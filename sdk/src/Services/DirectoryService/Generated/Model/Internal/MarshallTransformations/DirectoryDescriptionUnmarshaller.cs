@@ -142,6 +142,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     unmarshalledObject.RadiusStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RegionsInfo", targetDepth))
+                {
+                    var unmarshaller = RegionsInfoUnmarshaller.Instance;
+                    unmarshalledObject.RegionsInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ShareMethod", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

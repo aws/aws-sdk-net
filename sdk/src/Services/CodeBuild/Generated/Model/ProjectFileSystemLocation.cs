@@ -44,10 +44,10 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        ///  The name used to access a file system created by Amazon EFS. CodeBuild creates an
+        /// The name used to access a file system created by Amazon EFS. CodeBuild creates an
         /// environment variable by appending the <code>identifier</code> in all capital letters
-        /// to <code>CODEBUILD_</code>. For example, if you specify <code>my-efs</code> for <code>identifier</code>,
-        /// a new environment variable is create named <code>CODEBUILD_MY-EFS</code>. 
+        /// to <code>CODEBUILD_</code>. For example, if you specify <code>my_efs</code> for <code>identifier</code>,
+        /// a new environment variable is create named <code>CODEBUILD_MY_EFS</code>. 
         /// </para>
         ///  
         /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        ///  A string that specifies the location of the file system created by Amazon EFS. Its
+        /// A string that specifies the location of the file system created by Amazon EFS. Its
         /// format is <code>efs-dns-name:/directory-path</code>. You can find the DNS name of
         /// file system when you view it in the AWS EFS console. The directory path is a path
         /// to a directory in the file system that CodeBuild mounts. For example, if the DNS name
@@ -79,7 +79,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  
         /// <para>
-        ///  The directory path in the format <code>efs-dns-name:/directory-path</code> is optional.
+        /// The directory path in the format <code>efs-dns-name:/directory-path</code> is optional.
         /// If you do not specify a directory path, the location is only the DNS name and CodeBuild
         /// mounts the entire file system. 
         /// </para>
@@ -120,7 +120,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property MountPoint. 
         /// <para>
-        ///  The location in the container where you mount the file system. 
+        /// The location in the container where you mount the file system. 
         /// </para>
         /// </summary>
         public string MountPoint

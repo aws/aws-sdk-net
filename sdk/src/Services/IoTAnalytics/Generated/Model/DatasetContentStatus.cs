@@ -57,8 +57,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the data set contents. Can be one of "READY", "CREATING", "SUCCEEDED"
-        /// or "FAILED".
+        /// The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED, or FAILED.
         /// </para>
         /// </summary>
         public DatasetContentState State

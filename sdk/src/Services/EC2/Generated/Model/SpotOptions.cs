@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private SpotAllocationStrategy _allocationStrategy;
         private SpotInstanceInterruptionBehavior _instanceInterruptionBehavior;
         private int? _instancePoolsToUseCount;
+        private FleetSpotMaintenanceStrategies _maintenanceStrategies;
         private string _maxTotalPrice;
         private int? _minTargetCapacity;
         private bool? _singleAvailabilityZone;
@@ -114,6 +115,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstancePoolsToUseCount()
         {
             return this._instancePoolsToUseCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaintenanceStrategies. 
+        /// <para>
+        /// The strategies for managing your workloads on your Spot Instances that will be interrupted.
+        /// Currently only the capacity rebalance strategy is available.
+        /// </para>
+        /// </summary>
+        public FleetSpotMaintenanceStrategies MaintenanceStrategies
+        {
+            get { return this._maintenanceStrategies; }
+            set { this._maintenanceStrategies = value; }
+        }
+
+        // Check to see if MaintenanceStrategies property is set
+        internal bool IsSetMaintenanceStrategies()
+        {
+            return this._maintenanceStrategies != null;
         }
 
         /// <summary>

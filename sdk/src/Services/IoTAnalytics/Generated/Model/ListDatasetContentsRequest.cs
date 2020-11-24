@@ -100,7 +100,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Gets and sets the property ScheduledBefore. 
         /// <para>
         /// A filter to limit results to those data set contents whose creation is scheduled before
-        /// the given time. See the field <code>triggers.schedule</code> in the CreateDataset
+        /// the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
         /// request. (timestamp)
         /// </para>
         /// </summary>
@@ -120,7 +120,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Gets and sets the property ScheduledOnOrAfter. 
         /// <para>
         /// A filter to limit results to those data set contents whose creation is scheduled on
-        /// or after the given time. See the field <code>triggers.schedule</code> in the CreateDataset
+        /// or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
         /// request. (timestamp)
         /// </para>
         /// </summary>

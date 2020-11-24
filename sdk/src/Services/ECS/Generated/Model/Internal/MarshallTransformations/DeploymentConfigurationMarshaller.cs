@@ -45,6 +45,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DeploymentConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDeploymentCircuitBreaker())
+            {
+                context.Writer.WritePropertyName("deploymentCircuitBreaker");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DeploymentCircuitBreakerMarshaller.Instance;
+                marshaller.Marshall(requestObject.DeploymentCircuitBreaker, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMaximumPercent())
             {
                 context.Writer.WritePropertyName("maximumPercent");

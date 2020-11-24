@@ -76,8 +76,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The ID of the message that caused the error. (See the value corresponding to the "messageId"
-        /// key in the message object.)
+        /// The ID of the message that caused the error. See the value corresponding to the <code>messageId</code>
+        /// key in the message object.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

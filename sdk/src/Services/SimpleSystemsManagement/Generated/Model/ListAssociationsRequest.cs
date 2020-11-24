@@ -48,7 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates ListAssociationsRequest with the parameterized properties
         /// </summary>
-        /// <param name="associationFilterList">One or more filters. Use a filter to return a more specific list of results.</param>
+        /// <param name="associationFilterList">One or more filters. Use a filter to return a more specific list of results. <note> Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the instance that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> are not returned. </note></param>
         public ListAssociationsRequest(List<AssociationFilter> associationFilterList)
         {
             _associationFilterList = associationFilterList;
@@ -59,6 +59,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// One or more filters. Use a filter to return a more specific list of results.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Filtering associations using the <code>InstanceID</code> attribute only returns legacy
+        /// associations created using the <code>InstanceID</code> attribute. Associations targeting
+        /// the instance that are part of the Target Attributes <code>ResourceGroup</code> or
+        /// <code>Tags</code> are not returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<AssociationFilter> AssociationFilterList

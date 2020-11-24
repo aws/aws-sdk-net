@@ -64,6 +64,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ErrorMetrics", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ErrorMetric, ErrorMetricUnmarshaller>(ErrorMetricUnmarshaller.Instance);
+                    unmarshalledObject.ErrorMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RMSE", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;

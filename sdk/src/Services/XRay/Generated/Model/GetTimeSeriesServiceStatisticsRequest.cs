@@ -36,6 +36,7 @@ namespace Amazon.XRay.Model
     {
         private DateTime? _endTime;
         private string _entitySelectorExpression;
+        private bool? _forecastStatistics;
         private string _groupARN;
         private string _groupName;
         private string _nextToken;
@@ -80,6 +81,25 @@ namespace Amazon.XRay.Model
         internal bool IsSetEntitySelectorExpression()
         {
             return this._entitySelectorExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForecastStatistics. 
+        /// <para>
+        /// The forecasted high and low fault count values. Forecast enabled requests require
+        /// the EntitySelectorExpression ID be provided.
+        /// </para>
+        /// </summary>
+        public bool ForecastStatistics
+        {
+            get { return this._forecastStatistics.GetValueOrDefault(); }
+            set { this._forecastStatistics = value; }
+        }
+
+        // Check to see if ForecastStatistics property is set
+        internal bool IsSetForecastStatistics()
+        {
+            return this._forecastStatistics.HasValue; 
         }
 
         /// <summary>

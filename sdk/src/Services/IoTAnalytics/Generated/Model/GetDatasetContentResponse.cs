@@ -40,7 +40,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// A list of "DatasetEntry" objects.
+        /// A list of <code>DatasetEntry</code> objects.
         /// </para>
         /// </summary>
         public List<DatasetEntry> Entries

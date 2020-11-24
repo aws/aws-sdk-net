@@ -76,7 +76,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ReadyDateTime. 
         /// <para>
-        /// The date and time when the cluster was ready to execute steps.
+        /// The date and time when the cluster was ready to run steps.
         /// </para>
         /// </summary>
         public DateTime ReadyDateTime

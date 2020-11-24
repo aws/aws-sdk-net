@@ -59,7 +59,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Listeners. 
         /// <para>
         /// The listeners that the mesh endpoint is expected to receive inbound traffic from.
-        /// You         can specify one listener.
+        /// You can specify one listener.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]

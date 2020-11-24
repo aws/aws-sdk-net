@@ -82,6 +82,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.DesiredCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("failedTasks", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.FailedTasks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +116,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PlatformVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rolloutState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RolloutState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rolloutStateReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RolloutStateReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("runningCount", targetDepth))

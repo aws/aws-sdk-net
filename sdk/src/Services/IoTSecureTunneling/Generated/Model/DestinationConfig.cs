@@ -39,14 +39,13 @@ namespace Amazon.IoTSecureTunneling.Model
         /// <summary>
         /// Gets and sets the property Services. 
         /// <para>
-        /// A list of service names that identity the target application. Currently, you can only
-        /// specify a single name. The AWS IoT client running on the destination device reads
-        /// this value and uses it to look up a port or an IP address and a port. The AWS IoT
-        /// client instantiates the local proxy which uses this information to connect to the
-        /// destination application.
+        /// A list of service names that identity the target application. The AWS IoT client running
+        /// on the destination device reads this value and uses it to look up a port or an IP
+        /// address and a port. The AWS IoT client instantiates the local proxy which uses this
+        /// information to connect to the destination application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=1)]
         public List<string> Services
         {
             get { return this._services; }
@@ -65,7 +64,7 @@ namespace Amazon.IoTSecureTunneling.Model
         /// The name of the IoT thing to which you want to connect.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string ThingName
         {
             get { return this._thingName; }

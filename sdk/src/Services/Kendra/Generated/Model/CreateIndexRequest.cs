@@ -50,6 +50,8 @@ namespace Amazon.Kendra.Model
         private string _roleArn;
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
         private List<Tag> _tags = new List<Tag>();
+        private UserContextPolicy _userContextPolicy;
+        private List<UserTokenConfiguration> _userTokenConfigurations = new List<UserTokenConfiguration>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -195,6 +197,54 @@ namespace Amazon.Kendra.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserContextPolicy. 
+        /// <para>
+        /// The user context policy.
+        /// </para>
+        ///  <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> 
+        /// <para>
+        /// All indexed content is searchable and displayable for all users. If there is an access
+        /// control list, it is ignored. You can filter on user and group attributes. 
+        /// </para>
+        ///  </dd> <dt>USER_TOKEN</dt> <dd> 
+        /// <para>
+        /// Enables SSO and token-based user access control. All documents with no access control
+        /// and all documents accessible to the user will be searchable and displayable. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        public UserContextPolicy UserContextPolicy
+        {
+            get { return this._userContextPolicy; }
+            set { this._userContextPolicy = value; }
+        }
+
+        // Check to see if UserContextPolicy property is set
+        internal bool IsSetUserContextPolicy()
+        {
+            return this._userContextPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserTokenConfigurations. 
+        /// <para>
+        /// The user token configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<UserTokenConfiguration> UserTokenConfigurations
+        {
+            get { return this._userTokenConfigurations; }
+            set { this._userTokenConfigurations = value; }
+        }
+
+        // Check to see if UserTokenConfigurations property is set
+        internal bool IsSetUserTokenConfigurations()
+        {
+            return this._userTokenConfigurations != null && this._userTokenConfigurations.Count > 0; 
         }
 
     }

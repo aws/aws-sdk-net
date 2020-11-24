@@ -33,6 +33,7 @@ namespace Amazon.Lex.Model
     /// </summary>
     public partial class PostTextResponse : AmazonWebServiceResponse
     {
+        private List<ActiveContext> _activeContexts = new List<ActiveContext>();
         private List<PredictedIntent> _alternativeIntents = new List<PredictedIntent>();
         private string _botVersion;
         private DialogState _dialogState;
@@ -46,6 +47,32 @@ namespace Amazon.Lex.Model
         private string _sessionId;
         private Dictionary<string, string> _slots = new Dictionary<string, string>();
         private string _slotToElicit;
+
+        /// <summary>
+        /// Gets and sets the property ActiveContexts. 
+        /// <para>
+        /// A list of active contexts for the session. A context can be set when an intent is
+        /// fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use a context to control the intents that can follow up an intent, or to modify
+        /// the operation of your application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<ActiveContext> ActiveContexts
+        {
+            get { return this._activeContexts; }
+            set { this._activeContexts = value; }
+        }
+
+        // Check to see if ActiveContexts property is set
+        internal bool IsSetActiveContexts()
+        {
+            return this._activeContexts != null && this._activeContexts.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AlternativeIntents. 
@@ -76,17 +103,6 @@ namespace Amazon.Lex.Model
         /// <para>
         /// The version of the bot that responded to the conversation. You can use this information
         /// to help determine if one version of a bot is performing better than another version.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you have enabled the new natural language understanding (NLU) model, you can use
-        /// this to determine if the improvement is due to changes to the bot or changes to the
-        /// NLU.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about enabling the new NLU, see the <a href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements">enableModelImprovements</a>
-        /// parameter of the <code>PutBot</code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -288,7 +304,7 @@ namespace Amazon.Lex.Model
         ///  
         /// <para>
         /// The score is a relative score, not an absolute score. The score may change based on
-        /// improvements to the Amazon Lex natural language understanding (NLU) model.
+        /// improvements to Amazon Lex.
         /// </para>
         /// </summary>
         public IntentConfidence NluIntentConfidence

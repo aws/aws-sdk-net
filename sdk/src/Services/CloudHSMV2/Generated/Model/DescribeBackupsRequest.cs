@@ -74,6 +74,13 @@ namespace Amazon.CloudHSMV2.Model
         /// Use the <code>states</code> filter to return only backups that match the specified
         /// state.
         /// </para>
+        ///  
+        /// <para>
+        /// Use the <code>neverExpires</code> filter to return backups filtered by the value in
+        /// the <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt
+        /// from the backup retention policy. <code>False</code> returns all backups with a backup
+        /// retention policy defined at the cluster.
+        /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Filters
         {
@@ -94,7 +101,7 @@ namespace Amazon.CloudHSMV2.Model
         /// than the number you specify, the response contains a <code>NextToken</code> value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

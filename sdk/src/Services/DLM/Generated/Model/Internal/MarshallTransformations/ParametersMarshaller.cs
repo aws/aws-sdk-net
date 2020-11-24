@@ -51,6 +51,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ExcludeBootVolume);
             }
 
+            if(requestObject.IsSetNoReboot())
+            {
+                context.Writer.WritePropertyName("NoReboot");
+                context.Writer.Write(requestObject.NoReboot);
+            }
+
         }
 
         /// <summary>

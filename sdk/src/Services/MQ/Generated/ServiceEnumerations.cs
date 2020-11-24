@@ -321,6 +321,10 @@ namespace Amazon.MQ
         /// </summary>
         public static readonly DeploymentMode ACTIVE_STANDBY_MULTI_AZ = new DeploymentMode("ACTIVE_STANDBY_MULTI_AZ");
         /// <summary>
+        /// Constant CLUSTER_MULTI_AZ for DeploymentMode
+        /// </summary>
+        public static readonly DeploymentMode CLUSTER_MULTI_AZ = new DeploymentMode("CLUSTER_MULTI_AZ");
+        /// <summary>
         /// Constant SINGLE_INSTANCE for DeploymentMode
         /// </summary>
         public static readonly DeploymentMode SINGLE_INSTANCE = new DeploymentMode("SINGLE_INSTANCE");
@@ -370,6 +374,10 @@ namespace Amazon.MQ
         /// Constant ACTIVEMQ for EngineType
         /// </summary>
         public static readonly EngineType ACTIVEMQ = new EngineType("ACTIVEMQ");
+        /// <summary>
+        /// Constant RABBITMQ for EngineType
+        /// </summary>
+        public static readonly EngineType RABBITMQ = new EngineType("RABBITMQ");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

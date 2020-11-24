@@ -64,6 +64,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("defaultValueSpec", targetDepth))
+                {
+                    var unmarshaller = SlotDefaultValueSpecUnmarshaller.Instance;
+                    unmarshalledObject.DefaultValueSpec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -78,6 +78,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EntitySelectorExpression);
                 }
 
+                if(publicRequest.IsSetForecastStatistics())
+                {
+                    context.Writer.WritePropertyName("ForecastStatistics");
+                    context.Writer.Write(publicRequest.ForecastStatistics);
+                }
+
                 if(publicRequest.IsSetGroupARN())
                 {
                     context.Writer.WritePropertyName("GroupARN");

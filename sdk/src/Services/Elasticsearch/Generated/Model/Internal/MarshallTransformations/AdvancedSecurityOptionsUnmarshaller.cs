@@ -76,6 +76,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.InternalUserDatabaseEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SAMLOptions", targetDepth))
+                {
+                    var unmarshaller = SAMLOptionsOutputUnmarshaller.Instance;
+                    unmarshalledObject.SAMLOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

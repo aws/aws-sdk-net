@@ -128,6 +128,7 @@ namespace Amazon.ApplicationInsights.Model
         /// are no more results to return.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

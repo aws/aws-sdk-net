@@ -31,10 +31,10 @@ namespace Amazon.ElasticMapReduce
     /// <summary>
     /// Interface for accessing ElasticMapReduce
     ///
-    /// Amazon EMR is a web service that makes it easy to process large amounts of data efficiently.
-    /// Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such
-    /// as web indexing, data mining, log file analysis, machine learning, scientific simulation,
-    /// and data warehousing.
+    /// Amazon EMR is a web service that makes it easier to process large amounts of data
+    /// efficiently. Amazon EMR uses Hadoop processing combined with several AWS services
+    /// to do tasks such as web indexing, data mining, log file analysis, machine learning,
+    /// scientific simulation, and data warehouse management.
     /// </summary>
     public partial interface IAmazonElasticMapReduce : IAmazonService, IDisposable
     {
@@ -282,7 +282,7 @@ namespace Amazon.ElasticMapReduce
         /// Cancels a pending step or steps in a running cluster. Available only in Amazon EMR
         /// versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed
         /// in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not
-        /// guarantee a step will be canceled, even if the request is successfully submitted.
+        /// guarantee that a step will be canceled, even if the request is successfully submitted.
         /// You can only cancel steps that are in a <code>PENDING</code> state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelSteps service method.</param>
@@ -304,7 +304,7 @@ namespace Amazon.ElasticMapReduce
         /// Cancels a pending step or steps in a running cluster. Available only in Amazon EMR
         /// versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed
         /// in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not
-        /// guarantee a step will be canceled, even if the request is successfully submitted.
+        /// guarantee that a step will be canceled, even if the request is successfully submitted.
         /// You can only cancel steps that are in a <code>PENDING</code> state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelSteps service method.</param>
@@ -367,6 +367,122 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  CreateStudio
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Creates a new Amazon EMR Studio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStudio service method.</param>
+        /// 
+        /// <returns>The response from the CreateStudio service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudio">REST API Reference for CreateStudio Operation</seealso>
+        CreateStudioResponse CreateStudio(CreateStudioRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Creates a new Amazon EMR Studio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStudio service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStudio service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudio">REST API Reference for CreateStudio Operation</seealso>
+        Task<CreateStudioResponse> CreateStudioAsync(CreateStudioRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateStudioSessionMapping
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>,
+        /// and applies a session policy to refine Studio permissions for that user or group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStudioSessionMapping service method.</param>
+        /// 
+        /// <returns>The response from the CreateStudioSessionMapping service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudioSessionMapping">REST API Reference for CreateStudioSessionMapping Operation</seealso>
+        CreateStudioSessionMappingResponse CreateStudioSessionMapping(CreateStudioSessionMappingRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>,
+        /// and applies a session policy to refine Studio permissions for that user or group.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStudioSessionMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStudioSessionMapping service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudioSessionMapping">REST API Reference for CreateStudioSessionMapping Operation</seealso>
+        Task<CreateStudioSessionMappingResponse> CreateStudioSessionMappingAsync(CreateStudioSessionMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteSecurityConfiguration
 
 
@@ -404,6 +520,120 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
         Task<DeleteSecurityConfigurationResponse> DeleteSecurityConfigurationAsync(DeleteSecurityConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteStudio
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Removes an Amazon EMR Studio from the Studio metadata store.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStudio service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStudio service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudio">REST API Reference for DeleteStudio Operation</seealso>
+        DeleteStudioResponse DeleteStudio(DeleteStudioRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Removes an Amazon EMR Studio from the Studio metadata store.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStudio service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteStudio service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudio">REST API Reference for DeleteStudio Operation</seealso>
+        Task<DeleteStudioResponse> DeleteStudioAsync(DeleteStudioRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteStudioSessionMapping
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Removes a user or group from an Amazon EMR Studio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStudioSessionMapping service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStudioSessionMapping service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudioSessionMapping">REST API Reference for DeleteStudioSessionMapping Operation</seealso>
+        DeleteStudioSessionMappingResponse DeleteStudioSessionMapping(DeleteStudioSessionMappingRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Removes a user or group from an Amazon EMR Studio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStudioSessionMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteStudioSessionMapping service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudioSessionMapping">REST API Reference for DeleteStudioSessionMapping Operation</seealso>
+        Task<DeleteStudioSessionMappingResponse> DeleteStudioSessionMappingAsync(DeleteStudioSessionMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -488,9 +718,9 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
-        /// <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a>
-        /// instead.
+        /// This API is no longer supported and will eventually be removed. We recommend you use
+        /// <a>ListClusters</a>, <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a>
+        /// and <a>ListBootstrapActions</a> instead.
         /// 
         ///  
         /// <para>
@@ -535,9 +765,9 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
-        /// <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a>
-        /// instead.
+        /// This API is no longer supported and will eventually be removed. We recommend you use
+        /// <a>ListClusters</a>, <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a>
+        /// and <a>ListBootstrapActions</a> instead.
         /// 
         ///  
         /// <para>
@@ -583,9 +813,9 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
-        /// <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a>
-        /// instead.
+        /// This API is no longer supported and will eventually be removed. We recommend you use
+        /// <a>ListClusters</a>, <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a>
+        /// and <a>ListBootstrapActions</a> instead.
         /// 
         ///  
         /// <para>
@@ -634,9 +864,9 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
-        /// <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a>
-        /// instead.
+        /// This API is no longer supported and will eventually be removed. We recommend you use
+        /// <a>ListClusters</a>, <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a>
+        /// and <a>ListBootstrapActions</a> instead.
         /// 
         ///  
         /// <para>
@@ -840,6 +1070,64 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  DescribeStudio
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio
+        /// access URL, and so on.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStudio service method.</param>
+        /// 
+        /// <returns>The response from the DescribeStudio service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStudio">REST API Reference for DescribeStudio Operation</seealso>
+        DescribeStudioResponse DescribeStudio(DescribeStudioRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio
+        /// access URL, and so on.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeStudio service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeStudio service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStudio">REST API Reference for DescribeStudio Operation</seealso>
+        Task<DescribeStudioResponse> DescribeStudioAsync(DescribeStudioRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetBlockPublicAccessConfiguration
 
 
@@ -909,6 +1197,66 @@ namespace Amazon.ElasticMapReduce
         /// <returns>The response from the GetManagedScalingPolicy service method, as returned by ElasticMapReduce.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy">REST API Reference for GetManagedScalingPolicy Operation</seealso>
         Task<GetManagedScalingPolicyResponse> GetManagedScalingPolicyAsync(GetManagedScalingPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetStudioSessionMapping
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Fetches mapping details for the specified Amazon EMR Studio and identity (user or
+        /// group).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStudioSessionMapping service method.</param>
+        /// 
+        /// <returns>The response from the GetStudioSessionMapping service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetStudioSessionMapping">REST API Reference for GetStudioSessionMapping Operation</seealso>
+        GetStudioSessionMappingResponse GetStudioSessionMapping(GetStudioSessionMappingRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Fetches mapping details for the specified Amazon EMR Studio and identity (user or
+        /// group).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStudioSessionMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStudioSessionMapping service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetStudioSessionMapping">REST API Reference for GetStudioSessionMapping Operation</seealso>
+        Task<GetStudioSessionMappingResponse> GetStudioSessionMappingAsync(GetStudioSessionMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1454,6 +1802,124 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">REST API Reference for ListSteps Operation</seealso>
         Task<ListStepsResponse> ListStepsAsync(ListStepsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListStudios
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns a list of all Amazon EMR Studios associated with the AWS account. The list
+        /// includes details such as ID, Studio Access URL, and creation time for each Studio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStudios service method.</param>
+        /// 
+        /// <returns>The response from the ListStudios service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudios">REST API Reference for ListStudios Operation</seealso>
+        ListStudiosResponse ListStudios(ListStudiosRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns a list of all Amazon EMR Studios associated with the AWS account. The list
+        /// includes details such as ID, Studio Access URL, and creation time for each Studio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStudios service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStudios service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudios">REST API Reference for ListStudios Operation</seealso>
+        Task<ListStudiosResponse> ListStudiosAsync(ListStudiosRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListStudioSessionMappings
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns a list of all user or group session mappings for the EMR Studio specified
+        /// by <code>StudioId</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStudioSessionMappings service method.</param>
+        /// 
+        /// <returns>The response from the ListStudioSessionMappings service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudioSessionMappings">REST API Reference for ListStudioSessionMappings Operation</seealso>
+        ListStudioSessionMappingsResponse ListStudioSessionMappings(ListStudioSessionMappingsRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Returns a list of all user or group session mappings for the EMR Studio specified
+        /// by <code>StudioId</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStudioSessionMappings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStudioSessionMappings service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudioSessionMappings">REST API Reference for ListStudioSessionMappings Operation</seealso>
+        Task<ListStudioSessionMappingsResponse> ListStudioSessionMappingsAsync(ListStudioSessionMappingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2202,6 +2668,66 @@ namespace Amazon.ElasticMapReduce
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateJobFlows">REST API Reference for TerminateJobFlows Operation</seealso>
         Task<TerminateJobFlowsResponse> TerminateJobFlowsAsync(TerminateJobFlowsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateStudioSessionMapping
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Updates the session policy attached to the user or group for the specified Amazon
+        /// EMR Studio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStudioSessionMapping service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStudioSessionMapping service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudioSessionMapping">REST API Reference for UpdateStudioSessionMapping Operation</seealso>
+        UpdateStudioSessionMappingResponse UpdateStudioSessionMapping(UpdateStudioSessionMappingRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// The Amazon EMR Studio APIs are in preview release for Amazon EMR and are subject to
+        /// change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Updates the session policy attached to the user or group for the specified Amazon
+        /// EMR Studio.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStudioSessionMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateStudioSessionMapping service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerErrorException">
+        /// Indicates that an error occurred while processing the request and that the request
+        /// was not completed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudioSessionMapping">REST API Reference for UpdateStudioSessionMapping Operation</seealso>
+        Task<UpdateStudioSessionMappingResponse> UpdateStudioSessionMappingAsync(UpdateStudioSessionMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

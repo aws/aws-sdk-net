@@ -58,7 +58,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property PipelineSummaries. 
         /// <para>
-        /// A list of "PipelineSummary" objects.
+        /// A list of <code>PipelineSummary</code> objects.
         /// </para>
         /// </summary>
         public List<PipelineSummary> PipelineSummaries

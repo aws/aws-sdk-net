@@ -100,6 +100,12 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeleteTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NeverExpires", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.NeverExpires = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceBackup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

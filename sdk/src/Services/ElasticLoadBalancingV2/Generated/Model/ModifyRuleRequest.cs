@@ -39,10 +39,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// you must provide the entire list. For example, to add an action, specify a list with
     /// the current actions plus the new action.
     /// </para>
-    ///  
-    /// <para>
-    /// To modify the actions for the default rule, use <a>ModifyListener</a>.
-    /// </para>
     /// </summary>
     public partial class ModifyRuleRequest : AmazonElasticLoadBalancingV2Request
     {

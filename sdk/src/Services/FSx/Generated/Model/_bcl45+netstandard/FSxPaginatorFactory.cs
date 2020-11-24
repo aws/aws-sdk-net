@@ -53,6 +53,14 @@ namespace Amazon.FSx.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeFileSystemAliases operation
+        ///</summary>
+        public IDescribeFileSystemAliasesPaginator DescribeFileSystemAliases(DescribeFileSystemAliasesRequest request) 
+        {
+            return new DescribeFileSystemAliasesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeFileSystems operation
         ///</summary>
         public IDescribeFileSystemsPaginator DescribeFileSystems(DescribeFileSystemsRequest request) 

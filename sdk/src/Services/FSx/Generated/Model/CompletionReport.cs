@@ -100,7 +100,7 @@ namespace Amazon.FSx.Model
         /// see . 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=900)]
+        [AWSProperty(Min=3, Max=4357)]
         public string Path
         {
             get { return this._path; }

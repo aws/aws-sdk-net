@@ -83,6 +83,56 @@ namespace Amazon.Chime
 
 
     /// <summary>
+    /// Constants used for properties of type AppInstanceDataType.
+    /// </summary>
+    public class AppInstanceDataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Channel for AppInstanceDataType
+        /// </summary>
+        public static readonly AppInstanceDataType Channel = new AppInstanceDataType("Channel");
+        /// <summary>
+        /// Constant ChannelMessage for AppInstanceDataType
+        /// </summary>
+        public static readonly AppInstanceDataType ChannelMessage = new AppInstanceDataType("ChannelMessage");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppInstanceDataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppInstanceDataType FindValue(string value)
+        {
+            return FindValue<AppInstanceDataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppInstanceDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BotType.
     /// </summary>
     public class BotType : ConstantClass
@@ -230,6 +280,256 @@ namespace Amazon.Chime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Capability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChannelMembershipType.
+    /// </summary>
+    public class ChannelMembershipType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for ChannelMembershipType
+        /// </summary>
+        public static readonly ChannelMembershipType DEFAULT = new ChannelMembershipType("DEFAULT");
+        /// <summary>
+        /// Constant HIDDEN for ChannelMembershipType
+        /// </summary>
+        public static readonly ChannelMembershipType HIDDEN = new ChannelMembershipType("HIDDEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelMembershipType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelMembershipType FindValue(string value)
+        {
+            return FindValue<ChannelMembershipType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelMembershipType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChannelMessagePersistenceType.
+    /// </summary>
+    public class ChannelMessagePersistenceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NON_PERSISTENT for ChannelMessagePersistenceType
+        /// </summary>
+        public static readonly ChannelMessagePersistenceType NON_PERSISTENT = new ChannelMessagePersistenceType("NON_PERSISTENT");
+        /// <summary>
+        /// Constant PERSISTENT for ChannelMessagePersistenceType
+        /// </summary>
+        public static readonly ChannelMessagePersistenceType PERSISTENT = new ChannelMessagePersistenceType("PERSISTENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelMessagePersistenceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelMessagePersistenceType FindValue(string value)
+        {
+            return FindValue<ChannelMessagePersistenceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelMessagePersistenceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChannelMessageType.
+    /// </summary>
+    public class ChannelMessageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTROL for ChannelMessageType
+        /// </summary>
+        public static readonly ChannelMessageType CONTROL = new ChannelMessageType("CONTROL");
+        /// <summary>
+        /// Constant STANDARD for ChannelMessageType
+        /// </summary>
+        public static readonly ChannelMessageType STANDARD = new ChannelMessageType("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelMessageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelMessageType FindValue(string value)
+        {
+            return FindValue<ChannelMessageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelMessageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChannelMode.
+    /// </summary>
+    public class ChannelMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESTRICTED for ChannelMode
+        /// </summary>
+        public static readonly ChannelMode RESTRICTED = new ChannelMode("RESTRICTED");
+        /// <summary>
+        /// Constant UNRESTRICTED for ChannelMode
+        /// </summary>
+        public static readonly ChannelMode UNRESTRICTED = new ChannelMode("UNRESTRICTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelMode FindValue(string value)
+        {
+            return FindValue<ChannelMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChannelPrivacy.
+    /// </summary>
+    public class ChannelPrivacy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRIVATE for ChannelPrivacy
+        /// </summary>
+        public static readonly ChannelPrivacy PRIVATE = new ChannelPrivacy("PRIVATE");
+        /// <summary>
+        /// Constant PUBLIC for ChannelPrivacy
+        /// </summary>
+        public static readonly ChannelPrivacy PUBLIC = new ChannelPrivacy("PUBLIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelPrivacy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelPrivacy FindValue(string value)
+        {
+            return FindValue<ChannelPrivacy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelPrivacy(string value)
         {
             return FindValue(value);
         }
@@ -827,6 +1127,10 @@ namespace Amazon.Chime
         /// </summary>
         public static readonly PhoneNumberAssociationName AccountId = new PhoneNumberAssociationName("AccountId");
         /// <summary>
+        /// Constant SipRuleId for PhoneNumberAssociationName
+        /// </summary>
+        public static readonly PhoneNumberAssociationName SipRuleId = new PhoneNumberAssociationName("SipRuleId");
+        /// <summary>
         /// Constant UserId for PhoneNumberAssociationName
         /// </summary>
         public static readonly PhoneNumberAssociationName UserId = new PhoneNumberAssociationName("UserId");
@@ -1258,6 +1562,106 @@ namespace Amazon.Chime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RoomMembershipRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SipRuleTriggerType.
+    /// </summary>
+    public class SipRuleTriggerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RequestUriHostname for SipRuleTriggerType
+        /// </summary>
+        public static readonly SipRuleTriggerType RequestUriHostname = new SipRuleTriggerType("RequestUriHostname");
+        /// <summary>
+        /// Constant ToPhoneNumber for SipRuleTriggerType
+        /// </summary>
+        public static readonly SipRuleTriggerType ToPhoneNumber = new SipRuleTriggerType("ToPhoneNumber");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SipRuleTriggerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SipRuleTriggerType FindValue(string value)
+        {
+            return FindValue<SipRuleTriggerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SipRuleTriggerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASCENDING = new SortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESCENDING = new SortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
         }

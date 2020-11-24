@@ -111,6 +111,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     response.WorldCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("worldTags", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.WorldTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

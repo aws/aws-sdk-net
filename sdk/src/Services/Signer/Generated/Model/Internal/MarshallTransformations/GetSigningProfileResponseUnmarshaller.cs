@@ -63,6 +63,12 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     response.Overrides = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("platformDisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PlatformDisplayName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("platformId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -73,6 +79,30 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProfileName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("profileVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProfileVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("profileVersionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProfileVersionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("revocationRecord", targetDepth))
+                {
+                    var unmarshaller = SigningProfileRevocationRecordUnmarshaller.Instance;
+                    response.RevocationRecord = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("signatureValidityPeriod", targetDepth))
+                {
+                    var unmarshaller = SignatureValidityPeriodUnmarshaller.Instance;
+                    response.SignatureValidityPeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("signingMaterial", targetDepth))
@@ -91,6 +121,12 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("statusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StatusReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
@@ -134,9 +170,9 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
                 {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonSignerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

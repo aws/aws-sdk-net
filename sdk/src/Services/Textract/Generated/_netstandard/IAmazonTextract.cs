@@ -114,7 +114,7 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
-        /// for synchronous operations 5 MB. The maximum document size for asynchronous operations
+        /// for synchronous operations 10 MB. The maximum document size for asynchronous operations
         /// is 500 MB for PDF files.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.HumanLoopQuotaExceededException">
@@ -198,7 +198,7 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
-        /// for synchronous operations 5 MB. The maximum document size for asynchronous operations
+        /// for synchronous operations 10 MB. The maximum document size for asynchronous operations
         /// is 500 MB for PDF files.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
@@ -470,7 +470,7 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
-        /// for synchronous operations 5 MB. The maximum document size for asynchronous operations
+        /// for synchronous operations 10 MB. The maximum document size for asynchronous operations
         /// is 500 MB for PDF files.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.IdempotentParameterMismatchException">
@@ -480,6 +480,10 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
         /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidKMSKeyException">
+        /// Indicates you do not have decrypt permissions with the KMS key entered, or the KMS
+        /// key was entered incorrectly.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
         /// An input parameter violated a constraint. For example, in synchronous operations,
@@ -562,7 +566,7 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
-        /// for synchronous operations 5 MB. The maximum document size for asynchronous operations
+        /// for synchronous operations 10 MB. The maximum document size for asynchronous operations
         /// is 500 MB for PDF files.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.IdempotentParameterMismatchException">
@@ -572,6 +576,10 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InternalServerErrorException">
         /// Amazon Textract experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Textract.Model.InvalidKMSKeyException">
+        /// Indicates you do not have decrypt permissions with the KMS key entered, or the KMS
+        /// key was entered incorrectly.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.InvalidParameterException">
         /// An input parameter violated a constraint. For example, in synchronous operations,

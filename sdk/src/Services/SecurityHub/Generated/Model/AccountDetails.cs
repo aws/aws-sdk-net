@@ -42,6 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// The ID of an AWS account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }

@@ -87,6 +87,11 @@ namespace Amazon.Glue.Model
         IGetPartitionsPaginator GetPartitions(GetPartitionsRequest request);
 
         /// <summary>
+        /// Paginator for GetResourcePolicies operation
+        ///</summary>
+        IGetResourcePoliciesPaginator GetResourcePolicies(GetResourcePoliciesRequest request);
+
+        /// <summary>
         /// Paginator for GetSecurityConfigurations operation
         ///</summary>
         IGetSecurityConfigurationsPaginator GetSecurityConfigurations(GetSecurityConfigurationsRequest request);
@@ -135,6 +140,21 @@ namespace Amazon.Glue.Model
         /// Paginator for ListMLTransforms operation
         ///</summary>
         IListMLTransformsPaginator ListMLTransforms(ListMLTransformsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRegistries operation
+        ///</summary>
+        IListRegistriesPaginator ListRegistries(ListRegistriesRequest request);
+
+        /// <summary>
+        /// Paginator for ListSchemas operation
+        ///</summary>
+        IListSchemasPaginator ListSchemas(ListSchemasRequest request);
+
+        /// <summary>
+        /// Paginator for ListSchemaVersions operation
+        ///</summary>
+        IListSchemaVersionsPaginator ListSchemaVersions(ListSchemaVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListTriggers operation

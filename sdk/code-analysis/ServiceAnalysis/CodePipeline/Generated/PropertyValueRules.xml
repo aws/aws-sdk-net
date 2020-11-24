@@ -653,7 +653,7 @@
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.EncryptionKey.Id</property>
     <min>1</min>
-    <max>100</max>
+    <max>400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.ErrorDetails.Message</property>

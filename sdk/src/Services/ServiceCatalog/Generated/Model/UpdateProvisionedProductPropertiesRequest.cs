@@ -116,12 +116,12 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>LAUNCH_ROLE</code> key accepts user ARNs and role ARNs. This key allows
-        /// an administrator to call <code>UpdateProvisionedProductProperties</code> to update
-        /// the launch role that is associated with a provisioned product. This role is used when
-        /// an end-user calls a provisioning operation such as <code>UpdateProvisionedProduct</code>,
-        /// <code>TerminateProvisionedProduct</code>, or <code>ExecuteProvisionedProductServiceAction</code>.
-        /// Only an ARN role is valid. A user ARN is invalid. 
+        /// The <code>LAUNCH_ROLE</code> key accepts role ARNs. This key allows an administrator
+        /// to call <code>UpdateProvisionedProductProperties</code> to update the launch role
+        /// that is associated with a provisioned product. This role is used when an end user
+        /// calls a provisioning operation such as <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
+        /// or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is valid.
+        /// A user ARN is invalid. 
         /// </para>
         ///  
         /// <para>

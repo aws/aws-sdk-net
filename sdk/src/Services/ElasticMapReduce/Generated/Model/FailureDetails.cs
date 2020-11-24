@@ -59,9 +59,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The descriptive message including the error the EMR service has identified as the
-        /// cause of step failure. This is text from an error log that describes the root cause
-        /// of the failure.
+        /// The descriptive message including the error the Amazon EMR service has identified
+        /// as the cause of step failure. This is text from an error log that describes the root
+        /// cause of the failure.
         /// </para>
         /// </summary>
         public string Message

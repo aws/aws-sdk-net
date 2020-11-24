@@ -103,11 +103,19 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.DisableOrganizationAdminAccountRequest.AdminAccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.EnableImportFindingsForProductRequest.ProductArn</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.EnableImportFindingsForProductResponse.ProductSubscriptionArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.EnableOrganizationAdminAccountRequest.AdminAccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -137,7 +145,7 @@
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ListInvitationsRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ListInvitationsResponse.NextToken</property>
@@ -146,11 +154,16 @@
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ListMembersRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ListMembersResponse.NextToken</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ListOrganizationAdminAccountsRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ListTagsForResourceRequest.ResourceArn</property>
@@ -214,6 +227,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ActionTarget.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AdminAccount.AccountId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

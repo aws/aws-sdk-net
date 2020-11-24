@@ -82,6 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeviceSettingsSyncState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deviceUpdateStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeviceUpdateStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hdDeviceSettings", targetDepth))
                 {
                     var unmarshaller = InputDeviceHdSettingsUnmarshaller.Instance;

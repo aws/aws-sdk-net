@@ -22,7 +22,7 @@
     <property>Amazon.CodeGuruReviewer.Model.CreateCodeReviewRequest.RepositoryAssociationArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:association:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.DescribeCodeReviewRequest.CodeReviewArn</property>
@@ -50,13 +50,13 @@
     <property>Amazon.CodeGuruReviewer.Model.DescribeRepositoryAssociationRequest.AssociationArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:association:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.DisassociateRepositoryRequest.AssociationArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$</pattern>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:association:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.ListCodeReviewsRequest.MaxResults</property>
@@ -131,6 +131,12 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:association:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.PutRecommendationFeedbackRequest.CodeReviewArn</property>
     <min>1</min>
     <max>1600</max>
@@ -142,10 +148,28 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:association:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:association:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.CodeCommitRepository.Name</property>
     <min>1</min>
     <max>100</max>
     <pattern>^\S[\w.-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.CodeReview.AssociationArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:association:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.CodeReview.CodeReviewArn</property>

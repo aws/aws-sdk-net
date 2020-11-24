@@ -133,6 +133,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOracleParameters())
+            {
+                context.Writer.WritePropertyName("OracleParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OracleParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.OracleParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPostgreSqlParameters())
             {
                 context.Writer.WritePropertyName("PostgreSqlParameters");

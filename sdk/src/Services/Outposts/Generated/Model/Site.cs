@@ -37,6 +37,7 @@ namespace Amazon.Outposts.Model
         private string _description;
         private string _name;
         private string _siteId;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property AccountId.
@@ -100,6 +101,25 @@ namespace Amazon.Outposts.Model
         internal bool IsSetSiteId()
         {
             return this._siteId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The site tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

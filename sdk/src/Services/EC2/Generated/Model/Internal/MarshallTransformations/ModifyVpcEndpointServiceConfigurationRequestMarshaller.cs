@@ -62,6 +62,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AcceptanceRequired", StringUtils.FromBool(publicRequest.AcceptanceRequired));
                 }
+                if(publicRequest.IsSetAddGatewayLoadBalancerArns())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AddGatewayLoadBalancerArns)
+                    {
+                        request.Parameters.Add("AddGatewayLoadBalancerArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetAddNetworkLoadBalancerArns())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -74,6 +83,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPrivateDnsName())
                 {
                     request.Parameters.Add("PrivateDnsName", StringUtils.FromString(publicRequest.PrivateDnsName));
+                }
+                if(publicRequest.IsSetRemoveGatewayLoadBalancerArns())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.RemoveGatewayLoadBalancerArns)
+                    {
+                        request.Parameters.Add("RemoveGatewayLoadBalancerArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
                 }
                 if(publicRequest.IsSetRemoveNetworkLoadBalancerArns())
                 {

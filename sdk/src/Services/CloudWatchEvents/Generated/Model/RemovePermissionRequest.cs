@@ -38,6 +38,7 @@ namespace Amazon.CloudWatchEvents.Model
     public partial class RemovePermissionRequest : AmazonCloudWatchEventsRequest
     {
         private string _eventBusName;
+        private bool? _removeAllPermissions;
         private string _statementId;
 
         /// <summary>
@@ -61,13 +62,31 @@ namespace Amazon.CloudWatchEvents.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RemoveAllPermissions. 
+        /// <para>
+        /// Specifies whether to remove all permissions.
+        /// </para>
+        /// </summary>
+        public bool RemoveAllPermissions
+        {
+            get { return this._removeAllPermissions.GetValueOrDefault(); }
+            set { this._removeAllPermissions = value; }
+        }
+
+        // Check to see if RemoveAllPermissions property is set
+        internal bool IsSetRemoveAllPermissions()
+        {
+            return this._removeAllPermissions.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property StatementId. 
         /// <para>
         /// The statement ID corresponding to the account that is no longer allowed to put events
         /// to the default event bus.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string StatementId
         {
             get { return this._statementId; }

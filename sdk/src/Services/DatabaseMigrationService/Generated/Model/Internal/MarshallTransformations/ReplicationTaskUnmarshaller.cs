@@ -166,6 +166,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.TargetEndpointArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TargetReplicationInstanceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetReplicationInstanceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TaskData", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

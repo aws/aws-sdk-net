@@ -31,11 +31,7 @@ namespace Amazon.CodeStarconnections
     /// <summary>
     /// Interface for accessing CodeStarconnections
     ///
-    /// AWS CodeStar Connections <important> 
-    /// <para>
-    /// The CodeStar Connections feature is in preview release and is subject to change.
-    /// </para>
-    ///  </important> 
+    /// AWS CodeStar Connections 
     /// <para>
     /// This AWS CodeStar Connections API Reference provides descriptions and usage examples
     /// of the operations and data types for the AWS CodeStar Connections API. You can use
@@ -54,8 +50,8 @@ namespace Amazon.CodeStarconnections
     /// <para>
     /// When you create a connection, the console initiates a third-party connection handshake.
     /// <i>Installations</i> are the apps that are used to conduct this handshake. For example,
-    /// the installation for the Bitbucket provider type is the Bitbucket Cloud app. When
-    /// you create a connection, you can choose an existing installation or create one.
+    /// the installation for the Bitbucket provider type is the Bitbucket app. When you create
+    /// a connection, you can choose an existing installation or create one.
     /// </para>
     ///  
     /// <para>
@@ -384,6 +380,9 @@ namespace Amazon.CodeStarconnections
         /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
         /// Resource not found. Verify the connection resource ARN and try again.
         /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceUnavailableException">
+        /// Resource not found. Verify the ARN for the host resource and try again.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetHost">REST API Reference for GetHost Operation</seealso>
         GetHostResponse GetHost(GetHostRequest request);
 
@@ -401,6 +400,9 @@ namespace Amazon.CodeStarconnections
         /// <returns>The response from the GetHost service method, as returned by CodeStarconnections.</returns>
         /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
         /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceUnavailableException">
+        /// Resource not found. Verify the ARN for the host resource and try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetHost">REST API Reference for GetHost Operation</seealso>
         Task<GetHostResponse> GetHostAsync(GetHostRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -570,6 +572,58 @@ namespace Amazon.CodeStarconnections
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateHost
+
+
+        /// <summary>
+        /// Updates a specified host with the provided configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHost service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHost service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConflictException">
+        /// Two conflicting operations have been made on the same resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceUnavailableException">
+        /// Resource not found. Verify the ARN for the host resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.UnsupportedOperationException">
+        /// The operation is not supported. Check the connection status and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost">REST API Reference for UpdateHost Operation</seealso>
+        UpdateHostResponse UpdateHost(UpdateHostRequest request);
+
+
+
+        /// <summary>
+        /// Updates a specified host with the provided configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHost service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateHost service method, as returned by CodeStarconnections.</returns>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ConflictException">
+        /// Two conflicting operations have been made on the same resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceNotFoundException">
+        /// Resource not found. Verify the connection resource ARN and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.ResourceUnavailableException">
+        /// Resource not found. Verify the ARN for the host resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeStarconnections.Model.UnsupportedOperationException">
+        /// The operation is not supported. Check the connection status and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost">REST API Reference for UpdateHost Operation</seealso>
+        Task<UpdateHostResponse> UpdateHostAsync(UpdateHostRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

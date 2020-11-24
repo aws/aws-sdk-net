@@ -65,6 +65,16 @@ namespace Amazon.ElasticMapReduce.Model
         /// Paginator for ListSteps operation
         ///</summary>
         IListStepsPaginator ListSteps(ListStepsRequest request);
+
+        /// <summary>
+        /// Paginator for ListStudios operation
+        ///</summary>
+        IListStudiosPaginator ListStudios(ListStudiosRequest request);
+
+        /// <summary>
+        /// Paginator for ListStudioSessionMappings operation
+        ///</summary>
+        IListStudioSessionMappingsPaginator ListStudioSessionMappings(ListStudioSessionMappingsRequest request);
     }
 }
 #endif

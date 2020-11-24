@@ -60,7 +60,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// One part of a key-value pair that comprises a tag. A tag value acts as a descriptor
-        /// for a tag key. A tag value can be empty or null.
+        /// for a tag key. A tag value can be an empty string.
         /// </para>
         /// </summary>
         public string Value

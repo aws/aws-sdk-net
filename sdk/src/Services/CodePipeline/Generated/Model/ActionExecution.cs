@@ -33,6 +33,7 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class ActionExecution
     {
+        private string _actionExecutionId;
         private ErrorDetails _errorDetails;
         private string _externalExecutionId;
         private string _externalExecutionUrl;
@@ -42,6 +43,31 @@ namespace Amazon.CodePipeline.Model
         private ActionExecutionStatus _status;
         private string _summary;
         private string _token;
+
+        /// <summary>
+        /// Gets and sets the property ActionExecutionId. 
+        /// <para>
+        /// ID of the workflow action execution in the current stage. Use the <a>GetPipelineState</a>
+        /// action to retrieve the current action execution details of the current stage.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For older executions, this field might be empty. The action execution ID is available
+        /// for executions run on or after March 2020.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string ActionExecutionId
+        {
+            get { return this._actionExecutionId; }
+            set { this._actionExecutionId = value; }
+        }
+
+        // Check to see if ActionExecutionId property is set
+        internal bool IsSetActionExecutionId()
+        {
+            return this._actionExecutionId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ErrorDetails. 

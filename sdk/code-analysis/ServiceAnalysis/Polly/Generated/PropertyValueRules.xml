@@ -57,7 +57,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.StartSpeechSynthesisTaskRequest.OutputS3KeyPrefix</property>
-    <pattern>^[0-9a-zA-Z\/\!\-_\.\*\'\(\)]{0,800}$</pattern>
+    <pattern>^[0-9a-zA-Z\/\!\-_\.\*\'\(\):;\$@=+\,\?&amp;]{0,800}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.StartSpeechSynthesisTaskRequest.SnsTopicArn</property>

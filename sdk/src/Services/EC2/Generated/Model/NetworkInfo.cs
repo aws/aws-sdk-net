@@ -33,13 +33,34 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class NetworkInfo
     {
+        private int? _defaultNetworkCardIndex;
         private bool? _efaSupported;
         private EnaSupport _enaSupport;
         private int? _ipv4AddressesPerInterface;
         private int? _ipv6AddressesPerInterface;
         private bool? _ipv6Supported;
+        private int? _maximumNetworkCards;
         private int? _maximumNetworkInterfaces;
+        private List<NetworkCardInfo> _networkCards = new List<NetworkCardInfo>();
         private string _networkPerformance;
+
+        /// <summary>
+        /// Gets and sets the property DefaultNetworkCardIndex. 
+        /// <para>
+        /// The index of the default network card, starting at 0.
+        /// </para>
+        /// </summary>
+        public int DefaultNetworkCardIndex
+        {
+            get { return this._defaultNetworkCardIndex.GetValueOrDefault(); }
+            set { this._defaultNetworkCardIndex = value; }
+        }
+
+        // Check to see if DefaultNetworkCardIndex property is set
+        internal bool IsSetDefaultNetworkCardIndex()
+        {
+            return this._defaultNetworkCardIndex.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property EfaSupported. 
@@ -132,6 +153,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaximumNetworkCards. 
+        /// <para>
+        /// The maximum number of physical network cards that can be allocated to the instance.
+        /// </para>
+        /// </summary>
+        public int MaximumNetworkCards
+        {
+            get { return this._maximumNetworkCards.GetValueOrDefault(); }
+            set { this._maximumNetworkCards = value; }
+        }
+
+        // Check to see if MaximumNetworkCards property is set
+        internal bool IsSetMaximumNetworkCards()
+        {
+            return this._maximumNetworkCards.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaximumNetworkInterfaces. 
         /// <para>
         /// The maximum number of network interfaces for the instance type.
@@ -150,9 +189,27 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkCards. 
+        /// <para>
+        /// Describes the network cards for the instance type.
+        /// </para>
+        /// </summary>
+        public List<NetworkCardInfo> NetworkCards
+        {
+            get { return this._networkCards; }
+            set { this._networkCards = value; }
+        }
+
+        // Check to see if NetworkCards property is set
+        internal bool IsSetNetworkCards()
+        {
+            return this._networkCards != null && this._networkCards.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkPerformance. 
         /// <para>
-        /// Describes the network performance.
+        /// The network performance.
         /// </para>
         /// </summary>
         public string NetworkPerformance

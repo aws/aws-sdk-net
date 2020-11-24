@@ -45,6 +45,30 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
+        /// Paginator for ListAppInstanceAdmins operation
+        ///</summary>
+        public IListAppInstanceAdminsPaginator ListAppInstanceAdmins(ListAppInstanceAdminsRequest request) 
+        {
+            return new ListAppInstanceAdminsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAppInstances operation
+        ///</summary>
+        public IListAppInstancesPaginator ListAppInstances(ListAppInstancesRequest request) 
+        {
+            return new ListAppInstancesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAppInstanceUsers operation
+        ///</summary>
+        public IListAppInstanceUsersPaginator ListAppInstanceUsers(ListAppInstanceUsersRequest request) 
+        {
+            return new ListAppInstanceUsersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAttendees operation
         ///</summary>
         public IListAttendeesPaginator ListAttendees(ListAttendeesRequest request) 
@@ -58,6 +82,62 @@ namespace Amazon.Chime.Model
         public IListBotsPaginator ListBots(ListBotsRequest request) 
         {
             return new ListBotsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListChannelBans operation
+        ///</summary>
+        public IListChannelBansPaginator ListChannelBans(ListChannelBansRequest request) 
+        {
+            return new ListChannelBansPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListChannelMemberships operation
+        ///</summary>
+        public IListChannelMembershipsPaginator ListChannelMemberships(ListChannelMembershipsRequest request) 
+        {
+            return new ListChannelMembershipsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListChannelMembershipsForAppInstanceUser operation
+        ///</summary>
+        public IListChannelMembershipsForAppInstanceUserPaginator ListChannelMembershipsForAppInstanceUser(ListChannelMembershipsForAppInstanceUserRequest request) 
+        {
+            return new ListChannelMembershipsForAppInstanceUserPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListChannelMessages operation
+        ///</summary>
+        public IListChannelMessagesPaginator ListChannelMessages(ListChannelMessagesRequest request) 
+        {
+            return new ListChannelMessagesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListChannelModerators operation
+        ///</summary>
+        public IListChannelModeratorsPaginator ListChannelModerators(ListChannelModeratorsRequest request) 
+        {
+            return new ListChannelModeratorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListChannels operation
+        ///</summary>
+        public IListChannelsPaginator ListChannels(ListChannelsRequest request) 
+        {
+            return new ListChannelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListChannelsModeratedByAppInstanceUser operation
+        ///</summary>
+        public IListChannelsModeratedByAppInstanceUserPaginator ListChannelsModeratedByAppInstanceUser(ListChannelsModeratedByAppInstanceUserRequest request) 
+        {
+            return new ListChannelsModeratedByAppInstanceUserPaginator(this.client, request);
         }
 
         /// <summary>
@@ -106,6 +186,22 @@ namespace Amazon.Chime.Model
         public IListRoomsPaginator ListRooms(ListRoomsRequest request) 
         {
             return new ListRoomsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSipMediaApplications operation
+        ///</summary>
+        public IListSipMediaApplicationsPaginator ListSipMediaApplications(ListSipMediaApplicationsRequest request) 
+        {
+            return new ListSipMediaApplicationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSipRules operation
+        ///</summary>
+        public IListSipRulesPaginator ListSipRules(ListSipRulesRequest request) 
+        {
+            return new ListSipRulesPaginator(this.client, request);
         }
 
         /// <summary>

@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyClientVpnEndpointRequest : AmazonEC2Request
     {
+        private ClientConnectOptions _clientConnectOptions;
         private string _clientVpnEndpointId;
         private ConnectionLogOptions _connectionLogOptions;
         private string _description;
@@ -45,6 +46,24 @@ namespace Amazon.EC2.Model
         private bool? _splitTunnel;
         private string _vpcId;
         private int? _vpnPort;
+
+        /// <summary>
+        /// Gets and sets the property ClientConnectOptions. 
+        /// <para>
+        /// The options for managing connection authorization for new client connections.
+        /// </para>
+        /// </summary>
+        public ClientConnectOptions ClientConnectOptions
+        {
+            get { return this._clientConnectOptions; }
+            set { this._clientConnectOptions = value; }
+        }
+
+        // Check to see if ClientConnectOptions property is set
+        internal bool IsSetClientConnectOptions()
+        {
+            return this._clientConnectOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientVpnEndpointId. 

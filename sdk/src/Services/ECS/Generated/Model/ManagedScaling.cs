@@ -47,10 +47,32 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class ManagedScaling
     {
+        private int? _instanceWarmupPeriod;
         private int? _maximumScalingStepSize;
         private int? _minimumScalingStepSize;
         private ManagedScalingStatus _status;
         private int? _targetCapacity;
+
+        /// <summary>
+        /// Gets and sets the property InstanceWarmupPeriod. 
+        /// <para>
+        /// The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute
+        /// to CloudWatch metrics for Auto Scaling group. If this parameter is omitted, the default
+        /// value of <code>300</code> seconds is used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
+        public int InstanceWarmupPeriod
+        {
+            get { return this._instanceWarmupPeriod.GetValueOrDefault(); }
+            set { this._instanceWarmupPeriod = value; }
+        }
+
+        // Check to see if InstanceWarmupPeriod property is set
+        internal bool IsSetInstanceWarmupPeriod()
+        {
+            return this._instanceWarmupPeriod.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaximumScalingStepSize. 

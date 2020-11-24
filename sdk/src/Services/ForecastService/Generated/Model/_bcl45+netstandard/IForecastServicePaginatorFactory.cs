@@ -52,6 +52,11 @@ namespace Amazon.ForecastService.Model
         IListForecastsPaginator ListForecasts(ListForecastsRequest request);
 
         /// <summary>
+        /// Paginator for ListPredictorBacktestExportJobs operation
+        ///</summary>
+        IListPredictorBacktestExportJobsPaginator ListPredictorBacktestExportJobs(ListPredictorBacktestExportJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListPredictors operation
         ///</summary>
         IListPredictorsPaginator ListPredictors(ListPredictorsRequest request);

@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("defaultNetworkCardIndex", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.DefaultNetworkCardIndex = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("efaSupported", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -84,10 +90,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Ipv6Supported = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("maximumNetworkCards", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MaximumNetworkCards = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("maximumNetworkInterfaces", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.MaximumNetworkInterfaces = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("networkCards/item", targetDepth))
+                    {
+                        var unmarshaller = NetworkCardInfoUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.NetworkCards.Add(item);
                         continue;
                     }
                     if (context.TestExpression("networkPerformance", targetDepth))

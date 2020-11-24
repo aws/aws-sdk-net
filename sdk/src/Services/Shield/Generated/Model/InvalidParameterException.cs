@@ -29,13 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// Exception that indicates that the parameters passed to the API are invalid.
+    /// Exception that indicates that the parameters passed to the API are invalid. If available,
+    /// this exception includes details in additional properties.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InvalidParameterException : AmazonShieldException
     {
+        private List<ValidationExceptionField> _fields = new List<ValidationExceptionField>();
+        private ValidationExceptionReason _reason;
 
         /// <summary>
         /// Constructs a new InvalidParameterException with the specified error
@@ -97,6 +100,8 @@ namespace Amazon.Shield.Model
         protected InvalidParameterException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Fields = (List<ValidationExceptionField>)info.GetValue("Fields", typeof(List<ValidationExceptionField>));
+            this.Reason = (ValidationExceptionReason)info.GetValue("Reason", typeof(ValidationExceptionReason));
         }
 
         /// <summary>
@@ -117,8 +122,46 @@ namespace Amazon.Shield.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Fields", this.Fields);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Fields. 
+        /// <para>
+        /// Fields that caused the exception.
+        /// </para>
+        /// </summary>
+        public List<ValidationExceptionField> Fields
+        {
+            get { return this._fields; }
+            set { this._fields = value; }
+        }
+
+        // Check to see if Fields property is set
+        internal bool IsSetFields()
+        {
+            return this._fields != null && this._fields.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// Additional information about the exception.
+        /// </para>
+        /// </summary>
+        public ValidationExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }

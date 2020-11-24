@@ -45,11 +45,27 @@ namespace Amazon.Shield.Model
         }
 
         /// <summary>
+        /// Paginator for ListProtectionGroups operation
+        ///</summary>
+        public IListProtectionGroupsPaginator ListProtectionGroups(ListProtectionGroupsRequest request) 
+        {
+            return new ListProtectionGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProtections operation
         ///</summary>
         public IListProtectionsPaginator ListProtections(ListProtectionsRequest request) 
         {
             return new ListProtectionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourcesInProtectionGroup operation
+        ///</summary>
+        public IListResourcesInProtectionGroupPaginator ListResourcesInProtectionGroup(ListResourcesInProtectionGroupRequest request) 
+        {
+            return new ListResourcesInProtectionGroupPaginator(this.client, request);
         }
     }
 }

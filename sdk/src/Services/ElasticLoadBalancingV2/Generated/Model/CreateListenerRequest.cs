@@ -30,25 +30,32 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateListener operation.
-    /// Creates a listener for the specified Application Load Balancer or Network Load Balancer.
+    /// Creates a listener for the specified Application Load Balancer, Network Load Balancer.
+    /// or Gateway Load Balancer.
     /// 
     ///  
     /// <para>
-    /// To update a listener, use <a>ModifyListener</a>. When you are finished with a listener,
-    /// you can delete it using <a>DeleteListener</a>. If you are finished with both the listener
-    /// and the load balancer, you can delete them both using <a>DeleteLoadBalancer</a>.
+    /// For more information, see the following:
     /// </para>
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
+    /// for your Application Load Balancers</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
+    /// for your Network Load Balancers</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-listeners.html">Listeners
+    /// for your Gateway Load Balancers</a> 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// This operation is idempotent, which means that it completes at most one time. If you
     /// attempt to create multiple listeners with the same settings, each call succeeds.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
-    /// for Your Application Load Balancers</a> in the <i>Application Load Balancers Guide</i>
-    /// and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
-    /// for Your Network Load Balancers</a> in the <i>Network Load Balancers Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateListenerRequest : AmazonElasticLoadBalancingV2Request
@@ -91,7 +98,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
-        /// Policies</a> in the <i>Network Load Balancers Guide</i>.
+        /// policies</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         public List<string> AlpnPolicy
@@ -112,10 +119,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// [HTTPS and TLS listeners] The default certificate for the listener. You must provide
         /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but
         /// do not set <code>IsDefault</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To create a certificate list for the listener, use <a>AddListenerCertificates</a>.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates
@@ -171,10 +174,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port on which the load balancer is listening.
+        /// The port on which the load balancer is listening. You cannot specify a port for a
+        /// Gateway Load Balancer.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=65535)]
+        [AWSProperty(Min=1, Max=65535)]
         public int Port
         {
             get { return this._port.GetValueOrDefault(); }
@@ -192,10 +196,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The protocol for connections from clients to the load balancer. For Application Load
         /// Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers,
-        /// the supported protocols are TCP, TLS, UDP, and TCP_UDP.
+        /// the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP
+        /// or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for
+        /// a Gateway Load Balancer.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ProtocolEnum Protocol
         {
             get { return this._protocol; }
@@ -212,49 +217,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property SslPolicy. 
         /// <para>
         /// [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers
-        /// are supported. The following are the possible values:
+        /// are supported.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>ELBSecurityPolicy-2016-08</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ELBSecurityPolicy-TLS-1-0-2015-04</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ELBSecurityPolicy-TLS-1-1-2017-01</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ELBSecurityPolicy-TLS-1-2-2017-01</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ELBSecurityPolicy-FS-2018-06</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ELBSecurityPolicy-FS-1-1-2019-08</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ELBSecurityPolicy-FS-1-2-2019-08</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code> 
-        /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
-        /// Policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
-        /// Policies</a> in the <i>Network Load Balancers Guide</i>.
+        /// policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
+        /// policies</a> in the <i>Network Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         public string SslPolicy

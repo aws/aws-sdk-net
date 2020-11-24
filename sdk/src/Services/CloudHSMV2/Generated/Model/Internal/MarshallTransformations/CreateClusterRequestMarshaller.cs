@@ -68,6 +68,17 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBackupRetentionPolicy())
+                {
+                    context.Writer.WritePropertyName("BackupRetentionPolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BackupRetentionPolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BackupRetentionPolicy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetHsmType())
                 {
                     context.Writer.WritePropertyName("HsmType");

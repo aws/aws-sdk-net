@@ -69,6 +69,7 @@ namespace Amazon.QuickSight.Model
         private IdentityType _identityType;
         private bool? _resetDisabled;
         private long? _sessionLifetimeInMinutes;
+        private bool? _statePersistenceEnabled;
         private bool? _undoRedoDisabled;
         private string _userArn;
 
@@ -165,6 +166,30 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSessionLifetimeInMinutes()
         {
             return this._sessionLifetimeInMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatePersistenceEnabled. 
+        /// <para>
+        /// Adds persistence of state for the user session in an embedded dashboard. Persistence
+        /// applies to the sheet and the parameter settings. These are control settings that the
+        /// dashboard subscriber (QuickSight reader) chooses while viewing the dashboard. If this
+        /// is set to <code>TRUE</code>, the settings are the same when the the subscriber reopens
+        /// the same dashboard URL. The state is stored in QuickSight, not in a browser cookie.
+        /// If this is set to FALSE, the state of the user session is not persisted. The default
+        /// is <code>FALSE</code>.
+        /// </para>
+        /// </summary>
+        public bool StatePersistenceEnabled
+        {
+            get { return this._statePersistenceEnabled.GetValueOrDefault(); }
+            set { this._statePersistenceEnabled = value; }
+        }
+
+        // Check to see if StatePersistenceEnabled property is set
+        internal bool IsSetStatePersistenceEnabled()
+        {
+            return this._statePersistenceEnabled.HasValue; 
         }
 
         /// <summary>

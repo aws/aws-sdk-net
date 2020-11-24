@@ -253,6 +253,180 @@ namespace Amazon.Shield
 
 
     /// <summary>
+    /// Constants used for properties of type ProtectedResourceType.
+    /// </summary>
+    public class ProtectedResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPLICATION_LOAD_BALANCER for ProtectedResourceType
+        /// </summary>
+        public static readonly ProtectedResourceType APPLICATION_LOAD_BALANCER = new ProtectedResourceType("APPLICATION_LOAD_BALANCER");
+        /// <summary>
+        /// Constant CLASSIC_LOAD_BALANCER for ProtectedResourceType
+        /// </summary>
+        public static readonly ProtectedResourceType CLASSIC_LOAD_BALANCER = new ProtectedResourceType("CLASSIC_LOAD_BALANCER");
+        /// <summary>
+        /// Constant CLOUDFRONT_DISTRIBUTION for ProtectedResourceType
+        /// </summary>
+        public static readonly ProtectedResourceType CLOUDFRONT_DISTRIBUTION = new ProtectedResourceType("CLOUDFRONT_DISTRIBUTION");
+        /// <summary>
+        /// Constant ELASTIC_IP_ALLOCATION for ProtectedResourceType
+        /// </summary>
+        public static readonly ProtectedResourceType ELASTIC_IP_ALLOCATION = new ProtectedResourceType("ELASTIC_IP_ALLOCATION");
+        /// <summary>
+        /// Constant GLOBAL_ACCELERATOR for ProtectedResourceType
+        /// </summary>
+        public static readonly ProtectedResourceType GLOBAL_ACCELERATOR = new ProtectedResourceType("GLOBAL_ACCELERATOR");
+        /// <summary>
+        /// Constant ROUTE_53_HOSTED_ZONE for ProtectedResourceType
+        /// </summary>
+        public static readonly ProtectedResourceType ROUTE_53_HOSTED_ZONE = new ProtectedResourceType("ROUTE_53_HOSTED_ZONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtectedResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtectedResourceType FindValue(string value)
+        {
+            return FindValue<ProtectedResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtectedResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProtectionGroupAggregation.
+    /// </summary>
+    public class ProtectionGroupAggregation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MAX for ProtectionGroupAggregation
+        /// </summary>
+        public static readonly ProtectionGroupAggregation MAX = new ProtectionGroupAggregation("MAX");
+        /// <summary>
+        /// Constant MEAN for ProtectionGroupAggregation
+        /// </summary>
+        public static readonly ProtectionGroupAggregation MEAN = new ProtectionGroupAggregation("MEAN");
+        /// <summary>
+        /// Constant SUM for ProtectionGroupAggregation
+        /// </summary>
+        public static readonly ProtectionGroupAggregation SUM = new ProtectionGroupAggregation("SUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtectionGroupAggregation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtectionGroupAggregation FindValue(string value)
+        {
+            return FindValue<ProtectionGroupAggregation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtectionGroupAggregation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProtectionGroupPattern.
+    /// </summary>
+    public class ProtectionGroupPattern : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ProtectionGroupPattern
+        /// </summary>
+        public static readonly ProtectionGroupPattern ALL = new ProtectionGroupPattern("ALL");
+        /// <summary>
+        /// Constant ARBITRARY for ProtectionGroupPattern
+        /// </summary>
+        public static readonly ProtectionGroupPattern ARBITRARY = new ProtectionGroupPattern("ARBITRARY");
+        /// <summary>
+        /// Constant BY_RESOURCE_TYPE for ProtectionGroupPattern
+        /// </summary>
+        public static readonly ProtectionGroupPattern BY_RESOURCE_TYPE = new ProtectionGroupPattern("BY_RESOURCE_TYPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtectionGroupPattern(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtectionGroupPattern FindValue(string value)
+        {
+            return FindValue<ProtectionGroupPattern>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtectionGroupPattern(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SubResourceType.
     /// </summary>
     public class SubResourceType : ConstantClass
@@ -404,6 +578,56 @@ namespace Amazon.Shield
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Unit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidationExceptionReason.
+    /// </summary>
+    public class ValidationExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FIELD_VALIDATION_FAILED for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason FIELD_VALIDATION_FAILED = new ValidationExceptionReason("FIELD_VALIDATION_FAILED");
+        /// <summary>
+        /// Constant OTHER for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason OTHER = new ValidationExceptionReason("OTHER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidationExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationExceptionReason FindValue(string value)
+        {
+            return FindValue<ValidationExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationExceptionReason(string value)
         {
             return FindValue(value);
         }

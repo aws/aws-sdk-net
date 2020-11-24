@@ -63,42 +63,12 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property EqExactMatch. 
         /// <para>
-        /// A condition that requires an array field on a finding to exactly match the specified
-        /// property values. You can use this operator with the following properties:
+        /// A condition that requires an array field to exactly match the specified property values.
+        /// You can use this operator with the following properties: customDataIdentifiers.detections.arn,
+        /// customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key, resourcesAffected.s3Bucket.tags.value,
+        /// resourcesAffected.s3Object.tags.key, resourcesAffected.s3Object.tags.value, sensitiveData.category,
+        /// and sensitiveData.detections.type.
         /// </para>
-        /// <ul><li>
-        /// <para>
-        /// customDataIdentifiers.detections.arn
-        /// </para>
-        /// </li><li>
-        /// <para>
-        /// customDataIdentifiers.detections.name
-        /// </para>
-        /// </li><li>
-        /// <para>
-        /// resourcesAffected.s3Bucket.tags.key
-        /// </para>
-        /// </li><li>
-        /// <para>
-        /// resourcesAffected.s3Bucket.tags.value
-        /// </para>
-        /// </li><li>
-        /// <para>
-        /// resourcesAffected.s3Object.tags.key
-        /// </para>
-        /// </li><li>
-        /// <para>
-        /// resourcesAffected.s3Object.tags.value
-        /// </para>
-        /// </li><li>
-        /// <para>
-        /// sensitiveData.category
-        /// </para>
-        /// </li><li>
-        /// <para>
-        /// sensitiveData.detections.type
-        /// </para>
-        /// </li></ul>
         /// </summary>
         public List<string> EqExactMatch
         {

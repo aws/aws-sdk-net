@@ -43,8 +43,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The following attributes are supported by both Application Load Balancers and Network
-        /// Load Balancers:
+        /// The following attribute is supported by all load balancers:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -54,7 +53,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// default value is 300 seconds. If the target is a Lambda function, this attribute is
         /// not supported.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
+        /// <para>
+        /// The following attributes are supported by both Application Load Balancers and Network
+        /// Load Balancers:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
         /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
@@ -106,9 +110,15 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following attribute is supported only by Network Load Balancers:
+        /// The following attributes are supported only by Network Load Balancers:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether
+        /// the load balancer terminates connections at the end of the deregistration timeout.
+        /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version
         /// 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is

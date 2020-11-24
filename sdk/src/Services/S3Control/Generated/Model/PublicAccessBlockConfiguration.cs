@@ -30,8 +30,8 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon
-    /// S3 bucket. You can enable the configuration options in any combination. For more information
-    /// about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
+    /// S3 account. You can enable the configuration options in any combination. For more
+    /// information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
     /// Meaning of "Public"</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
     /// 
     ///  
@@ -147,7 +147,8 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// Specifies whether Amazon S3 should restrict public bucket policies for buckets in
         /// this account. Setting this element to <code>TRUE</code> restricts access to buckets
-        /// with public policies to only AWS services and authorized users within this account.
+        /// with public policies to only AWS service principals and authorized users within this
+        /// account.
         /// </para>
         ///  
         /// <para>

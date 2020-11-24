@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DataURI. 
         /// <para>
-        /// The pre-signed URI of the data set item.
+        /// The presigned URI of the data set item.
         /// </para>
         /// </summary>
         public string DataURI

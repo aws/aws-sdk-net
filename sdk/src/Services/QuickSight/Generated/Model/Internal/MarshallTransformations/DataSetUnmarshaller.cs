@@ -76,6 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ColumnGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ColumnLevelPermissionRules", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ColumnLevelPermissionRule, ColumnLevelPermissionRuleUnmarshaller>(ColumnLevelPermissionRuleUnmarshaller.Instance);
+                    unmarshalledObject.ColumnLevelPermissionRules = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConsumedSpiceCapacityInBytes", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

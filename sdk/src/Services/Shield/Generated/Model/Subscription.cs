@@ -38,6 +38,7 @@ namespace Amazon.Shield.Model
         private List<Limit> _limits = new List<Limit>();
         private ProactiveEngagementStatus _proactiveEngagementStatus;
         private DateTime? _startTime;
+        private SubscriptionLimits _subscriptionLimits;
         private long? _timeCommitmentInSeconds;
 
         /// <summary>
@@ -148,6 +149,25 @@ namespace Amazon.Shield.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionLimits. 
+        /// <para>
+        /// Limits settings for your subscription. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public SubscriptionLimits SubscriptionLimits
+        {
+            get { return this._subscriptionLimits; }
+            set { this._subscriptionLimits = value; }
+        }
+
+        // Check to see if SubscriptionLimits property is set
+        internal bool IsSetSubscriptionLimits()
+        {
+            return this._subscriptionLimits != null;
         }
 
         /// <summary>

@@ -32,6 +32,12 @@ namespace Amazon.FraudDetector.Model
     /// Container for the parameters to the DeleteDetectorVersion operation.
     /// Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code>
     /// status.
+    /// 
+    ///  
+    /// <para>
+    /// When you delete a detector version, Amazon Fraud Detector permanently deletes the
+    /// detector and the data is no longer stored in Amazon Fraud Detector.
+    /// </para>
     /// </summary>
     public partial class DeleteDetectorVersionRequest : AmazonFraudDetectorRequest
     {

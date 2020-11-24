@@ -819,6 +819,56 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  CheckSchemaVersionValidity
+
+
+        /// <summary>
+        /// Validates the supplied schema. This call has no side effects, it simply validates
+        /// using the supplied schema using <code>DataFormat</code> as the format. Since it does
+        /// not take a schema set name, no compatibility checks are performed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckSchemaVersionValidity service method.</param>
+        /// 
+        /// <returns>The response from the CheckSchemaVersionValidity service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CheckSchemaVersionValidity">REST API Reference for CheckSchemaVersionValidity Operation</seealso>
+        CheckSchemaVersionValidityResponse CheckSchemaVersionValidity(CheckSchemaVersionValidityRequest request);
+
+
+
+        /// <summary>
+        /// Validates the supplied schema. This call has no side effects, it simply validates
+        /// using the supplied schema using <code>DataFormat</code> as the format. Since it does
+        /// not take a schema set name, no compatibility checks are performed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckSchemaVersionValidity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CheckSchemaVersionValidity service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CheckSchemaVersionValidity">REST API Reference for CheckSchemaVersionValidity Operation</seealso>
+        Task<CheckSchemaVersionValidityResponse> CheckSchemaVersionValidityAsync(CheckSchemaVersionValidityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateClassifier
 
 
@@ -1362,6 +1412,228 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartition">REST API Reference for CreatePartition Operation</seealso>
         Task<CreatePartitionResponse> CreatePartitionAsync(CreatePartitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreatePartitionIndex
+
+
+        /// <summary>
+        /// Creates a specified partition index in an existing table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartitionIndex service method.</param>
+        /// 
+        /// <returns>The response from the CreatePartitionIndex service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartitionIndex">REST API Reference for CreatePartitionIndex Operation</seealso>
+        CreatePartitionIndexResponse CreatePartitionIndex(CreatePartitionIndexRequest request);
+
+
+
+        /// <summary>
+        /// Creates a specified partition index in an existing table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartitionIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePartitionIndex service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartitionIndex">REST API Reference for CreatePartitionIndex Operation</seealso>
+        Task<CreatePartitionIndexResponse> CreatePartitionIndexAsync(CreatePartitionIndexRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateRegistry
+
+
+        /// <summary>
+        /// Creates a new registry which may be used to hold a collection of schemas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegistry service method.</param>
+        /// 
+        /// <returns>The response from the CreateRegistry service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateRegistry">REST API Reference for CreateRegistry Operation</seealso>
+        CreateRegistryResponse CreateRegistry(CreateRegistryRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new registry which may be used to hold a collection of schemas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegistry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRegistry service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateRegistry">REST API Reference for CreateRegistry Operation</seealso>
+        Task<CreateRegistryResponse> CreateRegistryAsync(CreateRegistryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateSchema
+
+
+        /// <summary>
+        /// Creates a new schema set and registers the schema definition. Returns an error if
+        /// the schema set already exists without actually registering the version.
+        /// 
+        ///  
+        /// <para>
+        /// When the schema set is created, a version checkpoint will be set to the first version.
+        /// Compatibility mode "DISABLED" restricts any additional schema versions from being
+        /// added after the first schema version. For all other compatibility modes, validation
+        /// of compatibility settings will be applied only from the second version onwards when
+        /// the <code>RegisterSchemaVersion</code> API is used.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this API is called without a <code>RegistryId</code>, this will create an entry
+        /// for a "default-registry" in the registry database tables, if it is not already present.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSchema service method.</param>
+        /// 
+        /// <returns>The response from the CreateSchema service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
+        CreateSchemaResponse CreateSchema(CreateSchemaRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new schema set and registers the schema definition. Returns an error if
+        /// the schema set already exists without actually registering the version.
+        /// 
+        ///  
+        /// <para>
+        /// When the schema set is created, a version checkpoint will be set to the first version.
+        /// Compatibility mode "DISABLED" restricts any additional schema versions from being
+        /// added after the first schema version. For all other compatibility modes, validation
+        /// of compatibility settings will be applied only from the second version onwards when
+        /// the <code>RegisterSchemaVersion</code> API is used.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this API is called without a <code>RegistryId</code>, this will create an entry
+        /// for a "default-registry" in the registry database tables, if it is not already present.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSchema service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSchema service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
+        Task<CreateSchemaResponse> CreateSchemaAsync(CreateSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2331,6 +2603,130 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  DeletePartitionIndex
+
+
+        /// <summary>
+        /// Deletes a specified partition index from an existing table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePartitionIndex service method.</param>
+        /// 
+        /// <returns>The response from the DeletePartitionIndex service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartitionIndex">REST API Reference for DeletePartitionIndex Operation</seealso>
+        DeletePartitionIndexResponse DeletePartitionIndex(DeletePartitionIndexRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a specified partition index from an existing table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePartitionIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePartitionIndex service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartitionIndex">REST API Reference for DeletePartitionIndex Operation</seealso>
+        Task<DeletePartitionIndexResponse> DeletePartitionIndexAsync(DeletePartitionIndexRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteRegistry
+
+
+        /// <summary>
+        /// Delete the entire registry including schema and all of its versions. To get the status
+        /// of the delete operation, you can call the <code>GetRegistry</code> API after the asynchronous
+        /// call. Deleting a registry will disable all online operations for the registry such
+        /// as the <code>UpdateRegistry</code>, <code>CreateSchema</code>, <code>UpdateSchema</code>,
+        /// and <code>RegisterSchemaVersion</code> APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistry service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRegistry service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteRegistry">REST API Reference for DeleteRegistry Operation</seealso>
+        DeleteRegistryResponse DeleteRegistry(DeleteRegistryRequest request);
+
+
+
+        /// <summary>
+        /// Delete the entire registry including schema and all of its versions. To get the status
+        /// of the delete operation, you can call the <code>GetRegistry</code> API after the asynchronous
+        /// call. Deleting a registry will disable all online operations for the registry such
+        /// as the <code>UpdateRegistry</code>, <code>CreateSchema</code>, <code>UpdateSchema</code>,
+        /// and <code>RegisterSchemaVersion</code> APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRegistry service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteRegistry">REST API Reference for DeleteRegistry Operation</seealso>
+        Task<DeleteRegistryResponse> DeleteRegistryAsync(DeleteRegistryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteResourcePolicy
 
 
@@ -2386,6 +2782,162 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteSchema
+
+
+        /// <summary>
+        /// Deletes the entire schema set, including the schema set and all of its versions. To
+        /// get the status of the delete operation, you can call <code>GetSchema</code> API after
+        /// the asynchronous call. Deleting a registry will disable all online operations for
+        /// the schema, such as the <code>GetSchemaByDefinition</code>, and <code>RegisterSchemaVersion</code>
+        /// APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSchema service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSchema service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
+        DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the entire schema set, including the schema set and all of its versions. To
+        /// get the status of the delete operation, you can call <code>GetSchema</code> API after
+        /// the asynchronous call. Deleting a registry will disable all online operations for
+        /// the schema, such as the <code>GetSchemaByDefinition</code>, and <code>RegisterSchemaVersion</code>
+        /// APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSchema service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSchema service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
+        Task<DeleteSchemaResponse> DeleteSchemaAsync(DeleteSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteSchemaVersions
+
+
+        /// <summary>
+        /// Remove versions from the specified schema. A version number or range may be supplied.
+        /// If the compatibility mode forbids deleting of a version that is necessary, such as
+        /// BACKWARDS_FULL, an error is returned. Calling the <code>GetSchemaVersions</code> API
+        /// after this call will list the status of the deleted versions.
+        /// 
+        ///  
+        /// <para>
+        /// When the range of version numbers contain check pointed version, the API will return
+        /// a 409 conflict and will not proceed with the deletion. You have to remove the checkpoint
+        /// first using the <code>DeleteSchemaCheckpoint</code> API before using this API.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot use the <code>DeleteSchemaVersions</code> API to delete the first schema
+        /// version in the schema set. The first schema version can only be deleted by the <code>DeleteSchema</code>
+        /// API. This operation will also delete the attached <code>SchemaVersionMetadata</code>
+        /// under the schema versions. Hard deletes will be enforced on the database.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the compatibility mode forbids deleting of a version that is necessary, such as
+        /// BACKWARDS_FULL, an error is returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSchemaVersions service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSchemaVersions service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchemaVersions">REST API Reference for DeleteSchemaVersions Operation</seealso>
+        DeleteSchemaVersionsResponse DeleteSchemaVersions(DeleteSchemaVersionsRequest request);
+
+
+
+        /// <summary>
+        /// Remove versions from the specified schema. A version number or range may be supplied.
+        /// If the compatibility mode forbids deleting of a version that is necessary, such as
+        /// BACKWARDS_FULL, an error is returned. Calling the <code>GetSchemaVersions</code> API
+        /// after this call will list the status of the deleted versions.
+        /// 
+        ///  
+        /// <para>
+        /// When the range of version numbers contain check pointed version, the API will return
+        /// a 409 conflict and will not proceed with the deletion. You have to remove the checkpoint
+        /// first using the <code>DeleteSchemaCheckpoint</code> API before using this API.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot use the <code>DeleteSchemaVersions</code> API to delete the first schema
+        /// version in the schema set. The first schema version can only be deleted by the <code>DeleteSchema</code>
+        /// API. This operation will also delete the attached <code>SchemaVersionMetadata</code>
+        /// under the schema versions. Hard deletes will be enforced on the database.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the compatibility mode forbids deleting of a version that is necessary, such as
+        /// BACKWARDS_FULL, an error is returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSchemaVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSchemaVersions service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchemaVersions">REST API Reference for DeleteSchemaVersions Operation</seealso>
+        Task<DeleteSchemaVersionsResponse> DeleteSchemaVersionsAsync(DeleteSchemaVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4323,6 +4875,58 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetRegistry
+
+
+        /// <summary>
+        /// Describes the specified registry in detail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistry service method.</param>
+        /// 
+        /// <returns>The response from the GetRegistry service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetRegistry">REST API Reference for GetRegistry Operation</seealso>
+        GetRegistryResponse GetRegistry(GetRegistryRequest request);
+
+
+
+        /// <summary>
+        /// Describes the specified registry in detail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRegistry service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetRegistry">REST API Reference for GetRegistry Operation</seealso>
+        Task<GetRegistryResponse> GetRegistryAsync(GetRegistryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetResourcePolicies
 
 
@@ -4440,6 +5044,242 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSchema
+
+
+        /// <summary>
+        /// Describes the specified schema in detail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSchema service method.</param>
+        /// 
+        /// <returns>The response from the GetSchema service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchema">REST API Reference for GetSchema Operation</seealso>
+        GetSchemaResponse GetSchema(GetSchemaRequest request);
+
+
+
+        /// <summary>
+        /// Describes the specified schema in detail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSchema service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSchema service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchema">REST API Reference for GetSchema Operation</seealso>
+        Task<GetSchemaResponse> GetSchemaAsync(GetSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSchemaByDefinition
+
+
+        /// <summary>
+        /// Retrieves a schema by the <code>SchemaDefinition</code>. The schema definition is
+        /// sent to the Schema Registry, canonicalized, and hashed. If the hash is matched within
+        /// the scope of the <code>SchemaName</code> or ARN (or the default registry, if none
+        /// is supplied), that schema’s metadata is returned. Otherwise, a 404 or NotFound error
+        /// is returned. Schema versions in <code>Deleted</code> statuses will not be included
+        /// in the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSchemaByDefinition service method.</param>
+        /// 
+        /// <returns>The response from the GetSchemaByDefinition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaByDefinition">REST API Reference for GetSchemaByDefinition Operation</seealso>
+        GetSchemaByDefinitionResponse GetSchemaByDefinition(GetSchemaByDefinitionRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a schema by the <code>SchemaDefinition</code>. The schema definition is
+        /// sent to the Schema Registry, canonicalized, and hashed. If the hash is matched within
+        /// the scope of the <code>SchemaName</code> or ARN (or the default registry, if none
+        /// is supplied), that schema’s metadata is returned. Otherwise, a 404 or NotFound error
+        /// is returned. Schema versions in <code>Deleted</code> statuses will not be included
+        /// in the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSchemaByDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSchemaByDefinition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaByDefinition">REST API Reference for GetSchemaByDefinition Operation</seealso>
+        Task<GetSchemaByDefinitionResponse> GetSchemaByDefinitionAsync(GetSchemaByDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSchemaVersion
+
+
+        /// <summary>
+        /// Get the specified schema by its unique ID assigned when a version of the schema is
+        /// created or registered. Schema versions in Deleted status will not be included in the
+        /// results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSchemaVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetSchemaVersion service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaVersion">REST API Reference for GetSchemaVersion Operation</seealso>
+        GetSchemaVersionResponse GetSchemaVersion(GetSchemaVersionRequest request);
+
+
+
+        /// <summary>
+        /// Get the specified schema by its unique ID assigned when a version of the schema is
+        /// created or registered. Schema versions in Deleted status will not be included in the
+        /// results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSchemaVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSchemaVersion service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaVersion">REST API Reference for GetSchemaVersion Operation</seealso>
+        Task<GetSchemaVersionResponse> GetSchemaVersionAsync(GetSchemaVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetSchemaVersionsDiff
+
+
+        /// <summary>
+        /// Fetches the schema version difference in the specified difference type between two
+        /// stored schema versions in the Schema Registry.
+        /// 
+        ///  
+        /// <para>
+        /// This API allows you to compare two schema versions between two schema definitions
+        /// under the same schema.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSchemaVersionsDiff service method.</param>
+        /// 
+        /// <returns>The response from the GetSchemaVersionsDiff service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaVersionsDiff">REST API Reference for GetSchemaVersionsDiff Operation</seealso>
+        GetSchemaVersionsDiffResponse GetSchemaVersionsDiff(GetSchemaVersionsDiffRequest request);
+
+
+
+        /// <summary>
+        /// Fetches the schema version difference in the specified difference type between two
+        /// stored schema versions in the Schema Registry.
+        /// 
+        ///  
+        /// <para>
+        /// This API allows you to compare two schema versions between two schema definitions
+        /// under the same schema.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSchemaVersionsDiff service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSchemaVersionsDiff service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaVersionsDiff">REST API Reference for GetSchemaVersionsDiff Operation</seealso>
+        Task<GetSchemaVersionsDiffResponse> GetSchemaVersionsDiffAsync(GetSchemaVersionsDiffRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5551,6 +6391,180 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListRegistries
+
+
+        /// <summary>
+        /// Returns a list of registries that you have created, with minimal registry information.
+        /// Registries in the <code>Deleting</code> status will not be included in the results.
+        /// Empty results will be returned if there are no registries available.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegistries service method.</param>
+        /// 
+        /// <returns>The response from the ListRegistries service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListRegistries">REST API Reference for ListRegistries Operation</seealso>
+        ListRegistriesResponse ListRegistries(ListRegistriesRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of registries that you have created, with minimal registry information.
+        /// Registries in the <code>Deleting</code> status will not be included in the results.
+        /// Empty results will be returned if there are no registries available.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegistries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRegistries service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListRegistries">REST API Reference for ListRegistries Operation</seealso>
+        Task<ListRegistriesResponse> ListRegistriesAsync(ListRegistriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListSchemas
+
+
+        /// <summary>
+        /// Returns a list of schemas with minimal details. Schemas in Deleting status will not
+        /// be included in the results. Empty results will be returned if there are no schemas
+        /// available.
+        /// 
+        ///  
+        /// <para>
+        /// When the <code>RegistryId</code> is not provided, all the schemas across registries
+        /// will be part of the API response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSchemas service method.</param>
+        /// 
+        /// <returns>The response from the ListSchemas service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
+        ListSchemasResponse ListSchemas(ListSchemasRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of schemas with minimal details. Schemas in Deleting status will not
+        /// be included in the results. Empty results will be returned if there are no schemas
+        /// available.
+        /// 
+        ///  
+        /// <para>
+        /// When the <code>RegistryId</code> is not provided, all the schemas across registries
+        /// will be part of the API response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSchemas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSchemas service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
+        Task<ListSchemasResponse> ListSchemasAsync(ListSchemasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListSchemaVersions
+
+
+        /// <summary>
+        /// Returns a list of schema versions that you have created, with minimal information.
+        /// Schema versions in Deleted status will not be included in the results. Empty results
+        /// will be returned if there are no schema versions available.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSchemaVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListSchemaVersions service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSchemaVersions">REST API Reference for ListSchemaVersions Operation</seealso>
+        ListSchemaVersionsResponse ListSchemaVersions(ListSchemaVersionsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of schema versions that you have created, with minimal information.
+        /// Schema versions in Deleted status will not be included in the results. Empty results
+        /// will be returned if there are no schema versions available.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSchemaVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSchemaVersions service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSchemaVersions">REST API Reference for ListSchemaVersions Operation</seealso>
+        Task<ListSchemaVersionsResponse> ListSchemaVersionsAsync(ListSchemaVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTriggers
 
 
@@ -5773,6 +6787,68 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  PutSchemaVersionMetadata
+
+
+        /// <summary>
+        /// Puts the metadata key value pair for a specified schema version ID. A maximum of 10
+        /// key value pairs will be allowed per schema version. They can be added over one or
+        /// more calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSchemaVersionMetadata service method.</param>
+        /// 
+        /// <returns>The response from the PutSchemaVersionMetadata service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutSchemaVersionMetadata">REST API Reference for PutSchemaVersionMetadata Operation</seealso>
+        PutSchemaVersionMetadataResponse PutSchemaVersionMetadata(PutSchemaVersionMetadataRequest request);
+
+
+
+        /// <summary>
+        /// Puts the metadata key value pair for a specified schema version ID. A maximum of 10
+        /// key value pairs will be allowed per schema version. They can be added over one or
+        /// more calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSchemaVersionMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutSchemaVersionMetadata service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutSchemaVersionMetadata">REST API Reference for PutSchemaVersionMetadata Operation</seealso>
+        Task<PutSchemaVersionMetadataResponse> PutSchemaVersionMetadataAsync(PutSchemaVersionMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutWorkflowRunProperties
 
 
@@ -5844,6 +6920,198 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutWorkflowRunProperties">REST API Reference for PutWorkflowRunProperties Operation</seealso>
         Task<PutWorkflowRunPropertiesResponse> PutWorkflowRunPropertiesAsync(PutWorkflowRunPropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  QuerySchemaVersionMetadata
+
+
+        /// <summary>
+        /// Queries for the schema version metadata information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QuerySchemaVersionMetadata service method.</param>
+        /// 
+        /// <returns>The response from the QuerySchemaVersionMetadata service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/QuerySchemaVersionMetadata">REST API Reference for QuerySchemaVersionMetadata Operation</seealso>
+        QuerySchemaVersionMetadataResponse QuerySchemaVersionMetadata(QuerySchemaVersionMetadataRequest request);
+
+
+
+        /// <summary>
+        /// Queries for the schema version metadata information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QuerySchemaVersionMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the QuerySchemaVersionMetadata service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/QuerySchemaVersionMetadata">REST API Reference for QuerySchemaVersionMetadata Operation</seealso>
+        Task<QuerySchemaVersionMetadataResponse> QuerySchemaVersionMetadataAsync(QuerySchemaVersionMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RegisterSchemaVersion
+
+
+        /// <summary>
+        /// Adds a new version to the existing schema. Returns an error if new version of schema
+        /// does not meet the compatibility requirements of the schema set. This API will not
+        /// create a new schema set and will return a 404 error if the schema set is not already
+        /// present in the Schema Registry.
+        /// 
+        ///  
+        /// <para>
+        /// If this is the first schema definition to be registered in the Schema Registry, this
+        /// API will store the schema version and return immediately. Otherwise, this call has
+        /// the potential to run longer than other operations due to compatibility modes. You
+        /// can call the <code>GetSchemaVersion</code> API with the <code>SchemaVersionId</code>
+        /// to check compatibility modes.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the same schema definition is already stored in Schema Registry as a version, the
+        /// schema ID of the existing schema is returned to the caller.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterSchemaVersion service method.</param>
+        /// 
+        /// <returns>The response from the RegisterSchemaVersion service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RegisterSchemaVersion">REST API Reference for RegisterSchemaVersion Operation</seealso>
+        RegisterSchemaVersionResponse RegisterSchemaVersion(RegisterSchemaVersionRequest request);
+
+
+
+        /// <summary>
+        /// Adds a new version to the existing schema. Returns an error if new version of schema
+        /// does not meet the compatibility requirements of the schema set. This API will not
+        /// create a new schema set and will return a 404 error if the schema set is not already
+        /// present in the Schema Registry.
+        /// 
+        ///  
+        /// <para>
+        /// If this is the first schema definition to be registered in the Schema Registry, this
+        /// API will store the schema version and return immediately. Otherwise, this call has
+        /// the potential to run longer than other operations due to compatibility modes. You
+        /// can call the <code>GetSchemaVersion</code> API with the <code>SchemaVersionId</code>
+        /// to check compatibility modes.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the same schema definition is already stored in Schema Registry as a version, the
+        /// schema ID of the existing schema is returned to the caller.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterSchemaVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterSchemaVersion service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RegisterSchemaVersion">REST API Reference for RegisterSchemaVersion Operation</seealso>
+        Task<RegisterSchemaVersionResponse> RegisterSchemaVersionAsync(RegisterSchemaVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RemoveSchemaVersionMetadata
+
+
+        /// <summary>
+        /// Removes a key value pair from the schema version metadata for the specified schema
+        /// version ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveSchemaVersionMetadata service method.</param>
+        /// 
+        /// <returns>The response from the RemoveSchemaVersionMetadata service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RemoveSchemaVersionMetadata">REST API Reference for RemoveSchemaVersionMetadata Operation</seealso>
+        RemoveSchemaVersionMetadataResponse RemoveSchemaVersionMetadata(RemoveSchemaVersionMetadataRequest request);
+
+
+
+        /// <summary>
+        /// Removes a key value pair from the schema version metadata for the specified schema
+        /// version ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveSchemaVersionMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveSchemaVersionMetadata service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RemoveSchemaVersionMetadata">REST API Reference for RemoveSchemaVersionMetadata Operation</seealso>
+        Task<RemoveSchemaVersionMetadataResponse> RemoveSchemaVersionMetadataAsync(RemoveSchemaVersionMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -7714,6 +8982,162 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdatePartition">REST API Reference for UpdatePartition Operation</seealso>
         Task<UpdatePartitionResponse> UpdatePartitionAsync(UpdatePartitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateRegistry
+
+
+        /// <summary>
+        /// Updates an existing registry which is used to hold a collection of schemas. The updated
+        /// properties relate to the registry, and do not modify any of the schemas within the
+        /// registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegistry service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRegistry service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateRegistry">REST API Reference for UpdateRegistry Operation</seealso>
+        UpdateRegistryResponse UpdateRegistry(UpdateRegistryRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing registry which is used to hold a collection of schemas. The updated
+        /// properties relate to the registry, and do not modify any of the schemas within the
+        /// registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegistry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRegistry service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateRegistry">REST API Reference for UpdateRegistry Operation</seealso>
+        Task<UpdateRegistryResponse> UpdateRegistryAsync(UpdateRegistryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateSchema
+
+
+        /// <summary>
+        /// Updates the description, compatibility setting, or version checkpoint for a schema
+        /// set.
+        /// 
+        ///  
+        /// <para>
+        /// For updating the compatibility setting, the call will not validate compatibility for
+        /// the entire set of schema versions with the new compatibility setting. If the value
+        /// for <code>Compatibility</code> is provided, the <code>VersionNumber</code> (a checkpoint)
+        /// is also required. The API will validate the checkpoint version number for consistency.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value for the <code>VersionNumber</code> (checkpoint) is provided, <code>Compatibility</code>
+        /// is optional and this can be used to set/reset a checkpoint for the schema.
+        /// </para>
+        ///  
+        /// <para>
+        /// This update will happen only if the schema is in the AVAILABLE state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSchema service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSchema service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
+        UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request);
+
+
+
+        /// <summary>
+        /// Updates the description, compatibility setting, or version checkpoint for a schema
+        /// set.
+        /// 
+        ///  
+        /// <para>
+        /// For updating the compatibility setting, the call will not validate compatibility for
+        /// the entire set of schema versions with the new compatibility setting. If the value
+        /// for <code>Compatibility</code> is provided, the <code>VersionNumber</code> (a checkpoint)
+        /// is also required. The API will validate the checkpoint version number for consistency.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value for the <code>VersionNumber</code> (checkpoint) is provided, <code>Compatibility</code>
+        /// is optional and this can be used to set/reset a checkpoint for the schema.
+        /// </para>
+        ///  
+        /// <para>
+        /// This update will happen only if the schema is in the AVAILABLE state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSchema service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSchema service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
+        Task<UpdateSchemaResponse> UpdateSchemaAsync(UpdateSchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

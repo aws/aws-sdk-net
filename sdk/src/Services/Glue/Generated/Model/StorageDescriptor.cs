@@ -41,6 +41,7 @@ namespace Amazon.Glue.Model
         private int? _numberOfBuckets;
         private string _outputFormat;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private SchemaReference _schemaReference;
         private SerDeInfo _serdeInfo;
         private SkewedInfo _skewedInfo;
         private List<Order> _sortColumns = new List<Order>();
@@ -197,6 +198,29 @@ namespace Amazon.Glue.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaReference. 
+        /// <para>
+        /// An object that references a schema stored in the AWS Glue Schema Registry.
+        /// </para>
+        ///  
+        /// <para>
+        /// When creating a table, you can pass an empty list of columns for the schema, and instead
+        /// use a schema reference.
+        /// </para>
+        /// </summary>
+        public SchemaReference SchemaReference
+        {
+            get { return this._schemaReference; }
+            set { this._schemaReference = value; }
+        }
+
+        // Check to see if SchemaReference property is set
+        internal bool IsSetSchemaReference()
+        {
+            return this._schemaReference != null;
         }
 
         /// <summary>

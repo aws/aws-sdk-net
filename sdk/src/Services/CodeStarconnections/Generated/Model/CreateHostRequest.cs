@@ -55,7 +55,7 @@ namespace Amazon.CodeStarconnections.Model
         /// The name of the host to be created. The name must be unique in the calling AWS account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }

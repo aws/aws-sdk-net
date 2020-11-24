@@ -29,30 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes an override for a launch template. Currently, the only supported override
-    /// is instance type.
-    /// 
-    ///  
-    /// <para>
-    /// The maximum number of instance type overrides that can be associated with an Auto
-    /// Scaling group is 20.
-    /// </para>
+    /// Describes an override for a launch template. The maximum number of instance types
+    /// that can be associated with an Auto Scaling group is 20. For more information, see
+    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-override-options.html">Configuring
+    /// overrides</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </summary>
     public partial class LaunchTemplateOverrides
     {
         private string _instanceType;
+        private LaunchTemplateSpecification _launchTemplateSpecification;
         private string _weightedCapacity;
 
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type. You must use an instance type that is supported in your requested
-        /// Region and Availability Zones. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
-        /// Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> 
+        /// The instance type, such as <code>m3.xlarge</code>. You must use an instance type that
+        /// is supported in your requested Region and Availability Zones. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+        /// types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -69,22 +63,41 @@ namespace Amazon.AutoScaling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LaunchTemplateSpecification. 
+        /// <para>
+        /// Provides the launch template to be used when launching the instance type. For example,
+        /// some instance types might require a launch template with a different AMI. If not provided,
+        /// Amazon EC2 Auto Scaling uses the launch template that's defined for your mixed instances
+        /// policy. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-template-overrides.html">Specifying
+        /// a different launch template for an instance type</a> in the <i>Amazon EC2 Auto Scaling
+        /// User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public LaunchTemplateSpecification LaunchTemplateSpecification
+        {
+            get { return this._launchTemplateSpecification; }
+            set { this._launchTemplateSpecification = value; }
+        }
+
+        // Check to see if LaunchTemplateSpecification property is set
+        internal bool IsSetLaunchTemplateSpecification()
+        {
+            return this._launchTemplateSpecification != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property WeightedCapacity. 
         /// <para>
-        /// The number of capacity units, which gives the instance type a proportional weight
-        /// to other instance types. For example, larger instance types are generally weighted
-        /// more than smaller instance types. These are the same units that you chose to set the
-        /// desired capacity in terms of instances, or a performance attribute such as vCPUs,
-        /// memory, or I/O.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
-        /// Weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Range: Minimum value of 1. Maximum value of 999.
+        /// The number of capacity units provided by the specified instance type in terms of virtual
+        /// CPUs, memory, storage, throughput, or other relative performance characteristic. When
+        /// a Spot or On-Demand Instance is provisioned, the capacity units count toward the desired
+        /// capacity. Amazon EC2 Auto Scaling provisions instances until the desired capacity
+        /// is totally fulfilled, even if this results in an overage. For example, if there are
+        /// 2 units remaining to fulfill capacity, and Amazon EC2 Auto Scaling can only provision
+        /// an instance with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned,
+        /// and the desired capacity is exceeded by 3 units. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
+        /// weighting for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+        /// Value must be in the range of 1 to 999.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

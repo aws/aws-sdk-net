@@ -64,10 +64,22 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("connectionPool", targetDepth))
+                {
+                    var unmarshaller = VirtualNodeConnectionPoolUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionPool = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("healthCheck", targetDepth))
                 {
                     var unmarshaller = HealthCheckPolicyUnmarshaller.Instance;
                     unmarshalledObject.HealthCheck = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("outlierDetection", targetDepth))
+                {
+                    var unmarshaller = OutlierDetectionUnmarshaller.Instance;
+                    unmarshalledObject.OutlierDetection = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("portMapping", targetDepth))

@@ -67,6 +67,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFsxWindowsFileServerVolumeConfiguration())
+            {
+                context.Writer.WritePropertyName("fsxWindowsFileServerVolumeConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FSxWindowsFileServerVolumeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FsxWindowsFileServerVolumeConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetHost())
             {
                 context.Writer.WritePropertyName("host");

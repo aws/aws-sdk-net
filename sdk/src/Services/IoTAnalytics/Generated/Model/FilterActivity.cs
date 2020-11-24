@@ -41,6 +41,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// An expression that looks like a SQL WHERE clause that must return a Boolean value.
+        /// Messages that satisfy the condition are passed to the next activity. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -59,7 +60,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the 'filter' activity.
+        /// The name of the filter activity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -30,7 +30,7 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// You can't delete the specified resource because it's in use or required by another
-    ///         resource.
+    /// resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

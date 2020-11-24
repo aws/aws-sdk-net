@@ -29,16 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies the location of an occurrence of sensitive data in an Apache Parquet file.
+    /// Specifies the location of an occurrence of sensitive data in an Apache Avro object
+    /// container or Apache Parquet file.
     /// </summary>
     public partial class Record
     {
+        private string _jsonPath;
         private long? _recordIndex;
+
+        /// <summary>
+        /// Gets and sets the property JsonPath. 
+        /// <para>
+        /// The path, as a JSONPath expression, to the field in the record that contains the data.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the name of an element exceeds 20 characters, Amazon Macie truncates the name by
+        /// removing characters from the beginning of the name. If the resulting full path exceeds
+        /// 250 characters, Macie also truncates the path, starting with the first element in
+        /// the path, until the path contains 250 or fewer characters.
+        /// </para>
+        /// </summary>
+        public string JsonPath
+        {
+            get { return this._jsonPath; }
+            set { this._jsonPath = value; }
+        }
+
+        // Check to see if JsonPath property is set
+        internal bool IsSetJsonPath()
+        {
+            return this._jsonPath != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RecordIndex. 
         /// <para>
-        /// The row index, starting from 0, for the row that contains the data.
+        /// The record index, starting from 0, for the record that contains the data.
         /// </para>
         /// </summary>
         public long RecordIndex

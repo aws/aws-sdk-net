@@ -35,6 +35,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ResourceChange
     {
         private ChangeAction _action;
+        private string _changeSetId;
         private List<ResourceChangeDetail> _details = new List<ResourceChangeDetail>();
         private string _logicalResourceId;
         private string _physicalResourceId;
@@ -46,8 +47,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// The action that AWS CloudFormation takes on the resource, such as <code>Add</code>
-        /// (adds a new resource), <code>Modify</code> (changes a resource), or <code>Remove</code>
-        /// (deletes a resource).
+        /// (adds a new resource), <code>Modify</code> (changes a resource), <code>Remove</code>
+        /// (deletes a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code>
+        /// (exact action for the resource cannot be determined).
         /// </para>
         /// </summary>
         public ChangeAction Action
@@ -60,6 +62,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChangeSetId. 
+        /// <para>
+        /// The change set ID of the nested change set.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string ChangeSetId
+        {
+            get { return this._changeSetId; }
+            set { this._changeSetId = value; }
+        }
+
+        // Check to see if ChangeSetId property is set
+        internal bool IsSetChangeSetId()
+        {
+            return this._changeSetId != null;
         }
 
         /// <summary>

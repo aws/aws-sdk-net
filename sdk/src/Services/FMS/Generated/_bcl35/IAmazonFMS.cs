@@ -37,6 +37,12 @@ namespace Amazon.FMS
     /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
     /// Firewall Manager Developer Guide</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// Some API actions require explicit resource permissions. For information, see the developer
+    /// guide topic <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
+    /// Manager required permissions for API actions</a>. 
+    /// </para>
     /// </summary>
     public partial interface IAmazonFMS : IAmazonService, IDisposable
     {
@@ -243,6 +249,9 @@ namespace Amazon.FMS
         /// The operation failed because of a system problem, even though the request was valid.
         /// Retry your request.
         /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
         /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
         /// The operation failed because there was nothing to do or the operation wasn't possible.
         /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
@@ -250,6 +259,11 @@ namespace Amazon.FMS
         /// Or you might have tried to access a Region that's disabled by default, and that you
         /// need to enable for the Firewall Manager administrator account and for AWS Organizations
         /// before you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>AWS WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -517,7 +531,12 @@ namespace Amazon.FMS
         /// are considered noncompliant for AWS WAF and Shield Advanced policies if the specified
         /// policy has not been applied to them. Resources are considered noncompliant for security
         /// group policies if they are in scope of the policy, they violate one or more of the
-        /// policy rules, and remediation is disabled or not possible.
+        /// policy rules, and remediation is disabled or not possible. Resources are considered
+        /// noncompliant for Network Firewall policies if a firewall is missing in the VPC, if
+        /// the firewall endpoint isn't set up in an expected Availability Zone and subnet, if
+        /// a subnet created by the Firewall Manager doesn't have the expected route table, and
+        /// for modifications to a firewall policy that violate the Firewall Manager policy's
+        /// rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceDetail service method.</param>
         /// 
@@ -1246,6 +1265,15 @@ namespace Amazon.FMS
         /// <summary>
         /// Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS
         /// Firewall Manager uses to record SNS logs.
+        /// 
+        ///  
+        /// <para>
+        /// To perform this action outside of the console, you must configure the SNS topic to
+        /// allow the Firewall Manager role <code>AWSServiceRoleForFMS</code> to publish SNS logs.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
+        /// Manager required permissions for API actions</a> in the <i>AWS Firewall Manager Developer
+        /// Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutNotificationChannel service method.</param>
         /// 
@@ -1308,11 +1336,6 @@ namespace Amazon.FMS
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// A Shield Advanced policy, which applies Shield Advanced protection to specified accounts
-        /// and resources
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// An AWS WAF policy (type WAFV2), which defines rule groups to run first in the corresponding
         /// AWS WAF web ACL and rule groups to run last in the web ACL.
         /// </para>
@@ -1322,8 +1345,18 @@ namespace Amazon.FMS
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// A Shield Advanced policy, which applies Shield Advanced protection to specified accounts
+        /// and resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// A security group policy, which manages VPC security groups across your AWS organization.
         /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An AWS Network Firewall policy, which provides firewall rules to filter network traffic
+        /// in specified Amazon VPCs.
         /// </para>
         ///  </li> </ul> 
         /// <para>

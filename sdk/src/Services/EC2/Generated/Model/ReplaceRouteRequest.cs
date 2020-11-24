@@ -56,6 +56,7 @@ namespace Amazon.EC2.Model
         private string _networkInterfaceId;
         private string _routeTableId;
         private string _transitGatewayId;
+        private string _vpcEndpointId;
         private string _vpcPeeringConnectionId;
 
         /// <summary>
@@ -293,6 +294,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTransitGatewayId()
         {
             return this._transitGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointId. 
+        /// <para>
+        /// The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+        /// </para>
+        /// </summary>
+        public string VpcEndpointId
+        {
+            get { return this._vpcEndpointId; }
+            set { this._vpcEndpointId = value; }
+        }
+
+        // Check to see if VpcEndpointId property is set
+        internal bool IsSetVpcEndpointId()
+        {
+            return this._vpcEndpointId != null;
         }
 
         /// <summary>

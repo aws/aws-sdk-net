@@ -223,6 +223,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("DynamoDBv2")]
+        public void DescribeKinesisStreamingDestinationEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeKinesisStreamingDestination");
+            var request = InstantiateClassGenerator.Execute<DescribeKinesisStreamingDestinationRequest>();
+            var marshaller = new DescribeKinesisStreamingDestinationEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DynamoDBv2")]
         public void DescribeLimitsEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeLimits");
@@ -258,6 +273,36 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var operation = service_model.FindOperation("DescribeTimeToLive");
             var request = InstantiateClassGenerator.Execute<DescribeTimeToLiveRequest>();
             var marshaller = new DescribeTimeToLiveEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DynamoDBv2")]
+        public void DisableKinesisStreamingDestinationEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableKinesisStreamingDestination");
+            var request = InstantiateClassGenerator.Execute<DisableKinesisStreamingDestinationRequest>();
+            var marshaller = new DisableKinesisStreamingDestinationEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DynamoDBv2")]
+        public void EnableKinesisStreamingDestinationEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableKinesisStreamingDestination");
+            var request = InstantiateClassGenerator.Execute<EnableKinesisStreamingDestinationRequest>();
+            var marshaller = new EnableKinesisStreamingDestinationEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
             var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);

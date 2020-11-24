@@ -107,7 +107,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Failed
         /// </para>
-        ///  </li> </ul> </li> </ul>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// SessionId: Specify a session ID to return details about the session.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=400)]
         public string Value

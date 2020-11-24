@@ -319,7 +319,7 @@ namespace Amazon.RDS
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
@@ -358,7 +358,7 @@ namespace Amazon.RDS
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
@@ -1007,6 +1007,10 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the CopyDBSnapshot service method.</param>
         /// 
         /// <returns>The response from the CopyDBSnapshot service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
+        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
+        /// Zone identifier.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
         /// <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.
         /// </exception>
@@ -1049,6 +1053,10 @@ namespace Amazon.RDS
         /// </param>
         /// 
         /// <returns>The response from the CopyDBSnapshot service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.CustomAvailabilityZoneNotFoundException">
+        /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
+        /// Zone identifier.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
         /// <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.
         /// </exception>
@@ -3169,7 +3177,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DeleteDBProxy service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
@@ -3190,7 +3198,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DeleteDBProxy service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
@@ -3546,7 +3554,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DeregisterDBProxyTargets service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
@@ -3576,7 +3584,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DeregisterDBProxyTargets service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
@@ -4519,7 +4527,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBProxies service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">REST API Reference for DescribeDBProxies Operation</seealso>
@@ -4537,7 +4545,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBProxies service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">REST API Reference for DescribeDBProxies Operation</seealso>
@@ -4556,7 +4564,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBProxyTargetGroups service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
@@ -4582,7 +4590,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBProxyTargetGroups service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
@@ -4607,7 +4615,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBProxyTargets service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
@@ -4636,7 +4644,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeDBProxyTargets service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
@@ -5930,7 +5938,7 @@ namespace Amazon.RDS
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
@@ -5967,7 +5975,7 @@ namespace Amazon.RDS
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
@@ -6906,7 +6914,7 @@ namespace Amazon.RDS
         /// in the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
@@ -6931,7 +6939,7 @@ namespace Amazon.RDS
         /// in the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBProxyStateException">
@@ -6952,7 +6960,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ModifyDBProxyTargetGroup service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
@@ -6977,7 +6985,7 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ModifyDBProxyTargetGroup service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
@@ -7644,7 +7652,7 @@ namespace Amazon.RDS
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetAlreadyRegisteredException">
@@ -7689,7 +7697,7 @@ namespace Amazon.RDS
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetAlreadyRegisteredException">
@@ -7956,7 +7964,7 @@ namespace Amazon.RDS
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
@@ -7993,7 +8001,7 @@ namespace Amazon.RDS
         /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
-        /// The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in
+        /// The specified proxy name doesn't correspond to a proxy owned by your AWS account in
         /// the specified AWS Region.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">

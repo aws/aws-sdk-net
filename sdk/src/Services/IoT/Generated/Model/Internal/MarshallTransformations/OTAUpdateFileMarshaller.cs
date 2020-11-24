@@ -87,6 +87,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FileName);
             }
 
+            if(requestObject.IsSetFileType())
+            {
+                context.Writer.WritePropertyName("fileType");
+                context.Writer.Write(requestObject.FileType);
+            }
+
             if(requestObject.IsSetFileVersion())
             {
                 context.Writer.WritePropertyName("fileVersion");

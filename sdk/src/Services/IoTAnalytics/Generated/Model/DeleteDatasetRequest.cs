@@ -30,11 +30,11 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataset operation.
-    /// Deletes the specified data set.
+    /// Deletes the specified dataset.
     /// 
     ///  
     /// <para>
-    /// You do not have to delete the content of the data set before you perform this operation.
+    /// You do not have to delete the content of the dataset before you perform this operation.
     /// </para>
     /// </summary>
     public partial class DeleteDatasetRequest : AmazonIoTAnalyticsRequest

@@ -30,7 +30,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// The request was rejected because it attempted to create resources beyond the current
-    /// AWS account limits. The error code describes the limit exceeded.
+    /// AWS account or throttling limits. The error code describes the limit exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

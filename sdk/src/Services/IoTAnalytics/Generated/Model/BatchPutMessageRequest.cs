@@ -59,16 +59,16 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Messages. 
         /// <para>
-        /// The list of messages to be sent. Each message has format: '{ "messageId": "string",
-        /// "payload": "string"}'.
+        /// The list of messages to be sent. Each message has the format: { "messageId": "string",
+        /// "payload": "string"}.
         /// </para>
         ///  
         /// <para>
-        /// Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+        /// The field names of message payloads (data) that you send to AWS IoT Analytics:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain only alphanumeric characters and undescores (_); no other special characters
+        /// Must contain only alphanumeric characters and undescores (_). No other special characters
         /// are allowed.
         /// </para>
         ///  </li> <li> 
@@ -86,11 +86,11 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot be greater than 255 characters.
+        /// Cannot be more than 255 characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered
+        /// Are case insensitive. (Fields named foo and FOO in the same payload are considered
         /// duplicates.)
         /// </para>
         ///  </li> </ul> 

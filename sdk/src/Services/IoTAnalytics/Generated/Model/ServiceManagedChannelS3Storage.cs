@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Use this to store channel data in an S3 bucket managed by the AWS IoT Analytics service.
-    /// The choice of service-managed or customer-managed S3 storage cannot be changed after
-    /// creation of the channel.
+    /// Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot
+    /// change the choice of service-managed or customer-managed S3 storage after the channel
+    /// is created.
     /// </summary>
     public partial class ServiceManagedChannelS3Storage
     {

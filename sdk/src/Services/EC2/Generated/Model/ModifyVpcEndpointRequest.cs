@@ -31,8 +31,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ModifyVpcEndpoint operation.
     /// Modifies attributes of a specified VPC endpoint. The attributes that you can modify
-    /// depend on the type of VPC endpoint (interface or gateway). For more information, see
-    /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
+    /// depend on the type of VPC endpoint (interface, gateway, or Gateway Load Balancer).
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
     /// Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// </summary>
     public partial class ModifyVpcEndpointRequest : AmazonEC2Request
@@ -88,7 +88,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AddSubnetIds. 
         /// <para>
-        /// (Interface endpoint) One or more subnet IDs in which to serve the endpoint.
+        /// (Interface and Gateway Load Balancer endpoints) One or more subnet IDs in which to
+        /// serve the endpoint. For a Gateway Load Balancer endpoint, you can specify only one
+        /// subnet.
         /// </para>
         /// </summary>
         public List<string> AddSubnetIds
@@ -106,8 +108,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PolicyDocument. 
         /// <para>
-        /// A policy to attach to the endpoint that controls access to the service. The policy
-        /// must be in valid JSON format.
+        /// (Interface and gateway endpoints) A policy to attach to the endpoint that controls
+        /// access to the service. The policy must be in valid JSON format.
         /// </para>
         /// </summary>
         public string PolicyDocument

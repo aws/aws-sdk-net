@@ -69,10 +69,28 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     response.JobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("jobInvoker", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.JobInvoker = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("jobOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.JobOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("overrides", targetDepth))
                 {
                     var unmarshaller = SigningPlatformOverridesUnmarshaller.Instance;
                     response.Overrides = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("platformDisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PlatformDisplayName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("platformId", targetDepth))
@@ -87,10 +105,28 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     response.ProfileName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("profileVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProfileVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("requestedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RequestedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("revocationRecord", targetDepth))
+                {
+                    var unmarshaller = SigningJobRevocationRecordUnmarshaller.Instance;
+                    response.RevocationRecord = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("signatureExpiresAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.SignatureExpiresAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("signedObject", targetDepth))
@@ -163,6 +199,10 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
+                {
+                    return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonSignerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

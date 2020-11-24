@@ -76,6 +76,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResponseTimeHistogram = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServiceForecastStatistics", targetDepth))
+                {
+                    var unmarshaller = ForecastStatisticsUnmarshaller.Instance;
+                    unmarshalledObject.ServiceForecastStatistics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServiceSummaryStatistics", targetDepth))
                 {
                     var unmarshaller = ServiceStatisticsUnmarshaller.Instance;

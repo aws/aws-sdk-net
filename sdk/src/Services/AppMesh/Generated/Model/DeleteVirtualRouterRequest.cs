@@ -32,10 +32,10 @@ namespace Amazon.AppMesh.Model
     /// Container for the parameters to the DeleteVirtualRouter operation.
     /// Deletes an existing virtual router.
     /// 
-    ///          
+    ///  
     /// <para>
     /// You must delete any routes associated with the virtual router before you can delete
-    /// the         router itself.
+    /// the router itself.
     /// </para>
     /// </summary>
     public partial class DeleteVirtualRouterRequest : AmazonAppMeshRequest
@@ -67,8 +67,8 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property MeshOwner. 
         /// <para>
         /// The AWS IAM account ID of the service mesh owner. If the account ID is not your own,
-        /// then it's               the ID of the account that shared the mesh with your account.
-        /// For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+        /// then it's the ID of the account that shared the mesh with your account. For more information
+        /// about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
         /// with shared meshes</a>.
         /// </para>
         /// </summary>

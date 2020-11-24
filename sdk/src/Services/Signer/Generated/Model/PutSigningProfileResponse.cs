@@ -34,6 +34,8 @@ namespace Amazon.Signer.Model
     public partial class PutSigningProfileResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private string _profileVersion;
+        private string _profileVersionArn;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -51,6 +53,44 @@ namespace Amazon.Signer.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileVersion. 
+        /// <para>
+        /// The version of the signing profile being created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=10)]
+        public string ProfileVersion
+        {
+            get { return this._profileVersion; }
+            set { this._profileVersion = value; }
+        }
+
+        // Check to see if ProfileVersion property is set
+        internal bool IsSetProfileVersion()
+        {
+            return this._profileVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileVersionArn. 
+        /// <para>
+        /// The signing profile ARN, including the profile version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ProfileVersionArn
+        {
+            get { return this._profileVersionArn; }
+            set { this._profileVersionArn = value; }
+        }
+
+        // Check to see if ProfileVersionArn property is set
+        internal bool IsSetProfileVersionArn()
+        {
+            return this._profileVersionArn != null;
         }
 
     }

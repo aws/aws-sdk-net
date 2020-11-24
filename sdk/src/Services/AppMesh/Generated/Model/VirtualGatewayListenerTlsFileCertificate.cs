@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents a local file certificate.         The certificate must meet
-    /// specific requirements and you must have proxy authorization enabled. For more information,
+    /// An object that represents a local file certificate. The certificate must meet specific
+    /// requirements and you must have proxy authorization enabled. For more information,
     /// see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport
     /// Layer Security (TLS)</a>.
     /// </summary>
@@ -62,7 +62,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property PrivateKey. 
         /// <para>
         /// The private key for a certificate stored on the file system of the mesh endpoint that
-        ///         the proxy is running on.
+        /// the proxy is running on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

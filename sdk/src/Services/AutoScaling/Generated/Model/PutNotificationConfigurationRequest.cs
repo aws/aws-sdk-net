@@ -41,8 +41,13 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
-    /// Amazon SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Amazon
+    /// Amazon SNS notifications when your Auto Scaling group scales</a> in the <i>Amazon
     /// EC2 Auto Scaling User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you exceed your maximum limit of SNS topics, which is 10 per Auto Scaling group,
+    /// the call fails.
     /// </para>
     /// </summary>
     public partial class PutNotificationConfigurationRequest : AmazonAutoScalingRequest

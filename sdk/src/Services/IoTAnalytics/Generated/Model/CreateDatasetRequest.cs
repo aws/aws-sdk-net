@@ -30,16 +30,18 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataset operation.
-    /// Creates a data set. A data set stores data retrieved from a data store by applying
-    /// a "queryAction" (a SQL query) or a "containerAction" (executing a containerized application).
-    /// This operation creates the skeleton of a data set. The data set can be populated manually
-    /// by calling "CreateDatasetContent" or automatically according to a "trigger" you specify.
+    /// Creates a dataset. A dataset stores data retrieved from a data store by applying a
+    /// <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing
+    /// a containerized application). This operation creates the skeleton of a dataset. The
+    /// dataset can be populated manually by calling <code>CreateDatasetContent</code> or
+    /// automatically according to a trigger you specify.
     /// </summary>
     public partial class CreateDatasetRequest : AmazonIoTAnalyticsRequest
     {
         private List<DatasetAction> _actions = new List<DatasetAction>();
         private List<DatasetContentDeliveryRule> _contentDeliveryRules = new List<DatasetContentDeliveryRule>();
         private string _datasetName;
+        private List<LateDataRule> _lateDataRules = new List<LateDataRule>();
         private RetentionPeriod _retentionPeriod;
         private List<Tag> _tags = new List<Tag>();
         private List<DatasetTrigger> _triggers = new List<DatasetTrigger>();
@@ -67,7 +69,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ContentDeliveryRules. 
         /// <para>
-        /// When data set contents are created they are delivered to destinations specified here.
+        /// When dataset contents are created, they are delivered to destinations specified here.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -103,13 +105,36 @@ namespace Amazon.IoTAnalytics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LateDataRules. 
+        /// <para>
+        /// A list of data rules that send notifications to Amazon CloudWatch, when data arrives
+        /// late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+        /// filter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<LateDataRule> LateDataRules
+        {
+            get { return this._lateDataRules; }
+            set { this._lateDataRules = value; }
+        }
+
+        // Check to see if LateDataRules property is set
+        internal bool IsSetLateDataRules()
+        {
+            return this._lateDataRules != null && this._lateDataRules.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// [Optional] How long, in days, versions of data set contents are kept for the data
-        /// set. If not specified or set to null, versions of data set contents are retained for
-        /// at most 90 days. The number of versions of data set contents retained is determined
-        /// by the <code>versioningConfiguration</code> parameter. (For more information, see
-        /// https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+        /// Optional. How long, in days, versions of dataset contents are kept for the dataset.
+        /// If not specified or set to <code>null</code>, versions of dataset contents are retained
+        /// for at most 90 days. The number of versions of dataset contents retained is determined
+        /// by the <code>versioningConfiguration</code> parameter. For more information, see <a
+        /// href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping
+        /// Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public RetentionPeriod RetentionPeriod
@@ -148,7 +173,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <para>
         /// A list of triggers. A trigger causes data set contents to be populated at a specified
         /// time interval or when another data set's contents are created. The list of triggers
-        /// can be empty or contain up to five <b>DataSetTrigger</b> objects.
+        /// can be empty or contain up to five <code>DataSetTrigger</code> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -167,10 +192,12 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property VersioningConfiguration. 
         /// <para>
-        /// [Optional] How many versions of data set contents are kept. If not specified or set
+        /// Optional. How many versions of dataset contents are kept. If not specified or set
         /// to null, only the latest version plus the latest succeeded version (if they are different)
-        /// are kept for the time period specified by the "retentionPeriod" parameter. (For more
-        /// information, see https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+        /// are kept for the time period specified by the <code>retentionPeriod</code> parameter.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping
+        /// Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public VersioningConfiguration VersioningConfiguration

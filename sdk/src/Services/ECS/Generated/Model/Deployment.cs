@@ -37,11 +37,14 @@ namespace Amazon.ECS.Model
         private List<CapacityProviderStrategyItem> _capacityProviderStrategy = new List<CapacityProviderStrategyItem>();
         private DateTime? _createdAt;
         private int? _desiredCount;
+        private int? _failedTasks;
         private string _id;
         private LaunchType _launchType;
         private NetworkConfiguration _networkConfiguration;
         private int? _pendingCount;
         private string _platformVersion;
+        private DeploymentRolloutState _rolloutState;
+        private string _rolloutStateReason;
         private int? _runningCount;
         private string _status;
         private string _taskDefinition;
@@ -100,6 +103,33 @@ namespace Amazon.ECS.Model
         internal bool IsSetDesiredCount()
         {
             return this._desiredCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailedTasks. 
+        /// <para>
+        /// The number of consecutively failed tasks in the deployment. A task is considered a
+        /// failure if the service scheduler can't launch the task, the task doesn't transition
+        /// to a <code>RUNNING</code> state, or if it fails any of its defined health checks and
+        /// is stopped.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Once a service deployment has one or more successfully running tasks, the failed task
+        /// count resets to zero and stops being evaluated.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int FailedTasks
+        {
+            get { return this._failedTasks.GetValueOrDefault(); }
+            set { this._failedTasks = value; }
+        }
+
+        // Check to see if FailedTasks property is set
+        internal bool IsSetFailedTasks()
+        {
+            return this._failedTasks.HasValue; 
         }
 
         /// <summary>
@@ -197,6 +227,53 @@ namespace Amazon.ECS.Model
         internal bool IsSetPlatformVersion()
         {
             return this._platformVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RolloutState. <note> 
+        /// <para>
+        /// The <code>rolloutState</code> of a service is only returned for services that use
+        /// the rolling update (<code>ECS</code>) deployment type that are not behind a Classic
+        /// Load Balancer.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The rollout state of the deployment. When a service deployment is started, it begins
+        /// in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
+        /// deployment will transition to a <code>COMPLETED</code> state. If the service fails
+        /// to reach a steady state and circuit breaker is enabled, the deployment will transition
+        /// to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state will launch
+        /// no new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
+        /// </para>
+        /// </summary>
+        public DeploymentRolloutState RolloutState
+        {
+            get { return this._rolloutState; }
+            set { this._rolloutState = value; }
+        }
+
+        // Check to see if RolloutState property is set
+        internal bool IsSetRolloutState()
+        {
+            return this._rolloutState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RolloutStateReason. 
+        /// <para>
+        /// A description of the rollout state of a deployment.
+        /// </para>
+        /// </summary>
+        public string RolloutStateReason
+        {
+            get { return this._rolloutStateReason; }
+            set { this._rolloutStateReason = value; }
+        }
+
+        // Check to see if RolloutStateReason property is set
+        internal bool IsSetRolloutStateReason()
+        {
+            return this._rolloutStateReason != null;
         }
 
         /// <summary>

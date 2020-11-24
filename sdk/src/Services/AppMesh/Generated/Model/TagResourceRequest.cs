@@ -31,9 +31,9 @@ namespace Amazon.AppMesh.Model
     /// <summary>
     /// Container for the parameters to the TagResource operation.
     /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
-    ///         If existing tags on a resource aren't specified in the request parameters,
-    /// they aren't         changed. When a resource is deleted, the tags associated with
-    /// that resource are also         deleted.
+    /// If existing tags on a resource aren't specified in the request parameters, they aren't
+    /// changed. When a resource is deleted, the tags associated with that resource are also
+    /// deleted.
     /// </summary>
     public partial class TagResourceRequest : AmazonAppMeshRequest
     {
@@ -62,9 +62,9 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to add to the resource. A tag is an array of key-value pairs.         Tag
-        /// keys can have a maximum character length of 128 characters, and tag values can have
-        ///            a maximum length of 256 characters.
+        /// The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can
+        /// have a maximum character length of 128 characters, and tag values can have a maximum
+        /// length of 256 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

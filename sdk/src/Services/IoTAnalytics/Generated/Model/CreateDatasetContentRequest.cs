@@ -30,17 +30,18 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDatasetContent operation.
-    /// Creates the content of a data set by applying a "queryAction" (a SQL query) or a "containerAction"
-    /// (executing a containerized application).
+    /// Creates the content of a data set by applying a <code>queryAction</code> (a SQL query)
+    /// or a <code>containerAction</code> (executing a containerized application).
     /// </summary>
     public partial class CreateDatasetContentRequest : AmazonIoTAnalyticsRequest
     {
         private string _datasetName;
+        private string _versionId;
 
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// The name of the data set.
+        /// The name of the dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -54,6 +55,27 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetDatasetName()
         {
             return this._datasetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionId. 
+        /// <para>
+        /// The version ID of the dataset content. To specify <code>versionId</code> for a dataset
+        /// content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+        /// filter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=36)]
+        public string VersionId
+        {
+            get { return this._versionId; }
+            set { this._versionId = value; }
+        }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return this._versionId != null;
         }
 
     }

@@ -45,8 +45,8 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         ///  
         /// <para>
-        /// The AWS Lambda function must be able to process all of these messages within five
-        /// minutes, which is the maximum timeout duration for Lambda functions.
+        /// The Lambda function must be able to process all of these messages within five minutes,
+        /// which is the maximum timeout duration for Lambda functions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
@@ -84,7 +84,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the 'lambda' activity.
+        /// The name of the lambda activity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

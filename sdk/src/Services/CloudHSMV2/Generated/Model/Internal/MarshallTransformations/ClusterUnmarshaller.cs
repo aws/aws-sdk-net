@@ -70,6 +70,12 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.BackupPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BackupRetentionPolicy", targetDepth))
+                {
+                    var unmarshaller = BackupRetentionPolicyUnmarshaller.Instance;
+                    unmarshalledObject.BackupRetentionPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Certificates", targetDepth))
                 {
                     var unmarshaller = CertificatesUnmarshaller.Instance;

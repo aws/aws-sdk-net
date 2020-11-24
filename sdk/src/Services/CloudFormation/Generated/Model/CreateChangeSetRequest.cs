@@ -56,6 +56,11 @@ namespace Amazon.CloudFormation.Model
     /// set by using the <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make changes
     /// until you execute the change set.
     /// </para>
+    ///  
+    /// <para>
+    /// To create a change set for the entire stack hierachy, set <code>IncludeNestedStacks</code>
+    /// to <code>True</code>.
+    /// </para>
     /// </summary>
     public partial class CreateChangeSetRequest : AmazonCloudFormationRequest
     {
@@ -64,6 +69,7 @@ namespace Amazon.CloudFormation.Model
         private ChangeSetType _changeSetType;
         private string _clientToken;
         private string _description;
+        private bool? _includeNestedStacks;
         private List<string> _notificationARNs = new List<string>();
         private List<Parameter> _parameters = new List<Parameter>();
         private List<ResourceToImport> _resourcesToImport = new List<ResourceToImport>();
@@ -181,10 +187,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Also, change sets do not currently support nested stacks. If you want to create a
-        /// stack from a stack template that contains macros <i>and</i> nested stacks, you must
-        /// create or update the stack directly from the template using the <a>CreateStack</a>
-        /// or <a>UpdateStack</a> action, and specifying this capability.
+        /// If you want to create a stack from a stack template that contains macros <i>and</i>
+        /// nested stacks, you must create or update the stack directly from the template using
+        /// the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.
         /// </para>
         ///  </note> 
         /// <para>
@@ -301,6 +306,26 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeNestedStacks. 
+        /// <para>
+        /// Creates a change set for the all nested stacks specified in the template. The default
+        /// behavior of this action is set to <code>False</code>. To include nested sets in a
+        /// change set, specify <code>True</code>.
+        /// </para>
+        /// </summary>
+        public bool IncludeNestedStacks
+        {
+            get { return this._includeNestedStacks.GetValueOrDefault(); }
+            set { this._includeNestedStacks = value; }
+        }
+
+        // Check to see if IncludeNestedStacks property is set
+        internal bool IsSetIncludeNestedStacks()
+        {
+            return this._includeNestedStacks.HasValue; 
         }
 
         /// <summary>

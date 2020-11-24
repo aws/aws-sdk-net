@@ -90,7 +90,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsSubscriptionArn. 
         /// <para>
-        /// The ARN of a resource that represents your subscription to a supported standard.
+        /// The ARN of a resource that represents your subscription to a supported standard. To
+        /// get the subscription ARNs of the standards you have enabled, use the <code> <a>GetEnabledStandards</a>
+        /// </code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -36,6 +36,7 @@ namespace Amazon.AutoScaling.Model
         private string _autoScalingGroupARN;
         private string _autoScalingGroupName;
         private List<string> _availabilityZones = new List<string>();
+        private bool? _capacityRebalance;
         private DateTime? _createdTime;
         private int? _defaultCooldown;
         private int? _desiredCapacity;
@@ -115,6 +116,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityRebalance. 
+        /// <para>
+        /// Indicates whether Capacity Rebalancing is enabled.
+        /// </para>
+        /// </summary>
+        public bool CapacityRebalance
+        {
+            get { return this._capacityRebalance.GetValueOrDefault(); }
+            set { this._capacityRebalance = value; }
+        }
+
+        // Check to see if CapacityRebalance property is set
+        internal bool IsSetCapacityRebalance()
+        {
+            return this._capacityRebalance.HasValue; 
         }
 
         /// <summary>

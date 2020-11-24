@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private List<AssociatedTargetNetwork> _associatedTargetNetworks = new List<AssociatedTargetNetwork>();
         private List<ClientVpnAuthentication> _authenticationOptions = new List<ClientVpnAuthentication>();
         private string _clientCidrBlock;
+        private ClientConnectResponseOptions _clientConnectOptions;
         private string _clientVpnEndpointId;
         private ConnectionLogResponseOptions _connectionLogOptions;
         private string _creationTime;
@@ -108,6 +109,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientCidrBlock()
         {
             return this._clientCidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientConnectOptions. 
+        /// <para>
+        /// The options for managing connection authorization for new client connections.
+        /// </para>
+        /// </summary>
+        public ClientConnectResponseOptions ClientConnectOptions
+        {
+            get { return this._clientConnectOptions; }
+            set { this._clientConnectOptions = value; }
+        }
+
+        // Check to see if ClientConnectOptions property is set
+        internal bool IsSetClientConnectOptions()
+        {
+            return this._clientConnectOptions != null;
         }
 
         /// <summary>

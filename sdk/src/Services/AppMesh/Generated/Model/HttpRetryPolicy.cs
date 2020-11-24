@@ -45,25 +45,24 @@ namespace Amazon.AppMesh.Model
         /// <para>
         /// Specify at least one of the following values.
         /// </para>
-        ///           <ul>            <li>               
+        ///  <ul> <li> 
         /// <para>
-        ///                   <b>server-error</b> – HTTP status codes 500, 501,              
-        ///    502, 503, 504, 505, 506, 507, 508, 510, and 511
+        ///  <b>server-error</b> – HTTP status codes 500, 501, 502, 503, 504, 505, 506, 507, 508,
+        /// 510, and 511
         /// </para>
-        ///             </li>            <li>               
+        ///  </li> <li> 
         /// <para>
-        ///                   <b>gateway-error</b> – HTTP status codes 502,                  503,
-        /// and 504
+        ///  <b>gateway-error</b> – HTTP status codes 502, 503, and 504
         /// </para>
-        ///             </li>            <li>               
+        ///  </li> <li> 
         /// <para>
-        ///                   <b>client-error</b> – HTTP status code 409
+        ///  <b>client-error</b> – HTTP status code 409
         /// </para>
-        ///             </li>            <li>               
+        ///  </li> <li> 
         /// <para>
-        ///                   <b>stream-error</b> – Retry on refused                  stream
+        ///  <b>stream-error</b> – Retry on refused stream
         /// </para>
-        ///             </li>         </ul>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
         public List<string> HttpRetryEvents
@@ -100,7 +99,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property PerRetryTimeout. 
         /// <para>
-        /// An object that represents a duration of time.
+        /// The timeout for each retry attempt.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,7 +118,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property TcpRetryEvents. 
         /// <para>
-        /// Specify a valid value.
+        /// Specify a valid value. The event occurs before any processing of a request has started
+        /// and is encountered when the upstream is temporarily or permanently unavailable.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

@@ -72,6 +72,7 @@ namespace Amazon.EC2.Model
         /// The format and location for an instance export task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ExportToS3TaskSpecification ExportToS3Task
         {
             get { return this._exportToS3Task; }
@@ -127,6 +128,7 @@ namespace Amazon.EC2.Model
         /// The target virtualization environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ExportEnvironment TargetEnvironment
         {
             get { return this._targetEnvironment; }

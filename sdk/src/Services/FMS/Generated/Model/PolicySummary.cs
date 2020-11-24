@@ -126,7 +126,7 @@ namespace Amazon.FMS.Model
         /// For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>,
         /// <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For
         /// a security group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>.
-        /// 
+        /// For an AWS Network Firewall policy, the value is <code>AWS::EC2::VPC</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

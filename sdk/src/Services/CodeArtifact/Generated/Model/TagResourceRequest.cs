@@ -40,8 +40,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource to which you want to add or update
-        /// tags.
+        /// The Amazon Resource Name (ARN) of the resource that you want to add or update tags
+        /// for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

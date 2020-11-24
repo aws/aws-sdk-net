@@ -65,6 +65,7 @@ namespace Amazon.CloudWatchEvents.Model
         private string _action;
         private Condition _condition;
         private string _eventBusName;
+        private string _policy;
         private string _principal;
         private string _statementId;
 
@@ -75,7 +76,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// be <code>events:PutEvents</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string Action
         {
             get { return this._action; }
@@ -123,8 +124,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property EventBusName. 
         /// <para>
-        /// The event bus associated with the rule. If you omit this, the default event bus is
-        /// used.
+        /// The name of the event bus associated with the rule. If you omit this, the default
+        /// event bus is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -138,6 +139,26 @@ namespace Amazon.CloudWatchEvents.Model
         internal bool IsSetEventBusName()
         {
             return this._eventBusName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Policy. 
+        /// <para>
+        /// A JSON string that describes the permission policy statement. You can include a <code>Policy</code>
+        /// parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>,
+        /// <code>Principal</code>, or <code>Condition</code> parameters.
+        /// </para>
+        /// </summary>
+        public string Policy
+        {
+            get { return this._policy; }
+            set { this._policy = value; }
+        }
+
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
+        {
+            return this._policy != null;
         }
 
         /// <summary>
@@ -155,7 +176,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// any events sent from other accounts.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=12)]
+        [AWSProperty(Min=1, Max=12)]
         public string Principal
         {
             get { return this._principal; }
@@ -176,7 +197,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <code>StatementId</code> when you run <a>RemovePermission</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string StatementId
         {
             get { return this._statementId; }

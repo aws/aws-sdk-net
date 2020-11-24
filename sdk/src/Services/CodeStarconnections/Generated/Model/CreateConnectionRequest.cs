@@ -84,7 +84,6 @@ namespace Amazon.CodeStarconnections.Model
         /// Gets and sets the property ProviderType. 
         /// <para>
         /// The name of the external provider where your third-party code repository is configured.
-        /// The valid provider type is Bitbucket.
         /// </para>
         /// </summary>
         public ProviderType ProviderType

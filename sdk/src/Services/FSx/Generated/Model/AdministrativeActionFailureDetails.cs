@@ -38,7 +38,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Error message providing details about the failure.
+        /// Error message providing details about the failed administrative action.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

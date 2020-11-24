@@ -69,6 +69,12 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                     response.QueryId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QueryStatus", targetDepth))
+                {
+                    var unmarshaller = QueryStatusUnmarshaller.Instance;
+                    response.QueryStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Rows", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Row, RowUnmarshaller>(RowUnmarshaller.Instance);

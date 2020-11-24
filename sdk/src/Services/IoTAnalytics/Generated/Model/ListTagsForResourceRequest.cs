@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags (metadata) which you have assigned to the resource.
+    /// Lists the tags (metadata) that you have assigned to the resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonIoTAnalyticsRequest
     {

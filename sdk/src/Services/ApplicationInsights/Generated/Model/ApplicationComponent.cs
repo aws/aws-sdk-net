@@ -35,7 +35,10 @@ namespace Amazon.ApplicationInsights.Model
     public partial class ApplicationComponent
     {
         private string _componentName;
+        private string _componentRemarks;
+        private Dictionary<string, Dictionary<string, string>> _detectedWorkload = new Dictionary<string, Dictionary<string, string>>();
         private bool? _monitor;
+        private OsType _osType;
         private string _resourceType;
         private Tier _tier;
 
@@ -45,6 +48,7 @@ namespace Amazon.ApplicationInsights.Model
         /// The name of the component.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1011)]
         public string ComponentName
         {
             get { return this._componentName; }
@@ -55,6 +59,43 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetComponentName()
         {
             return this._componentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComponentRemarks. 
+        /// <para>
+        ///  If logging is supported for the resource type, indicates whether the component has
+        /// configured logs to be monitored. 
+        /// </para>
+        /// </summary>
+        public string ComponentRemarks
+        {
+            get { return this._componentRemarks; }
+            set { this._componentRemarks = value; }
+        }
+
+        // Check to see if ComponentRemarks property is set
+        internal bool IsSetComponentRemarks()
+        {
+            return this._componentRemarks != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetectedWorkload. 
+        /// <para>
+        ///  Workloads detected in the application component. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, Dictionary<string, string>> DetectedWorkload
+        {
+            get { return this._detectedWorkload; }
+            set { this._detectedWorkload = value; }
+        }
+
+        // Check to see if DetectedWorkload property is set
+        internal bool IsSetDetectedWorkload()
+        {
+            return this._detectedWorkload != null && this._detectedWorkload.Count > 0; 
         }
 
         /// <summary>
@@ -76,12 +117,31 @@ namespace Amazon.ApplicationInsights.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OsType. 
+        /// <para>
+        ///  The operating system of the component. 
+        /// </para>
+        /// </summary>
+        public OsType OsType
+        {
+            get { return this._osType; }
+            set { this._osType = value; }
+        }
+
+        // Check to see if OsType property is set
+        internal bool IsSetOsType()
+        {
+            return this._osType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The resource type. Supported resource types include EC2 instances, Auto Scaling group,
         /// Classic ELB, Application ELB, and SQS Queue.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=50)]
         public string ResourceType
         {
             get { return this._resourceType; }

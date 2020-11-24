@@ -34,10 +34,29 @@ namespace Amazon.CloudHSMV2.Model
     /// </summary>
     public partial class CreateClusterRequest : AmazonCloudHSMV2Request
     {
+        private BackupRetentionPolicy _backupRetentionPolicy;
         private string _hsmType;
         private string _sourceBackupId;
         private List<string> _subnetIds = new List<string>();
         private List<Tag> _tagList = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property BackupRetentionPolicy. 
+        /// <para>
+        /// A policy that defines how the service retains backups.
+        /// </para>
+        /// </summary>
+        public BackupRetentionPolicy BackupRetentionPolicy
+        {
+            get { return this._backupRetentionPolicy; }
+            set { this._backupRetentionPolicy = value; }
+        }
+
+        // Check to see if BackupRetentionPolicy property is set
+        internal bool IsSetBackupRetentionPolicy()
+        {
+            return this._backupRetentionPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property HsmType. 

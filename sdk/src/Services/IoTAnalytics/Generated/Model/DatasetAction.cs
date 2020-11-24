@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// A "DatasetAction" object that specifies how data set contents are automatically created.
+    /// A <code>DatasetAction</code> object that specifies how data set contents are automatically
+    /// created.
     /// </summary>
     public partial class DatasetAction
     {
@@ -59,9 +60,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ContainerAction. 
         /// <para>
-        /// Information which allows the system to run a containerized application in order to
-        /// create the data set contents. The application must be in a Docker container along
-        /// with any needed support libraries.
+        /// Information that allows the system to run a containerized application to create the
+        /// dataset contents. The application must be in a Docker container along with any required
+        /// support libraries.
         /// </para>
         /// </summary>
         public ContainerDatasetAction ContainerAction
@@ -79,8 +80,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property QueryAction. 
         /// <para>
-        /// An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data
-        /// set contents.
+        /// An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically
+        /// create data set contents.
         /// </para>
         /// </summary>
         public SqlQueryDatasetAction QueryAction

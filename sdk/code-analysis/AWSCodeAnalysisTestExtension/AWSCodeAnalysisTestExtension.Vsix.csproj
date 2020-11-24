@@ -104,6 +104,10 @@
       <Project>{FAC77777-B66C-4D36-B883-A37A41C40A2D}</Project>
       <Name>AWSSDK.AppMesh.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AppRegistry/AWSSDK.AppRegistry.CodeAnalysis.csproj">
+      <Project>{16CFB3C8-BF63-4517-ADC4-87F48F7D4B22}</Project>
+      <Name>AWSSDK.AppRegistry.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/AppStream/AWSSDK.AppStream.CodeAnalysis.csproj">
       <Project>{D26A9B8A-A715-4131-A1C8-9882EA414C4B}</Project>
       <Name>AWSSDK.AppStream.CodeAnalysis</Name>
@@ -448,6 +452,10 @@
       <Project>{27740509-BBD9-4E6F-A880-73ADC6B5CEB4}</Project>
       <Name>AWSSDK.Glue.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/GlueDataBrew/AWSSDK.GlueDataBrew.CodeAnalysis.csproj">
+      <Project>{9BBDE0BF-C3FA-4862-9B3B-0DF678722F7A}</Project>
+      <Name>AWSSDK.GlueDataBrew.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Greengrass/AWSSDK.Greengrass.CodeAnalysis.csproj">
       <Project>{30C980A1-7313-47B7-82FB-BB1DDFAD0307}</Project>
       <Name>AWSSDK.Greengrass.CodeAnalysis</Name>
@@ -683,6 +691,10 @@
     <ProjectReference Include="../ServiceAnalysis/Neptune/AWSSDK.Neptune.CodeAnalysis.csproj">
       <Project>{58F7BFE2-830C-489D-BEE8-58C02C1CFF8A}</Project>
       <Name>AWSSDK.Neptune.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/NetworkFirewall/AWSSDK.NetworkFirewall.CodeAnalysis.csproj">
+      <Project>{8B7D3321-CC00-4673-975E-571DDB8FFBC6}</Project>
+      <Name>AWSSDK.NetworkFirewall.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/NetworkManager/AWSSDK.NetworkManager.CodeAnalysis.csproj">
       <Project>{43F64B0B-FD8E-4C5B-B31C-9FDF68364301}</Project>

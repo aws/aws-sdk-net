@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>instance-type</code> - The instance type.
+        ///  <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

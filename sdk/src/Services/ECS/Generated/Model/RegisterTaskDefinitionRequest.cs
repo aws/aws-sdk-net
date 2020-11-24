@@ -345,14 +345,17 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The Docker networking mode to use for the containers in the task. The valid values
         /// are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and <code>host</code>.
-        /// The default Docker network mode is <code>bridge</code>. If you are using the Fargate
-        /// launch type, the <code>awsvpc</code> network mode is required. If you are using the
-        /// EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>,
-        /// you cannot specify port mappings in your container definitions, and the tasks containers
-        /// do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network
-        /// modes offer the highest networking performance for containers because they use the
-        /// EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code>
-        /// mode.
+        /// If no network mode is specified, the default is <code>bridge</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Amazon ECS tasks on Fargate, the <code>awsvpc</code> network mode is required.
+        /// For Amazon ECS tasks on Amazon EC2 instances, any network mode can be used. If the
+        /// network mode is set to <code>none</code>, you cannot specify port mappings in your
+        /// container definitions, and the tasks containers do not have external connectivity.
+        /// The <code>host</code> and <code>awsvpc</code> network modes offer the highest networking
+        /// performance for containers because they use the EC2 network stack instead of the virtualized
+        /// network stack provided by the <code>bridge</code> mode.
         /// </para>
         ///  
         /// <para>
@@ -361,7 +364,12 @@ namespace Amazon.ECS.Model
         /// network mode) or the attached elastic network interface port (for the <code>awsvpc</code>
         /// network mode), so you cannot take advantage of dynamic host port mappings. 
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// When using the <code>host</code> network mode, you should not run containers using
+        /// the root user (UID 0). It is considered best practice to use a non-root user.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// If the network mode is <code>awsvpc</code>, the task is allocated an elastic network
         /// interface, and you must specify a <a>NetworkConfiguration</a> value when you create
@@ -479,7 +487,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RequiresCompatibilities. 
         /// <para>
-        /// The launch type required by the task. If no value is specified, it defaults to <code>EC2</code>.
+        /// The task launch type that Amazon ECS should validate the task definition against.
+        /// This ensures that the task definition parameters are compatible with the specified
+        /// launch type. If no value is specified, it defaults to <code>EC2</code>.
         /// </para>
         /// </summary>
         public List<string> RequiresCompatibilities

@@ -88,6 +88,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         response.AvailabilityZones.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("IpAddressType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.IpAddressType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
            }
 

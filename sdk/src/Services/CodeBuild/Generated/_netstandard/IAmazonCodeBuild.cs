@@ -1051,7 +1051,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Restarts a batch build.
+        /// Restarts a failed batch build. Only batch builds that have failed can be retried.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetryBuildBatch service method.</param>
         /// <param name="cancellationToken">

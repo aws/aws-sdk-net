@@ -39,6 +39,7 @@ namespace Amazon.Amplify.Model
         private List<string> _autoBranchCreationPatterns = new List<string>();
         private string _basicAuthCredentials;
         private string _buildSpec;
+        private string _customHeaders;
         private List<CustomRule> _customRules = new List<CustomRule>();
         private string _description;
         private bool? _enableAutoBranchCreation;
@@ -77,7 +78,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AutoBranchCreationConfig. 
         /// <para>
-        ///  The automated branch creation configuration for the Amplify app. 
+        ///  The automated branch creation configuration for an Amplify app. 
         /// </para>
         /// </summary>
         public AutoBranchCreationConfig AutoBranchCreationConfig
@@ -95,7 +96,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property AutoBranchCreationPatterns. 
         /// <para>
-        ///  The automated branch creation glob patterns for the Amplify app. 
+        ///  The automated branch creation glob patterns for an Amplify app. 
         /// </para>
         /// </summary>
         public List<string> AutoBranchCreationPatterns
@@ -149,6 +150,25 @@ namespace Amazon.Amplify.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomHeaders. 
+        /// <para>
+        /// The custom HTTP headers for an Amplify app.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25000)]
+        public string CustomHeaders
+        {
+            get { return this._customHeaders; }
+            set { this._customHeaders = value; }
+        }
+
+        // Check to see if CustomHeaders property is set
+        internal bool IsSetCustomHeaders()
+        {
+            return this._customHeaders != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CustomRules. 
         /// <para>
         ///  The custom rewrite and redirect rules for an Amplify app. 
@@ -188,7 +208,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnableAutoBranchCreation. 
         /// <para>
-        ///  Enables automated branch creation for the Amplify app. 
+        ///  Enables automated branch creation for an Amplify app. 
         /// </para>
         /// </summary>
         public bool EnableAutoBranchCreation
@@ -299,7 +319,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name for the Amplify app. 
+        ///  The name for an Amplify app. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

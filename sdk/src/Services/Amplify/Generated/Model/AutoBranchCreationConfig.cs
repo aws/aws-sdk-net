@@ -121,9 +121,13 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnablePerformanceMode. 
         /// <para>
-        ///  Performance mode optimizes for faster hosting performance by keeping content cached
-        /// at the edge for a longer interval. Enabling performance mode will mean that hosting
-        /// configuration or code changes can take up to 10 minutes to roll out. 
+        /// Enables performance mode for the branch.
+        /// </para>
+        ///  
+        /// <para>
+        /// Performance mode optimizes for faster hosting performance by keeping content cached
+        /// at the edge for a longer interval. When performance mode is enabled, hosting configuration
+        /// or code changes can take up to 10 minutes to roll out. 
         /// </para>
         /// </summary>
         public bool EnablePerformanceMode
@@ -141,7 +145,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property EnablePullRequestPreview. 
         /// <para>
-        ///  Enables pull request preview for the autocreated branch. 
+        ///  Enables pull request previews for the autocreated branch. 
         /// </para>
         /// </summary>
         public bool EnablePullRequestPreview

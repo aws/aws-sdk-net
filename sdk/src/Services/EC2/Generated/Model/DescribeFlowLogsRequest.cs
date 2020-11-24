@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>log-destination-type</code> - The type of destination to which the flow log
         /// publishes data. Possible destination types include <code>cloud-watch-logs</code> and
-        /// <code>S3</code>.
+        /// <code>s3</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

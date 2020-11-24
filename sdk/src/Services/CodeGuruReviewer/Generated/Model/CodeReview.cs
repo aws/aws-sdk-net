@@ -29,10 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Information about a code review.
+    /// Information about a code review. A code review belongs to the associated repository
+    /// that contains the reviewed code.
     /// </summary>
     public partial class CodeReview
     {
+        private string _associationArn;
         private string _codeReviewArn;
         private DateTime? _createdTimeStamp;
         private DateTime? _lastUpdatedTimeStamp;
@@ -46,6 +48,28 @@ namespace Amazon.CodeGuruReviewer.Model
         private JobState _state;
         private string _stateReason;
         private Type _type;
+
+        /// <summary>
+        /// Gets and sets the property AssociationArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+        /// <code>RepositoryAssociation</code> </a> that contains the reviewed source code. You
+        /// can retrieve associated repository ARNs by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+        /// <code>ListRepositoryAssociations</code> </a>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
+        public string AssociationArn
+        {
+            get { return this._associationArn; }
+            set { this._associationArn = value; }
+        }
+
+        // Check to see if AssociationArn property is set
+        internal bool IsSetAssociationArn()
+        {
+            return this._associationArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CodeReviewArn. 

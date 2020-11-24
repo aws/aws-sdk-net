@@ -43,7 +43,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The token to retrieve the next set of results.
+        /// To retrieve the next set of results, the <code>nextToken</code> value from a previous
+        /// response; otherwise <b>null</b> to receive the first set of results.
         /// </para>
         /// </summary>
         public string Marker

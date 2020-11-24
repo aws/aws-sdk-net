@@ -41,6 +41,7 @@ namespace Amazon.ForecastService.Model
         private EvaluationParameters _evaluationParameters;
         private FeaturizationConfig _featurizationConfig;
         private int? _forecastHorizon;
+        private List<string> _forecastTypes = new List<string>();
         private HyperParameterTuningJobConfig _hpoConfig;
         private InputDataConfig _inputDataConfig;
         private DateTime? _lastModificationTime;
@@ -202,6 +203,26 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetForecastHorizon()
         {
             return this._forecastHorizon.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForecastTypes. 
+        /// <para>
+        /// The forecast types used during predictor training. Default value is <code>["0.1","0.5","0.9"]</code>
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<string> ForecastTypes
+        {
+            get { return this._forecastTypes; }
+            set { this._forecastTypes = value; }
+        }
+
+        // Check to see if ForecastTypes property is set
+        internal bool IsSetForecastTypes()
+        {
+            return this._forecastTypes != null && this._forecastTypes.Count > 0; 
         }
 
         /// <summary>
@@ -420,10 +441,9 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property TrainingParameters. 
         /// <para>
-        /// The default training parameters or overrides selected during model training. If using
-        /// the AutoML algorithm or if HPO is turned on while using the DeepAR+ algorithms, the
-        /// optimized values for the chosen hyperparameters are returned. For more information,
-        /// see <a>aws-forecast-choosing-recipes</a>.
+        /// The default training parameters or overrides selected during model training. When
+        /// running AutoML or choosing HPO with CNN-QR or DeepAR+, the optimized values for the
+        /// chosen hyperparameters are returned. For more information, see <a>aws-forecast-choosing-recipes</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

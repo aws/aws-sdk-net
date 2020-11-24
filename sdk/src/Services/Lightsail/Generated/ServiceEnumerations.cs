@@ -657,6 +657,304 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type ContainerServiceDeploymentState.
+    /// </summary>
+    public class ContainerServiceDeploymentState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING for ContainerServiceDeploymentState
+        /// </summary>
+        public static readonly ContainerServiceDeploymentState ACTIVATING = new ContainerServiceDeploymentState("ACTIVATING");
+        /// <summary>
+        /// Constant ACTIVE for ContainerServiceDeploymentState
+        /// </summary>
+        public static readonly ContainerServiceDeploymentState ACTIVE = new ContainerServiceDeploymentState("ACTIVE");
+        /// <summary>
+        /// Constant FAILED for ContainerServiceDeploymentState
+        /// </summary>
+        public static readonly ContainerServiceDeploymentState FAILED = new ContainerServiceDeploymentState("FAILED");
+        /// <summary>
+        /// Constant INACTIVE for ContainerServiceDeploymentState
+        /// </summary>
+        public static readonly ContainerServiceDeploymentState INACTIVE = new ContainerServiceDeploymentState("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerServiceDeploymentState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerServiceDeploymentState FindValue(string value)
+        {
+            return FindValue<ContainerServiceDeploymentState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerServiceDeploymentState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerServiceMetricName.
+    /// </summary>
+    public class ContainerServiceMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CPUUtilization for ContainerServiceMetricName
+        /// </summary>
+        public static readonly ContainerServiceMetricName CPUUtilization = new ContainerServiceMetricName("CPUUtilization");
+        /// <summary>
+        /// Constant MemoryUtilization for ContainerServiceMetricName
+        /// </summary>
+        public static readonly ContainerServiceMetricName MemoryUtilization = new ContainerServiceMetricName("MemoryUtilization");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerServiceMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerServiceMetricName FindValue(string value)
+        {
+            return FindValue<ContainerServiceMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerServiceMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerServicePowerName.
+    /// </summary>
+    public class ContainerServicePowerName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Large for ContainerServicePowerName
+        /// </summary>
+        public static readonly ContainerServicePowerName Large = new ContainerServicePowerName("large");
+        /// <summary>
+        /// Constant Medium for ContainerServicePowerName
+        /// </summary>
+        public static readonly ContainerServicePowerName Medium = new ContainerServicePowerName("medium");
+        /// <summary>
+        /// Constant Micro for ContainerServicePowerName
+        /// </summary>
+        public static readonly ContainerServicePowerName Micro = new ContainerServicePowerName("micro");
+        /// <summary>
+        /// Constant Nano for ContainerServicePowerName
+        /// </summary>
+        public static readonly ContainerServicePowerName Nano = new ContainerServicePowerName("nano");
+        /// <summary>
+        /// Constant Small for ContainerServicePowerName
+        /// </summary>
+        public static readonly ContainerServicePowerName Small = new ContainerServicePowerName("small");
+        /// <summary>
+        /// Constant Xlarge for ContainerServicePowerName
+        /// </summary>
+        public static readonly ContainerServicePowerName Xlarge = new ContainerServicePowerName("xlarge");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerServicePowerName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerServicePowerName FindValue(string value)
+        {
+            return FindValue<ContainerServicePowerName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerServicePowerName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerServiceProtocol.
+    /// </summary>
+    public class ContainerServiceProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HTTP for ContainerServiceProtocol
+        /// </summary>
+        public static readonly ContainerServiceProtocol HTTP = new ContainerServiceProtocol("HTTP");
+        /// <summary>
+        /// Constant HTTPS for ContainerServiceProtocol
+        /// </summary>
+        public static readonly ContainerServiceProtocol HTTPS = new ContainerServiceProtocol("HTTPS");
+        /// <summary>
+        /// Constant TCP for ContainerServiceProtocol
+        /// </summary>
+        public static readonly ContainerServiceProtocol TCP = new ContainerServiceProtocol("TCP");
+        /// <summary>
+        /// Constant UDP for ContainerServiceProtocol
+        /// </summary>
+        public static readonly ContainerServiceProtocol UDP = new ContainerServiceProtocol("UDP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerServiceProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerServiceProtocol FindValue(string value)
+        {
+            return FindValue<ContainerServiceProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerServiceProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerServiceState.
+    /// </summary>
+    public class ContainerServiceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETING for ContainerServiceState
+        /// </summary>
+        public static readonly ContainerServiceState DELETING = new ContainerServiceState("DELETING");
+        /// <summary>
+        /// Constant DISABLED for ContainerServiceState
+        /// </summary>
+        public static readonly ContainerServiceState DISABLED = new ContainerServiceState("DISABLED");
+        /// <summary>
+        /// Constant PENDING for ContainerServiceState
+        /// </summary>
+        public static readonly ContainerServiceState PENDING = new ContainerServiceState("PENDING");
+        /// <summary>
+        /// Constant READY for ContainerServiceState
+        /// </summary>
+        public static readonly ContainerServiceState READY = new ContainerServiceState("READY");
+        /// <summary>
+        /// Constant RUNNING for ContainerServiceState
+        /// </summary>
+        public static readonly ContainerServiceState RUNNING = new ContainerServiceState("RUNNING");
+        /// <summary>
+        /// Constant UPDATING for ContainerServiceState
+        /// </summary>
+        public static readonly ContainerServiceState UPDATING = new ContainerServiceState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerServiceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerServiceState FindValue(string value)
+        {
+            return FindValue<ContainerServiceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerServiceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DiskSnapshotState.
     /// </summary>
     public class DiskSnapshotState : ConstantClass
@@ -2531,6 +2829,18 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType CreateContactMethod = new OperationType("CreateContactMethod");
         /// <summary>
+        /// Constant CreateContainerService for OperationType
+        /// </summary>
+        public static readonly OperationType CreateContainerService = new OperationType("CreateContainerService");
+        /// <summary>
+        /// Constant CreateContainerServiceDeployment for OperationType
+        /// </summary>
+        public static readonly OperationType CreateContainerServiceDeployment = new OperationType("CreateContainerServiceDeployment");
+        /// <summary>
+        /// Constant CreateContainerServiceRegistryLogin for OperationType
+        /// </summary>
+        public static readonly OperationType CreateContainerServiceRegistryLogin = new OperationType("CreateContainerServiceRegistryLogin");
+        /// <summary>
         /// Constant CreateDisk for OperationType
         /// </summary>
         public static readonly OperationType CreateDisk = new OperationType("CreateDisk");
@@ -2594,6 +2904,14 @@ namespace Amazon.Lightsail
         /// Constant DeleteContactMethod for OperationType
         /// </summary>
         public static readonly OperationType DeleteContactMethod = new OperationType("DeleteContactMethod");
+        /// <summary>
+        /// Constant DeleteContainerImage for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteContainerImage = new OperationType("DeleteContainerImage");
+        /// <summary>
+        /// Constant DeleteContainerService for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteContainerService = new OperationType("DeleteContainerService");
         /// <summary>
         /// Constant DeleteDisk for OperationType
         /// </summary>
@@ -2695,6 +3013,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType RebootRelationalDatabase = new OperationType("RebootRelationalDatabase");
         /// <summary>
+        /// Constant RegisterContainerImage for OperationType
+        /// </summary>
+        public static readonly OperationType RegisterContainerImage = new OperationType("RegisterContainerImage");
+        /// <summary>
         /// Constant ReleaseStaticIp for OperationType
         /// </summary>
         public static readonly OperationType ReleaseStaticIp = new OperationType("ReleaseStaticIp");
@@ -2726,6 +3048,10 @@ namespace Amazon.Lightsail
         /// Constant TestAlarm for OperationType
         /// </summary>
         public static readonly OperationType TestAlarm = new OperationType("TestAlarm");
+        /// <summary>
+        /// Constant UpdateContainerService for OperationType
+        /// </summary>
+        public static readonly OperationType UpdateContainerService = new OperationType("UpdateContainerService");
         /// <summary>
         /// Constant UpdateDistribution for OperationType
         /// </summary>
@@ -3392,6 +3718,10 @@ namespace Amazon.Lightsail
         /// Constant ContactMethod for ResourceType
         /// </summary>
         public static readonly ResourceType ContactMethod = new ResourceType("ContactMethod");
+        /// <summary>
+        /// Constant ContainerService for ResourceType
+        /// </summary>
+        public static readonly ResourceType ContainerService = new ResourceType("ContainerService");
         /// <summary>
         /// Constant Disk for ResourceType
         /// </summary>

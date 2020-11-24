@@ -238,6 +238,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Elasticsearch")]
+        public void GetPackageVersionHistoryTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetPackageVersionHistoryRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetPackageVersionHistoryResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetPackageVersionHistoryResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetPackageVersionHistory(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetPackageVersionHistory(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Elasticsearch")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetPackageVersionHistoryTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetPackageVersionHistoryRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetPackageVersionHistoryResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetPackageVersionHistory(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetPackageVersionHistory(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Elasticsearch")]
         public void GetUpgradeHistoryTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<GetUpgradeHistoryRequest>();

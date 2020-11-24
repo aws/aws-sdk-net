@@ -93,7 +93,7 @@ namespace Amazon.FSx.Model
         /// and changed Lustre file system files in S3.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=900)]
+        [AWSProperty(Min=3, Max=4357)]
         public string ExportPath
         {
             get { return this._exportPath; }
@@ -157,7 +157,7 @@ namespace Amazon.FSx.Model
         /// prefix are loaded into the file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=900)]
+        [AWSProperty(Min=3, Max=4357)]
         public string ImportPath
         {
             get { return this._importPath; }

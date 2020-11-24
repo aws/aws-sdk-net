@@ -39,6 +39,7 @@ namespace Amazon.Redshift.Model
         private string _clusterAvailabilityStatus;
         private DateTime? _clusterCreateTime;
         private string _clusterIdentifier;
+        private string _clusterNamespaceArn;
         private List<ClusterNode> _clusterNodes = new List<ClusterNode>();
         private List<ClusterParameterGroupStatus> _clusterParameterGroups = new List<ClusterParameterGroupStatus>();
         private string _clusterPublicKey;
@@ -210,6 +211,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetClusterIdentifier()
         {
             return this._clusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterNamespaceArn. 
+        /// <para>
+        /// The namespace Amazon Resource Name (ARN) of the cluster.
+        /// </para>
+        /// </summary>
+        public string ClusterNamespaceArn
+        {
+            get { return this._clusterNamespaceArn; }
+            set { this._clusterNamespaceArn = value; }
+        }
+
+        // Check to see if ClusterNamespaceArn property is set
+        internal bool IsSetClusterNamespaceArn()
+        {
+            return this._clusterNamespaceArn != null;
         }
 
         /// <summary>

@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SizeInMiB. 
         /// <para>
-        /// The size (in MiB) for the memory available to the GPU accelerator.
+        /// The size of the memory available to the GPU accelerator, in MiB.
         /// </para>
         /// </summary>
         public int SizeInMiB

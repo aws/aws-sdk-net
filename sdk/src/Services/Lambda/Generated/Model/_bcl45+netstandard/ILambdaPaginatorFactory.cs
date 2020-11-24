@@ -32,6 +32,11 @@ namespace Amazon.Lambda.Model
         IListAliasesPaginator ListAliases(ListAliasesRequest request);
 
         /// <summary>
+        /// Paginator for ListCodeSigningConfigs operation
+        ///</summary>
+        IListCodeSigningConfigsPaginator ListCodeSigningConfigs(ListCodeSigningConfigsRequest request);
+
+        /// <summary>
         /// Paginator for ListEventSourceMappings operation
         ///</summary>
         IListEventSourceMappingsPaginator ListEventSourceMappings(ListEventSourceMappingsRequest request);
@@ -45,6 +50,11 @@ namespace Amazon.Lambda.Model
         /// Paginator for ListFunctions operation
         ///</summary>
         IListFunctionsPaginator ListFunctions(ListFunctionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListFunctionsByCodeSigningConfig operation
+        ///</summary>
+        IListFunctionsByCodeSigningConfigPaginator ListFunctionsByCodeSigningConfig(ListFunctionsByCodeSigningConfigRequest request);
 
         /// <summary>
         /// Paginator for ListLayers operation

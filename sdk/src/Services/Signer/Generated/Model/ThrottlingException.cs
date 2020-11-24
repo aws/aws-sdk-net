@@ -29,13 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// The signing job has been throttled.
+    /// The request was denied due to request throttling.
+    /// 
+    ///  
+    /// <para>
+    /// Instead of this error, <code>TooManyRequestsException</code> should be used.
+    /// </para>
     /// </summary>
+    [Obsolete("Instead of this error, TooManyRequestsException should be used.")]
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ThrottlingException : AmazonSignerException
     {
+        private string _code;
 
         /// <summary>
         /// Constructs a new ThrottlingException with the specified error
@@ -97,6 +104,7 @@ namespace Amazon.Signer.Model
         protected ThrottlingException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Code = (string)info.GetValue("Code", typeof(string));
         }
 
         /// <summary>
@@ -117,8 +125,24 @@ namespace Amazon.Signer.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Code", this.Code);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Code.
+        /// </summary>
+        public string Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
+        }
 
     }
 }

@@ -42,6 +42,7 @@ namespace Amazon.Macie2.Model
         private string _jobId;
         private JobStatus _jobStatus;
         private JobType _jobType;
+        private LastRunErrorStatus _lastRunErrorStatus;
         private DateTime? _lastRunTime;
         private string _name;
         private S3JobDefinition _s3JobDefinition;
@@ -186,12 +187,12 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// CANCELLED - You cancelled the job, or you paused the job and didn't resume it within
-        /// 30 days of pausing it.
+        /// CANCELLED - You cancelled the job, or you paused the job while it had a status of
+        /// RUNNING and you didn't resume it within 30 days of pausing it.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// COMPLETE - For a one-time job, Amazon Macie finished processing all the data specified
+        /// COMPLETE - For a one-time job, Amazon Macie finished processing the data specified
         /// for the job. This value doesn't apply to recurring jobs.
         /// </para>
         /// </li> <li>
@@ -201,8 +202,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// PAUSED - Amazon Macie started running the job but completion of the job would exceed
-        /// one or more quotas for your account.
+        /// PAUSED - Amazon Macie started running the job but additional processing would exceed
+        /// the monthly sensitive data discovery quota for your account or one or more member
+        /// accounts that the job analyzes data for.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -211,8 +213,10 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
-        /// USER_PAUSED - You paused the job. If you don't resume the job within 30 days of pausing
-        /// it, the job will expire and be cancelled.
+        /// USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING
+        /// and you don't resume the job within 30 days of pausing it, the job expires and is
+        /// cancelled. To check the job's expiration date, refer to the UserPausedDetails.jobExpiresAt
+        /// property.
         /// </para>
         /// </li></ul>
         /// </summary>
@@ -257,9 +261,30 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastRunErrorStatus. 
+        /// <para>
+        /// Specifies whether any account- or bucket-level access errors occurred when the job
+        /// ran. For a recurring job, this value indicates the error status of the job's most
+        /// recent run.
+        /// </para>
+        /// </summary>
+        public LastRunErrorStatus LastRunErrorStatus
+        {
+            get { return this._lastRunErrorStatus; }
+            set { this._lastRunErrorStatus = value; }
+        }
+
+        // Check to see if LastRunErrorStatus property is set
+        internal bool IsSetLastRunErrorStatus()
+        {
+            return this._lastRunErrorStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastRunTime. 
         /// <para>
-        /// The date and time, in UTC and extended ISO 8601 format, when the job last ran.
+        /// The date and time, in UTC and extended ISO 8601 format, when the job started. If the
+        /// job is a recurring job, this value indicates when the most recent run started.
         /// </para>
         /// </summary>
         public DateTime LastRunTime

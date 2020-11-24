@@ -40,6 +40,12 @@
     <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.CreateInstanceAccessControlAttributeConfigurationRequest.InstanceArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>arn:aws:sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSOAdmin.Model.CreatePermissionSetRequest.Description</property>
     <min>1</min>
     <max>700</max>
@@ -104,6 +110,12 @@
     <pattern>arn:aws:sso:::permissionSet/(sso)?ins-[a-zA-Z0-9-.]{16}/ps-[a-zA-Z0-9-./]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.DeleteInstanceAccessControlAttributeConfigurationRequest.InstanceArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>arn:aws:sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DeletePermissionSetRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
@@ -131,6 +143,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribeAccountAssignmentDeletionStatusRequest.InstanceArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>arn:aws:sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.DescribeInstanceAccessControlAttributeConfigurationRequest.InstanceArn</property>
     <min>10</min>
     <max>1224</max>
     <pattern>arn:aws:sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
@@ -482,6 +500,12 @@
     <pattern>arn:aws:sso:([a-zA-Z0-9-]+)?:(\d{12})?:[a-zA-Z0-9-]+/[a-zA-Z0-9-/.]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.UpdateInstanceAccessControlAttributeConfigurationRequest.InstanceArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>arn:aws:sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSOAdmin.Model.UpdatePermissionSetRequest.Description</property>
     <min>1</min>
     <max>700</max>
@@ -510,6 +534,12 @@
     <min>1</min>
     <max>100</max>
     <pattern>^(-?)P(?=\d|T\d)(?:(\d+)Y)?(?:(\d+)M)?(?:(\d+)([DW]))?(?:T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+(?:\.\d+)?)S)?)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.AccessControlAttribute.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}\p{Z}\p{N}_.:\/=+\-@]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.AccountAssignment.AccountId</property>

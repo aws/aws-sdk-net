@@ -81,6 +81,12 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     response.PlatformId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("revocationSupported", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.RevocationSupported = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("signingConfiguration", targetDepth))
                 {
                     var unmarshaller = SigningConfigurationUnmarshaller.Instance;
@@ -133,6 +139,10 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
+                {
+                    return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonSignerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

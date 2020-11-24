@@ -112,6 +112,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.MySqlParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OracleParameters", targetDepth))
+                {
+                    var unmarshaller = OracleParametersUnmarshaller.Instance;
+                    unmarshalledObject.OracleParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PostgreSqlParameters", targetDepth))
                 {
                     var unmarshaller = PostgreSqlParametersUnmarshaller.Instance;

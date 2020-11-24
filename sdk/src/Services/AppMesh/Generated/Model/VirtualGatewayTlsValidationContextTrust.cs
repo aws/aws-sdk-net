@@ -40,7 +40,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Acm. 
         /// <para>
         /// A reference to an object that represents a TLS validation context trust for an AWS
-        /// Certicate Manager (ACM)         certificate.
+        /// Certicate Manager (ACM) certificate.
         /// </para>
         /// </summary>
         public VirtualGatewayTlsValidationContextAcmTrust Acm

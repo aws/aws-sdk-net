@@ -97,7 +97,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Priority. 
         /// <para>
         /// The priority for the route. Routes are matched based on the specified value, where
-        /// 0 is         the highest priority.
+        /// 0 is the highest priority.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]

@@ -322,7 +322,7 @@ namespace Amazon.DataSync.Model
         ///  
         /// <para>
         /// For detailed information about task execution statuses, see Understanding Task Statuses
-        /// in the <i>AWS DataSync User Guide.</i> 
+        /// in the <i>AWS DataSync User Guide</i>.
         /// </para>
         /// </summary>
         public TaskStatus Status

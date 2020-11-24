@@ -616,6 +616,12 @@ namespace Amazon.FraudDetector
         /// <summary>
         /// Deletes the detector. Before deleting a detector, you must first delete all detector
         /// versions and rule versions associated with the detector.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a detector, Amazon Fraud Detector permanently deletes the detector
+        /// and the data is no longer stored in Amazon Fraud Detector.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDetector service method.</param>
         /// <param name="cancellationToken">
@@ -687,6 +693,12 @@ namespace Amazon.FraudDetector
         /// <summary>
         /// Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code>
         /// status.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a detector version, Amazon Fraud Detector permanently deletes the
+        /// detector and the data is no longer stored in Amazon Fraud Detector.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDetectorVersion service method.</param>
         /// <param name="cancellationToken">
@@ -745,6 +757,84 @@ namespace Amazon.FraudDetector
 
         #endregion
         
+        #region  DeleteEntityType
+
+        internal virtual DeleteEntityTypeResponse DeleteEntityType(DeleteEntityTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEntityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEntityTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEntityTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an entity type.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an entity type that is included in an event type.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete an entity type, Amazon Fraud Detector permanently deletes that entity
+        /// type from the evaluation history, and the data is no longer stored in Amazon Fraud
+        /// Detector.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEntityType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEntityType service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEntityType">REST API Reference for DeleteEntityType Operation</seealso>
+        public virtual Task<DeleteEntityTypeResponse> DeleteEntityTypeAsync(DeleteEntityTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEntityTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEntityTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEntityTypeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteEvent
 
         internal virtual DeleteEventResponse DeleteEvent(DeleteEventRequest request)
@@ -760,6 +850,12 @@ namespace Amazon.FraudDetector
 
         /// <summary>
         /// Deletes the specified event.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete an event, Amazon Fraud Detector permanently deletes that event from
+        /// the evaluation history, and the event data is no longer stored in Amazon Fraud Detector.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvent service method.</param>
         /// <param name="cancellationToken">
@@ -778,6 +874,9 @@ namespace Amazon.FraudDetector
         /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
         /// An exception indicating a throttling error.
         /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEvent">REST API Reference for DeleteEvent Operation</seealso>
         public virtual Task<DeleteEventResponse> DeleteEventAsync(DeleteEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -786,6 +885,475 @@ namespace Amazon.FraudDetector
             options.ResponseUnmarshaller = DeleteEventResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEventResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEventType
+
+        internal virtual DeleteEventTypeResponse DeleteEventType(DeleteEventTypeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an event type.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an event type that is used in a detector or a model.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete an entity type, Amazon Fraud Detector permanently deletes that entity
+        /// type from the evaluation history, and the data is no longer stored in Amazon Fraud
+        /// Detector.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEventType service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEventType">REST API Reference for DeleteEventType Operation</seealso>
+        public virtual Task<DeleteEventTypeResponse> DeleteEventTypeAsync(DeleteEventTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEventTypeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteExternalModel
+
+        internal virtual DeleteExternalModelResponse DeleteExternalModel(DeleteExternalModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteExternalModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExternalModelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteExternalModelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes a SageMaker model from Amazon Fraud Detector.
+        /// 
+        ///  
+        /// <para>
+        /// You can remove an Amazon SageMaker model if it is not associated with a detector version.
+        /// Removing a SageMaker model disconnects it from Amazon Fraud Detector, but the model
+        /// remains available in SageMaker.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExternalModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExternalModel service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteExternalModel">REST API Reference for DeleteExternalModel Operation</seealso>
+        public virtual Task<DeleteExternalModelResponse> DeleteExternalModelAsync(DeleteExternalModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteExternalModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExternalModelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteExternalModelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLabel
+
+        internal virtual DeleteLabelResponse DeleteLabel(DeleteLabelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLabelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLabelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a label.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete labels that are included in an event type in Amazon Fraud Detector.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot delete a label assigned to an event ID. You must first delete the relevant
+        /// event ID.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete a label, Amazon Fraud Detector permanently deletes that label from
+        /// the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLabel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLabel service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteLabel">REST API Reference for DeleteLabel Operation</seealso>
+        public virtual Task<DeleteLabelResponse> DeleteLabelAsync(DeleteLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLabelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLabelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteModel
+
+        internal virtual DeleteModelResponse DeleteModel(DeleteModelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteModelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a model.
+        /// 
+        ///  
+        /// <para>
+        /// You can delete models and model versions in Amazon Fraud Detector, provided that they
+        /// are not associated with a detector version.
+        /// </para>
+        ///  
+        /// <para>
+        ///  When you delete a model, Amazon Fraud Detector permanently deletes that model from
+        /// the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteModel service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModel">REST API Reference for DeleteModel Operation</seealso>
+        public virtual Task<DeleteModelResponse> DeleteModelAsync(DeleteModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteModelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteModelVersion
+
+        internal virtual DeleteModelVersionResponse DeleteModelVersion(DeleteModelVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteModelVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a model version.
+        /// 
+        ///  
+        /// <para>
+        /// You can delete models and model versions in Amazon Fraud Detector, provided that they
+        /// are not associated with a detector version.
+        /// </para>
+        ///  
+        /// <para>
+        ///  When you delete a model version, Amazon Fraud Detector permanently deletes that model
+        /// version from the evaluation history, and the data is no longer stored in Amazon Fraud
+        /// Detector.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteModelVersion service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteModelVersion">REST API Reference for DeleteModelVersion Operation</seealso>
+        public virtual Task<DeleteModelVersionResponse> DeleteModelVersionAsync(DeleteModelVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteModelVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteOutcome
+
+        internal virtual DeleteOutcomeResponse DeleteOutcome(DeleteOutcomeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOutcomeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOutcomeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOutcomeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an outcome.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot delete an outcome that is used in a rule version.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete an outcome, Amazon Fraud Detector permanently deletes that outcome
+        /// from the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOutcome service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteOutcome service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteOutcome">REST API Reference for DeleteOutcome Operation</seealso>
+        public virtual Task<DeleteOutcomeResponse> DeleteOutcomeAsync(DeleteOutcomeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOutcomeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOutcomeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteOutcomeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -806,6 +1374,12 @@ namespace Amazon.FraudDetector
         /// <summary>
         /// Deletes the rule. You cannot delete a rule if it is used by an <code>ACTIVE</code>
         /// or <code>INACTIVE</code> detector version.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a rule, Amazon Fraud Detector permanently deletes that rule from the
+        /// evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRule service method.</param>
         /// <param name="cancellationToken">
@@ -857,6 +1431,91 @@ namespace Amazon.FraudDetector
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVariable
+
+        internal virtual DeleteVariableResponse DeleteVariable(DeleteVariableRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVariableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVariableResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVariableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a variable.
+        /// 
+        ///  
+        /// <para>
+        /// You can't delete variables that are included in an event type in Amazon Fraud Detector.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Fraud Detector automatically deletes model output variables and SageMaker model
+        /// output variables when you delete the model. You can't delete these variables manually.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you delete a variable, Amazon Fraud Detector permanently deletes that variable
+        /// from the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVariable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVariable service method, as returned by FraudDetector.</returns>
+        /// <exception cref="Amazon.FraudDetector.Model.AccessDeniedException">
+        /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
+        /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
+        /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
+        /// An exception indicating an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ThrottlingException">
+        /// An exception indicating a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ValidationException">
+        /// An exception indicating a specified value is not allowed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteVariable">REST API Reference for DeleteVariable Operation</seealso>
+        public virtual Task<DeleteVariableResponse> DeleteVariableAsync(DeleteVariableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVariableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVariableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVariableResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1148,6 +1807,28 @@ namespace Amazon.FraudDetector
         /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
         /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
         /// specifies a role that is not in your account.
+        /// </exception>
+        /// <exception cref="Amazon.FraudDetector.Model.ConflictException">
+        /// An exception indicating there was a conflict during a delete operation. The following
+        /// delete operations can cause a conflict exception:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// DeleteDetector: A conflict exception will occur if the detector has associated <code>Rules</code>
+        /// or <code>DetectorVersions</code>. You can only delete a detector if it has no <code>Rules</code>
+        /// or <code>DetectorVersions</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteDetectorVersion: A conflict exception will occur if the <code>DetectorVersion</code>
+        /// status is <code>ACTIVE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in
+        /// use by an associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.FraudDetector.Model.InternalServerException">
         /// An exception indicating an internal server error.

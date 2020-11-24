@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The client is permanently forbidden from making the request. For example, when a user
-    /// tries to create an account from an unsupported Region.
+    /// The client is permanently forbidden from making the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

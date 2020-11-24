@@ -673,6 +673,120 @@ namespace Amazon.CloudHSMV2
 
         #endregion
         
+        #region  ModifyBackupAttributes
+
+
+        /// <summary>
+        /// Modifies attributes for AWS CloudHSM backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyBackupAttributes service method.</param>
+        /// 
+        /// <returns>The response from the ModifyBackupAttributes service method, as returned by CloudHSMV2.</returns>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmAccessDeniedException">
+        /// The request was rejected because the requester does not have permission to perform
+        /// the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
+        /// The request was rejected because of an AWS CloudHSM internal failure. The request
+        /// can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
+        /// The request was rejected because it is not a valid request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmResourceNotFoundException">
+        /// The request was rejected because it refers to a resource that cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
+        /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyBackupAttributes">REST API Reference for ModifyBackupAttributes Operation</seealso>
+        ModifyBackupAttributesResponse ModifyBackupAttributes(ModifyBackupAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyBackupAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyBackupAttributes operation on AmazonCloudHSMV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyBackupAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyBackupAttributes">REST API Reference for ModifyBackupAttributes Operation</seealso>
+        IAsyncResult BeginModifyBackupAttributes(ModifyBackupAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyBackupAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyBackupAttributes.</param>
+        /// 
+        /// <returns>Returns a  ModifyBackupAttributesResult from CloudHSMV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyBackupAttributes">REST API Reference for ModifyBackupAttributes Operation</seealso>
+        ModifyBackupAttributesResponse EndModifyBackupAttributes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyCluster
+
+
+        /// <summary>
+        /// Modifies AWS CloudHSM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCluster service method.</param>
+        /// 
+        /// <returns>The response from the ModifyCluster service method, as returned by CloudHSMV2.</returns>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmAccessDeniedException">
+        /// The request was rejected because the requester does not have permission to perform
+        /// the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
+        /// The request was rejected because of an AWS CloudHSM internal failure. The request
+        /// can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
+        /// The request was rejected because it is not a valid request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmResourceNotFoundException">
+        /// The request was rejected because it refers to a resource that cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
+        /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
+        ModifyClusterResponse ModifyCluster(ModifyClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCluster operation on AmazonCloudHSMV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
+        IAsyncResult BeginModifyCluster(ModifyClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyCluster.</param>
+        /// 
+        /// <returns>Returns a  ModifyClusterResult from CloudHSMV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
+        ModifyClusterResponse EndModifyCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RestoreBackup
 
 

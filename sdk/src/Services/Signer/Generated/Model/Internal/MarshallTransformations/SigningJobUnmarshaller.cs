@@ -70,10 +70,58 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isRevoked", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsRevoked = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("jobInvoker", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobInvoker = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("jobOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("platformDisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlatformDisplayName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("platformId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlatformId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("profileName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProfileName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("profileVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProfileVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("signatureExpiresAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.SignatureExpiresAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("signedObject", targetDepth))

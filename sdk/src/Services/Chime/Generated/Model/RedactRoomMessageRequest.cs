@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the RedactRoomMessage operation.
-    /// Redacts the specified message from the specified Amazon Chime chat room.
+    /// Redacts the specified message from the specified Amazon Chime channel.
     /// </summary>
     public partial class RedactRoomMessageRequest : AmazonChimeRequest
     {

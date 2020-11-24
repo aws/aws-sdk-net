@@ -115,6 +115,14 @@ namespace Amazon.SecurityHub.Model
         {
             return new ListMembersPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListOrganizationAdminAccounts operation
+        ///</summary>
+        public IListOrganizationAdminAccountsPaginator ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request) 
+        {
+            return new ListOrganizationAdminAccountsPaginator(this.client, request);
+        }
     }
 }
 #endif

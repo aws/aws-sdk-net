@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SizeInMiB. 
         /// <para>
-        /// Size of the memory, in MiB.
+        /// The size of the memory, in MiB.
         /// </para>
         /// </summary>
         public long SizeInMiB

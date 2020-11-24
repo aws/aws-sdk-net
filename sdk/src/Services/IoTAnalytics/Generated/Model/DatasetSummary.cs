@@ -43,7 +43,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// A list of "DataActionSummary" objects.
+        /// A list of <code>DataActionSummary</code> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -137,7 +137,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <para>
         /// A list of triggers. A trigger causes data set content to be populated at a specified
         /// time interval or when another data set is populated. The list of triggers can be empty
-        /// or contain up to five DataSetTrigger objects
+        /// or contain up to five <code>DataSetTrigger</code> objects
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

@@ -112,6 +112,30 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodeDeployState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EbsCause", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EbsCause = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EbsEvent", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EbsEvent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EbsRequestId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EbsRequestId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EbsResult", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EbsResult = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Ec2State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -196,6 +220,24 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     unmarshalledObject.MetricNamespace = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RdsEventCategories", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RdsEventCategories = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RdsEventMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RdsEventMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3EventName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3EventName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -212,6 +254,30 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatesArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatesArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatesExecutionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatesExecutionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatesInput", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatesInput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatesStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatesStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Unit", targetDepth))

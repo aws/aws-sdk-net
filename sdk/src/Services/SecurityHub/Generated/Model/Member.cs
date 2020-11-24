@@ -135,7 +135,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ASSOCIATED</code> - Indicates that the member account accepted the invitation.
+        ///  <code>ENABLED</code> - Indicates that the member account is currently active. For
+        /// manually invited member accounts, indicates that the member account accepted the invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>

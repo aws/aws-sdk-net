@@ -261,6 +261,115 @@ namespace Amazon.Translate
         #endregion
 
 
+        #region  CreateParallelData
+
+        internal virtual CreateParallelDataResponse CreateParallelData(CreateParallelDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateParallelDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateParallelDataResponseUnmarshaller.Instance;
+
+            return Invoke<CreateParallelDataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a parallel data resource in Amazon Translate by importing an input file from
+        /// Amazon S3. Parallel data files contain examples of source phrases and their translations
+        /// from your translation memory. By adding parallel data, you can influence the style,
+        /// tone, and word choice in your translation output.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateParallelData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateParallelData service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
+        /// The value of the parameter is invalid. Review the value of the parameter you are using
+        /// to correct it, and then retry your operation.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.LimitExceededException">
+        /// The specified limit has been exceeded. Review your request and retry it with a quantity
+        /// below the stated limit.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/CreateParallelData">REST API Reference for CreateParallelData Operation</seealso>
+        public virtual Task<CreateParallelDataResponse> CreateParallelDataAsync(CreateParallelDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateParallelDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateParallelDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateParallelDataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteParallelData
+
+        internal virtual DeleteParallelDataResponse DeleteParallelData(DeleteParallelDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteParallelDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteParallelDataResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteParallelDataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a parallel data resource in Amazon Translate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteParallelData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteParallelData service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.ConcurrentModificationException">
+        /// Another modification is being made. That modification must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteParallelData">REST API Reference for DeleteParallelData Operation</seealso>
+        public virtual Task<DeleteParallelDataResponse> DeleteParallelDataAsync(DeleteParallelDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteParallelDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteParallelDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteParallelDataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteTerminology
 
         internal virtual DeleteTerminologyResponse DeleteTerminology(DeleteTerminologyRequest request)
@@ -354,6 +463,56 @@ namespace Amazon.Translate
             options.ResponseUnmarshaller = DescribeTextTranslationJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTextTranslationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetParallelData
+
+        internal virtual GetParallelDataResponse GetParallelData(GetParallelDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParallelDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParallelDataResponseUnmarshaller.Instance;
+
+            return Invoke<GetParallelDataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides information about a parallel data resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetParallelData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetParallelData service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
+        /// The value of the parameter is invalid. Review the value of the parameter you are using
+        /// to correct it, and then retry your operation.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetParallelData">REST API Reference for GetParallelData Operation</seealso>
+        public virtual Task<GetParallelDataResponse> GetParallelDataAsync(GetParallelDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParallelDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParallelDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetParallelDataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -464,6 +623,51 @@ namespace Amazon.Translate
             options.ResponseUnmarshaller = ImportTerminologyResponseUnmarshaller.Instance;
 
             return InvokeAsync<ImportTerminologyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListParallelData
+
+        internal virtual ListParallelDataResponse ListParallelData(ListParallelDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListParallelDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListParallelDataResponseUnmarshaller.Instance;
+
+            return Invoke<ListParallelDataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides a list of your parallel data resources in Amazon Translate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListParallelData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListParallelData service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
+        /// The value of the parameter is invalid. Review the value of the parameter you are using
+        /// to correct it, and then retry your operation.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListParallelData">REST API Reference for ListParallelData Operation</seealso>
+        public virtual Task<ListParallelDataResponse> ListParallelDataAsync(ListParallelDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListParallelDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListParallelDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListParallelDataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -756,6 +960,72 @@ namespace Amazon.Translate
             options.ResponseUnmarshaller = TranslateTextResponseUnmarshaller.Instance;
 
             return InvokeAsync<TranslateTextResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateParallelData
+
+        internal virtual UpdateParallelDataResponse UpdateParallelData(UpdateParallelDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateParallelDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateParallelDataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateParallelDataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a previously created parallel data resource by importing a new input file
+        /// from Amazon S3.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateParallelData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateParallelData service method, as returned by Translate.</returns>
+        /// <exception cref="Amazon.Translate.Model.ConcurrentModificationException">
+        /// Another modification is being made. That modification must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidParameterValueException">
+        /// The value of the parameter is invalid. Review the value of the parameter you are using
+        /// to correct it, and then retry your operation.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.InvalidRequestException">
+        /// The request that you made is invalid. Check your request to determine why it's invalid
+        /// and then retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.LimitExceededException">
+        /// The specified limit has been exceeded. Review your request and retry it with a quantity
+        /// below the stated limit.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.ResourceNotFoundException">
+        /// The resource you are looking for has not been found. Review the resource you're looking
+        /// for and see if a different resource will accomplish your needs before retrying the
+        /// revised request.
+        /// </exception>
+        /// <exception cref="Amazon.Translate.Model.TooManyRequestsException">
+        /// You have made too many requests within a short period of time. Wait for a short time
+        /// and then try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UpdateParallelData">REST API Reference for UpdateParallelData Operation</seealso>
+        public virtual Task<UpdateParallelDataResponse> UpdateParallelDataAsync(UpdateParallelDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateParallelDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateParallelDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateParallelDataResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -34,15 +34,36 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class Metrics
     {
+        private List<ErrorMetric> _errorMetrics = new List<ErrorMetric>();
         private double? _rmse;
         private List<WeightedQuantileLoss> _weightedQuantileLosses = new List<WeightedQuantileLoss>();
 
         /// <summary>
-        /// Gets and sets the property RMSE. 
+        /// Gets and sets the property ErrorMetrics. 
         /// <para>
-        /// The root mean square error (RMSE).
+        ///  Provides detailed error metrics on forecast type, root-mean square-error (RMSE),
+        /// and weighted average percentage error (WAPE). 
         /// </para>
         /// </summary>
+        public List<ErrorMetric> ErrorMetrics
+        {
+            get { return this._errorMetrics; }
+            set { this._errorMetrics = value; }
+        }
+
+        // Check to see if ErrorMetrics property is set
+        internal bool IsSetErrorMetrics()
+        {
+            return this._errorMetrics != null && this._errorMetrics.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RMSE. 
+        /// <para>
+        /// The root-mean-square error (RMSE).
+        /// </para>
+        /// </summary>
+        [Obsolete("This property is deprecated, please refer to ErrorMetrics for both RMSE and WAPE")]
         public double RMSE
         {
             get { return this._rmse.GetValueOrDefault(); }

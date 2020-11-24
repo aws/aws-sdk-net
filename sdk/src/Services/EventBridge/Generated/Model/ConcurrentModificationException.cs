@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// There is concurrent modification on a rule or target.
+    /// There is concurrent modification on a rule, target, archive, or replay.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

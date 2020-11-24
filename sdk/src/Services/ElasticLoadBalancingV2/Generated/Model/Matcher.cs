@@ -65,7 +65,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For Network Load Balancers, this is "200–399".
+        /// For Network Load Balancers and Gateway Load Balancers, this must be "200–399".
         /// </para>
         /// </summary>
         public string HttpCode

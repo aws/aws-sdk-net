@@ -47,7 +47,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Instantiates InstanceGroupModifyConfig with the parameterized properties
         /// </summary>
-        /// <param name="instanceGroupId">Unique ID of the instance group to expand or shrink.</param>
+        /// <param name="instanceGroupId">Unique ID of the instance group to modify.</param>
         /// <param name="instanceCount">Target size for the instance group.</param>
         public InstanceGroupModifyConfig(string instanceGroupId, int instanceCount)
         {
@@ -113,7 +113,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceGroupId. 
         /// <para>
-        /// Unique ID of the instance group to expand or shrink.
+        /// Unique ID of the instance group to modify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

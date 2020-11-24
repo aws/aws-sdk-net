@@ -239,7 +239,7 @@ namespace Amazon.MQ.Model
 
         /// <summary>
         /// Gets and sets the property EngineType. Required. The type of broker engine. Note:
-        /// Currently, Amazon MQ supports only ACTIVEMQ.
+        /// Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.
         /// </summary>
         public EngineType EngineType
         {
@@ -461,10 +461,12 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubnetIds. The list of groups (2 maximum) that define which
-        /// subnets and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE
+        /// Gets and sets the property SubnetIds. The list of groups that define which subnets
+        /// and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE
         /// deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ
-        /// deployment requires two subnets.
+        /// deployment (ACTIVEMQ) requires two subnets. A CLUSTER_MULTI_AZ deployment (RABBITMQ)
+        /// has no subnet requirements when deployed with public accessibility, deployment without
+        /// public accessibility requires at least one subnet.
         /// </summary>
         public List<string> SubnetIds
         {
@@ -494,7 +496,7 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Users. The list of all ActiveMQ usernames for the specified
+        /// Gets and sets the property Users. The list of all broker usernames for the specified
         /// broker.
         /// </summary>
         public List<UserSummary> Users

@@ -40,16 +40,16 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of <a>Protection</a> objects to be returned. If this is left blank
-        /// the first 20 results will be returned.
+        /// The maximum number of <a>Protection</a> objects to return. If you leave this blank,
+        /// Shield Advanced returns the first 20 results.
         /// </para>
         ///  
         /// <para>
-        /// This is a maximum value; it is possible that AWS WAF will return the results in smaller
-        /// batches. That is, the number of <a>Protection</a> objects returned could be less than
-        /// <code>MaxResults</code>, even if there are still more <a>Protection</a> objects yet
-        /// to return. If there are more <a>Protection</a> objects to return, AWS WAF will always
-        /// also return a <code>NextToken</code>.
+        /// This is a maximum value. Shield Advanced might return the results in smaller batches.
+        /// That is, the number of objects returned could be less than <code>MaxResults</code>,
+        /// even if there are still more objects yet to return. If there are more objects to return,
+        /// Shield Advanced returns a value in <code>NextToken</code> that you can use in your
+        /// next request, to get the next batch of objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]

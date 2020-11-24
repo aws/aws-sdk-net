@@ -202,7 +202,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactParameters. 
         /// <para>
-        /// The configuration of the provisioning artifact.
+        /// The configuration of the provisioning artifact. The <code>info</code> field accepts
+        /// <code>ImportFromPhysicalID</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

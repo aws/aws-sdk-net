@@ -30,7 +30,7 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReservationUtilization operation.
-    /// Retrieves the reservation utilization for your account. Master account in an organization
+    /// Retrieves the reservation utilization for your account. Management account in an organization
     /// have access to member accounts. You can filter data by dimensions in a time period.
     /// You can use <code>GetDimensionValues</code> to determine the possible dimension values.
     /// Currently, you can group only by <code>SUBSCRIPTION_ID</code>.

@@ -193,6 +193,10 @@ namespace Amazon.CodeArtifact
         /// </summary>
         public static readonly PackageFormat Npm = new PackageFormat("npm");
         /// <summary>
+        /// Constant Nuget for PackageFormat
+        /// </summary>
+        public static readonly PackageFormat Nuget = new PackageFormat("nuget");
+        /// <summary>
         /// Constant Pypi for PackageFormat
         /// </summary>
         public static readonly PackageFormat Pypi = new PackageFormat("pypi");

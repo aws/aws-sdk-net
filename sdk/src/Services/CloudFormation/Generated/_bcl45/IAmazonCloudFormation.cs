@@ -210,6 +210,11 @@ namespace Amazon.CloudFormation
         /// set by using the <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make changes
         /// until you execute the change set.
         /// </para>
+        ///  
+        /// <para>
+        /// To create a change set for the entire stack hierachy, set <code>IncludeNestedStacks</code>
+        /// to <code>True</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateChangeSet service method.</param>
         /// 
@@ -261,6 +266,11 @@ namespace Amazon.CloudFormation
         /// When you are satisfied with the changes the change set will make, execute the change
         /// set by using the <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make changes
         /// until you execute the change set.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a change set for the entire stack hierachy, set <code>IncludeNestedStacks</code>
+        /// to <code>True</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateChangeSet service method.</param>
@@ -516,6 +526,13 @@ namespace Amazon.CloudFormation
         /// If the call successfully completes, AWS CloudFormation successfully deleted the change
         /// set.
         /// </para>
+        ///  
+        /// <para>
+        /// If <code>IncludeNestedStacks</code> specifies <code>True</code> during the creation
+        /// of the nested change set, then <code>DeleteChangeSet</code> will delete all change
+        /// sets that belong to the stacks hierarchy and will also delete all change sets for
+        /// nested stacks with the status of <code>REVIEW_IN_PROGRESS</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChangeSet service method.</param>
         /// 
@@ -538,6 +555,13 @@ namespace Amazon.CloudFormation
         /// <para>
         /// If the call successfully completes, AWS CloudFormation successfully deleted the change
         /// set.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IncludeNestedStacks</code> specifies <code>True</code> during the creation
+        /// of the nested change set, then <code>DeleteChangeSet</code> will delete all change
+        /// sets that belong to the stacks hierarchy and will also delete all change sets for
+        /// nested stacks with the status of <code>REVIEW_IN_PROGRESS</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChangeSet service method.</param>
@@ -1807,6 +1831,11 @@ namespace Amazon.CloudFormation
         /// during the update. You can't specify a temporary stack policy that overrides the current
         /// policy.
         /// </para>
+        ///  
+        /// <para>
+        /// To create a change set for the entire stack hierachy, <code>IncludeNestedStacks</code>
+        /// must have been set to <code>True</code>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteChangeSet service method.</param>
         /// 
@@ -1848,6 +1877,11 @@ namespace Amazon.CloudFormation
         /// If a stack policy is associated with the stack, AWS CloudFormation enforces the policy
         /// during the update. You can't specify a temporary stack policy that overrides the current
         /// policy.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a change set for the entire stack hierachy, <code>IncludeNestedStacks</code>
+        /// must have been set to <code>True</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteChangeSet service method.</param>

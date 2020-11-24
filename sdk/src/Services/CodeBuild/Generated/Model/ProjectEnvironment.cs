@@ -45,7 +45,10 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// The certificate to use with this build project.
+        /// The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and
+        /// object key that contains the PEM-encoded certificate for the build project. For more
+        /// information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+        /// in the <i>AWS CodeBuild User Guide</i>.
         /// </para>
         /// </summary>
         public string Certificate
@@ -149,8 +152,7 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For
         /// example, in the Docker repository that CodeBuild uses to manage its Docker images,
-        /// this would be <code>aws/codebuild/standard:4.0</code>. To specify the latest version
-        /// of this image, this would be <code>aws/codebuild/standard:latest</code>.
+        /// this would be <code>aws/codebuild/standard:4.0</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -41,7 +41,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/deleting-scaling-policy.html">Deleting
-    /// a Scaling Policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// a scaling policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeletePolicyRequest : AmazonAutoScalingRequest

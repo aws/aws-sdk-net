@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ChannelSummaries. 
         /// <para>
-        /// A list of "ChannelSummary" objects.
+        /// A list of <code>ChannelSummary</code> objects.
         /// </para>
         /// </summary>
         public List<ChannelSummary> ChannelSummaries

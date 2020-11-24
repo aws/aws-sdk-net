@@ -38,6 +38,7 @@ namespace Amazon.RoboMaker.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _template;
         private WorldCount _worldCount;
+        private Dictionary<string, string> _worldTags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -116,6 +117,25 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetWorldCount()
         {
             return this._worldCount != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorldTags. 
+        /// <para>
+        /// A map that contains tag keys and tag values that are attached to the generated worlds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> WorldTags
+        {
+            get { return this._worldTags; }
+            set { this._worldTags = value; }
+        }
+
+        // Check to see if WorldTags property is set
+        internal bool IsSetWorldTags()
+        {
+            return this._worldTags != null && this._worldTags.Count > 0; 
         }
 
     }

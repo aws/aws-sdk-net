@@ -30,13 +30,13 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the ResumeProcesses operation.
-    /// Resumes the specified suspended automatic scaling processes, or all suspended process,
+    /// Resumes the specified suspended auto scaling processes, or all suspended process,
     /// for the specified Auto Scaling group.
     /// 
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
-    /// and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// and resuming scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ResumeProcessesRequest : AmazonAutoScalingRequest

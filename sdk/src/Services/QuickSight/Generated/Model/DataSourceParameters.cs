@@ -43,6 +43,7 @@ namespace Amazon.QuickSight.Model
         private JiraParameters _jiraParameters;
         private MariaDbParameters _mariaDbParameters;
         private MySqlParameters _mySqlParameters;
+        private OracleParameters _oracleParameters;
         private PostgreSqlParameters _postgreSqlParameters;
         private PrestoParameters _prestoParameters;
         private RdsParameters _rdsParameters;
@@ -197,6 +198,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetMySqlParameters()
         {
             return this._mySqlParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OracleParameters. 
+        /// <para>
+        /// Oracle parameters.
+        /// </para>
+        /// </summary>
+        public OracleParameters OracleParameters
+        {
+            get { return this._oracleParameters; }
+            set { this._oracleParameters = value; }
+        }
+
+        // Check to see if OracleParameters property is set
+        internal bool IsSetOracleParameters()
+        {
+            return this._oracleParameters != null;
         }
 
         /// <summary>

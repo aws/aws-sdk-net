@@ -77,8 +77,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EncryptionKmsKeyId. 
         /// <para>
-        /// The ID of the AWS Key Management Service (KMS) key used to encrypt the private key
-        /// of the certificate.
+        /// The ID of the AWS KMS CMK used to encrypt the private key of the certificate.
         /// </para>
         /// </summary>
         public string EncryptionKmsKeyId

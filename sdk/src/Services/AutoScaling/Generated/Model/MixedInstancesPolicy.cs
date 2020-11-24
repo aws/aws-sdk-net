@@ -32,15 +32,14 @@ namespace Amazon.AutoScaling.Model
     /// Describes a mixed instances policy for an Auto Scaling group. With mixed instances,
     /// your Auto Scaling group can provision a combination of On-Demand Instances and Spot
     /// Instances across multiple instance types. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
-    /// Scaling Groups with Multiple Instance Types and Purchase Options</a> in the <i>Amazon
+    /// Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon
     /// EC2 Auto Scaling User Guide</i>.
     /// 
     ///  
     /// <para>
     /// You can create a mixed instances policy for a new Auto Scaling group, or you can create
     /// it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code>
-    /// as the top-level parameter instead of a launch configuration or launch template. For
-    /// more information, see <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.
+    /// as the top-level parameter instead of a launch configuration or launch template.
     /// </para>
     /// </summary>
     public partial class MixedInstancesPolicy
@@ -51,12 +50,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstancesDistribution. 
         /// <para>
-        /// The instances distribution to use.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you leave this parameter unspecified, the value for each parameter in <code>InstancesDistribution</code>
-        /// uses a default value.
+        /// Specifies the instances distribution. If not provided, the value for each parameter
+        /// in <code>InstancesDistribution</code> uses a default value.
         /// </para>
         /// </summary>
         public InstancesDistribution InstancesDistribution
@@ -74,10 +69,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
-        /// The launch template and instance types (overrides).
-        /// </para>
-        ///  
-        /// <para>
+        /// Specifies the launch template to use and optionally the instance types (overrides)
+        /// that are used to provision EC2 instances to fulfill On-Demand and Spot capacities.
         /// Required when creating a mixed instances policy.
         /// </para>
         /// </summary>

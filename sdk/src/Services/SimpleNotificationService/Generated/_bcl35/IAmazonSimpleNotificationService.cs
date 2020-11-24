@@ -41,6 +41,12 @@ namespace Amazon.SimpleNotificationService
     /// </para>
     ///  
     /// <para>
+    /// For information on the permissions you need to use this API, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-authentication-and-access-control.html">Identity
+    /// and access management in Amazon SNS</a> in the <i>Amazon SNS Developer Guide.</i>
+    /// 
+    /// </para>
+    ///  
+    /// <para>
     /// We also provide SDKs that enable you to access Amazon SNS from your preferred programming
     /// language. The SDKs contain functionality that automatically takes care of tasks such
     /// as: cryptographically signing your service requests, retrying requests, and handling
@@ -2366,7 +2372,7 @@ namespace Amazon.SimpleNotificationService
         /// Allows a subscription owner to set an attribute of the subscription to a new value.
         /// </summary>
         /// <param name="subscriptionArn">The ARN of the subscription to modify.</param>
-        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses: <ul> <li>  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic. </li> <li>  <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata. </li> <li>  <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing. </li> </ul></param>
+        /// <param name="attributeName">A map of attributes with their corresponding values. The following lists the names, descriptions, and values of the special request parameters that this action uses: <ul> <li>  <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries failed deliveries to HTTP/S endpoints. </li> <li>  <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages, rather than receiving every message published to the topic. </li> <li>  <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise created for Amazon SNS metadata. </li> <li>  <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable) or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held in the dead-letter queue for further analysis or reprocessing. </li> </ul></param>
         /// <param name="attributeValue">The new value for the attribute in JSON format.</param>
         /// 
         /// <returns>The response from the SetSubscriptionAttributes service method, as returned by SimpleNotificationService.</returns>
@@ -2531,7 +2537,7 @@ namespace Amazon.SimpleNotificationService
         /// <summary>
         /// Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email,
         /// or if the endpoint and the topic are not in the same AWS account, the endpoint owner
-        /// must the <code>ConfirmSubscription</code> action to confirm the subscription.
+        /// must run the <code>ConfirmSubscription</code> action to confirm the subscription.
         /// 
         ///  
         /// <para>
@@ -2577,7 +2583,7 @@ namespace Amazon.SimpleNotificationService
         /// <summary>
         /// Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email,
         /// or if the endpoint and the topic are not in the same AWS account, the endpoint owner
-        /// must the <code>ConfirmSubscription</code> action to confirm the subscription.
+        /// must run the <code>ConfirmSubscription</code> action to confirm the subscription.
         /// 
         ///  
         /// <para>

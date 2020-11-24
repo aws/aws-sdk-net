@@ -77,6 +77,14 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
+        /// Paginator for ListPredictorBacktestExportJobs operation
+        ///</summary>
+        public IListPredictorBacktestExportJobsPaginator ListPredictorBacktestExportJobs(ListPredictorBacktestExportJobsRequest request) 
+        {
+            return new ListPredictorBacktestExportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPredictors operation
         ///</summary>
         public IListPredictorsPaginator ListPredictors(ListPredictorsRequest request) 

@@ -119,6 +119,21 @@
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AutomatedAbrSettings.MaxAbrBitrate</property>
+    <min>100000</min>
+    <max>100000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AutomatedAbrSettings.MaxRenditions</property>
+    <min>3</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AutomatedAbrSettings.MinAbrBitrate</property>
+    <min>100000</min>
+    <max>100000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.Av1QvbrSettings.QvbrQualityLevel</property>
     <min>1</min>
     <max>10</max>

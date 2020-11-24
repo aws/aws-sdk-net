@@ -30,7 +30,7 @@ namespace Amazon.Textract.Model
 {
     /// <summary>
     /// The document can't be processed because it's too large. The maximum document size
-    /// for synchronous operations 5 MB. The maximum document size for asynchronous operations
+    /// for synchronous operations 10 MB. The maximum document size for asynchronous operations
     /// is 500 MB for PDF files.
     /// </summary>
     #if !NETSTANDARD

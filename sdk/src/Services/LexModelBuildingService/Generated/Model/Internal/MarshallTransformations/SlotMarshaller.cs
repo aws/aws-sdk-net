@@ -45,6 +45,17 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Slot requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDefaultValueSpec())
+            {
+                context.Writer.WritePropertyName("defaultValueSpec");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SlotDefaultValueSpecMarshaller.Instance;
+                marshaller.Marshall(requestObject.DefaultValueSpec, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

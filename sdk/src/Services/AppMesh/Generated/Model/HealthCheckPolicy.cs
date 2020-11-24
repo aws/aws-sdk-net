@@ -45,7 +45,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property HealthyThreshold. 
         /// <para>
         /// The number of consecutive successful health checks that must occur before declaring
-        ///         listener healthy.
+        /// listener healthy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=10)]
@@ -84,8 +84,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Path. 
         /// <para>
         /// The destination path for the health check request. This value is only used if the
-        ///         specified protocol is HTTP or HTTP/2. For any other protocol, this value is
-        /// ignored.
+        /// specified protocol is HTTP or HTTP/2. For any other protocol, this value is ignored.
         /// </para>
         /// </summary>
         public string Path
@@ -104,7 +103,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Port. 
         /// <para>
         /// The destination port for the health check request. This port must match the port defined
-        ///         in the <a>PortMapping</a> for the listener.
+        /// in the <a>PortMapping</a> for the listener.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
@@ -124,8 +123,8 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Protocol. 
         /// <para>
         /// The protocol for the health check request. If you specify <code>grpc</code>, then
-        /// your         service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC
-        /// Health            Checking Protocol</a>.
+        /// your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC
+        /// Health Checking Protocol</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -144,8 +143,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property TimeoutMillis. 
         /// <para>
-        /// The amount of time to wait when receiving a response from the health check, in   
-        ///      milliseconds.
+        /// The amount of time to wait when receiving a response from the health check, in milliseconds.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2000, Max=60000)]
@@ -165,7 +163,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property UnhealthyThreshold. 
         /// <para>
         /// The number of consecutive failed health checks that must occur before declaring a
-        ///         virtual node unhealthy. 
+        /// virtual node unhealthy. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=10)]

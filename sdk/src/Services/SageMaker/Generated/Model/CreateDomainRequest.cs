@@ -83,6 +83,7 @@ namespace Amazon.SageMaker.Model
         private UserSettings _defaultUserSettings;
         private string _domainName;
         private string _homeEfsFileSystemKmsKeyId;
+        private string _kmsKeyId;
         private List<string> _subnetIds = new List<string>();
         private List<Tag> _tags = new List<Tag>();
         private string _vpcId;
@@ -175,10 +176,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystemKmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer
-        /// master key (CMK) is not supported.
+        /// This member is deprecated and replaced with <code>KmsKeyId</code>.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated, use KmsKeyId instead.")]
         [AWSProperty(Max=2048)]
         public string HomeEfsFileSystemKmsKeyId
         {
@@ -190,6 +191,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHomeEfsFileSystemKmsKeyId()
         {
             return this._homeEfsFileSystemKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS
+        /// managed customer master key (CMK) by default. For more control, specify a customer
+        /// managed CMK.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

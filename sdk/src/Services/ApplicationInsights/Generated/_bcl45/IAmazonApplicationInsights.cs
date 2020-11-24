@@ -31,23 +31,22 @@ namespace Amazon.ApplicationInsights
     /// <summary>
     /// Interface for accessing ApplicationInsights
     ///
-    /// Amazon CloudWatch Application Insights for .NET and SQL Server 
+    /// Amazon CloudWatch Application Insights 
     /// <para>
-    ///  Amazon CloudWatch Application Insights for .NET and SQL Server is a service that
-    /// helps you detect common problems with your .NET and SQL Server-based applications.
-    /// It enables you to pinpoint the source of issues in your applications (built with technologies
-    /// such as Microsoft IIS, .NET, and Microsoft SQL Server), by providing key insights
-    /// into detected problems.
+    ///  Amazon CloudWatch Application Insights is a service that helps you detect common
+    /// problems with your applications. It enables you to pinpoint the source of issues in
+    /// your applications (built with technologies such as Microsoft IIS, .NET, and Microsoft
+    /// SQL Server), by providing key insights into detected problems.
     /// </para>
     ///  
     /// <para>
-    /// After you onboard your application, CloudWatch Application Insights for .NET and SQL
-    /// Server identifies, recommends, and sets up metrics and logs. It continuously analyzes
-    /// and correlates your metrics and logs for unusual behavior to surface actionable problems
-    /// with your application. For example, if your application is slow and unresponsive and
-    /// leading to HTTP 500 errors in your Application Load Balancer (ALB), Application Insights
-    /// informs you that a memory pressure problem with your SQL Server database is occurring.
-    /// It bases this analysis on impactful metrics and log errors. 
+    /// After you onboard your application, CloudWatch Application Insights identifies, recommends,
+    /// and sets up metrics and logs. It continuously analyzes and correlates your metrics
+    /// and logs for unusual behavior to surface actionable problems with your application.
+    /// For example, if your application is slow and unresponsive and leading to HTTP 500
+    /// errors in your Application Load Balancer (ALB), Application Insights informs you that
+    /// a memory pressure problem with your SQL Server database is occurring. It bases this
+    /// analysis on impactful metrics and log errors. 
     /// </para>
     /// </summary>
     public partial interface IAmazonApplicationInsights : IAmazonService, IDisposable
@@ -68,6 +67,9 @@ namespace Amazon.ApplicationInsights
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// 
         /// <returns>The response from the CreateApplication service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.AccessDeniedException">
+        /// User does not have permissions to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
         /// The server encountered an internal error and is unable to complete the request.
         /// </exception>
@@ -97,6 +99,9 @@ namespace Amazon.ApplicationInsights
         /// </param>
         /// 
         /// <returns>The response from the CreateApplication service method, as returned by ApplicationInsights.</returns>
+        /// <exception cref="Amazon.ApplicationInsights.Model.AccessDeniedException">
+        /// User does not have permissions to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.ApplicationInsights.Model.InternalServerException">
         /// The server encountered an internal error and is unable to complete the request.
         /// </exception>

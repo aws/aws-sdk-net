@@ -34,6 +34,7 @@ namespace Amazon.CloudWatchEvents.Model
     public partial class DescribeRuleResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private string _createdBy;
         private string _description;
         private string _eventBusName;
         private string _eventPattern;
@@ -63,6 +64,29 @@ namespace Amazon.CloudWatchEvents.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// The account ID of the user that created the rule. If you use <code>PutRule</code>
+        /// to put a rule on an event bus in another account, the other account is the owner of
+        /// the rule, and the rule ARN includes the account ID for that account. However, the
+        /// value for <code>CreatedBy</code> is the account ID as the account that created the
+        /// rule in the other account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string CreatedBy
+        {
+            get { return this._createdBy; }
+            set { this._createdBy = value; }
+        }
+
+        // Check to see if CreatedBy property is set
+        internal bool IsSetCreatedBy()
+        {
+            return this._createdBy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the rule.
@@ -84,7 +108,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property EventBusName. 
         /// <para>
-        /// The event bus associated with the rule.
+        /// The name of the event bus associated with the rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

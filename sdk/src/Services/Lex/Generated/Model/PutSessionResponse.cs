@@ -33,6 +33,7 @@ namespace Amazon.Lex.Model
     /// </summary>
     public partial class PutSessionResponse : AmazonWebServiceResponse, IDisposable
     {
+        private string _activeContexts;
         private Stream _audioStream;
         private string _contentType;
         private DialogState _dialogState;
@@ -43,6 +44,24 @@ namespace Amazon.Lex.Model
         private string _sessionId;
         private string _slots;
         private string _slotToElicit;
+
+        /// <summary>
+        /// Gets and sets the property ActiveContexts. 
+        /// <para>
+        /// A list of active contexts for the session.
+        /// </para>
+        /// </summary>
+        public string ActiveContexts
+        {
+            get { return this._activeContexts; }
+            set { this._activeContexts = value; }
+        }
+
+        // Check to see if ActiveContexts property is set
+        internal bool IsSetActiveContexts()
+        {
+            return this._activeContexts != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AudioStream. 

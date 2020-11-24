@@ -50,10 +50,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1,
     /// HS1, M1, M2, M3, and T1. You can register instances of these types by IP address.
     /// </para>
-    ///  
-    /// <para>
-    /// To remove a target from a target group, use <a>DeregisterTargets</a>.
-    /// </para>
     /// </summary>
     public partial class RegisterTargetsRequest : AmazonElasticLoadBalancingV2Request
     {

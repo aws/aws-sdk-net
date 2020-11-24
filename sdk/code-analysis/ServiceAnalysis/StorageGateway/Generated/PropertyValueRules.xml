@@ -631,6 +631,16 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeBandwidthRateLimitScheduleRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeBandwidthRateLimitScheduleResponse.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeCacheRequest.GatewayARN</property>
     <min>50</min>
     <max>500</max>
@@ -1263,6 +1273,16 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateBandwidthRateLimitScheduleRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateBandwidthRateLimitScheduleResponse.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateChapCredentialsRequest.InitiatorName</property>
     <min>1</min>
     <max>255</max>
@@ -1512,6 +1532,34 @@
     <min>1</min>
     <max>4</max>
     <pattern>^[A-Z]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.BandwidthRateLimitInterval.AverageDownloadRateLimitInBitsPerSec</property>
+    <min>102400</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.BandwidthRateLimitInterval.AverageUploadRateLimitInBitsPerSec</property>
+    <min>51200</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.BandwidthRateLimitInterval.EndHourOfDay</property>
+    <min>0</min>
+    <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.BandwidthRateLimitInterval.EndMinuteOfHour</property>
+    <min>0</min>
+    <max>59</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.BandwidthRateLimitInterval.StartHourOfDay</property>
+    <min>0</min>
+    <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.BandwidthRateLimitInterval.StartMinuteOfHour</property>
+    <min>0</min>
+    <max>59</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CachediSCSIVolume.KMSKey</property>

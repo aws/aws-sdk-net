@@ -129,7 +129,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HealthCheckProtocol. 
         /// <para>
-        /// The protocol to use to connect with the target.
+        /// The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP
+        /// protocols are not supported for health checks.
         /// </para>
         /// </summary>
         public ProtocolEnum HealthCheckProtocol
@@ -316,8 +317,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property TargetType. 
         /// <para>
         /// The type of target that you must specify when registering targets with this target
-        /// group. The possible values are <code>instance</code> (targets are specified by instance
-        /// ID) or <code>ip</code> (targets are specified by IP address).
+        /// group. The possible values are <code>instance</code> (register targets by instance
+        /// ID), <code>ip</code> (register targets by IP address), or <code>lambda</code> (register
+        /// a single Lambda function as a target).
         /// </para>
         /// </summary>
         public TargetTypeEnum TargetType

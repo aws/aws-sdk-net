@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// A set of key/value pairs which are used to manage the resource.
+    /// A set of key-value pairs that are used to manage the resource.
     /// </summary>
     public partial class Tag
     {

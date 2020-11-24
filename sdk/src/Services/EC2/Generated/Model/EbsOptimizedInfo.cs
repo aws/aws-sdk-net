@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BaselineThroughputInMBps. 
         /// <para>
-        /// The baseline throughput performance for an EBS-optimized instance type, in MBps.
+        /// The baseline throughput performance for an EBS-optimized instance type, in MB/s.
         /// </para>
         /// </summary>
         public double BaselineThroughputInMBps
@@ -135,7 +135,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaximumThroughputInMBps. 
         /// <para>
-        /// The maximum throughput performance for an EBS-optimized instance type, in MBps.
+        /// The maximum throughput performance for an EBS-optimized instance type, in MB/s.
         /// </para>
         /// </summary>
         public double MaximumThroughputInMBps

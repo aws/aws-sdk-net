@@ -121,6 +121,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("FSx")]
+        public void DescribeFileSystemAliasesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeFileSystemAliasesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeFileSystemAliasesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeFileSystemAliasesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeFileSystemAliases(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeFileSystemAliases(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FSx")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeFileSystemAliasesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeFileSystemAliasesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeFileSystemAliasesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeFileSystemAliases(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeFileSystemAliases(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("FSx")]
         public void DescribeFileSystemsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<DescribeFileSystemsRequest>();

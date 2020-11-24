@@ -111,9 +111,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>MXNET/ONNX</code>: You must specify the name and shape (NCHW format) of the
-        /// expected data inputs in order using a dictionary format for your trained model. The
-        /// dictionary formats required for the console and CLI are different.
+        ///  <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format)
+        /// of the expected data inputs in order using a dictionary format for your trained model.
+        /// The dictionary formats required for the console and CLI are different.
         /// </para>
         ///  <ul> <li> 
         /// <para>

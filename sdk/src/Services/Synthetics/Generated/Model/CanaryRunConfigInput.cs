@@ -34,6 +34,7 @@ namespace Amazon.Synthetics.Model
     public partial class CanaryRunConfigInput
     {
         private bool? _activeTracing;
+        private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
         private int? _memoryInMB;
         private int? _timeoutInSeconds;
 
@@ -62,6 +63,37 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetActiveTracing()
         {
             return this._activeTracing.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentVariables. 
+        /// <para>
+        /// Specifies the keys and values to use for any environment variables used in the canary
+        /// script. Use the following format:
+        /// </para>
+        ///  
+        /// <para>
+        /// { "key1" : "value1", "key2" : "value2", ...}
+        /// </para>
+        ///  
+        /// <para>
+        /// Keys must start with a letter and be at least two characters. The total size of your
+        /// environment variables cannot exceed 4 KB. You can't specify any Lambda reserved environment
+        /// variables as the keys for your environment variables. For more information about reserved
+        /// keys, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-runtime">
+        /// Runtime environment variables</a>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> EnvironmentVariables
+        {
+            get { return this._environmentVariables; }
+            set { this._environmentVariables = value; }
+        }
+
+        // Check to see if EnvironmentVariables property is set
+        internal bool IsSetEnvironmentVariables()
+        {
+            return this._environmentVariables != null && this._environmentVariables.Count > 0; 
         }
 
         /// <summary>

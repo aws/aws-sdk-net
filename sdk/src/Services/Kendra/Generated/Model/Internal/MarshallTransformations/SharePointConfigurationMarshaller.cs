@@ -51,6 +51,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CrawlAttachments);
             }
 
+            if(requestObject.IsSetDisableLocalGroups())
+            {
+                context.Writer.WritePropertyName("DisableLocalGroups");
+                context.Writer.Write(requestObject.DisableLocalGroups);
+            }
+
             if(requestObject.IsSetDocumentTitleFieldName())
             {
                 context.Writer.WritePropertyName("DocumentTitleFieldName");

@@ -32,40 +32,47 @@ namespace Amazon.AppMesh.Model
     /// Container for the parameters to the CreateVirtualNode operation.
     /// Creates a virtual node within a service mesh.
     /// 
-    ///          
+    ///  
     /// <para>
     ///  A virtual node acts as a logical pointer to a particular task group, such as an Amazon
-    /// ECS         service or a Kubernetes deployment. When you create a virtual node, you
-    /// can specify the         service discovery information for your task group, and whether
-    /// the proxy running in a task         group will communicate with other proxies using
-    /// Transport Layer Security (TLS).
+    /// ECS service or a Kubernetes deployment. When you create a virtual node, you can specify
+    /// the service discovery information for your task group, and whether the proxy running
+    /// in a task group will communicate with other proxies using Transport Layer Security
+    /// (TLS).
     /// </para>
-    ///          
+    ///  
     /// <para>
     /// You define a <code>listener</code> for any inbound traffic that your virtual node
-    ///         expects. Any virtual service that your virtual node expects to communicate
-    /// to is specified         as a <code>backend</code>.
+    /// expects. Any virtual service that your virtual node expects to communicate to is specified
+    /// as a <code>backend</code>.
     /// </para>
-    ///          
+    ///  
     /// <para>
     /// The response metadata for your new virtual node contains the <code>arn</code> that
-    /// is         associated with the virtual node. Set this value (either the full ARN or
-    /// the truncated         resource name: for example, <code>mesh/default/virtualNode/simpleapp</code>)
-    /// as the            <code>APPMESH_VIRTUAL_NODE_NAME</code> environment variable for
-    /// your task group's Envoy         proxy container in your task definition or pod spec.
-    /// This is then mapped to the            <code>node.id</code> and <code>node.cluster</code>
-    /// Envoy parameters.
+    /// is associated with the virtual node. Set this value to the full ARN; for example,
+    /// <code>arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp</code>)
+    /// as the <code>APPMESH_RESOURCE_ARN</code> environment variable for your task group's
+    /// Envoy proxy container in your task definition or pod spec. This is then mapped to
+    /// the <code>node.id</code> and <code>node.cluster</code> Envoy parameters.
     /// </para>
-    ///          <note>            
+    ///  <note> 
     /// <para>
-    /// If you require your Envoy stats or tracing to use a different name, you can override
-    ///            the <code>node.cluster</code> value that is set by               <code>APPMESH_VIRTUAL_NODE_NAME</code>
-    /// with the               <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.
+    /// By default, App Mesh uses the name of the resource you specified in <code>APPMESH_RESOURCE_ARN</code>
+    /// when Envoy is referring to itself in metrics and traces. You can override this behavior
+    /// by setting the <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your
+    /// own name.
     /// </para>
-    ///          </note>         
+    ///  
+    /// <para>
+    /// AWS Cloud Map is not available in the eu-south-1 Region.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
-    /// nodes</a>.
+    /// nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image when
+    /// setting these variables. For more information about App Mesh Envoy variables, see
+    /// <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a>
+    /// in the AWS App Mesh User Guide.
     /// </para>
     /// </summary>
     public partial class CreateVirtualNodeRequest : AmazonAppMeshRequest
@@ -80,8 +87,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of therequest.
-        /// Up to 36 letters, numbers, hyphens, and underscores are allowed.
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -119,9 +126,9 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property MeshOwner. 
         /// <para>
         /// The AWS IAM account ID of the service mesh owner. If the account ID is not your own,
-        /// then               the account that you specify must share the mesh with your account
-        /// before you can create              the resource in the service mesh. For more information
-        /// about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+        /// then the account that you specify must share the mesh with your account before you
+        /// can create the resource in the service mesh. For more information about mesh sharing,
+        /// see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
         /// with shared meshes</a>.
         /// </para>
         /// </summary>
@@ -161,9 +168,9 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Optional metadata that you can apply to the virtual node to assist with categorization
-        ///         and organization. Each tag consists of a key and an optional value, both of
-        /// which you         define. Tag keys can have a maximum character length of 128 characters,
-        /// and tag values can have            a maximum length of 256 characters.
+        /// and organization. Each tag consists of a key and an optional value, both of which
+        /// you define. Tag keys can have a maximum character length of 128 characters, and tag
+        /// values can have a maximum length of 256 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

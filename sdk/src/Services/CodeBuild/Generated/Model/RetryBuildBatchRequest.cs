@@ -30,7 +30,7 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the RetryBuildBatch operation.
-    /// Restarts a batch build.
+    /// Restarts a failed batch build. Only batch builds that have failed can be retried.
     /// </summary>
     public partial class RetryBuildBatchRequest : AmazonCodeBuildRequest
     {

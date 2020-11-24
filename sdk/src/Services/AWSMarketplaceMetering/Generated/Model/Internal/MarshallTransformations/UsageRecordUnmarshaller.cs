@@ -88,6 +88,12 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UsageAllocations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<UsageAllocation, UsageAllocationUnmarshaller>(UsageAllocationUnmarshaller.Instance);
+                    unmarshalledObject.UsageAllocations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

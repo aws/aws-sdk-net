@@ -245,6 +245,16 @@ namespace Amazon.CodeGuruReviewer.Model
         ///  <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request
         /// notifications and source code access. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository.
+        /// You can create a new association with this repository if you want to review source
+        /// code in it later. You can control access to code reviews created in an associated
+        /// repository with tags after it has been disassociated. For more information, see <a
+        /// href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+        /// tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer
+        /// User Guide</i>. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public RepositoryAssociationState State

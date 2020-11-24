@@ -59,6 +59,12 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetIsRevoked())
+                request.Parameters.Add("isRevoked", StringUtils.FromBool(publicRequest.IsRevoked));
+            
+            if (publicRequest.IsSetJobInvoker())
+                request.Parameters.Add("jobInvoker", StringUtils.FromString(publicRequest.JobInvoker));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
@@ -70,6 +76,12 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetRequestedBy())
                 request.Parameters.Add("requestedBy", StringUtils.FromString(publicRequest.RequestedBy));
+            
+            if (publicRequest.IsSetSignatureExpiresAfter())
+                request.Parameters.Add("signatureExpiresAfter", StringUtils.FromDateTimeToISO8601(publicRequest.SignatureExpiresAfter));
+            
+            if (publicRequest.IsSetSignatureExpiresBefore())
+                request.Parameters.Add("signatureExpiresBefore", StringUtils.FromDateTimeToISO8601(publicRequest.SignatureExpiresBefore));
             
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));

@@ -72,6 +72,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.InstancePoolsToUseCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("maintenanceStrategies", targetDepth))
+                    {
+                        var unmarshaller = FleetSpotMaintenanceStrategiesUnmarshaller.Instance;
+                        unmarshalledObject.MaintenanceStrategies = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("maxTotalPrice", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -76,6 +76,7 @@ namespace Amazon.Kendra.Model
         private string _queryText;
         private List<string> _requestedDocumentAttributes = new List<string>();
         private SortingConfiguration _sortingConfiguration;
+        private UserContext _userContext;
 
         /// <summary>
         /// Gets and sets the property AttributeFilter. 
@@ -263,6 +264,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetSortingConfiguration()
         {
             return this._sortingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserContext. 
+        /// <para>
+        /// The user context token.
+        /// </para>
+        /// </summary>
+        public UserContext UserContext
+        {
+            get { return this._userContext; }
+            set { this._userContext = value; }
+        }
+
+        // Check to see if UserContext property is set
+        internal bool IsSetUserContext()
+        {
+            return this._userContext != null;
         }
 
     }

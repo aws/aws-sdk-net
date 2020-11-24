@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TotalGpuMemoryInMiB. 
         /// <para>
-        /// The total size of the memory for the GPU accelerators for the instance type.
+        /// The total size of the memory for the GPU accelerators for the instance type, in MiB.
         /// </para>
         /// </summary>
         public int TotalGpuMemoryInMiB

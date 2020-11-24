@@ -45,8 +45,8 @@ namespace Amazon.IoTSecureTunneling
     /// </para>
     ///  
     /// <para>
-    /// For more information about how AWS IoT Secure Tunneling works, see the <a href="https://docs.aws.amazon.com/secure-tunneling/latest/ug/what-is-secure-tunneling.html">User
-    /// Guide</a>.
+    /// For more information about how AWS IoT Secure Tunneling works, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">AWS
+    /// IoT Secure Tunneling</a>.
     /// </para>
     /// </summary>
     public partial class AmazonIoTSecureTunnelingClient : AmazonServiceClient, IAmazonIoTSecureTunneling
@@ -456,7 +456,7 @@ namespace Amazon.IoTSecureTunneling
 
         /// <summary>
         /// Creates a new tunnel, and returns two client access tokens for clients to use to connect
-        /// to the AWS IoT Secure Tunneling proxy server. .
+        /// to the AWS IoT Secure Tunneling proxy server.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the OpenTunnel service method.</param>
         /// 
@@ -477,7 +477,7 @@ namespace Amazon.IoTSecureTunneling
 
         /// <summary>
         /// Creates a new tunnel, and returns two client access tokens for clients to use to connect
-        /// to the AWS IoT Secure Tunneling proxy server. .
+        /// to the AWS IoT Secure Tunneling proxy server.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the OpenTunnel service method.</param>
         /// <param name="cancellationToken">

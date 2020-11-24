@@ -43,9 +43,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// If you are using DataSync on an Amazon Outpost, the Amazon Resource Name (ARNs) of
-        /// the EC2 agents deployed on your AWS Outpost. For more information about launching
-        /// a DataSync agent on an Amazon Outpost, see <a>outposts-agent</a>.
+        /// If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs) of the
+        /// EC2 agents deployed on your Outpost. For more information about launching a DataSync
+        /// agent on an AWS Outpost, see <a>outposts-agent</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -137,10 +137,9 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// The Amazon S3 storage class that you chose to store your files in when this location
         /// is used as a task destination. For more information about S3 storage classes, see
-        /// <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>
-        /// in the <i>Amazon Simple Storage Service Developer Guide</i>. Some storage classes
-        /// have behaviors that can affect your S3 storage cost. For detailed information, see
-        /// <a>using-storage-classes</a>.
+        /// <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>.
+        /// Some storage classes have behaviors that can affect your S3 storage cost. For detailed
+        /// information, see <a>using-storage-classes</a>.
         /// </para>
         /// </summary>
         public S3StorageClass S3StorageClass

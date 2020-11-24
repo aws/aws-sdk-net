@@ -31,6 +31,12 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the DeleteInvitations operation.
     /// Deletes invitations received by the AWS account to become a member account.
+    /// 
+    ///  
+    /// <para>
+    /// This operation is only used by accounts that are not part of an organization. Organization
+    /// accounts do not receive invitations.
+    /// </para>
     /// </summary>
     public partial class DeleteInvitationsRequest : AmazonSecurityHubRequest
     {

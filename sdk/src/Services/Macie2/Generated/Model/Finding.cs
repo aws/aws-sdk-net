@@ -129,7 +129,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The total number of occurrences of the finding.
+        /// The total number of occurrences of the finding. For sensitive data findings, this
+        /// value is always 1. All sensitive data findings are considered new (unique) because
+        /// they derive from individual classification jobs.
         /// </para>
         /// </summary>
         public long Count

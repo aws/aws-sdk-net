@@ -75,4 +75,31 @@ namespace Amazon.Runtime
 
         internal StringListParameterValue() { }
     }
+
+    /// <summary>
+    /// Double list parameter value.
+    /// </summary>
+    public class DoubleListParameterValue : ParameterValue
+    {
+        /// <summary>
+        /// List of doubles value of the parameter.
+        /// </summary>
+        public List<double> Value
+        {
+            get; set;
+        }
+
+        /// <summary>
+        /// Constructs ParameterValue for a list of doubles.
+        /// </summary>
+        /// <param name="values"></param>
+        public DoubleListParameterValue(List<double> values)
+        {
+            Value = values;
+        }
+
+        internal DoubleListParameterValue()
+        {
+        }
+    }
 }

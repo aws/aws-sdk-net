@@ -37,7 +37,7 @@ namespace Amazon.S3Control.Model
     /// 
     ///  
     /// <para>
-    /// This operation creates a S3 Batch Operations job.
+    /// This operation creates an S3 Batch Operations job.
     /// </para>
     ///   
     /// <para>

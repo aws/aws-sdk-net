@@ -44,7 +44,7 @@ namespace Amazon.ApplicationInsights.Model
         /// The name of the component.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string ComponentName
         {
             get { return this._componentName; }

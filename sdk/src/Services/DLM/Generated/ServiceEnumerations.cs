@@ -134,6 +134,10 @@ namespace Amazon.DLM
         /// Constant EBS_SNAPSHOT_MANAGEMENT for PolicyTypeValues
         /// </summary>
         public static readonly PolicyTypeValues EBS_SNAPSHOT_MANAGEMENT = new PolicyTypeValues("EBS_SNAPSHOT_MANAGEMENT");
+        /// <summary>
+        /// Constant IMAGE_MANAGEMENT for PolicyTypeValues
+        /// </summary>
+        public static readonly PolicyTypeValues IMAGE_MANAGEMENT = new PolicyTypeValues("IMAGE_MANAGEMENT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

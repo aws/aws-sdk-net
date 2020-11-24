@@ -39,6 +39,7 @@ namespace Amazon.Macie2.Model
         private string _bucketName;
         private long? _classifiableObjectCount;
         private long? _classifiableSizeInBytes;
+        private JobDetails _jobDetails;
         private DateTime? _lastUpdated;
         private long? _objectCount;
         private ObjectCountByEncryptionType _objectCountByEncryptionType;
@@ -163,6 +164,25 @@ namespace Amazon.Macie2.Model
         internal bool IsSetClassifiableSizeInBytes()
         {
             return this._classifiableSizeInBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobDetails. 
+        /// <para>
+        /// Specifies whether any one-time or recurring classification jobs are configured to
+        /// analyze data in the bucket, and, if so, the details of the job that ran most recently.
+        /// </para>
+        /// </summary>
+        public JobDetails JobDetails
+        {
+            get { return this._jobDetails; }
+            set { this._jobDetails = value; }
+        }
+
+        // Check to see if JobDetails property is set
+        internal bool IsSetJobDetails()
+        {
+            return this._jobDetails != null;
         }
 
         /// <summary>

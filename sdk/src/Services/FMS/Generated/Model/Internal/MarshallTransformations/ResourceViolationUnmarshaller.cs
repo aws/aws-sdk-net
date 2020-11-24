@@ -82,6 +82,30 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsVPCSecurityGroupViolation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NetworkFirewallMissingExpectedRTViolation", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallMissingExpectedRTViolationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFirewallMissingExpectedRTViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFirewallMissingFirewallViolation", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallMissingFirewallViolationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFirewallMissingFirewallViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFirewallMissingSubnetViolation", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallMissingSubnetViolationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFirewallMissingSubnetViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFirewallPolicyModifiedViolation", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallPolicyModifiedViolationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFirewallPolicyModifiedViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

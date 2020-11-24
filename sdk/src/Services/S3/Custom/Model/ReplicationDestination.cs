@@ -143,10 +143,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// A container specifying replication metrics-related information, including whether 
-        /// emitting metrics and Amazon S3 events for replication are enabled. In addition, 
-        /// contains configurations related to specific metrics or events. Must be specified 
-        /// together with a <code>ReplicationTime</code> block.
+        /// <para>A container specifying settings for configuring replication metrics and events. </para>
         /// </summary>
         public Metrics Metrics
         {

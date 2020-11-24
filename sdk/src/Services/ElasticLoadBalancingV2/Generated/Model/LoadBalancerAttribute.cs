@@ -43,6 +43,15 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
+        /// The following attribute is supported by all load balancers:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>deletion_protection.enabled</code> - Indicates whether deletion protection
+        /// is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// The following attributes are supported by both Application Load Balancers and Network
         /// Load Balancers:
         /// </para>
@@ -62,11 +71,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         ///  <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket
         /// for the access logs.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>deletion_protection.enabled</code> - Indicates whether deletion protection
-        /// is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -97,9 +101,15 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Load Balancing requires that message header names contain only alphanumeric characters
         /// and hyphens.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load
+        /// balancer to route requests to targets if it is unable to forward the request to AWS
+        /// WAF. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following attributes are supported by only Network Load Balancers:
+        /// The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
         /// </para>
         ///  <ul> <li> 
         /// <para>

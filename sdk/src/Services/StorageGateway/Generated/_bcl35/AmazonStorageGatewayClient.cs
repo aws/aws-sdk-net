@@ -2499,6 +2499,92 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  DescribeBandwidthRateLimitSchedule
+
+        /// <summary>
+        /// Returns information about the bandwidth rate limit schedule of a gateway. By default,
+        /// gateways do not have bandwidth rate limit schedules, which means no bandwidth rate
+        /// limiting is in effect. This operation is supported only in the volume and tape gateway
+        /// types. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns information about a gateway's bandwidth rate limit schedule.
+        /// A bandwidth rate limit schedule consists of one or more bandwidth rate limit intervals.
+        /// A bandwidth rate limit interval defines a period of time on one or more days of the
+        /// week, during which bandwidth rate limits are specified for uploading, downloading,
+        /// or both. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  A bandwidth rate limit interval consists of one or more days of the week, a start
+        /// hour and minute, an ending hour and minute, and bandwidth rate limits for uploading
+        /// and downloading 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If no bandwidth rate limit schedule intervals are set for the gateway, this operation
+        /// returns an empty response. To specify which gateway to describe, use the Amazon Resource
+        /// Name (ARN) of the gateway in your request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBandwidthRateLimitSchedule service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBandwidthRateLimitSchedule service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule">REST API Reference for DescribeBandwidthRateLimitSchedule Operation</seealso>
+        public virtual DescribeBandwidthRateLimitScheduleResponse DescribeBandwidthRateLimitSchedule(DescribeBandwidthRateLimitScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBandwidthRateLimitScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBandwidthRateLimitScheduleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBandwidthRateLimitSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBandwidthRateLimitSchedule operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBandwidthRateLimitSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule">REST API Reference for DescribeBandwidthRateLimitSchedule Operation</seealso>
+        public virtual IAsyncResult BeginDescribeBandwidthRateLimitSchedule(DescribeBandwidthRateLimitScheduleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBandwidthRateLimitScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBandwidthRateLimitSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBandwidthRateLimitSchedule.</param>
+        /// 
+        /// <returns>Returns a  DescribeBandwidthRateLimitScheduleResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule">REST API Reference for DescribeBandwidthRateLimitSchedule Operation</seealso>
+        public virtual DescribeBandwidthRateLimitScheduleResponse EndDescribeBandwidthRateLimitSchedule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeBandwidthRateLimitScheduleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeCache
 
         /// <summary>
@@ -5548,6 +5634,71 @@ namespace Amazon.StorageGateway
         public virtual UpdateBandwidthRateLimitResponse EndUpdateBandwidthRateLimit(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateBandwidthRateLimitResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateBandwidthRateLimitSchedule
+
+        /// <summary>
+        /// Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways
+        /// do not have bandwidth rate limit schedules, which means no bandwidth rate limiting
+        /// is in effect. Use this to initiate or update a gateway's bandwidth rate limit schedule.
+        /// This operation is supported in the volume and tape gateway types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBandwidthRateLimitSchedule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBandwidthRateLimitSchedule service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule">REST API Reference for UpdateBandwidthRateLimitSchedule Operation</seealso>
+        public virtual UpdateBandwidthRateLimitScheduleResponse UpdateBandwidthRateLimitSchedule(UpdateBandwidthRateLimitScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBandwidthRateLimitScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBandwidthRateLimitScheduleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBandwidthRateLimitSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBandwidthRateLimitSchedule operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBandwidthRateLimitSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule">REST API Reference for UpdateBandwidthRateLimitSchedule Operation</seealso>
+        public virtual IAsyncResult BeginUpdateBandwidthRateLimitSchedule(UpdateBandwidthRateLimitScheduleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBandwidthRateLimitScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateBandwidthRateLimitSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBandwidthRateLimitSchedule.</param>
+        /// 
+        /// <returns>Returns a  UpdateBandwidthRateLimitScheduleResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule">REST API Reference for UpdateBandwidthRateLimitSchedule Operation</seealso>
+        public virtual UpdateBandwidthRateLimitScheduleResponse EndUpdateBandwidthRateLimitSchedule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateBandwidthRateLimitScheduleResponse>(asyncResult);
         }
 
         #endregion

@@ -76,6 +76,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.EfsVolumeConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fsxWindowsFileServerVolumeConfiguration", targetDepth))
+                {
+                    var unmarshaller = FSxWindowsFileServerVolumeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FsxWindowsFileServerVolumeConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("host", targetDepth))
                 {
                     var unmarshaller = HostVolumePropertiesUnmarshaller.Instance;

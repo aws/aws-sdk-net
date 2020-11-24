@@ -106,6 +106,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("customHeaders", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomHeaders = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("customRules", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<CustomRule, CustomRuleUnmarshaller>(CustomRuleUnmarshaller.Instance);

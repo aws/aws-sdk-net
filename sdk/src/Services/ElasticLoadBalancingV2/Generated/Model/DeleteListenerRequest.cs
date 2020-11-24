@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     ///  
     /// <para>
     /// Alternatively, your listener is deleted when you delete the load balancer to which
-    /// it is attached, using <a>DeleteLoadBalancer</a>.
+    /// it is attached.
     /// </para>
     /// </summary>
     public partial class DeleteListenerRequest : AmazonElasticLoadBalancingV2Request

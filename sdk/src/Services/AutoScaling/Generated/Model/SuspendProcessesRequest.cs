@@ -30,7 +30,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the SuspendProcesses operation.
-    /// Suspends the specified automatic scaling processes, or all processes, for the specified
+    /// Suspends the specified auto scaling processes, or all processes, for the specified
     /// Auto Scaling group.
     /// 
     ///  
@@ -38,7 +38,7 @@ namespace Amazon.AutoScaling.Model
     /// If you suspend either the <code>Launch</code> or <code>Terminate</code> process types,
     /// it can prevent other process types from functioning properly. For more information,
     /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
-    /// and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// and resuming scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     ///  
     /// <para>

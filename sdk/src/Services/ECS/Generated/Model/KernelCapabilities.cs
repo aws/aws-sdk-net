@@ -47,14 +47,13 @@ namespace Amazon.ECS.Model
         /// The Linux capabilities for the container that have been added to the default configuration
         /// provided by Docker. This parameter maps to <code>CapAdd</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// Remote API</a> and the <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>SYS_PTRACE</code> capability is supported for tasks that use the Fargate
-        /// launch type if they are also using platform version 1.4.0. The other capabilities
-        /// are not supported for any platform versions.
+        /// Tasks launched on AWS Fargate only support adding the <code>SYS_PTRACE</code> kernel
+        /// capability.
         /// </para>
         ///  </note> 
         /// <para>
@@ -85,7 +84,7 @@ namespace Amazon.ECS.Model
         /// The Linux capabilities for the container that have been removed from the default configuration
         /// provided by Docker. This parameter maps to <code>CapDrop</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// Remote API</a> and the <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.
         /// </para>
         ///  

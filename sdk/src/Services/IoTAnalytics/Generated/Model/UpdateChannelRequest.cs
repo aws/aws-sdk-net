@@ -60,9 +60,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ChannelStorage. 
         /// <para>
-        /// Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3"
-        /// storage. If not specified, the default is "serviceManagedS3". This cannot be changed
-        /// after creation of the channel.
+        /// Where channel data is stored. You can choose one of <code>serviceManagedS3</code>
+        /// or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
+        /// You cannot change this storage option after the channel is created.
         /// </para>
         /// </summary>
         public ChannelStorage ChannelStorage

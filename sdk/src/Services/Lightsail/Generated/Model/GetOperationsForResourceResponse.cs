@@ -66,7 +66,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// The token to advance to the next page of resutls from your request.
+        /// The token to advance to the next page of results from your request.
         /// </para>
         ///  
         /// <para>

@@ -131,6 +131,11 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateDomainRequest.KmsKeyId</property>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateDomainRequest.VpcId</property>
     <max>32</max>
     <pattern>[-0-9a-zA-Z]+</pattern>
@@ -930,6 +935,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeDomainResponse.HomeEfsFileSystemKmsKeyId</property>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeDomainResponse.KmsKeyId</property>
     <max>2048</max>
     <pattern>.*</pattern>
   </property-value-rule>

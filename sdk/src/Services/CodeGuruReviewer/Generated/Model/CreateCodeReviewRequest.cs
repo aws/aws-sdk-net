@@ -30,7 +30,11 @@ namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCodeReview operation.
-    /// Use to create a code review for a repository analysis.
+    /// Use to create a code review with a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
+    /// <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type of
+    /// code review analyzes all code under a specified branch in an associated repository.
+    /// <code>PullRequest</code> code reviews are automatically triggered by a pull request
+    /// so cannot be created using this method.
     /// </summary>
     public partial class CreateCodeReviewRequest : AmazonCodeGuruReviewerRequest
     {
@@ -62,8 +66,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the code review. Each code review of the same code review type must have
-        /// a unique name in your AWS account. 
+        ///  The name of the code review. The name of each code review in your AWS account must
+        /// be unique. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -84,7 +88,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <para>
         ///  The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
         /// <code>RepositoryAssociation</code> </a> object. You can retrieve this ARN by calling
-        /// <code>ListRepositories</code>. 
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">
+        /// <code>ListRepositoryAssociations</code> </a>. 
         /// </para>
         ///  
         /// <para>
@@ -109,7 +114,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Gets and sets the property Type. 
         /// <para>
         ///  The type of code review to create. This is specified using a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
-        /// <code>CodeReviewType</code> </a> object. 
+        /// <code>CodeReviewType</code> </a> object. You can create a code review only of type
+        /// <code>RepositoryAnalysis</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

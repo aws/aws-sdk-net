@@ -34,12 +34,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// target groups are described. Alternatively, you can specify one of the following to
     /// filter the results: the ARN of the load balancer, the names of one or more target
     /// groups, or the ARNs of one or more target groups.
-    /// 
-    ///  
-    /// <para>
-    /// To describe the targets for a target group, use <a>DescribeTargetHealth</a>. To describe
-    /// the attributes of a target group, use <a>DescribeTargetGroupAttributes</a>.
-    /// </para>
     /// </summary>
     public partial class DescribeTargetGroupsRequest : AmazonElasticLoadBalancingV2Request
     {

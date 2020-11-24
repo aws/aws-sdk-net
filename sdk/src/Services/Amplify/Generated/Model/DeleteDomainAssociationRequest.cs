@@ -43,7 +43,7 @@ namespace Amazon.Amplify.Model
         ///  The unique id for an Amplify app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public string AppId
         {
             get { return this._appId; }

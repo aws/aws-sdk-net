@@ -35,13 +35,19 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
+    /// This operation is only used to invite accounts that do not belong to an organization.
+    /// Organization accounts do not receive invitations.
+    /// </para>
+    ///  
+    /// <para>
     /// Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a>
     /// </code> action to create the member account in Security Hub.
     /// </para>
     ///  
     /// <para>
-    /// When the account owner accepts the invitation to become a member account and enables
-    /// Security Hub, the master account can view the findings generated from the member account.
+    /// When the account owner enables Security Hub and accepts the invitation to become a
+    /// member account, the master account can view the findings generated from the member
+    /// account.
     /// </para>
     /// </summary>
     public partial class InviteMembersRequest : AmazonSecurityHubRequest
@@ -55,6 +61,7 @@ namespace Amazon.SecurityHub.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }

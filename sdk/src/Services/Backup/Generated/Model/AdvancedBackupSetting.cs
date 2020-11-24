@@ -44,9 +44,17 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup
-        /// option and create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a
-        /// regular backup. The WindowsVSS option is not enabled by default.
+        /// Valid values: 
+        /// </para>
+        ///  
+        /// <para>
+        /// Set to <code>"WindowsVSS":"enabled"</code> to enable the WindowsVSS backup option
+        /// and create a VSS Windows backup. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The WindowsVSS
+        /// option is not enabled by default.
         /// </para>
         ///  
         /// <para>

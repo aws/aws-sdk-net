@@ -35,6 +35,7 @@ namespace Amazon.DLM.Model
     {
         private string _description;
         private string _policyId;
+        private PolicyTypeValues _policyType;
         private GettablePolicyStateValues _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
@@ -74,6 +75,26 @@ namespace Amazon.DLM.Model
         internal bool IsSetPolicyId()
         {
             return this._policyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyType. 
+        /// <para>
+        /// The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy
+        /// manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates
+        /// that the policy manages the lifecycle of EBS-backed AMIs.
+        /// </para>
+        /// </summary>
+        public PolicyTypeValues PolicyType
+        {
+            get { return this._policyType; }
+            set { this._policyType = value; }
+        }
+
+        // Check to see if PolicyType property is set
+        internal bool IsSetPolicyType()
+        {
+            return this._policyType != null;
         }
 
         /// <summary>

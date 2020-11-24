@@ -117,6 +117,30 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.ParallelizationFactor = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Queues", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Queues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceAccessConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SourceAccessConfiguration, SourceAccessConfigurationUnmarshaller>(SourceAccessConfigurationUnmarshaller.Instance);
+                    response.SourceAccessConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartingPosition", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StartingPosition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartingPositionTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.StartingPositionTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

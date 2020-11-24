@@ -109,6 +109,12 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BuildSpec);
                 }
 
+                if(publicRequest.IsSetCustomHeaders())
+                {
+                    context.Writer.WritePropertyName("customHeaders");
+                    context.Writer.Write(publicRequest.CustomHeaders);
+                }
+
                 if(publicRequest.IsSetCustomRules())
                 {
                     context.Writer.WritePropertyName("customRules");

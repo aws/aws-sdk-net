@@ -51,6 +51,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ActiveDirectoryId);
             }
 
+            if(requestObject.IsSetAliases())
+            {
+                context.Writer.WritePropertyName("Aliases");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAliasesListValue in requestObject.Aliases)
+                {
+                        context.Writer.Write(requestObjectAliasesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetAutomaticBackupRetentionDays())
             {
                 context.Writer.WritePropertyName("AutomaticBackupRetentionDays");

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// The instances distribution specifies the distribution of On-Demand Instances and Spot
     /// Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group
-    /// allocates instance types to fulfill On-Demand and Spot capacity.
+    /// allocates instance types to fulfill On-Demand and Spot capacities.
     /// </para>
     ///  
     /// <para>
@@ -60,16 +60,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property OnDemandAllocationStrategy. 
         /// <para>
-        /// Indicates how to allocate instance types to fulfill On-Demand capacity.
-        /// </para>
-        ///  
-        /// <para>
-        /// The only valid value is <code>prioritized</code>, which is also the default value.
-        /// This strategy uses the order of instance type overrides for the <a>LaunchTemplate</a>
-        /// to define the launch priority of each instance type. The first instance type in the
-        /// array is prioritized higher than the last. If all your On-Demand capacity cannot be
-        /// fulfilled using your highest priority instance, then the Auto Scaling groups launches
-        /// the remaining capacity using the second priority instance type, and so on.
+        /// Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid
+        /// value is <code>prioritized</code>, which is also the default value. This strategy
+        /// uses the order of instance types in the overrides to define the launch priority of
+        /// each instance type. The first instance type in the array is prioritized higher than
+        /// the last. If all your On-Demand capacity cannot be fulfilled using your highest priority
+        /// instance, then the Auto Scaling groups launches the remaining capacity using the second
+        /// priority instance type, and so on.
         /// </para>
         /// </summary>
         public string OnDemandAllocationStrategy
@@ -89,20 +86,10 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The minimum amount of the Auto Scaling group's capacity that must be fulfilled by
         /// On-Demand Instances. This base portion is provisioned first as your group scales.
+        /// Defaults to 0 if not specified. If you specify weights for the instance types in the
+        /// overrides, set the value of <code>OnDemandBaseCapacity</code> in terms of the number
+        /// of capacity units, and not the number of instances.
         /// </para>
-        ///  
-        /// <para>
-        /// Default if not set is 0. If you leave it set to 0, On-Demand Instances are launched
-        /// as a percentage of the Auto Scaling group's desired capacity, per the <code>OnDemandPercentageAboveBaseCapacity</code>
-        /// setting.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// An update to this setting means a gradual replacement of instances to maintain the
-        /// specified number of On-Demand Instances for your base capacity. When replacing instances,
-        /// Amazon EC2 Auto Scaling launches new instances before terminating the old ones.
-        /// </para>
-        ///  </note>
         /// </summary>
         public int OnDemandBaseCapacity
         {
@@ -120,23 +107,9 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property OnDemandPercentageAboveBaseCapacity. 
         /// <para>
         /// Controls the percentages of On-Demand Instances and Spot Instances for your additional
-        /// capacity beyond <code>OnDemandBaseCapacity</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default if not set is 100. If you leave it set to 100, the percentages are 100% for
-        /// On-Demand Instances and 0% for Spot Instances.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// An update to this setting means a gradual replacement of instances to maintain the
-        /// percentage of On-Demand Instances for your additional capacity above the base capacity.
-        /// When replacing instances, Amazon EC2 Auto Scaling launches new instances before terminating
-        /// the old ones.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// Valid Range: Minimum value of 0. Maximum value of 100.
+        /// capacity beyond <code>OnDemandBaseCapacity</code>. Expressed as a number (for example,
+        /// 20 specifies 20% On-Demand Instances, 80% Spot Instances). Defaults to 100 if not
+        /// specified. If set to 100, only On-Demand Instances are provisioned.
         /// </para>
         /// </summary>
         public int OnDemandPercentageAboveBaseCapacity
@@ -154,25 +127,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property SpotAllocationStrategy. 
         /// <para>
-        /// Indicates how to allocate instances across Spot Instance pools.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches
-        /// instances using the Spot pools with the lowest price, and evenly allocates your instances
-        /// across the number of Spot pools that you specify. If the allocation strategy is <code>capacity-optimized</code>,
-        /// the Auto Scaling group launches instances using Spot pools that are optimally chosen
-        /// based on the available Spot capacity.
-        /// </para>
-        ///  
-        /// <para>
-        /// The default Spot allocation strategy for calls that you make through the API, the
-        /// AWS CLI, or the AWS SDKs is <code>lowest-price</code>. The default Spot allocation
-        /// strategy for the AWS Management Console is <code>capacity-optimized</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values: <code>lowest-price</code> | <code>capacity-optimized</code> 
+        /// Indicates how to allocate instances across Spot Instance pools. If the allocation
+        /// strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group
+        /// launches instances using Spot pools that are optimally chosen based on the available
+        /// Spot capacity. If the allocation strategy is <code>lowest-price</code>, the Auto Scaling
+        /// group launches instances using the Spot pools with the lowest price, and evenly allocates
+        /// your instances across the number of Spot pools that you specify. Defaults to <code>lowest-price</code>
+        /// if not specified.
         /// </para>
         /// </summary>
         public string SpotAllocationStrategy
@@ -191,16 +152,9 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property SpotInstancePools. 
         /// <para>
         /// The number of Spot Instance pools across which to allocate your Spot Instances. The
-        /// Spot pools are determined from the different instance types in the Overrides array
-        /// of <a>LaunchTemplate</a>. Default if not set is 2.
-        /// </para>
-        ///  
-        /// <para>
-        /// Used only when the Spot allocation strategy is <code>lowest-price</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Range: Minimum value of 1. Maximum value of 20.
+        /// Spot pools are determined from the different instance types in the overrides. Valid
+        /// only when the Spot allocation strategy is <code>lowest-price</code>. Value must be
+        /// in the range of 1 to 20. Defaults to 2 if not specified.
         /// </para>
         /// </summary>
         public int SpotInstancePools
@@ -219,13 +173,9 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property SpotMaxPrice. 
         /// <para>
         /// The maximum price per unit hour that you are willing to pay for a Spot Instance. If
-        /// you leave the value of this parameter blank (which is the default), the maximum Spot
-        /// price is set at the On-Demand price.
-        /// </para>
-        ///  
-        /// <para>
-        /// To remove a value that you previously set, include the parameter but leave the value
-        /// blank.
+        /// you leave the value at its default (empty), Amazon EC2 Auto Scaling uses the On-Demand
+        /// price as the maximum Spot price. To remove a value that you previously set, include
+        /// the property but specify an empty string ("") for the value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]

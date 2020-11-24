@@ -130,10 +130,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerAlias. 
         /// <para>
-        /// The AWS owner alias, as maintained by Amazon. The possible values are: <code>amazon</code>
-        /// | <code>self</code> | <code>all</code> | <code>aws-marketplace</code> | <code>microsoft</code>.
-        /// This AWS owner alias is not to be confused with the user-configured AWS account alias,
-        /// which is set from the IAM console.
+        /// The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is
+        /// not the user-configured AWS account alias set using the IAM console.
         /// </para>
         /// </summary>
         public string OwnerAlias

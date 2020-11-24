@@ -2027,6 +2027,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type DeviceUpdateStatus.
+    /// </summary>
+    public class DeviceUpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_UP_TO_DATE for DeviceUpdateStatus
+        /// </summary>
+        public static readonly DeviceUpdateStatus NOT_UP_TO_DATE = new DeviceUpdateStatus("NOT_UP_TO_DATE");
+        /// <summary>
+        /// Constant UP_TO_DATE for DeviceUpdateStatus
+        /// </summary>
+        public static readonly DeviceUpdateStatus UP_TO_DATE = new DeviceUpdateStatus("UP_TO_DATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceUpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceUpdateStatus FindValue(string value)
+        {
+            return FindValue<DeviceUpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DvbSdtOutputSdt.
     /// </summary>
     public class DvbSdtOutputSdt : ConstantClass
@@ -11186,6 +11236,52 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReservationVideoQuality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RtmpAdMarkers.
+    /// </summary>
+    public class RtmpAdMarkers : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ON_CUE_POINT_SCTE35 for RtmpAdMarkers
+        /// </summary>
+        public static readonly RtmpAdMarkers ON_CUE_POINT_SCTE35 = new RtmpAdMarkers("ON_CUE_POINT_SCTE35");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RtmpAdMarkers(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RtmpAdMarkers FindValue(string value)
+        {
+            return FindValue<RtmpAdMarkers>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RtmpAdMarkers(string value)
         {
             return FindValue(value);
         }

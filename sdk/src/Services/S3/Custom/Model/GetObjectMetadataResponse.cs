@@ -45,6 +45,7 @@ namespace Amazon.S3.Model
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
         private ReplicationStatus replicationStatus;
+        private ArchiveStatus archiveStatus;
         private int? partsCount;
         private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
         private ObjectLockMode objectLockMode;
@@ -351,6 +352,15 @@ namespace Amazon.S3.Model
         {
             get { return this.replicationStatus; }
             set { this.replicationStatus = value; }
+        }
+
+        /// <summary>
+        /// <para>The archive state of the head object.</para>
+        /// </summary>
+        public ArchiveStatus ArchiveStatus
+        {
+            get { return this.archiveStatus; }
+            set { this.archiveStatus = value; }
         }
 
         /// <summary>

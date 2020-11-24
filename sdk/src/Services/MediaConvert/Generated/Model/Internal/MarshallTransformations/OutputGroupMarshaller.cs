@@ -45,6 +45,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputGroup requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAutomatedEncodingSettings())
+            {
+                context.Writer.WritePropertyName("automatedEncodingSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AutomatedEncodingSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutomatedEncodingSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCustomName())
             {
                 context.Writer.WritePropertyName("customName");

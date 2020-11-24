@@ -49,10 +49,11 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property EventBusName. 
         /// <para>
-        /// Limits the results to show only the rules associated with the specified event bus.
+        /// The name or ARN of the event bus to list the rules for. If you omit this, the default
+        /// event bus is used.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=1600)]
         public string EventBusName
         {
             get { return this._eventBusName; }

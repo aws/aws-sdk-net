@@ -36,6 +36,7 @@ namespace Amazon.IoTAnalytics.Model
     {
         private string _arn;
         private DateTime? _creationTime;
+        private DateTime? _lastMessageArrivalTime;
         private DateTime? _lastUpdateTime;
         private string _name;
         private RetentionPeriod _retentionPeriod;
@@ -76,6 +77,34 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastMessageArrivalTime. 
+        /// <para>
+        /// The last time when a new message arrived in the channel.
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS IoT Analytics updates this value at most once per minute for one channel. Hence,
+        /// the <code>lastMessageArrivalTime</code> value is an approximation.
+        /// </para>
+        ///  
+        /// <para>
+        /// This feature only applies to messages that arrived in the data store after October
+        /// 23, 2020. 
+        /// </para>
+        /// </summary>
+        public DateTime LastMessageArrivalTime
+        {
+            get { return this._lastMessageArrivalTime.GetValueOrDefault(); }
+            set { this._lastMessageArrivalTime = value; }
+        }
+
+        // Check to see if LastMessageArrivalTime property is set
+        internal bool IsSetLastMessageArrivalTime()
+        {
+            return this._lastMessageArrivalTime.HasValue; 
         }
 
         /// <summary>
@@ -154,9 +183,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Storage. 
         /// <para>
-        /// Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3"
-        /// storage. If not specified, the default is "serviceManagedS3". This cannot be changed
-        /// after creation of the channel.
+        /// Where channel data is stored. You can choose one of <code>serviceManagedS3</code>
+        /// or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
+        /// You cannot change this storage option after the channel is created.
         /// </para>
         /// </summary>
         public ChannelStorage Storage

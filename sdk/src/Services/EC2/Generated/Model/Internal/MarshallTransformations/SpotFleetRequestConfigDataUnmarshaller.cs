@@ -146,6 +146,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ReplaceUnhealthyInstances = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("spotMaintenanceStrategies", targetDepth))
+                    {
+                        var unmarshaller = SpotMaintenanceStrategiesUnmarshaller.Instance;
+                        unmarshalledObject.SpotMaintenanceStrategies = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("spotMaxTotalPrice", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

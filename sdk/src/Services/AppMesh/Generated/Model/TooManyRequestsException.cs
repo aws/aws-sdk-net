@@ -30,14 +30,15 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// The maximum request rate permitted by the App Mesh APIs has been exceeded for your
-    ///         account. For best results, use an increasing or variable sleep interval between
-    ///         requests.
+    /// account. For best results, use an increasing or variable sleep interval between requests.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class TooManyRequestsException : AmazonAppMeshException
     {
+
+        private RetryableDetails _retryableDetails = new RetryableDetails(true);
 
         /// <summary>
         /// Constructs a new TooManyRequestsException with the specified error
@@ -122,5 +123,16 @@ namespace Amazon.AppMesh.Model
         }
 #endif
 
+        /// <summary>
+        /// Flag indicating if the exception is retryable and the associated retry
+        /// details. A null value indicates that the exception is not retryable.
+        /// </summary>
+        public override RetryableDetails Retryable
+        {
+            get
+            {
+                return _retryableDetails;
+            }
+        }
     }
 }

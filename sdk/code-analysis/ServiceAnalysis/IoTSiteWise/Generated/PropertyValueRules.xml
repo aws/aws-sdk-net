@@ -1484,7 +1484,6 @@
     <property>Amazon.IoTSiteWise.Model.Metric.Expression</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^[a-z0-9._+\-*%/^, ()]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.PortalResource.Id</property>
@@ -1612,7 +1611,6 @@
     <property>Amazon.IoTSiteWise.Model.Transform.Expression</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^[a-z0-9._+\-*%/^, ()]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.TumblingWindow.Interval</property>

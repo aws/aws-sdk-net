@@ -63,7 +63,7 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// When <code>true</code>, specifies whether the domain entry is an alias used by the
         /// Lightsail load balancer. You can include an alias (A type) record in your request,
-        /// which points to a load balancer DNS name and routes traffic to your load balancer
+        /// which points to a load balancer DNS name and routes traffic to your load balancer.
         /// </para>
         /// </summary>
         public bool IsAlias

@@ -70,6 +70,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExcludeBootVolume = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NoReboot", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.NoReboot = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

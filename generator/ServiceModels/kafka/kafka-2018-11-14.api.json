@@ -1245,9 +1245,11 @@
       "enum": [
         "ACTIVE",
         "CREATING",
-        "UPDATING",
         "DELETING",
-        "FAILED"
+        "FAILED",
+        "MAINTENANCE",
+        "REBOOTING_BROKER",
+        "UPDATING"
       ]
     },
     "CompatibleKafkaVersion" : {
@@ -1761,7 +1763,8 @@
       "enum": [
         "DEFAULT",
         "PER_BROKER",
-        "PER_TOPIC_PER_BROKER"
+        "PER_TOPIC_PER_BROKER",
+        "PER_TOPIC_PER_PARTITION"
       ]
     },
     "Error": {

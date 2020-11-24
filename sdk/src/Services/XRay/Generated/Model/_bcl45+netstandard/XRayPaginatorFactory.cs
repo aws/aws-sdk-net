@@ -53,6 +53,22 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
+        /// Paginator for GetInsightEvents operation
+        ///</summary>
+        public IGetInsightEventsPaginator GetInsightEvents(GetInsightEventsRequest request) 
+        {
+            return new GetInsightEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetInsightSummaries operation
+        ///</summary>
+        public IGetInsightSummariesPaginator GetInsightSummaries(GetInsightSummariesRequest request) 
+        {
+            return new GetInsightSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetSamplingRules operation
         ///</summary>
         public IGetSamplingRulesPaginator GetSamplingRules(GetSamplingRulesRequest request) 

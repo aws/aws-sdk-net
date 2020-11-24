@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// You tried to create more rules or add more targets to a rule than is allowed.
+    /// The request failed because it attempted to create resource beyond the allowed service
+    /// quota.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

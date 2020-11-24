@@ -34,6 +34,7 @@ namespace Amazon.Kendra.Model
     public partial class SharePointConfiguration
     {
         private bool? _crawlAttachments;
+        private bool? _disableLocalGroups;
         private string _documentTitleFieldName;
         private List<string> _exclusionPatterns = new List<string>();
         private List<DataSourceToIndexFieldMapping> _fieldMappings = new List<DataSourceToIndexFieldMapping>();
@@ -61,6 +62,25 @@ namespace Amazon.Kendra.Model
         internal bool IsSetCrawlAttachments()
         {
             return this._crawlAttachments.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableLocalGroups. 
+        /// <para>
+        /// A Boolean value that specifies whether local groups are disabled (<code>True</code>)
+        /// or enabled (<code>False</code>). 
+        /// </para>
+        /// </summary>
+        public bool DisableLocalGroups
+        {
+            get { return this._disableLocalGroups.GetValueOrDefault(); }
+            set { this._disableLocalGroups = value; }
+        }
+
+        // Check to see if DisableLocalGroups property is set
+        internal bool IsSetDisableLocalGroups()
+        {
+            return this._disableLocalGroups.HasValue; 
         }
 
         /// <summary>

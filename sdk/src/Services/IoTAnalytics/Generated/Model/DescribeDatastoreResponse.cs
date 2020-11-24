@@ -57,8 +57,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Statistics. 
         /// <para>
-        /// Additional statistical information about the data store. Included if the 'includeStatistics'
-        /// parameter is set to true in the request.
+        /// Additional statistical information about the data store. Included if the <code>includeStatistics</code>
+        /// parameter is set to <code>true</code> in the request.
         /// </para>
         /// </summary>
         public DatastoreStatistics Statistics

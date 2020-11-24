@@ -218,9 +218,10 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property EnhancedMonitoring.             
         /// <para>
-        /// Specifies which metrics are gathered for the MSK cluster. This property has three
-        /// possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the
-        /// metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
+        /// Specifies which metrics are gathered for the MSK cluster. This property has the following
+        /// possible values: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.
+        /// For a list of the metrics associated with each of these levels of monitoring, see
+        /// <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
         /// </para>
         /// </summary>
         public EnhancedMonitoring EnhancedMonitoring
@@ -289,7 +290,8 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property State.             
         /// <para>
-        /// The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+        /// The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED,
+        /// MAINTENANCE, REBOOTING_BROKER, and UPDATING.
         /// </para>
         /// </summary>
         public ClusterState State

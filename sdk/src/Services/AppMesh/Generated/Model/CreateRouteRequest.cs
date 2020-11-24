@@ -32,12 +32,12 @@ namespace Amazon.AppMesh.Model
     /// Container for the parameters to the CreateRoute operation.
     /// Creates a route that is associated with a virtual router.
     /// 
-    ///          
+    ///  
     /// <para>
     ///  You can route several different protocols and define a retry policy for a route.
-    ///         Traffic can be routed to one or more virtual nodes.
+    /// Traffic can be routed to one or more virtual nodes.
     /// </para>
-    ///          
+    ///  
     /// <para>
     /// For more information about routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html">Routes</a>.
     /// </para>
@@ -55,8 +55,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of therequest.
-        /// Up to 36 letters, numbers, hyphens, and underscores are allowed.
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -94,9 +94,9 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property MeshOwner. 
         /// <para>
         /// The AWS IAM account ID of the service mesh owner. If the account ID is not your own,
-        /// then               the account that you specify must share the mesh with your account
-        /// before you can create              the resource in the service mesh. For more information
-        /// about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+        /// then the account that you specify must share the mesh with your account before you
+        /// can create the resource in the service mesh. For more information about mesh sharing,
+        /// see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
         /// with shared meshes</a>.
         /// </para>
         /// </summary>
@@ -155,9 +155,9 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Optional metadata that you can apply to the route to assist with categorization and
-        ///         organization. Each tag consists of a key and an optional value, both of which
-        /// you define.         Tag keys can have a maximum character length of 128 characters,
-        /// and tag values can have            a maximum length of 256 characters.
+        /// organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Tag keys can have a maximum character length of 128 characters, and tag values
+        /// can have a maximum length of 256 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -177,7 +177,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property VirtualRouterName. 
         /// <para>
         /// The name of the virtual router in which to create the route. If the virtual router
-        /// is in         a shared mesh, then you must be the owner of the virtual router resource.
+        /// is in a shared mesh, then you must be the owner of the virtual router resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

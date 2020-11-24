@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssignmentName. 
         /// <para>
-        /// The name of the assignment. 
+        /// The name of the assignment or rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

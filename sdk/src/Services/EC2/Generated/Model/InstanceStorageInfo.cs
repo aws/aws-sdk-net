@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Disks. 
         /// <para>
-        /// Array describing the disks that are available for the instance type.
+        /// Describes the disks that are available for the instance type.
         /// </para>
         /// </summary>
         public List<DiskInfo> Disks

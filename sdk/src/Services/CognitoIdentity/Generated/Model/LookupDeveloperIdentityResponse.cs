@@ -86,7 +86,7 @@ namespace Amazon.CognitoIdentity.Model
         /// starting from the 11th match.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=65535)]
         public string NextToken
         {
             get { return this._nextToken; }

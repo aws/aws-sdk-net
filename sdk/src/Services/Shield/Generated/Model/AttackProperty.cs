@@ -82,8 +82,8 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property TopContributors. 
         /// <para>
-        /// The array of <a>Contributor</a> objects that includes the top five contributors to
-        /// an attack. 
+        /// The array of contributor objects that includes the top five contributors to an attack.
+        /// 
         /// </para>
         /// </summary>
         public List<Contributor> TopContributors

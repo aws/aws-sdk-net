@@ -38,7 +38,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The version ID of the data set contents which are being created.
+        /// The version ID of the dataset contents that are being created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=36)]

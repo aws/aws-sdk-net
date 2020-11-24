@@ -34,6 +34,7 @@ namespace Amazon.FSx.Model
     public partial class WindowsFileSystemConfiguration
     {
         private string _activeDirectoryId;
+        private List<Alias> _aliases = new List<Alias>();
         private int? _automaticBackupRetentionDays;
         private bool? _copyTagsToBackups;
         private string _dailyAutomaticBackupStartTime;
@@ -64,6 +65,22 @@ namespace Amazon.FSx.Model
         internal bool IsSetActiveDirectoryId()
         {
             return this._activeDirectoryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Aliases.
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<Alias> Aliases
+        {
+            get { return this._aliases; }
+            set { this._aliases = value; }
+        }
+
+        // Check to see if Aliases property is set
+        internal bool IsSetAliases()
+        {
+            return this._aliases != null && this._aliases.Count > 0; 
         }
 
         /// <summary>

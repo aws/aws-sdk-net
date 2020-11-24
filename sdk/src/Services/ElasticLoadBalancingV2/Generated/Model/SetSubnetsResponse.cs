@@ -34,6 +34,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class SetSubnetsResponse : AmazonWebServiceResponse
     {
         private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
+        private IpAddressType _ipAddressType;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
@@ -51,6 +52,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// [Network Load Balancers] The IP address type.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
     }

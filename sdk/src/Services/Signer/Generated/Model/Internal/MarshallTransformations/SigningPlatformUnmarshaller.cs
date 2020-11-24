@@ -94,6 +94,12 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     unmarshalledObject.PlatformId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("revocationSupported", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RevocationSupported = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("signingConfiguration", targetDepth))
                 {
                     var unmarshaller = SigningConfigurationUnmarshaller.Instance;

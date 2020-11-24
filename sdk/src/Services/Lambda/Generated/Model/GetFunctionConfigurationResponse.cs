@@ -53,6 +53,8 @@ namespace Amazon.Lambda.Model
         private string _revisionId;
         private string _role;
         private Runtime _runtime;
+        private string _signingJobArn;
+        private string _signingProfileVersionArn;
         private State _state;
         private string _stateReason;
         private StateReasonCode _stateReasonCode;
@@ -428,6 +430,42 @@ namespace Amazon.Lambda.Model
         internal bool IsSetRuntime()
         {
             return this._runtime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SigningJobArn. 
+        /// <para>
+        /// The ARN of the signing job.
+        /// </para>
+        /// </summary>
+        public string SigningJobArn
+        {
+            get { return this._signingJobArn; }
+            set { this._signingJobArn = value; }
+        }
+
+        // Check to see if SigningJobArn property is set
+        internal bool IsSetSigningJobArn()
+        {
+            return this._signingJobArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SigningProfileVersionArn. 
+        /// <para>
+        /// The ARN of the signing profile version.
+        /// </para>
+        /// </summary>
+        public string SigningProfileVersionArn
+        {
+            get { return this._signingProfileVersionArn; }
+            set { this._signingProfileVersionArn = value; }
+        }
+
+        // Check to see if SigningProfileVersionArn property is set
+        internal bool IsSetSigningProfileVersionArn()
+        {
+            return this._signingProfileVersionArn != null;
         }
 
         /// <summary>

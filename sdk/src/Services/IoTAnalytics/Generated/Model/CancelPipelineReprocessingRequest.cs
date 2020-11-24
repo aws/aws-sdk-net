@@ -59,7 +59,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ReprocessingId. 
         /// <para>
-        /// The ID of the reprocessing task (returned by "StartPipelineReprocessing").
+        /// The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

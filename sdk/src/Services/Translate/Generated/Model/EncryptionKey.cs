@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// The encryption key used to encrypt the custom terminologies used by Amazon Translate.
+    /// The encryption key used to encrypt this object.
     /// </summary>
     public partial class EncryptionKey
     {

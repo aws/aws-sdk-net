@@ -471,9 +471,25 @@ namespace Amazon.LexModelBuildingService
         /// </summary>
         public static readonly Locale EnUS = new Locale("en-US");
         /// <summary>
+        /// Constant EsES for Locale
+        /// </summary>
+        public static readonly Locale EsES = new Locale("es-ES");
+        /// <summary>
         /// Constant EsUS for Locale
         /// </summary>
         public static readonly Locale EsUS = new Locale("es-US");
+        /// <summary>
+        /// Constant FrCA for Locale
+        /// </summary>
+        public static readonly Locale FrCA = new Locale("fr-CA");
+        /// <summary>
+        /// Constant FrFR for Locale
+        /// </summary>
+        public static readonly Locale FrFR = new Locale("fr-FR");
+        /// <summary>
+        /// Constant ItIT for Locale
+        /// </summary>
+        public static readonly Locale ItIT = new Locale("it-IT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -30,8 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">
-    /// AWS Nitro Enclaves</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
+    /// What is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.
     /// </summary>
     public partial class EnclaveOptionsRequest
     {

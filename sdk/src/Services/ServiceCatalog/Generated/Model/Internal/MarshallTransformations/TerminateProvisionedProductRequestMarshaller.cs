@@ -92,6 +92,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProvisionedProductName);
                 }
 
+                if(publicRequest.IsSetRetainPhysicalResources())
+                {
+                    context.Writer.WritePropertyName("RetainPhysicalResources");
+                    context.Writer.Write(publicRequest.RetainPhysicalResources);
+                }
+
                 if(publicRequest.IsSetTerminateToken())
                 {
                     context.Writer.WritePropertyName("TerminateToken");

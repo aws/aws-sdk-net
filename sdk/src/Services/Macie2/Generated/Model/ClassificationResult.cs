@@ -50,9 +50,9 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  
         /// <para>
-        /// This value can help you to determine whether to investigate additional occurrences
-        /// of sensitive data in an object. You can do this by referring to the corresponding
-        /// sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).
+        /// This value can help you determine whether to investigate additional occurrences of
+        /// sensitive data in an object. You can do this by referring to the corresponding sensitive
+        /// data discovery result for the finding (ClassificationDetails.detailedResultsLocation).
         /// </para>
         /// </summary>
         public bool AdditionalOccurrences

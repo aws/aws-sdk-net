@@ -36,6 +36,7 @@ namespace Amazon.MediaLive.Model
         private string _arn;
         private InputDeviceConnectionState _connectionState;
         private DeviceSettingsSyncState _deviceSettingsSyncState;
+        private DeviceUpdateStatus _deviceUpdateStatus;
         private InputDeviceHdSettings _hdDeviceSettings;
         private string _id;
         private string _macAddress;
@@ -92,6 +93,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetDeviceSettingsSyncState()
         {
             return this._deviceSettingsSyncState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceUpdateStatus. The status of software on the input
+        /// device.
+        /// </summary>
+        public DeviceUpdateStatus DeviceUpdateStatus
+        {
+            get { return this._deviceUpdateStatus; }
+            set { this._deviceUpdateStatus = value; }
+        }
+
+        // Check to see if DeviceUpdateStatus property is set
+        internal bool IsSetDeviceUpdateStatus()
+        {
+            return this._deviceUpdateStatus != null;
         }
 
         /// <summary>

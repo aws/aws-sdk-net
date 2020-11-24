@@ -45,6 +45,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OneDriveConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDisableLocalGroups())
+            {
+                context.Writer.WritePropertyName("DisableLocalGroups");
+                context.Writer.Write(requestObject.DisableLocalGroups);
+            }
+
             if(requestObject.IsSetExclusionPatterns())
             {
                 context.Writer.WritePropertyName("ExclusionPatterns");

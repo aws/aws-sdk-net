@@ -2488,7 +2488,8 @@
       "errors":[
         {"shape":"InvalidRequestException"},
         {"shape":"InternalFailureException"},
-        {"shape":"ResourceNotFoundException"}
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"}
       ]
     },
     "ListThingGroupsForThing":{
@@ -2502,7 +2503,8 @@
       "errors":[
         {"shape":"InvalidRequestException"},
         {"shape":"InternalFailureException"},
-        {"shape":"ResourceNotFoundException"}
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"}
       ]
     },
     "ListThingPrincipals":{
@@ -2610,7 +2612,8 @@
       "errors":[
         {"shape":"InvalidRequestException"},
         {"shape":"InternalFailureException"},
-        {"shape":"ResourceNotFoundException"}
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"}
       ]
     },
     "ListTopicRuleDestinations":{
@@ -4249,6 +4252,7 @@
       }
     },
     "AwsJobTimeoutInProgressTimeoutInMinutes":{"type":"long"},
+    "BatchMode":{"type":"boolean"},
     "Behavior":{
       "type":"structure",
       "required":["name"],
@@ -6935,6 +6939,11 @@
       }
     },
     "FileName":{"type":"string"},
+    "FileType":{
+      "type":"integer",
+      "max":255,
+      "min":0
+    },
     "FindingId":{
       "type":"string",
       "max":128,
@@ -6956,7 +6965,8 @@
       "members":{
         "roleArn":{"shape":"AwsArn"},
         "deliveryStreamName":{"shape":"DeliveryStreamName"},
-        "separator":{"shape":"FirehoseSeparator"}
+        "separator":{"shape":"FirehoseSeparator"},
+        "batchMode":{"shape":"BatchMode"}
       }
     },
     "FirehoseSeparator":{
@@ -7414,6 +7424,7 @@
       "members":{
         "channelArn":{"shape":"AwsArn"},
         "channelName":{"shape":"ChannelName"},
+        "batchMode":{"shape":"BatchMode"},
         "roleArn":{"shape":"AwsArn"}
       }
     },
@@ -7426,6 +7437,7 @@
       "members":{
         "inputName":{"shape":"InputName"},
         "messageId":{"shape":"MessageId"},
+        "batchMode":{"shape":"BatchMode"},
         "roleArn":{"shape":"AwsArn"}
       }
     },
@@ -8797,6 +8809,16 @@
       "type":"structure",
       "required":["thingName"],
       "members":{
+        "nextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"RegistryMaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
         "thingName":{
           "shape":"ThingName",
           "location":"uri",
@@ -8807,7 +8829,8 @@
     "ListThingPrincipalsResponse":{
       "type":"structure",
       "members":{
-        "principals":{"shape":"Principals"}
+        "principals":{"shape":"Principals"},
+        "nextToken":{"shape":"NextToken"}
       }
     },
     "ListThingRegistrationTaskReportsRequest":{
@@ -9373,6 +9396,7 @@
       "type":"structure",
       "members":{
         "fileName":{"shape":"FileName"},
+        "fileType":{"shape":"FileType"},
         "fileVersion":{"shape":"OTAUpdateFileVersion"},
         "fileLocation":{"shape":"FileLocation"},
         "codeSigning":{"shape":"CodeSigning"},

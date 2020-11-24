@@ -44,7 +44,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property MaximumCapacityUnits. 
         /// <para>
-        ///  The upper boundary of EC2 units. It is measured through VCPU cores or instances for
+        ///  The upper boundary of EC2 units. It is measured through vCPU cores or instances for
         /// instance groups and measured through units for instance fleets. Managed scaling activities
         /// are not allowed beyond this boundary. The limit only applies to the core and task
         /// nodes. The master node cannot be scaled after initial configuration. 
@@ -67,7 +67,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property MaximumCoreCapacityUnits. 
         /// <para>
         ///  The upper boundary of EC2 units for core node type in a cluster. It is measured through
-        /// VCPU cores or instances for instance groups and measured through units for instance
+        /// vCPU cores or instances for instance groups and measured through units for instance
         /// fleets. The core units are not allowed to scale beyond this boundary. The parameter
         /// is used to split capacity allocation between core and task nodes. 
         /// </para>
@@ -87,10 +87,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property MaximumOnDemandCapacityUnits. 
         /// <para>
-        ///  The upper boundary of On-Demand EC2 units. It is measured through VCPU cores or instances
+        ///  The upper boundary of On-Demand EC2 units. It is measured through vCPU cores or instances
         /// for instance groups and measured through units for instance fleets. The On-Demand
         /// units are not allowed to scale beyond this boundary. The parameter is used to split
-        /// capacity allocation between On-Demand and Spot instances. 
+        /// capacity allocation between On-Demand and Spot Instances. 
         /// </para>
         /// </summary>
         public int MaximumOnDemandCapacityUnits
@@ -108,7 +108,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property MinimumCapacityUnits. 
         /// <para>
-        ///  The lower boundary of EC2 units. It is measured through VCPU cores or instances for
+        ///  The lower boundary of EC2 units. It is measured through vCPU cores or instances for
         /// instance groups and measured through units for instance fleets. Managed scaling activities
         /// are not allowed beyond this boundary. The limit only applies to the core and task
         /// nodes. The master node cannot be scaled after initial configuration. 

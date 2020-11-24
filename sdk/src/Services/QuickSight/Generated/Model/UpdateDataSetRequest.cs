@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _awsAccountId;
         private List<ColumnGroup> _columnGroups = new List<ColumnGroup>();
+        private List<ColumnLevelPermissionRule> _columnLevelPermissionRules = new List<ColumnLevelPermissionRule>();
         private string _dataSetId;
         private DataSetImportMode _importMode;
         private Dictionary<string, LogicalTable> _logicalTableMap = new Dictionary<string, LogicalTable>();
@@ -80,6 +81,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetColumnGroups()
         {
             return this._columnGroups != null && this._columnGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ColumnLevelPermissionRules. 
+        /// <para>
+        /// A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ColumnLevelPermissionRule> ColumnLevelPermissionRules
+        {
+            get { return this._columnLevelPermissionRules; }
+            set { this._columnLevelPermissionRules = value; }
+        }
+
+        // Check to see if ColumnLevelPermissionRules property is set
+        internal bool IsSetColumnLevelPermissionRules()
+        {
+            return this._columnLevelPermissionRules != null && this._columnLevelPermissionRules.Count > 0; 
         }
 
         /// <summary>

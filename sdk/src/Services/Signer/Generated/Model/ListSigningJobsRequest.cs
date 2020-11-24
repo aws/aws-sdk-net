@@ -40,11 +40,52 @@ namespace Amazon.Signer.Model
     /// </summary>
     public partial class ListSigningJobsRequest : AmazonSignerRequest
     {
+        private bool? _isRevoked;
+        private string _jobInvoker;
         private int? _maxResults;
         private string _nextToken;
         private string _platformId;
         private string _requestedBy;
+        private DateTime? _signatureExpiresAfter;
+        private DateTime? _signatureExpiresBefore;
         private SigningStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property IsRevoked. 
+        /// <para>
+        /// Filters results to return only signing jobs with revoked signatures.
+        /// </para>
+        /// </summary>
+        public bool IsRevoked
+        {
+            get { return this._isRevoked.GetValueOrDefault(); }
+            set { this._isRevoked = value; }
+        }
+
+        // Check to see if IsRevoked property is set
+        internal bool IsSetIsRevoked()
+        {
+            return this._isRevoked.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobInvoker. 
+        /// <para>
+        /// Filters results to return only signing jobs initiated by a specified IAM entity.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string JobInvoker
+        {
+            get { return this._jobInvoker; }
+            set { this._jobInvoker = value; }
+        }
+
+        // Check to see if JobInvoker property is set
+        internal bool IsSetJobInvoker()
+        {
+            return this._jobInvoker != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -123,6 +164,44 @@ namespace Amazon.Signer.Model
         internal bool IsSetRequestedBy()
         {
             return this._requestedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignatureExpiresAfter. 
+        /// <para>
+        /// Filters results to return only signing jobs with signatures expiring after a specified
+        /// timestamp.
+        /// </para>
+        /// </summary>
+        public DateTime SignatureExpiresAfter
+        {
+            get { return this._signatureExpiresAfter.GetValueOrDefault(); }
+            set { this._signatureExpiresAfter = value; }
+        }
+
+        // Check to see if SignatureExpiresAfter property is set
+        internal bool IsSetSignatureExpiresAfter()
+        {
+            return this._signatureExpiresAfter.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignatureExpiresBefore. 
+        /// <para>
+        /// Filters results to return only signing jobs with signatures expiring before a specified
+        /// timestamp.
+        /// </para>
+        /// </summary>
+        public DateTime SignatureExpiresBefore
+        {
+            get { return this._signatureExpiresBefore.GetValueOrDefault(); }
+            set { this._signatureExpiresBefore = value; }
+        }
+
+        // Check to see if SignatureExpiresBefore property is set
+        internal bool IsSetSignatureExpiresBefore()
+        {
+            return this._signatureExpiresBefore.HasValue; 
         }
 
         /// <summary>

@@ -889,6 +889,40 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  DescribeGlobalSettings
+
+
+        /// <summary>
+        /// The current feature settings for the AWS Account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGlobalSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings">REST API Reference for DescribeGlobalSettings Operation</seealso>
+        DescribeGlobalSettingsResponse DescribeGlobalSettings(DescribeGlobalSettingsRequest request);
+
+
+
+        /// <summary>
+        /// The current feature settings for the AWS Account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeGlobalSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings">REST API Reference for DescribeGlobalSettings Operation</seealso>
+        Task<DescribeGlobalSettingsResponse> DescribeGlobalSettingsAsync(DescribeGlobalSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeProtectedResource
 
 
@@ -1005,11 +1039,11 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns the current service opt-in settings for the Region. If the service has a value
-        /// set to <code>true</code>, AWS Backup tries to protect that service's resources in
-        /// this Region, when included in an on-demand backup or scheduled backup plan. If the
-        /// value is set to <code>false</code> for a service, AWS Backup does not try to protect
-        /// that service's resources in this Region.
+        /// Returns the current service opt-in settings for the Region. If service-opt-in is enabled
+        /// for a service, AWS Backup tries to protect that service's resources in this Region,
+        /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
+        /// AWS Backup does not try to protect that service's resources in this Region, AWS Backup
+        /// does not try to protect that service's resources in this Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRegionSettings service method.</param>
         /// 
@@ -1023,11 +1057,11 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns the current service opt-in settings for the Region. If the service has a value
-        /// set to <code>true</code>, AWS Backup tries to protect that service's resources in
-        /// this Region, when included in an on-demand backup or scheduled backup plan. If the
-        /// value is set to <code>false</code> for a service, AWS Backup does not try to protect
-        /// that service's resources in this Region.
+        /// Returns the current service opt-in settings for the Region. If service-opt-in is enabled
+        /// for a service, AWS Backup tries to protect that service's resources in this Region,
+        /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
+        /// AWS Backup does not try to protect that service's resources in this Region, AWS Backup
+        /// does not try to protect that service's resources in this Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRegionSettings service method.</param>
         /// <param name="cancellationToken">
@@ -2354,6 +2388,10 @@ namespace Amazon.Backup
         /// Indicates that something is wrong with a parameter's value. For example, the value
         /// is out of range.
         /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
         /// <exception cref="Amazon.Backup.Model.LimitExceededException">
         /// A limit in the request has been exceeded; for example, a maximum number of items allowed
         /// in a request.
@@ -2384,6 +2422,10 @@ namespace Amazon.Backup
         /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
         /// Indicates that something is wrong with a parameter's value. For example, the value
         /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
         /// </exception>
         /// <exception cref="Amazon.Backup.Model.LimitExceededException">
         /// A limit in the request has been exceeded; for example, a maximum number of items allowed
@@ -2757,6 +2799,64 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  UpdateGlobalSettings
+
+
+        /// <summary>
+        /// Updates the current global settings for the AWS Account. Use the <code>DescribeGlobalSettings</code>
+        /// API to determine the current settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGlobalSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
+        UpdateGlobalSettingsResponse UpdateGlobalSettings(UpdateGlobalSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Updates the current global settings for the AWS Account. Use the <code>DescribeGlobalSettings</code>
+        /// API to determine the current settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGlobalSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
+        Task<UpdateGlobalSettingsResponse> UpdateGlobalSettingsAsync(UpdateGlobalSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateRecoveryPointLifecycle
 
 
@@ -2843,11 +2943,11 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates the current service opt-in settings for the Region. If the service has a value
-        /// set to <code>true</code>, AWS Backup tries to protect that service's resources in
-        /// this Region, when included in an on-demand backup or scheduled backup plan. If the
-        /// value is set to <code>false</code> for a service, AWS Backup does not try to protect
-        /// that service's resources in this Region.
+        /// Updates the current service opt-in settings for the Region. If service-opt-in is enabled
+        /// for a service, AWS Backup tries to protect that service's resources in this Region,
+        /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
+        /// AWS Backup does not try to protect that service's resources in this Region. Use the
+        /// <code>DescribeRegionSettings</code> API to determine the resource types that are supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegionSettings service method.</param>
         /// 
@@ -2868,11 +2968,11 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates the current service opt-in settings for the Region. If the service has a value
-        /// set to <code>true</code>, AWS Backup tries to protect that service's resources in
-        /// this Region, when included in an on-demand backup or scheduled backup plan. If the
-        /// value is set to <code>false</code> for a service, AWS Backup does not try to protect
-        /// that service's resources in this Region.
+        /// Updates the current service opt-in settings for the Region. If service-opt-in is enabled
+        /// for a service, AWS Backup tries to protect that service's resources in this Region,
+        /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
+        /// AWS Backup does not try to protect that service's resources in this Region. Use the
+        /// <code>DescribeRegionSettings</code> API to determine the resource types that are supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegionSettings service method.</param>
         /// <param name="cancellationToken">

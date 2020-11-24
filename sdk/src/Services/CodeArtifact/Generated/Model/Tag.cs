@@ -40,7 +40,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The tag's key.
+        /// The tag key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -59,7 +59,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The tag's value.
+        /// The tag value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

@@ -182,8 +182,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsRootVolumeSize. 
         /// <para>
-        /// The size, in GiB, of the EBS root device volume of the Linux AMI that is used for
-        /// each EC2 instance. Available in Amazon EMR version 4.x and later.
+        /// The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used
+        /// for each EC2 instance. Available in Amazon EMR version 4.x and later.
         /// </para>
         /// </summary>
         public int EbsRootVolumeSize
@@ -265,7 +265,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// Attributes for Kerberos configuration when Kerberos authentication is enabled using
         /// a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
-        /// Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+        /// Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.
         /// </para>
         /// </summary>
         public KerberosAttributes KerberosAttributes
@@ -501,12 +501,13 @@ namespace Amazon.ElasticMapReduce.Model
         /// indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless
         /// of when the request to terminate the instance was submitted. This option is only available
         /// with Amazon EMR 5.1.0 and later and is the default for clusters created using that
-        /// version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-        /// and drains tasks from nodes before terminating the Amazon EC2 instances, regardless
-        /// of the instance-hour boundary. With either behavior, Amazon EMR removes the least
-        /// active nodes first and blocks instance termination if it could lead to HDFS corruption.
-        /// <code>TERMINATE_AT_TASK_COMPLETION</code> is available only in Amazon EMR version
-        /// 4.1.0 and later, and is the default for versions of Amazon EMR earlier than 5.1.0.
+        /// version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds
+        /// nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2
+        /// instances, regardless of the instance-hour boundary. With either behavior, Amazon
+        /// EMR removes the least active nodes first and blocks instance termination if it could
+        /// lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only
+        /// in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+        /// earlier than 5.1.0.
         /// </para>
         /// </summary>
         public ScaleDownBehavior ScaleDownBehavior

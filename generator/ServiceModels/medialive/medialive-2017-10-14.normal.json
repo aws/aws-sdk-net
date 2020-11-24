@@ -5441,6 +5441,11 @@
           "locationName": "deviceSettingsSyncState",
           "documentation": "The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration."
         },
+        "DeviceUpdateStatus": {
+          "shape": "DeviceUpdateStatus",
+          "locationName": "deviceUpdateStatus",
+          "documentation": "The status of software on the input device."
+        },
         "HdDeviceSettings": {
           "shape": "InputDeviceHdSettings",
           "locationName": "hdDeviceSettings",
@@ -6040,6 +6045,14 @@
       "enum": [
         "SYNCED",
         "SYNCING"
+      ]
+    },
+    "DeviceUpdateStatus": {
+      "type": "string",
+      "documentation": "The status of software on the input device.",
+      "enum": [
+        "UP_TO_DATE",
+        "NOT_UP_TO_DATE"
       ]
     },
     "DvbNitSettings": {
@@ -8682,6 +8695,11 @@
           "locationName": "deviceSettingsSyncState",
           "documentation": "The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration."
         },
+        "DeviceUpdateStatus": {
+          "shape": "DeviceUpdateStatus",
+          "locationName": "deviceUpdateStatus",
+          "documentation": "The status of software on the input device."
+        },
         "HdDeviceSettings": {
           "shape": "InputDeviceHdSettings",
           "locationName": "hdDeviceSettings",
@@ -8917,6 +8935,11 @@
           "shape": "DeviceSettingsSyncState",
           "locationName": "deviceSettingsSyncState",
           "documentation": "The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration."
+        },
+        "DeviceUpdateStatus": {
+          "shape": "DeviceUpdateStatus",
+          "locationName": "deviceUpdateStatus",
+          "documentation": "The status of software on the input device."
         },
         "HdDeviceSettings": {
           "shape": "InputDeviceHdSettings",
@@ -12223,6 +12246,13 @@
       },
       "documentation": "Placeholder documentation for ResourceNotFound"
     },
+    "RtmpAdMarkers": {
+      "type": "string",
+      "documentation": "Rtmp Ad Markers",
+      "enum": [
+        "ON_CUE_POINT_SCTE35"
+      ]
+    },
     "RtmpCacheFullBehavior": {
       "type": "string",
       "documentation": "Rtmp Cache Full Behavior",
@@ -12249,6 +12279,11 @@
     "RtmpGroupSettings": {
       "type": "structure",
       "members": {
+        "AdMarkers": {
+          "shape": "__listOfRtmpAdMarkers",
+          "locationName": "adMarkers",
+          "documentation": "Choose the ad marker type for this output group. MediaLive will create a message based on the content of each SCTE-35 message, format it for that marker type, and insert it in the datastream."
+        },
         "AuthenticationScheme": {
           "shape": "AuthenticationScheme",
           "locationName": "authenticationScheme",
@@ -13934,6 +13969,11 @@
           "locationName": "deviceSettingsSyncState",
           "documentation": "The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration."
         },
+        "DeviceUpdateStatus": {
+          "shape": "DeviceUpdateStatus",
+          "locationName": "deviceUpdateStatus",
+          "documentation": "The status of software on the input device."
+        },
         "HdDeviceSettings": {
           "shape": "InputDeviceHdSettings",
           "locationName": "hdDeviceSettings",
@@ -15075,6 +15115,13 @@
         "shape": "Reservation"
       },
       "documentation": "Placeholder documentation for __listOfReservation"
+    },
+    "__listOfRtmpAdMarkers": {
+      "type": "list",
+      "member": {
+        "shape": "RtmpAdMarkers"
+      },
+      "documentation": "Placeholder documentation for __listOfRtmpAdMarkers"
     },
     "__listOfScheduleAction": {
       "type": "list",

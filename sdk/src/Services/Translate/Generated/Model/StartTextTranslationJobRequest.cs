@@ -54,6 +54,7 @@ namespace Amazon.Translate.Model
         private InputDataConfig _inputDataConfig;
         private string _jobName;
         private OutputDataConfig _outputDataConfig;
+        private List<string> _parallelDataNames = new List<string>();
         private string _sourceLanguageCode;
         private List<string> _targetLanguageCodes = new List<string>();
         private List<string> _terminologyNames = new List<string>();
@@ -154,6 +155,25 @@ namespace Amazon.Translate.Model
         internal bool IsSetOutputDataConfig()
         {
             return this._outputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParallelDataNames. 
+        /// <para>
+        /// The names of the parallel data resources to use in the batch translation job. For
+        /// a list of available parallel data resources, use the <a>ListParallelData</a> operation.
+        /// </para>
+        /// </summary>
+        public List<string> ParallelDataNames
+        {
+            get { return this._parallelDataNames; }
+            set { this._parallelDataNames = value; }
+        }
+
+        // Check to see if ParallelDataNames property is set
+        internal bool IsSetParallelDataNames()
+        {
+            return this._parallelDataNames != null && this._parallelDataNames.Count > 0; 
         }
 
         /// <summary>

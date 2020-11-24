@@ -69,6 +69,22 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Timestamp);
             }
 
+            if(requestObject.IsSetUsageAllocations())
+            {
+                context.Writer.WritePropertyName("UsageAllocations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectUsageAllocationsListValue in requestObject.UsageAllocations)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UsageAllocationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectUsageAllocationsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

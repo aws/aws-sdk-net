@@ -30,7 +30,9 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAppImageConfig operation.
-    /// Creates a configuration for running an Amazon SageMaker image as a KernelGateway app.
+    /// Creates a configuration for running a SageMaker image as a KernelGateway app. The
+    /// configuration specifies the Amazon Elastic File System (EFS) storage volume on the
+    /// image, and a list of the kernels in the image.
     /// </summary>
     public partial class CreateAppImageConfigRequest : AmazonSageMakerRequest
     {

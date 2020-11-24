@@ -86,7 +86,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        /// The size (in MiB) of the tmpfs volume.
+        /// The maximum size (in MiB) of the tmpfs volume.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

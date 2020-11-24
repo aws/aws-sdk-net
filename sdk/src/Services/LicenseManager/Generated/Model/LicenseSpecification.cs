@@ -33,7 +33,26 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class LicenseSpecification
     {
+        private string _amiAssociationScope;
         private string _licenseConfigurationArn;
+
+        /// <summary>
+        /// Gets and sets the property AmiAssociationScope. 
+        /// <para>
+        /// Scope of AMI associations.
+        /// </para>
+        /// </summary>
+        public string AmiAssociationScope
+        {
+            get { return this._amiAssociationScope; }
+            set { this._amiAssociationScope = value; }
+        }
+
+        // Check to see if AmiAssociationScope property is set
+        internal bool IsSetAmiAssociationScope()
+        {
+            return this._amiAssociationScope != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LicenseConfigurationArn. 

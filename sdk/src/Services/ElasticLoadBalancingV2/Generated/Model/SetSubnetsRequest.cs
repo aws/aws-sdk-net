@@ -31,7 +31,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Container for the parameters to the SetSubnets operation.
     /// Enables the Availability Zones for the specified public subnets for the specified
-    /// load balancer. The specified subnets replace the previously enabled subnets.
+    /// Application Load Balancer or Network Load Balancer. The specified subnets replace
+    /// the previously enabled subnets.
     /// 
     ///  
     /// <para>
@@ -42,9 +43,31 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class SetSubnetsRequest : AmazonElasticLoadBalancingV2Request
     {
+        private IpAddressType _ipAddressType;
         private string _loadBalancerArn;
         private List<SubnetMapping> _subnetMappings = new List<SubnetMapping>();
         private List<string> _subnets = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// [Network Load Balancers] The type of IP addresses used by the subnets for your load
+        /// balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code>
+        /// (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load
+        /// balancer with a UDP or TCP_UDP listener. Internal load balancers must use <code>ipv4</code>.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LoadBalancerArn. 
@@ -78,10 +101,20 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
+        /// [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Application Load Balancers on Local Zones] You can specify subnets from one or more
+        /// Local Zones.
+        /// </para>
+        ///  
+        /// <para>
         /// [Network Load Balancers] You can specify subnets from one or more Availability Zones.
-        /// If you need static IP addresses for your internet-facing load balancer, you can specify
-        /// one Elastic IP address per subnet. For internal load balancers, you can specify one
-        /// private IP address per subnet from the IPv4 range of the subnet.
+        /// You can specify one Elastic IP address per subnet if you need static IP addresses
+        /// for your internet-facing load balancer. For internal load balancers, you can specify
+        /// one private IP address per subnet from the IPv4 range of the subnet. For internet-facing
+        /// load balancer, you can specify one IPv6 address per subnet.
         /// </para>
         /// </summary>
         public List<SubnetMapping> SubnetMappings
@@ -99,9 +132,26 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// The IDs of the public subnets. You must specify subnets from at least two Availability
-        /// Zones. You can specify only one subnet per Availability Zone. You must specify either
-        /// subnets or subnet mappings.
+        /// The IDs of the public subnets. You can specify only one subnet per Availability Zone.
+        /// You must specify either subnets or subnet mappings.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Application Load Balancers] You must specify subnets from at least two Availability
+        /// Zones.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Application Load Balancers on Local Zones] You can specify subnets from one or more
+        /// Local Zones.
+        /// </para>
+        ///  
+        /// <para>
+        /// [Network Load Balancers] You can specify subnets from one or more Availability Zones.
         /// </para>
         /// </summary>
         public List<string> Subnets

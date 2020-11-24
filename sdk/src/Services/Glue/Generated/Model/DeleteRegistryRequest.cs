@@ -1,0 +1,64 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the glue-2017-03-31.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.Glue.Model
+{
+    /// <summary>
+    /// Container for the parameters to the DeleteRegistry operation.
+    /// Delete the entire registry including schema and all of its versions. To get the status
+    /// of the delete operation, you can call the <code>GetRegistry</code> API after the asynchronous
+    /// call. Deleting a registry will disable all online operations for the registry such
+    /// as the <code>UpdateRegistry</code>, <code>CreateSchema</code>, <code>UpdateSchema</code>,
+    /// and <code>RegisterSchemaVersion</code> APIs.
+    /// </summary>
+    public partial class DeleteRegistryRequest : AmazonGlueRequest
+    {
+        private RegistryId _registryId;
+
+        /// <summary>
+        /// Gets and sets the property RegistryId. 
+        /// <para>
+        /// This is a wrapper structure that may contain the registry name and Amazon Resource
+        /// Name (ARN).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public RegistryId RegistryId
+        {
+            get { return this._registryId; }
+            set { this._registryId = value; }
+        }
+
+        // Check to see if RegistryId property is set
+        internal bool IsSetRegistryId()
+        {
+            return this._registryId != null;
+        }
+
+    }
+}

@@ -33,10 +33,28 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class OutputGroup
     {
+        private AutomatedEncodingSettings _automatedEncodingSettings;
         private string _customName;
         private string _name;
         private OutputGroupSettings _outputGroupSettings;
         private List<Output> _outputs = new List<Output>();
+
+        /// <summary>
+        /// Gets and sets the property AutomatedEncodingSettings. Use automated encoding to have
+        /// MediaConvert choose your encoding settings for you, based on characteristics of your
+        /// input video.
+        /// </summary>
+        public AutomatedEncodingSettings AutomatedEncodingSettings
+        {
+            get { return this._automatedEncodingSettings; }
+            set { this._automatedEncodingSettings = value; }
+        }
+
+        // Check to see if AutomatedEncodingSettings property is set
+        internal bool IsSetAutomatedEncodingSettings()
+        {
+            return this._automatedEncodingSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CustomName. Use Custom Group Name (CustomName) to specify

@@ -1680,6 +1680,11 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ListThingPrincipalsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ListThingPrincipalsRequest.ThingName</property>
     <min>1</min>
     <max>128</max>
@@ -2684,6 +2689,11 @@
     <property>Amazon.IoT.Model.MqttContext.Username</property>
     <min>1</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.OTAUpdateFile.FileType</property>
+    <min>0</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.OTAUpdateInfo.Description</property>

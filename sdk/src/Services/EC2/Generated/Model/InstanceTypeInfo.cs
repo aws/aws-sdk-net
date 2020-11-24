@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BareMetal. 
         /// <para>
-        /// Indicates whether the instance is bare metal.
+        /// Indicates whether the instance is a bare metal instance type.
         /// </para>
         /// </summary>
         public bool BareMetal
@@ -114,7 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CurrentGeneration. 
         /// <para>
-        /// Indicates whether the instance type is a current generation.
+        /// Indicates whether the instance type is current generation.
         /// </para>
         /// </summary>
         public bool CurrentGeneration
@@ -240,7 +240,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Hypervisor. 
         /// <para>
-        /// Indicates the hypervisor used for the instance type.
+        /// The hypervisor for the instance type.
         /// </para>
         /// </summary>
         public InstanceTypeHypervisor Hypervisor
@@ -276,7 +276,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceStorageInfo. 
         /// <para>
-        /// Describes the disks for the instance type.
+        /// Describes the instance storage for the instance type.
         /// </para>
         /// </summary>
         public InstanceStorageInfo InstanceStorageInfo
@@ -403,7 +403,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SupportedRootDeviceTypes. 
         /// <para>
-        /// Indicates the supported root device types.
+        /// The supported root device types.
         /// </para>
         /// </summary>
         public List<string> SupportedRootDeviceTypes

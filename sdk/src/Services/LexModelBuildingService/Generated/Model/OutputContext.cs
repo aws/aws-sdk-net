@@ -1,0 +1,102 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the lex-models-2017-04-19.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.LexModelBuildingService.Model
+{
+    /// <summary>
+    /// The specification of an output context that is set when an intent is fulfilled.
+    /// </summary>
+    public partial class OutputContext
+    {
+        private string _name;
+        private int? _timeToLiveInSeconds;
+        private int? _turnsToLive;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the context.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeToLiveInSeconds. 
+        /// <para>
+        /// The number of seconds that the context should be active after it is first sent in
+        /// a <code>PostContent</code> or <code>PostText</code> response. You can set the value
+        /// between 5 and 86,400 seconds (24 hours).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=5, Max=86400)]
+        public int TimeToLiveInSeconds
+        {
+            get { return this._timeToLiveInSeconds.GetValueOrDefault(); }
+            set { this._timeToLiveInSeconds = value; }
+        }
+
+        // Check to see if TimeToLiveInSeconds property is set
+        internal bool IsSetTimeToLiveInSeconds()
+        {
+            return this._timeToLiveInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TurnsToLive. 
+        /// <para>
+        /// The number of conversation turns that the context should be active. A conversation
+        /// turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding
+        /// response from Amazon Lex.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=20)]
+        public int TurnsToLive
+        {
+            get { return this._turnsToLive.GetValueOrDefault(); }
+            set { this._turnsToLive = value; }
+        }
+
+        // Check to see if TurnsToLive property is set
+        internal bool IsSetTurnsToLive()
+        {
+            return this._turnsToLive.HasValue; 
+        }
+
+    }
+}

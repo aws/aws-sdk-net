@@ -32,6 +32,12 @@ namespace Amazon.FraudDetector.Model
     /// Container for the parameters to the DeleteRule operation.
     /// Deletes the rule. You cannot delete a rule if it is used by an <code>ACTIVE</code>
     /// or <code>INACTIVE</code> detector version.
+    /// 
+    ///  
+    /// <para>
+    /// When you delete a rule, Amazon Fraud Detector permanently deletes that rule from the
+    /// evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+    /// </para>
     /// </summary>
     public partial class DeleteRuleRequest : AmazonFraudDetectorRequest
     {

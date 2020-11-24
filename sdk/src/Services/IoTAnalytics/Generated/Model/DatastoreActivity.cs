@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// The 'datastore' activity that specifies where to store the processed data.
+    /// The datastore activity that specifies where to store the processed data.
     /// </summary>
     public partial class DatastoreActivity
     {
@@ -58,7 +58,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the 'datastore' activity.
+        /// The name of the datastore activity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

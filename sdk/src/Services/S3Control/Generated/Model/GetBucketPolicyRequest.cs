@@ -32,8 +32,8 @@ namespace Amazon.S3Control.Model
     /// Container for the parameters to the GetBucketPolicy operation.
     /// <note> 
     /// <para>
-    /// This API action gets a bucket policy for an Amazon S3 on Outposts bucket. To get a
-    /// policy for an S3 bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html">GetBucketPolicy</a>
+    /// This action gets a bucket policy for an Amazon S3 on Outposts bucket. To get a policy
+    /// for an S3 bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html">GetBucketPolicy</a>
     /// in the <i>Amazon Simple Storage Service API</i>. 
     /// </para>
     ///  </note> 
@@ -50,10 +50,10 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  
     /// <para>
-    /// If you don't have <code>s3outposts:GetBucketPolicy</code> permissions, Amazon S3 returns
-    /// a <code>403 Access Denied</code> error. If you have the correct permissions, but you're
-    /// not using an identity that belongs to the bucket owner's account, Amazon S3 returns
-    /// a <code>405 Method Not Allowed</code> error.
+    /// Only users from Outposts bucket owner account with the right permissions can perform
+    /// actions on an Outposts bucket. If you don't have <code>s3-outposts:GetBucketPolicy</code>
+    /// permissions or you're not using an identity that belongs to the bucket owner's account,
+    /// Amazon S3 returns a <code>403 Access Denied</code> error.
     /// </para>
     ///  <important> 
     /// <para>
@@ -69,11 +69,12 @@ namespace Amazon.S3Control.Model
     ///  
     /// <para>
     /// All Amazon S3 on Outposts REST API requests for this action require an additional
-    /// parameter of outpost-id to be passed with the request and an S3 on Outposts endpoint
-    /// hostname prefix instead of s3-control. For an example of the request syntax for Amazon
-    /// S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the outpost-id
-    /// derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketPolicy.html#API_control_GetBucketPolicy_Examples">
-    /// Example</a> section below.
+    /// parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3
+    /// on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example
+    /// of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+    /// hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point
+    /// ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketPolicy.html#API_control_GetBucketPolicy_Examples">Examples</a>
+    /// section.
     /// </para>
     ///  
     /// <para>
@@ -123,11 +124,17 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The ARN of the bucket.
+        /// Specifies the bucket.
         /// </para>
         ///  
         /// <para>
-        /// For Amazon S3 on Outposts specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
+        /// For using this parameter with Amazon S3 on Outposts with the REST API, you must specify
+        /// the name and the x-amz-outpost-id as well.
+        /// </para>
+        ///  
+        /// <para>
+        /// For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify
+        /// the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
         /// For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code>
         /// owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the
         /// URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.

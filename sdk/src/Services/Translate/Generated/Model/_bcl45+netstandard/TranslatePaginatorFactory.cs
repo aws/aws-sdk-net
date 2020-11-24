@@ -37,6 +37,14 @@ namespace Amazon.Translate.Model
         }
 
         /// <summary>
+        /// Paginator for ListParallelData operation
+        ///</summary>
+        public IListParallelDataPaginator ListParallelData(ListParallelDataRequest request) 
+        {
+            return new ListParallelDataPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTerminologies operation
         ///</summary>
         public IListTerminologiesPaginator ListTerminologies(ListTerminologiesRequest request) 

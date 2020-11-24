@@ -88,12 +88,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected
-        /// HTTP code. Applies only to Application Load Balancers.
+        /// HTTP code. Applies only to Application Load Balancers and Gateway Load Balancers.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>Target.Timeout</code> - The health check requests timed out. Applies only to
-        /// Application Load Balancers.
+        /// Application Load Balancers and Gateway Load Balancers.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -282,6 +282,350 @@ namespace Amazon.Connect
         #endregion
 
 
+        #region  AssociateApprovedOrigin
+
+
+        /// <summary>
+        /// Associates an approved origin to an Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApprovedOrigin service method.</param>
+        /// 
+        /// <returns>The response from the AssociateApprovedOrigin service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin">REST API Reference for AssociateApprovedOrigin Operation</seealso>
+        public virtual AssociateApprovedOriginResponse AssociateApprovedOrigin(AssociateApprovedOriginRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateApprovedOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateApprovedOriginResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateApprovedOriginResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates an approved origin to an Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApprovedOrigin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateApprovedOrigin service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateApprovedOrigin">REST API Reference for AssociateApprovedOrigin Operation</seealso>
+        public virtual Task<AssociateApprovedOriginResponse> AssociateApprovedOriginAsync(AssociateApprovedOriginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateApprovedOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateApprovedOriginResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateApprovedOriginResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateInstanceStorageConfig
+
+
+        /// <summary>
+        /// Associates a storage resource type for the first time. You can only associate one
+        /// type of storage configuration in a single call. This means, for example, that you
+        /// can't define an instance with multiple S3 buckets for storing chat transcripts.
+        /// 
+        ///  
+        /// <para>
+        /// This API does not create a resource that doesn't exist. It only associates it to the
+        /// instance. Ensure that the resource being specified in the storage configuration, like
+        /// an Amazon S3 bucket, exists when being used for association.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateInstanceStorageConfig service method.</param>
+        /// 
+        /// <returns>The response from the AssociateInstanceStorageConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig">REST API Reference for AssociateInstanceStorageConfig Operation</seealso>
+        public virtual AssociateInstanceStorageConfigResponse AssociateInstanceStorageConfig(AssociateInstanceStorageConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateInstanceStorageConfigResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateInstanceStorageConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates a storage resource type for the first time. You can only associate one
+        /// type of storage configuration in a single call. This means, for example, that you
+        /// can't define an instance with multiple S3 buckets for storing chat transcripts.
+        /// 
+        ///  
+        /// <para>
+        /// This API does not create a resource that doesn't exist. It only associates it to the
+        /// instance. Ensure that the resource being specified in the storage configuration, like
+        /// an Amazon S3 bucket, exists when being used for association.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateInstanceStorageConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateInstanceStorageConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateInstanceStorageConfig">REST API Reference for AssociateInstanceStorageConfig Operation</seealso>
+        public virtual Task<AssociateInstanceStorageConfigResponse> AssociateInstanceStorageConfigAsync(AssociateInstanceStorageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateInstanceStorageConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateInstanceStorageConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateLambdaFunction
+
+
+        /// <summary>
+        /// Allows the specified Amazon Connect instance to access the specified Lambda function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateLambdaFunction service method.</param>
+        /// 
+        /// <returns>The response from the AssociateLambdaFunction service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLambdaFunction">REST API Reference for AssociateLambdaFunction Operation</seealso>
+        public virtual AssociateLambdaFunctionResponse AssociateLambdaFunction(AssociateLambdaFunctionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateLambdaFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateLambdaFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateLambdaFunctionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Allows the specified Amazon Connect instance to access the specified Lambda function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateLambdaFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateLambdaFunction service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLambdaFunction">REST API Reference for AssociateLambdaFunction Operation</seealso>
+        public virtual Task<AssociateLambdaFunctionResponse> AssociateLambdaFunctionAsync(AssociateLambdaFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateLambdaFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateLambdaFunctionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateLambdaFunctionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateLexBot
+
+
+        /// <summary>
+        /// Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateLexBot service method.</param>
+        /// 
+        /// <returns>The response from the AssociateLexBot service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot">REST API Reference for AssociateLexBot Operation</seealso>
+        public virtual AssociateLexBotResponse AssociateLexBot(AssociateLexBotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateLexBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateLexBotResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateLexBotResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateLexBot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateLexBot service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateLexBot">REST API Reference for AssociateLexBot Operation</seealso>
+        public virtual Task<AssociateLexBotResponse> AssociateLexBotAsync(AssociateLexBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateLexBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateLexBotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateLexBotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateRoutingProfileQueues
 
 
@@ -349,6 +693,89 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = AssociateRoutingProfileQueuesResponseUnmarshaller.Instance;
             
             return InvokeAsync<AssociateRoutingProfileQueuesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateSecurityKey
+
+
+        /// <summary>
+        /// Associates a security key to the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSecurityKey service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSecurityKey service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityKey">REST API Reference for AssociateSecurityKey Operation</seealso>
+        public virtual AssociateSecurityKeyResponse AssociateSecurityKey(AssociateSecurityKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSecurityKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSecurityKeyResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSecurityKeyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates a security key to the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSecurityKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateSecurityKey service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityKey">REST API Reference for AssociateSecurityKey Operation</seealso>
+        public virtual Task<AssociateSecurityKeyResponse> AssociateSecurityKeyAsync(AssociateSecurityKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSecurityKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSecurityKeyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateSecurityKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -450,6 +877,81 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = CreateContactFlowResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateContactFlowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateInstance
+
+
+        /// <summary>
+        /// Initiates an Amazon Connect instance with all the supported channels enabled. It does
+        /// not attach any storage (such as Amazon S3, or Kinesis) or allow for any configurations
+        /// on features such as Contact Lens for Amazon Connect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstance service method.</param>
+        /// 
+        /// <returns>The response from the CreateInstance service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
+        public virtual CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInstanceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates an Amazon Connect instance with all the supported channels enabled. It does
+        /// not attach any storage (such as Amazon S3, or Kinesis) or allow for any configurations
+        /// on features such as Contact Lens for Amazon Connect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInstance service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
+        public virtual Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateInstanceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -634,6 +1136,148 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateUserHierarchyGroup
+
+
+        /// <summary>
+        /// Creates a new user hierarchy group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserHierarchyGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateUserHierarchyGroup service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUserHierarchyGroup">REST API Reference for CreateUserHierarchyGroup Operation</seealso>
+        public virtual CreateUserHierarchyGroupResponse CreateUserHierarchyGroup(CreateUserHierarchyGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserHierarchyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserHierarchyGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserHierarchyGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new user hierarchy group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserHierarchyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateUserHierarchyGroup service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUserHierarchyGroup">REST API Reference for CreateUserHierarchyGroup Operation</seealso>
+        public virtual Task<CreateUserHierarchyGroupResponse> CreateUserHierarchyGroupAsync(CreateUserHierarchyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserHierarchyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserHierarchyGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateUserHierarchyGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteInstance
+
+
+        /// <summary>
+        /// Deletes the Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstance service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInstance service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
+        public virtual DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInstanceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteInstance service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
+        public virtual Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteUser
 
 
@@ -717,6 +1361,85 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUserHierarchyGroup
+
+
+        /// <summary>
+        /// Deletes an existing user hierarchy group. It must not be associated with any agents
+        /// or have any active child groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserHierarchyGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUserHierarchyGroup service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUserHierarchyGroup">REST API Reference for DeleteUserHierarchyGroup Operation</seealso>
+        public virtual DeleteUserHierarchyGroupResponse DeleteUserHierarchyGroup(DeleteUserHierarchyGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserHierarchyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserHierarchyGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserHierarchyGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an existing user hierarchy group. It must not be associated with any agents
+        /// or have any active child groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserHierarchyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteUserHierarchyGroup service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUserHierarchyGroup">REST API Reference for DeleteUserHierarchyGroup Operation</seealso>
+        public virtual Task<DeleteUserHierarchyGroupResponse> DeleteUserHierarchyGroupAsync(DeleteUserHierarchyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserHierarchyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserHierarchyGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteUserHierarchyGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -806,6 +1529,225 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DescribeContactFlowResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeContactFlowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInstance
+
+
+        /// <summary>
+        /// Returns the current state of the specified instance identifier. It tracks the instance
+        /// while it is being created and returns an error status if applicable. 
+        /// 
+        ///  
+        /// <para>
+        /// If an instance is not created successfully, the instance status reason field returns
+        /// details relevant to the reason. The instance in a failed state is returned only for
+        /// 24 hours after the CreateInstance API was invoked.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstance service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstance service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstance">REST API Reference for DescribeInstance Operation</seealso>
+        public virtual DescribeInstanceResponse DescribeInstance(DescribeInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the current state of the specified instance identifier. It tracks the instance
+        /// while it is being created and returns an error status if applicable. 
+        /// 
+        ///  
+        /// <para>
+        /// If an instance is not created successfully, the instance status reason field returns
+        /// details relevant to the reason. The instance in a failed state is returned only for
+        /// 24 hours after the CreateInstance API was invoked.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstance service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstance">REST API Reference for DescribeInstance Operation</seealso>
+        public virtual Task<DescribeInstanceResponse> DescribeInstanceAsync(DescribeInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInstanceAttribute
+
+
+        /// <summary>
+        /// Describes the specified instance attribute.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceAttribute">REST API Reference for DescribeInstanceAttribute Operation</seealso>
+        public virtual DescribeInstanceAttributeResponse DescribeInstanceAttribute(DescribeInstanceAttributeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceAttributeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the specified instance attribute.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstanceAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceAttribute">REST API Reference for DescribeInstanceAttribute Operation</seealso>
+        public virtual Task<DescribeInstanceAttributeResponse> DescribeInstanceAttributeAsync(DescribeInstanceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceAttributeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInstanceAttributeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInstanceStorageConfig
+
+
+        /// <summary>
+        /// Retrieves the current storage configurations for the specified resource type, association
+        /// ID, and instance ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceStorageConfig service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceStorageConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceStorageConfig">REST API Reference for DescribeInstanceStorageConfig Operation</seealso>
+        public virtual DescribeInstanceStorageConfigResponse DescribeInstanceStorageConfig(DescribeInstanceStorageConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceStorageConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceStorageConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the current storage configurations for the specified resource type, association
+        /// ID, and instance ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceStorageConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstanceStorageConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeInstanceStorageConfig">REST API Reference for DescribeInstanceStorageConfig Operation</seealso>
+        public virtual Task<DescribeInstanceStorageConfigResponse> DescribeInstanceStorageConfigAsync(DescribeInstanceStorageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInstanceStorageConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInstanceStorageConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1098,6 +2040,296 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateApprovedOrigin
+
+
+        /// <summary>
+        /// Revokes access to integrated applications from Amazon Connect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApprovedOrigin service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateApprovedOrigin service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin">REST API Reference for DisassociateApprovedOrigin Operation</seealso>
+        public virtual DisassociateApprovedOriginResponse DisassociateApprovedOrigin(DisassociateApprovedOriginRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateApprovedOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateApprovedOriginResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateApprovedOriginResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Revokes access to integrated applications from Amazon Connect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApprovedOrigin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateApprovedOrigin service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateApprovedOrigin">REST API Reference for DisassociateApprovedOrigin Operation</seealso>
+        public virtual Task<DisassociateApprovedOriginResponse> DisassociateApprovedOriginAsync(DisassociateApprovedOriginRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateApprovedOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateApprovedOriginResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateApprovedOriginResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateInstanceStorageConfig
+
+
+        /// <summary>
+        /// Removes the storage type configurations for the specified resource type and association
+        /// ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateInstanceStorageConfig service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateInstanceStorageConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateInstanceStorageConfig">REST API Reference for DisassociateInstanceStorageConfig Operation</seealso>
+        public virtual DisassociateInstanceStorageConfigResponse DisassociateInstanceStorageConfig(DisassociateInstanceStorageConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateInstanceStorageConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateInstanceStorageConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes the storage type configurations for the specified resource type and association
+        /// ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateInstanceStorageConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateInstanceStorageConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateInstanceStorageConfig">REST API Reference for DisassociateInstanceStorageConfig Operation</seealso>
+        public virtual Task<DisassociateInstanceStorageConfigResponse> DisassociateInstanceStorageConfigAsync(DisassociateInstanceStorageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateInstanceStorageConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateInstanceStorageConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateLambdaFunction
+
+
+        /// <summary>
+        /// Remove the Lambda function from the drop-down options available in the relevant contact
+        /// flow blocks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateLambdaFunction service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateLambdaFunction service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">REST API Reference for DisassociateLambdaFunction Operation</seealso>
+        public virtual DisassociateLambdaFunctionResponse DisassociateLambdaFunction(DisassociateLambdaFunctionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateLambdaFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateLambdaFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateLambdaFunctionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Remove the Lambda function from the drop-down options available in the relevant contact
+        /// flow blocks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateLambdaFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateLambdaFunction service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLambdaFunction">REST API Reference for DisassociateLambdaFunction Operation</seealso>
+        public virtual Task<DisassociateLambdaFunctionResponse> DisassociateLambdaFunctionAsync(DisassociateLambdaFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateLambdaFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateLambdaFunctionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateLambdaFunctionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateLexBot
+
+
+        /// <summary>
+        /// Revokes authorization from the specified instance to access the specified Amazon Lex
+        /// bot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateLexBot service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateLexBot service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLexBot">REST API Reference for DisassociateLexBot Operation</seealso>
+        public virtual DisassociateLexBotResponse DisassociateLexBot(DisassociateLexBotRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateLexBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateLexBotResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateLexBotResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Revokes authorization from the specified instance to access the specified Amazon Lex
+        /// bot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateLexBot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateLexBot service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateLexBot">REST API Reference for DisassociateLexBot Operation</seealso>
+        public virtual Task<DisassociateLexBotResponse> DisassociateLexBotAsync(DisassociateLexBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateLexBotRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateLexBotResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateLexBotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateRoutingProfileQueues
 
 
@@ -1165,6 +2397,77 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DisassociateRoutingProfileQueuesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DisassociateRoutingProfileQueuesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateSecurityKey
+
+
+        /// <summary>
+        /// Deletes the specified security key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSecurityKey service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSecurityKey service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityKey">REST API Reference for DisassociateSecurityKey Operation</seealso>
+        public virtual DisassociateSecurityKeyResponse DisassociateSecurityKey(DisassociateSecurityKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSecurityKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSecurityKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSecurityKeyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified security key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSecurityKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateSecurityKey service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityKey">REST API Reference for DisassociateSecurityKey Operation</seealso>
+        public virtual Task<DisassociateSecurityKeyResponse> DisassociateSecurityKeyAsync(DisassociateSecurityKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSecurityKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSecurityKeyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateSecurityKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1471,6 +2774,77 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListApprovedOrigins
+
+
+        /// <summary>
+        /// Returns a paginated list of all approved origins associated with the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApprovedOrigins service method.</param>
+        /// 
+        /// <returns>The response from the ListApprovedOrigins service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins">REST API Reference for ListApprovedOrigins Operation</seealso>
+        public virtual ListApprovedOriginsResponse ListApprovedOrigins(ListApprovedOriginsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApprovedOriginsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApprovedOriginsResponseUnmarshaller.Instance;
+
+            return Invoke<ListApprovedOriginsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of all approved origins associated with the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApprovedOrigins service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApprovedOrigins service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListApprovedOrigins">REST API Reference for ListApprovedOrigins Operation</seealso>
+        public virtual Task<ListApprovedOriginsResponse> ListApprovedOriginsAsync(ListApprovedOriginsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListApprovedOriginsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApprovedOriginsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListApprovedOriginsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListContactFlows
 
 
@@ -1645,6 +3019,353 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListHoursOfOperationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListHoursOfOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListInstanceAttributes
+
+
+        /// <summary>
+        /// Returns a paginated list of all attribute types for the given instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceAttributes service method.</param>
+        /// 
+        /// <returns>The response from the ListInstanceAttributes service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceAttributes">REST API Reference for ListInstanceAttributes Operation</seealso>
+        public virtual ListInstanceAttributesResponse ListInstanceAttributes(ListInstanceAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstanceAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstanceAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstanceAttributesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of all attribute types for the given instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInstanceAttributes service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceAttributes">REST API Reference for ListInstanceAttributes Operation</seealso>
+        public virtual Task<ListInstanceAttributesResponse> ListInstanceAttributesAsync(ListInstanceAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstanceAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstanceAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListInstanceAttributesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListInstances
+
+
+        /// <summary>
+        /// Return a list of instances which are in active state, creation-in-progress state,
+        /// and failed state. Instances that aren't successfully created (they are in a failed
+        /// state) are returned only for 24 hours after the CreateInstance API was invoked.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
+        /// 
+        /// <returns>The response from the ListInstances service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstances">REST API Reference for ListInstances Operation</seealso>
+        public virtual ListInstancesResponse ListInstances(ListInstancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstancesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Return a list of instances which are in active state, creation-in-progress state,
+        /// and failed state. Instances that aren't successfully created (they are in a failed
+        /// state) are returned only for 24 hours after the CreateInstance API was invoked.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInstances service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstances">REST API Reference for ListInstances Operation</seealso>
+        public virtual Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListInstanceStorageConfigs
+
+
+        /// <summary>
+        /// Returns a paginated list of storage configs for the identified instance and resource
+        /// type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceStorageConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListInstanceStorageConfigs service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceStorageConfigs">REST API Reference for ListInstanceStorageConfigs Operation</seealso>
+        public virtual ListInstanceStorageConfigsResponse ListInstanceStorageConfigs(ListInstanceStorageConfigsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstanceStorageConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstanceStorageConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstanceStorageConfigsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of storage configs for the identified instance and resource
+        /// type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstanceStorageConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInstanceStorageConfigs service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListInstanceStorageConfigs">REST API Reference for ListInstanceStorageConfigs Operation</seealso>
+        public virtual Task<ListInstanceStorageConfigsResponse> ListInstanceStorageConfigsAsync(ListInstanceStorageConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstanceStorageConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstanceStorageConfigsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListInstanceStorageConfigsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLambdaFunctions
+
+
+        /// <summary>
+        /// Returns a paginated list of all the Lambda functions that show up in the drop-down
+        /// options in the relevant contact flow blocks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLambdaFunctions service method.</param>
+        /// 
+        /// <returns>The response from the ListLambdaFunctions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">REST API Reference for ListLambdaFunctions Operation</seealso>
+        public virtual ListLambdaFunctionsResponse ListLambdaFunctions(ListLambdaFunctionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLambdaFunctionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLambdaFunctionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLambdaFunctionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of all the Lambda functions that show up in the drop-down
+        /// options in the relevant contact flow blocks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLambdaFunctions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLambdaFunctions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLambdaFunctions">REST API Reference for ListLambdaFunctions Operation</seealso>
+        public virtual Task<ListLambdaFunctionsResponse> ListLambdaFunctionsAsync(ListLambdaFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLambdaFunctionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLambdaFunctionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLambdaFunctionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLexBots
+
+
+        /// <summary>
+        /// Returns a paginated list of all the Amazon Lex bots currently associated with the
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLexBots service method.</param>
+        /// 
+        /// <returns>The response from the ListLexBots service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots">REST API Reference for ListLexBots Operation</seealso>
+        public virtual ListLexBotsResponse ListLexBots(ListLexBotsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLexBotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLexBotsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLexBotsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of all the Amazon Lex bots currently associated with the
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLexBots service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLexBots service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListLexBots">REST API Reference for ListLexBots Operation</seealso>
+        public virtual Task<ListLexBotsResponse> ListLexBotsAsync(ListLexBotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLexBotsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLexBotsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLexBotsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2044,6 +3765,77 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListRoutingProfilesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListRoutingProfilesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSecurityKeys
+
+
+        /// <summary>
+        /// Returns a paginated list of all security keys associated with the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityKeys service method.</param>
+        /// 
+        /// <returns>The response from the ListSecurityKeys service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys">REST API Reference for ListSecurityKeys Operation</seealso>
+        public virtual ListSecurityKeysResponse ListSecurityKeys(ListSecurityKeysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityKeysResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityKeysResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of all security keys associated with the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityKeys service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSecurityKeys service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys">REST API Reference for ListSecurityKeys Operation</seealso>
+        public virtual Task<ListSecurityKeysResponse> ListSecurityKeysAsync(ListSecurityKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSecurityKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityKeysResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSecurityKeysResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3213,10 +5005,6 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// This operation is also available in the Amazon Connect Flow language. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-actions-updatecontactattributes.html">UpdateContactAttributes</a>.
-        /// </para>
-        ///  
-        /// <para>
         ///  <b>Important:</b> You cannot use the operation to update attributes for contacts
         /// that occurred prior to the release of the API, September 12, 2018. You can update
         /// attributes only for contacts that started after the release of the API. If you attempt
@@ -3267,10 +5055,6 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
-        /// </para>
-        ///  
-        /// <para>
-        /// This operation is also available in the Amazon Connect Flow language. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-actions-updatecontactattributes.html">UpdateContactAttributes</a>.
         /// </para>
         ///  
         /// <para>
@@ -3406,6 +5190,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// The name of the contact flow.
+        /// 
+        ///  
+        /// <para>
+        /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// Connect Flow language</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowName service method.</param>
         /// 
@@ -3441,6 +5231,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// The name of the contact flow.
+        /// 
+        ///  
+        /// <para>
+        /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+        /// Connect Flow language</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowName service method.</param>
         /// <param name="cancellationToken">
@@ -3474,6 +5270,148 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateContactFlowNameResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateContactFlowNameResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateInstanceAttribute
+
+
+        /// <summary>
+        /// Updates the value for the specified attribute type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceAttribute service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInstanceAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceAttribute">REST API Reference for UpdateInstanceAttribute Operation</seealso>
+        public virtual UpdateInstanceAttributeResponse UpdateInstanceAttribute(UpdateInstanceAttributeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInstanceAttributeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the value for the specified attribute type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateInstanceAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceAttribute">REST API Reference for UpdateInstanceAttribute Operation</seealso>
+        public virtual Task<UpdateInstanceAttributeResponse> UpdateInstanceAttributeAsync(UpdateInstanceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceAttributeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateInstanceAttributeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateInstanceStorageConfig
+
+
+        /// <summary>
+        /// Updates an existing configuration for a resource type. This API is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceStorageConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInstanceStorageConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceStorageConfig">REST API Reference for UpdateInstanceStorageConfig Operation</seealso>
+        public virtual UpdateInstanceStorageConfigResponse UpdateInstanceStorageConfig(UpdateInstanceStorageConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceStorageConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInstanceStorageConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing configuration for a resource type. This API is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceStorageConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateInstanceStorageConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateInstanceStorageConfig">REST API Reference for UpdateInstanceStorageConfig Operation</seealso>
+        public virtual Task<UpdateInstanceStorageConfigResponse> UpdateInstanceStorageConfigAsync(UpdateInstanceStorageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceStorageConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceStorageConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateInstanceStorageConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3841,6 +5779,160 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateUserHierarchyResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateUserHierarchyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUserHierarchyGroupName
+
+
+        /// <summary>
+        /// Updates the name of the user hierarchy group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserHierarchyGroupName service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUserHierarchyGroupName service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchyGroupName">REST API Reference for UpdateUserHierarchyGroupName Operation</seealso>
+        public virtual UpdateUserHierarchyGroupNameResponse UpdateUserHierarchyGroupName(UpdateUserHierarchyGroupNameRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserHierarchyGroupNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserHierarchyGroupNameResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserHierarchyGroupNameResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the name of the user hierarchy group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserHierarchyGroupName service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateUserHierarchyGroupName service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchyGroupName">REST API Reference for UpdateUserHierarchyGroupName Operation</seealso>
+        public virtual Task<UpdateUserHierarchyGroupNameResponse> UpdateUserHierarchyGroupNameAsync(UpdateUserHierarchyGroupNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserHierarchyGroupNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserHierarchyGroupNameResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateUserHierarchyGroupNameResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUserHierarchyStructure
+
+
+        /// <summary>
+        /// Updates the user hierarchy structure: add, remove, and rename user hierarchy levels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserHierarchyStructure service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUserHierarchyStructure service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchyStructure">REST API Reference for UpdateUserHierarchyStructure Operation</seealso>
+        public virtual UpdateUserHierarchyStructureResponse UpdateUserHierarchyStructure(UpdateUserHierarchyStructureRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserHierarchyStructureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserHierarchyStructureResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserHierarchyStructureResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the user hierarchy structure: add, remove, and rename user hierarchy levels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserHierarchyStructure service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateUserHierarchyStructure service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use. Please try another.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchyStructure">REST API Reference for UpdateUserHierarchyStructure Operation</seealso>
+        public virtual Task<UpdateUserHierarchyStructureResponse> UpdateUserHierarchyStructureAsync(UpdateUserHierarchyStructureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateUserHierarchyStructureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserHierarchyStructureResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateUserHierarchyStructureResponse>(request, options, cancellationToken);
         }
 
         #endregion

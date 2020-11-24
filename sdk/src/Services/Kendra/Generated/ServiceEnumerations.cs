@@ -389,6 +389,10 @@ namespace Amazon.Kendra
     {
 
         /// <summary>
+        /// Constant CLOUD for ConfluenceVersion
+        /// </summary>
+        public static readonly ConfluenceVersion CLOUD = new ConfluenceVersion("CLOUD");
+        /// <summary>
         /// Constant SERVER for ConfluenceVersion
         /// </summary>
         public static readonly ConfluenceVersion SERVER = new ConfluenceVersion("SERVER");
@@ -1088,6 +1092,56 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IndexStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KeyLocation.
+    /// </summary>
+    public class KeyLocation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SECRET_MANAGER for KeyLocation
+        /// </summary>
+        public static readonly KeyLocation SECRET_MANAGER = new KeyLocation("SECRET_MANAGER");
+        /// <summary>
+        /// Constant URL for KeyLocation
+        /// </summary>
+        public static readonly KeyLocation URL = new KeyLocation("URL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KeyLocation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeyLocation FindValue(string value)
+        {
+            return FindValue<KeyLocation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KeyLocation(string value)
         {
             return FindValue(value);
         }
@@ -1810,6 +1864,56 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserContextPolicy.
+    /// </summary>
+    public class UserContextPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTRIBUTE_FILTER for UserContextPolicy
+        /// </summary>
+        public static readonly UserContextPolicy ATTRIBUTE_FILTER = new UserContextPolicy("ATTRIBUTE_FILTER");
+        /// <summary>
+        /// Constant USER_TOKEN for UserContextPolicy
+        /// </summary>
+        public static readonly UserContextPolicy USER_TOKEN = new UserContextPolicy("USER_TOKEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserContextPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserContextPolicy FindValue(string value)
+        {
+            return FindValue<UserContextPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserContextPolicy(string value)
         {
             return FindValue(value);
         }

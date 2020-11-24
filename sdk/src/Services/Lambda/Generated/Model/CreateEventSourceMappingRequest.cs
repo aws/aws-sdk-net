@@ -54,6 +54,11 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS Lambda
+    /// with Amazon MQ</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda
     /// with Amazon MSK</a> 
     /// </para>
@@ -75,13 +80,14 @@ namespace Amazon.Lambda.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
-    /// age. Default -1 (infinite). Minimum 60. Maximum 604800.
+    /// age. The default value is infinite (-1). When set to infinite (-1), failed records
+    /// are retried until the record expires
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
-    /// retries. Default -1 (infinite). Minimum 0. Maximum 10000. When infinite, failed records
-    /// will be retried until the record expires.
+    /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
+    /// are retried until the record expires.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -101,6 +107,8 @@ namespace Amazon.Lambda.Model
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
         private int? _parallelizationFactor;
+        private List<string> _queues = new List<string>();
+        private List<SourceAccessConfiguration> _sourceAccessConfigurations = new List<SourceAccessConfiguration>();
         private EventSourcePosition _startingPosition;
         private DateTime? _startingPositionTimestamp;
         private List<string> _topics = new List<string>();
@@ -351,6 +359,57 @@ namespace Amazon.Lambda.Model
         internal bool IsSetParallelizationFactor()
         {
             return this._parallelizationFactor.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Queues. 
+        /// <para>
+        ///  (MQ) The name of the Amazon MQ broker destination queue to consume. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> Queues
+        {
+            get { return this._queues; }
+            set { this._queues = value; }
+        }
+
+        // Check to see if Queues property is set
+        internal bool IsSetQueues()
+        {
+            return this._queues != null && this._queues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceAccessConfigurations. 
+        /// <para>
+        ///  (MQ) The Secrets Manager secret that stores your broker credentials. To store your
+        /// secret, use the following format: <code> { "username": "your username", "password":
+        /// "your password" }</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH",
+        /// "URI": "secretARN" } ]</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret,
+        /// you can use customer or service managed keys. When using a customer managed KMS key,
+        /// the Lambda execution role requires <code>kms:Decrypt</code> permissions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<SourceAccessConfiguration> SourceAccessConfigurations
+        {
+            get { return this._sourceAccessConfigurations; }
+            set { this._sourceAccessConfigurations = value; }
+        }
+
+        // Check to see if SourceAccessConfigurations property is set
+        internal bool IsSetSourceAccessConfigurations()
+        {
+            return this._sourceAccessConfigurations != null && this._sourceAccessConfigurations.Count > 0; 
         }
 
         /// <summary>

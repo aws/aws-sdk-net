@@ -70,6 +70,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.CrawlAttachments = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DisableLocalGroups", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DisableLocalGroups = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DocumentTitleFieldName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

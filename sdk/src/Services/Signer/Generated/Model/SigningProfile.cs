@@ -35,8 +35,12 @@ namespace Amazon.Signer.Model
     public partial class SigningProfile
     {
         private string _arn;
+        private string _platformDisplayName;
         private string _platformId;
         private string _profileName;
+        private string _profileVersion;
+        private string _profileVersionArn;
+        private SignatureValidityPeriod _signatureValidityPeriod;
         private SigningMaterial _signingMaterial;
         private Dictionary<string, string> _signingParameters = new Dictionary<string, string>();
         private SigningProfileStatus _status;
@@ -58,6 +62,24 @@ namespace Amazon.Signer.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformDisplayName. 
+        /// <para>
+        /// The name of the signing platform.
+        /// </para>
+        /// </summary>
+        public string PlatformDisplayName
+        {
+            get { return this._platformDisplayName; }
+            set { this._platformDisplayName = value; }
+        }
+
+        // Check to see if PlatformDisplayName property is set
+        internal bool IsSetPlatformDisplayName()
+        {
+            return this._platformDisplayName != null;
         }
 
         /// <summary>
@@ -95,6 +117,62 @@ namespace Amazon.Signer.Model
         internal bool IsSetProfileName()
         {
             return this._profileName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileVersion. 
+        /// <para>
+        /// The version of a signing profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=10)]
+        public string ProfileVersion
+        {
+            get { return this._profileVersion; }
+            set { this._profileVersion = value; }
+        }
+
+        // Check to see if ProfileVersion property is set
+        internal bool IsSetProfileVersion()
+        {
+            return this._profileVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileVersionArn. 
+        /// <para>
+        /// The ARN of a signing profile, including the profile version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ProfileVersionArn
+        {
+            get { return this._profileVersionArn; }
+            set { this._profileVersionArn = value; }
+        }
+
+        // Check to see if ProfileVersionArn property is set
+        internal bool IsSetProfileVersionArn()
+        {
+            return this._profileVersionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignatureValidityPeriod. 
+        /// <para>
+        /// The validity period for a signing job created using this signing profile.
+        /// </para>
+        /// </summary>
+        public SignatureValidityPeriod SignatureValidityPeriod
+        {
+            get { return this._signatureValidityPeriod; }
+            set { this._signatureValidityPeriod = value; }
+        }
+
+        // Check to see if SignatureValidityPeriod property is set
+        internal bool IsSetSignatureValidityPeriod()
+        {
+            return this._signatureValidityPeriod != null;
         }
 
         /// <summary>

@@ -25,18 +25,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// <para>Specifies whether Amazon S3 should replicate delete makers.</para>
+    /// <para>Specifies whether Amazon S3 replicates delete markers. 
+    /// If you specify a <code>Filter</code> in your replication configuration, 
+    /// you must also include a <code>DeleteMarkerReplication</code> element. 
+    /// If your <code>Filter</code> includes a <code>Tag</code> element, 
+    /// the <code>DeleteMarkerReplication</code> <code>Status</code> must be set to Disabled,
+    /// because Amazon S3 does not support replicating delete markers for tag-based rules. 
+    /// For an example configuration, 
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config\">Basic Rule Configuration</a>. 
+    /// </para> <para>For more information about delete marker replication, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html\">Basic Rule Configuration</a>. 
+    /// </para> <note> <para>If you are using an earlier version of the replication configuration, 
+    /// Amazon S3 handles replication of delete markers differently. For more information, 
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations\">Backward Compatibility</a>.</para> </note>
     /// </summary>
     public partial class DeleteMarkerReplication
     {
         private DeleteMarkerReplicationStatus status;
 
         /// <summary>
-        /// Gets and sets the property Status.
-        /// <para>The status of the delete marker replication.</para> <note>
-        /// <para> In the current implementation, Amazon S3 does not replicate
-        /// the delete markers. Therefore, the status must be
-        /// <code>Disabled</code>. </para> </note>
+        /// <para>Indicates whether to replicate delete markers.</para>
         /// </summary>
         public DeleteMarkerReplicationStatus Status
         {

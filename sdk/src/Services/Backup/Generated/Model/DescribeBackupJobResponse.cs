@@ -130,8 +130,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupType. 
         /// <para>
         /// Represents the actual backup type selected for a backup job. For example, if a successful
-        /// WindowsVSS backup was taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code>
-        /// is empty, then it is a regular backup.
+        /// WindowsVSS backup was taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code>
+        /// is empty, then the backup type that was is a regular backup.
         /// </para>
         /// </summary>
         public string BackupType

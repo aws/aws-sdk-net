@@ -271,7 +271,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the ActivateEventSource service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -331,6 +331,150 @@ namespace Amazon.EventBridge
 
         #endregion
         
+        #region  CancelReplay
+
+        /// <summary>
+        /// Cancels the specified replay.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelReplay service method.</param>
+        /// 
+        /// <returns>The response from the CancelReplay service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.IllegalStatusException">
+        /// An error occurred because a replay can be canceled only when the state is Running
+        /// or Starting.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CancelReplay">REST API Reference for CancelReplay Operation</seealso>
+        public virtual CancelReplayResponse CancelReplay(CancelReplayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelReplayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelReplayResponseUnmarshaller.Instance;
+
+            return Invoke<CancelReplayResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelReplay operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelReplay operation on AmazonEventBridgeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelReplay
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CancelReplay">REST API Reference for CancelReplay Operation</seealso>
+        public virtual IAsyncResult BeginCancelReplay(CancelReplayRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelReplayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelReplayResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelReplay operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelReplay.</param>
+        /// 
+        /// <returns>Returns a  CancelReplayResult from EventBridge.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CancelReplay">REST API Reference for CancelReplay Operation</seealso>
+        public virtual CancelReplayResponse EndCancelReplay(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelReplayResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateArchive
+
+        /// <summary>
+        /// Creates an archive of events with the specified settings. When you create an archive,
+        /// incoming events might not immediately start being sent to the archive. Allow a short
+        /// period of time for changes to take effect. If you do not specify a pattern to filter
+        /// events sent to the archive, all events are sent to the archive except replayed events.
+        /// Replayed events are not sent to an archive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateArchive service method.</param>
+        /// 
+        /// <returns>The response from the CreateArchive service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InvalidEventPatternException">
+        /// The event pattern is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive">REST API Reference for CreateArchive Operation</seealso>
+        public virtual CreateArchiveResponse CreateArchive(CreateArchiveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateArchiveResponseUnmarshaller.Instance;
+
+            return Invoke<CreateArchiveResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateArchive operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateArchive operation on AmazonEventBridgeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateArchive
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive">REST API Reference for CreateArchive Operation</seealso>
+        public virtual IAsyncResult BeginCreateArchive(CreateArchiveRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateArchiveResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateArchive operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateArchive.</param>
+        /// 
+        /// <returns>Returns a  CreateArchiveResult from EventBridge.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/CreateArchive">REST API Reference for CreateArchive Operation</seealso>
+        public virtual CreateArchiveResponse EndCreateArchive(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateArchiveResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateEventBus
 
         /// <summary>
@@ -342,7 +486,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the CreateEventBus service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -351,7 +495,8 @@ namespace Amazon.EventBridge
         /// The specified state is not a valid state for an event source.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
-        /// You tried to create more rules or add more targets to a rule than is allowed.
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
         /// The operation you are attempting is not available in this region.
@@ -453,13 +598,14 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the CreatePartnerEventSource service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
-        /// You tried to create more rules or add more targets to a rule than is allowed.
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
         /// The operation you are attempting is not available in this region.
@@ -533,7 +679,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the DeactivateEventSource service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -593,6 +739,69 @@ namespace Amazon.EventBridge
 
         #endregion
         
+        #region  DeleteArchive
+
+        /// <summary>
+        /// Deletes the specified archive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteArchive service method.</param>
+        /// 
+        /// <returns>The response from the DeleteArchive service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
+        public virtual DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteArchiveResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteArchive operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteArchive operation on AmazonEventBridgeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteArchive
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
+        public virtual IAsyncResult BeginDeleteArchive(DeleteArchiveRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteArchive operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteArchive.</param>
+        /// 
+        /// <returns>Returns a  DeleteArchiveResult from EventBridge.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
+        public virtual DeleteArchiveResponse EndDeleteArchive(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteArchiveResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteEventBus
 
         /// <summary>
@@ -604,7 +813,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the DeleteEventBus service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -671,7 +880,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the DeletePartnerEventSource service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -751,7 +960,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the DeleteRule service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -809,6 +1018,69 @@ namespace Amazon.EventBridge
         public virtual DeleteRuleResponse EndDeleteRule(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeArchive
+
+        /// <summary>
+        /// Retrieves details about an archive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeArchive service method.</param>
+        /// 
+        /// <returns>The response from the DescribeArchive service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeArchive">REST API Reference for DescribeArchive Operation</seealso>
+        public virtual DescribeArchiveResponse DescribeArchive(DescribeArchiveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeArchiveResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeArchiveResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeArchive operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeArchive operation on AmazonEventBridgeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeArchive
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeArchive">REST API Reference for DescribeArchive Operation</seealso>
+        public virtual IAsyncResult BeginDescribeArchive(DescribeArchiveRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeArchiveResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeArchive operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeArchive.</param>
+        /// 
+        /// <returns>Returns a  DescribeArchiveResult from EventBridge.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeArchive">REST API Reference for DescribeArchive Operation</seealso>
+        public virtual DescribeArchiveResponse EndDescribeArchive(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeArchiveResponse>(asyncResult);
         }
 
         #endregion
@@ -1016,6 +1288,74 @@ namespace Amazon.EventBridge
 
         #endregion
         
+        #region  DescribeReplay
+
+        /// <summary>
+        /// Retrieves details about a replay. Use <code>DescribeReplay</code> to determine the
+        /// progress of a running replay. A replay processes events to replay based on the time
+        /// in the event, and replays them using 1 minute intervals. If you use <code>StartReplay</code>
+        /// and specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers
+        /// a 20 minute time range, the events are replayed from the first minute of that 20 minute
+        /// range first. Then the events from the second minute are replayed. You can use <code>DescribeReplay</code>
+        /// to determine the progress of a replay. The value returned for <code>EventLastReplayedTime</code>
+        /// indicates the time within the specified time range associated with the last event
+        /// replayed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplay service method.</param>
+        /// 
+        /// <returns>The response from the DescribeReplay service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeReplay">REST API Reference for DescribeReplay Operation</seealso>
+        public virtual DescribeReplayResponse DescribeReplay(DescribeReplayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplayResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplayResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeReplay operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplay operation on AmazonEventBridgeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReplay
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeReplay">REST API Reference for DescribeReplay Operation</seealso>
+        public virtual IAsyncResult BeginDescribeReplay(DescribeReplayRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplayResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeReplay operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReplay.</param>
+        /// 
+        /// <returns>Returns a  DescribeReplayResult from EventBridge.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DescribeReplay">REST API Reference for DescribeReplay Operation</seealso>
+        public virtual DescribeReplayResponse EndDescribeReplay(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeReplayResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeRule
 
         /// <summary>
@@ -1098,7 +1438,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the DisableRule service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -1175,7 +1515,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the EnableRule service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -1233,6 +1573,67 @@ namespace Amazon.EventBridge
         public virtual EnableRuleResponse EndEnableRule(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListArchives
+
+        /// <summary>
+        /// Lists your archives. You can either list all the archives or you can provide a prefix
+        /// to match to the archive names. Filter parameters are exclusive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListArchives service method.</param>
+        /// 
+        /// <returns>The response from the ListArchives service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListArchives">REST API Reference for ListArchives Operation</seealso>
+        public virtual ListArchivesResponse ListArchives(ListArchivesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListArchivesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListArchivesResponseUnmarshaller.Instance;
+
+            return Invoke<ListArchivesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListArchives operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListArchives operation on AmazonEventBridgeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListArchives
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListArchives">REST API Reference for ListArchives Operation</seealso>
+        public virtual IAsyncResult BeginListArchives(ListArchivesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListArchivesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListArchivesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListArchives operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListArchives.</param>
+        /// 
+        /// <returns>Returns a  ListArchivesResult from EventBridge.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListArchives">REST API Reference for ListArchives Operation</seealso>
+        public virtual ListArchivesResponse EndListArchives(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListArchivesResponse>(asyncResult);
         }
 
         #endregion
@@ -1477,6 +1878,64 @@ namespace Amazon.EventBridge
         public virtual ListPartnerEventSourcesResponse EndListPartnerEventSources(IAsyncResult asyncResult)
         {
             return EndInvoke<ListPartnerEventSourcesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListReplays
+
+        /// <summary>
+        /// Lists your replays. You can either list all the replays or you can provide a prefix
+        /// to match to the replay names. Filter parameters are exclusive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReplays service method.</param>
+        /// 
+        /// <returns>The response from the ListReplays service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListReplays">REST API Reference for ListReplays Operation</seealso>
+        public virtual ListReplaysResponse ListReplays(ListReplaysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReplaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReplaysResponseUnmarshaller.Instance;
+
+            return Invoke<ListReplaysResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReplays operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReplays operation on AmazonEventBridgeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReplays
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListReplays">REST API Reference for ListReplays Operation</seealso>
+        public virtual IAsyncResult BeginListReplays(ListReplaysRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReplaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReplaysResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReplays operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReplays.</param>
+        /// 
+        /// <returns>Returns a  ListReplaysResult from EventBridge.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/ListReplays">REST API Reference for ListReplays Operation</seealso>
+        public virtual ListReplaysResponse EndListReplays(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListReplaysResponse>(asyncResult);
         }
 
         #endregion
@@ -1885,10 +2344,13 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the PutPermission service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.PolicyLengthExceededException">
         /// The event bus policy is too long. For more information, see the limits.
@@ -2023,7 +2485,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the PutRule service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -2032,7 +2494,8 @@ namespace Amazon.EventBridge
         /// The event pattern is not valid.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
-        /// You tried to create more rules or add more targets to a rule than is allowed.
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ManagedRuleException">
         /// This rule was created by an AWS service on behalf of your account. It is managed by
@@ -2278,13 +2741,14 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the PutTargets service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
-        /// You tried to create more rules or add more targets to a rule than is allowed.
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ManagedRuleException">
         /// This rule was created by an AWS service on behalf of your account. It is managed by
@@ -2355,10 +2819,13 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -2431,7 +2898,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the RemoveTargets service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -2493,6 +2960,84 @@ namespace Amazon.EventBridge
 
         #endregion
         
+        #region  StartReplay
+
+        /// <summary>
+        /// Starts the specified replay. Events are not necessarily replayed in the exact same
+        /// order that they were added to the archive. A replay processes events to replay based
+        /// on the time in the event, and replays them using 1 minute intervals. If you specify
+        /// an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20 minute
+        /// time range, the events are replayed from the first minute of that 20 minute range
+        /// first. Then the events from the second minute are replayed. You can use <code>DescribeReplay</code>
+        /// to determine the progress of a replay. The value returned for <code>EventLastReplayedTime</code>
+        /// indicates the time within the specified time range associated with the last event
+        /// replayed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartReplay service method.</param>
+        /// 
+        /// <returns>The response from the StartReplay service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InvalidEventPatternException">
+        /// The event pattern is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/StartReplay">REST API Reference for StartReplay Operation</seealso>
+        public virtual StartReplayResponse StartReplay(StartReplayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplayResponseUnmarshaller.Instance;
+
+            return Invoke<StartReplayResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartReplay operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartReplay operation on AmazonEventBridgeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartReplay
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/StartReplay">REST API Reference for StartReplay Operation</seealso>
+        public virtual IAsyncResult BeginStartReplay(StartReplayRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplayResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartReplay operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartReplay.</param>
+        /// 
+        /// <returns>Returns a  StartReplayResult from EventBridge.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/StartReplay">REST API Reference for StartReplay Operation</seealso>
+        public virtual StartReplayResponse EndStartReplay(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartReplayResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
@@ -2522,7 +3067,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the TagResource service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -2662,7 +3207,7 @@ namespace Amazon.EventBridge
         /// 
         /// <returns>The response from the UntagResource service method, as returned by EventBridge.</returns>
         /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.EventBridge.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -2720,6 +3265,76 @@ namespace Amazon.EventBridge
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateArchive
+
+        /// <summary>
+        /// Updates the specified archive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateArchive service method.</param>
+        /// 
+        /// <returns>The response from the UpdateArchive service method, as returned by EventBridge.</returns>
+        /// <exception cref="Amazon.EventBridge.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.InvalidEventPatternException">
+        /// The event pattern is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.EventBridge.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateArchive">REST API Reference for UpdateArchive Operation</seealso>
+        public virtual UpdateArchiveResponse UpdateArchive(UpdateArchiveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateArchiveResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateArchiveResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateArchive operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateArchive operation on AmazonEventBridgeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateArchive
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateArchive">REST API Reference for UpdateArchive Operation</seealso>
+        public virtual IAsyncResult BeginUpdateArchive(UpdateArchiveRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateArchiveResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateArchive operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateArchive.</param>
+        /// 
+        /// <returns>Returns a  UpdateArchiveResult from EventBridge.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UpdateArchive">REST API Reference for UpdateArchive Operation</seealso>
+        public virtual UpdateArchiveResponse EndUpdateArchive(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateArchiveResponse>(asyncResult);
         }
 
         #endregion

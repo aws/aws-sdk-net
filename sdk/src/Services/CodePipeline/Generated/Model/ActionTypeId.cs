@@ -45,6 +45,31 @@ namespace Amazon.CodePipeline.Model
         /// provider type for the action. Valid categories are limited to one of the following
         /// values. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Source
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Build
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Test
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deploy
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Approval
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ActionCategory Category
@@ -62,7 +87,10 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The creator of the action being called.
+        /// The creator of the action being called. There are three valid values for the <code>Owner</code>
+        /// field in the action category section within your pipeline structure: <code>AWS</code>,
+        /// <code>ThirdParty</code>, and <code>Custom</code>. For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
+        /// Action Types and Providers in CodePipeline</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

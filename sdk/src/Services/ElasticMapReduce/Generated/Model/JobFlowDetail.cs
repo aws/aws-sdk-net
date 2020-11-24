@@ -271,12 +271,13 @@ namespace Amazon.ElasticMapReduce.Model
         /// indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless
         /// of when the request to terminate the instance was submitted. This option is only available
         /// with Amazon EMR 5.1.0 and later and is the default for clusters created using that
-        /// version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-        /// and drains tasks from nodes before terminating the Amazon EC2 instances, regardless
-        /// of the instance-hour boundary. With either behavior, Amazon EMR removes the least
-        /// active nodes first and blocks instance termination if it could lead to HDFS corruption.
-        /// <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0
-        /// and later, and is the default for versions of Amazon EMR earlier than 5.1.0.
+        /// version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds
+        /// nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2
+        /// instances, regardless of the instance-hour boundary. With either behavior, Amazon
+        /// EMR removes the least active nodes first and blocks instance termination if it could
+        /// lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only
+        /// in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+        /// earlier than 5.1.0.
         /// </para>
         /// </summary>
         public ScaleDownBehavior ScaleDownBehavior
@@ -294,8 +295,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The IAM role that will be assumed by the Amazon EMR service to access AWS resources
-        /// on your behalf.
+        /// The IAM role that is assumed by the Amazon EMR service to access AWS resources on
+        /// your behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10280)]
@@ -332,8 +333,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property SupportedProducts. 
         /// <para>
-        /// A list of strings set by third party software when the job flow is launched. If you
-        /// are not using third party software to manage the job flow this value is empty.
+        /// A list of strings set by third-party software when the job flow is launched. If you
+        /// are not using third-party software to manage the job flow, this value is empty.
         /// </para>
         /// </summary>
         public List<string> SupportedProducts

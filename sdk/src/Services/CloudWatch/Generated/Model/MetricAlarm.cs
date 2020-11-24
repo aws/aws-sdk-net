@@ -337,7 +337,7 @@ namespace Amazon.CloudWatch.Model
         /// An array of MetricDataQuery structures, used in an alarm based on a metric math expression.
         /// Each structure either retrieves a metric or performs a math expression. One item in
         /// the Metrics array is the math expression that the alarm watches. This expression by
-        /// designated by having <code>ReturnValue</code> set to true.
+        /// designated by having <code>ReturnData</code> set to true.
         /// </para>
         /// </summary>
         public List<MetricDataQuery> Metrics

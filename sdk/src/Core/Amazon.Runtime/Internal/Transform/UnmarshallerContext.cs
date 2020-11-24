@@ -296,6 +296,7 @@ namespace Amazon.Runtime.Internal.Transform
         private XmlNodeType nodeType;
         private string nodeContent = String.Empty;
         private bool disposed = false;
+        private bool currentlyProcessingEmptyElement;
 
         public Stream Stream
         {
@@ -305,6 +306,11 @@ namespace Amazon.Runtime.Internal.Transform
             }
         }
 
+        /// <summary>
+        /// Lookup of element names that are not skipped if empty within the XML response structure.
+        /// </summary>
+        public HashSet<string> AllowEmptyElementLookup { get; private set; }
+        
         private XmlReader XmlReader
         {
             get
@@ -348,6 +354,7 @@ namespace Amazon.Runtime.Internal.Transform
             this.WebResponseData = responseData;
             this.MaintainResponseBody = maintainResponseBody;
             this.IsException = isException;
+            this.AllowEmptyElementLookup = new HashSet<string>();
         }
 
         #endregion
@@ -390,25 +397,46 @@ namespace Amazon.Runtime.Internal.Transform
                 if (nodesToSkip.Contains(XmlReader.NodeType))
                     XmlReader.Read();
 
-                while (XmlReader.IsEmptyElement)
+                while (XmlReader.IsEmptyElement && !AllowEmptyElementLookup.Contains(XmlReader.LocalName))
                 {
                     XmlReader.Read();
                 }
 
-                switch (XmlReader.NodeType)
+                if (currentlyProcessingEmptyElement)
                 {
-                    case XmlNodeType.EndElement:
-                        this.nodeType = XmlNodeType.EndElement;
-                        stack.Pop();
-                        stackString = StackToPath(stack);
-                        XmlReader.Read();
-                        break;
-                    case XmlNodeType.Element:
-                        nodeType = XmlNodeType.Element;
-                        stack.Push(XmlReader.LocalName);
-                        stackString = StackToPath(stack);
-                        this.ReadElement();
-                        break;
+                    nodeType = XmlNodeType.EndElement;
+                    stack.Pop();
+                    stackString = StackToPath(stack);
+                    XmlReader.Read();
+                    currentlyProcessingEmptyElement = false;
+                }
+                else if(XmlReader.IsEmptyElement && AllowEmptyElementLookup.Contains(XmlReader.LocalName))
+                {
+                    //This is a shorthand form of an empty element <element /> and we want to allow it
+                    nodeType = XmlNodeType.Element;
+                    stack.Push(XmlReader.LocalName);
+                    stackString = StackToPath(stack);
+                    currentlyProcessingEmptyElement = true;          
+                    
+                    //Defer reading so that on next pass we can treat this same element as the end element.
+                }
+                else
+                {
+                    switch (XmlReader.NodeType)
+                    {
+                        case XmlNodeType.EndElement:
+                            this.nodeType = XmlNodeType.EndElement;
+                            stack.Pop();
+                            stackString = StackToPath(stack);
+                            XmlReader.Read();
+                            break;
+                        case XmlNodeType.Element:
+                            nodeType = XmlNodeType.Element;
+                            stack.Push(XmlReader.LocalName);
+                            stackString = StackToPath(stack);
+                            this.ReadElement();
+                            break;
+                    }
                 }
             }
 

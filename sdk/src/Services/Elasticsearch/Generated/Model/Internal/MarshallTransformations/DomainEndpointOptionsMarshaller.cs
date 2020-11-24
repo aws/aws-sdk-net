@@ -45,6 +45,24 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DomainEndpointOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomEndpoint())
+            {
+                context.Writer.WritePropertyName("CustomEndpoint");
+                context.Writer.Write(requestObject.CustomEndpoint);
+            }
+
+            if(requestObject.IsSetCustomEndpointCertificateArn())
+            {
+                context.Writer.WritePropertyName("CustomEndpointCertificateArn");
+                context.Writer.Write(requestObject.CustomEndpointCertificateArn);
+            }
+
+            if(requestObject.IsSetCustomEndpointEnabled())
+            {
+                context.Writer.WritePropertyName("CustomEndpointEnabled");
+                context.Writer.Write(requestObject.CustomEndpointEnabled);
+            }
+
             if(requestObject.IsSetEnforceHTTPS())
             {
                 context.Writer.WritePropertyName("EnforceHTTPS");

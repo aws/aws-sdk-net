@@ -1187,6 +1187,71 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  CheckSchemaVersionValidity
+
+        /// <summary>
+        /// Validates the supplied schema. This call has no side effects, it simply validates
+        /// using the supplied schema using <code>DataFormat</code> as the format. Since it does
+        /// not take a schema set name, no compatibility checks are performed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckSchemaVersionValidity service method.</param>
+        /// 
+        /// <returns>The response from the CheckSchemaVersionValidity service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CheckSchemaVersionValidity">REST API Reference for CheckSchemaVersionValidity Operation</seealso>
+        public virtual CheckSchemaVersionValidityResponse CheckSchemaVersionValidity(CheckSchemaVersionValidityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckSchemaVersionValidityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckSchemaVersionValidityResponseUnmarshaller.Instance;
+
+            return Invoke<CheckSchemaVersionValidityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CheckSchemaVersionValidity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CheckSchemaVersionValidity operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCheckSchemaVersionValidity
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CheckSchemaVersionValidity">REST API Reference for CheckSchemaVersionValidity Operation</seealso>
+        public virtual IAsyncResult BeginCheckSchemaVersionValidity(CheckSchemaVersionValidityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckSchemaVersionValidityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckSchemaVersionValidityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CheckSchemaVersionValidity operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCheckSchemaVersionValidity.</param>
+        /// 
+        /// <returns>Returns a  CheckSchemaVersionValidityResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CheckSchemaVersionValidity">REST API Reference for CheckSchemaVersionValidity Operation</seealso>
+        public virtual CheckSchemaVersionValidityResponse EndCheckSchemaVersionValidity(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CheckSchemaVersionValidityResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateClassifier
 
         /// <summary>
@@ -1776,6 +1841,237 @@ namespace Amazon.Glue
         public virtual CreatePartitionResponse EndCreatePartition(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePartitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreatePartitionIndex
+
+        /// <summary>
+        /// Creates a specified partition index in an existing table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartitionIndex service method.</param>
+        /// 
+        /// <returns>The response from the CreatePartitionIndex service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartitionIndex">REST API Reference for CreatePartitionIndex Operation</seealso>
+        public virtual CreatePartitionIndexResponse CreatePartitionIndex(CreatePartitionIndexRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePartitionIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePartitionIndexResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePartitionIndexResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePartitionIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartitionIndex operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePartitionIndex
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartitionIndex">REST API Reference for CreatePartitionIndex Operation</seealso>
+        public virtual IAsyncResult BeginCreatePartitionIndex(CreatePartitionIndexRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePartitionIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePartitionIndexResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePartitionIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePartitionIndex.</param>
+        /// 
+        /// <returns>Returns a  CreatePartitionIndexResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartitionIndex">REST API Reference for CreatePartitionIndex Operation</seealso>
+        public virtual CreatePartitionIndexResponse EndCreatePartitionIndex(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePartitionIndexResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateRegistry
+
+        /// <summary>
+        /// Creates a new registry which may be used to hold a collection of schemas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegistry service method.</param>
+        /// 
+        /// <returns>The response from the CreateRegistry service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateRegistry">REST API Reference for CreateRegistry Operation</seealso>
+        public virtual CreateRegistryResponse CreateRegistry(CreateRegistryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRegistryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRegistryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRegistry operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRegistry operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRegistry
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateRegistry">REST API Reference for CreateRegistry Operation</seealso>
+        public virtual IAsyncResult BeginCreateRegistry(CreateRegistryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRegistryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRegistry operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRegistry.</param>
+        /// 
+        /// <returns>Returns a  CreateRegistryResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateRegistry">REST API Reference for CreateRegistry Operation</seealso>
+        public virtual CreateRegistryResponse EndCreateRegistry(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateRegistryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateSchema
+
+        /// <summary>
+        /// Creates a new schema set and registers the schema definition. Returns an error if
+        /// the schema set already exists without actually registering the version.
+        /// 
+        ///  
+        /// <para>
+        /// When the schema set is created, a version checkpoint will be set to the first version.
+        /// Compatibility mode "DISABLED" restricts any additional schema versions from being
+        /// added after the first schema version. For all other compatibility modes, validation
+        /// of compatibility settings will be applied only from the second version onwards when
+        /// the <code>RegisterSchemaVersion</code> API is used.
+        /// </para>
+        ///  
+        /// <para>
+        /// When this API is called without a <code>RegistryId</code>, this will create an entry
+        /// for a "default-registry" in the registry database tables, if it is not already present.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSchema service method.</param>
+        /// 
+        /// <returns>The response from the CreateSchema service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
+        public virtual CreateSchemaResponse CreateSchema(CreateSchemaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSchemaResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSchemaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSchema operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSchema operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSchema
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
+        public virtual IAsyncResult BeginCreateSchema(CreateSchemaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSchemaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSchema operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSchema.</param>
+        /// 
+        /// <returns>Returns a  CreateSchemaResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
+        public virtual CreateSchemaResponse EndCreateSchema(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSchemaResponse>(asyncResult);
         }
 
         #endregion
@@ -2903,6 +3199,148 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  DeletePartitionIndex
+
+        /// <summary>
+        /// Deletes a specified partition index from an existing table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePartitionIndex service method.</param>
+        /// 
+        /// <returns>The response from the DeletePartitionIndex service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.GlueEncryptionException">
+        /// An encryption operation failed.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartitionIndex">REST API Reference for DeletePartitionIndex Operation</seealso>
+        public virtual DeletePartitionIndexResponse DeletePartitionIndex(DeletePartitionIndexRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePartitionIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePartitionIndexResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePartitionIndexResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePartitionIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePartitionIndex operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePartitionIndex
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartitionIndex">REST API Reference for DeletePartitionIndex Operation</seealso>
+        public virtual IAsyncResult BeginDeletePartitionIndex(DeletePartitionIndexRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePartitionIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePartitionIndexResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePartitionIndex operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePartitionIndex.</param>
+        /// 
+        /// <returns>Returns a  DeletePartitionIndexResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartitionIndex">REST API Reference for DeletePartitionIndex Operation</seealso>
+        public virtual DeletePartitionIndexResponse EndDeletePartitionIndex(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePartitionIndexResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteRegistry
+
+        /// <summary>
+        /// Delete the entire registry including schema and all of its versions. To get the status
+        /// of the delete operation, you can call the <code>GetRegistry</code> API after the asynchronous
+        /// call. Deleting a registry will disable all online operations for the registry such
+        /// as the <code>UpdateRegistry</code>, <code>CreateSchema</code>, <code>UpdateSchema</code>,
+        /// and <code>RegisterSchemaVersion</code> APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistry service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRegistry service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteRegistry">REST API Reference for DeleteRegistry Operation</seealso>
+        public virtual DeleteRegistryResponse DeleteRegistry(DeleteRegistryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRegistryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRegistryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRegistry operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistry operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRegistry
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteRegistry">REST API Reference for DeleteRegistry Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRegistry(DeleteRegistryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRegistryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRegistry operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRegistry.</param>
+        /// 
+        /// <returns>Returns a  DeleteRegistryResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteRegistry">REST API Reference for DeleteRegistry Operation</seealso>
+        public virtual DeleteRegistryResponse EndDeleteRegistry(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRegistryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteResourcePolicy
 
         /// <summary>
@@ -2968,6 +3406,164 @@ namespace Amazon.Glue
         public virtual DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteSchema
+
+        /// <summary>
+        /// Deletes the entire schema set, including the schema set and all of its versions. To
+        /// get the status of the delete operation, you can call <code>GetSchema</code> API after
+        /// the asynchronous call. Deleting a registry will disable all online operations for
+        /// the schema, such as the <code>GetSchemaByDefinition</code>, and <code>RegisterSchemaVersion</code>
+        /// APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSchema service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSchema service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
+        public virtual DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSchemaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSchema operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSchema operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSchema
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSchema(DeleteSchemaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSchema operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSchema.</param>
+        /// 
+        /// <returns>Returns a  DeleteSchemaResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
+        public virtual DeleteSchemaResponse EndDeleteSchema(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSchemaResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteSchemaVersions
+
+        /// <summary>
+        /// Remove versions from the specified schema. A version number or range may be supplied.
+        /// If the compatibility mode forbids deleting of a version that is necessary, such as
+        /// BACKWARDS_FULL, an error is returned. Calling the <code>GetSchemaVersions</code> API
+        /// after this call will list the status of the deleted versions.
+        /// 
+        ///  
+        /// <para>
+        /// When the range of version numbers contain check pointed version, the API will return
+        /// a 409 conflict and will not proceed with the deletion. You have to remove the checkpoint
+        /// first using the <code>DeleteSchemaCheckpoint</code> API before using this API.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot use the <code>DeleteSchemaVersions</code> API to delete the first schema
+        /// version in the schema set. The first schema version can only be deleted by the <code>DeleteSchema</code>
+        /// API. This operation will also delete the attached <code>SchemaVersionMetadata</code>
+        /// under the schema versions. Hard deletes will be enforced on the database.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the compatibility mode forbids deleting of a version that is necessary, such as
+        /// BACKWARDS_FULL, an error is returned.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSchemaVersions service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSchemaVersions service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchemaVersions">REST API Reference for DeleteSchemaVersions Operation</seealso>
+        public virtual DeleteSchemaVersionsResponse DeleteSchemaVersions(DeleteSchemaVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSchemaVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSchemaVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSchemaVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSchemaVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSchemaVersions operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSchemaVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchemaVersions">REST API Reference for DeleteSchemaVersions Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSchemaVersions(DeleteSchemaVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSchemaVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSchemaVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSchemaVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSchemaVersions.</param>
+        /// 
+        /// <returns>Returns a  DeleteSchemaVersionsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchemaVersions">REST API Reference for DeleteSchemaVersions Operation</seealso>
+        public virtual DeleteSchemaVersionsResponse EndDeleteSchemaVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSchemaVersionsResponse>(asyncResult);
         }
 
         #endregion
@@ -5379,6 +5975,72 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetRegistry
+
+        /// <summary>
+        /// Describes the specified registry in detail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistry service method.</param>
+        /// 
+        /// <returns>The response from the GetRegistry service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetRegistry">REST API Reference for GetRegistry Operation</seealso>
+        public virtual GetRegistryResponse GetRegistry(GetRegistryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegistryResponseUnmarshaller.Instance;
+
+            return Invoke<GetRegistryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRegistry operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistry operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRegistry
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetRegistry">REST API Reference for GetRegistry Operation</seealso>
+        public virtual IAsyncResult BeginGetRegistry(GetRegistryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegistryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRegistry operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRegistry.</param>
+        /// 
+        /// <returns>Returns a  GetRegistryResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetRegistry">REST API Reference for GetRegistry Operation</seealso>
+        public virtual GetRegistryResponse EndGetRegistry(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRegistryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetResourcePolicies
 
         /// <summary>
@@ -5515,6 +6177,284 @@ namespace Amazon.Glue
         public virtual GetResourcePolicyResponse EndGetResourcePolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetResourcePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSchema
+
+        /// <summary>
+        /// Describes the specified schema in detail.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSchema service method.</param>
+        /// 
+        /// <returns>The response from the GetSchema service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchema">REST API Reference for GetSchema Operation</seealso>
+        public virtual GetSchemaResponse GetSchema(GetSchemaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSchemaResponseUnmarshaller.Instance;
+
+            return Invoke<GetSchemaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSchema operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSchema operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSchema
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchema">REST API Reference for GetSchema Operation</seealso>
+        public virtual IAsyncResult BeginGetSchema(GetSchemaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSchemaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSchema operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSchema.</param>
+        /// 
+        /// <returns>Returns a  GetSchemaResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchema">REST API Reference for GetSchema Operation</seealso>
+        public virtual GetSchemaResponse EndGetSchema(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSchemaResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSchemaByDefinition
+
+        /// <summary>
+        /// Retrieves a schema by the <code>SchemaDefinition</code>. The schema definition is
+        /// sent to the Schema Registry, canonicalized, and hashed. If the hash is matched within
+        /// the scope of the <code>SchemaName</code> or ARN (or the default registry, if none
+        /// is supplied), that schema’s metadata is returned. Otherwise, a 404 or NotFound error
+        /// is returned. Schema versions in <code>Deleted</code> statuses will not be included
+        /// in the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSchemaByDefinition service method.</param>
+        /// 
+        /// <returns>The response from the GetSchemaByDefinition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaByDefinition">REST API Reference for GetSchemaByDefinition Operation</seealso>
+        public virtual GetSchemaByDefinitionResponse GetSchemaByDefinition(GetSchemaByDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSchemaByDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSchemaByDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<GetSchemaByDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSchemaByDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSchemaByDefinition operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSchemaByDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaByDefinition">REST API Reference for GetSchemaByDefinition Operation</seealso>
+        public virtual IAsyncResult BeginGetSchemaByDefinition(GetSchemaByDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSchemaByDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSchemaByDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSchemaByDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSchemaByDefinition.</param>
+        /// 
+        /// <returns>Returns a  GetSchemaByDefinitionResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaByDefinition">REST API Reference for GetSchemaByDefinition Operation</seealso>
+        public virtual GetSchemaByDefinitionResponse EndGetSchemaByDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSchemaByDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSchemaVersion
+
+        /// <summary>
+        /// Get the specified schema by its unique ID assigned when a version of the schema is
+        /// created or registered. Schema versions in Deleted status will not be included in the
+        /// results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSchemaVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetSchemaVersion service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaVersion">REST API Reference for GetSchemaVersion Operation</seealso>
+        public virtual GetSchemaVersionResponse GetSchemaVersion(GetSchemaVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSchemaVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSchemaVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetSchemaVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSchemaVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSchemaVersion operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSchemaVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaVersion">REST API Reference for GetSchemaVersion Operation</seealso>
+        public virtual IAsyncResult BeginGetSchemaVersion(GetSchemaVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSchemaVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSchemaVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSchemaVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSchemaVersion.</param>
+        /// 
+        /// <returns>Returns a  GetSchemaVersionResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaVersion">REST API Reference for GetSchemaVersion Operation</seealso>
+        public virtual GetSchemaVersionResponse EndGetSchemaVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSchemaVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSchemaVersionsDiff
+
+        /// <summary>
+        /// Fetches the schema version difference in the specified difference type between two
+        /// stored schema versions in the Schema Registry.
+        /// 
+        ///  
+        /// <para>
+        /// This API allows you to compare two schema versions between two schema definitions
+        /// under the same schema.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSchemaVersionsDiff service method.</param>
+        /// 
+        /// <returns>The response from the GetSchemaVersionsDiff service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaVersionsDiff">REST API Reference for GetSchemaVersionsDiff Operation</seealso>
+        public virtual GetSchemaVersionsDiffResponse GetSchemaVersionsDiff(GetSchemaVersionsDiffRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSchemaVersionsDiffRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSchemaVersionsDiffResponseUnmarshaller.Instance;
+
+            return Invoke<GetSchemaVersionsDiffResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSchemaVersionsDiff operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSchemaVersionsDiff operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSchemaVersionsDiff
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaVersionsDiff">REST API Reference for GetSchemaVersionsDiff Operation</seealso>
+        public virtual IAsyncResult BeginGetSchemaVersionsDiff(GetSchemaVersionsDiffRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSchemaVersionsDiffRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSchemaVersionsDiffResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSchemaVersionsDiff operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSchemaVersionsDiff.</param>
+        /// 
+        /// <returns>Returns a  GetSchemaVersionsDiffResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaVersionsDiff">REST API Reference for GetSchemaVersionsDiff Operation</seealso>
+        public virtual GetSchemaVersionsDiffResponse EndGetSchemaVersionsDiff(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSchemaVersionsDiffResponse>(asyncResult);
         }
 
         #endregion
@@ -6873,6 +7813,213 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  ListRegistries
+
+        /// <summary>
+        /// Returns a list of registries that you have created, with minimal registry information.
+        /// Registries in the <code>Deleting</code> status will not be included in the results.
+        /// Empty results will be returned if there are no registries available.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegistries service method.</param>
+        /// 
+        /// <returns>The response from the ListRegistries service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListRegistries">REST API Reference for ListRegistries Operation</seealso>
+        public virtual ListRegistriesResponse ListRegistries(ListRegistriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRegistriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegistriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRegistriesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRegistries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRegistries operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRegistries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListRegistries">REST API Reference for ListRegistries Operation</seealso>
+        public virtual IAsyncResult BeginListRegistries(ListRegistriesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRegistriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegistriesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRegistries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRegistries.</param>
+        /// 
+        /// <returns>Returns a  ListRegistriesResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListRegistries">REST API Reference for ListRegistries Operation</seealso>
+        public virtual ListRegistriesResponse EndListRegistries(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRegistriesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSchemas
+
+        /// <summary>
+        /// Returns a list of schemas with minimal details. Schemas in Deleting status will not
+        /// be included in the results. Empty results will be returned if there are no schemas
+        /// available.
+        /// 
+        ///  
+        /// <para>
+        /// When the <code>RegistryId</code> is not provided, all the schemas across registries
+        /// will be part of the API response.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSchemas service method.</param>
+        /// 
+        /// <returns>The response from the ListSchemas service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
+        public virtual ListSchemasResponse ListSchemas(ListSchemasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
+
+            return Invoke<ListSchemasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSchemas operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSchemas operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSchemas
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
+        public virtual IAsyncResult BeginListSchemas(ListSchemasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSchemas operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSchemas.</param>
+        /// 
+        /// <returns>Returns a  ListSchemasResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
+        public virtual ListSchemasResponse EndListSchemas(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSchemasResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSchemaVersions
+
+        /// <summary>
+        /// Returns a list of schema versions that you have created, with minimal information.
+        /// Schema versions in Deleted status will not be included in the results. Empty results
+        /// will be returned if there are no schema versions available.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSchemaVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListSchemaVersions service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSchemaVersions">REST API Reference for ListSchemaVersions Operation</seealso>
+        public virtual ListSchemaVersionsResponse ListSchemaVersions(ListSchemaVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSchemaVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSchemaVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSchemaVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSchemaVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSchemaVersions operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSchemaVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSchemaVersions">REST API Reference for ListSchemaVersions Operation</seealso>
+        public virtual IAsyncResult BeginListSchemaVersions(ListSchemaVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSchemaVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSchemaVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSchemaVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSchemaVersions.</param>
+        /// 
+        /// <returns>Returns a  ListSchemaVersionsResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSchemaVersions">REST API Reference for ListSchemaVersions Operation</seealso>
+        public virtual ListSchemaVersionsResponse EndListSchemaVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSchemaVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTriggers
 
         /// <summary>
@@ -7144,6 +8291,77 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  PutSchemaVersionMetadata
+
+        /// <summary>
+        /// Puts the metadata key value pair for a specified schema version ID. A maximum of 10
+        /// key value pairs will be allowed per schema version. They can be added over one or
+        /// more calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSchemaVersionMetadata service method.</param>
+        /// 
+        /// <returns>The response from the PutSchemaVersionMetadata service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutSchemaVersionMetadata">REST API Reference for PutSchemaVersionMetadata Operation</seealso>
+        public virtual PutSchemaVersionMetadataResponse PutSchemaVersionMetadata(PutSchemaVersionMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSchemaVersionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSchemaVersionMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<PutSchemaVersionMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutSchemaVersionMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutSchemaVersionMetadata operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutSchemaVersionMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutSchemaVersionMetadata">REST API Reference for PutSchemaVersionMetadata Operation</seealso>
+        public virtual IAsyncResult BeginPutSchemaVersionMetadata(PutSchemaVersionMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSchemaVersionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSchemaVersionMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutSchemaVersionMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutSchemaVersionMetadata.</param>
+        /// 
+        /// <returns>Returns a  PutSchemaVersionMetadataResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutSchemaVersionMetadata">REST API Reference for PutSchemaVersionMetadata Operation</seealso>
+        public virtual PutSchemaVersionMetadataResponse EndPutSchemaVersionMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutSchemaVersionMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutWorkflowRunProperties
 
         /// <summary>
@@ -7217,6 +8435,222 @@ namespace Amazon.Glue
         public virtual PutWorkflowRunPropertiesResponse EndPutWorkflowRunProperties(IAsyncResult asyncResult)
         {
             return EndInvoke<PutWorkflowRunPropertiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  QuerySchemaVersionMetadata
+
+        /// <summary>
+        /// Queries for the schema version metadata information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QuerySchemaVersionMetadata service method.</param>
+        /// 
+        /// <returns>The response from the QuerySchemaVersionMetadata service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/QuerySchemaVersionMetadata">REST API Reference for QuerySchemaVersionMetadata Operation</seealso>
+        public virtual QuerySchemaVersionMetadataResponse QuerySchemaVersionMetadata(QuerySchemaVersionMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QuerySchemaVersionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QuerySchemaVersionMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<QuerySchemaVersionMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the QuerySchemaVersionMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the QuerySchemaVersionMetadata operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQuerySchemaVersionMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/QuerySchemaVersionMetadata">REST API Reference for QuerySchemaVersionMetadata Operation</seealso>
+        public virtual IAsyncResult BeginQuerySchemaVersionMetadata(QuerySchemaVersionMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QuerySchemaVersionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QuerySchemaVersionMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  QuerySchemaVersionMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginQuerySchemaVersionMetadata.</param>
+        /// 
+        /// <returns>Returns a  QuerySchemaVersionMetadataResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/QuerySchemaVersionMetadata">REST API Reference for QuerySchemaVersionMetadata Operation</seealso>
+        public virtual QuerySchemaVersionMetadataResponse EndQuerySchemaVersionMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<QuerySchemaVersionMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RegisterSchemaVersion
+
+        /// <summary>
+        /// Adds a new version to the existing schema. Returns an error if new version of schema
+        /// does not meet the compatibility requirements of the schema set. This API will not
+        /// create a new schema set and will return a 404 error if the schema set is not already
+        /// present in the Schema Registry.
+        /// 
+        ///  
+        /// <para>
+        /// If this is the first schema definition to be registered in the Schema Registry, this
+        /// API will store the schema version and return immediately. Otherwise, this call has
+        /// the potential to run longer than other operations due to compatibility modes. You
+        /// can call the <code>GetSchemaVersion</code> API with the <code>SchemaVersionId</code>
+        /// to check compatibility modes.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the same schema definition is already stored in Schema Registry as a version, the
+        /// schema ID of the existing schema is returned to the caller.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterSchemaVersion service method.</param>
+        /// 
+        /// <returns>The response from the RegisterSchemaVersion service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RegisterSchemaVersion">REST API Reference for RegisterSchemaVersion Operation</seealso>
+        public virtual RegisterSchemaVersionResponse RegisterSchemaVersion(RegisterSchemaVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterSchemaVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterSchemaVersionResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterSchemaVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterSchemaVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterSchemaVersion operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterSchemaVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RegisterSchemaVersion">REST API Reference for RegisterSchemaVersion Operation</seealso>
+        public virtual IAsyncResult BeginRegisterSchemaVersion(RegisterSchemaVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterSchemaVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterSchemaVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterSchemaVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterSchemaVersion.</param>
+        /// 
+        /// <returns>Returns a  RegisterSchemaVersionResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RegisterSchemaVersion">REST API Reference for RegisterSchemaVersion Operation</seealso>
+        public virtual RegisterSchemaVersionResponse EndRegisterSchemaVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RegisterSchemaVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RemoveSchemaVersionMetadata
+
+        /// <summary>
+        /// Removes a key value pair from the schema version metadata for the specified schema
+        /// version ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveSchemaVersionMetadata service method.</param>
+        /// 
+        /// <returns>The response from the RemoveSchemaVersionMetadata service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RemoveSchemaVersionMetadata">REST API Reference for RemoveSchemaVersionMetadata Operation</seealso>
+        public virtual RemoveSchemaVersionMetadataResponse RemoveSchemaVersionMetadata(RemoveSchemaVersionMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveSchemaVersionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveSchemaVersionMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveSchemaVersionMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveSchemaVersionMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveSchemaVersionMetadata operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveSchemaVersionMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RemoveSchemaVersionMetadata">REST API Reference for RemoveSchemaVersionMetadata Operation</seealso>
+        public virtual IAsyncResult BeginRemoveSchemaVersionMetadata(RemoveSchemaVersionMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RemoveSchemaVersionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveSchemaVersionMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveSchemaVersionMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveSchemaVersionMetadata.</param>
+        /// 
+        /// <returns>Returns a  RemoveSchemaVersionMetadataResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RemoveSchemaVersionMetadata">REST API Reference for RemoveSchemaVersionMetadata Operation</seealso>
+        public virtual RemoveSchemaVersionMetadataResponse EndRemoveSchemaVersionMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemoveSchemaVersionMetadataResponse>(asyncResult);
         }
 
         #endregion
@@ -9312,6 +10746,164 @@ namespace Amazon.Glue
         public virtual UpdatePartitionResponse EndUpdatePartition(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePartitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateRegistry
+
+        /// <summary>
+        /// Updates an existing registry which is used to hold a collection of schemas. The updated
+        /// properties relate to the registry, and do not modify any of the schemas within the
+        /// registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegistry service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRegistry service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateRegistry">REST API Reference for UpdateRegistry Operation</seealso>
+        public virtual UpdateRegistryResponse UpdateRegistry(UpdateRegistryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRegistryResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRegistryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRegistry operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRegistry operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRegistry
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateRegistry">REST API Reference for UpdateRegistry Operation</seealso>
+        public virtual IAsyncResult BeginUpdateRegistry(UpdateRegistryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRegistryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRegistryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRegistry operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRegistry.</param>
+        /// 
+        /// <returns>Returns a  UpdateRegistryResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateRegistry">REST API Reference for UpdateRegistry Operation</seealso>
+        public virtual UpdateRegistryResponse EndUpdateRegistry(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRegistryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateSchema
+
+        /// <summary>
+        /// Updates the description, compatibility setting, or version checkpoint for a schema
+        /// set.
+        /// 
+        ///  
+        /// <para>
+        /// For updating the compatibility setting, the call will not validate compatibility for
+        /// the entire set of schema versions with the new compatibility setting. If the value
+        /// for <code>Compatibility</code> is provided, the <code>VersionNumber</code> (a checkpoint)
+        /// is also required. The API will validate the checkpoint version number for consistency.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value for the <code>VersionNumber</code> (checkpoint) is provided, <code>Compatibility</code>
+        /// is optional and this can be used to set/reset a checkpoint for the schema.
+        /// </para>
+        ///  
+        /// <para>
+        /// This update will happen only if the schema is in the AVAILABLE state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSchema service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSchema service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
+        public virtual UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSchemaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSchema operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSchema operation on AmazonGlueClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSchema
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSchema(UpdateSchemaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSchema operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSchema.</param>
+        /// 
+        /// <returns>Returns a  UpdateSchemaResult from Glue.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
+        public virtual UpdateSchemaResponse EndUpdateSchema(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateSchemaResponse>(asyncResult);
         }
 
         #endregion

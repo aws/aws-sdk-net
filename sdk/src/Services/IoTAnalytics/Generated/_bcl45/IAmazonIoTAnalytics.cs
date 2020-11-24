@@ -254,10 +254,11 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates a data set. A data set stores data retrieved from a data store by applying
-        /// a "queryAction" (a SQL query) or a "containerAction" (executing a containerized application).
-        /// This operation creates the skeleton of a data set. The data set can be populated manually
-        /// by calling "CreateDatasetContent" or automatically according to a "trigger" you specify.
+        /// Creates a dataset. A dataset stores data retrieved from a data store by applying a
+        /// <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing
+        /// a containerized application). This operation creates the skeleton of a dataset. The
+        /// dataset can be populated manually by calling <code>CreateDatasetContent</code> or
+        /// automatically according to a trigger you specify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
         /// 
@@ -286,10 +287,11 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates a data set. A data set stores data retrieved from a data store by applying
-        /// a "queryAction" (a SQL query) or a "containerAction" (executing a containerized application).
-        /// This operation creates the skeleton of a data set. The data set can be populated manually
-        /// by calling "CreateDatasetContent" or automatically according to a "trigger" you specify.
+        /// Creates a dataset. A dataset stores data retrieved from a data store by applying a
+        /// <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing
+        /// a containerized application). This operation creates the skeleton of a dataset. The
+        /// dataset can be populated manually by calling <code>CreateDatasetContent</code> or
+        /// automatically according to a trigger you specify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
         /// <param name="cancellationToken">
@@ -324,8 +326,8 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates the content of a data set by applying a "queryAction" (a SQL query) or a "containerAction"
-        /// (executing a containerized application).
+        /// Creates the content of a data set by applying a <code>queryAction</code> (a SQL query)
+        /// or a <code>containerAction</code> (executing a containerized application).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetContent service method.</param>
         /// 
@@ -351,8 +353,8 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates the content of a data set by applying a "queryAction" (a SQL query) or a "containerAction"
-        /// (executing a containerized application).
+        /// Creates the content of a data set by applying a <code>queryAction</code> (a SQL query)
+        /// or a <code>containerAction</code> (executing a containerized application).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetContent service method.</param>
         /// <param name="cancellationToken">
@@ -576,11 +578,11 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Deletes the specified data set.
+        /// Deletes the specified dataset.
         /// 
         ///  
         /// <para>
-        /// You do not have to delete the content of the data set before you perform this operation.
+        /// You do not have to delete the content of the dataset before you perform this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
@@ -607,11 +609,11 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Deletes the specified data set.
+        /// Deletes the specified dataset.
         /// 
         ///  
         /// <para>
-        /// You do not have to delete the content of the data set before you perform this operation.
+        /// You do not have to delete the content of the dataset before you perform this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
@@ -644,7 +646,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Deletes the content of the specified data set.
+        /// Deletes the content of the specified dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDatasetContent service method.</param>
         /// 
@@ -670,7 +672,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Deletes the content of the specified data set.
+        /// Deletes the content of the specified dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDatasetContent service method.</param>
         /// <param name="cancellationToken">
@@ -876,7 +878,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Retrieves information about a data set.
+        /// Retrieves information about a dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// 
@@ -902,7 +904,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Retrieves information about a data set.
+        /// Retrieves information about a dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// <param name="cancellationToken">
@@ -1108,7 +1110,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Retrieves the contents of a data set as pre-signed URIs.
+        /// Retrieves the contents of a data set as presigned URIs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDatasetContent service method.</param>
         /// 
@@ -1134,7 +1136,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Retrieves the contents of a data set as pre-signed URIs.
+        /// Retrieves the contents of a data set as presigned URIs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDatasetContent service method.</param>
         /// <param name="cancellationToken">
@@ -1432,7 +1434,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Lists the tags (metadata) which you have assigned to the resource.
+        /// Lists the tags (metadata) that you have assigned to the resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1461,7 +1463,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Lists the tags (metadata) which you have assigned to the resource.
+        /// Lists the tags (metadata) that you have assigned to the resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1500,10 +1502,10 @@ namespace Amazon.IoTAnalytics
         /// 
         ///  
         /// <para>
-        /// Note that if you update the value of any <code>loggingOptions</code> field, it takes
-        /// up to one minute for the change to take effect. Also, if you change the policy attached
-        /// to the role you specified in the roleArn field (for example, to correct an invalid
-        /// policy) it takes up to 5 minutes for that change to take effect. 
+        /// If you update the value of any <code>loggingOptions</code> field, it takes up to one
+        /// minute for the change to take effect. Also, if you change the policy attached to the
+        /// role you specified in the <code>roleArn</code> field (for example, to correct an invalid
+        /// policy), it takes up to five minutes for that change to take effect. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLoggingOptions service method.</param>
@@ -1531,10 +1533,10 @@ namespace Amazon.IoTAnalytics
         /// 
         ///  
         /// <para>
-        /// Note that if you update the value of any <code>loggingOptions</code> field, it takes
-        /// up to one minute for the change to take effect. Also, if you change the policy attached
-        /// to the role you specified in the roleArn field (for example, to correct an invalid
-        /// policy) it takes up to 5 minutes for that change to take effect. 
+        /// If you update the value of any <code>loggingOptions</code> field, it takes up to one
+        /// minute for the change to take effect. Also, if you change the policy attached to the
+        /// role you specified in the <code>roleArn</code> field (for example, to correct an invalid
+        /// policy), it takes up to five minutes for that change to take effect. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLoggingOptions service method.</param>
@@ -1740,7 +1742,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Adds to or modifies the tags of the given resource. Tags are metadata which can be
+        /// Adds to or modifies the tags of the given resource. Tags are metadata that can be
         /// used to manage a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -1770,7 +1772,7 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Adds to or modifies the tags of the given resource. Tags are metadata which can be
+        /// Adds to or modifies the tags of the given resource. Tags are metadata that can be
         /// used to manage a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>

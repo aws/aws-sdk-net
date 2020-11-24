@@ -94,6 +94,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("lateDataRules", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LateDataRule, LateDataRuleUnmarshaller>(LateDataRuleUnmarshaller.Instance);
+                    unmarshalledObject.LateDataRules = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

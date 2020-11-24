@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
+    /// Used to store data store data in an S3 bucket managed by AWS IoT Analytics.
     /// </summary>
     public partial class ServiceManagedDatastoreS3StorageSummary
     {

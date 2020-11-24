@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         private string _failureReason;
         private string _homeEfsFileSystemId;
         private string _homeEfsFileSystemKmsKeyId;
+        private string _kmsKeyId;
         private DateTime? _lastModifiedTime;
         private string _singleSignOnManagedApplicationInstanceId;
         private DomainStatus _status;
@@ -117,7 +118,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultUserSettings. 
         /// <para>
-        /// Settings which are applied to all UserProfile in this domain, if settings are not
+        /// Settings which are applied to all UserProfiles in this domain, if settings are not
         /// explicitly specified in a given UserProfile. 
         /// </para>
         /// </summary>
@@ -231,9 +232,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystemKmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service encryption key ID.
+        /// This member is deprecated and replaced with <code>KmsKeyId</code>.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated, use KmsKeyId instead.")]
         [AWSProperty(Max=2048)]
         public string HomeEfsFileSystemKmsKeyId
         {
@@ -245,6 +247,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHomeEfsFileSystemKmsKeyId()
         {
             return this._homeEfsFileSystemKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

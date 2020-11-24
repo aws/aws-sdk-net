@@ -58,7 +58,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactDetail. 
         /// <para>
-        /// Information about the provisioning artifact.
+        /// Information about the provisioning artifact. 
         /// </para>
         /// </summary>
         public ProvisioningArtifactDetail ProvisioningArtifactDetail

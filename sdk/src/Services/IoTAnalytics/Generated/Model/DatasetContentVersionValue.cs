@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// The data set whose latest contents are used as input to the notebook or application.
+    /// The dataset whose latest contents are used as input to the notebook or application.
     /// </summary>
     public partial class DatasetContentVersionValue
     {
@@ -38,7 +38,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// The name of the data set whose latest contents are used as input to the notebook or
+        /// The name of the dataset whose latest contents are used as input to the notebook or
         /// application.
         /// </para>
         /// </summary>

@@ -64,6 +64,23 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.AddPathResource("{datasetName}", StringUtils.FromString(publicRequest.DatasetName));
             request.ResourcePath = "/datasets/{datasetName}/content";
             request.MarshallerVersion = 2;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetVersionId())
+                {
+                    context.Writer.WritePropertyName("versionId");
+                    context.Writer.Write(publicRequest.VersionId);
+                }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
 
             return request;
         }

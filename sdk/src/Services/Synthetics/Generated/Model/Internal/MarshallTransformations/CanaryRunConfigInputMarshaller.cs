@@ -51,6 +51,20 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ActiveTracing);
             }
 
+            if(requestObject.IsSetEnvironmentVariables())
+            {
+                context.Writer.WritePropertyName("EnvironmentVariables");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectEnvironmentVariablesKvp in requestObject.EnvironmentVariables)
+                {
+                    context.Writer.WritePropertyName(requestObjectEnvironmentVariablesKvp.Key);
+                    var requestObjectEnvironmentVariablesValue = requestObjectEnvironmentVariablesKvp.Value;
+
+                        context.Writer.Write(requestObjectEnvironmentVariablesValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMemoryInMB())
             {
                 context.Writer.WritePropertyName("MemoryInMB");

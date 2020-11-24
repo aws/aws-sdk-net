@@ -95,7 +95,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the action to be performed.
+        /// The name of the pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

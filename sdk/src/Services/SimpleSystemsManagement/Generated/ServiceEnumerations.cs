@@ -568,6 +568,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant TagKey for AutomationExecutionFilterKey
         /// </summary>
         public static readonly AutomationExecutionFilterKey TagKey = new AutomationExecutionFilterKey("TagKey");
+        /// <summary>
+        /// Constant TargetResourceGroup for AutomationExecutionFilterKey
+        /// </summary>
+        public static readonly AutomationExecutionFilterKey TargetResourceGroup = new AutomationExecutionFilterKey("TargetResourceGroup");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4020,6 +4024,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Owner for SessionFilterKey
         /// </summary>
         public static readonly SessionFilterKey Owner = new SessionFilterKey("Owner");
+        /// <summary>
+        /// Constant SessionId for SessionFilterKey
+        /// </summary>
+        public static readonly SessionFilterKey SessionId = new SessionFilterKey("SessionId");
         /// <summary>
         /// Constant Status for SessionFilterKey
         /// </summary>

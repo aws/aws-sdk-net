@@ -85,6 +85,9 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetAccept())
                 request.Headers["Accept"] = publicRequest.Accept;
         
+            if(publicRequest.IsSetActiveContexts())
+                request.Headers["x-amz-lex-active-contexts"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(publicRequest.ActiveContexts));
+        
             if(publicRequest.IsSetContentType())
                 request.Headers["Content-Type"] = publicRequest.ContentType;
         

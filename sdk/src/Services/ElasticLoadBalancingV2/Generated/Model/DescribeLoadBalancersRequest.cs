@@ -31,12 +31,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancers operation.
     /// Describes the specified load balancers or all of your load balancers.
-    /// 
-    ///  
-    /// <para>
-    /// To describe the listeners for a load balancer, use <a>DescribeListeners</a>. To describe
-    /// the attributes for a load balancer, use <a>DescribeLoadBalancerAttributes</a>.
-    /// </para>
     /// </summary>
     public partial class DescribeLoadBalancersRequest : AmazonElasticLoadBalancingV2Request
     {

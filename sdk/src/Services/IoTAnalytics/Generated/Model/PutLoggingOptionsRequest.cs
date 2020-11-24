@@ -34,10 +34,10 @@ namespace Amazon.IoTAnalytics.Model
     /// 
     ///  
     /// <para>
-    /// Note that if you update the value of any <code>loggingOptions</code> field, it takes
-    /// up to one minute for the change to take effect. Also, if you change the policy attached
-    /// to the role you specified in the roleArn field (for example, to correct an invalid
-    /// policy) it takes up to 5 minutes for that change to take effect. 
+    /// If you update the value of any <code>loggingOptions</code> field, it takes up to one
+    /// minute for the change to take effect. Also, if you change the policy attached to the
+    /// role you specified in the <code>roleArn</code> field (for example, to correct an invalid
+    /// policy), it takes up to five minutes for that change to take effect. 
     /// </para>
     /// </summary>
     public partial class PutLoggingOptionsRequest : AmazonIoTAnalyticsRequest

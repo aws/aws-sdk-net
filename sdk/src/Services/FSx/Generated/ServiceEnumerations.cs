@@ -89,6 +89,14 @@ namespace Amazon.FSx
     {
 
         /// <summary>
+        /// Constant FILE_SYSTEM_ALIAS_ASSOCIATION for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType FILE_SYSTEM_ALIAS_ASSOCIATION = new AdministrativeActionType("FILE_SYSTEM_ALIAS_ASSOCIATION");
+        /// <summary>
+        /// Constant FILE_SYSTEM_ALIAS_DISASSOCIATION for AdministrativeActionType
+        /// </summary>
+        public static readonly AdministrativeActionType FILE_SYSTEM_ALIAS_DISASSOCIATION = new AdministrativeActionType("FILE_SYSTEM_ALIAS_DISASSOCIATION");
+        /// <summary>
         /// Constant FILE_SYSTEM_UPDATE for AdministrativeActionType
         /// </summary>
         public static readonly AdministrativeActionType FILE_SYSTEM_UPDATE = new AdministrativeActionType("FILE_SYSTEM_UPDATE");
@@ -126,6 +134,68 @@ namespace Amazon.FSx
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AdministrativeActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AliasLifecycle.
+    /// </summary>
+    public class AliasLifecycle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for AliasLifecycle
+        /// </summary>
+        public static readonly AliasLifecycle AVAILABLE = new AliasLifecycle("AVAILABLE");
+        /// <summary>
+        /// Constant CREATE_FAILED for AliasLifecycle
+        /// </summary>
+        public static readonly AliasLifecycle CREATE_FAILED = new AliasLifecycle("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for AliasLifecycle
+        /// </summary>
+        public static readonly AliasLifecycle CREATING = new AliasLifecycle("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for AliasLifecycle
+        /// </summary>
+        public static readonly AliasLifecycle DELETE_FAILED = new AliasLifecycle("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for AliasLifecycle
+        /// </summary>
+        public static readonly AliasLifecycle DELETING = new AliasLifecycle("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AliasLifecycle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AliasLifecycle FindValue(string value)
+        {
+            return FindValue<AliasLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AliasLifecycle(string value)
         {
             return FindValue(value);
         }
@@ -258,6 +328,10 @@ namespace Amazon.FSx
         /// Constant AUTOMATIC for BackupType
         /// </summary>
         public static readonly BackupType AUTOMATIC = new BackupType("AUTOMATIC");
+        /// <summary>
+        /// Constant AWS_BACKUP for BackupType
+        /// </summary>
+        public static readonly BackupType AWS_BACKUP = new BackupType("AWS_BACKUP");
         /// <summary>
         /// Constant USER_INITIATED for BackupType
         /// </summary>

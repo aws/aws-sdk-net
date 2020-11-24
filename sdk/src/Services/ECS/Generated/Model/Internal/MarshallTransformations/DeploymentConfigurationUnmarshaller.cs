@@ -64,6 +64,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("deploymentCircuitBreaker", targetDepth))
+                {
+                    var unmarshaller = DeploymentCircuitBreakerUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentCircuitBreaker = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maximumPercent", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

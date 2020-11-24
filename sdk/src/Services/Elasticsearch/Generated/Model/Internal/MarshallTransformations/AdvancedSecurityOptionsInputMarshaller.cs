@@ -68,6 +68,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSAMLOptions())
+            {
+                context.Writer.WritePropertyName("SAMLOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SAMLOptionsInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.SAMLOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -34,17 +34,33 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
+    /// This operation is used with the following load balancer types: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  Application Load Balancer - Operates at the application layer (layer 7) and supports
+    /// HTTP and HTTPS. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP,
+    /// TLS, and UDP. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  Gateway Load Balancer - Operates at the network layer (layer 3).
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// To describe the target groups for an Auto Scaling group, call the <a>DescribeLoadBalancerTargetGroups</a>
     /// API. To detach the target group from the Auto Scaling group, call the <a>DetachLoadBalancerTargetGroups</a>
     /// API.
     /// </para>
     ///  
     /// <para>
-    /// With Application Load Balancers and Network Load Balancers, instances are registered
-    /// as targets with a target group. With Classic Load Balancers, instances are registered
-    /// with the load balancer. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
-    /// a Load Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
-    /// Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
+    /// Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+    /// Guide</i>. 
     /// </para>
     /// </summary>
     public partial class AttachLoadBalancerTargetGroupsRequest : AmazonAutoScalingRequest
@@ -75,7 +91,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property TargetGroupARNs. 
         /// <para>
         /// The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
-        /// groups.
+        /// groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a>
+        /// API operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

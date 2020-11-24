@@ -29,13 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// Exception indicating the specified resource already exists.
+    /// Exception indicating the specified resource already exists. If available, this exception
+    /// includes details in additional properties.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ResourceAlreadyExistsException : AmazonShieldException
     {
+        private string _resourceType;
 
         /// <summary>
         /// Constructs a new ResourceAlreadyExistsException with the specified error
@@ -97,6 +99,7 @@ namespace Amazon.Shield.Model
         protected ResourceAlreadyExistsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ResourceType = (string)info.GetValue("ResourceType", typeof(string));
         }
 
         /// <summary>
@@ -117,8 +120,27 @@ namespace Amazon.Shield.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("ResourceType", this.ResourceType);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The type of resource that already exists.
+        /// </para>
+        /// </summary>
+        public string ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
+        }
 
     }
 }

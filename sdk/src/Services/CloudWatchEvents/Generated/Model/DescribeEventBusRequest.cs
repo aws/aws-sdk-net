@@ -52,11 +52,11 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the event bus to show details for. If you omit this, the default event
-        /// bus is displayed.
+        /// The name or ARN of the event bus to show details for. If you omit this, the default
+        /// event bus is displayed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=1600)]
         public string Name
         {
             get { return this._name; }

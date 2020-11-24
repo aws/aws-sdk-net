@@ -321,6 +321,49 @@ namespace Amazon.DynamoDBv2
 
         #endregion
 
+        #region  BatchExecuteStatement
+
+        internal virtual BatchExecuteStatementResponse BatchExecuteStatement(BatchExecuteStatementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
+
+            return Invoke<BatchExecuteStatementResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This operation allows you to perform batch reads and writes on data stored in DynamoDB,
+        /// using PartiQL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchExecuteStatement service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
+        /// increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
+        public virtual Task<BatchExecuteStatementResponse> BatchExecuteStatementAsync(BatchExecuteStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchExecuteStatementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchExecuteStatementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetItem
 
         internal virtual BatchGetItemResponse BatchGetItem(BatchGetItemRequest request)
@@ -2057,6 +2100,67 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeExport
+
+        internal virtual DescribeExportResponse DescribeExport(DescribeExportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExportResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes an existing table export.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExport service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ExportNotFoundException">
+        /// The specified export was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport">REST API Reference for DescribeExport Operation</seealso>
+        public virtual Task<DescribeExportResponse> DescribeExportAsync(DescribeExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeExportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeGlobalTable
 
         internal virtual DescribeGlobalTableResponse DescribeGlobalTable(DescribeGlobalTableRequest request)
@@ -2157,6 +2261,51 @@ namespace Amazon.DynamoDBv2
             options.EndpointOperation = EndpointOperation;
 
             return InvokeAsync<DescribeGlobalTableSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeKinesisStreamingDestination
+
+        internal virtual DescribeKinesisStreamingDestinationResponse DescribeKinesisStreamingDestination(DescribeKinesisStreamingDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeKinesisStreamingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeKinesisStreamingDestinationResponseUnmarshaller.Instance;
+            options.EndpointDiscoveryMarshaller = DescribeKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+
+            return Invoke<DescribeKinesisStreamingDestinationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about the status of Kinesis streaming.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKinesisStreamingDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeKinesisStreamingDestination service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination">REST API Reference for DescribeKinesisStreamingDestination Operation</seealso>
+        public virtual Task<DescribeKinesisStreamingDestinationResponse> DescribeKinesisStreamingDestinationAsync(DescribeKinesisStreamingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeKinesisStreamingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeKinesisStreamingDestinationResponseUnmarshaller.Instance;
+            options.EndpointDiscoveryMarshaller = DescribeKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+
+            return InvokeAsync<DescribeKinesisStreamingDestinationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2498,6 +2647,593 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DisableKinesisStreamingDestination
+
+        internal virtual DisableKinesisStreamingDestinationResponse DisableKinesisStreamingDestination(DisableKinesisStreamingDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableKinesisStreamingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableKinesisStreamingDestinationResponseUnmarshaller.Instance;
+            options.EndpointDiscoveryMarshaller = DisableKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+
+            return Invoke<DisableKinesisStreamingDestinationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops replication from the DynamoDB table to the Kinesis data stream. This is done
+        /// without deleting either of the resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableKinesisStreamingDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableKinesisStreamingDestination service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination">REST API Reference for DisableKinesisStreamingDestination Operation</seealso>
+        public virtual Task<DisableKinesisStreamingDestinationResponse> DisableKinesisStreamingDestinationAsync(DisableKinesisStreamingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableKinesisStreamingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableKinesisStreamingDestinationResponseUnmarshaller.Instance;
+            options.EndpointDiscoveryMarshaller = DisableKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+
+            return InvokeAsync<DisableKinesisStreamingDestinationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableKinesisStreamingDestination
+
+        internal virtual EnableKinesisStreamingDestinationResponse EnableKinesisStreamingDestination(EnableKinesisStreamingDestinationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableKinesisStreamingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableKinesisStreamingDestinationResponseUnmarshaller.Instance;
+            options.EndpointDiscoveryMarshaller = EnableKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+
+            return Invoke<EnableKinesisStreamingDestinationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts table data replication to the specified Kinesis data stream at a timestamp
+        /// chosen during the enable workflow. If this operation doesn't return results immediately,
+        /// use DescribeKinesisStreamingDestination to check if streaming to the Kinesis data
+        /// stream is ACTIVE.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableKinesisStreamingDestination service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableKinesisStreamingDestination service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination">REST API Reference for EnableKinesisStreamingDestination Operation</seealso>
+        public virtual Task<EnableKinesisStreamingDestinationResponse> EnableKinesisStreamingDestinationAsync(EnableKinesisStreamingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableKinesisStreamingDestinationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableKinesisStreamingDestinationResponseUnmarshaller.Instance;
+            options.EndpointDiscoveryMarshaller = EnableKinesisStreamingDestinationEndpointDiscoveryMarshaller.Instance;
+            options.EndpointOperation = EndpointOperation;
+
+            return InvokeAsync<EnableKinesisStreamingDestinationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ExecuteStatement
+
+        internal virtual ExecuteStatementResponse ExecuteStatement(ExecuteStatementRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteStatementResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteStatementResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This operation allows you to perform reads and singleton writes on data stored in
+        /// DynamoDB, using PartiQL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExecuteStatement service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
+        /// A condition specified in the operation could not be evaluated.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.DuplicateItemException">
+        /// There was an attempt to insert an item with the same primary key as an item that
+        /// already exists in the DynamoDB table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ItemCollectionSizeLimitExceededException">
+        /// An item collection is too large. This exception is only returned for tables that have
+        /// one or more local secondary indexes.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
+        /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
+        /// Operation was rejected because there is an ongoing transaction for the item.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">REST API Reference for ExecuteStatement Operation</seealso>
+        public virtual Task<ExecuteStatementResponse> ExecuteStatementAsync(ExecuteStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteStatementRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteStatementResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExecuteStatementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ExecuteTransaction
+
+        internal virtual ExecuteTransactionResponse ExecuteTransaction(ExecuteTransactionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteTransactionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteTransactionResponseUnmarshaller.Instance;
+
+            return Invoke<ExecuteTransactionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This operation allows you to perform transactional reads or writes on data stored
+        /// in DynamoDB, using PartiQL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteTransaction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExecuteTransaction service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.IdempotentParameterMismatchException">
+        /// DynamoDB rejected the request because you retried a request with a different payload
+        /// but with an idempotent token that was already used.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
+        /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TransactionCanceledException">
+        /// The entire transaction request was canceled.
+        /// 
+        ///  
+        /// <para>
+        /// DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A condition in one of the condition expressions is not met.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A table in the <code>TransactWriteItems</code> request is in a different account or
+        /// region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// More than one action in the <code>TransactWriteItems</code> operation targets the
+        /// same item.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is insufficient provisioned capacity for the transaction to be completed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An item size becomes too large (larger than 400 KB), or a local secondary index (LSI)
+        /// becomes too large, or a similar validation error occurs because of changes made by
+        /// the transaction.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is a user error, such as an invalid data format.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// There is an ongoing <code>TransactGetItems</code> operation that conflicts with a
+        /// concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code>
+        /// or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code>
+        /// operation fails with a <code>TransactionCanceledException</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A table in the <code>TransactGetItems</code> request is in a different account or
+        /// region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is insufficient provisioned capacity for the transaction to be completed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is a user error, such as an invalid data format.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code>
+        /// property. This property is not set for other languages. Transaction cancellation reasons
+        /// are ordered in the order of requested items, if an item has no error it will have
+        /// <code>NONE</code> code and <code>Null</code> message.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Cancellation reason codes and possible error messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// No Errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>NONE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: <code>null</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Conditional Check Failed:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ConditionalCheckFailed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: The conditional request failed. 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Item Collection Size Limit Exceeded:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ItemCollectionSizeLimitExceeded</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: Collection size exceeded.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Transaction Conflict:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>TransactionConflict</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: Transaction is ongoing for the item.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Provisioned Throughput Exceeded:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ProvisionedThroughputExceeded</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The level of configured provisioned throughput for the table was exceeded. Consider
+        /// increasing your provisioning level with the UpdateTable API.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This Message is received when provisioned throughput is exceeded is on a provisioned
+        /// DynamoDB table.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The level of configured provisioned throughput for one or more global secondary indexes
+        /// of the table was exceeded. Consider increasing your provisioning level for the under-provisioned
+        /// global secondary indexes with the UpdateTable API.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when provisioned throughput is exceeded is on a provisioned
+        /// GSI.
+        /// </para>
+        ///  </note> </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        /// Throttling Error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ThrottlingError</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Throughput exceeds the current capacity of your table or index. DynamoDB is automatically
+        /// scaling your table or index so please try again shortly. If exceptions persist, check
+        /// if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when writes get throttled on an On-Demand table as DynamoDB
+        /// is automatically scaling the table.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// Throughput exceeds the current capacity for one or more global secondary indexes.
+        /// DynamoDB is automatically scaling your index so please try again shortly.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB
+        /// is automatically scaling the GSI.
+        /// </para>
+        ///  </note> </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        /// Validation Error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ValidationError</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// One or more parameter values were invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The update expression attempted to update the secondary index key beyond allowed size
+        /// limits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The update expression attempted to update the secondary index key to unsupported type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An operand in the update expression has an incorrect data type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Item size to update has exceeded the maximum allowed size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Number overflow. Attempting to store a number with magnitude larger than supported
+        /// range.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Type mismatch for attribute to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Nesting Levels have exceeded supported limits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The document path provided in the update expression is invalid for update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The provided expression refers to an attribute that does not exist in the item.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TransactionInProgressException">
+        /// The transaction with the given request token is already in progress.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction">REST API Reference for ExecuteTransaction Operation</seealso>
+        public virtual Task<ExecuteTransactionResponse> ExecuteTransactionAsync(ExecuteTransactionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExecuteTransactionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExecuteTransactionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExecuteTransactionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ExportTableToPointInTime
+
+        internal virtual ExportTableToPointInTimeResponse ExportTableToPointInTime(ExportTableToPointInTimeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportTableToPointInTimeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportTableToPointInTimeResponseUnmarshaller.Instance;
+
+            return Invoke<ExportTableToPointInTimeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Exports table data to an S3 bucket. The table must have point in time recovery enabled,
+        /// and you can export data from any time within the point in time recovery window.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportTableToPointInTime service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportTableToPointInTime service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ExportConflictException">
+        /// There was a conflict when writing to the specified S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InvalidExportTimeException">
+        /// The specified <code>ExportTime</code> is outside of the point in time recovery window.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.PointInTimeRecoveryUnavailableException">
+        /// Point in time recovery has not yet been enabled for this source table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
+        /// A source table with the name <code>TableName</code> does not currently exist within
+        /// the subscriber's account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime">REST API Reference for ExportTableToPointInTime Operation</seealso>
+        public virtual Task<ExportTableToPointInTimeResponse> ExportTableToPointInTimeAsync(ExportTableToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportTableToPointInTimeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportTableToPointInTimeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExportTableToPointInTimeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetItem
 
         internal virtual GetItemResponse GetItem(GetItemRequest request)
@@ -2757,6 +3493,64 @@ namespace Amazon.DynamoDBv2
             options.ResponseUnmarshaller = ListContributorInsightsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListContributorInsightsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListExports
+
+        internal virtual ListExportsResponse ListExports(ListExportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists completed exports within the past 90 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExports service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">REST API Reference for ListExports Operation</seealso>
+        public virtual Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListExportsResponse>(request, options, cancellationToken);
         }
 
         #endregion

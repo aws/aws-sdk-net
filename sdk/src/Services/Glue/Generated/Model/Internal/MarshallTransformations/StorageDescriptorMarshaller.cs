@@ -116,6 +116,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSchemaReference())
+            {
+                context.Writer.WritePropertyName("SchemaReference");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SchemaReferenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.SchemaReference, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSerdeInfo())
             {
                 context.Writer.WritePropertyName("SerdeInfo");

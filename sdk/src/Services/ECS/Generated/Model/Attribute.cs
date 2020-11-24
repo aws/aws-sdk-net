@@ -44,8 +44,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the attribute. Up to 128 letters (uppercase and lowercase), numbers, hyphens,
-        /// underscores, and periods are allowed.
+        /// The name of the attribute. The <code>name</code> must contain between 1 and 128 characters
+        /// and name may contain letters (uppercase and lowercase), numbers, hyphens, underscores,
+        /// forward slashes, back slashes, or periods.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,9 +103,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the attribute. Up to 128 letters (uppercase and lowercase), numbers,
-        /// hyphens, underscores, periods, at signs (@), forward slashes, colons, and spaces are
-        /// allowed.
+        /// The value of the attribute. The <code>value</code> must contain between 1 and 128
+        /// characters and may contain letters (uppercase and lowercase), numbers, hyphens, underscores,
+        /// periods, at signs (@), forward slashes, back slashes, colons, or spaces. The value
+        /// cannot contain any leading or trailing whitespace.
         /// </para>
         /// </summary>
         public string Value

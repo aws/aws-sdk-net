@@ -31,15 +31,35 @@ namespace Amazon.Signer
     /// <summary>
     /// Interface for accessing Signer
     ///
-    /// With code signing for IoT, you can sign code that you create for any IoT device that
-    /// is supported by Amazon Web Services (AWS). Code signing is available through <a href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon
+    /// AWS Signer is a fully managed code signing service to help you ensure the trust and
+    /// integrity of your code. 
+    /// 
+    ///  
+    /// <para>
+    /// AWS Signer supports the following applications:
+    /// </para>
+    ///  
+    /// <para>
+    /// With <i>code signing for AWS Lambda</i>, you can sign AWS Lambda deployment packages.
+    /// Integrated support is provided for Amazon S3, Amazon CloudWatch, and AWS CloudTrail.
+    /// In order to sign code, you create a signing profile and then use Signer to sign Lambda
+    /// zip files in S3. 
+    /// </para>
+    ///  
+    /// <para>
+    /// With <i>code signing for IoT</i>, you can sign code for any IoT device that is supported
+    /// by AWS. IoT code signing is available for <a href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon
     /// FreeRTOS</a> and <a href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS
-    /// IoT Device Management</a>, and integrated with <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
+    /// IoT Device Management</a>, and is integrated with <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
     /// Certificate Manager (ACM)</a>. In order to sign code, you import a third-party code
-    /// signing certificate with ACM that is used to sign updates in Amazon FreeRTOS and AWS
-    /// IoT Device Management. For general information about using code signing, see the <a
-    /// href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code Signing
-    /// for IoT Developer Guide</a>.
+    /// signing certificate using ACM, and use that to sign updates in Amazon FreeRTOS and
+    /// AWS IoT Device Management. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about AWS Signer, see the <a href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS
+    /// Signer Developer Guide</a>.
+    /// </para>
     /// </summary>
     public partial interface IAmazonSigner : IAmazonService, IDisposable
     {
@@ -49,6 +69,86 @@ namespace Amazon.Signer
         /// </summary>
         ISignerPaginatorFactory Paginators { get; }
 
+        
+        #region  AddProfilePermission
+
+
+        /// <summary>
+        /// Adds cross-account permissions to a signing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddProfilePermission service method.</param>
+        /// 
+        /// <returns>The response from the AddProfilePermission service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ConflictException">
+        /// The resource encountered a conflicting state.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
+        /// A specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ServiceLimitExceededException">
+        /// The client is making a request that exceeds service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ValidationException">
+        /// You signing certificate could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/AddProfilePermission">REST API Reference for AddProfilePermission Operation</seealso>
+        AddProfilePermissionResponse AddProfilePermission(AddProfilePermissionRequest request);
+
+
+
+        /// <summary>
+        /// Adds cross-account permissions to a signing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddProfilePermission service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddProfilePermission service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ConflictException">
+        /// The resource encountered a conflicting state.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
+        /// A specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ServiceLimitExceededException">
+        /// The client is making a request that exceeds service limits.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ValidationException">
+        /// You signing certificate could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/AddProfilePermission">REST API Reference for AddProfilePermission Operation</seealso>
+        Task<AddProfilePermissionResponse> AddProfilePermissionAsync(AddProfilePermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
         
         #region  CancelSigningProfile
 
@@ -70,8 +170,13 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
         /// A specified resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.Signer.Model.ThrottlingException">
-        /// The signing job has been throttled.
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/CancelSigningProfile">REST API Reference for CancelSigningProfile Operation</seealso>
         CancelSigningProfileResponse CancelSigningProfile(CancelSigningProfileRequest request);
@@ -98,8 +203,13 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
         /// A specified resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.Signer.Model.ThrottlingException">
-        /// The signing job has been throttled.
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/CancelSigningProfile">REST API Reference for CancelSigningProfile Operation</seealso>
         Task<CancelSigningProfileResponse> CancelSigningProfileAsync(CancelSigningProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -125,6 +235,14 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
         /// A specified resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/DescribeSigningJob">REST API Reference for DescribeSigningJob Operation</seealso>
         DescribeSigningJobResponse DescribeSigningJob(DescribeSigningJobRequest request);
 
@@ -149,6 +267,14 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
         /// A specified resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/DescribeSigningJob">REST API Reference for DescribeSigningJob Operation</seealso>
         Task<DescribeSigningJobResponse> DescribeSigningJobAsync(DescribeSigningJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -171,6 +297,14 @@ namespace Amazon.Signer
         /// </exception>
         /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
         /// A specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetSigningPlatform">REST API Reference for GetSigningPlatform Operation</seealso>
         GetSigningPlatformResponse GetSigningPlatform(GetSigningPlatformRequest request);
@@ -195,6 +329,14 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
         /// A specified resource could not be found.
         /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetSigningPlatform">REST API Reference for GetSigningPlatform Operation</seealso>
         Task<GetSigningPlatformResponse> GetSigningPlatformAsync(GetSigningPlatformRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -218,8 +360,13 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
         /// A specified resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.Signer.Model.ThrottlingException">
-        /// The signing job has been throttled.
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetSigningProfile">REST API Reference for GetSigningProfile Operation</seealso>
         GetSigningProfileResponse GetSigningProfile(GetSigningProfileRequest request);
@@ -244,11 +391,84 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
         /// A specified resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.Signer.Model.ThrottlingException">
-        /// The signing job has been throttled.
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetSigningProfile">REST API Reference for GetSigningProfile Operation</seealso>
         Task<GetSigningProfileResponse> GetSigningProfileAsync(GetSigningProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListProfilePermissions
+
+
+        /// <summary>
+        /// Lists the cross-account permissions associated with a signing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProfilePermissions service method.</param>
+        /// 
+        /// <returns>The response from the ListProfilePermissions service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
+        /// A specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ValidationException">
+        /// You signing certificate could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListProfilePermissions">REST API Reference for ListProfilePermissions Operation</seealso>
+        ListProfilePermissionsResponse ListProfilePermissions(ListProfilePermissionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the cross-account permissions associated with a signing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProfilePermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProfilePermissions service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
+        /// A specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ValidationException">
+        /// You signing certificate could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListProfilePermissions">REST API Reference for ListProfilePermissions Operation</seealso>
+        Task<ListProfilePermissionsResponse> ListProfilePermissionsAsync(ListProfilePermissionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -273,8 +493,13 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
         /// An internal error occurred.
         /// </exception>
-        /// <exception cref="Amazon.Signer.Model.ThrottlingException">
-        /// The signing job has been throttled.
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Signer.Model.ValidationException">
         /// You signing certificate could not be validated.
@@ -305,8 +530,13 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
         /// An internal error occurred.
         /// </exception>
-        /// <exception cref="Amazon.Signer.Model.ThrottlingException">
-        /// The signing job has been throttled.
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Signer.Model.ValidationException">
         /// You signing certificate could not be validated.
@@ -336,8 +566,13 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
         /// An internal error occurred.
         /// </exception>
-        /// <exception cref="Amazon.Signer.Model.ThrottlingException">
-        /// The signing job has been throttled.
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Signer.Model.ValidationException">
         /// You signing certificate could not be validated.
@@ -367,8 +602,13 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
         /// An internal error occurred.
         /// </exception>
-        /// <exception cref="Amazon.Signer.Model.ThrottlingException">
-        /// The signing job has been throttled.
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Signer.Model.ValidationException">
         /// You signing certificate could not be validated.
@@ -400,8 +640,13 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
         /// An internal error occurred.
         /// </exception>
-        /// <exception cref="Amazon.Signer.Model.ThrottlingException">
-        /// The signing job has been throttled.
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningProfiles">REST API Reference for ListSigningProfiles Operation</seealso>
         ListSigningProfilesResponse ListSigningProfiles(ListSigningProfilesRequest request);
@@ -430,8 +675,13 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
         /// An internal error occurred.
         /// </exception>
-        /// <exception cref="Amazon.Signer.Model.ThrottlingException">
-        /// The signing job has been throttled.
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningProfiles">REST API Reference for ListSigningProfiles Operation</seealso>
         Task<ListSigningProfilesResponse> ListSigningProfilesAsync(ListSigningProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -457,6 +707,14 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.NotFoundException">
         /// The signing profile was not found.
         /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
@@ -480,6 +738,14 @@ namespace Amazon.Signer
         /// </exception>
         /// <exception cref="Amazon.Signer.Model.NotFoundException">
         /// The signing profile was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -505,8 +771,13 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
         /// A specified resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.Signer.Model.ThrottlingException">
-        /// The signing job has been throttled.
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Signer.Model.ValidationException">
         /// You signing certificate could not be validated.
@@ -535,14 +806,233 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
         /// A specified resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.Signer.Model.ThrottlingException">
-        /// The signing job has been throttled.
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Signer.Model.ValidationException">
         /// You signing certificate could not be validated.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/PutSigningProfile">REST API Reference for PutSigningProfile Operation</seealso>
         Task<PutSigningProfileResponse> PutSigningProfileAsync(PutSigningProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RemoveProfilePermission
+
+
+        /// <summary>
+        /// Removes cross-account permissions from a signing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveProfilePermission service method.</param>
+        /// 
+        /// <returns>The response from the RemoveProfilePermission service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ConflictException">
+        /// The resource encountered a conflicting state.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
+        /// A specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ValidationException">
+        /// You signing certificate could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RemoveProfilePermission">REST API Reference for RemoveProfilePermission Operation</seealso>
+        RemoveProfilePermissionResponse RemoveProfilePermission(RemoveProfilePermissionRequest request);
+
+
+
+        /// <summary>
+        /// Removes cross-account permissions from a signing profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveProfilePermission service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveProfilePermission service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ConflictException">
+        /// The resource encountered a conflicting state.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
+        /// A specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ValidationException">
+        /// You signing certificate could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RemoveProfilePermission">REST API Reference for RemoveProfilePermission Operation</seealso>
+        Task<RemoveProfilePermissionResponse> RemoveProfilePermissionAsync(RemoveProfilePermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RevokeSignature
+
+
+        /// <summary>
+        /// Changes the state of a signing job to REVOKED. This indicates that the signature is
+        /// no longer valid.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeSignature service method.</param>
+        /// 
+        /// <returns>The response from the RevokeSignature service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
+        /// A specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ValidationException">
+        /// You signing certificate could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RevokeSignature">REST API Reference for RevokeSignature Operation</seealso>
+        RevokeSignatureResponse RevokeSignature(RevokeSignatureRequest request);
+
+
+
+        /// <summary>
+        /// Changes the state of a signing job to REVOKED. This indicates that the signature is
+        /// no longer valid.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeSignature service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RevokeSignature service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
+        /// A specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ValidationException">
+        /// You signing certificate could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RevokeSignature">REST API Reference for RevokeSignature Operation</seealso>
+        Task<RevokeSignatureResponse> RevokeSignatureAsync(RevokeSignatureRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RevokeSigningProfile
+
+
+        /// <summary>
+        /// Changes the state of a signing profile to REVOKED. This indicates that signatures
+        /// generated using the signing profile after an effective start date are no longer valid.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeSigningProfile service method.</param>
+        /// 
+        /// <returns>The response from the RevokeSigningProfile service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
+        /// A specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ValidationException">
+        /// You signing certificate could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RevokeSigningProfile">REST API Reference for RevokeSigningProfile Operation</seealso>
+        RevokeSigningProfileResponse RevokeSigningProfile(RevokeSigningProfileRequest request);
+
+
+
+        /// <summary>
+        /// Changes the state of a signing profile to REVOKED. This indicates that signatures
+        /// generated using the signing profile after an effective start date are no longer valid.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeSigningProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RevokeSigningProfile service method, as returned by Signer.</returns>
+        /// <exception cref="Amazon.Signer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.InternalServiceErrorException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ResourceNotFoundException">
+        /// A specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.ValidationException">
+        /// You signing certificate could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RevokeSigningProfile">REST API Reference for RevokeSigningProfile Operation</seealso>
+        Task<RevokeSigningProfileResponse> RevokeSigningProfileAsync(RevokeSigningProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -601,7 +1091,20 @@ namespace Amazon.Signer
         /// A specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.Signer.Model.ThrottlingException">
-        /// The signing job has been throttled.
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// Instead of this error, <code>TooManyRequestsException</code> should be used.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Signer.Model.ValidationException">
         /// You signing certificate could not be validated.
@@ -666,7 +1169,20 @@ namespace Amazon.Signer
         /// A specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.Signer.Model.ThrottlingException">
-        /// The signing job has been throttled.
+        /// The request was denied due to request throttling.
+        /// 
+        ///  
+        /// <para>
+        /// Instead of this error, <code>TooManyRequestsException</code> should be used.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Signer.Model.ValidationException">
         /// You signing certificate could not be validated.
@@ -698,6 +1214,14 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.NotFoundException">
         /// The signing profile was not found.
         /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
 
@@ -725,6 +1249,14 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.NotFoundException">
         /// The signing profile was not found.
         /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -750,6 +1282,14 @@ namespace Amazon.Signer
         /// <exception cref="Amazon.Signer.Model.NotFoundException">
         /// The signing profile was not found.
         /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
@@ -774,6 +1314,14 @@ namespace Amazon.Signer
         /// </exception>
         /// <exception cref="Amazon.Signer.Model.NotFoundException">
         /// The signing profile was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Signer.Model.TooManyRequestsException">
+        /// The allowed number of job-signing requests has been exceeded.
+        /// 
+        ///  
+        /// <para>
+        /// This error supersedes the error <code>ThrottlingException</code>.
+        /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));

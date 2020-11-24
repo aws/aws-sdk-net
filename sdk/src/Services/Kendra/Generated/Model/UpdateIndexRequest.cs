@@ -40,6 +40,8 @@ namespace Amazon.Kendra.Model
         private string _id;
         private string _name;
         private string _roleArn;
+        private UserContextPolicy _userContextPolicy;
+        private List<UserTokenConfiguration> _userTokenConfigurations = new List<UserTokenConfiguration>();
 
         /// <summary>
         /// Gets and sets the property CapacityUnits. 
@@ -159,6 +161,43 @@ namespace Amazon.Kendra.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserContextPolicy. 
+        /// <para>
+        /// The user user token context policy.
+        /// </para>
+        /// </summary>
+        public UserContextPolicy UserContextPolicy
+        {
+            get { return this._userContextPolicy; }
+            set { this._userContextPolicy = value; }
+        }
+
+        // Check to see if UserContextPolicy property is set
+        internal bool IsSetUserContextPolicy()
+        {
+            return this._userContextPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserTokenConfigurations. 
+        /// <para>
+        /// The user token configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<UserTokenConfiguration> UserTokenConfigurations
+        {
+            get { return this._userTokenConfigurations; }
+            set { this._userTokenConfigurations = value; }
+        }
+
+        // Check to see if UserTokenConfigurations property is set
+        internal bool IsSetUserTokenConfigurations()
+        {
+            return this._userTokenConfigurations != null && this._userTokenConfigurations.Count > 0; 
         }
 
     }

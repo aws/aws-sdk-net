@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// Before the service provider runs this command, they must add a record to the DNS server.
-    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html#add-dns-txt-record">Adding
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html#add-dns-txt-record">Adding
     /// a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     /// </summary>

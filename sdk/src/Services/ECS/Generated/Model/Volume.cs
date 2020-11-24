@@ -29,17 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// A data volume used in a task definition. For tasks that use Amazon Elastic File System
-    /// (Amazon EFS) file storage, specify an <code>efsVolumeConfiguration</code>. For tasks
-    /// that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks
-    /// that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+    /// A data volume used in a task definition. For tasks that use the Amazon Elastic File
+    /// System (Amazon EFS), specify an <code>efsVolumeConfiguration</code>. For Windows tasks
+    /// that use Amazon FSx for Windows File Server file system, specify a <code>fsxWindowsFileServerVolumeConfiguration</code>.
+    /// For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>.
+    /// For tasks that use a bind mount host volume, specify a <code>host</code> and optional
+    /// <code>sourcePath</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
     /// Data Volumes in Tasks</a>.
     /// </summary>
     public partial class Volume
     {
         private DockerVolumeConfiguration _dockerVolumeConfiguration;
         private EFSVolumeConfiguration _efsVolumeConfiguration;
+        private FSxWindowsFileServerVolumeConfiguration _fsxWindowsFileServerVolumeConfiguration;
         private HostVolumeProperties _host;
         private string _name;
 
@@ -81,6 +83,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetEfsVolumeConfiguration()
         {
             return this._efsVolumeConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FsxWindowsFileServerVolumeConfiguration. 
+        /// <para>
+        /// This parameter is specified when you are using Amazon FSx for Windows File Server
+        /// file system for task storage.
+        /// </para>
+        /// </summary>
+        public FSxWindowsFileServerVolumeConfiguration FsxWindowsFileServerVolumeConfiguration
+        {
+            get { return this._fsxWindowsFileServerVolumeConfiguration; }
+            set { this._fsxWindowsFileServerVolumeConfiguration = value; }
+        }
+
+        // Check to see if FsxWindowsFileServerVolumeConfiguration property is set
+        internal bool IsSetFsxWindowsFileServerVolumeConfiguration()
+        {
+            return this._fsxWindowsFileServerVolumeConfiguration != null;
         }
 
         /// <summary>

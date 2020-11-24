@@ -33,10 +33,30 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class Listener
     {
+        private VirtualNodeConnectionPool _connectionPool;
         private HealthCheckPolicy _healthCheck;
+        private OutlierDetection _outlierDetection;
         private PortMapping _portMapping;
         private ListenerTimeout _timeout;
         private ListenerTls _tls;
+
+        /// <summary>
+        /// Gets and sets the property ConnectionPool. 
+        /// <para>
+        /// The connection pool information for the listener.
+        /// </para>
+        /// </summary>
+        public VirtualNodeConnectionPool ConnectionPool
+        {
+            get { return this._connectionPool; }
+            set { this._connectionPool = value; }
+        }
+
+        // Check to see if ConnectionPool property is set
+        internal bool IsSetConnectionPool()
+        {
+            return this._connectionPool != null;
+        }
 
         /// <summary>
         /// Gets and sets the property HealthCheck. 
@@ -54,6 +74,24 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetHealthCheck()
         {
             return this._healthCheck != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutlierDetection. 
+        /// <para>
+        /// The outlier detection information for the listener.
+        /// </para>
+        /// </summary>
+        public OutlierDetection OutlierDetection
+        {
+            get { return this._outlierDetection; }
+            set { this._outlierDetection = value; }
+        }
+
+        // Check to see if OutlierDetection property is set
+        internal bool IsSetOutlierDetection()
+        {
+            return this._outlierDetection != null;
         }
 
         /// <summary>

@@ -76,7 +76,7 @@ namespace Amazon.CodeStarconnections.Model
         /// The name of the host.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=32)]
+        [AWSProperty(Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }

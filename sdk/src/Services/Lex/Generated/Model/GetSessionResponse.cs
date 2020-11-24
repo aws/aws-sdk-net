@@ -33,10 +33,37 @@ namespace Amazon.Lex.Model
     /// </summary>
     public partial class GetSessionResponse : AmazonWebServiceResponse
     {
+        private List<ActiveContext> _activeContexts = new List<ActiveContext>();
         private DialogAction _dialogAction;
         private List<IntentSummary> _recentIntentSummaryView = new List<IntentSummary>();
         private Dictionary<string, string> _sessionAttributes = new Dictionary<string, string>();
         private string _sessionId;
+
+        /// <summary>
+        /// Gets and sets the property ActiveContexts. 
+        /// <para>
+        /// A list of active contexts for the session. A context can be set when an intent is
+        /// fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use a context to control the intents that can follow up an intent, or to modify
+        /// the operation of your application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<ActiveContext> ActiveContexts
+        {
+            get { return this._activeContexts; }
+            set { this._activeContexts = value; }
+        }
+
+        // Check to see if ActiveContexts property is set
+        internal bool IsSetActiveContexts()
+        {
+            return this._activeContexts != null && this._activeContexts.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DialogAction. 

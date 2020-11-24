@@ -113,6 +113,17 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetParallelDataNames())
+                {
+                    context.Writer.WritePropertyName("ParallelDataNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestParallelDataNamesListValue in publicRequest.ParallelDataNames)
+                    {
+                            context.Writer.Write(publicRequestParallelDataNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetSourceLanguageCode())
                 {
                     context.Writer.WritePropertyName("SourceLanguageCode");

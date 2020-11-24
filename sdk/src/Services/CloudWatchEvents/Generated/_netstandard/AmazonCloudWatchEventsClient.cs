@@ -291,7 +291,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the ActivateEventSource service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -313,6 +313,110 @@ namespace Amazon.CloudWatchEvents
             options.ResponseUnmarshaller = ActivateEventSourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ActivateEventSourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelReplay
+
+        internal virtual CancelReplayResponse CancelReplay(CancelReplayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelReplayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelReplayResponseUnmarshaller.Instance;
+
+            return Invoke<CancelReplayResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Cancels the specified replay.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelReplay service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelReplay service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.IllegalStatusException">
+        /// An error occurred because a replay can be canceled only when the state is Running
+        /// or Starting.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CancelReplay">REST API Reference for CancelReplay Operation</seealso>
+        public virtual Task<CancelReplayResponse> CancelReplayAsync(CancelReplayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelReplayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelReplayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelReplayResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateArchive
+
+        internal virtual CreateArchiveResponse CreateArchive(CreateArchiveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateArchiveResponseUnmarshaller.Instance;
+
+            return Invoke<CreateArchiveResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an archive of events with the specified settings. When you create an archive,
+        /// incoming events might not immediately start being sent to the archive. Allow a short
+        /// period of time for changes to take effect. If you do not specify a pattern to filter
+        /// events sent to the archive, all events are sent to the archive except replayed events.
+        /// Replayed events are not sent to an archive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateArchive service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateArchive service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InvalidEventPatternException">
+        /// The event pattern is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateArchive">REST API Reference for CreateArchive Operation</seealso>
+        public virtual Task<CreateArchiveResponse> CreateArchiveAsync(CreateArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateArchiveResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateArchiveResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -342,7 +446,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the CreateEventBus service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -351,7 +455,8 @@ namespace Amazon.CloudWatchEvents
         /// The specified state is not a valid state for an event source.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
-        /// You tried to create more rules or add more targets to a rule than is allowed.
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.OperationDisabledException">
         /// The operation you are attempting is not available in this region.
@@ -433,13 +538,14 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the CreatePartnerEventSource service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
-        /// You tried to create more rules or add more targets to a rule than is allowed.
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.OperationDisabledException">
         /// The operation you are attempting is not available in this region.
@@ -493,7 +599,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the DeactivateEventSource service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -515,6 +621,49 @@ namespace Amazon.CloudWatchEvents
             options.ResponseUnmarshaller = DeactivateEventSourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeactivateEventSourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteArchive
+
+        internal virtual DeleteArchiveResponse DeleteArchive(DeleteArchiveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteArchiveResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified archive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteArchive service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteArchive service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteArchive">REST API Reference for DeleteArchive Operation</seealso>
+        public virtual Task<DeleteArchiveResponse> DeleteArchiveAsync(DeleteArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteArchiveResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteArchiveResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -544,7 +693,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the DeleteEventBus service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -591,7 +740,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the DeletePartnerEventSource service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -651,7 +800,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the DeleteRule service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -675,6 +824,49 @@ namespace Amazon.CloudWatchEvents
             options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeArchive
+
+        internal virtual DescribeArchiveResponse DescribeArchive(DescribeArchiveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeArchiveResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeArchiveResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves details about an archive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeArchive service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeArchive service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeArchive">REST API Reference for DescribeArchive Operation</seealso>
+        public virtual Task<DescribeArchiveResponse> DescribeArchiveAsync(DescribeArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeArchiveResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeArchiveResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -822,6 +1014,54 @@ namespace Amazon.CloudWatchEvents
 
         #endregion
         
+        #region  DescribeReplay
+
+        internal virtual DescribeReplayResponse DescribeReplay(DescribeReplayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplayResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeReplayResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves details about a replay. Use <code>DescribeReplay</code> to determine the
+        /// progress of a running replay. A replay processes events to replay based on the time
+        /// in the event, and replays them using 1 minute intervals. If you use <code>StartReplay</code>
+        /// and specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers
+        /// a 20 minute time range, the events are replayed from the first minute of that 20 minute
+        /// range first. Then the events from the second minute are replayed. You can use <code>DescribeReplay</code>
+        /// to determine the progress of a replay. The value returned for <code>EventLastReplayedTime</code>
+        /// indicates the time within the specified time range associated with the last event
+        /// replayed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeReplay service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeReplay service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeReplay">REST API Reference for DescribeReplay Operation</seealso>
+        public virtual Task<DescribeReplayResponse> DescribeReplayAsync(DescribeReplayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeReplayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeReplayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeReplayResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeRule
 
         internal virtual DescribeRuleResponse DescribeRule(DescribeRuleRequest request)
@@ -898,7 +1138,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the DisableRule service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -955,7 +1195,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the EnableRule service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -979,6 +1219,47 @@ namespace Amazon.CloudWatchEvents
             options.ResponseUnmarshaller = EnableRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListArchives
+
+        internal virtual ListArchivesResponse ListArchives(ListArchivesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListArchivesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListArchivesResponseUnmarshaller.Instance;
+
+            return Invoke<ListArchivesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists your archives. You can either list all the archives or you can provide a prefix
+        /// to match to the archive names. Filter parameters are exclusive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListArchives service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListArchives service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListArchives">REST API Reference for ListArchives Operation</seealso>
+        public virtual Task<ListArchivesResponse> ListArchivesAsync(ListArchivesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListArchivesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListArchivesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListArchivesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1143,6 +1424,44 @@ namespace Amazon.CloudWatchEvents
             options.ResponseUnmarshaller = ListPartnerEventSourcesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPartnerEventSourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListReplays
+
+        internal virtual ListReplaysResponse ListReplays(ListReplaysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReplaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReplaysResponseUnmarshaller.Instance;
+
+            return Invoke<ListReplaysResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists your replays. You can either list all the replays or you can provide a prefix
+        /// to match to the replay names. Filter parameters are exclusive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReplays service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReplays service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListReplays">REST API Reference for ListReplays Operation</seealso>
+        public virtual Task<ListReplaysResponse> ListReplaysAsync(ListReplaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReplaysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReplaysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListReplaysResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1477,10 +1796,13 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the PutPermission service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.PolicyLengthExceededException">
         /// The event bus policy is too long. For more information, see the limits.
@@ -1595,7 +1917,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the PutRule service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -1604,7 +1926,8 @@ namespace Amazon.CloudWatchEvents
         /// The event pattern is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
-        /// You tried to create more rules or add more targets to a rule than is allowed.
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an AWS service on behalf of your account. It is managed by
@@ -1830,13 +2153,14 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the PutTargets service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
-        /// You tried to create more rules or add more targets to a rule than is allowed.
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an AWS service on behalf of your account. It is managed by
@@ -1887,10 +2211,13 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.OperationDisabledException">
+        /// The operation you are attempting is not available in this region.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -1943,7 +2270,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the RemoveTargets service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -1967,6 +2294,64 @@ namespace Amazon.CloudWatchEvents
             options.ResponseUnmarshaller = RemoveTargetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<RemoveTargetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartReplay
+
+        internal virtual StartReplayResponse StartReplay(StartReplayRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplayResponseUnmarshaller.Instance;
+
+            return Invoke<StartReplayResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts the specified replay. Events are not necessarily replayed in the exact same
+        /// order that they were added to the archive. A replay processes events to replay based
+        /// on the time in the event, and replays them using 1 minute intervals. If you specify
+        /// an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20 minute
+        /// time range, the events are replayed from the first minute of that 20 minute range
+        /// first. Then the events from the second minute are replayed. You can use <code>DescribeReplay</code>
+        /// to determine the progress of a replay. The value returned for <code>EventLastReplayedTime</code>
+        /// indicates the time within the specified time range associated with the last event
+        /// replayed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartReplay service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartReplay service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InvalidEventPatternException">
+        /// The event pattern is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceAlreadyExistsException">
+        /// The resource you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/StartReplay">REST API Reference for StartReplay Operation</seealso>
+        public virtual Task<StartReplayResponse> StartReplayAsync(StartReplayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartReplayRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartReplayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartReplayResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2014,7 +2399,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the TagResource service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -2114,7 +2499,7 @@ namespace Amazon.CloudWatchEvents
         /// 
         /// <returns>The response from the UntagResource service method, as returned by CloudWatchEvents.</returns>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
-        /// There is concurrent modification on a rule or target.
+        /// There is concurrent modification on a rule, target, archive, or replay.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
@@ -2138,6 +2523,56 @@ namespace Amazon.CloudWatchEvents
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateArchive
+
+        internal virtual UpdateArchiveResponse UpdateArchive(UpdateArchiveRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateArchiveResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateArchiveResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the specified archive.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateArchive service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateArchive service method, as returned by CloudWatchEvents.</returns>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ConcurrentModificationException">
+        /// There is concurrent modification on a rule, target, archive, or replay.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
+        /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.InvalidEventPatternException">
+        /// The event pattern is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
+        /// The request failed because it attempted to create resource beyond the allowed service
+        /// quota.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
+        /// An entity that you specified does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateArchive">REST API Reference for UpdateArchive Operation</seealso>
+        public virtual Task<UpdateArchiveResponse> UpdateArchiveAsync(UpdateArchiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateArchiveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateArchiveResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateArchiveResponse>(request, options, cancellationToken);
         }
 
         #endregion

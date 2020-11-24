@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds to or modifies the tags of the given resource. Tags are metadata which can be
+    /// Adds to or modifies the tags of the given resource. Tags are metadata that can be
     /// used to manage a resource.
     /// </summary>
     public partial class TagResourceRequest : AmazonIoTAnalyticsRequest
