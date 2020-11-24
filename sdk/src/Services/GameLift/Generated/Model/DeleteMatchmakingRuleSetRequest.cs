@@ -40,7 +40,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build
     /// a Rule Set</a> 
     /// </para>
     ///  </li> </ul> 

@@ -52,17 +52,17 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build
     /// a Rule Set</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-configuration.html">Design
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html">Design
     /// a Matchmaker</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">Matchmaking
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-intro.html">Matchmaking
     /// with FlexMatch</a> 
     /// </para>
     ///  </li> </ul> 

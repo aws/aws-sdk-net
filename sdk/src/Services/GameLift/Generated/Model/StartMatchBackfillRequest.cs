@@ -53,7 +53,7 @@ namespace Amazon.GameLift.Model
     /// formed, the matchmaker creates player sessions for the new players. All tickets in
     /// the match are updated with the game session's connection information, and the <a>GameSession</a>
     /// object is updated to include matchmaker data on the new players. For more detail on
-    /// how match backfill requests are processed, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-match.html">
+    /// how match backfill requests are processed, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html">
     /// How Amazon GameLift FlexMatch Works</a>. 
     /// </para>
     ///  
@@ -62,12 +62,12 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">
     /// Backfill Existing Games with FlexMatch</a> 
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-match.html">
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html">
     /// How GameLift FlexMatch Works</a> 
     /// </para>
     ///  
@@ -132,7 +132,7 @@ namespace Amazon.GameLift.Model
         /// the game session ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string GameSessionArn
         {
             get { return this._gameSessionArn; }
@@ -157,7 +157,7 @@ namespace Amazon.GameLift.Model
         /// PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a>
         /// object, <code>MatchmakerData</code> property, for all players who are currently assigned
         /// to the game session. The matchmaker data is in JSON syntax, formatted as a string.
-        /// For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+        /// For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
         /// Match Data</a>. 
         /// </para>
         ///  </li> <li> 

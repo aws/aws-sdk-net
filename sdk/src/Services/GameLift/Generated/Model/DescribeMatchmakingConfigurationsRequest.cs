@@ -50,7 +50,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/matchmaker-build.html">
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/matchmaker-build.html">
     /// Setting Up FlexMatch Matchmakers</a> 
     /// </para>
     ///  

@@ -297,7 +297,7 @@ namespace Amazon.GameLift.Model
         /// Information on the matchmaking process for this game. Data is in JSON syntax, formatted
         /// as a string. It identifies the matchmaking configuration used to create the match,
         /// and contains data on all players assigned to the match, including player attributes
-        /// and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
+        /// and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match
         /// Data</a>.
         /// </para>
         /// </summary>

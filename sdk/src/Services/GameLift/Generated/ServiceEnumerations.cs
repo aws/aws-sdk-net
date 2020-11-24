@@ -411,6 +411,38 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EC2InstanceType C59xlarge = new EC2InstanceType("c5.9xlarge");
         /// <summary>
+        /// Constant C5a12xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5a12xlarge = new EC2InstanceType("c5a.12xlarge");
+        /// <summary>
+        /// Constant C5a16xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5a16xlarge = new EC2InstanceType("c5a.16xlarge");
+        /// <summary>
+        /// Constant C5a24xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5a24xlarge = new EC2InstanceType("c5a.24xlarge");
+        /// <summary>
+        /// Constant C5a2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5a2xlarge = new EC2InstanceType("c5a.2xlarge");
+        /// <summary>
+        /// Constant C5a4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5a4xlarge = new EC2InstanceType("c5a.4xlarge");
+        /// <summary>
+        /// Constant C5a8xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5a8xlarge = new EC2InstanceType("c5a.8xlarge");
+        /// <summary>
+        /// Constant C5aLarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5aLarge = new EC2InstanceType("c5a.large");
+        /// <summary>
+        /// Constant C5aXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType C5aXlarge = new EC2InstanceType("c5a.xlarge");
+        /// <summary>
         /// Constant C5Large for EC2InstanceType
         /// </summary>
         public static readonly EC2InstanceType C5Large = new EC2InstanceType("c5.large");
@@ -478,6 +510,38 @@ namespace Amazon.GameLift
         /// Constant M58xlarge for EC2InstanceType
         /// </summary>
         public static readonly EC2InstanceType M58xlarge = new EC2InstanceType("m5.8xlarge");
+        /// <summary>
+        /// Constant M5a12xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M5a12xlarge = new EC2InstanceType("m5a.12xlarge");
+        /// <summary>
+        /// Constant M5a16xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M5a16xlarge = new EC2InstanceType("m5a.16xlarge");
+        /// <summary>
+        /// Constant M5a24xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M5a24xlarge = new EC2InstanceType("m5a.24xlarge");
+        /// <summary>
+        /// Constant M5a2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M5a2xlarge = new EC2InstanceType("m5a.2xlarge");
+        /// <summary>
+        /// Constant M5a4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M5a4xlarge = new EC2InstanceType("m5a.4xlarge");
+        /// <summary>
+        /// Constant M5a8xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M5a8xlarge = new EC2InstanceType("m5a.8xlarge");
+        /// <summary>
+        /// Constant M5aLarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M5aLarge = new EC2InstanceType("m5a.large");
+        /// <summary>
+        /// Constant M5aXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType M5aXlarge = new EC2InstanceType("m5a.xlarge");
         /// <summary>
         /// Constant M5Large for EC2InstanceType
         /// </summary>
@@ -554,6 +618,38 @@ namespace Amazon.GameLift
         /// Constant R58xlarge for EC2InstanceType
         /// </summary>
         public static readonly EC2InstanceType R58xlarge = new EC2InstanceType("r5.8xlarge");
+        /// <summary>
+        /// Constant R5a12xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5a12xlarge = new EC2InstanceType("r5a.12xlarge");
+        /// <summary>
+        /// Constant R5a16xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5a16xlarge = new EC2InstanceType("r5a.16xlarge");
+        /// <summary>
+        /// Constant R5a24xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5a24xlarge = new EC2InstanceType("r5a.24xlarge");
+        /// <summary>
+        /// Constant R5a2xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5a2xlarge = new EC2InstanceType("r5a.2xlarge");
+        /// <summary>
+        /// Constant R5a4xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5a4xlarge = new EC2InstanceType("r5a.4xlarge");
+        /// <summary>
+        /// Constant R5a8xlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5a8xlarge = new EC2InstanceType("r5a.8xlarge");
+        /// <summary>
+        /// Constant R5aLarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5aLarge = new EC2InstanceType("r5a.large");
+        /// <summary>
+        /// Constant R5aXlarge for EC2InstanceType
+        /// </summary>
+        public static readonly EC2InstanceType R5aXlarge = new EC2InstanceType("r5a.xlarge");
         /// <summary>
         /// Constant R5Large for EC2InstanceType
         /// </summary>
@@ -956,6 +1052,56 @@ namespace Amazon.GameLift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FleetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FlexMatchMode.
+    /// </summary>
+    public class FlexMatchMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STANDALONE for FlexMatchMode
+        /// </summary>
+        public static readonly FlexMatchMode STANDALONE = new FlexMatchMode("STANDALONE");
+        /// <summary>
+        /// Constant WITH_QUEUE for FlexMatchMode
+        /// </summary>
+        public static readonly FlexMatchMode WITH_QUEUE = new FlexMatchMode("WITH_QUEUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlexMatchMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlexMatchMode FindValue(string value)
+        {
+            return FindValue<FlexMatchMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlexMatchMode(string value)
         {
             return FindValue(value);
         }

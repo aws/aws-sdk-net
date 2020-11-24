@@ -104,6 +104,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetFlexMatchMode())
+                {
+                    context.Writer.WritePropertyName("FlexMatchMode");
+                    context.Writer.Write(publicRequest.FlexMatchMode);
+                }
+
                 if(publicRequest.IsSetGameProperties())
                 {
                     context.Writer.WritePropertyName("GameProperties");

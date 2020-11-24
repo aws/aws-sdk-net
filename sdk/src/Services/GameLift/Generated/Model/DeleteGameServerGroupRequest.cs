@@ -130,8 +130,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SAFE_DELETE</code> – Terminates the game server group and EC2 Auto Scaling
-        /// group only when it has no game servers that are in <code>UTILIZED</code> status.
+        ///  <code>SAFE_DELETE</code> – (default) Terminates the game server group and EC2 Auto
+        /// Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.
         /// </para>
         ///  </li> <li> 
         /// <para>

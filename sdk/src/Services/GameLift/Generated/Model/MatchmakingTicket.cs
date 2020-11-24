@@ -134,7 +134,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Identifier and connection information of the game session created for the match. This
         /// information is added to the ticket only after the matchmaking request has been successfully
-        /// completed.
+        /// completed. This parameter is not set when FlexMatch is being used without GameLift
+        /// hosting.
         /// </para>
         /// </summary>
         public GameSessionConnectionInfo GameSessionConnectionInfo

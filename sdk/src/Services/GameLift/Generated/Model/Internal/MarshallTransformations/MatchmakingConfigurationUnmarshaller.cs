@@ -112,6 +112,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FlexMatchMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FlexMatchMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GameProperties", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<GameProperty, GamePropertyUnmarshaller>(GamePropertyUnmarshaller.Instance);
