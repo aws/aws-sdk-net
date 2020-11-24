@@ -279,6 +279,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly BackupLifecycle FAILED = new BackupLifecycle("FAILED");
         /// <summary>
+        /// Constant PENDING for BackupLifecycle
+        /// </summary>
+        public static readonly BackupLifecycle PENDING = new BackupLifecycle("PENDING");
+        /// <summary>
         /// Constant TRANSFERRING for BackupLifecycle
         /// </summary>
         public static readonly BackupLifecycle TRANSFERRING = new BackupLifecycle("TRANSFERRING");

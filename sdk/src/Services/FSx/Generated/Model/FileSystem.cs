@@ -320,7 +320,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// The storage capacity of the file system in gigabytes (GB).
+        /// The storage capacity of the file system in gibibytes (GiB).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]

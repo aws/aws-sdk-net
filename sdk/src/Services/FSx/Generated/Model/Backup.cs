@@ -29,7 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// A backup of an Amazon FSx for file system.
+    /// A backup of an Amazon FSx file system. For more information see:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+    /// with backups for Windows file systems</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
+    /// with backups for Lustre file systems</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Backup
     {
@@ -171,16 +183,21 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATING</code> - FSx is creating the backup.
+        ///  <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon
+        /// FSx has not started creating the backup.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the
-        /// backup to S3.
+        ///  <code>CREATING</code> - Amazon FSx is creating the backup.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - The backup was deleted is no longer available.
+        ///  <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only;
+        /// Amazon FSx is transferring the backup to S3.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
         /// </para>
         ///  </li> <li> 
         /// <para>

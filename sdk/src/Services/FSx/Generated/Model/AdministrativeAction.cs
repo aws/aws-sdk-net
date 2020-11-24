@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Describes a specific Amazon FSx Administrative Action for the current Windows file
-    /// system.
+    /// Describes a specific Amazon FSx administrative action for the current Windows or Lustre
+    /// file system.
     /// </summary>
     public partial class AdministrativeAction
     {
@@ -135,7 +135,9 @@ namespace Amazon.FSx.Model
         ///  <code>UPDATED_OPTIMIZING</code> - For a storage capacity increase update, Amazon
         /// FSx has updated the file system with the new storage capacity, and is now performing
         /// the storage optimization process. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-        /// Storage Capacity</a>.
+        /// storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
+        /// storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

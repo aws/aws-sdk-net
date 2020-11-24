@@ -54,7 +54,8 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+    /// For more information about backing up Amazon FSx for Windows file systems, see <a
+    /// href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
     /// with FSx for Windows backups</a>.
     /// </para>
     ///  

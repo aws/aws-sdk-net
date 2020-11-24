@@ -72,9 +72,9 @@ namespace Amazon.FSx.Model
         /// FSx file system. Aliases allow you to use existing DNS names to access the data in
         /// your Amazon FSx file system. You can associate up to 50 aliases with a file system
         /// at any time. You can associate additional DNS aliases after you create the file system
-        /// using the <a>AssociateFileSystemAliases</a> operation. You can remove DNS aliases
-        /// from the file system after it is created using the <a>DisassociateFileSystemAliases</a>
-        /// operation. You only need to specify the alias name in the request payload.
+        /// using the AssociateFileSystemAliases operation. You can remove DNS aliases from the
+        /// file system after it is created using the DisassociateFileSystemAliases operation.
+        /// You only need to specify the alias name in the request payload.
         /// </para>
         ///  
         /// <para>
