@@ -99,6 +99,15 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.GetReportGroupTrendRequest.NumOfReports</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.GetReportGroupTrendRequest.ReportGroupArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.GetResourcePolicyRequest.ResourceArn</property>
     <min>1</min>
   </property-value-rule>
@@ -503,6 +512,10 @@
     <property>Amazon.CodeBuild.Model.ReportGroup.Name</property>
     <min>2</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ReportWithRawData.ReportArn</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.S3ReportExportConfig.Bucket</property>
