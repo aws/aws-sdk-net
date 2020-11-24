@@ -65,8 +65,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field DashboardId set");
             request.AddPathResource("{DashboardId}", StringUtils.FromString(publicRequest.DashboardId));
             
+            if (publicRequest.IsSetAdditionalDashboardIds())
+                request.ParameterCollection.Add("additional-dashboard-ids", publicRequest.AdditionalDashboardIds);
+            
             if (publicRequest.IsSetIdentityType())
                 request.Parameters.Add("creds-type", StringUtils.FromString(publicRequest.IdentityType));
+            
+            if (publicRequest.IsSetNamespace())
+                request.Parameters.Add("namespace", StringUtils.FromString(publicRequest.Namespace));
             
             if (publicRequest.IsSetResetDisabled())
                 request.Parameters.Add("reset-disabled", StringUtils.FromBool(publicRequest.ResetDisabled));

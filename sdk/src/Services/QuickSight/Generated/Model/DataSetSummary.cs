@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ColumnLevelPermissionRulesApplied. 
         /// <para>
-        /// Indicates if the dataset has column level permission configured. 
+        /// Indicates if the dataset has column level permission configured.
         /// </para>
         /// </summary>
         public bool ColumnLevelPermissionRulesApplied

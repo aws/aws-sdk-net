@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// This is the response object from the GetDashboardEmbedUrl operation.
+    /// Output returned from the <code>GetDashboardEmbedUrl</code> operation.
     /// </summary>
     public partial class GetDashboardEmbedUrlResponse : AmazonWebServiceResponse
     {

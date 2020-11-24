@@ -64,14 +64,39 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class GetDashboardEmbedUrlRequest : AmazonQuickSightRequest
     {
+        private List<string> _additionalDashboardIds = new List<string>();
         private string _awsAccountId;
         private string _dashboardId;
-        private IdentityType _identityType;
+        private EmbeddingIdentityType _identityType;
+        private string _awsNamespace;
         private bool? _resetDisabled;
         private long? _sessionLifetimeInMinutes;
         private bool? _statePersistenceEnabled;
         private bool? _undoRedoDisabled;
         private string _userArn;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalDashboardIds. 
+        /// <para>
+        /// A list of one or more dashboard ids that you want to add to a session that includes
+        /// anonymous authorizations. <code>IdentityType</code> must be set to ANONYMOUS for this
+        /// to work, because other other identity types authenticate as QuickSight users. For
+        /// example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3
+        /// identity-type ANONYMOUS</code>", the session can access all three dashboards. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<string> AdditionalDashboardIds
+        {
+            get { return this._additionalDashboardIds; }
+            set { this._additionalDashboardIds = value; }
+        }
+
+        // Check to see if AdditionalDashboardIds property is set
+        internal bool IsSetAdditionalDashboardIds()
+        {
+            return this._additionalDashboardIds != null && this._additionalDashboardIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -118,7 +143,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public IdentityType IdentityType
+        public EmbeddingIdentityType IdentityType
         {
             get { return this._identityType; }
             set { this._identityType = value; }
@@ -128,6 +153,26 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetIdentityType()
         {
             return this._identityType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// The QuickSight namespace that contains the dashboard IDs in this request. If you're
+        /// not using a custom namespace, set this to "<code>default</code>".
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string Namespace
+        {
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
+        }
+
+        // Check to see if Namespace property is set
+        internal bool IsSetNamespace()
+        {
+            return this._awsNamespace != null;
         }
 
         /// <summary>

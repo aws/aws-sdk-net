@@ -3530,6 +3530,19 @@ namespace Amazon.QuickSight
         /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
         /// Access is throttled.
         /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
+        /// This error indicates that you are calling an embedding operation in Amazon QuickSight
+        /// without the required pricing plan on your AWS account. Before you can use anonymous
+        /// embedding, a QuickSight administrator needs to add capacity pricing to QuickSight.
+        /// You can do this on the <b>Manage QuickSight</b> page. 
+        /// 
+        ///  
+        /// <para>
+        /// After capacity pricing is added, you can enable anonymous embedding by using the <code>
+        /// <a>GetDashboardEmbedUrl</a> </code> API operation with the <code>--identity-type ANONYMOUS</code>
+        /// option.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
         /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
         /// where the edition doesn't include support for that operation. Amazon QuickSight currently
