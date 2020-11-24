@@ -36,6 +36,7 @@ namespace Amazon.CloudFormation.Model
         private string _description;
         private StackResourceDriftInformation _driftInformation;
         private string _logicalResourceId;
+        private ModuleInfo _moduleInfo;
         private string _physicalResourceId;
         private ResourceStatus _resourceStatus;
         private string _resourceStatusReason;
@@ -101,6 +102,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetLogicalResourceId()
         {
             return this._logicalResourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModuleInfo. 
+        /// <para>
+        /// Contains information about the module from which the resource was created, if the
+        /// resource was created from a module included in the stack template.
+        /// </para>
+        /// </summary>
+        public ModuleInfo ModuleInfo
+        {
+            get { return this._moduleInfo; }
+            set { this._moduleInfo = value; }
+        }
+
+        // Check to see if ModuleInfo property is set
+        internal bool IsSetModuleInfo()
+        {
+            return this._moduleInfo != null;
         }
 
         /// <summary>

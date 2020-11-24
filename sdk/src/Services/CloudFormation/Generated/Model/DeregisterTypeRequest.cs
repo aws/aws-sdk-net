@@ -114,7 +114,7 @@ namespace Amazon.CloudFormation.Model
         /// or <code>Arn</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=10, Max=196)]
+        [AWSProperty(Min=10, Max=204)]
         public string TypeName
         {
             get { return this._typeName; }

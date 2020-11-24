@@ -145,7 +145,7 @@ namespace Amazon.CloudFormation.Model
         /// The name of the type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=10, Max=196)]
+        [AWSProperty(Min=10, Max=204)]
         public string TypeName
         {
             get { return this._typeName; }

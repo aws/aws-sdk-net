@@ -74,6 +74,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ProvisioningType", StringUtils.FromString(publicRequest.ProvisioningType));
                 }
+                if(publicRequest.IsSetType())
+                {
+                    request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
+                }
                 if(publicRequest.IsSetVisibility())
                 {
                     request.Parameters.Add("Visibility", StringUtils.FromString(publicRequest.Visibility));

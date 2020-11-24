@@ -30,8 +30,9 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// [<code>Service-managed</code> permissions] The AWS Organizations accounts to which
-    /// StackSets deploys. StackSets does not deploy stack instances to the organization master
-    /// account, even if the master account is in your organization or in an OU in your organization.
+    /// StackSets deploys. StackSets does not deploy stack instances to the organization management
+    /// account, even if the organization management account is in your organization or in
+    /// an OU in your organization.
     /// 
     ///  
     /// <para>

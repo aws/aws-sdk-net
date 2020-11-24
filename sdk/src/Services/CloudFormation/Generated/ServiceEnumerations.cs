@@ -1025,6 +1025,10 @@ namespace Amazon.CloudFormation
     {
 
         /// <summary>
+        /// Constant MODULE for RegistryType
+        /// </summary>
+        public static readonly RegistryType MODULE = new RegistryType("MODULE");
+        /// <summary>
         /// Constant RESOURCE for RegistryType
         /// </summary>
         public static readonly RegistryType RESOURCE = new RegistryType("RESOURCE");

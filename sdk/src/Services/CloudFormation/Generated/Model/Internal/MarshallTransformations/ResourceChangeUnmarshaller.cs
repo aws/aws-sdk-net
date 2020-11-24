@@ -79,6 +79,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.LogicalResourceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ModuleInfo", targetDepth))
+                    {
+                        var unmarshaller = ModuleInfoUnmarshaller.Instance;
+                        unmarshalledObject.ModuleInfo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PhysicalResourceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
