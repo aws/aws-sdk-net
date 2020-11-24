@@ -82,6 +82,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.DesiredvCpus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ec2Configuration", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Ec2Configuration, Ec2ConfigurationUnmarshaller>(Ec2ConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.Ec2Configuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ec2KeyPair", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

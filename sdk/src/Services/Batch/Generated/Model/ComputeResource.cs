@@ -36,6 +36,7 @@ namespace Amazon.Batch.Model
         private CRAllocationStrategy _allocationStrategy;
         private int? _bidPercentage;
         private int? _desiredvCpus;
+        private List<Ec2Configuration> _ec2Configuration = new List<Ec2Configuration>();
         private string _ec2KeyPair;
         private string _imageId;
         private string _instanceRole;
@@ -124,6 +125,25 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ec2Configuration. 
+        /// <para>
+        /// Provides additional details used to selecting the AMI to use for instances in a compute
+        /// environment.
+        /// </para>
+        /// </summary>
+        public List<Ec2Configuration> Ec2Configuration
+        {
+            get { return this._ec2Configuration; }
+            set { this._ec2Configuration = value; }
+        }
+
+        // Check to see if Ec2Configuration property is set
+        internal bool IsSetEc2Configuration()
+        {
+            return this._ec2Configuration != null && this._ec2Configuration.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Ec2KeyPair. 
         /// <para>
         /// The Amazon EC2 key pair that is used for instances launched in the compute environment.
@@ -145,8 +165,11 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ImageId. 
         /// <para>
         /// The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+        /// This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code>
+        /// structure.
         /// </para>
         /// </summary>
+        [Obsolete("This field is deprecated, use ec2Configuration[].imageIdOverride instead.")]
         public string ImageId
         {
             get { return this._imageId; }

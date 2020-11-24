@@ -63,6 +63,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DesiredvCpus);
             }
 
+            if(requestObject.IsSetEc2Configuration())
+            {
+                context.Writer.WritePropertyName("ec2Configuration");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEc2ConfigurationListValue in requestObject.Ec2Configuration)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = Ec2ConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEc2ConfigurationListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetEc2KeyPair())
             {
                 context.Writer.WritePropertyName("ec2KeyPair");
