@@ -333,6 +333,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.MQ.CodeAnalysis" Path="|AWSSDK.MQ.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.MTurk.CodeAnalysis" Path="|AWSSDK.MTurk.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.MTurk.CodeAnalysis" Path="|AWSSDK.MTurk.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.MWAA.CodeAnalysis" Path="|AWSSDK.MWAA.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.MWAA.CodeAnalysis" Path="|AWSSDK.MWAA.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Neptune.CodeAnalysis" Path="|AWSSDK.Neptune.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Neptune.CodeAnalysis" Path="|AWSSDK.Neptune.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.NetworkFirewall.CodeAnalysis" Path="|AWSSDK.NetworkFirewall.CodeAnalysis|"/>

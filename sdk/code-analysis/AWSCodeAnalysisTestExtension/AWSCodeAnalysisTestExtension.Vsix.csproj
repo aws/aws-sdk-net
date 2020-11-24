@@ -688,6 +688,10 @@
       <Project>{4A9F55E5-9F5B-4CA3-BCBE-1BD152F6BCEA}</Project>
       <Name>AWSSDK.MTurk.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MWAA/AWSSDK.MWAA.CodeAnalysis.csproj">
+      <Project>{8805FBEB-EB40-4EE5-AA6C-98F85578FD1C}</Project>
+      <Name>AWSSDK.MWAA.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Neptune/AWSSDK.Neptune.CodeAnalysis.csproj">
       <Project>{58F7BFE2-830C-489D-BEE8-58C02C1CFF8A}</Project>
       <Name>AWSSDK.Neptune.CodeAnalysis</Name>

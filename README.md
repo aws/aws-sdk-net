@@ -393,6 +393,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This is the initial SDK release for Amazon MQ. Amazon MQ is a managed message broker service for Apache ActiveMQ that makes it easy to set up and operate message brokers in the cloud.
 * [AWSSDK.MTurk](https://www.nuget.org/packages/AWSSDK.MTurk/)
 	* Amazon MTurk is a web service that provides an on-demand, scalable, human workforce to complete jobs that humans can do better than computers, for example, recognizing objects in photos.
+* [AWSSDK.MWAA](https://www.nuget.org/packages/AWSSDK.MWAA/)
+	* (New Service) Amazon MWAA is a managed service for Apache Airflow that makes it easy for data engineers and data scientists to execute data processing workflows in the cloud.
 * [AWSSDK.Neptune](https://www.nuget.org/packages/AWSSDK.Neptune/)
 	* Amazon Neptune is a fast, reliable graph database service that makes it easy to build and run applications that work with highly connected datasets. Neptune supports popular graph models Property Graph and W3C's Resource Description Frame (RDF), and their respective query languages Apache TinkerPop Gremlin 3.3.2 and SPARQL 1.1. 
 * [AWSSDK.NetworkFirewall](https://www.nuget.org/packages/AWSSDK.NetworkFirewall/)
