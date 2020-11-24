@@ -93,8 +93,10 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientCache. When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no
-        /// tag, which prevents client from saving media segments for later replay.
+        /// Gets and sets the property ClientCache. Disable this setting only when your workflow
+        /// requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled
+        /// (ENABLED) and control caching in your video distribution set up. For example, use
+        /// the Cache-Control http header.
         /// </summary>
         public CmafClientCache ClientCache
         {

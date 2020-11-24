@@ -51,6 +51,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AudioBufferModel);
             }
 
+            if(requestObject.IsSetAudioDuration())
+            {
+                context.Writer.WritePropertyName("audioDuration");
+                context.Writer.Write(requestObject.AudioDuration);
+            }
+
             if(requestObject.IsSetAudioFramesPerPes())
             {
                 context.Writer.WritePropertyName("audioFramesPerPes");

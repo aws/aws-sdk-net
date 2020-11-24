@@ -3461,6 +3461,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type CmfcAudioDuration.
+    /// </summary>
+    public class CmfcAudioDuration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT_CODEC_DURATION for CmfcAudioDuration
+        /// </summary>
+        public static readonly CmfcAudioDuration DEFAULT_CODEC_DURATION = new CmfcAudioDuration("DEFAULT_CODEC_DURATION");
+        /// <summary>
+        /// Constant MATCH_VIDEO_DURATION for CmfcAudioDuration
+        /// </summary>
+        public static readonly CmfcAudioDuration MATCH_VIDEO_DURATION = new CmfcAudioDuration("MATCH_VIDEO_DURATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmfcAudioDuration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmfcAudioDuration FindValue(string value)
+        {
+            return FindValue<CmfcAudioDuration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmfcAudioDuration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CmfcScte35Esam.
     /// </summary>
     public class CmfcScte35Esam : ConstantClass
@@ -11503,6 +11553,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type M2tsAudioDuration.
+    /// </summary>
+    public class M2tsAudioDuration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT_CODEC_DURATION for M2tsAudioDuration
+        /// </summary>
+        public static readonly M2tsAudioDuration DEFAULT_CODEC_DURATION = new M2tsAudioDuration("DEFAULT_CODEC_DURATION");
+        /// <summary>
+        /// Constant MATCH_VIDEO_DURATION for M2tsAudioDuration
+        /// </summary>
+        public static readonly M2tsAudioDuration MATCH_VIDEO_DURATION = new M2tsAudioDuration("MATCH_VIDEO_DURATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public M2tsAudioDuration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static M2tsAudioDuration FindValue(string value)
+        {
+            return FindValue<M2tsAudioDuration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator M2tsAudioDuration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type M2tsBufferModel.
     /// </summary>
     public class M2tsBufferModel : ConstantClass
@@ -12062,6 +12162,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator M2tsSegmentationStyle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type M3u8AudioDuration.
+    /// </summary>
+    public class M3u8AudioDuration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT_CODEC_DURATION for M3u8AudioDuration
+        /// </summary>
+        public static readonly M3u8AudioDuration DEFAULT_CODEC_DURATION = new M3u8AudioDuration("DEFAULT_CODEC_DURATION");
+        /// <summary>
+        /// Constant MATCH_VIDEO_DURATION for M3u8AudioDuration
+        /// </summary>
+        public static readonly M3u8AudioDuration MATCH_VIDEO_DURATION = new M3u8AudioDuration("MATCH_VIDEO_DURATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public M3u8AudioDuration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static M3u8AudioDuration FindValue(string value)
+        {
+            return FindValue<M3u8AudioDuration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator M3u8AudioDuration(string value)
         {
             return FindValue(value);
         }
@@ -12762,6 +12912,106 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Mp4MoovPlacement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MpdAccessibilityCaptionHints.
+    /// </summary>
+    public class MpdAccessibilityCaptionHints : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUDE for MpdAccessibilityCaptionHints
+        /// </summary>
+        public static readonly MpdAccessibilityCaptionHints EXCLUDE = new MpdAccessibilityCaptionHints("EXCLUDE");
+        /// <summary>
+        /// Constant INCLUDE for MpdAccessibilityCaptionHints
+        /// </summary>
+        public static readonly MpdAccessibilityCaptionHints INCLUDE = new MpdAccessibilityCaptionHints("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MpdAccessibilityCaptionHints(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MpdAccessibilityCaptionHints FindValue(string value)
+        {
+            return FindValue<MpdAccessibilityCaptionHints>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MpdAccessibilityCaptionHints(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MpdAudioDuration.
+    /// </summary>
+    public class MpdAudioDuration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT_CODEC_DURATION for MpdAudioDuration
+        /// </summary>
+        public static readonly MpdAudioDuration DEFAULT_CODEC_DURATION = new MpdAudioDuration("DEFAULT_CODEC_DURATION");
+        /// <summary>
+        /// Constant MATCH_VIDEO_DURATION for MpdAudioDuration
+        /// </summary>
+        public static readonly MpdAudioDuration MATCH_VIDEO_DURATION = new MpdAudioDuration("MATCH_VIDEO_DURATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MpdAudioDuration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MpdAudioDuration FindValue(string value)
+        {
+            return FindValue<MpdAudioDuration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MpdAudioDuration(string value)
         {
             return FindValue(value);
         }

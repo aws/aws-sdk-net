@@ -45,6 +45,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(M3u8Settings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAudioDuration())
+            {
+                context.Writer.WritePropertyName("audioDuration");
+                context.Writer.Write(requestObject.AudioDuration);
+            }
+
             if(requestObject.IsSetAudioFramesPerPes())
             {
                 context.Writer.WritePropertyName("audioFramesPerPes");

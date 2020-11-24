@@ -33,9 +33,58 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class MpdSettings
     {
+        private MpdAccessibilityCaptionHints _accessibilityCaptionHints;
+        private MpdAudioDuration _audioDuration;
         private MpdCaptionContainerType _captionContainerType;
         private MpdScte35Esam _scte35Esam;
         private MpdScte35Source _scte35Source;
+
+        /// <summary>
+        /// Gets and sets the property AccessibilityCaptionHints. Optional. Choose Include (INCLUDE)
+        /// to have MediaConvert mark up your DASH manifest with <Accessibility> elements for
+        /// embedded 608 captions. This markup isn't generally required, but some video players
+        /// require it to discover and play embedded 608 captions. Keep the default value, Exclude
+        /// (EXCLUDE), to leave these elements out. When you enable this setting, this is the
+        /// markup that MediaConvert includes in your manifest: <Accessibility schemeIdUri="urn:scte:dash:cc:cea-608:2015"
+        /// value="CC1=eng"/>
+        /// </summary>
+        public MpdAccessibilityCaptionHints AccessibilityCaptionHints
+        {
+            get { return this._accessibilityCaptionHints; }
+            set { this._accessibilityCaptionHints = value; }
+        }
+
+        // Check to see if AccessibilityCaptionHints property is set
+        internal bool IsSetAccessibilityCaptionHints()
+        {
+            return this._accessibilityCaptionHints != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AudioDuration. Specify this setting only when your output
+        /// will be consumed by a downstream repackaging workflow that is sensitive to very small
+        /// duration differences between video and audio. For this situation, choose Match video
+        /// duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default
+        /// codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert
+        /// pads the output audio streams with silence or trims them to ensure that the total
+        /// duration of each audio stream is at least as long as the total duration of the video
+        /// stream. After padding or trimming, the audio stream duration is no more than one frame
+        /// longer than the video stream. MediaConvert applies audio padding or trimming only
+        /// to the end of the last segment of the output. For unsegmented outputs, MediaConvert
+        /// adds padding only to the end of the file. When you keep the default value, any minor
+        /// discrepancies between audio and video duration will depend on your output audio codec.
+        /// </summary>
+        public MpdAudioDuration AudioDuration
+        {
+            get { return this._audioDuration; }
+            set { this._audioDuration = value; }
+        }
+
+        // Check to see if AudioDuration property is set
+        internal bool IsSetAudioDuration()
+        {
+            return this._audioDuration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CaptionContainerType. Use this setting only in DASH output

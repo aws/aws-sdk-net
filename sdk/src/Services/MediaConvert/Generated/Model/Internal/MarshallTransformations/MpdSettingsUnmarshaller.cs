@@ -64,6 +64,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("accessibilityCaptionHints", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AccessibilityCaptionHints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("audioDuration", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioDuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("captionContainerType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

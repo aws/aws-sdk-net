@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AudioBufferModel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("audioDuration", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioDuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("audioFramesPerPes", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

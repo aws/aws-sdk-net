@@ -45,6 +45,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MpdSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccessibilityCaptionHints())
+            {
+                context.Writer.WritePropertyName("accessibilityCaptionHints");
+                context.Writer.Write(requestObject.AccessibilityCaptionHints);
+            }
+
+            if(requestObject.IsSetAudioDuration())
+            {
+                context.Writer.WritePropertyName("audioDuration");
+                context.Writer.Write(requestObject.AudioDuration);
+            }
+
             if(requestObject.IsSetCaptionContainerType())
             {
                 context.Writer.WritePropertyName("captionContainerType");

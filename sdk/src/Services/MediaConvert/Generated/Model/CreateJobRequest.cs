@@ -248,7 +248,9 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property Tags. Optional. The tags that you want to add to the resource.
-        /// You can tag resources with a key-value pair or with only a key.
+        /// You can tag resources with a key-value pair or with only a key.  Use standard AWS
+        /// tags on your job for automatic integration with AWS services and for custom integrations
+        /// and workflows.
         /// </summary>
         public Dictionary<string, string> Tags
         {
@@ -265,6 +267,8 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property UserMetadata. Optional. User-defined metadata that you
         /// want to associate with an MediaConvert job. You specify metadata in key/value pairs.
+        ///  Use only for existing integrations or workflows that rely on job metadata tags. Otherwise,
+        /// we recommend that you use standard AWS tags.
         /// </summary>
         public Dictionary<string, string> UserMetadata
         {

@@ -45,6 +45,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Mp4Settings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAudioDuration())
+            {
+                context.Writer.WritePropertyName("audioDuration");
+                context.Writer.Write(requestObject.AudioDuration);
+            }
+
             if(requestObject.IsSetCslgAtom())
             {
                 context.Writer.WritePropertyName("cslgAtom");
