@@ -522,6 +522,12 @@
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.DescribeDefaultEncryptionConfigurationResponse.KmsKeyArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.DescribeGatewayRequest.GatewayId</property>
     <min>36</min>
     <max>36</max>
@@ -993,6 +999,17 @@
     <property>Amazon.IoTSiteWise.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.PutDefaultEncryptionConfigurationRequest.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.PutDefaultEncryptionConfigurationResponse.KmsKeyArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.TagResourceRequest.ResourceArn</property>

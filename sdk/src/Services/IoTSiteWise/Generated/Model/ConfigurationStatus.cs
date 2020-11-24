@@ -29,35 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// This is the response object from the CreatePresignedPortalUrl operation.
+    /// 
     /// </summary>
-    public partial class CreatePresignedPortalUrlResponse : AmazonWebServiceResponse
+    public partial class ConfigurationStatus
     {
-        private string _presignedPortalUrl;
+        private ConfigurationErrorDetails _error;
+        private ConfigurationState _state;
 
         /// <summary>
-        /// Gets and sets the property PresignedPortalUrl. 
-        /// <para>
-        /// The pre-signed URL to the portal. The URL contains the portal ID and an authentication
-        /// token that lets you access the portal. The URL has the following format.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/iam?token=&lt;encrypted-token&gt;</code>
-        /// 
-        /// </para>
+        /// Gets and sets the property Error.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string PresignedPortalUrl
+        public ConfigurationErrorDetails Error
         {
-            get { return this._presignedPortalUrl; }
-            set { this._presignedPortalUrl = value; }
+            get { return this._error; }
+            set { this._error = value; }
         }
 
-        // Check to see if PresignedPortalUrl property is set
-        internal bool IsSetPresignedPortalUrl()
+        // Check to see if Error property is set
+        internal bool IsSetError()
         {
-            return this._presignedPortalUrl != null;
+            return this._error != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public ConfigurationState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
     }

@@ -33,7 +33,7 @@ namespace Amazon.IoTSiteWise.Model
     /// Creates a pre-signed URL to a portal. Use this operation to create URLs to portals
     /// that use AWS Identity and Access Management (IAM) to authenticate users. An IAM user
     /// with access to a portal can call this API to get a URL to that portal. The URL contains
-    /// a session token that lets the IAM user access the portal.
+    /// an authentication token that lets the IAM user access the portal.
     /// </summary>
     public partial class CreatePresignedPortalUrlRequest : AmazonIoTSiteWiseRequest
     {
@@ -66,7 +66,7 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: 900 seconds (15 minutes)
+        /// Default: 43,200 seconds (12 hours)
         /// </para>
         /// </summary>
         [AWSProperty(Min=900, Max=43200)]

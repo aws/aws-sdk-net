@@ -29,35 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// This is the response object from the CreatePresignedPortalUrl operation.
+    /// 
     /// </summary>
-    public partial class CreatePresignedPortalUrlResponse : AmazonWebServiceResponse
+    public partial class ConfigurationErrorDetails
     {
-        private string _presignedPortalUrl;
+        private ErrorCode _code;
+        private string _message;
 
         /// <summary>
-        /// Gets and sets the property PresignedPortalUrl. 
-        /// <para>
-        /// The pre-signed URL to the portal. The URL contains the portal ID and an authentication
-        /// token that lets you access the portal. The URL has the following format.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>https://&lt;portal-id&gt;.app.iotsitewise.aws/iam?token=&lt;encrypted-token&gt;</code>
-        /// 
-        /// </para>
+        /// Gets and sets the property Code.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string PresignedPortalUrl
+        [AWSProperty(Required=true)]
+        public ErrorCode Code
         {
-            get { return this._presignedPortalUrl; }
-            set { this._presignedPortalUrl = value; }
+            get { return this._code; }
+            set { this._code = value; }
         }
 
-        // Check to see if PresignedPortalUrl property is set
-        internal bool IsSetPresignedPortalUrl()
+        // Check to see if Code property is set
+        internal bool IsSetCode()
         {
-            return this._presignedPortalUrl != null;
+            return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Message.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
         }
 
     }
