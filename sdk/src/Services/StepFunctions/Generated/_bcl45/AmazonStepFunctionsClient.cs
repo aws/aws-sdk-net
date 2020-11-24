@@ -1779,6 +1779,83 @@ namespace Amazon.StepFunctions
 
         #endregion
         
+        #region  StartSyncExecution
+
+
+        /// <summary>
+        /// Starts a Synchronous Express state machine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSyncExecution service method.</param>
+        /// 
+        /// <returns>The response from the StartSyncExecution service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidExecutionInputException">
+        /// The provided JSON input data is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
+        /// The provided name is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
+        /// The specified state machine is being deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
+        /// The specified state machine does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineTypeNotSupportedException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution">REST API Reference for StartSyncExecution Operation</seealso>
+        public virtual StartSyncExecutionResponse StartSyncExecution(StartSyncExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSyncExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSyncExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartSyncExecutionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a Synchronous Express state machine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSyncExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSyncExecution service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidExecutionInputException">
+        /// The provided JSON input data is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
+        /// The provided name is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
+        /// The specified state machine is being deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
+        /// The specified state machine does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineTypeNotSupportedException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution">REST API Reference for StartSyncExecution Operation</seealso>
+        public virtual Task<StartSyncExecutionResponse> StartSyncExecutionAsync(StartSyncExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSyncExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSyncExecutionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartSyncExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopExecution
 
 

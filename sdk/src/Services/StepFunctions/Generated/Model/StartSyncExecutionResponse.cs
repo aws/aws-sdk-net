@@ -29,10 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeExecution operation.
+    /// This is the response object from the StartSyncExecution operation.
     /// </summary>
-    public partial class DescribeExecutionResponse : AmazonWebServiceResponse
+    public partial class StartSyncExecutionResponse : AmazonWebServiceResponse
     {
+        private BillingDetails _billingDetails;
+        private string _cause;
+        private string _error;
         private string _executionArn;
         private string _input;
         private CloudWatchEventsExecutionDataDetails _inputDetails;
@@ -41,9 +44,66 @@ namespace Amazon.StepFunctions.Model
         private CloudWatchEventsExecutionDataDetails _outputDetails;
         private DateTime? _startDate;
         private string _stateMachineArn;
-        private ExecutionStatus _status;
+        private SyncExecutionStatus _status;
         private DateTime? _stopDate;
         private string _traceHeader;
+
+        /// <summary>
+        /// Gets and sets the property BillingDetails. 
+        /// <para>
+        /// An object that describes workflow billing details, including billed duration and memory
+        /// use.
+        /// </para>
+        /// </summary>
+        public BillingDetails BillingDetails
+        {
+            get { return this._billingDetails; }
+            set { this._billingDetails = value; }
+        }
+
+        // Check to see if BillingDetails property is set
+        internal bool IsSetBillingDetails()
+        {
+            return this._billingDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cause. 
+        /// <para>
+        /// A more detailed explanation of the cause of the failure.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=32768)]
+        public string Cause
+        {
+            get { return this._cause; }
+            set { this._cause = value; }
+        }
+
+        // Check to see if Cause property is set
+        internal bool IsSetCause()
+        {
+            return this._cause != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Error. 
+        /// <para>
+        /// The error code of the failure.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string Error
+        {
+            get { return this._error; }
+            set { this._error = value; }
+        }
+
+        // Check to see if Error property is set
+        internal bool IsSetError()
+        {
+            return this._error != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExecutionArn. 
@@ -103,35 +163,6 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the execution.
-        /// </para>
-        ///  
-        /// <para>
-        /// A name must <i>not</i> contain:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// white space
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// brackets <code>&lt; &gt; { } [ ]</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// wildcard characters <code>? *</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z,
-        /// - and _.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=80)]
@@ -210,10 +241,10 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property StateMachineArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the executed stated machine.
+        /// The Amazon Resource Name (ARN) that identifies the state machine.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string StateMachineArn
         {
             get { return this._stateMachineArn; }
@@ -233,7 +264,7 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ExecutionStatus Status
+        public SyncExecutionStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -251,6 +282,7 @@ namespace Amazon.StepFunctions.Model
         /// If the execution has already ended, the date the execution stopped.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime StopDate
         {
             get { return this._stopDate.GetValueOrDefault(); }

@@ -286,6 +286,63 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StartSyncExecutionRequest.Input</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StartSyncExecutionRequest.Name</property>
+    <min>1</min>
+    <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StartSyncExecutionRequest.StateMachineArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StartSyncExecutionRequest.TraceHeader</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StartSyncExecutionResponse.Cause</property>
+    <min>0</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StartSyncExecutionResponse.Error</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StartSyncExecutionResponse.ExecutionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StartSyncExecutionResponse.Input</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StartSyncExecutionResponse.Name</property>
+    <min>1</min>
+    <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StartSyncExecutionResponse.Output</property>
+    <max>262144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StartSyncExecutionResponse.StateMachineArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.StartSyncExecutionResponse.TraceHeader</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.StopExecutionRequest.Cause</property>
     <min>0</min>
     <max>32768</max>
@@ -381,6 +438,14 @@
     <property>Amazon.StepFunctions.Model.ActivityTimedOutEventDetails.Error</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.BillingDetails.BilledDurationInMilliseconds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.BillingDetails.BilledMemoryUsedInMB</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.CloudWatchLogsLogGroup.LogGroupArn</property>

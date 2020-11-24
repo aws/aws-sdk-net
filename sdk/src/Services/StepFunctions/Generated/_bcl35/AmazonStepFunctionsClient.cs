@@ -1614,6 +1614,78 @@ namespace Amazon.StepFunctions
 
         #endregion
         
+        #region  StartSyncExecution
+
+        /// <summary>
+        /// Starts a Synchronous Express state machine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSyncExecution service method.</param>
+        /// 
+        /// <returns>The response from the StartSyncExecution service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidExecutionInputException">
+        /// The provided JSON input data is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
+        /// The provided name is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
+        /// The specified state machine is being deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
+        /// The specified state machine does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineTypeNotSupportedException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution">REST API Reference for StartSyncExecution Operation</seealso>
+        public virtual StartSyncExecutionResponse StartSyncExecution(StartSyncExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSyncExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSyncExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartSyncExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSyncExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSyncExecution operation on AmazonStepFunctionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSyncExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution">REST API Reference for StartSyncExecution Operation</seealso>
+        public virtual IAsyncResult BeginStartSyncExecution(StartSyncExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSyncExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSyncExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSyncExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSyncExecution.</param>
+        /// 
+        /// <returns>Returns a  StartSyncExecutionResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution">REST API Reference for StartSyncExecution Operation</seealso>
+        public virtual StartSyncExecutionResponse EndStartSyncExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartSyncExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StopExecution
 
         /// <summary>
