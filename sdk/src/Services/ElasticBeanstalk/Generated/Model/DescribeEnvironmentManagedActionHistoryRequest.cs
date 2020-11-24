@@ -82,6 +82,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The maximum number of items to return for a single request.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxItems
         {
             get { return this._maxItems.GetValueOrDefault(); }
