@@ -68,6 +68,22 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdvancedEventSelectors())
+                {
+                    context.Writer.WritePropertyName("AdvancedEventSelectors");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAdvancedEventSelectorsListValue in publicRequest.AdvancedEventSelectors)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AdvancedEventSelectorMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAdvancedEventSelectorsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetEventSelectors())
                 {
                     context.Writer.WritePropertyName("EventSelectors");

@@ -33,8 +33,24 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class GetEventSelectorsResponse : AmazonWebServiceResponse
     {
+        private List<AdvancedEventSelector> _advancedEventSelectors = new List<AdvancedEventSelector>();
         private List<EventSelector> _eventSelectors = new List<EventSelector>();
         private string _trailARN;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedEventSelectors.
+        /// </summary>
+        public List<AdvancedEventSelector> AdvancedEventSelectors
+        {
+            get { return this._advancedEventSelectors; }
+            set { this._advancedEventSelectors = value; }
+        }
+
+        // Check to see if AdvancedEventSelectors property is set
+        internal bool IsSetAdvancedEventSelectors()
+        {
+            return this._advancedEventSelectors != null && this._advancedEventSelectors.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property EventSelectors. 

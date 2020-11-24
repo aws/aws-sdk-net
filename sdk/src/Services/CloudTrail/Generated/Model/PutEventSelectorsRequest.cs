@@ -84,8 +84,24 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class PutEventSelectorsRequest : AmazonCloudTrailRequest
     {
+        private List<AdvancedEventSelector> _advancedEventSelectors = new List<AdvancedEventSelector>();
         private List<EventSelector> _eventSelectors = new List<EventSelector>();
         private string _trailName;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedEventSelectors.
+        /// </summary>
+        public List<AdvancedEventSelector> AdvancedEventSelectors
+        {
+            get { return this._advancedEventSelectors; }
+            set { this._advancedEventSelectors = value; }
+        }
+
+        // Check to see if AdvancedEventSelectors property is set
+        internal bool IsSetAdvancedEventSelectors()
+        {
+            return this._advancedEventSelectors != null && this._advancedEventSelectors.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property EventSelectors. 
@@ -94,7 +110,6 @@ namespace Amazon.CloudTrail.Model
         /// selectors for a trail.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<EventSelector> EventSelectors
         {
             get { return this._eventSelectors; }

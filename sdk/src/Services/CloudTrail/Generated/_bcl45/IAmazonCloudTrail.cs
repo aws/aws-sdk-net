@@ -328,8 +328,9 @@ namespace Amazon.CloudTrail
         /// This exception is no longer in use.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
-        /// This exception is thrown when the KMS key does not exist, or when the S3 bucket and
-        /// the KMS key are not in the same region.
+        /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
+        /// KMS key are not in the same region, or when the KMS key associated with the SNS topic
+        /// either does not exist or is not in the same region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.MaximumNumberOfTrailsExceededException">
         /// This exception is thrown when the maximum number of trails is reached.
@@ -466,8 +467,9 @@ namespace Amazon.CloudTrail
         /// This exception is no longer in use.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
-        /// This exception is thrown when the KMS key does not exist, or when the S3 bucket and
-        /// the KMS key are not in the same region.
+        /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
+        /// KMS key are not in the same region, or when the KMS key associated with the SNS topic
+        /// either does not exist or is not in the same region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.MaximumNumberOfTrailsExceededException">
         /// This exception is thrown when the maximum number of trails is reached.
@@ -1634,8 +1636,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  <important> 
         /// <para>
-        /// The rate of lookup requests is limited to two per second per account. If this limit
-        /// is exceeded, a throttling error occurs.
+        /// The rate of lookup requests is limited to two per second, per account, per region.
+        /// If this limit is exceeded, a throttling error occurs.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1733,8 +1735,8 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  <important> 
         /// <para>
-        /// The rate of lookup requests is limited to two per second per account. If this limit
-        /// is exceeded, a throttling error occurs.
+        /// The rate of lookup requests is limited to two per second, per account, per region.
+        /// If this limit is exceeded, a throttling error occurs.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2776,8 +2778,9 @@ namespace Amazon.CloudTrail
         /// This exception is no longer in use.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
-        /// This exception is thrown when the KMS key does not exist, or when the S3 bucket and
-        /// the KMS key are not in the same region.
+        /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
+        /// KMS key are not in the same region, or when the KMS key associated with the SNS topic
+        /// either does not exist or is not in the same region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the AWS account making the request to create or update
@@ -2944,8 +2947,9 @@ namespace Amazon.CloudTrail
         /// This exception is no longer in use.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
-        /// This exception is thrown when the KMS key does not exist, or when the S3 bucket and
-        /// the KMS key are not in the same region.
+        /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
+        /// KMS key are not in the same region, or when the KMS key associated with the SNS topic
+        /// either does not exist or is not in the same region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
         /// This exception is thrown when the AWS account making the request to create or update

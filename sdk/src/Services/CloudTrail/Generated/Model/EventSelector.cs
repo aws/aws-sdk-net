@@ -111,6 +111,13 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// By default, the value is <code>true</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// The first copy of management events is free. You are charged for additional copies
+        /// of management events that you are logging on any subsequent trail in the same region.
+        /// For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS
+        /// CloudTrail Pricing</a>.
+        /// </para>
         /// </summary>
         public bool IncludeManagementEvents
         {

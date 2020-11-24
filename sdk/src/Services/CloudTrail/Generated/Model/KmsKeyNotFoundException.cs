@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when the KMS key does not exist, or when the S3 bucket and
-    /// the KMS key are not in the same region.
+    /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
+    /// KMS key are not in the same region, or when the KMS key associated with the SNS topic
+    /// either does not exist or is not in the same region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

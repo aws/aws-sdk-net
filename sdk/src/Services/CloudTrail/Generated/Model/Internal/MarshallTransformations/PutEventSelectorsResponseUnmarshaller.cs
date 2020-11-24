@@ -51,6 +51,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdvancedEventSelectors", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AdvancedEventSelector, AdvancedEventSelectorUnmarshaller>(AdvancedEventSelectorUnmarshaller.Instance);
+                    response.AdvancedEventSelectors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EventSelectors", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<EventSelector, EventSelectorUnmarshaller>(EventSelectorUnmarshaller.Instance);
