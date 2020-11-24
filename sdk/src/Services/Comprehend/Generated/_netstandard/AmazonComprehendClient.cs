@@ -1246,6 +1246,52 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  DescribeEventsDetectionJob
+
+        internal virtual DescribeEventsDetectionJobResponse DescribeEventsDetectionJob(DescribeEventsDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventsDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventsDetectionJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the status and details of an events detection job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventsDetectionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEventsDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob">REST API Reference for DescribeEventsDetectionJob Operation</seealso>
+        public virtual Task<DescribeEventsDetectionJobResponse> DescribeEventsDetectionJobAsync(DescribeEventsDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventsDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEventsDetectionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeKeyPhrasesDetectionJob
 
         internal virtual DescribeKeyPhrasesDetectionJobResponse DescribeKeyPhrasesDetectionJob(DescribeKeyPhrasesDetectionJobRequest request)
@@ -2018,6 +2064,52 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListEventsDetectionJobs
+
+        internal virtual ListEventsDetectionJobsResponse ListEventsDetectionJobs(ListEventsDetectionJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventsDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventsDetectionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventsDetectionJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of the events detection jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventsDetectionJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEventsDetectionJobs service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs">REST API Reference for ListEventsDetectionJobs Operation</seealso>
+        public virtual Task<ListEventsDetectionJobsResponse> ListEventsDetectionJobsAsync(ListEventsDetectionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventsDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventsDetectionJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEventsDetectionJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListKeyPhrasesDetectionJobs
 
         internal virtual ListKeyPhrasesDetectionJobsResponse ListKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest request)
@@ -2409,6 +2501,53 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  StartEventsDetectionJob
+
+        internal virtual StartEventsDetectionJobResponse StartEventsDetectionJob(StartEventsDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEventsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEventsDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartEventsDetectionJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts an asynchronous event detection job for a collection of documents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEventsDetectionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartEventsDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob">REST API Reference for StartEventsDetectionJob Operation</seealso>
+        public virtual Task<StartEventsDetectionJobResponse> StartEventsDetectionJobAsync(StartEventsDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEventsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEventsDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartEventsDetectionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartKeyPhrasesDetectionJob
 
         internal virtual StartKeyPhrasesDetectionJobResponse StartKeyPhrasesDetectionJob(StartKeyPhrasesDetectionJobRequest request)
@@ -2718,6 +2857,49 @@ namespace Amazon.Comprehend
             options.ResponseUnmarshaller = StopEntitiesDetectionJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopEntitiesDetectionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopEventsDetectionJob
+
+        internal virtual StopEventsDetectionJobResponse StopEventsDetectionJob(StopEventsDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopEventsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopEventsDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopEventsDetectionJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops an events detection job in progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopEventsDetectionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopEventsDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob">REST API Reference for StopEventsDetectionJob Operation</seealso>
+        public virtual Task<StopEventsDetectionJobResponse> StopEventsDetectionJobAsync(StopEventsDetectionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopEventsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopEventsDetectionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopEventsDetectionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

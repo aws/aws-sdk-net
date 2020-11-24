@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// The filter used to determine which endpoints are are returned. You can filter jobs
-    /// on their name, model, status, or the date and time that they were created. You can
-    /// only set one filter at a time.
+    /// The filter used to determine which endpoints are returned. You can filter jobs on
+    /// their name, model, status, or the date and time that they were created. You can only
+    /// set one filter at a time.
     /// </summary>
     public partial class EndpointFilter
     {

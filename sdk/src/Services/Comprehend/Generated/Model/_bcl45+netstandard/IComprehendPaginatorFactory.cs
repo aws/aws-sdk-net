@@ -52,6 +52,11 @@ namespace Amazon.Comprehend.Model
         IListEntityRecognizersPaginator ListEntityRecognizers(ListEntityRecognizersRequest request);
 
         /// <summary>
+        /// Paginator for ListEventsDetectionJobs operation
+        ///</summary>
+        IListEventsDetectionJobsPaginator ListEventsDetectionJobs(ListEventsDetectionJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListKeyPhrasesDetectionJobs operation
         ///</summary>
         IListKeyPhrasesDetectionJobsPaginator ListKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest request);

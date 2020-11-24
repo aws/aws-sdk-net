@@ -1582,6 +1582,72 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  DescribeEventsDetectionJob
+
+        /// <summary>
+        /// Gets the status and details of an events detection job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventsDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEventsDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob">REST API Reference for DescribeEventsDetectionJob Operation</seealso>
+        public virtual DescribeEventsDetectionJobResponse DescribeEventsDetectionJob(DescribeEventsDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventsDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventsDetectionJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEventsDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEventsDetectionJob operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventsDetectionJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob">REST API Reference for DescribeEventsDetectionJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribeEventsDetectionJob(DescribeEventsDetectionJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEventsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventsDetectionJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEventsDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventsDetectionJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeEventsDetectionJobResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob">REST API Reference for DescribeEventsDetectionJob Operation</seealso>
+        public virtual DescribeEventsDetectionJobResponse EndDescribeEventsDetectionJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEventsDetectionJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeKeyPhrasesDetectionJob
 
         /// <summary>
@@ -2674,6 +2740,72 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListEventsDetectionJobs
+
+        /// <summary>
+        /// Gets a list of the events detection jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventsDetectionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListEventsDetectionJobs service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the operation is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs">REST API Reference for ListEventsDetectionJobs Operation</seealso>
+        public virtual ListEventsDetectionJobsResponse ListEventsDetectionJobs(ListEventsDetectionJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventsDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventsDetectionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventsDetectionJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEventsDetectionJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEventsDetectionJobs operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEventsDetectionJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs">REST API Reference for ListEventsDetectionJobs Operation</seealso>
+        public virtual IAsyncResult BeginListEventsDetectionJobs(ListEventsDetectionJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventsDetectionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventsDetectionJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEventsDetectionJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEventsDetectionJobs.</param>
+        /// 
+        /// <returns>Returns a  ListEventsDetectionJobsResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs">REST API Reference for ListEventsDetectionJobs Operation</seealso>
+        public virtual ListEventsDetectionJobsResponse EndListEventsDetectionJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEventsDetectionJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListKeyPhrasesDetectionJobs
 
         /// <summary>
@@ -3225,6 +3357,73 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  StartEventsDetectionJob
+
+        /// <summary>
+        /// Starts an asynchronous event detection job for a collection of documents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEventsDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StartEventsDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
+        /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
+        /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob">REST API Reference for StartEventsDetectionJob Operation</seealso>
+        public virtual StartEventsDetectionJobResponse StartEventsDetectionJob(StartEventsDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEventsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEventsDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartEventsDetectionJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartEventsDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartEventsDetectionJob operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartEventsDetectionJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob">REST API Reference for StartEventsDetectionJob Operation</seealso>
+        public virtual IAsyncResult BeginStartEventsDetectionJob(StartEventsDetectionJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEventsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEventsDetectionJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartEventsDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartEventsDetectionJob.</param>
+        /// 
+        /// <returns>Returns a  StartEventsDetectionJobResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob">REST API Reference for StartEventsDetectionJob Operation</seealso>
+        public virtual StartEventsDetectionJobResponse EndStartEventsDetectionJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartEventsDetectionJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartKeyPhrasesDetectionJob
 
         /// <summary>
@@ -3654,6 +3853,69 @@ namespace Amazon.Comprehend
         public virtual StopEntitiesDetectionJobResponse EndStopEntitiesDetectionJob(IAsyncResult asyncResult)
         {
             return EndInvoke<StopEntitiesDetectionJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopEventsDetectionJob
+
+        /// <summary>
+        /// Stops an events detection job in progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopEventsDetectionJob service method.</param>
+        /// 
+        /// <returns>The response from the StopEventsDetectionJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob">REST API Reference for StopEventsDetectionJob Operation</seealso>
+        public virtual StopEventsDetectionJobResponse StopEventsDetectionJob(StopEventsDetectionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopEventsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopEventsDetectionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopEventsDetectionJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopEventsDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopEventsDetectionJob operation on AmazonComprehendClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopEventsDetectionJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob">REST API Reference for StopEventsDetectionJob Operation</seealso>
+        public virtual IAsyncResult BeginStopEventsDetectionJob(StopEventsDetectionJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopEventsDetectionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopEventsDetectionJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopEventsDetectionJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopEventsDetectionJob.</param>
+        /// 
+        /// <returns>Returns a  StopEventsDetectionJobResult from Comprehend.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob">REST API Reference for StopEventsDetectionJob Operation</seealso>
+        public virtual StopEventsDetectionJobResponse EndStopEventsDetectionJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopEventsDetectionJobResponse>(asyncResult);
         }
 
         #endregion

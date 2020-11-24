@@ -30,7 +30,7 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Configuration parameters for an optional private Virtual Private Cloud (VPC) containing
-    /// the resources you are using for the job. For For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+    /// the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
     /// VPC</a>.
     /// </summary>
     public partial class VpcConfig

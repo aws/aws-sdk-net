@@ -77,6 +77,14 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Paginator for ListEventsDetectionJobs operation
+        ///</summary>
+        public IListEventsDetectionJobsPaginator ListEventsDetectionJobs(ListEventsDetectionJobsRequest request) 
+        {
+            return new ListEventsDetectionJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListKeyPhrasesDetectionJobs operation
         ///</summary>
         public IListKeyPhrasesDetectionJobsPaginator ListKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest request) 
