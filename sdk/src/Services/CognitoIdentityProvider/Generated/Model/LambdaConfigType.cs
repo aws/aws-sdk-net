@@ -34,8 +34,11 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class LambdaConfigType
     {
         private string _createAuthChallenge;
+        private CustomEmailLambdaVersionConfigType _customEmailSender;
         private string _customMessage;
+        private CustomSMSLambdaVersionConfigType _customSMSSender;
         private string _defineAuthChallenge;
+        private string _kmsKeyID;
         private string _postAuthentication;
         private string _postConfirmation;
         private string _preAuthentication;
@@ -64,6 +67,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomEmailSender. 
+        /// <para>
+        /// A custom email sender AWS Lambda trigger.
+        /// </para>
+        /// </summary>
+        public CustomEmailLambdaVersionConfigType CustomEmailSender
+        {
+            get { return this._customEmailSender; }
+            set { this._customEmailSender = value; }
+        }
+
+        // Check to see if CustomEmailSender property is set
+        internal bool IsSetCustomEmailSender()
+        {
+            return this._customEmailSender != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CustomMessage. 
         /// <para>
         /// A custom Message AWS Lambda trigger.
@@ -83,6 +104,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomSMSSender. 
+        /// <para>
+        /// A custom SMS sender AWS Lambda trigger.
+        /// </para>
+        /// </summary>
+        public CustomSMSLambdaVersionConfigType CustomSMSSender
+        {
+            get { return this._customSMSSender; }
+            set { this._customSMSSender = value; }
+        }
+
+        // Check to see if CustomSMSSender property is set
+        internal bool IsSetCustomSMSSender()
+        {
+            return this._customSMSSender != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DefineAuthChallenge. 
         /// <para>
         /// Defines the authentication challenge.
@@ -99,6 +138,27 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetDefineAuthChallenge()
         {
             return this._defineAuthChallenge != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKeyID. 
+        /// <para>
+        /// The Amazon Resource Name of Key Management Service <a href="/kms/latest/developerguide/concepts.html#master_keys">Customer
+        /// master keys</a> . Amazon Cognito uses the key to encrypt codes and temporary passwords
+        /// sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string KMSKeyID
+        {
+            get { return this._kmsKeyID; }
+            set { this._kmsKeyID = value; }
+        }
+
+        // Check to see if KMSKeyID property is set
+        internal bool IsSetKMSKeyID()
+        {
+            return this._kmsKeyID != null;
         }
 
         /// <summary>

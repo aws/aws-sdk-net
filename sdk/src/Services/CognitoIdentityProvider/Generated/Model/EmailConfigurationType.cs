@@ -29,7 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The email configuration type.
+    /// The email configuration type. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Amazon Cognito has specific regions for use with Amazon SES. For more information
+    /// on the supported regions, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html">Email
+    /// Settings for Amazon Cognito User Pools</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class EmailConfigurationType
     {
@@ -100,7 +108,47 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// address, provide the ARN of an Amazon SES verified email address for the <code>SourceArn</code>
         /// parameter.
         /// </para>
-        ///  </dd> <dt>DEVELOPER</dt> <dd> 
+        ///  
+        /// <para>
+        ///  If EmailSendingAccount is COGNITO_DEFAULT, the following parameters aren't allowed:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// EmailVerificationMessage
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EmailVerificationSubject
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// InviteMessageTemplate.EmailMessage
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// InviteMessageTemplate.EmailSubject
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// VerificationMessageTemplate.EmailMessage
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// VerificationMessageTemplate.EmailMessageByLink
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// VerificationMessageTemplate.EmailSubject,
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// VerificationMessageTemplate.EmailSubjectByLink
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// DEVELOPER EmailSendingAccount is required.
+        /// </para>
+        ///  </note> </dd> <dt>DEVELOPER</dt> <dd> 
         /// <para>
         /// When Amazon Cognito emails your users, it uses your Amazon SES configuration. Amazon
         /// Cognito calls Amazon SES on your behalf to send email from your verified email address.

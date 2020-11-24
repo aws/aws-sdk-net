@@ -51,16 +51,44 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CreateAuthChallenge);
             }
 
+            if(requestObject.IsSetCustomEmailSender())
+            {
+                context.Writer.WritePropertyName("CustomEmailSender");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomEmailLambdaVersionConfigTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomEmailSender, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCustomMessage())
             {
                 context.Writer.WritePropertyName("CustomMessage");
                 context.Writer.Write(requestObject.CustomMessage);
             }
 
+            if(requestObject.IsSetCustomSMSSender())
+            {
+                context.Writer.WritePropertyName("CustomSMSSender");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomSMSLambdaVersionConfigTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomSMSSender, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDefineAuthChallenge())
             {
                 context.Writer.WritePropertyName("DefineAuthChallenge");
                 context.Writer.Write(requestObject.DefineAuthChallenge);
+            }
+
+            if(requestObject.IsSetKMSKeyID())
+            {
+                context.Writer.WritePropertyName("KMSKeyID");
+                context.Writer.Write(requestObject.KMSKeyID);
             }
 
             if(requestObject.IsSetPostAuthentication())

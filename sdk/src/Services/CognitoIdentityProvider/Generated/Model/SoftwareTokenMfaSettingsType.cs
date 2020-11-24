@@ -29,7 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The type used for enabling software token MFA at the user level.
+    /// The type used for enabling software token MFA at the user level. If an MFA type is
+    /// enabled for a user, the user will be prompted for MFA during all sign in attempts,
+    /// unless device tracking is turned on and the device has been trusted. If you would
+    /// like MFA to be applied selectively based on the assessed risk level of sign in attempts,
+    /// disable MFA for users and turn on Adaptive Authentication for the user pool.
     /// </summary>
     public partial class SoftwareTokenMfaSettingsType
     {
@@ -39,7 +43,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies whether software token MFA is enabled.
+        /// Specifies whether software token MFA is enabled. If an MFA type is enabled for a user,
+        /// the user will be prompted for MFA during all sign in attempts, unless device tracking
+        /// is turned on and the device has been trusted.
         /// </para>
         /// </summary>
         public bool Enabled

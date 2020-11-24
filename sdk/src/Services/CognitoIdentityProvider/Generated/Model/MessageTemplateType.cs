@@ -40,7 +40,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailMessage. 
         /// <para>
-        /// The message template for email messages.
+        /// The message template for email messages. EmailMessage is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+        /// is DEVELOPER. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=20000)]
@@ -59,7 +60,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailSubject. 
         /// <para>
-        /// The subject line for email messages.
+        /// The subject line for email messages. EmailSubject is allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+        /// is DEVELOPER. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=140)]

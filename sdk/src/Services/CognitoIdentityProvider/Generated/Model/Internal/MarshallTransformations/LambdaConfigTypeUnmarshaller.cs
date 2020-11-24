@@ -70,16 +70,34 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreateAuthChallenge = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomEmailSender", targetDepth))
+                {
+                    var unmarshaller = CustomEmailLambdaVersionConfigTypeUnmarshaller.Instance;
+                    unmarshalledObject.CustomEmailSender = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomSMSSender", targetDepth))
+                {
+                    var unmarshaller = CustomSMSLambdaVersionConfigTypeUnmarshaller.Instance;
+                    unmarshalledObject.CustomSMSSender = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DefineAuthChallenge", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefineAuthChallenge = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KMSKeyID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KMSKeyID = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PostAuthentication", targetDepth))
