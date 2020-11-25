@@ -34,6 +34,7 @@ namespace AWSSDK.UnitTests
             var pipeline = new RuntimePipeline(new List<IPipelineHandler>
             {
                 new NoopPipelineHandler(),
+                new EndpointResolver(),
                 new AmazonS3ControlPostMarshallHandler(),
                 new Marshaller(),
                 new AmazonS3ControlPreMarshallHandler()

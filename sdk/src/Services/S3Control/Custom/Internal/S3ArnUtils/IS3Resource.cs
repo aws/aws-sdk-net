@@ -50,7 +50,8 @@ namespace Amazon.S3Control.Internal
         /// options set in the client config
         /// </summary>
         /// <param name="config">A client config to validate with</param>
-        void ValidateArnWithClientConfig(IClientConfig config);
+        /// <param name="region">The region to use for cross region checks</param>
+        void ValidateArnWithClientConfig(IClientConfig config, RegionEndpoint region);
 
         /// <summary>
         /// Get the endpoint based on the client config options

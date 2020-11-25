@@ -97,7 +97,8 @@ namespace Amazon.S3Control.Internal
         /// Validate the outpost ARN
         /// </summary>
         /// <param name="config">A client config to validate with</param>
-        public void ValidateArnWithClientConfig(IClientConfig config)
+        /// <param name="region">The region to use for cross region checks</param>
+        public void ValidateArnWithClientConfig(IClientConfig config, RegionEndpoint region)
         {
             var s3Config = config as AmazonS3ControlConfig;
             var accessPointOrBucketString = GetTypeString(false, true);
@@ -105,13 +106,6 @@ namespace Amazon.S3Control.Internal
             if (!_arn.Service.Equals(S3ArnUtils.S3OutpostsService))
             {
                 throw new AmazonClientException("Invalid ARN, not S3 Outposts ARN");
-            }
-            if (!string.IsNullOrEmpty(s3Config.ServiceURL))
-            {
-                throw new AmazonClientException(
-                            $"The request is using an outpost {accessPointOrBucketString} ARN for the bucket name and the S3 service client is configured to use a specific host using the ServiceURL property. " +
-                            "Access point ARNs define the host for the request which makes it incompatible with the host being set ServiceURL. " +
-                            $"When using {accessPointOrBucketString} ARNs set the region and not the ServiceURL for the S3 service client.");
             }
             if (s3Config.UseDualstackEndpoint)
             {
@@ -125,17 +119,17 @@ namespace Amazon.S3Control.Internal
             {
                 throw new AmazonClientException($"AWS region is missing in {capitalizedAccessPointOrBucketString} ARN");
             }
-            if (s3Config.RegionEndpoint != null && !string.Equals(s3Config.RegionEndpoint.PartitionName, _arn.Partition))
+            if (s3Config.RegionEndpoint != null && !string.Equals(region.PartitionName, _arn.Partition))
             {
                 throw new AmazonClientException($"Invalid configuration, cross partition Outpost {capitalizedAccessPointOrBucketString} ARN");
             }
             if ((s3Config.UseArnRegion && _arn.Region.StartsWith("fips-"))
-                || (!s3Config.UseArnRegion && s3Config.RegionEndpoint.SystemName.StartsWith("fips-")))
+                || (!s3Config.UseArnRegion && region.SystemName.StartsWith("fips-")))
             {
                 throw new AmazonClientException($"Invalid configuration Outpost {capitalizedAccessPointOrBucketString}s do not support Fips- regions");
             }
             if (!s3Config.UseArnRegion
-                && !string.Equals(_arn.Region, s3Config.RegionEndpoint.SystemName, StringComparison.Ordinal))
+                && !string.Equals(_arn.Region, region.SystemName, StringComparison.Ordinal))
             {
                 throw new AmazonClientException($"Invalid configuration, cross region Outpost {capitalizedAccessPointOrBucketString} ARN");
             }

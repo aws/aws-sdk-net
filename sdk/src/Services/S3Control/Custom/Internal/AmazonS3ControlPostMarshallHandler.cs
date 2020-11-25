@@ -84,6 +84,16 @@ namespace Amazon.S3Control.Internal
         {
             var request = executionContext.RequestContext.Request;
             var config = executionContext.RequestContext.ClientConfig;
+
+            //If a ServiceURL is set the config ClientRegion should be null. Under this case
+            //the region needs to be determined from the ServiceURL.          
+            RegionEndpoint useRegion = config.RegionEndpoint;
+            if (useRegion == null && !string.IsNullOrEmpty(config.ServiceURL))
+            {
+                var regionName = AWSSDKUtils.DetermineRegion(config.ServiceURL);
+                useRegion = RegionEndpoint.GetBySystemName(regionName);
+            }
+
             string nonArnOutpostId;
             Arn s3Arn;
             if (S3ArnUtils.RequestContainsArn(request, out s3Arn))
@@ -100,8 +110,15 @@ namespace Amazon.S3Control.Internal
                 }
                 if (s3Resource != null)
                 {
-                    s3Resource.ValidateArnWithClientConfig(config);
-                    request.Endpoint = s3Resource.GetEndpoint(config);
+                    s3Resource.ValidateArnWithClientConfig(config, useRegion);
+                    if (string.IsNullOrEmpty(config.ServiceURL))
+                    {
+                        request.Endpoint = s3Resource.GetEndpoint(config);
+                    }
+                    else
+                    {                        
+                        request.Endpoint = new Uri(config.ServiceURL);
+                    }
                     request.UseSigV4 = true;
                     request.CanonicalResourcePrefix = string.Concat("/", s3Resource.FullResourceName);
                     request.OverrideSigningServiceName = s3Arn.Service;
@@ -122,7 +139,14 @@ namespace Amazon.S3Control.Internal
                     throw new AmazonClientException($"Invalid outpost ID. ID must contain only alphanumeric characters and dashes");
                 }
                 request.OverrideSigningServiceName = S3ArnUtils.S3OutpostsService;
-                request.Endpoint = S3ArnUtils.GetNonStandardOutpostIdEndpoint(config);
+                if (string.IsNullOrEmpty(config.ServiceURL))
+                {
+                    request.Endpoint = S3ArnUtils.GetNonStandardOutpostIdEndpoint(config);
+                }
+                else
+                {
+                    request.Endpoint = new Uri(config.ServiceURL);
+                }
                 request.Headers[HeaderKeys.XAmzOutpostId] = nonArnOutpostId;
             }
         }
