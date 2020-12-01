@@ -240,6 +240,430 @@ namespace Amazon.Honeycode
         #endregion
 
 
+        #region  BatchCreateTableRows
+
+        /// <summary>
+        /// The BatchCreateTableRows API allows you to create one or more rows at the end of
+        /// a table in a workbook. The API allows you to specify the values to set in some or
+        /// all of the columns in the new rows. 
+        /// 
+        ///  
+        /// <para>
+        ///  If a column is not explicitly set in a specific row, then the column level formula
+        /// specified in the table will be applied to the new row. If there is no column level
+        /// formula but the last row of the table has a formula, then that formula will be copied
+        /// down to the new row. If there is no column level formula and no formula in the last
+        /// row of the table, then that column will be left blank for the new rows. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateTableRows service method.</param>
+        /// 
+        /// <returns>The response from the BatchCreateTableRows service method, as returned by Honeycode.</returns>
+        /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check that the workbook
+        /// is owned by you and your IAM policy allows access to the resource in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
+        /// There were unexpected errors from the server.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceQuotaExceededException">
+        /// The request caused service quota to be breached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
+        /// Remote service is unreachable.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ThrottlingException">
+        /// Tps(transactions per second) rate reached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ValidationException">
+        /// Request is invalid. The message in the response contains details on why the request
+        /// is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/BatchCreateTableRows">REST API Reference for BatchCreateTableRows Operation</seealso>
+        public virtual BatchCreateTableRowsResponse BatchCreateTableRows(BatchCreateTableRowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchCreateTableRowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateTableRowsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchCreateTableRowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchCreateTableRows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateTableRows operation on AmazonHoneycodeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchCreateTableRows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/BatchCreateTableRows">REST API Reference for BatchCreateTableRows Operation</seealso>
+        public virtual IAsyncResult BeginBatchCreateTableRows(BatchCreateTableRowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchCreateTableRowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateTableRowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchCreateTableRows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchCreateTableRows.</param>
+        /// 
+        /// <returns>Returns a  BatchCreateTableRowsResult from Honeycode.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/BatchCreateTableRows">REST API Reference for BatchCreateTableRows Operation</seealso>
+        public virtual BatchCreateTableRowsResponse EndBatchCreateTableRows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchCreateTableRowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteTableRows
+
+        /// <summary>
+        /// The BatchDeleteTableRows API allows you to delete one or more rows from a table in
+        /// a workbook. You need to specify the ids of the rows that you want to delete from the
+        /// table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTableRows service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteTableRows service method, as returned by Honeycode.</returns>
+        /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check that the workbook
+        /// is owned by you and your IAM policy allows access to the resource in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
+        /// There were unexpected errors from the server.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
+        /// Remote service is unreachable.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ThrottlingException">
+        /// Tps(transactions per second) rate reached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ValidationException">
+        /// Request is invalid. The message in the response contains details on why the request
+        /// is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/BatchDeleteTableRows">REST API Reference for BatchDeleteTableRows Operation</seealso>
+        public virtual BatchDeleteTableRowsResponse BatchDeleteTableRows(BatchDeleteTableRowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteTableRowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteTableRowsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteTableRowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteTableRows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTableRows operation on AmazonHoneycodeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteTableRows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/BatchDeleteTableRows">REST API Reference for BatchDeleteTableRows Operation</seealso>
+        public virtual IAsyncResult BeginBatchDeleteTableRows(BatchDeleteTableRowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteTableRowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteTableRowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteTableRows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteTableRows.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteTableRowsResult from Honeycode.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/BatchDeleteTableRows">REST API Reference for BatchDeleteTableRows Operation</seealso>
+        public virtual BatchDeleteTableRowsResponse EndBatchDeleteTableRows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDeleteTableRowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchUpdateTableRows
+
+        /// <summary>
+        /// The BatchUpdateTableRows API allows you to update one or more rows in a table in
+        /// a workbook. 
+        /// 
+        ///  
+        /// <para>
+        ///  You can specify the values to set in some or all of the columns in the table for
+        /// the specified rows. If a column is not explicitly specified in a particular row, then
+        /// that column will not be updated for that row. To clear out the data in a specific
+        /// cell, you need to set the value as an empty string (""). 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateTableRows service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateTableRows service method, as returned by Honeycode.</returns>
+        /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check that the workbook
+        /// is owned by you and your IAM policy allows access to the resource in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
+        /// There were unexpected errors from the server.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
+        /// Remote service is unreachable.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ThrottlingException">
+        /// Tps(transactions per second) rate reached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ValidationException">
+        /// Request is invalid. The message in the response contains details on why the request
+        /// is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/BatchUpdateTableRows">REST API Reference for BatchUpdateTableRows Operation</seealso>
+        public virtual BatchUpdateTableRowsResponse BatchUpdateTableRows(BatchUpdateTableRowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateTableRowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateTableRowsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateTableRowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateTableRows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateTableRows operation on AmazonHoneycodeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateTableRows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/BatchUpdateTableRows">REST API Reference for BatchUpdateTableRows Operation</seealso>
+        public virtual IAsyncResult BeginBatchUpdateTableRows(BatchUpdateTableRowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateTableRowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateTableRowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateTableRows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateTableRows.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateTableRowsResult from Honeycode.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/BatchUpdateTableRows">REST API Reference for BatchUpdateTableRows Operation</seealso>
+        public virtual BatchUpdateTableRowsResponse EndBatchUpdateTableRows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchUpdateTableRowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchUpsertTableRows
+
+        /// <summary>
+        /// The BatchUpsertTableRows API allows you to upsert one or more rows in a table. The
+        /// upsert operation takes a filter expression as input and evaluates it to find matching
+        /// rows on the destination table. If matching rows are found, it will update the cells
+        /// in the matching rows to new values specified in the request. If no matching rows are
+        /// found, a new row is added at the end of the table and the cells in that row are set
+        /// to the new values specified in the request. 
+        /// 
+        ///  
+        /// <para>
+        ///  You can specify the values to set in some or all of the columns in the table for
+        /// the matching or newly appended rows. If a column is not explicitly specified for a
+        /// particular row, then that column will not be updated for that row. To clear out the
+        /// data in a specific cell, you need to set the value as an empty string (""). 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpsertTableRows service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpsertTableRows service method, as returned by Honeycode.</returns>
+        /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check that the workbook
+        /// is owned by you and your IAM policy allows access to the resource in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
+        /// There were unexpected errors from the server.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceQuotaExceededException">
+        /// The request caused service quota to be breached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
+        /// Remote service is unreachable.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ThrottlingException">
+        /// Tps(transactions per second) rate reached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ValidationException">
+        /// Request is invalid. The message in the response contains details on why the request
+        /// is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/BatchUpsertTableRows">REST API Reference for BatchUpsertTableRows Operation</seealso>
+        public virtual BatchUpsertTableRowsResponse BatchUpsertTableRows(BatchUpsertTableRowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpsertTableRowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpsertTableRowsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpsertTableRowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpsertTableRows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpsertTableRows operation on AmazonHoneycodeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpsertTableRows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/BatchUpsertTableRows">REST API Reference for BatchUpsertTableRows Operation</seealso>
+        public virtual IAsyncResult BeginBatchUpsertTableRows(BatchUpsertTableRowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpsertTableRowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpsertTableRowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpsertTableRows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpsertTableRows.</param>
+        /// 
+        /// <returns>Returns a  BatchUpsertTableRowsResult from Honeycode.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/BatchUpsertTableRows">REST API Reference for BatchUpsertTableRows Operation</seealso>
+        public virtual BatchUpsertTableRowsResponse EndBatchUpsertTableRows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchUpsertTableRowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTableDataImportJob
+
+        /// <summary>
+        /// The DescribeTableDataImportJob API allows you to retrieve the status and details
+        /// of a table data import job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTableDataImportJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTableDataImportJob service method, as returned by Honeycode.</returns>
+        /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check that the workbook
+        /// is owned by you and your IAM policy allows access to the resource in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
+        /// There were unexpected errors from the server.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
+        /// Remote service is unreachable.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ThrottlingException">
+        /// Tps(transactions per second) rate reached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ValidationException">
+        /// Request is invalid. The message in the response contains details on why the request
+        /// is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/DescribeTableDataImportJob">REST API Reference for DescribeTableDataImportJob Operation</seealso>
+        public virtual DescribeTableDataImportJobResponse DescribeTableDataImportJob(DescribeTableDataImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTableDataImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTableDataImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTableDataImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTableDataImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTableDataImportJob operation on AmazonHoneycodeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTableDataImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/DescribeTableDataImportJob">REST API Reference for DescribeTableDataImportJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTableDataImportJob(DescribeTableDataImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTableDataImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTableDataImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTableDataImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTableDataImportJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeTableDataImportJobResult from Honeycode.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/DescribeTableDataImportJob">REST API Reference for DescribeTableDataImportJob Operation</seealso>
+        public virtual DescribeTableDataImportJobResponse EndDescribeTableDataImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTableDataImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetScreenData
 
         /// <summary>
@@ -252,8 +676,7 @@ namespace Amazon.Honeycode
         /// <returns>The response from the GetScreenData service method, as returned by Honeycode.</returns>
         /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Check that the workbook
-        /// is owned by you and your IAM policy allows access to the screen/automation in the
-        /// request.
+        /// is owned by you and your IAM policy allows access to the resource in the request.
         /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
         /// There were unexpected errors from the server.
@@ -262,7 +685,7 @@ namespace Amazon.Honeycode
         /// The request timed out.
         /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
-        /// A Workbook, App, Screen or Screen Automation was not found with the given ID.
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
         /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
         /// Remote service is unreachable.
@@ -333,8 +756,7 @@ namespace Amazon.Honeycode
         /// <returns>The response from the InvokeScreenAutomation service method, as returned by Honeycode.</returns>
         /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Check that the workbook
-        /// is owned by you and your IAM policy allows access to the screen/automation in the
-        /// request.
+        /// is owned by you and your IAM policy allows access to the resource in the request.
         /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.AutomationExecutionException">
         /// The automation execution did not end successfully.
@@ -349,7 +771,7 @@ namespace Amazon.Honeycode
         /// The request timed out.
         /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
-        /// A Workbook, App, Screen or Screen Automation was not found with the given ID.
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
         /// </exception>
         /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
         /// Remote service is unreachable.
@@ -403,6 +825,393 @@ namespace Amazon.Honeycode
         public virtual InvokeScreenAutomationResponse EndInvokeScreenAutomation(IAsyncResult asyncResult)
         {
             return EndInvoke<InvokeScreenAutomationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTableColumns
+
+        /// <summary>
+        /// The ListTableColumns API allows you to retrieve a list of all the columns in a table
+        /// in a workbook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTableColumns service method.</param>
+        /// 
+        /// <returns>The response from the ListTableColumns service method, as returned by Honeycode.</returns>
+        /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check that the workbook
+        /// is owned by you and your IAM policy allows access to the resource in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
+        /// There were unexpected errors from the server.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
+        /// Remote service is unreachable.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ThrottlingException">
+        /// Tps(transactions per second) rate reached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ValidationException">
+        /// Request is invalid. The message in the response contains details on why the request
+        /// is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ListTableColumns">REST API Reference for ListTableColumns Operation</seealso>
+        public virtual ListTableColumnsResponse ListTableColumns(ListTableColumnsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTableColumnsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTableColumnsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTableColumnsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTableColumns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTableColumns operation on AmazonHoneycodeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTableColumns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ListTableColumns">REST API Reference for ListTableColumns Operation</seealso>
+        public virtual IAsyncResult BeginListTableColumns(ListTableColumnsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTableColumnsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTableColumnsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTableColumns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTableColumns.</param>
+        /// 
+        /// <returns>Returns a  ListTableColumnsResult from Honeycode.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ListTableColumns">REST API Reference for ListTableColumns Operation</seealso>
+        public virtual ListTableColumnsResponse EndListTableColumns(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTableColumnsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTableRows
+
+        /// <summary>
+        /// The ListTableRows API allows you to retrieve a list of all the rows in a table in
+        /// a workbook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTableRows service method.</param>
+        /// 
+        /// <returns>The response from the ListTableRows service method, as returned by Honeycode.</returns>
+        /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check that the workbook
+        /// is owned by you and your IAM policy allows access to the resource in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
+        /// There were unexpected errors from the server.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
+        /// Remote service is unreachable.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ThrottlingException">
+        /// Tps(transactions per second) rate reached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ValidationException">
+        /// Request is invalid. The message in the response contains details on why the request
+        /// is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ListTableRows">REST API Reference for ListTableRows Operation</seealso>
+        public virtual ListTableRowsResponse ListTableRows(ListTableRowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTableRowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTableRowsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTableRowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTableRows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTableRows operation on AmazonHoneycodeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTableRows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ListTableRows">REST API Reference for ListTableRows Operation</seealso>
+        public virtual IAsyncResult BeginListTableRows(ListTableRowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTableRowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTableRowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTableRows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTableRows.</param>
+        /// 
+        /// <returns>Returns a  ListTableRowsResult from Honeycode.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ListTableRows">REST API Reference for ListTableRows Operation</seealso>
+        public virtual ListTableRowsResponse EndListTableRows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTableRowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTables
+
+        /// <summary>
+        /// The ListTables API allows you to retrieve a list of all the tables in a workbook.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTables service method.</param>
+        /// 
+        /// <returns>The response from the ListTables service method, as returned by Honeycode.</returns>
+        /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check that the workbook
+        /// is owned by you and your IAM policy allows access to the resource in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
+        /// There were unexpected errors from the server.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
+        /// Remote service is unreachable.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ThrottlingException">
+        /// Tps(transactions per second) rate reached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ValidationException">
+        /// Request is invalid. The message in the response contains details on why the request
+        /// is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ListTables">REST API Reference for ListTables Operation</seealso>
+        public virtual ListTablesResponse ListTables(ListTablesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTablesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTables operation on AmazonHoneycodeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTables
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ListTables">REST API Reference for ListTables Operation</seealso>
+        public virtual IAsyncResult BeginListTables(ListTablesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTablesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTables operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTables.</param>
+        /// 
+        /// <returns>Returns a  ListTablesResult from Honeycode.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/ListTables">REST API Reference for ListTables Operation</seealso>
+        public virtual ListTablesResponse EndListTables(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTablesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  QueryTableRows
+
+        /// <summary>
+        /// The QueryTableRows API allows you to use a filter formula to query for specific rows
+        /// in a table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryTableRows service method.</param>
+        /// 
+        /// <returns>The response from the QueryTableRows service method, as returned by Honeycode.</returns>
+        /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check that the workbook
+        /// is owned by you and your IAM policy allows access to the resource in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
+        /// There were unexpected errors from the server.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
+        /// Remote service is unreachable.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ThrottlingException">
+        /// Tps(transactions per second) rate reached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ValidationException">
+        /// Request is invalid. The message in the response contains details on why the request
+        /// is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/QueryTableRows">REST API Reference for QueryTableRows Operation</seealso>
+        public virtual QueryTableRowsResponse QueryTableRows(QueryTableRowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryTableRowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryTableRowsResponseUnmarshaller.Instance;
+
+            return Invoke<QueryTableRowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the QueryTableRows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the QueryTableRows operation on AmazonHoneycodeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndQueryTableRows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/QueryTableRows">REST API Reference for QueryTableRows Operation</seealso>
+        public virtual IAsyncResult BeginQueryTableRows(QueryTableRowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = QueryTableRowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryTableRowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  QueryTableRows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginQueryTableRows.</param>
+        /// 
+        /// <returns>Returns a  QueryTableRowsResult from Honeycode.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/QueryTableRows">REST API Reference for QueryTableRows Operation</seealso>
+        public virtual QueryTableRowsResponse EndQueryTableRows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<QueryTableRowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartTableDataImportJob
+
+        /// <summary>
+        /// The StartTableDataImportJob API allows you to start an import job on a table. This
+        /// API will only return the id of the job that was started. To find out the status of
+        /// the import request, you need to call the DescribeTableDataImportJob API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTableDataImportJob service method.</param>
+        /// 
+        /// <returns>The response from the StartTableDataImportJob service method, as returned by Honeycode.</returns>
+        /// <exception cref="Amazon.Honeycode.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check that the workbook
+        /// is owned by you and your IAM policy allows access to the resource in the request.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.InternalServerException">
+        /// There were unexpected errors from the server.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ResourceNotFoundException">
+        /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ServiceUnavailableException">
+        /// Remote service is unreachable.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ThrottlingException">
+        /// Tps(transactions per second) rate reached.
+        /// </exception>
+        /// <exception cref="Amazon.Honeycode.Model.ValidationException">
+        /// Request is invalid. The message in the response contains details on why the request
+        /// is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/StartTableDataImportJob">REST API Reference for StartTableDataImportJob Operation</seealso>
+        public virtual StartTableDataImportJobResponse StartTableDataImportJob(StartTableDataImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTableDataImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTableDataImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartTableDataImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartTableDataImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartTableDataImportJob operation on AmazonHoneycodeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartTableDataImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/StartTableDataImportJob">REST API Reference for StartTableDataImportJob Operation</seealso>
+        public virtual IAsyncResult BeginStartTableDataImportJob(StartTableDataImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTableDataImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTableDataImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartTableDataImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartTableDataImportJob.</param>
+        /// 
+        /// <returns>Returns a  StartTableDataImportJobResult from Honeycode.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/honeycode-2020-03-01/StartTableDataImportJob">REST API Reference for StartTableDataImportJob Operation</seealso>
+        public virtual StartTableDataImportJobResponse EndStartTableDataImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartTableDataImportJobResponse>(asyncResult);
         }
 
         #endregion

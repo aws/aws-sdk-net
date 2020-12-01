@@ -41,7 +41,7 @@ namespace Amazon.Honeycode.Model
         /// Raw value of the variable.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=32767)]
         public string RawValue
         {
             get { return this._rawValue; }

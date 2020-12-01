@@ -30,8 +30,7 @@ namespace Amazon.Honeycode.Model
 {
     /// <summary>
     /// You do not have sufficient access to perform this action. Check that the workbook
-    /// is owned by you and your IAM policy allows access to the screen/automation in the
-    /// request.
+    /// is owned by you and your IAM policy allows access to the resource in the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -43,6 +43,7 @@ namespace Amazon.Honeycode.Model
         /// The formatted value of the data. e.g. John Smith.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
         public string FormattedValue
         {
             get { return this._formattedValue; }
@@ -81,6 +82,7 @@ namespace Amazon.Honeycode.Model
         /// The raw value of the data. e.g. jsmith@example.com
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=32767)]
         public string RawValue
         {
             get { return this._rawValue; }

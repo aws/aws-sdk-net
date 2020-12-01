@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Honeycode.Model
 {
     /// <summary>
-    /// A Workbook, App, Screen or Screen Automation was not found with the given ID.
+    /// A Workbook, Table, App, Screen or Screen Automation was not found with the given ID.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

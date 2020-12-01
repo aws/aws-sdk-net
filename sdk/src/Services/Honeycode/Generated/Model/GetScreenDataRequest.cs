@@ -49,7 +49,7 @@ namespace Amazon.Honeycode.Model
         /// The ID of the app that contains the screem.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string AppId
         {
             get { return this._appId; }
@@ -118,7 +118,7 @@ namespace Amazon.Honeycode.Model
         /// The ID of the screen.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string ScreenId
         {
             get { return this._screenId; }
@@ -158,7 +158,7 @@ namespace Amazon.Honeycode.Model
         /// The ID of the workbook that contains the screen.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string WorkbookId
         {
             get { return this._workbookId; }

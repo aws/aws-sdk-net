@@ -61,6 +61,7 @@ namespace Amazon.Honeycode.Model
         /// The ID for a particular row.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=77, Max=77)]
         public string RowId
         {
             get { return this._rowId; }

@@ -1,7 +1,99 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Honeycode.Model.BatchCreateTableRowsRequest.ClientRequestToken</property>
+    <min>32</min>
+    <max>64</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.BatchCreateTableRowsRequest.TableId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.BatchCreateTableRowsRequest.WorkbookId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.BatchDeleteTableRowsRequest.ClientRequestToken</property>
+    <min>32</min>
+    <max>64</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.BatchDeleteTableRowsRequest.TableId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.BatchDeleteTableRowsRequest.WorkbookId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.BatchUpdateTableRowsRequest.ClientRequestToken</property>
+    <min>32</min>
+    <max>64</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.BatchUpdateTableRowsRequest.TableId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.BatchUpdateTableRowsRequest.WorkbookId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.BatchUpsertTableRowsRequest.ClientRequestToken</property>
+    <min>32</min>
+    <max>64</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.BatchUpsertTableRowsRequest.TableId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.BatchUpsertTableRowsRequest.WorkbookId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.DescribeTableDataImportJobRequest.JobId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[^\n\r\x00\x08\x0B\x0C\x0E\x1F]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.DescribeTableDataImportJobRequest.TableId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.DescribeTableDataImportJobRequest.WorkbookId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Honeycode.Model.GetScreenDataRequest.AppId</property>
+    <min>36</min>
+    <max>36</max>
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -13,47 +105,322 @@
     <property>Amazon.Honeycode.Model.GetScreenDataRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>^(?!\s*$).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Honeycode.Model.GetScreenDataRequest.ScreenId</property>
+    <min>36</min>
+    <max>36</max>
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Honeycode.Model.GetScreenDataRequest.WorkbookId</property>
+    <min>36</min>
+    <max>36</max>
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Honeycode.Model.GetScreenDataResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>^(?!\s*$).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Honeycode.Model.InvokeScreenAutomationRequest.AppId</property>
+    <min>36</min>
+    <max>36</max>
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Honeycode.Model.InvokeScreenAutomationRequest.ClientRequestToken</property>
     <min>32</min>
     <max>64</max>
+    <pattern>^(?!\s*$).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Honeycode.Model.InvokeScreenAutomationRequest.RowId</property>
+    <min>77</min>
+    <max>77</max>
     <pattern>row:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Honeycode.Model.InvokeScreenAutomationRequest.ScreenAutomationId</property>
+    <min>36</min>
+    <max>36</max>
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Honeycode.Model.InvokeScreenAutomationRequest.ScreenId</property>
+    <min>36</min>
+    <max>36</max>
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Honeycode.Model.InvokeScreenAutomationRequest.WorkbookId</property>
+    <min>36</min>
+    <max>36</max>
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Honeycode.Model.ResultRow.RowId</property>
+    <property>Amazon.Honeycode.Model.ListTableColumnsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ListTableColumnsRequest.TableId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ListTableColumnsRequest.WorkbookId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ListTableColumnsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ListTableRowsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ListTableRowsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ListTableRowsRequest.TableId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ListTableRowsRequest.WorkbookId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ListTableRowsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ListTablesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ListTablesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ListTablesRequest.WorkbookId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ListTablesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.QueryTableRowsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.QueryTableRowsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.QueryTableRowsRequest.TableId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.QueryTableRowsRequest.WorkbookId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.QueryTableRowsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.StartTableDataImportJobRequest.ClientRequestToken</property>
+    <min>32</min>
+    <max>64</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.StartTableDataImportJobRequest.DestinationTableId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.StartTableDataImportJobRequest.WorkbookId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.StartTableDataImportJobResponse.JobId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[^\n\r\x00\x08\x0B\x0C\x0E\x1F]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.Cell.FormattedValue</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.Cell.Formula</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>^=.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.Cell.RawValue</property>
+    <min>0</min>
+    <max>32767</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.CellInput.Fact</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.CreateRowData.BatchItemId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.DataItem.FormattedValue</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.DataItem.RawValue</property>
+    <min>0</min>
+    <max>32767</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.DelimitedTextImportOptions.Delimiter</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>^[^\n\r\x00\x08\x0B\x0C\x0E\x1F]?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.FailedBatchItem.ErrorMessage</property>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.FailedBatchItem.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.Filter.ContextRowId</property>
+    <min>77</min>
+    <max>77</max>
     <pattern>row:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.Filter.Formula</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>^=.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ImportDataSourceConfig.DataSourceUrl</property>
+    <min>1</min>
+    <max>8000</max>
+    <pattern>^https:\/\/[^\n\r\x00\x08\x0B\x0C\x0E\x1F]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ImportJobSubmitter.Email</property>
+    <min>3</min>
+    <max>254</max>
+    <pattern>^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ImportJobSubmitter.UserArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.ResultRow.RowId</property>
+    <min>77</min>
+    <max>77</max>
+    <pattern>row:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.SourceDataColumnProperties.ColumnIndex</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.Table.TableId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.TableColumn.TableColumnId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.TableRow.RowId</property>
+    <min>77</min>
+    <max>77</max>
+    <pattern>row:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.UpdateRowData.RowId</property>
+    <min>77</min>
+    <max>77</max>
+    <pattern>row:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.UpsertRowData.BatchItemId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Honeycode.Model.VariableValue.RawValue</property>
+    <min>0</min>
+    <max>32767</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
 </property-value-rules>
