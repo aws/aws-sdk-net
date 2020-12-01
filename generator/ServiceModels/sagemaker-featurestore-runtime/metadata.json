@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "This release adds support for Amazon SageMaker Feature Store, which makes it easy for customers to create, version, share, and manage curated data for machine learning (ML) development.",
+  "generate-client-constructors": true
+}

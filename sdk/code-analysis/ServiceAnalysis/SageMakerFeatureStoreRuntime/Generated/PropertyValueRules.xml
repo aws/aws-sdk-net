@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.DeleteRecordRequest.EventTime</property>
+    <max>358400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.DeleteRecordRequest.FeatureGroupName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.DeleteRecordRequest.RecordIdentifierValueAsString</property>
+    <max>358400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.GetRecordRequest.FeatureGroupName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.GetRecordRequest.RecordIdentifierValueAsString</property>
+    <max>358400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.PutRecordRequest.FeatureGroupName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.FeatureValue.FeatureName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9]([-_]*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMakerFeatureStoreRuntime.Model.FeatureValue.ValueAsString</property>
+    <max>358400</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+</property-value-rules>
