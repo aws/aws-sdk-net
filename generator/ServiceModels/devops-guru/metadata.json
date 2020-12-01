@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "(New Service) Amazon DevOps Guru is available in public preview. It's a fully managed service that uses machine learning to analyze your operational solutions to help you find and troubleshoot issues.",
+  "generate-client-constructors": true
+}

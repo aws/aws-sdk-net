@@ -155,6 +155,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Detective.CodeAnalysis" Path="|AWSSDK.Detective.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.DeviceFarm.CodeAnalysis" Path="|AWSSDK.DeviceFarm.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.DeviceFarm.CodeAnalysis" Path="|AWSSDK.DeviceFarm.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.DevOpsGuru.CodeAnalysis" Path="|AWSSDK.DevOpsGuru.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.DevOpsGuru.CodeAnalysis" Path="|AWSSDK.DevOpsGuru.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.DirectConnect.CodeAnalysis" Path="|AWSSDK.DirectConnect.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.DirectConnect.CodeAnalysis" Path="|AWSSDK.DirectConnect.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.DirectoryService.CodeAnalysis" Path="|AWSSDK.DirectoryService.CodeAnalysis|"/>

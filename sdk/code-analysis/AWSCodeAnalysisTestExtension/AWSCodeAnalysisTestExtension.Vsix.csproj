@@ -332,6 +332,10 @@
       <Project>{1B5FACCC-9694-4A5A-AA84-6A6ACF9F7904}</Project>
       <Name>AWSSDK.DeviceFarm.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/DevOpsGuru/AWSSDK.DevOpsGuru.CodeAnalysis.csproj">
+      <Project>{FE7CB2C6-EE88-4AC8-AE64-9709EFD9F75E}</Project>
+      <Name>AWSSDK.DevOpsGuru.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/DirectConnect/AWSSDK.DirectConnect.CodeAnalysis.csproj">
       <Project>{10FC5F28-B6FC-4DA8-8408-18139B2C4E7B}</Project>
       <Name>AWSSDK.DirectConnect.CodeAnalysis</Name>
