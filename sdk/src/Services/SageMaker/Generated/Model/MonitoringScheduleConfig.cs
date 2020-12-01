@@ -42,7 +42,6 @@ namespace Amazon.SageMaker.Model
         /// Defines the monitoring job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public MonitoringJobDefinition MonitoringJobDefinition
         {
             get { return this._monitoringJobDefinition; }

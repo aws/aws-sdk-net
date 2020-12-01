@@ -95,8 +95,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// An array of key-value pairs. You can use tags to categorize your AWS resources in
         /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS Resources</a>.
         /// </para>
         ///  
         /// <para>

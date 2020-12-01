@@ -64,6 +64,7 @@ namespace Amazon.SageMaker.Model
         private string _displayName;
         private DateTime? _endTime;
         private Dictionary<string, TrialComponentArtifact> _inputArtifacts = new Dictionary<string, TrialComponentArtifact>();
+        private MetadataProperties _metadataProperties;
         private Dictionary<string, TrialComponentArtifact> _outputArtifacts = new Dictionary<string, TrialComponentArtifact>();
         private Dictionary<string, TrialComponentParameterValue> _parameters = new Dictionary<string, TrialComponentParameterValue>();
         private DateTime? _startTime;
@@ -127,6 +128,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInputArtifacts()
         {
             return this._inputArtifacts != null && this._inputArtifacts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataProperties.
+        /// </summary>
+        public MetadataProperties MetadataProperties
+        {
+            get { return this._metadataProperties; }
+            set { this._metadataProperties = value; }
+        }
+
+        // Check to see if MetadataProperties property is set
+        internal bool IsSetMetadataProperties()
+        {
+            return this._metadataProperties != null;
         }
 
         /// <summary>

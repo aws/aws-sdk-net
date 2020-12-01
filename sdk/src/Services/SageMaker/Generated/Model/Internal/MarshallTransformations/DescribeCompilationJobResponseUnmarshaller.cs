@@ -111,6 +111,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.ModelArtifacts = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelDigests", targetDepth))
+                {
+                    var unmarshaller = ModelDigestsUnmarshaller.Instance;
+                    response.ModelDigests = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OutputConfig", targetDepth))
                 {
                     var unmarshaller = OutputConfigUnmarshaller.Instance;

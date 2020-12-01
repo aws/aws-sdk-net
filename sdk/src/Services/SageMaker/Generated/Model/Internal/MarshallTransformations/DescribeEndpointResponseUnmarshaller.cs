@@ -93,6 +93,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastDeploymentConfig", targetDepth))
+                {
+                    var unmarshaller = DeploymentConfigUnmarshaller.Instance;
+                    response.LastDeploymentConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -29,12 +29,53 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The inputs for a processing job.
+    /// The inputs for a processing job. The processing input must specify exactly one of
+    /// either <code>S3Input</code> or <code>DatasetDefinition</code> types.
     /// </summary>
     public partial class ProcessingInput
     {
+        private bool? _appManaged;
+        private DatasetDefinition _datasetDefinition;
         private string _inputName;
         private ProcessingS3Input _s3Input;
+
+        /// <summary>
+        /// Gets and sets the property AppManaged. 
+        /// <para>
+        /// When <code>True</code>, input operations such as data download are managed natively
+        /// by the processing job application. When <code>False</code> (default), input operations
+        /// are managed by Amazon SageMaker.
+        /// </para>
+        /// </summary>
+        public bool AppManaged
+        {
+            get { return this._appManaged.GetValueOrDefault(); }
+            set { this._appManaged = value; }
+        }
+
+        // Check to see if AppManaged property is set
+        internal bool IsSetAppManaged()
+        {
+            return this._appManaged.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatasetDefinition. 
+        /// <para>
+        /// Configuration for a Dataset Definition input. 
+        /// </para>
+        /// </summary>
+        public DatasetDefinition DatasetDefinition
+        {
+            get { return this._datasetDefinition; }
+            set { this._datasetDefinition = value; }
+        }
+
+        // Check to see if DatasetDefinition property is set
+        internal bool IsSetDatasetDefinition()
+        {
+            return this._datasetDefinition != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InputName. 
@@ -58,10 +99,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3Input. 
         /// <para>
-        /// The S3 inputs for the processing job. 
+        /// Configuration for processing job inputs in Amazon S3.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ProcessingS3Input S3Input
         {
             get { return this._s3Input; }

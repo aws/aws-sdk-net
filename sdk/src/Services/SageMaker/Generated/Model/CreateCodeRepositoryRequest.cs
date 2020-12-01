@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _codeRepositoryName;
         private GitConfig _gitConfig;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property CodeRepositoryName. 
@@ -85,6 +86,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetGitConfig()
         {
             return this._gitConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// different ways, for example, by purpose, owner, or environment. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS Resources</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

@@ -51,10 +51,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ApprovalDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ApprovalDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CertifyForMarketplace", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     response.CertifyForMarketplace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CreatedBy", targetDepth))
+                {
+                    var unmarshaller = UserContextUnmarshaller.Instance;
+                    response.CreatedBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
@@ -69,6 +81,36 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.InferenceSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastModifiedBy", targetDepth))
+                {
+                    var unmarshaller = UserContextUnmarshaller.Instance;
+                    response.LastModifiedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastModifiedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LastModifiedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MetadataProperties", targetDepth))
+                {
+                    var unmarshaller = MetadataPropertiesUnmarshaller.Instance;
+                    response.MetadataProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ModelApprovalStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ModelApprovalStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ModelMetrics", targetDepth))
+                {
+                    var unmarshaller = ModelMetricsUnmarshaller.Instance;
+                    response.ModelMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelPackageArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -79,6 +121,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelPackageDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ModelPackageGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ModelPackageGroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ModelPackageName", targetDepth))
@@ -97,6 +145,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ModelPackageStatusDetailsUnmarshaller.Instance;
                     response.ModelPackageStatusDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ModelPackageVersion", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.ModelPackageVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SourceAlgorithmSpecification", targetDepth))

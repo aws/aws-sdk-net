@@ -99,6 +99,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMetadataProperties())
+                {
+                    context.Writer.WritePropertyName("MetadataProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MetadataPropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MetadataProperties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOutputArtifacts())
                 {
                     context.Writer.WritePropertyName("OutputArtifacts");

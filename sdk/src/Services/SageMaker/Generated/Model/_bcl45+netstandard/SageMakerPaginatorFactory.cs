@@ -37,6 +37,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListActions operation
+        ///</summary>
+        public IListActionsPaginator ListActions(ListActionsRequest request) 
+        {
+            return new ListActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAlgorithms operation
         ///</summary>
         public IListAlgorithmsPaginator ListAlgorithms(ListAlgorithmsRequest request) 
@@ -45,11 +53,35 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListAppImageConfigs operation
+        ///</summary>
+        public IListAppImageConfigsPaginator ListAppImageConfigs(ListAppImageConfigsRequest request) 
+        {
+            return new ListAppImageConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListApps operation
         ///</summary>
         public IListAppsPaginator ListApps(ListAppsRequest request) 
         {
             return new ListAppsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListArtifacts operation
+        ///</summary>
+        public IListArtifactsPaginator ListArtifacts(ListArtifactsRequest request) 
+        {
+            return new ListArtifactsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAssociations operation
+        ///</summary>
+        public IListAssociationsPaginator ListAssociations(ListAssociationsRequest request) 
+        {
+            return new ListAssociationsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -85,6 +117,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListContexts operation
+        ///</summary>
+        public IListContextsPaginator ListContexts(ListContextsRequest request) 
+        {
+            return new ListContextsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDomains operation
         ///</summary>
         public IListDomainsPaginator ListDomains(ListDomainsRequest request) 
@@ -114,6 +154,14 @@ namespace Amazon.SageMaker.Model
         public IListExperimentsPaginator ListExperiments(ListExperimentsRequest request) 
         {
             return new ListExperimentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFeatureGroups operation
+        ///</summary>
+        public IListFeatureGroupsPaginator ListFeatureGroups(ListFeatureGroupsRequest request) 
+        {
+            return new ListFeatureGroupsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -173,6 +221,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListModelPackageGroups operation
+        ///</summary>
+        public IListModelPackageGroupsPaginator ListModelPackageGroups(ListModelPackageGroupsRequest request) 
+        {
+            return new ListModelPackageGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListModelPackages operation
         ///</summary>
         public IListModelPackagesPaginator ListModelPackages(ListModelPackagesRequest request) 
@@ -221,11 +277,51 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListPipelineExecutions operation
+        ///</summary>
+        public IListPipelineExecutionsPaginator ListPipelineExecutions(ListPipelineExecutionsRequest request) 
+        {
+            return new ListPipelineExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPipelineExecutionSteps operation
+        ///</summary>
+        public IListPipelineExecutionStepsPaginator ListPipelineExecutionSteps(ListPipelineExecutionStepsRequest request) 
+        {
+            return new ListPipelineExecutionStepsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPipelineParametersForExecution operation
+        ///</summary>
+        public IListPipelineParametersForExecutionPaginator ListPipelineParametersForExecution(ListPipelineParametersForExecutionRequest request) 
+        {
+            return new ListPipelineParametersForExecutionPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPipelines operation
+        ///</summary>
+        public IListPipelinesPaginator ListPipelines(ListPipelinesRequest request) 
+        {
+            return new ListPipelinesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProcessingJobs operation
         ///</summary>
         public IListProcessingJobsPaginator ListProcessingJobs(ListProcessingJobsRequest request) 
         {
             return new ListProcessingJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListProjects operation
+        ///</summary>
+        public IListProjectsPaginator ListProjects(ListProjectsRequest request) 
+        {
+            return new ListProjectsPaginator(this.client, request);
         }
 
         /// <summary>

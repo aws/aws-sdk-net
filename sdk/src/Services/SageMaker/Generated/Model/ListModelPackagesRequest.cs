@@ -37,6 +37,9 @@ namespace Amazon.SageMaker.Model
         private DateTime? _creationTimeAfter;
         private DateTime? _creationTimeBefore;
         private int? _maxResults;
+        private ModelApprovalStatus _modelApprovalStatus;
+        private string _modelPackageGroupName;
+        private ModelPackageType _modelPackageType;
         private string _nameContains;
         private string _nextToken;
         private ModelPackageSortBy _sortBy;
@@ -95,6 +98,75 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelApprovalStatus. 
+        /// <para>
+        /// A filter that returns only the model packages with the specified approval status.
+        /// </para>
+        /// </summary>
+        public ModelApprovalStatus ModelApprovalStatus
+        {
+            get { return this._modelApprovalStatus; }
+            set { this._modelApprovalStatus = value; }
+        }
+
+        // Check to see if ModelApprovalStatus property is set
+        internal bool IsSetModelApprovalStatus()
+        {
+            return this._modelApprovalStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPackageGroupName. 
+        /// <para>
+        /// A filter that returns only model versions that belong to the specified model group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=170)]
+        public string ModelPackageGroupName
+        {
+            get { return this._modelPackageGroupName; }
+            set { this._modelPackageGroupName = value; }
+        }
+
+        // Check to see if ModelPackageGroupName property is set
+        internal bool IsSetModelPackageGroupName()
+        {
+            return this._modelPackageGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPackageType. 
+        /// <para>
+        /// A filter that returns onlyl the model packages of the specified type. This can be
+        /// one of the following values.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>VERSIONED</code> - List only versioned models.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UNVERSIONED</code> - List only unversioined models.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>BOTH</code> - List both versioned and unversioned models.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ModelPackageType ModelPackageType
+        {
+            get { return this._modelPackageType; }
+            set { this._modelPackageType = value; }
+        }
+
+        // Check to see if ModelPackageType property is set
+        internal bool IsSetModelPackageType()
+        {
+            return this._modelPackageType != null;
         }
 
         /// <summary>

@@ -74,6 +74,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CertifyForMarketplace);
                 }
 
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                }
                 if(publicRequest.IsSetInferenceSpecification())
                 {
                     context.Writer.WritePropertyName("InferenceSpecification");
@@ -85,10 +96,44 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMetadataProperties())
+                {
+                    context.Writer.WritePropertyName("MetadataProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MetadataPropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MetadataProperties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetModelApprovalStatus())
+                {
+                    context.Writer.WritePropertyName("ModelApprovalStatus");
+                    context.Writer.Write(publicRequest.ModelApprovalStatus);
+                }
+
+                if(publicRequest.IsSetModelMetrics())
+                {
+                    context.Writer.WritePropertyName("ModelMetrics");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ModelMetricsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ModelMetrics, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetModelPackageDescription())
                 {
                     context.Writer.WritePropertyName("ModelPackageDescription");
                     context.Writer.Write(publicRequest.ModelPackageDescription);
+                }
+
+                if(publicRequest.IsSetModelPackageGroupName())
+                {
+                    context.Writer.WritePropertyName("ModelPackageGroupName");
+                    context.Writer.Write(publicRequest.ModelPackageGroupName);
                 }
 
                 if(publicRequest.IsSetModelPackageName())
@@ -106,6 +151,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.SourceAlgorithmSpecification, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetValidationSpecification())

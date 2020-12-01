@@ -27,14 +27,34 @@ namespace Amazon.SageMaker.Model
     {
 
         /// <summary>
+        /// Paginator for ListActions operation
+        ///</summary>
+        IListActionsPaginator ListActions(ListActionsRequest request);
+
+        /// <summary>
         /// Paginator for ListAlgorithms operation
         ///</summary>
         IListAlgorithmsPaginator ListAlgorithms(ListAlgorithmsRequest request);
 
         /// <summary>
+        /// Paginator for ListAppImageConfigs operation
+        ///</summary>
+        IListAppImageConfigsPaginator ListAppImageConfigs(ListAppImageConfigsRequest request);
+
+        /// <summary>
         /// Paginator for ListApps operation
         ///</summary>
         IListAppsPaginator ListApps(ListAppsRequest request);
+
+        /// <summary>
+        /// Paginator for ListArtifacts operation
+        ///</summary>
+        IListArtifactsPaginator ListArtifacts(ListArtifactsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAssociations operation
+        ///</summary>
+        IListAssociationsPaginator ListAssociations(ListAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListAutoMLJobs operation
@@ -57,6 +77,11 @@ namespace Amazon.SageMaker.Model
         IListCompilationJobsPaginator ListCompilationJobs(ListCompilationJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListContexts operation
+        ///</summary>
+        IListContextsPaginator ListContexts(ListContextsRequest request);
+
+        /// <summary>
         /// Paginator for ListDomains operation
         ///</summary>
         IListDomainsPaginator ListDomains(ListDomainsRequest request);
@@ -75,6 +100,11 @@ namespace Amazon.SageMaker.Model
         /// Paginator for ListExperiments operation
         ///</summary>
         IListExperimentsPaginator ListExperiments(ListExperimentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListFeatureGroups operation
+        ///</summary>
+        IListFeatureGroupsPaginator ListFeatureGroups(ListFeatureGroupsRequest request);
 
         /// <summary>
         /// Paginator for ListFlowDefinitions operation
@@ -112,6 +142,11 @@ namespace Amazon.SageMaker.Model
         IListLabelingJobsForWorkteamPaginator ListLabelingJobsForWorkteam(ListLabelingJobsForWorkteamRequest request);
 
         /// <summary>
+        /// Paginator for ListModelPackageGroups operation
+        ///</summary>
+        IListModelPackageGroupsPaginator ListModelPackageGroups(ListModelPackageGroupsRequest request);
+
+        /// <summary>
         /// Paginator for ListModelPackages operation
         ///</summary>
         IListModelPackagesPaginator ListModelPackages(ListModelPackagesRequest request);
@@ -142,9 +177,34 @@ namespace Amazon.SageMaker.Model
         IListNotebookInstancesPaginator ListNotebookInstances(ListNotebookInstancesRequest request);
 
         /// <summary>
+        /// Paginator for ListPipelineExecutions operation
+        ///</summary>
+        IListPipelineExecutionsPaginator ListPipelineExecutions(ListPipelineExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPipelineExecutionSteps operation
+        ///</summary>
+        IListPipelineExecutionStepsPaginator ListPipelineExecutionSteps(ListPipelineExecutionStepsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPipelineParametersForExecution operation
+        ///</summary>
+        IListPipelineParametersForExecutionPaginator ListPipelineParametersForExecution(ListPipelineParametersForExecutionRequest request);
+
+        /// <summary>
+        /// Paginator for ListPipelines operation
+        ///</summary>
+        IListPipelinesPaginator ListPipelines(ListPipelinesRequest request);
+
+        /// <summary>
         /// Paginator for ListProcessingJobs operation
         ///</summary>
         IListProcessingJobsPaginator ListProcessingJobs(ListProcessingJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListProjects operation
+        ///</summary>
+        IListProjectsPaginator ListProjects(ListProjectsRequest request);
 
         /// <summary>
         /// Paginator for ListSubscribedWorkteams operation

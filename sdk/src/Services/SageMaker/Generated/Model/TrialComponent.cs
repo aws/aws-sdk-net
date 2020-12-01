@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private Dictionary<string, TrialComponentArtifact> _inputArtifacts = new Dictionary<string, TrialComponentArtifact>();
         private UserContext _lastModifiedBy;
         private DateTime? _lastModifiedTime;
+        private MetadataProperties _metadataProperties;
         private List<TrialComponentMetricSummary> _metrics = new List<TrialComponentMetricSummary>();
         private Dictionary<string, TrialComponentArtifact> _outputArtifacts = new Dictionary<string, TrialComponentArtifact>();
         private Dictionary<string, TrialComponentParameterValue> _parameters = new Dictionary<string, TrialComponentParameterValue>();
@@ -173,6 +174,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataProperties.
+        /// </summary>
+        public MetadataProperties MetadataProperties
+        {
+            get { return this._metadataProperties; }
+            set { this._metadataProperties = value; }
+        }
+
+        // Check to see if MetadataProperties property is set
+        internal bool IsSetMetadataProperties()
+        {
+            return this._metadataProperties != null;
         }
 
         /// <summary>

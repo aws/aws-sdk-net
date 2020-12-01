@@ -61,6 +61,35 @@ namespace Amazon.SageMaker
         ISageMakerPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  AddAssociation
+
+
+
+        /// <summary>
+        /// Creates an <i>association</i> between the source and the destination. A source can
+        /// be associated with multiple destinations, and a destination can be associated with
+        /// multiple sources. An association is a lineage tracking entity. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
+        /// SageMaker ML Lineage Tracking</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddAssociation service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddAssociation">REST API Reference for AddAssociation Operation</seealso>
+        Task<AddAssociationResponse> AddAssociationAsync(AddAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  AddTags
 
 
@@ -123,6 +152,31 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AssociateTrialComponent">REST API Reference for AssociateTrialComponent Operation</seealso>
         Task<AssociateTrialComponentResponse> AssociateTrialComponentAsync(AssociateTrialComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateAction
+
+
+
+        /// <summary>
+        /// Creates an <i>action</i>. An action is a lineage tracking entity that represents an
+        /// action or activity. For example, a model deployment or an HPO job. Generally, an action
+        /// involves at least one input or output artifact. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
+        /// SageMaker ML Lineage Tracking</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAction service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAction">REST API Reference for CreateAction Operation</seealso>
+        Task<CreateActionResponse> CreateActionAsync(CreateActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -193,6 +247,31 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig">REST API Reference for CreateAppImageConfig Operation</seealso>
         Task<CreateAppImageConfigResponse> CreateAppImageConfigAsync(CreateAppImageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateArtifact
+
+
+
+        /// <summary>
+        /// Creates an <i>artifact</i>. An artifact is a lineage tracking entity that represents
+        /// a URI addressable object or data. Some examples are the S3 URI of a dataset and the
+        /// ECR registry path of an image. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
+        /// SageMaker ML Lineage Tracking</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateArtifact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateArtifact service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateArtifact">REST API Reference for CreateArtifact Operation</seealso>
+        Task<CreateArtifactResponse> CreateArtifactAsync(CreateArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -329,6 +408,31 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  CreateContext
+
+
+
+        /// <summary>
+        /// Creates a <i>context</i>. A context is a lineage tracking entity that represents a
+        /// logical grouping of other tracking or experiment entities. Some examples are an endpoint
+        /// and a model package. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
+        /// SageMaker ML Lineage Tracking</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContext service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateContext">REST API Reference for CreateContext Operation</seealso>
+        Task<CreateContextResponse> CreateContextAsync(CreateContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateDomain
 
 
@@ -342,9 +446,21 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
+        ///  <b>EFS storage</b> 
+        /// </para>
+        ///  
+        /// <para>
         /// When a domain is created, an EFS volume is created for use by all of the users within
         /// the domain. Each user receives a private home directory within the EFS volume for
         /// notebooks, Git repositories, and data files.
+        /// </para>
+        ///  
+        /// <para>
+        /// SageMaker uses the AWS Key Management Service (AWS KMS) to encrypt the EFS volume
+        /// attached to the domain with an AWS managed customer master key (CMK) by default. For
+        /// more control, you can specify a customer managed CMK. For more information, see <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
+        /// Data at Rest Using Encryption</a>.
         /// </para>
         ///  
         /// <para>
@@ -648,6 +764,49 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  CreateFeatureGroup
+
+
+
+        /// <summary>
+        /// Create a new <code>FeatureGroup</code>. A <code>FeatureGroup</code> is a group of
+        /// <code>Features</code> defined in the <code>FeatureStore</code> to describe a <code>Record</code>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// The <code>FeatureGroup</code> defines the schema and features contained in the FeatureGroup.
+        /// A <code>FeatureGroup</code> definition is composed of a list of <code>Features</code>,
+        /// a <code>RecordIdentifierFeatureName</code>, an <code>EventTimeFeatureName</code> and
+        /// configurations for its <code>OnlineStore</code> and <code>OfflineStore</code>. Check
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
+        /// service quotas</a> to see the <code>FeatureGroup</code>s quota for your AWS account.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must include at least one of <code>OnlineStoreConfig</code> and <code>OfflineStoreConfig</code>
+        /// to create a <code>FeatureGroup</code>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFeatureGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFeatureGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateFeatureGroup">REST API Reference for CreateFeatureGroup Operation</seealso>
+        Task<CreateFeatureGroupResponse> CreateFeatureGroupAsync(CreateFeatureGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateFlowDefinition
 
 
@@ -925,8 +1084,8 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a model package that you can use to create Amazon SageMaker models or list
-        /// on AWS Marketplace. Buyers can subscribe to model packages listed on AWS Marketplace
-        /// to create models in Amazon SageMaker.
+        /// on AWS Marketplace, or a versioned model that is part of a model group. Buyers can
+        /// subscribe to model packages listed on AWS Marketplace to create models in Amazon SageMaker.
         /// 
         ///  
         /// <para>
@@ -935,6 +1094,19 @@ namespace Amazon.SageMaker
         /// To create a model from an algorithm resource that you created or subscribed to in
         /// AWS Marketplace, provide a value for <code>SourceAlgorithmSpecification</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// There are two types of model packages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Versioned - a model that is part of a model group in the model registry.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Unversioned - a model package that is not part of a model group.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateModelPackage service method.</param>
         /// <param name="cancellationToken">
@@ -951,6 +1123,28 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage">REST API Reference for CreateModelPackage Operation</seealso>
         Task<CreateModelPackageResponse> CreateModelPackageAsync(CreateModelPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateModelPackageGroup
+
+
+
+        /// <summary>
+        /// Creates a model group. A model group contains a group of model versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelPackageGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateModelPackageGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackageGroup">REST API Reference for CreateModelPackageGroup Operation</seealso>
+        Task<CreateModelPackageGroupResponse> CreateModelPackageGroupAsync(CreateModelPackageGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1108,6 +1302,31 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  CreatePipeline
+
+
+
+        /// <summary>
+        /// Creates a pipeline using a JSON pipeline definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePipeline service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
+        Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreatePresignedDomainUrl
 
 
@@ -1215,6 +1434,29 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  CreateProject
+
+
+
+        /// <summary>
+        /// Creates a machine learning (ML) project that can contain one or more templates that
+        /// set up an ML pipeline from training to deploying an approved model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProject service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateProject">REST API Reference for CreateProject Operation</seealso>
+        Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateTrainingJob
 
 
@@ -1228,7 +1470,7 @@ namespace Amazon.SageMaker
         /// If you choose to host your model using Amazon SageMaker hosting services, you can
         /// use the resulting model artifacts as part of the model. You can also use the artifacts
         /// in a machine learning service other than Amazon SageMaker, provided that you know
-        /// how to use them for inferences. 
+        /// how to use them for inference. 
         /// </para>
         ///  
         /// <para>
@@ -1271,7 +1513,7 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RoleARN</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes
+        ///  <code>RoleArn</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes
         /// to perform tasks on your behalf during model training. You must grant this role the
         /// necessary permissions so that Amazon SageMaker can successfully complete model training.
         /// 
@@ -1578,6 +1820,27 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  DeleteAction
+
+
+
+        /// <summary>
+        /// Deletes an action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAction service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAction">REST API Reference for DeleteAction Operation</seealso>
+        Task<DeleteActionResponse> DeleteActionAsync(DeleteActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteAlgorithm
 
 
@@ -1641,6 +1904,49 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  DeleteArtifact
+
+
+
+        /// <summary>
+        /// Deletes an artifact. Either <code>ArtifactArn</code> or <code>Source</code> must be
+        /// specified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteArtifact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteArtifact service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteArtifact">REST API Reference for DeleteArtifact Operation</seealso>
+        Task<DeleteArtifactResponse> DeleteArtifactAsync(DeleteArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteAssociation
+
+
+
+        /// <summary>
+        /// Deletes an association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAssociation service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
+        Task<DeleteAssociationResponse> DeleteAssociationAsync(DeleteAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteCodeRepository
 
 
@@ -1656,6 +1962,27 @@ namespace Amazon.SageMaker
         /// <returns>The response from the DeleteCodeRepository service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCodeRepository">REST API Reference for DeleteCodeRepository Operation</seealso>
         Task<DeleteCodeRepositoryResponse> DeleteCodeRepositoryAsync(DeleteCodeRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteContext
+
+
+
+        /// <summary>
+        /// Deletes an context.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContext service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteContext">REST API Reference for DeleteContext Operation</seealso>
+        Task<DeleteContextResponse> DeleteContextAsync(DeleteContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1761,6 +2088,36 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteExperiment">REST API Reference for DeleteExperiment Operation</seealso>
         Task<DeleteExperimentResponse> DeleteExperimentAsync(DeleteExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteFeatureGroup
+
+
+
+        /// <summary>
+        /// Delete the <code>FeatureGroup</code> and any data that was written to the <code>OnlineStore</code>
+        /// of the <code>FeatureGroup</code>. Data cannot be accessed from the <code>OnlineStore</code>
+        /// immediately after <code>DeleteFeatureGroup</code> is called. 
+        /// 
+        ///  
+        /// <para>
+        /// Data written into the <code>OfflineStore</code> will not be deleted. The AWS Glue
+        /// database and tables that are automatically created for your <code>OfflineStore</code>
+        /// are not deleted. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFeatureGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFeatureGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFeatureGroup">REST API Reference for DeleteFeatureGroup Operation</seealso>
+        Task<DeleteFeatureGroupResponse> DeleteFeatureGroupAsync(DeleteFeatureGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1914,6 +2271,42 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  DeleteModelPackageGroup
+
+
+
+        /// <summary>
+        /// Deletes the specified model group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelPackageGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteModelPackageGroup service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackageGroup">REST API Reference for DeleteModelPackageGroup Operation</seealso>
+        Task<DeleteModelPackageGroupResponse> DeleteModelPackageGroupAsync(DeleteModelPackageGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteModelPackageGroupPolicy
+
+
+
+        /// <summary>
+        /// Deletes a model group resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelPackageGroupPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteModelPackageGroupPolicy service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackageGroupPolicy">REST API Reference for DeleteModelPackageGroupPolicy Operation</seealso>
+        Task<DeleteModelPackageGroupPolicyResponse> DeleteModelPackageGroupPolicyAsync(DeleteModelPackageGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteMonitoringSchedule
 
 
@@ -1978,6 +2371,45 @@ namespace Amazon.SageMaker
         /// <returns>The response from the DeleteNotebookInstanceLifecycleConfig service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig">REST API Reference for DeleteNotebookInstanceLifecycleConfig Operation</seealso>
         Task<DeleteNotebookInstanceLifecycleConfigResponse> DeleteNotebookInstanceLifecycleConfigAsync(DeleteNotebookInstanceLifecycleConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeletePipeline
+
+
+
+        /// <summary>
+        /// Deletes a pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePipeline service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
+        Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteProject
+
+
+
+        /// <summary>
+        /// Delete the specified project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProject service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
+        Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2135,6 +2567,27 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  DescribeAction
+
+
+
+        /// <summary>
+        /// Describes an action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAction service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAction">REST API Reference for DescribeAction Operation</seealso>
+        Task<DescribeActionResponse> DescribeActionAsync(DescribeActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeAlgorithm
 
 
@@ -2192,6 +2645,27 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig">REST API Reference for DescribeAppImageConfig Operation</seealso>
         Task<DescribeAppImageConfigResponse> DescribeAppImageConfigAsync(DescribeAppImageConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeArtifact
+
+
+
+        /// <summary>
+        /// Describes an artifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeArtifact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeArtifact service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeArtifact">REST API Reference for DescribeArtifact Operation</seealso>
+        Task<DescribeArtifactResponse> DescribeArtifactAsync(DescribeArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2258,6 +2732,27 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCompilationJob">REST API Reference for DescribeCompilationJob Operation</seealso>
         Task<DescribeCompilationJobResponse> DescribeCompilationJobAsync(DescribeCompilationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeContext
+
+
+
+        /// <summary>
+        /// Describes a context.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeContext service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeContext">REST API Reference for DescribeContext Operation</seealso>
+        Task<DescribeContextResponse> DescribeContextAsync(DescribeContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2337,6 +2832,29 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeExperiment">REST API Reference for DescribeExperiment Operation</seealso>
         Task<DescribeExperimentResponse> DescribeExperimentAsync(DescribeExperimentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeFeatureGroup
+
+
+
+        /// <summary>
+        /// Use this operation to describe a <code>FeatureGroup</code>. The response includes
+        /// information on the creation time, <code>FeatureGroup</code> name, the unique identifier
+        /// for each <code>FeatureGroup</code>, and more.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFeatureGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFeatureGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureGroup">REST API Reference for DescribeFeatureGroup Operation</seealso>
+        Task<DescribeFeatureGroupResponse> DescribeFeatureGroupAsync(DescribeFeatureGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2509,6 +3027,24 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  DescribeModelPackageGroup
+
+
+
+        /// <summary>
+        /// Gets a description for the specified model group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelPackageGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeModelPackageGroup service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackageGroup">REST API Reference for DescribeModelPackageGroup Operation</seealso>
+        Task<DescribeModelPackageGroupResponse> DescribeModelPackageGroupAsync(DescribeModelPackageGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeMonitoringSchedule
 
 
@@ -2572,6 +3108,69 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  DescribePipeline
+
+
+
+        /// <summary>
+        /// Describes the details of a pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePipeline service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipeline">REST API Reference for DescribePipeline Operation</seealso>
+        Task<DescribePipelineResponse> DescribePipelineAsync(DescribePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribePipelineDefinitionForExecution
+
+
+
+        /// <summary>
+        /// Describes the details of an execution's pipeline definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePipelineDefinitionForExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePipelineDefinitionForExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipelineDefinitionForExecution">REST API Reference for DescribePipelineDefinitionForExecution Operation</seealso>
+        Task<DescribePipelineDefinitionForExecutionResponse> DescribePipelineDefinitionForExecutionAsync(DescribePipelineDefinitionForExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribePipelineExecution
+
+
+
+        /// <summary>
+        /// Describes the details of a pipeline execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePipelineExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipelineExecution">REST API Reference for DescribePipelineExecution Operation</seealso>
+        Task<DescribePipelineExecutionResponse> DescribePipelineExecutionAsync(DescribePipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeProcessingJob
 
 
@@ -2590,6 +3189,24 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeProcessingJob">REST API Reference for DescribeProcessingJob Operation</seealso>
         Task<DescribeProcessingJobResponse> DescribeProcessingJobAsync(DescribeProcessingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeProject
+
+
+
+        /// <summary>
+        /// Describes the details of a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeProject service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
+        Task<DescribeProjectResponse> DescribeProjectAsync(DescribeProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2764,6 +3381,25 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  DisableSagemakerServicecatalogPortfolio
+
+
+
+        /// <summary>
+        /// Disables using Service Catalog in SageMaker. Service Catalog is used to create SageMaker
+        /// projects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableSagemakerServicecatalogPortfolio service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableSagemakerServicecatalogPortfolio service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisableSagemakerServicecatalogPortfolio">REST API Reference for DisableSagemakerServicecatalogPortfolio Operation</seealso>
+        Task<DisableSagemakerServicecatalogPortfolioResponse> DisableSagemakerServicecatalogPortfolioAsync(DisableSagemakerServicecatalogPortfolioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisassociateTrialComponent
 
 
@@ -2795,6 +3431,65 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  EnableSagemakerServicecatalogPortfolio
+
+
+
+        /// <summary>
+        /// Enables using Service Catalog in SageMaker. Service Catalog is used to create SageMaker
+        /// projects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableSagemakerServicecatalogPortfolio service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableSagemakerServicecatalogPortfolio service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EnableSagemakerServicecatalogPortfolio">REST API Reference for EnableSagemakerServicecatalogPortfolio Operation</seealso>
+        Task<EnableSagemakerServicecatalogPortfolioResponse> EnableSagemakerServicecatalogPortfolioAsync(EnableSagemakerServicecatalogPortfolioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetModelPackageGroupPolicy
+
+
+
+        /// <summary>
+        /// Gets a resource policy that manages access for a model group. For information about
+        /// resource policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
+        /// policies and resource-based policies</a> in the <i>AWS Identity and Access Management
+        /// User Guide.</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetModelPackageGroupPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetModelPackageGroupPolicy service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetModelPackageGroupPolicy">REST API Reference for GetModelPackageGroupPolicy Operation</seealso>
+        Task<GetModelPackageGroupPolicyResponse> GetModelPackageGroupPolicyAsync(GetModelPackageGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSagemakerServicecatalogPortfolioStatus
+
+
+
+        /// <summary>
+        /// Gets the status of Service Catalog in SageMaker. Service Catalog is used to create
+        /// SageMaker projects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSagemakerServicecatalogPortfolioStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSagemakerServicecatalogPortfolioStatus service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetSagemakerServicecatalogPortfolioStatus">REST API Reference for GetSagemakerServicecatalogPortfolioStatus Operation</seealso>
+        Task<GetSagemakerServicecatalogPortfolioStatusResponse> GetSagemakerServicecatalogPortfolioStatusAsync(GetSagemakerServicecatalogPortfolioStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetSearchSuggestions
 
 
@@ -2813,6 +3508,27 @@ namespace Amazon.SageMaker
         /// <returns>The response from the GetSearchSuggestions service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetSearchSuggestions">REST API Reference for GetSearchSuggestions Operation</seealso>
         Task<GetSearchSuggestionsResponse> GetSearchSuggestionsAsync(GetSearchSuggestionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListActions
+
+
+
+        /// <summary>
+        /// Lists the actions in your account and their properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListActions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListActions">REST API Reference for ListActions Operation</seealso>
+        Task<ListActionsResponse> ListActionsAsync(ListActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2869,6 +3585,48 @@ namespace Amazon.SageMaker
         /// <returns>The response from the ListApps service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListApps">REST API Reference for ListApps Operation</seealso>
         Task<ListAppsResponse> ListAppsAsync(ListAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListArtifacts
+
+
+
+        /// <summary>
+        /// Lists the artifacts in your account and their properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListArtifacts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListArtifacts service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
+        Task<ListArtifactsResponse> ListArtifactsAsync(ListArtifactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAssociations
+
+
+
+        /// <summary>
+        /// Lists the associations in your account and their properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssociations service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
+        Task<ListAssociationsResponse> ListAssociationsAsync(ListAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2953,6 +3711,27 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  ListContexts
+
+
+
+        /// <summary>
+        /// Lists the contexts in your account and their properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContexts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContexts service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListContexts">REST API Reference for ListContexts Operation</seealso>
+        Task<ListContextsResponse> ListContextsAsync(ListContextsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListDomains
 
 
@@ -3024,6 +3803,24 @@ namespace Amazon.SageMaker
         /// <returns>The response from the ListExperiments service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListExperiments">REST API Reference for ListExperiments Operation</seealso>
         Task<ListExperimentsResponse> ListExperimentsAsync(ListExperimentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListFeatureGroups
+
+
+
+        /// <summary>
+        /// List <code>FeatureGroup</code>s based on given filter and order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFeatureGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFeatureGroups service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListFeatureGroups">REST API Reference for ListFeatureGroups Operation</seealso>
+        Task<ListFeatureGroupsResponse> ListFeatureGroupsAsync(ListFeatureGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3162,6 +3959,24 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  ListModelPackageGroups
+
+
+
+        /// <summary>
+        /// Gets a list of the model groups in your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelPackageGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListModelPackageGroups service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelPackageGroups">REST API Reference for ListModelPackageGroups Operation</seealso>
+        Task<ListModelPackageGroupsResponse> ListModelPackageGroupsAsync(ListModelPackageGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListModelPackages
 
 
@@ -3272,6 +4087,87 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  ListPipelineExecutions
+
+
+
+        /// <summary>
+        /// Gets a list of the pipeline executions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelineExecutions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineExecutions">REST API Reference for ListPipelineExecutions Operation</seealso>
+        Task<ListPipelineExecutionsResponse> ListPipelineExecutionsAsync(ListPipelineExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListPipelineExecutionSteps
+
+
+
+        /// <summary>
+        /// Gets a list of <code>PipeLineExecutionStep</code> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineExecutionSteps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelineExecutionSteps service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineExecutionSteps">REST API Reference for ListPipelineExecutionSteps Operation</seealso>
+        Task<ListPipelineExecutionStepsResponse> ListPipelineExecutionStepsAsync(ListPipelineExecutionStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListPipelineParametersForExecution
+
+
+
+        /// <summary>
+        /// Gets a list of parameters for a pipeline execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineParametersForExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelineParametersForExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineParametersForExecution">REST API Reference for ListPipelineParametersForExecution Operation</seealso>
+        Task<ListPipelineParametersForExecutionResponse> ListPipelineParametersForExecutionAsync(ListPipelineParametersForExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListPipelines
+
+
+
+        /// <summary>
+        /// Gets a list of pipelines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelines service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelines service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
+        Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListProcessingJobs
 
 
@@ -3287,6 +4183,24 @@ namespace Amazon.SageMaker
         /// <returns>The response from the ListProcessingJobs service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListProcessingJobs">REST API Reference for ListProcessingJobs Operation</seealso>
         Task<ListProcessingJobsResponse> ListProcessingJobsAsync(ListProcessingJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListProjects
+
+
+
+        /// <summary>
+        /// Gets a list of the projects in an AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProjects service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProjects service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListProjects">REST API Reference for ListProjects Operation</seealso>
+        Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3505,6 +4419,27 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  PutModelPackageGroupPolicy
+
+
+
+        /// <summary>
+        /// Adds a resouce policy to control access to a model group. For information about resoure
+        /// policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
+        /// policies and resource-based policies</a> in the <i>AWS Identity and Access Management
+        /// User Guide.</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutModelPackageGroupPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutModelPackageGroupPolicy service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PutModelPackageGroupPolicy">REST API Reference for PutModelPackageGroupPolicy Operation</seealso>
+        Task<PutModelPackageGroupPolicyResponse> PutModelPackageGroupPolicyAsync(PutModelPackageGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RenderUiTemplate
 
 
@@ -3600,6 +4535,31 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartNotebookInstance">REST API Reference for StartNotebookInstance Operation</seealso>
         Task<StartNotebookInstanceResponse> StartNotebookInstanceAsync(StartNotebookInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartPipelineExecution
+
+
+
+        /// <summary>
+        /// Starts a pipeline execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartPipelineExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartPipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
+        Task<StartPipelineExecutionResponse> StartPipelineExecutionAsync(StartPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3760,6 +4720,27 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  StopPipelineExecution
+
+
+
+        /// <summary>
+        /// Stops a pipeline execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopPipelineExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopPipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopPipelineExecution">REST API Reference for StopPipelineExecution Operation</seealso>
+        Task<StopPipelineExecutionResponse> StopPipelineExecutionAsync(StopPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StopProcessingJob
 
 
@@ -3840,6 +4821,30 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  UpdateAction
+
+
+
+        /// <summary>
+        /// Updates an action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAction service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify an experiment, trial, or trial component.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAction">REST API Reference for UpdateAction Operation</seealso>
+        Task<UpdateActionResponse> UpdateActionAsync(UpdateActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateAppImageConfig
 
 
@@ -3861,6 +4866,30 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  UpdateArtifact
+
+
+
+        /// <summary>
+        /// Updates an artifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateArtifact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateArtifact service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify an experiment, trial, or trial component.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateArtifact">REST API Reference for UpdateArtifact Operation</seealso>
+        Task<UpdateArtifactResponse> UpdateArtifactAsync(UpdateArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateCodeRepository
 
 
@@ -3876,6 +4905,30 @@ namespace Amazon.SageMaker
         /// <returns>The response from the UpdateCodeRepository service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCodeRepository">REST API Reference for UpdateCodeRepository Operation</seealso>
         Task<UpdateCodeRepositoryResponse> UpdateCodeRepositoryAsync(UpdateCodeRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateContext
+
+
+
+        /// <summary>
+        /// Updates a context.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContext service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify an experiment, trial, or trial component.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateContext">REST API Reference for UpdateContext Operation</seealso>
+        Task<UpdateContextResponse> UpdateContextAsync(UpdateContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4028,6 +5081,24 @@ namespace Amazon.SageMaker
 
         #endregion
                 
+        #region  UpdateModelPackage
+
+
+
+        /// <summary>
+        /// Updates a versioned model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModelPackage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateModelPackage service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelPackage">REST API Reference for UpdateModelPackage Operation</seealso>
+        Task<UpdateModelPackageResponse> UpdateModelPackageAsync(UpdateModelPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateMonitoringSchedule
 
 
@@ -4097,6 +5168,48 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">REST API Reference for UpdateNotebookInstanceLifecycleConfig Operation</seealso>
         Task<UpdateNotebookInstanceLifecycleConfigResponse> UpdateNotebookInstanceLifecycleConfigAsync(UpdateNotebookInstanceLifecycleConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdatePipeline
+
+
+
+        /// <summary>
+        /// Updates a pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePipeline service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
+        Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdatePipelineExecution
+
+
+
+        /// <summary>
+        /// Updates a pipeline execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineExecution">REST API Reference for UpdatePipelineExecution Operation</seealso>
+        Task<UpdatePipelineExecutionResponse> UpdatePipelineExecutionAsync(UpdatePipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

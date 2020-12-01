@@ -29,12 +29,54 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Describes the results of a processing job.
+    /// Describes the results of a processing job. The processing output must specify exactly
+    /// one of either <code>S3Output</code> or <code>FeatureStoreOutput</code> types.
     /// </summary>
     public partial class ProcessingOutput
     {
+        private bool? _appManaged;
+        private ProcessingFeatureStoreOutput _featureStoreOutput;
         private string _outputName;
         private ProcessingS3Output _s3Output;
+
+        /// <summary>
+        /// Gets and sets the property AppManaged. 
+        /// <para>
+        /// When <code>True</code>, output operations such as data upload are managed natively
+        /// by the processing job application. When <code>False</code> (default), output operations
+        /// are managed by Amazon SageMaker.
+        /// </para>
+        /// </summary>
+        public bool AppManaged
+        {
+            get { return this._appManaged.GetValueOrDefault(); }
+            set { this._appManaged = value; }
+        }
+
+        // Check to see if AppManaged property is set
+        internal bool IsSetAppManaged()
+        {
+            return this._appManaged.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FeatureStoreOutput. 
+        /// <para>
+        /// Configuration for processing job outputs in Amazon SageMaker Feature Store. This processing
+        /// output type is only supported when <code>AppManaged</code> is specified. 
+        /// </para>
+        /// </summary>
+        public ProcessingFeatureStoreOutput FeatureStoreOutput
+        {
+            get { return this._featureStoreOutput; }
+            set { this._featureStoreOutput = value; }
+        }
+
+        // Check to see if FeatureStoreOutput property is set
+        internal bool IsSetFeatureStoreOutput()
+        {
+            return this._featureStoreOutput != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OutputName. 
@@ -61,7 +103,6 @@ namespace Amazon.SageMaker.Model
         /// Configuration for processing job outputs in Amazon S3.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ProcessingS3Output S3Output
         {
             get { return this._s3Output; }

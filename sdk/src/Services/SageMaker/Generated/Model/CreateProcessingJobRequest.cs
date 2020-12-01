@@ -120,8 +120,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProcessingInputs. 
         /// <para>
-        /// For each input, data is downloaded from S3 into the processing container before the
-        /// processing job begins running if "S3InputMode" is set to <code>File</code>.
+        /// List of input configurations for the processing job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]

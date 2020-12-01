@@ -193,9 +193,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
-        /// 
+        /// An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// different ways, for example, by purpose, owner, or environment. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS Resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

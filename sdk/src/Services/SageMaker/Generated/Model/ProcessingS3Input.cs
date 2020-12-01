@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Information about where and how you want to obtain the inputs for an processing job.
+    /// Configuration for processing job inputs in Amazon S3.
     /// </summary>
     public partial class ProcessingS3Input
     {
@@ -45,10 +45,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The local path to the Amazon S3 bucket where you want Amazon SageMaker to download
         /// the inputs to run a processing job. <code>LocalPath</code> is an absolute path to
-        /// the input data.
+        /// the input data. This is a required parameter when <code>AppManaged</code> is <code>False</code>
+        /// (default).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string LocalPath
         {
             get { return this._localPath; }
@@ -129,10 +130,10 @@ namespace Amazon.SageMaker.Model
         /// Elastic Block Store (Amazon EBS) volumes before starting your training algorithm.
         /// This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker
         /// streams input data from the source directly to your algorithm without using the EBS
-        /// volume.
+        /// volume.This is a required parameter when <code>AppManaged</code> is <code>False</code>
+        /// (default).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ProcessingS3InputMode S3InputMode
         {
             get { return this._s3InputMode; }

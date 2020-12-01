@@ -123,7 +123,7 @@ namespace Amazon.SageMaker.Model
         ///  Runtime configuration for rule container.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> RuleParameters
         {
             get { return this._ruleParameters; }

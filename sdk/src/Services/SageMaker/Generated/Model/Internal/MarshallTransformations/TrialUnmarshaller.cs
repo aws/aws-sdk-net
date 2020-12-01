@@ -100,6 +100,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MetadataProperties", targetDepth))
+                {
+                    var unmarshaller = MetadataPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.MetadataProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Source", targetDepth))
                 {
                     var unmarshaller = TrialSourceUnmarshaller.Instance;

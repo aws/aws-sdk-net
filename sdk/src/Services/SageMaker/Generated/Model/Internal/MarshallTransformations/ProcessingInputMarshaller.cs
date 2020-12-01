@@ -45,6 +45,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProcessingInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAppManaged())
+            {
+                context.Writer.WritePropertyName("AppManaged");
+                context.Writer.Write(requestObject.AppManaged);
+            }
+
+            if(requestObject.IsSetDatasetDefinition())
+            {
+                context.Writer.WritePropertyName("DatasetDefinition");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DatasetDefinitionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DatasetDefinition, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInputName())
             {
                 context.Writer.WritePropertyName("InputName");

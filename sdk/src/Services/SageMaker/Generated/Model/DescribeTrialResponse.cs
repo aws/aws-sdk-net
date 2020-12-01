@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private string _experimentName;
         private UserContext _lastModifiedBy;
         private DateTime? _lastModifiedTime;
+        private MetadataProperties _metadataProperties;
         private TrialSource _source;
         private string _trialArn;
         private string _trialName;
@@ -152,6 +153,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataProperties.
+        /// </summary>
+        public MetadataProperties MetadataProperties
+        {
+            get { return this._metadataProperties; }
+            set { this._metadataProperties = value; }
+        }
+
+        // Check to see if MetadataProperties property is set
+        internal bool IsSetMetadataProperties()
+        {
+            return this._metadataProperties != null;
         }
 
         /// <summary>

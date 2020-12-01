@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
     /// If you choose to host your model using Amazon SageMaker hosting services, you can
     /// use the resulting model artifacts as part of the model. You can also use the artifacts
     /// in a machine learning service other than Amazon SageMaker, provided that you know
-    /// how to use them for inferences. 
+    /// how to use them for inference. 
     /// </para>
     ///  
     /// <para>
@@ -81,7 +81,7 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>RoleARN</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes
+    ///  <code>RoleArn</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes
     /// to perform tasks on your behalf during model training. You must grant this role the
     /// necessary permissions so that Amazon SageMaker can successfully complete model training.
     /// 
@@ -459,9 +459,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
-        /// 
+        /// An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// different ways, for example, by purpose, owner, or environment. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS Resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

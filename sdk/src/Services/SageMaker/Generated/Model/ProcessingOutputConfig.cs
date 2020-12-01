@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
-        /// Output configuration information for a processing job.
+        /// List of output configurations for the processing job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]

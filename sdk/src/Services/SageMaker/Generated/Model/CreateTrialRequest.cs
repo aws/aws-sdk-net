@@ -56,6 +56,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _displayName;
         private string _experimentName;
+        private MetadataProperties _metadataProperties;
         private List<Tag> _tags = new List<Tag>();
         private string _trialName;
 
@@ -96,6 +97,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExperimentName()
         {
             return this._experimentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataProperties.
+        /// </summary>
+        public MetadataProperties MetadataProperties
+        {
+            get { return this._metadataProperties; }
+            set { this._metadataProperties = value; }
+        }
+
+        // Check to see if MetadataProperties property is set
+        internal bool IsSetMetadataProperties()
+        {
+            return this._metadataProperties != null;
         }
 
         /// <summary>

@@ -277,6 +277,51 @@ namespace Amazon.SageMaker
         #endregion
 
 
+        #region  AddAssociation
+
+        internal virtual AddAssociationResponse AddAssociation(AddAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<AddAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an <i>association</i> between the source and the destination. A source can
+        /// be associated with multiple destinations, and a destination can be associated with
+        /// multiple sources. An association is a lineage tracking entity. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
+        /// SageMaker ML Lineage Tracking</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddAssociation service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddAssociation">REST API Reference for AddAssociation Operation</seealso>
+        public virtual Task<AddAssociationResponse> AddAssociationAsync(AddAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AddAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddTags
 
         internal virtual AddTagsResponse AddTags(AddTagsRequest request)
@@ -370,6 +415,47 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = AssociateTrialComponentResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateTrialComponentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAction
+
+        internal virtual CreateActionResponse CreateAction(CreateActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an <i>action</i>. An action is a lineage tracking entity that represents an
+        /// action or activity. For example, a model deployment or an HPO job. Generally, an action
+        /// involves at least one input or output artifact. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
+        /// SageMaker ML Lineage Tracking</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAction service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAction">REST API Reference for CreateAction Operation</seealso>
+        public virtual Task<CreateActionResponse> CreateActionAsync(CreateActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateActionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -488,6 +574,47 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = CreateAppImageConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateAppImageConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateArtifact
+
+        internal virtual CreateArtifactResponse CreateArtifact(CreateArtifactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateArtifactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateArtifactResponseUnmarshaller.Instance;
+
+            return Invoke<CreateArtifactResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an <i>artifact</i>. An artifact is a lineage tracking entity that represents
+        /// a URI addressable object or data. Some examples are the S3 URI of a dataset and the
+        /// ECR registry path of an image. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
+        /// SageMaker ML Lineage Tracking</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateArtifact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateArtifact service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateArtifact">REST API Reference for CreateArtifact Operation</seealso>
+        public virtual Task<CreateArtifactResponse> CreateArtifactAsync(CreateArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateArtifactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateArtifactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateArtifactResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -673,6 +800,47 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateContext
+
+        internal virtual CreateContextResponse CreateContext(CreateContextRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContextResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContextResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a <i>context</i>. A context is a lineage tracking entity that represents a
+        /// logical grouping of other tracking or experiment entities. Some examples are an endpoint
+        /// and a model package. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
+        /// SageMaker ML Lineage Tracking</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContext service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateContext">REST API Reference for CreateContext Operation</seealso>
+        public virtual Task<CreateContextResponse> CreateContextAsync(CreateContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContextResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateContextResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDomain
 
         internal virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
@@ -695,9 +863,21 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
+        ///  <b>EFS storage</b> 
+        /// </para>
+        ///  
+        /// <para>
         /// When a domain is created, an EFS volume is created for use by all of the users within
         /// the domain. Each user receives a private home directory within the EFS volume for
         /// notebooks, Git repositories, and data files.
+        /// </para>
+        ///  
+        /// <para>
+        /// SageMaker uses the AWS Key Management Service (AWS KMS) to encrypt the EFS volume
+        /// attached to the domain with an AWS managed customer master key (CMK) by default. For
+        /// more control, you can specify a customer managed CMK. For more information, see <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html">Protect
+        /// Data at Rest Using Encryption</a>.
         /// </para>
         ///  
         /// <para>
@@ -1052,6 +1232,65 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = CreateExperimentResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateExperimentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateFeatureGroup
+
+        internal virtual CreateFeatureGroupResponse CreateFeatureGroup(CreateFeatureGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFeatureGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFeatureGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFeatureGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create a new <code>FeatureGroup</code>. A <code>FeatureGroup</code> is a group of
+        /// <code>Features</code> defined in the <code>FeatureStore</code> to describe a <code>Record</code>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// The <code>FeatureGroup</code> defines the schema and features contained in the FeatureGroup.
+        /// A <code>FeatureGroup</code> definition is composed of a list of <code>Features</code>,
+        /// a <code>RecordIdentifierFeatureName</code>, an <code>EventTimeFeatureName</code> and
+        /// configurations for its <code>OnlineStore</code> and <code>OfflineStore</code>. Check
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS
+        /// service quotas</a> to see the <code>FeatureGroup</code>s quota for your AWS account.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must include at least one of <code>OnlineStoreConfig</code> and <code>OfflineStoreConfig</code>
+        /// to create a <code>FeatureGroup</code>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFeatureGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFeatureGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateFeatureGroup">REST API Reference for CreateFeatureGroup Operation</seealso>
+        public virtual Task<CreateFeatureGroupResponse> CreateFeatureGroupAsync(CreateFeatureGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFeatureGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFeatureGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFeatureGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1454,8 +1693,8 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a model package that you can use to create Amazon SageMaker models or list
-        /// on AWS Marketplace. Buyers can subscribe to model packages listed on AWS Marketplace
-        /// to create models in Amazon SageMaker.
+        /// on AWS Marketplace, or a versioned model that is part of a model group. Buyers can
+        /// subscribe to model packages listed on AWS Marketplace to create models in Amazon SageMaker.
         /// 
         ///  
         /// <para>
@@ -1464,6 +1703,19 @@ namespace Amazon.SageMaker
         /// To create a model from an algorithm resource that you created or subscribed to in
         /// AWS Marketplace, provide a value for <code>SourceAlgorithmSpecification</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// There are two types of model packages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Versioned - a model that is part of a model group in the model registry.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Unversioned - a model package that is not part of a model group.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateModelPackage service method.</param>
         /// <param name="cancellationToken">
@@ -1486,6 +1738,44 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = CreateModelPackageResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateModelPackageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateModelPackageGroup
+
+        internal virtual CreateModelPackageGroupResponse CreateModelPackageGroup(CreateModelPackageGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelPackageGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelPackageGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateModelPackageGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a model group. A model group contains a group of model versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelPackageGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateModelPackageGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackageGroup">REST API Reference for CreateModelPackageGroup Operation</seealso>
+        public virtual Task<CreateModelPackageGroupResponse> CreateModelPackageGroupAsync(CreateModelPackageGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelPackageGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelPackageGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateModelPackageGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1692,6 +1982,47 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreatePipeline
+
+        internal virtual CreatePipelineResponse CreatePipeline(CreatePipelineRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePipelineResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePipelineResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a pipeline using a JSON pipeline definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePipeline service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
+        public virtual Task<CreatePipelineResponse> CreatePipelineAsync(CreatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePipelineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePipelineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreatePresignedDomainUrl
 
         internal virtual CreatePresignedDomainUrlResponse CreatePresignedDomainUrl(CreatePresignedDomainUrlRequest request)
@@ -1847,6 +2178,45 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateProject
+
+        internal virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProjectResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a machine learning (ML) project that can contain one or more templates that
+        /// set up an ML pipeline from training to deploying an approved model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProject service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateProject">REST API Reference for CreateProject Operation</seealso>
+        public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateProjectResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTrainingJob
 
         internal virtual CreateTrainingJobResponse CreateTrainingJob(CreateTrainingJobRequest request)
@@ -1869,7 +2239,7 @@ namespace Amazon.SageMaker
         /// If you choose to host your model using Amazon SageMaker hosting services, you can
         /// use the resulting model artifacts as part of the model. You can also use the artifacts
         /// in a machine learning service other than Amazon SageMaker, provided that you know
-        /// how to use them for inferences. 
+        /// how to use them for inference. 
         /// </para>
         ///  
         /// <para>
@@ -1912,7 +2282,7 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RoleARN</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes
+        ///  <code>RoleArn</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes
         /// to perform tasks on your behalf during model training. You must grant this role the
         /// necessary permissions so that Amazon SageMaker can successfully complete model training.
         /// 
@@ -2322,6 +2692,43 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteAction
+
+        internal virtual DeleteActionResponse DeleteAction(DeleteActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAction service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAction">REST API Reference for DeleteAction Operation</seealso>
+        public virtual Task<DeleteActionResponse> DeleteActionAsync(DeleteActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAlgorithm
 
         internal virtual DeleteAlgorithmResponse DeleteAlgorithm(DeleteAlgorithmRequest request)
@@ -2433,6 +2840,81 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteArtifact
+
+        internal virtual DeleteArtifactResponse DeleteArtifact(DeleteArtifactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteArtifactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteArtifactResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteArtifactResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an artifact. Either <code>ArtifactArn</code> or <code>Source</code> must be
+        /// specified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteArtifact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteArtifact service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteArtifact">REST API Reference for DeleteArtifact Operation</seealso>
+        public virtual Task<DeleteArtifactResponse> DeleteArtifactAsync(DeleteArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteArtifactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteArtifactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteArtifactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAssociation
+
+        internal virtual DeleteAssociationResponse DeleteAssociation(DeleteAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAssociation service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
+        public virtual Task<DeleteAssociationResponse> DeleteAssociationAsync(DeleteAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCodeRepository
 
         internal virtual DeleteCodeRepositoryResponse DeleteCodeRepository(DeleteCodeRepositoryRequest request)
@@ -2463,6 +2945,43 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DeleteCodeRepositoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCodeRepositoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteContext
+
+        internal virtual DeleteContextResponse DeleteContext(DeleteContextRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContextResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContextResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an context.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContext service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteContext">REST API Reference for DeleteContext Operation</seealso>
+        public virtual Task<DeleteContextResponse> DeleteContextAsync(DeleteContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContextResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteContextResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2632,6 +3151,52 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DeleteExperimentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteExperimentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFeatureGroup
+
+        internal virtual DeleteFeatureGroupResponse DeleteFeatureGroup(DeleteFeatureGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFeatureGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFeatureGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFeatureGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete the <code>FeatureGroup</code> and any data that was written to the <code>OnlineStore</code>
+        /// of the <code>FeatureGroup</code>. Data cannot be accessed from the <code>OnlineStore</code>
+        /// immediately after <code>DeleteFeatureGroup</code> is called. 
+        /// 
+        ///  
+        /// <para>
+        /// Data written into the <code>OfflineStore</code> will not be deleted. The AWS Glue
+        /// database and tables that are automatically created for your <code>OfflineStore</code>
+        /// are not deleted. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFeatureGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFeatureGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFeatureGroup">REST API Reference for DeleteFeatureGroup Operation</seealso>
+        public virtual Task<DeleteFeatureGroupResponse> DeleteFeatureGroupAsync(DeleteFeatureGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteFeatureGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteFeatureGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFeatureGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2882,6 +3447,74 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteModelPackageGroup
+
+        internal virtual DeleteModelPackageGroupResponse DeleteModelPackageGroup(DeleteModelPackageGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelPackageGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelPackageGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteModelPackageGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified model group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelPackageGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteModelPackageGroup service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackageGroup">REST API Reference for DeleteModelPackageGroup Operation</seealso>
+        public virtual Task<DeleteModelPackageGroupResponse> DeleteModelPackageGroupAsync(DeleteModelPackageGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelPackageGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelPackageGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteModelPackageGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteModelPackageGroupPolicy
+
+        internal virtual DeleteModelPackageGroupPolicyResponse DeleteModelPackageGroupPolicy(DeleteModelPackageGroupPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelPackageGroupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelPackageGroupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteModelPackageGroupPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a model group resource policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelPackageGroupPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteModelPackageGroupPolicy service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackageGroupPolicy">REST API Reference for DeleteModelPackageGroupPolicy Operation</seealso>
+        public virtual Task<DeleteModelPackageGroupPolicyResponse> DeleteModelPackageGroupPolicyAsync(DeleteModelPackageGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelPackageGroupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelPackageGroupPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteModelPackageGroupPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteMonitoringSchedule
 
         internal virtual DeleteMonitoringScheduleResponse DeleteMonitoringSchedule(DeleteMonitoringScheduleRequest request)
@@ -2993,6 +3626,77 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DeleteNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteNotebookInstanceLifecycleConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePipeline
+
+        internal virtual DeletePipelineResponse DeletePipeline(DeletePipelineRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePipelineResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePipelineResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePipeline service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
+        public virtual Task<DeletePipelineResponse> DeletePipelineAsync(DeletePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePipelineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePipelineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteProject
+
+        internal virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProjectResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete the specified project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProject service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
+        public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3247,6 +3951,43 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeAction
+
+        internal virtual DescribeActionResponse DescribeAction(DescribeActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeActionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes an action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAction service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAction">REST API Reference for DescribeAction Operation</seealso>
+        public virtual Task<DescribeActionResponse> DescribeActionAsync(DescribeActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeAlgorithm
 
         internal virtual DescribeAlgorithmResponse DescribeAlgorithm(DescribeAlgorithmRequest request)
@@ -3351,6 +4092,43 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeAppImageConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAppImageConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeArtifact
+
+        internal virtual DescribeArtifactResponse DescribeArtifact(DescribeArtifactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeArtifactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeArtifactResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeArtifactResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes an artifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeArtifact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeArtifact service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeArtifact">REST API Reference for DescribeArtifact Operation</seealso>
+        public virtual Task<DescribeArtifactResponse> DescribeArtifactAsync(DescribeArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeArtifactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeArtifactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeArtifactResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3465,6 +4243,43 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeCompilationJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeCompilationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeContext
+
+        internal virtual DescribeContextResponse DescribeContext(DescribeContextRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContextResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContextResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes a context.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeContext service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeContext">REST API Reference for DescribeContext Operation</seealso>
+        public virtual Task<DescribeContextResponse> DescribeContextAsync(DescribeContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContextResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeContextResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3608,6 +4423,45 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeExperimentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeExperimentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFeatureGroup
+
+        internal virtual DescribeFeatureGroupResponse DescribeFeatureGroup(DescribeFeatureGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFeatureGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFeatureGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFeatureGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Use this operation to describe a <code>FeatureGroup</code>. The response includes
+        /// information on the creation time, <code>FeatureGroup</code> name, the unique identifier
+        /// for each <code>FeatureGroup</code>, and more.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFeatureGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFeatureGroup service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureGroup">REST API Reference for DescribeFeatureGroup Operation</seealso>
+        public virtual Task<DescribeFeatureGroupResponse> DescribeFeatureGroupAsync(DescribeFeatureGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFeatureGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFeatureGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFeatureGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3909,6 +4763,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeModelPackageGroup
+
+        internal virtual DescribeModelPackageGroupResponse DescribeModelPackageGroup(DescribeModelPackageGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelPackageGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelPackageGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeModelPackageGroupResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a description for the specified model group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelPackageGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeModelPackageGroup service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackageGroup">REST API Reference for DescribeModelPackageGroup Operation</seealso>
+        public virtual Task<DescribeModelPackageGroupResponse> DescribeModelPackageGroupAsync(DescribeModelPackageGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelPackageGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelPackageGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeModelPackageGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeMonitoringSchedule
 
         internal virtual DescribeMonitoringScheduleResponse DescribeMonitoringSchedule(DescribeMonitoringScheduleRequest request)
@@ -4020,6 +4908,117 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribePipeline
+
+        internal virtual DescribePipelineResponse DescribePipeline(DescribePipelineRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePipelineResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePipelineResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the details of a pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePipeline service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipeline">REST API Reference for DescribePipeline Operation</seealso>
+        public virtual Task<DescribePipelineResponse> DescribePipelineAsync(DescribePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePipelineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePipelineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePipelineDefinitionForExecution
+
+        internal virtual DescribePipelineDefinitionForExecutionResponse DescribePipelineDefinitionForExecution(DescribePipelineDefinitionForExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePipelineDefinitionForExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePipelineDefinitionForExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePipelineDefinitionForExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the details of an execution's pipeline definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePipelineDefinitionForExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePipelineDefinitionForExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipelineDefinitionForExecution">REST API Reference for DescribePipelineDefinitionForExecution Operation</seealso>
+        public virtual Task<DescribePipelineDefinitionForExecutionResponse> DescribePipelineDefinitionForExecutionAsync(DescribePipelineDefinitionForExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePipelineDefinitionForExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePipelineDefinitionForExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePipelineDefinitionForExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePipelineExecution
+
+        internal virtual DescribePipelineExecutionResponse DescribePipelineExecution(DescribePipelineExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePipelineExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePipelineExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePipelineExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the details of a pipeline execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePipelineExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipelineExecution">REST API Reference for DescribePipelineExecution Operation</seealso>
+        public virtual Task<DescribePipelineExecutionResponse> DescribePipelineExecutionAsync(DescribePipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePipelineExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePipelineExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePipelineExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeProcessingJob
 
         internal virtual DescribeProcessingJobResponse DescribeProcessingJob(DescribeProcessingJobRequest request)
@@ -4053,6 +5052,40 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeProcessingJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeProcessingJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeProject
+
+        internal virtual DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProjectResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeProjectResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the details of a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeProject service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
+        public virtual Task<DescribeProjectResponse> DescribeProjectAsync(DescribeProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeProjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeProjectResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeProjectResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4356,6 +5389,41 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DisableSagemakerServicecatalogPortfolio
+
+        internal virtual DisableSagemakerServicecatalogPortfolioResponse DisableSagemakerServicecatalogPortfolio(DisableSagemakerServicecatalogPortfolioRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableSagemakerServicecatalogPortfolioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableSagemakerServicecatalogPortfolioResponseUnmarshaller.Instance;
+
+            return Invoke<DisableSagemakerServicecatalogPortfolioResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disables using Service Catalog in SageMaker. Service Catalog is used to create SageMaker
+        /// projects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableSagemakerServicecatalogPortfolio service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableSagemakerServicecatalogPortfolio service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisableSagemakerServicecatalogPortfolio">REST API Reference for DisableSagemakerServicecatalogPortfolio Operation</seealso>
+        public virtual Task<DisableSagemakerServicecatalogPortfolioResponse> DisableSagemakerServicecatalogPortfolioAsync(DisableSagemakerServicecatalogPortfolioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableSagemakerServicecatalogPortfolioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableSagemakerServicecatalogPortfolioResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableSagemakerServicecatalogPortfolioResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateTrialComponent
 
         internal virtual DisassociateTrialComponentResponse DisassociateTrialComponent(DisassociateTrialComponentRequest request)
@@ -4403,6 +5471,113 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  EnableSagemakerServicecatalogPortfolio
+
+        internal virtual EnableSagemakerServicecatalogPortfolioResponse EnableSagemakerServicecatalogPortfolio(EnableSagemakerServicecatalogPortfolioRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableSagemakerServicecatalogPortfolioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableSagemakerServicecatalogPortfolioResponseUnmarshaller.Instance;
+
+            return Invoke<EnableSagemakerServicecatalogPortfolioResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables using Service Catalog in SageMaker. Service Catalog is used to create SageMaker
+        /// projects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableSagemakerServicecatalogPortfolio service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableSagemakerServicecatalogPortfolio service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/EnableSagemakerServicecatalogPortfolio">REST API Reference for EnableSagemakerServicecatalogPortfolio Operation</seealso>
+        public virtual Task<EnableSagemakerServicecatalogPortfolioResponse> EnableSagemakerServicecatalogPortfolioAsync(EnableSagemakerServicecatalogPortfolioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableSagemakerServicecatalogPortfolioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableSagemakerServicecatalogPortfolioResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableSagemakerServicecatalogPortfolioResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetModelPackageGroupPolicy
+
+        internal virtual GetModelPackageGroupPolicyResponse GetModelPackageGroupPolicy(GetModelPackageGroupPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetModelPackageGroupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetModelPackageGroupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetModelPackageGroupPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a resource policy that manages access for a model group. For information about
+        /// resource policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
+        /// policies and resource-based policies</a> in the <i>AWS Identity and Access Management
+        /// User Guide.</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetModelPackageGroupPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetModelPackageGroupPolicy service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetModelPackageGroupPolicy">REST API Reference for GetModelPackageGroupPolicy Operation</seealso>
+        public virtual Task<GetModelPackageGroupPolicyResponse> GetModelPackageGroupPolicyAsync(GetModelPackageGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetModelPackageGroupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetModelPackageGroupPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetModelPackageGroupPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSagemakerServicecatalogPortfolioStatus
+
+        internal virtual GetSagemakerServicecatalogPortfolioStatusResponse GetSagemakerServicecatalogPortfolioStatus(GetSagemakerServicecatalogPortfolioStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSagemakerServicecatalogPortfolioStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSagemakerServicecatalogPortfolioStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetSagemakerServicecatalogPortfolioStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the status of Service Catalog in SageMaker. Service Catalog is used to create
+        /// SageMaker projects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSagemakerServicecatalogPortfolioStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSagemakerServicecatalogPortfolioStatus service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetSagemakerServicecatalogPortfolioStatus">REST API Reference for GetSagemakerServicecatalogPortfolioStatus Operation</seealso>
+        public virtual Task<GetSagemakerServicecatalogPortfolioStatusResponse> GetSagemakerServicecatalogPortfolioStatusAsync(GetSagemakerServicecatalogPortfolioStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSagemakerServicecatalogPortfolioStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSagemakerServicecatalogPortfolioStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSagemakerServicecatalogPortfolioStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSearchSuggestions
 
         internal virtual GetSearchSuggestionsResponse GetSearchSuggestions(GetSearchSuggestionsRequest request)
@@ -4436,6 +5611,43 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = GetSearchSuggestionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSearchSuggestionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListActions
+
+        internal virtual ListActionsResponse ListActions(ListActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListActionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the actions in your account and their properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListActions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListActions">REST API Reference for ListActions Operation</seealso>
+        public virtual Task<ListActionsResponse> ListActionsAsync(ListActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListActionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListActionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4540,6 +5752,80 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListAppsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAppsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListArtifacts
+
+        internal virtual ListArtifactsResponse ListArtifacts(ListArtifactsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListArtifactsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListArtifactsResponseUnmarshaller.Instance;
+
+            return Invoke<ListArtifactsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the artifacts in your account and their properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListArtifacts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListArtifacts service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
+        public virtual Task<ListArtifactsResponse> ListArtifactsAsync(ListArtifactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListArtifactsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListArtifactsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListArtifactsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAssociations
+
+        internal virtual ListAssociationsResponse ListAssociations(ListAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the associations in your account and their properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssociations service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
+        public virtual Task<ListAssociationsResponse> ListAssociationsAsync(ListAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4689,6 +5975,43 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListContexts
+
+        internal virtual ListContextsResponse ListContexts(ListContextsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContextsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContextsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the contexts in your account and their properties.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContexts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContexts service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListContexts">REST API Reference for ListContexts Operation</seealso>
+        public virtual Task<ListContextsResponse> ListContextsAsync(ListContextsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContextsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContextsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContextsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDomains
 
         internal virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
@@ -4823,6 +6146,40 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListExperimentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListExperimentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListFeatureGroups
+
+        internal virtual ListFeatureGroupsResponse ListFeatureGroups(ListFeatureGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFeatureGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFeatureGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFeatureGroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List <code>FeatureGroup</code>s based on given filter and order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFeatureGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFeatureGroups service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListFeatureGroups">REST API Reference for ListFeatureGroups Operation</seealso>
+        public virtual Task<ListFeatureGroupsResponse> ListFeatureGroupsAsync(ListFeatureGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFeatureGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFeatureGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFeatureGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5074,6 +6431,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListModelPackageGroups
+
+        internal virtual ListModelPackageGroupsResponse ListModelPackageGroups(ListModelPackageGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelPackageGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelPackageGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListModelPackageGroupsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of the model groups in your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelPackageGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListModelPackageGroups service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelPackageGroups">REST API Reference for ListModelPackageGroups Operation</seealso>
+        public virtual Task<ListModelPackageGroupsResponse> ListModelPackageGroupsAsync(ListModelPackageGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelPackageGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelPackageGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListModelPackageGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListModelPackages
 
         internal virtual ListModelPackagesResponse ListModelPackages(ListModelPackagesRequest request)
@@ -5280,6 +6671,151 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListPipelineExecutions
+
+        internal virtual ListPipelineExecutionsResponse ListPipelineExecutions(ListPipelineExecutionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelineExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelineExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPipelineExecutionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of the pipeline executions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelineExecutions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineExecutions">REST API Reference for ListPipelineExecutions Operation</seealso>
+        public virtual Task<ListPipelineExecutionsResponse> ListPipelineExecutionsAsync(ListPipelineExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelineExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelineExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPipelineExecutionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPipelineExecutionSteps
+
+        internal virtual ListPipelineExecutionStepsResponse ListPipelineExecutionSteps(ListPipelineExecutionStepsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelineExecutionStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelineExecutionStepsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPipelineExecutionStepsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of <code>PipeLineExecutionStep</code> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineExecutionSteps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelineExecutionSteps service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineExecutionSteps">REST API Reference for ListPipelineExecutionSteps Operation</seealso>
+        public virtual Task<ListPipelineExecutionStepsResponse> ListPipelineExecutionStepsAsync(ListPipelineExecutionStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelineExecutionStepsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelineExecutionStepsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPipelineExecutionStepsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPipelineParametersForExecution
+
+        internal virtual ListPipelineParametersForExecutionResponse ListPipelineParametersForExecution(ListPipelineParametersForExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelineParametersForExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelineParametersForExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<ListPipelineParametersForExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of parameters for a pipeline execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelineParametersForExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelineParametersForExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineParametersForExecution">REST API Reference for ListPipelineParametersForExecution Operation</seealso>
+        public virtual Task<ListPipelineParametersForExecutionResponse> ListPipelineParametersForExecutionAsync(ListPipelineParametersForExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelineParametersForExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelineParametersForExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPipelineParametersForExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPipelines
+
+        internal virtual ListPipelinesResponse ListPipelines(ListPipelinesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelinesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPipelinesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of pipelines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPipelines service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPipelines service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
+        public virtual Task<ListPipelinesResponse> ListPipelinesAsync(ListPipelinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPipelinesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPipelinesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPipelinesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListProcessingJobs
 
         internal virtual ListProcessingJobsResponse ListProcessingJobs(ListProcessingJobsRequest request)
@@ -5310,6 +6846,40 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListProcessingJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProcessingJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListProjects
+
+        internal virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProjectsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of the projects in an AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProjects service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProjects service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListProjects">REST API Reference for ListProjects Operation</seealso>
+        public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5689,6 +7259,43 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  PutModelPackageGroupPolicy
+
+        internal virtual PutModelPackageGroupPolicyResponse PutModelPackageGroupPolicy(PutModelPackageGroupPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutModelPackageGroupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutModelPackageGroupPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutModelPackageGroupPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds a resouce policy to control access to a model group. For information about resoure
+        /// policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
+        /// policies and resource-based policies</a> in the <i>AWS Identity and Access Management
+        /// User Guide.</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutModelPackageGroupPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutModelPackageGroupPolicy service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PutModelPackageGroupPolicy">REST API Reference for PutModelPackageGroupPolicy Operation</seealso>
+        public virtual Task<PutModelPackageGroupPolicyResponse> PutModelPackageGroupPolicyAsync(PutModelPackageGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutModelPackageGroupPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutModelPackageGroupPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutModelPackageGroupPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RenderUiTemplate
 
         internal virtual RenderUiTemplateResponse RenderUiTemplate(RenderUiTemplateRequest request)
@@ -5847,6 +7454,47 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = StartNotebookInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartNotebookInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartPipelineExecution
+
+        internal virtual StartPipelineExecutionResponse StartPipelineExecution(StartPipelineExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartPipelineExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartPipelineExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartPipelineExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a pipeline execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartPipelineExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartPipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
+        public virtual Task<StartPipelineExecutionResponse> StartPipelineExecutionAsync(StartPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartPipelineExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartPipelineExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartPipelineExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6104,6 +7752,43 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  StopPipelineExecution
+
+        internal virtual StopPipelineExecutionResponse StopPipelineExecution(StopPipelineExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopPipelineExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopPipelineExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StopPipelineExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a pipeline execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopPipelineExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopPipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopPipelineExecution">REST API Reference for StopPipelineExecution Operation</seealso>
+        public virtual Task<StopPipelineExecutionResponse> StopPipelineExecutionAsync(StopPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopPipelineExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopPipelineExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopPipelineExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopProcessingJob
 
         internal virtual StopProcessingJobResponse StopProcessingJob(StopProcessingJobRequest request)
@@ -6232,6 +7917,46 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateAction
+
+        internal virtual UpdateActionResponse UpdateAction(UpdateActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateActionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAction service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify an experiment, trial, or trial component.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAction">REST API Reference for UpdateAction Operation</seealso>
+        public virtual Task<UpdateActionResponse> UpdateActionAsync(UpdateActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateActionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateAppImageConfig
 
         internal virtual UpdateAppImageConfigResponse UpdateAppImageConfig(UpdateAppImageConfigRequest request)
@@ -6269,6 +7994,46 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateArtifact
+
+        internal virtual UpdateArtifactResponse UpdateArtifact(UpdateArtifactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateArtifactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateArtifactResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateArtifactResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an artifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateArtifact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateArtifact service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify an experiment, trial, or trial component.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateArtifact">REST API Reference for UpdateArtifact Operation</seealso>
+        public virtual Task<UpdateArtifactResponse> UpdateArtifactAsync(UpdateArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateArtifactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateArtifactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateArtifactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateCodeRepository
 
         internal virtual UpdateCodeRepositoryResponse UpdateCodeRepository(UpdateCodeRepositoryRequest request)
@@ -6299,6 +8064,46 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = UpdateCodeRepositoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateCodeRepositoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateContext
+
+        internal virtual UpdateContextResponse UpdateContext(UpdateContextRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContextResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContextResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a context.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContext service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify an experiment, trial, or trial component.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateContext">REST API Reference for UpdateContext Operation</seealso>
+        public virtual Task<UpdateContextResponse> UpdateContextAsync(UpdateContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContextResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateContextResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6532,6 +8337,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateModelPackage
+
+        internal virtual UpdateModelPackageResponse UpdateModelPackage(UpdateModelPackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateModelPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateModelPackageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateModelPackageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a versioned model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateModelPackage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateModelPackage service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelPackage">REST API Reference for UpdateModelPackage Operation</seealso>
+        public virtual Task<UpdateModelPackageResponse> UpdateModelPackageAsync(UpdateModelPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateModelPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateModelPackageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateModelPackageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateMonitoringSchedule
 
         internal virtual UpdateMonitoringScheduleResponse UpdateMonitoringSchedule(UpdateMonitoringScheduleRequest request)
@@ -6648,6 +8487,80 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = UpdateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateNotebookInstanceLifecycleConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePipeline
+
+        internal virtual UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePipelineResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePipeline service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
+        public virtual Task<UpdatePipelineResponse> UpdatePipelineAsync(UpdatePipelineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePipelineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePipelineExecution
+
+        internal virtual UpdatePipelineExecutionResponse UpdatePipelineExecution(UpdatePipelineExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePipelineExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a pipeline execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePipelineExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePipelineExecution service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineExecution">REST API Reference for UpdatePipelineExecution Operation</seealso>
+        public virtual Task<UpdatePipelineExecutionResponse> UpdatePipelineExecutionAsync(UpdatePipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePipelineExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePipelineExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePipelineExecutionResponse>(request, options, cancellationToken);
         }
 
         #endregion

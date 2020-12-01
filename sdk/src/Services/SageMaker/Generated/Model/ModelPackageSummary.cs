@@ -34,10 +34,13 @@ namespace Amazon.SageMaker.Model
     public partial class ModelPackageSummary
     {
         private DateTime? _creationTime;
+        private ModelApprovalStatus _modelApprovalStatus;
         private string _modelPackageArn;
         private string _modelPackageDescription;
+        private string _modelPackageGroupName;
         private string _modelPackageName;
         private ModelPackageStatus _modelPackageStatus;
+        private int? _modelPackageVersion;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -56,6 +59,37 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelApprovalStatus. 
+        /// <para>
+        /// The approval status of the model. This can be one of the following values.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>APPROVED</code> - The model is approved
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REJECTED</code> - The model is rejected.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ModelApprovalStatus ModelApprovalStatus
+        {
+            get { return this._modelApprovalStatus; }
+            set { this._modelApprovalStatus = value; }
+        }
+
+        // Check to see if ModelApprovalStatus property is set
+        internal bool IsSetModelApprovalStatus()
+        {
+            return this._modelApprovalStatus != null;
         }
 
         /// <summary>
@@ -97,6 +131,26 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelPackageGroupName. 
+        /// <para>
+        /// If the model package is a versioned model, the model group that the versioned model
+        /// belongs to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string ModelPackageGroupName
+        {
+            get { return this._modelPackageGroupName; }
+            set { this._modelPackageGroupName = value; }
+        }
+
+        // Check to see if ModelPackageGroupName property is set
+        internal bool IsSetModelPackageGroupName()
+        {
+            return this._modelPackageGroupName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelPackageName. 
         /// <para>
         /// The name of the model package.
@@ -132,6 +186,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelPackageStatus()
         {
             return this._modelPackageStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPackageVersion. 
+        /// <para>
+        /// If the model package is a versioned model, the version of the model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int ModelPackageVersion
+        {
+            get { return this._modelPackageVersion.GetValueOrDefault(); }
+            set { this._modelPackageVersion = value; }
+        }
+
+        // Check to see if ModelPackageVersion property is set
+        internal bool IsSetModelPackageVersion()
+        {
+            return this._modelPackageVersion.HasValue; 
         }
 
     }

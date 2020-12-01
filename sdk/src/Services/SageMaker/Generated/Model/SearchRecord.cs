@@ -33,10 +33,31 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class SearchRecord
     {
+        private Endpoint _endpoint;
         private Experiment _experiment;
+        private FeatureGroup _featureGroup;
+        private ModelPackage _modelPackage;
+        private ModelPackageGroup _modelPackageGroup;
+        private Pipeline _pipeline;
+        private PipelineExecution _pipelineExecution;
         private TrainingJob _trainingJob;
         private Trial _trial;
         private TrialComponent _trialComponent;
+
+        /// <summary>
+        /// Gets and sets the property Endpoint.
+        /// </summary>
+        public Endpoint Endpoint
+        {
+            get { return this._endpoint; }
+            set { this._endpoint = value; }
+        }
+
+        // Check to see if Endpoint property is set
+        internal bool IsSetEndpoint()
+        {
+            return this._endpoint != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Experiment. 
@@ -54,6 +75,81 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExperiment()
         {
             return this._experiment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FeatureGroup.
+        /// </summary>
+        public FeatureGroup FeatureGroup
+        {
+            get { return this._featureGroup; }
+            set { this._featureGroup = value; }
+        }
+
+        // Check to see if FeatureGroup property is set
+        internal bool IsSetFeatureGroup()
+        {
+            return this._featureGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPackage.
+        /// </summary>
+        public ModelPackage ModelPackage
+        {
+            get { return this._modelPackage; }
+            set { this._modelPackage = value; }
+        }
+
+        // Check to see if ModelPackage property is set
+        internal bool IsSetModelPackage()
+        {
+            return this._modelPackage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPackageGroup.
+        /// </summary>
+        public ModelPackageGroup ModelPackageGroup
+        {
+            get { return this._modelPackageGroup; }
+            set { this._modelPackageGroup = value; }
+        }
+
+        // Check to see if ModelPackageGroup property is set
+        internal bool IsSetModelPackageGroup()
+        {
+            return this._modelPackageGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Pipeline.
+        /// </summary>
+        public Pipeline Pipeline
+        {
+            get { return this._pipeline; }
+            set { this._pipeline = value; }
+        }
+
+        // Check to see if Pipeline property is set
+        internal bool IsSetPipeline()
+        {
+            return this._pipeline != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineExecution.
+        /// </summary>
+        public PipelineExecution PipelineExecution
+        {
+            get { return this._pipelineExecution; }
+            set { this._pipelineExecution = value; }
+        }
+
+        // Check to see if PipelineExecution property is set
+        internal bool IsSetPipelineExecution()
+        {
+            return this._pipelineExecution != null;
         }
 
         /// <summary>

@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
     public partial class OutputConfig
     {
         private string _compilerOptions;
+        private string _kmsKeyId;
         private string _s3OutputLocation;
         private TargetDevice _targetDevice;
         private TargetPlatform _targetPlatform;
@@ -151,6 +152,50 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCompilerOptions()
         {
             return this._compilerOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt
+        /// data on the storage volume after compilation job. If you don't provide a KMS key ID,
+        /// Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account
+        /// </para>
+        ///  
+        /// <para>
+        /// The KmsKeyId can be any of the following formats: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name: <code>alias/ExampleAlias</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

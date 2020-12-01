@@ -86,6 +86,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxResults);
                 }
 
+                if(publicRequest.IsSetModelApprovalStatus())
+                {
+                    context.Writer.WritePropertyName("ModelApprovalStatus");
+                    context.Writer.Write(publicRequest.ModelApprovalStatus);
+                }
+
+                if(publicRequest.IsSetModelPackageGroupName())
+                {
+                    context.Writer.WritePropertyName("ModelPackageGroupName");
+                    context.Writer.Write(publicRequest.ModelPackageGroupName);
+                }
+
+                if(publicRequest.IsSetModelPackageType())
+                {
+                    context.Writer.WritePropertyName("ModelPackageType");
+                    context.Writer.Write(publicRequest.ModelPackageType);
+                }
+
                 if(publicRequest.IsSetNameContains())
                 {
                     context.Writer.WritePropertyName("NameContains");

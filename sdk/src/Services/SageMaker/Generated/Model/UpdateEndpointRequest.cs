@@ -57,10 +57,29 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateEndpointRequest : AmazonSageMakerRequest
     {
+        private DeploymentConfig _deploymentConfig;
         private string _endpointConfigName;
         private string _endpointName;
         private List<VariantProperty> _excludeRetainedVariantProperties = new List<VariantProperty>();
         private bool? _retainAllVariantProperties;
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfig. 
+        /// <para>
+        /// The deployment configuration for the endpoint to be updated.
+        /// </para>
+        /// </summary>
+        public DeploymentConfig DeploymentConfig
+        {
+            get { return this._deploymentConfig; }
+            set { this._deploymentConfig = value; }
+        }
+
+        // Check to see if DeploymentConfig property is set
+        internal bool IsSetDeploymentConfig()
+        {
+            return this._deploymentConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndpointConfigName. 
@@ -126,11 +145,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RetainAllVariantProperties. 
         /// <para>
-        /// When updating endpoint resources, enables or disables the retention of variant properties,
-        /// such as the instance count or the variant weight. To retain the variant properties
-        /// of an endpoint when updating it, set <code>RetainAllVariantProperties</code> to <code>true</code>.
-        /// To use the variant properties specified in a new <code>EndpointConfig</code> call
-        /// when updating an endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>.
+        /// When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant
+        /// properties</a>, such as the instance count or the variant weight. To retain the variant
+        /// properties of an endpoint when updating it, set <code>RetainAllVariantProperties</code>
+        /// to <code>true</code>. To use the variant properties specified in a new <code>EndpointConfig</code>
+        /// call when updating an endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>.
+        /// The default is <code>false</code>.
         /// </para>
         /// </summary>
         public bool RetainAllVariantProperties

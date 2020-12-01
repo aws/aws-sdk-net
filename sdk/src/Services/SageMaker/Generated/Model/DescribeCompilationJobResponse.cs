@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         private InputConfig _inputConfig;
         private DateTime? _lastModifiedTime;
         private ModelArtifacts _modelArtifacts;
+        private ModelDigests _modelDigests;
         private OutputConfig _outputConfig;
         private string _roleArn;
         private StoppingCondition _stoppingCondition;
@@ -246,6 +247,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelArtifacts()
         {
             return this._modelArtifacts != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelDigests. 
+        /// <para>
+        /// Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon
+        /// S3.
+        /// </para>
+        /// </summary>
+        public ModelDigests ModelDigests
+        {
+            get { return this._modelDigests; }
+            set { this._modelDigests = value; }
+        }
+
+        // Check to see if ModelDigests property is set
+        internal bool IsSetModelDigests()
+        {
+            return this._modelDigests != null;
         }
 
         /// <summary>
