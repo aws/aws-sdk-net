@@ -363,6 +363,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS License Manager makes it easier to manage licenses in AWS and on premises when customers run applications using existing licenses from a variety of software vendors including Microsoft, SAP, Oracle, and IBM. AWS License Manager automatically tracks and controls license usage once administrators have created and enforced rules that emulate the terms of their licensing agreements. The capabilities of AWS License Manager are available through SDK and Tools, besides the management console and CLI.
 * [AWSSDK.Lightsail](https://www.nuget.org/packages/AWSSDK.Lightsail/)
 	* An extremely simplified VM creation and management service.
+* [AWSSDK.LookoutforVision](https://www.nuget.org/packages/AWSSDK.LookoutforVision/)
+	* This release introduces support for Amazon Lookout for Vision.
 * [AWSSDK.MachineLearning](https://www.nuget.org/packages/AWSSDK.MachineLearning/)
 	* Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.
 * [AWSSDK.Macie](https://www.nuget.org/packages/AWSSDK.Macie/)

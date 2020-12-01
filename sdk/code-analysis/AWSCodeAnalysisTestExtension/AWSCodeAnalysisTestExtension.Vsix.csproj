@@ -628,6 +628,10 @@
       <Project>{33C9A310-95F4-4A30-B411-6E6679034FF3}</Project>
       <Name>AWSSDK.Lightsail.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/LookoutforVision/AWSSDK.LookoutforVision.CodeAnalysis.csproj">
+      <Project>{AEAAF64A-F230-4C3C-8AA4-8E2182617E19}</Project>
+      <Name>AWSSDK.LookoutforVision.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MachineLearning/AWSSDK.MachineLearning.CodeAnalysis.csproj">
       <Project>{BFEE58EE-DF58-4F52-A99B-01D05FB251AF}</Project>
       <Name>AWSSDK.MachineLearning.CodeAnalysis</Name>
