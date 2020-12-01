@@ -29,54 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the RegisterCertificate operation.
-    /// Registers a certificate for secured LDAP connection.
+    /// Container for the parameters to the EnableClientAuthentication operation.
+    /// Enable client authentication for smardtcards.
     /// </summary>
-    public partial class RegisterCertificateRequest : AmazonDirectoryServiceRequest
+    public partial class EnableClientAuthenticationRequest : AmazonDirectoryServiceRequest
     {
-        private string _certificateData;
-        private ClientCertAuthSettings _clientCertAuthSettings;
         private string _directoryId;
-        private CertificateType _type;
-
-        /// <summary>
-        /// Gets and sets the property CertificateData. 
-        /// <para>
-        /// The certificate PEM string that needs to be registered.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=8192)]
-        public string CertificateData
-        {
-            get { return this._certificateData; }
-            set { this._certificateData = value; }
-        }
-
-        // Check to see if CertificateData property is set
-        internal bool IsSetCertificateData()
-        {
-            return this._certificateData != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ClientCertAuthSettings.
-        /// </summary>
-        public ClientCertAuthSettings ClientCertAuthSettings
-        {
-            get { return this._clientCertAuthSettings; }
-            set { this._clientCertAuthSettings = value; }
-        }
-
-        // Check to see if ClientCertAuthSettings property is set
-        internal bool IsSetClientCertAuthSettings()
-        {
-            return this._clientCertAuthSettings != null;
-        }
+        private ClientAuthenticationType _type;
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory.
+        /// Enable client authentication in a specified directory for smart cards. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -95,10 +59,11 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The certificate type to register for the request.
+        /// Enable the type of client authentication request. 
         /// </para>
         /// </summary>
-        public CertificateType Type
+        [AWSProperty(Required=true)]
+        public ClientAuthenticationType Type
         {
             get { return this._type; }
             set { this._type = value; }

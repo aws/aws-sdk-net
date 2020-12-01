@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CertificateInfo Object
+    /// Response Unmarshaller for ClientCertAuthSettings Object
     /// </summary>  
-    public class CertificateInfoUnmarshaller : IUnmarshaller<CertificateInfo, XmlUnmarshallerContext>, IUnmarshaller<CertificateInfo, JsonUnmarshallerContext>
+    public class ClientCertAuthSettingsUnmarshaller : IUnmarshaller<ClientCertAuthSettings, XmlUnmarshallerContext>, IUnmarshaller<ClientCertAuthSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CertificateInfo IUnmarshaller<CertificateInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ClientCertAuthSettings IUnmarshaller<ClientCertAuthSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CertificateInfo Unmarshall(JsonUnmarshallerContext context)
+        public ClientCertAuthSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CertificateInfo unmarshalledObject = new CertificateInfo();
+            ClientCertAuthSettings unmarshalledObject = new ClientCertAuthSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CertificateId", targetDepth))
+                if (context.TestExpression("OCSPUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CommonName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CommonName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExpiryDateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ExpiryDateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OCSPUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         }
 
 
-        private static CertificateInfoUnmarshaller _instance = new CertificateInfoUnmarshaller();        
+        private static ClientCertAuthSettingsUnmarshaller _instance = new ClientCertAuthSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CertificateInfoUnmarshaller Instance
+        public static ClientCertAuthSettingsUnmarshaller Instance
         {
             get
             {

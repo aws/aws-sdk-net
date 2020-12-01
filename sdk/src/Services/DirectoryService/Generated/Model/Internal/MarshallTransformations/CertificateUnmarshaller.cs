@@ -70,6 +70,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CertificateId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ClientCertAuthSettings", targetDepth))
+                {
+                    var unmarshaller = ClientCertAuthSettingsUnmarshaller.Instance;
+                    unmarshalledObject.ClientCertAuthSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CommonName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StateReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -34,64 +34,40 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CertificateInfo Object
+    /// Response Unmarshaller for InvalidClientAuthStatusException Object
     /// </summary>  
-    public class CertificateInfoUnmarshaller : IUnmarshaller<CertificateInfo, XmlUnmarshallerContext>, IUnmarshaller<CertificateInfo, JsonUnmarshallerContext>
+    public class InvalidClientAuthStatusExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidClientAuthStatusException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CertificateInfo IUnmarshaller<CertificateInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public InvalidClientAuthStatusException Unmarshall(JsonUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            return this.Unmarshall(context, new ErrorResponse());
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public CertificateInfo Unmarshall(JsonUnmarshallerContext context)
+        public InvalidClientAuthStatusException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
         {
             context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
 
-            CertificateInfo unmarshalledObject = new CertificateInfo();
+            InvalidClientAuthStatusException unmarshalledObject = new InvalidClientAuthStatusException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CertificateId", targetDepth))
+                if (context.TestExpression("RequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CommonName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CommonName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExpiryDateTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ExpiryDateTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequestId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -99,13 +75,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-
-        private static CertificateInfoUnmarshaller _instance = new CertificateInfoUnmarshaller();        
+        private static InvalidClientAuthStatusExceptionUnmarshaller _instance = new InvalidClientAuthStatusExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CertificateInfoUnmarshaller Instance
+        public static InvalidClientAuthStatusExceptionUnmarshaller Instance
         {
             get
             {

@@ -39,7 +39,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If not null, more results are available. Pass this value for the <i>NextToken</i>
+        /// If not null, more results are available. Pass this value for the <code>NextToken</code>
         /// parameter in a subsequent call to <a>DescribeRegions</a> to retrieve the next set
         /// of items.
         /// </para>
@@ -59,7 +59,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property RegionsDescription. 
         /// <para>
-        /// List of regional information related to the directory per replicated Region.
+        /// List of Region information related to the directory for each replicated Region.
         /// </para>
         /// </summary>
         public List<RegionDescription> RegionsDescription

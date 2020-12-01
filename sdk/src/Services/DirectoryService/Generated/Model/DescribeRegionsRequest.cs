@@ -60,7 +60,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <i>DescribeRegionsResult.NextToken</i> value from a previous call to <a>DescribeRegions</a>.
+        /// The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>.
         /// Pass null if this is the first call.
         /// </para>
         /// </summary>

@@ -34,11 +34,13 @@ namespace Amazon.DirectoryService.Model
     public partial class Certificate
     {
         private string _certificateId;
+        private ClientCertAuthSettings _clientCertAuthSettings;
         private string _commonName;
         private DateTime? _expiryDateTime;
         private DateTime? _registeredDateTime;
         private CertificateState _state;
         private string _stateReason;
+        private CertificateType _type;
 
         /// <summary>
         /// Gets and sets the property CertificateId. 
@@ -56,6 +58,25 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetCertificateId()
         {
             return this._certificateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientCertAuthSettings. 
+        /// <para>
+        /// Provides information about the client certificate authentication settings. The default
+        /// value is <code>ClientLDAPS</code>.
+        /// </para>
+        /// </summary>
+        public ClientCertAuthSettings ClientCertAuthSettings
+        {
+            get { return this._clientCertAuthSettings; }
+            set { this._clientCertAuthSettings = value; }
+        }
+
+        // Check to see if ClientCertAuthSettings property is set
+        internal bool IsSetClientCertAuthSettings()
+        {
+            return this._clientCertAuthSettings != null;
         }
 
         /// <summary>
@@ -146,6 +167,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetStateReason()
         {
             return this._stateReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Select <code>ClientCertAuth</code> for smart card integration.
+        /// </para>
+        /// </summary>
+        public CertificateType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

@@ -246,7 +246,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.RegionLimitExceededException">
-        /// You have reached the limit for maximum number of simultaneous region replications
+        /// You have reached the limit for maximum number of simultaneous Region replications
         /// per directory.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
@@ -292,7 +292,7 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.RegionLimitExceededException">
-        /// You have reached the limit for maximum number of simultaneous region replications
+        /// You have reached the limit for maximum number of simultaneous Region replications
         /// per directory.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
@@ -2321,6 +2321,70 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DisableClientAuthentication
+
+
+        /// <summary>
+        /// Disable client authentication for smart cards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableClientAuthentication service method.</param>
+        /// 
+        /// <returns>The response from the DisableClientAuthentication service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidClientAuthStatusException">
+        /// The client authorization was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication">REST API Reference for DisableClientAuthentication Operation</seealso>
+        DisableClientAuthenticationResponse DisableClientAuthentication(DisableClientAuthenticationRequest request);
+
+
+
+        /// <summary>
+        /// Disable client authentication for smart cards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableClientAuthentication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableClientAuthentication service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidClientAuthStatusException">
+        /// The client authorization was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication">REST API Reference for DisableClientAuthentication Operation</seealso>
+        Task<DisableClientAuthenticationResponse> DisableClientAuthenticationAsync(DisableClientAuthenticationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisableLDAPS
 
 
@@ -2494,6 +2558,78 @@ namespace Amazon.DirectoryService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableSso">REST API Reference for DisableSso Operation</seealso>
         Task<DisableSsoResponse> DisableSsoAsync(DisableSsoRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableClientAuthentication
+
+
+        /// <summary>
+        /// Enable client authentication for smardtcards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableClientAuthentication service method.</param>
+        /// 
+        /// <returns>The response from the EnableClientAuthentication service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidClientAuthStatusException">
+        /// The client authorization was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.NoAvailableCertificateException">
+        /// The LDAP activities could not be performed because at least one valid certificate
+        /// must be registered with the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication">REST API Reference for EnableClientAuthentication Operation</seealso>
+        EnableClientAuthenticationResponse EnableClientAuthentication(EnableClientAuthenticationRequest request);
+
+
+
+        /// <summary>
+        /// Enable client authentication for smardtcards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableClientAuthentication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableClientAuthentication service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidClientAuthStatusException">
+        /// The client authorization was invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.NoAvailableCertificateException">
+        /// The LDAP activities could not be performed because at least one valid certificate
+        /// must be registered with the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication">REST API Reference for EnableClientAuthentication Operation</seealso>
+        Task<EnableClientAuthenticationResponse> EnableClientAuthenticationAsync(EnableClientAuthenticationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

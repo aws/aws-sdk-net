@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// The replicated regional information for a directory.
+    /// The replicated Region information for a directory.
     /// </summary>
     public partial class RegionDescription
     {
@@ -139,7 +139,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property RegionType. 
         /// <para>
-        /// Specifies if the Region is the primary Region or an additional Region.
+        /// Specifies whether the Region is the primary Region or an additional Region.
         /// </para>
         /// </summary>
         public RegionType RegionType

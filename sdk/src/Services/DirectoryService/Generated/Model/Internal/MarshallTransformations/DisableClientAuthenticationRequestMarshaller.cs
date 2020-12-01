@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RegisterCertificate Request Marshaller
+    /// DisableClientAuthentication Request Marshaller
     /// </summary>       
-    public class RegisterCertificateRequestMarshaller : IMarshaller<IRequest, RegisterCertificateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DisableClientAuthenticationRequestMarshaller : IMarshaller<IRequest, DisableClientAuthenticationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((RegisterCertificateRequest)input);
+            return this.Marshall((DisableClientAuthenticationRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(RegisterCertificateRequest publicRequest)
+        public IRequest Marshall(DisableClientAuthenticationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DirectoryService");
-            string target = "DirectoryService_20150416.RegisterCertificate";
+            string target = "DirectoryService_20150416.DisableClientAuthentication";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-04-16";            
@@ -68,23 +68,6 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCertificateData())
-                {
-                    context.Writer.WritePropertyName("CertificateData");
-                    context.Writer.Write(publicRequest.CertificateData);
-                }
-
-                if(publicRequest.IsSetClientCertAuthSettings())
-                {
-                    context.Writer.WritePropertyName("ClientCertAuthSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ClientCertAuthSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ClientCertAuthSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetDirectoryId())
                 {
                     context.Writer.WritePropertyName("DirectoryId");
@@ -106,9 +89,9 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static RegisterCertificateRequestMarshaller _instance = new RegisterCertificateRequestMarshaller();        
+        private static DisableClientAuthenticationRequestMarshaller _instance = new DisableClientAuthenticationRequestMarshaller();        
 
-        internal static RegisterCertificateRequestMarshaller GetInstance()
+        internal static DisableClientAuthenticationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +99,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RegisterCertificateRequestMarshaller Instance
+        public static DisableClientAuthenticationRequestMarshaller Instance
         {
             get
             {
