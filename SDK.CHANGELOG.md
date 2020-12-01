@@ -1,3 +1,42 @@
+### 3.5.64.0 (2020-12-01 19:20 UTC)
+* AmplifyBackend (3.5.0.0)
+	* (New Service) The Amplify Admin UI offers an accessible way to develop app backends and manage app content. We recommend that you use the Amplify Admin UI to manage the backend of your Amplify app.
+* AppIntegrationsService (3.5.0.0)
+	* The Amazon AppIntegrations service (in preview release) enables you to configure and reuse connections to external applications.
+* Connect (3.5.4.0)
+	* This release adds an Amazon Connect API that provides the ability to create tasks, and a set of APIs (in preview) to configure AppIntegrations associations with Amazon Connect instances.
+* ConnectContactLens (3.5.0.0)
+	* Contact Lens for Amazon Connect analyzes conversations, both real-time and post-call. The ListRealtimeContactAnalysisSegments API returns a list of analysis segments for a real-time analysis session.
+* DevOpsGuru (3.5.0.0)
+	* (New Service) Amazon DevOps Guru is available in public preview. It's a fully managed service that uses machine learning to analyze your operational solutions to help you find and troubleshoot issues.
+* DirectoryService (3.5.2.0)
+	* Adding client authentication feature for AWS AD Connector
+* EC2 (3.5.21.0)
+	* This release adds support for: EBS gp3 volumes; and D3/D3en/R5b/M5zn instances powered by Intel Cascade Lake CPUs
+* ECRPublic (3.5.0.0)
+	* Supports Amazon Elastic Container Registry (Amazon ECR) Public, a fully managed registry that makes it easy for a developer to publicly share container software worldwide for anyone to download.
+* EKS (3.5.3.0)
+	* Amazon EKS now allows you to define and manage the lifecycle for Kubernetes add-ons for your clusters. This release adds support for the AWS VPC CNI (vpc-cni).
+* Honeycode (3.5.1.0)
+	* Introducing APIs to read and write directly from Honeycode tables. Use APIs to pull table and column metadata, then use the read and write APIs to programmatically read and write from the tables.
+* Lambda (3.5.4.0)
+	* This release includes support for a new feature: Container images support in AWS Lambda. This adds APIs for deploying functions as container images. AWS Lambda now supports memory up to 10240MB.
+* LookoutforVision (3.5.0.0)
+	* This release introduces support for Amazon Lookout for Vision.
+* Profile (3.5.0.0)
+	* This is the first release of Amazon Connect Customer Profiles, a unified customer profile for your Amazon Connect contact center.
+* S3 (3.5.6.0)
+	* S3 adds support for multiple-destination replication, option to sync replica modifications;  S3 Bucket Keys to reduce cost of S3 SSE with AWS KMS
+* SageMaker (3.5.6.0)
+	* Amazon SageMaker Pipelines for ML workflows. Amazon SageMaker Feature Store, a fully managed repository for ML features.
+* SageMakerFeatureStoreRuntime (3.5.0.0)
+	* This release adds support for Amazon SageMaker Feature Store, which makes it easy for customers to create, version, share, and manage curated data for machine learning (ML) development.
+* Core 3.5.1.44
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.63.0 (2020-12-01 04:28 UTC)
 * EC2 (3.5.20.0)
 	* This release introduces Amazon EC2 Mac1 instances, a new Amazon EC2 instance family built on Apple Mac mini computers, powered by AWS Nitro System, and support running macOS workloads on Amazon EC2
