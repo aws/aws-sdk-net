@@ -1,3 +1,12 @@
+### 3.5.63.0 (2020-12-01 04:28 UTC)
+* EC2 (3.5.20.0)
+	* This release introduces Amazon EC2 Mac1 instances, a new Amazon EC2 instance family built on Apple Mac mini computers, powered by AWS Nitro System, and support running macOS workloads on Amazon EC2
+* Core 3.5.1.43
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.62.0 (2020-11-24 21:37 UTC)
 * Appflow (3.5.2.0)
 	* Upsolver as a destination connector and documentation update.
