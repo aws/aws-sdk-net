@@ -79,6 +79,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
+
+                                if (serverSideEncryptionRule.IsSetBucketKeyEnabled())
+                                {
+                                    xmlWriter.WriteElementString("BucketKeyEnabled", "", S3Transforms.ToXmlStringValue(serverSideEncryptionRule.BucketKeyEnabled));
+                                }
                             }
                             xmlWriter.WriteEndElement();
                         }

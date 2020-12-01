@@ -37,6 +37,7 @@ namespace Amazon.S3.Model
         private DateTime? abortDate;
         private string abortRuleId;
         private RequestCharged requestCharged;
+        private bool? bucketKeyEnabled;
 
         /// <summary>
         /// <para>The name of the bucket to which the multipart upload was initiated.</para> 
@@ -198,6 +199,21 @@ namespace Amazon.S3.Model
         internal bool IsSetRequestCharged()
         {
             return requestCharged != null;
+        }
+
+        /// <summary>
+        /// <para>Indicates whether the multipart upload uses bucket key for 
+        /// server-side encryption with AWS KMS (SSE-KMS).</para>
+        /// </summary>
+        public bool BucketKeyEnabled
+        {
+            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            set { this.bucketKeyEnabled = value; }
+        }
+
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return bucketKeyEnabled.HasValue;
         }
     }
 }

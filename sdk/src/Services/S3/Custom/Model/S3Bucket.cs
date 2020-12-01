@@ -30,8 +30,7 @@ namespace Amazon.S3.Model
         private string bucketName;
 
         /// <summary>
-        /// Date the bucket was created.
-        ///  
+        /// <para>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</para>
         /// </summary>
         public DateTime CreationDate
         {

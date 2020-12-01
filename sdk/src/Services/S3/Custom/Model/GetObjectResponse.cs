@@ -60,6 +60,7 @@ namespace Amazon.S3.Model
 
         private string bucketName;
         private string key;
+        private bool? bucketKeyEnabled;
                 
         /// <summary>
         /// Flag which returns true if the Expires property has been unmarshalled
@@ -488,6 +489,21 @@ namespace Amazon.S3.Model
         {
             get { return this.tagCount ?? 0; }
             set { this.tagCount = value; }
+        }
+
+        /// <summary>
+        /// <para>Indicates whether the object uses bucket key 
+        /// for server-side encryption with AWS KMS (SSE-KMS).</para>
+        /// </summary>
+        public bool BucketKeyEnabled
+        {
+            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            set { this.bucketKeyEnabled = value; }
+        }
+
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return bucketKeyEnabled.HasValue;
         }
 
 #if BCL

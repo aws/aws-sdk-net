@@ -2355,4 +2355,43 @@ namespace Amazon.S3
         }
 
     }
+
+    public sealed class ReplicaModificationsStatus : ConstantClass
+    {
+        private ReplicaModificationsStatus(string value)
+            : base(value)
+        {
+
+        }
+
+        /// <summary>
+        /// Replica Modification is enabled.
+        /// </summary>
+        public static readonly ReplicaModificationsStatus Enabled = new ReplicaModificationsStatus("Enabled");
+
+        /// <summary>
+        /// Replica Modification is disabled.
+        /// </summary>
+        public static readonly ReplicaModificationsStatus Disabled = new ReplicaModificationsStatus("Disabled");
+
+        /// <summary>
+        /// Finds the ReplicaModificationsStatus instance for the string value
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static ReplicaModificationsStatus FindValue(string value)
+        {
+            return FindValue<ReplicaModificationsStatus>(value);
+        }
+
+        /// <summary>
+        /// Converts the string to ReplicaModificationsStatus instance
+        /// </summary>
+        /// <param name="value"></param>
+        public static implicit operator ReplicaModificationsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

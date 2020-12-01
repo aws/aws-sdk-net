@@ -52,6 +52,7 @@ namespace Amazon.S3.Model
         private DateTime? objectLockRetainUntilDate;
         private S3StorageClass storageClass;
         private RequestCharged requestCharged;
+        private bool? bucketKeyEnabled;
 
         /// <summary>
         /// Flag which returns true if the Expires property has been unmarshalled
@@ -346,7 +347,29 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The status of the replication job associated with this source object.
+        /// <p>Amazon S3 can return this header if your request involves a 
+        /// bucket that is either a source or a destination in a replication rule.</p> <p>In replication,
+        /// you have a source bucket on which you configure replication and destination bucket or buckets 
+        /// where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or
+        /// object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will 
+        /// return the <code>x-amz-replication-status</code> header in the response as follows:</p> 
+        /// <ul> <li> <p>If requesting an object from the source bucket — Amazon S3 will return the 
+        /// <code>x-amz-replication-status</code> header if the object in your request is eligible for 
+        /// replication.</p> <p> For example, suppose that in your replication configuration, you specify 
+        /// object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key 
+        /// prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example 
+        /// <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with 
+        /// this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header 
+        /// with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li> <li> <p>If 
+        /// requesting an object from a destination bucket — Amazon S3 will return the 
+        /// <code>x-amz-replication-status</code> header with value REPLICA if the object in your 
+        /// request is a replica that Amazon S3 created.</p> </li> <li> <p>When replicating objects 
+        /// to multiple destination buckets the <code>x-amz-replication-status</code> header acts differently. 
+        /// The header of the source object will only return a value of COMPLETED when replication is 
+        /// successful to all destinations. The header will remain at value PENDING until replication has 
+        /// completed for all destinations. If one or more destinations fails replication the header will 
+        /// return FAILED. </p> </li> </ul> <p>For more information, 
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html\">Replication</a>.</p>
         /// </summary>
         public ReplicationStatus ReplicationStatus
         {
@@ -473,6 +496,21 @@ namespace Amazon.S3.Model
         internal bool IsSetRequestCharged()
         {
             return requestCharged != null;
+        }
+
+        /// <summary>
+        /// <para>Indicates whether the object uses bucket key for 
+        /// server-side encryption with AWS KMS (SSE-KMS).</para>
+        /// </summary>
+        public bool BucketKeyEnabled
+        {
+            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            set { this.bucketKeyEnabled = value; }
+        }
+
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return bucketKeyEnabled.HasValue;
         }
     }
 }

@@ -58,6 +58,7 @@ namespace Amazon.S3.Model
 
         private string md5Digest;
         private List<Tag> tagset = new List<Tag>();
+        private bool? bucketKeyEnabled;
 
         /// <summary>
         /// A canned access control list (CACL) to apply to the object.
@@ -601,6 +602,24 @@ namespace Amazon.S3.Model
         internal bool IsSetExpectedBucketOwner()
         {
             return !String.IsNullOrEmpty(this.expectedBucketOwner);
+        }
+
+        /// <summary>
+        /// <para>Specifies whether Amazon S3 should use bucket key for object encryption 
+        /// with server-side encryption using AWS KMS (SSE-KMS). Setting this header 
+        /// to <code>true</code> causes Amazon S3 to use bucket key for object encryption with 
+        /// SSE-KMS.</para> <para>Specifying this header with a PUT operation doesn’t affect 
+        /// bucket-level settings for bucket key.</para>",
+        /// </summary>
+        public bool BucketKeyEnabled
+        {
+            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            set { this.bucketKeyEnabled = value; }
+        }
+
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return bucketKeyEnabled.HasValue;
         }
     }
 }

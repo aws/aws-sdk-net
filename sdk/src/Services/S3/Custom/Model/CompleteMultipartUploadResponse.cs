@@ -12,19 +12,14 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-
 using Amazon.Runtime;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>
-    /// Returns information about the  CompleteMultipartUpload response and response metadata.
-    /// </summary>
-    public class CompleteMultipartUploadResponse : AmazonWebServiceResponse
+	/// <summary>
+	/// Returns information about the  CompleteMultipartUpload response and response metadata.
+	/// </summary>
+	public class CompleteMultipartUploadResponse : AmazonWebServiceResponse
     {
         private string location;
         private string bucketName;
@@ -35,6 +30,7 @@ namespace Amazon.S3.Model
         private ServerSideEncryptionMethod serverSideEncryption;
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private RequestCharged requestCharged;
+        private bool? bucketKeyEnabled;
 
         /// <summary>
         /// Gets and sets the URI that identifies the newly created object.
@@ -182,6 +178,22 @@ namespace Amazon.S3.Model
         {
             return requestCharged != null;
         }
+
+        /// <summary>
+        /// <para>Indicates whether the multipart upload uses bucket key for server-side encryption with 
+        /// AWS KMS (SSE-KMS).</para>
+        /// </summary>
+        public bool BucketKeyEnabled
+        {
+            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            set { this.bucketKeyEnabled = value; }
+        }
+
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return bucketKeyEnabled.HasValue;
+        }
+
     }
 }
     

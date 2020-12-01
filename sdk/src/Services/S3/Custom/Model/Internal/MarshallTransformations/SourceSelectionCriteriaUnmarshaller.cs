@@ -40,6 +40,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                         continue;
                     }
+                    if (context.TestExpression("ReplicaModifications", targetDepth))
+                    {
+                        SourceSelectionCriteria.ReplicaModifications = ReplicaModificationsUnmarshaller.Instance.Unmarshall(context);
+
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

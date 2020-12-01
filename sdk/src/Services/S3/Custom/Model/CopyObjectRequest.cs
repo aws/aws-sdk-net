@@ -69,6 +69,8 @@ namespace Amazon.S3.Model
         private string copySourceServerSideEncryptionCustomerProvidedKey;
         private string copySourceServerSideEncryptionCustomerProvidedKeyMD5;
 
+        private bool? bucketKeyEnabled;
+
 
         /// <summary>
         /// The name of the bucket containing the object to copy.
@@ -757,6 +759,23 @@ namespace Amazon.S3.Model
         internal bool IsSetExpectedSourceBucketOwner()
         {
             return !String.IsNullOrEmpty(this.expectedSourceBucketOwner);
+        }
+
+        /// <summary>
+        /// <para>Specifies whether Amazon S3 should use bucket key for object encryption 
+        /// with server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes 
+        /// Amazon S3 to use bucket key for object encryption with SSE-KMS. </para> 
+        /// <para>Specifying this header with a COPY operation doesn’t affect bucket-level settings for bucket key.</para>
+        /// </summary>
+        public bool BucketKeyEnabled
+        {
+            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            set { this.bucketKeyEnabled = value; }
+        }
+
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return bucketKeyEnabled.HasValue;
         }
     }
 }

@@ -27,6 +27,7 @@ namespace Amazon.S3.Model
     public class ServerSideEncryptionRule
     {
         private ServerSideEncryptionByDefault serverSideEncryptionByDefault;
+        private bool? bucketKeyEnabled;
 
         /// <summary>
         /// Describes the default server-side encryption to apply to 
@@ -43,6 +44,26 @@ namespace Amazon.S3.Model
         internal bool IsSetServerSideEncryptionByDefault()
         {
             return this.serverSideEncryptionByDefault != null;
+        }
+
+        /// <summary>
+        /// <para>Specifies whether Amazon S3 should use bucket key with 
+        /// server-side encryption using KMS (SSE-KMS) for new objects in the bucket. 
+        /// Existing objects are not affected. Setting the <code>BucketKeyEnabled</code> 
+        /// element to <code>true</code> causes Amazon S3 to use bucket key. By default, 
+        /// bucket key is not enabled.</para> <para>For more information, 
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html\">Bucket key</a> in 
+        /// the <i>Amazon Simple Storage Service Developer Guide</i>.</para>",
+        /// </summary>
+        public bool BucketKeyEnabled
+        {
+            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            set { this.bucketKeyEnabled = value; }
+        }
+
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return bucketKeyEnabled.HasValue;
         }
     }
 }

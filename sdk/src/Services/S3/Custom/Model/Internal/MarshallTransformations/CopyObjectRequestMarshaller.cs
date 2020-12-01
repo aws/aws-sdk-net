@@ -129,6 +129,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (copyObjectRequest.IsSetExpectedSourceBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedSourceBucketOwner, S3Transforms.ToStringValue(copyObjectRequest.ExpectedSourceBucketOwner));
 
+            if (copyObjectRequest.IsSetBucketKeyEnabled())
+                request.Headers.Add(S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(copyObjectRequest.BucketKeyEnabled));
+
+
             AmazonS3Util.SetMetadataHeaders(request, copyObjectRequest.Metadata);
 
             if (string.IsNullOrEmpty(copyObjectRequest.DestinationBucket))

@@ -12,20 +12,21 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-
-using System.Collections.Generic;
-
-using Amazon.S3.Model;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.S3.Util;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-    public class ServerSideEncryptionRuleUnmarshaller : IUnmarshaller<ServerSideEncryptionRule, XmlUnmarshallerContext>, IUnmarshaller<ServerSideEncryptionRule, JsonUnmarshallerContext>
+    /// <summary>
+    /// Unmarshaller for ReplicaModifications
+    /// </summary>
+    public class ReplicaModificationsUnmarshaller : IUnmarshaller<ReplicaModifications, XmlUnmarshallerContext>, IUnmarshaller<ReplicaModifications, JsonUnmarshallerContext>
     {
-        public ServerSideEncryptionRule Unmarshall(XmlUnmarshallerContext context)
+        public ReplicaModifications Unmarshall(XmlUnmarshallerContext context)
         {
-            ServerSideEncryptionRule rule = new ServerSideEncryptionRule();
+            ReplicaModifications response = new ReplicaModifications();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
 
@@ -36,47 +37,39 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ApplyServerSideEncryptionByDefault", targetDepth))
+                    if (context.TestExpression("Status", targetDepth))
                     {
-                        rule.ServerSideEncryptionByDefault = ServerSideEncryptionByDefaultUnmarshaller.Instance.Unmarshall(context);
-
+                        response.Status = StringUnmarshaller.Instance.Unmarshall(context);
                         continue;
                     }
 
-                    if (context.TestExpression("BucketKeyEnabled", targetDepth))
-                    {
-                        rule.BucketKeyEnabled = BoolUnmarshaller.Instance.Unmarshall(context);
-
-                        continue;
-                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return rule;
+                    return response;
                 }
             }
 
-            return rule;
-
+            return response;
         }
 
-        public ServerSideEncryptionRule Unmarshall(JsonUnmarshallerContext input)
+        public ReplicaModifications Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
-        private static ServerSideEncryptionRuleUnmarshaller _instance;
 
-        public static ServerSideEncryptionRuleUnmarshaller Instance
+        private static ReplicaModificationsUnmarshaller _instance;
+
+        public static ReplicaModificationsUnmarshaller Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new ServerSideEncryptionRuleUnmarshaller();
+                    _instance = new ReplicaModificationsUnmarshaller();
                 }
                 return _instance;
             }
         }
-
     }
 }

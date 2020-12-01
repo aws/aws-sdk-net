@@ -27,6 +27,7 @@ namespace Amazon.S3.Model
     public class SourceSelectionCriteria
     {
         private SseKmsEncryptedObjects sseKmsEncryptedObjects;
+        private ReplicaModifications replicaModifications;
 
         /// <summary>
         /// Container for filter information of selection of KMS Encrypted
@@ -44,6 +45,26 @@ namespace Amazon.S3.Model
         internal bool IsSetSseKmsEncryptedObjects()
         {
             return this.sseKmsEncryptedObjects != null;
+        }
+
+        /// <summary>
+        /// <para>A filter that you can specify for selections for modifications on replicas. 
+        /// Amazon S3 doesn't replicate replica modifications by default. In the 
+        /// latest version of replication configuration (when <code>Filter</code> is specified), you can 
+        /// specify this element and set the status to <code>Enabled</code> to replicate modifications on
+        /// replicas. </para> <note> <para> If you don't specify the <code>Filter</code> element, 
+        /// Amazon S3 assumes that the replication configuration is the earlier version, V1. 
+        /// In the earlier version, this element is not allowed</para> </note>
+        /// </summary>
+        public ReplicaModifications ReplicaModifications
+        {
+            get { return this.replicaModifications; }
+            set { this.replicaModifications = value; }
+        }
+
+        internal bool IsSetReplicaModifications()
+        {
+            return this.replicaModifications != null;
         }
     }
 }

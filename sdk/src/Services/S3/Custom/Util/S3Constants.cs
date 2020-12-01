@@ -75,6 +75,7 @@ namespace Amazon.S3.Util
 
         internal static string
             AmzHeaderArchiveStatus = "x-amz-archive-status",
+            AmzHeaderBucketKeyEnabled = "x-amz-server-side-encryption-bucket-key-enabled",
             AmzHeaderExpectedBucketOwner = "x-amz-expected-bucket-owner",
             AmzHeaderExpectedSourceBucketOwner = "x-amz-source-expected-bucket-owner",
             AmzHeaderMultipartPartsCount    = "x-amz-mp-parts-count",

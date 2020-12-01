@@ -99,6 +99,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (putObjectRequest.IsSetExpectedBucketOwner())
                 request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putObjectRequest.ExpectedBucketOwner));
 
+            if (putObjectRequest.IsSetBucketKeyEnabled())
+                request.Headers.Add(S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(putObjectRequest.BucketKeyEnabled));
+
             AmazonS3Util.SetMetadataHeaders(request, putObjectRequest.Metadata);
 
             if (string.IsNullOrEmpty(putObjectRequest.BucketName))
