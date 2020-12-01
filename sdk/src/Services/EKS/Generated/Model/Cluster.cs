@@ -181,7 +181,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property KubernetesNetworkConfig. 
         /// <para>
-        /// Network configuration settings for your cluster.
+        /// The Kubernetes network configuration for the cluster.
         /// </para>
         /// </summary>
         public KubernetesNetworkConfigResponse KubernetesNetworkConfig

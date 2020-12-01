@@ -37,6 +37,22 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeAddonVersions operation
+        ///</summary>
+        public IDescribeAddonVersionsPaginator DescribeAddonVersions(DescribeAddonVersionsRequest request) 
+        {
+            return new DescribeAddonVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAddons operation
+        ///</summary>
+        public IListAddonsPaginator ListAddons(ListAddonsRequest request) 
+        {
+            return new ListAddonsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListClusters operation
         ///</summary>
         public IListClustersPaginator ListClusters(ListClustersRequest request) 

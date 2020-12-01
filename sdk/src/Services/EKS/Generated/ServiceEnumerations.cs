@@ -25,6 +25,138 @@ namespace Amazon.EKS
 {
 
     /// <summary>
+    /// Constants used for properties of type AddonIssueCode.
+    /// </summary>
+    public class AddonIssueCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDenied for AddonIssueCode
+        /// </summary>
+        public static readonly AddonIssueCode AccessDenied = new AddonIssueCode("AccessDenied");
+        /// <summary>
+        /// Constant ClusterUnreachable for AddonIssueCode
+        /// </summary>
+        public static readonly AddonIssueCode ClusterUnreachable = new AddonIssueCode("ClusterUnreachable");
+        /// <summary>
+        /// Constant ConfigurationConflict for AddonIssueCode
+        /// </summary>
+        public static readonly AddonIssueCode ConfigurationConflict = new AddonIssueCode("ConfigurationConflict");
+        /// <summary>
+        /// Constant InsufficientNumberOfReplicas for AddonIssueCode
+        /// </summary>
+        public static readonly AddonIssueCode InsufficientNumberOfReplicas = new AddonIssueCode("InsufficientNumberOfReplicas");
+        /// <summary>
+        /// Constant InternalFailure for AddonIssueCode
+        /// </summary>
+        public static readonly AddonIssueCode InternalFailure = new AddonIssueCode("InternalFailure");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AddonIssueCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AddonIssueCode FindValue(string value)
+        {
+            return FindValue<AddonIssueCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AddonIssueCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AddonStatus.
+    /// </summary>
+    public class AddonStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AddonStatus
+        /// </summary>
+        public static readonly AddonStatus ACTIVE = new AddonStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for AddonStatus
+        /// </summary>
+        public static readonly AddonStatus CREATE_FAILED = new AddonStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for AddonStatus
+        /// </summary>
+        public static readonly AddonStatus CREATING = new AddonStatus("CREATING");
+        /// <summary>
+        /// Constant DEGRADED for AddonStatus
+        /// </summary>
+        public static readonly AddonStatus DEGRADED = new AddonStatus("DEGRADED");
+        /// <summary>
+        /// Constant DELETE_FAILED for AddonStatus
+        /// </summary>
+        public static readonly AddonStatus DELETE_FAILED = new AddonStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for AddonStatus
+        /// </summary>
+        public static readonly AddonStatus DELETING = new AddonStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATING for AddonStatus
+        /// </summary>
+        public static readonly AddonStatus UPDATING = new AddonStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AddonStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AddonStatus FindValue(string value)
+        {
+            return FindValue<AddonStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AddonStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AMITypes.
     /// </summary>
     public class AMITypes : ConstantClass
@@ -72,6 +204,56 @@ namespace Amazon.EKS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AMITypes(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityTypes.
+    /// </summary>
+    public class CapacityTypes : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ON_DEMAND for CapacityTypes
+        /// </summary>
+        public static readonly CapacityTypes ON_DEMAND = new CapacityTypes("ON_DEMAND");
+        /// <summary>
+        /// Constant SPOT for CapacityTypes
+        /// </summary>
+        public static readonly CapacityTypes SPOT = new CapacityTypes("SPOT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityTypes(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityTypes FindValue(string value)
+        {
+            return FindValue<CapacityTypes>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityTypes(string value)
         {
             return FindValue(value);
         }
@@ -155,6 +337,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly ErrorCode ClusterUnreachable = new ErrorCode("ClusterUnreachable");
         /// <summary>
+        /// Constant ConfigurationConflict for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode ConfigurationConflict = new ErrorCode("ConfigurationConflict");
+        /// <summary>
         /// Constant EniLimitReached for ErrorCode
         /// </summary>
         public static readonly ErrorCode EniLimitReached = new ErrorCode("EniLimitReached");
@@ -162,6 +348,10 @@ namespace Amazon.EKS
         /// Constant InsufficientFreeAddresses for ErrorCode
         /// </summary>
         public static readonly ErrorCode InsufficientFreeAddresses = new ErrorCode("InsufficientFreeAddresses");
+        /// <summary>
+        /// Constant InsufficientNumberOfReplicas for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode InsufficientNumberOfReplicas = new ErrorCode("InsufficientNumberOfReplicas");
         /// <summary>
         /// Constant IpNotAvailable for ErrorCode
         /// </summary>
@@ -539,11 +729,65 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type ResolveConflicts.
+    /// </summary>
+    public class ResolveConflicts : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for ResolveConflicts
+        /// </summary>
+        public static readonly ResolveConflicts NONE = new ResolveConflicts("NONE");
+        /// <summary>
+        /// Constant OVERWRITE for ResolveConflicts
+        /// </summary>
+        public static readonly ResolveConflicts OVERWRITE = new ResolveConflicts("OVERWRITE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolveConflicts(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolveConflicts FindValue(string value)
+        {
+            return FindValue<ResolveConflicts>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolveConflicts(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UpdateParamType.
     /// </summary>
     public class UpdateParamType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AddonVersion for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType AddonVersion = new UpdateParamType("AddonVersion");
         /// <summary>
         /// Constant ClusterLogging for UpdateParamType
         /// </summary>
@@ -588,6 +832,14 @@ namespace Amazon.EKS
         /// Constant ReleaseVersion for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ReleaseVersion = new UpdateParamType("ReleaseVersion");
+        /// <summary>
+        /// Constant ResolveConflicts for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType ResolveConflicts = new UpdateParamType("ResolveConflicts");
+        /// <summary>
+        /// Constant ServiceAccountRoleArn for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType ServiceAccountRoleArn = new UpdateParamType("ServiceAccountRoleArn");
         /// <summary>
         /// Constant Version for UpdateParamType
         /// </summary>
@@ -692,6 +944,10 @@ namespace Amazon.EKS
     public class UpdateType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AddonUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType AddonUpdate = new UpdateType("AddonUpdate");
         /// <summary>
         /// Constant ConfigUpdate for UpdateType
         /// </summary>

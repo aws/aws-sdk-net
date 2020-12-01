@@ -42,9 +42,29 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class DescribeUpdateRequest : AmazonEKSRequest
     {
+        private string _addonName;
         private string _name;
         private string _nodegroupName;
         private string _updateId;
+
+        /// <summary>
+        /// Gets and sets the property AddonName. 
+        /// <para>
+        /// The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
+        /// <code>ListAddons</code> </a>.
+        /// </para>
+        /// </summary>
+        public string AddonName
+        {
+            get { return this._addonName; }
+            set { this._addonName = value; }
+        }
+
+        // Check to see if AddonName property is set
+        internal bool IsSetAddonName()
+        {
+            return this._addonName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

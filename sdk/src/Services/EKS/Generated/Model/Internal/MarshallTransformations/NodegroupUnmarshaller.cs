@@ -70,6 +70,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.AmiType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("capacityType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CapacityType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("clusterName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

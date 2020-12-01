@@ -36,6 +36,7 @@ namespace Amazon.EKS.Model
     #endif
     public partial class InvalidParameterException : AmazonEKSException
     {
+        private string _addonName;
         private string _clusterName;
         private string _fargateProfileName;
         private string _nodegroupName;
@@ -100,6 +101,7 @@ namespace Amazon.EKS.Model
         protected InvalidParameterException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.AddonName = (string)info.GetValue("AddonName", typeof(string));
             this.ClusterName = (string)info.GetValue("ClusterName", typeof(string));
             this.FargateProfileName = (string)info.GetValue("FargateProfileName", typeof(string));
             this.NodegroupName = (string)info.GetValue("NodegroupName", typeof(string));
@@ -123,11 +125,27 @@ namespace Amazon.EKS.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("AddonName", this.AddonName);
             info.AddValue("ClusterName", this.ClusterName);
             info.AddValue("FargateProfileName", this.FargateProfileName);
             info.AddValue("NodegroupName", this.NodegroupName);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property AddonName.
+        /// </summary>
+        public string AddonName
+        {
+            get { return this._addonName; }
+            set { this._addonName = value; }
+        }
+
+        // Check to see if AddonName property is set
+        internal bool IsSetAddonName()
+        {
+            return this._addonName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterName. 

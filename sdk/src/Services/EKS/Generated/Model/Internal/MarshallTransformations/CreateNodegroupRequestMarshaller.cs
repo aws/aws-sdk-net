@@ -75,6 +75,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AmiType);
                 }
 
+                if(publicRequest.IsSetCapacityType())
+                {
+                    context.Writer.WritePropertyName("capacityType");
+                    context.Writer.Write(publicRequest.CapacityType);
+                }
+
                 if(publicRequest.IsSetClientRequestToken())
                 {
                     context.Writer.WritePropertyName("clientRequestToken");

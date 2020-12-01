@@ -65,6 +65,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field UpdateId set");
             request.AddPathResource("{updateId}", StringUtils.FromString(publicRequest.UpdateId));
             
+            if (publicRequest.IsSetAddonName())
+                request.Parameters.Add("addonName", StringUtils.FromString(publicRequest.AddonName));
+            
             if (publicRequest.IsSetNodegroupName())
                 request.Parameters.Add("nodegroupName", StringUtils.FromString(publicRequest.NodegroupName));
             request.ResourcePath = "/clusters/{name}/updates/{updateId}";

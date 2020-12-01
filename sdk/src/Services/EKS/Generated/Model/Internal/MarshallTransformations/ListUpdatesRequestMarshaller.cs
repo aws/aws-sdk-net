@@ -62,6 +62,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             
+            if (publicRequest.IsSetAddonName())
+                request.Parameters.Add("addonName", StringUtils.FromString(publicRequest.AddonName));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

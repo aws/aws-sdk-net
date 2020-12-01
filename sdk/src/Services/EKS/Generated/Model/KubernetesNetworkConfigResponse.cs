@@ -39,9 +39,9 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property ServiceIpv4Cidr. 
         /// <para>
         /// The CIDR block that Kubernetes service IP addresses are assigned from. If you didn't
-        /// specify a CIDR block, then Kubernetes assigns addresses from either the 10.100.0.0/16
-        /// or 172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the
-        /// cluster was created and it cannot be changed.
+        /// specify a CIDR block when you created the cluster, then Kubernetes assigns addresses
+        /// from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified,
+        /// then it was specified when the cluster was created and it cannot be changed.
         /// </para>
         /// </summary>
         public string ServiceIpv4Cidr

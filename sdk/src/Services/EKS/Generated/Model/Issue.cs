@@ -44,19 +44,25 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is failing to
+        /// authenticate or authorize with your Kubernetes cluster API server.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures
+        /// while attempting to launch instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>AutoScalingGroupNotFound</b>: We couldn't find the Auto Scaling group associated
         /// with the managed node group. You may be able to recreate an Auto Scaling group with
         /// the same settings to recover.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for
-        /// the cluster. You must recreate your cluster.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security
-        /// group for your managed node group. Remove any dependencies from the security group.
+        ///  <b>ClusterUnreachable</b>: Amazon EKS or one or more of your managed nodes is unable
+        /// to to communicate with your Kubernetes cluster API server. This can happen if there
+        /// are network disruptions or if API servers are timing out processing requests. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -69,6 +75,16 @@ namespace Amazon.EKS.Model
         ///  <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template version for
         /// your managed node group does not match the version that Amazon EKS created. You may
         /// be able to revert to the version that Amazon EKS created to recover.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Ec2SecurityGroupDeletionFailure</b>: We could not delete the remote access security
+        /// group for your managed node group. Remove any dependencies from the security group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Ec2SecurityGroupNotFound</b>: We couldn't find the cluster security group for
+        /// the cluster. You must recreate your cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -92,17 +108,6 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is experiencing failures
-        /// while attempting to launch instances.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>NodeCreationFailure</b>: Your launched instances are unable to register with your
-        /// Amazon EKS cluster. Common causes of this failure are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
-        /// node IAM role</a> permissions or lack of outbound internet access for the nodes. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any more instances
         /// of the specified instance type. You may be able to request an Amazon EC2 instance
         /// limit increase to recover.
@@ -114,13 +119,14 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AccessDenied</b>: Amazon EKS or one or more of your managed nodes is unable to
-        /// communicate with your cluster API server.
+        ///  <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side
+        /// issue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side
-        /// issue.
+        ///  <b>NodeCreationFailure</b>: Your launched instances are unable to register with your
+        /// Amazon EKS cluster. Common causes of this failure are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
+        /// node IAM role</a> permissions or lack of outbound internet access for the nodes. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

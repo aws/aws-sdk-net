@@ -250,6 +250,92 @@ namespace Amazon.EKS
         #endregion
 
 
+        #region  CreateAddon
+
+        /// <summary>
+        /// Creates an Amazon EKS add-on.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon EKS add-ons help to automate the provisioning and lifecycle management of common
+        /// operational software for Amazon EKS clusters. Amazon EKS add-ons can only be used
+        /// with Amazon EKS clusters running version 1.18 with platform version <code>eks.3</code>
+        /// or later because add-ons rely on the Server-side Apply Kubernetes feature, which is
+        /// only available in Kubernetes 1.18 and later.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddon service method.</param>
+        /// 
+        /// <returns>The response from the CreateAddon service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon">REST API Reference for CreateAddon Operation</seealso>
+        public virtual CreateAddonResponse CreateAddon(CreateAddonRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAddonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAddonResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAddonResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAddon operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAddon operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAddon
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon">REST API Reference for CreateAddon Operation</seealso>
+        public virtual IAsyncResult BeginCreateAddon(CreateAddonRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAddonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAddonResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAddon operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAddon.</param>
+        /// 
+        /// <returns>Returns a  CreateAddonResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon">REST API Reference for CreateAddon Operation</seealso>
+        public virtual CreateAddonResponse EndCreateAddon(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAddonResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateCluster
 
         /// <summary>
@@ -516,7 +602,7 @@ namespace Amazon.EKS
         /// <para>
         /// An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated
         /// Amazon EC2 instances that are managed by AWS for an Amazon EKS cluster. Each node
-        /// group uses a version of the Amazon EKS-optimized Amazon Linux 2 AMI. For more information,
+        /// group uses a version of the Amazon EKS optimized Amazon Linux 2 AMI. For more information,
         /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
         /// Node Groups</a> in the <i>Amazon EKS User Guide</i>. 
         /// </para>
@@ -590,6 +676,86 @@ namespace Amazon.EKS
         public virtual CreateNodegroupResponse EndCreateNodegroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateNodegroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAddon
+
+        /// <summary>
+        /// Delete an Amazon EKS add-on.
+        /// 
+        ///  
+        /// <para>
+        /// When you remove the add-on, it will also be deleted from the cluster. You can always
+        /// manually start an add-on on the cluster using the Kubernetes API.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddon service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAddon service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAddon">REST API Reference for DeleteAddon Operation</seealso>
+        public virtual DeleteAddonResponse DeleteAddon(DeleteAddonRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAddonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAddonResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAddonResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAddon operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAddon operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAddon
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAddon">REST API Reference for DeleteAddon Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAddon(DeleteAddonRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAddonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAddonResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAddon operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAddon.</param>
+        /// 
+        /// <returns>Returns a  DeleteAddonResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAddon">REST API Reference for DeleteAddon Operation</seealso>
+        public virtual DeleteAddonResponse EndDeleteAddon(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAddonResponse>(asyncResult);
         }
 
         #endregion
@@ -837,6 +1003,145 @@ namespace Amazon.EKS
         public virtual DeleteNodegroupResponse EndDeleteNodegroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteNodegroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeAddon
+
+        /// <summary>
+        /// Describes an Amazon EKS add-on.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddon service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAddon service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddon">REST API Reference for DescribeAddon Operation</seealso>
+        public virtual DescribeAddonResponse DescribeAddon(DescribeAddonRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAddonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAddonResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAddonResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAddon operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddon operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAddon
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddon">REST API Reference for DescribeAddon Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAddon(DescribeAddonRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAddonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAddonResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAddon operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAddon.</param>
+        /// 
+        /// <returns>Returns a  DescribeAddonResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddon">REST API Reference for DescribeAddon Operation</seealso>
+        public virtual DescribeAddonResponse EndDescribeAddon(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAddonResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeAddonVersions
+
+        /// <summary>
+        /// Describes the Kubernetes versions that the add-on can be used with.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddonVersions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAddonVersions service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions">REST API Reference for DescribeAddonVersions Operation</seealso>
+        public virtual DescribeAddonVersionsResponse DescribeAddonVersions(DescribeAddonVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAddonVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAddonVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAddonVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAddonVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddonVersions operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAddonVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions">REST API Reference for DescribeAddonVersions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAddonVersions(DescribeAddonVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAddonVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAddonVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAddonVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAddonVersions.</param>
+        /// 
+        /// <returns>Returns a  DescribeAddonVersionsResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions">REST API Reference for DescribeAddonVersions Operation</seealso>
+        public virtual DescribeAddonVersionsResponse EndDescribeAddonVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAddonVersionsResponse>(asyncResult);
         }
 
         #endregion
@@ -1142,6 +1447,80 @@ namespace Amazon.EKS
         public virtual DescribeUpdateResponse EndDescribeUpdate(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeUpdateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAddons
+
+        /// <summary>
+        /// Lists the available add-ons.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAddons service method.</param>
+        /// 
+        /// <returns>The response from the ListAddons service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAddons">REST API Reference for ListAddons Operation</seealso>
+        public virtual ListAddonsResponse ListAddons(ListAddonsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAddonsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAddonsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAddonsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAddons operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAddons operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAddons
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAddons">REST API Reference for ListAddons Operation</seealso>
+        public virtual IAsyncResult BeginListAddons(ListAddonsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAddonsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAddonsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAddons operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAddons.</param>
+        /// 
+        /// <returns>Returns a  ListAddonsResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAddons">REST API Reference for ListAddons Operation</seealso>
+        public virtual ListAddonsResponse EndListAddons(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAddonsResponse>(asyncResult);
         }
 
         #endregion
@@ -1622,6 +2001,83 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  UpdateAddon
+
+        /// <summary>
+        /// Updates an Amazon EKS add-on.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAddon service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAddon service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAddon">REST API Reference for UpdateAddon Operation</seealso>
+        public virtual UpdateAddonResponse UpdateAddon(UpdateAddonRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAddonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAddonResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAddonResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAddon operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAddon operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAddon
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAddon">REST API Reference for UpdateAddon Operation</seealso>
+        public virtual IAsyncResult BeginUpdateAddon(UpdateAddonRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAddonRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAddonResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAddon operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAddon.</param>
+        /// 
+        /// <returns>Returns a  UpdateAddonResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAddon">REST API Reference for UpdateAddon Operation</seealso>
+        public virtual UpdateAddonResponse EndUpdateAddon(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateAddonResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateClusterConfig
 
         /// <summary>
@@ -1930,7 +2386,7 @@ namespace Amazon.EKS
         /// version in the request. You can update to the latest AMI version of your cluster's
         /// current Kubernetes version by specifying your cluster's Kubernetes version in the
         /// request. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
-        /// EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>.
+        /// EKS optimized Amazon Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         ///  
         /// <para>

@@ -34,6 +34,7 @@ namespace Amazon.EKS.Model
     public partial class Nodegroup
     {
         private AMITypes _amiType;
+        private CapacityTypes _capacityType;
         private string _clusterName;
         private DateTime? _createdAt;
         private int? _diskSize;
@@ -72,6 +73,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetAmiType()
         {
             return this._amiType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityType. 
+        /// <para>
+        /// The capacity type of your managed node group.
+        /// </para>
+        /// </summary>
+        public CapacityTypes CapacityType
+        {
+            get { return this._capacityType; }
+            set { this._capacityType = value; }
+        }
+
+        // Check to see if CapacityType property is set
+        internal bool IsSetCapacityType()
+        {
+            return this._capacityType != null;
         }
 
         /// <summary>
@@ -291,7 +310,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// If the node group was deployed using a launch template with a custom AMI, then this
         /// is the AMI ID that was specified in the launch template. For node groups that weren't
-        /// deployed using a launch template, this is the version of the Amazon EKS-optimized
+        /// deployed using a launch template, this is the version of the Amazon EKS optimized
         /// AMI that the node group was deployed with.
         /// </para>
         /// </summary>

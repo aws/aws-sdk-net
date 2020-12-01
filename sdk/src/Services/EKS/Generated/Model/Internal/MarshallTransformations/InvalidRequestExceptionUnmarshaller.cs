@@ -64,6 +64,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("addonName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AddonName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("clusterName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

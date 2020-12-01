@@ -117,8 +117,22 @@ namespace Amazon.EKS.Model
         /// <para>
         /// Specify one or more security groups for the cross-account elastic network interfaces
         /// that Amazon EKS creates to use to allow communication between your worker nodes and
-        /// the Kubernetes control plane. If you don't specify a security group, the default security
-        /// group for your VPC is used.
+        /// the Kubernetes control plane. If you don't specify any security groups, then familiarize
+        /// yourself with the difference between Amazon EKS defaults for clusters deployed with
+        /// Kubernetes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// 1.14 Amazon EKS platform version <code>eks.2</code> and earlier
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 1.14 Amazon EKS platform version <code>eks.3</code> and later 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon
+        /// EKS security group considerations</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
