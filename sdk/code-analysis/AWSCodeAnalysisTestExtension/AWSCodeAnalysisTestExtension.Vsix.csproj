@@ -376,6 +376,10 @@
       <Project>{F5371954-6310-4702-A8C2-EBAE8D4D9556}</Project>
       <Name>AWSSDK.ECR.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ECRPublic/AWSSDK.ECRPublic.CodeAnalysis.csproj">
+      <Project>{1275E2E6-EACB-499D-AABC-C5382097F19C}</Project>
+      <Name>AWSSDK.ECRPublic.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ECS/AWSSDK.ECS.CodeAnalysis.csproj">
       <Project>{55B3C3E4-5D68-415D-80A1-BAD78A9FC7B1}</Project>
       <Name>AWSSDK.ECS.CodeAnalysis</Name>

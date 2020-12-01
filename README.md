@@ -237,6 +237,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon EC2 Instance Connect is a simple and secure way to connect to your instances using Secure Shell (SSH). With EC2 Instance Connect, you can control SSH access to your instances using AWS Identity and Access Management (IAM) policies as well as audit connection requests with AWS CloudTrail events. In addition, you can leverage your existing SSH keys or further enhance your security posture by generating one-time use SSH keys each time an authorized user connects.
 * [AWSSDK.ECR](https://www.nuget.org/packages/AWSSDK.ECR/)
 	* Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.
+* [AWSSDK.ECRPublic](https://www.nuget.org/packages/AWSSDK.ECRPublic/)
+	* Supports Amazon Elastic Container Registry (Amazon ECR) Public, a fully managed registry that makes it easy for a developer to publicly share container software worldwide for anyone to download.
 * [AWSSDK.ECS](https://www.nuget.org/packages/AWSSDK.ECS/)
 	* Amazon EC2 Container Service is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run distributed applications on a managed cluster of Amazon EC2 instances.
 * [AWSSDK.EKS](https://www.nuget.org/packages/AWSSDK.EKS/)
