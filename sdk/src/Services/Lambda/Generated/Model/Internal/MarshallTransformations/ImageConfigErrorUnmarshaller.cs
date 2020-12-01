@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FunctionCodeLocation Object
+    /// Response Unmarshaller for ImageConfigError Object
     /// </summary>  
-    public class FunctionCodeLocationUnmarshaller : IUnmarshaller<FunctionCodeLocation, XmlUnmarshallerContext>, IUnmarshaller<FunctionCodeLocation, JsonUnmarshallerContext>
+    public class ImageConfigErrorUnmarshaller : IUnmarshaller<ImageConfigError, XmlUnmarshallerContext>, IUnmarshaller<ImageConfigError, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FunctionCodeLocation IUnmarshaller<FunctionCodeLocation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ImageConfigError IUnmarshaller<ImageConfigError, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FunctionCodeLocation Unmarshall(JsonUnmarshallerContext context)
+        public ImageConfigError Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FunctionCodeLocation unmarshalledObject = new FunctionCodeLocation();
+            ImageConfigError unmarshalledObject = new ImageConfigError();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ImageUri", targetDepth))
+                if (context.TestExpression("ErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImageUri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Location", targetDepth))
+                if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RepositoryType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RepositoryType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResolvedImageUri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResolvedImageUri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         }
 
 
-        private static FunctionCodeLocationUnmarshaller _instance = new FunctionCodeLocationUnmarshaller();        
+        private static ImageConfigErrorUnmarshaller _instance = new ImageConfigErrorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FunctionCodeLocationUnmarshaller Instance
+        public static ImageConfigErrorUnmarshaller Instance
         {
             get
             {

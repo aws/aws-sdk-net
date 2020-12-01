@@ -44,6 +44,7 @@ namespace Amazon.Lambda.Model
     {
         private bool? _dryRun;
         private string _functionName;
+        private string _imageUri;
         private bool? _publish;
         private string _revisionId;
         private string _s3Bucket;
@@ -106,6 +107,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetFunctionName()
         {
             return this._functionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageUri. 
+        /// <para>
+        /// URI of a container image in the Amazon ECR registry.
+        /// </para>
+        /// </summary>
+        public string ImageUri
+        {
+            get { return this._imageUri; }
+            set { this._imageUri = value; }
+        }
+
+        // Check to see if ImageUri property is set
+        internal bool IsSetImageUri()
+        {
+            return this._imageUri != null;
         }
 
         /// <summary>

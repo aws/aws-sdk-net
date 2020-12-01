@@ -293,6 +293,14 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly LastUpdateStatusReasonCode EniLimitExceeded = new LastUpdateStatusReasonCode("EniLimitExceeded");
         /// <summary>
+        /// Constant ImageAccessDenied for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode ImageAccessDenied = new LastUpdateStatusReasonCode("ImageAccessDenied");
+        /// <summary>
+        /// Constant ImageDeleted for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode ImageDeleted = new LastUpdateStatusReasonCode("ImageDeleted");
+        /// <summary>
         /// Constant InsufficientRolePermissions for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode InsufficientRolePermissions = new LastUpdateStatusReasonCode("InsufficientRolePermissions");
@@ -396,6 +404,56 @@ namespace Amazon.Lambda
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackageType.
+    /// </summary>
+    public class PackageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Image for PackageType
+        /// </summary>
+        public static readonly PackageType Image = new PackageType("Image");
+        /// <summary>
+        /// Constant Zip for PackageType
+        /// </summary>
+        public static readonly PackageType Zip = new PackageType("Zip");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageType FindValue(string value)
+        {
+            return FindValue<PackageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageType(string value)
         {
             return FindValue(value);
         }
@@ -712,6 +770,14 @@ namespace Amazon.Lambda
         /// Constant Idle for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode Idle = new StateReasonCode("Idle");
+        /// <summary>
+        /// Constant ImageAccessDenied for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode ImageAccessDenied = new StateReasonCode("ImageAccessDenied");
+        /// <summary>
+        /// Constant ImageDeleted for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode ImageDeleted = new StateReasonCode("ImageDeleted");
         /// <summary>
         /// Constant InsufficientRolePermissions for StateReasonCode
         /// </summary>

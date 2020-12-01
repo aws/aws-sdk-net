@@ -63,6 +63,7 @@ namespace Amazon.Lambda.Model
         private List<FileSystemConfig> _fileSystemConfigs = new List<FileSystemConfig>();
         private string _functionName;
         private string _handler;
+        private ImageConfig _imageConfig;
         private string _kmsKeyArn;
         private List<string> _layers = new List<string>();
         private int? _memorySize;
@@ -210,6 +211,24 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageConfig. 
+        /// <para>
+        /// Configuration values that override the container image Dockerfile.
+        /// </para>
+        /// </summary>
+        public ImageConfig ImageConfig
+        {
+            get { return this._imageConfig; }
+            set { this._imageConfig = value; }
+        }
+
+        // Check to see if ImageConfig property is set
+        internal bool IsSetImageConfig()
+        {
+            return this._imageConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
         /// The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your
@@ -279,7 +298,7 @@ namespace Amazon.Lambda.Model
         /// a multiple of 64 MB.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=128, Max=3008)]
+        [AWSProperty(Min=128, Max=10240)]
         public int MemorySize
         {
             get { return this._memorySize.GetValueOrDefault(); }

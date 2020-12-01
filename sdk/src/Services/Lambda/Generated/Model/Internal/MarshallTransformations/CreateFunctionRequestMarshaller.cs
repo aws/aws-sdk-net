@@ -139,6 +139,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Handler);
                 }
 
+                if(publicRequest.IsSetImageConfig())
+                {
+                    context.Writer.WritePropertyName("ImageConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ImageConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ImageConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKMSKeyArn())
                 {
                     context.Writer.WritePropertyName("KMSKeyArn");
@@ -160,6 +171,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("MemorySize");
                     context.Writer.Write(publicRequest.MemorySize);
+                }
+
+                if(publicRequest.IsSetPackageType())
+                {
+                    context.Writer.WritePropertyName("PackageType");
+                    context.Writer.Write(publicRequest.PackageType);
                 }
 
                 if(publicRequest.IsSetPublish())

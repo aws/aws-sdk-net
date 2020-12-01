@@ -31,9 +31,9 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the ListCodeSigningConfigs operation.
     /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code
-    /// signing configurations</a> for the specified function. A request returns up to 10,000
-    /// configurations per call. You can use the <code>MaxItems</code> parameter to return
-    /// fewer configurations per call.
+    /// signing configurations</a>. A request returns up to 10,000 configurations per call.
+    /// You can use the <code>MaxItems</code> parameter to return fewer configurations per
+    /// call.
     /// </summary>
     public partial class ListCodeSigningConfigsRequest : AmazonLambdaRequest
     {

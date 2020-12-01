@@ -29,15 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The code for the Lambda function. You can specify either an object in Amazon S3, or
-    /// upload a deployment package directly.
+    /// The code for the Lambda function. You can specify either an object in Amazon S3, upload
+    /// a ZIP archive deployment package directly, or specify the URI of a container image.
     /// </summary>
     public partial class FunctionCode
     {
+        private string _imageUri;
         private string _s3Bucket;
         private string _s3Key;
         private string _s3ObjectVersion;
         private MemoryStream _zipFile;
+
+        /// <summary>
+        /// Gets and sets the property ImageUri. 
+        /// <para>
+        /// URI of a container image in the Amazon ECR registry.
+        /// </para>
+        /// </summary>
+        public string ImageUri
+        {
+            get { return this._imageUri; }
+            set { this._imageUri = value; }
+        }
+
+        // Check to see if ImageUri property is set
+        internal bool IsSetImageUri()
+        {
+            return this._imageUri != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3Bucket. 

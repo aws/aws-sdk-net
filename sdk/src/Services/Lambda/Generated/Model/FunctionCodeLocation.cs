@@ -33,8 +33,28 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class FunctionCodeLocation
     {
+        private string _imageUri;
         private string _location;
         private string _repositoryType;
+        private string _resolvedImageUri;
+
+        /// <summary>
+        /// Gets and sets the property ImageUri. 
+        /// <para>
+        /// URI of a container image in the Amazon ECR registry.
+        /// </para>
+        /// </summary>
+        public string ImageUri
+        {
+            get { return this._imageUri; }
+            set { this._imageUri = value; }
+        }
+
+        // Check to see if ImageUri property is set
+        internal bool IsSetImageUri()
+        {
+            return this._imageUri != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Location. 
@@ -70,6 +90,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetRepositoryType()
         {
             return this._repositoryType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolvedImageUri. 
+        /// <para>
+        /// The resolved URI for the image.
+        /// </para>
+        /// </summary>
+        public string ResolvedImageUri
+        {
+            get { return this._resolvedImageUri; }
+            set { this._resolvedImageUri = value; }
+        }
+
+        // Check to see if ResolvedImageUri property is set
+        internal bool IsSetResolvedImageUri()
+        {
+            return this._resolvedImageUri != null;
         }
 
     }

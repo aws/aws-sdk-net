@@ -118,6 +118,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.Handler = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ImageConfigResponse", targetDepth))
+                {
+                    var unmarshaller = ImageConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.ImageConfigResponse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KMSKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -164,6 +170,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.MemorySize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PackageType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PackageType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RevisionId", targetDepth))

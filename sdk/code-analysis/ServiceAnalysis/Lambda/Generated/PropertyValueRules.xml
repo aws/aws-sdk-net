@@ -209,7 +209,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionRequest.MemorySize</property>
     <min>128</min>
-    <max>3008</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionRequest.Role</property>
@@ -250,7 +250,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.MemorySize</property>
     <min>128</min>
-    <max>3008</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.Role</property>
@@ -531,7 +531,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.MemorySize</property>
     <min>128</min>
-    <max>3008</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.Role</property>
@@ -888,7 +888,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.MemorySize</property>
     <min>128</min>
-    <max>3008</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.Role</property>
@@ -1221,7 +1221,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.MemorySize</property>
     <min>128</min>
-    <max>3008</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.Role</property>
@@ -1268,7 +1268,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationRequest.MemorySize</property>
     <min>128</min>
-    <max>3008</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationRequest.Role</property>
@@ -1309,7 +1309,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.MemorySize</property>
     <min>128</min>
-    <max>3008</max>
+    <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.Role</property>
@@ -1416,6 +1416,10 @@
     <property>Amazon.Lambda.Model.FunctionCode.S3ObjectVersion</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.ImageConfig.WorkingDirectory</property>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.Layer.Arn</property>

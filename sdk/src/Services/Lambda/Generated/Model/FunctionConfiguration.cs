@@ -42,6 +42,7 @@ namespace Amazon.Lambda.Model
         private string _functionArn;
         private string _functionName;
         private string _handler;
+        private ImageConfigResponse _imageConfigResponse;
         private string _kmsKeyArn;
         private string _lastModified;
         private LastUpdateStatus _lastUpdateStatus;
@@ -50,6 +51,7 @@ namespace Amazon.Lambda.Model
         private List<Layer> _layers = new List<Layer>();
         private string _masterArn;
         private int? _memorySize;
+        private PackageType _packageType;
         private string _revisionId;
         private string _role;
         private Runtime _runtime;
@@ -230,6 +232,24 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageConfigResponse. 
+        /// <para>
+        /// The function's image configuration values.
+        /// </para>
+        /// </summary>
+        public ImageConfigResponse ImageConfigResponse
+        {
+            get { return this._imageConfigResponse; }
+            set { this._imageConfigResponse = value; }
+        }
+
+        // Check to see if ImageConfigResponse property is set
+        internal bool IsSetImageConfigResponse()
+        {
+            return this._imageConfigResponse != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
         /// The KMS key that's used to encrypt the function's environment variables. This key
@@ -365,7 +385,7 @@ namespace Amazon.Lambda.Model
         /// The memory that's allocated to the function.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=128, Max=3008)]
+        [AWSProperty(Min=128, Max=10240)]
         public int MemorySize
         {
             get { return this._memorySize.GetValueOrDefault(); }
@@ -376,6 +396,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetMemorySize()
         {
             return this._memorySize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PackageType. 
+        /// <para>
+        /// The type of deployment package. Set to <code>Image</code> for container image and
+        /// set <code>Zip</code> for ZIP archive.
+        /// </para>
+        /// </summary>
+        public PackageType PackageType
+        {
+            get { return this._packageType; }
+            set { this._packageType = value; }
+        }
+
+        // Check to see if PackageType property is set
+        internal bool IsSetPackageType()
+        {
+            return this._packageType != null;
         }
 
         /// <summary>

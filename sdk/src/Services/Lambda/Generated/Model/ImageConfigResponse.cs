@@ -29,36 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Code signing configuration policies specifies the validation failure action for signature
-    /// mismatch or expiry.
+    /// Response to GetFunctionConfiguration request.
     /// </summary>
-    public partial class CodeSigningPolicies
+    public partial class ImageConfigResponse
     {
-        private CodeSigningPolicy _untrustedArtifactOnDeployment;
+        private ImageConfigError _error;
+        private ImageConfig _imageConfig;
 
         /// <summary>
-        /// Gets and sets the property UntrustedArtifactOnDeployment. 
+        /// Gets and sets the property Error. 
         /// <para>
-        /// Code signing configuration policy for deployment validation failure. If you set the
-        /// policy to <code>Enforce</code>, Lambda blocks the deployment request if signature
-        /// validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows
-        /// the deployment and creates a CloudWatch log. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default value: <code>Warn</code> 
+        /// Error response to GetFunctionConfiguration.
         /// </para>
         /// </summary>
-        public CodeSigningPolicy UntrustedArtifactOnDeployment
+        public ImageConfigError Error
         {
-            get { return this._untrustedArtifactOnDeployment; }
-            set { this._untrustedArtifactOnDeployment = value; }
+            get { return this._error; }
+            set { this._error = value; }
         }
 
-        // Check to see if UntrustedArtifactOnDeployment property is set
-        internal bool IsSetUntrustedArtifactOnDeployment()
+        // Check to see if Error property is set
+        internal bool IsSetError()
         {
-            return this._untrustedArtifactOnDeployment != null;
+            return this._error != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageConfig. 
+        /// <para>
+        /// Configuration values that override the container image Dockerfile.
+        /// </para>
+        /// </summary>
+        public ImageConfig ImageConfig
+        {
+            get { return this._imageConfig; }
+            set { this._imageConfig = value; }
+        }
+
+        // Check to see if ImageConfig property is set
+        internal bool IsSetImageConfig()
+        {
+            return this._imageConfig != null;
         }
 
     }

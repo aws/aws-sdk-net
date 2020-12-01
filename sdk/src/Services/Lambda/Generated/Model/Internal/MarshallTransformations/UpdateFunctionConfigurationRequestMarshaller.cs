@@ -119,6 +119,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Handler);
                 }
 
+                if(publicRequest.IsSetImageConfig())
+                {
+                    context.Writer.WritePropertyName("ImageConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ImageConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ImageConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKMSKeyArn())
                 {
                     context.Writer.WritePropertyName("KMSKeyArn");

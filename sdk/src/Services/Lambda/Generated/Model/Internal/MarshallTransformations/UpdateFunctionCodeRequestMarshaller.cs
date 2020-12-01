@@ -75,6 +75,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DryRun);
                 }
 
+                if(publicRequest.IsSetImageUri())
+                {
+                    context.Writer.WritePropertyName("ImageUri");
+                    context.Writer.Write(publicRequest.ImageUri);
+                }
+
                 if(publicRequest.IsSetPublish())
                 {
                     context.Writer.WritePropertyName("Publish");

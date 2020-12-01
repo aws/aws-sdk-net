@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FunctionCode Marshaller
+    /// ImageConfig Marshaller
     /// </summary>       
-    public class FunctionCodeMarshaller : IRequestMarshaller<FunctionCode, JsonMarshallerContext> 
+    public class ImageConfigMarshaller : IRequestMarshaller<ImageConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,36 +43,34 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FunctionCode requestObject, JsonMarshallerContext context)
+        public void Marshall(ImageConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetImageUri())
+            if(requestObject.IsSetCommand())
             {
-                context.Writer.WritePropertyName("ImageUri");
-                context.Writer.Write(requestObject.ImageUri);
+                context.Writer.WritePropertyName("Command");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCommandListValue in requestObject.Command)
+                {
+                        context.Writer.Write(requestObjectCommandListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetS3Bucket())
+            if(requestObject.IsSetEntryPoint())
             {
-                context.Writer.WritePropertyName("S3Bucket");
-                context.Writer.Write(requestObject.S3Bucket);
+                context.Writer.WritePropertyName("EntryPoint");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEntryPointListValue in requestObject.EntryPoint)
+                {
+                        context.Writer.Write(requestObjectEntryPointListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetS3Key())
+            if(requestObject.IsSetWorkingDirectory())
             {
-                context.Writer.WritePropertyName("S3Key");
-                context.Writer.Write(requestObject.S3Key);
-            }
-
-            if(requestObject.IsSetS3ObjectVersion())
-            {
-                context.Writer.WritePropertyName("S3ObjectVersion");
-                context.Writer.Write(requestObject.S3ObjectVersion);
-            }
-
-            if(requestObject.IsSetZipFile())
-            {
-                context.Writer.WritePropertyName("ZipFile");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.ZipFile));
+                context.Writer.WritePropertyName("WorkingDirectory");
+                context.Writer.Write(requestObject.WorkingDirectory);
             }
 
         }
@@ -80,7 +78,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static FunctionCodeMarshaller Instance = new FunctionCodeMarshaller();
+        public readonly static ImageConfigMarshaller Instance = new ImageConfigMarshaller();
 
     }
 }

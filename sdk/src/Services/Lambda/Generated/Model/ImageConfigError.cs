@@ -29,36 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Code signing configuration policies specifies the validation failure action for signature
-    /// mismatch or expiry.
+    /// Error response to GetFunctionConfiguration.
     /// </summary>
-    public partial class CodeSigningPolicies
+    public partial class ImageConfigError
     {
-        private CodeSigningPolicy _untrustedArtifactOnDeployment;
+        private string _errorCode;
+        private string _message;
 
         /// <summary>
-        /// Gets and sets the property UntrustedArtifactOnDeployment. 
+        /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// Code signing configuration policy for deployment validation failure. If you set the
-        /// policy to <code>Enforce</code>, Lambda blocks the deployment request if signature
-        /// validation checks fail. If you set the policy to <code>Warn</code>, Lambda allows
-        /// the deployment and creates a CloudWatch log. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default value: <code>Warn</code> 
+        /// Error code.
         /// </para>
         /// </summary>
-        public CodeSigningPolicy UntrustedArtifactOnDeployment
+        public string ErrorCode
         {
-            get { return this._untrustedArtifactOnDeployment; }
-            set { this._untrustedArtifactOnDeployment = value; }
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
         }
 
-        // Check to see if UntrustedArtifactOnDeployment property is set
-        internal bool IsSetUntrustedArtifactOnDeployment()
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
         {
-            return this._untrustedArtifactOnDeployment != null;
+            return this._errorCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// Error message.
+        /// </para>
+        /// </summary>
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
         }
 
     }

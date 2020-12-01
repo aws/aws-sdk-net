@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FunctionCodeLocation Object
+    /// Response Unmarshaller for ImageConfigResponse Object
     /// </summary>  
-    public class FunctionCodeLocationUnmarshaller : IUnmarshaller<FunctionCodeLocation, XmlUnmarshallerContext>, IUnmarshaller<FunctionCodeLocation, JsonUnmarshallerContext>
+    public class ImageConfigResponseUnmarshaller : IUnmarshaller<ImageConfigResponse, XmlUnmarshallerContext>, IUnmarshaller<ImageConfigResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FunctionCodeLocation IUnmarshaller<FunctionCodeLocation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ImageConfigResponse IUnmarshaller<ImageConfigResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FunctionCodeLocation Unmarshall(JsonUnmarshallerContext context)
+        public ImageConfigResponse Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FunctionCodeLocation unmarshalledObject = new FunctionCodeLocation();
+            ImageConfigResponse unmarshalledObject = new ImageConfigResponse();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ImageUri", targetDepth))
+                if (context.TestExpression("Error", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImageUri = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ImageConfigErrorUnmarshaller.Instance;
+                    unmarshalledObject.Error = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Location", targetDepth))
+                if (context.TestExpression("ImageConfig", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RepositoryType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RepositoryType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResolvedImageUri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResolvedImageUri = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ImageConfigUnmarshaller.Instance;
+                    unmarshalledObject.ImageConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         }
 
 
-        private static FunctionCodeLocationUnmarshaller _instance = new FunctionCodeLocationUnmarshaller();        
+        private static ImageConfigResponseUnmarshaller _instance = new ImageConfigResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FunctionCodeLocationUnmarshaller Instance
+        public static ImageConfigResponseUnmarshaller Instance
         {
             get
             {
