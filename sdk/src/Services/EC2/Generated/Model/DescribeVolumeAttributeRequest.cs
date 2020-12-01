@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
-    /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeVolumeAttributeRequest : AmazonEC2Request

@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
         private string _snapshotId;
         private VolumeState _state;
         private List<Tag> _tags = new List<Tag>();
+        private int? _throughput;
         private string _volumeId;
         private VolumeType _volumeType;
 
@@ -142,26 +143,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The number of I/O operations per second (IOPS) that the volume supports. For Provisioned
-        /// IOPS SSD volumes, this represents the number of IOPS that are provisioned for the
-        /// volume. For General Purpose SSD volumes, this represents the baseline performance
+        /// The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>,
+        /// and <code>io2</code> volumes, this represents the number of IOPS that are provisioned
+        /// for the volume. For <code>gp2</code> volumes, this represents the baseline performance
         /// of the volume and the rate at which the volume accumulates I/O credits for bursting.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-        /// EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to 64,000
-        /// IOPS for <code>io1</code> and <code>io2</code> volumes, in most Regions. The maximum
-        /// IOPS for <code>io1</code> and <code>io2</code> of 64,000 is guaranteed only on <a
-        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-        /// instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
-        /// </para>
-        ///  
-        /// <para>
-        /// Condition: This parameter is required for requests to create <code>io1</code> and
-        /// <code>io2</code> volumes; it is not used in requests to create <code>gp2</code>, <code>st1</code>,
-        /// <code>sc1</code>, or <code>standard</code> volumes.
         /// </para>
         /// </summary>
         public int Iops
@@ -304,6 +289,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Throughput. 
+        /// <para>
+        /// The throughput that the volume supports, in MiB/s.
+        /// </para>
+        /// </summary>
+        public int Throughput
+        {
+            get { return this._throughput.GetValueOrDefault(); }
+            set { this._throughput = value; }
+        }
+
+        // Check to see if Throughput property is set
+        internal bool IsSetThroughput()
+        {
+            return this._throughput.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
         /// The ID of the volume.
@@ -324,9 +327,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code>
-        /// or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
-        /// HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+        /// The volume type.
         /// </para>
         /// </summary>
         public VolumeType VolumeType

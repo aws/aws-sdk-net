@@ -118,6 +118,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetThroughput())
+                {
+                    request.Parameters.Add("Throughput", StringUtils.FromInt(publicRequest.Throughput));
+                }
                 if(publicRequest.IsSetVolumeType())
                 {
                     request.Parameters.Add("VolumeType", StringUtils.FromString(publicRequest.VolumeType));

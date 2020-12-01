@@ -134,6 +134,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Tags.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("throughput", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Throughput = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("volumeId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

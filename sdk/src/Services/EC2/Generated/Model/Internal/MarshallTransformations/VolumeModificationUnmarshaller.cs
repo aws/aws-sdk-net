@@ -78,6 +78,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.OriginalSize = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("originalThroughput", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.OriginalThroughput = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("originalVolumeType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -112,6 +118,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.TargetSize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("targetThroughput", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.TargetThroughput = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("targetVolumeType", targetDepth))

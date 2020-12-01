@@ -32,12 +32,12 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the ModifyVolume operation.
     /// You can modify several parameters of an existing EBS volume, including volume size,
     /// volume type, and IOPS capacity. If your EBS volume is attached to a current-generation
-    /// EC2 instance type, you may be able to apply these changes without stopping the instance
+    /// EC2 instance type, you might be able to apply these changes without stopping the instance
     /// or detaching the volume from it. For more information about modifying an EBS volume
     /// running Linux, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
     /// the size, IOPS, or type of an EBS volume on Linux</a>. For more information about
     /// modifying an EBS volume running Windows, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-    /// the size, IOPS, or type of an EBS volume on Windows</a>. 
+    /// the size, IOPS, or type of an EBS volume on Windows</a>.
     /// 
     ///  
     /// <para>
@@ -59,11 +59,11 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// With previous-generation instance types, resizing an EBS volume may require detaching
+    /// With previous-generation instance types, resizing an EBS volume might require detaching
     /// and reattaching the volume or stopping and restarting the instance. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
-    /// the size, IOPS, or type of an EBS volume on Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-    /// the size, IOPS, or type of an EBS volume on Windows</a>.
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon
+    /// EBS Elastic Volumes</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon
+    /// EBS Elastic Volumes</a> (Windows).
     /// </para>
     ///  
     /// <para>
@@ -76,21 +76,33 @@ namespace Amazon.EC2.Model
     {
         private int? _iops;
         private int? _size;
+        private int? _throughput;
         private string _volumeId;
         private VolumeType _volumeType;
 
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The target IOPS rate of the volume.
+        /// The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>,
+        /// <code>io1</code>, and <code>io2</code> volumes.
         /// </para>
         ///  
         /// <para>
-        /// This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>)
-        /// volumes. For moreinformation, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
-        /// Provisioned IOPS SSD (io1 and io2) volumes</a>.
+        /// The following are the supported values for each volume type:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>gp3</code>: 3,000-16,000 IOPS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>io1</code>: 100-64,000 IOPS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>io2</code>: 100-64,000 IOPS
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Default: If no IOPS value is specified, the existing value is retained.
         /// </para>
@@ -111,11 +123,29 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Size. 
         /// <para>
         /// The target size of the volume, in GiB. The target volume size must be greater than
-        /// or equal to than the existing size of the volume. For information about available
-        /// EBS volume sizes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-        /// EBS Volume Types</a>.
+        /// or equal to the existing size of the volume.
         /// </para>
         ///  
+        /// <para>
+        /// The following are the supported volumes sizes for each volume type:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>gp2</code> and <code>gp3</code>: 1-16,384
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>io1</code> and <code>io2</code>: 4-16,384
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>st1</code> and <code>sc1</code>: 125-16,384
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>standard</code>: 1-1,024
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Default: If no size is specified, the existing size is retained.
         /// </para>
@@ -130,6 +160,33 @@ namespace Amazon.EC2.Model
         internal bool IsSetSize()
         {
             return this._size.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Throughput. 
+        /// <para>
+        /// The target throughput of the volume, in MiB/s. This parameter is valid only for <code>gp3</code>
+        /// volumes. The maximum value is 1,000.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: If no throughput value is specified, the existing value is retained.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 125. Maximum value of 1000.
+        /// </para>
+        /// </summary>
+        public int Throughput
+        {
+            get { return this._throughput.GetValueOrDefault(); }
+            set { this._throughput = value; }
+        }
+
+        // Check to see if Throughput property is set
+        internal bool IsSetThroughput()
+        {
+            return this._throughput.HasValue; 
         }
 
         /// <summary>
@@ -154,7 +211,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The target EBS volume type of the volume.
+        /// The target EBS volume type of the volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+        /// EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>

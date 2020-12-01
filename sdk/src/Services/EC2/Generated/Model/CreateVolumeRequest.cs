@@ -31,9 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CreateVolume operation.
     /// Creates an EBS volume that can be attached to an instance in the same Availability
-    /// Zone. The volume is created in the regional endpoint that you send the HTTP request
-    /// to. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-    /// and Endpoints</a>.
+    /// Zone.
     /// 
     ///  
     /// <para>
@@ -45,7 +43,7 @@ namespace Amazon.EC2.Model
     /// You can create encrypted volumes. Encrypted volumes must be attached to instances
     /// that support Amazon EBS encryption. Volumes that are created from encrypted snapshots
     /// are also automatically encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -69,6 +67,7 @@ namespace Amazon.EC2.Model
         private int? _size;
         private string _snapshotId;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private int? _throughput;
         private VolumeType _volumeType;
 
         /// <summary>
@@ -80,7 +79,7 @@ namespace Amazon.EC2.Model
         /// Instantiates CreateVolumeRequest with the parameterized properties
         /// </summary>
         /// <param name="availabilityZone">The Availability Zone in which to create the volume.</param>
-        /// <param name="size">The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code> and <code>io2</code>, 500-16,384 for <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for <code>standard</code>. If you specify a snapshot, the volume size must be equal to or larger than the snapshot size. Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</param>
+        /// <param name="size">The size of the volume, in GiBs. You must specify either a snapshot ID or a volume size. If you specify a snapshot, the default is the snapshot size. You can specify a volume size that is equal to or larger than the snapshot size. The following are the supported volumes sizes for each volume type: <ul> <li>  <code>gp2</code> and <code>gp3</code>: 1-16,384 </li> <li>  <code>io1</code> and <code>io2</code>: 4-16,384 </li> <li>  <code>st1</code> and <code>sc1</code>: 125-16,384 </li> <li>  <code>standard</code>: 1-1,024 </li> </ul></param>
         public CreateVolumeRequest(string availabilityZone, int size)
         {
             _availabilityZone = availabilityZone;
@@ -120,7 +119,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Specifies whether the volume should be encrypted. The effect of setting the encryption
+        /// Indicates whether the volume should be encrypted. The effect of setting the encryption
         /// state to <code>true</code> depends on the volume origin (new or from a snapshot),
         /// starting encryption state, ownership, and whether encryption by default is enabled.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption
@@ -148,17 +147,39 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The number of I/O operations per second (IOPS) to provision for an <code>io1</code>
-        /// or <code>io2</code> volume, with a maximum ratio of 50 IOPS/GiB for <code>io1</code>,
-        /// and 500 IOPS/GiB for <code>io2</code>. Range is 100 to 64,000 IOPS for volumes in
-        /// most Regions. Maximum IOPS of 64,000 is guaranteed only on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-        /// instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-        /// EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>,
+        /// and <code>io2</code> volumes, this represents the number of IOPS that are provisioned
+        /// for the volume. For <code>gp2</code> volumes, this represents the baseline performance
+        /// of the volume and the rate at which the volume accumulates I/O credits for bursting.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is valid only for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>)
+        /// The following are the supported values for each volume type:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>gp3</code>: 3,000-16,000 IOPS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>io1</code>: 100-64,000 IOPS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>io2</code>: 100-64,000 IOPS
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <code>io1</code> and <code>io2</code> volumes, we guarantee 64,000 IOPS only for
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+        /// built on the Nitro System</a>. Other instance families guarantee performance up to
+        /// 32,000 IOPS.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required for <code>io1</code> and <code>io2</code> volumes. The
+        /// default for <code>gp3</code> volumes is 3,000 IOPS. This parameter is not supported
+        /// for <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code>
         /// volumes.
         /// </para>
         /// </summary>
@@ -223,9 +244,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MultiAttachEnabled. 
         /// <para>
-        /// Specifies whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you
-        /// can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
-        /// instances</a> in the same Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
+        /// Indicates whether to enable Amazon EBS Multi-Attach. If you enable Multi-Attach, you
+        /// can attach the volume to up to 16 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+        /// built on the Nitro System</a> in the same Availability Zone. This parameter is supported
+        /// with <code>io1</code> volumes only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
         /// Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
@@ -263,20 +285,30 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Size. 
         /// <para>
         /// The size of the volume, in GiBs. You must specify either a snapshot ID or a volume
-        /// size.
+        /// size. If you specify a snapshot, the default is the snapshot size. You can specify
+        /// a volume size that is equal to or larger than the snapshot size.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: 1-16,384 for <code>gp2</code>, 4-16,384 for <code>io1</code> and <code>io2</code>,
-        /// 500-16,384 for <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for
-        /// <code>standard</code>. If you specify a snapshot, the volume size must be equal to
-        /// or larger than the snapshot size.
+        /// The following are the supported volumes sizes for each volume type:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Default: If you're creating the volume from a snapshot and don't specify a volume
-        /// size, the default is the snapshot size.
+        ///  <code>gp2</code> and <code>gp3</code>: 1-16,384
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>io1</code> and <code>io2</code>: 4-16,384
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>st1</code> and <code>sc1</code>: 125-16,384
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>standard</code>: 1-1,024
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int Size
         {
@@ -328,11 +360,60 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Throughput. 
+        /// <para>
+        /// The throughput to provision for a volume, with a maximum of 1,000 MiB/s.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is valid only for <code>gp3</code> volumes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 125. Maximum value of 1000.
+        /// </para>
+        /// </summary>
+        public int Throughput
+        {
+            get { return this._throughput.GetValueOrDefault(); }
+            set { this._throughput = value; }
+        }
+
+        // Check to see if Throughput property is set
+        internal bool IsSetThroughput()
+        {
+            return this._throughput.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code>
-        /// or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
-        /// HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+        /// The volume type. This parameter can be one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// General Purpose SSD: <code>gp2</code> | <code>gp3</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Provisioned IOPS SSD: <code>io1</code> | <code>io2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Throughput Optimized HDD: <code>st1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cold HDD: <code>sc1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Magnetic: <code>standard</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+        /// EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>

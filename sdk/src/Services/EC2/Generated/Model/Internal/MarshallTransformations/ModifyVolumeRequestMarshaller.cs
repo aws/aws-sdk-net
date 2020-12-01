@@ -66,6 +66,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Size", StringUtils.FromInt(publicRequest.Size));
                 }
+                if(publicRequest.IsSetThroughput())
+                {
+                    request.Parameters.Add("Throughput", StringUtils.FromInt(publicRequest.Throughput));
+                }
                 if(publicRequest.IsSetVolumeId())
                 {
                     request.Parameters.Add("VolumeId", StringUtils.FromString(publicRequest.VolumeId));

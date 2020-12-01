@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     /// After resetting the default CMK to the AWS managed CMK, you can continue to encrypt
     /// by a customer managed CMK by specifying it when you create the volume. For more information,
     /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-    /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ResetEbsDefaultKmsKeyIdRequest : AmazonEC2Request

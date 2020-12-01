@@ -831,7 +831,7 @@ namespace Amazon.EC2
         /// <para>
         /// Encrypted EBS volumes must be attached to instances that support Amazon EBS encryption.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2367,12 +2367,13 @@ namespace Amazon.EC2
         /// <para>
         /// You can take a snapshot of an attached volume that is in use. However, snapshots only
         /// capture data that has been written to your EBS volume at the time the snapshot command
-        /// is issued; this may exclude any data that has been cached by any applications or the
-        /// operating system. If you can pause any file systems on the volume long enough to take
-        /// a snapshot, your snapshot should be complete. However, if you cannot pause all file
-        /// writes to the volume, you should unmount the volume from within the instance, issue
-        /// the snapshot command, and then remount the volume to ensure a consistent and complete
-        /// snapshot. You may remount and use your volume while the snapshot status is <code>pending</code>.
+        /// is issued; this might exclude any data that has been cached by any applications or
+        /// the operating system. If you can pause any file systems on the volume long enough
+        /// to take a snapshot, your snapshot should be complete. However, if you cannot pause
+        /// all file writes to the volume, you should unmount the volume from within the instance,
+        /// issue the snapshot command, and then remount the volume to ensure a consistent and
+        /// complete snapshot. You may remount and use your volume while the snapshot status is
+        /// <code>pending</code>.
         /// </para>
         ///  
         /// <para>
@@ -2394,7 +2395,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
         /// Elastic Block Store</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
@@ -2847,9 +2848,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates an EBS volume that can be attached to an instance in the same Availability
-        /// Zone. The volume is created in the regional endpoint that you send the HTTP request
-        /// to. For more information see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-        /// and Endpoints</a>.
+        /// Zone.
         /// 
         ///  
         /// <para>
@@ -2861,7 +2860,7 @@ namespace Amazon.EC2
         /// You can create encrypted volumes. Encrypted volumes must be attached to instances
         /// that support Amazon EBS encryption. Volumes that are created from encrypted snapshots
         /// are also automatically encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6773,7 +6772,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-        /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotAttribute service method.</param>
@@ -6863,7 +6862,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-        /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -6949,7 +6948,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-        /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots service method.</param>
@@ -7469,7 +7468,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
-        /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeAttribute service method.</param>
@@ -7501,7 +7500,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
-        /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -7529,7 +7528,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
-        /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumes service method.</param>
@@ -7598,21 +7597,21 @@ namespace Amazon.EC2
         /// <code>ok</code>, <code>impaired</code> , <code>warning</code>, or <code>insufficient-data</code>.
         /// If all checks pass, the overall status of the volume is <code>ok</code>. If the check
         /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
-        /// then the checks may still be taking place on your volume at the time. We recommend
+        /// then the checks might still be taking place on your volume at the time. We recommend
         /// that you retry the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
         /// the status of your volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Events</i>: Reflect the cause of a volume status and may require you to take action.
-        /// For example, if your volume returns an <code>impaired</code> status, then the volume
-        /// event might be <code>potential-data-inconsistency</code>. This means that your volume
-        /// has been affected by an issue with the underlying host, has all I/O operations disabled,
-        /// and may have inconsistent data.
+        ///  <i>Events</i>: Reflect the cause of a volume status and might require you to take
+        /// action. For example, if your volume returns an <code>impaired</code> status, then
+        /// the volume event might be <code>potential-data-inconsistency</code>. This means that
+        /// your volume has been affected by an issue with the underlying host, has all I/O operations
+        /// disabled, and might have inconsistent data.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Actions</i>: Reflect the actions you may have to take in response to an event.
+        ///  <i>Actions</i>: Reflect the actions you might have to take in response to an event.
         /// For example, if the status of the volume is <code>impaired</code> and the volume event
         /// shows <code>potential-data-inconsistency</code>, then the action shows <code>enable-volume-io</code>.
         /// This means that you may want to enable the I/O operations for the volume by calling
@@ -7655,21 +7654,21 @@ namespace Amazon.EC2
         /// <code>ok</code>, <code>impaired</code> , <code>warning</code>, or <code>insufficient-data</code>.
         /// If all checks pass, the overall status of the volume is <code>ok</code>. If the check
         /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
-        /// then the checks may still be taking place on your volume at the time. We recommend
+        /// then the checks might still be taking place on your volume at the time. We recommend
         /// that you retry the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
         /// the status of your volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Events</i>: Reflect the cause of a volume status and may require you to take action.
-        /// For example, if your volume returns an <code>impaired</code> status, then the volume
-        /// event might be <code>potential-data-inconsistency</code>. This means that your volume
-        /// has been affected by an issue with the underlying host, has all I/O operations disabled,
-        /// and may have inconsistent data.
+        ///  <i>Events</i>: Reflect the cause of a volume status and might require you to take
+        /// action. For example, if your volume returns an <code>impaired</code> status, then
+        /// the volume event might be <code>potential-data-inconsistency</code>. This means that
+        /// your volume has been affected by an issue with the underlying host, has all I/O operations
+        /// disabled, and might have inconsistent data.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Actions</i>: Reflect the actions you may have to take in response to an event.
+        ///  <i>Actions</i>: Reflect the actions you might have to take in response to an event.
         /// For example, if the status of the volume is <code>impaired</code> and the volume event
         /// shows <code>potential-data-inconsistency</code>, then the action shows <code>enable-volume-io</code>.
         /// This means that you may want to enable the I/O operations for the volume by calling
@@ -8157,7 +8156,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableEbsEncryptionByDefault service method.</param>
@@ -8508,7 +8507,7 @@ namespace Amazon.EC2
         /// After you enable encryption by default, the EBS volumes that you create are are always
         /// encrypted, either using the default CMK or the CMK that you specified when you created
         /// each volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8944,7 +8943,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEbsDefaultKmsKeyId service method.</param>
@@ -8969,7 +8968,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEbsEncryptionByDefault service method.</param>
@@ -9516,7 +9515,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyEbsDefaultKmsKeyId service method.</param>
@@ -10283,12 +10282,12 @@ namespace Amazon.EC2
         /// <summary>
         /// You can modify several parameters of an existing EBS volume, including volume size,
         /// volume type, and IOPS capacity. If your EBS volume is attached to a current-generation
-        /// EC2 instance type, you may be able to apply these changes without stopping the instance
+        /// EC2 instance type, you might be able to apply these changes without stopping the instance
         /// or detaching the volume from it. For more information about modifying an EBS volume
         /// running Linux, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
         /// the size, IOPS, or type of an EBS volume on Linux</a>. For more information about
         /// modifying an EBS volume running Windows, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-        /// the size, IOPS, or type of an EBS volume on Windows</a>. 
+        /// the size, IOPS, or type of an EBS volume on Windows</a>.
         /// 
         ///  
         /// <para>
@@ -10310,11 +10309,11 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// With previous-generation instance types, resizing an EBS volume may require detaching
+        /// With previous-generation instance types, resizing an EBS volume might require detaching
         /// and reattaching the volume or stopping and restarting the instance. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
-        /// the size, IOPS, or type of an EBS volume on Linux</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
-        /// the size, IOPS, or type of an EBS volume on Windows</a>.
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon
+        /// EBS Elastic Volumes</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon
+        /// EBS Elastic Volumes</a> (Windows).
         /// </para>
         ///  
         /// <para>
@@ -11491,7 +11490,7 @@ namespace Amazon.EC2
         /// After resetting the default CMK to the AWS managed CMK, you can continue to encrypt
         /// by a customer managed CMK by specifying it when you create the volume. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetEbsDefaultKmsKeyId service method.</param>

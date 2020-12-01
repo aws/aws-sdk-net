@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information about EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
-    /// EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeVolumesRequest : AmazonEC2Request
@@ -152,10 +152,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code>
-        /// for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS
-        /// SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD,
-        /// or <code>standard</code> for Magnetic volumes.
+        ///  <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code>
+        /// | <code>io1</code> | <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
         /// </para>
         ///  </li> </ul>
         /// </summary>

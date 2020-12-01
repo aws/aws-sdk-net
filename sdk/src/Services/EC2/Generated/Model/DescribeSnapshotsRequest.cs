@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-    /// EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeSnapshotsRequest : AmazonEC2Request
@@ -200,10 +200,10 @@ namespace Amazon.EC2.Model
         /// returns <code>MaxResults</code> results in a single page along with a <code>NextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
-        /// value. This value can be between 5 and 1000; if <code>MaxResults</code> is given a
-        /// value larger than 1000, only 1000 results are returned. If this parameter is not used,
-        /// then <code>DescribeSnapshots</code> returns all results. You cannot specify this parameter
-        /// and the snapshot IDs parameter in the same request.
+        /// value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given
+        /// a value larger than 1,000, only 1,000 results are returned. If this parameter is not
+        /// used, then <code>DescribeSnapshots</code> returns all results. You cannot specify
+        /// this parameter and the snapshot IDs parameter in the same request.
         /// </para>
         /// </summary>
         public int MaxResults

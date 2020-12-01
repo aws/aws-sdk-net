@@ -5543,6 +5543,46 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType D2Xlarge = new InstanceType("d2.xlarge");
         /// <summary>
+        /// Constant D32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType D32xlarge = new InstanceType("d3.2xlarge");
+        /// <summary>
+        /// Constant D34xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType D34xlarge = new InstanceType("d3.4xlarge");
+        /// <summary>
+        /// Constant D38xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType D38xlarge = new InstanceType("d3.8xlarge");
+        /// <summary>
+        /// Constant D3en12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType D3en12xlarge = new InstanceType("d3en.12xlarge");
+        /// <summary>
+        /// Constant D3en2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType D3en2xlarge = new InstanceType("d3en.2xlarge");
+        /// <summary>
+        /// Constant D3en4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType D3en4xlarge = new InstanceType("d3en.4xlarge");
+        /// <summary>
+        /// Constant D3en6xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType D3en6xlarge = new InstanceType("d3en.6xlarge");
+        /// <summary>
+        /// Constant D3en8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType D3en8xlarge = new InstanceType("d3en.8xlarge");
+        /// <summary>
+        /// Constant D3enXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType D3enXlarge = new InstanceType("d3en.xlarge");
+        /// <summary>
+        /// Constant D3Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType D3Xlarge = new InstanceType("d3.xlarge");
+        /// <summary>
         /// Constant F116xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType F116xlarge = new InstanceType("f1.16xlarge");
@@ -5991,6 +6031,34 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M5Xlarge = new InstanceType("m5.xlarge");
         /// <summary>
+        /// Constant M5zn12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5zn12xlarge = new InstanceType("m5zn.12xlarge");
+        /// <summary>
+        /// Constant M5zn2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5zn2xlarge = new InstanceType("m5zn.2xlarge");
+        /// <summary>
+        /// Constant M5zn3xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5zn3xlarge = new InstanceType("m5zn.3xlarge");
+        /// <summary>
+        /// Constant M5zn6xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5zn6xlarge = new InstanceType("m5zn.6xlarge");
+        /// <summary>
+        /// Constant M5znLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5znLarge = new InstanceType("m5zn.large");
+        /// <summary>
+        /// Constant M5znMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5znMetal = new InstanceType("m5zn.metal");
+        /// <summary>
+        /// Constant M5znXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M5znXlarge = new InstanceType("m5zn.xlarge");
+        /// <summary>
         /// Constant M6g12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M6g12xlarge = new InstanceType("m6g.12xlarge");
@@ -6230,6 +6298,42 @@ namespace Amazon.EC2
         /// Constant R5aXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R5aXlarge = new InstanceType("r5a.xlarge");
+        /// <summary>
+        /// Constant R5b12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5b12xlarge = new InstanceType("r5b.12xlarge");
+        /// <summary>
+        /// Constant R5b16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5b16xlarge = new InstanceType("r5b.16xlarge");
+        /// <summary>
+        /// Constant R5b24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5b24xlarge = new InstanceType("r5b.24xlarge");
+        /// <summary>
+        /// Constant R5b2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5b2xlarge = new InstanceType("r5b.2xlarge");
+        /// <summary>
+        /// Constant R5b4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5b4xlarge = new InstanceType("r5b.4xlarge");
+        /// <summary>
+        /// Constant R5b8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5b8xlarge = new InstanceType("r5b.8xlarge");
+        /// <summary>
+        /// Constant R5bLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5bLarge = new InstanceType("r5b.large");
+        /// <summary>
+        /// Constant R5bMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5bMetal = new InstanceType("r5b.metal");
+        /// <summary>
+        /// Constant R5bXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R5bXlarge = new InstanceType("r5b.xlarge");
         /// <summary>
         /// Constant R5d12xlarge for InstanceType
         /// </summary>
@@ -12510,6 +12614,10 @@ namespace Amazon.EC2
         /// Constant Gp2 for VolumeType
         /// </summary>
         public static readonly VolumeType Gp2 = new VolumeType("gp2");
+        /// <summary>
+        /// Constant Gp3 for VolumeType
+        /// </summary>
+        public static readonly VolumeType Gp3 = new VolumeType("gp3");
         /// <summary>
         /// Constant Io1 for VolumeType
         /// </summary>

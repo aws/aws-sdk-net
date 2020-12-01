@@ -42,12 +42,14 @@ namespace Amazon.EC2.Model
         private VolumeModificationState _modificationState;
         private int? _originalIops;
         private int? _originalSize;
+        private int? _originalThroughput;
         private VolumeType _originalVolumeType;
         private long? _progress;
         private DateTime? _startTime;
         private string _statusMessage;
         private int? _targetIops;
         private int? _targetSize;
+        private int? _targetThroughput;
         private VolumeType _targetVolumeType;
         private string _volumeId;
 
@@ -121,6 +123,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetOriginalSize()
         {
             return this._originalSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginalThroughput. 
+        /// <para>
+        /// The original throughput of the volume, in MiB/s.
+        /// </para>
+        /// </summary>
+        public int OriginalThroughput
+        {
+            get { return this._originalThroughput.GetValueOrDefault(); }
+            set { this._originalThroughput = value; }
+        }
+
+        // Check to see if OriginalThroughput property is set
+        internal bool IsSetOriginalThroughput()
+        {
+            return this._originalThroughput.HasValue; 
         }
 
         /// <summary>
@@ -229,6 +249,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTargetSize()
         {
             return this._targetSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetThroughput. 
+        /// <para>
+        /// The target throughput of the volume, in MiB/s.
+        /// </para>
+        /// </summary>
+        public int TargetThroughput
+        {
+            get { return this._targetThroughput.GetValueOrDefault(); }
+            set { this._targetThroughput = value; }
+        }
+
+        // Check to see if TargetThroughput property is set
+        internal bool IsSetTargetThroughput()
+        {
+            return this._targetThroughput.HasValue; 
         }
 
         /// <summary>
