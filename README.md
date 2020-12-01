@@ -439,8 +439,6 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility.
 * [AWSSDK.Pricing](https://www.nuget.org/packages/AWSSDK.Pricing/)
 	* We launched new service, Price List Service.
-* [AWSSDK.Profile](https://www.nuget.org/packages/AWSSDK.Profile/)
-	* This is the first release of Amazon Connect Customer Profiles, a unified customer profile for your Amazon Connect contact center.
 * [AWSSDK.QLDB](https://www.nuget.org/packages/AWSSDK.QLDB/)
 	* Introduces operations needed for managing Amazon QLDB ledgers. This includes the ability to create, delete, modify, and describe Amazon QLDB ledgers. This also includes the ability to cryptographically verify documents and export the journal in a ledger.
 * [AWSSDK.QLDBSession](https://www.nuget.org/packages/AWSSDK.QLDBSession/)
