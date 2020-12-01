@@ -68,6 +68,10 @@
       <Project>{FE28FA91-1F9C-417B-844C-AF73189EFA3A}</Project>
       <Name>AWSSDK.Amplify.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AmplifyBackend/AWSSDK.AmplifyBackend.CodeAnalysis.csproj">
+      <Project>{2AEECD2D-ED63-40C2-9419-AF3850254796}</Project>
+      <Name>AWSSDK.AmplifyBackend.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/APIGateway/AWSSDK.APIGateway.CodeAnalysis.csproj">
       <Project>{AFBED677-F602-4CE6-96D0-CE2DF0DA800E}</Project>
       <Name>AWSSDK.APIGateway.CodeAnalysis</Name>

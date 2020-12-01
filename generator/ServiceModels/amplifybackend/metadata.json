@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "(New Service) The Amplify Admin UI offers an accessible way to develop app backends and manage app content. We recommend that you use the Amplify Admin UI to manage the backend of your Amplify app.",
+  "generate-client-constructors": true
+}
