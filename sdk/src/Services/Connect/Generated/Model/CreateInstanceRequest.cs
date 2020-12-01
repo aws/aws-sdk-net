@@ -30,9 +30,14 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInstance operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Initiates an Amazon Connect instance with all the supported channels enabled. It does
     /// not attach any storage (such as Amazon S3, or Kinesis) or allow for any configurations
-    /// on features such as Contact Lens for Amazon Connect.
+    /// on features such as Contact Lens for Amazon Connect. 
+    /// </para>
     /// </summary>
     public partial class CreateInstanceRequest : AmazonConnectRequest
     {

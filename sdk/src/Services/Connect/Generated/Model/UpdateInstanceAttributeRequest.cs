@@ -30,7 +30,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateInstanceAttribute operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Updates the value for the specified attribute type.
+    /// </para>
     /// </summary>
     public partial class UpdateInstanceAttributeRequest : AmazonConnectRequest
     {

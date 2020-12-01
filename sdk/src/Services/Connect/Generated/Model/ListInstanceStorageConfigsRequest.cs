@@ -30,8 +30,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInstanceStorageConfigs operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Returns a paginated list of storage configs for the identified instance and resource
     /// type.
+    /// </para>
     /// </summary>
     public partial class ListInstanceStorageConfigsRequest : AmazonConnectRequest
     {

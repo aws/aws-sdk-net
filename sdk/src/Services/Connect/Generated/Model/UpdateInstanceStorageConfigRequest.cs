@@ -30,7 +30,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateInstanceStorageConfig operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Updates an existing configuration for a resource type. This API is idempotent.
+    /// </para>
     /// </summary>
     public partial class UpdateInstanceStorageConfigRequest : AmazonConnectRequest
     {

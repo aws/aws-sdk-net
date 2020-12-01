@@ -35,6 +35,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly Channel CHAT = new Channel("CHAT");
         /// <summary>
+        /// Constant TASK for Channel
+        /// </summary>
+        public static readonly Channel TASK = new Channel("TASK");
+        /// <summary>
         /// Constant VOICE for Channel
         /// </summary>
         public static readonly Channel VOICE = new Channel("VOICE");
@@ -768,6 +772,52 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstanceStorageResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IntegrationType.
+    /// </summary>
+    public class IntegrationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EVENT for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType EVENT = new IntegrationType("EVENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntegrationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationType FindValue(string value)
+        {
+            return FindValue<IntegrationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationType(string value)
         {
             return FindValue(value);
         }
@@ -1915,6 +1965,52 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ReferenceType.
+    /// </summary>
+    public class ReferenceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant URL for ReferenceType
+        /// </summary>
+        public static readonly ReferenceType URL = new ReferenceType("URL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReferenceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReferenceType FindValue(string value)
+        {
+            return FindValue<ReferenceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReferenceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -1978,6 +2074,56 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SourceType.
+    /// </summary>
+    public class SourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SALESFORCE for SourceType
+        /// </summary>
+        public static readonly SourceType SALESFORCE = new SourceType("SALESFORCE");
+        /// <summary>
+        /// Constant ZENDESK for SourceType
+        /// </summary>
+        public static readonly SourceType ZENDESK = new SourceType("ZENDESK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceType FindValue(string value)
+        {
+            return FindValue<SourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceType(string value)
         {
             return FindValue(value);
         }
@@ -2144,6 +2290,52 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Unit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UseCaseType.
+    /// </summary>
+    public class UseCaseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RULES_EVALUATION for UseCaseType
+        /// </summary>
+        public static readonly UseCaseType RULES_EVALUATION = new UseCaseType("RULES_EVALUATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UseCaseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UseCaseType FindValue(string value)
+        {
+            return FindValue<UseCaseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UseCaseType(string value)
         {
             return FindValue(value);
         }

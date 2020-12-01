@@ -80,7 +80,7 @@ namespace Amazon.Connect.Model
         /// The queues, up to 100, or channels, to use to filter the metrics returned. Metric
         /// data is retrieved only for the resources associated with the queues or channels included
         /// in the filter. You can include both queue IDs and queue ARNs in the same request.
-        /// Both <code>VOICE</code> and <code>CHAT</code> channels are supported.
+        /// VOICE, CHAT, and TASK channels are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

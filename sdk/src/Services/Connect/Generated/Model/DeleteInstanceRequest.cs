@@ -30,7 +30,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInstance operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Deletes the Amazon Connect instance.
+    /// </para>
     /// </summary>
     public partial class DeleteInstanceRequest : AmazonConnectRequest
     {

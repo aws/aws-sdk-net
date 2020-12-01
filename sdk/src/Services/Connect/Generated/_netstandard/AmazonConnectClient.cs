@@ -697,9 +697,14 @@ namespace Amazon.Connect
 
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Initiates an Amazon Connect instance with all the supported channels enabled. It does
         /// not attach any storage (such as Amazon S3, or Kinesis) or allow for any configurations
-        /// on features such as Contact Lens for Amazon Connect.
+        /// on features such as Contact Lens for Amazon Connect. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstance service method.</param>
         /// <param name="cancellationToken">
@@ -730,6 +735,60 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateIntegrationAssociation
+
+        internal virtual CreateIntegrationAssociationResponse CreateIntegrationAssociation(CreateIntegrationAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIntegrationAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntegrationAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIntegrationAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Create an AppIntegration association with anAmazon Connect instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIntegrationAssociation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">REST API Reference for CreateIntegrationAssociation Operation</seealso>
+        public virtual Task<CreateIntegrationAssociationResponse> CreateIntegrationAssociationAsync(CreateIntegrationAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIntegrationAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntegrationAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIntegrationAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -785,6 +844,60 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = CreateRoutingProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateRoutingProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateUseCase
+
+        internal virtual CreateUseCaseResponse CreateUseCase(CreateUseCaseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUseCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUseCaseResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUseCaseResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Creates a use case for an AppIntegration association.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUseCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateUseCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase">REST API Reference for CreateUseCase Operation</seealso>
+        public virtual Task<CreateUseCaseResponse> CreateUseCaseAsync(CreateUseCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUseCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUseCaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateUseCaseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -920,7 +1033,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Deletes the Amazon Connect instance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInstance service method.</param>
         /// <param name="cancellationToken">
@@ -945,6 +1063,109 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteIntegrationAssociation
+
+        internal virtual DeleteIntegrationAssociationResponse DeleteIntegrationAssociation(DeleteIntegrationAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIntegrationAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Deletes an AppIntegration association from an Amazon Connect instance. The association
+        /// must not have any use cases associated with it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIntegrationAssociation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">REST API Reference for DeleteIntegrationAssociation Operation</seealso>
+        public virtual Task<DeleteIntegrationAssociationResponse> DeleteIntegrationAssociationAsync(DeleteIntegrationAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIntegrationAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUseCase
+
+        internal virtual DeleteUseCaseResponse DeleteUseCase(DeleteUseCaseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUseCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUseCaseResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUseCaseResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Deletes a use case from an AppIntegration association.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUseCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteUseCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase">REST API Reference for DeleteUseCase Operation</seealso>
+        public virtual Task<DeleteUseCaseResponse> DeleteUseCaseAsync(DeleteUseCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUseCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUseCaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteUseCaseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2146,7 +2367,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Returns a paginated list of all attribute types for the given instance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -2195,9 +2421,14 @@ namespace Amazon.Connect
 
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Return a list of instances which are in active state, creation-in-progress state,
         /// and failed state. Instances that aren't successfully created (they are in a failed
         /// state) are returned only for 24 hours after the CreateInstance API was invoked.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
         /// <param name="cancellationToken">
@@ -2237,8 +2468,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Returns a paginated list of storage configs for the identified instance and resource
         /// type.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceStorageConfigs service method.</param>
         /// <param name="cancellationToken">
@@ -2269,6 +2505,58 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListInstanceStorageConfigsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListInstanceStorageConfigsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListIntegrationAssociations
+
+        internal virtual ListIntegrationAssociationsResponse ListIntegrationAssociations(ListIntegrationAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIntegrationAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntegrationAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIntegrationAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Provides summary information about the AppIntegration associations for the specified
+        /// Amazon Connect instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntegrationAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIntegrationAssociations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">REST API Reference for ListIntegrationAssociations Operation</seealso>
+        public virtual Task<ListIntegrationAssociationsResponse> ListIntegrationAssociationsAsync(ListIntegrationAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIntegrationAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntegrationAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIntegrationAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2801,6 +3089,57 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListUseCases
+
+        internal virtual ListUseCasesResponse ListUseCases(ListUseCasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUseCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUseCasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListUseCasesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// List the use cases. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUseCases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUseCases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">REST API Reference for ListUseCases Operation</seealso>
+        public virtual Task<ListUseCasesResponse> ListUseCasesAsync(ListUseCasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUseCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUseCasesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListUseCasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListUserHierarchyGroups
 
         internal virtual ListUserHierarchyGroupsResponse ListUserHierarchyGroups(ListUserHierarchyGroupsRequest request)
@@ -3166,6 +3505,58 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = StartOutboundVoiceContactResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartOutboundVoiceContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartTaskContact
+
+        internal virtual StartTaskContactResponse StartTaskContact(StartTaskContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTaskContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTaskContactResponseUnmarshaller.Instance;
+
+            return Invoke<StartTaskContactResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Initiates a contact flow to start a new task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTaskContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartTaskContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact">REST API Reference for StartTaskContact Operation</seealso>
+        public virtual Task<StartTaskContactResponse> StartTaskContactAsync(StartTaskContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTaskContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTaskContactResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartTaskContactResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3636,7 +4027,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Updates the value for the specified attribute type.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -3685,7 +4081,12 @@ namespace Amazon.Connect
 
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Updates an existing configuration for a resource type. This API is idempotent.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceStorageConfig service method.</param>
         /// <param name="cancellationToken">

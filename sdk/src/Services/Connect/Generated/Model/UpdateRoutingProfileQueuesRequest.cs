@@ -60,7 +60,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property QueueConfigs. 
         /// <para>
-        /// The queues to be updated for this routing profile.
+        /// The queues to be updated for this routing profile. Queues must first be associated
+        /// to the routing profile. You can do this using AssociateRoutingProfileQueues.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

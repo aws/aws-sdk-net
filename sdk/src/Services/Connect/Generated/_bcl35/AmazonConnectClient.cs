@@ -802,9 +802,14 @@ namespace Amazon.Connect
         #region  CreateInstance
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Initiates an Amazon Connect instance with all the supported channels enabled. It does
         /// not attach any storage (such as Amazon S3, or Kinesis) or allow for any configurations
-        /// on features such as Contact Lens for Amazon Connect.
+        /// on features such as Contact Lens for Amazon Connect. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstance service method.</param>
         /// 
@@ -866,6 +871,80 @@ namespace Amazon.Connect
         public virtual CreateInstanceResponse EndCreateInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateIntegrationAssociation
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Create an AppIntegration association with anAmazon Connect instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateIntegrationAssociation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">REST API Reference for CreateIntegrationAssociation Operation</seealso>
+        public virtual CreateIntegrationAssociationResponse CreateIntegrationAssociation(CreateIntegrationAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIntegrationAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntegrationAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIntegrationAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIntegrationAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIntegrationAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">REST API Reference for CreateIntegrationAssociation Operation</seealso>
+        public virtual IAsyncResult BeginCreateIntegrationAssociation(CreateIntegrationAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIntegrationAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntegrationAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIntegrationAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIntegrationAssociation.</param>
+        /// 
+        /// <returns>Returns a  CreateIntegrationAssociationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">REST API Reference for CreateIntegrationAssociation Operation</seealso>
+        public virtual CreateIntegrationAssociationResponse EndCreateIntegrationAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateIntegrationAssociationResponse>(asyncResult);
         }
 
         #endregion
@@ -941,6 +1020,80 @@ namespace Amazon.Connect
         public virtual CreateRoutingProfileResponse EndCreateRoutingProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRoutingProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateUseCase
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Creates a use case for an AppIntegration association.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUseCase service method.</param>
+        /// 
+        /// <returns>The response from the CreateUseCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase">REST API Reference for CreateUseCase Operation</seealso>
+        public virtual CreateUseCaseResponse CreateUseCase(CreateUseCaseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUseCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUseCaseResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUseCaseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUseCase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUseCase operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUseCase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase">REST API Reference for CreateUseCase Operation</seealso>
+        public virtual IAsyncResult BeginCreateUseCase(CreateUseCaseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUseCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUseCaseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateUseCase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUseCase.</param>
+        /// 
+        /// <returns>Returns a  CreateUseCaseResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase">REST API Reference for CreateUseCase Operation</seealso>
+        public virtual CreateUseCaseResponse EndCreateUseCase(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateUseCaseResponse>(asyncResult);
         }
 
         #endregion
@@ -1105,7 +1258,12 @@ namespace Amazon.Connect
         #region  DeleteInstance
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Deletes the Amazon Connect instance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInstance service method.</param>
         /// 
@@ -1161,6 +1319,149 @@ namespace Amazon.Connect
         public virtual DeleteInstanceResponse EndDeleteInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteIntegrationAssociation
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Deletes an AppIntegration association from an Amazon Connect instance. The association
+        /// must not have any use cases associated with it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIntegrationAssociation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">REST API Reference for DeleteIntegrationAssociation Operation</seealso>
+        public virtual DeleteIntegrationAssociationResponse DeleteIntegrationAssociation(DeleteIntegrationAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIntegrationAssociationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIntegrationAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationAssociation operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIntegrationAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">REST API Reference for DeleteIntegrationAssociation Operation</seealso>
+        public virtual IAsyncResult BeginDeleteIntegrationAssociation(DeleteIntegrationAssociationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationAssociationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIntegrationAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIntegrationAssociation.</param>
+        /// 
+        /// <returns>Returns a  DeleteIntegrationAssociationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">REST API Reference for DeleteIntegrationAssociation Operation</seealso>
+        public virtual DeleteIntegrationAssociationResponse EndDeleteIntegrationAssociation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteIntegrationAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteUseCase
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Deletes a use case from an AppIntegration association.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUseCase service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUseCase service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase">REST API Reference for DeleteUseCase Operation</seealso>
+        public virtual DeleteUseCaseResponse DeleteUseCase(DeleteUseCaseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUseCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUseCaseResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUseCaseResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUseCase operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUseCase operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUseCase
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase">REST API Reference for DeleteUseCase Operation</seealso>
+        public virtual IAsyncResult BeginDeleteUseCase(DeleteUseCaseRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUseCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUseCaseResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUseCase operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUseCase.</param>
+        /// 
+        /// <returns>Returns a  DeleteUseCaseResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase">REST API Reference for DeleteUseCase Operation</seealso>
+        public virtual DeleteUseCaseResponse EndDeleteUseCase(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteUseCaseResponse>(asyncResult);
         }
 
         #endregion
@@ -2811,7 +3112,12 @@ namespace Amazon.Connect
         #region  ListInstanceAttributes
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Returns a paginated list of all attribute types for the given instance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceAttributes service method.</param>
         /// 
@@ -2880,9 +3186,14 @@ namespace Amazon.Connect
         #region  ListInstances
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Return a list of instances which are in active state, creation-in-progress state,
         /// and failed state. Instances that aren't successfully created (they are in a failed
         /// state) are returned only for 24 hours after the CreateInstance API was invoked.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
         /// 
@@ -2942,8 +3253,13 @@ namespace Amazon.Connect
         #region  ListInstanceStorageConfigs
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Returns a paginated list of storage configs for the identified instance and resource
         /// type.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceStorageConfigs service method.</param>
         /// 
@@ -3005,6 +3321,78 @@ namespace Amazon.Connect
         public virtual ListInstanceStorageConfigsResponse EndListInstanceStorageConfigs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListInstanceStorageConfigsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListIntegrationAssociations
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Provides summary information about the AppIntegration associations for the specified
+        /// Amazon Connect instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntegrationAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListIntegrationAssociations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">REST API Reference for ListIntegrationAssociations Operation</seealso>
+        public virtual ListIntegrationAssociationsResponse ListIntegrationAssociations(ListIntegrationAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIntegrationAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntegrationAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIntegrationAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIntegrationAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIntegrationAssociations operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIntegrationAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">REST API Reference for ListIntegrationAssociations Operation</seealso>
+        public virtual IAsyncResult BeginListIntegrationAssociations(ListIntegrationAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIntegrationAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntegrationAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIntegrationAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIntegrationAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListIntegrationAssociationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">REST API Reference for ListIntegrationAssociations Operation</seealso>
+        public virtual ListIntegrationAssociationsResponse EndListIntegrationAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListIntegrationAssociationsResponse>(asyncResult);
         }
 
         #endregion
@@ -3737,6 +4125,77 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListUseCases
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// List the use cases. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUseCases service method.</param>
+        /// 
+        /// <returns>The response from the ListUseCases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">REST API Reference for ListUseCases Operation</seealso>
+        public virtual ListUseCasesResponse ListUseCases(ListUseCasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUseCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUseCasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListUseCasesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUseCases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUseCases operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUseCases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">REST API Reference for ListUseCases Operation</seealso>
+        public virtual IAsyncResult BeginListUseCases(ListUseCasesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListUseCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUseCasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListUseCases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUseCases.</param>
+        /// 
+        /// <returns>Returns a  ListUseCasesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">REST API Reference for ListUseCases Operation</seealso>
+        public virtual ListUseCasesResponse EndListUseCases(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListUseCasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListUserHierarchyGroups
 
         /// <summary>
@@ -4222,6 +4681,78 @@ namespace Amazon.Connect
         public virtual StartOutboundVoiceContactResponse EndStartOutboundVoiceContact(IAsyncResult asyncResult)
         {
             return EndInvoke<StartOutboundVoiceContactResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartTaskContact
+
+        /// <summary>
+        /// Initiates a contact flow to start a new task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTaskContact service method.</param>
+        /// 
+        /// <returns>The response from the StartTaskContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact">REST API Reference for StartTaskContact Operation</seealso>
+        public virtual StartTaskContactResponse StartTaskContact(StartTaskContactRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTaskContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTaskContactResponseUnmarshaller.Instance;
+
+            return Invoke<StartTaskContactResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartTaskContact operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartTaskContact operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartTaskContact
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact">REST API Reference for StartTaskContact Operation</seealso>
+        public virtual IAsyncResult BeginStartTaskContact(StartTaskContactRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartTaskContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartTaskContactResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartTaskContact operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartTaskContact.</param>
+        /// 
+        /// <returns>Returns a  StartTaskContactResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartTaskContact">REST API Reference for StartTaskContact Operation</seealso>
+        public virtual StartTaskContactResponse EndStartTaskContact(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartTaskContactResponse>(asyncResult);
         }
 
         #endregion
@@ -4841,7 +5372,12 @@ namespace Amazon.Connect
         #region  UpdateInstanceAttribute
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Updates the value for the specified attribute type.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceAttribute service method.</param>
         /// 
@@ -4910,7 +5446,12 @@ namespace Amazon.Connect
         #region  UpdateInstanceStorageConfig
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Updates an existing configuration for a resource type. This API is idempotent.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInstanceStorageConfig service method.</param>
         /// 

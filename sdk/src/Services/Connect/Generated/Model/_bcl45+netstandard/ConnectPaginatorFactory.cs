@@ -101,6 +101,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListIntegrationAssociations operation
+        ///</summary>
+        public IListIntegrationAssociationsPaginator ListIntegrationAssociations(ListIntegrationAssociationsRequest request) 
+        {
+            return new ListIntegrationAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLambdaFunctions operation
         ///</summary>
         public IListLambdaFunctionsPaginator ListLambdaFunctions(ListLambdaFunctionsRequest request) 
@@ -170,6 +178,14 @@ namespace Amazon.Connect.Model
         public IListSecurityProfilesPaginator ListSecurityProfiles(ListSecurityProfilesRequest request) 
         {
             return new ListSecurityProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListUseCases operation
+        ///</summary>
+        public IListUseCasesPaginator ListUseCases(ListUseCasesRequest request) 
+        {
+            return new ListUseCasesPaginator(this.client, request);
         }
 
         /// <summary>

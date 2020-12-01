@@ -206,7 +206,7 @@ namespace Amazon.Connect.Model
         /// The queues, up to 100, or channels, to use to filter the metrics returned. Metric
         /// data is retrieved only for the resources associated with the queues or channels included
         /// in the filter. You can include both queue IDs and queue ARNs in the same request.
-        /// Both <code>VOICE</code> and <code>CHAT</code> channels are supported.
+        /// VOICE, CHAT, and TASK channels are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -227,8 +227,8 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>,
         /// the metrics returned apply to each queue rather than aggregated for all queues. If
-        /// you group by <code>CHANNEL</code>, you should include a Channels filter. Both <code>VOICE</code>
-        /// and <code>CHAT</code> channels are supported.
+        /// you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE, CHAT,
+        /// and TASK channels are supported.
         /// </para>
         ///  
         /// <para>
