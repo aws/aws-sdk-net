@@ -300,6 +300,10 @@
       <Project>{E51E5A8A-4B72-47BE-B25C-42999CF5D6FC}</Project>
       <Name>AWSSDK.Connect.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ConnectContactLens/AWSSDK.ConnectContactLens.CodeAnalysis.csproj">
+      <Project>{D6283E41-B330-46FF-8497-EFB7F15D3222}</Project>
+      <Name>AWSSDK.ConnectContactLens.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ConnectParticipant/AWSSDK.ConnectParticipant.CodeAnalysis.csproj">
       <Project>{9AC947B6-6DC4-4B32-BA81-F7FBFCBE09F5}</Project>
       <Name>AWSSDK.ConnectParticipant.CodeAnalysis</Name>
