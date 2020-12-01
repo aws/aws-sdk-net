@@ -88,6 +88,10 @@
       <Project>{46F6224C-A560-4D5C-A932-0D4A587F205F}</Project>
       <Name>AWSSDK.Appflow.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AppIntegrationsService/AWSSDK.AppIntegrationsService.CodeAnalysis.csproj">
+      <Project>{8881FD55-C6AF-47D1-AF85-7C8D659D8E35}</Project>
+      <Name>AWSSDK.AppIntegrationsService.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ApplicationAutoScaling/AWSSDK.ApplicationAutoScaling.CodeAnalysis.csproj">
       <Project>{E016F5A7-11FD-4EEC-9FCF-47F95A920CE5}</Project>
       <Name>AWSSDK.ApplicationAutoScaling.CodeAnalysis</Name>
