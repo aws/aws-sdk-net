@@ -18,6 +18,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateLaunchTemplateRequest.VersionDescription</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -28,6 +29,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateLaunchTemplateVersionRequest.VersionDescription</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -478,6 +480,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.LaunchTemplateVersion.VersionDescription</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>

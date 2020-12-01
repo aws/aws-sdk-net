@@ -103,7 +103,7 @@ namespace Amazon.EC2.Model
         /// The configuration for the EC2 Fleet.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=50)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<FleetLaunchTemplateConfigRequest> LaunchTemplateConfigs
         {
             get { return this._launchTemplateConfigs; }

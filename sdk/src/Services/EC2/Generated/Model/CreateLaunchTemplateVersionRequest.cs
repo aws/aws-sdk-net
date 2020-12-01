@@ -163,7 +163,7 @@ namespace Amazon.EC2.Model
         /// A description for the version of the launch template.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string VersionDescription
         {
             get { return this._versionDescription; }

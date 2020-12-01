@@ -269,7 +269,7 @@ namespace Amazon.EC2.Model
         /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public List<string> InstanceTypes
         {
             get { return this._instanceTypes; }

@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// Any parameters that you specify override the same parameters in the launch template.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public List<FleetLaunchTemplateOverridesRequest> Overrides
         {
             get { return this._overrides; }

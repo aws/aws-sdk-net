@@ -157,7 +157,7 @@ namespace Amazon.EC2.Model
         /// The description for the version.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string VersionDescription
         {
             get { return this._versionDescription; }

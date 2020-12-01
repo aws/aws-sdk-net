@@ -6063,6 +6063,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M6gXlarge = new InstanceType("m6g.xlarge");
         /// <summary>
+        /// Constant Mac1Metal for InstanceType
+        /// </summary>
+        public static readonly InstanceType Mac1Metal = new InstanceType("mac1.metal");
+        /// <summary>
         /// Constant P216xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType P216xlarge = new InstanceType("p2.16xlarge");

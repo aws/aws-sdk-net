@@ -122,7 +122,7 @@ namespace Amazon.EC2.Model
         /// The launch template and overrides.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public List<FleetLaunchTemplateConfigRequest> LaunchTemplateConfigs
         {
             get { return this._launchTemplateConfigs; }
