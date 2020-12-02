@@ -23,8 +23,6 @@
 	* This release includes support for a new feature: Container images support in AWS Lambda. This adds APIs for deploying functions as container images. AWS Lambda now supports memory up to 10240MB.
 * LookoutforVision (3.5.0.0)
 	* This release introduces support for Amazon Lookout for Vision.
-* Profile (3.5.0.0)
-	* This is the first release of Amazon Connect Customer Profiles, a unified customer profile for your Amazon Connect contact center.
 * S3 (3.5.6.0)
 	* S3 adds support for multiple-destination replication, option to sync replica modifications;  S3 Bucket Keys to reduce cost of S3 SSE with AWS KMS
 * SageMaker (3.5.6.0)
