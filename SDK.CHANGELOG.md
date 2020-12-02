@@ -1,3 +1,12 @@
+### 3.5.65.0 (2020-12-02 01:57 UTC)
+* CustomerProfiles (3.5.0.0)
+	* This is the first release of Amazon Connect Customer Profiles, a unified customer profile for your Amazon Connect contact center.
+* Core 3.5.1.45
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.64.0 (2020-12-01 19:20 UTC)
 * AmplifyBackend (3.5.0.0)
 	* (New Service) The Amplify Admin UI offers an accessible way to develop app backends and manage app content. We recommend that you use the Amplify Admin UI to manage the backend of your Amplify app.
