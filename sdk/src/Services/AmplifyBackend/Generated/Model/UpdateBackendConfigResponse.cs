@@ -95,8 +95,8 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property LoginAuthConfig. 
         /// <para>
-        /// Describes the Amazon Cognito configurations for the Admin UI auth resource to login
-        /// with.
+        /// Describes the Amazon Cognito configurations for the Admin UI auth resource to log
+        /// in with.
         /// </para>
         /// </summary>
         public LoginAuthConfigReqObj LoginAuthConfig

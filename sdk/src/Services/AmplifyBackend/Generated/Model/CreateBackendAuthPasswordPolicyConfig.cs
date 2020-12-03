@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// The password policy configuration for the backend to your Amplify project.
+    /// The password policy configuration for the backend of your Amplify project.
     /// </summary>
     public partial class CreateBackendAuthPasswordPolicyConfig
     {
@@ -39,7 +39,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property AdditionalConstraints. 
         /// <para>
-        /// Additional constraints for the pasword used to access the backend of your Amplify
+        /// Additional constraints for the password used to access the backend of your Amplify
         /// project.
         /// </para>
         /// </summary>
@@ -58,7 +58,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property MinimumLength. 
         /// <para>
-        /// The minimum length of password used to access the backend of your Amplify project.
+        /// The minimum length of the password used to access the backend of your Amplify project.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

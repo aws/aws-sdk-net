@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// The settings for using the social providers for access to your Amplify app.
+    /// The settings for using the social identity providers for access to your Amplify app.
     /// </summary>
     public partial class SocialProviderSettings
     {

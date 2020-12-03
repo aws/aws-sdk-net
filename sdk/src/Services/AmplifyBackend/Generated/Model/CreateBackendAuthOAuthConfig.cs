@@ -61,7 +61,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property OAuthGrantType. 
         /// <para>
-        /// The OAuth grant type which you use to allow app users to authenticate from your Amplify
+        /// The OAuth grant type that you use to allow app users to authenticate from your Amplify
         /// app.
         /// </para>
         /// </summary>
@@ -81,8 +81,8 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property OAuthScopes. 
         /// <para>
-        /// List of OAuth related flows which use to allow your app users to authenticate from
-        /// your Amplify app.
+        /// List of OAuth-related flows that allow your app users to authenticate from your Amplify
+        /// app.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +101,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property RedirectSignInURIs. 
         /// <para>
-        /// The redirected URI for sigining into your Amplify app.
+        /// The redirected URI for signing in to your Amplify app.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -120,7 +120,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property RedirectSignOutURIs. 
         /// <para>
-        /// Redirect URLs used by OAuth when a user signs out of an Amplify app.
+        /// Redirect URLs that OAuth uses when a user signs out of an Amplify app.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -139,7 +139,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property SocialProviderSettings. 
         /// <para>
-        /// The settings for using the social providers for access to your Amplify app.
+        /// The settings for using social identity providers for access to your Amplify app.
         /// </para>
         /// </summary>
         public SocialProviderSettings SocialProviderSettings

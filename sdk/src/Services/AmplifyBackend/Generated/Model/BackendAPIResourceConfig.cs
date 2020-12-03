@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// The resource config for the data model,configured as a part of the Amplify project.
+    /// The resource configuration for the data model, configured as a part of the Amplify
+    /// project.
     /// </summary>
     public partial class BackendAPIResourceConfig
     {
@@ -43,7 +44,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property AdditionalAuthTypes. 
         /// <para>
-        /// Addition authentication methods used to interact with your data models.
+        /// Additional authentication methods used to interact with your data models.
         /// </para>
         /// </summary>
         public List<BackendAPIAuthType> AdditionalAuthTypes
@@ -61,7 +62,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property ApiName. 
         /// <para>
-        /// The API name used to interact with the data model, configured as a part of the amplify
+        /// The API name used to interact with the data model, configured as a part of the Amplify
         /// project.
         /// </para>
         /// </summary>
@@ -80,7 +81,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property ConflictResolution. 
         /// <para>
-        /// The conflict resoultion strategy for your data stored in the data models.
+        /// The conflict resolution strategy for your data stored in the data models.
         /// </para>
         /// </summary>
         public BackendAPIConflictResolution ConflictResolution
@@ -99,7 +100,7 @@ namespace Amazon.AmplifyBackend.Model
         /// Gets and sets the property DefaultAuthType. 
         /// <para>
         /// The default authentication type for interacting with the configured data models in
-        /// your amplify project.
+        /// your Amplify project.
         /// </para>
         /// </summary>
         public BackendAPIAuthType DefaultAuthType
@@ -135,7 +136,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property TransformSchema. 
         /// <para>
-        /// The definition of the data model in the annotated transform of the graphql schema.
+        /// The definition of the data model in the annotated transform of the GraphQL schema.
         /// </para>
         /// </summary>
         public string TransformSchema

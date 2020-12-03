@@ -39,7 +39,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property Models. 
         /// <para>
-        /// Stringified JSON of the datastore model.
+        /// Stringified JSON of the DataStore model.
         /// </para>
         /// </summary>
         public string Models

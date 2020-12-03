@@ -30,7 +30,7 @@ namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateToken operation.
-    /// Generates a one time challenge code to authenticate a user into your Amplify Admin
+    /// Generates a one-time challenge code to authenticate a user into your Amplify Admin
     /// UI.
     /// </summary>
     public partial class CreateTokenRequest : AmazonAmplifyBackendRequest

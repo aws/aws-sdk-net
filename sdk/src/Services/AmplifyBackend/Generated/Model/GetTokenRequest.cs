@@ -59,7 +59,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The session Id.
+        /// The session ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

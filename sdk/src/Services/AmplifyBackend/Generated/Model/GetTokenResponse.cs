@@ -59,7 +59,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property ChallengeCode. 
         /// <para>
-        /// The one time challenge code for authenticating into Amplify Admin UI.
+        /// The one-time challenge code for authenticating into the Amplify Admin UI.
         /// </para>
         /// </summary>
         public string ChallengeCode
@@ -77,7 +77,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// A unique identifier provided when creating a new challenge token.
+        /// A unique ID provided when creating a new challenge token.
         /// </para>
         /// </summary>
         public string SessionId
@@ -95,7 +95,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property Ttl. 
         /// <para>
-        /// The expiry time for the one time generated token code.
+        /// The expiry time for the one-time generated token code.
         /// </para>
         /// </summary>
         public string Ttl

@@ -39,7 +39,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property MfaTypes. 
         /// <para>
-        /// The supported MFA types
+        /// The supported MFA types.
         /// </para>
         /// </summary>
         public List<string> MfaTypes

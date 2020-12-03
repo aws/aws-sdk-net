@@ -30,7 +30,7 @@ namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBackend operation.
-    /// Removes an existing environment from your Ampify project.
+    /// Removes an existing environment from your Amplify project.
     /// </summary>
     public partial class DeleteBackendRequest : AmazonAmplifyBackendRequest
     {

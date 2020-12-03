@@ -41,7 +41,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property AwsCognitoIdentityPoolId. 
         /// <para>
-        /// Amazon Cognito identitypool id used for the Amplify Admin UI login authorization.
+        /// The Amazon Cognito identity pool ID used for Amplify Admin UI login authorization.
         /// </para>
         /// </summary>
         public string AwsCognitoIdentityPoolId
@@ -59,7 +59,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property AwsCognitoRegion. 
         /// <para>
-        /// The AWS Region for the the Amplify Admin login.
+        /// The AWS Region for the Amplify Admin UI login.
         /// </para>
         /// </summary>
         public string AwsCognitoRegion
@@ -77,7 +77,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property AwsUserPoolsId. 
         /// <para>
-        /// The Amazon Cognito userpool id used for Amplify Admin UI login authentication.
+        /// The Amazon Cognito user pool ID used for Amplify Admin UI login authentication.
         /// </para>
         /// </summary>
         public string AwsUserPoolsId
@@ -95,7 +95,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property AwsUserPoolsWebClientId. 
         /// <para>
-        /// The web client ID for the Amazon Cognito userpools.
+        /// The web client ID for the Amazon Cognito user pools.
         /// </para>
         /// </summary>
         public string AwsUserPoolsWebClientId

@@ -101,7 +101,7 @@ namespace Amazon.AmplifyBackend.Model
         /// <summary>
         /// Gets and sets the property ResourceConfig. 
         /// <para>
-        /// The resource configuration for the create backend request.
+        /// The resource configuration for the backend creation request.
         /// </para>
         /// </summary>
         public ResourceConfig ResourceConfig

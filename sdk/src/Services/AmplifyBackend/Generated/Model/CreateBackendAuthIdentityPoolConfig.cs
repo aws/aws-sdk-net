@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
-    /// Describes authorization configurations for the auth resources, configures as a part
+    /// Describes authorization configurations for the auth resources, configured as a part
     /// of your Amplify project.
     /// </summary>
     public partial class CreateBackendAuthIdentityPoolConfig
