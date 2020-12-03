@@ -41,7 +41,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property MemberAccountsEnrolled. 
         /// <para>
         /// Confirms the enrollment status of member accounts within the organization, if the
-        /// account is a master account of an organization.
+        /// account is a management account of an organization.
         /// </para>
         /// </summary>
         public bool MemberAccountsEnrolled

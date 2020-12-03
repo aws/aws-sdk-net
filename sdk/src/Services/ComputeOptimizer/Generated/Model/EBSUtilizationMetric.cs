@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes a utilization metric of a resource, such as an Amazon EC2 instance.
+    /// Describes a utilization metric of an Amazon Elastic Block Store (Amazon EBS) volume.
     /// 
     ///  
     /// <para>
@@ -38,9 +38,9 @@ namespace Amazon.ComputeOptimizer.Model
     /// and the recommended option.
     /// </para>
     /// </summary>
-    public partial class UtilizationMetric
+    public partial class EBSUtilizationMetric
     {
-        private MetricName _name;
+        private EBSMetricName _name;
         private MetricStatistic _statistic;
         private double? _value;
 
@@ -55,39 +55,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Cpu</code> - The percentage of allocated EC2 compute units that are currently
-        /// in use on the instance. This metric identifies the processing power required to run
-        /// an application on the instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// Depending on the instance type, tools in your operating system can show a lower percentage
-        /// than CloudWatch when the instance is not allocated a full processor core.
-        /// </para>
-        ///  
-        /// <para>
-        /// Units: Percent
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Memory</code> - The percentage of memory that is currently in use on the instance.
-        /// This metric identifies the amount of memory required to run an application on the
-        /// instance.
-        /// </para>
-        ///  
-        /// <para>
-        /// Units: Percent
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// The <code>Memory</code> metric is returned only for resources that have the unified
-        /// CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
-        /// Memory Utilization with the CloudWatch Agent</a>.
-        /// </para>
-        ///  </note> </li> <li> 
-        /// <para>
-        ///  <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS
-        /// volumes attached to the instance in a specified period of time.
+        ///  <code>VolumeReadOpsPerSecond</code> - The completed read operations per second from
+        /// the volume in a specified period of time.
         /// </para>
         ///  
         /// <para>
@@ -95,8 +64,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed write operations to all EBS
-        /// volumes attached to the instance in a specified period of time.
+        ///  <code>VolumeWriteOpsPerSecond</code> - The completed write operations per second
+        /// to the volume in a specified period of time.
         /// </para>
         ///  
         /// <para>
@@ -104,8 +73,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EBS_READ_BYTES_PER_SECOND</code> - The bytes read from all EBS volumes attached
-        /// to the instance in a specified period of time.
+        ///  <code>VolumeReadBytesPerSecond</code> - The bytes read per second from the volume
+        /// in a specified period of time.
         /// </para>
         ///  
         /// <para>
@@ -113,8 +82,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EBS_WRITE_BYTES_PER_SECOND</code> - The bytes written to all EBS volumes attached
-        /// to the instance in a specified period of time.
+        ///  <code>VolumeWriteBytesPerSecond</code> - The bytes written to the volume in a specified
+        /// period of time.
         /// </para>
         ///  
         /// <para>
@@ -122,7 +91,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public MetricName Name
+        public EBSMetricName Name
         {
             get { return this._name; }
             set { this._name = value; }

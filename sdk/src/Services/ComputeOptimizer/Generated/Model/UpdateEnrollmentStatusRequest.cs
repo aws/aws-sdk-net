@@ -35,8 +35,8 @@ namespace Amazon.ComputeOptimizer.Model
     /// 
     ///  
     /// <para>
-    /// If the account is a master account of an organization, this action can also be used
-    /// to enroll member accounts within the organization.
+    /// If the account is a management account of an organization, this action can also be
+    /// used to enroll member accounts within the organization.
     /// </para>
     /// </summary>
     public partial class UpdateEnrollmentStatusRequest : AmazonComputeOptimizerRequest
@@ -48,7 +48,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property IncludeMemberAccounts. 
         /// <para>
         /// Indicates whether to enroll member accounts of the organization if the your account
-        /// is the master account of an organization.
+        /// is the management account of an organization.
         /// </para>
         /// </summary>
         public bool IncludeMemberAccounts

@@ -76,15 +76,21 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>name</code> parameter as <code>ResourceType</code>, the valid
-        /// values are <code>Ec2Instance</code> or <code>AutoScalingGroup</code>.
+        /// The valid values for this parameter are as follows, depending on what you specify
+        /// for the <code>name</code> parameter:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// If you specify the <code>name</code> parameter as <code>JobStatus</code>, the valid
-        /// values are <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or
-        /// <code>Failed</code>.
+        /// Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified
+        /// the <code>name</code> parameter as <code>ResourceType</code>. There is no filter for
+        /// EBS volumes because volume recommendations cannot be exported at this time.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code>
+        /// if you specified the <code>name</code> parameter as <code>JobStatus</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> Values
         {

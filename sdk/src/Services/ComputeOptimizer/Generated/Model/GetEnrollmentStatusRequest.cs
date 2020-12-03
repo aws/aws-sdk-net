@@ -35,7 +35,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// 
     ///  
     /// <para>
-    /// If the account is the master account of an organization, this action also confirms
+    /// If the account is the management account of an organization, this action also confirms
     /// the enrollment status of member accounts within the organization.
     /// </para>
     /// </summary>

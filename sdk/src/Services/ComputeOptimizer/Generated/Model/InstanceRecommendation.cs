@@ -112,12 +112,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// with optimal performance and infrastructure cost. For optimized resources, AWS Compute
         /// Optimizer might recommend a new generation instance type.
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// The values that are returned might be <code>UNDER_PROVISIONED</code>, <code>OVER_PROVISIONED</code>,
-        /// or <code>OPTIMIZED</code>.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         public Finding Finding
         {

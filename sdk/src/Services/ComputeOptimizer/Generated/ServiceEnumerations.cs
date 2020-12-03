@@ -25,6 +25,160 @@ namespace Amazon.ComputeOptimizer
 {
 
     /// <summary>
+    /// Constants used for properties of type EBSFilterName.
+    /// </summary>
+    public class EBSFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Finding for EBSFilterName
+        /// </summary>
+        public static readonly EBSFilterName Finding = new EBSFilterName("Finding");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EBSFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EBSFilterName FindValue(string value)
+        {
+            return FindValue<EBSFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EBSFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EBSFinding.
+    /// </summary>
+    public class EBSFinding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NotOptimized for EBSFinding
+        /// </summary>
+        public static readonly EBSFinding NotOptimized = new EBSFinding("NotOptimized");
+        /// <summary>
+        /// Constant Optimized for EBSFinding
+        /// </summary>
+        public static readonly EBSFinding Optimized = new EBSFinding("Optimized");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EBSFinding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EBSFinding FindValue(string value)
+        {
+            return FindValue<EBSFinding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EBSFinding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EBSMetricName.
+    /// </summary>
+    public class EBSMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VolumeReadBytesPerSecond for EBSMetricName
+        /// </summary>
+        public static readonly EBSMetricName VolumeReadBytesPerSecond = new EBSMetricName("VolumeReadBytesPerSecond");
+        /// <summary>
+        /// Constant VolumeReadOpsPerSecond for EBSMetricName
+        /// </summary>
+        public static readonly EBSMetricName VolumeReadOpsPerSecond = new EBSMetricName("VolumeReadOpsPerSecond");
+        /// <summary>
+        /// Constant VolumeWriteBytesPerSecond for EBSMetricName
+        /// </summary>
+        public static readonly EBSMetricName VolumeWriteBytesPerSecond = new EBSMetricName("VolumeWriteBytesPerSecond");
+        /// <summary>
+        /// Constant VolumeWriteOpsPerSecond for EBSMetricName
+        /// </summary>
+        public static readonly EBSMetricName VolumeWriteOpsPerSecond = new EBSMetricName("VolumeWriteOpsPerSecond");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EBSMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EBSMetricName FindValue(string value)
+        {
+            return FindValue<EBSMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EBSMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExportableAutoScalingGroupField.
     /// </summary>
     public class ExportableAutoScalingGroupField : ConstantClass
@@ -776,6 +930,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant AutoScalingGroup for RecommendationSourceType
         /// </summary>
         public static readonly RecommendationSourceType AutoScalingGroup = new RecommendationSourceType("AutoScalingGroup");
+        /// <summary>
+        /// Constant EbsVolume for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType EbsVolume = new RecommendationSourceType("EbsVolume");
         /// <summary>
         /// Constant Ec2Instance for RecommendationSourceType
         /// </summary>

@@ -29,17 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes a filter that returns a more specific list of recommendations.
+    /// Describes a filter that returns a more specific list of Amazon Elastic Block Store
+    /// (Amazon EBS) volume recommendations.
     /// 
     ///  
     /// <para>
-    /// This filter is used with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code>
-    /// actions.
+    /// This filter is used with the <code>GetEBSVolumeRecommendations</code> action.
     /// </para>
     /// </summary>
-    public partial class Filter
+    public partial class EBSFilter
     {
-        private FilterName _name;
+        private EBSFilterName _name;
         private List<string> _values = new List<string>();
 
         /// <summary>
@@ -50,15 +50,10 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// Specify <code>Finding</code> to return recommendations with a specific finding classification
-        /// (e.g., <code>Overprovisioned</code>).
-        /// </para>
-        ///  
-        /// <para>
-        /// Specify <code>RecommendationSourceType</code> to return recommendations of a specific
-        /// resource type (e.g., <code>AutoScalingGroup</code>).
+        /// (e.g., <code>Optimized</code>).
         /// </para>
         /// </summary>
-        public FilterName Name
+        public EBSFilterName Name
         {
             get { return this._name; }
             set { this._name = value; }
@@ -77,28 +72,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// The valid values for this parameter are as follows, depending on what you specify
-        /// for the <code>name</code> parameter and the resource type that you wish to filter
-        /// results for:
+        /// The valid values are <code>Optimized</code>, or <code>NotOptimized</code>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code>
-        /// parameter as <code>Finding</code> and you want to filter results for Auto Scaling
-        /// groups.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code>
-        /// if you specified the <code>name</code> parameter as <code>Finding</code> and you want
-        /// to filter results for EC2 instances.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified
-        /// the <code>name</code> parameter as <code>RecommendationSourceType</code>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<string> Values
         {

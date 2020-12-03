@@ -60,8 +60,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// If your account is the master account of an organization, use this parameter to specify
-        /// the member accounts for which you want to export recommendations.
+        /// If your account is the management account of an organization, use this parameter to
+        /// specify the member accounts for which you want to export recommendations.
         /// </para>
         ///  
         /// <para>
@@ -155,7 +155,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property IncludeMemberAccounts. 
         /// <para>
         /// Indicates whether to include recommendations for resources in all member accounts
-        /// of the organization if your account is the master account of an organization.
+        /// of the organization if your account is the management account of an organization.
         /// </para>
         ///  
         /// <para>
