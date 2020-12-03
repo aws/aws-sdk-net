@@ -242,6 +242,637 @@ namespace Amazon.LicenseManager
         #endregion
 
 
+        #region  AcceptGrant
+
+
+        /// <summary>
+        /// Accepts the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptGrant service method.</param>
+        /// 
+        /// <returns>The response from the AcceptGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/AcceptGrant">REST API Reference for AcceptGrant Operation</seealso>
+        public virtual AcceptGrantResponse AcceptGrant(AcceptGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptGrantResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptGrantResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Accepts the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/AcceptGrant">REST API Reference for AcceptGrant Operation</seealso>
+        public virtual Task<AcceptGrantResponse> AcceptGrantAsync(AcceptGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AcceptGrantResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CheckInLicense
+
+
+        /// <summary>
+        /// Checks in the specified license. Check in a license when it is no longer in use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckInLicense service method.</param>
+        /// 
+        /// <returns>The response from the CheckInLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckInLicense">REST API Reference for CheckInLicense Operation</seealso>
+        public virtual CheckInLicenseResponse CheckInLicense(CheckInLicenseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckInLicenseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckInLicenseResponseUnmarshaller.Instance;
+
+            return Invoke<CheckInLicenseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Checks in the specified license. Check in a license when it is no longer in use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckInLicense service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CheckInLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckInLicense">REST API Reference for CheckInLicense Operation</seealso>
+        public virtual Task<CheckInLicenseResponse> CheckInLicenseAsync(CheckInLicenseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckInLicenseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckInLicenseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CheckInLicenseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CheckoutBorrowLicense
+
+
+        /// <summary>
+        /// Checks out the specified license for offline use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckoutBorrowLicense service method.</param>
+        /// 
+        /// <returns>The response from the CheckoutBorrowLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.EntitlementNotAllowedException">
+        /// The entitlement is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.NoEntitlementsAllowedException">
+        /// There are no entitlements found for this license, or the entitlement maximum count
+        /// is reached.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.UnsupportedDigitalSignatureMethodException">
+        /// The digital signature method is unsupported. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckoutBorrowLicense">REST API Reference for CheckoutBorrowLicense Operation</seealso>
+        public virtual CheckoutBorrowLicenseResponse CheckoutBorrowLicense(CheckoutBorrowLicenseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckoutBorrowLicenseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckoutBorrowLicenseResponseUnmarshaller.Instance;
+
+            return Invoke<CheckoutBorrowLicenseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Checks out the specified license for offline use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckoutBorrowLicense service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CheckoutBorrowLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.EntitlementNotAllowedException">
+        /// The entitlement is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.NoEntitlementsAllowedException">
+        /// There are no entitlements found for this license, or the entitlement maximum count
+        /// is reached.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.UnsupportedDigitalSignatureMethodException">
+        /// The digital signature method is unsupported. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckoutBorrowLicense">REST API Reference for CheckoutBorrowLicense Operation</seealso>
+        public virtual Task<CheckoutBorrowLicenseResponse> CheckoutBorrowLicenseAsync(CheckoutBorrowLicenseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckoutBorrowLicenseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckoutBorrowLicenseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CheckoutBorrowLicenseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CheckoutLicense
+
+
+        /// <summary>
+        /// Checks out the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckoutLicense service method.</param>
+        /// 
+        /// <returns>The response from the CheckoutLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.NoEntitlementsAllowedException">
+        /// There are no entitlements found for this license, or the entitlement maximum count
+        /// is reached.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.UnsupportedDigitalSignatureMethodException">
+        /// The digital signature method is unsupported. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckoutLicense">REST API Reference for CheckoutLicense Operation</seealso>
+        public virtual CheckoutLicenseResponse CheckoutLicense(CheckoutLicenseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckoutLicenseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckoutLicenseResponseUnmarshaller.Instance;
+
+            return Invoke<CheckoutLicenseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Checks out the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckoutLicense service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CheckoutLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.NoEntitlementsAllowedException">
+        /// There are no entitlements found for this license, or the entitlement maximum count
+        /// is reached.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.UnsupportedDigitalSignatureMethodException">
+        /// The digital signature method is unsupported. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckoutLicense">REST API Reference for CheckoutLicense Operation</seealso>
+        public virtual Task<CheckoutLicenseResponse> CheckoutLicenseAsync(CheckoutLicenseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CheckoutLicenseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckoutLicenseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CheckoutLicenseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateGrant
+
+
+        /// <summary>
+        /// Creates a grant for the specified license. A grant shares the use of license entitlements
+        /// with specific AWS accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGrant service method.</param>
+        /// 
+        /// <returns>The response from the CreateGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
+        public virtual CreateGrantResponse CreateGrant(CreateGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGrantResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGrantResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a grant for the specified license. A grant shares the use of license entitlements
+        /// with specific AWS accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
+        public virtual Task<CreateGrantResponse> CreateGrantAsync(CreateGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateGrantResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateGrantVersion
+
+
+        /// <summary>
+        /// Creates a new version of the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGrantVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateGrantVersion service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrantVersion">REST API Reference for CreateGrantVersion Operation</seealso>
+        public virtual CreateGrantVersionResponse CreateGrantVersion(CreateGrantVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGrantVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGrantVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGrantVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new version of the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGrantVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGrantVersion service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrantVersion">REST API Reference for CreateGrantVersion Operation</seealso>
+        public virtual Task<CreateGrantVersionResponse> CreateGrantVersionAsync(CreateGrantVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateGrantVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGrantVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateGrantVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLicense
+
+
+        /// <summary>
+        /// Creates a license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicense service method.</param>
+        /// 
+        /// <returns>The response from the CreateLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicense">REST API Reference for CreateLicense Operation</seealso>
+        public virtual CreateLicenseResponse CreateLicense(CreateLicenseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLicenseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLicenseResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLicenseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicense service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicense">REST API Reference for CreateLicense Operation</seealso>
+        public virtual Task<CreateLicenseResponse> CreateLicenseAsync(CreateLicenseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLicenseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLicenseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLicenseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateLicenseConfiguration
 
 
@@ -341,6 +972,378 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  CreateLicenseVersion
+
+
+        /// <summary>
+        /// Creates a new version of the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicenseVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateLicenseVersion service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseVersion">REST API Reference for CreateLicenseVersion Operation</seealso>
+        public virtual CreateLicenseVersionResponse CreateLicenseVersion(CreateLicenseVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLicenseVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLicenseVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLicenseVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new version of the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicenseVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLicenseVersion service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseVersion">REST API Reference for CreateLicenseVersion Operation</seealso>
+        public virtual Task<CreateLicenseVersionResponse> CreateLicenseVersionAsync(CreateLicenseVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLicenseVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLicenseVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLicenseVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateToken
+
+
+        /// <summary>
+        /// Creates a long-lived token.
+        /// 
+        ///  
+        /// <para>
+        /// A refresh token is a JWT token used to get an access token. With an access token,
+        /// you can call AssumeRoleWithWebIdentity to get role credentials that you can use to
+        /// call License Manager to manage the specified license.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateToken service method.</param>
+        /// 
+        /// <returns>The response from the CreateToken service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateToken">REST API Reference for CreateToken Operation</seealso>
+        public virtual CreateTokenResponse CreateToken(CreateTokenRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTokenResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTokenResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a long-lived token.
+        /// 
+        ///  
+        /// <para>
+        /// A refresh token is a JWT token used to get an access token. With an access token,
+        /// you can call AssumeRoleWithWebIdentity to get role credentials that you can use to
+        /// call License Manager to manage the specified license.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateToken service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateToken">REST API Reference for CreateToken Operation</seealso>
+        public virtual Task<CreateTokenResponse> CreateTokenAsync(CreateTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTokenResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTokenResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteGrant
+
+
+        /// <summary>
+        /// Deletes the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGrant service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteGrant">REST API Reference for DeleteGrant Operation</seealso>
+        public virtual DeleteGrantResponse DeleteGrant(DeleteGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGrantResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGrantResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteGrant">REST API Reference for DeleteGrant Operation</seealso>
+        public virtual Task<DeleteGrantResponse> DeleteGrantAsync(DeleteGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteGrantResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLicense
+
+
+        /// <summary>
+        /// Deletes the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLicense service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicense">REST API Reference for DeleteLicense Operation</seealso>
+        public virtual DeleteLicenseResponse DeleteLicense(DeleteLicenseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLicenseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLicenseResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLicenseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLicense service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicense">REST API Reference for DeleteLicense Operation</seealso>
+        public virtual Task<DeleteLicenseResponse> DeleteLicenseAsync(DeleteLicenseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLicenseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLicenseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLicenseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteLicenseConfiguration
 
 
@@ -424,6 +1427,415 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  DeleteToken
+
+
+        /// <summary>
+        /// Deletes the specified token. Must be called in the license home Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteToken service method.</param>
+        /// 
+        /// <returns>The response from the DeleteToken service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteToken">REST API Reference for DeleteToken Operation</seealso>
+        public virtual DeleteTokenResponse DeleteToken(DeleteTokenRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTokenResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTokenResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified token. Must be called in the license home Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteToken service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteToken">REST API Reference for DeleteToken Operation</seealso>
+        public virtual Task<DeleteTokenResponse> DeleteTokenAsync(DeleteTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTokenResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTokenResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ExtendLicenseConsumption
+
+
+        /// <summary>
+        /// Extends the expiration date for license consumption.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExtendLicenseConsumption service method.</param>
+        /// 
+        /// <returns>The response from the ExtendLicenseConsumption service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ExtendLicenseConsumption">REST API Reference for ExtendLicenseConsumption Operation</seealso>
+        public virtual ExtendLicenseConsumptionResponse ExtendLicenseConsumption(ExtendLicenseConsumptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExtendLicenseConsumptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExtendLicenseConsumptionResponseUnmarshaller.Instance;
+
+            return Invoke<ExtendLicenseConsumptionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Extends the expiration date for license consumption.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExtendLicenseConsumption service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExtendLicenseConsumption service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ExtendLicenseConsumption">REST API Reference for ExtendLicenseConsumption Operation</seealso>
+        public virtual Task<ExtendLicenseConsumptionResponse> ExtendLicenseConsumptionAsync(ExtendLicenseConsumptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExtendLicenseConsumptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExtendLicenseConsumptionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ExtendLicenseConsumptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAccessToken
+
+
+        /// <summary>
+        /// Gets a temporary access token to use with AssumeRoleWithWebIdentity. Access tokens
+        /// are valid for one hour.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessToken service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessToken service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetAccessToken">REST API Reference for GetAccessToken Operation</seealso>
+        public virtual GetAccessTokenResponse GetAccessToken(GetAccessTokenRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessTokenResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccessTokenResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a temporary access token to use with AssumeRoleWithWebIdentity. Access tokens
+        /// are valid for one hour.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccessToken service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetAccessToken">REST API Reference for GetAccessToken Operation</seealso>
+        public virtual Task<GetAccessTokenResponse> GetAccessTokenAsync(GetAccessTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAccessTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccessTokenResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAccessTokenResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetGrant
+
+
+        /// <summary>
+        /// Gets detailed information about the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGrant service method.</param>
+        /// 
+        /// <returns>The response from the GetGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetGrant">REST API Reference for GetGrant Operation</seealso>
+        public virtual GetGrantResponse GetGrant(GetGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGrantResponseUnmarshaller.Instance;
+
+            return Invoke<GetGrantResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets detailed information about the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetGrant">REST API Reference for GetGrant Operation</seealso>
+        public virtual Task<GetGrantResponse> GetGrantAsync(GetGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetGrantResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLicense
+
+
+        /// <summary>
+        /// Gets detailed information about the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLicense service method.</param>
+        /// 
+        /// <returns>The response from the GetLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicense">REST API Reference for GetLicense Operation</seealso>
+        public virtual GetLicenseResponse GetLicense(GetLicenseRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLicenseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLicenseResponseUnmarshaller.Instance;
+
+            return Invoke<GetLicenseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets detailed information about the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLicense service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicense">REST API Reference for GetLicense Operation</seealso>
+        public virtual Task<GetLicenseResponse> GetLicenseAsync(GetLicenseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLicenseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLicenseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetLicenseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetLicenseConfiguration
 
 
@@ -493,6 +1905,85 @@ namespace Amazon.LicenseManager
             options.ResponseUnmarshaller = GetLicenseConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetLicenseConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLicenseUsage
+
+
+        /// <summary>
+        /// Gets detailed information about the usage of the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLicenseUsage service method.</param>
+        /// 
+        /// <returns>The response from the GetLicenseUsage service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseUsage">REST API Reference for GetLicenseUsage Operation</seealso>
+        public virtual GetLicenseUsageResponse GetLicenseUsage(GetLicenseUsageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLicenseUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLicenseUsageResponseUnmarshaller.Instance;
+
+            return Invoke<GetLicenseUsageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets detailed information about the usage of the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLicenseUsage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLicenseUsage service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseUsage">REST API Reference for GetLicenseUsage Operation</seealso>
+        public virtual Task<GetLicenseUsageResponse> GetLicenseUsageAsync(GetLicenseUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLicenseUsageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLicenseUsageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetLicenseUsageResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -657,6 +2148,91 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  ListDistributedGrants
+
+
+        /// <summary>
+        /// Lists the grants distributed for the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributedGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributedGrants service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListDistributedGrants">REST API Reference for ListDistributedGrants Operation</seealso>
+        public virtual ListDistributedGrantsResponse ListDistributedGrants(ListDistributedGrantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributedGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributedGrantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributedGrantsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the grants distributed for the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributedGrants service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDistributedGrants service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListDistributedGrants">REST API Reference for ListDistributedGrants Operation</seealso>
+        public virtual Task<ListDistributedGrantsResponse> ListDistributedGrantsAsync(ListDistributedGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributedGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributedGrantsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDistributedGrantsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListFailuresForLicenseConfigurationOperations
 
 
@@ -809,6 +2385,85 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  ListLicenses
+
+
+        /// <summary>
+        /// Lists the licenses for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenses service method.</param>
+        /// 
+        /// <returns>The response from the ListLicenses service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenses">REST API Reference for ListLicenses Operation</seealso>
+        public virtual ListLicensesResponse ListLicenses(ListLicensesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLicensesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicensesResponseUnmarshaller.Instance;
+
+            return Invoke<ListLicensesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the licenses for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLicenses service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenses">REST API Reference for ListLicenses Operation</seealso>
+        public virtual Task<ListLicensesResponse> ListLicensesAsync(ListLicensesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLicensesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicensesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLicensesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListLicenseSpecificationsForResource
 
 
@@ -878,6 +2533,249 @@ namespace Amazon.LicenseManager
             options.ResponseUnmarshaller = ListLicenseSpecificationsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListLicenseSpecificationsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLicenseVersions
+
+
+        /// <summary>
+        /// Lists all versions of the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListLicenseVersions service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseVersions">REST API Reference for ListLicenseVersions Operation</seealso>
+        public virtual ListLicenseVersionsResponse ListLicenseVersions(ListLicenseVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLicenseVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLicenseVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all versions of the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLicenseVersions service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseVersions">REST API Reference for ListLicenseVersions Operation</seealso>
+        public virtual Task<ListLicenseVersionsResponse> ListLicenseVersionsAsync(ListLicenseVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLicenseVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLicenseVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListReceivedGrants
+
+
+        /// <summary>
+        /// Lists grants that are received but not accepted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListReceivedGrants service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrants">REST API Reference for ListReceivedGrants Operation</seealso>
+        public virtual ListReceivedGrantsResponse ListReceivedGrants(ListReceivedGrantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReceivedGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReceivedGrantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReceivedGrantsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists grants that are received but not accepted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedGrants service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReceivedGrants service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrants">REST API Reference for ListReceivedGrants Operation</seealso>
+        public virtual Task<ListReceivedGrantsResponse> ListReceivedGrantsAsync(ListReceivedGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReceivedGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReceivedGrantsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListReceivedGrantsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListReceivedLicenses
+
+
+        /// <summary>
+        /// Lists received licenses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedLicenses service method.</param>
+        /// 
+        /// <returns>The response from the ListReceivedLicenses service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicenses">REST API Reference for ListReceivedLicenses Operation</seealso>
+        public virtual ListReceivedLicensesResponse ListReceivedLicenses(ListReceivedLicensesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReceivedLicensesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReceivedLicensesResponseUnmarshaller.Instance;
+
+            return Invoke<ListReceivedLicensesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists received licenses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedLicenses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReceivedLicenses service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicenses">REST API Reference for ListReceivedLicenses Operation</seealso>
+        public virtual Task<ListReceivedLicensesResponse> ListReceivedLicensesAsync(ListReceivedLicensesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReceivedLicensesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReceivedLicensesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListReceivedLicensesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1040,6 +2938,79 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  ListTokens
+
+
+        /// <summary>
+        /// Lists your tokens.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTokens service method.</param>
+        /// 
+        /// <returns>The response from the ListTokens service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListTokens">REST API Reference for ListTokens Operation</seealso>
+        public virtual ListTokensResponse ListTokens(ListTokensRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTokensRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTokensResponseUnmarshaller.Instance;
+
+            return Invoke<ListTokensResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists your tokens.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTokens service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTokens service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListTokens">REST API Reference for ListTokens Operation</seealso>
+        public virtual Task<ListTokensResponse> ListTokensAsync(ListTokensRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTokensRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTokensResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTokensResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListUsageForLicenseConfiguration
 
 
@@ -1119,6 +3090,91 @@ namespace Amazon.LicenseManager
             options.ResponseUnmarshaller = ListUsageForLicenseConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListUsageForLicenseConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RejectGrant
+
+
+        /// <summary>
+        /// Rejects the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectGrant service method.</param>
+        /// 
+        /// <returns>The response from the RejectGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/RejectGrant">REST API Reference for RejectGrant Operation</seealso>
+        public virtual RejectGrantResponse RejectGrant(RejectGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectGrantResponseUnmarshaller.Instance;
+
+            return Invoke<RejectGrantResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Rejects the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/RejectGrant">REST API Reference for RejectGrant Operation</seealso>
+        public virtual Task<RejectGrantResponse> RejectGrantAsync(RejectGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RejectGrantResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1291,6 +3347,9 @@ namespace Amazon.LicenseManager
         /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
         /// Too many requests have been submitted. Try again after a brief wait.
         /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
         /// The server experienced an internal error. Try again.
         /// </exception>
@@ -1326,6 +3385,9 @@ namespace Amazon.LicenseManager
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
         /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
         /// The server experienced an internal error. Try again.

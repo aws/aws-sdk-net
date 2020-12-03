@@ -42,6 +42,458 @@ namespace Amazon.LicenseManager
 
 
         
+        #region  AcceptGrant
+
+
+        /// <summary>
+        /// Accepts the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptGrant service method.</param>
+        /// 
+        /// <returns>The response from the AcceptGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/AcceptGrant">REST API Reference for AcceptGrant Operation</seealso>
+        AcceptGrantResponse AcceptGrant(AcceptGrantRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptGrant operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/AcceptGrant">REST API Reference for AcceptGrant Operation</seealso>
+        IAsyncResult BeginAcceptGrant(AcceptGrantRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptGrant.</param>
+        /// 
+        /// <returns>Returns a  AcceptGrantResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/AcceptGrant">REST API Reference for AcceptGrant Operation</seealso>
+        AcceptGrantResponse EndAcceptGrant(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CheckInLicense
+
+
+        /// <summary>
+        /// Checks in the specified license. Check in a license when it is no longer in use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckInLicense service method.</param>
+        /// 
+        /// <returns>The response from the CheckInLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckInLicense">REST API Reference for CheckInLicense Operation</seealso>
+        CheckInLicenseResponse CheckInLicense(CheckInLicenseRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CheckInLicense operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CheckInLicense operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCheckInLicense
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckInLicense">REST API Reference for CheckInLicense Operation</seealso>
+        IAsyncResult BeginCheckInLicense(CheckInLicenseRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CheckInLicense operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCheckInLicense.</param>
+        /// 
+        /// <returns>Returns a  CheckInLicenseResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckInLicense">REST API Reference for CheckInLicense Operation</seealso>
+        CheckInLicenseResponse EndCheckInLicense(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CheckoutBorrowLicense
+
+
+        /// <summary>
+        /// Checks out the specified license for offline use.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckoutBorrowLicense service method.</param>
+        /// 
+        /// <returns>The response from the CheckoutBorrowLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.EntitlementNotAllowedException">
+        /// The entitlement is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.NoEntitlementsAllowedException">
+        /// There are no entitlements found for this license, or the entitlement maximum count
+        /// is reached.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.UnsupportedDigitalSignatureMethodException">
+        /// The digital signature method is unsupported. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckoutBorrowLicense">REST API Reference for CheckoutBorrowLicense Operation</seealso>
+        CheckoutBorrowLicenseResponse CheckoutBorrowLicense(CheckoutBorrowLicenseRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CheckoutBorrowLicense operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CheckoutBorrowLicense operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCheckoutBorrowLicense
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckoutBorrowLicense">REST API Reference for CheckoutBorrowLicense Operation</seealso>
+        IAsyncResult BeginCheckoutBorrowLicense(CheckoutBorrowLicenseRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CheckoutBorrowLicense operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCheckoutBorrowLicense.</param>
+        /// 
+        /// <returns>Returns a  CheckoutBorrowLicenseResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckoutBorrowLicense">REST API Reference for CheckoutBorrowLicense Operation</seealso>
+        CheckoutBorrowLicenseResponse EndCheckoutBorrowLicense(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CheckoutLicense
+
+
+        /// <summary>
+        /// Checks out the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckoutLicense service method.</param>
+        /// 
+        /// <returns>The response from the CheckoutLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.NoEntitlementsAllowedException">
+        /// There are no entitlements found for this license, or the entitlement maximum count
+        /// is reached.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.UnsupportedDigitalSignatureMethodException">
+        /// The digital signature method is unsupported. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckoutLicense">REST API Reference for CheckoutLicense Operation</seealso>
+        CheckoutLicenseResponse CheckoutLicense(CheckoutLicenseRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CheckoutLicense operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CheckoutLicense operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCheckoutLicense
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckoutLicense">REST API Reference for CheckoutLicense Operation</seealso>
+        IAsyncResult BeginCheckoutLicense(CheckoutLicenseRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CheckoutLicense operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCheckoutLicense.</param>
+        /// 
+        /// <returns>Returns a  CheckoutLicenseResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CheckoutLicense">REST API Reference for CheckoutLicense Operation</seealso>
+        CheckoutLicenseResponse EndCheckoutLicense(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateGrant
+
+
+        /// <summary>
+        /// Creates a grant for the specified license. A grant shares the use of license entitlements
+        /// with specific AWS accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGrant service method.</param>
+        /// 
+        /// <returns>The response from the CreateGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
+        CreateGrantResponse CreateGrant(CreateGrantRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGrant operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
+        IAsyncResult BeginCreateGrant(CreateGrantRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGrant.</param>
+        /// 
+        /// <returns>Returns a  CreateGrantResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
+        CreateGrantResponse EndCreateGrant(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateGrantVersion
+
+
+        /// <summary>
+        /// Creates a new version of the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGrantVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateGrantVersion service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrantVersion">REST API Reference for CreateGrantVersion Operation</seealso>
+        CreateGrantVersionResponse CreateGrantVersion(CreateGrantVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGrantVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGrantVersion operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGrantVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrantVersion">REST API Reference for CreateGrantVersion Operation</seealso>
+        IAsyncResult BeginCreateGrantVersion(CreateGrantVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateGrantVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGrantVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateGrantVersionResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrantVersion">REST API Reference for CreateGrantVersion Operation</seealso>
+        CreateGrantVersionResponse EndCreateGrantVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateLicense
+
+
+        /// <summary>
+        /// Creates a license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicense service method.</param>
+        /// 
+        /// <returns>The response from the CreateLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicense">REST API Reference for CreateLicense Operation</seealso>
+        CreateLicenseResponse CreateLicense(CreateLicenseRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLicense operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicense operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLicense
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicense">REST API Reference for CreateLicense Operation</seealso>
+        IAsyncResult BeginCreateLicense(CreateLicenseRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLicense operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLicense.</param>
+        /// 
+        /// <returns>Returns a  CreateLicenseResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicense">REST API Reference for CreateLicense Operation</seealso>
+        CreateLicenseResponse EndCreateLicense(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateLicenseConfiguration
 
 
@@ -111,6 +563,270 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  CreateLicenseVersion
+
+
+        /// <summary>
+        /// Creates a new version of the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicenseVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateLicenseVersion service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseVersion">REST API Reference for CreateLicenseVersion Operation</seealso>
+        CreateLicenseVersionResponse CreateLicenseVersion(CreateLicenseVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLicenseVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicenseVersion operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLicenseVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseVersion">REST API Reference for CreateLicenseVersion Operation</seealso>
+        IAsyncResult BeginCreateLicenseVersion(CreateLicenseVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLicenseVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLicenseVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateLicenseVersionResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseVersion">REST API Reference for CreateLicenseVersion Operation</seealso>
+        CreateLicenseVersionResponse EndCreateLicenseVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateToken
+
+
+        /// <summary>
+        /// Creates a long-lived token.
+        /// 
+        ///  
+        /// <para>
+        /// A refresh token is a JWT token used to get an access token. With an access token,
+        /// you can call AssumeRoleWithWebIdentity to get role credentials that you can use to
+        /// call License Manager to manage the specified license.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateToken service method.</param>
+        /// 
+        /// <returns>The response from the CreateToken service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateToken">REST API Reference for CreateToken Operation</seealso>
+        CreateTokenResponse CreateToken(CreateTokenRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateToken operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateToken
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateToken">REST API Reference for CreateToken Operation</seealso>
+        IAsyncResult BeginCreateToken(CreateTokenRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateToken operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateToken.</param>
+        /// 
+        /// <returns>Returns a  CreateTokenResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateToken">REST API Reference for CreateToken Operation</seealso>
+        CreateTokenResponse EndCreateToken(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteGrant
+
+
+        /// <summary>
+        /// Deletes the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGrant service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteGrant">REST API Reference for DeleteGrant Operation</seealso>
+        DeleteGrantResponse DeleteGrant(DeleteGrantRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGrant operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteGrant">REST API Reference for DeleteGrant Operation</seealso>
+        IAsyncResult BeginDeleteGrant(DeleteGrantRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGrant.</param>
+        /// 
+        /// <returns>Returns a  DeleteGrantResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteGrant">REST API Reference for DeleteGrant Operation</seealso>
+        DeleteGrantResponse EndDeleteGrant(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteLicense
+
+
+        /// <summary>
+        /// Deletes the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLicense service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicense">REST API Reference for DeleteLicense Operation</seealso>
+        DeleteLicenseResponse DeleteLicense(DeleteLicenseRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLicense operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLicense operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLicense
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicense">REST API Reference for DeleteLicense Operation</seealso>
+        IAsyncResult BeginDeleteLicense(DeleteLicenseRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLicense operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLicense.</param>
+        /// 
+        /// <returns>Returns a  DeleteLicenseResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicense">REST API Reference for DeleteLicense Operation</seealso>
+        DeleteLicenseResponse EndDeleteLicense(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteLicenseConfiguration
 
 
@@ -172,6 +888,308 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  DeleteToken
+
+
+        /// <summary>
+        /// Deletes the specified token. Must be called in the license home Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteToken service method.</param>
+        /// 
+        /// <returns>The response from the DeleteToken service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RedirectException">
+        /// This is not the correct Region for the resource. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteToken">REST API Reference for DeleteToken Operation</seealso>
+        DeleteTokenResponse DeleteToken(DeleteTokenRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteToken operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteToken
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteToken">REST API Reference for DeleteToken Operation</seealso>
+        IAsyncResult BeginDeleteToken(DeleteTokenRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteToken operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteToken.</param>
+        /// 
+        /// <returns>Returns a  DeleteTokenResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteToken">REST API Reference for DeleteToken Operation</seealso>
+        DeleteTokenResponse EndDeleteToken(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ExtendLicenseConsumption
+
+
+        /// <summary>
+        /// Extends the expiration date for license consumption.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExtendLicenseConsumption service method.</param>
+        /// 
+        /// <returns>The response from the ExtendLicenseConsumption service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ExtendLicenseConsumption">REST API Reference for ExtendLicenseConsumption Operation</seealso>
+        ExtendLicenseConsumptionResponse ExtendLicenseConsumption(ExtendLicenseConsumptionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExtendLicenseConsumption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExtendLicenseConsumption operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExtendLicenseConsumption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ExtendLicenseConsumption">REST API Reference for ExtendLicenseConsumption Operation</seealso>
+        IAsyncResult BeginExtendLicenseConsumption(ExtendLicenseConsumptionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExtendLicenseConsumption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExtendLicenseConsumption.</param>
+        /// 
+        /// <returns>Returns a  ExtendLicenseConsumptionResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ExtendLicenseConsumption">REST API Reference for ExtendLicenseConsumption Operation</seealso>
+        ExtendLicenseConsumptionResponse EndExtendLicenseConsumption(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAccessToken
+
+
+        /// <summary>
+        /// Gets a temporary access token to use with AssumeRoleWithWebIdentity. Access tokens
+        /// are valid for one hour.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessToken service method.</param>
+        /// 
+        /// <returns>The response from the GetAccessToken service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetAccessToken">REST API Reference for GetAccessToken Operation</seealso>
+        GetAccessTokenResponse GetAccessToken(GetAccessTokenRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccessToken operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessToken operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccessToken
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetAccessToken">REST API Reference for GetAccessToken Operation</seealso>
+        IAsyncResult BeginGetAccessToken(GetAccessTokenRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccessToken operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccessToken.</param>
+        /// 
+        /// <returns>Returns a  GetAccessTokenResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetAccessToken">REST API Reference for GetAccessToken Operation</seealso>
+        GetAccessTokenResponse EndGetAccessToken(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetGrant
+
+
+        /// <summary>
+        /// Gets detailed information about the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGrant service method.</param>
+        /// 
+        /// <returns>The response from the GetGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetGrant">REST API Reference for GetGrant Operation</seealso>
+        GetGrantResponse GetGrant(GetGrantRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGrant operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetGrant">REST API Reference for GetGrant Operation</seealso>
+        IAsyncResult BeginGetGrant(GetGrantRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGrant.</param>
+        /// 
+        /// <returns>Returns a  GetGrantResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetGrant">REST API Reference for GetGrant Operation</seealso>
+        GetGrantResponse EndGetGrant(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetLicense
+
+
+        /// <summary>
+        /// Gets detailed information about the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLicense service method.</param>
+        /// 
+        /// <returns>The response from the GetLicense service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicense">REST API Reference for GetLicense Operation</seealso>
+        GetLicenseResponse GetLicense(GetLicenseRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLicense operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLicense operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLicense
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicense">REST API Reference for GetLicense Operation</seealso>
+        IAsyncResult BeginGetLicense(GetLicenseRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLicense operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLicense.</param>
+        /// 
+        /// <returns>Returns a  GetLicenseResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicense">REST API Reference for GetLicense Operation</seealso>
+        GetLicenseResponse EndGetLicense(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetLicenseConfiguration
 
 
@@ -225,6 +1243,65 @@ namespace Amazon.LicenseManager
         /// <returns>Returns a  GetLicenseConfigurationResult from LicenseManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseConfiguration">REST API Reference for GetLicenseConfiguration Operation</seealso>
         GetLicenseConfigurationResponse EndGetLicenseConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetLicenseUsage
+
+
+        /// <summary>
+        /// Gets detailed information about the usage of the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLicenseUsage service method.</param>
+        /// 
+        /// <returns>The response from the GetLicenseUsage service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseUsage">REST API Reference for GetLicenseUsage Operation</seealso>
+        GetLicenseUsageResponse GetLicenseUsage(GetLicenseUsageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLicenseUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLicenseUsage operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLicenseUsage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseUsage">REST API Reference for GetLicenseUsage Operation</seealso>
+        IAsyncResult BeginGetLicenseUsage(GetLicenseUsageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLicenseUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLicenseUsage.</param>
+        /// 
+        /// <returns>Returns a  GetLicenseUsageResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseUsage">REST API Reference for GetLicenseUsage Operation</seealso>
+        GetLicenseUsageResponse EndGetLicenseUsage(IAsyncResult asyncResult);
 
         #endregion
         
@@ -347,6 +1424,68 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  ListDistributedGrants
+
+
+        /// <summary>
+        /// Lists the grants distributed for the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributedGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributedGrants service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListDistributedGrants">REST API Reference for ListDistributedGrants Operation</seealso>
+        ListDistributedGrantsResponse ListDistributedGrants(ListDistributedGrantsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDistributedGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributedGrants operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributedGrants
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListDistributedGrants">REST API Reference for ListDistributedGrants Operation</seealso>
+        IAsyncResult BeginListDistributedGrants(ListDistributedGrantsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDistributedGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributedGrants.</param>
+        /// 
+        /// <returns>Returns a  ListDistributedGrantsResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListDistributedGrants">REST API Reference for ListDistributedGrants Operation</seealso>
+        ListDistributedGrantsResponse EndListDistributedGrants(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListFailuresForLicenseConfigurationOperations
 
 
@@ -462,6 +1601,65 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  ListLicenses
+
+
+        /// <summary>
+        /// Lists the licenses for your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenses service method.</param>
+        /// 
+        /// <returns>The response from the ListLicenses service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenses">REST API Reference for ListLicenses Operation</seealso>
+        ListLicensesResponse ListLicenses(ListLicensesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLicenses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenses operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLicenses
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenses">REST API Reference for ListLicenses Operation</seealso>
+        IAsyncResult BeginListLicenses(ListLicensesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLicenses operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLicenses.</param>
+        /// 
+        /// <returns>Returns a  ListLicensesResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenses">REST API Reference for ListLicenses Operation</seealso>
+        ListLicensesResponse EndListLicenses(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListLicenseSpecificationsForResource
 
 
@@ -515,6 +1713,186 @@ namespace Amazon.LicenseManager
         /// <returns>Returns a  ListLicenseSpecificationsForResourceResult from LicenseManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseSpecificationsForResource">REST API Reference for ListLicenseSpecificationsForResource Operation</seealso>
         ListLicenseSpecificationsForResourceResponse EndListLicenseSpecificationsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListLicenseVersions
+
+
+        /// <summary>
+        /// Lists all versions of the specified license.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListLicenseVersions service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseVersions">REST API Reference for ListLicenseVersions Operation</seealso>
+        ListLicenseVersionsResponse ListLicenseVersions(ListLicenseVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLicenseVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseVersions operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLicenseVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseVersions">REST API Reference for ListLicenseVersions Operation</seealso>
+        IAsyncResult BeginListLicenseVersions(ListLicenseVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLicenseVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLicenseVersions.</param>
+        /// 
+        /// <returns>Returns a  ListLicenseVersionsResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseVersions">REST API Reference for ListLicenseVersions Operation</seealso>
+        ListLicenseVersionsResponse EndListLicenseVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListReceivedGrants
+
+
+        /// <summary>
+        /// Lists grants that are received but not accepted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListReceivedGrants service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrants">REST API Reference for ListReceivedGrants Operation</seealso>
+        ListReceivedGrantsResponse ListReceivedGrants(ListReceivedGrantsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReceivedGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedGrants operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReceivedGrants
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrants">REST API Reference for ListReceivedGrants Operation</seealso>
+        IAsyncResult BeginListReceivedGrants(ListReceivedGrantsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReceivedGrants operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReceivedGrants.</param>
+        /// 
+        /// <returns>Returns a  ListReceivedGrantsResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrants">REST API Reference for ListReceivedGrants Operation</seealso>
+        ListReceivedGrantsResponse EndListReceivedGrants(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListReceivedLicenses
+
+
+        /// <summary>
+        /// Lists received licenses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedLicenses service method.</param>
+        /// 
+        /// <returns>The response from the ListReceivedLicenses service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicenses">REST API Reference for ListReceivedLicenses Operation</seealso>
+        ListReceivedLicensesResponse ListReceivedLicenses(ListReceivedLicensesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReceivedLicenses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedLicenses operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReceivedLicenses
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicenses">REST API Reference for ListReceivedLicenses Operation</seealso>
+        IAsyncResult BeginListReceivedLicenses(ListReceivedLicensesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReceivedLicenses operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReceivedLicenses.</param>
+        /// 
+        /// <returns>Returns a  ListReceivedLicensesResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicenses">REST API Reference for ListReceivedLicenses Operation</seealso>
+        ListReceivedLicensesResponse EndListReceivedLicenses(IAsyncResult asyncResult);
 
         #endregion
         
@@ -636,6 +2014,62 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  ListTokens
+
+
+        /// <summary>
+        /// Lists your tokens.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTokens service method.</param>
+        /// 
+        /// <returns>The response from the ListTokens service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListTokens">REST API Reference for ListTokens Operation</seealso>
+        ListTokensResponse ListTokens(ListTokensRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTokens operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTokens operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTokens
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListTokens">REST API Reference for ListTokens Operation</seealso>
+        IAsyncResult BeginListTokens(ListTokensRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTokens operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTokens.</param>
+        /// 
+        /// <returns>Returns a  ListTokensResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListTokens">REST API Reference for ListTokens Operation</seealso>
+        ListTokensResponse EndListTokens(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListUsageForLicenseConfiguration
 
 
@@ -694,6 +2128,68 @@ namespace Amazon.LicenseManager
         /// <returns>Returns a  ListUsageForLicenseConfigurationResult from LicenseManager.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListUsageForLicenseConfiguration">REST API Reference for ListUsageForLicenseConfiguration Operation</seealso>
         ListUsageForLicenseConfigurationResponse EndListUsageForLicenseConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RejectGrant
+
+
+        /// <summary>
+        /// Rejects the specified grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectGrant service method.</param>
+        /// 
+        /// <returns>The response from the RejectGrant service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The AWS user account does not have permission to perform the action. Check the IAM
+        /// policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/RejectGrant">REST API Reference for RejectGrant Operation</seealso>
+        RejectGrantResponse RejectGrant(RejectGrantRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectGrant operation on AmazonLicenseManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectGrant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/RejectGrant">REST API Reference for RejectGrant Operation</seealso>
+        IAsyncResult BeginRejectGrant(RejectGrantRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RejectGrant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectGrant.</param>
+        /// 
+        /// <returns>Returns a  RejectGrantResult from LicenseManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/RejectGrant">REST API Reference for RejectGrant Operation</seealso>
+        RejectGrantResponse EndRejectGrant(IAsyncResult asyncResult);
 
         #endregion
         
@@ -830,6 +2326,9 @@ namespace Amazon.LicenseManager
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
         /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
         /// The server experienced an internal error. Try again.

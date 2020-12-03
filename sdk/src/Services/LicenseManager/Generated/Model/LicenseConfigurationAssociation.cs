@@ -42,7 +42,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property AmiAssociationScope. 
         /// <para>
-        /// Scope of AMI associations.
+        /// Scope of AMI associations. The possible value is <code>cross-account</code>.
         /// </para>
         /// </summary>
         public string AmiAssociationScope

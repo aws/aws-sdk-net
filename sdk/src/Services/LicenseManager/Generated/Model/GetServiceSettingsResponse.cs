@@ -42,7 +42,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property EnableCrossAccountsDiscovery. 
         /// <para>
-        /// Indicates whether cross-account discovery has been enabled.
+        /// Indicates whether cross-account discovery is enabled.
         /// </para>
         /// </summary>
         public bool EnableCrossAccountsDiscovery
@@ -79,7 +79,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property OrganizationConfiguration. 
         /// <para>
-        /// Indicates whether AWS Organizations has been integrated with License Manager for cross-account
+        /// Indicates whether AWS Organizations is integrated with License Manager for cross-account
         /// discovery.
         /// </para>
         /// </summary>

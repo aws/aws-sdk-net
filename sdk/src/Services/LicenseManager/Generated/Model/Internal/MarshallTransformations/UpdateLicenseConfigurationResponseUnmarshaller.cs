@@ -85,6 +85,10 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 {
                     return RateLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceLimitExceededException"))
+                {
+                    return ResourceLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServerInternalException"))
                 {
                     return ServerInternalExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

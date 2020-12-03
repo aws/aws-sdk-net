@@ -36,6 +36,7 @@ namespace Amazon.LicenseManager.Model
     #endif
     public partial class FailedDependencyException : AmazonLicenseManagerException
     {
+        private string _errorCode;
 
         /// <summary>
         /// Constructs a new FailedDependencyException with the specified error
@@ -97,6 +98,7 @@ namespace Amazon.LicenseManager.Model
         protected FailedDependencyException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ErrorCode = (string)info.GetValue("ErrorCode", typeof(string));
         }
 
         /// <summary>
@@ -117,8 +119,24 @@ namespace Amazon.LicenseManager.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("ErrorCode", this.ErrorCode);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property ErrorCode.
+        /// </summary>
+        public string ErrorCode
+        {
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
+        }
+
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
+        {
+            return this._errorCode != null;
+        }
 
     }
 }
