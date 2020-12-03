@@ -30,6 +30,12 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// The <code>ulimit</code> settings to pass to the container.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This object isn't applicable to jobs running on Fargate resources.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class Ulimit
     {

@@ -31,7 +31,7 @@ namespace Amazon.Batch.Model
     /// <summary>
     /// Determine whether your data volume persists on the host container instance and where
     /// it is stored. If this parameter is empty, then the Docker daemon assigns a host path
-    /// for your data volume, but the data is not guaranteed to persist after the containers
+    /// for your data volume, but the data isn't guaranteed to persist after the containers
     /// associated with it stop running.
     /// </summary>
     public partial class Host
@@ -48,6 +48,12 @@ namespace Amazon.Batch.Model
         /// path location does not exist on the host container instance, the Docker daemon creates
         /// it. If the location does exist, the contents of the source path folder are exported.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
+        /// be provided.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string SourcePath
         {

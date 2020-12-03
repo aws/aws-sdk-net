@@ -38,6 +38,8 @@ namespace Amazon.Batch.Model
         private string _jobDefinitionName;
         private NodeProperties _nodeProperties;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private List<string> _platformCapabilities = new List<string>();
+        private bool? _propagateTags;
         private RetryStrategy _retryStrategy;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private JobTimeout _timeout;
@@ -50,6 +52,12 @@ namespace Amazon.Batch.Model
         /// the job definition's <code>type</code> parameter is <code>container</code>, then you
         /// must specify either <code>containerProperties</code> or <code>nodeProperties</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>;
+        /// use only <code>containerProperties</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ContainerProperties ContainerProperties
         {
@@ -93,6 +101,12 @@ namespace Amazon.Batch.Model
         /// parameter is <code>container</code>, then you must specify either <code>containerProperties</code>
         /// or <code>nodeProperties</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>;
+        /// use <code>containerProperties</code> instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         public NodeProperties NodeProperties
         {
@@ -127,11 +141,53 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlatformCapabilities. 
+        /// <para>
+        /// The platform capabilities required by the job definition. If no value is specified,
+        /// it defaults to <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.
+        /// </para>
+        /// </summary>
+        public List<string> PlatformCapabilities
+        {
+            get { return this._platformCapabilities; }
+            set { this._platformCapabilities = value; }
+        }
+
+        // Check to see if PlatformCapabilities property is set
+        internal bool IsSetPlatformCapabilities()
+        {
+            return this._platformCapabilities != null && this._platformCapabilities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropagateTags. 
+        /// <para>
+        /// Specifies whether to propagate the tags from the job or job definition to the corresponding
+        /// Amazon ECS task. If no value is specified, the tags are not propagated. Tags can only
+        /// be propagated to the tasks during task creation. For tags with the same name, job
+        /// tags are given priority over job definitions tags. If the total number of combined
+        /// tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code>
+        /// state.
+        /// </para>
+        /// </summary>
+        public bool PropagateTags
+        {
+            get { return this._propagateTags.GetValueOrDefault(); }
+            set { this._propagateTags = value; }
+        }
+
+        // Check to see if PropagateTags property is set
+        internal bool IsSetPropagateTags()
+        {
+            return this._propagateTags.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RetryStrategy. 
         /// <para>
         /// The retry strategy to use for failed jobs that are submitted with this job definition.
         /// Any retry strategy that is specified during a <a>SubmitJob</a> operation overrides
-        /// the retry strategy defined here. If a job is terminated due to a timeout, it is not
+        /// the retry strategy defined here. If a job is terminated due to a timeout, it isn't
         /// retried.
         /// </para>
         /// </summary>
@@ -152,8 +208,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The tags that you apply to the job definition to help you categorize and organize
         /// your resources. Each tag consists of a key and an optional value. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS Resources</a> in <i>AWS General Reference</i>.
+        /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
+        /// AWS Resources</a> in <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -174,10 +230,10 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The timeout configuration for jobs that are submitted with this job definition, after
         /// which AWS Batch terminates your jobs if they have not finished. If a job is terminated
-        /// due to a timeout, it is not retried. The minimum value for the timeout is 60 seconds.
+        /// due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds.
         /// Any timeout configuration that is specified during a <a>SubmitJob</a> operation overrides
-        /// the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
-        /// Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
+        /// Timeouts</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         public JobTimeout Timeout
@@ -195,8 +251,15 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of job definition.
+        /// The type of job definition. For more information about multi-node parallel jobs, see
+        /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
+        /// a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public JobDefinitionType Type

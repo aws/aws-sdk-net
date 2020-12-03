@@ -94,6 +94,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExitCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fargatePlatformConfiguration", targetDepth))
+                {
+                    var unmarshaller = FargatePlatformConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FargatePlatformConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("image", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -140,6 +146,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<MountPoint, MountPointUnmarshaller>(MountPointUnmarshaller.Instance);
                     unmarshalledObject.MountPoints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("networkConfiguration", targetDepth))
+                {
+                    var unmarshaller = NetworkConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("networkInterfaces", targetDepth))

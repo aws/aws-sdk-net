@@ -49,7 +49,12 @@ namespace Amazon.Batch.Model
         /// <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
         /// and <code>splunk</code>.
         /// </para>
-        ///  <dl> <dt>awslogs</dt> <dd> 
+        ///  <note> 
+        /// <para>
+        /// Jobs running on Fargate resources are restricted to the <code>awslogs</code> and <code>splunk</code>
+        /// log drivers.
+        /// </para>
+        ///  </note> <dl> <dt>awslogs</dt> <dd> 
         /// <para>
         /// Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a
         /// href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
@@ -94,12 +99,12 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </dd> </dl> <note> 
         /// <para>
-        /// If you have a custom driver that is not listed earlier that you would like to work
-        /// with the Amazon ECS container agent, you can fork the Amazon ECS container agent project
-        /// that is <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a>
-        /// and customize it to work with that driver. We encourage you to submit pull requests
-        /// for changes that you would like to have included. However, Amazon Web Services does
-        /// not currently support running modified copies of this software.
+        /// If you have a custom driver that isn't listed earlier that you want to work with the
+        /// Amazon ECS container agent, you can fork the Amazon ECS container agent project that
+        /// is <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize
+        /// it to work with that driver. We encourage you to submit pull requests for changes
+        /// that you want to have included. However, Amazon Web Services doesn't currently support
+        /// running modified copies of this software.
         /// </para>
         ///  </note> 
         /// <para>

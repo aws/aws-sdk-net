@@ -31,7 +31,9 @@ namespace Amazon.Batch.Model
     /// <summary>
     /// Container for the parameters to the CreateComputeEnvironment operation.
     /// Creates an AWS Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code>
-    /// compute environments.
+    /// compute environments. <code>MANAGED</code> compute environments can use Amazon EC2
+    /// or AWS Fargate resources. <code>UNMANAGED</code> compute environments can only use
+    /// EC2 resources.
     /// 
     ///  
     /// <para>
@@ -39,9 +41,10 @@ namespace Amazon.Batch.Model
     /// of the compute resources within the environment. This is based on the compute resource
     /// specification that you define or the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
     /// template</a> that you specify when you create the compute environment. You can choose
-    /// to use Amazon EC2 On-Demand Instances or Spot Instances in your managed compute environment.
-    /// You can optionally set a maximum price so that Spot Instances only launch when the
-    /// Spot Instance price is below a specified percentage of the On-Demand price.
+    /// either to use EC2 On-Demand Instances and EC2 Spot Instances, or to use Fargate and
+    /// Fargate Spot capacity in your managed compute environment. You can optionally set
+    /// a maximum price so that Spot Instances only launch when the Spot Instance price is
+    /// below a specified percentage of the On-Demand price.
     /// </para>
     ///  <note> 
     /// <para>
@@ -49,25 +52,26 @@ namespace Amazon.Batch.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// In an unmanaged compute environment, you can manage your own compute resources. This
-    /// provides more compute resource configuration options, such as using a custom AMI,
-    /// but you must ensure that your AMI meets the Amazon ECS container instance AMI specification.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container
-    /// Instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// In an unmanaged compute environment, you can manage your own EC2 compute resources
+    /// and have a lot of flexibility with how you configure your compute resources. For example,
+    /// you can use custom AMI. However, you need to verify that your AMI meets the Amazon
+    /// ECS container instance AMI specification. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
+    /// instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// After you have created your unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a>
     /// operation to find the Amazon ECS cluster that is associated with it. Then, manually
     /// launch your container instances into that Amazon ECS cluster. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
-    /// an Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service Developer
+    /// an Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service Developer
     /// Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
-    /// AWS Batch does not upgrade the AMIs in a compute environment after it is created (for
-    /// example, when a newer version of the Amazon ECS-optimized AMI is available). You are
-    /// responsible for the management of the guest operating system (including updates and
-    /// security patches) and any additional application software or utilities that you install
-    /// on the compute resources. To use a new AMI for your AWS Batch jobs:
+    /// AWS Batch doesn't upgrade the AMIs in a compute environment after it's created. For
+    /// example, it doesn't update the AMIs when a newer version of the Amazon ECS-optimized
+    /// AMI is available. Therefore, you're responsible for the management of the guest operating
+    /// system (including updates and security patches) and any additional application software
+    /// or utilities that you install on the compute resources. To use a new AMI for your
+    /// AWS Batch jobs, complete these steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
@@ -79,11 +83,11 @@ namespace Amazon.Batch.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Remove the old compute environment from your job queue.
+    /// Remove the earlier compute environment from your job queue.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Delete the old compute environment.
+    /// Delete the earlier compute environment.
     /// </para>
     ///  </li> </ol> </note>
     /// </summary>
@@ -119,7 +123,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ComputeResources. 
         /// <para>
-        /// Details of the compute resources managed by the compute environment. This parameter
+        /// Details about the compute resources managed by the compute environment. This parameter
         /// is required for managed compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
         /// Environments</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
@@ -151,7 +155,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Depending on how you created your AWS Batch service role, its ARN may contain the
         /// <code>service-role</code> path prefix. When you only specify the name of the service
-        /// role, AWS Batch assumes that your ARN does not use the <code>service-role</code> path
+        /// role, AWS Batch assumes that your ARN doesn't use the <code>service-role</code> path
         /// prefix. Because of this, we recommend that you specify the full ARN of your service
         /// role when you create compute environments.
         /// </para>
@@ -202,7 +206,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
         /// and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
-        /// API operations. These tags do not propagate to the underlying compute resources.
+        /// API operations. These tags don't propagate to the underlying compute resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -221,7 +225,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+        /// The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
         /// Environments</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>

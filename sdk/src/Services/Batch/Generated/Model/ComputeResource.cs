@@ -54,21 +54,48 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
-        /// The allocation strategy to use for the compute resource in case not enough instances
-        /// of the best fitting instance type can be allocated. This could be due to availability
-        /// of the instance type in the region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-        /// EC2 service limits</a>. If this is not specified, the default is <code>BEST_FIT</code>,
-        /// which will use only the best fitting instance type, waiting for additional capacity
-        /// if it's not available. This allocation strategy keeps costs lower but can limit scaling.
-        /// If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM Role
-        /// must be specified. <code>BEST_FIT_PROGRESSIVE</code> will select additional instance
-        /// types that are large enough to meet the requirements of the jobs in the queue, with
-        /// a preference for instance types with a lower cost per vCPU. <code>SPOT_CAPACITY_OPTIMIZED</code>
-        /// is only available for Spot Instance compute resources and will select additional instance
-        /// types that are large enough to meet the requirements of the jobs in the queue, with
-        /// a preference for instance types that are less likely to be interrupted. For more information,
-        /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+        /// The allocation strategy to use for the compute resource if not enough instances of
+        /// the best fitting instance type can be allocated. This might be because of availability
+        /// of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+        /// EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
         /// Strategies</a> in the <i>AWS Batch User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+        /// be specified.
+        /// </para>
+        ///  </note> <dl> <dt>BEST_FIT (default)</dt> <dd> 
+        /// <para>
+        /// AWS Batch selects an instance type that best fits the needs of the jobs with a preference
+        /// for the lowest-cost instance type. If additional instances of the selected instance
+        /// type aren't available, AWS Batch will wait for the additional instances to be available.
+        /// If there are not enough instances available, or if the user is hitting <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+        /// EC2 service limits</a> then additional jobs aren't run until currently running jobs
+        /// have completed. This allocation strategy keeps costs lower but can limit scaling.
+        /// If you are using Spot Fleets with <code>BEST_FIT</code> then the Spot Fleet IAM Role
+        /// must be specified.
+        /// </para>
+        ///  </dd> <dt>BEST_FIT_PROGRESSIVE</dt> <dd> 
+        /// <para>
+        /// AWS Batch will select additional instance types that are large enough to meet the
+        /// requirements of the jobs in the queue, with a preference for instance types with a
+        /// lower cost per unit vCPU. If additional instances of the previously selected instance
+        /// types aren't available, AWS Batch will select new instance types.
+        /// </para>
+        ///  </dd> <dt>SPOT_CAPACITY_OPTIMIZED</dt> <dd> 
+        /// <para>
+        /// AWS Batch will select one or more instance types that are large enough to meet the
+        /// requirements of the jobs in the queue, with a preference for instance types that are
+        /// less likely to be interrupted. This allocation strategy is only available for Spot
+        /// Instance compute resources.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
+        /// strategies, AWS Batch might need to go above <code>maxvCpus</code> to meet your capacity
+        /// requirements. In this event, AWS Batch never exceeds <code>maxvCpus</code> by more
+        /// than a single instance.
         /// </para>
         /// </summary>
         public CRAllocationStrategy AllocationStrategy
@@ -93,6 +120,12 @@ namespace Amazon.Batch.Model
         /// more than your maximum percentage. If you leave this field empty, the default value
         /// is 100% of the On-Demand price.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+        /// be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int BidPercentage
         {
@@ -109,8 +142,15 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property DesiredvCpus. 
         /// <para>
-        /// The desired number of Amazon EC2 vCPUS in the compute environment.
+        /// The desired number of Amazon EC2 vCPUS in the compute environment. AWS Batch modifies
+        /// this value between the minimum and maximum values, based on job queue demand.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+        /// be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int DesiredvCpus
         {
@@ -127,9 +167,16 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Ec2Configuration. 
         /// <para>
-        /// Provides additional details used to selecting the AMI to use for instances in a compute
-        /// environment.
+        /// Provides information used to select Amazon Machine Images (AMIs) for instances in
+        /// the compute environment. If <code>Ec2Configuration</code> isn't specified, the default
+        /// is <code>ECS_AL1</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+        /// be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Ec2Configuration> Ec2Configuration
         {
@@ -147,7 +194,14 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Ec2KeyPair. 
         /// <para>
         /// The Amazon EC2 key pair that is used for instances launched in the compute environment.
+        /// You can use this key pair to log in to your instances with SSH.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+        /// be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Ec2KeyPair
         {
@@ -168,6 +222,22 @@ namespace Amazon.Batch.Model
         /// This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code>
         /// structure.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+        /// be specified.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// The AMI that you choose for a compute environment must match the architecture of the
+        /// instance types that you intend to use for that compute environment. For example, if
+        /// your compute environment uses A1 instance types, the compute resource AMI that you
+        /// choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the
+        /// Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon
+        /// ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [Obsolete("This field is deprecated, use ec2Configuration[].imageIdOverride instead.")]
         public string ImageId
@@ -191,8 +261,13 @@ namespace Amazon.Batch.Model
         /// </code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
         /// ECS Instance Role</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+        /// be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string InstanceRole
         {
             get { return this._instanceRole; }
@@ -211,11 +286,22 @@ namespace Amazon.Batch.Model
         /// The instances types that may be launched. You can specify instance families to launch
         /// any instance type within those families (for example, <code>c5</code> or <code>p3</code>),
         /// or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>).
-        /// You can also choose <code>optimal</code> to pick instance types (from the C, M, and
-        /// R instance families) on the fly that match the demand of your job queues.
+        /// You can also choose <code>optimal</code> to select instance types (from the C, M,
+        /// and R instance families) on the fly that match the demand of your job queues.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+        /// be specified.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// When you create a compute environment, the instance types that you select for the
+        /// compute environment must share the same architecture. For example, you can't mix x86
+        /// and ARM instances in the same compute environment.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> InstanceTypes
         {
             get { return this._instanceTypes; }
@@ -238,6 +324,12 @@ namespace Amazon.Batch.Model
         /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
         /// Template Support</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+        /// be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplate
         {
@@ -256,6 +348,15 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The maximum number of Amazon EC2 vCPUs that an environment can reach.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
+        /// allocation strategies, AWS Batch may need to go above <code>maxvCpus</code> to meet
+        /// your capacity requirements. In this event, AWS Batch will never go above <code>maxvCpus</code>
+        /// by more than a single instance (e.g., no more than a single instance from among those
+        /// specified in your compute environment).
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public int MaxvCpus
@@ -276,8 +377,13 @@ namespace Amazon.Batch.Model
         /// The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if
         /// the compute environment is <code>DISABLED</code>).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+        /// be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int MinvCpus
         {
             get { return this._minvCpus.GetValueOrDefault(); }
@@ -300,6 +406,12 @@ namespace Amazon.Batch.Model
         /// Availability Zone with high network flow potential. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+        /// be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string PlacementGroup
         {
@@ -318,9 +430,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The Amazon EC2 security groups associated with instances launched in the compute environment.
         /// One or more security groups must be specified, either in <code>securityGroupIds</code>
-        /// or using a launch template referenced in <code>launchTemplate</code>. If security
-        /// groups are specified using both <code>securityGroupIds</code> and <code>launchTemplate</code>,
-        /// the values in <code>securityGroupIds</code> will be used.
+        /// or using a launch template referenced in <code>launchTemplate</code>. This parameter
+        /// is required for jobs running on Fargate resources and must contain at least one security
+        /// group. (Fargate does not support launch templates.) If security groups are specified
+        /// using both <code>securityGroupIds</code> and <code>launchTemplate</code>, the values
+        /// in <code>securityGroupIds</code> will be used.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -340,10 +454,24 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a
         /// <code>SPOT</code> compute environment. This role is required if the allocation strategy
-        /// set to <code>BEST_FIT</code> or if the allocation strategy is not specified. For more
+        /// set to <code>BEST_FIT</code> or if the allocation strategy isn't specified. For more
         /// information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
         /// EC2 Spot Fleet Role</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+        /// be specified.
+        /// </para>
+        ///  </note> <important> 
+        /// <para>
+        /// To tag your Spot Instances on creation, the Spot Fleet IAM role specified here must
+        /// use the newer <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously
+        /// recommended <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required
+        /// permissions to tag Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot
+        /// Instances not tagged on creation</a> in the <i>AWS Batch User Guide</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string SpotIamFleetRole
         {
@@ -360,8 +488,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// The VPC subnets into which the compute resources are launched. For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+        /// The VPC subnets into which the compute resources are launched. These subnets must
+        /// be within the same VPC. This parameter is required for jobs running on Fargate resources,
+        /// where it can contain up to 16 subnets. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
         /// and Subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
@@ -381,12 +510,13 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Key-value pair tags to be applied to resources that are launched in the compute environment.
-        /// For AWS Batch, these take the form of "String1": "String2", where String1 is the tag
-        /// key and String2 is the tag value—for example, { "Name": "AWS Batch Instance - C4OnDemand"
-        /// }. These tags can not be updated or removed after the compute environment has been
-        /// created; any changes require creating a new compute environment and removing the old
-        /// compute environment. These tags are not seen when using the AWS Batch ListTagsForResource
+        /// Key-value pair tags to be applied to EC2 resources that are launched in the compute
+        /// environment. For AWS Batch, these take the form of "String1": "String2", where String1
+        /// is the tag key and String2 is the tag value—for example, { "Name": "AWS Batch Instance
+        /// - C4OnDemand" }. This is helpful for recognizing your AWS Batch instances in the Amazon
+        /// EC2 console. These tags can not be updated or removed after the compute environment
+        /// has been created; any changes require creating a new compute environment and removing
+        /// the old compute environment. These tags are not seen when using the AWS Batch <code>ListTagsForResource</code>
         /// API operation.
         /// </para>
         /// </summary>
@@ -405,7 +535,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of compute environment: <code>EC2</code> or <code>SPOT</code>.
+        /// The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>,
+        /// or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+        /// Environments</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

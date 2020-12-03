@@ -46,6 +46,8 @@ namespace Amazon.Batch.Model
         private NodeDetails _nodeDetails;
         private NodeProperties _nodeProperties;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private List<string> _platformCapabilities = new List<string>();
+        private bool? _propagateTags;
         private RetryStrategy _retryStrategy;
         private long? _startedAt;
         private JobStatus _status;
@@ -93,7 +95,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Container. 
         /// <para>
-        /// An object representing the details of the container that is associated with the job.
+        /// An object representing the details of the container that's associated with the job.
         /// </para>
         /// </summary>
         public ContainerDetail Container
@@ -132,7 +134,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property DependsOn. 
         /// <para>
-        /// A list of job IDs on which this job depends.
+        /// A list of job IDs that this job depends on.
         /// </para>
         /// </summary>
         public List<JobDependency> DependsOn
@@ -225,7 +227,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobQueue. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the job queue with which the job is associated.
+        /// The Amazon Resource Name (ARN) of the job queue that the job is associated with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -265,6 +267,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// An object representing the node properties of a multi-node parallel job.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This isn't applicable to jobs running on Fargate resources.
+        /// </para>
+        ///  </note>
         /// </summary>
         public NodeProperties NodeProperties
         {
@@ -298,6 +305,48 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlatformCapabilities. 
+        /// <para>
+        /// The platform capabilities required by the job definition. If no value is specified,
+        /// it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+        /// </para>
+        /// </summary>
+        public List<string> PlatformCapabilities
+        {
+            get { return this._platformCapabilities; }
+            set { this._platformCapabilities = value; }
+        }
+
+        // Check to see if PlatformCapabilities property is set
+        internal bool IsSetPlatformCapabilities()
+        {
+            return this._platformCapabilities != null && this._platformCapabilities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropagateTags. 
+        /// <para>
+        /// Specifies whether to propagate the tags from the job or job definition to the corresponding
+        /// Amazon ECS task. If no value is specified, the tags are not propagated. Tags can only
+        /// be propagated to the tasks during task creation. For tags with the same name, job
+        /// tags are given priority over job definitions tags. If the total number of combined
+        /// tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code>
+        /// state.
+        /// </para>
+        /// </summary>
+        public bool PropagateTags
+        {
+            get { return this._propagateTags.GetValueOrDefault(); }
+            set { this._propagateTags = value; }
+        }
+
+        // Check to see if PropagateTags property is set
+        internal bool IsSetPropagateTags()
+        {
+            return this._propagateTags.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RetryStrategy. 
         /// <para>
         /// The retry strategy to use for this job if an attempt fails.
@@ -320,7 +369,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The Unix timestamp (in milliseconds) for when the job was started (when the job transitioned
         /// from the <code>STARTING</code> state to the <code>RUNNING</code> state). This parameter
-        /// is not provided for child jobs of array jobs or multi-node parallel jobs.
+        /// isn't provided for child jobs of array jobs or multi-node parallel jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -44,8 +44,8 @@ namespace Amazon.Batch.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-    /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+    /// sensitive data</a> in the <i>AWS Batch User Guide</i>.
     /// </para>
     /// </summary>
     public partial class Secret
@@ -82,7 +82,7 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// If the AWS Systems Manager Parameter Store parameter exists in the same Region as
-        /// the task you are launching, then you can use either the full ARN or name of the parameter.
+        /// the job you are launching, then you can use either the full ARN or name of the parameter.
         /// If the parameter exists in a different Region, then the full ARN must be specified.
         /// </para>
         ///  </note>

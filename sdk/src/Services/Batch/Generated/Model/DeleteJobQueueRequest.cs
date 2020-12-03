@@ -36,7 +36,7 @@ namespace Amazon.Batch.Model
     /// 
     ///  
     /// <para>
-    /// It is not necessary to disassociate compute environments from a queue before submitting
+    /// It's not necessary to disassociate compute environments from a queue before submitting
     /// a <code>DeleteJobQueue</code> request.
     /// </para>
     /// </summary>

@@ -30,6 +30,13 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// An object representing a container instance host device.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This object isn't applicable to jobs running on Fargate resources and shouldn't be
+    /// provided.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class Device
     {
@@ -40,7 +47,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerPath. 
         /// <para>
-        /// The path inside the container at which to expose the host device. By default the <code>hostPath</code>
+        /// The path inside the container used to expose the host device. By default the <code>hostPath</code>
         /// value is used.
         /// </para>
         /// </summary>

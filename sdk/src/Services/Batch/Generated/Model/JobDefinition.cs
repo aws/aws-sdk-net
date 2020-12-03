@@ -38,6 +38,8 @@ namespace Amazon.Batch.Model
         private string _jobDefinitionName;
         private NodeProperties _nodeProperties;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private List<string> _platformCapabilities = new List<string>();
+        private bool? _propagateTags;
         private RetryStrategy _retryStrategy;
         private int? _revision;
         private string _status;
@@ -106,6 +108,12 @@ namespace Amazon.Batch.Model
         /// <para>
         /// An object with various properties specific to multi-node parallel jobs.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>;
+        /// use <code>containerProperties</code> instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         public NodeProperties NodeProperties
         {
@@ -139,6 +147,48 @@ namespace Amazon.Batch.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformCapabilities. 
+        /// <para>
+        /// The platform capabilities required by the job definition. If no value is specified,
+        /// it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+        /// </para>
+        /// </summary>
+        public List<string> PlatformCapabilities
+        {
+            get { return this._platformCapabilities; }
+            set { this._platformCapabilities = value; }
+        }
+
+        // Check to see if PlatformCapabilities property is set
+        internal bool IsSetPlatformCapabilities()
+        {
+            return this._platformCapabilities != null && this._platformCapabilities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropagateTags. 
+        /// <para>
+        /// Specifies whether to propagate the tags from the job or job definition to the corresponding
+        /// Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only
+        /// be propagated to the tasks during task creation. For tags with the same name, job
+        /// tags are given priority over job definitions tags. If the total number of combined
+        /// tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code>
+        /// state.
+        /// </para>
+        /// </summary>
+        public bool PropagateTags
+        {
+            get { return this._propagateTags.GetValueOrDefault(); }
+            set { this._propagateTags = value; }
+        }
+
+        // Check to see if PropagateTags property is set
+        internal bool IsSetPropagateTags()
+        {
+            return this._propagateTags.HasValue; 
         }
 
         /// <summary>
@@ -220,7 +270,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The timeout configuration for jobs that are submitted with this job definition. You
         /// can specify a timeout duration after which AWS Batch terminates your jobs if they
-        /// have not finished.
+        /// haven't finished.
         /// </para>
         /// </summary>
         public JobTimeout Timeout
@@ -238,7 +288,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of job definition.
+        /// The type of job definition. If the job is run on Fargate resources, then <code>multinode</code>
+        /// isn't supported. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
+        /// a multi-node parallel job definition</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

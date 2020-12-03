@@ -94,6 +94,18 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("platformCapabilities", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PlatformCapabilities = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("propagateTags", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.PropagateTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("retryStrategy", targetDepth))
                 {
                     var unmarshaller = RetryStrategyUnmarshaller.Instance;

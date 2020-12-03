@@ -30,6 +30,12 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// The container path, mount options, and size of the tmpfs mount.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This object isn't applicable to jobs running on Fargate resources.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class Tmpfs
     {
@@ -40,7 +46,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerPath. 
         /// <para>
-        /// The absolute file path in the container where the tmpfs volume is to be mounted.
+        /// The absolute file path in the container where the tmpfs volume is mounted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

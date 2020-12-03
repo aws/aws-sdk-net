@@ -31,10 +31,10 @@ namespace Amazon.Batch.Model
     /// <summary>
     /// Container for the parameters to the TagResource operation.
     /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
-    /// If existing tags on a resource are not specified in the request parameters, they are
-    /// not changed. When a resource is deleted, the tags associated with that resource are
-    /// deleted as well. AWS Batch resources that support tags are compute environments, jobs,
-    /// job definitions, and job queues. ARNs for child jobs of array and multi-node parallel
+    /// If existing tags on a resource aren't specified in the request parameters, they aren't
+    /// changed. When a resource is deleted, the tags associated with that resource are deleted
+    /// as well. AWS Batch resources that support tags are compute environments, jobs, job
+    /// definitions, and job queues. ARNs for child jobs of array and multi-node parallel
     /// (MNP) jobs are not supported.
     /// </summary>
     public partial class TagResourceRequest : AmazonBatchRequest
@@ -45,7 +45,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource to which to add tags. AWS Batch resources
+        /// The Amazon Resource Name (ARN) of the resource that tags are added to. AWS Batch resources
         /// that support tags are compute environments, jobs, job definitions, and job queues.
         /// ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.
         /// </para>

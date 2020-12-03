@@ -37,6 +37,7 @@ namespace Amazon.Batch.Model
         private List<string> _command = new List<string>();
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
         private string _executionRoleArn;
+        private FargatePlatformConfiguration _fargatePlatformConfiguration;
         private string _image;
         private string _instanceType;
         private string _jobRoleArn;
@@ -44,6 +45,7 @@ namespace Amazon.Batch.Model
         private LogConfiguration _logConfiguration;
         private int? _memory;
         private List<MountPoint> _mountPoints = new List<MountPoint>();
+        private NetworkConfiguration _networkConfiguration;
         private bool? _privileged;
         private bool? _readonlyRootFilesystem;
         private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
@@ -86,7 +88,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// We do not recommend using plaintext environment variables for sensitive information,
+        /// We don't recommend using plaintext environment variables for sensitive information,
         /// such as credential data.
         /// </para>
         ///  </important> <note> 
@@ -111,9 +113,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For
-        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
-        /// Batch execution IAM role</a>.
+        /// The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. Jobs
+        /// running on Fargate resources must provide an execution role. For more information,
+        /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
+        /// Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         public string ExecutionRoleArn
@@ -129,6 +132,25 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FargatePlatformConfiguration. 
+        /// <para>
+        /// The platform configuration for jobs running on Fargate resources. Jobs running on
+        /// EC2 resources must not specify this parameter.
+        /// </para>
+        /// </summary>
+        public FargatePlatformConfiguration FargatePlatformConfiguration
+        {
+            get { return this._fargatePlatformConfiguration; }
+            set { this._fargatePlatformConfiguration = value; }
+        }
+
+        // Check to see if FargatePlatformConfiguration property is set
+        internal bool IsSetFargatePlatformConfiguration()
+        {
+            return this._fargatePlatformConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Image. 
         /// <para>
         /// The image used to start a container. This string is passed directly to the Docker
@@ -141,7 +163,13 @@ namespace Amazon.Batch.Model
         /// Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Docker image architecture must match the processor architecture of the compute resources
+        /// that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based
+        /// compute resources.
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         /// Images in Amazon ECR repositories use the full registry and repository URI (for example,
         /// <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
@@ -178,10 +206,15 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type to use for a multi-node parallel job. Currently all node groups
-        /// in a multi-node parallel job must use the same instance type. This parameter is not
-        /// valid for single-node container jobs.
+        /// The instance type to use for a multi-node parallel job. All node groups in a multi-node
+        /// parallel job must use the same instance type.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to single-node container jobs or for jobs running
+        /// on Fargate resources and shouldn't be provided.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string InstanceType
         {
@@ -199,7 +232,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property JobRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS
-        /// permissions.
+        /// permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+        /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string JobRoleArn
@@ -244,7 +278,7 @@ namespace Amazon.Batch.Model
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. By default, containers use the same logging driver that the Docker daemon
-        /// uses. However the container may use a different logging driver than the Docker daemon
+        /// uses. However the container might use a different logging driver than the Docker daemon
         /// by specifying a log driver with this parameter in the container definition. To use
         /// a different logging driver for a container, the log system must be configured properly
         /// on the container instance (or on a different log server for remote logging options).
@@ -289,23 +323,26 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The hard limit (in MiB) of memory to present to the container. If your container attempts
-        /// to exceed the memory specified here, the container is killed. This parameter maps
-        /// to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// This parameter is deprecated and not supported for jobs run on Fargate resources,
+        /// use <code>ResourceRequirement</code>. For jobs run on EC2 resources can specify the
+        /// memory requirement using the <code>ResourceRequirement</code> structure. The hard
+        /// limit (in MiB) of memory to present to the container. If your container attempts to
+        /// exceed the memory specified here, the container is killed. This parameter maps to
+        /// <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. You must specify at least 4 MiB of memory for a job. This is required but
-        /// can be specified in several places for multi-node parallel (MNP) jobs; it must be
-        /// specified for each node at least once.
+        /// can be specified in several places; it must be specified for each node at least once.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you are trying to maximize your resource utilization by providing your jobs as
-        /// much memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
+        /// If you're trying to maximize your resource utilization by providing your jobs as much
+        /// memory as possible for a particular instance type, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
         /// Management</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
+        [Obsolete("This field is deprecated, use resourceRequirements instead.")]
         public int Memory
         {
             get { return this._memory.GetValueOrDefault(); }
@@ -341,15 +378,40 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// The network configuration for jobs running on Fargate resources. Jobs running on EC2
+        /// resources must not specify this parameter.
+        /// </para>
+        /// </summary>
+        public NetworkConfiguration NetworkConfiguration
+        {
+            get { return this._networkConfiguration; }
+            set { this._networkConfiguration = value; }
+        }
+
+        // Check to see if NetworkConfiguration property is set
+        internal bool IsSetNetworkConfiguration()
+        {
+            return this._networkConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Privileged. 
         /// <para>
-        /// When this parameter is true, the container is given elevated privileges on the host
+        /// When this parameter is true, the container is given elevated permissions on the host
         /// container instance (similar to the <code>root</code> user). This parameter maps to
         /// <code>Privileged</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-        /// run</a>.
+        /// run</a>. The default value is false.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
+        /// be provided, or specified as false.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool Privileged
         {
@@ -387,8 +449,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ResourceRequirements. 
         /// <para>
-        /// The type and amount of a resource to assign to a container. Currently, the only supported
-        /// resource is <code>GPU</code>.
+        /// The type and amount of resources to assign to a container. The supported resources
+        /// include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
         /// </para>
         /// </summary>
         public List<ResourceRequirement> ResourceRequirements
@@ -406,8 +468,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Secrets. 
         /// <para>
-        /// The secrets for the container. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
-        /// Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// The secrets for the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+        /// sensitive data</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         public List<Secret> Secrets
@@ -431,6 +493,12 @@ namespace Amazon.Batch.Model
         /// Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
+        /// be provided.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Ulimit> Ulimits
         {
@@ -469,15 +537,26 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Vcpus. 
         /// <para>
-        /// The number of vCPUs reserved for the container. This parameter maps to <code>CpuShares</code>
-        /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// This parameter is deprecated and not supported for jobs run on Fargate resources,
+        /// see <code>resourceRequirement</code>. The number of vCPUs reserved for the container.
+        /// Jobs running on EC2 resources can specify the vCPU requirement for the job using <code>resourceRequirements</code>
+        /// but the vCPU requirements can't be specified both here and in the <code>resourceRequirement</code>
+        /// structure. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one
-        /// vCPU. This is required but can be specified in several places for multi-node parallel
-        /// (MNP) jobs; it must be specified for each node at least once.
+        /// vCPU. This is required but can be specified in several places. It must be specified
+        /// for each node at least once.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
+        /// be provided. Jobs running on Fargate resources must specify the vCPU requirement for
+        /// the job using <code>resourceRequirements</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
+        [Obsolete("This field is deprecated, use resourceRequirements instead.")]
         public int Vcpus
         {
             get { return this._vcpus.GetValueOrDefault(); }

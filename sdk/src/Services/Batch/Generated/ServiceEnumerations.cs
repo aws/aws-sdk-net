@@ -75,6 +75,56 @@ namespace Amazon.Batch
 
 
     /// <summary>
+    /// Constants used for properties of type AssignPublicIp.
+    /// </summary>
+    public class AssignPublicIp : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AssignPublicIp
+        /// </summary>
+        public static readonly AssignPublicIp DISABLED = new AssignPublicIp("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AssignPublicIp
+        /// </summary>
+        public static readonly AssignPublicIp ENABLED = new AssignPublicIp("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssignPublicIp(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssignPublicIp FindValue(string value)
+        {
+            return FindValue<AssignPublicIp>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssignPublicIp(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CEState.
     /// </summary>
     public class CEState : ConstantClass
@@ -304,6 +354,14 @@ namespace Amazon.Batch
         /// Constant EC2 for CRType
         /// </summary>
         public static readonly CRType EC2 = new CRType("EC2");
+        /// <summary>
+        /// Constant FARGATE for CRType
+        /// </summary>
+        public static readonly CRType FARGATE = new CRType("FARGATE");
+        /// <summary>
+        /// Constant FARGATE_SPOT for CRType
+        /// </summary>
+        public static readonly CRType FARGATE_SPOT = new CRType("FARGATE_SPOT");
         /// <summary>
         /// Constant SPOT for CRType
         /// </summary>
@@ -705,6 +763,56 @@ namespace Amazon.Batch
 
 
     /// <summary>
+    /// Constants used for properties of type PlatformCapability.
+    /// </summary>
+    public class PlatformCapability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EC2 for PlatformCapability
+        /// </summary>
+        public static readonly PlatformCapability EC2 = new PlatformCapability("EC2");
+        /// <summary>
+        /// Constant FARGATE for PlatformCapability
+        /// </summary>
+        public static readonly PlatformCapability FARGATE = new PlatformCapability("FARGATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PlatformCapability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PlatformCapability FindValue(string value)
+        {
+            return FindValue<PlatformCapability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PlatformCapability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -714,6 +822,14 @@ namespace Amazon.Batch
         /// Constant GPU for ResourceType
         /// </summary>
         public static readonly ResourceType GPU = new ResourceType("GPU");
+        /// <summary>
+        /// Constant MEMORY for ResourceType
+        /// </summary>
+        public static readonly ResourceType MEMORY = new ResourceType("MEMORY");
+        /// <summary>
+        /// Constant VCPU for ResourceType
+        /// </summary>
+        public static readonly ResourceType VCPU = new ResourceType("VCPU");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

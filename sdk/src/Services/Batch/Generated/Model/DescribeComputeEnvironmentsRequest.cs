@@ -34,7 +34,7 @@ namespace Amazon.Batch.Model
     /// 
     ///  
     /// <para>
-    /// If you are using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code>
+    /// If you're using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code>
     /// operation to determine the <code>ecsClusterArn</code> that you should launch your
     /// Amazon ECS container instances into.
     /// </para>
@@ -71,7 +71,7 @@ namespace Amazon.Batch.Model
         /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeComputeEnvironments</code>
+        /// value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code>
         /// returns up to 100 results and a <code>nextToken</code> value if applicable.
         /// </para>
         /// </summary>

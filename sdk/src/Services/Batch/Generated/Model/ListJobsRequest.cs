@@ -34,24 +34,24 @@ namespace Amazon.Batch.Model
     /// 
     ///  
     /// <para>
-    /// You must specify only one of the following:
+    /// You must specify only one of the following items:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// a job queue ID to return a list of jobs in that job queue
+    /// A job queue ID to return a list of jobs in that job queue
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// a multi-node parallel job ID to return a list of that job's nodes
+    /// A multi-node parallel job ID to return a list of that job's nodes
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// an array job ID to return a list of that job's children
+    /// An array job ID to return a list of that job's children
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// You can filter the results by job status with the <code>jobStatus</code> parameter.
-    /// If you do not specify a status, only <code>RUNNING</code> jobs are returned.
+    /// If you don't specify a status, only <code>RUNNING</code> jobs are returned.
     /// </para>
     /// </summary>
     public partial class ListJobsRequest : AmazonBatchRequest
@@ -85,7 +85,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobQueue. 
         /// <para>
-        /// The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
+        /// The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.
         /// </para>
         /// </summary>
         public string JobQueue
@@ -103,8 +103,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The job status with which to filter jobs in the specified queue. If you do not specify
-        /// a status, only <code>RUNNING</code> jobs are returned.
+        /// The job status used to filter jobs in the specified queue. If you don't specify a
+        /// status, only <code>RUNNING</code> jobs are returned.
         /// </para>
         /// </summary>
         public JobStatus JobStatus
@@ -127,7 +127,7 @@ namespace Amazon.Batch.Model
         /// results in a single page along with a <code>nextToken</code> response element. The
         /// remaining results of the initial request can be seen by sending another <code>ListJobs</code>
         /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter is not used, then <code>ListJobs</code> returns up to
+        /// 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to
         /// 100 results and a <code>nextToken</code> value if applicable.
         /// </para>
         /// </summary>

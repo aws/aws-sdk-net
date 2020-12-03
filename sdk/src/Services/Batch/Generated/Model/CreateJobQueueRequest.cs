@@ -55,9 +55,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The set of compute environments mapped to a job queue and their order relative to
         /// each other. The job scheduler uses this parameter to determine which compute environment
-        /// should execute a given job. Compute environments must be in the <code>VALID</code>
+        /// should run a specific job. Compute environments must be in the <code>VALID</code>
         /// state before you can associate them with a job queue. You can associate up to three
-        /// compute environments with a job queue.
+        /// compute environments with a job queue. All of the compute environments must be either
+        /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>);
+        /// EC2 and Fargate compute environments can't be mixed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -97,7 +99,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The priority of the job queue. Job queues with a higher priority (or a higher integer
         /// value for the <code>priority</code> parameter) are evaluated first when associated
-        /// with the same compute environment. Priority is determined in descending order, for
+        /// with the same compute environment. Priority is determined in descending order. For
         /// example, a job queue with a priority value of <code>10</code> is given scheduling
         /// preference over a job queue with a priority value of <code>1</code>.
         /// </para>
@@ -119,7 +121,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property State. 
         /// <para>
         /// The state of the job queue. If the job queue state is <code>ENABLED</code>, it is
-        /// able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot
+        /// able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't
         /// be added to the queue, but jobs already in the queue can finish.
         /// </para>
         /// </summary>

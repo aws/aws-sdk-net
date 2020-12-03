@@ -43,7 +43,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
-        /// <code>onReason</code>, and <code>onExitCode</code>) are met.
+        /// <code>onReason</code>, and <code>onExitCode</code>) are met. The values are not case
+        /// sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,7 +86,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Contains a glob pattern to match against the <code>Reason</code> returned for a job.
         /// The patten can be up to 512 characters long, can contain letters, numbers, periods
-        /// (.), colons (:), and whitespace (spaces, tabs), and can optionally end with an asterisk
+        /// (.), colons (:), and white space (spaces, tabs), and can optionally end with an asterisk
         /// (*) so that only the start of the string needs to be an exact match.
         /// </para>
         /// </summary>
@@ -106,7 +107,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Contains a glob pattern to match against the <code>StatusReason</code> returned for
         /// a job. The patten can be up to 512 characters long, can contain letters, numbers,
-        /// periods (.), colons (:), and whitespace (spaces, tabs). and can optionally end with
+        /// periods (.), colons (:), and white space (spaces, tabs). and can optionally end with
         /// an asterisk (*) so that only the start of the string needs to be an exact match.
         /// </para>
         /// </summary>

@@ -61,7 +61,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Order. 
         /// <para>
-        /// The order of the compute environment.
+        /// The order of the compute environment. Compute environments are tried in ascending
+        /// order. For example, if two compute environments are associated with a job queue, the
+        /// compute environment with a lower <code>order</code> integer value is tried for job
+        /// placement first.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

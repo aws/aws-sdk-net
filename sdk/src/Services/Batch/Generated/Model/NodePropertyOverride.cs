@@ -58,7 +58,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property TargetNodes. 
         /// <para>
-        /// The range of nodes, using node index values, with which to override. A range of <code>0:3</code>
+        /// The range of nodes, using node index values, that's used to override. A range of <code>0:3</code>
         /// indicates nodes with index values of <code>0</code> through <code>3</code>. If the
         /// starting range value is omitted (<code>:n</code>), then <code>0</code> is used to
         /// start the range. If the ending range value is omitted (<code>n:</code>), then the

@@ -50,6 +50,12 @@ namespace Amazon.Batch.Model
         /// Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
+        /// be provided.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Device> Devices
         {
@@ -89,20 +95,26 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property MaxSwap. 
         /// <para>
-        /// The total amount of swap memory (in MiB) a container can use. This parameter will
-        /// be translated to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-        /// run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code>
+        /// The total amount of swap memory (in MiB) a container can use. This parameter is translated
+        /// to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// run</a> where the value is the sum of the container memory plus the <code>maxSwap</code>
         /// value. For more information, see <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details">
         /// <code>--memory-swap</code> details</a> in the Docker documentation.
         /// </para>
         ///  
         /// <para>
-        /// If a <code>maxSwap</code> value of <code>0</code> is specified, the container will
-        /// not use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code>
-        /// parameter is omitted, the container will use the swap configuration for the container
+        /// If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't
+        /// use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code>
+        /// parameter is omitted, the container doesn't use the swap configuration for the container
         /// instance it is running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code>
         /// parameter to be used.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
+        /// be provided.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int MaxSwap
         {
@@ -123,6 +135,12 @@ namespace Amazon.Batch.Model
         /// maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
+        /// be provided.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int SharedMemorySize
         {
@@ -140,14 +158,20 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Swappiness. 
         /// <para>
         /// This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code>
-        /// value of <code>0</code> will cause swapping to not happen unless absolutely necessary.
-        /// A <code>swappiness</code> value of <code>100</code> will cause pages to be swapped
-        /// very aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>.
-        /// If the <code>swappiness</code> parameter is not specified, a default value of <code>60</code>
-        /// is used. If a value is not specified for <code>maxSwap</code> then this parameter
-        /// is ignored. This parameter maps to the <code>--memory-swappiness</code> option to
-        /// <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+        /// value of <code>0</code> causes swapping not to happen unless absolutely necessary.
+        /// A <code>swappiness</code> value of <code>100</code> causes pages to be swapped very
+        /// aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>.
+        /// If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code>
+        /// is used. If a value isn't specified for <code>maxSwap</code> then this parameter is
+        /// ignored. This parameter maps to the <code>--memory-swappiness</code> option to <a
+        /// href="https://docs.docker.com/engine/reference/run/">docker run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
+        /// be provided.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int Swappiness
         {
@@ -168,6 +192,12 @@ namespace Amazon.Batch.Model
         /// maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
+        /// be provided.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Tmpfs> Tmpfs
         {

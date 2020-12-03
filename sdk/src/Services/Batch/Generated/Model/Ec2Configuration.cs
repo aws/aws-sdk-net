@@ -30,8 +30,14 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Provides information used to select Amazon Machine Images (AMIs) for instances in
-    /// the compute environment. If the <code>Ec2Configuration</code> is not specified, the
+    /// the compute environment. If the <code>Ec2Configuration</code> isn't specified, the
     /// default is <code>ECS_AL1</code>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This object isn't applicable to jobs running on Fargate resources.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class Ec2Configuration
     {
@@ -62,9 +68,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ImageType. 
         /// <para>
-        /// The image type to match with the instance type to pick an AMI. If the <code>imageIdOverride</code>
-        /// parameter is not specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-        /// ECS-optimized AMI</a> will be used.
+        /// The image type to match with the instance type to select an AMI. If the <code>imageIdOverride</code>
+        /// parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+        /// ECS-optimized AMI</a> is used.
         /// </para>
         ///  <dl> <dt>ECS_AL2</dt> <dd> 
         /// <para>
@@ -83,7 +89,7 @@ namespace Amazon.Batch.Model
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
         /// Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux
-        /// is reaching the end-of-life of standard support. For more information, see <a href="https://aws.amazon.com/amazon-linux-ami/">Amazon
+        /// is reaching the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon
         /// Linux AMI</a>.
         /// </para>
         ///  </dd> </dl>

@@ -163,6 +163,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The node properties for a single node in a job summary list.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This isn't applicable to jobs running on Fargate resources.
+        /// </para>
+        ///  </note>
         /// </summary>
         public NodePropertiesSummary NodeProperties
         {

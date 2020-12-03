@@ -36,12 +36,20 @@ namespace Amazon.Batch.Model
         private int? _desiredvCpus;
         private int? _maxvCpus;
         private int? _minvCpus;
+        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _subnets = new List<string>();
 
         /// <summary>
         /// Gets and sets the property DesiredvCpus. 
         /// <para>
         /// The desired number of Amazon EC2 vCPUS in the compute environment.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
+        /// be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int DesiredvCpus
         {
@@ -78,6 +86,12 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The minimum number of Amazon EC2 vCPUs that an environment should maintain.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isnt applicable to jobs running on Fargate resources, and shouldn't
+        /// be specified.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int MinvCpus
         {
@@ -89,6 +103,50 @@ namespace Amazon.Batch.Model
         internal bool IsSetMinvCpus()
         {
             return this._minvCpus.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupIds. 
+        /// <para>
+        /// The Amazon EC2 security groups associated with instances launched in the compute environment.
+        /// This parameter is required for Fargate compute resources, where it can contain up
+        /// to 5 security groups. This can't be specified for EC2 compute resources. Providing
+        /// an empty list is handled as if this parameter wasn't specified and no changeis made.
+        /// </para>
+        /// </summary>
+        public List<string> SecurityGroupIds
+        {
+            get { return this._securityGroupIds; }
+            set { this._securityGroupIds = value; }
+        }
+
+        // Check to see if SecurityGroupIds property is set
+        internal bool IsSetSecurityGroupIds()
+        {
+            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Subnets. 
+        /// <para>
+        /// The VPC subnets that the compute resources are launched into. This parameter is required
+        /// for jobs running on Fargate compute resources, where it can contain up to 16 subnets.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+        /// and Subnets</a> in the <i>Amazon VPC User Guide</i>. This can't be specified for EC2
+        /// compute resources. Providing an empty list will be handled as if this parameter wasn't
+        /// specified and no change is made.
+        /// </para>
+        /// </summary>
+        public List<string> Subnets
+        {
+            get { return this._subnets; }
+            set { this._subnets = value; }
+        }
+
+        // Check to see if Subnets property is set
+        internal bool IsSetSubnets()
+        {
+            return this._subnets != null && this._subnets.Count > 0; 
         }
 
     }

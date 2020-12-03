@@ -154,7 +154,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt
+        /// If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt
         /// to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
         /// state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
         /// state do not scale out. However, they scale in to <code>minvCpus</code> value after
@@ -233,7 +233,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the compute environment.
+        /// The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>,
+        /// or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+        /// Environments</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         public CEType Type

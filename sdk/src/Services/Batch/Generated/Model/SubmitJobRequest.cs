@@ -32,6 +32,13 @@ namespace Amazon.Batch.Model
     /// Container for the parameters to the SubmitJob operation.
     /// Submits an AWS Batch job from a job definition. Parameters specified during <a>SubmitJob</a>
     /// override parameters defined in the job definition.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Jobs run on Fargate resources don't run for more than 14 days. After 14 days, the
+    /// Fargate resources might no longer be available and the job is terminated.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class SubmitJobRequest : AmazonBatchRequest
     {
@@ -43,6 +50,7 @@ namespace Amazon.Batch.Model
         private string _jobQueue;
         private NodeOverrides _nodeOverrides;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private bool? _propagateTags;
         private RetryStrategy _retryStrategy;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private JobTimeout _timeout;
@@ -182,6 +190,12 @@ namespace Amazon.Batch.Model
         /// A list of node overrides in JSON format that specify the node range to target and
         /// the container overrides for that node range.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources; use <code>containerOverrides</code>
+        /// instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         public NodeOverrides NodeOverrides
         {
@@ -214,6 +228,29 @@ namespace Amazon.Batch.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropagateTags. 
+        /// <para>
+        /// Specifies whether to propagate the tags from the job or job definition to the corresponding
+        /// Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only
+        /// be propagated to the tasks during task creation. For tags with the same name, job
+        /// tags are given priority over job definitions tags. If the total number of combined
+        /// tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code>
+        /// state. When specified, this overrides the tag propagation setting in the job definition.
+        /// </para>
+        /// </summary>
+        public bool PropagateTags
+        {
+            get { return this._propagateTags.GetValueOrDefault(); }
+            set { this._propagateTags = value; }
+        }
+
+        // Check to see if PropagateTags property is set
+        internal bool IsSetPropagateTags()
+        {
+            return this._propagateTags.HasValue; 
         }
 
         /// <summary>
@@ -262,10 +299,10 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Timeout. 
         /// <para>
         /// The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout
-        /// duration after which AWS Batch terminates your jobs if they have not finished. If
-        /// a job is terminated due to a timeout, it is not retried. The minimum value for the
-        /// timeout is 60 seconds. This configuration overrides any timeout configuration specified
-        /// in the job definition. For array jobs, child jobs have the same timeout configuration
+        /// duration after which AWS Batch terminates your jobs if they haven't finished. If a
+        /// job is terminated due to a timeout, it isn't retried. The minimum value for the timeout
+        /// is 60 seconds. This configuration overrides any timeout configuration specified in
+        /// the job definition. For array jobs, child jobs have the same timeout configuration
         /// as the parent job. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
         /// Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>

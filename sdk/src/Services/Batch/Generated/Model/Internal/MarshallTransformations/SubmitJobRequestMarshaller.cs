@@ -147,6 +147,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetPropagateTags())
+                {
+                    context.Writer.WritePropertyName("propagateTags");
+                    context.Writer.Write(publicRequest.PropagateTags);
+                }
+
                 if(publicRequest.IsSetRetryStrategy())
                 {
                     context.Writer.WritePropertyName("retryStrategy");

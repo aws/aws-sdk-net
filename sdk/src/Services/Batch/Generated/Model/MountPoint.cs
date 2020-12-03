@@ -43,7 +43,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerPath. 
         /// <para>
-        /// The path on the container at which to mount the host volume.
+        /// The path on the container where the host volume is mounted.
         /// </para>
         /// </summary>
         public string ContainerPath
@@ -61,8 +61,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ReadOnly. 
         /// <para>
-        /// If this value is <code>true</code>, the container has read-only access to the volume;
-        /// otherwise, the container can write to the volume. The default value is <code>false</code>.
+        /// If this value is <code>true</code>, the container has read-only access to the volume.
+        /// Otherwise, the container can write to the volume. The default value is <code>false</code>.
         /// </para>
         /// </summary>
         public bool ReadOnly

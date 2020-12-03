@@ -39,7 +39,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property AttemptDurationSeconds. 
         /// <para>
         /// The time duration in seconds (measured from the job attempt's <code>startedAt</code>
-        /// timestamp) after which AWS Batch terminates your jobs if they have not finished.
+        /// timestamp) after which AWS Batch terminates your jobs if they have not finished. The
+        /// minimum value for the timeout is 60 seconds.
         /// </para>
         /// </summary>
         public int AttemptDurationSeconds

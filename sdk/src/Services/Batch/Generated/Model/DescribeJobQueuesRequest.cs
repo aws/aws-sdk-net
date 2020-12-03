@@ -64,7 +64,7 @@ namespace Amazon.Batch.Model
         /// results in a single page along with a <code>nextToken</code> response element. The
         /// remaining results of the initial request can be seen by sending another <code>DescribeJobQueues</code>
         /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter is not used, then <code>DescribeJobQueues</code> returns
+        /// 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns
         /// up to 100 results and a <code>nextToken</code> value if applicable.
         /// </para>
         /// </summary>

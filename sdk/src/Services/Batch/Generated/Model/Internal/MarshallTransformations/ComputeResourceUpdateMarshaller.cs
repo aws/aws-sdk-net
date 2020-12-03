@@ -63,6 +63,28 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinvCpus);
             }
 
+            if(requestObject.IsSetSecurityGroupIds())
+            {
+                context.Writer.WritePropertyName("securityGroupIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
+                {
+                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetSubnets())
+            {
+                context.Writer.WritePropertyName("subnets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSubnetsListValue in requestObject.Subnets)
+                {
+                        context.Writer.Write(requestObjectSubnetsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

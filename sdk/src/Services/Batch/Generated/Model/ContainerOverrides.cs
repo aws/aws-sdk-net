@@ -88,9 +88,14 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type to use for a multi-node parallel job. This parameter is not valid
-        /// for single-node container jobs.
+        /// The instance type to use for a multi-node parallel job.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to single-node container jobs or for jobs running
+        /// on Fargate resources and shouldn't be provided.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string InstanceType
         {
@@ -107,10 +112,13 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The number of MiB of memory reserved for the job. This value overrides the value set
-        /// in the job definition.
+        /// This parameter is deprecated and not supported for jobs run on Fargate resources,
+        /// use <code>ResourceRequirement</code>. For jobs run on EC2 resource, the number of
+        /// MiB of memory reserved for the job. This value overrides the value set in the job
+        /// definition.
         /// </para>
         /// </summary>
+        [Obsolete("This field is deprecated, use resourceRequirements instead.")]
         public int Memory
         {
             get { return this._memory.GetValueOrDefault(); }
@@ -126,8 +134,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ResourceRequirements. 
         /// <para>
-        /// The type and amount of a resource to assign to a container. This value overrides the
-        /// value set in the job definition. Currently, the only supported resource is <code>GPU</code>.
+        /// The type and amount of resources to assign to a container. This overrides the settings
+        /// in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>,
+        /// and <code>VCPU</code>.
         /// </para>
         /// </summary>
         public List<ResourceRequirement> ResourceRequirements
@@ -145,10 +154,26 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Vcpus. 
         /// <para>
-        /// The number of vCPUs to reserve for the container. This value overrides the value set
-        /// in the job definition.
+        /// This parameter is deprecated and not supported for jobs run on Fargate resources,
+        /// see <code>resourceRequirement</code>. For jobs run on EC2 resources, the number of
+        /// vCPUs to reserve for the container. This value overrides the value set in the job
+        /// definition. Jobs run on EC2 resources can specify the vCPU requirement using <code>resourceRequirement</code>
+        /// but the vCPU requirements can't be specified both here and in <code>resourceRequirement</code>.
+        /// This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+        /// Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one
+        /// vCPU.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
+        /// be provided. Jobs running on Fargate resources must specify the vCPU requirement for
+        /// the job using <code>resourceRequirements</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
+        [Obsolete("This field is deprecated, use resourceRequirements instead.")]
         public int Vcpus
         {
             get { return this._vcpus.GetValueOrDefault(); }

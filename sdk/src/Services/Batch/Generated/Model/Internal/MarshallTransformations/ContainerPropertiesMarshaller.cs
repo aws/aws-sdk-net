@@ -78,6 +78,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ExecutionRoleArn);
             }
 
+            if(requestObject.IsSetFargatePlatformConfiguration())
+            {
+                context.Writer.WritePropertyName("fargatePlatformConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FargatePlatformConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FargatePlatformConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("image");
@@ -138,6 +149,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetNetworkConfiguration())
+            {
+                context.Writer.WritePropertyName("networkConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NetworkConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.NetworkConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetPrivileged())

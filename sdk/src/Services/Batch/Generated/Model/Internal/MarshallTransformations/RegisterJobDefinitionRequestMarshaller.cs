@@ -108,6 +108,23 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetPlatformCapabilities())
+                {
+                    context.Writer.WritePropertyName("platformCapabilities");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPlatformCapabilitiesListValue in publicRequest.PlatformCapabilities)
+                    {
+                            context.Writer.Write(publicRequestPlatformCapabilitiesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetPropagateTags())
+                {
+                    context.Writer.WritePropertyName("propagateTags");
+                    context.Writer.Write(publicRequest.PropagateTags);
+                }
+
                 if(publicRequest.IsSetRetryStrategy())
                 {
                     context.Writer.WritePropertyName("retryStrategy");
