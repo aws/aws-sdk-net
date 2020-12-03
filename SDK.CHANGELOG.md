@@ -1,3 +1,18 @@
+### 3.5.66.0 (2020-12-03 19:24 UTC)
+* AmplifyBackend (3.5.0.2)
+	* Regular documentation updates.
+* Batch (3.5.5.0)
+	* This release adds support for customer to run Batch Jobs on ECS Fargate, the serverless compute engine built for containers on AWS. Customer can also propagate Job and Job Definition Tags to ECS Task.
+* ComputeOptimizer (3.5.2.0)
+	* This release enables AWS Compute Optimizer to analyze and generate optimization recommendations for EBS volumes that are attached to instances.
+* LicenseManager (3.5.2.0)
+	* AWS License Manager enables managed entitlements for AWS customers and Software Vendors (ISV). You can track and distribute license entitlements from AWS Marketplace and supported ISVs.
+* Core 3.5.1.46
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.65.0 (2020-12-02 01:57 UTC)
 * CustomerProfiles (3.5.0.0)
 	* This is the first release of Amazon Connect Customer Profiles, a unified customer profile for your Amazon Connect contact center.
