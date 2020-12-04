@@ -1,3 +1,23 @@
+### 3.5.67.0 (2020-12-04 19:14 UTC)
+* DirectoryService (3.5.2.3)
+	* Documentation updates for ds - updated descriptions
+* EC2 (3.5.22.0)
+	* This release introduces tag-on-create capability for the CreateImage API. A user can now specify tags that will be applied to the new resources (image, snapshots or both), during creation time.
+* Kafka (3.5.6.0)
+	* Adding HEALING to ClusterState.
+* Lambda (3.5.5.0)
+	* Added the additional enum InvalidImage to StateReasonCode and LastUpdateStatusReasonCode fields.
+* LicenseManager (3.5.3.0)
+	* Automated Discovery now has support for custom tags, and detects software uninstalls.
+* MediaLive (3.5.8.0)
+	* AWS Elemental MediaLive now supports black video and audio silence as new conditions to trigger automatic input failover.
+* RDS (3.5.7.0)
+	* Adds support for Amazon RDS Cross-Region Automated Backups, the ability to setup automatic replication of snapshots and transaction logs from a primary AWS Region to a secondary AWS Region.
+* SimpleSystemsManagement (3.5.6.0)
+	* AWS Systems Manager Patch Manager MAC OS Support and OpsMetadata Store APIs to store operational metadata for an Application.
+* WorkSpaces (3.5.3.0)
+	* Update the import-workspace-image API to have "BYOL_REGULAR_WSP" as a valid input string for ingestion-process.
+
 ### 3.5.66.0 (2020-12-03 19:24 UTC)
 * AmplifyBackend (3.5.0.2)
 	* Regular documentation updates.

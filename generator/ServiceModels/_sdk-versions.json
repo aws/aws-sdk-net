@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.66.0",
+    "ProductVersion" : "3.5.67.0",
     "CoreVersion"    : "3.5.1.46",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.5.21.2",
+            "Version" : "3.5.22.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.46"
@@ -242,7 +242,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.5.4.2",
+            "Version" : "3.5.5.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.46"
@@ -282,7 +282,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.5.6.9",
+            "Version" : "3.5.7.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.46"
@@ -370,7 +370,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.5.5.10",
+            "Version" : "3.5.6.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.46"
@@ -386,7 +386,7 @@
             "InPreview"               : false
         },
         "WorkSpaces"                : {
-            "Version" : "3.5.2.34",
+            "Version" : "3.5.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.46"
@@ -394,7 +394,7 @@
             "InPreview"               : false
         },
         "DirectoryService"          : {
-            "Version" : "3.5.2.2",
+            "Version" : "3.5.2.3",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.46"
@@ -874,7 +874,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.5.7.7",
+            "Version" : "3.5.8.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.46"
@@ -1314,7 +1314,7 @@
             "InPreview"               : false
         },
         "LicenseManager"                  : {
-            "Version" : "3.5.2.0",
+            "Version" : "3.5.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.46"
@@ -1330,7 +1330,7 @@
             "InPreview"               : false
         },
         "Kafka"                           : {
-            "Version" : "3.5.5.5",
+            "Version" : "3.5.6.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.46"
