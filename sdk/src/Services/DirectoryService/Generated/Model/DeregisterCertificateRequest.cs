@@ -30,7 +30,8 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterCertificate operation.
-    /// Deletes from the system the certificate that was registered for a secured LDAP connection.
+    /// Deletes from the system the certificate that was registered for secure LDAP or client
+    /// certificate authentication.
     /// </summary>
     public partial class DeregisterCertificateRequest : AmazonDirectoryServiceRequest
     {

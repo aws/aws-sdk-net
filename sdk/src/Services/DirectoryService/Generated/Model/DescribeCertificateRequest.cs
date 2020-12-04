@@ -30,7 +30,8 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCertificate operation.
-    /// Displays information about the certificate registered for a secured LDAP connection.
+    /// Displays information about the certificate registered for secure LDAP or client certificate
+    /// authentication.
     /// </summary>
     public partial class DescribeCertificateRequest : AmazonDirectoryServiceRequest
     {

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// The LDAP activities could not be performed because at least one valid certificate
-    /// must be registered with the system.
+    /// Client authentication setup could not be completed because at least one valid certificate
+    /// must be registered in the system.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

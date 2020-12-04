@@ -30,7 +30,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableClientAuthentication operation.
-    /// Disable client authentication for smart cards.
+    /// Disables alternative client authentication methods for the specified directory.
     /// </summary>
     public partial class DisableClientAuthenticationRequest : AmazonDirectoryServiceRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// Disable client authentication in a specified directory for smart cards. 
+        /// The identifier of the directory 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Disable the type of client authentication request. 
+        /// The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code>
+        /// is supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

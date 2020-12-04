@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// The client authorization was invalid.
+    /// Client authentication is already enabled.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

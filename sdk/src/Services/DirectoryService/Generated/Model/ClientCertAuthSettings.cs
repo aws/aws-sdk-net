@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Contains information about the client certificate authentication settings, such as
-    /// <code>ClientLDAPS</code> or <code>ClientCertAuth</code>.
+    /// Contains information about the client certificate authentication settings for the
+    /// <code>RegisterCertificate</code> and <code>DescribeCertificate</code> operations.
     /// </summary>
     public partial class ClientCertAuthSettings
     {
@@ -40,6 +40,7 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property OCSPUrl. 
         /// <para>
         /// Specifies the URL of the default OCSP server used to check for revocation status.
+        /// A secondary value to any OCSP address found in the AIA extension of the user certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

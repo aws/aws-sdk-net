@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// You do not have sufficient access to perform this action.
+    /// Client authentication is not available in this region at this time.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -30,7 +30,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterCertificate operation.
-    /// Registers a certificate for secured LDAP connection.
+    /// Registers a certificate for a secure LDAP or client certificate authentication.
     /// </summary>
     public partial class RegisterCertificateRequest : AmazonDirectoryServiceRequest
     {
@@ -59,7 +59,11 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientCertAuthSettings.
+        /// Gets and sets the property ClientCertAuthSettings. 
+        /// <para>
+        /// A <code>ClientCertAuthSettings</code> object that contains client certificate authentication
+        /// settings.
+        /// </para>
         /// </summary>
         public ClientCertAuthSettings ClientCertAuthSettings
         {
@@ -95,7 +99,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The certificate type to register for the request.
+        /// The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code>
+        /// or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
         /// </para>
         /// </summary>
         public CertificateType Type

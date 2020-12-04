@@ -63,8 +63,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property ClientCertAuthSettings. 
         /// <para>
-        /// Provides information about the client certificate authentication settings. The default
-        /// value is <code>ClientLDAPS</code>.
+        /// A <code>ClientCertAuthSettings</code> object that contains client certificate authentication
+        /// settings.
         /// </para>
         /// </summary>
         public ClientCertAuthSettings ClientCertAuthSettings
@@ -172,7 +172,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Select <code>ClientCertAuth</code> for smart card integration.
+        /// The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code>
+        /// or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
         /// </para>
         /// </summary>
         public CertificateType Type

@@ -30,7 +30,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableClientAuthentication operation.
-    /// Enable client authentication for smardtcards.
+    /// Enables alternative client authentication methods for the specified directory.
     /// </summary>
     public partial class EnableClientAuthenticationRequest : AmazonDirectoryServiceRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// Enable client authentication in a specified directory for smart cards. 
+        /// The identifier of the specified directory. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,10 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Enable the type of client authentication request. 
+        /// The type of client authentication to enable. Currently only the value <code>SmartCard</code>
+        /// is supported. Smart card authentication in AD Connector requires that you enable Kerberos
+        /// Constrained Delegation for the Service User to the LDAP service in the on-premises
+        /// AD. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

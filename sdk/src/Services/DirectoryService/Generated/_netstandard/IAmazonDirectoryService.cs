@@ -162,7 +162,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the AddRegion service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Client authentication is not available in this region at this time.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
@@ -804,7 +804,8 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Deletes from the system the certificate that was registered for a secured LDAP connection.
+        /// Deletes from the system the certificate that was registered for secure LDAP or client
+        /// certificate authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -877,7 +878,8 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Displays information about the certificate registered for a secured LDAP connection.
+        /// Displays information about the certificate registered for secure LDAP or client certificate
+        /// authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -1171,7 +1173,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DescribeRegions service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Client authentication is not available in this region at this time.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
@@ -1324,7 +1326,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Disable client authentication for smart cards.
+        /// Disables alternative client authentication methods for the specified directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableClientAuthentication service method.</param>
         /// <param name="cancellationToken">
@@ -1333,7 +1335,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the DisableClientAuthentication service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Client authentication is not available in this region at this time.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
@@ -1342,7 +1344,7 @@ namespace Amazon.DirectoryService
         /// The specified directory does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidClientAuthStatusException">
-        /// The client authorization was invalid.
+        /// Client authentication is already enabled.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
         /// An exception has occurred in AWS Directory Service.
@@ -1460,7 +1462,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Enable client authentication for smardtcards.
+        /// Enables alternative client authentication methods for the specified directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableClientAuthentication service method.</param>
         /// <param name="cancellationToken">
@@ -1469,7 +1471,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the EnableClientAuthentication service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Client authentication is not available in this region at this time.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
@@ -1478,11 +1480,11 @@ namespace Amazon.DirectoryService
         /// The specified directory does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidClientAuthStatusException">
-        /// The client authorization was invalid.
+        /// Client authentication is already enabled.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.NoAvailableCertificateException">
-        /// The LDAP activities could not be performed because at least one valid certificate
-        /// must be registered with the system.
+        /// Client authentication setup could not be completed because at least one valid certificate
+        /// must be registered in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
         /// An exception has occurred in AWS Directory Service.
@@ -1524,8 +1526,8 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.NoAvailableCertificateException">
-        /// The LDAP activities could not be performed because at least one valid certificate
-        /// must be registered with the system.
+        /// Client authentication setup could not be completed because at least one valid certificate
+        /// must be registered in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
         /// An exception has occurred in AWS Directory Service.
@@ -1687,8 +1689,8 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// For the specified directory, lists all the certificates registered for a secured LDAP
-        /// connection.
+        /// For the specified directory, lists all the certificates registered for a secure LDAP
+        /// or client certificate authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
         /// <param name="cancellationToken">
@@ -1850,7 +1852,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Registers a certificate for secured LDAP connection.
+        /// Registers a certificate for a secure LDAP or client certificate authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterCertificate service method.</param>
         /// <param name="cancellationToken">
@@ -2006,7 +2008,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the RemoveRegion service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Client authentication is not available in this region at this time.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
@@ -2198,7 +2200,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the ShareDirectory service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Client authentication is not available in this region at this time.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.
