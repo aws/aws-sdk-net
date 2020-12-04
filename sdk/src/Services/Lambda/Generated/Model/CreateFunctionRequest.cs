@@ -32,7 +32,7 @@ namespace Amazon.Lambda.Model
     /// Container for the parameters to the CreateFunction operation.
     /// Creates a Lambda function. To create a function, you need a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment
     /// package</a> and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
-    /// role</a>. The deployment package is a ZIP archive or image container that contains
+    /// role</a>. The deployment package is a .zip file archive or container image that contains
     /// your function code. The execution role grants the function permission to use AWS services,
     /// such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for request tracing.
     /// 
@@ -65,9 +65,9 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use code signing if your deployment package is a ZIP archive. To enable code
-    /// signing for this function, specify the ARN of a code-signing configuration. When a
-    /// user attempts to deploy a code package with <a>UpdateFunctionCode</a>, Lambda checks
+    /// You can use code signing if your deployment package is a .zip file archive. To enable
+    /// code signing for this function, specify the ARN of a code-signing configuration. When
+    /// a user attempts to deploy a code package with <a>UpdateFunctionCode</a>, Lambda checks
     /// that the code package has a valid signature from a trusted publisher. The code-signing
     /// configuration includes set set of signing profiles, which define the trusted publishers
     /// for this function.
@@ -347,9 +347,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
-        /// The amount of memory that your function has access to. Increasing the function's memory
-        /// also increases its CPU allocation. The default value is 128 MB. The value must be
-        /// a multiple of 64 MB.
+        /// The amount of memory available to the function at runtime. Increasing the function's
+        /// memory also increases its CPU allocation. The default value is 128 MB. The value can
+        /// be any multiple of 1 MB.
         /// </para>
         /// </summary>
         [AWSProperty(Min=128, Max=10240)]

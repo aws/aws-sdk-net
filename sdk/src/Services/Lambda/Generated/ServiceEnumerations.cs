@@ -313,6 +313,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly LastUpdateStatusReasonCode InvalidConfiguration = new LastUpdateStatusReasonCode("InvalidConfiguration");
         /// <summary>
+        /// Constant InvalidImage for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode InvalidImage = new LastUpdateStatusReasonCode("InvalidImage");
+        /// <summary>
         /// Constant InvalidSecurityGroup for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode InvalidSecurityGroup = new LastUpdateStatusReasonCode("InvalidSecurityGroup");
@@ -790,6 +794,10 @@ namespace Amazon.Lambda
         /// Constant InvalidConfiguration for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode InvalidConfiguration = new StateReasonCode("InvalidConfiguration");
+        /// <summary>
+        /// Constant InvalidImage for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode InvalidImage = new StateReasonCode("InvalidImage");
         /// <summary>
         /// Constant InvalidSecurityGroup for StateReasonCode
         /// </summary>

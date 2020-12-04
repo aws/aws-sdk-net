@@ -39,6 +39,13 @@ namespace Amazon.Lambda.Model
     /// The function's code is locked when you publish a version. You can't modify the code
     /// of a published version, only the unpublished version.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// For a function defined as a container image, Lambda resolves the image tag to an image
+    /// digest. In Amazon ECR, if you update the image tag to a new image, Lambda does not
+    /// automatically update the function.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateFunctionCodeRequest : AmazonLambdaRequest
     {

@@ -382,7 +382,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
-        /// The memory that's allocated to the function.
+        /// The amount of memory available to the function at runtime. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=128, Max=10240)]
@@ -402,7 +402,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property PackageType. 
         /// <para>
         /// The type of deployment package. Set to <code>Image</code> for container image and
-        /// set <code>Zip</code> for ZIP archive.
+        /// set <code>Zip</code> for .zip file archive.
         /// </para>
         /// </summary>
         public PackageType PackageType

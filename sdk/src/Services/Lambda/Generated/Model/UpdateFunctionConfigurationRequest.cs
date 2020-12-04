@@ -293,9 +293,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
-        /// The amount of memory that your function has access to. Increasing the function's memory
-        /// also increases its CPU allocation. The default value is 128 MB. The value must be
-        /// a multiple of 64 MB.
+        /// The amount of memory available to the function at runtime. Increasing the function's
+        /// memory also increases its CPU allocation. The default value is 128 MB. The value can
+        /// be any multiple of 1 MB.
         /// </para>
         /// </summary>
         [AWSProperty(Min=128, Max=10240)]
