@@ -132,8 +132,15 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property IngestionProcess. 
         /// <para>
-        /// The ingestion process to be used when importing the image. For non-GPU-enabled bundles
-        /// (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>.
+        /// The ingestion process to be used when importing the image, depending on which protocol
+        /// you want to use for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming
+        /// Protocol (WSP). To use WSP, specify a value that ends in <code>_WSP</code>. To use
+        /// PCoIP, specify a value that does not end in <code>_WSP</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+        /// <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -1048,6 +1048,10 @@ namespace Amazon.WorkSpaces
         /// Constant BYOL_REGULAR for WorkspaceImageIngestionProcess
         /// </summary>
         public static readonly WorkspaceImageIngestionProcess BYOL_REGULAR = new WorkspaceImageIngestionProcess("BYOL_REGULAR");
+        /// <summary>
+        /// Constant BYOL_REGULAR_WSP for WorkspaceImageIngestionProcess
+        /// </summary>
+        public static readonly WorkspaceImageIngestionProcess BYOL_REGULAR_WSP = new WorkspaceImageIngestionProcess("BYOL_REGULAR_WSP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
