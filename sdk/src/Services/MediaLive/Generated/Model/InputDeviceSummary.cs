@@ -44,6 +44,7 @@ namespace Amazon.MediaLive.Model
         private InputDeviceNetworkSettings _networkSettings;
         private string _serialNumber;
         private InputDeviceType _type;
+        private InputDeviceUhdSettings _uhdDeviceSettings;
 
         /// <summary>
         /// Gets and sets the property Arn. The unique ARN of the input device.
@@ -215,6 +216,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UhdDeviceSettings. Settings that describe an input device
+        /// that is type UHD.
+        /// </summary>
+        public InputDeviceUhdSettings UhdDeviceSettings
+        {
+            get { return this._uhdDeviceSettings; }
+            set { this._uhdDeviceSettings = value; }
+        }
+
+        // Check to see if UhdDeviceSettings property is set
+        internal bool IsSetUhdDeviceSettings()
+        {
+            return this._uhdDeviceSettings != null;
         }
 
     }

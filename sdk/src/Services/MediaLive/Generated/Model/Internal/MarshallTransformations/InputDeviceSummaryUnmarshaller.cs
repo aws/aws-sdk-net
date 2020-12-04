@@ -130,6 +130,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("uhdDeviceSettings", targetDepth))
+                {
+                    var unmarshaller = InputDeviceUhdSettingsUnmarshaller.Instance;
+                    unmarshalledObject.UhdDeviceSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

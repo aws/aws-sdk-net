@@ -86,6 +86,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetUhdDeviceSettings())
+                {
+                    context.Writer.WritePropertyName("uhdDeviceSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InputDeviceConfigurableSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UhdDeviceSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

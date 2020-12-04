@@ -45,6 +45,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FailoverConditionSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAudioSilenceSettings())
+            {
+                context.Writer.WritePropertyName("audioSilenceSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AudioSilenceFailoverSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AudioSilenceSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInputLossSettings())
             {
                 context.Writer.WritePropertyName("inputLossSettings");
@@ -52,6 +63,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
                 var marshaller = InputLossFailoverSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputLossSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetVideoBlackSettings())
+            {
+                context.Writer.WritePropertyName("videoBlackSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VideoBlackFailoverSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.VideoBlackSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }

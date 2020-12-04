@@ -37,10 +37,11 @@ namespace Amazon.MediaLive.Model
         private InputDeviceConfigurableSettings _hdDeviceSettings;
         private string _inputDeviceId;
         private string _name;
+        private InputDeviceConfigurableSettings _uhdDeviceSettings;
 
         /// <summary>
         /// Gets and sets the property HdDeviceSettings. The settings that you want to apply to
-        /// the input device.
+        /// the HD input device.
         /// </summary>
         public InputDeviceConfigurableSettings HdDeviceSettings
         {
@@ -85,6 +86,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UhdDeviceSettings. The settings that you want to apply
+        /// to the UHD input device.
+        /// </summary>
+        public InputDeviceConfigurableSettings UhdDeviceSettings
+        {
+            get { return this._uhdDeviceSettings; }
+            set { this._uhdDeviceSettings = value; }
+        }
+
+        // Check to see if UhdDeviceSettings property is set
+        internal bool IsSetUhdDeviceSettings()
+        {
+            return this._uhdDeviceSettings != null;
         }
 
     }

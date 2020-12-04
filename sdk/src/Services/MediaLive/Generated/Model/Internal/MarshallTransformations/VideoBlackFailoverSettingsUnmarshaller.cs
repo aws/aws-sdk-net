@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FailoverConditionSettings Object
+    /// Response Unmarshaller for VideoBlackFailoverSettings Object
     /// </summary>  
-    public class FailoverConditionSettingsUnmarshaller : IUnmarshaller<FailoverConditionSettings, XmlUnmarshallerContext>, IUnmarshaller<FailoverConditionSettings, JsonUnmarshallerContext>
+    public class VideoBlackFailoverSettingsUnmarshaller : IUnmarshaller<VideoBlackFailoverSettings, XmlUnmarshallerContext>, IUnmarshaller<VideoBlackFailoverSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FailoverConditionSettings IUnmarshaller<FailoverConditionSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        VideoBlackFailoverSettings IUnmarshaller<VideoBlackFailoverSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FailoverConditionSettings Unmarshall(JsonUnmarshallerContext context)
+        public VideoBlackFailoverSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FailoverConditionSettings unmarshalledObject = new FailoverConditionSettings();
+            VideoBlackFailoverSettings unmarshalledObject = new VideoBlackFailoverSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("audioSilenceSettings", targetDepth))
+                if (context.TestExpression("blackDetectThreshold", targetDepth))
                 {
-                    var unmarshaller = AudioSilenceFailoverSettingsUnmarshaller.Instance;
-                    unmarshalledObject.AudioSilenceSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.BlackDetectThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("inputLossSettings", targetDepth))
+                if (context.TestExpression("videoBlackThresholdMsec", targetDepth))
                 {
-                    var unmarshaller = InputLossFailoverSettingsUnmarshaller.Instance;
-                    unmarshalledObject.InputLossSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("videoBlackSettings", targetDepth))
-                {
-                    var unmarshaller = VideoBlackFailoverSettingsUnmarshaller.Instance;
-                    unmarshalledObject.VideoBlackSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.VideoBlackThresholdMsec = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static FailoverConditionSettingsUnmarshaller _instance = new FailoverConditionSettingsUnmarshaller();        
+        private static VideoBlackFailoverSettingsUnmarshaller _instance = new VideoBlackFailoverSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FailoverConditionSettingsUnmarshaller Instance
+        public static VideoBlackFailoverSettingsUnmarshaller Instance
         {
             get
             {

@@ -33,7 +33,25 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class FailoverConditionSettings
     {
+        private AudioSilenceFailoverSettings _audioSilenceSettings;
         private InputLossFailoverSettings _inputLossSettings;
+        private VideoBlackFailoverSettings _videoBlackSettings;
+
+        /// <summary>
+        /// Gets and sets the property AudioSilenceSettings. MediaLive will perform a failover
+        /// if the specified audio selector is silent for the specified period.
+        /// </summary>
+        public AudioSilenceFailoverSettings AudioSilenceSettings
+        {
+            get { return this._audioSilenceSettings; }
+            set { this._audioSilenceSettings = value; }
+        }
+
+        // Check to see if AudioSilenceSettings property is set
+        internal bool IsSetAudioSilenceSettings()
+        {
+            return this._audioSilenceSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InputLossSettings. MediaLive will perform a failover if
@@ -49,6 +67,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetInputLossSettings()
         {
             return this._inputLossSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VideoBlackSettings. MediaLive will perform a failover if
+        /// content is considered black for the specified period.
+        /// </summary>
+        public VideoBlackFailoverSettings VideoBlackSettings
+        {
+            get { return this._videoBlackSettings; }
+            set { this._videoBlackSettings = value; }
+        }
+
+        // Check to see if VideoBlackSettings property is set
+        internal bool IsSetVideoBlackSettings()
+        {
+            return this._videoBlackSettings != null;
         }
 
     }

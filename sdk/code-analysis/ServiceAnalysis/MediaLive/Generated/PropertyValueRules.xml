@@ -88,6 +88,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.AudioSilenceFailoverSettings.AudioSilenceThresholdMsec</property>
+    <min>1000</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.AudioTrack.Track</property>
     <min>1</min>
   </property-value-rule>
@@ -911,6 +915,10 @@
     <property>Amazon.MediaLive.Model.UdpOutputSettings.BufferMsec</property>
     <min>0</min>
     <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.VideoBlackFailoverSettings.VideoBlackThresholdMsec</property>
+    <min>1000</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.VideoDescription.Sharpness</property>
