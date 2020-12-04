@@ -88,6 +88,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DisassociateWhenNotFound", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DisassociateWhenNotFound = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LicenseConfigurationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

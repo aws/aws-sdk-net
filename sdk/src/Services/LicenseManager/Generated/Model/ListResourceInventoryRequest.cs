@@ -69,6 +69,12 @@ namespace Amazon.LicenseManager.Model
         ///  <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code>
         /// | <code>NOT_EQUALS</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to the
+        /// resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code>
+        /// | <code>NOT_EQUALS</code> (cross account).
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<InventoryFilter> Filters

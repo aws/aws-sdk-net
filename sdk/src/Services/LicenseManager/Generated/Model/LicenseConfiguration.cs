@@ -42,6 +42,7 @@ namespace Amazon.LicenseManager.Model
         private long? _consumedLicenses;
         private List<ConsumedLicenseSummary> _consumedLicenseSummaryList = new List<ConsumedLicenseSummary>();
         private string _description;
+        private bool? _disassociateWhenNotFound;
         private string _licenseConfigurationArn;
         private string _licenseConfigurationId;
         private long? _licenseCount;
@@ -124,6 +125,24 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisassociateWhenNotFound. 
+        /// <para>
+        /// When true, disassociates a resource when software is uninstalled.
+        /// </para>
+        /// </summary>
+        public bool DisassociateWhenNotFound
+        {
+            get { return this._disassociateWhenNotFound.GetValueOrDefault(); }
+            set { this._disassociateWhenNotFound = value; }
+        }
+
+        // Check to see if DisassociateWhenNotFound property is set
+        internal bool IsSetDisassociateWhenNotFound()
+        {
+            return this._disassociateWhenNotFound.HasValue; 
         }
 
         /// <summary>

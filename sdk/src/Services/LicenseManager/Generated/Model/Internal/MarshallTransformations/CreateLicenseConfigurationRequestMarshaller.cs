@@ -74,6 +74,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetDisassociateWhenNotFound())
+                {
+                    context.Writer.WritePropertyName("DisassociateWhenNotFound");
+                    context.Writer.Write(publicRequest.DisassociateWhenNotFound);
+                }
+
                 if(publicRequest.IsSetLicenseCount())
                 {
                     context.Writer.WritePropertyName("LicenseCount");
