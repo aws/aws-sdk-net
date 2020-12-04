@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
         private string _dbInstanceArn;
+        private List<DBInstanceAutomatedBackupsReplication> _dbInstanceAutomatedBackupsReplications = new List<DBInstanceAutomatedBackupsReplication>();
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private int? _dbInstancePort;
@@ -295,6 +296,24 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DBInstanceAutomatedBackupsReplications. 
+        /// <para>
+        /// The list of replicated automated backups associated with the DB instance.
+        /// </para>
+        /// </summary>
+        public List<DBInstanceAutomatedBackupsReplication> DBInstanceAutomatedBackupsReplications
+        {
+            get { return this._dbInstanceAutomatedBackupsReplications; }
+            set { this._dbInstanceAutomatedBackupsReplications = value; }
+        }
+
+        // Check to see if DBInstanceAutomatedBackupsReplications property is set
+        internal bool IsSetDBInstanceAutomatedBackupsReplications()
+        {
+            return this._dbInstanceAutomatedBackupsReplications != null && this._dbInstanceAutomatedBackupsReplications.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
         /// Contains the name of the compute and memory capacity class of the DB instance.
@@ -377,8 +396,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DbiResourceId. 
         /// <para>
         /// The AWS Region-unique, immutable identifier for the DB instance. This identifier is
-        /// found in AWS CloudTrail log entries whenever the AWS KMS key for the DB instance is
-        /// accessed.
+        /// found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK)
+        /// for the DB instance is accessed.
         /// </para>
         /// </summary>
         public string DbiResourceId
@@ -704,6 +723,11 @@ namespace Amazon.RDS.Model
         ///  If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted
         /// DB instance. 
         /// </para>
+        ///  
+        /// <para>
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK).
+        /// </para>
         /// </summary>
         public string KmsKeyId
         {
@@ -942,9 +966,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsKMSKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for encryption of Performance Insights data. The KMS key
-        /// ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-        /// the KMS encryption key.
+        /// The AWS KMS key identifier for encryption of Performance Insights data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK).
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId

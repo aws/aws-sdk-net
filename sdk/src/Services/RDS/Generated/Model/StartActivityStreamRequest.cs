@@ -64,7 +64,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The AWS KMS key identifier for encrypting messages in the database activity stream.
-        /// The key identifier can be either a key ID, a key ARN, or a key alias.
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,7 +105,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the DB cluster, for example <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
+        /// The Amazon Resource Name (ARN) of the DB cluster, for example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

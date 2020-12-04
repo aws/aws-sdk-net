@@ -297,6 +297,11 @@ namespace Amazon.RDS.Model
         ///  If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB
         /// snapshot. 
         /// </para>
+        ///  
+        /// <para>
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK).
+        /// </para>
         /// </summary>
         public string KmsKeyId
         {

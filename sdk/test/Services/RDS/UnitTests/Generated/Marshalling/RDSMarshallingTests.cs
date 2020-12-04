@@ -13870,6 +13870,143 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void StartDBInstanceAutomatedBackupsReplicationMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartDBInstanceAutomatedBackupsReplication");
+
+            var request = InstantiateClassGenerator.Execute<StartDBInstanceAutomatedBackupsReplicationRequest>();
+            var marshaller = new StartDBInstanceAutomatedBackupsReplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = StartDBInstanceAutomatedBackupsReplicationResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartDBInstanceAutomatedBackupsReplicationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void StartDBInstanceAutomatedBackupsReplication_DBInstanceAutomatedBackupQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartDBInstanceAutomatedBackupsReplication");
+
+            var request = InstantiateClassGenerator.Execute<StartDBInstanceAutomatedBackupsReplicationRequest>();
+            var marshaller = new StartDBInstanceAutomatedBackupsReplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBInstanceAutomatedBackupQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = StartDBInstanceAutomatedBackupsReplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void StartDBInstanceAutomatedBackupsReplication_DBInstanceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartDBInstanceAutomatedBackupsReplication");
+
+            var request = InstantiateClassGenerator.Execute<StartDBInstanceAutomatedBackupsReplicationRequest>();
+            var marshaller = new StartDBInstanceAutomatedBackupsReplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBInstanceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = StartDBInstanceAutomatedBackupsReplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void StartDBInstanceAutomatedBackupsReplication_InvalidDBInstanceStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartDBInstanceAutomatedBackupsReplication");
+
+            var request = InstantiateClassGenerator.Execute<StartDBInstanceAutomatedBackupsReplicationRequest>();
+            var marshaller = new StartDBInstanceAutomatedBackupsReplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBInstanceStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = StartDBInstanceAutomatedBackupsReplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void StartDBInstanceAutomatedBackupsReplication_KMSKeyNotAccessibleExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartDBInstanceAutomatedBackupsReplication");
+
+            var request = InstantiateClassGenerator.Execute<StartDBInstanceAutomatedBackupsReplicationRequest>();
+            var marshaller = new StartDBInstanceAutomatedBackupsReplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KMSKeyNotAccessibleException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = StartDBInstanceAutomatedBackupsReplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void StartDBInstanceAutomatedBackupsReplication_StorageTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartDBInstanceAutomatedBackupsReplication");
+
+            var request = InstantiateClassGenerator.Execute<StartDBInstanceAutomatedBackupsReplicationRequest>();
+            var marshaller = new StartDBInstanceAutomatedBackupsReplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("StorageTypeNotSupportedException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = StartDBInstanceAutomatedBackupsReplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void StartExportTaskMarshallTest()
         {
             var operation = service_model.FindOperation("StartExportTask");
@@ -14456,6 +14593,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = StopDBInstanceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void StopDBInstanceAutomatedBackupsReplicationMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopDBInstanceAutomatedBackupsReplication");
+
+            var request = InstantiateClassGenerator.Execute<StopDBInstanceAutomatedBackupsReplicationRequest>();
+            var marshaller = new StopDBInstanceAutomatedBackupsReplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = StopDBInstanceAutomatedBackupsReplicationResponseUnmarshaller.Instance.Unmarshall(context)
+                as StopDBInstanceAutomatedBackupsReplicationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void StopDBInstanceAutomatedBackupsReplication_DBInstanceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopDBInstanceAutomatedBackupsReplication");
+
+            var request = InstantiateClassGenerator.Execute<StopDBInstanceAutomatedBackupsReplicationRequest>();
+            var marshaller = new StopDBInstanceAutomatedBackupsReplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DBInstanceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = StopDBInstanceAutomatedBackupsReplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void StopDBInstanceAutomatedBackupsReplication_InvalidDBInstanceStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopDBInstanceAutomatedBackupsReplication");
+
+            var request = InstantiateClassGenerator.Execute<StopDBInstanceAutomatedBackupsReplicationRequest>();
+            var marshaller = new StopDBInstanceAutomatedBackupsReplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidDBInstanceStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = StopDBInstanceAutomatedBackupsReplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

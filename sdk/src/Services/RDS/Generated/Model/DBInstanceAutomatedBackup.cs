@@ -29,15 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// An automated backup of a DB instance. It it consists of system backups, transaction
-    /// logs, and the database instance properties that existed at the time you deleted the
-    /// source instance.
+    /// An automated backup of a DB instance. It consists of system backups, transaction logs,
+    /// and the database instance properties that existed at the time you deleted the source
+    /// instance.
     /// </summary>
     public partial class DBInstanceAutomatedBackup
     {
         private int? _allocatedStorage;
         private string _availabilityZone;
+        private int? _backupRetentionPeriod;
         private string _dbInstanceArn;
+        private string _dbInstanceAutomatedBackupsArn;
+        private List<DBInstanceAutomatedBackupsReplication> _dbInstanceAutomatedBackupsReplications = new List<DBInstanceAutomatedBackupsReplication>();
         private string _dbInstanceIdentifier;
         private string _dbiResourceId;
         private bool? _encrypted;
@@ -98,9 +101,27 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BackupRetentionPeriod. 
+        /// <para>
+        /// The retention period for the automated backups.
+        /// </para>
+        /// </summary>
+        public int BackupRetentionPeriod
+        {
+            get { return this._backupRetentionPeriod.GetValueOrDefault(); }
+            set { this._backupRetentionPeriod = value; }
+        }
+
+        // Check to see if BackupRetentionPeriod property is set
+        internal bool IsSetBackupRetentionPeriod()
+        {
+            return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DBInstanceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the automated backup.
+        /// The Amazon Resource Name (ARN) for the automated backups.
         /// </para>
         /// </summary>
         public string DBInstanceArn
@@ -113,6 +134,42 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceArn()
         {
             return this._dbInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBInstanceAutomatedBackupsArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the replicated automated backups.
+        /// </para>
+        /// </summary>
+        public string DBInstanceAutomatedBackupsArn
+        {
+            get { return this._dbInstanceAutomatedBackupsArn; }
+            set { this._dbInstanceAutomatedBackupsArn = value; }
+        }
+
+        // Check to see if DBInstanceAutomatedBackupsArn property is set
+        internal bool IsSetDBInstanceAutomatedBackupsArn()
+        {
+            return this._dbInstanceAutomatedBackupsArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBInstanceAutomatedBackupsReplications. 
+        /// <para>
+        /// The list of replications to different AWS Regions associated with the automated backup.
+        /// </para>
+        /// </summary>
+        public List<DBInstanceAutomatedBackupsReplication> DBInstanceAutomatedBackupsReplications
+        {
+            get { return this._dbInstanceAutomatedBackupsReplications; }
+            set { this._dbInstanceAutomatedBackupsReplications = value; }
+        }
+
+        // Check to see if DBInstanceAutomatedBackupsReplications property is set
+        internal bool IsSetDBInstanceAutomatedBackupsReplications()
+        {
+            return this._dbInstanceAutomatedBackupsReplications != null && this._dbInstanceAutomatedBackupsReplications.Count > 0; 
         }
 
         /// <summary>
@@ -265,8 +322,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon Resource
-        /// Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. 
+        /// The AWS KMS key ID for an automated backup.
+        /// </para>
+        ///  
+        /// <para>
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK).
         /// </para>
         /// </summary>
         public string KmsKeyId

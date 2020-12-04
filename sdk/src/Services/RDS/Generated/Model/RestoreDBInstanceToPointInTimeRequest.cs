@@ -74,6 +74,7 @@ namespace Amazon.RDS.Model
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private bool? _publiclyAccessible;
         private DateTime? _restoreTimeUtc;
+        private string _sourceDBInstanceAutomatedBackupsArn;
         private string _sourceDBInstanceIdentifier;
         private string _sourceDbiResourceId;
         private string _storageType;
@@ -715,6 +716,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetRestoreTimeUtc()
         {
             return this._restoreTimeUtc.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceDBInstanceAutomatedBackupsArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the replicated automated backups from which to restore,
+        /// for example, <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+        /// </para>
+        /// </summary>
+        public string SourceDBInstanceAutomatedBackupsArn
+        {
+            get { return this._sourceDBInstanceAutomatedBackupsArn; }
+            set { this._sourceDBInstanceAutomatedBackupsArn = value; }
+        }
+
+        // Check to see if SourceDBInstanceAutomatedBackupsArn property is set
+        internal bool IsSetSourceDBInstanceAutomatedBackupsArn()
+        {
+            return this._sourceDBInstanceAutomatedBackupsArn != null;
         }
 
         /// <summary>

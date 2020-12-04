@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteDBInstanceAutomatedBackup Request Marshaller
+    /// StartDBInstanceAutomatedBackupsReplication Request Marshaller
     /// </summary>       
-    public class DeleteDBInstanceAutomatedBackupRequestMarshaller : IMarshaller<IRequest, DeleteDBInstanceAutomatedBackupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StartDBInstanceAutomatedBackupsReplicationRequestMarshaller : IMarshaller<IRequest, StartDBInstanceAutomatedBackupsReplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteDBInstanceAutomatedBackupRequest)input);
+            return this.Marshall((StartDBInstanceAutomatedBackupsReplicationRequest)input);
         }
     
         /// <summary>
@@ -50,28 +50,36 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteDBInstanceAutomatedBackupRequest publicRequest)
+        public IRequest Marshall(StartDBInstanceAutomatedBackupsReplicationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
-            request.Parameters.Add("Action", "DeleteDBInstanceAutomatedBackup");
+            request.Parameters.Add("Action", "StartDBInstanceAutomatedBackupsReplication");
             request.Parameters.Add("Version", "2014-10-31");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetDBInstanceAutomatedBackupsArn())
+                if(publicRequest.IsSetBackupRetentionPeriod())
                 {
-                    request.Parameters.Add("DBInstanceAutomatedBackupsArn", StringUtils.FromString(publicRequest.DBInstanceAutomatedBackupsArn));
+                    request.Parameters.Add("BackupRetentionPeriod", StringUtils.FromInt(publicRequest.BackupRetentionPeriod));
                 }
-                if(publicRequest.IsSetDbiResourceId())
+                if(publicRequest.IsSetKmsKeyId())
                 {
-                    request.Parameters.Add("DbiResourceId", StringUtils.FromString(publicRequest.DbiResourceId));
+                    request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
+                }
+                if(publicRequest.IsSetPreSignedUrl())
+                {
+                    request.Parameters.Add("PreSignedUrl", StringUtils.FromString(publicRequest.PreSignedUrl));
+                }
+                if(publicRequest.IsSetSourceDBInstanceArn())
+                {
+                    request.Parameters.Add("SourceDBInstanceArn", StringUtils.FromString(publicRequest.SourceDBInstanceArn));
                 }
             }
             return request;
         }
-                    private static DeleteDBInstanceAutomatedBackupRequestMarshaller _instance = new DeleteDBInstanceAutomatedBackupRequestMarshaller();        
+                    private static StartDBInstanceAutomatedBackupsReplicationRequestMarshaller _instance = new StartDBInstanceAutomatedBackupsReplicationRequestMarshaller();        
 
-        internal static DeleteDBInstanceAutomatedBackupRequestMarshaller GetInstance()
+        internal static StartDBInstanceAutomatedBackupsReplicationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -79,7 +87,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteDBInstanceAutomatedBackupRequestMarshaller Instance
+        public static StartDBInstanceAutomatedBackupsReplicationRequestMarshaller Instance
         {
             get
             {

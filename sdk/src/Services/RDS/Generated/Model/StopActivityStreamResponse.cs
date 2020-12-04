@@ -60,6 +60,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The AWS KMS key identifier used for encrypting messages in the database activity stream.
         /// </para>
+        ///  
+        /// <para>
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK).
+        /// </para>
         /// </summary>
         public string KmsKeyId
         {

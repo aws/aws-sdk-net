@@ -29,19 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDBInstanceAutomatedBackup operation.
-    /// Deletes automated backups using the <code>DbiResourceId</code> value of the source
-    /// DB instance or the Amazon Resource Name (ARN) of the automated backups.
+    /// Automated backups of a DB instance replicated to another AWS Region. They consist
+    /// of system backups, transaction logs, and database instance properties.
     /// </summary>
-    public partial class DeleteDBInstanceAutomatedBackupRequest : AmazonRDSRequest
+    public partial class DBInstanceAutomatedBackupsReplication
     {
         private string _dbInstanceAutomatedBackupsArn;
-        private string _dbiResourceId;
 
         /// <summary>
         /// Gets and sets the property DBInstanceAutomatedBackupsArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the automated backups to delete, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+        /// The Amazon Resource Name (ARN) of the replicated automated backups.
         /// </para>
         /// </summary>
         public string DBInstanceAutomatedBackupsArn
@@ -54,25 +52,6 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceAutomatedBackupsArn()
         {
             return this._dbInstanceAutomatedBackupsArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DbiResourceId. 
-        /// <para>
-        /// The identifier for the source DB instance, which can't be changed and which is unique
-        /// to an AWS Region.
-        /// </para>
-        /// </summary>
-        public string DbiResourceId
-        {
-            get { return this._dbiResourceId; }
-            set { this._dbiResourceId = value; }
-        }
-
-        // Check to see if DbiResourceId property is set
-        internal bool IsSetDbiResourceId()
-        {
-            return this._dbiResourceId != null;
         }
 
     }

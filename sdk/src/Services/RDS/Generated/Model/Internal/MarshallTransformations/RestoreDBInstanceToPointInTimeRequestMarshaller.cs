@@ -163,6 +163,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("RestoreTime", StringUtils.FromDateTimeToISO8601(publicRequest.RestoreTimeUtc));
                 }
+                if(publicRequest.IsSetSourceDBInstanceAutomatedBackupsArn())
+                {
+                    request.Parameters.Add("SourceDBInstanceAutomatedBackupsArn", StringUtils.FromString(publicRequest.SourceDBInstanceAutomatedBackupsArn));
+                }
                 if(publicRequest.IsSetSourceDBInstanceIdentifier())
                 {
                     request.Parameters.Add("SourceDBInstanceIdentifier", StringUtils.FromString(publicRequest.SourceDBInstanceIdentifier));

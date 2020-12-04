@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SourceRegion Object
+    /// Response Unmarshaller for DBInstanceAutomatedBackupsReplication Object
     /// </summary>  
-    public class SourceRegionUnmarshaller : IUnmarshaller<SourceRegion, XmlUnmarshallerContext>, IUnmarshaller<SourceRegion, JsonUnmarshallerContext>
+    public class DBInstanceAutomatedBackupsReplicationUnmarshaller : IUnmarshaller<DBInstanceAutomatedBackupsReplication, XmlUnmarshallerContext>, IUnmarshaller<DBInstanceAutomatedBackupsReplication, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SourceRegion Unmarshall(XmlUnmarshallerContext context)
+        public DBInstanceAutomatedBackupsReplication Unmarshall(XmlUnmarshallerContext context)
         {
-            SourceRegion unmarshalledObject = new SourceRegion();
+            DBInstanceAutomatedBackupsReplication unmarshalledObject = new DBInstanceAutomatedBackupsReplication();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,28 +54,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Endpoint", targetDepth))
+                    if (context.TestExpression("DBInstanceAutomatedBackupsArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("RegionName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.RegionName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SupportsDBInstanceAutomatedBackupsReplication", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.SupportsDBInstanceAutomatedBackupsReplication = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DBInstanceAutomatedBackupsArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -93,18 +75,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SourceRegion Unmarshall(JsonUnmarshallerContext context)
+        public DBInstanceAutomatedBackupsReplication Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static SourceRegionUnmarshaller _instance = new SourceRegionUnmarshaller();        
+        private static DBInstanceAutomatedBackupsReplicationUnmarshaller _instance = new DBInstanceAutomatedBackupsReplicationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SourceRegionUnmarshaller Instance
+        public static DBInstanceAutomatedBackupsReplicationUnmarshaller Instance
         {
             get
             {

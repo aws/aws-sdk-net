@@ -65,10 +65,11 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
-    /// copy of the DB cluster snapshot in the destination AWS Region. This is the same identifier
-    /// for both the <code>CopyDBClusterSnapshot</code> action that is called in the destination
-    /// AWS Region, and the action contained in the pre-signed URL.
+    ///  <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK)
+    /// to use to encrypt the copy of the DB cluster snapshot in the destination AWS Region.
+    /// This is the same identifier for both the <code>CopyDBClusterSnapshot</code> action
+    /// that is called in the destination AWS Region, and the action contained in the pre-signed
+    /// URL.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -163,16 +164,16 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon
-        /// Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption
-        /// key. 
+        /// The AWS KMS key identifier for an encrypted DB cluster snapshot. The AWS KMS key identifier
+        /// is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+        /// (CMK).
         /// </para>
         ///  
         /// <para>
         /// If you copy an encrypted DB cluster snapshot from your AWS account, you can specify
-        /// a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key.
-        /// If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster
-        /// snapshot is encrypted with the same KMS key as the source DB cluster snapshot. 
+        /// a value for <code>KmsKeyId</code> to encrypt the copy with a new AWS KMS CMK. If you
+        /// don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster snapshot
+        /// is encrypted with the same AWS KMS key as the source DB cluster snapshot. 
         /// </para>
         ///  
         /// <para>
@@ -182,10 +183,10 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// To copy an encrypted DB cluster snapshot to another AWS Region, you must set <code>KmsKeyId</code>
-        /// to the KMS key ID you want to use to encrypt the copy of the DB cluster snapshot in
-        /// the destination AWS Region. KMS encryption keys are specific to the AWS Region that
-        /// they are created in, and you can't use encryption keys from one AWS Region in another
-        /// AWS Region.
+        /// to the AWS KMS key identifier you want to use to encrypt the copy of the DB cluster
+        /// snapshot in the destination AWS Region. AWS KMS CMKs are specific to the AWS Region
+        /// that they are created in, and you can't use CMKs from one AWS Region in another AWS
+        /// Region.
         /// </para>
         ///  
         /// <para>
@@ -223,10 +224,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt
-        /// the copy of the DB cluster snapshot in the destination AWS Region. This is the same
-        /// identifier for both the <code>CopyDBClusterSnapshot</code> action that is called in
-        /// the destination AWS Region, and the action contained in the pre-signed URL.
+        ///  <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK)
+        /// to use to encrypt the copy of the DB cluster snapshot in the destination AWS Region.
+        /// This is the same identifier for both the <code>CopyDBClusterSnapshot</code> action
+        /// that is called in the destination AWS Region, and the action contained in the pre-signed
+        /// URL.
         /// </para>
         ///  </li> <li> 
         /// <para>

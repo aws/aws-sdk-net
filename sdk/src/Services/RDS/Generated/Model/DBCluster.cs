@@ -118,6 +118,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The AWS KMS key identifier used for encrypting messages in the database activity stream.
         /// </para>
+        ///  
+        /// <para>
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK).
+        /// </para>
         /// </summary>
         public string ActivityStreamKmsKeyId
         {
@@ -534,7 +539,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DbClusterResourceId. 
         /// <para>
         /// The AWS Region-unique, immutable identifier for the DB cluster. This identifier is
-        /// found in AWS CloudTrail log entries whenever the AWS KMS key for the DB cluster is
+        /// found in AWS CloudTrail log entries whenever the AWS KMS CMK for the DB cluster is
         /// accessed.
         /// </para>
         /// </summary>
@@ -856,6 +861,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted
         /// DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK).
         /// </para>
         /// </summary>
         public string KmsKeyId

@@ -37,6 +37,7 @@ namespace Amazon.RDS.Model
         private string _endpoint;
         private string _regionName;
         private string _status;
+        private bool? _supportsDBInstanceAutomatedBackupsReplication;
 
         /// <summary>
         /// Gets and sets the property Endpoint. 
@@ -90,6 +91,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsDBInstanceAutomatedBackupsReplication. 
+        /// <para>
+        /// Whether the source AWS Region supports replicating automated backups to the current
+        /// AWS Region.
+        /// </para>
+        /// </summary>
+        public bool SupportsDBInstanceAutomatedBackupsReplication
+        {
+            get { return this._supportsDBInstanceAutomatedBackupsReplication.GetValueOrDefault(); }
+            set { this._supportsDBInstanceAutomatedBackupsReplication = value; }
+        }
+
+        // Check to see if SupportsDBInstanceAutomatedBackupsReplication property is set
+        internal bool IsSetSupportsDBInstanceAutomatedBackupsReplication()
+        {
+            return this._supportsDBInstanceAutomatedBackupsReplication.HasValue; 
         }
 
     }

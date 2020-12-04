@@ -42,11 +42,30 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBInstanceAutomatedBackupsRequest : AmazonRDSRequest
     {
+        private string _dbInstanceAutomatedBackupsArn;
         private string _dbInstanceIdentifier;
         private string _dbiResourceId;
         private List<Filter> _filters = new List<Filter>();
         private string _marker;
         private int? _maxRecords;
+
+        /// <summary>
+        /// Gets and sets the property DBInstanceAutomatedBackupsArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the replicated automated backups, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+        /// </para>
+        /// </summary>
+        public string DBInstanceAutomatedBackupsArn
+        {
+            get { return this._dbInstanceAutomatedBackupsArn; }
+            set { this._dbInstanceAutomatedBackupsArn = value; }
+        }
+
+        // Check to see if DBInstanceAutomatedBackupsArn property is set
+        internal bool IsSetDBInstanceAutomatedBackupsArn()
+        {
+            return this._dbInstanceAutomatedBackupsArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 

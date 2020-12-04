@@ -58,6 +58,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetDBInstanceAutomatedBackupsArn())
+                {
+                    request.Parameters.Add("DBInstanceAutomatedBackupsArn", StringUtils.FromString(publicRequest.DBInstanceAutomatedBackupsArn));
+                }
                 if(publicRequest.IsSetDBInstanceIdentifier())
                 {
                     request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));

@@ -115,6 +115,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBInstanceArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DBInstanceAutomatedBackupsReplications/DBInstanceAutomatedBackupsReplication", targetDepth))
+                    {
+                        var unmarshaller = DBInstanceAutomatedBackupsReplicationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DBInstanceAutomatedBackupsReplications.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("DBInstanceClass", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
