@@ -147,6 +147,10 @@ namespace Amazon.Kafka
         /// </summary>
         public static readonly ClusterState FAILED = new ClusterState("FAILED");
         /// <summary>
+        /// Constant HEALING for ClusterState
+        /// </summary>
+        public static readonly ClusterState HEALING = new ClusterState("HEALING");
+        /// <summary>
         /// Constant MAINTENANCE for ClusterState
         /// </summary>
         public static readonly ClusterState MAINTENANCE = new ClusterState("MAINTENANCE");

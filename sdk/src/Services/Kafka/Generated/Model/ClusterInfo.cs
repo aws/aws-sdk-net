@@ -291,7 +291,7 @@ namespace Amazon.Kafka.Model
         /// Gets and sets the property State.             
         /// <para>
         /// The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED,
-        /// MAINTENANCE, REBOOTING_BROKER, and UPDATING.
+        /// HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.
         /// </para>
         /// </summary>
         public ClusterState State
