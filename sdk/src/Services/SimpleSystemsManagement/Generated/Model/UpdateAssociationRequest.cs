@@ -72,7 +72,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// By default, when you update an association, the system runs it immediately after it
         /// is updated and then according to the schedule you specified. Specify this option if
-        /// you don't want an association to run immediately after you update it.
+        /// you don't want an association to run immediately after you update it. This parameter
+        /// is not supported for rate expressions.
         /// </para>
         ///  
         /// <para>

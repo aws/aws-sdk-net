@@ -155,7 +155,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CVEIds. 
         /// <para>
-        /// The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-1999-0067</code>.
+        /// The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>.
         /// Applies to Linux-based instances only.
         /// </para>
         /// </summary>

@@ -56,6 +56,10 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     /// Valid properties: PRODUCT, PRIORITY
     /// </para>
+    ///  </dd> <dt>MACOS</dt> <dd> 
+    /// <para>
+    /// Valid properties: PRODUCT, CLASSIFICATION
+    /// </para>
     ///  </dd> <dt>ORACLE_LINUX</dt> <dd> 
     /// <para>
     /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
@@ -148,7 +152,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property PatchSet. 
         /// <para>
         /// Indicates whether to list patches for the Windows operating system or for Microsoft
-        /// applications. Not applicable for Linux operating systems.
+        /// applications. Not applicable for the Linux or macOS operating systems.
         /// </para>
         /// </summary>
         public PatchSet PatchSet

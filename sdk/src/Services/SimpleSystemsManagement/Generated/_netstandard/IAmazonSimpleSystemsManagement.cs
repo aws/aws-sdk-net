@@ -742,6 +742,42 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
                 
+        #region  CreateOpsMetadata
+
+
+
+        /// <summary>
+        /// If you create a new application in AppManager, Systems Manager calls this API action
+        /// to specify information about the new application, including the application type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOpsMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateOpsMetadata service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataAlreadyExistsException">
+        /// An OpsMetadata object already exists for the selected resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataInvalidArgumentException">
+        /// One of the arguments passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataLimitExceededException">
+        /// Your account reached the maximum number of OpsMetadata objects allowed by AppManager.
+        /// The maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataTooManyUpdatesException">
+        /// The system is processing too many concurrent updates. Wait a few moments and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata">REST API Reference for CreateOpsMetadata Operation</seealso>
+        Task<CreateOpsMetadataResponse> CreateOpsMetadataAsync(CreateOpsMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreatePatchBaseline
 
 
@@ -1117,6 +1153,33 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">REST API Reference for DeleteMaintenanceWindow Operation</seealso>
         Task<DeleteMaintenanceWindowResponse> DeleteMaintenanceWindowAsync(DeleteMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteOpsMetadata
+
+
+
+        /// <summary>
+        /// Delete OpsMetadata related to an application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOpsMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteOpsMetadata service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataInvalidArgumentException">
+        /// One of the arguments passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataNotFoundException">
+        /// The OpsMetadata object does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata">REST API Reference for DeleteOpsMetadata Operation</seealso>
+        Task<DeleteOpsMetadataResponse> DeleteOpsMetadataAsync(DeleteOpsMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2494,6 +2557,10 @@ namespace Amazon.SimpleSystemsManagement
         /// <para>
         /// Valid properties: PRODUCT, PRIORITY
         /// </para>
+        ///  </dd> <dt>MACOS</dt> <dd> 
+        /// <para>
+        /// Valid properties: PRODUCT, CLASSIFICATION
+        /// </para>
         ///  </dd> <dt>ORACLE_LINUX</dt> <dd> 
         /// <para>
         /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
@@ -3069,6 +3136,33 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem">REST API Reference for GetOpsItem Operation</seealso>
         Task<GetOpsItemResponse> GetOpsItemAsync(GetOpsItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetOpsMetadata
+
+
+
+        /// <summary>
+        /// View operational metadata related to an application in AppManager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOpsMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetOpsMetadata service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataInvalidArgumentException">
+        /// One of the arguments passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataNotFoundException">
+        /// The OpsMetadata object does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata">REST API Reference for GetOpsMetadata Operation</seealso>
+        Task<GetOpsMetadataResponse> GetOpsMetadataAsync(GetOpsMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3963,6 +4057,31 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">REST API Reference for ListInventoryEntries Operation</seealso>
         Task<ListInventoryEntriesResponse> ListInventoryEntriesAsync(ListInventoryEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListOpsMetadata
+
+
+
+        /// <summary>
+        /// Systems Manager calls this API action when displaying all AppManager OpsMetadata objects
+        /// or blobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOpsMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOpsMetadata service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataInvalidArgumentException">
+        /// One of the arguments passed is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata">REST API Reference for ListOpsMetadata Operation</seealso>
+        Task<ListOpsMetadataResponse> ListOpsMetadataAsync(ListOpsMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -5520,6 +5639,40 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem">REST API Reference for UpdateOpsItem Operation</seealso>
         Task<UpdateOpsItemResponse> UpdateOpsItemAsync(UpdateOpsItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateOpsMetadata
+
+
+
+        /// <summary>
+        /// Systems Manager calls this API action when you edit OpsMetadata in AppManager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOpsMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOpsMetadata service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataInvalidArgumentException">
+        /// One of the arguments passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataKeyLimitExceededException">
+        /// The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can
+        /// assign to an application in AppManager.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataNotFoundException">
+        /// The OpsMetadata object does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.OpsMetadataTooManyUpdatesException">
+        /// The system is processing too many concurrent updates. Wait a few moments and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata">REST API Reference for UpdateOpsMetadata Operation</seealso>
+        Task<UpdateOpsMetadataResponse> UpdateOpsMetadataAsync(UpdateOpsMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

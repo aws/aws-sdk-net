@@ -174,6 +174,18 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateOpsMetadataRequest.ResourceId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateOpsMetadataResponse.OpsMetadataArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:ssm:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:opsmetadata\/([a-zA-Z0-9-_\.\/]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreatePatchBaselineRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -264,6 +276,12 @@
     <min>20</min>
     <max>20</max>
     <pattern>^mw-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeleteOpsMetadataRequest.OpsMetadataArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:ssm:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:opsmetadata\/([a-zA-Z0-9-_\.\/]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeleteParameterRequest.Name</property>
@@ -999,6 +1017,23 @@
     <pattern>^(oi)-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetOpsMetadataRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetOpsMetadataRequest.OpsMetadataArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:ssm:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:opsmetadata\/([a-zA-Z0-9-_\.\/]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetOpsMetadataResponse.ResourceId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetOpsSummaryRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -1182,6 +1217,11 @@
     <min>1</min>
     <max>100</max>
     <pattern>^(AWS|Custom):.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ListOpsMetadataRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListResourceComplianceSummariesRequest.MaxResults</property>
@@ -1855,6 +1895,18 @@
     <property>Amazon.SimpleSystemsManagement.Model.UpdateOpsItemRequest.Title</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateOpsMetadataRequest.OpsMetadataArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:ssm:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:opsmetadata\/([a-zA-Z0-9-_\.\/]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateOpsMetadataResponse.OpsMetadataArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:ssm:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:opsmetadata\/([a-zA-Z0-9-_\.\/]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdatePatchBaselineRequest.BaselineId</property>
@@ -2976,6 +3028,11 @@
     <pattern>^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.MetadataValue.Value</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.OpsAggregator.AggregatorType</property>
     <min>1</min>
     <max>20</max>
@@ -3063,6 +3120,24 @@
     <property>Amazon.SimpleSystemsManagement.Model.OpsItemSummary.Title</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsMetadata.OpsMetadataArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:ssm:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:opsmetadata\/([a-zA-Z0-9-_\.\/]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsMetadata.ResourceId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^(?!\s*$).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.OpsMetadataFilter.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^(?!\s*$).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.OpsResultAttribute.TypeName</property>

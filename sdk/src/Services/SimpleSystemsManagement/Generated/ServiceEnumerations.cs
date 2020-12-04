@@ -2611,6 +2611,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly OperatingSystem DEBIAN = new OperatingSystem("DEBIAN");
         /// <summary>
+        /// Constant MACOS for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem MACOS = new OperatingSystem("MACOS");
+        /// <summary>
         /// Constant ORACLE_LINUX for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem ORACLE_LINUX = new OperatingSystem("ORACLE_LINUX");

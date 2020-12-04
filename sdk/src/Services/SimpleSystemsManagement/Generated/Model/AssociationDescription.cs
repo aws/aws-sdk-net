@@ -61,7 +61,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// By default, when you create a new associations, the system runs it immediately after
         /// it is created and then according to the schedule you specified. Specify this option
-        /// if you don't want an association to run immediately after you create it.
+        /// if you don't want an association to run immediately after you create it. This parameter
+        /// is not supported for rate expressions.
         /// </para>
         /// </summary>
         public bool ApplyOnlyAtCronInterval
