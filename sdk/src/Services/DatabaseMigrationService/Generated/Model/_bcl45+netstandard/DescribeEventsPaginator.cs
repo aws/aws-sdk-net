@@ -64,7 +64,7 @@ namespace Amazon.DatabaseMigrationService.Model
                 marker = response.Marker;
                 yield return response;
             }
-            while (marker != null);
+            while (!string.IsNullOrEmpty(marker));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -85,7 +85,7 @@ namespace Amazon.DatabaseMigrationService.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (marker != null);
+            while (!string.IsNullOrEmpty(marker));
         }
 #endif
     }

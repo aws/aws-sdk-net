@@ -104,7 +104,7 @@ else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
 else
 {
 #>
-            while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#> != null);
+            while (!string.IsNullOrEmpty(<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#>));
 <#
 }
 #>
@@ -165,7 +165,7 @@ else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
 else
 {
 #>
-            while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#> != null);
+            while (!string.IsNullOrEmpty(<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#>));
 <#
 }
 #>

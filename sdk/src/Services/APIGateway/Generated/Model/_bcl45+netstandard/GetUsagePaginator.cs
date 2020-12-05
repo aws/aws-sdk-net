@@ -64,7 +64,7 @@ namespace Amazon.APIGateway.Model
                 position = response.Position;
                 yield return response;
             }
-            while (position != null);
+            while (!string.IsNullOrEmpty(position));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -85,7 +85,7 @@ namespace Amazon.APIGateway.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (position != null);
+            while (!string.IsNullOrEmpty(position));
         }
 #endif
     }

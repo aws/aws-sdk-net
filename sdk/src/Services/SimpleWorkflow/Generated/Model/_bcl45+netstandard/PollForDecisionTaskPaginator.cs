@@ -70,7 +70,7 @@ namespace Amazon.SimpleWorkflow.Model
                 nextPageToken = response.DecisionTask.NextPageToken;
                 yield return response;
             }
-            while (nextPageToken != null);
+            while (!string.IsNullOrEmpty(nextPageToken));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -91,7 +91,7 @@ namespace Amazon.SimpleWorkflow.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (nextPageToken != null);
+            while (!string.IsNullOrEmpty(nextPageToken));
         }
 #endif
     }

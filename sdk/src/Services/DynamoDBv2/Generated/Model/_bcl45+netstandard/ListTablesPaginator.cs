@@ -70,7 +70,7 @@ namespace Amazon.DynamoDBv2.Model
                 exclusiveStartTableName = response.LastEvaluatedTableName;
                 yield return response;
             }
-            while (exclusiveStartTableName != null);
+            while (!string.IsNullOrEmpty(exclusiveStartTableName));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -91,7 +91,7 @@ namespace Amazon.DynamoDBv2.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (exclusiveStartTableName != null);
+            while (!string.IsNullOrEmpty(exclusiveStartTableName));
         }
 #endif
     }
