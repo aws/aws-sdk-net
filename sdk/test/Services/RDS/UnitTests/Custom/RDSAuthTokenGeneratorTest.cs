@@ -141,7 +141,7 @@ namespace AWSSDK.UnitTests.RDS
 
         [TestMethod]
         [TestCategory("RDS")]
-        public void GenerateAuthTokenEmptyDBUser()
+        public void GenerateAuthTokenNullDBUser()
         {
             AssertExtensions.ExpectException(() =>
             {
