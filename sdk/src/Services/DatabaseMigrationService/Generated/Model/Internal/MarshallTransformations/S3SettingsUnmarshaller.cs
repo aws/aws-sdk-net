@@ -88,6 +88,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CdcInsertsOnly = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CdcPath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CdcPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompressionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CsvDelimiter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CsvNoSupValue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CsvNoSupValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CsvRowDelimiter", targetDepth))
@@ -184,6 +196,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ParquetVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PreserveTransactions", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.PreserveTransactions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RowGroupLength", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -206,6 +224,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimestampColumnName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UseCsvNoSupValue", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseCsvNoSupValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

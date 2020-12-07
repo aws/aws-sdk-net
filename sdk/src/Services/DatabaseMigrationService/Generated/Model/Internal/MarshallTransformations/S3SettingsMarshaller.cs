@@ -69,6 +69,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CdcInsertsOnly);
             }
 
+            if(requestObject.IsSetCdcPath())
+            {
+                context.Writer.WritePropertyName("CdcPath");
+                context.Writer.Write(requestObject.CdcPath);
+            }
+
             if(requestObject.IsSetCompressionType())
             {
                 context.Writer.WritePropertyName("CompressionType");
@@ -79,6 +85,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("CsvDelimiter");
                 context.Writer.Write(requestObject.CsvDelimiter);
+            }
+
+            if(requestObject.IsSetCsvNoSupValue())
+            {
+                context.Writer.WritePropertyName("CsvNoSupValue");
+                context.Writer.Write(requestObject.CsvNoSupValue);
             }
 
             if(requestObject.IsSetCsvRowDelimiter())
@@ -165,6 +177,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ParquetVersion);
             }
 
+            if(requestObject.IsSetPreserveTransactions())
+            {
+                context.Writer.WritePropertyName("PreserveTransactions");
+                context.Writer.Write(requestObject.PreserveTransactions);
+            }
+
             if(requestObject.IsSetRowGroupLength())
             {
                 context.Writer.WritePropertyName("RowGroupLength");
@@ -187,6 +205,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("TimestampColumnName");
                 context.Writer.Write(requestObject.TimestampColumnName);
+            }
+
+            if(requestObject.IsSetUseCsvNoSupValue())
+            {
+                context.Writer.WritePropertyName("UseCsvNoSupValue");
+                context.Writer.Write(requestObject.UseCsvNoSupValue);
             }
 
         }
