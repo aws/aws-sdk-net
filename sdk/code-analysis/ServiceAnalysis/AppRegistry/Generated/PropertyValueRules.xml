@@ -275,6 +275,24 @@
     <pattern>[A-Za-z0-9+/=]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppRegistry.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRegistry.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRegistry.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppRegistry.Model.UpdateApplicationRequest.Application</property>
     <min>1</min>
     <max>256</max>
