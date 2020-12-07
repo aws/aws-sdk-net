@@ -1,3 +1,14 @@
+### 3.5.68.0 (2020-12-07 22:11 UTC)
+* AppRegistry (3.5.2.0)
+	* AWS Service Catalog AppRegistry now supports adding, removing, and listing tags on resources after they are created.
+* DatabaseMigrationService (3.5.6.0)
+	* Added PreserveTransaction setting to preserve order of CDC for S3 as target. Added CsvNoSupValue setting to replace empty value for columns not included in the supplemental log for S3 as target.
+* Core 3.5.1.47
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.67.0 (2020-12-04 19:14 UTC)
 * DirectoryService (3.5.2.3)
 	* Documentation updates for ds - updated descriptions
