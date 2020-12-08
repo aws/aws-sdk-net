@@ -1,3 +1,25 @@
+### 3.5.69.0 (2020-12-08 19:19 UTC)
+* AuditManager (3.5.0.0)
+	* AWS Audit Manager helps you continuously audit your AWS usage to simplify how you manage risk and compliance. This update releases the first version of the AWS Audit Manager APIs and SDK.
+* ECR (3.5.1.0)
+	* This release adds support for configuring cross-region and cross-account replication of your Amazon ECR images.
+* EMRContainers (3.5.0.0)
+	* This release adds support for Amazon EMR on EKS, a simple way to run Spark on Kubernetes.
+* ForecastService (3.5.3.0)
+	* This release adds support for the Amazon Forecast Weather Index which can increase forecasting accuracy by automatically including weather forecasts in demand forecasts.
+* HealthLake (3.5.0.0)
+	* This release introduces Amazon HealthLake (preview), a HIPAA-eligible service that enables healthcare and life sciences customers to store, transform, query, and analyze health data in the AWS Cloud.
+* Kendra (3.5.7.0)
+	* 1. Amazon Kendra connector for Google Drive repositories 2. Amazon Kendra's relevance ranking models are regularly tuned for each customer by capturing end-user search patterns and feedback.
+* QuickSight (3.5.8.0)
+	* Added new parameters for join optimization.
+* SageMaker (3.5.7.0)
+	* This feature helps you monitor model performance characteristics such as accuracy, identify undesired bias in your ML models, and explain model decisions better with explainability drift detection.
+* SagemakerEdgeManager (3.5.0.0)
+	* Amazon SageMaker Edge Manager makes it easy to optimize, secure, monitor, and maintain  machine learning (ML) models across fleets of edge devices such as smart cameras, smart speakers, and robots.
+* SageMakerRuntime (3.5.1.0)
+	* This feature allows customers to invoke their endpoint with an inference ID. If used and data capture for the endpoint is enabled, this ID will be captured along with request data.
+
 ### 3.5.68.0 (2020-12-07 22:11 UTC)
 * AppRegistry (3.5.2.0)
 	* AWS Service Catalog AppRegistry now supports adding, removing, and listing tags on resources after they are created.
