@@ -35,6 +35,10 @@ namespace Amazon.ForecastService
         /// </summary>
         public static readonly AttributeType Float = new AttributeType("float");
         /// <summary>
+        /// Constant Geolocation for AttributeType
+        /// </summary>
+        public static readonly AttributeType Geolocation = new AttributeType("geolocation");
+        /// <summary>
         /// Constant Integer for AttributeType
         /// </summary>
         public static readonly AttributeType Integer = new AttributeType("integer");

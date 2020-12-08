@@ -62,7 +62,7 @@ namespace Amazon.ForecastService.Model
         /// An array of supplementary features. The only supported feature is a holiday calendar.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=2)]
         public List<SupplementaryFeature> SupplementaryFeatures
         {
             get { return this._supplementaryFeatures; }

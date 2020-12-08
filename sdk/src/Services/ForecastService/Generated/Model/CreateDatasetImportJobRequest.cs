@@ -69,8 +69,11 @@ namespace Amazon.ForecastService.Model
         private string _datasetArn;
         private string _datasetImportJobName;
         private DataSource _dataSource;
+        private string _geolocationFormat;
         private List<Tag> _tags = new List<Tag>();
         private string _timestampFormat;
+        private string _timeZone;
+        private bool? _useGeolocationForTimeZone;
 
         /// <summary>
         /// Gets and sets the property DatasetArn. 
@@ -139,6 +142,36 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetDataSource()
         {
             return this._dataSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GeolocationFormat. 
+        /// <para>
+        /// The format of the geolocation attribute. The geolocation attribute can be formatted
+        /// in one of two ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit
+        /// ZIP code (Example: US_98121).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string GeolocationFormat
+        {
+            get { return this._geolocationFormat; }
+            set { this._geolocationFormat = value; }
+        }
+
+        // Check to see if GeolocationFormat property is set
+        internal bool IsSetGeolocationFormat()
+        {
+            return this._geolocationFormat != null;
         }
 
         /// <summary>
@@ -245,6 +278,52 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetTimestampFormat()
         {
             return this._timestampFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeZone. 
+        /// <para>
+        /// A single time zone for every item in your dataset. This option is ideal for datasets
+        /// with all timestamps within a single time zone, or if all timestamps are normalized
+        /// to a single time zone. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a>
+        /// for a complete list of valid time zone names.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string TimeZone
+        {
+            get { return this._timeZone; }
+            set { this._timeZone = value; }
+        }
+
+        // Check to see if TimeZone property is set
+        internal bool IsSetTimeZone()
+        {
+            return this._timeZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseGeolocationForTimeZone. 
+        /// <para>
+        /// Automatically derive time zone information from the geolocation attribute. This option
+        /// is ideal for datasets that contain timestamps in multiple time zones and those timestamps
+        /// are expressed in local time.
+        /// </para>
+        /// </summary>
+        public bool UseGeolocationForTimeZone
+        {
+            get { return this._useGeolocationForTimeZone.GetValueOrDefault(); }
+            set { this._useGeolocationForTimeZone = value; }
+        }
+
+        // Check to see if UseGeolocationForTimeZone property is set
+        internal bool IsSetUseGeolocationForTimeZone()
+        {
+            return this._useGeolocationForTimeZone.HasValue; 
         }
 
     }

@@ -30,13 +30,32 @@ namespace Amazon.ForecastService.Model
 {
     /// <summary>
     /// Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a>
-    /// object.
+    /// object. Forecast supports the Weather Index and Holidays built-in featurizations.
     /// 
     ///  
     /// <para>
-    /// The only supported feature is Holidays. If you use the calendar, all data in the datasets
-    /// should belong to the same country as the calendar. For the holiday calendar data,
-    /// see the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a> website.
+    ///  <b>Weather Index</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The Amazon Forecast Weather Index is a built-in featurization that incorporates historical
+    /// and projected weather information into your model. The Weather Index supplements your
+    /// datasets with over two years of historical weather data and up to 14 days of projected
+    /// weather data. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/weather.html">Amazon
+    /// Forecast Weather Index</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Holidays</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Holidays is a built-in featurization that incorporates a feature-engineered dataset
+    /// of national holiday information into your model. It provides native support for the
+    /// holiday calendars of 66 countries. To view the holiday calendars, refer to the <a
+    /// href="http://jollyday.sourceforge.net/data.html">Jollyday</a> library. For more information,
+    /// see <a href="https://docs.aws.amazon.com/forecast/latest/dg/holidays.html">Holidays
+    /// Featurization</a>.
     /// </para>
     /// </summary>
     public partial class SupplementaryFeature
@@ -47,7 +66,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the feature. This must be "holiday".
+        /// The name of the feature. Valid values: <code>"holiday"</code> and <code>"weather"</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -66,7 +85,20 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// One of the following 2 letter country codes:
+        ///  <b>Weather Index</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To enable the Weather Index, set the value to <code>"true"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Holidays</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To enable Holidays, specify a country with one of the following two-letter country
+        /// codes:
         /// </para>
         ///  <ul> <li> 
         /// <para>

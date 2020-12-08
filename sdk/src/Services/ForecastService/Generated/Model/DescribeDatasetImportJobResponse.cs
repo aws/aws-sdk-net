@@ -40,10 +40,13 @@ namespace Amazon.ForecastService.Model
         private double? _dataSize;
         private DataSource _dataSource;
         private Dictionary<string, Statistics> _fieldStatistics = new Dictionary<string, Statistics>();
+        private string _geolocationFormat;
         private DateTime? _lastModificationTime;
         private string _message;
         private string _status;
         private string _timestampFormat;
+        private string _timeZone;
+        private bool? _useGeolocationForTimeZone;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -182,6 +185,26 @@ namespace Amazon.ForecastService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GeolocationFormat. 
+        /// <para>
+        /// The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and
+        /// <code>"CC_POSTALCODE"</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string GeolocationFormat
+        {
+            get { return this._geolocationFormat; }
+            set { this._geolocationFormat = value; }
+        }
+
+        // Check to see if GeolocationFormat property is set
+        internal bool IsSetGeolocationFormat()
+        {
+            return this._geolocationFormat != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastModificationTime. 
         /// <para>
         /// The last time that the dataset was modified. The time depends on the status of the
@@ -304,6 +327,43 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetTimestampFormat()
         {
             return this._timestampFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeZone. 
+        /// <para>
+        /// The single time zone applied to every item in the dataset
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string TimeZone
+        {
+            get { return this._timeZone; }
+            set { this._timeZone = value; }
+        }
+
+        // Check to see if TimeZone property is set
+        internal bool IsSetTimeZone()
+        {
+            return this._timeZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseGeolocationForTimeZone. 
+        /// <para>
+        /// Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+        /// </para>
+        /// </summary>
+        public bool UseGeolocationForTimeZone
+        {
+            get { return this._useGeolocationForTimeZone.GetValueOrDefault(); }
+            set { this._useGeolocationForTimeZone = value; }
+        }
+
+        // Check to see if UseGeolocationForTimeZone property is set
+        internal bool IsSetUseGeolocationForTimeZone()
+        {
+            return this._useGeolocationForTimeZone.HasValue; 
         }
 
     }
