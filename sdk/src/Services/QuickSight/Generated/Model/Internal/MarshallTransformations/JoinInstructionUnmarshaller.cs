@@ -64,6 +64,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("LeftJoinKeyProperties", targetDepth))
+                {
+                    var unmarshaller = JoinKeyPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.LeftJoinKeyProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LeftOperand", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OnClause = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RightJoinKeyProperties", targetDepth))
+                {
+                    var unmarshaller = JoinKeyPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.RightJoinKeyProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RightOperand", targetDepth))

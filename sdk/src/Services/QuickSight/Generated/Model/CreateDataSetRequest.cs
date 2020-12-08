@@ -149,7 +149,7 @@ namespace Amazon.QuickSight.Model
         /// Configures the combination and transformation of the data from the physical tables.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=32)]
+        [AWSProperty(Min=1, Max=64)]
         public Dictionary<string, LogicalTable> LogicalTableMap
         {
             get { return this._logicalTableMap; }
@@ -206,7 +206,7 @@ namespace Amazon.QuickSight.Model
         /// Declares the physical tables that are available in the underlying data sources.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=16)]
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public Dictionary<string, PhysicalTable> PhysicalTableMap
         {
             get { return this._physicalTableMap; }

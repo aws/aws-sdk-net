@@ -29,19 +29,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Join instruction.
+    /// The instructions associated with a join.
     /// </summary>
     public partial class JoinInstruction
     {
+        private JoinKeyProperties _leftJoinKeyProperties;
         private string _leftOperand;
         private string _onClause;
+        private JoinKeyProperties _rightJoinKeyProperties;
         private string _rightOperand;
         private JoinType _type;
 
         /// <summary>
+        /// Gets and sets the property LeftJoinKeyProperties. 
+        /// <para>
+        /// Join key properties of the left operand.
+        /// </para>
+        /// </summary>
+        public JoinKeyProperties LeftJoinKeyProperties
+        {
+            get { return this._leftJoinKeyProperties; }
+            set { this._leftJoinKeyProperties = value; }
+        }
+
+        // Check to see if LeftJoinKeyProperties property is set
+        internal bool IsSetLeftJoinKeyProperties()
+        {
+            return this._leftJoinKeyProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LeftOperand. 
         /// <para>
-        /// Left operand.
+        /// The operand on the left side of a join.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -60,7 +80,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property OnClause. 
         /// <para>
-        /// On Clause.
+        /// The join instructions provided in the <code>ON</code> clause of a join.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -77,9 +97,27 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RightJoinKeyProperties. 
+        /// <para>
+        /// Join key properties of the right operand.
+        /// </para>
+        /// </summary>
+        public JoinKeyProperties RightJoinKeyProperties
+        {
+            get { return this._rightJoinKeyProperties; }
+            set { this._rightJoinKeyProperties = value; }
+        }
+
+        // Check to see if RightJoinKeyProperties property is set
+        internal bool IsSetRightJoinKeyProperties()
+        {
+            return this._rightJoinKeyProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RightOperand. 
         /// <para>
-        /// Right operand.
+        /// The operand on the right side of a join.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -98,7 +136,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Type.
+        /// The type of join that it is.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

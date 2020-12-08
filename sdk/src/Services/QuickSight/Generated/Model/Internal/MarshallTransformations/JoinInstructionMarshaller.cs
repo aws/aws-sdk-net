@@ -45,6 +45,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JoinInstruction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetLeftJoinKeyProperties())
+            {
+                context.Writer.WritePropertyName("LeftJoinKeyProperties");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = JoinKeyPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.LeftJoinKeyProperties, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLeftOperand())
             {
                 context.Writer.WritePropertyName("LeftOperand");
@@ -55,6 +66,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("OnClause");
                 context.Writer.Write(requestObject.OnClause);
+            }
+
+            if(requestObject.IsSetRightJoinKeyProperties())
+            {
+                context.Writer.WritePropertyName("RightJoinKeyProperties");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = JoinKeyPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.RightJoinKeyProperties, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetRightOperand())
