@@ -96,6 +96,14 @@ namespace Amazon.SageMakerRuntime.Model
         /// </para>
         ///  
         /// <para>
+        /// The code in your model is responsible for setting or updating any custom attributes
+        /// in the response. If your code does not set this value in the response, an empty value
+        /// is returned. For example, if a custom attribute represents the trace ID, your model
+        /// can prepend the custom attribute with <code>Trace ID:</code> in your post-processing
+        /// function.
+        /// </para>
+        ///  
+        /// <para>
         /// This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker
         /// Python SDK.
         /// </para>
