@@ -67,6 +67,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetGoogleDriveConfiguration())
+            {
+                context.Writer.WritePropertyName("GoogleDriveConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GoogleDriveConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.GoogleDriveConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOneDriveConfiguration())
             {
                 context.Writer.WritePropertyName("OneDriveConfiguration");

@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Access Control List files for the documents in a data source.
+    /// Access Control List files for the documents in a data source. For the format of the
+    /// file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access
+    /// control for S3 data sources</a>.
     /// </summary>
     public partial class AccessControlListConfiguration
     {

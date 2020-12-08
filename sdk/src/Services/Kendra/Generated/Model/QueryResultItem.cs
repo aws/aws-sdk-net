@@ -46,6 +46,7 @@ namespace Amazon.Kendra.Model
         private string _documentId;
         private TextWithHighlights _documentTitle;
         private string _documentURI;
+        private string _feedbackToken;
         private string _id;
         private ScoreAttributes _scoreAttributes;
         private QueryResultType _type;
@@ -161,6 +162,27 @@ namespace Amazon.Kendra.Model
         internal bool IsSetDocumentURI()
         {
             return this._documentURI != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FeedbackToken. 
+        /// <para>
+        /// A token that identifies a particular result from a particular query. Use this token
+        /// to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
+        /// Submitting feedback </a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string FeedbackToken
+        {
+            get { return this._feedbackToken; }
+            set { this._feedbackToken = value; }
+        }
+
+        // Check to see if FeedbackToken property is set
+        internal bool IsSetFeedbackToken()
+        {
+            return this._feedbackToken != null;
         }
 
         /// <summary>

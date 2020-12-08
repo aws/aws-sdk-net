@@ -35,6 +35,7 @@ namespace Amazon.Kendra.Model
     {
         private ConfluenceConfiguration _confluenceConfiguration;
         private DatabaseConfiguration _databaseConfiguration;
+        private GoogleDriveConfiguration _googleDriveConfiguration;
         private OneDriveConfiguration _oneDriveConfiguration;
         private S3DataSourceConfiguration _s3Configuration;
         private SalesforceConfiguration _salesforceConfiguration;
@@ -78,9 +79,27 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GoogleDriveConfiguration. 
+        /// <para>
+        /// Provides configuration for data sources that connect to Google Drive. 
+        /// </para>
+        /// </summary>
+        public GoogleDriveConfiguration GoogleDriveConfiguration
+        {
+            get { return this._googleDriveConfiguration; }
+            set { this._googleDriveConfiguration = value; }
+        }
+
+        // Check to see if GoogleDriveConfiguration property is set
+        internal bool IsSetGoogleDriveConfiguration()
+        {
+            return this._googleDriveConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OneDriveConfiguration. 
         /// <para>
-        /// Provided configuration for data sources that connect to Microsoft OneDrive.
+        /// Provides configuration for data sources that connect to Microsoft OneDrive.
         /// </para>
         /// </summary>
         public OneDriveConfiguration OneDriveConfiguration

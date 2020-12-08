@@ -45,7 +45,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property AccessControlListConfiguration. 
         /// <para>
         /// Provides the path to the S3 bucket that contains the user context filtering files
-        /// for the data source.
+        /// for the data source. For the format of the file, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/s3-acl.html">Access
+        /// control for S3 data sources</a>.
         /// </para>
         /// </summary>
         public AccessControlListConfiguration AccessControlListConfiguration

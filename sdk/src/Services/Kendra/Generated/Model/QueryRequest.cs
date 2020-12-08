@@ -77,6 +77,7 @@ namespace Amazon.Kendra.Model
         private List<string> _requestedDocumentAttributes = new List<string>();
         private SortingConfiguration _sortingConfiguration;
         private UserContext _userContext;
+        private string _visitorId;
 
         /// <summary>
         /// Gets and sets the property AttributeFilter. 
@@ -282,6 +283,27 @@ namespace Amazon.Kendra.Model
         internal bool IsSetUserContext()
         {
             return this._userContext != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VisitorId. 
+        /// <para>
+        /// Provides an identifier for a specific user. The <code>VisitorId</code> should be a
+        /// unique identifier, such as a GUID. Don't use personally identifiable information,
+        /// such as the user's email address, as the <code>VisitorId</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string VisitorId
+        {
+            get { return this._visitorId; }
+            set { this._visitorId = value; }
+        }
+
+        // Check to see if VisitorId property is set
+        internal bool IsSetVisitorId()
+        {
+            return this._visitorId != null;
         }
 
     }

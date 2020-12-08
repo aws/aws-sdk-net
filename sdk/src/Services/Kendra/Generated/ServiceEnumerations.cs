@@ -703,6 +703,10 @@ namespace Amazon.Kendra
         /// </summary>
         public static readonly DataSourceType DATABASE = new DataSourceType("DATABASE");
         /// <summary>
+        /// Constant GOOGLEDRIVE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType GOOGLEDRIVE = new DataSourceType("GOOGLEDRIVE");
+        /// <summary>
         /// Constant ONEDRIVE for DataSourceType
         /// </summary>
         public static readonly DataSourceType ONEDRIVE = new DataSourceType("ONEDRIVE");

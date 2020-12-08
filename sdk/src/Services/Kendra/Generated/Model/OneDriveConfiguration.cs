@@ -176,7 +176,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property TenantDomain. 
         /// <para>
-        /// Tha Azure Active Directory domain of the organization. 
+        /// The Azure Active Directory domain of the organization. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

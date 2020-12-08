@@ -381,6 +381,12 @@
     <pattern>^\P{C}*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.QueryRequest.VisitorId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.QueryResponse.QueryId</property>
     <min>1</min>
     <max>36</max>
@@ -779,6 +785,12 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.GoogleDriveConfiguration.SecretArn</property>
+    <min>1</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.IndexConfigurationSummary.Id</property>
     <min>36</min>
     <max>36</max>
@@ -864,6 +876,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^(https?|ftp|file):\/\/([^\s]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.QueryResultItem.FeedbackToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\P{C}*.\P{C}*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.QueryResultItem.Id</property>
