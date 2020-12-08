@@ -94,6 +94,15 @@
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.DeleteRegistryPolicyResponse.PolicyText</property>
+    <min>0</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.DeleteRegistryPolicyResponse.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.DeleteRepositoryRequest.RegistryId</property>
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
@@ -167,6 +176,10 @@
     <min>2</min>
     <max>256</max>
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.DescribeRegistryResponse.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.DescribeRepositoriesRequest.MaxResults</property>
@@ -249,6 +262,15 @@
     <min>2</min>
     <max>256</max>
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.GetRegistryPolicyResponse.PolicyText</property>
+    <min>0</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.GetRegistryPolicyResponse.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.GetRepositoryPolicyRequest.RegistryId</property>
@@ -397,6 +419,20 @@
     <min>2</min>
     <max>256</max>
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.PutRegistryPolicyRequest.PolicyText</property>
+    <min>0</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.PutRegistryPolicyResponse.PolicyText</property>
+    <min>0</min>
+    <max>10240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.PutRegistryPolicyResponse.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.SetRepositoryPolicyRequest.PolicyText</property>
@@ -606,6 +642,16 @@
   <property-value-rule>
     <property>Amazon.ECR.Model.LifecyclePolicyPreviewSummary.ExpiringImageTotalCount</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.ReplicationDestination.Region</property>
+    <min>2</min>
+    <max>25</max>
+    <pattern>[0-9a-z-]{2,25}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.ReplicationDestination.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.Repository.RegistryId</property>

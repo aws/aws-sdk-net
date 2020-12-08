@@ -437,6 +437,55 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  DeleteRegistryPolicy
+
+
+        /// <summary>
+        /// Deletes the registry permissions policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistryPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRegistryPolicy service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RegistryPolicyNotFoundException">
+        /// The registry doesn't have an associated registry policy.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRegistryPolicy">REST API Reference for DeleteRegistryPolicy Operation</seealso>
+        DeleteRegistryPolicyResponse DeleteRegistryPolicy(DeleteRegistryPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRegistryPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistryPolicy operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRegistryPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRegistryPolicy">REST API Reference for DeleteRegistryPolicy Operation</seealso>
+        IAsyncResult BeginDeleteRegistryPolicy(DeleteRegistryPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRegistryPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRegistryPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteRegistryPolicyResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRegistryPolicy">REST API Reference for DeleteRegistryPolicy Operation</seealso>
+        DeleteRegistryPolicyResponse EndDeleteRegistryPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteRepository
 
 
@@ -665,6 +714,56 @@ namespace Amazon.ECR
         /// <returns>Returns a  DescribeImageScanFindingsResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">REST API Reference for DescribeImageScanFindings Operation</seealso>
         DescribeImageScanFindingsResponse EndDescribeImageScanFindings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeRegistry
+
+
+        /// <summary>
+        /// Describes the settings for a registry. The replication configuration for a repository
+        /// can be created or updated with the <a>PutReplicationConfiguration</a> API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRegistry service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRegistry service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRegistry">REST API Reference for DescribeRegistry Operation</seealso>
+        DescribeRegistryResponse DescribeRegistry(DescribeRegistryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRegistry operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRegistry operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRegistry
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRegistry">REST API Reference for DescribeRegistry Operation</seealso>
+        IAsyncResult BeginDescribeRegistry(DescribeRegistryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRegistry operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRegistry.</param>
+        /// 
+        /// <returns>Returns a  DescribeRegistryResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRegistry">REST API Reference for DescribeRegistry Operation</seealso>
+        DescribeRegistryResponse EndDescribeRegistry(IAsyncResult asyncResult);
 
         #endregion
         
@@ -950,6 +1049,55 @@ namespace Amazon.ECR
         /// <returns>Returns a  GetLifecyclePolicyPreviewResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">REST API Reference for GetLifecyclePolicyPreview Operation</seealso>
         GetLifecyclePolicyPreviewResponse EndGetLifecyclePolicyPreview(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetRegistryPolicy
+
+
+        /// <summary>
+        /// Retrieves the permissions policy for a registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistryPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetRegistryPolicy service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RegistryPolicyNotFoundException">
+        /// The registry doesn't have an associated registry policy.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryPolicy">REST API Reference for GetRegistryPolicy Operation</seealso>
+        GetRegistryPolicyResponse GetRegistryPolicy(GetRegistryPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRegistryPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistryPolicy operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRegistryPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryPolicy">REST API Reference for GetRegistryPolicy Operation</seealso>
+        IAsyncResult BeginGetRegistryPolicy(GetRegistryPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRegistryPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRegistryPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetRegistryPolicyResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryPolicy">REST API Reference for GetRegistryPolicy Operation</seealso>
+        GetRegistryPolicyResponse EndGetRegistryPolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1426,6 +1574,122 @@ namespace Amazon.ECR
         /// <returns>Returns a  PutLifecyclePolicyResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
         PutLifecyclePolicyResponse EndPutLifecyclePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutRegistryPolicy
+
+
+        /// <summary>
+        /// Creates or updates the permissions policy for your registry.
+        /// 
+        ///  
+        /// <para>
+        /// A registry policy is used to specify permissions for another AWS account and is used
+        /// when configuring cross-account replication. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry
+        /// permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRegistryPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutRegistryPolicy service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryPolicy">REST API Reference for PutRegistryPolicy Operation</seealso>
+        PutRegistryPolicyResponse PutRegistryPolicy(PutRegistryPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutRegistryPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutRegistryPolicy operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRegistryPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryPolicy">REST API Reference for PutRegistryPolicy Operation</seealso>
+        IAsyncResult BeginPutRegistryPolicy(PutRegistryPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutRegistryPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRegistryPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutRegistryPolicyResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryPolicy">REST API Reference for PutRegistryPolicy Operation</seealso>
+        PutRegistryPolicyResponse EndPutRegistryPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutReplicationConfiguration
+
+
+        /// <summary>
+        /// Creates or updates the replication configuration for a registry. The existing replication
+        /// configuration for a repository can be retrieved with the <a>DescribeRegistry</a> API
+        /// action. The first time the PutReplicationConfiguration API is called, a service-linked
+        /// IAM role is created in your account for the replication process. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using
+        /// Service-Linked Roles for Amazon ECR</a> in the <i>Amazon Elastic Container Registry
+        /// User Guide</i>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When configuring cross-account replication, the destination account must grant the
+        /// source account permission to replicate. This permission is controlled using a registry
+        /// permissions policy. For more information, see <a>PutRegistryPolicy</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutReplicationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutReplicationConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutReplicationConfiguration">REST API Reference for PutReplicationConfiguration Operation</seealso>
+        PutReplicationConfigurationResponse PutReplicationConfiguration(PutReplicationConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutReplicationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutReplicationConfiguration operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutReplicationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutReplicationConfiguration">REST API Reference for PutReplicationConfiguration Operation</seealso>
+        IAsyncResult BeginPutReplicationConfiguration(PutReplicationConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutReplicationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutReplicationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutReplicationConfigurationResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutReplicationConfiguration">REST API Reference for PutReplicationConfiguration Operation</seealso>
+        PutReplicationConfigurationResponse EndPutReplicationConfiguration(IAsyncResult asyncResult);
 
         #endregion
         

@@ -1140,6 +1140,130 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ECR")]
+        public void DeleteRegistryPolicyMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DeleteRegistryPolicyRequest>();
+            var marshaller = new DeleteRegistryPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DeleteRegistryPolicyRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteRegistryPolicy").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DeleteRegistryPolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteRegistryPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void DeleteRegistryPolicy_InvalidParameterExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteRegistryPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRegistryPolicyRequest>();
+            var marshaller = new DeleteRegistryPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteRegistryPolicyRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidParameterException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidParameterException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteRegistryPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void DeleteRegistryPolicy_RegistryPolicyNotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteRegistryPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRegistryPolicyRequest>();
+            var marshaller = new DeleteRegistryPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteRegistryPolicyRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RegistryPolicyNotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RegistryPolicyNotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteRegistryPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void DeleteRegistryPolicy_ServerExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteRegistryPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteRegistryPolicyRequest>();
+            var marshaller = new DeleteRegistryPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteRegistryPolicyRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServerException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServerException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteRegistryPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
         public void DeleteRepositoryMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DeleteRepositoryRequest>();
@@ -1820,6 +1944,130 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             };
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = DescribeImageScanFindingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void DescribeRegistryMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeRegistryRequest>();
+            var marshaller = new DescribeRegistryRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<DescribeRegistryRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeRegistry").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeRegistryResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeRegistryResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void DescribeRegistry_InvalidParameterExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DescribeRegistry");
+
+            var request = InstantiateClassGenerator.Execute<DescribeRegistryRequest>();
+            var marshaller = new DescribeRegistryRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DescribeRegistryRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidParameterException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidParameterException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DescribeRegistryResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void DescribeRegistry_ServerExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DescribeRegistry");
+
+            var request = InstantiateClassGenerator.Execute<DescribeRegistryRequest>();
+            var marshaller = new DescribeRegistryRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DescribeRegistryRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServerException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServerException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DescribeRegistryResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void DescribeRegistry_ValidationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DescribeRegistry");
+
+            var request = InstantiateClassGenerator.Execute<DescribeRegistryRequest>();
+            var marshaller = new DescribeRegistryRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DescribeRegistryRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DescribeRegistryResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2536,6 +2784,130 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             };
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = GetLifecyclePolicyPreviewResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void GetRegistryPolicyMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetRegistryPolicyRequest>();
+            var marshaller = new GetRegistryPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetRegistryPolicyRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetRegistryPolicy").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetRegistryPolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetRegistryPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void GetRegistryPolicy_InvalidParameterExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetRegistryPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetRegistryPolicyRequest>();
+            var marshaller = new GetRegistryPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetRegistryPolicyRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidParameterException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidParameterException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetRegistryPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void GetRegistryPolicy_RegistryPolicyNotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetRegistryPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetRegistryPolicyRequest>();
+            var marshaller = new GetRegistryPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetRegistryPolicyRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RegistryPolicyNotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RegistryPolicyNotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetRegistryPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void GetRegistryPolicy_ServerExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetRegistryPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetRegistryPolicyRequest>();
+            var marshaller = new GetRegistryPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetRegistryPolicyRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServerException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServerException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetRegistryPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3816,6 +4188,222 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             };
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = PutLifecyclePolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void PutRegistryPolicyMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<PutRegistryPolicyRequest>();
+            var marshaller = new PutRegistryPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<PutRegistryPolicyRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutRegistryPolicy").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = PutRegistryPolicyResponseUnmarshaller.Instance.Unmarshall(context)
+                as PutRegistryPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void PutRegistryPolicy_InvalidParameterExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("PutRegistryPolicy");
+
+            var request = InstantiateClassGenerator.Execute<PutRegistryPolicyRequest>();
+            var marshaller = new PutRegistryPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<PutRegistryPolicyRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidParameterException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidParameterException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = PutRegistryPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void PutRegistryPolicy_ServerExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("PutRegistryPolicy");
+
+            var request = InstantiateClassGenerator.Execute<PutRegistryPolicyRequest>();
+            var marshaller = new PutRegistryPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<PutRegistryPolicyRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServerException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServerException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = PutRegistryPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void PutReplicationConfigurationMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<PutReplicationConfigurationRequest>();
+            var marshaller = new PutReplicationConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<PutReplicationConfigurationRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("PutReplicationConfiguration").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = PutReplicationConfigurationResponseUnmarshaller.Instance.Unmarshall(context)
+                as PutReplicationConfigurationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void PutReplicationConfiguration_InvalidParameterExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("PutReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<PutReplicationConfigurationRequest>();
+            var marshaller = new PutReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<PutReplicationConfigurationRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidParameterException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidParameterException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = PutReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void PutReplicationConfiguration_ServerExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("PutReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<PutReplicationConfigurationRequest>();
+            var marshaller = new PutReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<PutReplicationConfigurationRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServerException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServerException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = PutReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ECR")]
+        public void PutReplicationConfiguration_ValidationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("PutReplicationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<PutReplicationConfigurationRequest>();
+            var marshaller = new PutReplicationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<PutReplicationConfigurationRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = PutReplicationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

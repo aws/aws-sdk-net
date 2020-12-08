@@ -508,6 +508,52 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  DeleteRegistryPolicy
+
+
+        /// <summary>
+        /// Deletes the registry permissions policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistryPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRegistryPolicy service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RegistryPolicyNotFoundException">
+        /// The registry doesn't have an associated registry policy.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRegistryPolicy">REST API Reference for DeleteRegistryPolicy Operation</seealso>
+        DeleteRegistryPolicyResponse DeleteRegistryPolicy(DeleteRegistryPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the registry permissions policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRegistryPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRegistryPolicy service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RegistryPolicyNotFoundException">
+        /// The registry doesn't have an associated registry policy.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRegistryPolicy">REST API Reference for DeleteRegistryPolicy Operation</seealso>
+        Task<DeleteRegistryPolicyResponse> DeleteRegistryPolicyAsync(DeleteRegistryPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteRepository
 
 
@@ -759,6 +805,54 @@ namespace Amazon.ECR
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">REST API Reference for DescribeImageScanFindings Operation</seealso>
         Task<DescribeImageScanFindingsResponse> DescribeImageScanFindingsAsync(DescribeImageScanFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeRegistry
+
+
+        /// <summary>
+        /// Describes the settings for a registry. The replication configuration for a repository
+        /// can be created or updated with the <a>PutReplicationConfiguration</a> API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRegistry service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRegistry service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRegistry">REST API Reference for DescribeRegistry Operation</seealso>
+        DescribeRegistryResponse DescribeRegistry(DescribeRegistryRequest request);
+
+
+
+        /// <summary>
+        /// Describes the settings for a registry. The replication configuration for a repository
+        /// can be created or updated with the <a>PutReplicationConfiguration</a> API action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRegistry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRegistry service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRegistry">REST API Reference for DescribeRegistry Operation</seealso>
+        Task<DescribeRegistryResponse> DescribeRegistryAsync(DescribeRegistryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1069,6 +1163,52 @@ namespace Amazon.ECR
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">REST API Reference for GetLifecyclePolicyPreview Operation</seealso>
         Task<GetLifecyclePolicyPreviewResponse> GetLifecyclePolicyPreviewAsync(GetLifecyclePolicyPreviewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetRegistryPolicy
+
+
+        /// <summary>
+        /// Retrieves the permissions policy for a registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistryPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetRegistryPolicy service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RegistryPolicyNotFoundException">
+        /// The registry doesn't have an associated registry policy.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryPolicy">REST API Reference for GetRegistryPolicy Operation</seealso>
+        GetRegistryPolicyResponse GetRegistryPolicy(GetRegistryPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the permissions policy for a registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegistryPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRegistryPolicy service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RegistryPolicyNotFoundException">
+        /// The registry doesn't have an associated registry policy.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRegistryPolicy">REST API Reference for GetRegistryPolicy Operation</seealso>
+        Task<GetRegistryPolicyResponse> GetRegistryPolicyAsync(GetRegistryPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1605,6 +1745,134 @@ namespace Amazon.ECR
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
         Task<PutLifecyclePolicyResponse> PutLifecyclePolicyAsync(PutLifecyclePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutRegistryPolicy
+
+
+        /// <summary>
+        /// Creates or updates the permissions policy for your registry.
+        /// 
+        ///  
+        /// <para>
+        /// A registry policy is used to specify permissions for another AWS account and is used
+        /// when configuring cross-account replication. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry
+        /// permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRegistryPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutRegistryPolicy service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryPolicy">REST API Reference for PutRegistryPolicy Operation</seealso>
+        PutRegistryPolicyResponse PutRegistryPolicy(PutRegistryPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Creates or updates the permissions policy for your registry.
+        /// 
+        ///  
+        /// <para>
+        /// A registry policy is used to specify permissions for another AWS account and is used
+        /// when configuring cross-account replication. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/registry-permissions.html">Registry
+        /// permissions</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutRegistryPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutRegistryPolicy service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutRegistryPolicy">REST API Reference for PutRegistryPolicy Operation</seealso>
+        Task<PutRegistryPolicyResponse> PutRegistryPolicyAsync(PutRegistryPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutReplicationConfiguration
+
+
+        /// <summary>
+        /// Creates or updates the replication configuration for a registry. The existing replication
+        /// configuration for a repository can be retrieved with the <a>DescribeRegistry</a> API
+        /// action. The first time the PutReplicationConfiguration API is called, a service-linked
+        /// IAM role is created in your account for the replication process. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using
+        /// Service-Linked Roles for Amazon ECR</a> in the <i>Amazon Elastic Container Registry
+        /// User Guide</i>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When configuring cross-account replication, the destination account must grant the
+        /// source account permission to replicate. This permission is controlled using a registry
+        /// permissions policy. For more information, see <a>PutRegistryPolicy</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutReplicationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutReplicationConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutReplicationConfiguration">REST API Reference for PutReplicationConfiguration Operation</seealso>
+        PutReplicationConfigurationResponse PutReplicationConfiguration(PutReplicationConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Creates or updates the replication configuration for a registry. The existing replication
+        /// configuration for a repository can be retrieved with the <a>DescribeRegistry</a> API
+        /// action. The first time the PutReplicationConfiguration API is called, a service-linked
+        /// IAM role is created in your account for the replication process. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using
+        /// Service-Linked Roles for Amazon ECR</a> in the <i>Amazon Elastic Container Registry
+        /// User Guide</i>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When configuring cross-account replication, the destination account must grant the
+        /// source account permission to replicate. This permission is controlled using a registry
+        /// permissions policy. For more information, see <a>PutRegistryPolicy</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutReplicationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutReplicationConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutReplicationConfiguration">REST API Reference for PutReplicationConfiguration Operation</seealso>
+        Task<PutReplicationConfigurationResponse> PutReplicationConfigurationAsync(PutReplicationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
