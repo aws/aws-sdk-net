@@ -34,7 +34,8 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  <note> 
     /// <para>
-    /// New monitoring schedules are immediately started after creation.
+    /// By default, when you successfully create a new schedule, the status of a monitoring
+    /// schedule is <code>scheduled</code>.
     /// </para>
     ///  </note>
     /// </summary>

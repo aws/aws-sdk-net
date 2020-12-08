@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private MonitoringScheduleConfig _monitoringScheduleConfig;
         private string _monitoringScheduleName;
         private ScheduleStatus _monitoringScheduleStatus;
+        private MonitoringType _monitoringType;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -213,6 +214,43 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMonitoringScheduleStatus()
         {
             return this._monitoringScheduleStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringType. 
+        /// <para>
+        /// The type of the monitoring job that this schedule runs. This is one of the following
+        /// values.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring
+        /// job.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public MonitoringType MonitoringType
+        {
+            get { return this._monitoringType; }
+            set { this._monitoringType = value; }
+        }
+
+        // Check to see if MonitoringType property is set
+        internal bool IsSetMonitoringType()
+        {
+            return this._monitoringType != null;
         }
 
     }

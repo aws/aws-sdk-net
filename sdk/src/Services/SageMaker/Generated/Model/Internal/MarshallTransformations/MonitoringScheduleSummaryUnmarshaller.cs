@@ -82,6 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MonitoringJobDefinitionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MonitoringJobDefinitionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MonitoringScheduleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MonitoringScheduleStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MonitoringType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MonitoringType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

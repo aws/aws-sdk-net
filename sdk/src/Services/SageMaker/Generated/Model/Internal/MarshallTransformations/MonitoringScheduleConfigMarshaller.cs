@@ -56,6 +56,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMonitoringJobDefinitionName())
+            {
+                context.Writer.WritePropertyName("MonitoringJobDefinitionName");
+                context.Writer.Write(requestObject.MonitoringJobDefinitionName);
+            }
+
+            if(requestObject.IsSetMonitoringType())
+            {
+                context.Writer.WritePropertyName("MonitoringType");
+                context.Writer.Write(requestObject.MonitoringType);
+            }
+
             if(requestObject.IsSetScheduleConfig())
             {
                 context.Writer.WritePropertyName("ScheduleConfig");

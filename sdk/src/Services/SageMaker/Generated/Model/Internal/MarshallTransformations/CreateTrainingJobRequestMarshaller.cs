@@ -187,6 +187,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetProfilerConfig())
+                {
+                    context.Writer.WritePropertyName("ProfilerConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProfilerConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProfilerConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetProfilerRuleConfigurations())
+                {
+                    context.Writer.WritePropertyName("ProfilerRuleConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestProfilerRuleConfigurationsListValue in publicRequest.ProfilerRuleConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProfilerRuleConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestProfilerRuleConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetResourceConfig())
                 {
                     context.Writer.WritePropertyName("ResourceConfig");

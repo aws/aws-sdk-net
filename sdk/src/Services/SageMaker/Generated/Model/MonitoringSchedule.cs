@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         private MonitoringScheduleConfig _monitoringScheduleConfig;
         private string _monitoringScheduleName;
         private ScheduleStatus _monitoringScheduleStatus;
+        private MonitoringType _monitoringType;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -221,6 +222,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMonitoringScheduleStatus()
         {
             return this._monitoringScheduleStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringType. 
+        /// <para>
+        /// The type of the monitoring job definition to schedule.
+        /// </para>
+        /// </summary>
+        public MonitoringType MonitoringType
+        {
+            get { return this._monitoringType; }
+            set { this._monitoringType = value; }
+        }
+
+        // Check to see if MonitoringType property is set
+        internal bool IsSetMonitoringType()
+        {
+            return this._monitoringType != null;
         }
 
         /// <summary>

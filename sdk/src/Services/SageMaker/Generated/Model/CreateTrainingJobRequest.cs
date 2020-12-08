@@ -111,6 +111,8 @@ namespace Amazon.SageMaker.Model
         private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
         private List<Channel> _inputDataConfig = new List<Channel>();
         private OutputDataConfig _outputDataConfig;
+        private ProfilerConfig _profilerConfig;
+        private List<ProfilerRuleConfiguration> _profilerRuleConfigurations = new List<ProfilerRuleConfiguration>();
         private ResourceConfig _resourceConfig;
         private string _roleArn;
         private StoppingCondition _stoppingCondition;
@@ -179,7 +181,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DebugRuleConfigurations. 
         /// <para>
-        /// Configuration information for debugging rules.
+        /// Configuration information for Debugger rules for debugging output tensors.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -364,6 +366,40 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetOutputDataConfig()
         {
             return this._outputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfilerConfig.
+        /// </summary>
+        public ProfilerConfig ProfilerConfig
+        {
+            get { return this._profilerConfig; }
+            set { this._profilerConfig = value; }
+        }
+
+        // Check to see if ProfilerConfig property is set
+        internal bool IsSetProfilerConfig()
+        {
+            return this._profilerConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfilerRuleConfigurations. 
+        /// <para>
+        /// Configuration information for Debugger rules for profiling system and framework metrics.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<ProfilerRuleConfiguration> ProfilerRuleConfigurations
+        {
+            get { return this._profilerRuleConfigurations; }
+            set { this._profilerRuleConfigurations = value; }
+        }
+
+        // Check to see if ProfilerRuleConfigurations property is set
+        internal bool IsSetProfilerRuleConfigurations()
+        {
+            return this._profilerRuleConfigurations != null && this._profilerRuleConfigurations.Count > 0; 
         }
 
         /// <summary>

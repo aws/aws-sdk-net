@@ -125,11 +125,43 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListDataQualityJobDefinitions operation
+        ///</summary>
+        public IListDataQualityJobDefinitionsPaginator ListDataQualityJobDefinitions(ListDataQualityJobDefinitionsRequest request) 
+        {
+            return new ListDataQualityJobDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDeviceFleets operation
+        ///</summary>
+        public IListDeviceFleetsPaginator ListDeviceFleets(ListDeviceFleetsRequest request) 
+        {
+            return new ListDeviceFleetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDevices operation
+        ///</summary>
+        public IListDevicesPaginator ListDevices(ListDevicesRequest request) 
+        {
+            return new ListDevicesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDomains operation
         ///</summary>
         public IListDomainsPaginator ListDomains(ListDomainsRequest request) 
         {
             return new ListDomainsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEdgePackagingJobs operation
+        ///</summary>
+        public IListEdgePackagingJobsPaginator ListEdgePackagingJobs(ListEdgePackagingJobsRequest request) 
+        {
+            return new ListEdgePackagingJobsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -221,6 +253,22 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListModelBiasJobDefinitions operation
+        ///</summary>
+        public IListModelBiasJobDefinitionsPaginator ListModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest request) 
+        {
+            return new ListModelBiasJobDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListModelExplainabilityJobDefinitions operation
+        ///</summary>
+        public IListModelExplainabilityJobDefinitionsPaginator ListModelExplainabilityJobDefinitions(ListModelExplainabilityJobDefinitionsRequest request) 
+        {
+            return new ListModelExplainabilityJobDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListModelPackageGroups operation
         ///</summary>
         public IListModelPackageGroupsPaginator ListModelPackageGroups(ListModelPackageGroupsRequest request) 
@@ -234,6 +282,14 @@ namespace Amazon.SageMaker.Model
         public IListModelPackagesPaginator ListModelPackages(ListModelPackagesRequest request) 
         {
             return new ListModelPackagesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListModelQualityJobDefinitions operation
+        ///</summary>
+        public IListModelQualityJobDefinitionsPaginator ListModelQualityJobDefinitions(ListModelQualityJobDefinitionsRequest request) 
+        {
+            return new ListModelQualityJobDefinitionsPaginator(this.client, request);
         }
 
         /// <summary>

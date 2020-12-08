@@ -51,10 +51,40 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EndpointName);
             }
 
+            if(requestObject.IsSetEndTimeOffset())
+            {
+                context.Writer.WritePropertyName("EndTimeOffset");
+                context.Writer.Write(requestObject.EndTimeOffset);
+            }
+
+            if(requestObject.IsSetFeaturesAttribute())
+            {
+                context.Writer.WritePropertyName("FeaturesAttribute");
+                context.Writer.Write(requestObject.FeaturesAttribute);
+            }
+
+            if(requestObject.IsSetInferenceAttribute())
+            {
+                context.Writer.WritePropertyName("InferenceAttribute");
+                context.Writer.Write(requestObject.InferenceAttribute);
+            }
+
             if(requestObject.IsSetLocalPath())
             {
                 context.Writer.WritePropertyName("LocalPath");
                 context.Writer.Write(requestObject.LocalPath);
+            }
+
+            if(requestObject.IsSetProbabilityAttribute())
+            {
+                context.Writer.WritePropertyName("ProbabilityAttribute");
+                context.Writer.Write(requestObject.ProbabilityAttribute);
+            }
+
+            if(requestObject.IsSetProbabilityThresholdAttribute())
+            {
+                context.Writer.WritePropertyName("ProbabilityThresholdAttribute");
+                context.Writer.Write(requestObject.ProbabilityThresholdAttribute);
             }
 
             if(requestObject.IsSetS3DataDistributionType())
@@ -67,6 +97,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("S3InputMode");
                 context.Writer.Write(requestObject.S3InputMode);
+            }
+
+            if(requestObject.IsSetStartTimeOffset())
+            {
+                context.Writer.WritePropertyName("StartTimeOffset");
+                context.Writer.Write(requestObject.StartTimeOffset);
             }
 
         }

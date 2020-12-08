@@ -105,6 +105,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.MonitoringScheduleStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MonitoringType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MonitoringType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

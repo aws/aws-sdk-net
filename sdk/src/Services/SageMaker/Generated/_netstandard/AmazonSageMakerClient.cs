@@ -841,6 +841,90 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateDataQualityJobDefinition
+
+        internal virtual CreateDataQualityJobDefinitionResponse CreateDataQualityJobDefinition(CreateDataQualityJobDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataQualityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataQualityJobDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataQualityJobDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a definition for a job that monitors data quality and drift. For information
+        /// about model monitor, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon
+        /// SageMaker Model Monitor</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataQualityJobDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataQualityJobDefinition service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDataQualityJobDefinition">REST API Reference for CreateDataQualityJobDefinition Operation</seealso>
+        public virtual Task<CreateDataQualityJobDefinitionResponse> CreateDataQualityJobDefinitionAsync(CreateDataQualityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataQualityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataQualityJobDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDataQualityJobDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDeviceFleet
+
+        internal virtual CreateDeviceFleetResponse CreateDeviceFleet(CreateDeviceFleetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDeviceFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDeviceFleetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDeviceFleetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a device fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDeviceFleet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDeviceFleet service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDeviceFleet">REST API Reference for CreateDeviceFleet Operation</seealso>
+        public virtual Task<CreateDeviceFleetResponse> CreateDeviceFleetAsync(CreateDeviceFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDeviceFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDeviceFleetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDeviceFleetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDomain
 
         internal virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
@@ -934,6 +1018,47 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateEdgePackagingJob
+
+        internal virtual CreateEdgePackagingJobResponse CreateEdgePackagingJob(CreateEdgePackagingJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEdgePackagingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEdgePackagingJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEdgePackagingJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a SageMaker Edge Manager model packaging job. Edge Manager will use the model
+        /// artifacts from the Amazon Simple Storage Service bucket that you specify. After the
+        /// model has been packaged, Amazon SageMaker saves the resulting artifacts to an S3 bucket
+        /// that you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEdgePackagingJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEdgePackagingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEdgePackagingJob">REST API Reference for CreateEdgePackagingJob Operation</seealso>
+        public virtual Task<CreateEdgePackagingJobResponse> CreateEdgePackagingJobAsync(CreateEdgePackagingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEdgePackagingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEdgePackagingJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateEdgePackagingJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1678,6 +1803,88 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateModelBiasJobDefinition
+
+        internal virtual CreateModelBiasJobDefinitionResponse CreateModelBiasJobDefinition(CreateModelBiasJobDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelBiasJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelBiasJobDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateModelBiasJobDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates the definition for a model bias job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelBiasJobDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateModelBiasJobDefinition service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelBiasJobDefinition">REST API Reference for CreateModelBiasJobDefinition Operation</seealso>
+        public virtual Task<CreateModelBiasJobDefinitionResponse> CreateModelBiasJobDefinitionAsync(CreateModelBiasJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelBiasJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelBiasJobDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateModelBiasJobDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateModelExplainabilityJobDefinition
+
+        internal virtual CreateModelExplainabilityJobDefinitionResponse CreateModelExplainabilityJobDefinition(CreateModelExplainabilityJobDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelExplainabilityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelExplainabilityJobDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateModelExplainabilityJobDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates the definition for a model explainability job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelExplainabilityJobDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateModelExplainabilityJobDefinition service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelExplainabilityJobDefinition">REST API Reference for CreateModelExplainabilityJobDefinition Operation</seealso>
+        public virtual Task<CreateModelExplainabilityJobDefinitionResponse> CreateModelExplainabilityJobDefinitionAsync(CreateModelExplainabilityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelExplainabilityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelExplainabilityJobDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateModelExplainabilityJobDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateModelPackage
 
         internal virtual CreateModelPackageResponse CreateModelPackage(CreateModelPackageRequest request)
@@ -1776,6 +1983,49 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = CreateModelPackageGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateModelPackageGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateModelQualityJobDefinition
+
+        internal virtual CreateModelQualityJobDefinitionResponse CreateModelQualityJobDefinition(CreateModelQualityJobDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelQualityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelQualityJobDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateModelQualityJobDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a definition for a job that monitors model quality and drift. For information
+        /// about model monitor, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon
+        /// SageMaker Model Monitor</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelQualityJobDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateModelQualityJobDefinition service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelQualityJobDefinition">REST API Reference for CreateModelQualityJobDefinition Operation</seealso>
+        public virtual Task<CreateModelQualityJobDefinitionResponse> CreateModelQualityJobDefinitionAsync(CreateModelQualityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateModelQualityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateModelQualityJobDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateModelQualityJobDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2986,6 +3236,80 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteDataQualityJobDefinition
+
+        internal virtual DeleteDataQualityJobDefinitionResponse DeleteDataQualityJobDefinition(DeleteDataQualityJobDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataQualityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataQualityJobDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataQualityJobDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a data quality monitoring job definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataQualityJobDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataQualityJobDefinition service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDataQualityJobDefinition">REST API Reference for DeleteDataQualityJobDefinition Operation</seealso>
+        public virtual Task<DeleteDataQualityJobDefinitionResponse> DeleteDataQualityJobDefinitionAsync(DeleteDataQualityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataQualityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataQualityJobDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDataQualityJobDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDeviceFleet
+
+        internal virtual DeleteDeviceFleetResponse DeleteDeviceFleet(DeleteDeviceFleetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeviceFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeviceFleetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDeviceFleetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDeviceFleet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDeviceFleet service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDeviceFleet">REST API Reference for DeleteDeviceFleet Operation</seealso>
+        public virtual Task<DeleteDeviceFleetResponse> DeleteDeviceFleetAsync(DeleteDeviceFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDeviceFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDeviceFleetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDeviceFleetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDomain
 
         internal virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
@@ -3403,6 +3727,80 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteModelBiasJobDefinition
+
+        internal virtual DeleteModelBiasJobDefinitionResponse DeleteModelBiasJobDefinition(DeleteModelBiasJobDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelBiasJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelBiasJobDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteModelBiasJobDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Amazon SageMaker model bias job definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelBiasJobDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteModelBiasJobDefinition service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelBiasJobDefinition">REST API Reference for DeleteModelBiasJobDefinition Operation</seealso>
+        public virtual Task<DeleteModelBiasJobDefinitionResponse> DeleteModelBiasJobDefinitionAsync(DeleteModelBiasJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelBiasJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelBiasJobDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteModelBiasJobDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteModelExplainabilityJobDefinition
+
+        internal virtual DeleteModelExplainabilityJobDefinitionResponse DeleteModelExplainabilityJobDefinition(DeleteModelExplainabilityJobDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelExplainabilityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelExplainabilityJobDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteModelExplainabilityJobDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Amazon SageMaker model explainability job definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelExplainabilityJobDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteModelExplainabilityJobDefinition service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelExplainabilityJobDefinition">REST API Reference for DeleteModelExplainabilityJobDefinition Operation</seealso>
+        public virtual Task<DeleteModelExplainabilityJobDefinitionResponse> DeleteModelExplainabilityJobDefinitionAsync(DeleteModelExplainabilityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelExplainabilityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelExplainabilityJobDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteModelExplainabilityJobDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteModelPackage
 
         internal virtual DeleteModelPackageResponse DeleteModelPackage(DeleteModelPackageRequest request)
@@ -3511,6 +3909,43 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DeleteModelPackageGroupPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteModelPackageGroupPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteModelQualityJobDefinition
+
+        internal virtual DeleteModelQualityJobDefinitionResponse DeleteModelQualityJobDefinition(DeleteModelQualityJobDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelQualityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelQualityJobDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteModelQualityJobDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the secified model quality monitoring job definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelQualityJobDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteModelQualityJobDefinition service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelQualityJobDefinition">REST API Reference for DeleteModelQualityJobDefinition Operation</seealso>
+        public virtual Task<DeleteModelQualityJobDefinitionResponse> DeleteModelQualityJobDefinitionAsync(DeleteModelQualityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteModelQualityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteModelQualityJobDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteModelQualityJobDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3644,7 +4079,7 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Deletes a pipeline.
+        /// Deletes a pipeline if there are no in-progress executions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePipeline service method.</param>
         /// <param name="cancellationToken">
@@ -3947,6 +4382,41 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DeleteWorkteamResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteWorkteamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterDevices
+
+        internal virtual DeregisterDevicesResponse DeregisterDevices(DeregisterDevicesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterDevicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterDevicesResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterDevicesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deregisters the specified devices. After you deregister a device, you will need to
+        /// re-register the devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterDevices service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterDevices service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeregisterDevices">REST API Reference for DeregisterDevices Operation</seealso>
+        public virtual Task<DeregisterDevicesResponse> DeregisterDevicesAsync(DeregisterDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterDevicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterDevicesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterDevicesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4284,6 +4754,117 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeDataQualityJobDefinition
+
+        internal virtual DescribeDataQualityJobDefinitionResponse DescribeDataQualityJobDefinition(DescribeDataQualityJobDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDataQualityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataQualityJobDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDataQualityJobDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the details of a data quality monitoring job definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataQualityJobDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDataQualityJobDefinition service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDataQualityJobDefinition">REST API Reference for DescribeDataQualityJobDefinition Operation</seealso>
+        public virtual Task<DescribeDataQualityJobDefinitionResponse> DescribeDataQualityJobDefinitionAsync(DescribeDataQualityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDataQualityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataQualityJobDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDataQualityJobDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDevice
+
+        internal virtual DescribeDeviceResponse DescribeDevice(DescribeDeviceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDeviceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDevice service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDevice service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDevice">REST API Reference for DescribeDevice Operation</seealso>
+        public virtual Task<DescribeDeviceResponse> DescribeDeviceAsync(DescribeDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeviceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDeviceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDeviceFleet
+
+        internal virtual DescribeDeviceFleetResponse DescribeDeviceFleet(DescribeDeviceFleetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeviceFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeviceFleetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDeviceFleetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// A description of the fleet the device belongs to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDeviceFleet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDeviceFleet service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDeviceFleet">REST API Reference for DescribeDeviceFleet Operation</seealso>
+        public virtual Task<DescribeDeviceFleetResponse> DescribeDeviceFleetAsync(DescribeDeviceFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDeviceFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDeviceFleetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDeviceFleetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDomain
 
         internal virtual DescribeDomainResponse DescribeDomain(DescribeDomainRequest request)
@@ -4317,6 +4898,43 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEdgePackagingJob
+
+        internal virtual DescribeEdgePackagingJobResponse DescribeEdgePackagingJob(DescribeEdgePackagingJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEdgePackagingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEdgePackagingJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEdgePackagingJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// A description of edge packaging jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEdgePackagingJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEdgePackagingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgePackagingJob">REST API Reference for DescribeEdgePackagingJob Operation</seealso>
+        public virtual Task<DescribeEdgePackagingJobResponse> DescribeEdgePackagingJobAsync(DescribeEdgePackagingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeEdgePackagingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEdgePackagingJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEdgePackagingJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4722,6 +5340,80 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeModelBiasJobDefinition
+
+        internal virtual DescribeModelBiasJobDefinitionResponse DescribeModelBiasJobDefinition(DescribeModelBiasJobDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelBiasJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelBiasJobDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeModelBiasJobDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a description of a model bias job definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelBiasJobDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeModelBiasJobDefinition service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelBiasJobDefinition">REST API Reference for DescribeModelBiasJobDefinition Operation</seealso>
+        public virtual Task<DescribeModelBiasJobDefinitionResponse> DescribeModelBiasJobDefinitionAsync(DescribeModelBiasJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelBiasJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelBiasJobDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeModelBiasJobDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeModelExplainabilityJobDefinition
+
+        internal virtual DescribeModelExplainabilityJobDefinitionResponse DescribeModelExplainabilityJobDefinition(DescribeModelExplainabilityJobDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelExplainabilityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelExplainabilityJobDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeModelExplainabilityJobDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a description of a model explainability job definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelExplainabilityJobDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeModelExplainabilityJobDefinition service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelExplainabilityJobDefinition">REST API Reference for DescribeModelExplainabilityJobDefinition Operation</seealso>
+        public virtual Task<DescribeModelExplainabilityJobDefinitionResponse> DescribeModelExplainabilityJobDefinitionAsync(DescribeModelExplainabilityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelExplainabilityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelExplainabilityJobDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeModelExplainabilityJobDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeModelPackage
 
         internal virtual DescribeModelPackageResponse DescribeModelPackage(DescribeModelPackageRequest request)
@@ -4793,6 +5485,43 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = DescribeModelPackageGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeModelPackageGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeModelQualityJobDefinition
+
+        internal virtual DescribeModelQualityJobDefinitionResponse DescribeModelQualityJobDefinition(DescribeModelQualityJobDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelQualityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelQualityJobDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeModelQualityJobDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a description of a model quality job definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelQualityJobDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeModelQualityJobDefinition service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelQualityJobDefinition">REST API Reference for DescribeModelQualityJobDefinition Operation</seealso>
+        public virtual Task<DescribeModelQualityJobDefinitionResponse> DescribeModelQualityJobDefinitionAsync(DescribeModelQualityJobDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeModelQualityJobDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeModelQualityJobDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeModelQualityJobDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5506,6 +6235,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  GetDeviceFleetReport
+
+        internal virtual GetDeviceFleetReportResponse GetDeviceFleetReport(GetDeviceFleetReportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeviceFleetReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeviceFleetReportResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeviceFleetReportResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes a fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeviceFleetReport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDeviceFleetReport service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetDeviceFleetReport">REST API Reference for GetDeviceFleetReport Operation</seealso>
+        public virtual Task<GetDeviceFleetReportResponse> GetDeviceFleetReportAsync(GetDeviceFleetReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDeviceFleetReportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDeviceFleetReportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDeviceFleetReportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetModelPackageGroupPolicy
 
         internal virtual GetModelPackageGroupPolicyResponse GetModelPackageGroupPolicy(GetModelPackageGroupPolicyRequest request)
@@ -6012,6 +6775,108 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListDataQualityJobDefinitions
+
+        internal virtual ListDataQualityJobDefinitionsResponse ListDataQualityJobDefinitions(ListDataQualityJobDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataQualityJobDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityJobDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataQualityJobDefinitionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the data quality job definitions in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataQualityJobDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataQualityJobDefinitions service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDataQualityJobDefinitions">REST API Reference for ListDataQualityJobDefinitions Operation</seealso>
+        public virtual Task<ListDataQualityJobDefinitionsResponse> ListDataQualityJobDefinitionsAsync(ListDataQualityJobDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataQualityJobDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataQualityJobDefinitionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataQualityJobDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDeviceFleets
+
+        internal virtual ListDeviceFleetsResponse ListDeviceFleets(ListDeviceFleetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeviceFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeviceFleetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDeviceFleetsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of devices in the fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeviceFleets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDeviceFleets service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDeviceFleets">REST API Reference for ListDeviceFleets Operation</seealso>
+        public virtual Task<ListDeviceFleetsResponse> ListDeviceFleetsAsync(ListDeviceFleetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDeviceFleetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDeviceFleetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDeviceFleetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDevices
+
+        internal virtual ListDevicesResponse ListDevices(ListDevicesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDevicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDevicesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDevicesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// A list of devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDevices service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDevices service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDevices">REST API Reference for ListDevices Operation</seealso>
+        public virtual Task<ListDevicesResponse> ListDevicesAsync(ListDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDevicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDevicesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDevicesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDomains
 
         internal virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
@@ -6042,6 +6907,40 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEdgePackagingJobs
+
+        internal virtual ListEdgePackagingJobsResponse ListEdgePackagingJobs(ListEdgePackagingJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEdgePackagingJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEdgePackagingJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEdgePackagingJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of edge packaging jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEdgePackagingJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEdgePackagingJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEdgePackagingJobs">REST API Reference for ListEdgePackagingJobs Operation</seealso>
+        public virtual Task<ListEdgePackagingJobsResponse> ListEdgePackagingJobsAsync(ListEdgePackagingJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEdgePackagingJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEdgePackagingJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEdgePackagingJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6431,6 +7330,74 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListModelBiasJobDefinitions
+
+        internal virtual ListModelBiasJobDefinitionsResponse ListModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelBiasJobDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelBiasJobDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListModelBiasJobDefinitionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists model bias jobs definitions that satisfy various filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelBiasJobDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListModelBiasJobDefinitions service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelBiasJobDefinitions">REST API Reference for ListModelBiasJobDefinitions Operation</seealso>
+        public virtual Task<ListModelBiasJobDefinitionsResponse> ListModelBiasJobDefinitionsAsync(ListModelBiasJobDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelBiasJobDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelBiasJobDefinitionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListModelBiasJobDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListModelExplainabilityJobDefinitions
+
+        internal virtual ListModelExplainabilityJobDefinitionsResponse ListModelExplainabilityJobDefinitions(ListModelExplainabilityJobDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelExplainabilityJobDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelExplainabilityJobDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListModelExplainabilityJobDefinitionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists model explainability job definitions that satisfy various filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelExplainabilityJobDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListModelExplainabilityJobDefinitions service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelExplainabilityJobDefinitions">REST API Reference for ListModelExplainabilityJobDefinitions Operation</seealso>
+        public virtual Task<ListModelExplainabilityJobDefinitionsResponse> ListModelExplainabilityJobDefinitionsAsync(ListModelExplainabilityJobDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelExplainabilityJobDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelExplainabilityJobDefinitionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListModelExplainabilityJobDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListModelPackageGroups
 
         internal virtual ListModelPackageGroupsResponse ListModelPackageGroups(ListModelPackageGroupsRequest request)
@@ -6495,6 +7462,40 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = ListModelPackagesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListModelPackagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListModelQualityJobDefinitions
+
+        internal virtual ListModelQualityJobDefinitionsResponse ListModelQualityJobDefinitions(ListModelQualityJobDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelQualityJobDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelQualityJobDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListModelQualityJobDefinitionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets a list of model quality monitoring job definitions in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListModelQualityJobDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListModelQualityJobDefinitions service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelQualityJobDefinitions">REST API Reference for ListModelQualityJobDefinitions Operation</seealso>
+        public virtual Task<ListModelQualityJobDefinitionsResponse> ListModelQualityJobDefinitionsAsync(ListModelQualityJobDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListModelQualityJobDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListModelQualityJobDefinitionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListModelQualityJobDefinitionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7296,6 +8297,44 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  RegisterDevices
+
+        internal virtual RegisterDevicesResponse RegisterDevices(RegisterDevicesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDevicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDevicesResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterDevicesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Register devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDevices service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterDevices service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an Amazon SageMaker resource limit. For example, you might have
+        /// too many training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RegisterDevices">REST API Reference for RegisterDevices Operation</seealso>
+        public virtual Task<RegisterDevicesResponse> RegisterDevicesAsync(RegisterDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterDevicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDevicesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterDevicesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RenderUiTemplate
 
         internal virtual RenderUiTemplateResponse RenderUiTemplate(RenderUiTemplateRequest request)
@@ -7392,7 +8431,8 @@ namespace Amazon.SageMaker
         /// 
         ///  <note> 
         /// <para>
-        /// New monitoring schedules are immediately started after creation.
+        /// By default, when you successfully create a new schedule, the status of a monitoring
+        /// schedule is <code>scheduled</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7582,6 +8622,40 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = StopCompilationJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopCompilationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopEdgePackagingJob
+
+        internal virtual StopEdgePackagingJobResponse StopEdgePackagingJob(StopEdgePackagingJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopEdgePackagingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopEdgePackagingJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopEdgePackagingJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Request to stop an edge packaging job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopEdgePackagingJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopEdgePackagingJob service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopEdgePackagingJob">REST API Reference for StopEdgePackagingJob Operation</seealso>
+        public virtual Task<StopEdgePackagingJobResponse> StopEdgePackagingJobAsync(StopEdgePackagingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopEdgePackagingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopEdgePackagingJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopEdgePackagingJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8108,6 +9182,77 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateDeviceFleet
+
+        internal virtual UpdateDeviceFleetResponse UpdateDeviceFleet(UpdateDeviceFleetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDeviceFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDeviceFleetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDeviceFleetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a fleet of devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeviceFleet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDeviceFleet service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDeviceFleet">REST API Reference for UpdateDeviceFleet Operation</seealso>
+        public virtual Task<UpdateDeviceFleetResponse> UpdateDeviceFleetAsync(UpdateDeviceFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDeviceFleetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDeviceFleetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDeviceFleetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDevices
+
+        internal virtual UpdateDevicesResponse UpdateDevices(UpdateDevicesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDevicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDevicesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDevicesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates one or more devices in a fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDevices service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDevices service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDevices">REST API Reference for UpdateDevices Operation</seealso>
+        public virtual Task<UpdateDevicesResponse> UpdateDevicesAsync(UpdateDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDevicesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDevicesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDevicesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateDomain
 
         internal virtual UpdateDomainResponse UpdateDomain(UpdateDomainRequest request)
@@ -8561,6 +9706,43 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = UpdatePipelineExecutionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdatePipelineExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTrainingJob
+
+        internal virtual UpdateTrainingJobResponse UpdateTrainingJob(UpdateTrainingJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrainingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrainingJobResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTrainingJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update a model training job to request a new Debugger profiling configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrainingJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTrainingJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob">REST API Reference for UpdateTrainingJob Operation</seealso>
+        public virtual Task<UpdateTrainingJobResponse> UpdateTrainingJobAsync(UpdateTrainingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateTrainingJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrainingJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTrainingJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

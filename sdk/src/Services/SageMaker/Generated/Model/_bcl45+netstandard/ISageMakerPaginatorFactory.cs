@@ -82,9 +82,29 @@ namespace Amazon.SageMaker.Model
         IListContextsPaginator ListContexts(ListContextsRequest request);
 
         /// <summary>
+        /// Paginator for ListDataQualityJobDefinitions operation
+        ///</summary>
+        IListDataQualityJobDefinitionsPaginator ListDataQualityJobDefinitions(ListDataQualityJobDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDeviceFleets operation
+        ///</summary>
+        IListDeviceFleetsPaginator ListDeviceFleets(ListDeviceFleetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDevices operation
+        ///</summary>
+        IListDevicesPaginator ListDevices(ListDevicesRequest request);
+
+        /// <summary>
         /// Paginator for ListDomains operation
         ///</summary>
         IListDomainsPaginator ListDomains(ListDomainsRequest request);
+
+        /// <summary>
+        /// Paginator for ListEdgePackagingJobs operation
+        ///</summary>
+        IListEdgePackagingJobsPaginator ListEdgePackagingJobs(ListEdgePackagingJobsRequest request);
 
         /// <summary>
         /// Paginator for ListEndpointConfigs operation
@@ -142,6 +162,16 @@ namespace Amazon.SageMaker.Model
         IListLabelingJobsForWorkteamPaginator ListLabelingJobsForWorkteam(ListLabelingJobsForWorkteamRequest request);
 
         /// <summary>
+        /// Paginator for ListModelBiasJobDefinitions operation
+        ///</summary>
+        IListModelBiasJobDefinitionsPaginator ListModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListModelExplainabilityJobDefinitions operation
+        ///</summary>
+        IListModelExplainabilityJobDefinitionsPaginator ListModelExplainabilityJobDefinitions(ListModelExplainabilityJobDefinitionsRequest request);
+
+        /// <summary>
         /// Paginator for ListModelPackageGroups operation
         ///</summary>
         IListModelPackageGroupsPaginator ListModelPackageGroups(ListModelPackageGroupsRequest request);
@@ -150,6 +180,11 @@ namespace Amazon.SageMaker.Model
         /// Paginator for ListModelPackages operation
         ///</summary>
         IListModelPackagesPaginator ListModelPackages(ListModelPackagesRequest request);
+
+        /// <summary>
+        /// Paginator for ListModelQualityJobDefinitions operation
+        ///</summary>
+        IListModelQualityJobDefinitionsPaginator ListModelQualityJobDefinitions(ListModelQualityJobDefinitionsRequest request);
 
         /// <summary>
         /// Paginator for ListModels operation

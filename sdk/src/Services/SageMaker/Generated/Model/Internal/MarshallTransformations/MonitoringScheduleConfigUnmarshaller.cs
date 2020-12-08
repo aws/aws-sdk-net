@@ -70,6 +70,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.MonitoringJobDefinition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MonitoringJobDefinitionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MonitoringJobDefinitionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MonitoringType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MonitoringType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ScheduleConfig", targetDepth))
                 {
                     var unmarshaller = ScheduleConfigUnmarshaller.Instance;

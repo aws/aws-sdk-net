@@ -34,9 +34,15 @@ namespace Amazon.SageMaker.Model
     public partial class EndpointInput
     {
         private string _endpointName;
+        private string _endTimeOffset;
+        private string _featuresAttribute;
+        private string _inferenceAttribute;
         private string _localPath;
+        private string _probabilityAttribute;
+        private double? _probabilityThresholdAttribute;
         private ProcessingS3DataDistributionType _s3DataDistributionType;
         private ProcessingS3InputMode _s3InputMode;
+        private string _startTimeOffset;
 
         /// <summary>
         /// Gets and sets the property EndpointName. 
@@ -59,6 +65,63 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndTimeOffset. 
+        /// <para>
+        /// If specified, monitoring jobs substract this time from the end time. For information
+        /// about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
+        /// Model Quality Monitoring Jobs</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=15)]
+        public string EndTimeOffset
+        {
+            get { return this._endTimeOffset; }
+            set { this._endTimeOffset = value; }
+        }
+
+        // Check to see if EndTimeOffset property is set
+        internal bool IsSetEndTimeOffset()
+        {
+            return this._endTimeOffset != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FeaturesAttribute. 
+        /// <para>
+        /// The attributes of the input data that are the input features.
+        /// </para>
+        /// </summary>
+        public string FeaturesAttribute
+        {
+            get { return this._featuresAttribute; }
+            set { this._featuresAttribute = value; }
+        }
+
+        // Check to see if FeaturesAttribute property is set
+        internal bool IsSetFeaturesAttribute()
+        {
+            return this._featuresAttribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceAttribute. 
+        /// <para>
+        /// The attribute of the input data that represents the ground truth label.
+        /// </para>
+        /// </summary>
+        public string InferenceAttribute
+        {
+            get { return this._inferenceAttribute; }
+            set { this._inferenceAttribute = value; }
+        }
+
+        // Check to see if InferenceAttribute property is set
+        internal bool IsSetInferenceAttribute()
+        {
+            return this._inferenceAttribute != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LocalPath. 
         /// <para>
         /// Path to the filesystem where the endpoint data is available to the container.
@@ -75,6 +138,42 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLocalPath()
         {
             return this._localPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProbabilityAttribute. 
+        /// <para>
+        /// In a classification problem, the attribute that represents the class probability.
+        /// </para>
+        /// </summary>
+        public string ProbabilityAttribute
+        {
+            get { return this._probabilityAttribute; }
+            set { this._probabilityAttribute = value; }
+        }
+
+        // Check to see if ProbabilityAttribute property is set
+        internal bool IsSetProbabilityAttribute()
+        {
+            return this._probabilityAttribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProbabilityThresholdAttribute. 
+        /// <para>
+        /// The threshold for the class probability to be evaluated as a positive result.
+        /// </para>
+        /// </summary>
+        public double ProbabilityThresholdAttribute
+        {
+            get { return this._probabilityThresholdAttribute.GetValueOrDefault(); }
+            set { this._probabilityThresholdAttribute = value; }
+        }
+
+        // Check to see if ProbabilityThresholdAttribute property is set
+        internal bool IsSetProbabilityThresholdAttribute()
+        {
+            return this._probabilityThresholdAttribute.HasValue; 
         }
 
         /// <summary>
@@ -114,6 +213,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetS3InputMode()
         {
             return this._s3InputMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTimeOffset. 
+        /// <para>
+        /// If specified, monitoring jobs substract this time from the start time. For information
+        /// about using offsets for scheduling monitoring jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
+        /// Model Quality Monitoring Jobs</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=15)]
+        public string StartTimeOffset
+        {
+            get { return this._startTimeOffset; }
+            set { this._startTimeOffset = value; }
+        }
+
+        // Check to see if StartTimeOffset property is set
+        internal bool IsSetStartTimeOffset()
+        {
+            return this._startTimeOffset != null;
         }
 
     }

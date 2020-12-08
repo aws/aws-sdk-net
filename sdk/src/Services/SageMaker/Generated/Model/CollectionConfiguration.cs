@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Configuration information for tensor collections.
+    /// Configuration information for the Debugger output tensor collections.
     /// </summary>
     public partial class CollectionConfiguration
     {

@@ -35,8 +35,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class MonitoringBaselineConfig
     {
+        private string _baseliningJobName;
         private MonitoringConstraintsResource _constraintsResource;
         private MonitoringStatisticsResource _statisticsResource;
+
+        /// <summary>
+        /// Gets and sets the property BaseliningJobName. 
+        /// <para>
+        /// The name of the job that performs baselining for the monitoring job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string BaseliningJobName
+        {
+            get { return this._baseliningJobName; }
+            set { this._baseliningJobName = value; }
+        }
+
+        // Check to see if BaseliningJobName property is set
+        internal bool IsSetBaseliningJobName()
+        {
+            return this._baseliningJobName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConstraintsResource. 

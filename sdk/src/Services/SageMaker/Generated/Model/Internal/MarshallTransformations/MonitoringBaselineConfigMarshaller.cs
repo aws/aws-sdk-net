@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MonitoringBaselineConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBaseliningJobName())
+            {
+                context.Writer.WritePropertyName("BaseliningJobName");
+                context.Writer.Write(requestObject.BaseliningJobName);
+            }
+
             if(requestObject.IsSetConstraintsResource())
             {
                 context.Writer.WritePropertyName("ConstraintsResource");

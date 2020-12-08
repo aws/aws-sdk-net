@@ -40,7 +40,9 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastModifiedTimeAfter;
         private DateTime? _lastModifiedTimeBefore;
         private int? _maxResults;
+        private string _monitoringJobDefinitionName;
         private string _monitoringScheduleName;
+        private MonitoringType _monitoringTypeEquals;
         private string _nextToken;
         private DateTime? _scheduledTimeAfter;
         private DateTime? _scheduledTimeBefore;
@@ -159,6 +161,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MonitoringJobDefinitionName. 
+        /// <para>
+        /// Gets a list of the monitoring job runs of the specified monitoring job definitions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string MonitoringJobDefinitionName
+        {
+            get { return this._monitoringJobDefinitionName; }
+            set { this._monitoringJobDefinitionName = value; }
+        }
+
+        // Check to see if MonitoringJobDefinitionName property is set
+        internal bool IsSetMonitoringJobDefinitionName()
+        {
+            return this._monitoringJobDefinitionName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MonitoringScheduleName. 
         /// <para>
         /// Name of a specific schedule to fetch jobs for.
@@ -175,6 +196,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMonitoringScheduleName()
         {
             return this._monitoringScheduleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringTypeEquals. 
+        /// <para>
+        /// A filter that returns only the monitoring job runs of the specified monitoring type.
+        /// </para>
+        /// </summary>
+        public MonitoringType MonitoringTypeEquals
+        {
+            get { return this._monitoringTypeEquals; }
+            set { this._monitoringTypeEquals = value; }
+        }
+
+        // Check to see if MonitoringTypeEquals property is set
+        internal bool IsSetMonitoringTypeEquals()
+        {
+            return this._monitoringTypeEquals != null;
         }
 
         /// <summary>

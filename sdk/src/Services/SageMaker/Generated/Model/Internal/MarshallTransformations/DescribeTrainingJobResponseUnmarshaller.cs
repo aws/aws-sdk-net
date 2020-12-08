@@ -171,6 +171,30 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.OutputDataConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProfilerConfig", targetDepth))
+                {
+                    var unmarshaller = ProfilerConfigUnmarshaller.Instance;
+                    response.ProfilerConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProfilerRuleConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProfilerRuleConfiguration, ProfilerRuleConfigurationUnmarshaller>(ProfilerRuleConfigurationUnmarshaller.Instance);
+                    response.ProfilerRuleConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProfilerRuleEvaluationStatuses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProfilerRuleEvaluationStatus, ProfilerRuleEvaluationStatusUnmarshaller>(ProfilerRuleEvaluationStatusUnmarshaller.Instance);
+                    response.ProfilerRuleEvaluationStatuses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProfilingStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProfilingStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceConfig", targetDepth))
                 {
                     var unmarshaller = ResourceConfigUnmarshaller.Instance;

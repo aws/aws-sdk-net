@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BaseliningJobName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BaseliningJobName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConstraintsResource", targetDepth))
                 {
                     var unmarshaller = MonitoringConstraintsResourceUnmarshaller.Instance;

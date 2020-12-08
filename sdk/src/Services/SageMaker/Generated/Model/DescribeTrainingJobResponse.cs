@@ -53,6 +53,10 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastModifiedTime;
         private ModelArtifacts _modelArtifacts;
         private OutputDataConfig _outputDataConfig;
+        private ProfilerConfig _profilerConfig;
+        private List<ProfilerRuleConfiguration> _profilerRuleConfigurations = new List<ProfilerRuleConfiguration>();
+        private List<ProfilerRuleEvaluationStatus> _profilerRuleEvaluationStatuses = new List<ProfilerRuleEvaluationStatus>();
+        private ProfilingStatus _profilingStatus;
         private ResourceConfig _resourceConfig;
         private string _roleArn;
         private SecondaryStatus _secondaryStatus;
@@ -183,7 +187,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DebugRuleConfigurations. 
         /// <para>
-        /// Configuration information for debugging rules.
+        /// Configuration information for Debugger rules for debugging output tensors.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -202,7 +206,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DebugRuleEvaluationStatuses. 
         /// <para>
-        /// Status about the debug rule evaluation.
+        /// Evaluation status of Debugger rules for debugging on a training job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -448,6 +452,77 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetOutputDataConfig()
         {
             return this._outputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfilerConfig.
+        /// </summary>
+        public ProfilerConfig ProfilerConfig
+        {
+            get { return this._profilerConfig; }
+            set { this._profilerConfig = value; }
+        }
+
+        // Check to see if ProfilerConfig property is set
+        internal bool IsSetProfilerConfig()
+        {
+            return this._profilerConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfilerRuleConfigurations. 
+        /// <para>
+        /// Configuration information for Debugger rules for profiling system and framework metrics.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<ProfilerRuleConfiguration> ProfilerRuleConfigurations
+        {
+            get { return this._profilerRuleConfigurations; }
+            set { this._profilerRuleConfigurations = value; }
+        }
+
+        // Check to see if ProfilerRuleConfigurations property is set
+        internal bool IsSetProfilerRuleConfigurations()
+        {
+            return this._profilerRuleConfigurations != null && this._profilerRuleConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfilerRuleEvaluationStatuses. 
+        /// <para>
+        /// Evaluation status of Debugger rules for profiling on a training job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<ProfilerRuleEvaluationStatus> ProfilerRuleEvaluationStatuses
+        {
+            get { return this._profilerRuleEvaluationStatuses; }
+            set { this._profilerRuleEvaluationStatuses = value; }
+        }
+
+        // Check to see if ProfilerRuleEvaluationStatuses property is set
+        internal bool IsSetProfilerRuleEvaluationStatuses()
+        {
+            return this._profilerRuleEvaluationStatuses != null && this._profilerRuleEvaluationStatuses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfilingStatus. 
+        /// <para>
+        /// Profiling status of a training job.
+        /// </para>
+        /// </summary>
+        public ProfilingStatus ProfilingStatus
+        {
+            get { return this._profilingStatus; }
+            set { this._profilingStatus = value; }
+        }
+
+        // Check to see if ProfilingStatus property is set
+        internal bool IsSetProfilingStatus()
+        {
+            return this._profilingStatus != null;
         }
 
         /// <summary>

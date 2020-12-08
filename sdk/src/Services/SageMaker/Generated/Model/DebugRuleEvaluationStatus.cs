@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RuleConfigurationName. 
         /// <para>
-        /// The name of the rule configuration
+        /// The name of the rule configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

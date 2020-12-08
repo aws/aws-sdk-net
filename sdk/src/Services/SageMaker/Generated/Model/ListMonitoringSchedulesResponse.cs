@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the response is truncated, Amazon SageMaker returns this token. To retrieve the
-        /// next set of jobs, use it in the subsequent reques
+        /// next set of jobs, use it in the subsequent request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

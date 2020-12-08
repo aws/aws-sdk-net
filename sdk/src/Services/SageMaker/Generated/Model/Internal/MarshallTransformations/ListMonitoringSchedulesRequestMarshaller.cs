@@ -104,6 +104,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxResults);
                 }
 
+                if(publicRequest.IsSetMonitoringJobDefinitionName())
+                {
+                    context.Writer.WritePropertyName("MonitoringJobDefinitionName");
+                    context.Writer.Write(publicRequest.MonitoringJobDefinitionName);
+                }
+
+                if(publicRequest.IsSetMonitoringTypeEquals())
+                {
+                    context.Writer.WritePropertyName("MonitoringTypeEquals");
+                    context.Writer.Write(publicRequest.MonitoringTypeEquals);
+                }
+
                 if(publicRequest.IsSetNameContains())
                 {
                     context.Writer.WritePropertyName("NameContains");

@@ -29,8 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Configuration information for the debug hook parameters, collection configuration,
-    /// and storage paths.
+    /// Configuration information for the Debugger hook parameters, metric and tensor collections,
+    /// and storage paths. To learn more about how to configure the <code>DebugHookConfig</code>
+    /// parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use
+    /// the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug
+    /// Your Training Job</a>.
     /// </summary>
     public partial class DebugHookConfig
     {
@@ -42,7 +45,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CollectionConfigurations. 
         /// <para>
-        /// Configuration information for tensor collections.
+        /// Configuration information for Debugger tensor collections. To learn more about how
+        /// to configure the <code>CollectionConfiguration</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use
+        /// the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug
+        /// Your Training Job</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -61,7 +67,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HookParameters. 
         /// <para>
-        /// Configuration information for the debug hook parameters.
+        /// Configuration information for the Debugger hook parameters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -80,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LocalPath. 
         /// <para>
-        /// Path to local storage location for tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
+        /// Path to local storage location for metrics and tensors. Defaults to <code>/opt/ml/output/tensors/</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -99,7 +105,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3OutputPath. 
         /// <para>
-        /// Path to Amazon S3 storage location for tensors.
+        /// Path to Amazon S3 storage location for metrics and tensors.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

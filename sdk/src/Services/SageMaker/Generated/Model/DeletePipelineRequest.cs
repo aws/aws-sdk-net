@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePipeline operation.
-    /// Deletes a pipeline.
+    /// Deletes a pipeline if there are no in-progress executions.
     /// </summary>
     public partial class DeletePipelineRequest : AmazonSageMakerRequest
     {
