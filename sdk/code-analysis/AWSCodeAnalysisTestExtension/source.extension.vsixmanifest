@@ -53,6 +53,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AppSync.CodeAnalysis" Path="|AWSSDK.AppSync.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Athena.CodeAnalysis" Path="|AWSSDK.Athena.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Athena.CodeAnalysis" Path="|AWSSDK.Athena.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AuditManager.CodeAnalysis" Path="|AWSSDK.AuditManager.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AuditManager.CodeAnalysis" Path="|AWSSDK.AuditManager.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AugmentedAIRuntime.CodeAnalysis" Path="|AWSSDK.AugmentedAIRuntime.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.AugmentedAIRuntime.CodeAnalysis" Path="|AWSSDK.AugmentedAIRuntime.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.AutoScaling.CodeAnalysis" Path="|AWSSDK.AutoScaling.CodeAnalysis|"/>

@@ -128,6 +128,10 @@
       <Project>{3F35B8E9-41B1-4D5A-8CFA-47B00E4030E3}</Project>
       <Name>AWSSDK.Athena.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AuditManager/AWSSDK.AuditManager.CodeAnalysis.csproj">
+      <Project>{4D9F6E2D-73AE-4F89-BD08-437993F8CEE6}</Project>
+      <Name>AWSSDK.AuditManager.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/AugmentedAIRuntime/AWSSDK.AugmentedAIRuntime.CodeAnalysis.csproj">
       <Project>{56A7FFCA-113E-4D89-AA75-84718D256F18}</Project>
       <Name>AWSSDK.AugmentedAIRuntime.CodeAnalysis</Name>
