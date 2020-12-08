@@ -481,6 +481,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon S3 on Outposts expands object storage to on-premises AWS Outposts environments, enabling you to store and retrieve objects using S3 APIs and features.
 * [AWSSDK.SageMaker](https://www.nuget.org/packages/AWSSDK.SageMaker/)
 	* Amazon SageMaker is a fully-managed service that enables data scientists and developers to quickly and easily build, train, and deploy machine learning models, at scale.
+* [AWSSDK.SagemakerEdgeManager](https://www.nuget.org/packages/AWSSDK.SagemakerEdgeManager/)
+	* Amazon SageMaker Edge Manager makes it easy to optimize, secure, monitor, and maintain  machine learning (ML) models across fleets of edge devices such as smart cameras, smart speakers, and robots.
 * [AWSSDK.SageMakerFeatureStoreRuntime](https://www.nuget.org/packages/AWSSDK.SageMakerFeatureStoreRuntime/)
 	* This release adds support for Amazon SageMaker Feature Store, which makes it easy for customers to create, version, share, and manage curated data for machine learning (ML) development.
 * [AWSSDK.SageMakerRuntime](https://www.nuget.org/packages/AWSSDK.SageMakerRuntime/)

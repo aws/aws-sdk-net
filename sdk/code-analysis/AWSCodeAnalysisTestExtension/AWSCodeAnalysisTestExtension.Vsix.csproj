@@ -864,6 +864,10 @@
       <Project>{3314BA0F-1C6A-4E4A-80F8-EB858D20D048}</Project>
       <Name>AWSSDK.SageMaker.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SagemakerEdgeManager/AWSSDK.SagemakerEdgeManager.CodeAnalysis.csproj">
+      <Project>{2D75EA51-ED06-449F-A756-12D33C6976E5}</Project>
+      <Name>AWSSDK.SagemakerEdgeManager.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SageMakerFeatureStoreRuntime/AWSSDK.SageMakerFeatureStoreRuntime.CodeAnalysis.csproj">
       <Project>{FC99DFC4-831C-4B14-8D6F-6852BE29C478}</Project>
       <Name>AWSSDK.SageMakerFeatureStoreRuntime.CodeAnalysis</Name>
