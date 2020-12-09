@@ -1,3 +1,16 @@
+### 3.5.70.0 (2020-12-09 19:16 UTC)
+* EC2 (3.5.23.0)
+	* This release adds support for G4ad instances powered by AMD Radeon Pro V520 GPUs and AMD 2nd Generation EPYC processors
+* GlobalAccelerator (3.5.2.0)
+	* This release adds support for custom routing accelerators
+* Redshift (3.5.2.0)
+	* Add support for availability zone relocation feature.
+* Core 3.5.1.48
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.69.0 (2020-12-08 19:19 UTC)
 * AuditManager (3.5.0.0)
 	* AWS Audit Manager helps you continuously audit your AWS usage to simplify how you manage risk and compliance. This update releases the first version of the AWS Audit Manager APIs and SDK.
