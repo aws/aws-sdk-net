@@ -49,7 +49,7 @@ namespace Amazon.Redshift.Model
         /// The name of the parameter group to be modified.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ParameterGroupName
         {
             get { return this._parameterGroupName; }

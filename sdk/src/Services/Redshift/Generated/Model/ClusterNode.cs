@@ -43,6 +43,7 @@ namespace Amazon.Redshift.Model
         /// Whether the node is a leader node or a compute node.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string NodeRole
         {
             get { return this._nodeRole; }
@@ -61,6 +62,7 @@ namespace Amazon.Redshift.Model
         /// The private IP address of a node within a cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string PrivateIPAddress
         {
             get { return this._privateIPAddress; }
@@ -79,6 +81,7 @@ namespace Amazon.Redshift.Model
         /// The public IP address of a node within a cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string PublicIPAddress
         {
             get { return this._publicIPAddress; }

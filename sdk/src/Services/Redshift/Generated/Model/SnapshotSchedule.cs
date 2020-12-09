@@ -117,6 +117,7 @@ namespace Amazon.Redshift.Model
         /// The description of the schedule.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ScheduleDescription
         {
             get { return this._scheduleDescription; }
@@ -135,6 +136,7 @@ namespace Amazon.Redshift.Model
         /// A unique identifier for the schedule.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ScheduleIdentifier
         {
             get { return this._scheduleIdentifier; }

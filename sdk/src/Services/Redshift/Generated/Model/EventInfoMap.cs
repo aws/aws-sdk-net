@@ -62,6 +62,7 @@ namespace Amazon.Redshift.Model
         /// The description of an Amazon Redshift event.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string EventDescription
         {
             get { return this._eventDescription; }
@@ -80,6 +81,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of an Amazon Redshift event.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string EventId
         {
             get { return this._eventId; }
@@ -102,6 +104,7 @@ namespace Amazon.Redshift.Model
         /// Values: ERROR, INFO
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Severity
         {
             get { return this._severity; }

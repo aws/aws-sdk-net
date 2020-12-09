@@ -39,6 +39,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier.
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }

@@ -120,6 +120,7 @@ namespace Amazon.Redshift.Model
         /// is <code>transferringdata</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Status
         {
             get { return this._status; }

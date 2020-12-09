@@ -73,6 +73,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -121,6 +122,7 @@ namespace Amazon.Redshift.Model
         /// about all parameter groups and the default parameter group are returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ParameterGroupName
         {
             get { return this._parameterGroupName; }

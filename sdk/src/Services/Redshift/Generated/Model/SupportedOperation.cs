@@ -41,6 +41,7 @@ namespace Amazon.Redshift.Model
         /// A list of the supported operations.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string OperationName
         {
             get { return this._operationName; }

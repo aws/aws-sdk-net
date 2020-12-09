@@ -110,6 +110,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -157,6 +158,7 @@ namespace Amazon.Redshift.Model
         /// The name of the scheduled action to retrieve. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ScheduledActionName
         {
             get { return this._scheduledActionName; }

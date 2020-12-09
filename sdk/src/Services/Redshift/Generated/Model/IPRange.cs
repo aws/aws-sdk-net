@@ -43,6 +43,7 @@ namespace Amazon.Redshift.Model
         /// The IP range in Classless Inter-Domain Routing (CIDR) notation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string CIDRIP
         {
             get { return this._cidrip; }
@@ -61,6 +62,7 @@ namespace Amazon.Redshift.Model
         /// The status of the IP range, for example, "authorized".
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Status
         {
             get { return this._status; }

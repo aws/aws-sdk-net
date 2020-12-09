@@ -51,6 +51,7 @@ namespace Amazon.Redshift.Model
         /// and <code>EC2SecurityGroupOwnerId</code> cannot be provided. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string CIDRIP
         {
             get { return this._cidrip; }
@@ -69,7 +70,7 @@ namespace Amazon.Redshift.Model
         /// The name of the security Group from which to revoke the ingress rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ClusterSecurityGroupName
         {
             get { return this._clusterSecurityGroupName; }
@@ -90,6 +91,7 @@ namespace Amazon.Redshift.Model
         /// cannot be provided. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string EC2SecurityGroupName
         {
             get { return this._ec2SecurityGroupName; }
@@ -115,6 +117,7 @@ namespace Amazon.Redshift.Model
         /// Example: <code>111122223333</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string EC2SecurityGroupOwnerId
         {
             get { return this._ec2SecurityGroupOwnerId; }

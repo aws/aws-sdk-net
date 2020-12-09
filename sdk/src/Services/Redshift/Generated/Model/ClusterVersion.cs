@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// The name of the cluster parameter group family for the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterParameterGroupFamily
         {
             get { return this._clusterParameterGroupFamily; }
@@ -62,6 +63,7 @@ namespace Amazon.Redshift.Model
         /// The description of the cluster version.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Description
         {
             get { return this._description; }
@@ -80,6 +82,7 @@ namespace Amazon.Redshift.Model
         /// The version number used by the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Version
         {
             get { return this._version; }

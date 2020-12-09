@@ -42,6 +42,7 @@ namespace Amazon.Redshift.Model
         /// The name of the cluster security group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterSecurityGroupName
         {
             get { return this._clusterSecurityGroupName; }
@@ -60,6 +61,7 @@ namespace Amazon.Redshift.Model
         /// The status of the cluster security group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Status
         {
             get { return this._status; }

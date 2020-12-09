@@ -50,6 +50,7 @@ namespace Amazon.Redshift.Model
         /// The Amazon Redshift cluster that the table is being restored to.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -70,6 +71,7 @@ namespace Amazon.Redshift.Model
         /// the marker, up to the value specified by the <code>MaxRecords</code> parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -110,6 +112,7 @@ namespace Amazon.Redshift.Model
         /// returns the status of all in-progress table restore requests.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string TableRestoreRequestId
         {
             get { return this._tableRestoreRequestId; }

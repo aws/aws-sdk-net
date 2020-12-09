@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// The name of the maintenance track. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string MaintenanceTrackName
         {
             get { return this._maintenanceTrackName; }
@@ -67,6 +68,7 @@ namespace Amazon.Redshift.Model
         /// and retrying the request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }

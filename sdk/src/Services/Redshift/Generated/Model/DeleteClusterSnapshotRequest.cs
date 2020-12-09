@@ -59,6 +59,7 @@ namespace Amazon.Redshift.Model
         /// Constraints: Must be the name of valid cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SnapshotClusterIdentifier
         {
             get { return this._snapshotClusterIdentifier; }
@@ -82,7 +83,7 @@ namespace Amazon.Redshift.Model
         /// <code>failed</code>, or <code>cancelled</code> state.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }

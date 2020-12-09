@@ -52,7 +52,7 @@ namespace Amazon.Redshift.Model
         /// The cluster identifier for which you want a snapshot.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -123,7 +123,7 @@ namespace Amazon.Redshift.Model
         /// Example: <code>my-snapshot-id</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }

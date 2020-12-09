@@ -70,6 +70,7 @@ namespace Amazon.Redshift.Model
         /// The pending or in-progress change of the new identifier for the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -88,6 +89,7 @@ namespace Amazon.Redshift.Model
         /// The pending or in-progress change of the cluster type.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterType
         {
             get { return this._clusterType; }
@@ -106,6 +108,7 @@ namespace Amazon.Redshift.Model
         /// The pending or in-progress change of the service version.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterVersion
         {
             get { return this._clusterVersion; }
@@ -124,6 +127,7 @@ namespace Amazon.Redshift.Model
         /// The encryption type for a cluster. Possible values are: KMS and None. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string EncryptionType
         {
             get { return this._encryptionType; }
@@ -172,6 +176,7 @@ namespace Amazon.Redshift.Model
         /// maintenance window.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string MaintenanceTrackName
         {
             get { return this._maintenanceTrackName; }
@@ -190,6 +195,7 @@ namespace Amazon.Redshift.Model
         /// The pending or in-progress change of the master user password for the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }
@@ -208,6 +214,7 @@ namespace Amazon.Redshift.Model
         /// The pending or in-progress change of the cluster's node type.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string NodeType
         {
             get { return this._nodeType; }

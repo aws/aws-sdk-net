@@ -63,7 +63,7 @@ namespace Amazon.Redshift.Model
         /// A unique alphanumeric identifier of the schedule to modify.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ScheduleIdentifier
         {
             get { return this._scheduleIdentifier; }

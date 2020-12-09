@@ -67,6 +67,7 @@ namespace Amazon.Redshift.Model
         /// using these credentials.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string DbUser
         {
             get { return this._dbUser; }

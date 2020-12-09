@@ -54,6 +54,7 @@ namespace Amazon.Redshift.Model
         /// permission. If no key is specified, the default key is used.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -98,7 +99,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string SnapshotCopyGrantName
         {
             get { return this._snapshotCopyGrantName; }

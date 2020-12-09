@@ -107,6 +107,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterState"))
+                {
+                    return InvalidClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTagFault"))
                 {
                     return InvalidTagExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

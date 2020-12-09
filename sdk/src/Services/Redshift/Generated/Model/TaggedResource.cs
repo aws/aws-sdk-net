@@ -43,6 +43,7 @@ namespace Amazon.Redshift.Model
         /// The Amazon Resource Name (ARN) with which the tag is associated, for example: <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ResourceName
         {
             get { return this._resourceName; }
@@ -104,6 +105,7 @@ namespace Amazon.Redshift.Model
         /// Guide. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ResourceType
         {
             get { return this._resourceType; }

@@ -41,6 +41,7 @@ namespace Amazon.Redshift.Model
         /// The value of the attribute.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string AttributeValue
         {
             get { return this._attributeValue; }

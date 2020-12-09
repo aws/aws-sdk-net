@@ -74,6 +74,7 @@ namespace Amazon.Redshift.Model
         ///  Example: <code>securitygroup1</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterSecurityGroupName
         {
             get { return this._clusterSecurityGroupName; }
@@ -102,6 +103,7 @@ namespace Amazon.Redshift.Model
         /// or the <b>Marker</b> parameter, but not both. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }

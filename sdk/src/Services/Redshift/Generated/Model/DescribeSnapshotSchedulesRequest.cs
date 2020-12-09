@@ -47,6 +47,7 @@ namespace Amazon.Redshift.Model
         /// The unique identifier for the cluster whose snapshot schedules you want to view.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -69,6 +70,7 @@ namespace Amazon.Redshift.Model
         /// response records have been retrieved for the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -108,6 +110,7 @@ namespace Amazon.Redshift.Model
         /// A unique identifier for a snapshot schedule.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ScheduleIdentifier
         {
             get { return this._scheduleIdentifier; }

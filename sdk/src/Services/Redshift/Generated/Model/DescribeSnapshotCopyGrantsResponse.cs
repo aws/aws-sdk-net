@@ -52,6 +52,7 @@ namespace Amazon.Redshift.Model
         /// the <b>Marker</b> parameter, but not both. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }

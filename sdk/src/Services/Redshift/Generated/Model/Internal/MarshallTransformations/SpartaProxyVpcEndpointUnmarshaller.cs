@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Endpoint Object
+    /// Response Unmarshaller for SpartaProxyVpcEndpoint Object
     /// </summary>  
-    public class EndpointUnmarshaller : IUnmarshaller<Endpoint, XmlUnmarshallerContext>, IUnmarshaller<Endpoint, JsonUnmarshallerContext>
+    public class SpartaProxyVpcEndpointUnmarshaller : IUnmarshaller<SpartaProxyVpcEndpoint, XmlUnmarshallerContext>, IUnmarshaller<SpartaProxyVpcEndpoint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Endpoint Unmarshall(XmlUnmarshallerContext context)
+        public SpartaProxyVpcEndpoint Unmarshall(XmlUnmarshallerContext context)
         {
-            Endpoint unmarshalledObject = new Endpoint();
+            SpartaProxyVpcEndpoint unmarshalledObject = new SpartaProxyVpcEndpoint();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,23 +54,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Address", targetDepth))
+                    if (context.TestExpression("VpcEndpointId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Address = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Port", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.Port = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("VpcEndpoints/SpartaProxyVpcEndpoint", targetDepth))
-                    {
-                        var unmarshaller = SpartaProxyVpcEndpointUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.VpcEndpoints.Add(item);
+                        unmarshalledObject.VpcEndpointId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -88,18 +75,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Endpoint Unmarshall(JsonUnmarshallerContext context)
+        public SpartaProxyVpcEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static EndpointUnmarshaller _instance = new EndpointUnmarshaller();        
+        private static SpartaProxyVpcEndpointUnmarshaller _instance = new SpartaProxyVpcEndpointUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EndpointUnmarshaller Instance
+        public static SpartaProxyVpcEndpointUnmarshaller Instance
         {
             get
             {

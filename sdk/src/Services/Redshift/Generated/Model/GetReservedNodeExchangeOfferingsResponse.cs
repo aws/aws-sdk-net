@@ -46,6 +46,7 @@ namespace Amazon.Redshift.Model
         /// the returned marker value in the marker parameter and retrying the request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }

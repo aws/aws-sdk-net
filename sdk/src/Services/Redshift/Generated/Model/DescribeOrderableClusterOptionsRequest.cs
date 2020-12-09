@@ -61,6 +61,7 @@ namespace Amazon.Redshift.Model
         /// Constraints: Must be one of the version returned from <a>DescribeClusterVersions</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterVersion
         {
             get { return this._clusterVersion; }
@@ -84,6 +85,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -132,6 +134,7 @@ namespace Amazon.Redshift.Model
         /// matching the specified node type.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string NodeType
         {
             get { return this._nodeType; }

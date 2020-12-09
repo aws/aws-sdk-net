@@ -58,7 +58,7 @@ namespace Amazon.Redshift.Model
         /// A text description of the HSM configuration to be created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string Description
         {
             get { return this._description; }
@@ -77,7 +77,7 @@ namespace Amazon.Redshift.Model
         /// The identifier to be assigned to the new Amazon Redshift HSM configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string HsmConfigurationIdentifier
         {
             get { return this._hsmConfigurationIdentifier; }
@@ -96,7 +96,7 @@ namespace Amazon.Redshift.Model
         /// The IP address that the Amazon Redshift cluster must use to access the HSM.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string HsmIpAddress
         {
             get { return this._hsmIpAddress; }
@@ -116,7 +116,7 @@ namespace Amazon.Redshift.Model
         /// their database encryption keys.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string HsmPartitionName
         {
             get { return this._hsmPartitionName; }
@@ -135,7 +135,7 @@ namespace Amazon.Redshift.Model
         /// The password required to access the HSM partition.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string HsmPartitionPassword
         {
             get { return this._hsmPartitionPassword; }
@@ -154,7 +154,7 @@ namespace Amazon.Redshift.Model
         /// The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string HsmServerPublicCertificate
         {
             get { return this._hsmServerPublicCertificate; }

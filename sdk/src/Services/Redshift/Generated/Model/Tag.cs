@@ -42,6 +42,7 @@ namespace Amazon.Redshift.Model
         /// The key, or name, for the resource tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Key
         {
             get { return this._key; }
@@ -60,6 +61,7 @@ namespace Amazon.Redshift.Model
         /// The value for the resource tag.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Value
         {
             get { return this._value; }

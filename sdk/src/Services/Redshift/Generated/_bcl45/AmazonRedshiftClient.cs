@@ -2036,6 +2036,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidScheduleException">
         /// The schedule you submitted isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ScheduleDefinitionTypeUnsupportedException">
         /// The definition you submitted is not supported.
         /// </exception>
@@ -2071,6 +2074,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the CreateSnapshotSchedule service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.InvalidScheduleException">
         /// The schedule you submitted isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ScheduleDefinitionTypeUnsupportedException">
         /// The definition you submitted is not supported.
@@ -2116,6 +2122,9 @@ namespace Amazon.Redshift
         /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
         /// 
         /// <returns>The response from the CreateTags service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
@@ -2156,6 +2165,9 @@ namespace Amazon.Redshift
         /// </param>
         /// 
         /// <returns>The response from the CreateTags service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
@@ -7866,6 +7878,10 @@ namespace Amazon.Redshift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ra3.xlplus
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ra3.4xlarge
         /// </para>
         ///  </li> <li> 
@@ -7958,6 +7974,10 @@ namespace Amazon.Redshift
         ///  </li> <li> 
         /// <para>
         /// ds2.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ra3.xlplus
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8390,6 +8410,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InsufficientClusterCapacityException">
+        /// The number of nodes specified exceeds the allotted capacity of the cluster.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
@@ -8415,6 +8438,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the ResumeCluster service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InsufficientClusterCapacityException">
+        /// The number of nodes specified exceeds the allotted capacity of the cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.

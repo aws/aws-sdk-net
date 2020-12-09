@@ -43,6 +43,7 @@ namespace Amazon.Redshift.Model
         /// support, the identifier is <code>amazon-redshift-support</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string AccountAlias
         {
             get { return this._accountAlias; }
@@ -61,6 +62,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of an AWS customer account authorized to restore a snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string AccountId
         {
             get { return this._accountId; }

@@ -61,6 +61,7 @@ namespace Amazon.Redshift.Model
         /// A unique identifier for the maintenance window.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string DeferMaintenanceIdentifier
         {
             get { return this._deferMaintenanceIdentifier; }

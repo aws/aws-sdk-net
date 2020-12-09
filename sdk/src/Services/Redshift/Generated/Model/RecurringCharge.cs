@@ -60,6 +60,7 @@ namespace Amazon.Redshift.Model
         /// The frequency at which the recurring charge amount is applied.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string RecurringChargeFrequency
         {
             get { return this._recurringChargeFrequency; }

@@ -45,6 +45,7 @@ namespace Amazon.Redshift.Model
         private long? _elapsedTimeInSeconds;
         private bool? _encrypted;
         private bool? _encryptedWithHSM;
+        private string _engineFullVersion;
         private bool? _enhancedVpcRouting;
         private long? _estimatedSecondsToCompletion;
         private string _kmsKeyId;
@@ -110,6 +111,7 @@ namespace Amazon.Redshift.Model
         /// The Availability Zone in which the cluster was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -164,6 +166,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the cluster for which the snapshot was taken.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -182,6 +185,7 @@ namespace Amazon.Redshift.Model
         /// The version ID of the Amazon Redshift engine that is running on the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterVersion
         {
             get { return this._clusterVersion; }
@@ -219,6 +223,7 @@ namespace Amazon.Redshift.Model
         /// The name of the database that was created when the cluster was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string DBName
         {
             get { return this._dbName; }
@@ -289,6 +294,26 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineFullVersion. 
+        /// <para>
+        /// The cluster version of the cluster used to create the snapshot. For example, 1.0.15503.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string EngineFullVersion
+        {
+            get { return this._engineFullVersion; }
+            set { this._engineFullVersion = value; }
+        }
+
+        // Check to see if EngineFullVersion property is set
+        internal bool IsSetEngineFullVersion()
+        {
+            return this._engineFullVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EnhancedVpcRouting. 
         /// <para>
         /// An option that specifies whether to create the cluster with enhanced VPC routing enabled.
@@ -343,6 +368,7 @@ namespace Amazon.Redshift.Model
         /// encrypt data in the cluster from which the snapshot was taken.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -361,6 +387,7 @@ namespace Amazon.Redshift.Model
         /// The name of the maintenance track for the snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string MaintenanceTrackName
         {
             get { return this._maintenanceTrackName; }
@@ -420,6 +447,7 @@ namespace Amazon.Redshift.Model
         /// The master user name for the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string MasterUsername
         {
             get { return this._masterUsername; }
@@ -438,6 +466,7 @@ namespace Amazon.Redshift.Model
         /// The node type of the nodes in the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string NodeType
         {
             get { return this._nodeType; }
@@ -476,6 +505,7 @@ namespace Amazon.Redshift.Model
         /// actions, such as sharing a manual snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string OwnerAccount
         {
             get { return this._ownerAccount; }
@@ -549,6 +579,7 @@ namespace Amazon.Redshift.Model
         /// The snapshot identifier that is provided in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }
@@ -586,6 +617,7 @@ namespace Amazon.Redshift.Model
         /// are of type "manual". 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SnapshotType
         {
             get { return this._snapshotType; }
@@ -604,6 +636,7 @@ namespace Amazon.Redshift.Model
         /// The source region from which the snapshot was copied.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SourceRegion
         {
             get { return this._sourceRegion; }
@@ -637,6 +670,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Status
         {
             get { return this._status; }
@@ -692,6 +726,7 @@ namespace Amazon.Redshift.Model
         /// this field is not in the output.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string VpcId
         {
             get { return this._vpcId; }

@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// this value in <a>ModifyClusterDbRevision</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string DatabaseRevision
         {
             get { return this._databaseRevision; }
@@ -81,6 +82,7 @@ namespace Amazon.Redshift.Model
         /// when it is updated to the corresponding <a>ClusterDbRevision</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Description
         {
             get { return this._description; }

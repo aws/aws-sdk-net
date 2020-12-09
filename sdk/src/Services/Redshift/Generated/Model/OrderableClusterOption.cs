@@ -62,6 +62,7 @@ namespace Amazon.Redshift.Model
         /// The cluster type, for example <code>multi-node</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterType
         {
             get { return this._clusterType; }
@@ -80,6 +81,7 @@ namespace Amazon.Redshift.Model
         /// The version of the orderable cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterVersion
         {
             get { return this._clusterVersion; }
@@ -98,6 +100,7 @@ namespace Amazon.Redshift.Model
         /// The node type for the orderable cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string NodeType
         {
             get { return this._nodeType; }

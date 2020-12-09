@@ -50,6 +50,7 @@ namespace Amazon.Redshift.Model
         /// and scheduled-action.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SourceType
         {
             get { return this._sourceType; }

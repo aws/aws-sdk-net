@@ -67,6 +67,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -114,6 +115,7 @@ namespace Amazon.Redshift.Model
         /// The name of the Amazon Redshift event notification subscription to be described.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SubscriptionName
         {
             get { return this._subscriptionName; }

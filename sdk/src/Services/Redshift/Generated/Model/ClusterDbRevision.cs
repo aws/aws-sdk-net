@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// The unique identifier of the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -62,6 +63,7 @@ namespace Amazon.Redshift.Model
         /// A string representing the current cluster version.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string CurrentDatabaseRevision
         {
             get { return this._currentDatabaseRevision; }

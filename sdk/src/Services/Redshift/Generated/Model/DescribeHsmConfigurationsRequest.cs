@@ -64,6 +64,7 @@ namespace Amazon.Redshift.Model
         /// by your AWS customer account.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string HsmConfigurationIdentifier
         {
             get { return this._hsmConfigurationIdentifier; }
@@ -87,6 +88,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }

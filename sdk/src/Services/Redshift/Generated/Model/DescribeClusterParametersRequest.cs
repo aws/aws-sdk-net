@@ -65,6 +65,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -112,7 +113,7 @@ namespace Amazon.Redshift.Model
         /// The name of a cluster parameter group for which to return details.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ParameterGroupName
         {
             get { return this._parameterGroupName; }
@@ -141,6 +142,7 @@ namespace Amazon.Redshift.Model
         /// Valid Values: <code>user</code> | <code>engine-default</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Source
         {
             get { return this._source; }

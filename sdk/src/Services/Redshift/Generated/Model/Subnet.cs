@@ -58,6 +58,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SubnetIdentifier
         {
             get { return this._subnetIdentifier; }
@@ -76,6 +77,7 @@ namespace Amazon.Redshift.Model
         /// The status of the subnet.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SubnetStatus
         {
             get { return this._subnetStatus; }

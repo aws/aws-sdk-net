@@ -60,6 +60,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -107,6 +108,7 @@ namespace Amazon.Redshift.Model
         /// The unique identifier for the offering.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ReservedNodeOfferingId
         {
             get { return this._reservedNodeOfferingId; }

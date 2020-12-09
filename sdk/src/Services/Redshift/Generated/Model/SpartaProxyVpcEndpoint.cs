@@ -29,35 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisableLogging operation.
-    /// Stops logging information, such as queries and connection attempts, for the specified
-    /// Amazon Redshift cluster.
+    /// The connection endpoint for connecting an Amazon Redshift cluster through the proxy.
     /// </summary>
-    public partial class DisableLoggingRequest : AmazonRedshiftRequest
+    public partial class SpartaProxyVpcEndpoint
     {
-        private string _clusterIdentifier;
+        private string _vpcEndpointId;
 
         /// <summary>
-        /// Gets and sets the property ClusterIdentifier. 
+        /// Gets and sets the property VpcEndpointId. 
         /// <para>
-        /// The identifier of the cluster on which logging is to be stopped.
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: <code>examplecluster</code> 
+        /// The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2147483647)]
-        public string ClusterIdentifier
+        [AWSProperty(Max=2147483647)]
+        public string VpcEndpointId
         {
-            get { return this._clusterIdentifier; }
-            set { this._clusterIdentifier = value; }
+            get { return this._vpcEndpointId; }
+            set { this._vpcEndpointId = value; }
         }
 
-        // Check to see if ClusterIdentifier property is set
-        internal bool IsSetClusterIdentifier()
+        // Check to see if VpcEndpointId property is set
+        internal bool IsSetVpcEndpointId()
         {
-            return this._clusterIdentifier != null;
+            return this._vpcEndpointId != null;
         }
 
     }

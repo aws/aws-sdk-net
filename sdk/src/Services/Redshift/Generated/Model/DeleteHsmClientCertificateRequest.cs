@@ -42,7 +42,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the HSM client certificate to be deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string HsmClientCertificateIdentifier
         {
             get { return this._hsmClientCertificateIdentifier; }

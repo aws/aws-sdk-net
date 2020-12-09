@@ -62,6 +62,7 @@ namespace Amazon.Redshift.Model
         /// The name of the cluster subnet group for which information is requested.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterSubnetGroupName
         {
             get { return this._clusterSubnetGroupName; }
@@ -85,6 +86,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }

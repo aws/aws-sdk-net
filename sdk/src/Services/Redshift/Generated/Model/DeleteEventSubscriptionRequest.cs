@@ -42,7 +42,7 @@ namespace Amazon.Redshift.Model
         /// The name of the Amazon Redshift event notification subscription to be deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string SubscriptionName
         {
             get { return this._subscriptionName; }

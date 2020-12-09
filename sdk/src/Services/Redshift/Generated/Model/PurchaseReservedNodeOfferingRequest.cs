@@ -75,7 +75,7 @@ namespace Amazon.Redshift.Model
         /// The unique identifier of the reserved node offering you want to purchase.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ReservedNodeOfferingId
         {
             get { return this._reservedNodeOfferingId; }

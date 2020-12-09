@@ -63,7 +63,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the Amazon Redshift cluster to restore the table to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -82,7 +82,7 @@ namespace Amazon.Redshift.Model
         /// The name of the table to create as a result of the current request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string NewTableName
         {
             get { return this._newTableName; }
@@ -103,7 +103,7 @@ namespace Amazon.Redshift.Model
         /// parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }
@@ -122,7 +122,7 @@ namespace Amazon.Redshift.Model
         /// The name of the source database that contains the table to restore from.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string SourceDatabaseName
         {
             get { return this._sourceDatabaseName; }
@@ -142,6 +142,7 @@ namespace Amazon.Redshift.Model
         /// specify a <code>SourceSchemaName</code> value, the default is <code>public</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SourceSchemaName
         {
             get { return this._sourceSchemaName; }
@@ -160,7 +161,7 @@ namespace Amazon.Redshift.Model
         /// The name of the source table to restore from.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string SourceTableName
         {
             get { return this._sourceTableName; }
@@ -179,6 +180,7 @@ namespace Amazon.Redshift.Model
         /// The name of the database to restore the table to.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string TargetDatabaseName
         {
             get { return this._targetDatabaseName; }
@@ -197,6 +199,7 @@ namespace Amazon.Redshift.Model
         /// The name of the schema to restore the table to.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string TargetSchemaName
         {
             get { return this._targetSchemaName; }

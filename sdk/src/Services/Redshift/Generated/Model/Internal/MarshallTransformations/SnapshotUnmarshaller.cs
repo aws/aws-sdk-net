@@ -127,6 +127,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.EncryptedWithHSM = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EngineFullVersion", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EngineFullVersion = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EnhancedVpcRouting", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

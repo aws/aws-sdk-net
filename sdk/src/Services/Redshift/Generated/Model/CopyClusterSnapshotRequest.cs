@@ -98,6 +98,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SourceSnapshotClusterIdentifier
         {
             get { return this._sourceSnapshotClusterIdentifier; }
@@ -125,7 +126,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string SourceSnapshotIdentifier
         {
             get { return this._sourceSnapshotIdentifier; }
@@ -169,7 +170,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string TargetSnapshotIdentifier
         {
             get { return this._targetSnapshotIdentifier; }

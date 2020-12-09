@@ -55,7 +55,7 @@ namespace Amazon.Redshift.Model
         /// <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ResourceName
         {
             get { return this._resourceName; }

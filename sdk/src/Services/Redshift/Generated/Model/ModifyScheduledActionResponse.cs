@@ -76,6 +76,7 @@ namespace Amazon.Redshift.Model
         /// Management Guide</i>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string IamRole
         {
             get { return this._iamRole; }
@@ -124,6 +125,7 @@ namespace Amazon.Redshift.Model
         /// Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Schedule
         {
             get { return this._schedule; }
@@ -142,6 +144,7 @@ namespace Amazon.Redshift.Model
         /// The description of the scheduled action. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ScheduledActionDescription
         {
             get { return this._scheduledActionDescription; }
@@ -160,6 +163,7 @@ namespace Amazon.Redshift.Model
         /// The name of the scheduled action. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ScheduledActionName
         {
             get { return this._scheduledActionName; }

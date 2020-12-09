@@ -48,7 +48,7 @@ namespace Amazon.Redshift.Model
         /// Example: <code>examplecluster</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -68,7 +68,7 @@ namespace Amazon.Redshift.Model
         /// to the <a>DescribeClusterDbRevisions</a> request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string RevisionTarget
         {
             get { return this._revisionTarget; }

@@ -47,6 +47,7 @@ namespace Amazon.Redshift.Model
         /// response records have been retrieved for the request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -66,6 +67,7 @@ namespace Amazon.Redshift.Model
         /// apply.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ParameterGroupFamily
         {
             get { return this._parameterGroupFamily; }

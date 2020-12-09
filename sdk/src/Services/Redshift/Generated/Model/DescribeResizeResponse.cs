@@ -201,6 +201,7 @@ namespace Amazon.Redshift.Model
         /// An optional string to provide additional details about the resize action.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Message
         {
             get { return this._message; }
@@ -242,6 +243,7 @@ namespace Amazon.Redshift.Model
         /// These values describe the type of resize operation being performed. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ResizeType
         {
             get { return this._resizeType; }
@@ -265,6 +267,7 @@ namespace Amazon.Redshift.Model
         /// <code>SUCCEEDED</code> | <code>CANCELLING</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Status
         {
             get { return this._status; }
@@ -287,6 +290,7 @@ namespace Amazon.Redshift.Model
         /// Valid Values: <code>multi-node</code> | <code>single-node</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string TargetClusterType
         {
             get { return this._targetClusterType; }
@@ -309,6 +313,7 @@ namespace Amazon.Redshift.Model
         /// Possible values are <code>KMS</code> and <code>None</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string TargetEncryptionType
         {
             get { return this._targetEncryptionType; }
@@ -327,6 +332,7 @@ namespace Amazon.Redshift.Model
         /// The node type that the cluster will have after the resize operation is complete.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string TargetNodeType
         {
             get { return this._targetNodeType; }

@@ -65,6 +65,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterParameterGroupFamily
         {
             get { return this._clusterParameterGroupFamily; }
@@ -87,6 +88,7 @@ namespace Amazon.Redshift.Model
         /// Example: <code>1.0</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterVersion
         {
             get { return this._clusterVersion; }
@@ -110,6 +112,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }

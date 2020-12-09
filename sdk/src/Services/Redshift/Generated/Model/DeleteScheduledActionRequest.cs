@@ -42,7 +42,7 @@ namespace Amazon.Redshift.Model
         /// The name of the scheduled action to delete. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ScheduledActionName
         {
             get { return this._scheduledActionName; }

@@ -114,6 +114,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the cluster which generated the requested snapshots.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -162,6 +163,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -211,6 +213,7 @@ namespace Amazon.Redshift.Model
         /// own, either specify your AWS customer account, or do not specify the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string OwnerAccount
         {
             get { return this._ownerAccount; }
@@ -229,6 +232,7 @@ namespace Amazon.Redshift.Model
         /// The snapshot identifier of the snapshot about which to return information.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }
@@ -252,6 +256,7 @@ namespace Amazon.Redshift.Model
         /// Valid Values: <code>automated</code> | <code>manual</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SnapshotType
         {
             get { return this._snapshotType; }

@@ -56,7 +56,7 @@ namespace Amazon.Redshift.Model
         /// By default, resize operations for all clusters defined for an AWS account are returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }

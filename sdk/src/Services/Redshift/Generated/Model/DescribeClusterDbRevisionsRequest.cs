@@ -46,6 +46,7 @@ namespace Amazon.Redshift.Model
         /// by default.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -74,6 +75,7 @@ namespace Amazon.Redshift.Model
         /// or the <code>marker</code> parameter, but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }

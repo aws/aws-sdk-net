@@ -87,6 +87,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the event.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string EventId
         {
             get { return this._eventId; }
@@ -105,6 +106,7 @@ namespace Amazon.Redshift.Model
         /// The text of this event.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Message
         {
             get { return this._message; }
@@ -127,6 +129,7 @@ namespace Amazon.Redshift.Model
         /// Values: ERROR, INFO
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Severity
         {
             get { return this._severity; }
@@ -145,6 +148,7 @@ namespace Amazon.Redshift.Model
         /// The identifier for the source of the event.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SourceIdentifier
         {
             get { return this._sourceIdentifier; }

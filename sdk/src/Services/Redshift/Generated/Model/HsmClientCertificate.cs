@@ -45,6 +45,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the HSM client certificate.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string HsmClientCertificateIdentifier
         {
             get { return this._hsmClientCertificateIdentifier; }
@@ -64,6 +65,7 @@ namespace Amazon.Redshift.Model
         /// must register the public key in the HSM.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string HsmClientCertificatePublicKey
         {
             get { return this._hsmClientCertificatePublicKey; }

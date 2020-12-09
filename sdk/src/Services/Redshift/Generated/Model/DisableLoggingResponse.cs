@@ -46,6 +46,7 @@ namespace Amazon.Redshift.Model
         /// The name of the S3 bucket where the log files are stored.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string BucketName
         {
             get { return this._bucketName; }
@@ -64,6 +65,7 @@ namespace Amazon.Redshift.Model
         /// The message indicating that logs failed to be delivered.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string LastFailureMessage
         {
             get { return this._lastFailureMessage; }
@@ -136,6 +138,7 @@ namespace Amazon.Redshift.Model
         /// The prefix applied to the log file names.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string S3KeyPrefix
         {
             get { return this._s3KeyPrefix; }

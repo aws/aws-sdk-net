@@ -45,6 +45,7 @@ namespace Amazon.Redshift.Model
         /// The name of the cluster security group to which the operation was applied.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterSecurityGroupName
         {
             get { return this._clusterSecurityGroupName; }
@@ -63,6 +64,7 @@ namespace Amazon.Redshift.Model
         /// A description of the security group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Description
         {
             get { return this._description; }

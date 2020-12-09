@@ -42,7 +42,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the usage limit to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string UsageLimitId
         {
             get { return this._usageLimitId; }

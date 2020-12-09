@@ -71,6 +71,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the cluster for which you want to describe usage limits.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -112,6 +113,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -205,6 +207,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the usage limit to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string UsageLimitId
         {
             get { return this._usageLimitId; }

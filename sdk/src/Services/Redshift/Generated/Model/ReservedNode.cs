@@ -54,6 +54,7 @@ namespace Amazon.Redshift.Model
         /// The currency code for the reserved cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string CurrencyCode
         {
             get { return this._currencyCode; }
@@ -126,6 +127,7 @@ namespace Amazon.Redshift.Model
         /// The node type of the reserved node.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string NodeType
         {
             get { return this._nodeType; }
@@ -145,6 +147,7 @@ namespace Amazon.Redshift.Model
         /// offering.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string OfferingType
         {
             get { return this._offeringType; }
@@ -181,6 +184,7 @@ namespace Amazon.Redshift.Model
         /// The unique identifier for the reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ReservedNodeId
         {
             get { return this._reservedNodeId; }
@@ -199,6 +203,7 @@ namespace Amazon.Redshift.Model
         /// The identifier for the reserved node offering.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ReservedNodeOfferingId
         {
             get { return this._reservedNodeOfferingId; }
@@ -277,6 +282,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string State
         {
             get { return this._state; }

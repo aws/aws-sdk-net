@@ -145,6 +145,7 @@ namespace Amazon.Redshift.Model
         /// The status of the restore action. Returns starting, restoring, completed, or failed.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Status
         {
             get { return this._status; }

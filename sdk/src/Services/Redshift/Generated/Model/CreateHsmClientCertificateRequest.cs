@@ -55,7 +55,7 @@ namespace Amazon.Redshift.Model
         /// use to connect to the HSM to use the database encryption keys.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string HsmClientCertificateIdentifier
         {
             get { return this._hsmClientCertificateIdentifier; }

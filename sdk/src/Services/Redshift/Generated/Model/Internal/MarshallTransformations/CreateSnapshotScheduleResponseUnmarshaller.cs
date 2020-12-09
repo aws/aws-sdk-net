@@ -156,6 +156,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     return InvalidScheduleExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTagFault"))
+                {
+                    return InvalidTagExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ScheduleDefinitionTypeUnsupported"))
                 {
                     return ScheduleDefinitionTypeUnsupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

@@ -49,6 +49,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -96,6 +97,7 @@ namespace Amazon.Redshift.Model
         /// Identifier for the node reservation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ReservedNodeId
         {
             get { return this._reservedNodeId; }

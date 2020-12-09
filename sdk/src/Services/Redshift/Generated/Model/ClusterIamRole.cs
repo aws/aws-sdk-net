@@ -62,6 +62,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ApplyStatus
         {
             get { return this._applyStatus; }
@@ -81,6 +82,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string IamRoleArn
         {
             get { return this._iamRoleArn; }

@@ -88,7 +88,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the cluster that you want to limit usage.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }

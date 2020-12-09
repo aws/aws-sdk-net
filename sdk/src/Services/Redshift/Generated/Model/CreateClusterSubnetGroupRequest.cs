@@ -73,7 +73,7 @@ namespace Amazon.Redshift.Model
         /// Example: <code>examplesubnetgroup</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ClusterSubnetGroupName
         {
             get { return this._clusterSubnetGroupName; }
@@ -92,7 +92,7 @@ namespace Amazon.Redshift.Model
         /// A description for the subnet group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string Description
         {
             get { return this._description; }

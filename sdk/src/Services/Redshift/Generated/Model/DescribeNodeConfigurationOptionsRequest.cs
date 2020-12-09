@@ -72,6 +72,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the cluster to evaluate for possible node configurations.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -113,6 +114,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -161,6 +163,7 @@ namespace Amazon.Redshift.Model
         /// restoring a snapshot you do not own, optional if you own the snapshot.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string OwnerAccount
         {
             get { return this._ownerAccount; }
@@ -179,6 +182,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the snapshot to evaluate for possible node configurations.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }

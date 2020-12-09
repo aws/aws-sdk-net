@@ -43,6 +43,7 @@ namespace Amazon.Redshift.Model
         /// The cluster version for the new maintenance track.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string DatabaseVersion
         {
             get { return this._databaseVersion; }
@@ -61,6 +62,7 @@ namespace Amazon.Redshift.Model
         /// The name of the new maintenance track.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string MaintenanceTrackName
         {
             get { return this._maintenanceTrackName; }

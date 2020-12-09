@@ -80,6 +80,7 @@ namespace Amazon.Redshift.Model
         /// The node type, such as, "ds2.8xlarge".
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string NodeType
         {
             get { return this._nodeType; }

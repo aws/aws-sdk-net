@@ -35,6 +35,7 @@ namespace Amazon.Redshift.Model
     {
         private string _address;
         private int? _port;
+        private List<SpartaProxyVpcEndpoint> _vpcEndpoints = new List<SpartaProxyVpcEndpoint>();
 
         /// <summary>
         /// Gets and sets the property Address. 
@@ -42,6 +43,7 @@ namespace Amazon.Redshift.Model
         /// The DNS address of the Cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Address
         {
             get { return this._address; }
@@ -70,6 +72,24 @@ namespace Amazon.Redshift.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpoints. 
+        /// <para>
+        /// Describes a connection endpoint.
+        /// </para>
+        /// </summary>
+        public List<SpartaProxyVpcEndpoint> VpcEndpoints
+        {
+            get { return this._vpcEndpoints; }
+            set { this._vpcEndpoints = value; }
+        }
+
+        // Check to see if VpcEndpoints property is set
+        internal bool IsSetVpcEndpoints()
+        {
+            return this._vpcEndpoints != null && this._vpcEndpoints.Count > 0; 
         }
 
     }

@@ -44,7 +44,7 @@ namespace Amazon.Redshift.Model
         /// A string representing the node identifier of the DC1 Reserved Node to be exchanged.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ReservedNodeId
         {
             get { return this._reservedNodeId; }
@@ -65,7 +65,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string TargetReservedNodeOfferingId
         {
             get { return this._targetReservedNodeOfferingId; }

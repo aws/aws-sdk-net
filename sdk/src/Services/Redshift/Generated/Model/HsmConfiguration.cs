@@ -47,6 +47,7 @@ namespace Amazon.Redshift.Model
         /// A text description of the HSM configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Description
         {
             get { return this._description; }
@@ -65,6 +66,7 @@ namespace Amazon.Redshift.Model
         /// The name of the Amazon Redshift HSM configuration.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string HsmConfigurationIdentifier
         {
             get { return this._hsmConfigurationIdentifier; }
@@ -83,6 +85,7 @@ namespace Amazon.Redshift.Model
         /// The IP address that the Amazon Redshift cluster must use to access the HSM.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string HsmIpAddress
         {
             get { return this._hsmIpAddress; }
@@ -102,6 +105,7 @@ namespace Amazon.Redshift.Model
         /// their database encryption keys.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string HsmPartitionName
         {
             get { return this._hsmPartitionName; }

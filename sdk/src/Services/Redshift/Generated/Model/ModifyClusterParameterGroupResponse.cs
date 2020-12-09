@@ -42,6 +42,7 @@ namespace Amazon.Redshift.Model
         /// The name of the cluster parameter group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ParameterGroupName
         {
             get { return this._parameterGroupName; }
@@ -62,6 +63,7 @@ namespace Amazon.Redshift.Model
         /// cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ParameterGroupStatus
         {
             get { return this._parameterGroupStatus; }

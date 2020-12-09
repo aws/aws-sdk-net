@@ -61,6 +61,7 @@ namespace Amazon.Redshift.Model
         /// belong to.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SourceType
         {
             get { return this._sourceType; }

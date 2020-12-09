@@ -52,6 +52,7 @@ namespace Amazon.Redshift.Model
         /// Redshift is granted permission.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -70,6 +71,7 @@ namespace Amazon.Redshift.Model
         /// The name of the snapshot copy grant.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SnapshotCopyGrantName
         {
             get { return this._snapshotCopyGrantName; }

@@ -47,6 +47,7 @@ namespace Amazon.Redshift.Model
         private bool? _allowVersionUpgrade;
         private int? _automatedSnapshotRetentionPeriod;
         private string _availabilityZone;
+        private bool? _availabilityZoneRelocation;
         private string _clusterIdentifier;
         private string _clusterParameterGroupName;
         private List<string> _clusterSecurityGroups = new List<string>();
@@ -80,6 +81,7 @@ namespace Amazon.Redshift.Model
         /// Reserved.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string AdditionalInfo
         {
             get { return this._additionalInfo; }
@@ -172,6 +174,7 @@ namespace Amazon.Redshift.Model
         /// endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -182,6 +185,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneRelocation. 
+        /// <para>
+        /// The option to enable relocation for an Amazon Redshift cluster between Availability
+        /// Zones after the cluster is created.
+        /// </para>
+        /// </summary>
+        public bool AvailabilityZoneRelocation
+        {
+            get { return this._availabilityZoneRelocation.GetValueOrDefault(); }
+            set { this._availabilityZoneRelocation = value; }
+        }
+
+        // Check to see if AvailabilityZoneRelocation property is set
+        internal bool IsSetAvailabilityZoneRelocation()
+        {
+            return this._availabilityZoneRelocation.HasValue; 
         }
 
         /// <summary>
@@ -220,7 +242,7 @@ namespace Amazon.Redshift.Model
         /// Example: <code>myexamplecluster</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -262,6 +284,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterParameterGroupName
         {
             get { return this._clusterParameterGroupName; }
@@ -307,6 +330,7 @@ namespace Amazon.Redshift.Model
         /// private cloud (VPC).
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterSubnetGroupName
         {
             get { return this._clusterSubnetGroupName; }
@@ -341,6 +365,7 @@ namespace Amazon.Redshift.Model
         /// Default: <code>multi-node</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterType
         {
             get { return this._clusterType; }
@@ -372,6 +397,7 @@ namespace Amazon.Redshift.Model
         /// Example: <code>1.0</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterVersion
         {
             get { return this._clusterVersion; }
@@ -420,6 +446,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string DBName
         {
             get { return this._dbName; }
@@ -445,6 +472,7 @@ namespace Amazon.Redshift.Model
         /// Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ElasticIp
         {
             get { return this._elasticIp; }
@@ -515,6 +543,7 @@ namespace Amazon.Redshift.Model
         /// to retrieve the data encryption keys stored in an HSM.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string HsmClientCertificateIdentifier
         {
             get { return this._hsmClientCertificateIdentifier; }
@@ -534,6 +563,7 @@ namespace Amazon.Redshift.Model
         /// Redshift cluster can use to retrieve and store keys in an HSM.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string HsmConfigurationIdentifier
         {
             get { return this._hsmConfigurationIdentifier; }
@@ -577,6 +607,7 @@ namespace Amazon.Redshift.Model
         /// use to encrypt data in the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -597,6 +628,7 @@ namespace Amazon.Redshift.Model
         /// track.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string MaintenanceTrackName
         {
             get { return this._maintenanceTrackName; }
@@ -658,7 +690,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string MasterUsername
         {
             get { return this._masterUsername; }
@@ -704,7 +736,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }
@@ -728,11 +760,11 @@ namespace Amazon.Redshift.Model
         ///  
         /// <para>
         /// Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code>
-        /// | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code>
-        /// | <code>ra3.16xlarge</code> 
+        /// | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code>
+        /// | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string NodeType
         {
             get { return this._nodeType; }
@@ -840,6 +872,7 @@ namespace Amazon.Redshift.Model
         /// Constraints: Minimum 30-minute window.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string PreferredMaintenanceWindow
         {
             get { return this._preferredMaintenanceWindow; }
@@ -876,6 +909,7 @@ namespace Amazon.Redshift.Model
         /// A unique identifier for the snapshot schedule.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SnapshotScheduleIdentifier
         {
             get { return this._snapshotScheduleIdentifier; }

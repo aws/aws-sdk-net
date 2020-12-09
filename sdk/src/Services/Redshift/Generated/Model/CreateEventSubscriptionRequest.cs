@@ -120,6 +120,7 @@ namespace Amazon.Redshift.Model
         /// Values: ERROR, INFO
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Severity
         {
             get { return this._severity; }
@@ -140,7 +141,7 @@ namespace Amazon.Redshift.Model
         /// to it.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string SnsTopicArn
         {
             get { return this._snsTopicArn; }
@@ -196,6 +197,7 @@ namespace Amazon.Redshift.Model
         /// and scheduled-action.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SourceType
         {
             get { return this._sourceType; }
@@ -235,7 +237,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string SubscriptionName
         {
             get { return this._subscriptionName; }

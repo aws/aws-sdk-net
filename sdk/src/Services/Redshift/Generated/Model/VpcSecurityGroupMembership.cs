@@ -42,6 +42,7 @@ namespace Amazon.Redshift.Model
         /// The status of the VPC security group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Status
         {
             get { return this._status; }
@@ -60,6 +61,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the VPC security group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string VpcSecurityGroupId
         {
             get { return this._vpcSecurityGroupId; }

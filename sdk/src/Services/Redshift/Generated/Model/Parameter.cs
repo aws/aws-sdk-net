@@ -49,6 +49,7 @@ namespace Amazon.Redshift.Model
         /// The valid range of values for the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string AllowedValues
         {
             get { return this._allowedValues; }
@@ -89,6 +90,7 @@ namespace Amazon.Redshift.Model
         /// The data type of the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string DataType
         {
             get { return this._dataType; }
@@ -107,6 +109,7 @@ namespace Amazon.Redshift.Model
         /// A description of the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Description
         {
             get { return this._description; }
@@ -144,6 +147,7 @@ namespace Amazon.Redshift.Model
         /// The earliest engine version to which the parameter can apply.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string MinimumEngineVersion
         {
             get { return this._minimumEngineVersion; }
@@ -162,6 +166,7 @@ namespace Amazon.Redshift.Model
         /// The name of the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ParameterName
         {
             get { return this._parameterName; }
@@ -180,6 +185,7 @@ namespace Amazon.Redshift.Model
         /// The value of the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ParameterValue
         {
             get { return this._parameterValue; }
@@ -198,6 +204,7 @@ namespace Amazon.Redshift.Model
         /// The source of the parameter value, such as "engine-default" or "user".
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Source
         {
             get { return this._source; }

@@ -63,6 +63,7 @@ namespace Amazon.Redshift.Model
         /// field is empty, all revisions have already been returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }

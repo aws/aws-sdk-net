@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// The failure code for the error.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string FailureCode
         {
             get { return this._failureCode; }
@@ -62,6 +63,7 @@ namespace Amazon.Redshift.Model
         /// The text message describing the error.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string FailureReason
         {
             get { return this._failureReason; }
@@ -80,6 +82,7 @@ namespace Amazon.Redshift.Model
         /// A unique identifier for the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SnapshotClusterIdentifier
         {
             get { return this._snapshotClusterIdentifier; }
@@ -98,6 +101,7 @@ namespace Amazon.Redshift.Model
         /// A unique identifier for the snapshot returning the error.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SnapshotIdentifier
         {
             get { return this._snapshotIdentifier; }

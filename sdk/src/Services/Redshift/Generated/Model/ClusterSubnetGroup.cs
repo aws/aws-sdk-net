@@ -46,6 +46,7 @@ namespace Amazon.Redshift.Model
         /// The name of the cluster subnet group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterSubnetGroupName
         {
             get { return this._clusterSubnetGroupName; }
@@ -64,6 +65,7 @@ namespace Amazon.Redshift.Model
         /// The description of the cluster subnet group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Description
         {
             get { return this._description; }
@@ -83,6 +85,7 @@ namespace Amazon.Redshift.Model
         /// <code>Incomplete</code> and <code>Invalid</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SubnetGroupStatus
         {
             get { return this._subnetGroupStatus; }
@@ -137,6 +140,7 @@ namespace Amazon.Redshift.Model
         /// The VPC ID of the cluster subnet group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string VpcId
         {
             get { return this._vpcId; }

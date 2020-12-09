@@ -42,7 +42,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the Amazon Redshift HSM configuration to be deleted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string HsmConfigurationIdentifier
         {
             get { return this._hsmConfigurationIdentifier; }

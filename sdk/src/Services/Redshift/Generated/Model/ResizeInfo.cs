@@ -60,6 +60,7 @@ namespace Amazon.Redshift.Model
         /// Returns the value <code>ClassicResize</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ResizeType
         {
             get { return this._resizeType; }

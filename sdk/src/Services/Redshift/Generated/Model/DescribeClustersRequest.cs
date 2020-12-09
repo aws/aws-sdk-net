@@ -69,6 +69,7 @@ namespace Amazon.Redshift.Model
         /// The default is that all clusters defined for an account are returned.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -96,6 +97,7 @@ namespace Amazon.Redshift.Model
         /// <b>Marker</b> parameter, but not both. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }

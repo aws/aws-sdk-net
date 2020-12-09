@@ -42,6 +42,7 @@ namespace Amazon.Redshift.Model
         /// The name of the availability zone.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Name
         {
             get { return this._name; }

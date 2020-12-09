@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// to retrieve the data encryption keys stored in an HSM.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string HsmClientCertificateIdentifier
         {
             get { return this._hsmClientCertificateIdentifier; }
@@ -63,6 +64,7 @@ namespace Amazon.Redshift.Model
         /// Redshift cluster can use to retrieve and store keys in an HSM.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string HsmConfigurationIdentifier
         {
             get { return this._hsmConfigurationIdentifier; }
@@ -86,6 +88,7 @@ namespace Amazon.Redshift.Model
         /// Values: active, applying
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Status
         {
             get { return this._status; }
