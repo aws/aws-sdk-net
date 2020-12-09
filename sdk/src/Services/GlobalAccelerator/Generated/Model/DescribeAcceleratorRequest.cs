@@ -30,8 +30,7 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccelerator operation.
-    /// Describe an accelerator. To see an AWS CLI example of describing an accelerator, scroll
-    /// down to <b>Example</b>.
+    /// Describe an accelerator.
     /// </summary>
     public partial class DescribeAcceleratorRequest : AmazonGlobalAcceleratorRequest
     {

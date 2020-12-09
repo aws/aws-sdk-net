@@ -30,8 +30,7 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Add tags to an accelerator resource. To see an AWS CLI example of adding tags to an
-    /// accelerator, scroll down to <b>Example</b>.
+    /// Add tags to an accelerator resource. 
     /// 
     ///  
     /// <para>

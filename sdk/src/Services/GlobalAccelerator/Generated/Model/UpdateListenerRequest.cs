@@ -30,8 +30,7 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateListener operation.
-    /// Update a listener. To see an AWS CLI example of updating listener, scroll down to
-    /// <b>Example</b>.
+    /// Update a listener.
     /// </summary>
     public partial class UpdateListenerRequest : AmazonGlobalAcceleratorRequest
     {

@@ -30,8 +30,7 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the ListListeners operation.
-    /// List the listeners for an accelerator. To see an AWS CLI example of listing the listeners
-    /// for an accelerator, scroll down to <b>Example</b>.
+    /// List the listeners for an accelerator.
     /// </summary>
     public partial class ListListenersRequest : AmazonGlobalAcceleratorRequest
     {

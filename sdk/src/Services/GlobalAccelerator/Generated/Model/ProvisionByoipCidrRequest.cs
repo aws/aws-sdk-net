@@ -37,11 +37,6 @@ namespace Amazon.GlobalAccelerator.Model
     /// 
     ///  
     /// <para>
-    /// To see an AWS CLI example of provisioning an address range for BYOIP, scroll down
-    /// to <b>Example</b>.
-    /// </para>
-    ///  
-    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
     /// Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
     /// </para>

@@ -30,8 +30,7 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeListener operation.
-    /// Describe a listener. To see an AWS CLI example of describing a listener, scroll down
-    /// to <b>Example</b>.
+    /// Describe a listener.
     /// </summary>
     public partial class DescribeListenerRequest : AmazonGlobalAcceleratorRequest
     {

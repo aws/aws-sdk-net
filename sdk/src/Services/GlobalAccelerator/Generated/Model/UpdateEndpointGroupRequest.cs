@@ -32,12 +32,6 @@ namespace Amazon.GlobalAccelerator.Model
     /// Container for the parameters to the UpdateEndpointGroup operation.
     /// Update an endpoint group. A resource must be valid and active when you add it as an
     /// endpoint.
-    /// 
-    ///  
-    /// <para>
-    /// To see an AWS CLI example of updating an endpoint group, scroll down to <b>Example</b>.
-    /// 
-    /// </para>
     /// </summary>
     public partial class UpdateEndpointGroupRequest : AmazonGlobalAcceleratorRequest
     {

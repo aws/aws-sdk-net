@@ -211,6 +211,156 @@ namespace Amazon.GlobalAccelerator
 
 
     /// <summary>
+    /// Constants used for properties of type CustomRoutingAcceleratorStatus.
+    /// </summary>
+    public class CustomRoutingAcceleratorStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEPLOYED for CustomRoutingAcceleratorStatus
+        /// </summary>
+        public static readonly CustomRoutingAcceleratorStatus DEPLOYED = new CustomRoutingAcceleratorStatus("DEPLOYED");
+        /// <summary>
+        /// Constant IN_PROGRESS for CustomRoutingAcceleratorStatus
+        /// </summary>
+        public static readonly CustomRoutingAcceleratorStatus IN_PROGRESS = new CustomRoutingAcceleratorStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomRoutingAcceleratorStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomRoutingAcceleratorStatus FindValue(string value)
+        {
+            return FindValue<CustomRoutingAcceleratorStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomRoutingAcceleratorStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomRoutingDestinationTrafficState.
+    /// </summary>
+    public class CustomRoutingDestinationTrafficState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for CustomRoutingDestinationTrafficState
+        /// </summary>
+        public static readonly CustomRoutingDestinationTrafficState ALLOW = new CustomRoutingDestinationTrafficState("ALLOW");
+        /// <summary>
+        /// Constant DENY for CustomRoutingDestinationTrafficState
+        /// </summary>
+        public static readonly CustomRoutingDestinationTrafficState DENY = new CustomRoutingDestinationTrafficState("DENY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomRoutingDestinationTrafficState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomRoutingDestinationTrafficState FindValue(string value)
+        {
+            return FindValue<CustomRoutingDestinationTrafficState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomRoutingDestinationTrafficState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomRoutingProtocol.
+    /// </summary>
+    public class CustomRoutingProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TCP for CustomRoutingProtocol
+        /// </summary>
+        public static readonly CustomRoutingProtocol TCP = new CustomRoutingProtocol("TCP");
+        /// <summary>
+        /// Constant UDP for CustomRoutingProtocol
+        /// </summary>
+        public static readonly CustomRoutingProtocol UDP = new CustomRoutingProtocol("UDP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomRoutingProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomRoutingProtocol FindValue(string value)
+        {
+            return FindValue<CustomRoutingProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomRoutingProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HealthCheckProtocol.
     /// </summary>
     public class HealthCheckProtocol : ConstantClass

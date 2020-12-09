@@ -33,11 +33,6 @@ namespace Amazon.GlobalAccelerator.Model
     /// Create an endpoint group for the specified listener. An endpoint group is a collection
     /// of endpoints in one AWS Region. A resource must be valid and active when you add it
     /// as an endpoint.
-    /// 
-    ///  
-    /// <para>
-    /// To see an AWS CLI example of creating an endpoint group, scroll down to <b>Example</b>.
-    /// </para>
     /// </summary>
     public partial class CreateEndpointGroupRequest : AmazonGlobalAcceleratorRequest
     {

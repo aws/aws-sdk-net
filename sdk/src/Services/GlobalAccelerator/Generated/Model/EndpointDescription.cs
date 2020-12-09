@@ -77,8 +77,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <para>
         /// An ID for the endpoint. If the endpoint is a Network Load Balancer or Application
         /// Load Balancer, this is the Amazon Resource Name (ARN) of the resource. If the endpoint
-        /// is an Elastic IP address, this is the Elastic IP address allocation ID. For EC2 instances,
-        /// this is the EC2 instance ID. 
+        /// is an Elastic IP address, this is the Elastic IP address allocation ID. For Amazon
+        /// EC2 instances, this is the EC2 instance ID. 
         /// </para>
         ///  
         /// <para>
@@ -101,40 +101,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property HealthReason. 
         /// <para>
-        /// The reason code associated with why the endpoint is not healthy. If the endpoint state
-        /// is healthy, a reason code is not provided.
+        /// Returns a null result.
         /// </para>
-        ///  
-        /// <para>
-        /// If the endpoint state is <b>unhealthy</b>, the reason code can be one of the following
-        /// values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>Timeout</b>: The health check requests to the endpoint are timing out before returning
-        /// a status.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Failed</b>: The health check failed, for example because the endpoint response
-        /// was invalid (malformed).
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If the endpoint state is <b>initial</b>, the reason code can be one of the following
-        /// values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>ProvisioningInProgress</b>: The endpoint is in the process of being provisioned.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>InitialHealthChecking</b>: Global Accelerator is still setting up the minimum
-        /// number of health checks for the endpoint that are required to determine its health
-        /// status.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=255)]
         public string HealthReason

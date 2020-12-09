@@ -30,8 +30,7 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List all tags for an accelerator. To see an AWS CLI example of listing tags for an
-    /// accelerator, scroll down to <b>Example</b>.
+    /// List all tags for an accelerator. 
     /// 
     ///  
     /// <para>

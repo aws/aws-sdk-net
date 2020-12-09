@@ -30,8 +30,7 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAcceleratorAttributes operation.
-    /// Update the attributes for an accelerator. To see an AWS CLI example of updating an
-    /// accelerator to enable flow logs, scroll down to <b>Example</b>.
+    /// Update the attributes for an accelerator.
     /// </summary>
     public partial class UpdateAcceleratorAttributesRequest : AmazonGlobalAcceleratorRequest
     {

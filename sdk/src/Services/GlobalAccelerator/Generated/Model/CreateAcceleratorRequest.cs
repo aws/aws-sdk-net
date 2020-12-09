@@ -32,8 +32,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// Container for the parameters to the CreateAccelerator operation.
     /// Create an accelerator. An accelerator includes one or more listeners that process
     /// inbound connections and direct traffic to one or more endpoint groups, each of which
-    /// includes endpoints, such as Network Load Balancers. To see an AWS CLI example of creating
-    /// an accelerator, scroll down to <b>Example</b>.
+    /// includes endpoints, such as Network Load Balancers. 
     /// 
     ///  <important> 
     /// <para>
@@ -136,7 +135,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The value for the address type must be IPv4. 
+        /// The value for the address type must be IPv4.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType
