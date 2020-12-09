@@ -5619,6 +5619,18 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType G3sXlarge = new InstanceType("g3s.xlarge");
         /// <summary>
+        /// Constant G4ad16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G4ad16xlarge = new InstanceType("g4ad.16xlarge");
+        /// <summary>
+        /// Constant G4ad4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G4ad4xlarge = new InstanceType("g4ad.4xlarge");
+        /// <summary>
+        /// Constant G4ad8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G4ad8xlarge = new InstanceType("g4ad.8xlarge");
+        /// <summary>
         /// Constant G4dn12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType G4dn12xlarge = new InstanceType("g4dn.12xlarge");
