@@ -37,6 +37,7 @@ namespace Amazon.Kendra.Model
         private int? _beginOffset;
         private int? _endOffset;
         private bool? _topAnswer;
+        private HighlightType _type;
 
         /// <summary>
         /// Gets and sets the property BeginOffset. 
@@ -93,6 +94,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetTopAnswer()
         {
             return this._topAnswer.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The highlight type. 
+        /// </para>
+        /// </summary>
+        public HighlightType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

@@ -655,6 +655,82 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  CreateThesaurus
+
+        /// <summary>
+        /// Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr
+        /// format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThesaurus service method.</param>
+        /// 
+        /// <returns>The response from the CreateThesaurus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus">REST API Reference for CreateThesaurus Operation</seealso>
+        public virtual CreateThesaurusResponse CreateThesaurus(CreateThesaurusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThesaurusResponseUnmarshaller.Instance;
+
+            return Invoke<CreateThesaurusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateThesaurus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateThesaurus operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateThesaurus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus">REST API Reference for CreateThesaurus Operation</seealso>
+        public virtual IAsyncResult BeginCreateThesaurus(CreateThesaurusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThesaurusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateThesaurus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateThesaurus.</param>
+        /// 
+        /// <returns>Returns a  CreateThesaurusResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus">REST API Reference for CreateThesaurus Operation</seealso>
+        public virtual CreateThesaurusResponse EndCreateThesaurus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateThesaurusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteDataSource
 
         /// <summary>
@@ -877,6 +953,78 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  DeleteThesaurus
+
+        /// <summary>
+        /// Deletes an existing Amazon Kendra thesaurus.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThesaurus service method.</param>
+        /// 
+        /// <returns>The response from the DeleteThesaurus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus">REST API Reference for DeleteThesaurus Operation</seealso>
+        public virtual DeleteThesaurusResponse DeleteThesaurus(DeleteThesaurusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThesaurusResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteThesaurusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteThesaurus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThesaurus operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteThesaurus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus">REST API Reference for DeleteThesaurus Operation</seealso>
+        public virtual IAsyncResult BeginDeleteThesaurus(DeleteThesaurusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThesaurusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteThesaurus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteThesaurus.</param>
+        /// 
+        /// <returns>Returns a  DeleteThesaurusResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus">REST API Reference for DeleteThesaurus Operation</seealso>
+        public virtual DeleteThesaurusResponse EndDeleteThesaurus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteThesaurusResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDataSource
 
         /// <summary>
@@ -1080,6 +1228,75 @@ namespace Amazon.Kendra
         public virtual DescribeIndexResponse EndDescribeIndex(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeIndexResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeThesaurus
+
+        /// <summary>
+        /// Describes an existing Amazon Kendra thesaurus.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThesaurus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeThesaurus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus">REST API Reference for DescribeThesaurus Operation</seealso>
+        public virtual DescribeThesaurusResponse DescribeThesaurus(DescribeThesaurusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThesaurusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThesaurusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeThesaurus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThesaurus operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeThesaurus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus">REST API Reference for DescribeThesaurus Operation</seealso>
+        public virtual IAsyncResult BeginDescribeThesaurus(DescribeThesaurusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThesaurusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeThesaurus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeThesaurus.</param>
+        /// 
+        /// <returns>Returns a  DescribeThesaurusResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus">REST API Reference for DescribeThesaurus Operation</seealso>
+        public virtual DescribeThesaurusResponse EndDescribeThesaurus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeThesaurusResponse>(asyncResult);
         }
 
         #endregion
@@ -1426,6 +1643,75 @@ namespace Amazon.Kendra
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListThesauri
+
+        /// <summary>
+        /// Lists the Amazon Kendra thesauri associated with an index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThesauri service method.</param>
+        /// 
+        /// <returns>The response from the ListThesauri service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri">REST API Reference for ListThesauri Operation</seealso>
+        public virtual ListThesauriResponse ListThesauri(ListThesauriRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThesauriRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThesauriResponseUnmarshaller.Instance;
+
+            return Invoke<ListThesauriResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThesauri operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThesauri operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListThesauri
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri">REST API Reference for ListThesauri Operation</seealso>
+        public virtual IAsyncResult BeginListThesauri(ListThesauriRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThesauriRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThesauriResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListThesauri operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListThesauri.</param>
+        /// 
+        /// <returns>Returns a  ListThesauriResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri">REST API Reference for ListThesauri Operation</seealso>
+        public virtual ListThesauriResponse EndListThesauri(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListThesauriResponse>(asyncResult);
         }
 
         #endregion
@@ -2038,6 +2324,78 @@ namespace Amazon.Kendra
         public virtual UpdateIndexResponse EndUpdateIndex(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateIndexResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateThesaurus
+
+        /// <summary>
+        /// Updates a thesaurus file associated with an index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThesaurus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThesaurus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus">REST API Reference for UpdateThesaurus Operation</seealso>
+        public virtual UpdateThesaurusResponse UpdateThesaurus(UpdateThesaurusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThesaurusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThesaurusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateThesaurus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThesaurus operation on AmazonKendraClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateThesaurus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus">REST API Reference for UpdateThesaurus Operation</seealso>
+        public virtual IAsyncResult BeginUpdateThesaurus(UpdateThesaurusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThesaurusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateThesaurus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateThesaurus.</param>
+        /// 
+        /// <returns>Returns a  UpdateThesaurusResult from Kendra.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus">REST API Reference for UpdateThesaurus Operation</seealso>
+        public virtual UpdateThesaurusResponse EndUpdateThesaurus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateThesaurusResponse>(asyncResult);
         }
 
         #endregion

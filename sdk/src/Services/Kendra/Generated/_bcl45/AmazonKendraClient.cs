@@ -755,6 +755,91 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  CreateThesaurus
+
+
+        /// <summary>
+        /// Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr
+        /// format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThesaurus service method.</param>
+        /// 
+        /// <returns>The response from the CreateThesaurus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus">REST API Reference for CreateThesaurus Operation</seealso>
+        public virtual CreateThesaurusResponse CreateThesaurus(CreateThesaurusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThesaurusResponseUnmarshaller.Instance;
+
+            return Invoke<CreateThesaurusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr
+        /// format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThesaurus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateThesaurus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus">REST API Reference for CreateThesaurus Operation</seealso>
+        public virtual Task<CreateThesaurusResponse> CreateThesaurusAsync(CreateThesaurusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThesaurusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateThesaurusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDataSource
 
 
@@ -998,6 +1083,83 @@ namespace Amazon.Kendra
 
         #endregion
         
+        #region  DeleteThesaurus
+
+
+        /// <summary>
+        /// Deletes an existing Amazon Kendra thesaurus.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThesaurus service method.</param>
+        /// 
+        /// <returns>The response from the DeleteThesaurus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus">REST API Reference for DeleteThesaurus Operation</seealso>
+        public virtual DeleteThesaurusResponse DeleteThesaurus(DeleteThesaurusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThesaurusResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteThesaurusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an existing Amazon Kendra thesaurus.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThesaurus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteThesaurus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus">REST API Reference for DeleteThesaurus Operation</seealso>
+        public virtual Task<DeleteThesaurusResponse> DeleteThesaurusAsync(DeleteThesaurusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteThesaurusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteThesaurusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDataSource
 
 
@@ -1207,6 +1369,77 @@ namespace Amazon.Kendra
             options.ResponseUnmarshaller = DescribeIndexResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeIndexResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeThesaurus
+
+
+        /// <summary>
+        /// Describes an existing Amazon Kendra thesaurus.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThesaurus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeThesaurus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus">REST API Reference for DescribeThesaurus Operation</seealso>
+        public virtual DescribeThesaurusResponse DescribeThesaurus(DescribeThesaurusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThesaurusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThesaurusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes an existing Amazon Kendra thesaurus.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThesaurus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeThesaurus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus">REST API Reference for DescribeThesaurus Operation</seealso>
+        public virtual Task<DescribeThesaurusResponse> DescribeThesaurusAsync(DescribeThesaurusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeThesaurusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeThesaurusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1564,6 +1797,77 @@ namespace Amazon.Kendra
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListThesauri
+
+
+        /// <summary>
+        /// Lists the Amazon Kendra thesauri associated with an index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThesauri service method.</param>
+        /// 
+        /// <returns>The response from the ListThesauri service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri">REST API Reference for ListThesauri Operation</seealso>
+        public virtual ListThesauriResponse ListThesauri(ListThesauriRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThesauriRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThesauriResponseUnmarshaller.Instance;
+
+            return Invoke<ListThesauriResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the Amazon Kendra thesauri associated with an index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThesauri service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListThesauri service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri">REST API Reference for ListThesauri Operation</seealso>
+        public virtual Task<ListThesauriResponse> ListThesauriAsync(ListThesauriRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListThesauriRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThesauriResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListThesauriResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2252,6 +2556,83 @@ namespace Amazon.Kendra
             options.ResponseUnmarshaller = UpdateIndexResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateIndexResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateThesaurus
+
+
+        /// <summary>
+        /// Updates a thesaurus file associated with an index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThesaurus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThesaurus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus">REST API Reference for UpdateThesaurus Operation</seealso>
+        public virtual UpdateThesaurusResponse UpdateThesaurus(UpdateThesaurusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThesaurusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThesaurusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a thesaurus file associated with an index.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThesaurus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateThesaurus service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus">REST API Reference for UpdateThesaurus Operation</seealso>
+        public virtual Task<UpdateThesaurusResponse> UpdateThesaurusAsync(UpdateThesaurusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThesaurusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThesaurusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateThesaurusResponse>(request, options, cancellationToken);
         }
 
         #endregion
