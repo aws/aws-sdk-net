@@ -34,9 +34,12 @@ namespace Amazon.EC2.Model
     public partial class TransitGatewayMulticastDomain
     {
         private DateTime? _creationTime;
+        private TransitGatewayMulticastDomainOptions _options;
+        private string _ownerId;
         private TransitGatewayMulticastDomainState _state;
         private List<Tag> _tags = new List<Tag>();
         private string _transitGatewayId;
+        private string _transitGatewayMulticastDomainArn;
         private string _transitGatewayMulticastDomainId;
 
         /// <summary>
@@ -55,6 +58,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Options. 
+        /// <para>
+        /// The options for the transit gateway multicast domain.
+        /// </para>
+        /// </summary>
+        public TransitGatewayMulticastDomainOptions Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        ///  The ID of the AWS account that owns the transit gateway multiicast domain.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
         }
 
         /// <summary>
@@ -109,6 +148,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTransitGatewayId()
         {
             return this._transitGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayMulticastDomainArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the transit gateway multicast domain.
+        /// </para>
+        /// </summary>
+        public string TransitGatewayMulticastDomainArn
+        {
+            get { return this._transitGatewayMulticastDomainArn; }
+            set { this._transitGatewayMulticastDomainArn = value; }
+        }
+
+        // Check to see if TransitGatewayMulticastDomainArn property is set
+        internal bool IsSetTransitGatewayMulticastDomainArn()
+        {
+            return this._transitGatewayMulticastDomainArn != null;
         }
 
         /// <summary>

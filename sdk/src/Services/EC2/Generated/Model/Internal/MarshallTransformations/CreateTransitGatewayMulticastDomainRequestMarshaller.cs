@@ -58,6 +58,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetOptions())
+                {
+                    if(publicRequest.Options.IsSetAutoAcceptSharedAssociations())
+                    {
+                        request.Parameters.Add("Options" + "." + "AutoAcceptSharedAssociations", StringUtils.FromString(publicRequest.Options.AutoAcceptSharedAssociations));
+                    }
+                    if(publicRequest.Options.IsSetIgmpv2Support())
+                    {
+                        request.Parameters.Add("Options" + "." + "Igmpv2Support", StringUtils.FromString(publicRequest.Options.Igmpv2Support));
+                    }
+                    if(publicRequest.Options.IsSetStaticSourcesSupport())
+                    {
+                        request.Parameters.Add("Options" + "." + "StaticSourcesSupport", StringUtils.FromString(publicRequest.Options.StaticSourcesSupport));
+                    }
+                }
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;

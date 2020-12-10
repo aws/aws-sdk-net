@@ -60,6 +60,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("options", targetDepth))
+                    {
+                        var unmarshaller = TransitGatewayMulticastDomainOptionsUnmarshaller.Instance;
+                        unmarshalledObject.Options = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ownerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -77,6 +89,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.TransitGatewayId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("transitGatewayMulticastDomainArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TransitGatewayMulticastDomainArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("transitGatewayMulticastDomainId", targetDepth))

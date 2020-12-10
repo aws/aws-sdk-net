@@ -33,13 +33,34 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyTransitGatewayOptions
     {
+        private List<string> _addTransitGatewayCidrBlocks = new List<string>();
         private string _associationDefaultRouteTableId;
         private AutoAcceptSharedAttachmentsValue _autoAcceptSharedAttachments;
         private DefaultRouteTableAssociationValue _defaultRouteTableAssociation;
         private DefaultRouteTablePropagationValue _defaultRouteTablePropagation;
         private DnsSupportValue _dnsSupport;
         private string _propagationDefaultRouteTableId;
+        private List<string> _removeTransitGatewayCidrBlocks = new List<string>();
         private VpnEcmpSupportValue _vpnEcmpSupport;
+
+        /// <summary>
+        /// Gets and sets the property AddTransitGatewayCidrBlocks. 
+        /// <para>
+        /// Adds IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR block
+        /// or larger for IPv4, or a size /64 CIDR block or larger for IPv6.
+        /// </para>
+        /// </summary>
+        public List<string> AddTransitGatewayCidrBlocks
+        {
+            get { return this._addTransitGatewayCidrBlocks; }
+            set { this._addTransitGatewayCidrBlocks = value; }
+        }
+
+        // Check to see if AddTransitGatewayCidrBlocks property is set
+        internal bool IsSetAddTransitGatewayCidrBlocks()
+        {
+            return this._addTransitGatewayCidrBlocks != null && this._addTransitGatewayCidrBlocks.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AssociationDefaultRouteTableId. 
@@ -148,6 +169,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPropagationDefaultRouteTableId()
         {
             return this._propagationDefaultRouteTableId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveTransitGatewayCidrBlocks. 
+        /// <para>
+        /// Removes CIDR blocks for the transit gateway.
+        /// </para>
+        /// </summary>
+        public List<string> RemoveTransitGatewayCidrBlocks
+        {
+            get { return this._removeTransitGatewayCidrBlocks; }
+            set { this._removeTransitGatewayCidrBlocks = value; }
+        }
+
+        // Check to see if RemoveTransitGatewayCidrBlocks property is set
+        internal bool IsSetRemoveTransitGatewayCidrBlocks()
+        {
+            return this._removeTransitGatewayCidrBlocks != null && this._removeTransitGatewayCidrBlocks.Count > 0; 
         }
 
         /// <summary>

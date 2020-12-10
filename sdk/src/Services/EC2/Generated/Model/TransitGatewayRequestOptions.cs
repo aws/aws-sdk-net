@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private DefaultRouteTablePropagationValue _defaultRouteTablePropagation;
         private DnsSupportValue _dnsSupport;
         private MulticastSupportValue _multicastSupport;
+        private List<string> _transitGatewayCidrBlocks = new List<string>();
         private VpnEcmpSupportValue _vpnEcmpSupport;
 
         /// <summary>
@@ -151,6 +152,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetMulticastSupport()
         {
             return this._multicastSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayCidrBlocks. 
+        /// <para>
+        /// One or more IPv4 or IPv6 CIDR blocks for the transit gateway. Must be a size /24 CIDR
+        /// block or larger for IPv4, or a size /64 CIDR block or larger for IPv6.
+        /// </para>
+        /// </summary>
+        public List<string> TransitGatewayCidrBlocks
+        {
+            get { return this._transitGatewayCidrBlocks; }
+            set { this._transitGatewayCidrBlocks = value; }
+        }
+
+        // Check to see if TransitGatewayCidrBlocks property is set
+        internal bool IsSetTransitGatewayCidrBlocks()
+        {
+            return this._transitGatewayCidrBlocks != null && this._transitGatewayCidrBlocks.Count > 0; 
         }
 
         /// <summary>

@@ -94,6 +94,24 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  AcceptTransitGatewayMulticastDomainAssociations
+
+
+
+        /// <summary>
+        /// Accepts a request to associate subnets with a transit gateway multicast domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayMulticastDomainAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptTransitGatewayMulticastDomainAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayMulticastDomainAssociations">REST API Reference for AcceptTransitGatewayMulticastDomainAssociations Operation</seealso>
+        Task<AcceptTransitGatewayMulticastDomainAssociationsResponse> AcceptTransitGatewayMulticastDomainAssociationsAsync(AcceptTransitGatewayMulticastDomainAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  AcceptTransitGatewayPeeringAttachment
 
 
@@ -2092,6 +2110,31 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateNetworkInsightsPath
+
+
+
+        /// <summary>
+        /// Creates a path to analyze for reachability.
+        /// 
+        ///  
+        /// <para>
+        /// Reachability Analyzer enables you to analyze and debug network reachability between
+        /// two resources in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/reachability/">What
+        /// is Reachability Analyzer</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInsightsPath service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateNetworkInsightsPath service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsPath">REST API Reference for CreateNetworkInsightsPath Operation</seealso>
+        Task<CreateNetworkInsightsPathResponse> CreateNetworkInsightsPathAsync(CreateNetworkInsightsPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateNetworkInterface
 
 
@@ -2702,6 +2745,62 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateTransitGateway service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGateway">REST API Reference for CreateTransitGateway Operation</seealso>
         Task<CreateTransitGatewayResponse> CreateTransitGatewayAsync(CreateTransitGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTransitGatewayConnect
+
+
+
+        /// <summary>
+        /// Creates a Connect attachment from a specified transit gateway attachment. A Connect
+        /// attachment is a GRE-based tunnel attachment that you can use to establish a connection
+        /// between a transit gateway and an appliance.
+        /// 
+        ///  
+        /// <para>
+        /// A Connect attachment uses an existing VPC or AWS Direct Connect attachment as the
+        /// underlying transport mechanism. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayConnect service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayConnect service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect">REST API Reference for CreateTransitGatewayConnect Operation</seealso>
+        Task<CreateTransitGatewayConnectResponse> CreateTransitGatewayConnectAsync(CreateTransitGatewayConnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTransitGatewayConnectPeer
+
+
+
+        /// <summary>
+        /// Creates a Connect peer for a specified transit gateway Connect attachment between
+        /// a transit gateway and an appliance.
+        /// 
+        ///  
+        /// <para>
+        /// The peer address and transit gateway address must be the same IP address family (IPv4
+        /// or IPv6).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html#tgw-connect-peer">Connect
+        /// peers</a> in the <i>Transit Gateways Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayConnectPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayConnectPeer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnectPeer">REST API Reference for CreateTransitGatewayConnectPeer Operation</seealso>
+        Task<CreateTransitGatewayConnectPeerResponse> CreateTransitGatewayConnectPeerAsync(CreateTransitGatewayConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3584,6 +3683,42 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DeleteNetworkInsightsAnalysis
+
+
+
+        /// <summary>
+        /// Deletes the specified network insights analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInsightsAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteNetworkInsightsAnalysis service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAnalysis">REST API Reference for DeleteNetworkInsightsAnalysis Operation</seealso>
+        Task<DeleteNetworkInsightsAnalysisResponse> DeleteNetworkInsightsAnalysisAsync(DeleteNetworkInsightsAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteNetworkInsightsPath
+
+
+
+        /// <summary>
+        /// Deletes the specified path.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInsightsPath service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteNetworkInsightsPath service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsPath">REST API Reference for DeleteNetworkInsightsPath Operation</seealso>
+        Task<DeleteNetworkInsightsPathResponse> DeleteNetworkInsightsPathAsync(DeleteNetworkInsightsPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteNetworkInterface
 
 
@@ -3931,6 +4066,43 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteTransitGateway service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGateway">REST API Reference for DeleteTransitGateway Operation</seealso>
         Task<DeleteTransitGatewayResponse> DeleteTransitGatewayAsync(DeleteTransitGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteTransitGatewayConnect
+
+
+
+        /// <summary>
+        /// Deletes the specified Connect attachment. You must first delete any Connect peers
+        /// for the attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayConnect service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayConnect service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnect">REST API Reference for DeleteTransitGatewayConnect Operation</seealso>
+        Task<DeleteTransitGatewayConnectResponse> DeleteTransitGatewayConnectAsync(DeleteTransitGatewayConnectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteTransitGatewayConnectPeer
+
+
+
+        /// <summary>
+        /// Deletes the specified Connect peer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayConnectPeer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayConnectPeer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnectPeer">REST API Reference for DeleteTransitGatewayConnectPeer Operation</seealso>
+        Task<DeleteTransitGatewayConnectPeerResponse> DeleteTransitGatewayConnectPeerAsync(DeleteTransitGatewayConnectPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -6123,6 +6295,42 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeNetworkInsightsAnalyses
+
+
+
+        /// <summary>
+        /// Describes one or more of your network insights analyses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInsightsAnalyses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNetworkInsightsAnalyses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAnalyses">REST API Reference for DescribeNetworkInsightsAnalyses Operation</seealso>
+        Task<DescribeNetworkInsightsAnalysesResponse> DescribeNetworkInsightsAnalysesAsync(DescribeNetworkInsightsAnalysesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeNetworkInsightsPaths
+
+
+
+        /// <summary>
+        /// Describes one or more of your paths.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInsightsPaths service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeNetworkInsightsPaths service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsPaths">REST API Reference for DescribeNetworkInsightsPaths Operation</seealso>
+        Task<DescribeNetworkInsightsPathsResponse> DescribeNetworkInsightsPathsAsync(DescribeNetworkInsightsPathsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeNetworkInterfaceAttribute
 
 
@@ -7361,6 +7569,42 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeTransitGatewayAttachments service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayAttachments">REST API Reference for DescribeTransitGatewayAttachments Operation</seealso>
         Task<DescribeTransitGatewayAttachmentsResponse> DescribeTransitGatewayAttachmentsAsync(DescribeTransitGatewayAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeTransitGatewayConnectPeers
+
+
+
+        /// <summary>
+        /// Describes one or more Connect peers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayConnectPeers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayConnectPeers service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnectPeers">REST API Reference for DescribeTransitGatewayConnectPeers Operation</seealso>
+        Task<DescribeTransitGatewayConnectPeersResponse> DescribeTransitGatewayConnectPeersAsync(DescribeTransitGatewayConnectPeersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeTransitGatewayConnects
+
+
+
+        /// <summary>
+        /// Describes one or more Connect attachments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayConnects service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayConnects service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnects">REST API Reference for DescribeTransitGatewayConnects Operation</seealso>
+        Task<DescribeTransitGatewayConnectsResponse> DescribeTransitGatewayConnectsAsync(DescribeTransitGatewayConnectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -11069,6 +11313,25 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  RejectTransitGatewayMulticastDomainAssociations
+
+
+
+        /// <summary>
+        /// Rejects a request to associate cross-account subnets with a transit gateway multicast
+        /// domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayMulticastDomainAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectTransitGatewayMulticastDomainAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayMulticastDomainAssociations">REST API Reference for RejectTransitGatewayMulticastDomainAssociations Operation</seealso>
+        Task<RejectTransitGatewayMulticastDomainAssociationsResponse> RejectTransitGatewayMulticastDomainAssociationsAsync(RejectTransitGatewayMulticastDomainAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RejectTransitGatewayPeeringAttachment
 
 
@@ -12034,6 +12297,25 @@ namespace Amazon.EC2
         /// <returns>The response from the StartInstances service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">REST API Reference for StartInstances Operation</seealso>
         Task<StartInstancesResponse> StartInstancesAsync(StartInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartNetworkInsightsAnalysis
+
+
+
+        /// <summary>
+        /// Starts analyzing the specified path. If the path is reachable, the operation returns
+        /// the shortest feasible path.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkInsightsAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartNetworkInsightsAnalysis service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAnalysis">REST API Reference for StartNetworkInsightsAnalysis Operation</seealso>
+        Task<StartNetworkInsightsAnalysisResponse> StartNetworkInsightsAnalysisAsync(StartNetworkInsightsAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

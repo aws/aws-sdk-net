@@ -102,6 +102,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PropagationDefaultRouteTableId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("transitGatewayCidrBlocks/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TransitGatewayCidrBlocks.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("vpnEcmpSupport", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

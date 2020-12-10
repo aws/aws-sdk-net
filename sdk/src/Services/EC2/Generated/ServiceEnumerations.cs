@@ -353,6 +353,60 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type AnalysisStatus.
+    /// </summary>
+    public class AnalysisStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus Failed = new AnalysisStatus("failed");
+        /// <summary>
+        /// Constant Running for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus Running = new AnalysisStatus("running");
+        /// <summary>
+        /// Constant Succeeded for AnalysisStatus
+        /// </summary>
+        public static readonly AnalysisStatus Succeeded = new AnalysisStatus("succeeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisStatus FindValue(string value)
+        {
+            return FindValue<AnalysisStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ApplianceModeSupportValue.
     /// </summary>
     public class ApplianceModeSupportValue : ConstantClass
@@ -677,6 +731,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type AutoAcceptSharedAssociationsValue.
+    /// </summary>
+    public class AutoAcceptSharedAssociationsValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for AutoAcceptSharedAssociationsValue
+        /// </summary>
+        public static readonly AutoAcceptSharedAssociationsValue Disable = new AutoAcceptSharedAssociationsValue("disable");
+        /// <summary>
+        /// Constant Enable for AutoAcceptSharedAssociationsValue
+        /// </summary>
+        public static readonly AutoAcceptSharedAssociationsValue Enable = new AutoAcceptSharedAssociationsValue("enable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoAcceptSharedAssociationsValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoAcceptSharedAssociationsValue FindValue(string value)
+        {
+            return FindValue<AutoAcceptSharedAssociationsValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoAcceptSharedAssociationsValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutoAcceptSharedAttachmentsValue.
     /// </summary>
     public class AutoAcceptSharedAttachmentsValue : ConstantClass
@@ -952,6 +1056,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BatchState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BgpStatus.
+    /// </summary>
+    public class BgpStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Down for BgpStatus
+        /// </summary>
+        public static readonly BgpStatus Down = new BgpStatus("down");
+        /// <summary>
+        /// Constant Up for BgpStatus
+        /// </summary>
+        public static readonly BgpStatus Up = new BgpStatus("up");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BgpStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BgpStatus FindValue(string value)
+        {
+            return FindValue<BgpStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BgpStatus(string value)
         {
             return FindValue(value);
         }
@@ -4478,6 +4632,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IamInstanceProfileAssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Igmpv2SupportValue.
+    /// </summary>
+    public class Igmpv2SupportValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for Igmpv2SupportValue
+        /// </summary>
+        public static readonly Igmpv2SupportValue Disable = new Igmpv2SupportValue("disable");
+        /// <summary>
+        /// Constant Enable for Igmpv2SupportValue
+        /// </summary>
+        public static readonly Igmpv2SupportValue Enable = new Igmpv2SupportValue("enable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Igmpv2SupportValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Igmpv2SupportValue FindValue(string value)
+        {
+            return FindValue<Igmpv2SupportValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Igmpv2SupportValue(string value)
         {
             return FindValue(value);
         }
@@ -8839,6 +9043,102 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type Protocol.
+    /// </summary>
+    public class Protocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Tcp for Protocol
+        /// </summary>
+        public static readonly Protocol Tcp = new Protocol("tcp");
+        /// <summary>
+        /// Constant Udp for Protocol
+        /// </summary>
+        public static readonly Protocol Udp = new Protocol("udp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Protocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Protocol FindValue(string value)
+        {
+            return FindValue<Protocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Protocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProtocolValue.
+    /// </summary>
+    public class ProtocolValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Gre for ProtocolValue
+        /// </summary>
+        public static readonly ProtocolValue Gre = new ProtocolValue("gre");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProtocolValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProtocolValue FindValue(string value)
+        {
+            return FindValue<ProtocolValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProtocolValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecurringChargeFrequency.
     /// </summary>
     public class RecurringChargeFrequency : ConstantClass
@@ -9369,6 +9669,14 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType NetworkAcl = new ResourceType("network-acl");
         /// <summary>
+        /// Constant NetworkInsightsAnalysis for ResourceType
+        /// </summary>
+        public static readonly ResourceType NetworkInsightsAnalysis = new ResourceType("network-insights-analysis");
+        /// <summary>
+        /// Constant NetworkInsightsPath for ResourceType
+        /// </summary>
+        public static readonly ResourceType NetworkInsightsPath = new ResourceType("network-insights-path");
+        /// <summary>
         /// Constant NetworkInterface for ResourceType
         /// </summary>
         public static readonly ResourceType NetworkInterface = new ResourceType("network-interface");
@@ -9424,6 +9732,10 @@ namespace Amazon.EC2
         /// Constant TransitGatewayAttachment for ResourceType
         /// </summary>
         public static readonly ResourceType TransitGatewayAttachment = new ResourceType("transit-gateway-attachment");
+        /// <summary>
+        /// Constant TransitGatewayConnectPeer for ResourceType
+        /// </summary>
+        public static readonly ResourceType TransitGatewayConnectPeer = new ResourceType("transit-gateway-connect-peer");
         /// <summary>
         /// Constant TransitGatewayMulticastDomain for ResourceType
         /// </summary>
@@ -10481,6 +10793,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type StaticSourcesSupportValue.
+    /// </summary>
+    public class StaticSourcesSupportValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for StaticSourcesSupportValue
+        /// </summary>
+        public static readonly StaticSourcesSupportValue Disable = new StaticSourcesSupportValue("disable");
+        /// <summary>
+        /// Constant Enable for StaticSourcesSupportValue
+        /// </summary>
+        public static readonly StaticSourcesSupportValue Enable = new StaticSourcesSupportValue("enable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StaticSourcesSupportValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StaticSourcesSupportValue FindValue(string value)
+        {
+            return FindValue<StaticSourcesSupportValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StaticSourcesSupportValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Status.
     /// </summary>
     public class Status : ConstantClass
@@ -11347,6 +11709,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant Connect for TransitGatewayAttachmentResourceType
+        /// </summary>
+        public static readonly TransitGatewayAttachmentResourceType Connect = new TransitGatewayAttachmentResourceType("connect");
+        /// <summary>
         /// Constant DirectConnectGateway for TransitGatewayAttachmentResourceType
         /// </summary>
         public static readonly TransitGatewayAttachmentResourceType DirectConnectGateway = new TransitGatewayAttachmentResourceType("direct-connect-gateway");
@@ -11497,6 +11863,64 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type TransitGatewayConnectPeerState.
+    /// </summary>
+    public class TransitGatewayConnectPeerState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for TransitGatewayConnectPeerState
+        /// </summary>
+        public static readonly TransitGatewayConnectPeerState Available = new TransitGatewayConnectPeerState("available");
+        /// <summary>
+        /// Constant Deleted for TransitGatewayConnectPeerState
+        /// </summary>
+        public static readonly TransitGatewayConnectPeerState Deleted = new TransitGatewayConnectPeerState("deleted");
+        /// <summary>
+        /// Constant Deleting for TransitGatewayConnectPeerState
+        /// </summary>
+        public static readonly TransitGatewayConnectPeerState Deleting = new TransitGatewayConnectPeerState("deleting");
+        /// <summary>
+        /// Constant Pending for TransitGatewayConnectPeerState
+        /// </summary>
+        public static readonly TransitGatewayConnectPeerState Pending = new TransitGatewayConnectPeerState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayConnectPeerState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayConnectPeerState FindValue(string value)
+        {
+            return FindValue<TransitGatewayConnectPeerState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayConnectPeerState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TransitGatewayMulitcastDomainAssociationState.
     /// </summary>
     public class TransitGatewayMulitcastDomainAssociationState : ConstantClass
@@ -11518,6 +11942,18 @@ namespace Amazon.EC2
         /// Constant Disassociating for TransitGatewayMulitcastDomainAssociationState
         /// </summary>
         public static readonly TransitGatewayMulitcastDomainAssociationState Disassociating = new TransitGatewayMulitcastDomainAssociationState("disassociating");
+        /// <summary>
+        /// Constant Failed for TransitGatewayMulitcastDomainAssociationState
+        /// </summary>
+        public static readonly TransitGatewayMulitcastDomainAssociationState Failed = new TransitGatewayMulitcastDomainAssociationState("failed");
+        /// <summary>
+        /// Constant PendingAcceptance for TransitGatewayMulitcastDomainAssociationState
+        /// </summary>
+        public static readonly TransitGatewayMulitcastDomainAssociationState PendingAcceptance = new TransitGatewayMulitcastDomainAssociationState("pendingAcceptance");
+        /// <summary>
+        /// Constant Rejected for TransitGatewayMulitcastDomainAssociationState
+        /// </summary>
+        public static readonly TransitGatewayMulitcastDomainAssociationState Rejected = new TransitGatewayMulitcastDomainAssociationState("rejected");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

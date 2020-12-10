@@ -344,6 +344,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AcceptTransitGatewayMulticastDomainAssociations
+
+        /// <summary>
+        /// Accepts a request to associate subnets with a transit gateway multicast domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayMulticastDomainAssociations service method.</param>
+        /// 
+        /// <returns>The response from the AcceptTransitGatewayMulticastDomainAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayMulticastDomainAssociations">REST API Reference for AcceptTransitGatewayMulticastDomainAssociations Operation</seealso>
+        public virtual AcceptTransitGatewayMulticastDomainAssociationsResponse AcceptTransitGatewayMulticastDomainAssociations(AcceptTransitGatewayMulticastDomainAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptTransitGatewayMulticastDomainAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptTransitGatewayMulticastDomainAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayMulticastDomainAssociations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptTransitGatewayMulticastDomainAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayMulticastDomainAssociations">REST API Reference for AcceptTransitGatewayMulticastDomainAssociations Operation</seealso>
+        public virtual IAsyncResult BeginAcceptTransitGatewayMulticastDomainAssociations(AcceptTransitGatewayMulticastDomainAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptTransitGatewayMulticastDomainAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptTransitGatewayMulticastDomainAssociations.</param>
+        /// 
+        /// <returns>Returns a  AcceptTransitGatewayMulticastDomainAssociationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayMulticastDomainAssociations">REST API Reference for AcceptTransitGatewayMulticastDomainAssociations Operation</seealso>
+        public virtual AcceptTransitGatewayMulticastDomainAssociationsResponse EndAcceptTransitGatewayMulticastDomainAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AcceptTransitGatewayMulticastDomainAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AcceptTransitGatewayPeeringAttachment
 
         /// <summary>
@@ -4680,6 +4734,67 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateNetworkInsightsPath
+
+        /// <summary>
+        /// Creates a path to analyze for reachability.
+        /// 
+        ///  
+        /// <para>
+        /// Reachability Analyzer enables you to analyze and debug network reachability between
+        /// two resources in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/reachability/">What
+        /// is Reachability Analyzer</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInsightsPath service method.</param>
+        /// 
+        /// <returns>The response from the CreateNetworkInsightsPath service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsPath">REST API Reference for CreateNetworkInsightsPath Operation</seealso>
+        public virtual CreateNetworkInsightsPathResponse CreateNetworkInsightsPath(CreateNetworkInsightsPathRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNetworkInsightsPathRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkInsightsPathResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNetworkInsightsPathResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNetworkInsightsPath operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInsightsPath operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNetworkInsightsPath
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsPath">REST API Reference for CreateNetworkInsightsPath Operation</seealso>
+        public virtual IAsyncResult BeginCreateNetworkInsightsPath(CreateNetworkInsightsPathRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateNetworkInsightsPathRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNetworkInsightsPathResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNetworkInsightsPath operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNetworkInsightsPath.</param>
+        /// 
+        /// <returns>Returns a  CreateNetworkInsightsPathResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInsightsPath">REST API Reference for CreateNetworkInsightsPath Operation</seealso>
+        public virtual CreateNetworkInsightsPathResponse EndCreateNetworkInsightsPath(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateNetworkInsightsPathResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateNetworkInterface
 
         /// <summary>
@@ -5901,6 +6016,134 @@ namespace Amazon.EC2
         public virtual CreateTransitGatewayResponse EndCreateTransitGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTransitGatewayResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayConnect
+
+        /// <summary>
+        /// Creates a Connect attachment from a specified transit gateway attachment. A Connect
+        /// attachment is a GRE-based tunnel attachment that you can use to establish a connection
+        /// between a transit gateway and an appliance.
+        /// 
+        ///  
+        /// <para>
+        /// A Connect attachment uses an existing VPC or AWS Direct Connect attachment as the
+        /// underlying transport mechanism. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayConnect service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayConnect service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect">REST API Reference for CreateTransitGatewayConnect Operation</seealso>
+        public virtual CreateTransitGatewayConnectResponse CreateTransitGatewayConnect(CreateTransitGatewayConnectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayConnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayConnectResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayConnectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayConnect operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayConnect operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGatewayConnect
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect">REST API Reference for CreateTransitGatewayConnect Operation</seealso>
+        public virtual IAsyncResult BeginCreateTransitGatewayConnect(CreateTransitGatewayConnectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayConnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayConnectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGatewayConnect operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGatewayConnect.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayConnectResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnect">REST API Reference for CreateTransitGatewayConnect Operation</seealso>
+        public virtual CreateTransitGatewayConnectResponse EndCreateTransitGatewayConnect(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTransitGatewayConnectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayConnectPeer
+
+        /// <summary>
+        /// Creates a Connect peer for a specified transit gateway Connect attachment between
+        /// a transit gateway and an appliance.
+        /// 
+        ///  
+        /// <para>
+        /// The peer address and transit gateway address must be the same IP address family (IPv4
+        /// or IPv6).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html#tgw-connect-peer">Connect
+        /// peers</a> in the <i>Transit Gateways Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayConnectPeer service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayConnectPeer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnectPeer">REST API Reference for CreateTransitGatewayConnectPeer Operation</seealso>
+        public virtual CreateTransitGatewayConnectPeerResponse CreateTransitGatewayConnectPeer(CreateTransitGatewayConnectPeerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayConnectPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayConnectPeerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayConnectPeerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayConnectPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayConnectPeer operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGatewayConnectPeer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnectPeer">REST API Reference for CreateTransitGatewayConnectPeer Operation</seealso>
+        public virtual IAsyncResult BeginCreateTransitGatewayConnectPeer(CreateTransitGatewayConnectPeerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTransitGatewayConnectPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTransitGatewayConnectPeerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGatewayConnectPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGatewayConnectPeer.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayConnectPeerResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayConnectPeer">REST API Reference for CreateTransitGatewayConnectPeer Operation</seealso>
+        public virtual CreateTransitGatewayConnectPeerResponse EndCreateTransitGatewayConnectPeer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTransitGatewayConnectPeerResponse>(asyncResult);
         }
 
         #endregion
@@ -8008,6 +8251,114 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteNetworkInsightsAnalysis
+
+        /// <summary>
+        /// Deletes the specified network insights analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInsightsAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNetworkInsightsAnalysis service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAnalysis">REST API Reference for DeleteNetworkInsightsAnalysis Operation</seealso>
+        public virtual DeleteNetworkInsightsAnalysisResponse DeleteNetworkInsightsAnalysis(DeleteNetworkInsightsAnalysisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkInsightsAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkInsightsAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNetworkInsightsAnalysisResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNetworkInsightsAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInsightsAnalysis operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNetworkInsightsAnalysis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAnalysis">REST API Reference for DeleteNetworkInsightsAnalysis Operation</seealso>
+        public virtual IAsyncResult BeginDeleteNetworkInsightsAnalysis(DeleteNetworkInsightsAnalysisRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkInsightsAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkInsightsAnalysisResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNetworkInsightsAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNetworkInsightsAnalysis.</param>
+        /// 
+        /// <returns>Returns a  DeleteNetworkInsightsAnalysisResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsAnalysis">REST API Reference for DeleteNetworkInsightsAnalysis Operation</seealso>
+        public virtual DeleteNetworkInsightsAnalysisResponse EndDeleteNetworkInsightsAnalysis(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteNetworkInsightsAnalysisResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteNetworkInsightsPath
+
+        /// <summary>
+        /// Deletes the specified path.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInsightsPath service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNetworkInsightsPath service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsPath">REST API Reference for DeleteNetworkInsightsPath Operation</seealso>
+        public virtual DeleteNetworkInsightsPathResponse DeleteNetworkInsightsPath(DeleteNetworkInsightsPathRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkInsightsPathRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkInsightsPathResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNetworkInsightsPathResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNetworkInsightsPath operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInsightsPath operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNetworkInsightsPath
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsPath">REST API Reference for DeleteNetworkInsightsPath Operation</seealso>
+        public virtual IAsyncResult BeginDeleteNetworkInsightsPath(DeleteNetworkInsightsPathRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteNetworkInsightsPathRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNetworkInsightsPathResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNetworkInsightsPath operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNetworkInsightsPath.</param>
+        /// 
+        /// <returns>Returns a  DeleteNetworkInsightsPathResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInsightsPath">REST API Reference for DeleteNetworkInsightsPath Operation</seealso>
+        public virtual DeleteNetworkInsightsPathResponse EndDeleteNetworkInsightsPath(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteNetworkInsightsPathResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteNetworkInterface
 
         /// <summary>
@@ -8929,6 +9280,115 @@ namespace Amazon.EC2
         public virtual DeleteTransitGatewayResponse EndDeleteTransitGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTransitGatewayResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTransitGatewayConnect
+
+        /// <summary>
+        /// Deletes the specified Connect attachment. You must first delete any Connect peers
+        /// for the attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayConnect service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayConnect service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnect">REST API Reference for DeleteTransitGatewayConnect Operation</seealso>
+        public virtual DeleteTransitGatewayConnectResponse DeleteTransitGatewayConnect(DeleteTransitGatewayConnectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayConnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayConnectResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayConnectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayConnect operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayConnect operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTransitGatewayConnect
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnect">REST API Reference for DeleteTransitGatewayConnect Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTransitGatewayConnect(DeleteTransitGatewayConnectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayConnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayConnectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTransitGatewayConnect operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTransitGatewayConnect.</param>
+        /// 
+        /// <returns>Returns a  DeleteTransitGatewayConnectResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnect">REST API Reference for DeleteTransitGatewayConnect Operation</seealso>
+        public virtual DeleteTransitGatewayConnectResponse EndDeleteTransitGatewayConnect(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTransitGatewayConnectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTransitGatewayConnectPeer
+
+        /// <summary>
+        /// Deletes the specified Connect peer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayConnectPeer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayConnectPeer service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnectPeer">REST API Reference for DeleteTransitGatewayConnectPeer Operation</seealso>
+        public virtual DeleteTransitGatewayConnectPeerResponse DeleteTransitGatewayConnectPeer(DeleteTransitGatewayConnectPeerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayConnectPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayConnectPeerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayConnectPeerResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayConnectPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayConnectPeer operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTransitGatewayConnectPeer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnectPeer">REST API Reference for DeleteTransitGatewayConnectPeer Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTransitGatewayConnectPeer(DeleteTransitGatewayConnectPeerRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteTransitGatewayConnectPeerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTransitGatewayConnectPeerResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTransitGatewayConnectPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTransitGatewayConnectPeer.</param>
+        /// 
+        /// <returns>Returns a  DeleteTransitGatewayConnectPeerResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayConnectPeer">REST API Reference for DeleteTransitGatewayConnectPeer Operation</seealso>
+        public virtual DeleteTransitGatewayConnectPeerResponse EndDeleteTransitGatewayConnectPeer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTransitGatewayConnectPeerResponse>(asyncResult);
         }
 
         #endregion
@@ -14024,6 +14484,114 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeNetworkInsightsAnalyses
+
+        /// <summary>
+        /// Describes one or more of your network insights analyses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInsightsAnalyses service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNetworkInsightsAnalyses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAnalyses">REST API Reference for DescribeNetworkInsightsAnalyses Operation</seealso>
+        public virtual DescribeNetworkInsightsAnalysesResponse DescribeNetworkInsightsAnalyses(DescribeNetworkInsightsAnalysesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNetworkInsightsAnalysesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNetworkInsightsAnalysesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNetworkInsightsAnalysesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNetworkInsightsAnalyses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInsightsAnalyses operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNetworkInsightsAnalyses
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAnalyses">REST API Reference for DescribeNetworkInsightsAnalyses Operation</seealso>
+        public virtual IAsyncResult BeginDescribeNetworkInsightsAnalyses(DescribeNetworkInsightsAnalysesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNetworkInsightsAnalysesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNetworkInsightsAnalysesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNetworkInsightsAnalyses operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNetworkInsightsAnalyses.</param>
+        /// 
+        /// <returns>Returns a  DescribeNetworkInsightsAnalysesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsAnalyses">REST API Reference for DescribeNetworkInsightsAnalyses Operation</seealso>
+        public virtual DescribeNetworkInsightsAnalysesResponse EndDescribeNetworkInsightsAnalyses(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeNetworkInsightsAnalysesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeNetworkInsightsPaths
+
+        /// <summary>
+        /// Describes one or more of your paths.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInsightsPaths service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNetworkInsightsPaths service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsPaths">REST API Reference for DescribeNetworkInsightsPaths Operation</seealso>
+        public virtual DescribeNetworkInsightsPathsResponse DescribeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNetworkInsightsPathsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNetworkInsightsPathsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNetworkInsightsPathsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNetworkInsightsPaths operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInsightsPaths operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNetworkInsightsPaths
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsPaths">REST API Reference for DescribeNetworkInsightsPaths Operation</seealso>
+        public virtual IAsyncResult BeginDescribeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeNetworkInsightsPathsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNetworkInsightsPathsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNetworkInsightsPaths operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNetworkInsightsPaths.</param>
+        /// 
+        /// <returns>Returns a  DescribeNetworkInsightsPathsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInsightsPaths">REST API Reference for DescribeNetworkInsightsPaths Operation</seealso>
+        public virtual DescribeNetworkInsightsPathsResponse EndDescribeNetworkInsightsPaths(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeNetworkInsightsPathsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeNetworkInterfaceAttribute
 
         /// <summary>
@@ -16398,6 +16966,114 @@ namespace Amazon.EC2
         public virtual DescribeTransitGatewayAttachmentsResponse EndDescribeTransitGatewayAttachments(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTransitGatewayAttachmentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTransitGatewayConnectPeers
+
+        /// <summary>
+        /// Describes one or more Connect peers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayConnectPeers service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayConnectPeers service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnectPeers">REST API Reference for DescribeTransitGatewayConnectPeers Operation</seealso>
+        public virtual DescribeTransitGatewayConnectPeersResponse DescribeTransitGatewayConnectPeers(DescribeTransitGatewayConnectPeersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayConnectPeersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayConnectPeersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewayConnectPeersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayConnectPeers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayConnectPeers operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTransitGatewayConnectPeers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnectPeers">REST API Reference for DescribeTransitGatewayConnectPeers Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTransitGatewayConnectPeers(DescribeTransitGatewayConnectPeersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayConnectPeersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayConnectPeersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTransitGatewayConnectPeers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTransitGatewayConnectPeers.</param>
+        /// 
+        /// <returns>Returns a  DescribeTransitGatewayConnectPeersResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnectPeers">REST API Reference for DescribeTransitGatewayConnectPeers Operation</seealso>
+        public virtual DescribeTransitGatewayConnectPeersResponse EndDescribeTransitGatewayConnectPeers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTransitGatewayConnectPeersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTransitGatewayConnects
+
+        /// <summary>
+        /// Describes one or more Connect attachments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayConnects service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayConnects service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnects">REST API Reference for DescribeTransitGatewayConnects Operation</seealso>
+        public virtual DescribeTransitGatewayConnectsResponse DescribeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayConnectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayConnectsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewayConnectsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayConnects operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayConnects operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTransitGatewayConnects
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnects">REST API Reference for DescribeTransitGatewayConnects Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTransitGatewayConnectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTransitGatewayConnectsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTransitGatewayConnects operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTransitGatewayConnects.</param>
+        /// 
+        /// <returns>Returns a  DescribeTransitGatewayConnectsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayConnects">REST API Reference for DescribeTransitGatewayConnects Operation</seealso>
+        public virtual DescribeTransitGatewayConnectsResponse EndDescribeTransitGatewayConnects(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTransitGatewayConnectsResponse>(asyncResult);
         }
 
         #endregion
@@ -24925,6 +25601,61 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  RejectTransitGatewayMulticastDomainAssociations
+
+        /// <summary>
+        /// Rejects a request to associate cross-account subnets with a transit gateway multicast
+        /// domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayMulticastDomainAssociations service method.</param>
+        /// 
+        /// <returns>The response from the RejectTransitGatewayMulticastDomainAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayMulticastDomainAssociations">REST API Reference for RejectTransitGatewayMulticastDomainAssociations Operation</seealso>
+        public virtual RejectTransitGatewayMulticastDomainAssociationsResponse RejectTransitGatewayMulticastDomainAssociations(RejectTransitGatewayMulticastDomainAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<RejectTransitGatewayMulticastDomainAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectTransitGatewayMulticastDomainAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayMulticastDomainAssociations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectTransitGatewayMulticastDomainAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayMulticastDomainAssociations">REST API Reference for RejectTransitGatewayMulticastDomainAssociations Operation</seealso>
+        public virtual IAsyncResult BeginRejectTransitGatewayMulticastDomainAssociations(RejectTransitGatewayMulticastDomainAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectTransitGatewayMulticastDomainAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectTransitGatewayMulticastDomainAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RejectTransitGatewayMulticastDomainAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectTransitGatewayMulticastDomainAssociations.</param>
+        /// 
+        /// <returns>Returns a  RejectTransitGatewayMulticastDomainAssociationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayMulticastDomainAssociations">REST API Reference for RejectTransitGatewayMulticastDomainAssociations Operation</seealso>
+        public virtual RejectTransitGatewayMulticastDomainAssociationsResponse EndRejectTransitGatewayMulticastDomainAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RejectTransitGatewayMulticastDomainAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RejectTransitGatewayPeeringAttachment
 
         /// <summary>
@@ -27077,6 +27808,61 @@ namespace Amazon.EC2
         public virtual StartInstancesResponse EndStartInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<StartInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartNetworkInsightsAnalysis
+
+        /// <summary>
+        /// Starts analyzing the specified path. If the path is reachable, the operation returns
+        /// the shortest feasible path.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkInsightsAnalysis service method.</param>
+        /// 
+        /// <returns>The response from the StartNetworkInsightsAnalysis service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAnalysis">REST API Reference for StartNetworkInsightsAnalysis Operation</seealso>
+        public virtual StartNetworkInsightsAnalysisResponse StartNetworkInsightsAnalysis(StartNetworkInsightsAnalysisRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartNetworkInsightsAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkInsightsAnalysisResponseUnmarshaller.Instance;
+
+            return Invoke<StartNetworkInsightsAnalysisResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartNetworkInsightsAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkInsightsAnalysis operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartNetworkInsightsAnalysis
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAnalysis">REST API Reference for StartNetworkInsightsAnalysis Operation</seealso>
+        public virtual IAsyncResult BeginStartNetworkInsightsAnalysis(StartNetworkInsightsAnalysisRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartNetworkInsightsAnalysisRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNetworkInsightsAnalysisResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartNetworkInsightsAnalysis operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartNetworkInsightsAnalysis.</param>
+        /// 
+        /// <returns>Returns a  StartNetworkInsightsAnalysisResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartNetworkInsightsAnalysis">REST API Reference for StartNetworkInsightsAnalysis Operation</seealso>
+        public virtual StartNetworkInsightsAnalysisResponse EndStartNetworkInsightsAnalysis(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartNetworkInsightsAnalysisResponse>(asyncResult);
         }
 
         #endregion

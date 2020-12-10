@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private DnsSupportValue _dnsSupport;
         private MulticastSupportValue _multicastSupport;
         private string _propagationDefaultRouteTableId;
+        private List<string> _transitGatewayCidrBlocks = new List<string>();
         private VpnEcmpSupportValue _vpnEcmpSupport;
 
         /// <summary>
@@ -188,6 +189,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPropagationDefaultRouteTableId()
         {
             return this._propagationDefaultRouteTableId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayCidrBlocks. 
+        /// <para>
+        /// The transit gateway CIDR blocks.
+        /// </para>
+        /// </summary>
+        public List<string> TransitGatewayCidrBlocks
+        {
+            get { return this._transitGatewayCidrBlocks; }
+            set { this._transitGatewayCidrBlocks = value; }
+        }
+
+        // Check to see if TransitGatewayCidrBlocks property is set
+        internal bool IsSetTransitGatewayCidrBlocks()
+        {
+            return this._transitGatewayCidrBlocks != null && this._transitGatewayCidrBlocks.Count > 0; 
         }
 
         /// <summary>

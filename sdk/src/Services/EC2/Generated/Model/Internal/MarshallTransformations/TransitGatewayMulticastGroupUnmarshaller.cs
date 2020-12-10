@@ -90,6 +90,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("resourceOwnerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ResourceOwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("resourceType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

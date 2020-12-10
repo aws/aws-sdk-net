@@ -52,7 +52,8 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>resource-type</code> - The resource type. Valid values are <code>vpc</code>
-        /// | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
+        /// | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> |
+        /// <code>connect</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

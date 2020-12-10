@@ -237,6 +237,16 @@ namespace Amazon.EC2.Model
         IDescribeNetworkAclsPaginator DescribeNetworkAcls(DescribeNetworkAclsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeNetworkInsightsAnalyses operation
+        ///</summary>
+        IDescribeNetworkInsightsAnalysesPaginator DescribeNetworkInsightsAnalyses(DescribeNetworkInsightsAnalysesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeNetworkInsightsPaths operation
+        ///</summary>
+        IDescribeNetworkInsightsPathsPaginator DescribeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeNetworkInterfacePermissions operation
         ///</summary>
         IDescribeNetworkInterfacePermissionsPaginator DescribeNetworkInterfacePermissions(DescribeNetworkInterfacePermissionsRequest request);
@@ -345,6 +355,16 @@ namespace Amazon.EC2.Model
         /// Paginator for DescribeTransitGatewayAttachments operation
         ///</summary>
         IDescribeTransitGatewayAttachmentsPaginator DescribeTransitGatewayAttachments(DescribeTransitGatewayAttachmentsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTransitGatewayConnectPeers operation
+        ///</summary>
+        IDescribeTransitGatewayConnectPeersPaginator DescribeTransitGatewayConnectPeers(DescribeTransitGatewayConnectPeersRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTransitGatewayConnects operation
+        ///</summary>
+        IDescribeTransitGatewayConnectsPaginator DescribeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest request);
 
         /// <summary>
         /// Paginator for DescribeTransitGatewayMulticastDomains operation

@@ -33,6 +33,23 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.CreateNetworkInsightsPathRequest.DestinationIp</property>
+    <min>0</min>
+    <max>15</max>
+    <pattern>^([0-9]{1,3}.){3}[0-9]{1,3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateNetworkInsightsPathRequest.DestinationPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateNetworkInsightsPathRequest.SourceIp</property>
+    <min>0</min>
+    <max>15</max>
+    <pattern>^([0-9]{1,3}.){3}[0-9]{1,3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DeleteLaunchTemplateRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
@@ -221,6 +238,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeNetworkInsightsAnalysesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeNetworkInsightsPathsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeNetworkInterfacePermissionsRequest.MaxResults</property>
     <min>5</min>
     <max>255</max>
@@ -297,6 +324,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeTransitGatewayAttachmentsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTransitGatewayConnectPeersRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTransitGatewayConnectsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -437,6 +474,27 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.AnalysisLoadBalancerListener.InstancePort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.AnalysisLoadBalancerListener.LoadBalancerPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.AnalysisLoadBalancerTarget.Address</property>
+    <min>0</min>
+    <max>15</max>
+    <pattern>^([0-9]{1,3}.){3}[0-9]{1,3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.AnalysisLoadBalancerTarget.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.AssociatedRole.AssociatedRoleArn</property>
     <min>1</min>
     <max>1283</max>
@@ -449,6 +507,32 @@
   <property-value-rule>
     <property>Amazon.EC2.Model.ElasticInferenceAccelerator.Count</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.Explanation.Address</property>
+    <min>0</min>
+    <max>15</max>
+    <pattern>^([0-9]{1,3}.){3}[0-9]{1,3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.Explanation.LoadBalancerArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.Explanation.LoadBalancerListenerPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.Explanation.LoadBalancerTargetPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.Explanation.Port</property>
+    <min>1</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.FleetLaunchTemplateSpecification.LaunchTemplateName</property>
@@ -507,5 +591,27 @@
     <property>Amazon.EC2.Model.ManagedPrefixList.PrefixListArn</property>
     <min>1</min>
     <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.NetworkInsightsAnalysis.NetworkInsightsAnalysisArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.NetworkInsightsPath.DestinationIp</property>
+    <min>0</min>
+    <max>15</max>
+    <pattern>^([0-9]{1,3}.){3}[0-9]{1,3}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.NetworkInsightsPath.NetworkInsightsPathArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.NetworkInsightsPath.SourceIp</property>
+    <min>0</min>
+    <max>15</max>
+    <pattern>^([0-9]{1,3}.){3}[0-9]{1,3}$</pattern>
   </property-value-rule>
 </property-value-rules>

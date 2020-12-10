@@ -88,6 +88,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Options" + "." + "MulticastSupport", StringUtils.FromString(publicRequest.Options.MulticastSupport));
                     }
+                    if(publicRequest.Options.IsSetTransitGatewayCidrBlocks())
+                    {
+                        int publicRequestOptionslistValueIndex = 1;
+                        foreach(var publicRequestOptionslistValue in publicRequest.Options.TransitGatewayCidrBlocks)
+                        {
+                            request.Parameters.Add("Options" + "." + "TransitGatewayCidrBlocks" + "." + publicRequestOptionslistValueIndex, StringUtils.FromString(publicRequestOptionslistValue));
+                            publicRequestOptionslistValueIndex++;
+                        }
+                    }
                     if(publicRequest.Options.IsSetVpnEcmpSupport())
                     {
                         request.Parameters.Add("Options" + "." + "VpnEcmpSupport", StringUtils.FromString(publicRequest.Options.VpnEcmpSupport));

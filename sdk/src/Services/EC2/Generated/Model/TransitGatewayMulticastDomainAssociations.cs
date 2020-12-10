@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class TransitGatewayMulticastDomainAssociations
     {
         private string _resourceId;
+        private string _resourceOwnerId;
         private TransitGatewayAttachmentResourceType _resourceType;
         private List<SubnetAssociation> _subnets = new List<SubnetAssociation>();
         private string _transitGatewayAttachmentId;
@@ -55,6 +56,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetResourceId()
         {
             return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceOwnerId. 
+        /// <para>
+        ///  The ID of the AWS account that owns the resource.
+        /// </para>
+        /// </summary>
+        public string ResourceOwnerId
+        {
+            get { return this._resourceOwnerId; }
+            set { this._resourceOwnerId = value; }
+        }
+
+        // Check to see if ResourceOwnerId property is set
+        internal bool IsSetResourceOwnerId()
+        {
+            return this._resourceOwnerId != null;
         }
 
         /// <summary>
