@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.70.0",
+    "ProductVersion" : "3.5.71.0",
     "CoreVersion"    : "3.5.1.48",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.5.23.0",
+            "Version" : "3.5.24.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.48"
@@ -1674,7 +1674,7 @@
             "InPreview"               : false
         },
         "NetworkManager"                  : {
-            "Version" : "3.5.0.48",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.48"
@@ -1682,7 +1682,7 @@
             "InPreview"               : false
         },
         "Kendra"                          : {
-            "Version" : "3.5.7.1",
+            "Version" : "3.5.8.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.48"
