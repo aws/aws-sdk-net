@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateDevice Request Marshaller
+    /// UpdateConnection Request Marshaller
     /// </summary>       
-    public class UpdateDeviceRequestMarshaller : IMarshaller<IRequest, UpdateDeviceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateConnectionRequestMarshaller : IMarshaller<IRequest, UpdateConnectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateDeviceRequest)input);
+            return this.Marshall((UpdateConnectionRequest)input);
         }
 
         /// <summary>
@@ -52,35 +52,30 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateDeviceRequest publicRequest)
+        public IRequest Marshall(UpdateConnectionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NetworkManager");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-07-05";            
             request.HttpMethod = "PATCH";
 
-            if (!publicRequest.IsSetDeviceId())
-                throw new AmazonNetworkManagerException("Request object does not have required field DeviceId set");
-            request.AddPathResource("{deviceId}", StringUtils.FromString(publicRequest.DeviceId));
+            if (!publicRequest.IsSetConnectionId())
+                throw new AmazonNetworkManagerException("Request object does not have required field ConnectionId set");
+            request.AddPathResource("{connectionId}", StringUtils.FromString(publicRequest.ConnectionId));
             if (!publicRequest.IsSetGlobalNetworkId())
                 throw new AmazonNetworkManagerException("Request object does not have required field GlobalNetworkId set");
             request.AddPathResource("{globalNetworkId}", StringUtils.FromString(publicRequest.GlobalNetworkId));
-            request.ResourcePath = "/global-networks/{globalNetworkId}/devices/{deviceId}";
+            request.ResourcePath = "/global-networks/{globalNetworkId}/connections/{connectionId}";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAWSLocation())
+                if(publicRequest.IsSetConnectedLinkId())
                 {
-                    context.Writer.WritePropertyName("AWSLocation");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AWSLocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AWSLocation, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("ConnectedLinkId");
+                    context.Writer.Write(publicRequest.ConnectedLinkId);
                 }
 
                 if(publicRequest.IsSetDescription())
@@ -89,45 +84,10 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
-                if(publicRequest.IsSetLocation())
+                if(publicRequest.IsSetLinkId())
                 {
-                    context.Writer.WritePropertyName("Location");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Location, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetModel())
-                {
-                    context.Writer.WritePropertyName("Model");
-                    context.Writer.Write(publicRequest.Model);
-                }
-
-                if(publicRequest.IsSetSerialNumber())
-                {
-                    context.Writer.WritePropertyName("SerialNumber");
-                    context.Writer.Write(publicRequest.SerialNumber);
-                }
-
-                if(publicRequest.IsSetSiteId())
-                {
-                    context.Writer.WritePropertyName("SiteId");
-                    context.Writer.Write(publicRequest.SiteId);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("Type");
-                    context.Writer.Write(publicRequest.Type);
-                }
-
-                if(publicRequest.IsSetVendor())
-                {
-                    context.Writer.WritePropertyName("Vendor");
-                    context.Writer.Write(publicRequest.Vendor);
+                    context.Writer.WritePropertyName("LinkId");
+                    context.Writer.Write(publicRequest.LinkId);
                 }
 
         
@@ -139,9 +99,9 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateDeviceRequestMarshaller _instance = new UpdateDeviceRequestMarshaller();        
+        private static UpdateConnectionRequestMarshaller _instance = new UpdateConnectionRequestMarshaller();        
 
-        internal static UpdateDeviceRequestMarshaller GetInstance()
+        internal static UpdateConnectionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -149,7 +109,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateDeviceRequestMarshaller Instance
+        public static UpdateConnectionRequestMarshaller Instance
         {
             get
             {

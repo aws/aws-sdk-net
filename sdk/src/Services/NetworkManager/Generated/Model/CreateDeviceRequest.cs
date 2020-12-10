@@ -35,6 +35,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class CreateDeviceRequest : AmazonNetworkManagerRequest
     {
+        private AWSLocation _awsLocation;
         private string _description;
         private string _globalNetworkId;
         private Location _location;
@@ -44,6 +45,24 @@ namespace Amazon.NetworkManager.Model
         private List<Tag> _tags = new List<Tag>();
         private string _type;
         private string _vendor;
+
+        /// <summary>
+        /// Gets and sets the property AWSLocation. 
+        /// <para>
+        /// The AWS location of the device.
+        /// </para>
+        /// </summary>
+        public AWSLocation AWSLocation
+        {
+            get { return this._awsLocation; }
+            set { this._awsLocation = value; }
+        }
+
+        // Check to see if AWSLocation property is set
+        internal bool IsSetAWSLocation()
+        {
+            return this._awsLocation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

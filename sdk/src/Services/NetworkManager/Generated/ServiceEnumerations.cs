@@ -25,6 +25,64 @@ namespace Amazon.NetworkManager
 {
 
     /// <summary>
+    /// Constants used for properties of type ConnectionState.
+    /// </summary>
+    public class ConnectionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState AVAILABLE = new ConnectionState("AVAILABLE");
+        /// <summary>
+        /// Constant DELETING for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState DELETING = new ConnectionState("DELETING");
+        /// <summary>
+        /// Constant PENDING for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState PENDING = new ConnectionState("PENDING");
+        /// <summary>
+        /// Constant UPDATING for ConnectionState
+        /// </summary>
+        public static readonly ConnectionState UPDATING = new ConnectionState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionState FindValue(string value)
+        {
+            return FindValue<ConnectionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CustomerGatewayAssociationState.
     /// </summary>
     public class CustomerGatewayAssociationState : ConstantClass
@@ -366,6 +424,64 @@ namespace Amazon.NetworkManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SiteState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransitGatewayConnectPeerAssociationState.
+    /// </summary>
+    public class TransitGatewayConnectPeerAssociationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for TransitGatewayConnectPeerAssociationState
+        /// </summary>
+        public static readonly TransitGatewayConnectPeerAssociationState AVAILABLE = new TransitGatewayConnectPeerAssociationState("AVAILABLE");
+        /// <summary>
+        /// Constant DELETED for TransitGatewayConnectPeerAssociationState
+        /// </summary>
+        public static readonly TransitGatewayConnectPeerAssociationState DELETED = new TransitGatewayConnectPeerAssociationState("DELETED");
+        /// <summary>
+        /// Constant DELETING for TransitGatewayConnectPeerAssociationState
+        /// </summary>
+        public static readonly TransitGatewayConnectPeerAssociationState DELETING = new TransitGatewayConnectPeerAssociationState("DELETING");
+        /// <summary>
+        /// Constant PENDING for TransitGatewayConnectPeerAssociationState
+        /// </summary>
+        public static readonly TransitGatewayConnectPeerAssociationState PENDING = new TransitGatewayConnectPeerAssociationState("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitGatewayConnectPeerAssociationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitGatewayConnectPeerAssociationState FindValue(string value)
+        {
+            return FindValue<TransitGatewayConnectPeerAssociationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitGatewayConnectPeerAssociationState(string value)
         {
             return FindValue(value);
         }

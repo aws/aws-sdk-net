@@ -45,6 +45,14 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
+        /// Paginator for GetConnections operation
+        ///</summary>
+        public IGetConnectionsPaginator GetConnections(GetConnectionsRequest request) 
+        {
+            return new GetConnectionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetCustomerGatewayAssociations operation
         ///</summary>
         public IGetCustomerGatewayAssociationsPaginator GetCustomerGatewayAssociations(GetCustomerGatewayAssociationsRequest request) 
@@ -82,6 +90,14 @@ namespace Amazon.NetworkManager.Model
         public IGetSitesPaginator GetSites(GetSitesRequest request) 
         {
             return new GetSitesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetTransitGatewayConnectPeerAssociations operation
+        ///</summary>
+        public IGetTransitGatewayConnectPeerAssociationsPaginator GetTransitGatewayConnectPeerAssociations(GetTransitGatewayConnectPeerAssociationsRequest request) 
+        {
+            return new GetTransitGatewayConnectPeerAssociationsPaginator(this.client, request);
         }
 
         /// <summary>

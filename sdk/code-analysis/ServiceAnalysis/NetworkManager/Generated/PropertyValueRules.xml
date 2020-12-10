@@ -6,6 +6,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetConnectionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.GetCustomerGatewayAssociationsRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>
@@ -27,6 +32,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.GetSitesRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetTransitGatewayConnectPeerAssociationsRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>
   </property-value-rule>

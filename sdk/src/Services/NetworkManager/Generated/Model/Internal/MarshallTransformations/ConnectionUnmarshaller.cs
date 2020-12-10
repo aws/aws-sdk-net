@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Device Object
+    /// Response Unmarshaller for Connection Object
     /// </summary>  
-    public class DeviceUnmarshaller : IUnmarshaller<Device, XmlUnmarshallerContext>, IUnmarshaller<Device, JsonUnmarshallerContext>
+    public class ConnectionUnmarshaller : IUnmarshaller<Connection, XmlUnmarshallerContext>, IUnmarshaller<Connection, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Device IUnmarshaller<Device, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Connection IUnmarshaller<Connection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,39 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Device Unmarshall(JsonUnmarshallerContext context)
+        public Connection Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Device unmarshalledObject = new Device();
+            Connection unmarshalledObject = new Connection();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AWSLocation", targetDepth))
+                if (context.TestExpression("ConnectedDeviceId", targetDepth))
                 {
-                    var unmarshaller = AWSLocationUnmarshaller.Instance;
-                    unmarshalledObject.AWSLocation = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectedDeviceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConnectedLinkId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectedLinkId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConnectionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConnectionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreatedAt", targetDepth))
@@ -82,12 +100,6 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DeviceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("DeviceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -100,28 +112,10 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.GlobalNetworkId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Location", targetDepth))
-                {
-                    var unmarshaller = LocationUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Model", targetDepth))
+                if (context.TestExpression("LinkId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Model = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SerialNumber", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SerialNumber = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SiteId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SiteId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LinkId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("State", targetDepth))
@@ -136,30 +130,18 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Vendor", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Vendor = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static DeviceUnmarshaller _instance = new DeviceUnmarshaller();        
+        private static ConnectionUnmarshaller _instance = new ConnectionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeviceUnmarshaller Instance
+        public static ConnectionUnmarshaller Instance
         {
             get
             {
