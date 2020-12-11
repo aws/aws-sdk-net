@@ -40,6 +40,10 @@ namespace Amazon.CloudTrail.Model
     /// <para>
     /// You can configure up to five event selectors for a trail.
     /// </para>
+    ///  
+    /// <para>
+    /// You cannot apply both event selectors and advanced event selectors to a trail.
+    /// </para>
     /// </summary>
     public partial class EventSelector
     {

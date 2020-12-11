@@ -7,9 +7,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.AdvancedEventSelector.Name</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
-    <pattern>.+</pattern>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.AdvancedFieldSelector.Field</property>

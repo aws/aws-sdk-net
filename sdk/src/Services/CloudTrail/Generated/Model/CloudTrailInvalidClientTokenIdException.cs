@@ -29,75 +29,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when the <code>PutEventSelectors</code> operation is called
-    /// with a number of event selectors, advanced event selectors, or data resources that
-    /// is not valid. The combination of event selectors or advanced event selectors and data
-    /// resources is not valid. A trail can have up to 5 event selectors. If a trail uses
-    /// advanced event selectors, a maximum of 500 total values for all conditions in all
-    /// advanced event selectors is allowed. A trail is limited to 250 data resources. These
-    /// data resources can be distributed across event selectors, but the overall total cannot
-    /// exceed 250.
-    /// 
-    ///  
-    /// <para>
-    /// You can:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Specify a valid number of event selectors (1 to 5) for a trail.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Specify a valid number of data resources (1 to 250) for an event selector. The limit
-    /// of number of resources on an individual event selector is configurable up to 250.
-    /// However, this upper limit is allowed only if the total number of data resources does
-    /// not exceed 250 across all event selectors for a trail.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Specify up to 500 values for all conditions in all advanced event selectors for a
-    /// trail.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
-    /// parameter with a value of <code>read-only</code> is invalid.
-    /// </para>
-    ///  </li> </ul>
+    /// This exception is thrown when a call results in the <code>InvalidClientTokenId</code>
+    /// error code. This can occur when you are creating or updating a trail to send notifications
+    /// to an Amazon SNS topic that is in a suspended AWS account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class InvalidEventSelectorsException : AmazonCloudTrailException
+    public partial class CloudTrailInvalidClientTokenIdException : AmazonCloudTrailException
     {
 
         /// <summary>
-        /// Constructs a new InvalidEventSelectorsException with the specified error
+        /// Constructs a new CloudTrailInvalidClientTokenIdException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public InvalidEventSelectorsException(string message) 
+        public CloudTrailInvalidClientTokenIdException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of InvalidEventSelectorsException
+        /// Construct instance of CloudTrailInvalidClientTokenIdException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public InvalidEventSelectorsException(string message, Exception innerException) 
+        public CloudTrailInvalidClientTokenIdException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of InvalidEventSelectorsException
+        /// Construct instance of CloudTrailInvalidClientTokenIdException
         /// </summary>
         /// <param name="innerException"></param>
-        public InvalidEventSelectorsException(Exception innerException) 
+        public CloudTrailInvalidClientTokenIdException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of InvalidEventSelectorsException
+        /// Construct instance of CloudTrailInvalidClientTokenIdException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -105,30 +73,30 @@ namespace Amazon.CloudTrail.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InvalidEventSelectorsException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public CloudTrailInvalidClientTokenIdException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of InvalidEventSelectorsException
+        /// Construct instance of CloudTrailInvalidClientTokenIdException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InvalidEventSelectorsException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public CloudTrailInvalidClientTokenIdException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the InvalidEventSelectorsException class with serialized data.
+        /// Constructs a new instance of the CloudTrailInvalidClientTokenIdException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected InvalidEventSelectorsException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected CloudTrailInvalidClientTokenIdException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

@@ -39,6 +39,11 @@ namespace Amazon.CloudTrail.Model
     /// The total number of allowed data resources is 250. This number can be distributed
     /// between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.
     /// </para>
+    ///  
+    /// <para>
+    /// If you are using advanced event selectors, the maximum total number of values for
+    /// all conditions, across all advanced event selectors for the trail, is 500.
+    /// </para>
     ///  </note> 
     /// <para>
     /// The following example demonstrates how logging works when you configure logging of

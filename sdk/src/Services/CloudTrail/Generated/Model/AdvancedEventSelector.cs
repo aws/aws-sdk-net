@@ -29,7 +29,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
+    /// Advanced event selectors let you create fine-grained selectors for the following AWS
+    /// CloudTrail event record ﬁelds. They help you control costs by logging only those events
+    /// that are important to you. For more information about advanced event selectors, see
+    /// <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+    /// data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
     /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>readOnly</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>eventSource</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>eventName</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>eventCategory</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>resources.type</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>resources.ARN</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You cannot apply both event selectors and advanced event selectors to a trail.
+    /// </para>
     /// </summary>
     public partial class AdvancedEventSelector
     {
@@ -37,7 +70,10 @@ namespace Amazon.CloudTrail.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property FieldSelectors.
+        /// Gets and sets the property FieldSelectors. 
+        /// <para>
+        /// Contains all selector statements in an advanced event selector.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public List<AdvancedFieldSelector> FieldSelectors
@@ -53,9 +89,13 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// An optional, descriptive name for an advanced event selector, such as "Log data events
+        /// for only two S3 buckets".
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string Name
         {
             get { return this._name; }

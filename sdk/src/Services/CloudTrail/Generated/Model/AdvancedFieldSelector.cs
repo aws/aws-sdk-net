@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// 
+    /// A single selector statement in an advanced event selector.
     /// </summary>
     public partial class AdvancedFieldSelector
     {
@@ -42,7 +42,11 @@ namespace Amazon.CloudTrail.Model
         private List<string> _startsWith = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property EndsWith.
+        /// Gets and sets the property EndsWith. 
+        /// <para>
+        ///  An operator that includes events that match the last few characters of the event
+        /// record field specified as the value of <code>Field</code>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> EndsWith
@@ -58,7 +62,13 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Equals.
+        /// Gets and sets the property Equals. 
+        /// <para>
+        ///  An operator that includes events that match the exact value of the event record field
+        /// specified as the value of <code>Field</code>. This is the only valid operator that
+        /// you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code>
+        /// fields. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> Equals
@@ -74,7 +84,71 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Field.
+        /// Gets and sets the property Field. 
+        /// <para>
+        ///  A field in an event record on which to filter events to be logged. Supported fields
+        /// include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code>
+        /// (for management events), <code>eventName</code>, <code>resources.type</code>, and
+        /// <code>resources.ARN</code>. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b> <code>readOnly</code> </b> - Optional. Can be set to <code>Equals</code> a value
+        /// of <code>true</code> or <code>false</code>. A value of <code>false</code> logs both
+        /// <code>read</code> and <code>write</code> events.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>eventSource</code> </b> - For filtering management events only. This can
+        /// be set only to <code>NotEquals</code> <code>kms.amazonaws.com</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>eventName</code> </b> - Can use any operator. You can use it to ﬁlter in
+        /// or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code>.
+        /// You can have multiple values for this ﬁeld, separated by commas.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>eventCategory</code> </b> - This is required. It must be set to <code>Equals</code>,
+        /// and the value must be <code>Management</code> or <code>Data</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code>
+        /// can only use the <code>Equals</code> operator, and the value can be one of the following:
+        /// <code>AWS::S3::Object</code> or <code>AWS::Lambda::Function</code>. You can have only
+        /// one <code>resources.type</code> ﬁeld per selector. To log data events on more than
+        /// one resource type, add another selector.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>resources.ARN</code> </b> - You can use any operator with resources.ARN,
+        /// but if you use <code>Equals</code> or <code>NotEquals</code>, the value must exactly
+        /// match the ARN of a valid resource of the type you've speciﬁed in the template as the
+        /// value of resources.type. For example, if resources.type equals <code>AWS::S3::Object</code>,
+        /// the ARN must be in one of the following formats. The trailing slash is intentional;
+        /// do not exclude it.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:partition:s3:::bucket_name/</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:partition:s3:::bucket_name/object_or_file_name/</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is
+        /// set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:partition:lambda:region:account_ID:function:function_name</code> 
+        /// </para>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
         public string Field
@@ -90,7 +164,11 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NotEndsWith.
+        /// Gets and sets the property NotEndsWith. 
+        /// <para>
+        ///  An operator that excludes events that match the last few characters of the event
+        /// record field specified as the value of <code>Field</code>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> NotEndsWith
@@ -106,7 +184,11 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NotEquals.
+        /// Gets and sets the property NotEquals. 
+        /// <para>
+        ///  An operator that excludes events that match the exact value of the event record field
+        /// specified as the value of <code>Field</code>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> NotEquals
@@ -122,7 +204,11 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NotStartsWith.
+        /// Gets and sets the property NotStartsWith. 
+        /// <para>
+        ///  An operator that excludes events that match the first few characters of the event
+        /// record field specified as the value of <code>Field</code>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> NotStartsWith
@@ -138,7 +224,11 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartsWith.
+        /// Gets and sets the property StartsWith. 
+        /// <para>
+        ///  An operator that includes events that match the first few characters of the event
+        /// record field specified as the value of <code>Field</code>. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> StartsWith

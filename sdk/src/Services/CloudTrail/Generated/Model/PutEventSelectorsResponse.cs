@@ -38,7 +38,10 @@ namespace Amazon.CloudTrail.Model
         private string _trailARN;
 
         /// <summary>
-        /// Gets and sets the property AdvancedEventSelectors.
+        /// Gets and sets the property AdvancedEventSelectors. 
+        /// <para>
+        /// Specifies the advanced event selectors configured for your trail.
+        /// </para>
         /// </summary>
         public List<AdvancedEventSelector> AdvancedEventSelectors
         {
