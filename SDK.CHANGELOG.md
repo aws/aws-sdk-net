@@ -1,3 +1,17 @@
+### 3.5.72.0 (2020-12-11 19:13 UTC)
+* AutoScaling (3.5.3.0)
+	* Documentation updates and corrections for Amazon EC2 Auto Scaling API Reference and SDKs.
+* CloudTrail (3.5.2.0)
+	* CloudTrailInvalidClientTokenIdException is now thrown when a call results in the InvalidClientTokenId error code. The Name parameter of the AdvancedEventSelector data type is now optional.
+* CloudWatch (3.5.0.49)
+	* Documentation updates for monitoring
+* GuardDuty (3.5.1.41)
+	* Documentation updates for GuardDuty
+* IoTSiteWise (3.5.6.0)
+	* Added the ListAssetRelationships operation and support for composite asset models, which represent structured sets of properties within asset models.
+* PI (3.5.0.49)
+	* You can group DB load according to the dimension groups for database, application, and session type. Amazon RDS also supports the dimensions db.name, db.application.name, and db.session_type.name.
+
 ### 3.5.71.0 (2020-12-10 19:34 UTC)
 * EC2 (3.5.24.0)
 	* TGW connect simplifies connectivity of SD-WAN appliances; IGMP support for TGW multicast; VPC Reachability Analyzer for VPC resources connectivity analysis.
