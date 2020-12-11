@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the master account and invitation.
+    /// Contains information about the administrator account and invitation.
     /// </summary>
     public partial class Master
     {
@@ -41,7 +41,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of the account used as the master account.
+        /// The ID of the account used as the administrator account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -60,7 +60,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property InvitationId. 
         /// <para>
-        /// The value used to validate the master account to the member account.
+        /// The value used to validate the administrator account to the member account.
         /// </para>
         /// </summary>
         public string InvitationId
@@ -96,7 +96,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property RelationshipStatus. 
         /// <para>
-        /// The status of the relationship between the master and member accounts.
+        /// The status of the relationship between the administrator and member accounts.
         /// </para>
         /// </summary>
         public string RelationshipStatus

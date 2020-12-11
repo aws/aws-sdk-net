@@ -32,7 +32,7 @@ namespace Amazon.GuardDuty.Model
     /// Container for the parameters to the InviteMembers operation.
     /// Invites other AWS accounts (created as members of the current AWS account by CreateMembers)
     /// to enable GuardDuty, and allow the current AWS account to view and manage these accounts'
-    /// GuardDuty findings on their behalf as the master account.
+    /// findings on their behalf as the GuardDuty administrator account.
     /// </summary>
     public partial class InviteMembersRequest : AmazonGuardDutyRequest
     {

@@ -39,8 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AdminAccounts. 
         /// <para>
-        /// An AdminAccounts object that includes a list of accounts configured as GuardDuty delegated
-        /// administrators.
+        /// A list of accounts configured as GuardDuty delegated administrators.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

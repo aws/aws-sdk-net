@@ -30,8 +30,8 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMembers operation.
-    /// Deletes GuardDuty member accounts (to the current GuardDuty master account) specified
-    /// by the account IDs.
+    /// Deletes GuardDuty member accounts (to the current GuardDuty administrator account)
+    /// specified by the account IDs.
     /// </summary>
     public partial class DeleteMembersRequest : AmazonGuardDutyRequest
     {

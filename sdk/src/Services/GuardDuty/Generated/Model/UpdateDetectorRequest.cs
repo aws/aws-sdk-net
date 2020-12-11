@@ -42,7 +42,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DataSources. 
         /// <para>
-        /// An object that describes which data sources will be updated.
+        /// Describes which data sources will be updated.
         /// </para>
         /// </summary>
         public DataSourceConfigurations DataSources

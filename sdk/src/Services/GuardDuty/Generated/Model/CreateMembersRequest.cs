@@ -38,8 +38,8 @@ namespace Amazon.GuardDuty.Model
     /// <para>
     /// When using <code>Create Members</code> as an organizations delegated administrator
     /// this action will enable GuardDuty in the added member accounts, with the exception
-    /// of the organization master account, which must enable GuardDuty prior to being added
-    /// as a member.
+    /// of the organization delegated administrator account, which must enable GuardDuty prior
+    /// to being added as a member.
     /// </para>
     ///  
     /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property AccountDetails. 
         /// <para>
         /// A list of account ID and email address pairs of the accounts that you want to associate
-        /// with the master GuardDuty account.
+        /// with the GuardDuty administrator account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

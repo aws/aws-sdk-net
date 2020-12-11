@@ -60,8 +60,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector associated with the GuardDuty master account that is
-        /// monitoring member accounts.
+        /// The unique ID of the detector associated with the GuardDuty administrator account
+        /// that is monitoring member accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

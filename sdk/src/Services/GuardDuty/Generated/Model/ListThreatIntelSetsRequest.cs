@@ -32,7 +32,7 @@ namespace Amazon.GuardDuty.Model
     /// Container for the parameters to the ListThreatIntelSets operation.
     /// Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If
     /// you use this operation from a member account, the ThreatIntelSets associated with
-    /// the master account are returned.
+    /// the administrator account are returned.
     /// </summary>
     public partial class ListThreatIntelSetsRequest : AmazonGuardDutyRequest
     {

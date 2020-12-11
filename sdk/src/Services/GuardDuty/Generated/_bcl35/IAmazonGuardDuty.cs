@@ -70,7 +70,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Accepts the invitation to be monitored by a master GuardDuty account.
+        /// Accepts the invitation to be monitored by a GuardDuty administrator account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptInvitation service method.</param>
         /// 
@@ -120,7 +120,7 @@ namespace Amazon.GuardDuty
         /// 
         ///  <note> 
         /// <para>
-        /// Only the master account can archive findings. Member accounts don't have permission
+        /// Only the administrator account can archive findings. Member accounts don't have permission
         /// to archive findings from their accounts.
         /// </para>
         ///  </note>
@@ -267,7 +267,8 @@ namespace Amazon.GuardDuty
         /// Creates a new IPSet, which is called a trusted IP list in the console user interface.
         /// An IPSet is a list of IP addresses that are trusted for secure communication with
         /// AWS infrastructure and applications. GuardDuty doesn't generate findings for IP addresses
-        /// that are included in IPSets. Only users from the master account can use this operation.
+        /// that are included in IPSets. Only users from the administrator account can use this
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIPSet service method.</param>
         /// 
@@ -321,8 +322,8 @@ namespace Amazon.GuardDuty
         /// <para>
         /// When using <code>Create Members</code> as an organizations delegated administrator
         /// this action will enable GuardDuty in the added member accounts, with the exception
-        /// of the organization master account, which must enable GuardDuty prior to being added
-        /// as a member.
+        /// of the organization delegated administrator account, which must enable GuardDuty prior
+        /// to being added as a member.
         /// </para>
         ///  
         /// <para>
@@ -471,8 +472,8 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses.
-        /// GuardDuty generates findings based on ThreatIntelSets. Only users of the master account
-        /// can use this operation.
+        /// GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator
+        /// account can use this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThreatIntelSet service method.</param>
         /// 
@@ -751,8 +752,8 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Deletes GuardDuty member accounts (to the current GuardDuty master account) specified
-        /// by the account IDs.
+        /// Deletes GuardDuty member accounts (to the current GuardDuty administrator account)
+        /// specified by the account IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
         /// 
@@ -1029,7 +1030,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Disassociates the current GuardDuty member account from its master account.
+        /// Disassociates the current GuardDuty member account from its administrator account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFromMasterAccount service method.</param>
         /// 
@@ -1075,7 +1076,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Disassociates GuardDuty member accounts (to the current GuardDuty master account)
+        /// Disassociates GuardDuty member accounts (to the current GuardDuty administrator account)
         /// specified by the account IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
@@ -1445,7 +1446,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Provides the details for the GuardDuty master account associated with the current
+        /// Provides the details for the GuardDuty administrator account associated with the current
         /// GuardDuty member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMasterAccount service method.</param>
@@ -1538,8 +1539,8 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Retrieves GuardDuty member accounts (to the current GuardDuty master account) specified
-        /// by the account IDs.
+        /// Retrieves GuardDuty member accounts (of the current GuardDuty administrator account)
+        /// specified by the account IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMembers service method.</param>
         /// 
@@ -1684,7 +1685,7 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Invites other AWS accounts (created as members of the current AWS account by CreateMembers)
         /// to enable GuardDuty, and allow the current AWS account to view and manage these accounts'
-        /// GuardDuty findings on their behalf as the master account.
+        /// findings on their behalf as the GuardDuty administrator account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteMembers service method.</param>
         /// 
@@ -1916,7 +1917,7 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Lists the IPSets of the GuardDuty service specified by the detector ID. If you use
         /// this operation from a member account, the IPSets returned are the IPSets from the
-        /// associated master account.
+        /// associated administrator account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIPSets service method.</param>
         /// 
@@ -1962,7 +1963,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Lists details about all member accounts for the current GuardDuty master account.
+        /// Lists details about all member accounts for the current GuardDuty administrator account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// 
@@ -2150,7 +2151,7 @@ namespace Amazon.GuardDuty
         /// <summary>
         /// Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If
         /// you use this operation from a member account, the ThreatIntelSets associated with
-        /// the master account are returned.
+        /// the administrator account are returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThreatIntelSets service method.</param>
         /// 

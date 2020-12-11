@@ -119,7 +119,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property MasterId. 
         /// <para>
-        /// The master account ID.
+        /// The administrator account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -138,7 +138,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property RelationshipStatus. 
         /// <para>
-        /// The status of the relationship between the member and the master.
+        /// The status of the relationship between the member and the administrator.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

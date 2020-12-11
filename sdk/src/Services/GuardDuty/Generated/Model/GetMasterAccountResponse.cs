@@ -38,7 +38,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Master. 
         /// <para>
-        /// The master account details.
+        /// The administrator account details.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

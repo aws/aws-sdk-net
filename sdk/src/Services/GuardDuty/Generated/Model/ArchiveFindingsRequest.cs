@@ -34,7 +34,7 @@ namespace Amazon.GuardDuty.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Only the master account can archive findings. Member accounts don't have permission
+    /// Only the administrator account can archive findings. Member accounts don't have permission
     /// to archive findings from their accounts.
     /// </para>
     ///  </note>

@@ -103,8 +103,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector of the GuardDuty account that you want to create a filter
-        /// for.
+        /// The ID of the detector belonging to the GuardDuty account that you want to create
+        /// a filter for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -235,6 +235,10 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// service.action.awsApiCallAction.errorCode
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// service.action.awsApiCallAction.remoteIpDetails.city.cityName
         /// </para>
         ///  </li> <li> 
@@ -358,7 +362,9 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the filter.
+        /// The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
+        /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are
+        /// not allowed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=64)]

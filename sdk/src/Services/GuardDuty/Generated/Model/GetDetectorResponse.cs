@@ -62,7 +62,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DataSources. 
         /// <para>
-        /// An object that describes which data sources are enabled for the detector.
+        /// Describes which data sources are enabled for the detector.
         /// </para>
         /// </summary>
         public DataSourceConfigurationsResult DataSources

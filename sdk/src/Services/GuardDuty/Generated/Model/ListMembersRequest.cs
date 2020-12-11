@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMembers operation.
-    /// Lists details about all member accounts for the current GuardDuty master account.
+    /// Lists details about all member accounts for the current GuardDuty administrator account.
     /// </summary>
     public partial class ListMembersRequest : AmazonGuardDutyRequest
     {

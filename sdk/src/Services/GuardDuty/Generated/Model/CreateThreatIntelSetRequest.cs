@@ -31,8 +31,8 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Container for the parameters to the CreateThreatIntelSet operation.
     /// Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses.
-    /// GuardDuty generates findings based on ThreatIntelSets. Only users of the master account
-    /// can use this operation.
+    /// GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator
+    /// account can use this operation.
     /// </summary>
     public partial class CreateThreatIntelSetRequest : AmazonGuardDutyRequest
     {

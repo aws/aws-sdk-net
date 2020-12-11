@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the AcceptInvitation operation.
-    /// Accepts the invitation to be monitored by a master GuardDuty account.
+    /// Accepts the invitation to be monitored by a GuardDuty administrator account.
     /// </summary>
     public partial class AcceptInvitationRequest : AmazonGuardDutyRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property InvitationId. 
         /// <para>
-        /// The value that is used to validate the master account to the member account.
+        /// The value that is used to validate the administrator account to the member account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property MasterId. 
         /// <para>
-        /// The account ID of the master GuardDuty account whose invitation you're accepting.
+        /// The account ID of the GuardDuty administrator account whose invitation you're accepting.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
