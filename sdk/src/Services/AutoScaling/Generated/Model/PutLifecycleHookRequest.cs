@@ -103,7 +103,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -254,7 +254,7 @@ namespace Amazon.AutoScaling.Model
         /// Test messages contain the following additional key-value pair: <code>"Event": "autoscaling:TEST_NOTIFICATION"</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1600)]
+        [AWSProperty(Min=0, Max=255)]
         public string NotificationTargetARN
         {
             get { return this._notificationTargetARN; }
@@ -278,7 +278,7 @@ namespace Amazon.AutoScaling.Model
         /// Required for new lifecycle hooks, but optional when updating existing hooks.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1600)]
+        [AWSProperty(Min=1, Max=255)]
         public string RoleARN
         {
             get { return this._roleARN; }

@@ -48,7 +48,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the launch configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string LaunchConfigurationName
         {
             get { return this._launchConfigurationName; }

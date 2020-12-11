@@ -113,7 +113,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -132,7 +132,6 @@ namespace Amazon.AutoScaling.Model
         /// One or more Availability Zones for the group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public List<string> AvailabilityZones
         {
             get { return this._availabilityZones; }
@@ -261,7 +260,7 @@ namespace Amazon.AutoScaling.Model
         /// in your update request, you can't specify <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1600)]
+        [AWSProperty(Min=1, Max=255)]
         public string LaunchConfigurationName
         {
             get { return this._launchConfigurationName; }

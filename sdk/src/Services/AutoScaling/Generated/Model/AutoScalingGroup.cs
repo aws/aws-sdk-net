@@ -105,7 +105,7 @@ namespace Amazon.AutoScaling.Model
         /// One or more Availability Zones for the group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public List<string> AvailabilityZones
         {
             get { return this._availabilityZones; }

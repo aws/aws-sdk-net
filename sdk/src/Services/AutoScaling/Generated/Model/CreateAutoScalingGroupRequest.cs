@@ -113,7 +113,6 @@ namespace Amazon.AutoScaling.Model
         /// to launch instances into EC2-Classic.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public List<string> AvailabilityZones
         {
             get { return this._availabilityZones; }
@@ -279,7 +278,7 @@ namespace Amazon.AutoScaling.Model
         /// or <code>InstanceId</code>).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1600)]
+        [AWSProperty(Min=1, Max=255)]
         public string LaunchConfigurationName
         {
             get { return this._launchConfigurationName; }

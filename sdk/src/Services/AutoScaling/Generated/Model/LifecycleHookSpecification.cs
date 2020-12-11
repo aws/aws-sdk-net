@@ -203,7 +203,7 @@ namespace Amazon.AutoScaling.Model
         /// can be either an SQS queue or an SNS topic.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1600)]
+        [AWSProperty(Min=0, Max=255)]
         public string NotificationTargetARN
         {
             get { return this._notificationTargetARN; }
@@ -223,7 +223,7 @@ namespace Amazon.AutoScaling.Model
         /// notification target, for example, an Amazon SNS topic or an Amazon SQS queue.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1600)]
+        [AWSProperty(Min=1, Max=255)]
         public string RoleARN
         {
             get { return this._roleARN; }
