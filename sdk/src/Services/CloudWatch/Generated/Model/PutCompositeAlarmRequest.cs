@@ -85,6 +85,11 @@ namespace Amazon.CloudWatch.Model
     /// When you update an existing alarm, its state is left unchanged, but the update completely
     /// overwrites the previous configuration of the alarm.
     /// </para>
+    ///  
+    /// <para>
+    /// If you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to
+    /// create a composite alarm that has Systems Manager OpsItem actions.
+    /// </para>
     /// </summary>
     public partial class PutCompositeAlarmRequest : AmazonCloudWatchRequest
     {
@@ -125,6 +130,7 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
+        /// </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
         /// </code> 
         /// </para>
         /// </summary>
