@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PI.Model
 {
     /// <summary>
-    /// A time-ordered series of data points, correpsonding to a dimension of a Performance
+    /// A time-ordered series of data points, corresponding to a dimension of a Performance
     /// Insights metric.
     /// </summary>
     public partial class MetricKeyDataPoints

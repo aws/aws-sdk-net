@@ -87,7 +87,7 @@ namespace Amazon.PI.Model
         /// </para>
         ///  
         /// <para>
-        /// To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code>
+        /// To use a DB instance as a data source, you specify its <code>DbiResourceId</code>
         /// value - for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> 
         /// </para>
         /// </summary>

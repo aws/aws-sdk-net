@@ -110,7 +110,16 @@ namespace Amazon.PI.Model
         ///  <code>db.sampledload.avg</code> - the raw number of active sessions for the database
         /// engine.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the number of active sessions is less than an internal Performance Insights threshold,
+        /// <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If
+        /// the number of active sessions is greater than the internal threshold, Performance
+        /// Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled
+        /// values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code>
+        /// less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code>
+        /// only. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Metric
