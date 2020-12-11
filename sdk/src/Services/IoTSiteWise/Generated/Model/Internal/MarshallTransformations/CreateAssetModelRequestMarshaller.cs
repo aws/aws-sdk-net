@@ -66,6 +66,22 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAssetModelCompositeModels())
+                {
+                    context.Writer.WritePropertyName("assetModelCompositeModels");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAssetModelCompositeModelsListValue in publicRequest.AssetModelCompositeModels)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AssetModelCompositeModelDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAssetModelCompositeModelsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetAssetModelDescription())
                 {
                     context.Writer.WritePropertyName("assetModelDescription");

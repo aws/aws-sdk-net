@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreatePresignedPortalUrl Request Marshaller
+    /// ListAssetRelationships Request Marshaller
     /// </summary>       
-    public class CreatePresignedPortalUrlRequestMarshaller : IMarshaller<IRequest, CreatePresignedPortalUrlRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListAssetRelationshipsRequestMarshaller : IMarshaller<IRequest, ListAssetRelationshipsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreatePresignedPortalUrlRequest)input);
+            return this.Marshall((ListAssetRelationshipsRequest)input);
         }
 
         /// <summary>
@@ -52,29 +52,35 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreatePresignedPortalUrlRequest publicRequest)
+        public IRequest Marshall(ListAssetRelationshipsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoTSiteWise");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";            
             request.HttpMethod = "GET";
 
-            if (!publicRequest.IsSetPortalId())
-                throw new AmazonIoTSiteWiseException("Request object does not have required field PortalId set");
-            request.AddPathResource("{portalId}", StringUtils.FromString(publicRequest.PortalId));
+            if (!publicRequest.IsSetAssetId())
+                throw new AmazonIoTSiteWiseException("Request object does not have required field AssetId set");
+            request.AddPathResource("{assetId}", StringUtils.FromString(publicRequest.AssetId));
             
-            if (publicRequest.IsSetSessionDurationSeconds())
-                request.Parameters.Add("sessionDurationSeconds", StringUtils.FromInt(publicRequest.SessionDurationSeconds));
-            request.ResourcePath = "/portals/{portalId}/presigned-url";
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetTraversalType())
+                request.Parameters.Add("traversalType", StringUtils.FromString(publicRequest.TraversalType));
+            request.ResourcePath = "/assets/{assetId}/assetRelationships";
             request.MarshallerVersion = 2;
             request.UseQueryString = true;
             
-            request.HostPrefix = $"monitor.";
+            request.HostPrefix = $"model.";
 
             return request;
         }
-        private static CreatePresignedPortalUrlRequestMarshaller _instance = new CreatePresignedPortalUrlRequestMarshaller();        
+        private static ListAssetRelationshipsRequestMarshaller _instance = new ListAssetRelationshipsRequestMarshaller();        
 
-        internal static CreatePresignedPortalUrlRequestMarshaller GetInstance()
+        internal static ListAssetRelationshipsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -82,7 +88,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreatePresignedPortalUrlRequestMarshaller Instance
+        public static ListAssetRelationshipsRequestMarshaller Instance
         {
             get
             {

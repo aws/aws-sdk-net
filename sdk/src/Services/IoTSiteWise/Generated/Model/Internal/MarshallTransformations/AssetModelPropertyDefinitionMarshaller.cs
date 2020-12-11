@@ -51,6 +51,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DataType);
             }
 
+            if(requestObject.IsSetDataTypeSpec())
+            {
+                context.Writer.WritePropertyName("dataTypeSpec");
+                context.Writer.Write(requestObject.DataTypeSpec);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

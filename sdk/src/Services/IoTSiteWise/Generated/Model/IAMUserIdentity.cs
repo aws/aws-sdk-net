@@ -38,8 +38,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the IAM user. IAM users must have the <code>iotsitewise:CreatePresignedPortalUrl</code>
-        /// permission to sign in to the portal. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+        /// The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
         /// ARNs</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 

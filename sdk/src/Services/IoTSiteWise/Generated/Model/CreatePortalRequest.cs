@@ -89,8 +89,7 @@ namespace Amazon.IoTSiteWise.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate
-        /// users and manage user permissions. IAM users must have the <code>iotsitewise:CreatePresignedPortalUrl</code>
-        /// permission to sign in to the portal. This option is only available in the China Regions.
+        /// users and manage user permissions. This option is only available in the China Regions.
         /// </para>
         ///  </li> </ul> 
         /// <para>

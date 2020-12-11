@@ -46,7 +46,7 @@ namespace Amazon.IoTSiteWise.Model
         /// data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=204800)]
+        [AWSProperty(Required=true, Min=1, Max=104857600)]
         public string CapabilityConfiguration
         {
             get { return this._capabilityConfiguration; }

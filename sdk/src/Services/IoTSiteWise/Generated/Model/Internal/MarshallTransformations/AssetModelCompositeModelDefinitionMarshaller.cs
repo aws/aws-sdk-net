@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AssetModelProperty Marshaller
+    /// AssetModelCompositeModelDefinition Marshaller
     /// </summary>       
-    public class AssetModelPropertyMarshaller : IRequestMarshaller<AssetModelProperty, JsonMarshallerContext> 
+    public class AssetModelCompositeModelDefinitionMarshaller : IRequestMarshaller<AssetModelCompositeModelDefinition, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,24 +43,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AssetModelProperty requestObject, JsonMarshallerContext context)
+        public void Marshall(AssetModelCompositeModelDefinition requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDataType())
+            if(requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("dataType");
-                context.Writer.Write(requestObject.DataType);
-            }
-
-            if(requestObject.IsSetDataTypeSpec())
-            {
-                context.Writer.WritePropertyName("dataTypeSpec");
-                context.Writer.Write(requestObject.DataTypeSpec);
-            }
-
-            if(requestObject.IsSetId())
-            {
-                context.Writer.WritePropertyName("id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WritePropertyName("description");
+                context.Writer.Write(requestObject.Description);
             }
 
             if(requestObject.IsSetName())
@@ -69,21 +57,26 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetProperties())
+            {
+                context.Writer.WritePropertyName("properties");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPropertiesListValue in requestObject.Properties)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AssetModelPropertyDefinitionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPropertiesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = PropertyTypeMarshaller.Instance;
-                marshaller.Marshall(requestObject.Type, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetUnit())
-            {
-                context.Writer.WritePropertyName("unit");
-                context.Writer.Write(requestObject.Unit);
+                context.Writer.Write(requestObject.Type);
             }
 
         }
@@ -91,7 +84,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static AssetModelPropertyMarshaller Instance = new AssetModelPropertyMarshaller();
+        public readonly static AssetModelCompositeModelDefinitionMarshaller Instance = new AssetModelCompositeModelDefinitionMarshaller();
 
     }
 }

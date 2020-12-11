@@ -57,6 +57,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.AssetArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("assetCompositeModels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AssetCompositeModel, AssetCompositeModelUnmarshaller>(AssetCompositeModelUnmarshaller.Instance);
+                    response.AssetCompositeModels = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("assetCreationDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

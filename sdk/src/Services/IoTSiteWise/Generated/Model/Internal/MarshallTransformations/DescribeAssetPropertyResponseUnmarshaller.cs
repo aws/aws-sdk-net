@@ -75,6 +75,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.AssetProperty = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("compositeModel", targetDepth))
+                {
+                    var unmarshaller = CompositeModelPropertyUnmarshaller.Instance;
+                    response.CompositeModel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -52,12 +52,34 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class UpdateAssetModelRequest : AmazonIoTSiteWiseRequest
     {
+        private List<AssetModelCompositeModel> _assetModelCompositeModels = new List<AssetModelCompositeModel>();
         private string _assetModelDescription;
         private List<AssetModelHierarchy> _assetModelHierarchies = new List<AssetModelHierarchy>();
         private string _assetModelId;
         private string _assetModelName;
         private List<AssetModelProperty> _assetModelProperties = new List<AssetModelProperty>();
         private string _clientToken;
+
+        /// <summary>
+        /// Gets and sets the property AssetModelCompositeModels. 
+        /// <para>
+        /// The composite asset models that are part of this asset model. Composite asset models
+        /// are asset models that contain specific properties. Each composite model has a type
+        /// that defines the properties that the composite model supports. Use composite asset
+        /// models to define alarms on this asset model.
+        /// </para>
+        /// </summary>
+        public List<AssetModelCompositeModel> AssetModelCompositeModels
+        {
+            get { return this._assetModelCompositeModels; }
+            set { this._assetModelCompositeModels = value; }
+        }
+
+        // Check to see if AssetModelCompositeModels property is set
+        internal bool IsSetAssetModelCompositeModels()
+        {
+            return this._assetModelCompositeModels != null && this._assetModelCompositeModels.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AssetModelDescription. 

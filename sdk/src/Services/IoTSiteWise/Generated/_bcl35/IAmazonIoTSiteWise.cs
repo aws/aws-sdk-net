@@ -284,8 +284,8 @@ namespace Amazon.IoTSiteWise
         ///  </li> </ul> <important> 
         /// <para>
         /// With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp
-        /// of no more than 15 minutes in the past and no more than 5 minutes in the future. AWS
-        /// IoT SiteWise rejects timestamps outside of the inclusive range of [-15, +5] minutes
+        /// of no more than 7 days in the past and no more than 5 minutes in the future. AWS IoT
+        /// SiteWise rejects timestamps outside of the inclusive range of [-7 days, +5 minutes]
         /// and returns a <code>TimestampOutOfRangeException</code> error.
         /// </para>
         ///  
@@ -836,67 +836,6 @@ namespace Amazon.IoTSiteWise
         /// <returns>Returns a  CreatePortalResult from IoTSiteWise.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePortal">REST API Reference for CreatePortal Operation</seealso>
         CreatePortalResponse EndCreatePortal(IAsyncResult asyncResult);
-
-        #endregion
-        
-        #region  CreatePresignedPortalUrl
-
-
-        /// <summary>
-        /// Creates a pre-signed URL to a portal. Use this operation to create URLs to portals
-        /// that use AWS Identity and Access Management (IAM) to authenticate users. An IAM user
-        /// with access to a portal can call this API to get a URL to that portal. The URL contains
-        /// an authentication token that lets the IAM user access the portal.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedPortalUrl service method.</param>
-        /// 
-        /// <returns>The response from the CreatePresignedPortalUrl service method, as returned by IoTSiteWise.</returns>
-        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
-        /// AWS IoT SiteWise can't process your request right now. Try again later.
-        /// </exception>
-        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
-        /// The request isn't valid. This can occur if your request contains malformed JSON or
-        /// unsupported characters. Check your request and try again.
-        /// </exception>
-        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
-        /// Your request exceeded a rate limit. For example, you might have exceeded the number
-        /// of AWS IoT SiteWise assets that can be created per second, the allowed number of messages
-        /// per second, and so on.
-        /// 
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-        /// in the <i>AWS IoT SiteWise User Guide</i>.
-        /// </para>
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">REST API Reference for CreatePresignedPortalUrl Operation</seealso>
-        CreatePresignedPortalUrlResponse CreatePresignedPortalUrl(CreatePresignedPortalUrlRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreatePresignedPortalUrl operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedPortalUrl operation on AmazonIoTSiteWiseClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePresignedPortalUrl
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">REST API Reference for CreatePresignedPortalUrl Operation</seealso>
-        IAsyncResult BeginCreatePresignedPortalUrl(CreatePresignedPortalUrlRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  CreatePresignedPortalUrl operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePresignedPortalUrl.</param>
-        /// 
-        /// <returns>Returns a  CreatePresignedPortalUrlResult from IoTSiteWise.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl">REST API Reference for CreatePresignedPortalUrl Operation</seealso>
-        CreatePresignedPortalUrlResponse EndCreatePresignedPortalUrl(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2537,6 +2476,69 @@ namespace Amazon.IoTSiteWise
 
         #endregion
         
+        #region  ListAssetRelationships
+
+
+        /// <summary>
+        /// Retrieves a paginated list of asset relationships for an asset. You can use this operation
+        /// to identify an asset's root asset and all associated assets between that asset and
+        /// its root.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetRelationships service method.</param>
+        /// 
+        /// <returns>The response from the ListAssetRelationships service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// AWS IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of AWS IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships">REST API Reference for ListAssetRelationships Operation</seealso>
+        ListAssetRelationshipsResponse ListAssetRelationships(ListAssetRelationshipsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAssetRelationships operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetRelationships operation on AmazonIoTSiteWiseClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssetRelationships
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships">REST API Reference for ListAssetRelationships Operation</seealso>
+        IAsyncResult BeginListAssetRelationships(ListAssetRelationshipsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAssetRelationships operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssetRelationships.</param>
+        /// 
+        /// <returns>Returns a  ListAssetRelationshipsResult from IoTSiteWise.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships">REST API Reference for ListAssetRelationships Operation</seealso>
+        ListAssetRelationshipsResponse EndListAssetRelationships(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListAssets
 
 
@@ -2992,12 +2994,27 @@ namespace Amazon.IoTSiteWise
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
         /// AWS IoT SiteWise can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
         /// The request isn't valid. This can occur if your request contains malformed JSON or
         /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
         /// The requested resource can't be found.
@@ -3012,6 +3029,9 @@ namespace Amazon.IoTSiteWise
         /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
         /// in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.UnauthorizedException">
+        /// You are not authorized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -3194,12 +3214,27 @@ namespace Amazon.IoTSiteWise
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
         /// AWS IoT SiteWise can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
         /// The request isn't valid. This can occur if your request contains malformed JSON or
         /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
         /// The requested resource can't be found.
@@ -3219,6 +3254,9 @@ namespace Amazon.IoTSiteWise
         /// You've reached the limit for the number of tags allowed for a resource. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
         /// naming limits and requirements</a> in the <i>AWS General Reference</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.UnauthorizedException">
+        /// You are not authorized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -3260,12 +3298,27 @@ namespace Amazon.IoTSiteWise
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
         /// AWS IoT SiteWise can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
         /// The request isn't valid. This can occur if your request contains malformed JSON or
         /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
         /// The requested resource can't be found.
@@ -3280,6 +3333,9 @@ namespace Amazon.IoTSiteWise
         /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
         /// in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.UnauthorizedException">
+        /// You are not authorized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);

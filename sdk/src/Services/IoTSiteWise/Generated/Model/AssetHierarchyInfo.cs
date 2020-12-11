@@ -29,48 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains current status information for the configuration.
+    /// Contains information about a parent asset and a child asset that are related through
+    /// an asset hierarchy.
     /// </summary>
-    public partial class ConfigurationStatus
+    public partial class AssetHierarchyInfo
     {
-        private ConfigurationErrorDetails _error;
-        private ConfigurationState _state;
+        private string _childAssetId;
+        private string _parentAssetId;
 
         /// <summary>
-        /// Gets and sets the property Error. 
+        /// Gets and sets the property ChildAssetId. 
         /// <para>
-        /// Contains associated error information, if any.
+        /// The ID of the child asset in this asset relationship.
         /// </para>
         /// </summary>
-        public ConfigurationErrorDetails Error
+        [AWSProperty(Min=36, Max=36)]
+        public string ChildAssetId
         {
-            get { return this._error; }
-            set { this._error = value; }
+            get { return this._childAssetId; }
+            set { this._childAssetId = value; }
         }
 
-        // Check to see if Error property is set
-        internal bool IsSetError()
+        // Check to see if ChildAssetId property is set
+        internal bool IsSetChildAssetId()
         {
-            return this._error != null;
+            return this._childAssetId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property State. 
+        /// Gets and sets the property ParentAssetId. 
         /// <para>
-        /// The current state of the configuration.
+        /// The ID of the parent asset in this asset relationship.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public ConfigurationState State
+        [AWSProperty(Min=36, Max=36)]
+        public string ParentAssetId
         {
-            get { return this._state; }
-            set { this._state = value; }
+            get { return this._parentAssetId; }
+            set { this._parentAssetId = value; }
         }
 
-        // Check to see if State property is set
-        internal bool IsSetState()
+        // Check to see if ParentAssetId property is set
+        internal bool IsSetParentAssetId()
         {
-            return this._state != null;
+            return this._parentAssetId != null;
         }
 
     }

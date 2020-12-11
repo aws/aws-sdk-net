@@ -37,6 +37,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _assetModelId;
         private string _assetName;
         private Property _assetProperty;
+        private CompositeModelProperty _compositeModel;
 
         /// <summary>
         /// Gets and sets the property AssetId. 
@@ -100,8 +101,13 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The asset property's definition, alias, and notification state.
         /// </para>
+        ///  
+        /// <para>
+        /// This response includes this object for normal asset properties. If you describe an
+        /// asset property in a composite model, this response includes the asset property information
+        /// in <code>compositeModel</code>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Property AssetProperty
         {
             get { return this._assetProperty; }
@@ -112,6 +118,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetAssetProperty()
         {
             return this._assetProperty != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompositeModel. 
+        /// <para>
+        /// The composite asset model that declares this asset property, if this asset property
+        /// exists in a composite model.
+        /// </para>
+        /// </summary>
+        public CompositeModelProperty CompositeModel
+        {
+            get { return this._compositeModel; }
+            set { this._compositeModel = value; }
+        }
+
+        // Check to see if CompositeModel property is set
+        internal bool IsSetCompositeModel()
+        {
+            return this._compositeModel != null;
         }
 
     }

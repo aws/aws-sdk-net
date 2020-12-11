@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// 
+    /// Contains the details of an AWS IoT SiteWise configuration error.
     /// </summary>
     public partial class ConfigurationErrorDetails
     {
@@ -37,7 +37,10 @@ namespace Amazon.IoTSiteWise.Model
         private string _message;
 
         /// <summary>
-        /// Gets and sets the property Code.
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// The error code.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ErrorCode Code
@@ -53,7 +56,10 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Message.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The error message.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Message

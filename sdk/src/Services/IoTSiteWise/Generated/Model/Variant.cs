@@ -98,7 +98,6 @@ namespace Amazon.IoTSiteWise.Model
         /// Asset property data of type string (sequence of characters).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
         public string StringValue
         {
             get { return this._stringValue; }

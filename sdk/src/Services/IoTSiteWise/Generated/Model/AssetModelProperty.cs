@@ -34,6 +34,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class AssetModelProperty
     {
         private PropertyDataType _dataType;
+        private string _dataTypeSpec;
         private string _id;
         private string _name;
         private PropertyType _type;
@@ -56,6 +57,26 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetDataType()
         {
             return this._dataType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataTypeSpec. 
+        /// <para>
+        /// The data type of the structure for this property. This parameter exists on properties
+        /// that have the <code>STRUCT</code> data type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string DataTypeSpec
+        {
+            get { return this._dataTypeSpec; }
+            set { this._dataTypeSpec = value; }
+        }
+
+        // Check to see if DataTypeSpec property is set
+        internal bool IsSetDataTypeSpec()
+        {
+            return this._dataTypeSpec != null;
         }
 
         /// <summary>

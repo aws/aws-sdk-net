@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreatePresignedPortalUrl operation
+    /// Response Unmarshaller for ListAssetRelationships operation
     /// </summary>  
-    public class CreatePresignedPortalUrlResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListAssetRelationshipsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreatePresignedPortalUrlResponse response = new CreatePresignedPortalUrlResponse();
+            ListAssetRelationshipsResponse response = new ListAssetRelationshipsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("presignedPortalUrl", targetDepth))
+                if (context.TestExpression("assetRelationshipSummaries", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AssetRelationshipSummary, AssetRelationshipSummaryUnmarshaller>(AssetRelationshipSummaryUnmarshaller.Instance);
+                    response.AssetRelationshipSummaries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.PresignedPortalUrl = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,6 +94,10 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -96,9 +106,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             return new AmazonIoTSiteWiseException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreatePresignedPortalUrlResponseUnmarshaller _instance = new CreatePresignedPortalUrlResponseUnmarshaller();        
+        private static ListAssetRelationshipsResponseUnmarshaller _instance = new ListAssetRelationshipsResponseUnmarshaller();        
 
-        internal static CreatePresignedPortalUrlResponseUnmarshaller GetInstance()
+        internal static ListAssetRelationshipsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -106,7 +116,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreatePresignedPortalUrlResponseUnmarshaller Instance
+        public static ListAssetRelationshipsResponseUnmarshaller Instance
         {
             get
             {

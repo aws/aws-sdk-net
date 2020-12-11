@@ -34,6 +34,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class DescribeAssetModelResponse : AmazonWebServiceResponse
     {
         private string _assetModelArn;
+        private List<AssetModelCompositeModel> _assetModelCompositeModels = new List<AssetModelCompositeModel>();
         private DateTime? _assetModelCreationDate;
         private string _assetModelDescription;
         private List<AssetModelHierarchy> _assetModelHierarchies = new List<AssetModelHierarchy>();
@@ -66,6 +67,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetAssetModelArn()
         {
             return this._assetModelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssetModelCompositeModels. 
+        /// <para>
+        /// The list of composite asset models for the asset model.
+        /// </para>
+        /// </summary>
+        public List<AssetModelCompositeModel> AssetModelCompositeModels
+        {
+            get { return this._assetModelCompositeModels; }
+            set { this._assetModelCompositeModels = value; }
+        }
+
+        // Check to see if AssetModelCompositeModels property is set
+        internal bool IsSetAssetModelCompositeModels()
+        {
+            return this._assetModelCompositeModels != null && this._assetModelCompositeModels.Count > 0; 
         }
 
         /// <summary>
@@ -188,6 +207,11 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property AssetModelProperties. 
         /// <para>
         /// The list of asset properties for the asset model.
+        /// </para>
+        ///  
+        /// <para>
+        /// This object doesn't include properties that you define in composite models. You can
+        /// find composite model properties in the <code>assetModelCompositeModels</code> object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -69,6 +69,14 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for ListAssetRelationships operation
+        ///</summary>
+        public IListAssetRelationshipsPaginator ListAssetRelationships(ListAssetRelationshipsRequest request) 
+        {
+            return new ListAssetRelationshipsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssets operation
         ///</summary>
         public IListAssetsPaginator ListAssets(ListAssetsRequest request) 
