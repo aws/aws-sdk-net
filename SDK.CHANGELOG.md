@@ -1,3 +1,16 @@
+### 3.5.73.0 (2020-12-14 19:11 UTC)
+* DevOpsGuru (3.5.1.0)
+	* Documentation updates for DevOps Guru.
+* EC2 (3.5.25.0)
+	* Add c5n.metal to ec2 instance types list
+* GlobalAccelerator (3.5.3.0)
+	* This release adds support for custom routing accelerators
+* Core 3.5.1.49
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.72.0 (2020-12-11 19:13 UTC)
 * AutoScaling (3.5.3.0)
 	* Documentation updates and corrections for Amazon EC2 Auto Scaling API Reference and SDKs.
