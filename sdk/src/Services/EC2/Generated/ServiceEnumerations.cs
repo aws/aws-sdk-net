@@ -5635,6 +5635,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C5nLarge = new InstanceType("c5n.large");
         /// <summary>
+        /// Constant C5nMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType C5nMetal = new InstanceType("c5n.metal");
+        /// <summary>
         /// Constant C5nXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C5nXlarge = new InstanceType("c5n.xlarge");
