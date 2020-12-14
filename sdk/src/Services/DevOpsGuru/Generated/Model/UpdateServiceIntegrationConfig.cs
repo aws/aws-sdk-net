@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Information about updating the integration status of an AWS service, such as AWS
+    /// Systems Manager, with DevOps Guru.
     /// </summary>
     public partial class UpdateServiceIntegrationConfig
     {

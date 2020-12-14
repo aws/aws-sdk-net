@@ -29,14 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Information about a filter used to specify which AWS resources are analyzed for anomalous
+    /// behavior by DevOps Guru.
     /// </summary>
     public partial class ResourceCollectionFilter
     {
         private CloudFormationCollectionFilter _cloudFormation;
 
         /// <summary>
-        /// Gets and sets the property CloudFormation.
+        /// Gets and sets the property CloudFormation. 
+        /// <para>
+        ///  Information about AWS CloudFormation stacks. You can use stacks to specify which
+        /// AWS resources in your account to analyze. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a>
+        /// in the <i>AWS CloudFormation User Guide</i>. 
+        /// </para>
         /// </summary>
         public CloudFormationCollectionFilter CloudFormation
         {

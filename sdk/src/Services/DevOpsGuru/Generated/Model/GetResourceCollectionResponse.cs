@@ -37,7 +37,11 @@ namespace Amazon.DevOpsGuru.Model
         private ResourceCollectionFilter _resourceCollection;
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If there are no more pages, this value is null.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string NextToken
@@ -53,7 +57,12 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceCollection.
+        /// Gets and sets the property ResourceCollection. 
+        /// <para>
+        ///  The requested list of AWS resource collections. The one type of AWS resource collection
+        /// supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only
+        /// the AWS resources that are defined in the stacks. 
+        /// </para>
         /// </summary>
         public ResourceCollectionFilter ResourceCollection
         {

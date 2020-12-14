@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// An internal failure in an Amazon service occurred.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class InternalServerException : AmazonDevOpsGuruException
     {
+        private int? _retryAfterSeconds;
 
         /// <summary>
         /// Constructs a new InternalServerException with the specified error
@@ -97,6 +98,7 @@ namespace Amazon.DevOpsGuru.Model
         protected InternalServerException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.RetryAfterSeconds = (int)info.GetValue("RetryAfterSeconds", typeof(int));
         }
 
         /// <summary>
@@ -117,8 +119,28 @@ namespace Amazon.DevOpsGuru.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("RetryAfterSeconds", this.RetryAfterSeconds);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property RetryAfterSeconds. 
+        /// <para>
+        ///  The number of seconds after which the action that caused the internal server exception
+        /// can be retried. 
+        /// </para>
+        /// </summary>
+        public int RetryAfterSeconds
+        {
+            get { return this._retryAfterSeconds.GetValueOrDefault(); }
+            set { this._retryAfterSeconds = value; }
+        }
+
+        // Check to see if RetryAfterSeconds property is set
+        internal bool IsSetRetryAfterSeconds()
+        {
+            return this._retryAfterSeconds.HasValue; 
+        }
 
     }
 }

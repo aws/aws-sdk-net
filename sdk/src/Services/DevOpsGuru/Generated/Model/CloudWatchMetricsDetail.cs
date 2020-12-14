@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Information about an Amazon CloudWatch metric.
     /// </summary>
     public partial class CloudWatchMetricsDetail
     {
@@ -41,7 +41,10 @@ namespace Amazon.DevOpsGuru.Model
         private string _unit;
 
         /// <summary>
-        /// Gets and sets the property Dimensions.
+        /// Gets and sets the property Dimensions. 
+        /// <para>
+        ///  An array of CloudWatch dimensions associated with 
+        /// </para>
         /// </summary>
         public List<CloudWatchMetricsDimension> Dimensions
         {
@@ -56,7 +59,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetricName.
+        /// Gets and sets the property MetricName. 
+        /// <para>
+        ///  The name of the CloudWatch metric. 
+        /// </para>
         /// </summary>
         public string MetricName
         {
@@ -71,7 +77,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Namespace.
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        ///  The namespace of the CloudWatch metric. A namespace is a container for CloudWatch
+        /// metrics. 
+        /// </para>
         /// </summary>
         public string Namespace
         {
@@ -86,7 +96,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Period.
+        /// Gets and sets the property Period. 
+        /// <para>
+        ///  The length of time associated with the CloudWatch metric in number of seconds. 
+        /// </para>
         /// </summary>
         public int Period
         {
@@ -101,7 +114,12 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Stat.
+        /// Gets and sets the property Stat. 
+        /// <para>
+        ///  The type of statistic associated with the CloudWatch metric. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a>
+        /// in the <i>Amazon CloudWatch User Guide</i>. 
+        /// </para>
         /// </summary>
         public CloudWatchMetricsStat Stat
         {
@@ -116,7 +134,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Unit.
+        /// Gets and sets the property Unit. 
+        /// <para>
+        ///  The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>,
+        /// <code>Seconds</code>, <code>Count</code>, and <code>Percent</code>. 
+        /// </para>
         /// </summary>
         public string Unit
         {

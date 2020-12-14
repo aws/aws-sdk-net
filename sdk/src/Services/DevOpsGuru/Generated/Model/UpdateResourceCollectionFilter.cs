@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Contains information used to update a collection of AWS resources.
     /// </summary>
     public partial class UpdateResourceCollectionFilter
     {
         private UpdateCloudFormationCollectionFilter _cloudFormation;
 
         /// <summary>
-        /// Gets and sets the property CloudFormation.
+        /// Gets and sets the property CloudFormation. 
+        /// <para>
+        ///  An collection of AWS CloudFormation stacks. 
+        /// </para>
         /// </summary>
         public UpdateCloudFormationCollectionFilter CloudFormation
         {

@@ -29,14 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Contains an array of <code>RecommendationRelatedCloudWatchMetricsSourceDetail</code>
+    /// objects that contain the name and namespace of an Amazon CloudWatch metric.
     /// </summary>
     public partial class RecommendationRelatedAnomalySourceDetail
     {
         private List<RecommendationRelatedCloudWatchMetricsSourceDetail> _cloudWatchMetrics = new List<RecommendationRelatedCloudWatchMetricsSourceDetail>();
 
         /// <summary>
-        /// Gets and sets the property CloudWatchMetrics.
+        /// Gets and sets the property CloudWatchMetrics. 
+        /// <para>
+        ///  An array of <code>CloudWatchMetricsDetail</code> objects that contains information
+        /// about the analyzed metrics that displayed anomalous behavior. 
+        /// </para>
         /// </summary>
         public List<RecommendationRelatedCloudWatchMetricsSourceDetail> CloudWatchMetrics
         {

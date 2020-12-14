@@ -29,15 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Contains the names of AWS CloudFormation stacks used to update a collection of stacks.
     /// </summary>
     public partial class UpdateCloudFormationCollectionFilter
     {
         private List<string> _stackNames = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property StackNames.
+        /// Gets and sets the property StackNames. 
+        /// <para>
+        ///  An array of the name of stacks to update. 
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<string> StackNames
         {
             get { return this._stackNames; }

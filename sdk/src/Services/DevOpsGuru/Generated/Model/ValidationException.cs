@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about data passed in to a field during a request that is not
+    /// valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -142,7 +143,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Reason.
+        /// Gets and sets the property Reason. 
+        /// <para>
+        ///  The reason the validation exception was thrown. 
+        /// </para>
         /// </summary>
         public ValidationExceptionReason Reason
         {

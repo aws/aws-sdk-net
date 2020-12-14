@@ -29,7 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// The dimension of a Amazon CloudWatch metric that is used when DevOps Guru analyzes
+    /// the resources in your account for operational problems and anomalous behaviour. A
+    /// dimension is a name/value pair that is part of the identity of a metric. A metric
+    /// can have up to 10 dimensions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Dimension">Dimensions</a>
+    /// in the <i>Amazon CloudWatch User Guide</i>.
     /// </summary>
     public partial class CloudWatchMetricsDimension
     {
@@ -37,7 +41,10 @@ namespace Amazon.DevOpsGuru.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the CloudWatch dimension. 
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -52,7 +59,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        ///  The value of the CloudWatch dimension. 
+        /// </para>
         /// </summary>
         public string Value
         {

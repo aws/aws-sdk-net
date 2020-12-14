@@ -30,14 +30,20 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateServiceIntegration operation.
-    /// 
+    /// Enables or disables integration with a service that can be integrated with DevOps
+    /// Guru. The one service that can be integrated with DevOps Guru is AWS Systems Manager,
+    /// which can be used to create an OpsItem for each generated insight.
     /// </summary>
     public partial class UpdateServiceIntegrationRequest : AmazonDevOpsGuruRequest
     {
         private UpdateServiceIntegrationConfig _serviceIntegration;
 
         /// <summary>
-        /// Gets and sets the property ServiceIntegration.
+        /// Gets and sets the property ServiceIntegration. 
+        /// <para>
+        ///  An <code>IntegratedServiceConfig</code> object used to specify the integrated service
+        /// you want to update, and whether you want to update it to enabled or disabled. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public UpdateServiceIntegrationConfig ServiceIntegration

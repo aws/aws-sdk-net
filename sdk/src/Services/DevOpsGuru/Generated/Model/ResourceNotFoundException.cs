@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// A requested resource could not be found
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -127,7 +127,10 @@ namespace Amazon.DevOpsGuru.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property ResourceId.
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        ///  The ID of the AWS resource that could not be found. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceId
@@ -143,7 +146,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType.
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        ///  The type of the AWS resource that could not be found. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceType

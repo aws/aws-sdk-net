@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Filters you can use to specify which events are returned when <code>ListEvents</code>
+    /// is called.
     /// </summary>
     public partial class ListEventsFilters
     {
@@ -41,7 +42,11 @@ namespace Amazon.DevOpsGuru.Model
         private ResourceCollection _resourceCollection;
 
         /// <summary>
-        /// Gets and sets the property DataSource.
+        /// Gets and sets the property DataSource. 
+        /// <para>
+        ///  The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the
+        /// events you want returned. 
+        /// </para>
         /// </summary>
         public EventDataSource DataSource
         {
@@ -56,7 +61,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventClass.
+        /// Gets and sets the property EventClass. 
+        /// <para>
+        ///  The class of the events you want to filter for, such as an infrastructure change,
+        /// a deployment, or a schema change. 
+        /// </para>
         /// </summary>
         public EventClass EventClass
         {
@@ -71,7 +80,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventSource.
+        /// Gets and sets the property EventSource. 
+        /// <para>
+        ///  The AWS source that emitted the events you want to filter for. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=50)]
         public string EventSource
@@ -87,7 +99,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventTimeRange.
+        /// Gets and sets the property EventTimeRange. 
+        /// <para>
+        ///  A time range during which you want the filtered events to have occurred. 
+        /// </para>
         /// </summary>
         public EventTimeRange EventTimeRange
         {
@@ -102,7 +117,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InsightId.
+        /// Gets and sets the property InsightId. 
+        /// <para>
+        ///  An ID of an insight that is related to the events you want to filter for. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string InsightId

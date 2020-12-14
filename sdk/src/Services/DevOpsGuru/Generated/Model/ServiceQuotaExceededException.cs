@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// The request contains a value that exceeds a maximum quota.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

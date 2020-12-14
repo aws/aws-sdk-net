@@ -581,6 +581,52 @@ namespace Amazon.DevOpsGuru
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceCollectionType.
+    /// </summary>
+    public class ResourceCollectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_CLOUD_FORMATION for ResourceCollectionType
+        /// </summary>
+        public static readonly ResourceCollectionType AWS_CLOUD_FORMATION = new ResourceCollectionType("AWS_CLOUD_FORMATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceCollectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceCollectionType FindValue(string value)
+        {
+            return FindValue<ResourceCollectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceCollectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UpdateResourceCollectionAction.
     /// </summary>
     public class UpdateResourceCollectionAction : ConstantClass

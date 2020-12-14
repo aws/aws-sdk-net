@@ -29,14 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Information about whether DevOps Guru is configured to create an OpsItem in AWS Systems
+    /// Manager OpsCenter for each created insight.
     /// </summary>
     public partial class OpsCenterIntegration
     {
         private OptInStatus _optInStatus;
 
         /// <summary>
-        /// Gets and sets the property OptInStatus.
+        /// Gets and sets the property OptInStatus. 
+        /// <para>
+        ///  Specifies if DevOps Guru is enabled to create an AWS Systems Manager OpsItem for
+        /// each created insight. 
+        /// </para>
         /// </summary>
         public OptInStatus OptInStatus
         {

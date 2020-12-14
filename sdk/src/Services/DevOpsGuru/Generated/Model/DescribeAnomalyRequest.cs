@@ -30,16 +30,19 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAnomaly operation.
-    /// 
+    /// Returns details about an anomaly that you specify using its ID.
     /// </summary>
     public partial class DescribeAnomalyRequest : AmazonDevOpsGuruRequest
     {
         private string _id;
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        ///  The ID of the anomaly. 
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string Id
         {
             get { return this._id; }

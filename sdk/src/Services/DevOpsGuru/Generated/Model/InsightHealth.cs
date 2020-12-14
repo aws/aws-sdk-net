@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Information about the number of open reactive and proactive insights that can be
+    /// used to gauge the health of your system.
     /// </summary>
     public partial class InsightHealth
     {
@@ -38,7 +39,10 @@ namespace Amazon.DevOpsGuru.Model
         private int? _openReactiveInsights;
 
         /// <summary>
-        /// Gets and sets the property MeanTimeToRecoverInMilliseconds.
+        /// Gets and sets the property MeanTimeToRecoverInMilliseconds. 
+        /// <para>
+        ///  The Meant Time to Recover (MTTR) for the insight. 
+        /// </para>
         /// </summary>
         public long MeanTimeToRecoverInMilliseconds
         {
@@ -53,7 +57,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OpenProactiveInsights.
+        /// Gets and sets the property OpenProactiveInsights. 
+        /// <para>
+        ///  The number of open proactive insights. 
+        /// </para>
         /// </summary>
         public int OpenProactiveInsights
         {
@@ -68,7 +75,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OpenReactiveInsights.
+        /// Gets and sets the property OpenReactiveInsights. 
+        /// <para>
+        ///  The number of open reactive insights. 
+        /// </para>
         /// </summary>
         public int OpenReactiveInsights
         {

@@ -36,9 +36,12 @@ namespace Amazon.DevOpsGuru.Model
         private string _id;
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        ///  The ID of the added notification channel. 
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=36, Max=36)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string Id
         {
             get { return this._id; }

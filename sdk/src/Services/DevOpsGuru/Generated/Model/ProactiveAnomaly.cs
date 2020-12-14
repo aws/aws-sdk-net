@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Information about an anomaly. This object is returned by <code>ListAnomalies</code>.
     /// </summary>
     public partial class ProactiveAnomaly
     {
@@ -60,7 +60,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AssociatedInsightId.
+        /// Gets and sets the property AssociatedInsightId. 
+        /// <para>
+        ///  The ID of the insight that contains this anomaly. An insight is composed of related
+        /// anomalies. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string AssociatedInsightId
@@ -76,7 +80,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        ///  The ID of a proactive anomaly. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string Id
@@ -92,7 +99,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Limit.
+        /// Gets and sets the property Limit. 
+        /// <para>
+        ///  A threshold that was exceeded by behavior in analyzed resources. Exceeding this threshold
+        /// is related to the anomalous behavior that generated this anomaly. 
+        /// </para>
         /// </summary>
         public double Limit
         {
@@ -137,7 +148,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Severity.
+        /// Gets and sets the property Severity. 
+        /// <para>
+        ///  The severity of a proactive anomaly. 
+        /// </para>
         /// </summary>
         public AnomalySeverity Severity
         {
@@ -152,7 +166,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceDetails.
+        /// Gets and sets the property SourceDetails. 
+        /// <para>
+        ///  Details about the source of the analyzed operational data that triggered the anomaly.
+        /// The one supported source is Amazon CloudWatch metrics. 
+        /// </para>
         /// </summary>
         public AnomalySourceDetails SourceDetails
         {
@@ -167,7 +185,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  The status of a proactive anomaly. 
+        /// </para>
         /// </summary>
         public AnomalyStatus Status
         {
@@ -182,7 +203,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdateTime.
+        /// Gets and sets the property UpdateTime. 
+        /// <para>
+        ///  The time of the anomaly's most recent update. 
+        /// </para>
         /// </summary>
         public DateTime UpdateTime
         {

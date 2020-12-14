@@ -38,7 +38,11 @@ namespace Amazon.DevOpsGuru.Model
         private List<ReactiveAnomalySummary> _reactiveAnomalies = new List<ReactiveAnomalySummary>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If there are no more pages, this value is null.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string NextToken
@@ -54,7 +58,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProactiveAnomalies.
+        /// Gets and sets the property ProactiveAnomalies. 
+        /// <para>
+        ///  An array of <code>ProactiveAnomalySummary</code> objects that represent the requested
+        /// anomalies 
+        /// </para>
         /// </summary>
         public List<ProactiveAnomalySummary> ProactiveAnomalies
         {
@@ -69,7 +77,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReactiveAnomalies.
+        /// Gets and sets the property ReactiveAnomalies. 
+        /// <para>
+        ///  An array of <code>ReactiveAnomalySummary</code> objects that represent the requested
+        /// anomalies 
+        /// </para>
         /// </summary>
         public List<ReactiveAnomalySummary> ReactiveAnomalies
         {

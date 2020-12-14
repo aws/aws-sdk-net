@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// The field associated with the validation exception.
     /// </summary>
     public partial class ValidationExceptionField
     {
@@ -37,7 +37,11 @@ namespace Amazon.DevOpsGuru.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Message.
+        /// Gets and sets the property Message. 
+        /// <para>
+        ///  The message associated with the validation exception with information to help determine
+        /// its cause. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Message
@@ -53,7 +57,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the field. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name

@@ -30,7 +30,9 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInsights operation.
-    /// 
+    /// Returns a list of insights in your AWS account. You can specify which insights are
+    /// returned by their start time and status (<code>ONGOING</code>, <code>CLOSED</code>,
+    /// or <code>ANY</code>).
     /// </summary>
     public partial class ListInsightsRequest : AmazonDevOpsGuruRequest
     {
@@ -39,7 +41,11 @@ namespace Amazon.DevOpsGuru.Model
         private ListInsightsStatusFilter _statusFilter;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return with a single call. To retrieve the remaining
+        /// results, make another call with the returned <code>nextToken</code> value.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -55,7 +61,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If this value is null, it retrieves the first page.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string NextToken
@@ -71,7 +81,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusFilter.
+        /// Gets and sets the property StatusFilter. 
+        /// <para>
+        ///  A filter used to filter the returned insights by their status. You can specify one
+        /// status filter. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ListInsightsStatusFilter StatusFilter

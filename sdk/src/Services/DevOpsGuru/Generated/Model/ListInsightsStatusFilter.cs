@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// A filter used by <code>ListInsights</code> to specify which insights to return.
     /// </summary>
     public partial class ListInsightsStatusFilter
     {
@@ -38,7 +38,11 @@ namespace Amazon.DevOpsGuru.Model
         private ListInsightsOngoingStatusFilter _ongoing;
 
         /// <summary>
-        /// Gets and sets the property Any.
+        /// Gets and sets the property Any. 
+        /// <para>
+        ///  A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status
+        /// that are either <code>REACTIVE</code> or <code>PROACTIVE</code>. 
+        /// </para>
         /// </summary>
         public ListInsightsAnyStatusFilter Any
         {
@@ -53,7 +57,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Closed.
+        /// Gets and sets the property Closed. 
+        /// <para>
+        ///  A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that
+        /// are either <code>REACTIVE</code> or <code>PROACTIVE</code>. 
+        /// </para>
         /// </summary>
         public ListInsightsClosedStatusFilter Closed
         {
@@ -68,7 +76,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Ongoing.
+        /// Gets and sets the property Ongoing. 
+        /// <para>
+        ///  A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights that are
+        /// either <code>REACTIVE</code> or <code>PROACTIVE</code>. 
+        /// </para>
         /// </summary>
         public ListInsightsOngoingStatusFilter Ongoing
         {

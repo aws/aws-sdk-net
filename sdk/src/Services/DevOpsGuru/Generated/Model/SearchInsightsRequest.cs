@@ -30,7 +30,18 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchInsights operation.
+    /// Returns a list of insights in your AWS account. You can specify which insights are
+    /// returned by their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>,
+    /// and <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>,
+    /// and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
     /// 
+    /// 
+    ///  
+    /// <para>
+    ///  Use the <code>Filters</code> parameter to specify status and severity search parameters.
+    /// Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code>
+    /// in your search. 
+    /// </para>
     /// </summary>
     public partial class SearchInsightsRequest : AmazonDevOpsGuruRequest
     {
@@ -41,7 +52,11 @@ namespace Amazon.DevOpsGuru.Model
         private InsightType _type;
 
         /// <summary>
-        /// Gets and sets the property Filters.
+        /// Gets and sets the property Filters. 
+        /// <para>
+        ///  A <code>SearchInsightsFilters</code> object that is used to set the severity and
+        /// status filters on your insight search. 
+        /// </para>
         /// </summary>
         public SearchInsightsFilters Filters
         {
@@ -56,7 +71,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return with a single call. To retrieve the remaining
+        /// results, make another call with the returned <code>nextToken</code> value.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -72,7 +91,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If this value is null, it retrieves the first page.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string NextToken
@@ -88,7 +111,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTimeRange.
+        /// Gets and sets the property StartTimeRange. 
+        /// <para>
+        ///  The start of the time range passed in. Returned insights occurred after this time.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public StartTimeRange StartTimeRange
@@ -104,7 +131,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        ///  The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public InsightType Type

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// A time ranged that specifies when the observed behavior in an insight started and
+    /// ended.
     /// </summary>
     public partial class InsightTimeRange
     {
@@ -37,7 +38,10 @@ namespace Amazon.DevOpsGuru.Model
         private DateTime? _startTime;
 
         /// <summary>
-        /// Gets and sets the property EndTime.
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        ///  The time when the behavior described in an insight ended. 
+        /// </para>
         /// </summary>
         public DateTime EndTime
         {
@@ -52,7 +56,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTime.
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        ///  The time when the behavior described in an insight started. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime StartTime

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// A time range used to specify when the behavior of an insight or anomaly started.
     /// </summary>
     public partial class StartTimeRange
     {
@@ -37,7 +37,10 @@ namespace Amazon.DevOpsGuru.Model
         private DateTime? _toTime;
 
         /// <summary>
-        /// Gets and sets the property FromTime.
+        /// Gets and sets the property FromTime. 
+        /// <para>
+        ///  The start time of the time range. 
+        /// </para>
         /// </summary>
         public DateTime FromTime
         {
@@ -52,7 +55,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ToTime.
+        /// Gets and sets the property ToTime. 
+        /// <para>
+        ///  The end time of the time range. 
+        /// </para>
         /// </summary>
         public DateTime ToTime
         {

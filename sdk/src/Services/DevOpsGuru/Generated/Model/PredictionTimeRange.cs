@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// The time range during which anomalous behavior in a proactive anomaly or an insight
+    /// is expected to occur.
     /// </summary>
     public partial class PredictionTimeRange
     {
@@ -37,7 +38,10 @@ namespace Amazon.DevOpsGuru.Model
         private DateTime? _startTime;
 
         /// <summary>
-        /// Gets and sets the property EndTime.
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        ///  The time when the behavior in a proactive insight is expected to end. 
+        /// </para>
         /// </summary>
         public DateTime EndTime
         {
@@ -52,7 +56,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTime.
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        ///  The time range during which a metric limit is expected to be exceeded. This applies
+        /// to proactive insights only. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime StartTime

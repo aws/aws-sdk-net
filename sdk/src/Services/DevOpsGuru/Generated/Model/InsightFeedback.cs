@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Information about insight feedback received from a customer.
     /// </summary>
     public partial class InsightFeedback
     {
@@ -37,7 +37,10 @@ namespace Amazon.DevOpsGuru.Model
         private string _id;
 
         /// <summary>
-        /// Gets and sets the property Feedback.
+        /// Gets and sets the property Feedback. 
+        /// <para>
+        ///  The feedback provided by the customer. 
+        /// </para>
         /// </summary>
         public InsightFeedbackOption Feedback
         {
@@ -52,7 +55,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        ///  The insight feedback ID. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string Id

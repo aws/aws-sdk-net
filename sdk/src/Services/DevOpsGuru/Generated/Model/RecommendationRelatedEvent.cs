@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Information about an event that is related to a recommendation.
     /// </summary>
     public partial class RecommendationRelatedEvent
     {
@@ -37,7 +37,11 @@ namespace Amazon.DevOpsGuru.Model
         private List<RecommendationRelatedEventResource> _resources = new List<RecommendationRelatedEventResource>();
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code>
+        /// object. 
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -52,7 +56,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Resources.
+        /// Gets and sets the property Resources. 
+        /// <para>
+        ///  A <code>ResourceCollection</code> object that contains arrays of the names of AWS
+        /// CloudFormation stacks. 
+        /// </para>
         /// </summary>
         public List<RecommendationRelatedEventResource> Resources
         {

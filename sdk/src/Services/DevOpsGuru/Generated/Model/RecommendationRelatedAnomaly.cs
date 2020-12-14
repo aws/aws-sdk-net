@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Information about an anomaly that is related to a recommendation.
     /// </summary>
     public partial class RecommendationRelatedAnomaly
     {
@@ -37,7 +37,11 @@ namespace Amazon.DevOpsGuru.Model
         private List<RecommendationRelatedAnomalySourceDetail> _sourceDetails = new List<RecommendationRelatedAnomalySourceDetail>();
 
         /// <summary>
-        /// Gets and sets the property Resources.
+        /// Gets and sets the property Resources. 
+        /// <para>
+        ///  An array of objects that represent resources in which DevOps Guru detected anomalous
+        /// behavior. Each object contains the name and type of the resource. 
+        /// </para>
         /// </summary>
         public List<RecommendationRelatedAnomalyResource> Resources
         {
@@ -52,7 +56,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceDetails.
+        /// Gets and sets the property SourceDetails. 
+        /// <para>
+        ///  Information about where the anomalous behavior related the recommendation was found.
+        /// For example, details in Amazon CloudWatch metrics. 
+        /// </para>
         /// </summary>
         public List<RecommendationRelatedAnomalySourceDetail> SourceDetails
         {

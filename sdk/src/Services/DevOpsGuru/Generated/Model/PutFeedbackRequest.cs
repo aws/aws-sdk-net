@@ -30,14 +30,17 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Container for the parameters to the PutFeedback operation.
-    /// 
+    /// Collects customer feedback about the specified insight.
     /// </summary>
     public partial class PutFeedbackRequest : AmazonDevOpsGuruRequest
     {
         private InsightFeedback _insightFeedback;
 
         /// <summary>
-        /// Gets and sets the property InsightFeedback.
+        /// Gets and sets the property InsightFeedback. 
+        /// <para>
+        ///  The feedback from customers is about the recommendations in this insight. 
+        /// </para>
         /// </summary>
         public InsightFeedback InsightFeedback
         {

@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// An AWS resource event. AWS resource events and metrics are analyzed by DevOps Guru
+    /// to find anomalous behavior and provide recommendations to improve your operational
+    /// solutions.
     /// </summary>
     public partial class Event
     {
@@ -43,7 +45,11 @@ namespace Amazon.DevOpsGuru.Model
         private DateTime? _time;
 
         /// <summary>
-        /// Gets and sets the property DataSource.
+        /// Gets and sets the property DataSource. 
+        /// <para>
+        ///  The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps
+        /// Guru analysis found the event. 
+        /// </para>
         /// </summary>
         public EventDataSource DataSource
         {
@@ -58,7 +64,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventClass.
+        /// Gets and sets the property EventClass. 
+        /// <para>
+        ///  The class of the event. The class specifies what the event is related to, such as
+        /// an infrastructure change, a deployment, or a schema change. 
+        /// </para>
         /// </summary>
         public EventClass EventClass
         {
@@ -73,7 +83,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventSource.
+        /// Gets and sets the property EventSource. 
+        /// <para>
+        ///  The AWS source that emitted the event. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=50)]
         public string EventSource
@@ -89,7 +102,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        ///  The ID of the event. 
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -104,7 +120,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the event. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
         public string Name
@@ -135,7 +154,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Resources.
+        /// Gets and sets the property Resources. 
+        /// <para>
+        ///  An <code>EventResource</code> object that contains information about the resource
+        /// that emitted the event. 
+        /// </para>
         /// </summary>
         public List<EventResource> Resources
         {
@@ -150,7 +173,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Time.
+        /// Gets and sets the property Time. 
+        /// <para>
+        ///  A <code>Timestamp</code> that specifies the time the event occurred. 
+        /// </para>
         /// </summary>
         public DateTime Time
         {

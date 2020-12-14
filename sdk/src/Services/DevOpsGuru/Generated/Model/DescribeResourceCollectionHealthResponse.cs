@@ -37,8 +37,13 @@ namespace Amazon.DevOpsGuru.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property CloudFormation.
+        /// Gets and sets the property CloudFormation. 
+        /// <para>
+        ///  The returned <code>CloudFormationHealthOverview</code> object that contains an <code>InsightHealthOverview</code>
+        /// object with the requested system health information. 
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<CloudFormationHealth> CloudFormation
         {
             get { return this._cloudFormation; }
@@ -52,7 +57,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If there are no more pages, this value is null.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string NextToken

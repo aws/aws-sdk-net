@@ -30,7 +30,8 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRecommendations operation.
-    /// 
+    /// Returns a list of a specified insight's recommendations. Each recommendation includes
+    /// a list of related metrics and a list of related events.
     /// </summary>
     public partial class ListRecommendationsRequest : AmazonDevOpsGuruRequest
     {
@@ -38,7 +39,10 @@ namespace Amazon.DevOpsGuru.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property InsightId.
+        /// Gets and sets the property InsightId. 
+        /// <para>
+        ///  The ID of the requested insight. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string InsightId
@@ -54,7 +58,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If this value is null, it retrieves the first page.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string NextToken

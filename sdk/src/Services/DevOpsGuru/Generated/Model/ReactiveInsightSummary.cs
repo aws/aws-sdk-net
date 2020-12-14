@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Information about a reactive insight. This object is returned by <code>DescribeInsight.</code>
     /// </summary>
     public partial class ReactiveInsightSummary
     {
@@ -41,7 +41,10 @@ namespace Amazon.DevOpsGuru.Model
         private InsightStatus _status;
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        ///  The ID of a reactive summary. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string Id
@@ -72,7 +75,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of a reactive insight. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=530)]
         public string Name
@@ -103,7 +109,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Severity.
+        /// Gets and sets the property Severity. 
+        /// <para>
+        ///  The severity of a reactive insight. 
+        /// </para>
         /// </summary>
         public InsightSeverity Severity
         {
@@ -118,7 +127,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  The status of a reactive insight. 
+        /// </para>
         /// </summary>
         public InsightStatus Status
         {

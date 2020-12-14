@@ -29,14 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Information about AWS CloudFormation stacks. You can use stacks to specify which
+    /// AWS resources in your account to analyze. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a>
+    /// in the <i>AWS CloudFormation User Guide</i>.
     /// </summary>
     public partial class CloudFormationCollectionFilter
     {
         private List<string> _stackNames = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property StackNames.
+        /// Gets and sets the property StackNames. 
+        /// <para>
+        ///  An array of CloudFormation stack names. 
+        /// </para>
         /// </summary>
         public List<string> StackNames
         {

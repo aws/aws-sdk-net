@@ -37,7 +37,11 @@ namespace Amazon.DevOpsGuru.Model
         private List<Recommendation> _recommendations = new List<Recommendation>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If there are no more pages, this value is null.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string NextToken
@@ -53,8 +57,12 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Recommendations.
+        /// Gets and sets the property Recommendations. 
+        /// <para>
+        ///  An array of the requested recommendations. 
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10)]
         public List<Recommendation> Recommendations
         {
             get { return this._recommendations; }

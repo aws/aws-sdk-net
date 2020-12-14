@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// A range of time that specifies when anomalous behavior in an anomaly or insight ended.
     /// </summary>
     public partial class EndTimeRange
     {
@@ -37,7 +37,10 @@ namespace Amazon.DevOpsGuru.Model
         private DateTime? _toTime;
 
         /// <summary>
-        /// Gets and sets the property FromTime.
+        /// Gets and sets the property FromTime. 
+        /// <para>
+        ///  The earliest end time in the time range. 
+        /// </para>
         /// </summary>
         public DateTime FromTime
         {
@@ -52,7 +55,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ToTime.
+        /// Gets and sets the property ToTime. 
+        /// <para>
+        ///  The latest end time in the time range. 
+        /// </para>
         /// </summary>
         public DateTime ToTime
         {

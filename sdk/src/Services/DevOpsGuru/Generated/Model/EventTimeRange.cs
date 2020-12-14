@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// The time range during which an AWS event occurred. AWS resource events and metrics
+    /// are analyzed by DevOps Guru to find anomalous behavior and provide recommendations
+    /// to improve your operational solutions.
     /// </summary>
     public partial class EventTimeRange
     {
@@ -37,7 +39,10 @@ namespace Amazon.DevOpsGuru.Model
         private DateTime? _toTime;
 
         /// <summary>
-        /// Gets and sets the property FromTime.
+        /// Gets and sets the property FromTime. 
+        /// <para>
+        ///  The time when the event started. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime FromTime
@@ -53,7 +58,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ToTime.
+        /// Gets and sets the property ToTime. 
+        /// <para>
+        ///  The time when the event ended. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime ToTime

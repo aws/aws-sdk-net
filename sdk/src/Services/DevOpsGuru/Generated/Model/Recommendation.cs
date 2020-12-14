@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Recommendation information to help you remediate detected anomalous behavior that
+    /// generated an insight.
     /// </summary>
     public partial class Recommendation
     {
@@ -41,7 +42,10 @@ namespace Amazon.DevOpsGuru.Model
         private List<RecommendationRelatedEvent> _relatedEvents = new List<RecommendationRelatedEvent>();
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  A description of the problem. 
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -56,7 +60,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Link.
+        /// Gets and sets the property Link. 
+        /// <para>
+        ///  A hyperlink to information to help you address the problem. 
+        /// </para>
         /// </summary>
         public string Link
         {
@@ -71,7 +78,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the recommendation. 
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -86,7 +96,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Reason.
+        /// Gets and sets the property Reason. 
+        /// <para>
+        ///  The reason DevOps Guru flagged the anomalous behavior as a problem. 
+        /// </para>
         /// </summary>
         public string Reason
         {
@@ -101,7 +114,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RelatedAnomalies.
+        /// Gets and sets the property RelatedAnomalies. 
+        /// <para>
+        ///  Anomalies that are related to the problem. Use these Anomalies to learn more about
+        /// what's happening and to help address the issue. 
+        /// </para>
         /// </summary>
         public List<RecommendationRelatedAnomaly> RelatedAnomalies
         {
@@ -116,7 +133,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RelatedEvents.
+        /// Gets and sets the property RelatedEvents. 
+        /// <para>
+        ///  Events that are related to the problem. Use these events to learn more about what's
+        /// happening and to help address the issue. 
+        /// </para>
         /// </summary>
         public List<RecommendationRelatedEvent> RelatedEvents
         {

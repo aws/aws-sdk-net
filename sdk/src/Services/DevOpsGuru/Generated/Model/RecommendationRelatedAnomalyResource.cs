@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Information about a resource in which DevOps Guru detected anomalous behavior.
     /// </summary>
     public partial class RecommendationRelatedAnomalyResource
     {
@@ -37,7 +37,10 @@ namespace Amazon.DevOpsGuru.Model
         private string _type;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the resource. 
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -52,7 +55,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        ///  The type of the resource. 
+        /// </para>
         /// </summary>
         public string Type
         {

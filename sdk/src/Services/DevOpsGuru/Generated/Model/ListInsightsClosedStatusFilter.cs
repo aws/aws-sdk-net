@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Used to filter for insights that have the status <code>CLOSED</code>.
     /// </summary>
     public partial class ListInsightsClosedStatusFilter
     {
@@ -37,7 +37,10 @@ namespace Amazon.DevOpsGuru.Model
         private InsightType _type;
 
         /// <summary>
-        /// Gets and sets the property EndTimeRange.
+        /// Gets and sets the property EndTimeRange. 
+        /// <para>
+        ///  A time range used to specify when the behavior of the filtered insights ended. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public EndTimeRange EndTimeRange
@@ -53,7 +56,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        ///  Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public InsightType Type

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// The request was denied due to a request throttling.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -37,6 +37,7 @@ namespace Amazon.DevOpsGuru.Model
     public partial class ThrottlingException : AmazonDevOpsGuruException
     {
         private string _quotaCode;
+        private int? _retryAfterSeconds;
         private string _serviceCode;
 
         /// <summary>
@@ -100,6 +101,7 @@ namespace Amazon.DevOpsGuru.Model
             : base(info, context)
         {
             this.QuotaCode = (string)info.GetValue("QuotaCode", typeof(string));
+            this.RetryAfterSeconds = (int)info.GetValue("RetryAfterSeconds", typeof(int));
             this.ServiceCode = (string)info.GetValue("ServiceCode", typeof(string));
         }
 
@@ -122,12 +124,16 @@ namespace Amazon.DevOpsGuru.Model
         {
             base.GetObjectData(info, context);
             info.AddValue("QuotaCode", this.QuotaCode);
+            info.AddValue("RetryAfterSeconds", this.RetryAfterSeconds);
             info.AddValue("ServiceCode", this.ServiceCode);
         }
 #endif
 
         /// <summary>
-        /// Gets and sets the property QuotaCode.
+        /// Gets and sets the property QuotaCode. 
+        /// <para>
+        ///  The code of the quota that was exceeded, causing the throttling exception. 
+        /// </para>
         /// </summary>
         public string QuotaCode
         {
@@ -142,7 +148,29 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceCode.
+        /// Gets and sets the property RetryAfterSeconds. 
+        /// <para>
+        ///  The number of seconds after which the action that caused the throttling exception
+        /// can be retried. 
+        /// </para>
+        /// </summary>
+        public int RetryAfterSeconds
+        {
+            get { return this._retryAfterSeconds.GetValueOrDefault(); }
+            set { this._retryAfterSeconds = value; }
+        }
+
+        // Check to see if RetryAfterSeconds property is set
+        internal bool IsSetRetryAfterSeconds()
+        {
+            return this._retryAfterSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceCode. 
+        /// <para>
+        ///  The code of the service that caused the throttling exception. 
+        /// </para>
         /// </summary>
         public string ServiceCode
         {

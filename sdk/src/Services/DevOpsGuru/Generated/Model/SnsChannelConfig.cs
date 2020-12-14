@@ -29,14 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
+    /// Contains the Amazon Resource Name (ARN) of an Amazon Simple Notification Service
+    /// topic. 
     /// 
+    ///  
+    /// <para>
+    /// If you use an Amazon SNS topic in another account, you must attach a policy to it
+    /// that grants DevOps Guru permission to it notifications. DevOps Guru adds the required
+    /// policy on your behalf to send notifications using Amazon SNS in your account. For
+    /// more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
+    /// for cross account Amazon SNS topics</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you use an Amazon SNS topic that is encrypted by an AWS Key Management Service
+    /// customer-managed key (CMK), then you must add permissions to the CMK. For more information,
+    /// see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions
+    /// for AWS KMS–encrypted Amazon SNS topics</a>.
+    /// </para>
     /// </summary>
     public partial class SnsChannelConfig
     {
         private string _topicArn;
 
         /// <summary>
-        /// Gets and sets the property TopicArn.
+        /// Gets and sets the property TopicArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=1024)]
         public string TopicArn

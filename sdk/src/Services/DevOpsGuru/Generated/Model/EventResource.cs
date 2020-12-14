@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// The AWS resource that emitted an event. AWS resource events and metrics are analyzed
+    /// by DevOps Guru to find anomalous behavior and provide recommendations to improve your
+    /// operational solutions.
     /// </summary>
     public partial class EventResource
     {
@@ -38,7 +40,10 @@ namespace Amazon.DevOpsGuru.Model
         private string _type;
 
         /// <summary>
-        /// Gets and sets the property Arn.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the resource that emitted an event. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=2048)]
         public string Arn
@@ -54,7 +59,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the resource that emitted an event. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public string Name
@@ -70,7 +78,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        ///  The type of resource that emitted an event. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public string Type

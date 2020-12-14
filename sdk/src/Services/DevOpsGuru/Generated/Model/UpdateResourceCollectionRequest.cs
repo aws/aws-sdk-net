@@ -30,7 +30,10 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateResourceCollection operation.
-    /// 
+    /// Updates the collection of resources that DevOps Guru analyzes. The one type of AWS
+    /// resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured
+    /// to analyze only the AWS resources that are defined in the stacks. This method also
+    /// creates the IAM role required for you to use DevOps Guru.
     /// </summary>
     public partial class UpdateResourceCollectionRequest : AmazonDevOpsGuruRequest
     {
@@ -38,7 +41,11 @@ namespace Amazon.DevOpsGuru.Model
         private UpdateResourceCollectionFilter _resourceCollection;
 
         /// <summary>
-        /// Gets and sets the property Action.
+        /// Gets and sets the property Action. 
+        /// <para>
+        ///  Specifies if the resource collection in the request is added or deleted to the resource
+        /// collection. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public UpdateResourceCollectionAction Action

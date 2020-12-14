@@ -29,14 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Details about the source of the anomalous operational data that triggered the anomaly.
+    /// The one supported source is Amazon CloudWatch metrics.
     /// </summary>
     public partial class AnomalySourceDetails
     {
         private List<CloudWatchMetricsDetail> _cloudWatchMetrics = new List<CloudWatchMetricsDetail>();
 
         /// <summary>
-        /// Gets and sets the property CloudWatchMetrics.
+        /// Gets and sets the property CloudWatchMetrics. 
+        /// <para>
+        ///  An array of <code>CloudWatchMetricsDetail</code> object that contains information
+        /// about the analyzed metrics that displayed anomalous behavior. 
+        /// </para>
         /// </summary>
         public List<CloudWatchMetricsDetail> CloudWatchMetrics
         {

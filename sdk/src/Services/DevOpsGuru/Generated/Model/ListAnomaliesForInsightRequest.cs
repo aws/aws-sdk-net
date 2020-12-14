@@ -30,7 +30,8 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAnomaliesForInsight operation.
-    /// 
+    /// Returns a list of the anomalies that belong to an insight that you specify using
+    /// its ID.
     /// </summary>
     public partial class ListAnomaliesForInsightRequest : AmazonDevOpsGuruRequest
     {
@@ -40,9 +41,12 @@ namespace Amazon.DevOpsGuru.Model
         private StartTimeRange _startTimeRange;
 
         /// <summary>
-        /// Gets and sets the property InsightId.
+        /// Gets and sets the property InsightId. 
+        /// <para>
+        ///  The ID of the insight. The returned anomalies belong to this insight. 
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string InsightId
         {
             get { return this._insightId; }
@@ -56,7 +60,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return with a single call. To retrieve the remaining
+        /// results, make another call with the returned <code>nextToken</code> value.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public int MaxResults
@@ -72,7 +80,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If this value is null, it retrieves the first page.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string NextToken
@@ -88,7 +100,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTimeRange.
+        /// Gets and sets the property StartTimeRange. 
+        /// <para>
+        ///  A time range used to specify when the requested anomalies started. All returned anomalies
+        /// started during this time range. 
+        /// </para>
         /// </summary>
         public StartTimeRange StartTimeRange
         {

@@ -30,7 +30,8 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEvents operation.
-    /// 
+    /// Returns a list of the events emitted by the resources that are evaluated by DevOps
+    /// Guru. You can use filters to specify which events are returned.
     /// </summary>
     public partial class ListEventsRequest : AmazonDevOpsGuruRequest
     {
@@ -39,7 +40,10 @@ namespace Amazon.DevOpsGuru.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Filters.
+        /// Gets and sets the property Filters. 
+        /// <para>
+        ///  A <code>ListEventsFilters</code> object used to specify which events to return. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ListEventsFilters Filters
@@ -55,7 +59,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return with a single call. To retrieve the remaining
+        /// results, make another call with the returned <code>nextToken</code> value.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public int MaxResults
@@ -71,7 +79,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If this value is null, it retrieves the first page.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string NextToken

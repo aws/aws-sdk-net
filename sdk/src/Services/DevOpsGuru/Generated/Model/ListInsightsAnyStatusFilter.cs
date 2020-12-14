@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Used to filter for insights that have any status.
     /// </summary>
     public partial class ListInsightsAnyStatusFilter
     {
@@ -37,7 +37,11 @@ namespace Amazon.DevOpsGuru.Model
         private InsightType _type;
 
         /// <summary>
-        /// Gets and sets the property StartTimeRange.
+        /// Gets and sets the property StartTimeRange. 
+        /// <para>
+        ///  A time range used to specify when the behavior of the filtered insights started.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public StartTimeRange StartTimeRange
@@ -53,7 +57,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        ///  Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public InsightType Type

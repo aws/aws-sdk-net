@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// A time range that specifies when the observed unusual behavior in an anomaly started
+    /// and ended.
     /// </summary>
     public partial class AnomalyTimeRange
     {
@@ -37,7 +38,10 @@ namespace Amazon.DevOpsGuru.Model
         private DateTime? _startTime;
 
         /// <summary>
-        /// Gets and sets the property EndTime.
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        ///  The time when the anomalous behavior ended. 
+        /// </para>
         /// </summary>
         public DateTime EndTime
         {
@@ -52,7 +56,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTime.
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        ///  The time when the anomalous behavior started. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime StartTime

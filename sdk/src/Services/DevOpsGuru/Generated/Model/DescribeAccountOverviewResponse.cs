@@ -38,8 +38,13 @@ namespace Amazon.DevOpsGuru.Model
         private int? _reactiveInsights;
 
         /// <summary>
-        /// Gets and sets the property MeanTimeToRecoverInMilliseconds.
+        /// Gets and sets the property MeanTimeToRecoverInMilliseconds. 
+        /// <para>
+        ///  The Mean Time to Recover (MTTR) for all closed insights that were created during
+        /// the time range passed in. 
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public long MeanTimeToRecoverInMilliseconds
         {
             get { return this._meanTimeToRecoverInMilliseconds.GetValueOrDefault(); }
@@ -53,8 +58,13 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProactiveInsights.
+        /// Gets and sets the property ProactiveInsights. 
+        /// <para>
+        ///  An integer that specifies the number of open proactive insights in your AWS account
+        /// that were created during the time range passed in. 
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int ProactiveInsights
         {
             get { return this._proactiveInsights.GetValueOrDefault(); }
@@ -68,8 +78,13 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReactiveInsights.
+        /// Gets and sets the property ReactiveInsights. 
+        /// <para>
+        ///  An integer that specifies the number of open reactive insights in your AWS account
+        /// that were created during the time range passed in. 
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int ReactiveInsights
         {
             get { return this._reactiveInsights.GetValueOrDefault(); }

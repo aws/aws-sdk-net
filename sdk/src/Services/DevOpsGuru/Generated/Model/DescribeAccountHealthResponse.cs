@@ -38,8 +38,13 @@ namespace Amazon.DevOpsGuru.Model
         private int? _openReactiveInsights;
 
         /// <summary>
-        /// Gets and sets the property MetricsAnalyzed.
+        /// Gets and sets the property MetricsAnalyzed. 
+        /// <para>
+        ///  An integer that specifies the number of metrics that have been analyzed in your AWS
+        /// account. 
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int MetricsAnalyzed
         {
             get { return this._metricsAnalyzed.GetValueOrDefault(); }
@@ -53,8 +58,13 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OpenProactiveInsights.
+        /// Gets and sets the property OpenProactiveInsights. 
+        /// <para>
+        ///  An integer that specifies the number of open proactive insights in your AWS account.
+        /// 
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int OpenProactiveInsights
         {
             get { return this._openProactiveInsights.GetValueOrDefault(); }
@@ -68,8 +78,13 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OpenReactiveInsights.
+        /// Gets and sets the property OpenReactiveInsights. 
+        /// <para>
+        ///  An integer that specifies the number of open reactive insights in your AWS account.
+        /// 
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public int OpenReactiveInsights
         {
             get { return this._openReactiveInsights.GetValueOrDefault(); }

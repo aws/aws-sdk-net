@@ -38,7 +38,11 @@ namespace Amazon.DevOpsGuru.Model
         private List<ReactiveInsightSummary> _reactiveInsights = new List<ReactiveInsightSummary>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token to use to retrieve the next page of results for this operation.
+        /// If there are no more pages, this value is null.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string NextToken
@@ -54,7 +58,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProactiveInsights.
+        /// Gets and sets the property ProactiveInsights. 
+        /// <para>
+        ///  The returned list of proactive insights. 
+        /// </para>
         /// </summary>
         public List<ProactiveInsightSummary> ProactiveInsights
         {
@@ -69,7 +76,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReactiveInsights.
+        /// Gets and sets the property ReactiveInsights. 
+        /// <para>
+        ///  The returned list of reactive insights. 
+        /// </para>
         /// </summary>
         public List<ReactiveInsightSummary> ReactiveInsights
         {

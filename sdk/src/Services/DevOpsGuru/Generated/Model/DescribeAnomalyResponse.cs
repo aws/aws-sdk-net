@@ -37,7 +37,10 @@ namespace Amazon.DevOpsGuru.Model
         private ReactiveAnomaly _reactiveAnomaly;
 
         /// <summary>
-        /// Gets and sets the property ProactiveAnomaly.
+        /// Gets and sets the property ProactiveAnomaly. 
+        /// <para>
+        ///  An <code>ReactiveAnomaly</code> object that represents the requested anomaly. 
+        /// </para>
         /// </summary>
         public ProactiveAnomaly ProactiveAnomaly
         {
@@ -52,7 +55,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReactiveAnomaly.
+        /// Gets and sets the property ReactiveAnomaly. 
+        /// <para>
+        ///  An <code>ProactiveAnomaly</code> object that represents the requested anomaly. 
+        /// </para>
         /// </summary>
         public ReactiveAnomaly ReactiveAnomaly
         {

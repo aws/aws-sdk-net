@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Specifies one or more severity values and one or more status values that are used
+    /// to search for insights.
     /// </summary>
     public partial class SearchInsightsFilters
     {
@@ -53,8 +54,12 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Severities.
+        /// Gets and sets the property Severities. 
+        /// <para>
+        ///  An array of severity values used to search for insights. 
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=3)]
         public List<string> Severities
         {
             get { return this._severities; }
@@ -68,8 +73,12 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Statuses.
+        /// Gets and sets the property Statuses. 
+        /// <para>
+        ///  An array of status values used to search for insights. 
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2)]
         public List<string> Statuses
         {
             get { return this._statuses; }

@@ -70,6 +70,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     unmarshalledObject.QuotaCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Retry-After", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RetryAfterSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServiceCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

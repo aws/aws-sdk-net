@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Information about an Amazon CloudWatch metric that is analyzed by DevOps Guru. It
+    /// is one of many analyzed metrics that are used to generate insights.
     /// </summary>
     public partial class RecommendationRelatedCloudWatchMetricsSourceDetail
     {
@@ -37,7 +38,10 @@ namespace Amazon.DevOpsGuru.Model
         private string _awsNamespace;
 
         /// <summary>
-        /// Gets and sets the property MetricName.
+        /// Gets and sets the property MetricName. 
+        /// <para>
+        /// The name of the CloudWatch metric.
+        /// </para>
         /// </summary>
         public string MetricName
         {
@@ -52,7 +56,11 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Namespace.
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// The namespace of the CloudWatch metric. A namespace is a container for CloudWatch
+        /// metrics.
+        /// </para>
         /// </summary>
         public string Namespace
         {

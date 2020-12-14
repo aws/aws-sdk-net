@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// 
+    /// Details about a proactive insight. This object is returned by <code>DescribeInsight.</code>
     /// </summary>
     public partial class ProactiveInsightSummary
     {
@@ -42,7 +42,10 @@ namespace Amazon.DevOpsGuru.Model
         private InsightStatus _status;
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID of the proactive insight. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string Id
@@ -73,7 +76,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the proactive insight. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=530)]
         public string Name
@@ -119,7 +125,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Severity.
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// The severity of the proactive insight. 
+        /// </para>
         /// </summary>
         public InsightSeverity Severity
         {
@@ -134,7 +143,10 @@ namespace Amazon.DevOpsGuru.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the proactive insight. 
+        /// </para>
         /// </summary>
         public InsightStatus Status
         {
