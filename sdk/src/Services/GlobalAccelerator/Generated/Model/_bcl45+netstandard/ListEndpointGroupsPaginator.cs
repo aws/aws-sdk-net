@@ -42,6 +42,12 @@ namespace Amazon.GlobalAccelerator.Model
         /// </summary>
         public IPaginatedEnumerable<ListEndpointGroupsResponse> Responses => new PaginatedResponse<ListEndpointGroupsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the EndpointGroups
+        /// </summary>
+        public IPaginatedEnumerable<EndpointGroup> EndpointGroups => 
+            new PaginatedResultKeyResponse<ListEndpointGroupsResponse, EndpointGroup>(this, (i) => i.EndpointGroups);
+
         internal ListEndpointGroupsPaginator(IAmazonGlobalAccelerator client, ListEndpointGroupsRequest request)
         {
             this._client = client;

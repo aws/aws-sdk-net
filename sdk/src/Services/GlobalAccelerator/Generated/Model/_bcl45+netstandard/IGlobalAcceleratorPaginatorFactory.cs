@@ -32,6 +32,11 @@ namespace Amazon.GlobalAccelerator.Model
         IListAcceleratorsPaginator ListAccelerators(ListAcceleratorsRequest request);
 
         /// <summary>
+        /// Paginator for ListByoipCidrs operation
+        ///</summary>
+        IListByoipCidrsPaginator ListByoipCidrs(ListByoipCidrsRequest request);
+
+        /// <summary>
         /// Paginator for ListCustomRoutingAccelerators operation
         ///</summary>
         IListCustomRoutingAcceleratorsPaginator ListCustomRoutingAccelerators(ListCustomRoutingAcceleratorsRequest request);

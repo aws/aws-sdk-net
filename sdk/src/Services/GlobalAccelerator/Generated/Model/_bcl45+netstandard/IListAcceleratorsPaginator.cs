@@ -30,6 +30,11 @@ namespace Amazon.GlobalAccelerator.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListAcceleratorsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Accelerators
+        /// </summary>
+        IPaginatedEnumerable<Accelerator> Accelerators { get; }
     }
 }
 #endif

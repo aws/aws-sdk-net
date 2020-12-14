@@ -22,19 +22,19 @@ using Amazon.Runtime;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// Paginator for the ListEndpointGroups operation
+    /// Paginator for the ListByoipCidrs operation
     ///</summary>
-    public interface IListEndpointGroupsPaginator
+    public interface IListByoipCidrsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<ListEndpointGroupsResponse> Responses { get; }
+        IPaginatedEnumerable<ListByoipCidrsResponse> Responses { get; }
 
         /// <summary>
-        /// Enumerable containing all of the EndpointGroups
+        /// Enumerable containing all of the ByoipCidrs
         /// </summary>
-        IPaginatedEnumerable<EndpointGroup> EndpointGroups { get; }
+        IPaginatedEnumerable<ByoipCidr> ByoipCidrs { get; }
     }
 }
 #endif

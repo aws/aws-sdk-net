@@ -29,32 +29,32 @@ using Amazon.Runtime;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// Base class for ListCustomRoutingAccelerators paginators.
+    /// Base class for ListByoipCidrs paginators.
     /// </summary>
-    internal sealed partial class ListCustomRoutingAcceleratorsPaginator : IPaginator<ListCustomRoutingAcceleratorsResponse>, IListCustomRoutingAcceleratorsPaginator
+    internal sealed partial class ListByoipCidrsPaginator : IPaginator<ListByoipCidrsResponse>, IListByoipCidrsPaginator
     {
         private readonly IAmazonGlobalAccelerator _client;
-        private readonly ListCustomRoutingAcceleratorsRequest _request;
+        private readonly ListByoipCidrsRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<ListCustomRoutingAcceleratorsResponse> Responses => new PaginatedResponse<ListCustomRoutingAcceleratorsResponse>(this);
+        public IPaginatedEnumerable<ListByoipCidrsResponse> Responses => new PaginatedResponse<ListByoipCidrsResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the Accelerators
+        /// Enumerable containing all of the ByoipCidrs
         /// </summary>
-        public IPaginatedEnumerable<CustomRoutingAccelerator> Accelerators => 
-            new PaginatedResultKeyResponse<ListCustomRoutingAcceleratorsResponse, CustomRoutingAccelerator>(this, (i) => i.Accelerators);
+        public IPaginatedEnumerable<ByoipCidr> ByoipCidrs => 
+            new PaginatedResultKeyResponse<ListByoipCidrsResponse, ByoipCidr>(this, (i) => i.ByoipCidrs);
 
-        internal ListCustomRoutingAcceleratorsPaginator(IAmazonGlobalAccelerator client, ListCustomRoutingAcceleratorsRequest request)
+        internal ListByoipCidrsPaginator(IAmazonGlobalAccelerator client, ListByoipCidrsRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<ListCustomRoutingAcceleratorsResponse> IPaginator<ListCustomRoutingAcceleratorsResponse>.Paginate()
+        IEnumerable<ListByoipCidrsResponse> IPaginator<ListByoipCidrsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -62,11 +62,11 @@ namespace Amazon.GlobalAccelerator.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            ListCustomRoutingAcceleratorsResponse response;
+            ListByoipCidrsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = _client.ListCustomRoutingAccelerators(_request);
+                response = _client.ListByoipCidrs(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -74,7 +74,7 @@ namespace Amazon.GlobalAccelerator.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListCustomRoutingAcceleratorsResponse> IPaginator<ListCustomRoutingAcceleratorsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListByoipCidrsResponse> IPaginator<ListByoipCidrsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -82,11 +82,11 @@ namespace Amazon.GlobalAccelerator.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            ListCustomRoutingAcceleratorsResponse response;
+            ListByoipCidrsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = await _client.ListCustomRoutingAcceleratorsAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.ListByoipCidrsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

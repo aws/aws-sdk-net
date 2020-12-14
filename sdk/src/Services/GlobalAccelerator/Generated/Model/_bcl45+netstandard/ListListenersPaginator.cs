@@ -42,6 +42,12 @@ namespace Amazon.GlobalAccelerator.Model
         /// </summary>
         public IPaginatedEnumerable<ListListenersResponse> Responses => new PaginatedResponse<ListListenersResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Listeners
+        /// </summary>
+        public IPaginatedEnumerable<Listener> Listeners => 
+            new PaginatedResultKeyResponse<ListListenersResponse, Listener>(this, (i) => i.Listeners);
+
         internal ListListenersPaginator(IAmazonGlobalAccelerator client, ListListenersRequest request)
         {
             this._client = client;

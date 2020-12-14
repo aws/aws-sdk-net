@@ -42,6 +42,12 @@ namespace Amazon.GlobalAccelerator.Model
         /// </summary>
         public IPaginatedEnumerable<ListCustomRoutingPortMappingsResponse> Responses => new PaginatedResponse<ListCustomRoutingPortMappingsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the PortMappings
+        /// </summary>
+        public IPaginatedEnumerable<PortMapping> PortMappings => 
+            new PaginatedResultKeyResponse<ListCustomRoutingPortMappingsResponse, PortMapping>(this, (i) => i.PortMappings);
+
         internal ListCustomRoutingPortMappingsPaginator(IAmazonGlobalAccelerator client, ListCustomRoutingPortMappingsRequest request)
         {
             this._client = client;

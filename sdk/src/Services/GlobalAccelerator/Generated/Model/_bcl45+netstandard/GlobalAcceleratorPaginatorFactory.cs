@@ -45,6 +45,14 @@ namespace Amazon.GlobalAccelerator.Model
         }
 
         /// <summary>
+        /// Paginator for ListByoipCidrs operation
+        ///</summary>
+        public IListByoipCidrsPaginator ListByoipCidrs(ListByoipCidrsRequest request) 
+        {
+            return new ListByoipCidrsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCustomRoutingAccelerators operation
         ///</summary>
         public IListCustomRoutingAcceleratorsPaginator ListCustomRoutingAccelerators(ListCustomRoutingAcceleratorsRequest request) 

@@ -30,6 +30,11 @@ namespace Amazon.GlobalAccelerator.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListCustomRoutingPortMappingsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the PortMappings
+        /// </summary>
+        IPaginatedEnumerable<PortMapping> PortMappings { get; }
     }
 }
 #endif
