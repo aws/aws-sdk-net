@@ -64,6 +64,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Author", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Author = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DocumentFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<DocumentRequires, DocumentRequiresUnmarshaller>(DocumentRequiresUnmarshaller.Instance);
                     unmarshalledObject.Requires = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReviewStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReviewStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SchemaVersion", targetDepth))

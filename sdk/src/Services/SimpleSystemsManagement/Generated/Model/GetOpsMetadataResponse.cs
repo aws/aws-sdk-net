@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// OpsMetadata for an AppManager application.
+        /// OpsMetadata for an Application Manager application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -78,7 +78,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The resource ID of the AppManager application.
+        /// The resource ID of the Application Manager application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -61,7 +61,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleName. 
         /// <para>
-        /// The Automation execution role used by the currently running Automation.
+        /// The Automation execution role used by the currently running Automation. If not specified,
+        /// the default value is <code>AWS-SystemsManager-AutomationExecutionRole</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -99,8 +100,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TargetLocationMaxConcurrency. 
         /// <para>
-        /// The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently
-        /// 
+        /// The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -120,7 +120,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TargetLocationMaxErrors. 
         /// <para>
         /// The maximum number of errors allowed before the system stops queueing additional Automation
-        /// executions for the currently running Automation. 
+        /// executions for the currently running Automation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]

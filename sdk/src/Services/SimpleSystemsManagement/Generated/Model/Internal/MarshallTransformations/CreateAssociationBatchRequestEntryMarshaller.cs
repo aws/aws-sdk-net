@@ -141,6 +141,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SyncCompliance);
             }
 
+            if(requestObject.IsSetTargetLocations())
+            {
+                context.Writer.WritePropertyName("TargetLocations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTargetLocationsListValue in requestObject.TargetLocations)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TargetLocationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTargetLocationsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTargets())
             {
                 context.Writer.WritePropertyName("Targets");

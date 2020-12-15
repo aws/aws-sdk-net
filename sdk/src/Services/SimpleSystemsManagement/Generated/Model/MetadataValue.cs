@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Metadata to assign to an AppManager application.
+    /// Metadata to assign to an Application Manager application.
     /// </summary>
     public partial class MetadataValue
     {
@@ -38,7 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Metadata value to assign to an AppManager application.
+        /// Metadata value to assign to an Application Manager application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

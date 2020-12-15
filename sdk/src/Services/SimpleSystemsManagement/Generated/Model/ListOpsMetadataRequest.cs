@@ -30,8 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOpsMetadata operation.
-    /// Systems Manager calls this API action when displaying all AppManager OpsMetadata objects
-    /// or blobs.
+    /// Systems Manager calls this API action when displaying all Application Manager OpsMetadata
+    /// objects or blobs.
     /// </summary>
     public partial class ListOpsMetadataRequest : AmazonSimpleSystemsManagementRequest
     {

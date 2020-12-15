@@ -250,7 +250,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
+        ///  <code>Key=WindowTargetIds,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
         /// 
         /// </para>
         /// </summary>

@@ -93,6 +93,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     response.Requires = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReviewStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ReviewStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

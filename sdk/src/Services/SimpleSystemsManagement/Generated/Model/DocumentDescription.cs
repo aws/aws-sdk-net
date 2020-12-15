@@ -33,7 +33,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DocumentDescription
     {
+        private string _approvedVersion;
         private List<AttachmentInformation> _attachmentsInformation = new List<AttachmentInformation>();
+        private string _author;
         private DateTime? _createdDate;
         private string _defaultVersion;
         private string _description;
@@ -46,8 +48,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _name;
         private string _owner;
         private List<DocumentParameter> _parameters = new List<DocumentParameter>();
+        private string _pendingReviewVersion;
         private List<string> _platformTypes = new List<string>();
         private List<DocumentRequires> _requires = new List<DocumentRequires>();
+        private List<ReviewInformation> _reviewInformation = new List<ReviewInformation>();
+        private ReviewStatus _reviewStatus;
         private string _schemaVersion;
         private string _sha1;
         private DocumentStatus _status;
@@ -55,6 +60,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<Tag> _tags = new List<Tag>();
         private string _targetType;
         private string _versionName;
+
+        /// <summary>
+        /// Gets and sets the property ApprovedVersion. 
+        /// <para>
+        /// The version of the document currently approved for use in the organization.
+        /// </para>
+        /// </summary>
+        public string ApprovedVersion
+        {
+            get { return this._approvedVersion; }
+            set { this._approvedVersion = value; }
+        }
+
+        // Check to see if ApprovedVersion property is set
+        internal bool IsSetApprovedVersion()
+        {
+            return this._approvedVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AttachmentsInformation. 
@@ -73,6 +96,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAttachmentsInformation()
         {
             return this._attachmentsInformation != null && this._attachmentsInformation.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Author. 
+        /// <para>
+        /// The user in your organization who created the document.
+        /// </para>
+        /// </summary>
+        public string Author
+        {
+            get { return this._author; }
+            set { this._author = value; }
+        }
+
+        // Check to see if Author property is set
+        internal bool IsSetAuthor()
+        {
+            return this._author != null;
         }
 
         /// <summary>
@@ -303,6 +344,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PendingReviewVersion. 
+        /// <para>
+        /// The version of the document that is currently under review.
+        /// </para>
+        /// </summary>
+        public string PendingReviewVersion
+        {
+            get { return this._pendingReviewVersion; }
+            set { this._pendingReviewVersion = value; }
+        }
+
+        // Check to see if PendingReviewVersion property is set
+        internal bool IsSetPendingReviewVersion()
+        {
+            return this._pendingReviewVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PlatformTypes. 
         /// <para>
         /// The list of OS platforms compatible with this Systems Manager document. 
@@ -338,6 +397,43 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRequires()
         {
             return this._requires != null && this._requires.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReviewInformation. 
+        /// <para>
+        /// Details about the review of a document.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ReviewInformation> ReviewInformation
+        {
+            get { return this._reviewInformation; }
+            set { this._reviewInformation = value; }
+        }
+
+        // Check to see if ReviewInformation property is set
+        internal bool IsSetReviewInformation()
+        {
+            return this._reviewInformation != null && this._reviewInformation.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReviewStatus. 
+        /// <para>
+        /// The current status of the review.
+        /// </para>
+        /// </summary>
+        public ReviewStatus ReviewStatus
+        {
+            get { return this._reviewStatus; }
+            set { this._reviewStatus = value; }
+        }
+
+        // Check to see if ReviewStatus property is set
+        internal bool IsSetReviewStatus()
+        {
+            return this._reviewStatus != null;
         }
 
         /// <summary>

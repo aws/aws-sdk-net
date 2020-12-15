@@ -245,7 +245,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>cron(0 30 23 ? * TUE#3 *)</code> 
+        ///  <code>cron(30 23 ? * TUE#3 *)</code> 
         /// </para>
         ///  
         /// <para>
@@ -270,7 +270,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ScheduleTimezone. 
         /// <para>
         /// The time zone that the scheduled maintenance window executions are based on, in Internet
-        /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC",
+        /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC",
         /// or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
         /// Zone Database</a> on the IANA website.
         /// </para>
@@ -291,7 +291,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StartDate. 
         /// <para>
         /// The time zone that the scheduled maintenance window executions are based on, in Internet
-        /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC",
+        /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC",
         /// or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
         /// Zone Database</a> on the IANA website.
         /// </para>

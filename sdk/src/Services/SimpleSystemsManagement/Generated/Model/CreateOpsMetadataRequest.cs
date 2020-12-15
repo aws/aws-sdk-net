@@ -30,8 +30,9 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateOpsMetadata operation.
-    /// If you create a new application in AppManager, Systems Manager calls this API action
-    /// to specify information about the new application, including the application type.
+    /// If you create a new application in Application Manager, Systems Manager calls this
+    /// API action to specify information about the new application, including the application
+    /// type.
     /// </summary>
     public partial class CreateOpsMetadataRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// Metadata for a new AppManager application. 
+        /// Metadata for a new Application Manager application. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -60,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// A resource ID for a new AppManager application.
+        /// A resource ID for a new Application Manager application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

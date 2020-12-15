@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DocumentIdentifier
     {
+        private string _author;
         private DocumentFormat _documentFormat;
         private DocumentType _documentType;
         private string _documentVersion;
@@ -40,6 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _owner;
         private List<string> _platformTypes = new List<string>();
         private List<DocumentRequires> _requires = new List<DocumentRequires>();
+        private ReviewStatus _reviewStatus;
         private string _schemaVersion;
         private List<Tag> _tags = new List<Tag>();
         private string _targetType;
@@ -57,6 +59,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         public DocumentIdentifier(string name)
         {
             _name = name;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Author. 
+        /// <para>
+        /// The user in your organization who created the document.
+        /// </para>
+        /// </summary>
+        public string Author
+        {
+            get { return this._author; }
+            set { this._author = value; }
+        }
+
+        // Check to see if Author property is set
+        internal bool IsSetAuthor()
+        {
+            return this._author != null;
         }
 
         /// <summary>
@@ -185,6 +205,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRequires()
         {
             return this._requires != null && this._requires.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReviewStatus. 
+        /// <para>
+        /// The current status of a document review.
+        /// </para>
+        /// </summary>
+        public ReviewStatus ReviewStatus
+        {
+            get { return this._reviewStatus; }
+            set { this._reviewStatus = value; }
+        }
+
+        // Check to see if ReviewStatus property is set
+        internal bool IsSetReviewStatus()
+        {
+            return this._reviewStatus != null;
         }
 
         /// <summary>

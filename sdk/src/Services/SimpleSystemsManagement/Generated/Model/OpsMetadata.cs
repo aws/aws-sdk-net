@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Operational metadata for an application in AppManager.
+    /// Operational metadata for an application in Application Manager.
     /// </summary>
     public partial class OpsMetadata
     {
@@ -115,7 +115,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the AppManager application.
+        /// The ID of the Application Manager application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

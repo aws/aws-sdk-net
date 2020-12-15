@@ -68,6 +68,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetActualEndTime())
+                {
+                    context.Writer.WritePropertyName("ActualEndTime");
+                    context.Writer.Write(publicRequest.ActualEndTime);
+                }
+
+                if(publicRequest.IsSetActualStartTime())
+                {
+                    context.Writer.WritePropertyName("ActualStartTime");
+                    context.Writer.Write(publicRequest.ActualStartTime);
+                }
+
                 if(publicRequest.IsSetCategory())
                 {
                     context.Writer.WritePropertyName("Category");
@@ -130,6 +142,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("OpsItemId");
                     context.Writer.Write(publicRequest.OpsItemId);
+                }
+
+                if(publicRequest.IsSetPlannedEndTime())
+                {
+                    context.Writer.WritePropertyName("PlannedEndTime");
+                    context.Writer.Write(publicRequest.PlannedEndTime);
+                }
+
+                if(publicRequest.IsSetPlannedStartTime())
+                {
+                    context.Writer.WritePropertyName("PlannedStartTime");
+                    context.Writer.Write(publicRequest.PlannedStartTime);
                 }
 
                 if(publicRequest.IsSetPriority())

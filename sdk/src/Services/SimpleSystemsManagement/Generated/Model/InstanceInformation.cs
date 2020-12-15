@@ -247,7 +247,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property LastPingDateTime. 
         /// <para>
-        /// The date and time when agent last pinged Systems Manager service. 
+        /// The date and time when the agent last pinged the Systems Manager service. 
         /// </para>
         /// </summary>
         public DateTime LastPingDateTime

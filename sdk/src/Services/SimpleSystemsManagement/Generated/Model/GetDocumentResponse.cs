@@ -40,6 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _documentVersion;
         private string _name;
         private List<DocumentRequires> _requires = new List<DocumentRequires>();
+        private ReviewStatus _reviewStatus;
         private DocumentStatus _status;
         private string _statusInformation;
         private string _versionName;
@@ -172,6 +173,35 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetRequires()
         {
             return this._requires != null && this._requires.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReviewStatus. 
+        /// <para>
+        /// The current review status of a new custom Systems Manager document (SSM document)
+        /// created by a member of your organization, or of the latest version of an existing
+        /// SSM document.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only one version of an SSM document can be in the APPROVED state at a time. When a
+        /// new version is approved, the status of the previous version changes to REJECTED.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only one version of an SSM document can be in review, or PENDING, at a time.
+        /// </para>
+        /// </summary>
+        public ReviewStatus ReviewStatus
+        {
+            get { return this._reviewStatus; }
+            set { this._reviewStatus = value; }
+        }
+
+        // Check to see if ReviewStatus property is set
+        internal bool IsSetReviewStatus()
+        {
+            return this._reviewStatus != null;
         }
 
         /// <summary>

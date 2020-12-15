@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetOpsMetadata operation.
-    /// View operational metadata related to an application in AppManager.
+    /// View operational metadata related to an application in Application Manager.
     /// </summary>
     public partial class GetOpsMetadataRequest : AmazonSimpleSystemsManagementRequest
     {

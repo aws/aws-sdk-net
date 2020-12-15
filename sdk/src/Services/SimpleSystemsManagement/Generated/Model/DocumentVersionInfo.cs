@@ -38,6 +38,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _documentVersion;
         private bool? _isDefaultVersion;
         private string _name;
+        private ReviewStatus _reviewStatus;
         private DocumentStatus _status;
         private string _statusInformation;
         private string _versionName;
@@ -130,6 +131,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReviewStatus. 
+        /// <para>
+        /// The current status of the approval review for the latest version of the document.
+        /// </para>
+        /// </summary>
+        public ReviewStatus ReviewStatus
+        {
+            get { return this._reviewStatus; }
+            set { this._reviewStatus = value; }
+        }
+
+        // Check to see if ReviewStatus property is set
+        internal bool IsSetReviewStatus()
+        {
+            return this._reviewStatus != null;
         }
 
         /// <summary>

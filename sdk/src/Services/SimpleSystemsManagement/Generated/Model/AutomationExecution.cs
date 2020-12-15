@@ -33,8 +33,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class AutomationExecution
     {
+        private string _associationId;
         private string _automationExecutionId;
         private AutomationExecutionStatus _automationExecutionStatus;
+        private AutomationSubtype _automationSubtype;
+        private string _changeRequestName;
         private string _currentAction;
         private string _currentStepName;
         private string _documentName;
@@ -46,11 +49,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _maxConcurrency;
         private string _maxErrors;
         private ExecutionMode _mode;
+        private string _opsItemId;
         private Dictionary<string, List<string>> _outputs = new Dictionary<string, List<string>>();
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private string _parentAutomationExecutionId;
         private ProgressCounters _progressCounters;
         private ResolvedTargets _resolvedTargets;
+        private List<Runbook> _runbooks = new List<Runbook>();
+        private DateTime? _scheduledTime;
         private List<StepExecution> _stepExecutions = new List<StepExecution>();
         private bool? _stepExecutionsTruncated;
         private string _target;
@@ -58,6 +64,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
         private string _targetParameterName;
         private List<Target> _targets = new List<Target>();
+
+        /// <summary>
+        /// Gets and sets the property AssociationId. 
+        /// <para>
+        /// The ID of a State Manager association used in the Automation operation.
+        /// </para>
+        /// </summary>
+        public string AssociationId
+        {
+            get { return this._associationId; }
+            set { this._associationId = value; }
+        }
+
+        // Check to see if AssociationId property is set
+        internal bool IsSetAssociationId()
+        {
+            return this._associationId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AutomationExecutionId. 
@@ -94,6 +118,43 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAutomationExecutionStatus()
         {
             return this._automationExecutionStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomationSubtype. 
+        /// <para>
+        /// The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.
+        /// </para>
+        /// </summary>
+        public AutomationSubtype AutomationSubtype
+        {
+            get { return this._automationSubtype; }
+            set { this._automationSubtype = value; }
+        }
+
+        // Check to see if AutomationSubtype property is set
+        internal bool IsSetAutomationSubtype()
+        {
+            return this._automationSubtype != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChangeRequestName. 
+        /// <para>
+        /// The name of the Change Manager change request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string ChangeRequestName
+        {
+            get { return this._changeRequestName; }
+            set { this._changeRequestName = value; }
+        }
+
+        // Check to see if ChangeRequestName property is set
+        internal bool IsSetChangeRequestName()
+        {
+            return this._changeRequestName != null;
         }
 
         /// <summary>
@@ -297,6 +358,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OpsItemId. 
+        /// <para>
+        /// The ID of an OpsItem that is created to represent a Change Manager change request.
+        /// </para>
+        /// </summary>
+        public string OpsItemId
+        {
+            get { return this._opsItemId; }
+            set { this._opsItemId = value; }
+        }
+
+        // Check to see if OpsItemId property is set
+        internal bool IsSetOpsItemId()
+        {
+            return this._opsItemId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
         /// The list of execution outputs as defined in the automation document.
@@ -388,6 +467,50 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetResolvedTargets()
         {
             return this._resolvedTargets != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Runbooks. 
+        /// <para>
+        /// Information about the Automation runbooks (Automation documents) that are run as part
+        /// of a runbook workflow.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The Automation runbooks specified for the runbook workflow can't run until all required
+        /// approvals for the change request have been received.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<Runbook> Runbooks
+        {
+            get { return this._runbooks; }
+            set { this._runbooks = value; }
+        }
+
+        // Check to see if Runbooks property is set
+        internal bool IsSetRunbooks()
+        {
+            return this._runbooks != null && this._runbooks.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledTime. 
+        /// <para>
+        /// The date and time the Automation operation is scheduled to start.
+        /// </para>
+        /// </summary>
+        public DateTime ScheduledTime
+        {
+            get { return this._scheduledTime.GetValueOrDefault(); }
+            set { this._scheduledTime = value; }
+        }
+
+        // Check to see if ScheduledTime property is set
+        internal bool IsSetScheduledTime()
+        {
+            return this._scheduledTime.HasValue; 
         }
 
         /// <summary>

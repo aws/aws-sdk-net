@@ -33,6 +33,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class OpsItemSummary
     {
+        private DateTime? _actualEndTime;
+        private DateTime? _actualStartTime;
         private string _category;
         private string _createdBy;
         private DateTime? _createdTime;
@@ -40,11 +42,51 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _lastModifiedTime;
         private Dictionary<string, OpsItemDataValue> _operationalData = new Dictionary<string, OpsItemDataValue>();
         private string _opsItemId;
+        private string _opsItemType;
+        private DateTime? _plannedEndTime;
+        private DateTime? _plannedStartTime;
         private int? _priority;
         private string _severity;
         private string _source;
         private OpsItemStatus _status;
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property ActualEndTime. 
+        /// <para>
+        /// The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.
+        /// </para>
+        /// </summary>
+        public DateTime ActualEndTime
+        {
+            get { return this._actualEndTime.GetValueOrDefault(); }
+            set { this._actualEndTime = value; }
+        }
+
+        // Check to see if ActualEndTime property is set
+        internal bool IsSetActualEndTime()
+        {
+            return this._actualEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActualStartTime. 
+        /// <para>
+        /// The time a runbook workflow started. Currently reported only for the OpsItem type
+        /// <code>/aws/changerequest</code>.
+        /// </para>
+        /// </summary>
+        public DateTime ActualStartTime
+        {
+            get { return this._actualStartTime.GetValueOrDefault(); }
+            set { this._actualStartTime = value; }
+        }
+
+        // Check to see if ActualStartTime property is set
+        internal bool IsSetActualStartTime()
+        {
+            return this._actualStartTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Category. 
@@ -175,6 +217,63 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OpsItemType. 
+        /// <para>
+        /// The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code>
+        /// and <code>/aws/issue</code>.
+        /// </para>
+        /// </summary>
+        public string OpsItemType
+        {
+            get { return this._opsItemType; }
+            set { this._opsItemType = value; }
+        }
+
+        // Check to see if OpsItemType property is set
+        internal bool IsSetOpsItemType()
+        {
+            return this._opsItemType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlannedEndTime. 
+        /// <para>
+        /// The time specified in a change request for a runbook workflow to end. Currently supported
+        /// only for the OpsItem type <code>/aws/changerequest</code>.
+        /// </para>
+        /// </summary>
+        public DateTime PlannedEndTime
+        {
+            get { return this._plannedEndTime.GetValueOrDefault(); }
+            set { this._plannedEndTime = value; }
+        }
+
+        // Check to see if PlannedEndTime property is set
+        internal bool IsSetPlannedEndTime()
+        {
+            return this._plannedEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlannedStartTime. 
+        /// <para>
+        /// The time specified in a change request for a runbook workflow to start. Currently
+        /// supported only for the OpsItem type <code>/aws/changerequest</code>.
+        /// </para>
+        /// </summary>
+        public DateTime PlannedStartTime
+        {
+            get { return this._plannedStartTime.GetValueOrDefault(); }
+            set { this._plannedStartTime = value; }
+        }
+
+        // Check to see if PlannedStartTime property is set
+        internal bool IsSetPlannedStartTime()
+        {
+            return this._plannedStartTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
         /// The importance of this OpsItem in relation to other OpsItems in the system.
@@ -218,7 +317,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The impacted AWS resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=128)]
         public string Source
         {
             get { return this._source; }

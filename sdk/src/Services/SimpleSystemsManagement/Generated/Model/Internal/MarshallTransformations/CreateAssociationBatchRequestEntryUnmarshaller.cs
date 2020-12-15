@@ -142,6 +142,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.SyncCompliance = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TargetLocations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TargetLocation, TargetLocationUnmarshaller>(TargetLocationUnmarshaller.Instance);
+                    unmarshalledObject.TargetLocations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Targets", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Target, TargetUnmarshaller>(TargetUnmarshaller.Instance);

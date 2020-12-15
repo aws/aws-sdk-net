@@ -56,6 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private string _scheduleExpression;
         private AssociationSyncCompliance _syncCompliance;
+        private List<TargetLocation> _targetLocations = new List<TargetLocation>();
         private List<Target> _targets = new List<Target>();
 
         /// <summary>
@@ -395,6 +396,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetSyncCompliance()
         {
             return this._syncCompliance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetLocations. 
+        /// <para>
+        /// A location is a combination of AWS Regions and AWS accounts where you want to run
+        /// the association. Use this action to create an association in multiple Regions and
+        /// multiple accounts.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<TargetLocation> TargetLocations
+        {
+            get { return this._targetLocations; }
+            set { this._targetLocations = value; }
+        }
+
+        // Check to see if TargetLocations property is set
+        internal bool IsSetTargetLocations()
+        {
+            return this._targetLocations != null && this._targetLocations.Count > 0; 
         }
 
         /// <summary>

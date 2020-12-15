@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can
-    /// assign to an application in AppManager.
+    /// assign to an application in Application Manager.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Your account reached the maximum number of OpsMetadata objects allowed by AppManager.
-    /// The maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and
-    /// try again.
+    /// Your account reached the maximum number of OpsMetadata objects allowed by Application
+    /// Manager. The maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object
+    /// and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
