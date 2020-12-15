@@ -464,7 +464,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaGetProvisionedConcurrencyConfig()
         {
-            #region to-get-a-provisioned-concurrency-configuration-1586490192690
+            #region to-view-a-provisioned-concurrency-configuration-1586490192690
 
             var response = client.GetProvisionedConcurrencyConfig(new GetProvisionedConcurrencyConfigRequest 
             {
@@ -483,7 +483,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
 
         public void LambdaGetProvisionedConcurrencyConfig()
         {
-            #region to-view-a-provisioned-concurrency-configuration-1586490192690
+            #region to-get-a-provisioned-concurrency-configuration-1586490192690
 
             var response = client.GetProvisionedConcurrencyConfig(new GetProvisionedConcurrencyConfigRequest 
             {

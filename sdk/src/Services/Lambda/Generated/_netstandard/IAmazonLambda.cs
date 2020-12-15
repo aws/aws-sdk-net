@@ -274,6 +274,11 @@ namespace Amazon.Lambda
         ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda
         /// with Amazon MSK</a> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS
+        /// Lambda with Self-Managed Apache Kafka</a> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The following error handling options are only available for stream sources (DynamoDB

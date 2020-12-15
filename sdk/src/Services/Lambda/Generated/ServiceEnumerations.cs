@@ -75,6 +75,52 @@ namespace Amazon.Lambda
 
 
     /// <summary>
+    /// Constants used for properties of type EndPointType.
+    /// </summary>
+    public class EndPointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KAFKA_BOOTSTRAP_SERVERS for EndPointType
+        /// </summary>
+        public static readonly EndPointType KAFKA_BOOTSTRAP_SERVERS = new EndPointType("KAFKA_BOOTSTRAP_SERVERS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndPointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndPointType FindValue(string value)
+        {
+            return FindValue<EndPointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndPointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventSourcePosition.
     /// </summary>
     public class EventSourcePosition : ConstantClass
@@ -122,6 +168,52 @@ namespace Amazon.Lambda
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventSourcePosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FunctionResponseType.
+    /// </summary>
+    public class FunctionResponseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ReportBatchItemFailures for FunctionResponseType
+        /// </summary>
+        public static readonly FunctionResponseType ReportBatchItemFailures = new FunctionResponseType("ReportBatchItemFailures");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FunctionResponseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FunctionResponseType FindValue(string value)
+        {
+            return FindValue<FunctionResponseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FunctionResponseType(string value)
         {
             return FindValue(value);
         }
@@ -662,6 +754,22 @@ namespace Amazon.Lambda
         /// Constant BASIC_AUTH for SourceAccessType
         /// </summary>
         public static readonly SourceAccessType BASIC_AUTH = new SourceAccessType("BASIC_AUTH");
+        /// <summary>
+        /// Constant SASL_SCRAM_256_AUTH for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType SASL_SCRAM_256_AUTH = new SourceAccessType("SASL_SCRAM_256_AUTH");
+        /// <summary>
+        /// Constant SASL_SCRAM_512_AUTH for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType SASL_SCRAM_512_AUTH = new SourceAccessType("SASL_SCRAM_512_AUTH");
+        /// <summary>
+        /// Constant VPC_SECURITY_GROUP for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType VPC_SECURITY_GROUP = new SourceAccessType("VPC_SECURITY_GROUP");
+        /// <summary>
+        /// Constant VPC_SUBNET for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType VPC_SUBNET = new SourceAccessType("VPC_SUBNET");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

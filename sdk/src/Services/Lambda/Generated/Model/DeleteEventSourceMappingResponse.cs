@@ -39,6 +39,7 @@ namespace Amazon.Lambda.Model
         private DestinationConfig _destinationConfig;
         private string _eventSourceArn;
         private string _functionArn;
+        private List<string> _functionResponseTypes = new List<string>();
         private DateTime? _lastModified;
         private string _lastProcessingResult;
         private int? _maximumBatchingWindowInSeconds;
@@ -46,12 +47,14 @@ namespace Amazon.Lambda.Model
         private int? _maximumRetryAttempts;
         private int? _parallelizationFactor;
         private List<string> _queues = new List<string>();
+        private SelfManagedEventSource _selfManagedEventSource;
         private List<SourceAccessConfiguration> _sourceAccessConfigurations = new List<SourceAccessConfiguration>();
         private EventSourcePosition _startingPosition;
         private DateTime? _startingPositionTimestamp;
         private string _state;
         private string _stateTransitionReason;
         private List<string> _topics = new List<string>();
+        private int? _tumblingWindowInSeconds;
         private string _uuid;
 
         /// <summary>
@@ -147,6 +150,25 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FunctionResponseTypes. 
+        /// <para>
+        /// (Streams) A list of current response type enums applied to the event source mapping.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> FunctionResponseTypes
+        {
+            get { return this._functionResponseTypes; }
+            set { this._functionResponseTypes = value; }
+        }
+
+        // Check to see if FunctionResponseTypes property is set
+        internal bool IsSetFunctionResponseTypes()
+        {
+            return this._functionResponseTypes != null && this._functionResponseTypes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
         /// The date that the event source mapping was last updated, or its state changed.
@@ -185,8 +207,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumBatchingWindowInSeconds. 
         /// <para>
-        /// (Streams) The maximum amount of time to gather records before invoking the function,
-        /// in seconds. The default value is zero.
+        /// (Streams and SQS standard queues) The maximum amount of time to gather records before
+        /// invoking the function, in seconds. The default value is zero.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
@@ -283,25 +305,31 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceAccessConfigurations. 
+        /// Gets and sets the property SelfManagedEventSource. 
         /// <para>
-        ///  (MQ) The Secrets Manager secret that stores your broker credentials. To store your
-        /// secret, use the following format: <code> { "username": "your username", "password":
-        /// "your password" }</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH",
-        /// "URI": "secretARN" } ]</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret,
-        /// you can use customer or service managed keys. When using a customer managed KMS key,
-        /// the Lambda execution role requires <code>kms:Decrypt</code> permissions.
+        /// The Self-Managed Apache Kafka cluster for your event source.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        public SelfManagedEventSource SelfManagedEventSource
+        {
+            get { return this._selfManagedEventSource; }
+            set { this._selfManagedEventSource = value; }
+        }
+
+        // Check to see if SelfManagedEventSource property is set
+        internal bool IsSetSelfManagedEventSource()
+        {
+            return this._selfManagedEventSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceAccessConfigurations. 
+        /// <para>
+        /// An array of the authentication protocol, or the VPC components to secure your event
+        /// source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=22)]
         public List<SourceAccessConfiguration> SourceAccessConfigurations
         {
             get { return this._sourceAccessConfigurations; }
@@ -395,7 +423,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Topics. 
         /// <para>
-        ///  (MSK) The name of the Kafka topic to consume. 
+        /// The name of the Kafka topic.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -409,6 +437,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetTopics()
         {
             return this._topics != null && this._topics.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TumblingWindowInSeconds. 
+        /// <para>
+        /// (Streams) The duration of a processing window in seconds. The range is between 1 second
+        /// up to 15 minutes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=900)]
+        public int TumblingWindowInSeconds
+        {
+            get { return this._tumblingWindowInSeconds.GetValueOrDefault(); }
+            set { this._tumblingWindowInSeconds = value; }
+        }
+
+        // Check to see if TumblingWindowInSeconds property is set
+        internal bool IsSetTumblingWindowInSeconds()
+        {
+            return this._tumblingWindowInSeconds.HasValue; 
         }
 
         /// <summary>

@@ -104,6 +104,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FunctionName);
                 }
 
+                if(publicRequest.IsSetFunctionResponseTypes())
+                {
+                    context.Writer.WritePropertyName("FunctionResponseTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFunctionResponseTypesListValue in publicRequest.FunctionResponseTypes)
+                    {
+                            context.Writer.Write(publicRequestFunctionResponseTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMaximumBatchingWindowInSeconds())
                 {
                     context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
@@ -142,6 +153,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetTumblingWindowInSeconds())
+                {
+                    context.Writer.WritePropertyName("TumblingWindowInSeconds");
+                    context.Writer.Write(publicRequest.TumblingWindowInSeconds);
                 }
 
         

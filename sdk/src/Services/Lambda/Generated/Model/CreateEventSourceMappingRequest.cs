@@ -62,6 +62,11 @@ namespace Amazon.Lambda.Model
     ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda
     /// with Amazon MSK</a> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS
+    /// Lambda with Self-Managed Apache Kafka</a> 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// The following error handling options are only available for stream sources (DynamoDB
@@ -103,15 +108,18 @@ namespace Amazon.Lambda.Model
         private bool? _enabled;
         private string _eventSourceArn;
         private string _functionName;
+        private List<string> _functionResponseTypes = new List<string>();
         private int? _maximumBatchingWindowInSeconds;
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
         private int? _parallelizationFactor;
         private List<string> _queues = new List<string>();
+        private SelfManagedEventSource _selfManagedEventSource;
         private List<SourceAccessConfiguration> _sourceAccessConfigurations = new List<SourceAccessConfiguration>();
         private EventSourcePosition _startingPosition;
         private DateTime? _startingPositionTimestamp;
         private List<string> _topics = new List<string>();
+        private int? _tumblingWindowInSeconds;
 
         /// <summary>
         /// Gets and sets the property BatchSize. 
@@ -128,11 +136,16 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+        ///  <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
+        /// For FIFO queues the max is 10.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -226,7 +239,6 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string EventSourceArn
         {
             get { return this._eventSourceArn; }
@@ -282,10 +294,29 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FunctionResponseTypes. 
+        /// <para>
+        /// (Streams) A list of current response type enums applied to the event source mapping.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> FunctionResponseTypes
+        {
+            get { return this._functionResponseTypes; }
+            set { this._functionResponseTypes = value; }
+        }
+
+        // Check to see if FunctionResponseTypes property is set
+        internal bool IsSetFunctionResponseTypes()
+        {
+            return this._functionResponseTypes != null && this._functionResponseTypes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaximumBatchingWindowInSeconds. 
         /// <para>
-        /// (Streams) The maximum amount of time to gather records before invoking the function,
-        /// in seconds.
+        /// (Streams and SQS standard queues) The maximum amount of time to gather records before
+        /// invoking the function, in seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
@@ -381,25 +412,31 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceAccessConfigurations. 
+        /// Gets and sets the property SelfManagedEventSource. 
         /// <para>
-        ///  (MQ) The Secrets Manager secret that stores your broker credentials. To store your
-        /// secret, use the following format: <code> { "username": "your username", "password":
-        /// "your password" }</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH",
-        /// "URI": "secretARN" } ]</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret,
-        /// you can use customer or service managed keys. When using a customer managed KMS key,
-        /// the Lambda execution role requires <code>kms:Decrypt</code> permissions.
+        /// The Self-Managed Apache Kafka cluster to send records.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        public SelfManagedEventSource SelfManagedEventSource
+        {
+            get { return this._selfManagedEventSource; }
+            set { this._selfManagedEventSource = value; }
+        }
+
+        // Check to see if SelfManagedEventSource property is set
+        internal bool IsSetSelfManagedEventSource()
+        {
+            return this._selfManagedEventSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceAccessConfigurations. 
+        /// <para>
+        /// An array of the authentication protocol, or the VPC components to secure your event
+        /// source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=22)]
         public List<SourceAccessConfiguration> SourceAccessConfigurations
         {
             get { return this._sourceAccessConfigurations; }
@@ -454,7 +491,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Topics. 
         /// <para>
-        ///  (MSK) The name of the Kafka topic. 
+        /// The name of the Kafka topic.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -468,6 +505,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetTopics()
         {
             return this._topics != null && this._topics.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TumblingWindowInSeconds. 
+        /// <para>
+        /// (Streams) The duration of a processing window in seconds. The range is between 1 second
+        /// up to 15 minutes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=900)]
+        public int TumblingWindowInSeconds
+        {
+            get { return this._tumblingWindowInSeconds.GetValueOrDefault(); }
+            set { this._tumblingWindowInSeconds = value; }
+        }
+
+        // Check to see if TumblingWindowInSeconds property is set
+        internal bool IsSetTumblingWindowInSeconds()
+        {
+            return this._tumblingWindowInSeconds.HasValue; 
         }
 
     }

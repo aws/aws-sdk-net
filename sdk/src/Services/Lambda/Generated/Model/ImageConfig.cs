@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Configuration values that override the container image Dockerfile. See <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images-settings.html">Override
-    /// Container settings</a>.
+    /// Configuration values that override the container image Dockerfile settings. See <a
+    /// href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container settings</a>.
     /// </summary>
     public partial class ImageConfig
     {

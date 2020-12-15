@@ -81,6 +81,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.FunctionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FunctionResponseTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.FunctionResponseTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModified", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -123,6 +129,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Queues = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SelfManagedEventSource", targetDepth))
+                {
+                    var unmarshaller = SelfManagedEventSourceUnmarshaller.Instance;
+                    response.SelfManagedEventSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceAccessConfigurations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<SourceAccessConfiguration, SourceAccessConfigurationUnmarshaller>(SourceAccessConfigurationUnmarshaller.Instance);
@@ -157,6 +169,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.Topics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TumblingWindowInSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.TumblingWindowInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UUID", targetDepth))

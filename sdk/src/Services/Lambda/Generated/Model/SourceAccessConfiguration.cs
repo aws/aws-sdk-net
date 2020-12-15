@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// (MQ) The Secrets Manager secret that stores your broker credentials. To store your
-    /// secret, use the following format: <code> { "username": "your username", "password":
-    /// "your password" }</code>
+    /// You can specify the authentication protocol, or the VPC components to secure access
+    /// to your event source.
     /// </summary>
     public partial class SourceAccessConfiguration
     {
@@ -41,15 +40,35 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH",
-        /// "URI": "secretARN" } ]</code> 
+        /// The type of authentication protocol or the VPC components for your event source. For
+        /// example: <code>"Type":"SASL_SCRAM_512_AUTH"</code>.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret,
-        /// you can use customer or service managed keys. When using a customer managed KMS key,
-        /// the Lambda execution role requires <code>kms:Decrypt</code> permissions.
+        ///  <code>BASIC_AUTH</code> - (MQ) The Secrets Manager secret that stores your broker
+        /// credentials.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to
+        /// these subnets to fetch data from your Kafka cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to
+        /// your Kafka brokers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL SCRAM-256
+        /// authentication of your Kafka brokers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL SCRAM-512
+        /// authentication of your Kafka brokers.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public SourceAccessType Type
         {
@@ -66,16 +85,11 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property URI. 
         /// <para>
-        /// To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH",
-        /// "URI": "secretARN" } ]</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret,
-        /// you can use customer or service managed keys. When using a customer managed KMS key,
-        /// the Lambda execution role requires <code>kms:Decrypt</code> permissions.
+        /// The value for your chosen configuration in <code>Type</code>. For example: <code>"URI":
+        /// "arn:aws:secretsmanager:us-east-1:01234567890:secret:MyBrokerSecretName"</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=200)]
         public string URI
         {
             get { return this._uri; }

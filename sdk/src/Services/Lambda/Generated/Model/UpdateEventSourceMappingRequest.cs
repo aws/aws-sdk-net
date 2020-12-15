@@ -73,11 +73,13 @@ namespace Amazon.Lambda.Model
         private DestinationConfig _destinationConfig;
         private bool? _enabled;
         private string _functionName;
+        private List<string> _functionResponseTypes = new List<string>();
         private int? _maximumBatchingWindowInSeconds;
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
         private int? _parallelizationFactor;
         private List<SourceAccessConfiguration> _sourceAccessConfigurations = new List<SourceAccessConfiguration>();
+        private int? _tumblingWindowInSeconds;
         private string _uuid;
 
         /// <summary>
@@ -95,11 +97,16 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+        ///  <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000.
+        /// For FIFO queues the max is 10.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Self-Managed Apache Kafka</b> - Default 100. Max 10,000.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -213,10 +220,29 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FunctionResponseTypes. 
+        /// <para>
+        /// (Streams) A list of current response type enums applied to the event source mapping.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> FunctionResponseTypes
+        {
+            get { return this._functionResponseTypes; }
+            set { this._functionResponseTypes = value; }
+        }
+
+        // Check to see if FunctionResponseTypes property is set
+        internal bool IsSetFunctionResponseTypes()
+        {
+            return this._functionResponseTypes != null && this._functionResponseTypes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaximumBatchingWindowInSeconds. 
         /// <para>
-        /// (Streams) The maximum amount of time to gather records before invoking the function,
-        /// in seconds.
+        /// (Streams and SQS standard queues) The maximum amount of time to gather records before
+        /// invoking the function, in seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
@@ -295,23 +321,11 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SourceAccessConfigurations. 
         /// <para>
-        ///  (MQ) The Secrets Manager secret that stores your broker credentials. To store your
-        /// secret, use the following format: <code> { "username": "your username", "password":
-        /// "your password" }</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// To reference the secret, use the following format: <code>[ { "Type": "BASIC_AUTH",
-        /// "URI": "secretARN" } ]</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The value of <code>Type</code> is always <code>BASIC_AUTH</code>. To encrypt the secret,
-        /// you can use customer or service managed keys. When using a customer managed KMS key,
-        /// the Lambda execution role requires <code>kms:Decrypt</code> permissions.
+        /// An array of the authentication protocol, or the VPC components to secure your event
+        /// source.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=22)]
         public List<SourceAccessConfiguration> SourceAccessConfigurations
         {
             get { return this._sourceAccessConfigurations; }
@@ -322,6 +336,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetSourceAccessConfigurations()
         {
             return this._sourceAccessConfigurations != null && this._sourceAccessConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TumblingWindowInSeconds. 
+        /// <para>
+        /// (Streams) The duration of a processing window in seconds. The range is between 1 second
+        /// up to 15 minutes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=900)]
+        public int TumblingWindowInSeconds
+        {
+            get { return this._tumblingWindowInSeconds.GetValueOrDefault(); }
+            set { this._tumblingWindowInSeconds = value; }
+        }
+
+        // Check to see if TumblingWindowInSeconds property is set
+        internal bool IsSetTumblingWindowInSeconds()
+        {
+            return this._tumblingWindowInSeconds.HasValue; 
         }
 
         /// <summary>
