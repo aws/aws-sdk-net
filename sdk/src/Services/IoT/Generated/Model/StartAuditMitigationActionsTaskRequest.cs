@@ -84,7 +84,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property Target. 
         /// <para>
         /// Specifies the audit findings to which the mitigation actions are applied. You can
-        /// apply them to a type of audit check, to all findings from an audit, or to a speecific
+        /// apply them to a type of audit check, to all findings from an audit, or to a specific
         /// set of findings.
         /// </para>
         /// </summary>

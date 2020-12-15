@@ -65,6 +65,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
+            if (publicRequest.IsSetMetricName())
+                request.Parameters.Add("metricName", StringUtils.FromString(publicRequest.MetricName));
+            
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             request.ResourcePath = "/security-profiles";

@@ -41,7 +41,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property OverrideDynamicGroups. 
         /// <para>
         /// Specifies if this mitigation action can move the things that triggered the mitigation
-        /// action even if they are part of one or more dynamic things groups.
+        /// action even if they are part of one or more dynamic thing groups.
         /// </para>
         /// </summary>
         public bool OverrideDynamicGroups
@@ -60,8 +60,8 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property ThingGroupNames. 
         /// <para>
         /// The list of groups to which you want to add the things that triggered the mitigation
-        /// action. You can add a thing to a maximum of 10 groups, but you cannot add a thing
-        /// to more than one group in the same hierarchy.
+        /// action. You can add a thing to a maximum of 10 groups, but you can't add a thing to
+        /// more than one group in the same hierarchy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

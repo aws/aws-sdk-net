@@ -44,10 +44,10 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DayOfMonth. 
         /// <para>
-        /// The day of the month on which the scheduled audit takes place. Can be "1" through
-        /// "31" or "LAST". This field is required if the "frequency" parameter is set to "MONTHLY".
-        /// If days 29-31 are specified, and the month does not have that many days, the audit
-        /// takes place on the "LAST" day of the month.
+        /// The day of the month on which the scheduled audit takes place. This can be "1" through
+        /// "31" or "LAST". This field is required if the "frequency" parameter is set to <code>MONTHLY</code>.
+        /// If days 29 to 31 are specified, and the month doesn't have that many days, the audit
+        /// takes place on the <code>LAST</code> day of the month.
         /// </para>
         /// </summary>
         public string DayOfMonth
@@ -65,9 +65,10 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DayOfWeek. 
         /// <para>
-        /// The day of the week on which the scheduled audit takes place. Can be one of "SUN",
-        /// "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if the "frequency"
-        /// parameter is set to "WEEKLY" or "BIWEEKLY".
+        /// The day of the week on which the scheduled audit takes place, either <code>SUN</code>,
+        /// <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>,
+        /// or <code>SAT</code>. This field is required if the <code>frequency</code> parameter
+        /// is set to <code>WEEKLY</code> or <code>BIWEEKLY</code>.
         /// </para>
         /// </summary>
         public DayOfWeek DayOfWeek
@@ -85,8 +86,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Frequency. 
         /// <para>
-        /// How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY"
-        /// or "MONTHLY". The start time of each audit is determined by the system.
+        /// How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>,
+        /// <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined
+        /// by the system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

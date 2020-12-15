@@ -37,6 +37,14 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Paginator for GetBehaviorModelTrainingSummaries operation
+        ///</summary>
+        public IGetBehaviorModelTrainingSummariesPaginator GetBehaviorModelTrainingSummaries(GetBehaviorModelTrainingSummariesRequest request) 
+        {
+            return new GetBehaviorModelTrainingSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListActiveViolations operation
         ///</summary>
         public IListActiveViolationsPaginator ListActiveViolations(ListActiveViolationsRequest request) 
@@ -130,6 +138,30 @@ namespace Amazon.IoT.Model
         public IListCertificatesByCAPaginator ListCertificatesByCA(ListCertificatesByCARequest request) 
         {
             return new ListCertificatesByCAPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCustomMetrics operation
+        ///</summary>
+        public IListCustomMetricsPaginator ListCustomMetrics(ListCustomMetricsRequest request) 
+        {
+            return new ListCustomMetricsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDetectMitigationActionsExecutions operation
+        ///</summary>
+        public IListDetectMitigationActionsExecutionsPaginator ListDetectMitigationActionsExecutions(ListDetectMitigationActionsExecutionsRequest request) 
+        {
+            return new ListDetectMitigationActionsExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDetectMitigationActionsTasks operation
+        ///</summary>
+        public IListDetectMitigationActionsTasksPaginator ListDetectMitigationActionsTasks(ListDetectMitigationActionsTasksRequest request) 
+        {
+            return new ListDetectMitigationActionsTasksPaginator(this.client, request);
         }
 
         /// <summary>

@@ -39,7 +39,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AlertTargetArn. 
         /// <para>
-        /// The ARN of the notification target to which alerts are sent.
+        /// The Amazon Resource Name (ARN) of the notification target to which alerts are sent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

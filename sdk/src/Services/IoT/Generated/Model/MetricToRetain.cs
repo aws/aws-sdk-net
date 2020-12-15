@@ -58,7 +58,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property MetricDimension. 
         /// <para>
-        /// The dimension of a metric.
+        /// The dimension of a metric. This can't be used with custom metrics.
         /// </para>
         /// </summary>
         public MetricDimension MetricDimension

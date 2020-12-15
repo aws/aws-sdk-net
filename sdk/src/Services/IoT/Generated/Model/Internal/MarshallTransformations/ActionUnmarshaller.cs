@@ -130,6 +130,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.IotSiteWise = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kafka", targetDepth))
+                {
+                    var unmarshaller = KafkaActionUnmarshaller.Instance;
+                    unmarshalledObject.Kafka = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("kinesis", targetDepth))
                 {
                     var unmarshaller = KinesisActionUnmarshaller.Instance;

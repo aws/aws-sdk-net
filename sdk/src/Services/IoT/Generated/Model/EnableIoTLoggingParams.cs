@@ -39,7 +39,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property LogLevel. 
         /// <para>
-        /// Specifies the types of information to be logged.
+        /// Specifies the type of information to be logged.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArnForLogging. 
         /// <para>
-        /// The ARN of the IAM role used for logging.
+        /// The Amazon Resource Name (ARN) of the IAM role used for logging.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

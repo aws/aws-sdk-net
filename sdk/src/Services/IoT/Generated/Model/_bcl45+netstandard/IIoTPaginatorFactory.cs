@@ -27,6 +27,11 @@ namespace Amazon.IoT.Model
     {
 
         /// <summary>
+        /// Paginator for GetBehaviorModelTrainingSummaries operation
+        ///</summary>
+        IGetBehaviorModelTrainingSummariesPaginator GetBehaviorModelTrainingSummaries(GetBehaviorModelTrainingSummariesRequest request);
+
+        /// <summary>
         /// Paginator for ListActiveViolations operation
         ///</summary>
         IListActiveViolationsPaginator ListActiveViolations(ListActiveViolationsRequest request);
@@ -85,6 +90,21 @@ namespace Amazon.IoT.Model
         /// Paginator for ListCertificatesByCA operation
         ///</summary>
         IListCertificatesByCAPaginator ListCertificatesByCA(ListCertificatesByCARequest request);
+
+        /// <summary>
+        /// Paginator for ListCustomMetrics operation
+        ///</summary>
+        IListCustomMetricsPaginator ListCustomMetrics(ListCustomMetricsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDetectMitigationActionsExecutions operation
+        ///</summary>
+        IListDetectMitigationActionsExecutionsPaginator ListDetectMitigationActionsExecutions(ListDetectMitigationActionsExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDetectMitigationActionsTasks operation
+        ///</summary>
+        IListDetectMitigationActionsTasksPaginator ListDetectMitigationActionsTasks(ListDetectMitigationActionsTasksRequest request);
 
         /// <summary>
         /// Paginator for ListDimensions operation

@@ -39,7 +39,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action that you want to apply to the device cerrtificate. The only supported value
+        /// The action that you want to apply to the device certificate. The only supported value
         /// is <code>DEACTIVATE</code>.
         /// </para>
         /// </summary>

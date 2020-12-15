@@ -83,8 +83,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property PublishFindingToSnsParams. 
         /// <para>
-        /// Parameters to define a mitigation action that publishes findings to Amazon SNS. You
-        /// can implement your own custom actions in response to the Amazon SNS messages.
+        /// Parameters to define a mitigation action that publishes findings to Amazon Simple
+        /// Notification Service (Amazon SNS. You can implement your own custom actions in response
+        /// to the Amazon SNS messages.
         /// </para>
         /// </summary>
         public PublishFindingToSnsParams PublishFindingToSnsParams

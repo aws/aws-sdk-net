@@ -62,6 +62,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Count);
             }
 
+            if(requestObject.IsSetNumber())
+            {
+                context.Writer.WritePropertyName("number");
+                context.Writer.Write(requestObject.Number);
+            }
+
+            if(requestObject.IsSetNumbers())
+            {
+                context.Writer.WritePropertyName("numbers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectNumbersListValue in requestObject.Numbers)
+                {
+                        context.Writer.Write(requestObjectNumbersListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetPorts())
             {
                 context.Writer.WritePropertyName("ports");
@@ -69,6 +86,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 foreach(var requestObjectPortsListValue in requestObject.Ports)
                 {
                         context.Writer.Write(requestObjectPortsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetStrings())
+            {
+                context.Writer.WritePropertyName("strings");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStringsListValue in requestObject.Strings)
+                {
+                        context.Writer.Write(requestObjectStringsListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }

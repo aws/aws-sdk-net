@@ -893,6 +893,60 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type BehaviorCriteriaType.
+    /// </summary>
+    public class BehaviorCriteriaType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MACHINE_LEARNING for BehaviorCriteriaType
+        /// </summary>
+        public static readonly BehaviorCriteriaType MACHINE_LEARNING = new BehaviorCriteriaType("MACHINE_LEARNING");
+        /// <summary>
+        /// Constant STATIC for BehaviorCriteriaType
+        /// </summary>
+        public static readonly BehaviorCriteriaType STATIC = new BehaviorCriteriaType("STATIC");
+        /// <summary>
+        /// Constant STATISTICAL for BehaviorCriteriaType
+        /// </summary>
+        public static readonly BehaviorCriteriaType STATISTICAL = new BehaviorCriteriaType("STATISTICAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BehaviorCriteriaType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BehaviorCriteriaType FindValue(string value)
+        {
+            return FindValue<BehaviorCriteriaType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BehaviorCriteriaType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CACertificateStatus.
     /// </summary>
     public class CACertificateStatus : ConstantClass
@@ -1201,6 +1255,10 @@ namespace Amazon.IoT
         /// </summary>
         public static readonly ComparisonOperator InPortSet = new ComparisonOperator("in-port-set");
         /// <summary>
+        /// Constant InSet for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator InSet = new ComparisonOperator("in-set");
+        /// <summary>
         /// Constant LessThan for ComparisonOperator
         /// </summary>
         public static readonly ComparisonOperator LessThan = new ComparisonOperator("less-than");
@@ -1216,6 +1274,10 @@ namespace Amazon.IoT
         /// Constant NotInPortSet for ComparisonOperator
         /// </summary>
         public static readonly ComparisonOperator NotInPortSet = new ComparisonOperator("not-in-port-set");
+        /// <summary>
+        /// Constant NotInSet for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator NotInSet = new ComparisonOperator("not-in-set");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1246,6 +1308,118 @@ namespace Amazon.IoT
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ComparisonOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfidenceLevel.
+    /// </summary>
+    public class ConfidenceLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for ConfidenceLevel
+        /// </summary>
+        public static readonly ConfidenceLevel HIGH = new ConfidenceLevel("HIGH");
+        /// <summary>
+        /// Constant LOW for ConfidenceLevel
+        /// </summary>
+        public static readonly ConfidenceLevel LOW = new ConfidenceLevel("LOW");
+        /// <summary>
+        /// Constant MEDIUM for ConfidenceLevel
+        /// </summary>
+        public static readonly ConfidenceLevel MEDIUM = new ConfidenceLevel("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfidenceLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfidenceLevel FindValue(string value)
+        {
+            return FindValue<ConfidenceLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfidenceLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomMetricType.
+    /// </summary>
+    public class CustomMetricType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IpAddressList for CustomMetricType
+        /// </summary>
+        public static readonly CustomMetricType IpAddressList = new CustomMetricType("ip-address-list");
+        /// <summary>
+        /// Constant Number for CustomMetricType
+        /// </summary>
+        public static readonly CustomMetricType Number = new CustomMetricType("number");
+        /// <summary>
+        /// Constant NumberList for CustomMetricType
+        /// </summary>
+        public static readonly CustomMetricType NumberList = new CustomMetricType("number-list");
+        /// <summary>
+        /// Constant StringList for CustomMetricType
+        /// </summary>
+        public static readonly CustomMetricType StringList = new CustomMetricType("string-list");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomMetricType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomMetricType FindValue(string value)
+        {
+            return FindValue<CustomMetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomMetricType(string value)
         {
             return FindValue(value);
         }
@@ -1316,6 +1490,122 @@ namespace Amazon.IoT
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DayOfWeek(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DetectMitigationActionExecutionStatus.
+    /// </summary>
+    public class DetectMitigationActionExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for DetectMitigationActionExecutionStatus
+        /// </summary>
+        public static readonly DetectMitigationActionExecutionStatus FAILED = new DetectMitigationActionExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for DetectMitigationActionExecutionStatus
+        /// </summary>
+        public static readonly DetectMitigationActionExecutionStatus IN_PROGRESS = new DetectMitigationActionExecutionStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SKIPPED for DetectMitigationActionExecutionStatus
+        /// </summary>
+        public static readonly DetectMitigationActionExecutionStatus SKIPPED = new DetectMitigationActionExecutionStatus("SKIPPED");
+        /// <summary>
+        /// Constant SUCCESSFUL for DetectMitigationActionExecutionStatus
+        /// </summary>
+        public static readonly DetectMitigationActionExecutionStatus SUCCESSFUL = new DetectMitigationActionExecutionStatus("SUCCESSFUL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DetectMitigationActionExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DetectMitigationActionExecutionStatus FindValue(string value)
+        {
+            return FindValue<DetectMitigationActionExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DetectMitigationActionExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DetectMitigationActionsTaskStatus.
+    /// </summary>
+    public class DetectMitigationActionsTaskStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELED for DetectMitigationActionsTaskStatus
+        /// </summary>
+        public static readonly DetectMitigationActionsTaskStatus CANCELED = new DetectMitigationActionsTaskStatus("CANCELED");
+        /// <summary>
+        /// Constant FAILED for DetectMitigationActionsTaskStatus
+        /// </summary>
+        public static readonly DetectMitigationActionsTaskStatus FAILED = new DetectMitigationActionsTaskStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for DetectMitigationActionsTaskStatus
+        /// </summary>
+        public static readonly DetectMitigationActionsTaskStatus IN_PROGRESS = new DetectMitigationActionsTaskStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCESSFUL for DetectMitigationActionsTaskStatus
+        /// </summary>
+        public static readonly DetectMitigationActionsTaskStatus SUCCESSFUL = new DetectMitigationActionsTaskStatus("SUCCESSFUL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DetectMitigationActionsTaskStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DetectMitigationActionsTaskStatus FindValue(string value)
+        {
+            return FindValue<DetectMitigationActionsTaskStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DetectMitigationActionsTaskStatus(string value)
         {
             return FindValue(value);
         }
@@ -2285,6 +2575,60 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type ModelStatus.
+    /// </summary>
+    public class ModelStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus ACTIVE = new ModelStatus("ACTIVE");
+        /// <summary>
+        /// Constant EXPIRED for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus EXPIRED = new ModelStatus("EXPIRED");
+        /// <summary>
+        /// Constant PENDING_BUILD for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus PENDING_BUILD = new ModelStatus("PENDING_BUILD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelStatus FindValue(string value)
+        {
+            return FindValue<ModelStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OTAUpdateStatus.
     /// </summary>
     public class OTAUpdateStatus : ConstantClass
@@ -2938,6 +3282,10 @@ namespace Amazon.IoT
     public class TopicRuleDestinationStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DELETING for TopicRuleDestinationStatus
+        /// </summary>
+        public static readonly TopicRuleDestinationStatus DELETING = new TopicRuleDestinationStatus("DELETING");
         /// <summary>
         /// Constant DISABLED for TopicRuleDestinationStatus
         /// </summary>

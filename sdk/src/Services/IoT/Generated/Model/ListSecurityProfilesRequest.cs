@@ -30,20 +30,28 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSecurityProfiles operation.
-    /// Lists the Device Defender security profiles you have created. You can use filters
-    /// to list only those security profiles associated with a thing group or only those associated
-    /// with your account.
+    /// Lists the Device Defender security profiles you've created. You can filter security
+    /// profiles by dimension or custom metric.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  <code>dimensionName</code> and <code>metricName</code> cannot be used in the same
+    /// request.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListSecurityProfilesRequest : AmazonIoTRequest
     {
         private string _dimensionName;
         private int? _maxResults;
+        private string _metricName;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property DimensionName. 
         /// <para>
         /// A filter to limit results to the security profiles that use the defined dimension.
+        /// Cannot be used with <code>metricName</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -76,6 +84,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricName. 
+        /// <para>
+        ///  The name of the custom metric. Cannot be used with <code>dimensionName</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string MetricName
+        {
+            get { return this._metricName; }
+            set { this._metricName = value; }
+        }
+
+        // Check to see if MetricName property is set
+        internal bool IsSetMetricName()
+        {
+            return this._metricName != null;
         }
 
         /// <summary>

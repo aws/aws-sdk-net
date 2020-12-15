@@ -37,6 +37,7 @@ namespace Amazon.IoT.Model
         private MetricValue _metricValue;
         private string _securityProfileName;
         private string _thingName;
+        private ViolationEventAdditionalInfo _violationEventAdditionalInfo;
         private DateTime? _violationEventTime;
         private ViolationEventType _violationEventType;
         private string _violationId;
@@ -44,7 +45,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Behavior. 
         /// <para>
-        /// The behavior which was violated.
+        /// The behavior that was violated.
         /// </para>
         /// </summary>
         public Behavior Behavior
@@ -113,6 +114,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetThingName()
         {
             return this._thingName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ViolationEventAdditionalInfo. 
+        /// <para>
+        ///  The details of a violation event. 
+        /// </para>
+        /// </summary>
+        public ViolationEventAdditionalInfo ViolationEventAdditionalInfo
+        {
+            get { return this._violationEventAdditionalInfo; }
+            set { this._violationEventAdditionalInfo = value; }
+        }
+
+        // Check to see if ViolationEventAdditionalInfo property is set
+        internal bool IsSetViolationEventAdditionalInfo()
+        {
+            return this._violationEventAdditionalInfo != null;
         }
 
         /// <summary>

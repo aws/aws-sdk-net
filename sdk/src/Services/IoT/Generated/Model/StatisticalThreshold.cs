@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// A statistical ranking (percentile) which indicates a threshold value by which a behavior
+    /// A statistical ranking (percentile) that indicates a threshold value by which a behavior
     /// is determined to be in compliance or in violation of the behavior.
     /// </summary>
     public partial class StatisticalThreshold
@@ -39,7 +39,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
-        /// The percentile which resolves to a threshold value by which compliance with a behavior
+        /// The percentile that resolves to a threshold value by which compliance with a behavior
         /// is determined. Metrics are collected over the specified period (<code>durationSeconds</code>)
         /// from all reporting devices in your account and statistical ranks are calculated. Then,
         /// the measurements from a device are collected over the same period. If the accumulated

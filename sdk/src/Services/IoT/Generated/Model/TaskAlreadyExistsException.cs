@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// This exception occurs if you attempt to start a task with the same task-id as an existing
-    /// task but with a different clientRequestToken.
+    /// This exception occurs if you attempt to start a task with the same task-id as an
+    /// existing task but with a different clientRequestToken.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

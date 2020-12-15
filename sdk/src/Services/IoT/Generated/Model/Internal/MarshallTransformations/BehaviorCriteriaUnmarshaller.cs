@@ -88,6 +88,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.DurationSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mlDetectionConfig", targetDepth))
+                {
+                    var unmarshaller = MachineLearningDetectionConfigUnmarshaller.Instance;
+                    unmarshalledObject.MlDetectionConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("statisticalThreshold", targetDepth))
                 {
                     var unmarshaller = StatisticalThresholdUnmarshaller.Instance;

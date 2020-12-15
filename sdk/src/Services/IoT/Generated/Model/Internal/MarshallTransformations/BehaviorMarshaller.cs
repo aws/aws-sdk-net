@@ -79,6 +79,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetSuppressAlerts())
+            {
+                context.Writer.WritePropertyName("suppressAlerts");
+                context.Writer.Write(requestObject.SuppressAlerts);
+            }
+
         }
 
         /// <summary>

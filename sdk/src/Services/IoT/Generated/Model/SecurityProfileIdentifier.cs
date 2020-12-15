@@ -58,7 +58,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name you have given to the security profile.
+        /// The name you've given to the security profile.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

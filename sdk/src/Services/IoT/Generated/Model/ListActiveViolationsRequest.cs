@@ -34,10 +34,48 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListActiveViolationsRequest : AmazonIoTRequest
     {
+        private BehaviorCriteriaType _behaviorCriteriaType;
+        private bool? _listSuppressedAlerts;
         private int? _maxResults;
         private string _nextToken;
         private string _securityProfileName;
         private string _thingName;
+
+        /// <summary>
+        /// Gets and sets the property BehaviorCriteriaType. 
+        /// <para>
+        ///  The criteria for a behavior. 
+        /// </para>
+        /// </summary>
+        public BehaviorCriteriaType BehaviorCriteriaType
+        {
+            get { return this._behaviorCriteriaType; }
+            set { this._behaviorCriteriaType = value; }
+        }
+
+        // Check to see if BehaviorCriteriaType property is set
+        internal bool IsSetBehaviorCriteriaType()
+        {
+            return this._behaviorCriteriaType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListSuppressedAlerts. 
+        /// <para>
+        ///  A list of all suppressed alerts. 
+        /// </para>
+        /// </summary>
+        public bool ListSuppressedAlerts
+        {
+            get { return this._listSuppressedAlerts.GetValueOrDefault(); }
+            set { this._listSuppressedAlerts = value; }
+        }
+
+        // Check to see if ListSuppressedAlerts property is set
+        internal bool IsSetListSuppressedAlerts()
+        {
+            return this._listSuppressedAlerts.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

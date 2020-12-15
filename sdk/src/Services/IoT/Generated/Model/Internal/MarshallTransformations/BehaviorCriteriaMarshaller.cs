@@ -69,6 +69,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DurationSeconds);
             }
 
+            if(requestObject.IsSetMlDetectionConfig())
+            {
+                context.Writer.WritePropertyName("mlDetectionConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MachineLearningDetectionConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.MlDetectionConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStatisticalThreshold())
             {
                 context.Writer.WritePropertyName("statisticalThreshold");

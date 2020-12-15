@@ -37,6 +37,7 @@ namespace Amazon.IoT.Model
         private string _metric;
         private MetricDimension _metricDimension;
         private string _name;
+        private bool? _suppressAlerts;
 
         /// <summary>
         /// Gets and sets the property Criteria. 
@@ -78,8 +79,9 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property MetricDimension. 
         /// <para>
         /// The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code>
-        /// dimension, you can narrow down the scope of the metric only to MQTT topics whose name
-        /// match the pattern specified in the dimension.
+        /// dimension, you can narrow down the scope of the metric to only MQTT topics where the
+        /// name matches the pattern specified in the dimension. This can't be used with custom
+        /// metrics.
         /// </para>
         /// </summary>
         public MetricDimension MetricDimension
@@ -97,7 +99,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name you have given to the behavior.
+        /// The name you've given to the behavior.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -111,6 +113,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuppressAlerts. 
+        /// <para>
+        ///  Suppresses alerts. 
+        /// </para>
+        /// </summary>
+        public bool SuppressAlerts
+        {
+            get { return this._suppressAlerts.GetValueOrDefault(); }
+            set { this._suppressAlerts = value; }
+        }
+
+        // Check to see if SuppressAlerts property is set
+        internal bool IsSetSuppressAlerts()
+        {
+            return this._suppressAlerts.HasValue; 
         }
 
     }

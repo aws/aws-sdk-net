@@ -39,7 +39,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN (Amazon resource name) of the created dimension.
+        /// The Amazon Resource Name (ARN) of the created dimension.
         /// </para>
         /// </summary>
         public string Arn

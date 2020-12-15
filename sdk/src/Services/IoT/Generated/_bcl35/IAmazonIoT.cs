@@ -689,8 +689,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Cancels an audit that is in progress. The audit can be either scheduled or on-demand.
-        /// If the audit is not in progress, an "InvalidRequestException" occurs.
+        /// Cancels an audit that is in progress. The audit can be either scheduled or on demand.
+        /// If the audit isn't in progress, an "InvalidRequestException" occurs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelAuditTask service method.</param>
         /// 
@@ -852,6 +852,58 @@ namespace Amazon.IoT
         /// <returns>Returns a  CancelCertificateTransferResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelCertificateTransfer">REST API Reference for CancelCertificateTransfer Operation</seealso>
         CancelCertificateTransferResponse EndCancelCertificateTransfer(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CancelDetectMitigationActionsTask
+
+
+        /// <summary>
+        /// Cancels a Device Defender ML Detect mitigation action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelDetectMitigationActionsTask service method.</param>
+        /// 
+        /// <returns>The response from the CancelDetectMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelDetectMitigationActionsTask">REST API Reference for CancelDetectMitigationActionsTask Operation</seealso>
+        CancelDetectMitigationActionsTaskResponse CancelDetectMitigationActionsTask(CancelDetectMitigationActionsTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelDetectMitigationActionsTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelDetectMitigationActionsTask operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelDetectMitigationActionsTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelDetectMitigationActionsTask">REST API Reference for CancelDetectMitigationActionsTask Operation</seealso>
+        IAsyncResult BeginCancelDetectMitigationActionsTask(CancelDetectMitigationActionsTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelDetectMitigationActionsTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelDetectMitigationActionsTask.</param>
+        /// 
+        /// <returns>Returns a  CancelDetectMitigationActionsTaskResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelDetectMitigationActionsTask">REST API Reference for CancelDetectMitigationActionsTask Operation</seealso>
+        CancelDetectMitigationActionsTaskResponse EndCancelDetectMitigationActionsTask(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1554,6 +1606,61 @@ namespace Amazon.IoT
         /// <returns>Returns a  CreateCertificateFromCsrResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCertificateFromCsr">REST API Reference for CreateCertificateFromCsr Operation</seealso>
         CreateCertificateFromCsrResponse EndCreateCertificateFromCsr(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateCustomMetric
+
+
+        /// <summary>
+        /// Use this API to define a Custom Metric published by your devices to Device Defender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomMetric service method.</param>
+        /// 
+        /// <returns>The response from the CreateCustomMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCustomMetric">REST API Reference for CreateCustomMetric Operation</seealso>
+        CreateCustomMetricResponse CreateCustomMetric(CreateCustomMetricRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCustomMetric operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomMetric operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCustomMetric
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCustomMetric">REST API Reference for CreateCustomMetric Operation</seealso>
+        IAsyncResult BeginCreateCustomMetric(CreateCustomMetricRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCustomMetric operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCustomMetric.</param>
+        /// 
+        /// <returns>Returns a  CreateCustomMetricResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCustomMetric">REST API Reference for CreateCustomMetric Operation</seealso>
+        CreateCustomMetricResponse EndCreateCustomMetric(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3430,6 +3537,65 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeleteCustomMetric
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// Before you can delete a custom metric, you must first remove the custom metric from
+        /// all security profiles it's a part of. The security profile associated with the custom
+        /// metric can be found using the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html">ListSecurityProfiles</a>
+        /// API with <code>metricName</code> set to your custom metric name.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Deletes a Device Defender detect custom metric. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomMetric service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCustomMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCustomMetric">REST API Reference for DeleteCustomMetric Operation</seealso>
+        DeleteCustomMetricResponse DeleteCustomMetric(DeleteCustomMetricRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCustomMetric operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomMetric operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCustomMetric
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCustomMetric">REST API Reference for DeleteCustomMetric Operation</seealso>
+        IAsyncResult BeginDeleteCustomMetric(DeleteCustomMetricRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCustomMetric operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCustomMetric.</param>
+        /// 
+        /// <returns>Returns a  DeleteCustomMetricResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCustomMetric">REST API Reference for DeleteCustomMetric Operation</seealso>
+        DeleteCustomMetricResponse EndDeleteCustomMetric(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteDimension
 
 
@@ -4968,7 +5134,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about a single audit finding. Properties include the reason for noncompliance,
-        /// the severity of the issue, and when the audit that returned the finding was started.
+        /// the severity of the issue, and the start time when the audit that returned the finding.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAuditFinding service method.</param>
         /// 
@@ -5427,6 +5593,58 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DescribeCustomMetric
+
+
+        /// <summary>
+        /// Gets information about a Device Defender detect custom metric.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomMetric service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCustomMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCustomMetric">REST API Reference for DescribeCustomMetric Operation</seealso>
+        DescribeCustomMetricResponse DescribeCustomMetric(DescribeCustomMetricRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCustomMetric operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomMetric operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCustomMetric
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCustomMetric">REST API Reference for DescribeCustomMetric Operation</seealso>
+        IAsyncResult BeginDescribeCustomMetric(DescribeCustomMetricRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCustomMetric operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCustomMetric.</param>
+        /// 
+        /// <returns>Returns a  DescribeCustomMetricResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCustomMetric">REST API Reference for DescribeCustomMetric Operation</seealso>
+        DescribeCustomMetricResponse EndDescribeCustomMetric(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeDefaultAuthorizer
 
 
@@ -5482,6 +5700,58 @@ namespace Amazon.IoT
         /// <returns>Returns a  DescribeDefaultAuthorizerResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDefaultAuthorizer">REST API Reference for DescribeDefaultAuthorizer Operation</seealso>
         DescribeDefaultAuthorizerResponse EndDescribeDefaultAuthorizer(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeDetectMitigationActionsTask
+
+
+        /// <summary>
+        /// Gets information about a Device Defender ML Detect mitigation action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDetectMitigationActionsTask service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDetectMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDetectMitigationActionsTask">REST API Reference for DescribeDetectMitigationActionsTask Operation</seealso>
+        DescribeDetectMitigationActionsTaskResponse DescribeDetectMitigationActionsTask(DescribeDetectMitigationActionsTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDetectMitigationActionsTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDetectMitigationActionsTask operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDetectMitigationActionsTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDetectMitigationActionsTask">REST API Reference for DescribeDetectMitigationActionsTask Operation</seealso>
+        IAsyncResult BeginDescribeDetectMitigationActionsTask(DescribeDetectMitigationActionsTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDetectMitigationActionsTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDetectMitigationActionsTask.</param>
+        /// 
+        /// <returns>Returns a  DescribeDetectMitigationActionsTaskResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDetectMitigationActionsTask">REST API Reference for DescribeDetectMitigationActionsTask Operation</seealso>
+        DescribeDetectMitigationActionsTaskResponse EndDescribeDetectMitigationActionsTask(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6934,6 +7204,58 @@ namespace Amazon.IoT
         /// <returns>Returns a  EnableTopicRuleResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/EnableTopicRule">REST API Reference for EnableTopicRule Operation</seealso>
         EnableTopicRuleResponse EndEnableTopicRule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetBehaviorModelTrainingSummaries
+
+
+        /// <summary>
+        /// Returns a Device Defender's ML Detect Security Profile training model's status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBehaviorModelTrainingSummaries service method.</param>
+        /// 
+        /// <returns>The response from the GetBehaviorModelTrainingSummaries service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetBehaviorModelTrainingSummaries">REST API Reference for GetBehaviorModelTrainingSummaries Operation</seealso>
+        GetBehaviorModelTrainingSummariesResponse GetBehaviorModelTrainingSummaries(GetBehaviorModelTrainingSummariesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBehaviorModelTrainingSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBehaviorModelTrainingSummaries operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBehaviorModelTrainingSummaries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetBehaviorModelTrainingSummaries">REST API Reference for GetBehaviorModelTrainingSummaries Operation</seealso>
+        IAsyncResult BeginGetBehaviorModelTrainingSummaries(GetBehaviorModelTrainingSummariesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBehaviorModelTrainingSummaries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBehaviorModelTrainingSummaries.</param>
+        /// 
+        /// <returns>Returns a  GetBehaviorModelTrainingSummariesResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetBehaviorModelTrainingSummaries">REST API Reference for GetBehaviorModelTrainingSummaries Operation</seealso>
+        GetBehaviorModelTrainingSummariesResponse EndGetBehaviorModelTrainingSummaries(IAsyncResult asyncResult);
 
         #endregion
         
@@ -8504,6 +8826,153 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListCustomMetrics
+
+
+        /// <summary>
+        /// Lists your Device Defender detect custom metrics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomMetrics service method.</param>
+        /// 
+        /// <returns>The response from the ListCustomMetrics service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCustomMetrics">REST API Reference for ListCustomMetrics Operation</seealso>
+        ListCustomMetricsResponse ListCustomMetrics(ListCustomMetricsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCustomMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomMetrics operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCustomMetrics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCustomMetrics">REST API Reference for ListCustomMetrics Operation</seealso>
+        IAsyncResult BeginListCustomMetrics(ListCustomMetricsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCustomMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCustomMetrics.</param>
+        /// 
+        /// <returns>Returns a  ListCustomMetricsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCustomMetrics">REST API Reference for ListCustomMetrics Operation</seealso>
+        ListCustomMetricsResponse EndListCustomMetrics(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDetectMitigationActionsExecutions
+
+
+        /// <summary>
+        /// Lists mitigation actions executions for a Device Defender ML Detect Security Profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDetectMitigationActionsExecutions service method.</param>
+        /// 
+        /// <returns>The response from the ListDetectMitigationActionsExecutions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsExecutions">REST API Reference for ListDetectMitigationActionsExecutions Operation</seealso>
+        ListDetectMitigationActionsExecutionsResponse ListDetectMitigationActionsExecutions(ListDetectMitigationActionsExecutionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDetectMitigationActionsExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDetectMitigationActionsExecutions operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDetectMitigationActionsExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsExecutions">REST API Reference for ListDetectMitigationActionsExecutions Operation</seealso>
+        IAsyncResult BeginListDetectMitigationActionsExecutions(ListDetectMitigationActionsExecutionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDetectMitigationActionsExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDetectMitigationActionsExecutions.</param>
+        /// 
+        /// <returns>Returns a  ListDetectMitigationActionsExecutionsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsExecutions">REST API Reference for ListDetectMitigationActionsExecutions Operation</seealso>
+        ListDetectMitigationActionsExecutionsResponse EndListDetectMitigationActionsExecutions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDetectMitigationActionsTasks
+
+
+        /// <summary>
+        /// List of Device Defender ML Detect mitigation actions tasks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDetectMitigationActionsTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListDetectMitigationActionsTasks service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsTasks">REST API Reference for ListDetectMitigationActionsTasks Operation</seealso>
+        ListDetectMitigationActionsTasksResponse ListDetectMitigationActionsTasks(ListDetectMitigationActionsTasksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDetectMitigationActionsTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDetectMitigationActionsTasks operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDetectMitigationActionsTasks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsTasks">REST API Reference for ListDetectMitigationActionsTasks Operation</seealso>
+        IAsyncResult BeginListDetectMitigationActionsTasks(ListDetectMitigationActionsTasksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDetectMitigationActionsTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDetectMitigationActionsTasks.</param>
+        /// 
+        /// <returns>Returns a  ListDetectMitigationActionsTasksResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsTasks">REST API Reference for ListDetectMitigationActionsTasks Operation</seealso>
+        ListDetectMitigationActionsTasksResponse EndListDetectMitigationActionsTasks(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListDimensions
 
 
@@ -9621,9 +10090,15 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the Device Defender security profiles you have created. You can use filters
-        /// to list only those security profiles associated with a thing group or only those associated
-        /// with your account.
+        /// Lists the Device Defender security profiles you've created. You can filter security
+        /// profiles by dimension or custom metric.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>dimensionName</code> and <code>metricName</code> cannot be used in the same
+        /// request.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfiles service method.</param>
         /// 
@@ -11675,8 +12150,8 @@ namespace Amazon.IoT
         /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TaskAlreadyExistsException">
-        /// This exception occurs if you attempt to start a task with the same task-id as an existing
-        /// task but with a different clientRequestToken.
+        /// This exception occurs if you attempt to start a task with the same task-id as an
+        /// existing task but with a different clientRequestToken.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ThrottlingException">
         /// The rate exceeds the limit.
@@ -11709,6 +12184,62 @@ namespace Amazon.IoT
         /// <returns>Returns a  StartAuditMitigationActionsTaskResult from IoT.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartAuditMitigationActionsTask">REST API Reference for StartAuditMitigationActionsTask Operation</seealso>
         StartAuditMitigationActionsTaskResponse EndStartAuditMitigationActionsTask(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartDetectMitigationActionsTask
+
+
+        /// <summary>
+        /// Starts a Device Defender ML Detect mitigation actions task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDetectMitigationActionsTask service method.</param>
+        /// 
+        /// <returns>The response from the StartDetectMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.TaskAlreadyExistsException">
+        /// This exception occurs if you attempt to start a task with the same task-id as an
+        /// existing task but with a different clientRequestToken.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartDetectMitigationActionsTask">REST API Reference for StartDetectMitigationActionsTask Operation</seealso>
+        StartDetectMitigationActionsTaskResponse StartDetectMitigationActionsTask(StartDetectMitigationActionsTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDetectMitigationActionsTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDetectMitigationActionsTask operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDetectMitigationActionsTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartDetectMitigationActionsTask">REST API Reference for StartDetectMitigationActionsTask Operation</seealso>
+        IAsyncResult BeginStartDetectMitigationActionsTask(StartDetectMitigationActionsTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartDetectMitigationActionsTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartDetectMitigationActionsTask.</param>
+        /// 
+        /// <returns>Returns a  StartDetectMitigationActionsTaskResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartDetectMitigationActionsTask">REST API Reference for StartDetectMitigationActionsTask Operation</seealso>
+        StartDetectMitigationActionsTaskResponse EndStartDetectMitigationActionsTask(IAsyncResult asyncResult);
 
         #endregion
         
@@ -12636,12 +13167,64 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  UpdateCustomMetric
+
+
+        /// <summary>
+        /// Updates a Device Defender detect custom metric.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomMetric service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCustomMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCustomMetric">REST API Reference for UpdateCustomMetric Operation</seealso>
+        UpdateCustomMetricResponse UpdateCustomMetric(UpdateCustomMetricRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCustomMetric operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomMetric operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCustomMetric
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCustomMetric">REST API Reference for UpdateCustomMetric Operation</seealso>
+        IAsyncResult BeginUpdateCustomMetric(UpdateCustomMetricRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCustomMetric operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCustomMetric.</param>
+        /// 
+        /// <returns>Returns a  UpdateCustomMetricResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCustomMetric">REST API Reference for UpdateCustomMetric Operation</seealso>
+        UpdateCustomMetricResponse EndUpdateCustomMetric(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateDimension
 
 
         /// <summary>
         /// Updates the definition for a dimension. You cannot change the type of a dimension
-        /// after it is created (you can delete it and re-create it).
+        /// after it is created (you can delete it and recreate it).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDimension service method.</param>
         /// 

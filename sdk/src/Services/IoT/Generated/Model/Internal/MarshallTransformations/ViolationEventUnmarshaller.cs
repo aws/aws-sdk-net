@@ -88,6 +88,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.ThingName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("violationEventAdditionalInfo", targetDepth))
+                {
+                    var unmarshaller = ViolationEventAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.ViolationEventAdditionalInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("violationEventTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

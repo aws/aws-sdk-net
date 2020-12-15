@@ -76,10 +76,28 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("number", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Number = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("numbers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
+                    unmarshalledObject.Numbers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ports", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.Ports = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("strings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Strings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

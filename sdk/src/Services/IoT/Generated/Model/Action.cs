@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         private IotAnalyticsAction _iotAnalytics;
         private IotEventsAction _iotEvents;
         private IotSiteWiseAction _iotSiteWise;
+        private KafkaAction _kafka;
         private KinesisAction _kinesis;
         private LambdaAction _lambda;
         private RepublishAction _republish;
@@ -252,6 +253,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetIotSiteWise()
         {
             return this._iotSiteWise != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Kafka. 
+        /// <para>
+        /// Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed
+        /// Apache Kafka cluster.
+        /// </para>
+        /// </summary>
+        public KafkaAction Kafka
+        {
+            get { return this._kafka; }
+            set { this._kafka = value; }
+        }
+
+        // Check to see if Kafka property is set
+        internal bool IsSetKafka()
+        {
+            return this._kafka != null;
         }
 
         /// <summary>

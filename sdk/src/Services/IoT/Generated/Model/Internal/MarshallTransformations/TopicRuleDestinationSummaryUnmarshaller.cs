@@ -70,10 +70,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("createdAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("httpUrlSummary", targetDepth))
                 {
                     var unmarshaller = HttpUrlDestinationSummaryUnmarshaller.Instance;
                     unmarshalledObject.HttpUrlSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastUpdatedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
@@ -86,6 +98,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vpcDestinationSummary", targetDepth))
+                {
+                    var unmarshaller = VpcDestinationSummaryUnmarshaller.Instance;
+                    unmarshalledObject.VpcDestinationSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

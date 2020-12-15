@@ -35,7 +35,10 @@ namespace Amazon.IoT.Model
     {
         private List<string> _cidrs = new List<string>();
         private long? _count;
+        private double? _number;
+        private List<double> _numbers = new List<double>();
         private List<int> _ports = new List<int>();
+        private List<string> _strings = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Cidrs. 
@@ -77,6 +80,42 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Number. 
+        /// <para>
+        ///  The numeral value of a metric. 
+        /// </para>
+        /// </summary>
+        public double Number
+        {
+            get { return this._number.GetValueOrDefault(); }
+            set { this._number = value; }
+        }
+
+        // Check to see if Number property is set
+        internal bool IsSetNumber()
+        {
+            return this._number.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Numbers. 
+        /// <para>
+        ///  The numeral values of a metric. 
+        /// </para>
+        /// </summary>
+        public List<double> Numbers
+        {
+            get { return this._numbers; }
+            set { this._numbers = value; }
+        }
+
+        // Check to see if Numbers property is set
+        internal bool IsSetNumbers()
+        {
+            return this._numbers != null && this._numbers.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Ports. 
         /// <para>
         /// If the <code>comparisonOperator</code> calls for a set of ports, use this to specify
@@ -93,6 +132,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetPorts()
         {
             return this._ports != null && this._ports.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Strings. 
+        /// <para>
+        ///  The string values of a metric. 
+        /// </para>
+        /// </summary>
+        public List<string> Strings
+        {
+            get { return this._strings; }
+            set { this._strings = value; }
+        }
+
+        // Check to see if Strings property is set
+        internal bool IsSetStrings()
+        {
+            return this._strings != null && this._strings.Count > 0; 
         }
 
     }

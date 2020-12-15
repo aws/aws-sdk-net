@@ -34,9 +34,12 @@ namespace Amazon.IoT.Model
     public partial class TopicRuleDestinationSummary
     {
         private string _arn;
+        private DateTime? _createdAt;
         private HttpUrlDestinationSummary _httpUrlSummary;
+        private DateTime? _lastUpdatedAt;
         private TopicRuleDestinationStatus _status;
         private string _statusReason;
+        private VpcDestinationSummary _vpcDestinationSummary;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -57,6 +60,24 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The date and time when the topic rule destination was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedAt
+        {
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property HttpUrlSummary. 
         /// <para>
         /// Information about the HTTP URL.
@@ -72,6 +93,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetHttpUrlSummary()
         {
             return this._httpUrlSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdatedAt. 
+        /// <para>
+        /// The date and time when the topic rule destination was last updated.
+        /// </para>
+        /// </summary>
+        public DateTime LastUpdatedAt
+        {
+            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            set { this._lastUpdatedAt = value; }
+        }
+
+        // Check to see if LastUpdatedAt property is set
+        internal bool IsSetLastUpdatedAt()
+        {
+            return this._lastUpdatedAt.HasValue; 
         }
 
         /// <summary>
@@ -134,6 +173,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetStatusReason()
         {
             return this._statusReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcDestinationSummary. 
+        /// <para>
+        /// Information about the virtual private cloud (VPC) connection.
+        /// </para>
+        /// </summary>
+        public VpcDestinationSummary VpcDestinationSummary
+        {
+            get { return this._vpcDestinationSummary; }
+            set { this._vpcDestinationSummary = value; }
+        }
+
+        // Check to see if VpcDestinationSummary property is set
+        internal bool IsSetVpcDestinationSummary()
+        {
+            return this._vpcDestinationSummary != null;
         }
 
     }

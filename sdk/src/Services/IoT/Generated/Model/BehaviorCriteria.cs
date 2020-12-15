@@ -37,6 +37,7 @@ namespace Amazon.IoT.Model
         private int? _consecutiveDatapointsToAlarm;
         private int? _consecutiveDatapointsToClear;
         private int? _durationSeconds;
+        private MachineLearningDetectionConfig _mlDetectionConfig;
         private StatisticalThreshold _statisticalThreshold;
         private MetricValue _value;
 
@@ -44,8 +45,28 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property ComparisonOperator. 
         /// <para>
         /// The operator that relates the thing measured (<code>metric</code>) to the criteria
-        /// (containing a <code>value</code> or <code>statisticalThreshold</code>).
+        /// (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators
+        /// include:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>,
+        /// and <code>greater-than-equals</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ComparisonOperator ComparisonOperator
         {
@@ -104,11 +125,12 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property DurationSeconds. 
         /// <para>
         /// Use this to specify the time duration over which the behavior is evaluated, for those
-        /// criteria which have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>).
+        /// criteria that have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>).
         /// For a <code>statisticalThreshhold</code> metric comparison, measurements from all
         /// devices are accumulated over this time duration before being used to calculate percentiles,
         /// and later, measurements from an individual device are also accumulated over this time
-        /// duration before being given a percentile rank.
+        /// duration before being given a percentile rank. Cannot be used with list-based metric
+        /// datatypes.
         /// </para>
         /// </summary>
         public int DurationSeconds
@@ -124,9 +146,27 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MlDetectionConfig. 
+        /// <para>
+        ///  The configuration of an ML Detect 
+        /// </para>
+        /// </summary>
+        public MachineLearningDetectionConfig MlDetectionConfig
+        {
+            get { return this._mlDetectionConfig; }
+            set { this._mlDetectionConfig = value; }
+        }
+
+        // Check to see if MlDetectionConfig property is set
+        internal bool IsSetMlDetectionConfig()
+        {
+            return this._mlDetectionConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StatisticalThreshold. 
         /// <para>
-        /// A statistical ranking (percentile) which indicates a threshold value by which a behavior
+        /// A statistical ranking (percentile)that indicates a threshold value by which a behavior
         /// is determined to be in compliance or in violation of the behavior.
         /// </para>
         /// </summary>

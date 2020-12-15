@@ -52,7 +52,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot disable a check if it is used by any scheduled audit. You must first delete
+        /// You cannot disable a check if it's used by any scheduled audit. You must first delete
         /// the check from the scheduled audit or delete the scheduled audit itself.
         /// </para>
         ///  
@@ -94,9 +94,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role that grants permission to AWS IoT to access information about
-        /// your devices, policies, certificates and other items as required when performing an
-        /// audit.
+        /// The Amazon Resource Name (ARN) of the role that grants permission to AWS IoT to access
+        /// information about your devices, policies, certificates, and other items as required
+        /// when performing an audit.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

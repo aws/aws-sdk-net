@@ -166,6 +166,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetKafka())
+            {
+                context.Writer.WritePropertyName("kafka");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KafkaActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Kafka, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetKinesis())
             {
                 context.Writer.WritePropertyName("kinesis");

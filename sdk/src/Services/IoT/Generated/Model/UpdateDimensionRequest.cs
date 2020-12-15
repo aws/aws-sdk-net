@@ -31,7 +31,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the UpdateDimension operation.
     /// Updates the definition for a dimension. You cannot change the type of a dimension
-    /// after it is created (you can delete it and re-create it).
+    /// after it is created (you can delete it and recreate it).
     /// </summary>
     public partial class UpdateDimensionRequest : AmazonIoTRequest
     {

@@ -30,8 +30,8 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelAuditTask operation.
-    /// Cancels an audit that is in progress. The audit can be either scheduled or on-demand.
-    /// If the audit is not in progress, an "InvalidRequestException" occurs.
+    /// Cancels an audit that is in progress. The audit can be either scheduled or on demand.
+    /// If the audit isn't in progress, an "InvalidRequestException" occurs.
     /// </summary>
     public partial class CancelAuditTaskRequest : AmazonIoTRequest
     {

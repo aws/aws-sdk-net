@@ -43,9 +43,10 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DayOfMonth. 
         /// <para>
-        /// The day of the month on which the scheduled audit takes place. Will be "1" through
-        /// "31" or "LAST". If days 29-31 are specified, and the month does not have that many
-        /// days, the audit takes place on the "LAST" day of the month.
+        /// The day of the month on which the scheduled audit takes place. This is will be <code>1</code>
+        /// through <code>31</code> or <code>LAST</code>. If days <code>29</code>-<code>31</code>
+        /// are specified, and the month does not have that many days, the audit takes place on
+        /// the <code>LAST</code> day of the month.
         /// </para>
         /// </summary>
         public string DayOfMonth
@@ -63,8 +64,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DayOfWeek. 
         /// <para>
-        /// The day of the week on which the scheduled audit takes place. One of "SUN", "MON",
-        /// "TUE", "WED", "THU", "FRI", or "SAT".
+        /// The day of the week on which the scheduled audit takes place, either one of <code>SUN</code>,
+        /// <code>MON</code>, <code>TUE</code>, <code>WED</code>, <code>THU</code>, <code>FRI</code>,
+        /// or <code>SAT</code>.
         /// </para>
         /// </summary>
         public DayOfWeek DayOfWeek
@@ -82,8 +84,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Frequency. 
         /// <para>
-        /// How often the scheduled audit takes place. One of "DAILY", "WEEKLY", "BIWEEKLY", or
-        /// "MONTHLY". The start time of each audit is determined by the system.
+        /// How often the scheduled audit takes place, either one of <code>DAILY</code>, <code>WEEKLY</code>,
+        /// <code>BIWEEKLY</code>, or <code>MONTHLY</code>. The start time of each audit is determined
+        /// by the system.
         /// </para>
         /// </summary>
         public AuditFrequency Frequency
