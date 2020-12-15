@@ -295,6 +295,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* This is the initial SDK release for AWS Glue DataBrew. DataBrew is a visual data preparation tool that enables users to clean and normalize data without writing any code.
 * [AWSSDK.Greengrass](https://www.nuget.org/packages/AWSSDK.Greengrass/)
 	* AWS Greengrass is software that lets you run local compute, messaging, and device state synchronization for connected devices in a secure way. With AWS Greengrass, connected devices can run AWS Lambda functions, keep device data in sync, and communicate with other devices securely even when not connected to the Internet. Using AWS Lambda, Greengrass ensures your IoT devices can respond quickly to local events, operate with intermittent connections, and minimize the cost of transmitting IoT data to the cloud.
+* [AWSSDK.GreengrassV2](https://www.nuget.org/packages/AWSSDK.GreengrassV2/)
+	* AWS IoT Greengrass V2 is a new major version of AWS IoT Greengrass. This release adds several updates such as modular components, continuous deployments, and improved ease of use.
 * [AWSSDK.GroundStation](https://www.nuget.org/packages/AWSSDK.GroundStation/)
 	* New Service temporary synopsis, please replace it.
 * [AWSSDK.GuardDuty](https://www.nuget.org/packages/AWSSDK.GuardDuty/)

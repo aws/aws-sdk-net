@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "AWS IoT Greengrass V2 is a new major version of AWS IoT Greengrass. This release adds several updates such as modular components, continuous deployments, and improved ease of use.",
+  "generate-client-constructors": true
+}

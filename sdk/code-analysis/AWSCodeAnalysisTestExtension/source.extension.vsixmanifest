@@ -235,6 +235,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.GlueDataBrew.CodeAnalysis" Path="|AWSSDK.GlueDataBrew.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Greengrass.CodeAnalysis" Path="|AWSSDK.Greengrass.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Greengrass.CodeAnalysis" Path="|AWSSDK.Greengrass.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.GreengrassV2.CodeAnalysis" Path="|AWSSDK.GreengrassV2.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.GreengrassV2.CodeAnalysis" Path="|AWSSDK.GreengrassV2.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.GroundStation.CodeAnalysis" Path="|AWSSDK.GroundStation.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.GroundStation.CodeAnalysis" Path="|AWSSDK.GroundStation.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.GuardDuty.CodeAnalysis" Path="|AWSSDK.GuardDuty.CodeAnalysis|"/>
