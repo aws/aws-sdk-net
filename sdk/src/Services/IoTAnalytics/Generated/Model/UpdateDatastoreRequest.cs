@@ -36,6 +36,7 @@ namespace Amazon.IoTAnalytics.Model
     {
         private string _datastoreName;
         private DatastoreStorage _datastoreStorage;
+        private FileFormatConfiguration _fileFormatConfiguration;
         private RetentionPeriod _retentionPeriod;
 
         /// <summary>
@@ -75,6 +76,33 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetDatastoreStorage()
         {
             return this._datastoreStorage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileFormatConfiguration. 
+        /// <para>
+        /// Contains the configuration information of file formats. AWS IoT Analytics data stores
+        /// support JSON and <a href="https://parquet.apache.org/">Parquet</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default file format is JSON. You can specify only one format.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't change the file format after you create the data store.
+        /// </para>
+        /// </summary>
+        public FileFormatConfiguration FileFormatConfiguration
+        {
+            get { return this._fileFormatConfiguration; }
+            set { this._fileFormatConfiguration = value; }
+        }
+
+        // Check to see if FileFormatConfiguration property is set
+        internal bool IsSetFileFormatConfiguration()
+        {
+            return this._fileFormatConfiguration != null;
         }
 
         /// <summary>

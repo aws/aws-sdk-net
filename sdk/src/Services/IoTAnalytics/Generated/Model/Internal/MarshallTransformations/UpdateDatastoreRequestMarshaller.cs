@@ -80,6 +80,17 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetFileFormatConfiguration())
+                {
+                    context.Writer.WritePropertyName("fileFormatConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FileFormatConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FileFormatConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRetentionPeriod())
                 {
                     context.Writer.WritePropertyName("retentionPeriod");

@@ -36,6 +36,7 @@ namespace Amazon.IoTAnalytics.Model
         private DateTime? _creationTime;
         private string _datastoreName;
         private DatastoreStorageSummary _datastoreStorage;
+        private FileFormatType _fileFormatType;
         private DateTime? _lastMessageArrivalTime;
         private DateTime? _lastUpdateTime;
         private DatastoreStatus _status;
@@ -93,6 +94,24 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetDatastoreStorage()
         {
             return this._datastoreStorage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileFormatType. 
+        /// <para>
+        /// The file format of the data in the data store.
+        /// </para>
+        /// </summary>
+        public FileFormatType FileFormatType
+        {
+            get { return this._fileFormatType; }
+            set { this._fileFormatType = value; }
+        }
+
+        // Check to see if FileFormatType property is set
+        internal bool IsSetFileFormatType()
+        {
+            return this._fileFormatType != null;
         }
 
         /// <summary>

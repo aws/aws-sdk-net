@@ -34,14 +34,43 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class StartPipelineReprocessingRequest : AmazonIoTAnalyticsRequest
     {
+        private ChannelMessages _channelMessages;
         private DateTime? _endTime;
         private string _pipelineName;
         private DateTime? _startTime;
 
         /// <summary>
+        /// Gets and sets the property ChannelMessages. 
+        /// <para>
+        /// Specifies one or more sets of channel messages that you want to reprocess.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use the <code>channelMessages</code> object, you must not specify a value for
+        /// <code>startTime</code> and <code>endTime</code>.
+        /// </para>
+        /// </summary>
+        public ChannelMessages ChannelMessages
+        {
+            get { return this._channelMessages; }
+            set { this._channelMessages = value; }
+        }
+
+        // Check to see if ChannelMessages property is set
+        internal bool IsSetChannelMessages()
+        {
+            return this._channelMessages != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
         /// The end time (exclusive) of raw message data that is reprocessed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a value for the <code>endTime</code> parameter, you must not use the
+        /// <code>channelMessages</code> object.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -79,6 +108,11 @@ namespace Amazon.IoTAnalytics.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The start time (inclusive) of raw message data that is reprocessed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a value for the <code>startTime</code> parameter, you must not use
+        /// the <code>channelMessages</code> object.
         /// </para>
         /// </summary>
         public DateTime StartTime

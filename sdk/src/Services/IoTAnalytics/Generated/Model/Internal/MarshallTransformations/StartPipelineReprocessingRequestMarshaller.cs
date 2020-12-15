@@ -69,6 +69,17 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetChannelMessages())
+                {
+                    context.Writer.WritePropertyName("channelMessages");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ChannelMessagesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ChannelMessages, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEndTime())
                 {
                     context.Writer.WritePropertyName("endTime");
