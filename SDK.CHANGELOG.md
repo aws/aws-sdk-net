@@ -1,3 +1,23 @@
+### 3.5.74.0 (2020-12-15 19:15 UTC)
+* GreengrassV2 (3.5.0.0)
+	* AWS IoT Greengrass V2 is a new major version of AWS IoT Greengrass. This release adds several updates such as modular components, continuous deployments, and improved ease of use.
+* IoT (3.5.7.0)
+	* AWS IoT Rules Engine adds Kafka Action that allows sending data to Apache Kafka clusters inside a VPC. AWS IoT Device Defender adds custom metrics and machine-learning based anomaly detection.
+* IoTAnalytics (3.5.2.0)
+	* FileFormatConfiguration enables data store to save data in JSON or Parquet format. S3Paths enables you to specify the S3 objects that save your channel messages when you reprocess the pipeline.
+* IoTDeviceAdvisor (3.5.0.0)
+	* AWS IoT Core Device Advisor is fully managed test capability for IoT devices. Device manufacturers can use Device Advisor to test their IoT devices for reliable and secure connectivity with AWS IoT.
+* IoTFleetHub (3.5.0.0)
+	* AWS IoT Fleet Hub, a new feature of AWS IoT Device Management that provides a web application for monitoring and managing device fleets connected to AWS IoT at scale.
+* IoTWireless (3.5.0.0)
+	* AWS IoT for LoRaWAN enables customers to setup a private LoRaWAN network by connecting their LoRaWAN devices and gateways to the AWS cloud without managing a LoRaWAN Network Server.
+* Lambda (3.5.6.0)
+	* Added support for Apache Kafka as a event source. Added support for TumblingWindowInSeconds for streams event source mappings. Added support for FunctionResponseTypes for streams event source mappings
+* PrometheusService (3.5.0.0)
+	* (New Service) Amazon Managed Service for Prometheus is a fully managed Prometheus-compatible monitoring service that makes it easy to monitor containerized applications securely and at scale.
+* SimpleSystemsManagement (3.5.7.0)
+	* Adding support for Change Manager API content
+
 ### 3.5.73.0 (2020-12-14 19:11 UTC)
 * DevOpsGuru (3.5.1.0)
 	* Documentation updates for DevOps Guru.
