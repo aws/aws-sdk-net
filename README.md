@@ -325,6 +325,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS IoT Analytics is a fully-managed service that makes it easy to run and operationalize sophisticated analytics on massive volumes of IoT data without having to worry about the cost and complexity typically required to build an IoT analytics platform.
 * [AWSSDK.IotData](https://www.nuget.org/packages/AWSSDK.IotData/)
 	* AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.
+* [AWSSDK.IoTDeviceAdvisor](https://www.nuget.org/packages/AWSSDK.IoTDeviceAdvisor/)
+	* AWS IoT Core Device Advisor is fully managed test capability for IoT devices. Device manufacturers can use Device Advisor to test their IoT devices for reliable and secure connectivity with AWS IoT.
 * [AWSSDK.IoTEvents](https://www.nuget.org/packages/AWSSDK.IoTEvents/)
 	* The AWS IoT Events service allows customers to monitor their IoT devices and sensors to detect failures or changes in operation and to trigger actions when these events occur
 * [AWSSDK.IoTEventsData](https://www.nuget.org/packages/AWSSDK.IoTEventsData/)
