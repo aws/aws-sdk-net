@@ -269,6 +269,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTEvents.CodeAnalysis" Path="|AWSSDK.IoTEvents.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoTEventsData.CodeAnalysis" Path="|AWSSDK.IoTEventsData.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTEventsData.CodeAnalysis" Path="|AWSSDK.IoTEventsData.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoTFleetHub.CodeAnalysis" Path="|AWSSDK.IoTFleetHub.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTFleetHub.CodeAnalysis" Path="|AWSSDK.IoTFleetHub.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoTJobsDataPlane.CodeAnalysis" Path="|AWSSDK.IoTJobsDataPlane.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.IoTJobsDataPlane.CodeAnalysis" Path="|AWSSDK.IoTJobsDataPlane.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.IoTSecureTunneling.CodeAnalysis" Path="|AWSSDK.IoTSecureTunneling.CodeAnalysis|"/>
