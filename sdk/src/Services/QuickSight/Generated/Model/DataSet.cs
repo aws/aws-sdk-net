@@ -162,7 +162,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ImportMode. 
         /// <para>
-        /// Indicates whether you want to import the data into SPICE.
+        /// A value that indicates whether you want to import the data into SPICE.
         /// </para>
         /// </summary>
         public DataSetImportMode ImportMode

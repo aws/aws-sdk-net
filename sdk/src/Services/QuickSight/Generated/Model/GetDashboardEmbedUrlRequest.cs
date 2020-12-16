@@ -58,8 +58,8 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-    /// Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i> .
+    /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
+    /// Analytics</a> in the <i>Amazon QuickSight User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetDashboardEmbedUrlRequest : AmazonQuickSightRequest
@@ -78,11 +78,11 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AdditionalDashboardIds. 
         /// <para>
-        /// A list of one or more dashboard ids that you want to add to a session that includes
-        /// anonymous authorizations. <code>IdentityType</code> must be set to ANONYMOUS for this
-        /// to work, because other identity types authenticate as QuickSight users. For example,
-        /// if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
-        /// ANONYMOUS</code>", the session can access all three dashboards. 
+        /// A list of one or more dashboard IDs that you want to add to a session that includes
+        /// anonymous users. The <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code>
+        /// for this to work, because other identity types authenticate as QuickSight or IAM users.
+        /// For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3
+        /// identity-type ANONYMOUS</code>", the session can access all three dashboards. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -120,7 +120,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardId. 
         /// <para>
-        /// The ID for the dashboard, also added to the IAM policy.
+        /// The ID for the dashboard, also added to the AWS Identity and Access Management (IAM)
+        /// policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -219,7 +220,7 @@ namespace Amazon.QuickSight.Model
         /// Adds persistence of state for the user session in an embedded dashboard. Persistence
         /// applies to the sheet and the parameter settings. These are control settings that the
         /// dashboard subscriber (QuickSight reader) chooses while viewing the dashboard. If this
-        /// is set to <code>TRUE</code>, the settings are the same when the the subscriber reopens
+        /// is set to <code>TRUE</code>, the settings are the same when the subscriber reopens
         /// the same dashboard URL. The state is stored in QuickSight, not in a browser cookie.
         /// If this is set to FALSE, the state of the user session is not persisted. The default
         /// is <code>FALSE</code>.

@@ -695,7 +695,7 @@ namespace Amazon.QuickSight
         ///  
         /// <para>
         /// Any ingestions operating on tagged datasets inherit the same tags automatically for
-        /// use in access control. For an example, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How
+        /// use in access control. For an example, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How
         /// do I create an IAM policy to control access to Amazon EC2 resources using tags?</a>
         /// in the AWS Knowledge Center. Tags are visible on the tagged dataset, but not on the
         /// ingestion resource.
@@ -3485,8 +3485,8 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-        /// Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i> .
+        /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
+        /// Analytics</a> in the <i>Amazon QuickSight User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboardEmbedUrl service method.</param>
@@ -3532,15 +3532,14 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedPricingPlanException">
         /// This error indicates that you are calling an embedding operation in Amazon QuickSight
-        /// without the required pricing plan on your AWS account. Before you can use anonymous
-        /// embedding, a QuickSight administrator needs to add capacity pricing to QuickSight.
+        /// without the required pricing plan on your AWS account. Before you can use embedding
+        /// for anonymous users, a QuickSight administrator needs to add capacity pricing to QuickSight.
         /// You can do this on the <b>Manage QuickSight</b> page. 
         /// 
         ///  
         /// <para>
-        /// After capacity pricing is added, you can enable anonymous embedding by using the <code>
-        /// <a>GetDashboardEmbedUrl</a> </code> API operation with the <code>--identity-type ANONYMOUS</code>
-        /// option.
+        /// After capacity pricing is added, you can use the <a>GetDashboardEmbedUrl</a> API operation
+        /// with the <code>--identity-type ANONYMOUS</code> option.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">

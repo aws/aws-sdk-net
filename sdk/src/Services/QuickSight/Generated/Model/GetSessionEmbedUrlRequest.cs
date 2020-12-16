@@ -161,12 +161,12 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IAM users and IAM role-based sessions authenticated through Federated Single Sign-On
-        /// using SAML, OpenID Connect, or IAM federation
+        /// AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated
+        /// through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+        /// Omit this parameter for users in the third group, IAM users and IAM role-based sessions.
         /// </para>
         /// </summary>
         public string UserArn

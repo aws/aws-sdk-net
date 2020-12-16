@@ -2108,6 +2108,10 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.RelationalTable.Catalog</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.RelationalTable.Name</property>
     <min>1</min>
     <max>64</max>

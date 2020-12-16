@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ColumnLevelPermissionRulesApplied. 
         /// <para>
-        /// Indicates if the dataset has column level permission configured.
+        /// A value that indicates if the dataset has column level permission configured.
         /// </para>
         /// </summary>
         public bool ColumnLevelPermissionRulesApplied
@@ -117,7 +117,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ImportMode. 
         /// <para>
-        /// Indicates whether you want to import the data into SPICE.
+        /// A value that indicates whether you want to import the data into SPICE.
         /// </para>
         /// </summary>
         public DataSetImportMode ImportMode

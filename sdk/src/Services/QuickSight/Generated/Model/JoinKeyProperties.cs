@@ -38,8 +38,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UniqueKey. 
         /// <para>
-        /// Indicates that a row in a table is uniquely identified by the columns in a join key.
-        /// This is used by QuickSight to optimize query performance.
+        /// A value that indicates that a row in a table is uniquely identified by the columns
+        /// in a join key. This is used by QuickSight to optimize query performance.
         /// </para>
         /// </summary>
         public bool UniqueKey

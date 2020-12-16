@@ -45,6 +45,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RelationalTable requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCatalog())
+            {
+                context.Writer.WritePropertyName("Catalog");
+                context.Writer.Write(requestObject.Catalog);
+            }
+
             if(requestObject.IsSetDataSourceArn())
             {
                 context.Writer.WritePropertyName("DataSourceArn");
