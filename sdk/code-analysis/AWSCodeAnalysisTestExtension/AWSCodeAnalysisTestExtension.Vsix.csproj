@@ -1048,6 +1048,10 @@
       <Project>{23480004-2A15-497C-8CCA-21222F1DCB5F}</Project>
       <Name>AWSSDK.WAFV2.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/WellArchitected/AWSSDK.WellArchitected.CodeAnalysis.csproj">
+      <Project>{BDCA2140-D2F2-4C8A-8EEF-DD31603077D3}</Project>
+      <Name>AWSSDK.WellArchitected.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/WorkDocs/AWSSDK.WorkDocs.CodeAnalysis.csproj">
       <Project>{D2D05C00-79A7-47E4-9B77-FE08B1E7FC1D}</Project>
       <Name>AWSSDK.WorkDocs.CodeAnalysis</Name>

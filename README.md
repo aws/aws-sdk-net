@@ -573,6 +573,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS WAF (Web Application Firewall) Regional protects web applications from attack via ALB load balancer and provides API to associate it with a WAF WebACL.
 * [AWSSDK.WAFV2](https://www.nuget.org/packages/AWSSDK.WAFV2/)
 	* This release introduces new set of APIs (wafv2) for AWS WAF. Major changes include single set of APIs for creating/updating resources in global and regional scope, and rules are configured directly into web ACL instead of being referenced. The previous APIs (waf and waf-regional) are now referred as AWS WAF Classic. For more information visit: https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html
+* [AWSSDK.WellArchitected](https://www.nuget.org/packages/AWSSDK.WellArchitected/)
+	* This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.
 * [AWSSDK.WorkDocs](https://www.nuget.org/packages/AWSSDK.WorkDocs/)
 	* Amazon WorkDocs is a fully managed, secure enterprise storage and sharing service with strong administrative controls and feedback capabilities that improve user productivity.
 * [AWSSDK.WorkLink](https://www.nuget.org/packages/AWSSDK.WorkLink/)
