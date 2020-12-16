@@ -1,3 +1,20 @@
+### 3.5.75.0 (2020-12-16 20:32 UTC)
+* CostExplorer (3.5.6.0)
+	* This release updates the "MonitorArnList" from a list of String to be a list of Arn for both CreateAnomalySubscription and UpdateAnomalySubscription APIs
+* LocationService (3.5.0.0)
+	* Initial release of Amazon Location Service. A new geospatial service providing capabilities to render maps, geocode/reverse geocode, track device locations, and detect geofence entry/exit events.
+* PrometheusService (3.5.0.1)
+	* Documentation updates for Amazon Managed Service for Prometheus
+* QuickSight (3.5.9.0)
+	* QuickSight now supports connecting to federated data sources of Athena
+* WellArchitected (3.5.0.0)
+	* This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.
+* Core 3.5.1.50
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.74.0 (2020-12-15 19:15 UTC)
 * GreengrassV2 (3.5.0.0)
 	* AWS IoT Greengrass V2 is a new major version of AWS IoT Greengrass. This release adds several updates such as modular components, continuous deployments, and improved ease of use.
