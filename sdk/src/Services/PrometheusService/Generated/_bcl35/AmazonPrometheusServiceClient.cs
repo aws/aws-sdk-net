@@ -35,7 +35,7 @@ namespace Amazon.PrometheusService
     /// <summary>
     /// Implementation for accessing PrometheusService
     ///
-    /// StealFire Service
+    /// Amazon Managed Service for Prometheus
     /// </summary>
     public partial class AmazonPrometheusServiceClient : AmazonServiceClient, IAmazonPrometheusService
     {
@@ -240,7 +240,7 @@ namespace Amazon.PrometheusService
         #region  CreateWorkspace
 
         /// <summary>
-        /// Creates a new StealFire workspace.
+        /// Creates a new AMP workspace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspace service method.</param>
         /// 
@@ -312,7 +312,7 @@ namespace Amazon.PrometheusService
         #region  DeleteWorkspace
 
         /// <summary>
-        /// Deletes a StealFire workspace.
+        /// Deletes an AMP workspace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspace service method.</param>
         /// 
@@ -381,7 +381,7 @@ namespace Amazon.PrometheusService
         #region  DescribeWorkspace
 
         /// <summary>
-        /// Describes an existing StealFire workspace.
+        /// Describes an existing AMP workspace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspace service method.</param>
         /// 
@@ -450,7 +450,7 @@ namespace Amazon.PrometheusService
         #region  ListWorkspaces
 
         /// <summary>
-        /// Lists all StealFire workspaces, including workspaces being created or deleted.
+        /// Lists all AMP workspaces, including workspaces being created or deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkspaces service method.</param>
         /// 
@@ -516,7 +516,7 @@ namespace Amazon.PrometheusService
         #region  UpdateWorkspaceAlias
 
         /// <summary>
-        /// Updates a StealFire workspace alias.
+        /// Updates an AMP workspace alias.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceAlias service method.</param>
         /// 

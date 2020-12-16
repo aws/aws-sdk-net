@@ -30,7 +30,7 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteWorkspace operation.
-    /// Deletes a StealFire workspace.
+    /// Deletes an AMP workspace.
     /// </summary>
     public partial class DeleteWorkspaceRequest : AmazonPrometheusServiceRequest
     {

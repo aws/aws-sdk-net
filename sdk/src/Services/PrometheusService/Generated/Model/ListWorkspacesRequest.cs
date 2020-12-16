@@ -30,7 +30,7 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListWorkspaces operation.
-    /// Lists all StealFire workspaces, including workspaces being created or deleted.
+    /// Lists all AMP workspaces, including workspaces being created or deleted.
     /// </summary>
     public partial class ListWorkspacesRequest : AmazonPrometheusServiceRequest
     {

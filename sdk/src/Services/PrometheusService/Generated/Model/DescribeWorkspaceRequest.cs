@@ -30,7 +30,7 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeWorkspace operation.
-    /// Describes an existing StealFire workspace.
+    /// Describes an existing AMP workspace.
     /// </summary>
     public partial class DescribeWorkspaceRequest : AmazonPrometheusServiceRequest
     {

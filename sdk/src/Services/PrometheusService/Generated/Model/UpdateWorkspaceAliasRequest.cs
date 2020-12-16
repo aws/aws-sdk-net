@@ -30,7 +30,7 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateWorkspaceAlias operation.
-    /// Updates a StealFire workspace alias.
+    /// Updates an AMP workspace alias.
     /// </summary>
     public partial class UpdateWorkspaceAliasRequest : AmazonPrometheusServiceRequest
     {
