@@ -660,6 +660,10 @@
       <Project>{33C9A310-95F4-4A30-B411-6E6679034FF3}</Project>
       <Name>AWSSDK.Lightsail.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/LocationService/AWSSDK.LocationService.CodeAnalysis.csproj">
+      <Project>{083186B8-3B42-407F-9797-A1C9E93A0CDE}</Project>
+      <Name>AWSSDK.LocationService.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/LookoutforVision/AWSSDK.LookoutforVision.CodeAnalysis.csproj">
       <Project>{AEAAF64A-F230-4C3C-8AA4-8E2182617E19}</Project>
       <Name>AWSSDK.LookoutforVision.CodeAnalysis</Name>
