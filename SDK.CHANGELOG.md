@@ -1,3 +1,28 @@
+### 3.5.76.0 (2020-12-17 19:20 UTC)
+* ConfigService (3.5.2.0)
+	* Adding PutExternalEvaluation API which grants permission to deliver evaluation result to AWS Config
+* DLM (3.5.3.0)
+	* Provide Cross-account copy event based policy support in DataLifecycleManager (DLM)
+* EC2 (3.5.26.0)
+	* C6gn instances are powered by AWS Graviton2 processors and offer 100 Gbps networking bandwidth. These instances deliver up to 40% better price-performance benefit versus comparable x86-based instances
+* Imagebuilder (3.5.3.0)
+	* This release adds support for building and distributing container images within EC2 Image Builder.
+* KeyManagementService (3.5.1.0)
+	* Added CreationDate and LastUpdatedDate timestamps to ListAliases API response
+* Route53 (3.5.1.0)
+	* This release adds support for DNSSEC signing in Amazon Route 53.
+* Route53Resolver (3.5.2.0)
+	* Route 53 Resolver adds support for enabling resolver DNSSEC validation in virtual private cloud (VPC).
+* ServiceCatalog (3.5.7.0)
+	* Support TagOptions sharing with Service Catalog portfolio sharing.
+* SQS (3.5.1.0)
+	* Amazon SQS adds queue attributes to enable high throughput FIFO.
+* Core 3.5.1.51
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.75.0 (2020-12-16 20:32 UTC)
 * CostExplorer (3.5.6.0)
 	* This release updates the "MonitorArnList" from a list of String to be a list of Arn for both CreateAnomalySubscription and UpdateAnomalySubscription APIs
