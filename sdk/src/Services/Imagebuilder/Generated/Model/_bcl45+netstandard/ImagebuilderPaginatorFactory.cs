@@ -53,6 +53,14 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Paginator for ListContainerRecipes operation
+        ///</summary>
+        public IListContainerRecipesPaginator ListContainerRecipes(ListContainerRecipesRequest request) 
+        {
+            return new ListContainerRecipesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDistributionConfigurations operation
         ///</summary>
         public IListDistributionConfigurationsPaginator ListDistributionConfigurations(ListDistributionConfigurationsRequest request) 

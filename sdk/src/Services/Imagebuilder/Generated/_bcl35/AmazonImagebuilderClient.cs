@@ -36,7 +36,7 @@ namespace Amazon.Imagebuilder
     /// Implementation for accessing Imagebuilder
     ///
     /// EC2 Image Builder is a fully managed AWS service that makes it easier to automate
-    /// the creation, management, and deployment of customized, secure, and up-to-date “golden”
+    /// the creation, management, and deployment of customized, secure, and up-to-date "golden"
     /// server images that are pre-installed and pre-configured with software and settings
     /// to meet specific IT standards.
     /// </summary>
@@ -414,6 +414,100 @@ namespace Amazon.Imagebuilder
         public virtual CreateComponentResponse EndCreateComponent(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateComponentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateContainerRecipe
+
+        /// <summary>
+        /// Creates a new container recipe. Container recipes define how images are configured,
+        /// tested, and assessed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContainerRecipe service method.</param>
+        /// 
+        /// <returns>The response from the CreateContainerRecipe service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.IdempotentParameterMismatchException">
+        /// You have specified a client token for an operation using parameter values that differ
+        /// from a previous request that used the same client token.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have made a request for an action that is not supported by the service.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
+        /// Your version number is out of bounds or does not follow the required syntax.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
+        /// The resource that you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
+        /// The resource that you are trying to operate on is currently in use. Review the message
+        /// details and retry later.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
+        /// You have exceeded the number of permitted resources or operations for this service.
+        /// For service quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+        /// Image Builder endpoints and quotas</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateContainerRecipe">REST API Reference for CreateContainerRecipe Operation</seealso>
+        public virtual CreateContainerRecipeResponse CreateContainerRecipe(CreateContainerRecipeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContainerRecipeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContainerRecipeResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContainerRecipeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateContainerRecipe operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateContainerRecipe operation on AmazonImagebuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateContainerRecipe
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateContainerRecipe">REST API Reference for CreateContainerRecipe Operation</seealso>
+        public virtual IAsyncResult BeginCreateContainerRecipe(CreateContainerRecipeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateContainerRecipeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContainerRecipeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateContainerRecipe operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateContainerRecipe.</param>
+        /// 
+        /// <returns>Returns a  CreateContainerRecipeResult from Imagebuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateContainerRecipe">REST API Reference for CreateContainerRecipe Operation</seealso>
+        public virtual CreateContainerRecipeResponse EndCreateContainerRecipe(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateContainerRecipeResponse>(asyncResult);
         }
 
         #endregion
@@ -955,6 +1049,84 @@ namespace Amazon.Imagebuilder
 
         #endregion
         
+        #region  DeleteContainerRecipe
+
+        /// <summary>
+        /// Deletes a container recipe.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContainerRecipe service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContainerRecipe service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have made a request for an action that is not supported by the service.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
+        /// You have attempted to mutate or delete a resource with a dependency that prohibits
+        /// this action. See the error message for more details.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteContainerRecipe">REST API Reference for DeleteContainerRecipe Operation</seealso>
+        public virtual DeleteContainerRecipeResponse DeleteContainerRecipe(DeleteContainerRecipeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContainerRecipeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContainerRecipeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContainerRecipeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteContainerRecipe operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContainerRecipe operation on AmazonImagebuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteContainerRecipe
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteContainerRecipe">REST API Reference for DeleteContainerRecipe Operation</seealso>
+        public virtual IAsyncResult BeginDeleteContainerRecipe(DeleteContainerRecipeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteContainerRecipeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContainerRecipeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteContainerRecipe operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteContainerRecipe.</param>
+        /// 
+        /// <returns>Returns a  DeleteContainerRecipeResult from Imagebuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteContainerRecipe">REST API Reference for DeleteContainerRecipe Operation</seealso>
+        public virtual DeleteContainerRecipeResponse EndDeleteContainerRecipe(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteContainerRecipeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteDistributionConfiguration
 
         /// <summary>
@@ -1487,6 +1659,152 @@ namespace Amazon.Imagebuilder
         public virtual GetComponentPolicyResponse EndGetComponentPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetComponentPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetContainerRecipe
+
+        /// <summary>
+        /// Retrieves a container recipe.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContainerRecipe service method.</param>
+        /// 
+        /// <returns>The response from the GetContainerRecipe service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have made a request for an action that is not supported by the service.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipe">REST API Reference for GetContainerRecipe Operation</seealso>
+        public virtual GetContainerRecipeResponse GetContainerRecipe(GetContainerRecipeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContainerRecipeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContainerRecipeResponseUnmarshaller.Instance;
+
+            return Invoke<GetContainerRecipeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContainerRecipe operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContainerRecipe operation on AmazonImagebuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetContainerRecipe
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipe">REST API Reference for GetContainerRecipe Operation</seealso>
+        public virtual IAsyncResult BeginGetContainerRecipe(GetContainerRecipeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContainerRecipeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContainerRecipeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetContainerRecipe operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetContainerRecipe.</param>
+        /// 
+        /// <returns>Returns a  GetContainerRecipeResult from Imagebuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipe">REST API Reference for GetContainerRecipe Operation</seealso>
+        public virtual GetContainerRecipeResponse EndGetContainerRecipe(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetContainerRecipeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetContainerRecipePolicy
+
+        /// <summary>
+        /// Retrieves the policy for a container recipe.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContainerRecipePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetContainerRecipePolicy service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have made a request for an action that is not supported by the service.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
+        /// At least one of the resources referenced by your request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipePolicy">REST API Reference for GetContainerRecipePolicy Operation</seealso>
+        public virtual GetContainerRecipePolicyResponse GetContainerRecipePolicy(GetContainerRecipePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContainerRecipePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContainerRecipePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetContainerRecipePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContainerRecipePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContainerRecipePolicy operation on AmazonImagebuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetContainerRecipePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipePolicy">REST API Reference for GetContainerRecipePolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetContainerRecipePolicy(GetContainerRecipePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetContainerRecipePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetContainerRecipePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetContainerRecipePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetContainerRecipePolicy.</param>
+        /// 
+        /// <returns>Returns a  GetContainerRecipePolicyResult from Imagebuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetContainerRecipePolicy">REST API Reference for GetContainerRecipePolicy Operation</seealso>
+        public virtual GetContainerRecipePolicyResponse EndGetContainerRecipePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetContainerRecipePolicyResponse>(asyncResult);
         }
 
         #endregion
@@ -2248,6 +2566,83 @@ namespace Amazon.Imagebuilder
 
         #endregion
         
+        #region  ListContainerRecipes
+
+        /// <summary>
+        /// Returns a list of container recipes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContainerRecipes service method.</param>
+        /// 
+        /// <returns>The response from the ListContainerRecipes service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidPaginationTokenException">
+        /// You have provided an invalid pagination token in your request.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have made a request for an action that is not supported by the service.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListContainerRecipes">REST API Reference for ListContainerRecipes Operation</seealso>
+        public virtual ListContainerRecipesResponse ListContainerRecipes(ListContainerRecipesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContainerRecipesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContainerRecipesResponseUnmarshaller.Instance;
+
+            return Invoke<ListContainerRecipesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListContainerRecipes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListContainerRecipes operation on AmazonImagebuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListContainerRecipes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListContainerRecipes">REST API Reference for ListContainerRecipes Operation</seealso>
+        public virtual IAsyncResult BeginListContainerRecipes(ListContainerRecipesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListContainerRecipesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContainerRecipesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListContainerRecipes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListContainerRecipes.</param>
+        /// 
+        /// <returns>Returns a  ListContainerRecipesResult from Imagebuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListContainerRecipes">REST API Reference for ListContainerRecipes Operation</seealso>
+        public virtual ListContainerRecipesResponse EndListContainerRecipes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListContainerRecipesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDistributionConfigurations
 
         /// <summary>
@@ -2933,6 +3328,91 @@ namespace Amazon.Imagebuilder
         public virtual PutComponentPolicyResponse EndPutComponentPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutComponentPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutContainerRecipePolicy
+
+        /// <summary>
+        /// Applies a policy to a container image. We recommend that you call the RAM API CreateResourceShare
+        /// (https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html)
+        /// to share resources. If you call the Image Builder API <code>PutContainerImagePolicy</code>,
+        /// you must also call the RAM API PromoteResourceShareCreatedFromPolicy (https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
+        /// in order for the resource to be visible to all principals with whom the resource is
+        /// shared.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutContainerRecipePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutContainerRecipePolicy service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterValueException">
+        /// The value that you provided for the specified parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have made a request for an action that is not supported by the service.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
+        /// At least one of the resources referenced by your request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy">REST API Reference for PutContainerRecipePolicy Operation</seealso>
+        public virtual PutContainerRecipePolicyResponse PutContainerRecipePolicy(PutContainerRecipePolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutContainerRecipePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutContainerRecipePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutContainerRecipePolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutContainerRecipePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutContainerRecipePolicy operation on AmazonImagebuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutContainerRecipePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy">REST API Reference for PutContainerRecipePolicy Operation</seealso>
+        public virtual IAsyncResult BeginPutContainerRecipePolicy(PutContainerRecipePolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutContainerRecipePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutContainerRecipePolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutContainerRecipePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutContainerRecipePolicy.</param>
+        /// 
+        /// <returns>Returns a  PutContainerRecipePolicyResult from Imagebuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutContainerRecipePolicy">REST API Reference for PutContainerRecipePolicy Operation</seealso>
+        public virtual PutContainerRecipePolicyResponse EndPutContainerRecipePolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutContainerRecipePolicyResponse>(asyncResult);
         }
 
         #endregion

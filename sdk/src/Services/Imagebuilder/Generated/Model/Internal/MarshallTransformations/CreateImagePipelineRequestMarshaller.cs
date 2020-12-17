@@ -77,6 +77,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetContainerRecipeArn())
+                {
+                    context.Writer.WritePropertyName("containerRecipeArn");
+                    context.Writer.Write(publicRequest.ContainerRecipeArn);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

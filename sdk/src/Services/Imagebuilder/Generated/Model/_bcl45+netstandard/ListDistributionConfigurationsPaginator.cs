@@ -42,6 +42,12 @@ namespace Amazon.Imagebuilder.Model
         /// </summary>
         public IPaginatedEnumerable<ListDistributionConfigurationsResponse> Responses => new PaginatedResponse<ListDistributionConfigurationsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the DistributionConfigurationSummaryList
+        /// </summary>
+        public IPaginatedEnumerable<DistributionConfigurationSummary> DistributionConfigurationSummaryList => 
+            new PaginatedResultKeyResponse<ListDistributionConfigurationsResponse, DistributionConfigurationSummary>(this, (i) => i.DistributionConfigurationSummaryList);
+
         internal ListDistributionConfigurationsPaginator(IAmazonImagebuilder client, ListDistributionConfigurationsRequest request)
         {
             this._client = client;

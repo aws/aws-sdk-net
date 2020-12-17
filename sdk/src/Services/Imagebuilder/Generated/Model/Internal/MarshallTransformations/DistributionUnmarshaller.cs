@@ -70,6 +70,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.AmiDistributionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("containerDistributionConfiguration", targetDepth))
+                {
+                    var unmarshaller = ContainerDistributionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ContainerDistributionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("licenseConfigurationArns", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

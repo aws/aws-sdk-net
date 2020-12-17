@@ -38,6 +38,7 @@ namespace Amazon.Imagebuilder.Model
         private string _dateUpdated;
         private string _description;
         private string _name;
+        private List<string> _regions = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
@@ -129,6 +130,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Regions. 
+        /// <para>
+        /// A list of Regions where the container image is distributed to.
+        /// </para>
+        /// </summary>
+        public List<string> Regions
+        {
+            get { return this._regions; }
+            set { this._regions = value; }
+        }
+
+        // Check to see if Regions property is set
+        internal bool IsSetRegions()
+        {
+            return this._regions != null && this._regions.Count > 0; 
         }
 
         /// <summary>

@@ -66,6 +66,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetByName())
+                {
+                    context.Writer.WritePropertyName("byName");
+                    context.Writer.Write(publicRequest.ByName);
+                }
+
                 if(publicRequest.IsSetFilters())
                 {
                     context.Writer.WritePropertyName("filters");
@@ -80,6 +86,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetIncludeDeprecated())
+                {
+                    context.Writer.WritePropertyName("includeDeprecated");
+                    context.Writer.Write(publicRequest.IncludeDeprecated);
                 }
 
                 if(publicRequest.IsSetMaxResults())

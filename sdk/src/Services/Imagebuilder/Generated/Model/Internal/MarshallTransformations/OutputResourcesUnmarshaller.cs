@@ -70,6 +70,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Amis = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("containers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Container, ContainerUnmarshaller>(ContainerUnmarshaller.Instance);
+                    unmarshalledObject.Containers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

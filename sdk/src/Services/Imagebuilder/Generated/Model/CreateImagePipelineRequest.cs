@@ -36,6 +36,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class CreateImagePipelineRequest : AmazonImagebuilderRequest
     {
         private string _clientToken;
+        private string _containerRecipeArn;
         private string _description;
         private string _distributionConfigurationArn;
         private bool? _enhancedImageMetadataEnabled;
@@ -64,6 +65,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerRecipeArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the container recipe that is used to configure images
+        /// created by this container pipeline.
+        /// </para>
+        /// </summary>
+        public string ContainerRecipeArn
+        {
+            get { return this._containerRecipeArn; }
+            set { this._containerRecipeArn = value; }
+        }
+
+        // Check to see if ContainerRecipeArn property is set
+        internal bool IsSetContainerRecipeArn()
+        {
+            return this._containerRecipeArn != null;
         }
 
         /// <summary>
@@ -131,7 +151,6 @@ namespace Amazon.Imagebuilder.Model
         /// images created by this image pipeline. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ImageRecipeArn
         {
             get { return this._imageRecipeArn; }

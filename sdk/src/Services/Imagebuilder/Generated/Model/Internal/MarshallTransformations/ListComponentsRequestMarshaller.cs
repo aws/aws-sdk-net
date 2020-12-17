@@ -66,6 +66,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetByName())
+                {
+                    context.Writer.WritePropertyName("byName");
+                    context.Writer.Write(publicRequest.ByName);
+                }
+
                 if(publicRequest.IsSetFilters())
                 {
                     context.Writer.WritePropertyName("filters");

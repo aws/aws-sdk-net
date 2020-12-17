@@ -121,6 +121,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Imagebuilder")]
+        public void ListContainerRecipesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListContainerRecipesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListContainerRecipesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListContainerRecipesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListContainerRecipes(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListContainerRecipes(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Imagebuilder")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListContainerRecipesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListContainerRecipesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListContainerRecipesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListContainerRecipes(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListContainerRecipes(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Imagebuilder")]
         public void ListDistributionConfigurationsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListDistributionConfigurationsRequest>();

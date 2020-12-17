@@ -34,6 +34,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class Image
     {
         private string _arn;
+        private ContainerRecipe _containerRecipe;
         private string _dateCreated;
         private DistributionConfiguration _distributionConfiguration;
         private bool? _enhancedImageMetadataEnabled;
@@ -48,6 +49,7 @@ namespace Amazon.Imagebuilder.Model
         private string _sourcePipelineName;
         private ImageState _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private ImageType _type;
         private string _version;
 
         /// <summary>
@@ -66,6 +68,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerRecipe. 
+        /// <para>
+        /// The container recipe used to create the container image type.
+        /// </para>
+        /// </summary>
+        public ContainerRecipe ContainerRecipe
+        {
+            get { return this._containerRecipe; }
+            set { this._containerRecipe = value; }
+        }
+
+        // Check to see if ContainerRecipe property is set
+        internal bool IsSetContainerRecipe()
+        {
+            return this._containerRecipe != null;
         }
 
         /// <summary>
@@ -323,6 +343,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Specifies whether this is an AMI or container image.
+        /// </para>
+        /// </summary>
+        public ImageType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>

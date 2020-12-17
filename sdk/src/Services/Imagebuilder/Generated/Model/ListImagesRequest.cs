@@ -34,10 +34,30 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListImagesRequest : AmazonImagebuilderRequest
     {
+        private bool? _byName;
         private List<Filter> _filters = new List<Filter>();
+        private bool? _includeDeprecated;
         private int? _maxResults;
         private string _nextToken;
         private Ownership _owner;
+
+        /// <summary>
+        /// Gets and sets the property ByName. 
+        /// <para>
+        /// Requests a list of images with a specific recipe name.
+        /// </para>
+        /// </summary>
+        public bool ByName
+        {
+            get { return this._byName.GetValueOrDefault(); }
+            set { this._byName = value; }
+        }
+
+        // Check to see if ByName property is set
+        internal bool IsSetByName()
+        {
+            return this._byName.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -56,6 +76,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeDeprecated. 
+        /// <para>
+        /// Includes deprecated images in the response list.
+        /// </para>
+        /// </summary>
+        public bool IncludeDeprecated
+        {
+            get { return this._includeDeprecated.GetValueOrDefault(); }
+            set { this._includeDeprecated = value; }
+        }
+
+        // Check to see if IncludeDeprecated property is set
+        internal bool IsSetIncludeDeprecated()
+        {
+            return this._includeDeprecated.HasValue; 
         }
 
         /// <summary>

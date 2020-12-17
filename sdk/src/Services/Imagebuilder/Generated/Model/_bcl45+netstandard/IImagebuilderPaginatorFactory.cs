@@ -37,6 +37,11 @@ namespace Amazon.Imagebuilder.Model
         IListComponentsPaginator ListComponents(ListComponentsRequest request);
 
         /// <summary>
+        /// Paginator for ListContainerRecipes operation
+        ///</summary>
+        IListContainerRecipesPaginator ListContainerRecipes(ListContainerRecipesRequest request);
+
+        /// <summary>
         /// Paginator for ListDistributionConfigurations operation
         ///</summary>
         IListDistributionConfigurationsPaginator ListDistributionConfigurations(ListDistributionConfigurationsRequest request);

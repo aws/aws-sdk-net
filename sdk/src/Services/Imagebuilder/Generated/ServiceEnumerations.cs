@@ -121,6 +121,98 @@ namespace Amazon.Imagebuilder
 
 
     /// <summary>
+    /// Constants used for properties of type ContainerRepositoryService.
+    /// </summary>
+    public class ContainerRepositoryService : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ECR for ContainerRepositoryService
+        /// </summary>
+        public static readonly ContainerRepositoryService ECR = new ContainerRepositoryService("ECR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerRepositoryService(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerRepositoryService FindValue(string value)
+        {
+            return FindValue<ContainerRepositoryService>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerRepositoryService(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerType.
+    /// </summary>
+    public class ContainerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOCKER for ContainerType
+        /// </summary>
+        public static readonly ContainerType DOCKER = new ContainerType("DOCKER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerType FindValue(string value)
+        {
+            return FindValue<ContainerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EbsVolumeType.
     /// </summary>
     public class EbsVolumeType : ConstantClass
@@ -266,6 +358,56 @@ namespace Amazon.Imagebuilder
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ImageStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageType.
+    /// </summary>
+    public class ImageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMI for ImageType
+        /// </summary>
+        public static readonly ImageType AMI = new ImageType("AMI");
+        /// <summary>
+        /// Constant DOCKER for ImageType
+        /// </summary>
+        public static readonly ImageType DOCKER = new ImageType("DOCKER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageType FindValue(string value)
+        {
+            return FindValue<ImageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageType(string value)
         {
             return FindValue(value);
         }

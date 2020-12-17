@@ -30,6 +30,11 @@ namespace Amazon.Imagebuilder.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListImagePipelineImagesResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the ImageSummaryList
+        /// </summary>
+        IPaginatedEnumerable<ImageSummary> ImageSummaryList { get; }
     }
 }
 #endif

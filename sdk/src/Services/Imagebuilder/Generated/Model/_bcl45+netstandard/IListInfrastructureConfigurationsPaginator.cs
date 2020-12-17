@@ -30,6 +30,11 @@ namespace Amazon.Imagebuilder.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListInfrastructureConfigurationsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the InfrastructureConfigurationSummaryList
+        /// </summary>
+        IPaginatedEnumerable<InfrastructureConfigurationSummary> InfrastructureConfigurationSummaryList { get; }
     }
 }
 #endif

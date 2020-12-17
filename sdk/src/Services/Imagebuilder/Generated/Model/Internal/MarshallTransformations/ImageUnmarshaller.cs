@@ -70,6 +70,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("containerRecipe", targetDepth))
+                {
+                    var unmarshaller = ContainerRecipeUnmarshaller.Instance;
+                    unmarshalledObject.ContainerRecipe = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dateCreated", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -152,6 +158,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("version", targetDepth))

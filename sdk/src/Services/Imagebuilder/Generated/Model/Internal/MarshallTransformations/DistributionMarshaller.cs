@@ -56,6 +56,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetContainerDistributionConfiguration())
+            {
+                context.Writer.WritePropertyName("containerDistributionConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ContainerDistributionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContainerDistributionConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLicenseConfigurationArns())
             {
                 context.Writer.WritePropertyName("licenseConfigurationArns");

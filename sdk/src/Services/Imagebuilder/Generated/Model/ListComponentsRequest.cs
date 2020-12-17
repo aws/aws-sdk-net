@@ -34,10 +34,29 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListComponentsRequest : AmazonImagebuilderRequest
     {
+        private bool? _byName;
         private List<Filter> _filters = new List<Filter>();
         private int? _maxResults;
         private string _nextToken;
         private Ownership _owner;
+
+        /// <summary>
+        /// Gets and sets the property ByName. 
+        /// <para>
+        /// Returns the list of component build versions for the specified semantic version.
+        /// </para>
+        /// </summary>
+        public bool ByName
+        {
+            get { return this._byName.GetValueOrDefault(); }
+            set { this._byName = value; }
+        }
+
+        // Check to see if ByName property is set
+        internal bool IsSetByName()
+        {
+            return this._byName.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 

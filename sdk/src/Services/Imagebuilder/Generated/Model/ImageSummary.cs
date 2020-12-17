@@ -42,6 +42,7 @@ namespace Amazon.Imagebuilder.Model
         private Platform _platform;
         private ImageState _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private ImageType _type;
         private string _version;
 
         /// <summary>
@@ -208,6 +209,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Specifies whether this is an AMI or container image.
+        /// </para>
+        /// </summary>
+        public ImageType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>

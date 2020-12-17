@@ -70,6 +70,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("containerRecipeArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContainerRecipeArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dateCreated", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
