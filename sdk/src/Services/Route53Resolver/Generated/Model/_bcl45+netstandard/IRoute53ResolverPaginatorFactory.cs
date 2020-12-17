@@ -27,6 +27,11 @@ namespace Amazon.Route53Resolver.Model
     {
 
         /// <summary>
+        /// Paginator for ListResolverDnssecConfigs operation
+        ///</summary>
+        IListResolverDnssecConfigsPaginator ListResolverDnssecConfigs(ListResolverDnssecConfigsRequest request);
+
+        /// <summary>
         /// Paginator for ListResolverEndpointIpAddresses operation
         ///</summary>
         IListResolverEndpointIpAddressesPaginator ListResolverEndpointIpAddresses(ListResolverEndpointIpAddressesRequest request);

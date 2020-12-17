@@ -43,6 +43,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Route53Resolver")]
+        public void ListResolverDnssecConfigsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListResolverDnssecConfigsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListResolverDnssecConfigsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListResolverDnssecConfigsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListResolverDnssecConfigs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListResolverDnssecConfigs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListResolverDnssecConfigsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListResolverDnssecConfigsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListResolverDnssecConfigsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListResolverDnssecConfigs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListResolverDnssecConfigs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
         public void ListResolverEndpointIpAddressesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListResolverEndpointIpAddressesRequest>();

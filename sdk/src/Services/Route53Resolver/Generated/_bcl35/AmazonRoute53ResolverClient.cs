@@ -1288,6 +1288,79 @@ namespace Amazon.Route53Resolver
 
         #endregion
         
+        #region  GetResolverDnssecConfig
+
+        /// <summary>
+        /// Gets DNSSEC validation information for a specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResolverDnssecConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetResolverDnssecConfig service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverDnssecConfig">REST API Reference for GetResolverDnssecConfig Operation</seealso>
+        public virtual GetResolverDnssecConfigResponse GetResolverDnssecConfig(GetResolverDnssecConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverDnssecConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverDnssecConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetResolverDnssecConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResolverDnssecConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResolverDnssecConfig operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResolverDnssecConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverDnssecConfig">REST API Reference for GetResolverDnssecConfig Operation</seealso>
+        public virtual IAsyncResult BeginGetResolverDnssecConfig(GetResolverDnssecConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverDnssecConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverDnssecConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResolverDnssecConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResolverDnssecConfig.</param>
+        /// 
+        /// <returns>Returns a  GetResolverDnssecConfigResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverDnssecConfig">REST API Reference for GetResolverDnssecConfig Operation</seealso>
+        public virtual GetResolverDnssecConfigResponse EndGetResolverDnssecConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetResolverDnssecConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetResolverEndpoint
 
         /// <summary>
@@ -1715,9 +1788,10 @@ namespace Amazon.Route53Resolver
         #region  GetResolverRulePolicy
 
         /// <summary>
-        /// Gets information about a Resolver rule policy. A Resolver rule policy specifies the
-        /// Resolver operations and resources that you want to allow another AWS account to be
-        /// able to use.
+        /// Gets information about the Resolver rule policy for a specified rule. A Resolver rule
+        /// policy includes the rule that you want to share with another account, the account
+        /// that you want to share the rule with, and the Resolver operations that you want to
+        /// allow the account to use.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResolverRulePolicy service method.</param>
         /// 
@@ -1773,6 +1847,81 @@ namespace Amazon.Route53Resolver
         public virtual GetResolverRulePolicyResponse EndGetResolverRulePolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetResolverRulePolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListResolverDnssecConfigs
+
+        /// <summary>
+        /// Lists the configurations for DNSSEC validation that are associated with the current
+        /// AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResolverDnssecConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListResolverDnssecConfigs service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidNextTokenException">
+        /// The value that you specified for <code>NextToken</code> in a <code>List</code> request
+        /// isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs">REST API Reference for ListResolverDnssecConfigs Operation</seealso>
+        public virtual ListResolverDnssecConfigsResponse ListResolverDnssecConfigs(ListResolverDnssecConfigsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverDnssecConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverDnssecConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResolverDnssecConfigsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResolverDnssecConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResolverDnssecConfigs operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResolverDnssecConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs">REST API Reference for ListResolverDnssecConfigs Operation</seealso>
+        public virtual IAsyncResult BeginListResolverDnssecConfigs(ListResolverDnssecConfigsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverDnssecConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverDnssecConfigsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListResolverDnssecConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResolverDnssecConfigs.</param>
+        /// 
+        /// <returns>Returns a  ListResolverDnssecConfigsResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs">REST API Reference for ListResolverDnssecConfigs Operation</seealso>
+        public virtual ListResolverDnssecConfigsResponse EndListResolverDnssecConfigs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListResolverDnssecConfigsResponse>(asyncResult);
         }
 
         #endregion
@@ -2358,9 +2507,9 @@ namespace Amazon.Route53Resolver
         #region  PutResolverRulePolicy
 
         /// <summary>
-        /// Specifies an AWS account that you want to share rules with, the Resolver rules that
-        /// you want to share, and the operations that you want the account to be able to perform
-        /// on those rules.
+        /// Specifies an AWS rule that you want to share with another account, the account that
+        /// you want to share the rule with, and the operations that you want the account to be
+        /// able to perform on the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResolverRulePolicy service method.</param>
         /// 
@@ -2563,6 +2712,80 @@ namespace Amazon.Route53Resolver
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateResolverDnssecConfig
+
+        /// <summary>
+        /// Updates an existing DNSSEC validation configuration. If there is no existing DNSSEC
+        /// validation configuration, one is created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResolverDnssecConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResolverDnssecConfig service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverDnssecConfig">REST API Reference for UpdateResolverDnssecConfig Operation</seealso>
+        public virtual UpdateResolverDnssecConfigResponse UpdateResolverDnssecConfig(UpdateResolverDnssecConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverDnssecConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverDnssecConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResolverDnssecConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateResolverDnssecConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResolverDnssecConfig operation on AmazonRoute53ResolverClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateResolverDnssecConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverDnssecConfig">REST API Reference for UpdateResolverDnssecConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateResolverDnssecConfig(UpdateResolverDnssecConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverDnssecConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverDnssecConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateResolverDnssecConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateResolverDnssecConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateResolverDnssecConfigResult from Route53Resolver.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverDnssecConfig">REST API Reference for UpdateResolverDnssecConfig Operation</seealso>
+        public virtual UpdateResolverDnssecConfigResponse EndUpdateResolverDnssecConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateResolverDnssecConfigResponse>(asyncResult);
         }
 
         #endregion

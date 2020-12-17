@@ -29,30 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// This is the response object from the GetResolverRulePolicy operation.
+    /// Container for the parameters to the GetResolverDnssecConfig operation.
+    /// Gets DNSSEC validation information for a specified resource.
     /// </summary>
-    public partial class GetResolverRulePolicyResponse : AmazonWebServiceResponse
+    public partial class GetResolverDnssecConfigRequest : AmazonRoute53ResolverRequest
     {
-        private string _resolverRulePolicy;
+        private string _resourceId;
 
         /// <summary>
-        /// Gets and sets the property ResolverRulePolicy. 
+        /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code>
-        /// request.
+        /// The ID of the virtual private cloud (VPC) for the DNSSEC validation status.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5000)]
-        public string ResolverRulePolicy
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string ResourceId
         {
-            get { return this._resolverRulePolicy; }
-            set { this._resolverRulePolicy = value; }
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
         }
 
-        // Check to see if ResolverRulePolicy property is set
-        internal bool IsSetResolverRulePolicy()
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
         {
-            return this._resolverRulePolicy != null;
+            return this._resourceId != null;
         }
 
     }

@@ -29,30 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// This is the response object from the GetResolverRulePolicy operation.
+    /// This is the response object from the GetResolverDnssecConfig operation.
     /// </summary>
-    public partial class GetResolverRulePolicyResponse : AmazonWebServiceResponse
+    public partial class GetResolverDnssecConfigResponse : AmazonWebServiceResponse
     {
-        private string _resolverRulePolicy;
+        private ResolverDnssecConfig _resolverDNSSECConfig;
 
         /// <summary>
-        /// Gets and sets the property ResolverRulePolicy. 
+        /// Gets and sets the property ResolverDNSSECConfig. 
         /// <para>
-        /// The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code>
-        /// request.
+        /// The information about a configuration for DNSSEC validation.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5000)]
-        public string ResolverRulePolicy
+        public ResolverDnssecConfig ResolverDNSSECConfig
         {
-            get { return this._resolverRulePolicy; }
-            set { this._resolverRulePolicy = value; }
+            get { return this._resolverDNSSECConfig; }
+            set { this._resolverDNSSECConfig = value; }
         }
 
-        // Check to see if ResolverRulePolicy property is set
-        internal bool IsSetResolverRulePolicy()
+        // Check to see if ResolverDNSSECConfig property is set
+        internal bool IsSetResolverDNSSECConfig()
         {
-            return this._resolverRulePolicy != null;
+            return this._resolverDNSSECConfig != null;
         }
 
     }

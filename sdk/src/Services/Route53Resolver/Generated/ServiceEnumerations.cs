@@ -107,6 +107,64 @@ namespace Amazon.Route53Resolver
 
 
     /// <summary>
+    /// Constants used for properties of type ResolverDNSSECValidationStatus.
+    /// </summary>
+    public class ResolverDNSSECValidationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ResolverDNSSECValidationStatus
+        /// </summary>
+        public static readonly ResolverDNSSECValidationStatus DISABLED = new ResolverDNSSECValidationStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLING for ResolverDNSSECValidationStatus
+        /// </summary>
+        public static readonly ResolverDNSSECValidationStatus DISABLING = new ResolverDNSSECValidationStatus("DISABLING");
+        /// <summary>
+        /// Constant ENABLED for ResolverDNSSECValidationStatus
+        /// </summary>
+        public static readonly ResolverDNSSECValidationStatus ENABLED = new ResolverDNSSECValidationStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for ResolverDNSSECValidationStatus
+        /// </summary>
+        public static readonly ResolverDNSSECValidationStatus ENABLING = new ResolverDNSSECValidationStatus("ENABLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolverDNSSECValidationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolverDNSSECValidationStatus FindValue(string value)
+        {
+            return FindValue<ResolverDNSSECValidationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolverDNSSECValidationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResolverEndpointDirection.
     /// </summary>
     public class ResolverEndpointDirection : ConstantClass
@@ -672,6 +730,56 @@ namespace Amazon.Route53Resolver
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Validation.
+    /// </summary>
+    public class Validation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLE for Validation
+        /// </summary>
+        public static readonly Validation DISABLE = new Validation("DISABLE");
+        /// <summary>
+        /// Constant ENABLE for Validation
+        /// </summary>
+        public static readonly Validation ENABLE = new Validation("ENABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Validation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Validation FindValue(string value)
+        {
+            return FindValue<Validation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Validation(string value)
         {
             return FindValue(value);
         }

@@ -1072,6 +1072,59 @@ namespace Amazon.Route53Resolver
 
         #endregion
         
+        #region  GetResolverDnssecConfig
+
+        internal virtual GetResolverDnssecConfigResponse GetResolverDnssecConfig(GetResolverDnssecConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverDnssecConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverDnssecConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetResolverDnssecConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets DNSSEC validation information for a specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResolverDnssecConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResolverDnssecConfig service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverDnssecConfig">REST API Reference for GetResolverDnssecConfig Operation</seealso>
+        public virtual Task<GetResolverDnssecConfigResponse> GetResolverDnssecConfigAsync(GetResolverDnssecConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetResolverDnssecConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResolverDnssecConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResolverDnssecConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetResolverEndpoint
 
         internal virtual GetResolverEndpointResponse GetResolverEndpoint(GetResolverEndpointRequest request)
@@ -1390,9 +1443,10 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Gets information about a Resolver rule policy. A Resolver rule policy specifies the
-        /// Resolver operations and resources that you want to allow another AWS account to be
-        /// able to use.
+        /// Gets information about the Resolver rule policy for a specified rule. A Resolver rule
+        /// policy includes the rule that you want to share with another account, the account
+        /// that you want to share the rule with, and the Resolver operations that you want to
+        /// allow the account to use.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResolverRulePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1417,6 +1471,61 @@ namespace Amazon.Route53Resolver
             options.ResponseUnmarshaller = GetResolverRulePolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetResolverRulePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResolverDnssecConfigs
+
+        internal virtual ListResolverDnssecConfigsResponse ListResolverDnssecConfigs(ListResolverDnssecConfigsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverDnssecConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverDnssecConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResolverDnssecConfigsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the configurations for DNSSEC validation that are associated with the current
+        /// AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResolverDnssecConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResolverDnssecConfigs service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidNextTokenException">
+        /// The value that you specified for <code>NextToken</code> in a <code>List</code> request
+        /// isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs">REST API Reference for ListResolverDnssecConfigs Operation</seealso>
+        public virtual Task<ListResolverDnssecConfigsResponse> ListResolverDnssecConfigsAsync(ListResolverDnssecConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListResolverDnssecConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResolverDnssecConfigsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResolverDnssecConfigsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1853,9 +1962,9 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Specifies an AWS account that you want to share rules with, the Resolver rules that
-        /// you want to share, and the operations that you want the account to be able to perform
-        /// on those rules.
+        /// Specifies an AWS rule that you want to share with another account, the account that
+        /// you want to share the rule with, and the operations that you want the account to be
+        /// able to perform on the rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResolverRulePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1987,6 +2096,60 @@ namespace Amazon.Route53Resolver
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateResolverDnssecConfig
+
+        internal virtual UpdateResolverDnssecConfigResponse UpdateResolverDnssecConfig(UpdateResolverDnssecConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverDnssecConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverDnssecConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResolverDnssecConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing DNSSEC validation configuration. If there is no existing DNSSEC
+        /// validation configuration, one is created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResolverDnssecConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateResolverDnssecConfig service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
+        /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverDnssecConfig">REST API Reference for UpdateResolverDnssecConfig Operation</seealso>
+        public virtual Task<UpdateResolverDnssecConfigResponse> UpdateResolverDnssecConfigAsync(UpdateResolverDnssecConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateResolverDnssecConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResolverDnssecConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateResolverDnssecConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
