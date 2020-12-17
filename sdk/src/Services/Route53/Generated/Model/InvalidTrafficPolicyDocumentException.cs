@@ -30,7 +30,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// The format of the traffic policy document that you specified in the <code>Document</code>
-    /// element is invalid.
+    /// element is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -957,6 +957,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly RRType CNAME = new RRType("CNAME");
         /// <summary>
+        /// Constant DS for RRType
+        /// </summary>
+        public static readonly RRType DS = new RRType("DS");
+        /// <summary>
         /// Constant MX for RRType
         /// </summary>
         public static readonly RRType MX = new RRType("MX");

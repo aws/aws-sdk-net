@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// Parameter name is invalid.
+    /// Parameter name is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

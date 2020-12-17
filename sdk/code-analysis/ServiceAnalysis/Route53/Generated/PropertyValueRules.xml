@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Route53.Model.ActivateKeySigningKeyRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ActivateKeySigningKeyRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.AssociateVPCWithHostedZoneRequest.HostedZoneId</property>
     <max>32</max>
   </property-value-rule>
@@ -36,6 +45,29 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateHostedZoneResponse.Location</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateKeySigningKeyRequest.CallerReference</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateKeySigningKeyRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateKeySigningKeyRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateKeySigningKeyRequest.Status</property>
+    <min>5</min>
+    <max>150</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateKeySigningKeyResponse.Location</property>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -128,12 +160,30 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.DeactivateKeySigningKeyRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.DeactivateKeySigningKeyRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.DeleteHealthCheckRequest.HealthCheckId</property>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.DeleteHostedZoneRequest.Id</property>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.DeleteKeySigningKeyRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.DeleteKeySigningKeyRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.DeleteQueryLoggingConfigRequest.Id</property>
@@ -164,7 +214,15 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.DisableHostedZoneDNSSECRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.DisassociateVPCFromHostedZoneRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.EnableHostedZoneDNSSECRequest.HostedZoneId</property>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -173,6 +231,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetChangeRequest.Id</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.GetDNSSECRequest.HostedZoneId</property>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -674,6 +736,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.DNSSECStatus.ServeSignature</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.DNSSECStatus.StatusMessage</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.GeoLocation.ContinentCode</property>
     <min>2</min>
     <max>2</max>
@@ -810,6 +882,26 @@
   <property-value-rule>
     <property>Amazon.Route53.Model.HostedZoneSummary.Name</property>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.KeySigningKey.Name</property>
+    <min>3</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.KeySigningKey.KeyTag</property>
+    <min>0</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.KeySigningKey.Status</property>
+    <min>5</min>
+    <max>150</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.KeySigningKey.StatusMessage</property>
+    <min>0</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.LinkedService.ServicePrincipal</property>

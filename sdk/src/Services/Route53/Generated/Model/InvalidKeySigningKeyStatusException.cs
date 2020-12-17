@@ -29,43 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// This exception contains a list of messages that might contain one or more error messages.
-    /// Each error message indicates one error in the change batch.
+    /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class InvalidChangeBatchException : AmazonRoute53Exception
+    public partial class InvalidKeySigningKeyStatusException : AmazonRoute53Exception
     {
-        private List<string> _messages = new List<string>();
 
         /// <summary>
-        /// Constructs a new InvalidChangeBatchException with the specified error
+        /// Constructs a new InvalidKeySigningKeyStatusException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public InvalidChangeBatchException(string message) 
+        public InvalidKeySigningKeyStatusException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of InvalidChangeBatchException
+        /// Construct instance of InvalidKeySigningKeyStatusException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public InvalidChangeBatchException(string message, Exception innerException) 
+        public InvalidKeySigningKeyStatusException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of InvalidChangeBatchException
+        /// Construct instance of InvalidKeySigningKeyStatusException
         /// </summary>
         /// <param name="innerException"></param>
-        public InvalidChangeBatchException(Exception innerException) 
+        public InvalidKeySigningKeyStatusException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of InvalidChangeBatchException
+        /// Construct instance of InvalidKeySigningKeyStatusException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -73,33 +71,32 @@ namespace Amazon.Route53.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InvalidChangeBatchException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidKeySigningKeyStatusException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of InvalidChangeBatchException
+        /// Construct instance of InvalidKeySigningKeyStatusException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public InvalidChangeBatchException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public InvalidKeySigningKeyStatusException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the InvalidChangeBatchException class with serialized data.
+        /// Constructs a new instance of the InvalidKeySigningKeyStatusException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected InvalidChangeBatchException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected InvalidKeySigningKeyStatusException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            this.Messages = (List<string>)info.GetValue("Messages", typeof(List<string>));
         }
 
         /// <summary>
@@ -120,24 +117,8 @@ namespace Amazon.Route53.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
-            info.AddValue("Messages", this.Messages);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property Messages.
-        /// </summary>
-        public List<string> Messages
-        {
-            get { return this._messages; }
-            set { this._messages = value; }
-        }
-
-        // Check to see if Messages property is set
-        internal bool IsSetMessages()
-        {
-            return this._messages != null && this._messages.Count > 0; 
-        }
 
     }
 }

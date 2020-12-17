@@ -44,6 +44,64 @@ namespace Amazon.Route53
 
 
         
+        #region  ActivateKeySigningKey
+
+
+        /// <summary>
+        /// Activates a key signing key (KSK) so that it can be used for signing by DNSSEC. This
+        /// operation changes the KSK status to <code>ACTIVE</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ActivateKeySigningKey service method.</param>
+        /// 
+        /// <returns>The response from the ActivateKeySigningKey service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
+        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
+        /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidSigningStatusException">
+        /// Your hosted zone status isn't valid for this operation. In the hosted zone, change
+        /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchKeySigningKeyException">
+        /// The specified key signing key (KSK) doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">REST API Reference for ActivateKeySigningKey Operation</seealso>
+        ActivateKeySigningKeyResponse ActivateKeySigningKey(ActivateKeySigningKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ActivateKeySigningKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ActivateKeySigningKey operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndActivateKeySigningKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">REST API Reference for ActivateKeySigningKey Operation</seealso>
+        IAsyncResult BeginActivateKeySigningKey(ActivateKeySigningKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ActivateKeySigningKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginActivateKeySigningKey.</param>
+        /// 
+        /// <returns>Returns a  ActivateKeySigningKeyResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">REST API Reference for ActivateKeySigningKey Operation</seealso>
+        ActivateKeySigningKeyResponse EndActivateKeySigningKey(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateVPCWithHostedZone
 
 
@@ -702,6 +760,81 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  CreateKeySigningKey
+
+
+        /// <summary>
+        /// Creates a new key signing key (KSK) associated with a hosted zone. You can only have
+        /// two KSKs per hosted zone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateKeySigningKey service method.</param>
+        /// 
+        /// <returns>The response from the CreateKeySigningKey service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidArgumentException">
+        /// Parameter name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyNameException">
+        /// The key signing key (KSK) name that you specified isn't a valid name.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
+        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
+        /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidSigningStatusException">
+        /// Your hosted zone status isn't valid for this operation. In the hosted zone, change
+        /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.KeySigningKeyAlreadyExistsException">
+        /// You've already created a key signing key (KSK) with this name or with the same customer
+        /// managed key (CMK) ARN.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.TooManyKeySigningKeysException">
+        /// You've reached the limit for the number of key signing keys (KSKs). Remove at least
+        /// one KSK, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">REST API Reference for CreateKeySigningKey Operation</seealso>
+        CreateKeySigningKeyResponse CreateKeySigningKey(CreateKeySigningKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateKeySigningKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateKeySigningKey operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateKeySigningKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">REST API Reference for CreateKeySigningKey Operation</seealso>
+        IAsyncResult BeginCreateKeySigningKey(CreateKeySigningKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateKeySigningKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateKeySigningKey.</param>
+        /// 
+        /// <returns>Returns a  CreateKeySigningKeyResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">REST API Reference for CreateKeySigningKey Operation</seealso>
+        CreateKeySigningKeyResponse EndCreateKeySigningKey(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateQueryLoggingConfig
 
 
@@ -1019,7 +1152,7 @@ namespace Amazon.Route53
         /// The specified HostedZone can't be found.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidArgumentException">
-        /// Parameter name is invalid.
+        /// Parameter name is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -1080,7 +1213,7 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidTrafficPolicyDocumentException">
         /// The format of the traffic policy document that you specified in the <code>Document</code>
-        /// element is invalid.
+        /// element is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TooManyTrafficPoliciesException">
         /// This traffic policy can't be created because the current account has reached the limit
@@ -1236,7 +1369,7 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidTrafficPolicyDocumentException">
         /// The format of the traffic policy document that you specified in the <code>Document</code>
-        /// element is invalid.
+        /// element is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
         /// No traffic policy exists with the specified ID.
@@ -1355,6 +1488,69 @@ namespace Amazon.Route53
         /// <returns>Returns a  CreateVPCAssociationAuthorizationResult from Route53.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">REST API Reference for CreateVPCAssociationAuthorization Operation</seealso>
         CreateVPCAssociationAuthorizationResponse EndCreateVPCAssociationAuthorization(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeactivateKeySigningKey
+
+
+        /// <summary>
+        /// Deactivates a key signing key (KSK) so that it will not be used for signing by DNSSEC.
+        /// This operation changes the KSK status to <code>INACTIVE</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeactivateKeySigningKey service method.</param>
+        /// 
+        /// <returns>The response from the DeactivateKeySigningKey service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
+        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidSigningStatusException">
+        /// Your hosted zone status isn't valid for this operation. In the hosted zone, change
+        /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.KeySigningKeyInParentDSRecordException">
+        /// The key signing key (KSK) is specified in a parent DS record.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.KeySigningKeyInUseException">
+        /// The key signing key (KSK) that you specified can't be deactivated because it's the
+        /// only KSK for a currently-enabled DNSSEC. Disable DNSSEC signing, or add or enable
+        /// another KSK.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchKeySigningKeyException">
+        /// The specified key signing key (KSK) doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">REST API Reference for DeactivateKeySigningKey Operation</seealso>
+        DeactivateKeySigningKeyResponse DeactivateKeySigningKey(DeactivateKeySigningKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeactivateKeySigningKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeactivateKeySigningKey operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeactivateKeySigningKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">REST API Reference for DeactivateKeySigningKey Operation</seealso>
+        IAsyncResult BeginDeactivateKeySigningKey(DeactivateKeySigningKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeactivateKeySigningKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeactivateKeySigningKey.</param>
+        /// 
+        /// <returns>Returns a  DeactivateKeySigningKeyResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">REST API Reference for DeactivateKeySigningKey Operation</seealso>
+        DeactivateKeySigningKeyResponse EndDeactivateKeySigningKey(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1539,6 +1735,65 @@ namespace Amazon.Route53
         /// <returns>Returns a  DeleteHostedZoneResult from Route53.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">REST API Reference for DeleteHostedZone Operation</seealso>
         DeleteHostedZoneResponse EndDeleteHostedZone(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteKeySigningKey
+
+
+        /// <summary>
+        /// Deletes a key signing key (KSK). Before you can delete a KSK, you must deactivate
+        /// it. The KSK must be deactived before you can delete it regardless of whether the hosted
+        /// zone is enabled for DNSSEC signing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKeySigningKey service method.</param>
+        /// 
+        /// <returns>The response from the DeleteKeySigningKey service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
+        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
+        /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidSigningStatusException">
+        /// Your hosted zone status isn't valid for this operation. In the hosted zone, change
+        /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchKeySigningKeyException">
+        /// The specified key signing key (KSK) doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">REST API Reference for DeleteKeySigningKey Operation</seealso>
+        DeleteKeySigningKeyResponse DeleteKeySigningKey(DeleteKeySigningKeyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteKeySigningKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKeySigningKey operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteKeySigningKey
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">REST API Reference for DeleteKeySigningKey Operation</seealso>
+        IAsyncResult BeginDeleteKeySigningKey(DeleteKeySigningKeyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteKeySigningKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteKeySigningKey.</param>
+        /// 
+        /// <returns>Returns a  DeleteKeySigningKeyResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">REST API Reference for DeleteKeySigningKey Operation</seealso>
+        DeleteKeySigningKeyResponse EndDeleteKeySigningKey(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1868,6 +2123,69 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  DisableHostedZoneDNSSEC
+
+
+        /// <summary>
+        /// Disables DNSSEC signing in a specific hosted zone. This action does not deactivate
+        /// any key signing keys (KSKs) that are active in the hosted zone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableHostedZoneDNSSEC service method.</param>
+        /// 
+        /// <returns>The response from the DisableHostedZoneDNSSEC service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.DNSSECNotFoundException">
+        /// The hosted zone doesn't have any DNSSEC resources.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidArgumentException">
+        /// Parameter name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
+        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
+        /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.KeySigningKeyInParentDSRecordException">
+        /// The key signing key (KSK) is specified in a parent DS record.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC">REST API Reference for DisableHostedZoneDNSSEC Operation</seealso>
+        DisableHostedZoneDNSSECResponse DisableHostedZoneDNSSEC(DisableHostedZoneDNSSECRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableHostedZoneDNSSEC operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableHostedZoneDNSSEC operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableHostedZoneDNSSEC
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC">REST API Reference for DisableHostedZoneDNSSEC Operation</seealso>
+        IAsyncResult BeginDisableHostedZoneDNSSEC(DisableHostedZoneDNSSECRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableHostedZoneDNSSEC operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableHostedZoneDNSSEC.</param>
+        /// 
+        /// <returns>Returns a  DisableHostedZoneDNSSECResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC">REST API Reference for DisableHostedZoneDNSSEC Operation</seealso>
+        DisableHostedZoneDNSSECResponse EndDisableHostedZoneDNSSEC(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateVPCFromHostedZone
 
 
@@ -1952,6 +2270,72 @@ namespace Amazon.Route53
         /// <returns>Returns a  DisassociateVPCFromHostedZoneResult from Route53.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">REST API Reference for DisassociateVPCFromHostedZone Operation</seealso>
         DisassociateVPCFromHostedZoneResponse EndDisassociateVPCFromHostedZone(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableHostedZoneDNSSEC
+
+
+        /// <summary>
+        /// Enables DNSSEC signing in a specific hosted zone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableHostedZoneDNSSEC service method.</param>
+        /// 
+        /// <returns>The response from the EnableHostedZoneDNSSEC service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
+        /// Another user submitted a request to create, update, or delete the object at the same
+        /// time that you did. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.DNSSECNotFoundException">
+        /// The hosted zone doesn't have any DNSSEC resources.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.HostedZonePartiallyDelegatedException">
+        /// The hosted zone nameservers don't match the parent nameservers. The hosted zone and
+        /// parent must have the same nameservers.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidArgumentException">
+        /// Parameter name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
+        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
+        /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.KeySigningKeyWithActiveStatusNotFoundException">
+        /// A key signing key (KSK) with <code>ACTIVE</code> status wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC">REST API Reference for EnableHostedZoneDNSSEC Operation</seealso>
+        EnableHostedZoneDNSSECResponse EnableHostedZoneDNSSEC(EnableHostedZoneDNSSECRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableHostedZoneDNSSEC operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableHostedZoneDNSSEC operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableHostedZoneDNSSEC
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC">REST API Reference for EnableHostedZoneDNSSEC Operation</seealso>
+        IAsyncResult BeginEnableHostedZoneDNSSEC(EnableHostedZoneDNSSECRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableHostedZoneDNSSEC operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableHostedZoneDNSSEC.</param>
+        /// 
+        /// <returns>Returns a  EnableHostedZoneDNSSECResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC">REST API Reference for EnableHostedZoneDNSSEC Operation</seealso>
+        EnableHostedZoneDNSSECResponse EndEnableHostedZoneDNSSEC(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2118,6 +2502,53 @@ namespace Amazon.Route53
         /// <returns>Returns a  GetCheckerIpRangesResult from Route53.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">REST API Reference for GetCheckerIpRanges Operation</seealso>
         GetCheckerIpRangesResponse EndGetCheckerIpRanges(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetDNSSEC
+
+
+        /// <summary>
+        /// Returns information about DNSSEC for a specific hosted zone, including the key signing
+        /// keys (KSKs) and zone signing keys (ZSKs) in the hosted zone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDNSSEC service method.</param>
+        /// 
+        /// <returns>The response from the GetDNSSEC service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidArgumentException">
+        /// Parameter name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC">REST API Reference for GetDNSSEC Operation</seealso>
+        GetDNSSECResponse GetDNSSEC(GetDNSSECRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDNSSEC operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDNSSEC operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDNSSEC
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC">REST API Reference for GetDNSSEC Operation</seealso>
+        IAsyncResult BeginGetDNSSEC(GetDNSSECRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDNSSEC operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDNSSEC.</param>
+        /// 
+        /// <returns>Returns a  GetDNSSECResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC">REST API Reference for GetDNSSEC Operation</seealso>
+        GetDNSSECResponse EndGetDNSSEC(IAsyncResult asyncResult);
 
         #endregion
         
