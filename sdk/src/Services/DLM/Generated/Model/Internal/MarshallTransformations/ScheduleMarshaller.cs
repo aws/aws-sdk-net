@@ -106,6 +106,22 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetShareRules())
+            {
+                context.Writer.WritePropertyName("ShareRules");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectShareRulesListValue in requestObject.ShareRules)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ShareRuleMarshaller.Instance;
+                    marshaller.Marshall(requestObjectShareRulesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTagsToAdd())
             {
                 context.Writer.WritePropertyName("TagsToAdd");

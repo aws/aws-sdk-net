@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PolicyDetails Object
+    /// Response Unmarshaller for EventParameters Object
     /// </summary>  
-    public class PolicyDetailsUnmarshaller : IUnmarshaller<PolicyDetails, XmlUnmarshallerContext>, IUnmarshaller<PolicyDetails, JsonUnmarshallerContext>
+    public class EventParametersUnmarshaller : IUnmarshaller<EventParameters, XmlUnmarshallerContext>, IUnmarshaller<EventParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PolicyDetails IUnmarshaller<PolicyDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EventParameters IUnmarshaller<EventParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,33 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PolicyDetails Unmarshall(JsonUnmarshallerContext context)
+        public EventParameters Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PolicyDetails unmarshalledObject = new PolicyDetails();
+            EventParameters unmarshalledObject = new EventParameters();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Actions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Action, ActionUnmarshaller>(ActionUnmarshaller.Instance);
-                    unmarshalledObject.Actions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EventSource", targetDepth))
-                {
-                    var unmarshaller = EventSourceUnmarshaller.Instance;
-                    unmarshalledObject.EventSource = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Parameters", targetDepth))
-                {
-                    var unmarshaller = ParametersUnmarshaller.Instance;
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PolicyType", targetDepth))
+                if (context.TestExpression("DescriptionRegex", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PolicyType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DescriptionRegex = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceTypes", targetDepth))
+                if (context.TestExpression("EventType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SnapshotOwner", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ResourceTypes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Schedules", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Schedule, ScheduleUnmarshaller>(ScheduleUnmarshaller.Instance);
-                    unmarshalledObject.Schedules = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TargetTags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.TargetTags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SnapshotOwner = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +88,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         }
 
 
-        private static PolicyDetailsUnmarshaller _instance = new PolicyDetailsUnmarshaller();        
+        private static EventParametersUnmarshaller _instance = new EventParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PolicyDetailsUnmarshaller Instance
+        public static EventParametersUnmarshaller Instance
         {
             get
             {

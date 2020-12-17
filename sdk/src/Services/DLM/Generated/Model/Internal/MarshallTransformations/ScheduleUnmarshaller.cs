@@ -100,6 +100,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                     unmarshalledObject.RetainRule = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ShareRules", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ShareRule, ShareRuleUnmarshaller>(ShareRuleUnmarshaller.Instance);
+                    unmarshalledObject.ShareRules = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TagsToAdd", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);

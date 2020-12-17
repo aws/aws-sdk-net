@@ -63,7 +63,7 @@ namespace Amazon.DLM.Model
         /// Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted
         /// when the lifecycle policy runs. <code>true</code> indicates that targeted instances
         /// are not rebooted when the policy runs. <code>false</code> indicates that target instances
-        /// are rebooted when the policy runs. The default is <code>true</code> (instance are
+        /// are rebooted when the policy runs. The default is <code>true</code> (instances are
         /// not rebooted).
         /// </para>
         /// </summary>

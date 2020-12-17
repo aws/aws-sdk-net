@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DLM.Model
 {
     /// <summary>
-    /// Specifies a backup schedule.
+    /// Specifies a backup schedule for a snapshot or AMI lifecycle policy.
     /// </summary>
     public partial class Schedule
     {
@@ -39,6 +39,7 @@ namespace Amazon.DLM.Model
         private FastRestoreRule _fastRestoreRule;
         private string _name;
         private RetainRule _retainRule;
+        private List<ShareRule> _shareRules = new List<ShareRule>();
         private List<Tag> _tagsToAdd = new List<Tag>();
         private List<Tag> _variableTags = new List<Tag>();
 
@@ -151,6 +152,25 @@ namespace Amazon.DLM.Model
         internal bool IsSetRetainRule()
         {
             return this._retainRule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareRules. 
+        /// <para>
+        /// The rule for sharing snapshots with other AWS accounts.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<ShareRule> ShareRules
+        {
+            get { return this._shareRules; }
+            set { this._shareRules = value; }
+        }
+
+        // Check to see if ShareRules property is set
+        internal bool IsSetShareRules()
+        {
+            return this._shareRules != null && this._shareRules.Count > 0; 
         }
 
         /// <summary>
