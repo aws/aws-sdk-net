@@ -36,6 +36,7 @@ namespace Amazon.ServiceCatalog.Model
         private bool? _active;
         private string _id;
         private string _key;
+        private string _owner;
         private string _value;
 
         /// <summary>
@@ -92,6 +93,24 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetKey()
         {
             return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// The AWS account Id of the owner account that created the TagOption.
+        /// </para>
+        /// </summary>
+        public string Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
         }
 
         /// <summary>

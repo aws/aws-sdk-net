@@ -287,6 +287,64 @@ namespace Amazon.ServiceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type DescribePortfolioShareType.
+    /// </summary>
+    public class DescribePortfolioShareType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for DescribePortfolioShareType
+        /// </summary>
+        public static readonly DescribePortfolioShareType ACCOUNT = new DescribePortfolioShareType("ACCOUNT");
+        /// <summary>
+        /// Constant ORGANIZATION for DescribePortfolioShareType
+        /// </summary>
+        public static readonly DescribePortfolioShareType ORGANIZATION = new DescribePortfolioShareType("ORGANIZATION");
+        /// <summary>
+        /// Constant ORGANIZATION_MEMBER_ACCOUNT for DescribePortfolioShareType
+        /// </summary>
+        public static readonly DescribePortfolioShareType ORGANIZATION_MEMBER_ACCOUNT = new DescribePortfolioShareType("ORGANIZATION_MEMBER_ACCOUNT");
+        /// <summary>
+        /// Constant ORGANIZATIONAL_UNIT for DescribePortfolioShareType
+        /// </summary>
+        public static readonly DescribePortfolioShareType ORGANIZATIONAL_UNIT = new DescribePortfolioShareType("ORGANIZATIONAL_UNIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DescribePortfolioShareType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DescribePortfolioShareType FindValue(string value)
+        {
+            return FindValue<DescribePortfolioShareType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DescribePortfolioShareType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EvaluationType.
     /// </summary>
     public class EvaluationType : ConstantClass

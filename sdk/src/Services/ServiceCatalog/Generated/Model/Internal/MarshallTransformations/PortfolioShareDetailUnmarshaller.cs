@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TagOptionDetail Object
+    /// Response Unmarshaller for PortfolioShareDetail Object
     /// </summary>  
-    public class TagOptionDetailUnmarshaller : IUnmarshaller<TagOptionDetail, XmlUnmarshallerContext>, IUnmarshaller<TagOptionDetail, JsonUnmarshallerContext>
+    public class PortfolioShareDetailUnmarshaller : IUnmarshaller<PortfolioShareDetail, XmlUnmarshallerContext>, IUnmarshaller<PortfolioShareDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TagOptionDetail IUnmarshaller<TagOptionDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PortfolioShareDetail IUnmarshaller<PortfolioShareDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,39 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public TagOptionDetail Unmarshall(JsonUnmarshallerContext context)
+        public PortfolioShareDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            TagOptionDetail unmarshalledObject = new TagOptionDetail();
+            PortfolioShareDetail unmarshalledObject = new PortfolioShareDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Active", targetDepth))
+                if (context.TestExpression("Accepted", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Active = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Accepted = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("PrincipalId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrincipalId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Key", targetDepth))
+                if (context.TestExpression("ShareTagOptions", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ShareTagOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Owner", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Value", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +94,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         }
 
 
-        private static TagOptionDetailUnmarshaller _instance = new TagOptionDetailUnmarshaller();        
+        private static PortfolioShareDetailUnmarshaller _instance = new PortfolioShareDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TagOptionDetailUnmarshaller Instance
+        public static PortfolioShareDetailUnmarshaller Instance
         {
             get
             {

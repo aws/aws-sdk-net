@@ -1009,8 +1009,13 @@ namespace Amazon.ServiceCatalog
         /// </para>
         ///  
         /// <para>
-        /// You can't share a shared resource. This includes portfolios that contain a shared
-        /// product.
+        /// You can't share a shared resource, including portfolios that contain a shared product.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the portfolio share with the specified account or organization node already exists,
+        /// this action will have no effect and will not return an error. To update an existing
+        /// share, you must use the <code> UpdatePortfolioShare</code> API instead.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePortfolioShare service method.</param>
@@ -1062,8 +1067,13 @@ namespace Amazon.ServiceCatalog
         /// </para>
         ///  
         /// <para>
-        /// You can't share a shared resource. This includes portfolios that contain a shared
-        /// product.
+        /// You can't share a shared resource, including portfolios that contain a shared product.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the portfolio share with the specified account or organization node already exists,
+        /// this action will have no effect and will not return an error. To update an existing
+        /// share, you must use the <code> UpdatePortfolioShare</code> API instead.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePortfolioShare service method.</param>
@@ -1111,6 +1121,12 @@ namespace Amazon.ServiceCatalog
         /// <para>
         /// A delegated admin is authorized to invoke this command.
         /// </para>
+        ///  
+        /// <para>
+        /// The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
+        /// IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code>
+        /// template source in the information data section.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProduct service method.</param>
         /// 
@@ -1144,6 +1160,12 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         /// A delegated admin is authorized to invoke this command.
+        /// </para>
+        ///  
+        /// <para>
+        /// The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
+        /// IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code>
+        /// template source in the information data section.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProduct service method.</param>
@@ -1273,6 +1295,12 @@ namespace Amazon.ServiceCatalog
         /// <para>
         /// You cannot create a provisioning artifact for a product that was shared with you.
         /// </para>
+        ///  
+        /// <para>
+        /// The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
+        /// IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code>
+        /// template source in the information data section.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningArtifact service method.</param>
         /// 
@@ -1304,6 +1332,12 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         /// You cannot create a provisioning artifact for a product that was shared with you.
+        /// </para>
+        ///  
+        /// <para>
+        /// The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
+        /// IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code>
+        /// template source in the information data section.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProvisioningArtifact service method.</param>
@@ -2187,6 +2221,83 @@ namespace Amazon.ServiceCatalog
             options.ResponseUnmarshaller = DescribePortfolioResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribePortfolioResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePortfolioShares
+
+
+        /// <summary>
+        /// Returns a summary of each of the portfolio shares that were created for the specified
+        /// portfolio.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this API to determine which accounts or organizational nodes this portfolio
+        /// have been shared, whether the recipient entity has imported the share, and whether
+        /// TagOptions are included with the share.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>PortfolioId</code> and <code>Type</code> parameters are both required.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePortfolioShares service method.</param>
+        /// 
+        /// <returns>The response from the DescribePortfolioShares service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShares">REST API Reference for DescribePortfolioShares Operation</seealso>
+        public virtual DescribePortfolioSharesResponse DescribePortfolioShares(DescribePortfolioSharesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePortfolioSharesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePortfolioSharesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePortfolioSharesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a summary of each of the portfolio shares that were created for the specified
+        /// portfolio.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this API to determine which accounts or organizational nodes this portfolio
+        /// have been shared, whether the recipient entity has imported the share, and whether
+        /// TagOptions are included with the share.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>PortfolioId</code> and <code>Type</code> parameters are both required.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePortfolioShares service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePortfolioShares service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShares">REST API Reference for DescribePortfolioShares Operation</seealso>
+        public virtual Task<DescribePortfolioSharesResponse> DescribePortfolioSharesAsync(DescribePortfolioSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePortfolioSharesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePortfolioSharesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribePortfolioSharesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3575,8 +3686,9 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Requests the import of a resource as a Service Catalog provisioned product that is
-        /// associated to a Service Catalog product and provisioning artifact. Once imported all
-        /// supported Service Catalog governance actions are supported on the provisioned product.
+        /// associated to a Service Catalog product and provisioning artifact. Once imported,
+        /// all supported Service Catalog governance actions are supported on the provisioned
+        /// product.
         /// 
         ///  
         /// <para>
@@ -3585,13 +3697,19 @@ namespace Amazon.ServiceCatalog
         /// </para>
         ///  
         /// <para>
-        /// The CloudFormation stack must have one of the following statuses to be imported: CREATE_COMPLETE,
-        /// UPDATE_COMPLETE, UPDATE_ROLLBACK_COMPLETE, IMPORT_COMPLETE, IMPORT_ROLLBACK_COMPLETE.
+        /// The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>,
+        /// <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>,
+        /// <code>IMPORT_ROLLBACK_COMPLETE</code>.
         /// </para>
         ///  
         /// <para>
         /// Import of the resource requires that the CloudFormation stack template matches the
         /// associated Service Catalog product provisioning artifact. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
+        /// and <code>cloudformation:DescribeStacks</code> IAM policy permissions. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportAsProvisionedProduct service method.</param>
@@ -3623,8 +3741,9 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Requests the import of a resource as a Service Catalog provisioned product that is
-        /// associated to a Service Catalog product and provisioning artifact. Once imported all
-        /// supported Service Catalog governance actions are supported on the provisioned product.
+        /// associated to a Service Catalog product and provisioning artifact. Once imported,
+        /// all supported Service Catalog governance actions are supported on the provisioned
+        /// product.
         /// 
         ///  
         /// <para>
@@ -3633,13 +3752,19 @@ namespace Amazon.ServiceCatalog
         /// </para>
         ///  
         /// <para>
-        /// The CloudFormation stack must have one of the following statuses to be imported: CREATE_COMPLETE,
-        /// UPDATE_COMPLETE, UPDATE_ROLLBACK_COMPLETE, IMPORT_COMPLETE, IMPORT_ROLLBACK_COMPLETE.
+        /// The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>,
+        /// <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>,
+        /// <code>IMPORT_ROLLBACK_COMPLETE</code>.
         /// </para>
         ///  
         /// <para>
         /// Import of the resource requires that the CloudFormation stack template matches the
         /// associated Service Catalog product provisioning artifact. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
+        /// and <code>cloudformation:DescribeStacks</code> IAM policy permissions. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportAsProvisionedProduct service method.</param>
@@ -5200,6 +5325,121 @@ namespace Amazon.ServiceCatalog
             options.ResponseUnmarshaller = UpdatePortfolioResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdatePortfolioResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePortfolioShare
+
+
+        /// <summary>
+        /// Updates the specified portfolio share. You can use this API to enable or disable TagOptions
+        /// sharing for an existing portfolio share. 
+        /// 
+        ///  
+        /// <para>
+        /// The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation
+        /// is <code>IN_PROGRESS</code>, as the share is not available to recipient entities.
+        /// In this case, you must wait for the portfolio share to be COMPLETED.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must provide the <code>accountId</code> or organization node in the input, but
+        /// not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the portfolio is shared to both an external account and an organization node, and
+        /// both shares need to be updated, you must invoke <code>UpdatePortfolioShare</code>
+        /// separately for each share type. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code>
+        /// API for that action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePortfolioShare service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePortfolioShare service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolioShare">REST API Reference for UpdatePortfolioShare Operation</seealso>
+        public virtual UpdatePortfolioShareResponse UpdatePortfolioShare(UpdatePortfolioShareRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePortfolioShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePortfolioShareResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePortfolioShareResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the specified portfolio share. You can use this API to enable or disable TagOptions
+        /// sharing for an existing portfolio share. 
+        /// 
+        ///  
+        /// <para>
+        /// The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation
+        /// is <code>IN_PROGRESS</code>, as the share is not available to recipient entities.
+        /// In this case, you must wait for the portfolio share to be COMPLETED.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must provide the <code>accountId</code> or organization node in the input, but
+        /// not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the portfolio is shared to both an external account and an organization node, and
+        /// both shares need to be updated, you must invoke <code>UpdatePortfolioShare</code>
+        /// separately for each share type. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code>
+        /// API for that action. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePortfolioShare service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePortfolioShare service method, as returned by ServiceCatalog.</returns>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidParametersException">
+        /// One or more parameters provided to the operation are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.InvalidStateException">
+        /// An attempt was made to modify a resource that is in a state that is not valid. Check
+        /// your resources to ensure that they are in valid states before retrying the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.OperationNotSupportedException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolioShare">REST API Reference for UpdatePortfolioShare Operation</seealso>
+        public virtual Task<UpdatePortfolioShareResponse> UpdatePortfolioShareAsync(UpdatePortfolioShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePortfolioShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePortfolioShareResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePortfolioShareResponse>(request, options, cancellationToken);
         }
 
         #endregion

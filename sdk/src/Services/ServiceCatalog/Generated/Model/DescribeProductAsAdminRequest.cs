@@ -38,6 +38,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _acceptLanguage;
         private string _id;
         private string _name;
+        private string _sourcePortfolioId;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -107,6 +108,33 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourcePortfolioId. 
+        /// <para>
+        /// The unique identifier of the shared portfolio that the specified product is associated
+        /// with.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can provide this parameter to retrieve the shared TagOptions associated with the
+        /// product. If this parameter is provided and if TagOptions sharing is enabled in the
+        /// portfolio share, the API returns both local and shared TagOptions associated with
+        /// the product. Otherwise only local TagOptions will be returned. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string SourcePortfolioId
+        {
+            get { return this._sourcePortfolioId; }
+            set { this._sourcePortfolioId = value; }
+        }
+
+        // Check to see if SourcePortfolioId property is set
+        internal bool IsSetSourcePortfolioId()
+        {
+            return this._sourcePortfolioId != null;
         }
 
     }

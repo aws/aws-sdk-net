@@ -36,6 +36,12 @@ namespace Amazon.ServiceCatalog.Model
     /// <para>
     /// You cannot create a provisioning artifact for a product that was shared with you.
     /// </para>
+    ///  
+    /// <para>
+    /// The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
+    /// IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code>
+    /// template source in the information data section.
+    /// </para>
     /// </summary>
     public partial class CreateProvisioningArtifactRequest : AmazonServiceCatalogRequest
     {
@@ -99,8 +105,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The configuration for the provisioning artifact. The <code>info</code> field accepts
-        /// <code>ImportFromPhysicalID</code>. 
+        /// The configuration for the provisioning artifact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

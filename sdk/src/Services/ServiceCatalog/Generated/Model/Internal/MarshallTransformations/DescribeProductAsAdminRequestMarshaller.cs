@@ -86,6 +86,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetSourcePortfolioId())
+                {
+                    context.Writer.WritePropertyName("SourcePortfolioId");
+                    context.Writer.Write(publicRequest.SourcePortfolioId);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

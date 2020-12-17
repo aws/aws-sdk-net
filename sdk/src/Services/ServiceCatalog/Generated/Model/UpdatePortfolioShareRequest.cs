@@ -29,34 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreatePortfolioShare operation.
-    /// Shares the specified portfolio with the specified account or organization node. Shares
-    /// to an organization node can only be created by the management account of an organization
-    /// or by a delegated administrator. You can share portfolios to an organization, an organizational
-    /// unit, or a specific account.
+    /// Container for the parameters to the UpdatePortfolioShare operation.
+    /// Updates the specified portfolio share. You can use this API to enable or disable TagOptions
+    /// sharing for an existing portfolio share. 
     /// 
     ///  
     /// <para>
-    /// Note that if a delegated admin is de-registered, they can no longer create portfolio
-    /// shares.
+    /// The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation
+    /// is <code>IN_PROGRESS</code>, as the share is not available to recipient entities.
+    /// In this case, you must wait for the portfolio share to be COMPLETED.
     /// </para>
     ///  
     /// <para>
-    ///  <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio
-    /// share to an organization node.
+    /// You must provide the <code>accountId</code> or organization node in the input, but
+    /// not both.
     /// </para>
     ///  
     /// <para>
-    /// You can't share a shared resource, including portfolios that contain a shared product.
+    /// If the portfolio is shared to both an external account and an organization node, and
+    /// both shares need to be updated, you must invoke <code>UpdatePortfolioShare</code>
+    /// separately for each share type. 
     /// </para>
     ///  
     /// <para>
-    /// If the portfolio share with the specified account or organization node already exists,
-    /// this action will have no effect and will not return an error. To update an existing
-    /// share, you must use the <code> UpdatePortfolioShare</code> API instead.
+    /// This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code>
+    /// API for that action. 
     /// </para>
     /// </summary>
-    public partial class CreatePortfolioShareRequest : AmazonServiceCatalogRequest
+    public partial class UpdatePortfolioShareRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
         private string _accountId;
@@ -99,7 +99,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID. For example, <code>123456789012</code>.
+        /// The AWS Account Id of the recipient account. This field is required when updating
+        /// an external account to account type share.
         /// </para>
         /// </summary>
         public string AccountId
@@ -115,14 +116,7 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrganizationNode. 
-        /// <para>
-        /// The organization node to whom you are going to share. If <code>OrganizationNode</code>
-        /// is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd
-        /// its children (when applies), and a <code>PortfolioShareToken</code> will be returned
-        /// in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code>
-        /// creation process.
-        /// </para>
+        /// Gets and sets the property OrganizationNode.
         /// </summary>
         public OrganizationNode OrganizationNode
         {
@@ -139,7 +133,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PortfolioId. 
         /// <para>
-        /// The portfolio identifier.
+        /// The unique identifier of the portfolio for which the share will be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -158,8 +152,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ShareTagOptions. 
         /// <para>
-        /// Enables or disables <code>TagOptions </code> sharing when creating the portfolio share.
-        /// If this flag is not provided, TagOptions sharing is disabled.
+        /// A flag to enable or disable TagOptions sharing for the portfolio share. If this field
+        /// is not provided, the current state of TagOptions sharing on the portfolio share will
+        /// not be modified.
         /// </para>
         /// </summary>
         public bool ShareTagOptions

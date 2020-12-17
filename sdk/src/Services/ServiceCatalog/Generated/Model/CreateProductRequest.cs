@@ -36,6 +36,12 @@ namespace Amazon.ServiceCatalog.Model
     /// <para>
     /// A delegated admin is authorized to invoke this command.
     /// </para>
+    ///  
+    /// <para>
+    /// The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
+    /// IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code>
+    /// template source in the information data section.
+    /// </para>
     /// </summary>
     public partial class CreateProductRequest : AmazonServiceCatalogRequest
     {
@@ -202,8 +208,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactParameters. 
         /// <para>
-        /// The configuration of the provisioning artifact. The <code>info</code> field accepts
-        /// <code>ImportFromPhysicalID</code>.
+        /// The configuration of the provisioning artifact. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -261,6 +266,10 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property SupportUrl. 
         /// <para>
         /// The contact URL for product support.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2083)]

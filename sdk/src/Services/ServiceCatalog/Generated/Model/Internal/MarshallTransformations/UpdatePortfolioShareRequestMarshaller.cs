@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreatePortfolioShare Request Marshaller
+    /// UpdatePortfolioShare Request Marshaller
     /// </summary>       
-    public class CreatePortfolioShareRequestMarshaller : IMarshaller<IRequest, CreatePortfolioShareRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdatePortfolioShareRequestMarshaller : IMarshaller<IRequest, UpdatePortfolioShareRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreatePortfolioShareRequest)input);
+            return this.Marshall((UpdatePortfolioShareRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreatePortfolioShareRequest publicRequest)
+        public IRequest Marshall(UpdatePortfolioShareRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServiceCatalog");
-            string target = "AWS242ServiceCatalogService.CreatePortfolioShare";
+            string target = "AWS242ServiceCatalogService.UpdatePortfolioShare";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-12-10";            
@@ -112,9 +112,9 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreatePortfolioShareRequestMarshaller _instance = new CreatePortfolioShareRequestMarshaller();        
+        private static UpdatePortfolioShareRequestMarshaller _instance = new UpdatePortfolioShareRequestMarshaller();        
 
-        internal static CreatePortfolioShareRequestMarshaller GetInstance()
+        internal static UpdatePortfolioShareRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -122,7 +122,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreatePortfolioShareRequestMarshaller Instance
+        public static UpdatePortfolioShareRequestMarshaller Instance
         {
             get
             {
