@@ -2319,12 +2319,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns a list of organization config rules. 
         /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.&#x2028;
-        /// </para>
         ///  <note> 
         /// <para>
         /// When you specify the limit and the next token, you receive a paginated response. Limit
@@ -2387,12 +2381,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Provides organization config rule deployment status for an organization.
         /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         ///  <note> 
         /// <para>
         /// The status is not considered successful until organization config rule is successfully
@@ -2460,12 +2448,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns a list of organization conformance packs. 
         /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         ///  <note> 
         /// <para>
         /// When you specify the limit and the next token, you receive a paginated response. 
@@ -2538,12 +2520,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Provides organization conformance pack deployment status for an organization. 
         /// 
-        ///  
-        /// <para>
-        ///  Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         ///  <note> 
         /// <para>
         /// The status is not considered successful until organization conformance pack is successfully
@@ -3431,13 +3407,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns detailed status for each member account within an organization for a given
         /// organization config rule.
-        /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationConfigRuleDetailedStatus service method.</param>
         /// <param name="cancellationToken">
@@ -3493,13 +3462,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns detailed status for each member account within an organization for a given
         /// organization conformance pack.
-        /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationConformancePackDetailedStatus service method.</param>
         /// <param name="cancellationToken">
@@ -4399,6 +4361,48 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  PutExternalEvaluation
+
+        internal virtual PutExternalEvaluationResponse PutExternalEvaluation(PutExternalEvaluationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutExternalEvaluationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutExternalEvaluationResponseUnmarshaller.Instance;
+
+            return Invoke<PutExternalEvaluationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutExternalEvaluation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutExternalEvaluation service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation">REST API Reference for PutExternalEvaluation Operation</seealso>
+        public virtual Task<PutExternalEvaluationResponse> PutExternalEvaluationAsync(PutExternalEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutExternalEvaluationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutExternalEvaluationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutExternalEvaluationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutOrganizationConfigRule
 
         internal virtual PutOrganizationConfigRuleResponse PutOrganizationConfigRule(PutOrganizationConfigRuleRequest request)
@@ -4781,6 +4785,12 @@ namespace Amazon.ConfigService
         /// If you make backward incompatible changes to the SSM document, you must call this
         /// again to ensure the remediations can run.
         /// </para>
+        ///  
+        /// <para>
+        /// This API does not support adding remediation configurations for service-linked AWS
+        /// Config Rules such as Organization Config rules, the rules deployed by conformance
+        /// packs, and rules deployed by AWS Security Hub.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRemediationConfigurations service method.</param>
@@ -4854,7 +4864,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// A remediation exception is when a specific resource is no longer considered for auto-remediation.
-        /// This API adds a new exception or updates an exisiting exception for a specific resource
+        /// This API adds a new exception or updates an existing exception for a specific resource
         /// with a specific AWS Config rule. 
         /// 
         ///  <note> 

@@ -32,12 +32,6 @@ namespace Amazon.ConfigService.Model
     /// Container for the parameters to the DescribeOrganizationConfigRules operation.
     /// Returns a list of organization config rules. 
     /// 
-    ///  
-    /// <para>
-    /// Only a master account and a delegated administrator account can call this API. When
-    /// calling this API with a delegated administrator, you must ensure AWS Organizations
-    /// <code>ListDelegatedAdministrator</code> permissions are added.&#x2028;
-    /// </para>
     ///  <note> 
     /// <para>
     /// When you specify the limit and the next token, you receive a paginated response. Limit

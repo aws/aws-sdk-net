@@ -148,7 +148,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds
+        /// For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds
         /// as 50 seconds, AWS Config will put a RemediationException on your behalf for the failing
         /// resource after the 5th failed attempt within 50 seconds.
         /// </para>
@@ -211,7 +211,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts
+        /// For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts
         /// as 5, AWS Config will run auto-remediations 5 times within 50 seconds before throwing
         /// an exception.
         /// </para>

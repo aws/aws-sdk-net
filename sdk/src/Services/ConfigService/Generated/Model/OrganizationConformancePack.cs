@@ -64,9 +64,13 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property DeliveryS3Bucket. 
         /// <para>
-        /// Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and
-        /// conformance pack template that is used to create a pack. 
+        /// Amazon S3 bucket where AWS Config stores conformance pack templates. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is optional.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=63)]
         public string DeliveryS3Bucket
@@ -86,6 +90,11 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// Any folder structure you want to add to an Amazon S3 bucket.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is optional.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
         public string DeliveryS3KeyPrefix

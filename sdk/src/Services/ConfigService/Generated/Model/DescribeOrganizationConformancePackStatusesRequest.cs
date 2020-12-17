@@ -32,12 +32,6 @@ namespace Amazon.ConfigService.Model
     /// Container for the parameters to the DescribeOrganizationConformancePackStatuses operation.
     /// Provides organization conformance pack deployment status for an organization. 
     /// 
-    ///  
-    /// <para>
-    ///  Only a master account and a delegated administrator account can call this API. When
-    /// calling this API with a delegated administrator, you must ensure AWS Organizations
-    /// <code>ListDelegatedAdministrator</code> permissions are added.
-    /// </para>
     ///  <note> 
     /// <para>
     /// The status is not considered successful until organization conformance pack is successfully
