@@ -31,8 +31,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the CreateKey operation.
     /// Creates a unique customer managed <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master-keys">customer
-    /// master key</a> (CMK) in your AWS account and Region. You cannot use this operation
-    /// to create a CMK in a different AWS account.
+    /// master key</a> (CMK) in your AWS account and Region.
     /// 
     ///  
     /// <para>
@@ -117,7 +116,35 @@ namespace Amazon.KeyManagementService.Model
     /// Custom Key Stores</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
     /// </i>.
     /// </para>
-    ///  </dd> </dl>
+    ///  </dd> </dl> 
+    /// <para>
+    ///  <b>Cross-account use</b>: No. You cannot use this operation to create a CMK in a
+    /// different AWS account.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:CreateKey</a>
+    /// (IAM policy). To use the <code>Tags</code> parameter, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+    /// (IAM policy). For examples and information about related permissions, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policy-example-create-key">Allow
+    /// a user to create CMKs</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeKey</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListKeys</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ScheduleKeyDeletion</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateKeyRequest : AmazonKeyManagementServiceRequest
     {
@@ -436,11 +463,16 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// If you do not provide a key policy, AWS KMS attaches a default key policy to the CMK.
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-        /// Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// Key Policy</a> in the <i>AWS Key Management Service Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>
         /// The key policy size quota is 32 kilobytes (32768 bytes).
+        /// </para>
+        ///  
+        /// <para>
+        /// For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+        /// JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=131072)]
@@ -460,7 +492,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// One or more tags. Each tag consists of a tag key and a tag value. Both the tag key
-        /// and the tag value are required, but the tag value can be an empty (null) string.
+        /// and the tag value are required, but the tag value can be an empty (null) string. 
         /// </para>
         ///  
         /// <para>
@@ -473,6 +505,11 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// Use this parameter to tag the CMK when it is created. To add tags to an existing CMK,
         /// use the <a>TagResource</a> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a>
+        /// permission in an IAM policy.
         /// </para>
         /// </summary>
         public List<Tag> Tags

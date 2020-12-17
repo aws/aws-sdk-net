@@ -116,7 +116,42 @@ namespace Amazon.KeyManagementService.Model
     /// Use the plaintext data key to decrypt data outside of AWS KMS, then erase the plaintext
     /// data key from memory.
     /// </para>
-    ///  </li> </ol>
+    ///  </li> </ol> 
+    /// <para>
+    ///  <b>Cross-account use</b>: Yes. To perform this operation with a CMK in a different
+    /// AWS account, specify the key ARN or alias ARN in the value of the <code>KeyId</code>
+    /// parameter.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateDataKey</a>
+    /// (key policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>Decrypt</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>Encrypt</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GenerateDataKeyPair</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GenerateDataKeyPairWithoutPlaintext</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GenerateDataKeyWithoutPlaintext</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GenerateDataKeyRequest : AmazonKeyManagementServiceRequest
     {

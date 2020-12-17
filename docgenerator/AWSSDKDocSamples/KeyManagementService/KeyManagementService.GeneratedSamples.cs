@@ -85,7 +85,8 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
             var response = client.Decrypt(new DecryptRequest 
             {
-                CiphertextBlob = new MemoryStream(<binary data>) // The encrypted data (ciphertext).
+                CiphertextBlob = new MemoryStream(<binary data>), // The encrypted data (ciphertext).
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab" // A key identifier for the CMK to use to decrypt the data.
             });
 
             string keyId = response.KeyId; // The Amazon Resource Name (ARN) of the CMK that was used to decrypt the data.
@@ -496,12 +497,12 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             var response = client.ReEncrypt(new ReEncryptRequest 
             {
                 CiphertextBlob = new MemoryStream(<binary data>), // The data to reencrypt.
-                DestinationKeyId = "0987dcba-09fe-87dc-65ba-ab0987654321" // The identifier of the CMK to use to reencrypt the data. You can use the key ID or Amazon Resource Name (ARN) of the CMK, or the name or ARN of an alias that refers to the CMK.
+                DestinationKeyId = "0987dcba-09fe-87dc-65ba-ab0987654321" // The identifier of the CMK to use to reencrypt the data. You can use any valid key identifier.
             });
 
             MemoryStream ciphertextBlob = response.CiphertextBlob; // The reencrypted data.
             string keyId = response.KeyId; // The ARN of the CMK that was used to reencrypt the data.
-            string sourceKeyId = response.SourceKeyId; // The ARN of the CMK that was used to originally encrypt the data.
+            string sourceKeyId = response.SourceKeyId; // The ARN of the CMK that was originally used to encrypt the data.
 
             #endregion
         }

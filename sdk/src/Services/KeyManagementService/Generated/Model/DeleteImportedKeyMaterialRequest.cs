@@ -33,8 +33,7 @@ namespace Amazon.KeyManagementService.Model
     /// Deletes key material that you previously imported. This operation makes the specified
     /// customer master key (CMK) unusable. For more information about importing key material
     /// into AWS KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-    /// Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>. You cannot
-    /// perform this operation on a CMK in a different AWS account.
+    /// Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>. 
     /// 
     ///  
     /// <para>
@@ -53,6 +52,29 @@ namespace Amazon.KeyManagementService.Model
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
+    /// AWS account.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DeleteImportedKeyMaterial</a>
+    /// (key policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>GetParametersForImport</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ImportKeyMaterial</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteImportedKeyMaterialRequest : AmazonKeyManagementServiceRequest
     {

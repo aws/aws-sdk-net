@@ -56,23 +56,30 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// If your ciphertext was encrypted under an asymmetric CMK, you must identify the <i>source
-    /// CMK</i>, that is, the CMK that encrypted the ciphertext. You must also supply the
-    /// encryption algorithm that was used. This information is required to decrypt the data.
+    /// If your ciphertext was encrypted under an asymmetric CMK, you must use the <code>SourceKeyId</code>
+    /// parameter to identify the CMK that encrypted the ciphertext. You must also supply
+    /// the encryption algorithm that was used. This information is required to decrypt the
+    /// data.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// It is optional, but you can specify a source CMK even when the ciphertext was encrypted
-    /// under a symmetric CMK. This ensures that the ciphertext is decrypted only by using
-    /// a particular CMK. If the CMK that you specify cannot decrypt the ciphertext, the <code>ReEncrypt</code>
-    /// operation fails.
+    /// If your ciphertext was encrypted under a symmetric CMK, the <code>SourceKeyId</code>
+    /// parameter is optional. AWS KMS can get this information from metadata that it adds
+    /// to the symmetric ciphertext blob. This feature adds durability to your implementation
+    /// by ensuring that authorized users can decrypt ciphertext decades after it was encrypted,
+    /// even if they've lost track of the CMK ID. However, specifying the source CMK is always
+    /// recommended as a best practice. When you use the <code>SourceKeyId</code> parameter
+    /// to specify a CMK, AWS KMS uses only the CMK you specify. If the ciphertext was encrypted
+    /// under a different CMK, the <code>ReEncrypt</code> operation fails. This practice ensures
+    /// that you use the CMK that you intend.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To reencrypt the data, you must specify the <i>destination CMK</i>, that is, the CMK
-    /// that re-encrypts the data after it is decrypted. You can select a symmetric or asymmetric
-    /// CMK. If the destination CMK is an asymmetric CMK, you must also provide the encryption
-    /// algorithm. The algorithm that you choose must be compatible with the CMK.
+    /// To reencrypt the data, you must use the <code>DestinationKeyId</code> parameter specify
+    /// the CMK that re-encrypts the data after it is decrypted. You can select a symmetric
+    /// or asymmetric CMK. If the destination CMK is an asymmetric CMK, you must also provide
+    /// the encryption algorithm. The algorithm that you choose must be compatible with the
+    /// CMK.
     /// </para>
     ///  <important> 
     /// <para>
@@ -90,16 +97,29 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </important> </li> </ul> 
     /// <para>
-    /// Unlike other AWS KMS API operations, <code>ReEncrypt</code> callers must have two
-    /// permissions:
+    /// The CMK that you use for this operation must be in a compatible key state. For details,
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+    /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+    /// Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: Yes. The source CMK and destination CMK can be in different
+    /// AWS accounts. Either or both CMKs can be in a different account than the caller.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>kms:ReEncryptFrom</code> permission on the source CMK
+    ///  <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ReEncryptFrom</a>
+    /// permission on the source CMK (key policy)
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>kms:ReEncryptTo</code> permission on the destination CMK
+    ///  <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ReEncryptTo</a>
+    /// permission on the destination CMK (key policy)
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -111,11 +131,25 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// The CMK that you use for this operation must be in a compatible key state. For details,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-    /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
-    /// Developer Guide</i>.
+    ///  <b>Related operations:</b> 
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>Decrypt</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>Encrypt</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GenerateDataKey</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GenerateDataKeyPair</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ReEncryptRequest : AmazonKeyManagementServiceRequest
     {
@@ -350,26 +384,22 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property SourceKeyId. 
         /// <para>
-        /// A unique identifier for the CMK that is used to decrypt the ciphertext before it reencrypts
-        /// it using the destination CMK.
+        /// Specifies the customer master key (CMK) that AWS KMS will use to decrypt the ciphertext
+        /// before it is re-encrypted. Enter a key ID of the CMK that was used to encrypt the
+        /// ciphertext.
         /// </para>
         ///  
         /// <para>
         /// This parameter is required only when the ciphertext was encrypted under an asymmetric
-        /// CMK. Otherwise, AWS KMS uses the metadata that it adds to the ciphertext blob to determine
-        /// which CMK was used to encrypt the ciphertext. However, you can use this parameter
-        /// to ensure that a particular CMK (of any kind) is used to decrypt the ciphertext before
-        /// it is reencrypted.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you specify a <code>KeyId</code> value, the decrypt part of the <code>ReEncrypt</code>
-        /// operation succeeds only if the specified CMK was used to encrypt the ciphertext.
+        /// CMK. If you used a symmetric CMK, AWS KMS can get the CMK from metadata that it adds
+        /// to the symmetric ciphertext blob. However, it is always recommended as a best practice.
+        /// This practice ensures that you use the CMK that you intend.
         /// </para>
         ///  
         /// <para>
         /// To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-        /// ARN. When using an alias name, prefix it with <code>"alias/"</code>.
+        /// ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a
+        /// CMK in a different AWS account, you must use the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>

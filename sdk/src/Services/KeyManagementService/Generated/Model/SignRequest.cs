@@ -86,6 +86,21 @@ namespace Amazon.KeyManagementService.Model
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: Yes. To perform this operation with a CMK in a different
+    /// AWS account, specify the key ARN or alias ARN in the value of the <code>KeyId</code>
+    /// parameter.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:Sign</a>
+    /// (key policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b>: <a>Verify</a> 
+    /// </para>
     /// </summary>
     public partial class SignRequest : AmazonKeyManagementServiceRequest
     {

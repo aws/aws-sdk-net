@@ -30,13 +30,30 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutKeyPolicy operation.
-    /// Attaches a key policy to the specified customer master key (CMK). You cannot perform
-    /// this operation on a CMK in a different AWS account.
+    /// Attaches a key policy to the specified customer master key (CMK). 
     /// 
     ///  
     /// <para>
     /// For more information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
-    /// Policies</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// Policies</a> in the <i>AWS Key Management Service Developer Guide</i>. For help writing
+    /// and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
+    /// JSON Policy Reference</a> in the <i> <i>IAM User Guide</i> </i>. For examples of adding
+    /// a key policy in multiple programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-key-policies.html#put-policy">Setting
+    /// a key policy</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
+    /// AWS account.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:PutKeyPolicy</a>
+    /// (key policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b>: <a>GetKeyPolicy</a> 
     /// </para>
     /// </summary>
     public partial class PutKeyPolicyRequest : AmazonKeyManagementServiceRequest

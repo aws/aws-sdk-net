@@ -32,8 +32,7 @@ namespace Amazon.KeyManagementService.Model
     /// Container for the parameters to the UpdateAlias operation.
     /// Associates an existing AWS KMS alias with a different customer master key (CMK). Each
     /// alias is associated with only one CMK at a time, although a CMK can have multiple
-    /// aliases. The alias and the CMK must be in the same AWS account and region. You cannot
-    /// perform this operation on an alias in a different AWS account. 
+    /// aliases. The alias and the CMK must be in the same AWS account and region.
     /// 
     ///  
     /// <para>
@@ -63,6 +62,52 @@ namespace Amazon.KeyManagementService.Model
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
+    /// AWS account. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:UpdateAlias</a>
+    /// on the alias (IAM policy).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:UpdateAlias</a>
+    /// on the current CMK (key policy).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:UpdateAlias</a>
+    /// on the new CMK (key policy).
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html#alias-access">Controlling
+    /// access to aliases</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateAlias</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteAlias</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListAliases</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateAliasRequest : AmazonKeyManagementServiceRequest
     {
@@ -93,8 +138,10 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property TargetKeyId. 
         /// <para>
-        /// Identifies the CMK to associate with the alias. When the update operation completes,
-        /// the alias will point to this CMK. 
+        /// Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
+        /// managed CMK</a> to associate with the alias. You don't have permission to associate
+        /// an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS
+        /// managed CMK</a>.
         /// </para>
         ///  
         /// <para>

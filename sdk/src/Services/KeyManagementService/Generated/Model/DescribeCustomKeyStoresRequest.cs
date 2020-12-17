@@ -67,6 +67,41 @@ namespace Amazon.KeyManagementService.Model
     ///  For help repairing your custom key store, see the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
     /// Custom Key Stores</a> topic in the <i>AWS Key Management Service Developer Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a custom key store
+    /// in a different AWS account.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DescribeCustomKeyStores</a>
+    /// (IAM policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>ConnectCustomKeyStore</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateCustomKeyStore</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteCustomKeyStore</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DisconnectCustomKeyStore</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateCustomKeyStore</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeCustomKeyStoresRequest : AmazonKeyManagementServiceRequest
     {

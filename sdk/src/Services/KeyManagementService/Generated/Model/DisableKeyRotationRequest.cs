@@ -37,7 +37,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  You cannot enable automatic rotation of asymmetric CMKs, CMKs with imported key material,
     /// or CMKs in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-    /// key store</a>. You cannot perform this operation on a CMK in a different AWS account.
+    /// key store</a>. 
     /// </para>
     ///  
     /// <para>
@@ -46,6 +46,29 @@ namespace Amazon.KeyManagementService.Model
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
+    /// AWS account.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DisableKeyRotation</a>
+    /// (key policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>EnableKeyRotation</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetKeyRotationStatus</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DisableKeyRotationRequest : AmazonKeyManagementServiceRequest
     {
@@ -54,8 +77,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Identifies a symmetric customer master key (CMK). You cannot enable automatic rotation
-        /// of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
+        /// Identifies a symmetric customer master key (CMK). You cannot enable or disable automatic
+        /// rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric
         /// CMKs</a>, CMKs with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported
         /// key material</a>, or CMKs in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
         /// key store</a>.

@@ -79,9 +79,48 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-    /// or alias ARN in the value of the KeyId parameter.
+    ///  <b>Cross-account use</b>: Yes. To perform this operation with a CMK in a different
+    /// AWS account, specify the key ARN or alias ARN in the value of the <code>KeyId</code>
+    /// parameter.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DescribeKey</a>
+    /// (key policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>GetKeyPolicy</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetKeyRotationStatus</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListAliases</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListGrants</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListKeys</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListResourceTags</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListRetirableGrants</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeKeyRequest : AmazonKeyManagementServiceRequest
     {

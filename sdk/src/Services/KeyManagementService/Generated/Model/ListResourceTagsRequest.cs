@@ -30,12 +30,38 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResourceTags operation.
-    /// Returns a list of all tags for the specified customer master key (CMK).
+    /// Returns all tags on the specified customer master key (CMK).
     /// 
     ///  
     /// <para>
-    /// You cannot perform this operation on a CMK in a different AWS account.
+    /// For general information about tags, including the format and syntax, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+    /// AWS resources</a> in the <i>Amazon Web Services General Reference</i>. For information
+    /// about using tags in AWS KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
+    /// keys</a>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
+    /// AWS account.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListResourceTags</a>
+    /// (key policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>TagResource</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UntagResource</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListResourceTagsRequest : AmazonKeyManagementServiceRequest
     {

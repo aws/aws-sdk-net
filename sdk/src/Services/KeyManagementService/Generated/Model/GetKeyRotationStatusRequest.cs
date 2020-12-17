@@ -60,9 +60,27 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-    /// in the value of the <code>KeyId</code> parameter.
+    ///  <b>Cross-account use</b>: Yes. To perform this operation on a CMK in a different
+    /// AWS account, specify the key ARN in the value of the <code>KeyId</code> parameter.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetKeyRotationStatus</a>
+    /// (key policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DisableKeyRotation</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>EnableKeyRotation</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetKeyRotationStatusRequest : AmazonKeyManagementServiceRequest
     {

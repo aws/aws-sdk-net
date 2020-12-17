@@ -79,12 +79,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// For information about symmetric and asymmetric CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
     /// Symmetric and Asymmetric CMKs</a> in the <i>AWS Key Management Service Developer Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-    /// in the value of the <code>KeyId</code> parameter. For more information about grants,
-    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
+    /// For more information about grants, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
     /// in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
     /// </para>
     ///  
@@ -94,6 +89,38 @@ namespace Amazon.KeyManagementService.Model
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: Yes. To perform this operation on a CMK in a different
+    /// AWS account, specify the key ARN in the value of the <code>KeyId</code> parameter.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:CreateGrant</a>
+    /// (key policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>ListGrants</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListRetirableGrants</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RetireGrant</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RevokeGrant</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateGrantRequest : AmazonKeyManagementServiceRequest
     {
@@ -113,6 +140,12 @@ namespace Amazon.KeyManagementService.Model
         /// context specified in this structure. For more information about encryption context,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
         /// Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Grant constraints are not applied to operations that do not support an encryption
+        /// context, such as cryptographic operations with asymmetric CMKs and management operations,
+        /// such as <a>DescribeKey</a> or <a>RetireGrant</a>.
         /// </para>
         /// </summary>
         public GrantConstraints Constraints
@@ -223,8 +256,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name for identifying the grant. Use this value to prevent the unintended
-        /// creation of duplicate grants when retrying this request.
+        /// A friendly name for the grant. Use this value to prevent the unintended creation of
+        /// duplicate grants when retrying this request.
         /// </para>
         ///  
         /// <para>
@@ -239,7 +272,7 @@ namespace Amazon.KeyManagementService.Model
         /// identical parameters; if the grant already exists, the original <code>GrantId</code>
         /// is returned without creating a new grant. Note that the returned grant token is unique
         /// with every <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code>
-        /// is returned. All grant tokens obtained in this way can be used interchangeably.
+        /// is returned. All grant tokens for the same grant ID can be used interchangeably.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

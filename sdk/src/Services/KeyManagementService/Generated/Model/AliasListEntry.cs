@@ -35,6 +35,8 @@ namespace Amazon.KeyManagementService.Model
     {
         private string _aliasArn;
         private string _aliasName;
+        private DateTime? _creationDate;
+        private DateTime? _lastUpdatedDate;
         private string _targetKeyId;
 
         /// <summary>
@@ -76,9 +78,47 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// Date and time that the alias was most recently created in the account and Region.
+        /// Formatted as Unix time.
+        /// </para>
+        /// </summary>
+        public DateTime CreationDate
+        {
+            get { return this._creationDate.GetValueOrDefault(); }
+            set { this._creationDate = value; }
+        }
+
+        // Check to see if CreationDate property is set
+        internal bool IsSetCreationDate()
+        {
+            return this._creationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastUpdatedDate. 
+        /// <para>
+        /// Date and time that the alias was most recently associated with a CMK in the account
+        /// and Region. Formatted as Unix time.
+        /// </para>
+        /// </summary>
+        public DateTime LastUpdatedDate
+        {
+            get { return this._lastUpdatedDate.GetValueOrDefault(); }
+            set { this._lastUpdatedDate = value; }
+        }
+
+        // Check to see if LastUpdatedDate property is set
+        internal bool IsSetLastUpdatedDate()
+        {
+            return this._lastUpdatedDate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetKeyId. 
         /// <para>
-        /// String that contains the key identifier referred to by the alias.
+        /// String that contains the key identifier of the CMK associated with the alias.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

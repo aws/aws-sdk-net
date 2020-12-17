@@ -32,11 +32,6 @@ namespace Amazon.KeyManagementService.Model
     /// Container for the parameters to the ListGrants operation.
     /// Gets a list of all grants for the specified customer master key (CMK).
     /// 
-    ///  
-    /// <para>
-    /// To perform this operation on a CMK in a different AWS account, specify the key ARN
-    /// in the value of the <code>KeyId</code> parameter.
-    /// </para>
     ///  <note> 
     /// <para>
     /// The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually
@@ -45,7 +40,37 @@ namespace Amazon.KeyManagementService.Model
     /// field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
     /// principal</a>, which might represent several different grantee principals.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    ///  <b>Cross-account use</b>: Yes. To perform this operation on a CMK in a different
+    /// AWS account, specify the key ARN in the value of the <code>KeyId</code> parameter.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListGrants</a>
+    /// (key policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateGrant</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListRetirableGrants</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RetireGrant</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RevokeGrant</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListGrantsRequest : AmazonKeyManagementServiceRequest
     {

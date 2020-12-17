@@ -40,7 +40,7 @@ namespace Amazon.KeyManagementService.Model
     /// an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric
     /// CMK</a>. Grant constraints are not applied to operations that do not support an encryption
     /// context, such as cryptographic operations with asymmetric CMKs and management operations,
-    /// such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.
+    /// such as <a>DescribeKey</a> or <a>RetireGrant</a>.
     /// </para>
     ///  <important> 
     /// <para>

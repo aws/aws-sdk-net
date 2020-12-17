@@ -30,8 +30,7 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAlias operation.
-    /// Deletes the specified alias. You cannot perform this operation on an alias in a different
-    /// AWS account. 
+    /// Deletes the specified alias. 
     /// 
     ///  
     /// <para>
@@ -46,6 +45,47 @@ namespace Amazon.KeyManagementService.Model
     /// to delete the current alias and <a>CreateAlias</a> to create a new alias. To associate
     /// an existing alias with a different customer master key (CMK), call <a>UpdateAlias</a>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on an alias in a
+    /// different AWS account.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DeleteAlias</a>
+    /// on the alias (IAM policy).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DeleteAlias</a>
+    /// on the CMK (key policy).
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-alias.html#alias-access">Controlling
+    /// access to aliases</a> in the <i>AWS Key Management Service Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateAlias</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListAliases</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateAlias</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteAliasRequest : AmazonKeyManagementServiceRequest
     {
