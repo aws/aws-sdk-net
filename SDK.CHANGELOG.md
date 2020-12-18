@@ -1,3 +1,16 @@
+### 3.5.77.0 (2020-12-18 19:11 UTC)
+* EC2 (3.5.27.0)
+	* EBS io2 volumes now supports Multi-Attach
+* PersonalizeRuntime (3.5.2.0)
+	* Updated FilterValues regex pattern to align with Filter Expression.
+* RDS (3.5.8.0)
+	* Adds IAM DB authentication information to the PendingModifiedValues output of the DescribeDBInstances API. Adds ClusterPendingModifiedValues information to the output of the DescribeDBClusters API.
+* Core 3.5.1.52
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.76.0 (2020-12-17 19:20 UTC)
 * ConfigService (3.5.2.0)
 	* Adding PutExternalEvaluation API which grants permission to deliver evaluation result to AWS Config
