@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Iops", StringUtils.FromInt(publicRequest.Iops));
                 }
+                if(publicRequest.IsSetMultiAttachEnabled())
+                {
+                    request.Parameters.Add("MultiAttachEnabled", StringUtils.FromBool(publicRequest.MultiAttachEnabled));
+                }
                 if(publicRequest.IsSetSize())
                 {
                     request.Parameters.Add("Size", StringUtils.FromInt(publicRequest.Size));

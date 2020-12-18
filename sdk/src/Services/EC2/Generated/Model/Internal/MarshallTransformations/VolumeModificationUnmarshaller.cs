@@ -72,6 +72,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.OriginalIops = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("originalMultiAttachEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.OriginalMultiAttachEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("originalSize", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -112,6 +118,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.TargetIops = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("targetMultiAttachEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.TargetMultiAttachEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("targetSize", targetDepth))

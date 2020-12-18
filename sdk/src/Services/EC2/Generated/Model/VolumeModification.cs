@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private DateTime? _endTime;
         private VolumeModificationState _modificationState;
         private int? _originalIops;
+        private bool? _originalMultiAttachEnabled;
         private int? _originalSize;
         private int? _originalThroughput;
         private VolumeType _originalVolumeType;
@@ -48,6 +49,7 @@ namespace Amazon.EC2.Model
         private DateTime? _startTime;
         private string _statusMessage;
         private int? _targetIops;
+        private bool? _targetMultiAttachEnabled;
         private int? _targetSize;
         private int? _targetThroughput;
         private VolumeType _targetVolumeType;
@@ -105,6 +107,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetOriginalIops()
         {
             return this._originalIops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginalMultiAttachEnabled. 
+        /// <para>
+        /// The original setting for Amazon EBS Multi-Attach.
+        /// </para>
+        /// </summary>
+        public bool OriginalMultiAttachEnabled
+        {
+            get { return this._originalMultiAttachEnabled.GetValueOrDefault(); }
+            set { this._originalMultiAttachEnabled = value; }
+        }
+
+        // Check to see if OriginalMultiAttachEnabled property is set
+        internal bool IsSetOriginalMultiAttachEnabled()
+        {
+            return this._originalMultiAttachEnabled.HasValue; 
         }
 
         /// <summary>
@@ -231,6 +251,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTargetIops()
         {
             return this._targetIops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetMultiAttachEnabled. 
+        /// <para>
+        /// The target setting for Amazon EBS Multi-Attach.
+        /// </para>
+        /// </summary>
+        public bool TargetMultiAttachEnabled
+        {
+            get { return this._targetMultiAttachEnabled.GetValueOrDefault(); }
+            set { this._targetMultiAttachEnabled = value; }
+        }
+
+        // Check to see if TargetMultiAttachEnabled property is set
+        internal bool IsSetTargetMultiAttachEnabled()
+        {
+            return this._targetMultiAttachEnabled.HasValue; 
         }
 
         /// <summary>
