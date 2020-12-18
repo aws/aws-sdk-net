@@ -118,6 +118,20 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Determines if a checksum needs to be sent in the Content-MD5 header.
+        /// </summary>
+        public bool HttpChecksumRequired
+        {
+            get
+            {
+                if (data[ServiceModel.HttpChecksumRequiredKey] != null && data[ServiceModel.HttpChecksumRequiredKey].IsBoolean)
+                    return (bool)data[ServiceModel.HttpChecksumRequiredKey];
+
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Determines if the operation is customized to be only internally accessible.
         /// </summary>
         public bool IsInternal

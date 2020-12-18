@@ -16,6 +16,7 @@
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -102,7 +103,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 BucketName = bucketName,
                 Key = key,
                 ContentBody = content,
-                MD5Digest = AmazonS3Util.GenerateChecksumForContent(content, true),
+                MD5Digest = AWSSDKUtils.GenerateChecksumForContent(content, true),
             };
 
             if (retainUntilDate.HasValue)
