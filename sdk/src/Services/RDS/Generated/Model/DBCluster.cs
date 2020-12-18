@@ -82,6 +82,7 @@ namespace Amazon.RDS.Model
         private DateTime? _latestRestorableTime;
         private string _masterUsername;
         private bool? _multiAZ;
+        private ClusterPendingModifiedValues _pendingModifiedValues;
         private string _percentProgress;
         private int? _port;
         private string _preferredBackupWindow;
@@ -932,6 +933,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingModifiedValues. 
+        /// <para>
+        /// Specifies that changes to the DB cluster are pending. This element is only included
+        /// when changes are pending. Specific changes are identified by subelements.
+        /// </para>
+        /// </summary>
+        public ClusterPendingModifiedValues PendingModifiedValues
+        {
+            get { return this._pendingModifiedValues; }
+            set { this._pendingModifiedValues = value; }
+        }
+
+        // Check to see if PendingModifiedValues property is set
+        internal bool IsSetPendingModifiedValues()
+        {
+            return this._pendingModifiedValues != null;
         }
 
         /// <summary>

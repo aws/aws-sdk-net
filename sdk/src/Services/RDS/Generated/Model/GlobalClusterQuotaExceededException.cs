@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// 
+    /// The number of global database clusters for this account is already at the maximum
+    /// allowed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

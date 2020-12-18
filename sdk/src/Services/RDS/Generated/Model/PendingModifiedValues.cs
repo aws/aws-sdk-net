@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// This data type is used as a response element in the <code>ModifyDBInstance</code>
-    /// action.
+    /// action and contains changes that will be applied during the next maintenance window.
     /// </summary>
     public partial class PendingModifiedValues
     {
@@ -41,6 +41,7 @@ namespace Amazon.RDS.Model
         private string _dbInstanceIdentifier;
         private string _dbSubnetGroupName;
         private string _engineVersion;
+        private bool? _iamDatabaseAuthenticationEnabled;
         private int? _iops;
         private string _licenseModel;
         private string _masterUserPassword;
@@ -58,8 +59,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        ///  Contains the new <code>AllocatedStorage</code> size for the DB instance that will
-        /// be applied or is currently being applied. 
+        /// The allocated storage size for the DB instance specified in gibibytes .
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -77,7 +77,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
-        /// Specifies the pending number of days for which automated backups are retained.
+        /// The number of days for which automated backups are retained.
         /// </para>
         /// </summary>
         public int BackupRetentionPeriod
@@ -95,7 +95,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CACertificateIdentifier. 
         /// <para>
-        /// Specifies the identifier of the CA certificate for the DB instance.
+        /// The identifier of the CA certificate for the DB instance.
         /// </para>
         /// </summary>
         public string CACertificateIdentifier
@@ -113,8 +113,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        ///  Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied
-        /// or is currently being applied. 
+        /// The name of the compute and memory capacity class for the DB instance.
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -132,8 +131,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will
-        /// be applied or is currently being applied. 
+        /// The database identifier for the DB instance.
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -151,7 +149,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
-        /// The new DB subnet group for the DB instance. 
+        /// The DB subnet group for the DB instance.
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -169,7 +167,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// Indicates the database engine version.
+        /// The database engine version.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -185,10 +183,28 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IAMDatabaseAuthenticationEnabled. 
+        /// <para>
+        /// Whether mapping of AWS Identity and Access Management (IAM) accounts to database accounts
+        /// is enabled.
+        /// </para>
+        /// </summary>
+        public bool IAMDatabaseAuthenticationEnabled
+        {
+            get { return this._iamDatabaseAuthenticationEnabled.GetValueOrDefault(); }
+            set { this._iamDatabaseAuthenticationEnabled = value; }
+        }
+
+        // Check to see if IAMDatabaseAuthenticationEnabled property is set
+        internal bool IsSetIAMDatabaseAuthenticationEnabled()
+        {
+            return this._iamDatabaseAuthenticationEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// Specifies the new Provisioned IOPS value for the DB instance that will be applied
-        /// or is currently being applied.
+        /// The Provisioned IOPS value for the DB instance.
         /// </para>
         /// </summary>
         public int Iops
@@ -229,8 +245,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// Contains the pending or currently-in-progress change of the master credentials for
-        /// the DB instance.
+        /// The master credentials for the DB instance.
         /// </para>
         /// </summary>
         public string MasterUserPassword
@@ -248,7 +263,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// Indicates that the Single-AZ DB instance is to change to a Multi-AZ deployment.
+        /// Indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -281,7 +296,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Specifies the pending port for the DB instance.
+        /// The port for the DB instance.
         /// </para>
         /// </summary>
         public int Port
@@ -318,7 +333,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Specifies the storage type to be associated with the DB instance.
+        /// The storage type of the DB instance.
         /// </para>
         /// </summary>
         public string StorageType

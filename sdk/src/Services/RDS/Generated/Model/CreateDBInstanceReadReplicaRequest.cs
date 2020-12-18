@@ -487,8 +487,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// If you create an encrypted read replica in the same AWS Region as the source DB instance,
-        /// then you do not have to specify a value for this parameter. The read replica is encrypted
-        /// with the same AWS KMS CMK as the source DB instance.
+        /// then do not specify a value for this parameter. A read replica in the same Region
+        /// is always encrypted with the same AWS KMS CMK as the source DB instance.
         /// </para>
         ///  
         /// <para>

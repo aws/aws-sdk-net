@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// 
+    /// The global cluster is in an invalid state and can't perform the requested operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -1470,7 +1470,8 @@ namespace Amazon.RDS
         /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
-        /// 
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientStorageClusterCapacityException">
         /// There is insufficient storage available for the current action. You might be able
@@ -1487,7 +1488,7 @@ namespace Amazon.RDS
         /// The DB subnet group cannot be deleted because it's in use.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
-        /// 
+        /// The global cluster is in an invalid state and can't perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
@@ -2559,10 +2560,12 @@ namespace Amazon.RDS
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterAlreadyExistsException">
-        /// 
+        /// The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database
+        /// identifier (unique name) to create a new global database cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterQuotaExceededException">
-        /// 
+        /// The number of global database clusters for this account is already at the maximum
+        /// allowed.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
@@ -3623,10 +3626,11 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DeleteGlobalCluster service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
-        /// 
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
-        /// 
+        /// The global cluster is in an invalid state and can't perform the requested operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteGlobalCluster">REST API Reference for DeleteGlobalCluster Operation</seealso>
         public virtual DeleteGlobalClusterResponse DeleteGlobalCluster(DeleteGlobalClusterRequest request)
@@ -5893,7 +5897,8 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the DescribeGlobalClusters service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
-        /// 
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeGlobalClusters">REST API Reference for DescribeGlobalClusters Operation</seealso>
         public virtual DescribeGlobalClustersResponse DescribeGlobalClusters(DescribeGlobalClustersRequest request)
@@ -8015,10 +8020,11 @@ namespace Amazon.RDS
         /// 
         /// <returns>The response from the ModifyGlobalCluster service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
-        /// 
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
-        /// 
+        /// The global cluster is in an invalid state and can't perform the requested operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyGlobalCluster">REST API Reference for ModifyGlobalCluster Operation</seealso>
         public virtual ModifyGlobalClusterResponse ModifyGlobalCluster(ModifyGlobalClusterRequest request)
@@ -8510,10 +8516,11 @@ namespace Amazon.RDS
         /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
-        /// 
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
-        /// 
+        /// The global cluster is in an invalid state and can't perform the requested operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveFromGlobalCluster">REST API Reference for RemoveFromGlobalCluster Operation</seealso>
         public virtual RemoveFromGlobalClusterResponse RemoveFromGlobalCluster(RemoveFromGlobalClusterRequest request)

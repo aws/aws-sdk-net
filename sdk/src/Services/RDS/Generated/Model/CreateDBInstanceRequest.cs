@@ -573,7 +573,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The name of the database to create when the DB instance is created. If this parameter
-        /// isn't specified, the default "postgres" database is created in the DB instance.
+        /// isn't specified, no database is created in the DB instance.
         /// </para>
         ///  
         /// <para>

@@ -319,6 +319,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PendingModifiedValues", targetDepth))
+                    {
+                        var unmarshaller = ClusterPendingModifiedValuesUnmarshaller.Instance;
+                        unmarshalledObject.PendingModifiedValues = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PercentProgress", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
