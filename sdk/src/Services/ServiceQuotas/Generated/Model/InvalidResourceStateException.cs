@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// Invalid input was provided for the .
+    /// The resource is in an invalid state.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -38,7 +38,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Quota. 
         /// <para>
-        /// Returns the <a>ServiceQuota</a> object which contains all values for a quota.
+        /// Information about the quota.
         /// </para>
         /// </summary>
         public ServiceQuota Quota

@@ -38,8 +38,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property RequestedQuota. 
         /// <para>
-        /// Returns the <code>RequestedServiceQuotaChange</code> object for the specific increase
-        /// request.
+        /// Information about the quota increase request.
         /// </para>
         /// </summary>
         public RequestedServiceQuotaChange RequestedQuota

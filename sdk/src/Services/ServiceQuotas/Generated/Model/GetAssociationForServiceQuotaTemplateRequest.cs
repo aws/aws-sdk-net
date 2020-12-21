@@ -30,8 +30,7 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAssociationForServiceQuotaTemplate operation.
-    /// Retrieves the <code>ServiceQuotaTemplateAssociationStatus</code> value from the service.
-    /// Use this action to determine if the Service Quota template is associated, or enabled.
+    /// Retrieves the status of the association for the quota request template.
     /// </summary>
     public partial class GetAssociationForServiceQuotaTemplateRequest : AmazonServiceQuotasRequest
     {

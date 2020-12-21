@@ -38,9 +38,8 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceQuotaTemplateAssociationStatus. 
         /// <para>
-        /// Specifies whether the template is <code>ASSOCIATED</code> or <code>DISASSOCIATED</code>.
-        /// If the template is <code>ASSOCIATED</code>, then it requests service quota increases
-        /// for all new accounts created in your organization. 
+        /// The association status. If the status is <code>ASSOCIATED</code>, the quota increase
+        /// requests in the template are automatically applied to new accounts in your organization.
         /// </para>
         /// </summary>
         public ServiceQuotaTemplateAssociationStatus ServiceQuotaTemplateAssociationStatus

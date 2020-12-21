@@ -30,7 +30,8 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteServiceQuotaIncreaseRequestFromTemplate operation.
-    /// Removes a service quota increase request from the Service Quotas template.
+    /// Deletes the quota increase request for the specified quota from your quota request
+    /// template.
     /// </summary>
     public partial class DeleteServiceQuotaIncreaseRequestFromTemplateRequest : AmazonServiceQuotasRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// Specifies the AWS Region for the quota that you want to delete.
+        /// The AWS Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -60,7 +61,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// Specifies the code for the quota that you want to delete.
+        /// The quota identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -79,7 +80,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Specifies the code for the service that you want to delete.
+        /// The service identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

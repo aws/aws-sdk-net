@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// A structure that contains information about a requested change for a quota.
+    /// Information about a quota increase request.
     /// </summary>
     public partial class RequestedServiceQuotaChange
     {
@@ -51,7 +51,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property CaseId. 
         /// <para>
-        /// The case Id for the service quota increase request.
+        /// The case ID.
         /// </para>
         /// </summary>
         public string CaseId
@@ -69,8 +69,8 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Created. 
         /// <para>
-        /// The date and time when the service quota increase request was received and the case
-        /// Id was created. 
+        /// The date and time when the quota increase request was received and the case ID was
+        /// created.
         /// </para>
         /// </summary>
         public DateTime Created
@@ -88,7 +88,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property DesiredValue. 
         /// <para>
-        /// New increased value for the service quota.
+        /// The new, increased value for the quota.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000000000)]
@@ -107,7 +107,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property GlobalQuota. 
         /// <para>
-        /// Identifies if the quota is global.
+        /// Indicates whether the quota is global.
         /// </para>
         /// </summary>
         public bool GlobalQuota
@@ -125,7 +125,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of a requested service quota change.
+        /// The unique identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -144,7 +144,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property LastUpdated. 
         /// <para>
-        /// The date and time of the most recent change in the service quota increase request.
+        /// The date and time of the most recent change.
         /// </para>
         /// </summary>
         public DateTime LastUpdated
@@ -162,7 +162,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the service quota.
+        /// The Amazon Resource Name (ARN) of the quota.
         /// </para>
         /// </summary>
         public string QuotaArn
@@ -180,7 +180,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// Specifies the service quota that you want to use.
+        /// The quota identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -199,7 +199,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaName. 
         /// <para>
-        /// Name of the service quota.
+        /// The quota name.
         /// </para>
         /// </summary>
         public string QuotaName
@@ -217,7 +217,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Requester. 
         /// <para>
-        /// The IAM identity who submitted the service quota increase request.
+        /// The IAM identity of the requester.
         /// </para>
         /// </summary>
         public string Requester
@@ -235,7 +235,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Specifies the service that you want to use.
+        /// The service identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -254,7 +254,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS service specified in the increase request. 
+        /// The service name.
         /// </para>
         /// </summary>
         public string ServiceName
@@ -272,7 +272,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// State of the service quota increase request.
+        /// The state of the quota increase request.
         /// </para>
         /// </summary>
         public RequestStatus Status
@@ -290,7 +290,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// Specifies the unit used for the quota.
+        /// The unit of measurement.
         /// </para>
         /// </summary>
         public string Unit

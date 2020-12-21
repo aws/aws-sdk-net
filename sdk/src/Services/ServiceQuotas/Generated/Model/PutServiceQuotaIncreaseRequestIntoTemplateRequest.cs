@@ -30,10 +30,7 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the PutServiceQuotaIncreaseRequestIntoTemplate operation.
-    /// Defines and adds a quota to the service quota template. To add a quota to the template,
-    /// you must provide the <code>ServiceCode</code>, <code>QuotaCode</code>, <code>AwsRegion</code>,
-    /// and <code>DesiredValue</code>. Once you add a quota to the template, use <a>ListServiceQuotaIncreaseRequestsInTemplate</a>
-    /// to see the list of quotas in the template.
+    /// Adds a quota increase request to your quota request template.
     /// </summary>
     public partial class PutServiceQuotaIncreaseRequestIntoTemplateRequest : AmazonServiceQuotasRequest
     {
@@ -45,7 +42,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// Specifies the AWS Region for the quota. 
+        /// The AWS Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -64,7 +61,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property DesiredValue. 
         /// <para>
-        /// Specifies the new, increased value for the quota. 
+        /// The new, increased value for the quota.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000000000)]
@@ -83,7 +80,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// Specifies the service quota that you want to use.
+        /// The quota identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -102,7 +99,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Specifies the service that you want to use.
+        /// The service identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

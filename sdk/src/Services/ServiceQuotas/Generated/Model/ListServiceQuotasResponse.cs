@@ -39,13 +39,8 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If present in the response, this value indicates there's more output available that
-        /// what's included in the current response. This can occur even when the response includes
-        /// no values at all, such as when you ask for a filtered view of a very long list. Use
-        /// this value in the <code>NextToken</code> request parameter in a subsequent call to
-        /// the operation to continue processing and get the next part of the output. You should
-        /// repeat this until the <code>NextToken</code> response element comes back empty (as
-        /// <code>null</code>).
+        /// The token to use to retrieve the next page of results. This value is null when there
+        /// are no more results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -64,8 +59,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Quotas. 
         /// <para>
-        /// The response information for a quota lists all attribute information for the quota.
-        /// 
+        /// Information about the quotas.
         /// </para>
         /// </summary>
         public List<ServiceQuota> Quotas

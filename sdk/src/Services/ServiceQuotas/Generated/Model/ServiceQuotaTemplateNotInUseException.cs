@@ -29,12 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// The quota request template is not associated with your organization. 
-    /// 
-    ///  
-    /// <para>
-    /// To use the template, call <a>AssociateServiceQuotaTemplate</a>. 
-    /// </para>
+    /// The quota request template is not associated with your organization.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

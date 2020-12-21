@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// A structure that contains the full set of details that define the service quota.
+    /// Information about a quota.
     /// </summary>
     public partial class ServiceQuota
     {
@@ -49,7 +49,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Adjustable. 
         /// <para>
-        /// Specifies if the quota value can be increased.
+        /// Indicates whether the quota value can be increased.
         /// </para>
         /// </summary>
         public bool Adjustable
@@ -67,8 +67,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ErrorReason. 
         /// <para>
-        /// Specifies the <code>ErrorCode</code> and <code>ErrorMessage</code> when success isn't
-        /// achieved.
+        /// The error code and error reason.
         /// </para>
         /// </summary>
         public ErrorReason ErrorReason
@@ -86,7 +85,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property GlobalQuota. 
         /// <para>
-        /// Specifies if the quota is global.
+        /// Indicates whether the quota is global.
         /// </para>
         /// </summary>
         public bool GlobalQuota
@@ -104,7 +103,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// Identifies the unit and value of how time is measured.
+        /// The period of time.
         /// </para>
         /// </summary>
         public QuotaPeriod Period
@@ -122,7 +121,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the service quota.
+        /// The Amazon Resource Name (ARN) of the quota.
         /// </para>
         /// </summary>
         public string QuotaArn
@@ -140,7 +139,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// The code identifier for the service quota specified.
+        /// The quota identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -159,7 +158,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaName. 
         /// <para>
-        /// The name identifier of the service quota.
+        /// The quota name.
         /// </para>
         /// </summary>
         public string QuotaName
@@ -177,7 +176,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Specifies the service that you want to use.
+        /// The service identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -196,7 +195,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS service specified in the increase request. 
+        /// The service name.
         /// </para>
         /// </summary>
         public string ServiceName
@@ -214,7 +213,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit of measurement for the value of the service quota.
+        /// The unit of measurement.
         /// </para>
         /// </summary>
         public string Unit
@@ -232,7 +231,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property UsageMetric. 
         /// <para>
-        /// Specifies the details about the measurement. 
+        /// Information about the measurement.
         /// </para>
         /// </summary>
         public MetricInfo UsageMetric
@@ -250,7 +249,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of service quota.
+        /// The quota value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000000000)]

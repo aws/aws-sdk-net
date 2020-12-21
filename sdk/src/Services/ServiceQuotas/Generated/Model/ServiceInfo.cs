@@ -29,9 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// A structure that contains the <code>ServiceName</code> and <code>ServiceCode</code>.
-    /// It does not include all details of the service quota. To get those values, use the
-    /// <a>ListServiceQuotas</a> operation.
+    /// Information about a service.
     /// </summary>
     public partial class ServiceInfo
     {
@@ -41,7 +39,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Specifies the service that you want to use.
+        /// The service identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -60,7 +58,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS service specified in the increase request. 
+        /// The service name.
         /// </para>
         /// </summary>
         public string ServiceName

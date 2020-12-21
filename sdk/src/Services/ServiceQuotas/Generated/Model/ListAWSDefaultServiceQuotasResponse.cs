@@ -39,10 +39,8 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// (Optional) Use this parameter in a request if you receive a <code>NextToken</code>
-        /// response in a previous request that indicates that there's more output available.
-        /// In a subsequent call, set it to the value of the previous call's <code>NextToken</code>
-        /// response to indicate where the output should continue from.
+        /// The token to use to retrieve the next page of results. This value is null when there
+        /// are no more results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -61,7 +59,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Quotas. 
         /// <para>
-        /// A list of the quotas in the account with the AWS default values. 
+        /// Information about the quotas.
         /// </para>
         /// </summary>
         public List<ServiceQuota> Quotas

@@ -35,22 +35,10 @@ namespace Amazon.ServiceQuotas
     /// <summary>
     /// Implementation for accessing ServiceQuotas
     ///
-    /// Service Quotas is a web service that you can use to manage many of your AWS service
-    /// quotas. Quotas, also referred to as limits, are the maximum values for a resource,
-    /// item, or operation. This guide provide descriptions of the Service Quotas actions
-    /// that you can call from an API. For the Service Quotas user guide, which explains how
-    /// to use Service Quotas from the console, see <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">What
-    /// is Service Quotas</a>. 
-    /// 
-    ///  <note> 
-    /// <para>
-    /// AWS provides SDKs that consist of libraries and sample code for programming languages
-    /// and platforms (Java, Ruby, .NET, iOS, Android, etc...,). The SDKs provide a convenient
-    /// way to create programmatic access to Service Quotas and AWS. For information about
-    /// the AWS SDKs, including how to download and install them, see the <a href="https://docs.aws.amazon.com/aws.amazon.com/tools">Tools
-    /// for Amazon Web Services</a> page.
-    /// </para>
-    ///  </note>
+    /// With Service Quotas, you can view and manage your quotas easily as your AWS workloads
+    /// grow. Quotas, also referred to as limits, are the maximum number of resources that
+    /// you can create in your AWS account. For more information, see the <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service
+    /// Quotas User Guide</a>.
     /// </summary>
     public partial class AmazonServiceQuotasClient : AmazonServiceClient, IAmazonServiceQuotas
     {
@@ -255,21 +243,20 @@ namespace Amazon.ServiceQuotas
         #region  AssociateServiceQuotaTemplate
 
         /// <summary>
-        /// Associates the Service Quotas template with your organization so that when new accounts
-        /// are created in your organization, the template submits increase requests for the specified
-        /// service quotas. Use the Service Quotas template to request an increase for any adjustable
-        /// quota value. After you define the Service Quotas template, use this operation to associate,
-        /// or enable, the template.
+        /// Associates your quota request template with your organization. When a new account
+        /// is created in your organization, the quota increase requests in the template are automatically
+        /// applied to the account. You can add a quota increase request for any adjustable quota
+        /// to your template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateServiceQuotaTemplate service method.</param>
         /// 
         /// <returns>The response from the AssociateServiceQuotaTemplate service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.AWSServiceAccessNotEnabledException">
         /// The action you attempted is not allowed unless Service Access with Service Quotas
-        /// is enabled in your organization. To enable, call <a>AssociateServiceQuotaTemplate</a>.
+        /// is enabled in your organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.DependencyAccessDeniedException">
         /// You can't perform this action because a dependency does not have access.
@@ -278,15 +265,13 @@ namespace Amazon.ServiceQuotas
         /// The account making this call is not a member of an organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.OrganizationNotInAllFeaturesModeException">
-        /// The organization that your account belongs to, is not in All Features mode. To enable
-        /// all features mode, see <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAllFeatures.html">EnableAllFeatures</a>.
+        /// The organization that your account belongs to is not in All Features mode.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
         /// Something went wrong.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TemplatesNotAvailableInRegionException">
-        /// The Service Quotas template is not available in the Region where you are making the
-        /// request. Please make the request in us-east-1.
+        /// The Service Quotas template is not available in this AWS Region.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
         /// Due to throttling, the request was denied. Slow down the rate of request calls, or
@@ -341,17 +326,18 @@ namespace Amazon.ServiceQuotas
         #region  DeleteServiceQuotaIncreaseRequestFromTemplate
 
         /// <summary>
-        /// Removes a service quota increase request from the Service Quotas template.
+        /// Deletes the quota increase request for the specified quota from your quota request
+        /// template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServiceQuotaIncreaseRequestFromTemplate service method.</param>
         /// 
         /// <returns>The response from the DeleteServiceQuotaIncreaseRequestFromTemplate service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.AWSServiceAccessNotEnabledException">
         /// The action you attempted is not allowed unless Service Access with Service Quotas
-        /// is enabled in your organization. To enable, call <a>AssociateServiceQuotaTemplate</a>.
+        /// is enabled in your organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.DependencyAccessDeniedException">
         /// You can't perform this action because a dependency does not have access.
@@ -369,8 +355,7 @@ namespace Amazon.ServiceQuotas
         /// Something went wrong.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TemplatesNotAvailableInRegionException">
-        /// The Service Quotas template is not available in the Region where you are making the
-        /// request. Please make the request in us-east-1.
+        /// The Service Quotas template is not available in this AWS Region.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
         /// Due to throttling, the request was denied. Slow down the rate of request calls, or
@@ -425,33 +410,19 @@ namespace Amazon.ServiceQuotas
         #region  DisassociateServiceQuotaTemplate
 
         /// <summary>
-        /// Disables the Service Quotas template. Once the template is disabled, it does not request
-        /// quota increases for new accounts in your organization. Disabling the quota template
-        /// does not apply the quota increase requests from the template. 
-        /// 
-        ///  
-        /// <para>
-        ///  <b>Related operations</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To enable the quota template, call <a>AssociateServiceQuotaTemplate</a>. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To delete a specific service quota from the template, use <a>DeleteServiceQuotaIncreaseRequestFromTemplate</a>.
-        /// </para>
-        ///  </li> </ul>
+        /// Disables your quota request template. After a template is disabled, the quota increase
+        /// requests in the template are not applied to new accounts in your organization. Disabling
+        /// a quota request template does not apply its quota increase requests.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateServiceQuotaTemplate service method.</param>
         /// 
         /// <returns>The response from the DisassociateServiceQuotaTemplate service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.AWSServiceAccessNotEnabledException">
         /// The action you attempted is not allowed unless Service Access with Service Quotas
-        /// is enabled in your organization. To enable, call <a>AssociateServiceQuotaTemplate</a>.
+        /// is enabled in your organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.DependencyAccessDeniedException">
         /// You can't perform this action because a dependency does not have access.
@@ -463,16 +434,10 @@ namespace Amazon.ServiceQuotas
         /// Something went wrong.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.ServiceQuotaTemplateNotInUseException">
-        /// The quota request template is not associated with your organization. 
-        /// 
-        ///  
-        /// <para>
-        /// To use the template, call <a>AssociateServiceQuotaTemplate</a>. 
-        /// </para>
+        /// The quota request template is not associated with your organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TemplatesNotAvailableInRegionException">
-        /// The Service Quotas template is not available in the Region where you are making the
-        /// request. Please make the request in us-east-1.
+        /// The Service Quotas template is not available in this AWS Region.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
         /// Due to throttling, the request was denied. Slow down the rate of request calls, or
@@ -527,18 +492,17 @@ namespace Amazon.ServiceQuotas
         #region  GetAssociationForServiceQuotaTemplate
 
         /// <summary>
-        /// Retrieves the <code>ServiceQuotaTemplateAssociationStatus</code> value from the service.
-        /// Use this action to determine if the Service Quota template is associated, or enabled.
+        /// Retrieves the status of the association for the quota request template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssociationForServiceQuotaTemplate service method.</param>
         /// 
         /// <returns>The response from the GetAssociationForServiceQuotaTemplate service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.AWSServiceAccessNotEnabledException">
         /// The action you attempted is not allowed unless Service Access with Service Quotas
-        /// is enabled in your organization. To enable, call <a>AssociateServiceQuotaTemplate</a>.
+        /// is enabled in your organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.DependencyAccessDeniedException">
         /// You can't perform this action because a dependency does not have access.
@@ -550,16 +514,10 @@ namespace Amazon.ServiceQuotas
         /// Something went wrong.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.ServiceQuotaTemplateNotInUseException">
-        /// The quota request template is not associated with your organization. 
-        /// 
-        ///  
-        /// <para>
-        /// To use the template, call <a>AssociateServiceQuotaTemplate</a>. 
-        /// </para>
+        /// The quota request template is not associated with your organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TemplatesNotAvailableInRegionException">
-        /// The Service Quotas template is not available in the Region where you are making the
-        /// request. Please make the request in us-east-1.
+        /// The Service Quotas template is not available in this AWS Region.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
         /// Due to throttling, the request was denied. Slow down the rate of request calls, or
@@ -614,14 +572,14 @@ namespace Amazon.ServiceQuotas
         #region  GetAWSDefaultServiceQuota
 
         /// <summary>
-        /// Retrieves the default service quotas values. The Value returned for each quota is
-        /// the AWS default value, even if the quotas have been increased..
+        /// Retrieves the default value for the specified quota. The default value does not reflect
+        /// any quota increases.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAWSDefaultServiceQuota service method.</param>
         /// 
         /// <returns>The response from the GetAWSDefaultServiceQuota service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
         /// Invalid input was provided.
@@ -685,13 +643,13 @@ namespace Amazon.ServiceQuotas
         #region  GetRequestedServiceQuotaChange
 
         /// <summary>
-        /// Retrieves the details for a particular increase request.
+        /// Retrieves information about the specified quota increase request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRequestedServiceQuotaChange service method.</param>
         /// 
         /// <returns>The response from the GetRequestedServiceQuotaChange service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
         /// Invalid input was provided.
@@ -755,16 +713,15 @@ namespace Amazon.ServiceQuotas
         #region  GetServiceQuota
 
         /// <summary>
-        /// Returns the details for the specified service quota. This operation provides a different
-        /// Value than the <code>GetAWSDefaultServiceQuota</code> operation. This operation returns
-        /// the applied value for each quota. <code>GetAWSDefaultServiceQuota</code> returns the
-        /// default AWS value for each quota.
+        /// Retrieves the applied quota value for the specified quota. For some quotas, only the
+        /// default values are available. If the applied quota value is not available for a quota,
+        /// the quota is not retrieved.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceQuota service method.</param>
         /// 
         /// <returns>The response from the GetServiceQuota service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
         /// Invalid input was provided.
@@ -828,17 +785,18 @@ namespace Amazon.ServiceQuotas
         #region  GetServiceQuotaIncreaseRequestFromTemplate
 
         /// <summary>
-        /// Returns the details of the service quota increase request in your template.
+        /// Retrieves information about the specified quota increase request in your quota request
+        /// template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceQuotaIncreaseRequestFromTemplate service method.</param>
         /// 
         /// <returns>The response from the GetServiceQuotaIncreaseRequestFromTemplate service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.AWSServiceAccessNotEnabledException">
         /// The action you attempted is not allowed unless Service Access with Service Quotas
-        /// is enabled in your organization. To enable, call <a>AssociateServiceQuotaTemplate</a>.
+        /// is enabled in your organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.DependencyAccessDeniedException">
         /// You can't perform this action because a dependency does not have access.
@@ -856,8 +814,7 @@ namespace Amazon.ServiceQuotas
         /// Something went wrong.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TemplatesNotAvailableInRegionException">
-        /// The Service Quotas template is not available in the Region where you are making the
-        /// request. Please make the request in us-east-1.
+        /// The Service Quotas template is not available in this AWS Region.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
         /// Due to throttling, the request was denied. Slow down the rate of request calls, or
@@ -912,28 +869,14 @@ namespace Amazon.ServiceQuotas
         #region  ListAWSDefaultServiceQuotas
 
         /// <summary>
-        /// Lists all default service quotas for the specified AWS service or all AWS services.
-        /// ListAWSDefaultServiceQuotas is similar to <a>ListServiceQuotas</a> except for the
-        /// Value object. The Value object returned by <code>ListAWSDefaultServiceQuotas</code>
-        /// is the default value assigned by AWS. This request returns a list of all service quotas
-        /// for the specified service. The listing of each you'll see the default values are the
-        /// values that AWS provides for the quotas. 
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Always check the <code>NextToken</code> response parameter when calling any of the
-        /// <code>List*</code> operations. These operations can return an unexpected list of results,
-        /// even when there are more results available. When this happens, the <code>NextToken</code>
-        /// response parameter contains a value to pass the next call to the same API to request
-        /// the next part of the list.
-        /// </para>
-        ///  </note>
+        /// Lists the default values for the quotas for the specified AWS service. A default value
+        /// does not reflect any quota increases.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAWSDefaultServiceQuotas service method.</param>
         /// 
         /// <returns>The response from the ListAWSDefaultServiceQuotas service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
         /// Invalid input was provided.
@@ -1000,13 +943,13 @@ namespace Amazon.ServiceQuotas
         #region  ListRequestedServiceQuotaChangeHistory
 
         /// <summary>
-        /// Requests a list of the changes to quotas for a service.
+        /// Retrieves the quota increase requests for the specified service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRequestedServiceQuotaChangeHistory service method.</param>
         /// 
         /// <returns>The response from the ListRequestedServiceQuotaChangeHistory service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
         /// Invalid input was provided.
@@ -1073,16 +1016,13 @@ namespace Amazon.ServiceQuotas
         #region  ListRequestedServiceQuotaChangeHistoryByQuota
 
         /// <summary>
-        /// Requests a list of the changes to specific service quotas. This command provides additional
-        /// granularity over the <code>ListRequestedServiceQuotaChangeHistory</code> command.
-        /// Once a quota change request has reached <code>CASE_CLOSED, APPROVED,</code> or <code>DENIED</code>,
-        /// the history has been kept for 90 days.
+        /// Retrieves the quota increase requests for the specified quota.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRequestedServiceQuotaChangeHistoryByQuota service method.</param>
         /// 
         /// <returns>The response from the ListRequestedServiceQuotaChangeHistoryByQuota service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
         /// Invalid input was provided.
@@ -1149,17 +1089,17 @@ namespace Amazon.ServiceQuotas
         #region  ListServiceQuotaIncreaseRequestsInTemplate
 
         /// <summary>
-        /// Returns a list of the quota increase requests in the template.
+        /// Lists the quota increase requests in the specified quota request template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceQuotaIncreaseRequestsInTemplate service method.</param>
         /// 
         /// <returns>The response from the ListServiceQuotaIncreaseRequestsInTemplate service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.AWSServiceAccessNotEnabledException">
         /// The action you attempted is not allowed unless Service Access with Service Quotas
-        /// is enabled in your organization. To enable, call <a>AssociateServiceQuotaTemplate</a>.
+        /// is enabled in your organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.DependencyAccessDeniedException">
         /// You can't perform this action because a dependency does not have access.
@@ -1174,8 +1114,7 @@ namespace Amazon.ServiceQuotas
         /// Something went wrong.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TemplatesNotAvailableInRegionException">
-        /// The Service Quotas template is not available in the Region where you are making the
-        /// request. Please make the request in us-east-1.
+        /// The Service Quotas template is not available in this AWS Region.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
         /// Due to throttling, the request was denied. Slow down the rate of request calls, or
@@ -1230,25 +1169,15 @@ namespace Amazon.ServiceQuotas
         #region  ListServiceQuotas
 
         /// <summary>
-        /// Lists all service quotas for the specified AWS service. This request returns a list
-        /// of the service quotas for the specified service. you'll see the default values are
-        /// the values that AWS provides for the quotas. 
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Always check the <code>NextToken</code> response parameter when calling any of the
-        /// <code>List*</code> operations. These operations can return an unexpected list of results,
-        /// even when there are more results available. When this happens, the <code>NextToken</code>
-        /// response parameter contains a value to pass the next call to the same API to request
-        /// the next part of the list.
-        /// </para>
-        ///  </note>
+        /// Lists the applied quota values for the specified AWS service. For some quotas, only
+        /// the default values are available. If the applied quota value is not available for
+        /// a quota, the quota is not retrieved.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServiceQuotas service method.</param>
         /// 
         /// <returns>The response from the ListServiceQuotas service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
         /// Invalid input was provided.
@@ -1315,15 +1244,13 @@ namespace Amazon.ServiceQuotas
         #region  ListServices
 
         /// <summary>
-        /// Lists the AWS services available in Service Quotas. Not all AWS services are available
-        /// in Service Quotas. To list the see the list of the service quotas for a specific service,
-        /// use <a>ListServiceQuotas</a>.
+        /// Lists the names and codes for the services integrated with Service Quotas.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServices service method.</param>
         /// 
         /// <returns>The response from the ListServices service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
         /// Invalid input was provided.
@@ -1384,23 +1311,90 @@ namespace Amazon.ServiceQuotas
 
         #endregion
         
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Returns a list of the tags assigned to the specified applied quota.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonServiceQuotasClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from ServiceQuotas.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutServiceQuotaIncreaseRequestIntoTemplate
 
         /// <summary>
-        /// Defines and adds a quota to the service quota template. To add a quota to the template,
-        /// you must provide the <code>ServiceCode</code>, <code>QuotaCode</code>, <code>AwsRegion</code>,
-        /// and <code>DesiredValue</code>. Once you add a quota to the template, use <a>ListServiceQuotaIncreaseRequestsInTemplate</a>
-        /// to see the list of quotas in the template.
+        /// Adds a quota increase request to your quota request template.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutServiceQuotaIncreaseRequestIntoTemplate service method.</param>
         /// 
         /// <returns>The response from the PutServiceQuotaIncreaseRequestIntoTemplate service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.AWSServiceAccessNotEnabledException">
         /// The action you attempted is not allowed unless Service Access with Service Quotas
-        /// is enabled in your organization. To enable, call <a>AssociateServiceQuotaTemplate</a>.
+        /// is enabled in your organization.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.DependencyAccessDeniedException">
         /// You can't perform this action because a dependency does not have access.
@@ -1422,8 +1416,7 @@ namespace Amazon.ServiceQuotas
         /// Something went wrong.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TemplatesNotAvailableInRegionException">
-        /// The Service Quotas template is not available in the Region where you are making the
-        /// request. Please make the request in us-east-1.
+        /// The Service Quotas template is not available in this AWS Region.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
         /// Due to throttling, the request was denied. Slow down the rate of request calls, or
@@ -1478,14 +1471,13 @@ namespace Amazon.ServiceQuotas
         #region  RequestServiceQuotaIncrease
 
         /// <summary>
-        /// Retrieves the details of a service quota increase request. The response to this command
-        /// provides the details in the <a>RequestedServiceQuotaChange</a> object.
+        /// Submits a quota increase request for the specified quota.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestServiceQuotaIncrease service method.</param>
         /// 
         /// <returns>The response from the RequestServiceQuotaIncrease service method, as returned by ServiceQuotas.</returns>
         /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.DependencyAccessDeniedException">
         /// You can't perform this action because a dependency does not have access.
@@ -1494,7 +1486,7 @@ namespace Amazon.ServiceQuotas
         /// Invalid input was provided.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.InvalidResourceStateException">
-        /// Invalid input was provided for the .
+        /// The resource is in an invalid state.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
         /// The specified resource does not exist.
@@ -1555,6 +1547,156 @@ namespace Amazon.ServiceQuotas
         public virtual RequestServiceQuotaIncreaseResponse EndRequestServiceQuotaIncrease(IAsyncResult asyncResult)
         {
             return EndInvoke<RequestServiceQuotaIncreaseResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        /// <summary>
+        /// Adds tags to the specified applied quota. You can include one or more tags to add
+        /// to the quota.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TagPolicyViolationException">
+        /// The specified tag is a reserved word and cannot be used.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyTagsException">
+        /// You've exceeded the number of tags allowed for a resource. For more information, see
+        /// <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/sq-tagging.html#sq-tagging-restrictions">Tag
+        /// restrictions</a> in the <i>Service Quotas User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonServiceQuotasClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from ServiceQuotas.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes tags from the specified applied quota. You can specify one or more tags to
+        /// remove.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ServiceQuotas.</returns>
+        /// <exception cref="Amazon.ServiceQuotas.Model.AccessDeniedException">
+        /// You do not have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.ServiceException">
+        /// Something went wrong.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.TooManyRequestsException">
+        /// Due to throttling, the request was denied. Slow down the rate of request calls, or
+        /// request an increase for this quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonServiceQuotasClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from ServiceQuotas.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
         }
 
         #endregion

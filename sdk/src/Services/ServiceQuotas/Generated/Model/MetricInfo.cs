@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// A structure that uses CloudWatch metrics to gather data about the service quota.
+    /// Information about the CloudWatch metric that reflects quota usage.
     /// </summary>
     public partial class MetricInfo
     {
@@ -41,10 +41,8 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property MetricDimensions. 
         /// <para>
-        /// A dimension is a name/value pair that is part of the identity of a metric. Every metric
-        /// has specific characteristics that describe it, and you can think of dimensions as
-        /// categories for those characteristics. These dimensions are part of the CloudWatch
-        /// Metric Identity that measures usage against a particular service quota.
+        /// The metric dimension. This is a name/value pair that is part of the identity of a
+        /// metric.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
@@ -63,8 +61,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// The name of the CloudWatch metric that measures usage of a service quota. This is
-        /// a required field.
+        /// The name of the metric.
         /// </para>
         /// </summary>
         public string MetricName
@@ -82,8 +79,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property MetricNamespace. 
         /// <para>
-        /// The namespace of the metric. The namespace is a container for CloudWatch metrics.
-        /// You can specify a name for the namespace when you create a metric.
+        /// The namespace of the metric.
         /// </para>
         /// </summary>
         public string MetricNamespace
@@ -101,9 +97,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property MetricStatisticRecommendation. 
         /// <para>
-        /// Statistics are metric data aggregations over specified periods of time. This is the
-        /// recommended statistic to use when comparing usage in the CloudWatch Metric against
-        /// your Service Quota.
+        /// The metric statistic that we recommend you use when determining quota usage.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

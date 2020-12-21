@@ -30,7 +30,7 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRequestedServiceQuotaChangeHistory operation.
-    /// Requests a list of the changes to quotas for a service.
+    /// Retrieves the quota increase requests for the specified service.
     /// </summary>
     public partial class ListRequestedServiceQuotaChangeHistoryRequest : AmazonServiceQuotasRequest
     {
@@ -42,13 +42,8 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// (Optional) Limits the number of results that you want to include in the response.
-        /// If you don't include this parameter, the response defaults to a value that's specific
-        /// to the operation. If additional items exist beyond the specified maximum, the <code>NextToken</code>
-        /// element is present and has a value (isn't null). Include that value as the <code>NextToken</code>
-        /// request parameter in the call to the operation to get the next part of the results.
-        /// You should check <code>NextToken</code> after every operation to ensure that you receive
-        /// all of the results.
+        /// The maximum number of results to return with a single call. To retrieve the remaining
+        /// results, if any, make another call with the token returned from this call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -67,10 +62,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// (Optional) Use this parameter in a request if you receive a <code>NextToken</code>
-        /// response in a previous request that indicates that there's more output available.
-        /// In a subsequent call, set it to the value of the previous call's <code>NextToken</code>
-        /// response to indicate where the output should continue from.
+        /// The token for the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -89,7 +81,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Specifies the service that you want to use.
+        /// The service identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -108,7 +100,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies the status value of the quota increase request.
+        /// The status of the quota increase request.
         /// </para>
         /// </summary>
         public RequestStatus Status

@@ -30,7 +30,7 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRequestedServiceQuotaChange operation.
-    /// Retrieves the details for a particular increase request.
+    /// Retrieves information about the specified quota increase request.
     /// </summary>
     public partial class GetRequestedServiceQuotaChangeRequest : AmazonServiceQuotasRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// Identifies the quota increase request.
+        /// The ID of the quota increase request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// The organization that your account belongs to, is not in All Features mode. To enable
-    /// all features mode, see <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnableAllFeatures.html">EnableAllFeatures</a>.
+    /// The organization that your account belongs to is not in All Features mode.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// The Service Quotas template is not available in the Region where you are making the
-    /// request. Please make the request in us-east-1.
+    /// The Service Quotas template is not available in this AWS Region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

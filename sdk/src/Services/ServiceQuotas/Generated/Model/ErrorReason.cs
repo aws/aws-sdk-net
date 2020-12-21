@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// Returns an error that explains why the action did not succeed.
+    /// An error that explains why an action did not succeed.
     /// </summary>
     public partial class ErrorReason
     {
@@ -39,29 +39,27 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// Service Quotas returns the following error values. 
+        /// Service Quotas returns the following error values:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> is returned when the caller does not
-        /// have permission to call the service or service quota. To resolve the error, you need
-        /// permission to access the service or service quota.
+        ///  <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required
+        /// permissions to complete the action. To resolve the error, you must have permission
+        /// to access the service or quota.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>DEPENDENCY_THROTTLING_ERROR</code> is returned when the service being called
-        /// is throttling Service Quotas.
+        ///  <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service Quotas.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>DEPENDENCY_SERVICE_ERROR</code> is returned when the service being called has
-        /// availability issues.
+        ///  <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        ///  <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> is returned when there was an error
-        /// in Service Quotas.
+        ///  <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service Quotas.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ErrorCode ErrorCode
         {
@@ -78,7 +76,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The error message that provides more detail.
+        /// The error message.
         /// </para>
         /// </summary>
         public string ErrorMessage

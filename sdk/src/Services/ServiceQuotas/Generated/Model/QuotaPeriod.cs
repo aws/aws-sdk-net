@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// A structure that contains information about the quota period.
+    /// Information about the quota period.
     /// </summary>
     public partial class QuotaPeriod
     {
@@ -39,7 +39,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property PeriodUnit. 
         /// <para>
-        /// The time unit of a period.
+        /// The time unit.
         /// </para>
         /// </summary>
         public PeriodUnit PeriodUnit
@@ -57,7 +57,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property PeriodValue. 
         /// <para>
-        /// The value of a period.
+        /// The value.
         /// </para>
         /// </summary>
         public int PeriodValue

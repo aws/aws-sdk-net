@@ -30,7 +30,7 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// The action you attempted is not allowed unless Service Access with Service Quotas
-    /// is enabled in your organization. To enable, call <a>AssociateServiceQuotaTemplate</a>.
+    /// is enabled in your organization.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

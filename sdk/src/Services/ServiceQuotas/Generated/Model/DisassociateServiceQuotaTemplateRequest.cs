@@ -30,23 +30,9 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateServiceQuotaTemplate operation.
-    /// Disables the Service Quotas template. Once the template is disabled, it does not request
-    /// quota increases for new accounts in your organization. Disabling the quota template
-    /// does not apply the quota increase requests from the template. 
-    /// 
-    ///  
-    /// <para>
-    ///  <b>Related operations</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// To enable the quota template, call <a>AssociateServiceQuotaTemplate</a>. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// To delete a specific service quota from the template, use <a>DeleteServiceQuotaIncreaseRequestFromTemplate</a>.
-    /// </para>
-    ///  </li> </ul>
+    /// Disables your quota request template. After a template is disabled, the quota increase
+    /// requests in the template are not applied to new accounts in your organization. Disabling
+    /// a quota request template does not apply its quota increase requests.
     /// </summary>
     public partial class DisassociateServiceQuotaTemplateRequest : AmazonServiceQuotasRequest
     {

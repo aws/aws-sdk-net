@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// You do not have sufficient access to perform this action.
+    /// You do not have sufficient permission to perform this action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

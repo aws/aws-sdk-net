@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// A structure that contains information about one service quota increase request.
+    /// Information about a quota increase request.
     /// </summary>
     public partial class ServiceQuotaIncreaseRequestInTemplate
     {
@@ -45,7 +45,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// The AWS Region where the increase request occurs.
+        /// The AWS Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -64,8 +64,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property DesiredValue. 
         /// <para>
-        /// Identifies the new, increased value of the service quota in the increase request.
-        /// 
+        /// The new, increased value of the quota.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000000000)]
@@ -84,7 +83,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property GlobalQuota. 
         /// <para>
-        /// Specifies if the quota is a global quota.
+        /// Indicates whether the quota is global.
         /// </para>
         /// </summary>
         public bool GlobalQuota
@@ -102,7 +101,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// The code identifier for the service quota specified in the increase request.
+        /// The quota identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -121,7 +120,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaName. 
         /// <para>
-        /// The name of the service quota in the increase request.
+        /// The quota name.
         /// </para>
         /// </summary>
         public string QuotaName
@@ -139,7 +138,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// The code identifier for the AWS service specified in the increase request.
+        /// The service identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]
@@ -158,7 +157,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS service specified in the increase request. 
+        /// The service name.
         /// </para>
         /// </summary>
         public string ServiceName
@@ -176,7 +175,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit of measure for the increase request.
+        /// The unit of measurement.
         /// </para>
         /// </summary>
         public string Unit

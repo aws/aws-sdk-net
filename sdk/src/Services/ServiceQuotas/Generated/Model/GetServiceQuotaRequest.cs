@@ -30,10 +30,9 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the GetServiceQuota operation.
-    /// Returns the details for the specified service quota. This operation provides a different
-    /// Value than the <code>GetAWSDefaultServiceQuota</code> operation. This operation returns
-    /// the applied value for each quota. <code>GetAWSDefaultServiceQuota</code> returns the
-    /// default AWS value for each quota.
+    /// Retrieves the applied quota value for the specified quota. For some quotas, only the
+    /// default values are available. If the applied quota value is not available for a quota,
+    /// the quota is not retrieved.
     /// </summary>
     public partial class GetServiceQuotaRequest : AmazonServiceQuotasRequest
     {
@@ -43,7 +42,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// Identifies the service quota you want to select.
+        /// The quota identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -62,7 +61,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Specifies the service that you want to use.
+        /// The service identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
