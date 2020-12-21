@@ -1592,6 +1592,66 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DeleteStoredQuery
+
+        /// <summary>
+        /// Deletes the stored query for an AWS account in an AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStoredQuery service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">REST API Reference for DeleteStoredQuery Operation</seealso>
+        public virtual DeleteStoredQueryResponse DeleteStoredQuery(DeleteStoredQueryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStoredQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStoredQueryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStoredQueryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteStoredQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStoredQuery operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStoredQuery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">REST API Reference for DeleteStoredQuery Operation</seealso>
+        public virtual IAsyncResult BeginDeleteStoredQuery(DeleteStoredQueryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteStoredQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStoredQueryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteStoredQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStoredQuery.</param>
+        /// 
+        /// <returns>Returns a  DeleteStoredQueryResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">REST API Reference for DeleteStoredQuery Operation</seealso>
+        public virtual DeleteStoredQueryResponse EndDeleteStoredQuery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteStoredQueryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeliverConfigSnapshot
 
         /// <summary>
@@ -4619,6 +4679,66 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  GetStoredQuery
+
+        /// <summary>
+        /// Returns the details of a specific stored query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStoredQuery service method.</param>
+        /// 
+        /// <returns>The response from the GetStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery">REST API Reference for GetStoredQuery Operation</seealso>
+        public virtual GetStoredQueryResponse GetStoredQuery(GetStoredQueryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStoredQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStoredQueryResponseUnmarshaller.Instance;
+
+            return Invoke<GetStoredQueryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetStoredQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetStoredQuery operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStoredQuery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery">REST API Reference for GetStoredQuery Operation</seealso>
+        public virtual IAsyncResult BeginGetStoredQuery(GetStoredQueryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStoredQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStoredQueryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetStoredQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStoredQuery.</param>
+        /// 
+        /// <returns>Returns a  GetStoredQueryResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery">REST API Reference for GetStoredQuery Operation</seealso>
+        public virtual GetStoredQueryResponse EndGetStoredQuery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetStoredQueryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAggregateDiscoveredResources
 
         /// <summary>
@@ -4778,6 +4898,67 @@ namespace Amazon.ConfigService
         public virtual ListDiscoveredResourcesResponse EndListDiscoveredResources(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDiscoveredResourcesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListStoredQueries
+
+        /// <summary>
+        /// List the stored queries for an AWS account in an AWS Region. The default is 100.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStoredQueries service method.</param>
+        /// 
+        /// <returns>The response from the ListStoredQueries service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">REST API Reference for ListStoredQueries Operation</seealso>
+        public virtual ListStoredQueriesResponse ListStoredQueries(ListStoredQueriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStoredQueriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStoredQueriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListStoredQueriesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStoredQueries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStoredQueries operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStoredQueries
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">REST API Reference for ListStoredQueries Operation</seealso>
+        public virtual IAsyncResult BeginListStoredQueries(ListStoredQueriesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStoredQueriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStoredQueriesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStoredQueries operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStoredQueries.</param>
+        /// 
+        /// <returns>Returns a  ListStoredQueriesResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">REST API Reference for ListStoredQueries Operation</seealso>
+        public virtual ListStoredQueriesResponse EndListStoredQueries(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListStoredQueriesResponse>(asyncResult);
         }
 
         #endregion
@@ -6171,7 +6352,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// A remediation exception is when a specific resource is no longer considered for auto-remediation.
-        /// This API adds a new exception or updates an existing exception for a specific resource
+        /// This API adds a new exception or updates an exisiting exception for a specific resource
         /// with a specific AWS Config rule. 
         /// 
         ///  <note> 
@@ -6457,6 +6638,73 @@ namespace Amazon.ConfigService
         public virtual PutRetentionConfigurationResponse EndPutRetentionConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutRetentionConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutStoredQuery
+
+        /// <summary>
+        /// Saves a new query or updates an existing saved query. The <code>QueryName</code> must
+        /// be unique for an AWS account in an AWS Region. You can create upto 300 queries in
+        /// an AWS account in an AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutStoredQuery service method.</param>
+        /// 
+        /// <returns>The response from the PutStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceConcurrentModificationException">
+        /// Two users are trying to modify the same query at the same time. Wait for a moment
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.TooManyTagsException">
+        /// You have reached the limit of the number of tags you can use. You have more than 50
+        /// tags.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">REST API Reference for PutStoredQuery Operation</seealso>
+        public virtual PutStoredQueryResponse PutStoredQuery(PutStoredQueryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutStoredQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutStoredQueryResponseUnmarshaller.Instance;
+
+            return Invoke<PutStoredQueryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutStoredQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutStoredQuery operation on AmazonConfigServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutStoredQuery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">REST API Reference for PutStoredQuery Operation</seealso>
+        public virtual IAsyncResult BeginPutStoredQuery(PutStoredQueryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutStoredQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutStoredQueryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutStoredQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutStoredQuery.</param>
+        /// 
+        /// <returns>Returns a  PutStoredQueryResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">REST API Reference for PutStoredQuery Operation</seealso>
+        public virtual PutStoredQueryResponse EndPutStoredQuery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutStoredQueryResponse>(asyncResult);
         }
 
         #endregion

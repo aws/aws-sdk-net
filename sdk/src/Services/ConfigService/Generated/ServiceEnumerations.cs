@@ -1631,6 +1631,18 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSLambdaFunction = new ResourceType("AWS::Lambda::Function");
         /// <summary>
+        /// Constant AWSNetworkFirewallFirewall for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSNetworkFirewallFirewall = new ResourceType("AWS::NetworkFirewall::Firewall");
+        /// <summary>
+        /// Constant AWSNetworkFirewallFirewallPolicy for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSNetworkFirewallFirewallPolicy = new ResourceType("AWS::NetworkFirewall::FirewallPolicy");
+        /// <summary>
+        /// Constant AWSNetworkFirewallRuleGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSNetworkFirewallRuleGroup = new ResourceType("AWS::NetworkFirewall::RuleGroup");
+        /// <summary>
         /// Constant AWSQLDBLedger for ResourceType
         /// </summary>
         public static readonly ResourceType AWSQLDBLedger = new ResourceType("AWS::QLDB::Ledger");

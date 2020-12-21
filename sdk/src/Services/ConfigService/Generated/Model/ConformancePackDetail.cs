@@ -141,13 +141,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property DeliveryS3Bucket. 
         /// <para>
-        /// Amazon S3 bucket where AWS Config stores conformance pack templates. 
+        /// Conformance pack template that is used to create a pack. The delivery bucket name
+        /// should start with awsconfigconforms. For example: "Resource": "arn:aws:s3:::your_bucket_name/*".
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This field is optional.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=63)]
         public string DeliveryS3Bucket
@@ -167,11 +163,6 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// The prefix for the Amazon S3 bucket.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This field is optional.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
         public string DeliveryS3KeyPrefix

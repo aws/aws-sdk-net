@@ -42,6 +42,11 @@ namespace Amazon.ConfigService.Model
         IGetResourceConfigHistoryPaginator GetResourceConfigHistory(GetResourceConfigHistoryRequest request);
 
         /// <summary>
+        /// Paginator for ListStoredQueries operation
+        ///</summary>
+        IListStoredQueriesPaginator ListStoredQueries(ListStoredQueriesRequest request);
+
+        /// <summary>
         /// Paginator for SelectAggregateResourceConfig operation
         ///</summary>
         ISelectAggregateResourceConfigPaginator SelectAggregateResourceConfig(SelectAggregateResourceConfigRequest request);

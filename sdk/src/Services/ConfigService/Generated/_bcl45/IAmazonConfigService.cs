@@ -1440,6 +1440,46 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DeleteStoredQuery
+
+
+        /// <summary>
+        /// Deletes the stored query for an AWS account in an AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStoredQuery service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">REST API Reference for DeleteStoredQuery Operation</seealso>
+        DeleteStoredQueryResponse DeleteStoredQuery(DeleteStoredQueryRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the stored query for an AWS account in an AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStoredQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">REST API Reference for DeleteStoredQuery Operation</seealso>
+        Task<DeleteStoredQueryResponse> DeleteStoredQueryAsync(DeleteStoredQueryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeliverConfigSnapshot
 
 
@@ -4361,6 +4401,46 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  GetStoredQuery
+
+
+        /// <summary>
+        /// Returns the details of a specific stored query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStoredQuery service method.</param>
+        /// 
+        /// <returns>The response from the GetStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery">REST API Reference for GetStoredQuery Operation</seealso>
+        GetStoredQueryResponse GetStoredQuery(GetStoredQueryRequest request);
+
+
+
+        /// <summary>
+        /// Returns the details of a specific stored query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStoredQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery">REST API Reference for GetStoredQuery Operation</seealso>
+        Task<GetStoredQueryResponse> GetStoredQueryAsync(GetStoredQueryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListAggregateDiscoveredResources
 
 
@@ -4524,6 +4604,48 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         Task<ListDiscoveredResourcesResponse> ListDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListStoredQueries
+
+
+        /// <summary>
+        /// List the stored queries for an AWS account in an AWS Region. The default is 100.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStoredQueries service method.</param>
+        /// 
+        /// <returns>The response from the ListStoredQueries service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">REST API Reference for ListStoredQueries Operation</seealso>
+        ListStoredQueriesResponse ListStoredQueries(ListStoredQueriesRequest request);
+
+
+
+        /// <summary>
+        /// List the stored queries for an AWS account in an AWS Region. The default is 100.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStoredQueries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStoredQueries service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">REST API Reference for ListStoredQueries Operation</seealso>
+        Task<ListStoredQueriesResponse> ListStoredQueriesAsync(ListStoredQueriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6342,7 +6464,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// A remediation exception is when a specific resource is no longer considered for auto-remediation.
-        /// This API adds a new exception or updates an existing exception for a specific resource
+        /// This API adds a new exception or updates an exisiting exception for a specific resource
         /// with a specific AWS Config rule. 
         /// 
         ///  <note> 
@@ -6401,7 +6523,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// A remediation exception is when a specific resource is no longer considered for auto-remediation.
-        /// This API adds a new exception or updates an existing exception for a specific resource
+        /// This API adds a new exception or updates an exisiting exception for a specific resource
         /// with a specific AWS Config rule. 
         /// 
         ///  <note> 
@@ -6682,6 +6804,60 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
         Task<PutRetentionConfigurationResponse> PutRetentionConfigurationAsync(PutRetentionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutStoredQuery
+
+
+        /// <summary>
+        /// Saves a new query or updates an existing saved query. The <code>QueryName</code> must
+        /// be unique for an AWS account in an AWS Region. You can create upto 300 queries in
+        /// an AWS account in an AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutStoredQuery service method.</param>
+        /// 
+        /// <returns>The response from the PutStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceConcurrentModificationException">
+        /// Two users are trying to modify the same query at the same time. Wait for a moment
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.TooManyTagsException">
+        /// You have reached the limit of the number of tags you can use. You have more than 50
+        /// tags.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">REST API Reference for PutStoredQuery Operation</seealso>
+        PutStoredQueryResponse PutStoredQuery(PutStoredQueryRequest request);
+
+
+
+        /// <summary>
+        /// Saves a new query or updates an existing saved query. The <code>QueryName</code> must
+        /// be unique for an AWS account in an AWS Region. You can create upto 300 queries in
+        /// an AWS account in an AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutStoredQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceConcurrentModificationException">
+        /// Two users are trying to modify the same query at the same time. Wait for a moment
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.TooManyTagsException">
+        /// You have reached the limit of the number of tags you can use. You have more than 50
+        /// tags.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">REST API Reference for PutStoredQuery Operation</seealso>
+        Task<PutStoredQueryResponse> PutStoredQueryAsync(PutStoredQueryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

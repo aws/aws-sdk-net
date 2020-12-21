@@ -98,6 +98,12 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeleteStoredQueryRequest.QueryName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.DeliverConfigSnapshotRequest.DeliveryChannelName</property>
     <min>1</min>
     <max>256</max>
@@ -372,6 +378,12 @@
     <max>768</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetStoredQueryRequest.QueryName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.ListAggregateDiscoveredResourcesRequest.ConfigurationAggregatorName</property>
     <min>1</min>
     <max>256</max>
@@ -384,6 +396,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ListDiscoveredResourcesRequest.Limit</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ListStoredQueriesRequest.MaxResults</property>
     <min>0</min>
     <max>100</max>
   </property-value-rule>
@@ -524,6 +541,12 @@
     <property>Amazon.ConfigService.Model.PutRetentionConfigurationRequest.RetentionPeriodInDays</property>
     <min>30</min>
     <max>2557</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutStoredQueryResponse.QueryArn</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^arn:aws[a-z\-]*:config:[a-z\-\d]+:\d+:stored-query/[a-zA-Z0-9-_]+/query-[a-zA-Z\d-_/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.SelectAggregateResourceConfigRequest.ConfigurationAggregatorName</property>
@@ -1202,6 +1225,60 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.StatusDetailFilters.AccountId</property>
     <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StoredQuery.Description</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StoredQuery.Expression</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StoredQuery.QueryArn</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^arn:aws[a-z\-]*:config:[a-z\-\d]+:\d+:stored-query/[a-zA-Z0-9-_]+/query-[a-zA-Z\d-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StoredQuery.QueryId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StoredQuery.QueryName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StoredQueryMetadata.Description</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StoredQueryMetadata.QueryArn</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>^arn:aws[a-z\-]*:config:[a-z\-\d]+:\d+:stored-query/[a-zA-Z0-9-_]+/query-[a-zA-Z\d-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StoredQueryMetadata.QueryId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.StoredQueryMetadata.QueryName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.Tag.Key</property>

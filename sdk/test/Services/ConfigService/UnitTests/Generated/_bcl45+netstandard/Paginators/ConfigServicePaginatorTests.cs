@@ -160,6 +160,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("ConfigService")]
+        public void ListStoredQueriesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListStoredQueriesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListStoredQueriesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListStoredQueriesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListStoredQueries(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListStoredQueries(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ConfigService")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListStoredQueriesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListStoredQueriesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListStoredQueriesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListStoredQueries(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListStoredQueries(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ConfigService")]
         public void SelectAggregateResourceConfigTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<SelectAggregateResourceConfigRequest>();

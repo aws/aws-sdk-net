@@ -61,6 +61,14 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
+        /// Paginator for ListStoredQueries operation
+        ///</summary>
+        public IListStoredQueriesPaginator ListStoredQueries(ListStoredQueriesRequest request) 
+        {
+            return new ListStoredQueriesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SelectAggregateResourceConfig operation
         ///</summary>
         public ISelectAggregateResourceConfigPaginator SelectAggregateResourceConfig(SelectAggregateResourceConfigRequest request) 
