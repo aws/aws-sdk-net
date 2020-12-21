@@ -64,7 +64,7 @@ namespace Amazon.Chime.Model
                 nextToken = response.NextToken;
                 yield return response;
             }
-            while (nextToken != null);
+            while (!string.IsNullOrEmpty(nextToken));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -85,7 +85,7 @@ namespace Amazon.Chime.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (nextToken != null);
+            while (!string.IsNullOrEmpty(nextToken));
         }
 #endif
     }

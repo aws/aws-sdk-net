@@ -70,7 +70,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
                 marker = response.NextMarker;
                 yield return response;
             }
-            while (marker != null);
+            while (!string.IsNullOrEmpty(marker));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -91,7 +91,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (marker != null);
+            while (!string.IsNullOrEmpty(marker));
         }
 #endif
     }

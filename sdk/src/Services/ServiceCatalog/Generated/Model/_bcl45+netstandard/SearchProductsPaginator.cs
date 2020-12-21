@@ -64,7 +64,7 @@ namespace Amazon.ServiceCatalog.Model
                 pageToken = response.NextPageToken;
                 yield return response;
             }
-            while (pageToken != null);
+            while (!string.IsNullOrEmpty(pageToken));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -85,7 +85,7 @@ namespace Amazon.ServiceCatalog.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (pageToken != null);
+            while (!string.IsNullOrEmpty(pageToken));
         }
 #endif
     }

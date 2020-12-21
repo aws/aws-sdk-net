@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class BasePaginator : BaseGenerator
     {
@@ -30,7 +30,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         {
             this.Write("#if !NETSTANDARD13\r\n");
             
-            #line 7 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 7 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 	AddLicenseHeader();
 
@@ -41,49 +41,49 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "tem.Collections;\r\nusing System.Threading;\r\nusing System.Threading.Tasks;\r\nusing " +
                     "Amazon.Runtime;\r\n \r\nnamespace ");
             
-            #line 19 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 19 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model\r\n{\r\n    /// <summary>\r\n    /// Base class for ");
             
-            #line 22 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 22 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write(" paginators.\r\n    /// </summary>\r\n    internal sealed partial class ");
             
-            #line 24 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 24 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Paginator : IPaginator<");
             
-            #line 24 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 24 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Response>, I");
             
-            #line 24 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 24 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Paginator\r\n    {\r\n        private readonly IAmazon");
             
-            #line 26 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 26 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write(" _client;\r\n        private readonly ");
             
-            #line 27 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 27 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -92,21 +92,21 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "/// <summary>\r\n        /// Enumerable containing all full responses for the oper" +
                     "ation\r\n        /// </summary>\r\n        public IPaginatedEnumerable<");
             
-            #line 33 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 33 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> Responses => new PaginatedResponse<");
             
-            #line 33 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 33 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Response>(this);\r\n");
             
-            #line 34 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 foreach(var resultKey in this.Operation.Paginators.ResultKeys.Where(r => r.ListItemType != null))
 {
@@ -116,49 +116,49 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys.Where(r => r.ListI
             #line hidden
             this.Write("\r\n        /// <summary>\r\n        /// Enumerable containing all of the ");
             
-            #line 40 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 40 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resultKey.Member.PropertyName));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        public IPaginatedEnumerable<");
             
-            #line 42 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resultKey.ListItemType));
             
             #line default
             #line hidden
             this.Write("> ");
             
-            #line 42 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resultKey.Member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" => \r\n            new PaginatedResultKeyResponse<");
             
-            #line 43 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 43 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Response, ");
             
-            #line 43 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 43 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resultKey.ListItemType));
             
             #line default
             #line hidden
             this.Write(">(this, (i) => i.");
             
-            #line 43 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 43 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(resultKey.PropertyName));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 44 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 44 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 }
 
@@ -167,21 +167,21 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys.Where(r => r.ListI
             #line hidden
             this.Write("\r\n        internal ");
             
-            #line 48 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 48 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Paginator(IAmazon");
             
-            #line 48 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 48 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write(" client, ");
             
-            #line 48 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 48 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -189,14 +189,14 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys.Where(r => r.ListI
             this.Write("Request request)\r\n        {\r\n            this._client = client;\r\n            this" +
                     "._request = request;\r\n        }\r\n#if BCL\r\n        IEnumerable<");
             
-            #line 54 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 54 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> IPaginator<");
             
-            #line 54 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 54 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -210,7 +210,7 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys.Where(r => r.ListI
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
 ");
             
-            #line 61 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 61 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 foreach(var inputToken in this.Operation.Paginators.InputTokens)
 {
@@ -220,21 +220,21 @@ foreach(var inputToken in this.Operation.Paginators.InputTokens)
             #line hidden
             this.Write("            var ");
             
-            #line 65 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 65 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(inputToken.Member.ArgumentName));
             
             #line default
             #line hidden
             this.Write(" = _request.");
             
-            #line 65 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 65 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(inputToken.PropertyName));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 66 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 66 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 }
 
@@ -243,14 +243,14 @@ foreach(var inputToken in this.Operation.Paginators.InputTokens)
             #line hidden
             this.Write("            ");
             
-            #line 69 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 69 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Response response;\r\n            do\r\n            {\r\n");
             
-            #line 72 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 72 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 foreach(var inputToken in this.Operation.Paginators.InputTokens)
 {
@@ -260,21 +260,21 @@ foreach(var inputToken in this.Operation.Paginators.InputTokens)
             #line hidden
             this.Write("                _request.");
             
-            #line 76 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 76 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(inputToken.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 76 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 76 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(inputToken.Member.ArgumentName));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 77 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 77 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 }
 
@@ -283,14 +283,14 @@ foreach(var inputToken in this.Operation.Paginators.InputTokens)
             #line hidden
             this.Write("                response = _client.");
             
-            #line 80 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 80 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("(_request);\r\n");
             
-            #line 81 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 81 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 for(var i = 0; i < this.Operation.Paginators.InputTokens.Count; i++)
 {
@@ -300,21 +300,21 @@ for(var i = 0; i < this.Operation.Paginators.InputTokens.Count; i++)
             #line hidden
             this.Write("                ");
             
-            #line 85 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 85 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Paginators.InputTokens[i].Member.ArgumentName));
             
             #line default
             #line hidden
             this.Write(" = response.");
             
-            #line 85 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 85 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Paginators.OutputTokens[i].PropertyName));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 86 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 }
 
@@ -323,7 +323,7 @@ for(var i = 0; i < this.Operation.Paginators.InputTokens.Count; i++)
             #line hidden
             this.Write("                yield return response;\r\n            }\r\n");
             
-            #line 91 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 91 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 if (this.Operation.Paginators.MoreResults != null)
 {
@@ -333,14 +333,14 @@ if (this.Operation.Paginators.MoreResults != null)
             #line hidden
             this.Write("            while (response.");
             
-            #line 95 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 95 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Paginators.MoreResults.PropertyName));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 96 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 96 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 } 
 else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
@@ -351,14 +351,14 @@ else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
             #line hidden
             this.Write("            while (");
             
-            #line 101 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 101 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Paginators.InputTokens[0].Member.ArgumentName));
             
             #line default
             #line hidden
             this.Write(".Count > 0);\r\n");
             
-            #line 102 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 102 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 }
 else
@@ -367,16 +367,16 @@ else
             
             #line default
             #line hidden
-            this.Write("            while (");
+            this.Write("            while (!string.IsNullOrEmpty(");
             
-            #line 107 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 107 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Paginators.InputTokens[0].Member.ArgumentName));
             
             #line default
             #line hidden
-            this.Write(" != null);\r\n");
+            this.Write("));\r\n");
             
-            #line 108 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 108 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 }
 
@@ -386,14 +386,14 @@ else
             this.Write("        }\r\n#endif\r\n#if AWS_ASYNC_ENUMERABLES_API\r\n        async IAsyncEnumerable<" +
                     "");
             
-            #line 114 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 114 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> IPaginator<");
             
-            #line 114 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 114 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
@@ -407,7 +407,7 @@ else
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
 ");
             
-            #line 121 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 121 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 foreach(var inputToken in this.Operation.Paginators.InputTokens)
 {
@@ -417,21 +417,21 @@ foreach(var inputToken in this.Operation.Paginators.InputTokens)
             #line hidden
             this.Write("            var ");
             
-            #line 125 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 125 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(inputToken.Member.ArgumentName));
             
             #line default
             #line hidden
             this.Write(" = _request.");
             
-            #line 125 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 125 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(inputToken.PropertyName));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 126 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 126 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 }
 
@@ -440,14 +440,14 @@ foreach(var inputToken in this.Operation.Paginators.InputTokens)
             #line hidden
             this.Write("            ");
             
-            #line 129 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 129 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Response response;\r\n            do\r\n            {\r\n");
             
-            #line 132 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 132 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 foreach(var inputToken in this.Operation.Paginators.InputTokens)
 {
@@ -457,21 +457,21 @@ foreach(var inputToken in this.Operation.Paginators.InputTokens)
             #line hidden
             this.Write("                _request.");
             
-            #line 136 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 136 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(inputToken.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 136 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 136 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(inputToken.Member.ArgumentName));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 137 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 137 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 }
 
@@ -480,14 +480,14 @@ foreach(var inputToken in this.Operation.Paginators.InputTokens)
             #line hidden
             this.Write("                response = await _client.");
             
-            #line 140 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 140 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(_request, cancellationToken).ConfigureAwait(false);\r\n");
             
-            #line 141 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 141 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 for(var i = 0; i < this.Operation.Paginators.InputTokens.Count; i++)
 {
@@ -497,21 +497,21 @@ for(var i = 0; i < this.Operation.Paginators.InputTokens.Count; i++)
             #line hidden
             this.Write("                ");
             
-            #line 145 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 145 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Paginators.InputTokens[i].Member.ArgumentName));
             
             #line default
             #line hidden
             this.Write(" = response.");
             
-            #line 145 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 145 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Paginators.OutputTokens[i].PropertyName));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 146 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 146 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 }
 
@@ -521,7 +521,7 @@ for(var i = 0; i < this.Operation.Paginators.InputTokens.Count; i++)
             this.Write("                cancellationToken.ThrowIfCancellationRequested();\r\n              " +
                     "  yield return response;\r\n            }\r\n");
             
-            #line 152 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 152 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 if (this.Operation.Paginators.MoreResults != null)
 {
@@ -531,14 +531,14 @@ if (this.Operation.Paginators.MoreResults != null)
             #line hidden
             this.Write("            while (response.");
             
-            #line 156 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 156 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Paginators.MoreResults.PropertyName));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 157 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 157 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 } 
 else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
@@ -549,14 +549,14 @@ else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
             #line hidden
             this.Write("            while (");
             
-            #line 162 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 162 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Paginators.InputTokens[0].Member.ArgumentName));
             
             #line default
             #line hidden
             this.Write(".Count > 0);\r\n");
             
-            #line 163 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 163 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 }
 else
@@ -565,16 +565,16 @@ else
             
             #line default
             #line hidden
-            this.Write("            while (");
+            this.Write("            while (!string.IsNullOrEmpty(");
             
-            #line 168 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 168 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Paginators.InputTokens[0].Member.ArgumentName));
             
             #line default
             #line hidden
-            this.Write(" != null);\r\n");
+            this.Write("));\r\n");
             
-            #line 169 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+            #line 169 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
 }
 
@@ -585,7 +585,7 @@ else
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 178 "C:\codebase\worktrees\PaginatorsUserAgent\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
+        #line 178 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\BasePaginator.tt"
 
     // The operation the marshaller will be used on
 	public Operation Operation { get; set; }	

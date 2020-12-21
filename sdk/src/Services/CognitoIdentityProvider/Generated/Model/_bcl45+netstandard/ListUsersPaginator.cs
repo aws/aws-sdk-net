@@ -70,7 +70,7 @@ namespace Amazon.CognitoIdentityProvider.Model
                 paginationToken = response.PaginationToken;
                 yield return response;
             }
-            while (paginationToken != null);
+            while (!string.IsNullOrEmpty(paginationToken));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -91,7 +91,7 @@ namespace Amazon.CognitoIdentityProvider.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (paginationToken != null);
+            while (!string.IsNullOrEmpty(paginationToken));
         }
 #endif
     }
