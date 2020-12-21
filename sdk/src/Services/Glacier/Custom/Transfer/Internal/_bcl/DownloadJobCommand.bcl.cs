@@ -164,10 +164,15 @@ namespace Amazon.Glacier.Transfer.Internal
                     }
                 }
 
-                var computedCheckSum = TreeHashGenerator.CalculateTreeHash(hashes);
-                if (!string.Equals(glacierProvidedCheckSum, computedCheckSum, StringComparison.OrdinalIgnoreCase))
+                // If the job output is a vault inventory then Glacier does not return back a tree hash.
+                if (!string.IsNullOrEmpty(glacierProvidedCheckSum))
                 {
-                    throw new AmazonGlacierException("Checksum of the downloaded file does not match the checksum reported by Amazon Glacier.");
+                    var computedCheckSum = TreeHashGenerator.CalculateTreeHash(hashes);
+                    if (!string.Equals(glacierProvidedCheckSum, computedCheckSum, StringComparison.OrdinalIgnoreCase))
+                    {
+                        throw new AmazonGlacierException("Checksum of the downloaded file does not match the checksum reported by Amazon Glacier.");
+                    }
+
                 }
             }
             catch (IOException e)
