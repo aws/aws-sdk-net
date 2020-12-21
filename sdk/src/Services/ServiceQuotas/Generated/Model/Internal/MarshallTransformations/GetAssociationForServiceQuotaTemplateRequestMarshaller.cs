@@ -63,7 +63,8 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/";
             request.MarshallerVersion = 2;
-            request.Content = System.Text.Encoding.UTF8.GetBytes("{}");
+            var content = "{}";
+            request.Content = System.Text.Encoding.UTF8.GetBytes(content);
 
             return request;
         }

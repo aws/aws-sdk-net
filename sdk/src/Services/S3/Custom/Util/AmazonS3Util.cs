@@ -305,18 +305,7 @@ namespace Amazon.S3.Util
         /// </returns>
         public static string GenerateChecksumForContent(string content, bool fBase64Encode)
         {
-            // Convert the input string to a byte array and compute the hash.
-            byte[] hashed = CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(Encoding.UTF8.GetBytes(content));
-
-            if (fBase64Encode)
-            {
-                // Convert the hash to a Base64 Encoded string and return it
-                return Convert.ToBase64String(hashed);
-            }
-            else
-            {
-                return BitConverter.ToString(hashed).Replace("-", String.Empty);
-            }
+            return AWSSDKUtils.GenerateChecksumForContent(content, fBase64Encode);
         }
 
         internal static string ComputeEncodedMD5FromEncodedString(string base64EncodedString)

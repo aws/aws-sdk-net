@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon;
 using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
@@ -90,6 +91,43 @@ namespace AWSSDK.UnitTests
                 ResignRetries = false
             });
             Assert.IsTrue(serviceClient.Config.ResignRetries);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void ChecksumHeaderIsSetToPayload()
+        {
+            var request = new PutBucketEncryptionRequest
+            {
+                BucketName = "test",
+                ContentMD5 = "test",
+                ServerSideEncryptionConfiguration = new ServerSideEncryptionConfiguration
+                {
+                    ServerSideEncryptionRules = new List<ServerSideEncryptionRule>() { new ServerSideEncryptionRule { BucketKeyEnabled = true } }
+                }
+            };
+
+            var response = S3ArnTestUtils.RunMockRequest(request, PutBucketEncryptionRequestMarshaller.Instance);
+            Assert.AreEqual(response.Headers[Amazon.Util.HeaderKeys.ContentMD5Header], "test");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void ChecksumHeaderIsSet()
+        {
+            var request = new PutBucketEncryptionRequest
+            {
+                BucketName = "test",
+                ServerSideEncryptionConfiguration = new ServerSideEncryptionConfiguration
+                {
+                    ServerSideEncryptionRules = new List<ServerSideEncryptionRule>() { new ServerSideEncryptionRule { BucketKeyEnabled = true } }
+                }
+            };
+            var expectedPayload = "<ServerSideEncryptionConfiguration><Rule><BucketKeyEnabled>true</BucketKeyEnabled></Rule></ServerSideEncryptionConfiguration>";
+            var payloadChecksum = Amazon.Util.AWSSDKUtils.GenerateChecksumForContent(expectedPayload, true);
+            var response = S3ArnTestUtils.RunMockRequest(request, PutBucketEncryptionRequestMarshaller.Instance);
+            Assert.IsTrue(response.Headers.ContainsKey(Amazon.Util.HeaderKeys.ContentMD5Header));
+            Assert.AreEqual(payloadChecksum, response.Headers[Amazon.Util.HeaderKeys.ContentMD5Header]);
         }
     }
 }

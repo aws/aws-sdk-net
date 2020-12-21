@@ -261,4 +261,24 @@ using Amazon.Runtime.Internal.Util;
             }
         }
 	}
+	protected void CheckContentMd5Header(Operation operation, string requestContent) 
+    {
+		if (operation.HttpChecksumRequired) 
+        {
+#>
+                var checksum = Amazon.Util.AWSSDKUtils.GenerateChecksumForContent(<#=requestContent#>, true);
+<#+
+        var member = operation.RequestStructure.Members.FirstOrDefault(m => string.Equals(m.LocationName, "Content-MD5"));
+        if (member != default(Member)) 
+        {
+#>
+                if (publicRequest.IsSet<#=member.PropertyName#>())
+                    checksum = publicRequest.<#=member.PropertyName#>;
+<#+
+        }
+#>
+                request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = checksum;
+<#+
+        }
+	}
 #>

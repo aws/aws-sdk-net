@@ -104,6 +104,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
+                var checksum = Amazon.Util.AWSSDKUtils.GenerateChecksumForContent(content, true);
+                request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = checksum;
                 request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-08-20";            
             } 
             catch (EncoderFallbackException e) 
