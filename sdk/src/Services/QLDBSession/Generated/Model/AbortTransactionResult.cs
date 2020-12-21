@@ -33,6 +33,25 @@ namespace Amazon.QLDBSession.Model
     /// </summary>
     public partial class AbortTransactionResult
     {
+        private TimingInformation _timingInformation;
+
+        /// <summary>
+        /// Gets and sets the property TimingInformation. 
+        /// <para>
+        /// Contains server-side performance information for the command.
+        /// </para>
+        /// </summary>
+        public TimingInformation TimingInformation
+        {
+            get { return this._timingInformation; }
+            set { this._timingInformation = value; }
+        }
+
+        // Check to see if TimingInformation property is set
+        internal bool IsSetTimingInformation()
+        {
+            return this._timingInformation != null;
+        }
 
     }
 }

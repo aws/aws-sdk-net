@@ -70,6 +70,12 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
                     unmarshalledObject.SessionToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TimingInformation", targetDepth))
+                {
+                    var unmarshaller = TimingInformationUnmarshaller.Instance;
+                    unmarshalledObject.TimingInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

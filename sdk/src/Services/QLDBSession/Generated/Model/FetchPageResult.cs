@@ -33,7 +33,27 @@ namespace Amazon.QLDBSession.Model
     /// </summary>
     public partial class FetchPageResult
     {
+        private IOUsage _consumedIOs;
         private Page _page;
+        private TimingInformation _timingInformation;
+
+        /// <summary>
+        /// Gets and sets the property ConsumedIOs. 
+        /// <para>
+        /// Contains metrics about the number of I/O requests that were consumed.
+        /// </para>
+        /// </summary>
+        public IOUsage ConsumedIOs
+        {
+            get { return this._consumedIOs; }
+            set { this._consumedIOs = value; }
+        }
+
+        // Check to see if ConsumedIOs property is set
+        internal bool IsSetConsumedIOs()
+        {
+            return this._consumedIOs != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Page. 
@@ -51,6 +71,24 @@ namespace Amazon.QLDBSession.Model
         internal bool IsSetPage()
         {
             return this._page != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimingInformation. 
+        /// <para>
+        /// Contains server-side performance information for the command.
+        /// </para>
+        /// </summary>
+        public TimingInformation TimingInformation
+        {
+            get { return this._timingInformation; }
+            set { this._timingInformation = value; }
+        }
+
+        // Check to see if TimingInformation property is set
+        internal bool IsSetTimingInformation()
+        {
+            return this._timingInformation != null;
         }
 
     }

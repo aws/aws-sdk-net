@@ -29,49 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QLDBSession.Model
 {
     /// <summary>
-    /// Contains the details of the started session.
+    /// Contains I/O usage metrics for a command that was invoked.
     /// </summary>
-    public partial class StartSessionResult
+    public partial class IOUsage
     {
-        private string _sessionToken;
-        private TimingInformation _timingInformation;
+        private long? _readIOs;
+        private long? _writeIOs;
 
         /// <summary>
-        /// Gets and sets the property SessionToken. 
+        /// Gets and sets the property ReadIOs. 
         /// <para>
-        /// Session token of the started session. This <code>SessionToken</code> is required for
-        /// every subsequent command that is issued during the current session.
+        /// The number of read I/O requests that the command performed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=4, Max=1024)]
-        public string SessionToken
+        public long ReadIOs
         {
-            get { return this._sessionToken; }
-            set { this._sessionToken = value; }
+            get { return this._readIOs.GetValueOrDefault(); }
+            set { this._readIOs = value; }
         }
 
-        // Check to see if SessionToken property is set
-        internal bool IsSetSessionToken()
+        // Check to see if ReadIOs property is set
+        internal bool IsSetReadIOs()
         {
-            return this._sessionToken != null;
+            return this._readIOs.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property TimingInformation. 
+        /// Gets and sets the property WriteIOs. 
         /// <para>
-        /// Contains server-side performance information for the command.
+        /// The number of write I/O requests that the command performed.
         /// </para>
         /// </summary>
-        public TimingInformation TimingInformation
+        public long WriteIOs
         {
-            get { return this._timingInformation; }
-            set { this._timingInformation = value; }
+            get { return this._writeIOs.GetValueOrDefault(); }
+            set { this._writeIOs = value; }
         }
 
-        // Check to see if TimingInformation property is set
-        internal bool IsSetTimingInformation()
+        // Check to see if WriteIOs property is set
+        internal bool IsSetWriteIOs()
         {
-            return this._timingInformation != null;
+            return this._writeIOs.HasValue; 
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AbortTransactionResult Object
+    /// Response Unmarshaller for TimingInformation Object
     /// </summary>  
-    public class AbortTransactionResultUnmarshaller : IUnmarshaller<AbortTransactionResult, XmlUnmarshallerContext>, IUnmarshaller<AbortTransactionResult, JsonUnmarshallerContext>
+    public class TimingInformationUnmarshaller : IUnmarshaller<TimingInformation, XmlUnmarshallerContext>, IUnmarshaller<TimingInformation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AbortTransactionResult IUnmarshaller<AbortTransactionResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TimingInformation IUnmarshaller<TimingInformation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,21 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AbortTransactionResult Unmarshall(JsonUnmarshallerContext context)
+        public TimingInformation Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AbortTransactionResult unmarshalledObject = new AbortTransactionResult();
+            TimingInformation unmarshalledObject = new TimingInformation();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("TimingInformation", targetDepth))
+                if (context.TestExpression("ProcessingTimeMilliseconds", targetDepth))
                 {
-                    var unmarshaller = TimingInformationUnmarshaller.Instance;
-                    unmarshalledObject.TimingInformation = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ProcessingTimeMilliseconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,12 +76,12 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
         }
 
 
-        private static AbortTransactionResultUnmarshaller _instance = new AbortTransactionResultUnmarshaller();        
+        private static TimingInformationUnmarshaller _instance = new TimingInformationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AbortTransactionResultUnmarshaller Instance
+        public static TimingInformationUnmarshaller Instance
         {
             get
             {

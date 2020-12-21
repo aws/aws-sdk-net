@@ -44,6 +44,12 @@ namespace Amazon.QLDBSession.Model
         /// the commit with an error if the digest computed on the client does not match the digest
         /// computed by QLDB.
         /// </para>
+        ///  
+        /// <para>
+        /// The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits
+        /// a transaction if and only if the server has processed the exact set of statements
+        /// sent by the client, in the same order that client sent them, and with no duplicates.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public MemoryStream CommitDigest

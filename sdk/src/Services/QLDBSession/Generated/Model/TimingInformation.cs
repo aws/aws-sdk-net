@@ -29,28 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QLDBSession.Model
 {
     /// <summary>
-    /// Contains the details of the ended session.
+    /// Contains server-side performance information for a command. Amazon QLDB captures timing
+    /// information between the times when it receives the request and when it sends the corresponding
+    /// response.
     /// </summary>
-    public partial class EndSessionResult
+    public partial class TimingInformation
     {
-        private TimingInformation _timingInformation;
+        private long? _processingTimeMilliseconds;
 
         /// <summary>
-        /// Gets and sets the property TimingInformation. 
+        /// Gets and sets the property ProcessingTimeMilliseconds. 
         /// <para>
-        /// Contains server-side performance information for the command.
+        /// The amount of time that was taken for the command to finish processing, measured in
+        /// milliseconds.
         /// </para>
         /// </summary>
-        public TimingInformation TimingInformation
+        public long ProcessingTimeMilliseconds
         {
-            get { return this._timingInformation; }
-            set { this._timingInformation = value; }
+            get { return this._processingTimeMilliseconds.GetValueOrDefault(); }
+            set { this._processingTimeMilliseconds = value; }
         }
 
-        // Check to see if TimingInformation property is set
-        internal bool IsSetTimingInformation()
+        // Check to see if ProcessingTimeMilliseconds property is set
+        internal bool IsSetProcessingTimeMilliseconds()
         {
-            return this._timingInformation != null;
+            return this._processingTimeMilliseconds.HasValue; 
         }
 
     }

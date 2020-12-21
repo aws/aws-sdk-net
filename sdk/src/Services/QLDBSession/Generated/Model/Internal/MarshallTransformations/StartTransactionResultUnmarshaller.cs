@@ -64,6 +64,12 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("TimingInformation", targetDepth))
+                {
+                    var unmarshaller = TimingInformationUnmarshaller.Instance;
+                    unmarshalledObject.TimingInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TransactionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

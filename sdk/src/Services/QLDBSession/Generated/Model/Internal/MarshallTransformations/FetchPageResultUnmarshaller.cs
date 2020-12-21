@@ -64,10 +64,22 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ConsumedIOs", targetDepth))
+                {
+                    var unmarshaller = IOUsageUnmarshaller.Instance;
+                    unmarshalledObject.ConsumedIOs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Page", targetDepth))
                 {
                     var unmarshaller = PageUnmarshaller.Instance;
                     unmarshalledObject.Page = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TimingInformation", targetDepth))
+                {
+                    var unmarshaller = TimingInformationUnmarshaller.Instance;
+                    unmarshalledObject.TimingInformation = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

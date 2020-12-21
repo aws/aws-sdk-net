@@ -70,6 +70,18 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
                     unmarshalledObject.CommitDigest = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConsumedIOs", targetDepth))
+                {
+                    var unmarshaller = IOUsageUnmarshaller.Instance;
+                    unmarshalledObject.ConsumedIOs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TimingInformation", targetDepth))
+                {
+                    var unmarshaller = TimingInformationUnmarshaller.Instance;
+                    unmarshalledObject.TimingInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TransactionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

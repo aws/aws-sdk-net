@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QLDBSession.Model
 {
     /// <summary>
-    /// A structure that can contain an Amazon Ion value in multiple encoding formats.
+    /// A structure that can contain a value in multiple encoding formats.
     /// </summary>
     public partial class ValueHolder
     {
