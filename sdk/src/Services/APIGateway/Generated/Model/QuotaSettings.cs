@@ -58,7 +58,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Offset. 
         /// <para>
-        /// The number of requests subtracted from the given limit in the initial time period.
+        /// The day that a time period starts. For example, with a time period of <code>WEEK</code>,
+        /// an offset of <code>0</code> starts on Sunday, and an offset of <code>1</code> starts
+        /// on Monday.
         /// </para>
         /// </summary>
         public int Offset
