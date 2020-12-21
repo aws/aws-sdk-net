@@ -407,6 +407,18 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey CONNECTION_URL = new ConnectionPropertyKey("CONNECTION_URL");
         /// <summary>
+        /// Constant CONNECTOR_CLASS_NAME for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey CONNECTOR_CLASS_NAME = new ConnectionPropertyKey("CONNECTOR_CLASS_NAME");
+        /// <summary>
+        /// Constant CONNECTOR_TYPE for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey CONNECTOR_TYPE = new ConnectionPropertyKey("CONNECTOR_TYPE");
+        /// <summary>
+        /// Constant CONNECTOR_URL for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey CONNECTOR_URL = new ConnectionPropertyKey("CONNECTOR_URL");
+        /// <summary>
         /// Constant CUSTOM_JDBC_CERT for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey CUSTOM_JDBC_CERT = new ConnectionPropertyKey("CUSTOM_JDBC_CERT");
@@ -475,6 +487,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey PORT = new ConnectionPropertyKey("PORT");
         /// <summary>
+        /// Constant SECRET_ID for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey SECRET_ID = new ConnectionPropertyKey("SECRET_ID");
+        /// <summary>
         /// Constant SKIP_CUSTOM_JDBC_CERT_VALIDATION for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey SKIP_CUSTOM_JDBC_CERT_VALIDATION = new ConnectionPropertyKey("SKIP_CUSTOM_JDBC_CERT_VALIDATION");
@@ -525,6 +541,10 @@ namespace Amazon.Glue
     {
 
         /// <summary>
+        /// Constant CUSTOM for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType CUSTOM = new ConnectionType("CUSTOM");
+        /// <summary>
         /// Constant JDBC for ConnectionType
         /// </summary>
         public static readonly ConnectionType JDBC = new ConnectionType("JDBC");
@@ -532,6 +552,10 @@ namespace Amazon.Glue
         /// Constant KAFKA for ConnectionType
         /// </summary>
         public static readonly ConnectionType KAFKA = new ConnectionType("KAFKA");
+        /// <summary>
+        /// Constant MARKETPLACE for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType MARKETPLACE = new ConnectionType("MARKETPLACE");
         /// <summary>
         /// Constant MONGODB for ConnectionType
         /// </summary>

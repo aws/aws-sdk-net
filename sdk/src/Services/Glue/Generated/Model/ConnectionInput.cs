@@ -82,6 +82,17 @@ namespace Amazon.Glue.Model
         ///  <code>NETWORK</code> - Designates a network connection to a data source within an
         /// Amazon Virtual Private Cloud environment (Amazon VPC).
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased
+        /// from AWS Marketplace to read from and write to data stores that are not natively supported
+        /// by AWS Glue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CUSTOM</code> - Uses configuration settings contained in a custom connector
+        /// to read from and write to data stores that are not natively supported by AWS Glue.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// SFTP is not supported.

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// 
+    /// A structure containing the schema version information.
     /// </summary>
     public partial class SchemaVersionNumber
     {
@@ -37,7 +37,10 @@ namespace Amazon.Glue.Model
         private long? _versionNumber;
 
         /// <summary>
-        /// Gets and sets the property LatestVersion.
+        /// Gets and sets the property LatestVersion. 
+        /// <para>
+        /// The latest version available for the schema.
+        /// </para>
         /// </summary>
         public bool LatestVersion
         {
@@ -52,7 +55,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VersionNumber.
+        /// Gets and sets the property VersionNumber. 
+        /// <para>
+        /// The version number of the schema.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
         public long VersionNumber

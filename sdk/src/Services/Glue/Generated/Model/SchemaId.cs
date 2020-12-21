@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// 
+    /// The unique ID of the schema in the AWS Glue schema registry.
     /// </summary>
     public partial class SchemaId
     {
@@ -38,7 +38,10 @@ namespace Amazon.Glue.Model
         private string _schemaName;
 
         /// <summary>
-        /// Gets and sets the property RegistryName.
+        /// Gets and sets the property RegistryName. 
+        /// <para>
+        /// The name of the schema registry that contains the schema.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string RegistryName
@@ -54,7 +57,11 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaArn.
+        /// Gets and sets the property SchemaArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code>
+        /// has to be provided.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10240)]
         public string SchemaArn
@@ -70,7 +77,11 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaName.
+        /// Gets and sets the property SchemaName. 
+        /// <para>
+        /// The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has
+        /// to be provided.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string SchemaName
