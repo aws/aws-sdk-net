@@ -118,6 +118,21 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <max>1011</max>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:([a-z\d-]+)/)[a-z]{2,8}-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.TagResourceRequest.ResourceArn</property>
+    <max>1011</max>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:([a-z\d-]+)/)[a-z]{2,8}-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.UntagResourceRequest.ResourceArn</property>
+    <max>1011</max>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:([a-z\d-]+)/)[a-z]{2,8}-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.Outpost.AvailabilityZone</property>
     <min>1</min>
     <max>1000</max>
