@@ -53,6 +53,8 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _removeQuotes;
         private string _replaceChars;
         private string _replaceInvalidChars;
+        private string _secretsManagerAccessRoleArn;
+        private string _secretsManagerSecretId;
         private string _serverName;
         private string _serverSideEncryptionKmsKeyId;
         private string _serviceAccessRoleArn;
@@ -118,8 +120,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// For full load mode, AWS DMS converts source records into .csv files and loads them
         /// to the <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
         /// command to upload the .csv files to the target table. The files are deleted once the
-        /// <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
-        /// Redshift Database Developer Guide</a> 
+        /// <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a>
+        /// in the <i>Amazon Redshift Database Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -495,6 +497,58 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetReplaceInvalidChars()
         {
             return this._replaceInvalidChars != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManagerAccessRoleArn. 
+        /// <para>
+        /// The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the
+        /// trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+        /// <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret
+        /// that allows access to the Amazon Redshift endpoint.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can specify one of two sets of values for these permissions. You can specify the
+        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
+        /// clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>,
+        /// and <code>Port</code>. You can't specify both. For more information on creating this
+        /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
+        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database
+        /// Migration Service User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string SecretsManagerAccessRoleArn
+        {
+            get { return this._secretsManagerAccessRoleArn; }
+            set { this._secretsManagerAccessRoleArn = value; }
+        }
+
+        // Check to see if SecretsManagerAccessRoleArn property is set
+        internal bool IsSetSecretsManagerAccessRoleArn()
+        {
+            return this._secretsManagerAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManagerSecretId. 
+        /// <para>
+        /// The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
+        /// that contains the Amazon Redshift endpoint connection details.
+        /// </para>
+        /// </summary>
+        public string SecretsManagerSecretId
+        {
+            get { return this._secretsManagerSecretId; }
+            set { this._secretsManagerSecretId = value; }
+        }
+
+        // Check to see if SecretsManagerSecretId property is set
+        internal bool IsSetSecretsManagerSecretId()
+        {
+            return this._secretsManagerSecretId != null;
         }
 
         /// <summary>

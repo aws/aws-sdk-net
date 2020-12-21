@@ -40,6 +40,8 @@ namespace Amazon.DatabaseMigrationService.Model
         private int? _port;
         private bool? _readBackupOnly;
         private SafeguardPolicy _safeguardPolicy;
+        private string _secretsManagerAccessRoleArn;
+        private string _secretsManagerSecretId;
         private string _serverName;
         private bool? _useBcpFullLoad;
         private string _username;
@@ -65,9 +67,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ControlTablesFileGroup. 
         /// <para>
-        /// Specify a filegroup for the AWS DMS internal tables. When the replication task starts,
-        /// all the internal AWS DMS control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes)
-        /// are created on the specified filegroup.
+        /// Specifies a file group for the AWS DMS internal tables. When the replication task
+        /// starts, all the internal AWS DMS control tables (awsdms_ apply_exception, awsdms_apply,
+        /// awsdms_changes) are created for the specified file group.
         /// </para>
         /// </summary>
         public string ControlTablesFileGroup
@@ -193,6 +195,58 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetSafeguardPolicy()
         {
             return this._safeguardPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManagerAccessRoleArn. 
+        /// <para>
+        /// The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the
+        /// trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+        /// <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret
+        /// that allows access to the SQL Server endpoint.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can specify one of two sets of values for these permissions. You can specify the
+        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
+        /// clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>,
+        /// and <code>Port</code>. You can't specify both. For more information on creating this
+        /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
+        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database
+        /// Migration Service User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string SecretsManagerAccessRoleArn
+        {
+            get { return this._secretsManagerAccessRoleArn; }
+            set { this._secretsManagerAccessRoleArn = value; }
+        }
+
+        // Check to see if SecretsManagerAccessRoleArn property is set
+        internal bool IsSetSecretsManagerAccessRoleArn()
+        {
+            return this._secretsManagerAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManagerSecretId. 
+        /// <para>
+        /// The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
+        /// that contains the SQL Server endpoint connection details.
+        /// </para>
+        /// </summary>
+        public string SecretsManagerSecretId
+        {
+            get { return this._secretsManagerSecretId; }
+            set { this._secretsManagerSecretId = value; }
+        }
+
+        // Check to see if SecretsManagerSecretId property is set
+        internal bool IsSetSecretsManagerSecretId()
+        {
+            return this._secretsManagerSecretId != null;
         }
 
         /// <summary>
