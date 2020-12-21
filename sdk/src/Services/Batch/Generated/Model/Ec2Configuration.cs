@@ -88,7 +88,7 @@ namespace Amazon.Batch.Model
         ///  </dd> <dt>ECS_AL1</dt> <dd> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
-        /// Linux</a>−Default for all non-GPU, non-AWS-Graviton instance families. Amazon Linux
+        /// Linux</a>−Default for all non-GPU, non-AWS Graviton instance families. Amazon Linux
         /// is reaching the end-of-life of standard support. For more information, see <a href="http://aws.amazon.com/amazon-linux-ami/">Amazon
         /// Linux AMI</a>.
         /// </para>

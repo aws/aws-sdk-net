@@ -61,6 +61,13 @@ namespace Amazon.Batch.Model
         /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>);
         /// EC2 and Fargate compute environments can't be mixed.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// All compute environments that are associated with a job queue must share the same
+        /// architecture. AWS Batch doesn't support mixing compute environment architecture types
+        /// in a single job queue.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<ComputeEnvironmentOrder> ComputeEnvironmentOrder
@@ -78,7 +85,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property JobQueueName. 
         /// <para>
-        /// The name of the job queue.
+        /// The name of the job queue. Up to 128 letters (uppercase and lowercase), numbers, and
+        /// underscores are allowed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +109,10 @@ namespace Amazon.Batch.Model
         /// value for the <code>priority</code> parameter) are evaluated first when associated
         /// with the same compute environment. Priority is determined in descending order. For
         /// example, a job queue with a priority value of <code>10</code> is given scheduling
-        /// preference over a job queue with a priority value of <code>1</code>.
+        /// preference over a job queue with a priority value of <code>1</code>. All of the compute
+        /// environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate
+        /// (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments
+        /// cannot be mixed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -142,8 +153,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The tags that you apply to the job queue to help you categorize and organize your
         /// resources. Each tag consists of a key and an optional value. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// AWS Resources</a> in <i>AWS General Reference</i>.
+        /// see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
+        /// your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

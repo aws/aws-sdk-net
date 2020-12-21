@@ -104,7 +104,14 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// The priority of the job queue.
+        /// The priority of the job queue. Job queues with a higher priority (or a higher integer
+        /// value for the <code>priority</code> parameter) are evaluated first when associated
+        /// with the same compute environment. Priority is determined in descending order, for
+        /// example, a job queue with a priority value of <code>10</code> is given scheduling
+        /// preference over a job queue with a priority value of <code>1</code>. All of the compute
+        /// environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate
+        /// (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments
+        /// cannot be mixed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -181,7 +188,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags applied to the job queue.
+        /// The tags applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
+        /// your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

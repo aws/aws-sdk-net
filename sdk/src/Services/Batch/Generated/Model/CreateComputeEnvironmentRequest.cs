@@ -44,7 +44,7 @@ namespace Amazon.Batch.Model
     /// either to use EC2 On-Demand Instances and EC2 Spot Instances, or to use Fargate and
     /// Fargate Spot capacity in your managed compute environment. You can optionally set
     /// a maximum price so that Spot Instances only launch when the Spot Instance price is
-    /// below a specified percentage of the On-Demand price.
+    /// less than a specified percentage of the On-Demand price.
     /// </para>
     ///  <note> 
     /// <para>
@@ -58,7 +58,7 @@ namespace Amazon.Batch.Model
     /// ECS container instance AMI specification. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
     /// instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// After you have created your unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a>
-    /// operation to find the Amazon ECS cluster that is associated with it. Then, manually
+    /// operation to find the Amazon ECS cluster that's associated with it. Then, manually
     /// launch your container instances into that Amazon ECS cluster. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
     /// an Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service Developer
@@ -144,7 +144,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ServiceRole. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make
-        /// calls to other AWS services on your behalf.
+        /// calls to other AWS services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
+        /// Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -153,7 +154,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Depending on how you created your AWS Batch service role, its ARN may contain the
+        /// Depending on how you created your AWS Batch service role, its ARN might contain the
         /// <code>service-role</code> path prefix. When you only specify the name of the service
         /// role, AWS Batch assumes that your ARN doesn't use the <code>service-role</code> path
         /// prefix. Because of this, we recommend that you specify the full ARN of your service
@@ -180,6 +181,21 @@ namespace Amazon.Batch.Model
         /// The state of the compute environment. If the state is <code>ENABLED</code>, then the
         /// compute environment accepts jobs from a queue and can scale out automatically based
         /// on queues.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to
+        /// place jobs from an associated job queue on the compute resources within the environment.
+        /// If the compute environment is managed, then it can scale its instances out or in automatically,
+        /// based on the job queue demand.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt
+        /// to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
+        /// state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
+        /// state don't scale out. However, they scale in to <code>minvCpus</code> value after
+        /// instances become idle.
         /// </para>
         /// </summary>
         public CEState State

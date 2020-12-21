@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// Container properties are used in job definitions to describe the container that is
+    /// Container properties are used in job definitions to describe the container that's
     /// launched as part of a job.
     /// </summary>
     public partial class ContainerProperties
@@ -58,7 +58,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Command. 
         /// <para>
-        /// The command that is passed to the container. This parameter maps to <code>Cmd</code>
+        /// The command that's passed to the container. This parameter maps to <code>Cmd</code>
         /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker

@@ -186,7 +186,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property RetryStrategy. 
         /// <para>
         /// The retry strategy to use for failed jobs that are submitted with this job definition.
-        /// Any retry strategy that is specified during a <a>SubmitJob</a> operation overrides
+        /// Any retry strategy that's specified during a <a>SubmitJob</a> operation overrides
         /// the retry strategy defined here. If a job is terminated due to a timeout, it isn't
         /// retried.
         /// </para>
@@ -231,7 +231,7 @@ namespace Amazon.Batch.Model
         /// The timeout configuration for jobs that are submitted with this job definition, after
         /// which AWS Batch terminates your jobs if they have not finished. If a job is terminated
         /// due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds.
-        /// Any timeout configuration that is specified during a <a>SubmitJob</a> operation overrides
+        /// Any timeout configuration that's specified during a <a>SubmitJob</a> operation overrides
         /// the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
         /// Timeouts</a> in the <i>AWS Batch User Guide</i>.
         /// </para>

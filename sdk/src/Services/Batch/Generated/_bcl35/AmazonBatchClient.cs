@@ -268,7 +268,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -336,7 +336,7 @@ namespace Amazon.Batch
         /// either to use EC2 On-Demand Instances and EC2 Spot Instances, or to use Fargate and
         /// Fargate Spot capacity in your managed compute environment. You can optionally set
         /// a maximum price so that Spot Instances only launch when the Spot Instance price is
-        /// below a specified percentage of the On-Demand price.
+        /// less than a specified percentage of the On-Demand price.
         /// </para>
         ///  <note> 
         /// <para>
@@ -350,7 +350,7 @@ namespace Amazon.Batch
         /// ECS container instance AMI specification. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
         /// instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// After you have created your unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a>
-        /// operation to find the Amazon ECS cluster that is associated with it. Then, manually
+        /// operation to find the Amazon ECS cluster that's associated with it. Then, manually
         /// launch your container instances into that Amazon ECS cluster. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
         /// an Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service Developer
@@ -389,7 +389,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -461,7 +461,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -533,7 +533,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -588,8 +588,9 @@ namespace Amazon.Batch
 
         /// <summary>
         /// Deletes the specified job queue. You must first disable submissions for a queue with
-        /// the <a>UpdateJobQueue</a> operation. All jobs in the queue are terminated when you
-        /// delete a job queue.
+        /// the <a>UpdateJobQueue</a> operation. All jobs in the queue are eventually terminated
+        /// when you delete a job queue. The jobs are terminated at a rate of about 16 jobs each
+        /// second.
         /// 
         ///  
         /// <para>
@@ -603,7 +604,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -666,7 +667,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -735,7 +736,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -798,7 +799,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -860,7 +861,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -922,7 +923,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1006,7 +1007,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1070,7 +1071,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1132,7 +1133,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1202,7 +1203,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1269,7 +1270,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1333,7 +1334,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1395,7 +1396,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1457,7 +1458,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -1519,7 +1520,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that isn't valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.

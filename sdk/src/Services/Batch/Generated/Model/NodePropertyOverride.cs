@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a>
+    /// Object representing any node overrides to a job definition that's used in a <a>SubmitJob</a>
     /// API operation.
     /// </summary>
     public partial class NodePropertyOverride

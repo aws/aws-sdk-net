@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing the details of a container that is part of a job.
+    /// An object representing the details of a container that's part of a job.
     /// </summary>
     public partial class ContainerDetail
     {
@@ -63,7 +63,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Command. 
         /// <para>
-        /// The command that is passed to the container.
+        /// The command that's passed to the container.
         /// </para>
         /// </summary>
         public List<string> Command
@@ -278,7 +278,7 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// AWS Batch currently supports a subset of the logging drivers available to the Docker
-        /// daemon (shown in the <a>LogConfiguration</a> data type). Additional log drivers may
+        /// daemon (shown in the <a>LogConfiguration</a> data type). Additional log drivers might
         /// be available in future releases of the Amazon ECS container agent.
         /// </para>
         ///  </note> 
@@ -513,8 +513,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the
-        /// container job. Each container attempt receives a task ARN when they reach the <code>STARTING</code>
+        /// The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the container
+        /// job. Each container attempt receives a task ARN when they reach the <code>STARTING</code>
         /// status.
         /// </para>
         /// </summary>

@@ -62,7 +62,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ComputeResources. 
         /// <para>
         /// Details of the compute resources managed by the compute environment. Required for
-        /// a managed compute environment.
+        /// a managed compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+        /// Environments</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         public ComputeResourceUpdate ComputeResources
@@ -81,7 +82,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ServiceRole. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make
-        /// calls to other AWS services on your behalf.
+        /// calls to other AWS services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
+        /// Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -116,6 +118,21 @@ namespace Amazon.Batch.Model
         /// The state of the compute environment. Compute environments in the <code>ENABLED</code>
         /// state can accept jobs from a queue and scale in or out automatically based on the
         /// workload demand of its associated queues.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to
+        /// place jobs from an associated job queue on the compute resources within the environment.
+        /// If the compute environment is managed, then it can scale its instances out or in automatically,
+        /// based on the job queue demand.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt
+        /// to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
+        /// state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
+        /// state don't scale out. However, they scale in to <code>minvCpus</code> value after
+        /// instances become idle.
         /// </para>
         /// </summary>
         public CEState State

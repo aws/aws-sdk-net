@@ -163,10 +163,40 @@ namespace Amazon.Batch.Model
         /// aggressively. Accepted values are whole numbers between <code>0</code> and <code>100</code>.
         /// If the <code>swappiness</code> parameter isn't specified, a default value of <code>60</code>
         /// is used. If a value isn't specified for <code>maxSwap</code> then this parameter is
-        /// ignored. This parameter maps to the <code>--memory-swappiness</code> option to <a
-        /// href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+        /// ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This
+        /// parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// run</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Consider the following when you use a per-container swap configuration.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Swap space must be enabled and allocated on the container instance for the containers
+        /// to use.
         /// </para>
         ///  <note> 
+        /// <para>
+        /// The Amazon ECS optimized AMIs don't have swap enabled by default. You must enable
+        /// swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance
+        /// Store Swap Volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or
+        /// <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How
+        /// do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap
+        /// file?</a> 
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The swap space parameters are only supported for job definitions using EC2 resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from
+        /// a job definition, each container will have a default <code>swappiness</code> value
+        /// of 60 and the total swap usage will be limited to two times the memory reservation
+        /// of the container.
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
         /// be provided.

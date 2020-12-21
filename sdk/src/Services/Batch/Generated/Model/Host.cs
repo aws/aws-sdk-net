@@ -41,7 +41,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property SourcePath. 
         /// <para>
-        /// The path on the host container instance that is presented to the container. If this
+        /// The path on the host container instance that's presented to the container. If this
         /// parameter is empty, then the Docker daemon has assigned a host path for you. If this
         /// parameter contains a file location, then the data volume persists at the specified
         /// location on the host container instance until you delete it manually. If the source

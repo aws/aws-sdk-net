@@ -30,6 +30,8 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// An object representing the attributes of a compute environment that can be updated.
+    /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+    /// Environments</a> in the <i>AWS Batch User Guide</i>.
     /// </summary>
     public partial class ComputeResourceUpdate
     {
@@ -68,6 +70,15 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The maximum number of Amazon EC2 vCPUs that an environment can reach.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
+        /// allocation strategies, AWS Batch might need to go above <code>maxvCpus</code> to meet
+        /// your capacity requirements. In this event, AWS Batch will never go above <code>maxvCpus</code>
+        /// by more than a single instance (e.g., no more than a single instance from among those
+        /// specified in your compute environment).
+        /// </para>
+        ///  </note>
         /// </summary>
         public int MaxvCpus
         {
@@ -88,7 +99,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter isnt applicable to jobs running on Fargate resources, and shouldn't
+        /// This parameter isn't applicable to jobs running on Fargate resources, and shouldn't
         /// be specified.
         /// </para>
         ///  </note>
@@ -111,7 +122,7 @@ namespace Amazon.Batch.Model
         /// The Amazon EC2 security groups associated with instances launched in the compute environment.
         /// This parameter is required for Fargate compute resources, where it can contain up
         /// to 5 security groups. This can't be specified for EC2 compute resources. Providing
-        /// an empty list is handled as if this parameter wasn't specified and no changeis made.
+        /// an empty list is handled as if this parameter wasn't specified and no change is made.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds

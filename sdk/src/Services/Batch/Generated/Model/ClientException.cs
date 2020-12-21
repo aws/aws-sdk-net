@@ -31,7 +31,7 @@ namespace Amazon.Batch.Model
     /// <summary>
     /// These errors are usually caused by a client action, such as using an action or resource
     /// on behalf of a user that doesn't have permissions to use the action or resource, or
-    /// specifying an identifier that isn't valid.
+    /// specifying an identifier that's not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

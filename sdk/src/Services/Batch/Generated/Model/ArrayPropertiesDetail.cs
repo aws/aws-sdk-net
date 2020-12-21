@@ -40,7 +40,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Index. 
         /// <para>
-        /// The job index within the array that is associated with this job. This parameter is
+        /// The job index within the array that's associated with this job. This parameter is
         /// returned for array job children.
         /// </para>
         /// </summary>

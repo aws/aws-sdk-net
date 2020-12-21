@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing the properties of a node that is associated with a multi-node
+    /// An object representing the properties of a node that's associated with a multi-node
     /// parallel job.
     /// </summary>
     public partial class NodePropertiesSummary
