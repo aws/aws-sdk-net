@@ -51,7 +51,8 @@ namespace AWSSDK.UnitTests
         private const string CredentialSourceErrorFormat = "Error reading credential source [{0}] for profile [{1}].";
         private const string InvalidCredentialSourceErrorFormat = "Credential source [{0}] is invalid.";
         private const string IMDSNotEnabledError = "Unable to retrieve credentials.";
-        private const string CredentialSourceContainerNotSetErrorFormat = "Container environment variable {0} is not set.";
+        private const string CredentialSourceContainerNotSetErrorFormat = "Cannot fetch credentials from container - neither AWS_CONTAINER_CREDENTIALS_RELATIVE_URI" +
+                          " or AWS_CONTAINER_CREDENTIALS_FULL_URI environment variables are set.";
 
         private static readonly MemoryCredentialProfileSource ProfileStore = new MemoryCredentialProfileSource();
 

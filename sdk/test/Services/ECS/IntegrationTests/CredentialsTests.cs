@@ -75,7 +75,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestMethod]
         [TestCategory("General")]
         [TestCategory("ECS")]
-        public void TestECSCredentialsLocal()
+        public void TestECSCredentials_LocalRelativeUri()
         {
 
             string uri = "/ECS/Test/Endpoint/";
@@ -90,13 +90,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 string server = "http://localhost:" + servlet.Port;
 
-                servlet.Response = string.Format(
-@"{{
-    ""AccessKeyId"" : ""{0}"",
-    ""SecretAccessKey"" : ""{1}"",
-    ""Token"" : ""{2}"",
-    ""Expiration"" : ""{3}""
-}}", accessKey, secretKey, token, expiration);
+                servlet.Response =
+$@"{{
+    ""AccessKeyId"" : ""{accessKey}"",
+    ""SecretAccessKey"" : ""{secretKey}"",
+    ""Token"" : ""{token}"",
+    ""Expiration"" : ""{expiration}""
+}}";
 
                 ECSTaskCredentials generator = new ECSTaskCredentials();
 
@@ -112,6 +112,44 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
 
             System.Environment.SetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable, "");
+        }
+
+        [TestMethod]
+        [TestCategory("General")]
+        [TestCategory("ECS")]
+        public void TestECSCredentials_LocalFullUri()
+        {
+
+            string uri = "/ECS/Test/Endpoint/";
+            string accessKey = "SomeKey";
+            string secretKey = "SomeSecretKey";
+            string token = "Token";
+            string expiration = DateTime.UtcNow.AddHours(1).ToString("s") + "Z";
+
+            using (ResponseTestServlet servlet = new ResponseTestServlet(uri))
+            {
+                string server = "http://localhost:" + servlet.Port;
+
+                System.Environment.SetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsFullURIEnvVariable, $"{server}{uri}");
+
+                servlet.Response =
+$@"{{
+    ""AccessKeyId"" : ""{accessKey}"",
+    ""SecretAccessKey"" : ""{secretKey}"",
+    ""Token"" : ""{token}"",
+    ""Expiration"" : ""{expiration}""
+}}";
+
+                ECSTaskCredentials generator = new ECSTaskCredentials();
+
+                ImmutableCredentials credentials = generator.GetCredentials();
+
+                Assert.AreEqual(accessKey, credentials.AccessKey);
+                Assert.AreEqual(secretKey, credentials.SecretKey);
+                Assert.AreEqual(token, credentials.Token);
+            }
+
+            System.Environment.SetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsFullURIEnvVariable, "");
         }
 
         private static void TestCredentialsFile(ImmutableCredentials ic)
