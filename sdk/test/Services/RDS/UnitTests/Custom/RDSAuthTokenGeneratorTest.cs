@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
- using Amazon;
+using Amazon;
 using Amazon.RDS;
 using Amazon.RDS.Util;
 using Amazon.Runtime;
@@ -63,6 +63,7 @@ namespace AWSSDK.UnitTests.RDS
         }
 
         [TestMethod]
+        [TestCategory("RDS")]
         public void GenerateAuthTokenBasic()
         {
             AssertAuthToken(RDSAuthTokenGenerator.GenerateAuthToken(BasicCredentials,
@@ -120,11 +121,31 @@ namespace AWSSDK.UnitTests.RDS
 
         [TestMethod]
         [TestCategory("RDS")]
+        public void GenerateAuthTokenNullHostname()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                RDSAuthTokenGenerator.GenerateAuthToken(AWSRegion, null, DBPort, DBUser);
+            }, typeof(ArgumentException));
+        }
+
+        [TestMethod]
+        [TestCategory("RDS")]
         public void GenerateAuthTokenEmptyHostname()
         {
             AssertExtensions.ExpectException(() =>
             {
                 RDSAuthTokenGenerator.GenerateAuthToken(AWSRegion, " ", DBPort, DBUser);
+            }, typeof(ArgumentException));
+        }
+
+        [TestMethod]
+        [TestCategory("RDS")]
+        public void GenerateAuthTokenNullDBUser()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                RDSAuthTokenGenerator.GenerateAuthToken(AWSRegion, DBHost, DBPort, null);
             }, typeof(ArgumentException));
         }
 

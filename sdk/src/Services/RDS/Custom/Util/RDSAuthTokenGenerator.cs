@@ -128,11 +128,11 @@ namespace Amazon.RDS.Util
             if (port < 0 || port > 65535)
                 throw new ArgumentException(String.Format(CultureInfo.InvariantCulture, "{0} is an invalid port. Port must be 0 to 65535.", port));
 
-            hostname = hostname.Trim();
+            hostname = hostname?.Trim();
             if (string.IsNullOrEmpty(hostname))
                 throw new ArgumentException("Hostname must not be null or empty.");
 
-            dbUser = dbUser.Trim();
+            dbUser = dbUser?.Trim();
             if (string.IsNullOrEmpty(dbUser))
                 throw new ArgumentException("DBUser must not be null or empty.");
 
