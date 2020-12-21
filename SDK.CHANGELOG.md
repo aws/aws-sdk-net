@@ -1,3 +1,38 @@
+### 3.5.78.0 (2020-12-21 19:19 UTC)
+* APIGateway (3.5.2.19)
+	* Documentation updates for Amazon API Gateway.
+* AppRegistry (3.5.3.0)
+	* New API `SyncResouce` to update AppRegistry system tags.
+* Batch (3.5.5.7)
+	* Documentation updates for batch
+* ConfigService (3.5.3.0)
+	* AWS Config adds support to save advanced queries. New API operations - GetStoredQuery, PutStoredQuery, ListStoredQueries, DeleteStoredQuery
+* ConnectParticipant (3.5.1.0)
+	* This release adds three new APIs: StartAttachmentUpload, CompleteAttachmentUpload, and GetAttachment. For Amazon Connect Chat, you can use these APIs to share files in chat conversations.
+* DatabaseMigrationService (3.5.7.0)
+	* AWS DMS launches support for AWS Secrets Manager to manage source and target database credentials.
+* EC2 (3.5.28.0)
+	* This release adds Tag On Create feature support for the AllocateAddress API.
+* Glue (3.5.9.0)
+	* Add 4 connection properties: SECRET_ID, CONNECTOR_URL, CONNECTOR_TYPE, CONNECTOR_CLASS_NAME. Add two connection types: MARKETPLACE, CUSTOM
+* ManagedBlockchain (3.5.2.0)
+	* Added support for provisioning and managing public Ethereum nodes on main and test networks supporting secure access using Sigv4 and standard open-source Ethereum APIs.
+* Outposts (3.5.3.0)
+	* In this release, AWS Outposts adds support for three new APIs: TagResource, UntagResource, and ListTagsForResource. Customers can now manage tags for their resources through the SDK.
+* QLDBSession (3.5.1.0)
+	* Adds "TimingInformation" to all SendCommand API results and "IOUsage" to ExecuteStatementResult, FetchPageResult and CommitTransactionResult.
+* S3 (3.5.7.0)
+	* Format GetObject's Expires header to be an http-date instead of iso8601
+* SecurityHub (3.5.3.12)
+	* Finding providers can now use BatchImportFindings to update Confidence, Criticality, RelatedFindings, Severity, and Types.
+* ServiceQuotas (3.5.1.0)
+	* Added the ability to tag applied quotas.
+* Core 3.5.1.53
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.77.0 (2020-12-18 19:11 UTC)
 * EC2 (3.5.27.0)
 	* EBS io2 volumes now supports Multi-Attach
