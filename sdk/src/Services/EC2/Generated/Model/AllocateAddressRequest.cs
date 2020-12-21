@@ -75,6 +75,7 @@ namespace Amazon.EC2.Model
         private DomainType _domain;
         private string _networkBorderGroup;
         private string _publicIpv4Pool;
+        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
         /// Gets and sets the property Address. 
@@ -189,6 +190,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPublicIpv4Pool()
         {
             return this._publicIpv4Pool != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to assign to the Elastic IP address.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
         }
 
     }
