@@ -34,8 +34,8 @@ namespace Amazon.S3.Model
         /// </summary>
         public SSES3 SSES3
         {
-            get { return this.SSES3; }
-            set { this.SSES3 = value; }
+            get { return this.sSES3; }
+            set { this.sSES3 = value; }
         }
 
         // Check to see if SSES3 property is set

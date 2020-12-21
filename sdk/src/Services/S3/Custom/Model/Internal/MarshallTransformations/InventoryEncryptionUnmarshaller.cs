@@ -45,6 +45,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("SSE-S3", targetDepth))
                     {
+                        condition.SSES3 = SSES3Unmarshaller.Instance.Unmarshall(context);
+
                         continue;
                     }
                 }
