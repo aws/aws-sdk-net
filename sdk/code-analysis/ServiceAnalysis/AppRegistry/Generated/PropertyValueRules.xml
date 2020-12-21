@@ -281,6 +281,22 @@
     <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppRegistry.Model.SyncResourceRequest.Resource</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRegistry.Model.SyncResourceResponse.ApplicationArn</property>
+    <pattern>arn:aws[-a-z]*:servicecatalog:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:/applications/[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppRegistry.Model.SyncResourceResponse.ResourceArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppRegistry.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1600</max>

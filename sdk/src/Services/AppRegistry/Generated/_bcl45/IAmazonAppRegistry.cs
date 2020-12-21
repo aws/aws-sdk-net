@@ -776,6 +776,60 @@ namespace Amazon.AppRegistry
 
         #endregion
         
+        #region  SyncResource
+
+
+        /// <summary>
+        /// Syncs the resource with what is currently recorded in App registry. Specifically,
+        /// the resource’s App registry system tags are synced with its associated application.
+        /// The resource is removed if it is not associated with the application. The caller must
+        /// have permissions to read and update the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SyncResource service method.</param>
+        /// 
+        /// <returns>The response from the SyncResource service method, as returned by AppRegistry.</returns>
+        /// <exception cref="Amazon.AppRegistry.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a resource with the
+        /// given name already exists within the account).
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.InternalServerException">
+        /// The service is experiencing internal problems.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">REST API Reference for SyncResource Operation</seealso>
+        SyncResourceResponse SyncResource(SyncResourceRequest request);
+
+
+
+        /// <summary>
+        /// Syncs the resource with what is currently recorded in App registry. Specifically,
+        /// the resource’s App registry system tags are synced with its associated application.
+        /// The resource is removed if it is not associated with the application. The caller must
+        /// have permissions to read and update the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SyncResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SyncResource service method, as returned by AppRegistry.</returns>
+        /// <exception cref="Amazon.AppRegistry.Model.ConflictException">
+        /// There was a conflict when processing the request (for example, a resource with the
+        /// given name already exists within the account).
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.InternalServerException">
+        /// The service is experiencing internal problems.
+        /// </exception>
+        /// <exception cref="Amazon.AppRegistry.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource">REST API Reference for SyncResource Operation</seealso>
+        Task<SyncResourceResponse> SyncResourceAsync(SyncResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -786,6 +840,10 @@ namespace Amazon.AppRegistry
         /// <para>
         /// Each tag consists of a key and an optional value. If a tag with the same key is already
         /// associated with the resource, this action updates its value.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation returns an empty response if the call was successful.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -813,6 +871,10 @@ namespace Amazon.AppRegistry
         /// Each tag consists of a key and an optional value. If a tag with the same key is already
         /// associated with the resource, this action updates its value.
         /// </para>
+        ///  
+        /// <para>
+        /// This operation returns an empty response if the call was successful.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -839,6 +901,11 @@ namespace Amazon.AppRegistry
 
         /// <summary>
         /// Removes tags from a resource.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns an empty response if the call was successful.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -859,6 +926,11 @@ namespace Amazon.AppRegistry
 
         /// <summary>
         /// Removes tags from a resource.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns an empty response if the call was successful.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

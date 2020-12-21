@@ -37,6 +37,10 @@ namespace Amazon.AppRegistry.Model
     /// Each tag consists of a key and an optional value. If a tag with the same key is already
     /// associated with the resource, this action updates its value.
     /// </para>
+    ///  
+    /// <para>
+    /// This operation returns an empty response if the call was successful.
+    /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonAppRegistryRequest
     {
