@@ -350,27 +350,7 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Confidence</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Criticality</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>Note</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>RelatedFindings</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Severity</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Types</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -383,6 +363,33 @@ namespace Amazon.SecurityHub
         ///  </li> <li> 
         /// <para>
         ///  <code>Workflow</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <code>BatchImportFindings</code> can be used to update the following finding fields
+        /// and objects only if they have not been updated using <code>BatchUpdateFindings</code>.
+        /// After they are updated using <code>BatchUpdateFindings</code>, these fields cannot
+        /// be updated using <code>BatchImportFindings</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Confidence</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Criticality</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RelatedFindings</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Severity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Types</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -428,27 +435,7 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Confidence</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Criticality</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>Note</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>RelatedFindings</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Severity</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Types</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -461,6 +448,33 @@ namespace Amazon.SecurityHub
         ///  </li> <li> 
         /// <para>
         ///  <code>Workflow</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <code>BatchImportFindings</code> can be used to update the following finding fields
+        /// and objects only if they have not been updated using <code>BatchUpdateFindings</code>.
+        /// After they are updated using <code>BatchUpdateFindings</code>, these fields cannot
+        /// be updated using <code>BatchImportFindings</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Confidence</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Criticality</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RelatedFindings</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Severity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Types</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
