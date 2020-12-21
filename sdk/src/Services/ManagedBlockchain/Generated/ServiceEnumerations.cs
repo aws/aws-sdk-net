@@ -81,6 +81,10 @@ namespace Amazon.ManagedBlockchain
     {
 
         /// <summary>
+        /// Constant ETHEREUM for Framework
+        /// </summary>
+        public static readonly Framework ETHEREUM = new Framework("ETHEREUM");
+        /// <summary>
         /// Constant HYPERLEDGER_FABRIC for Framework
         /// </summary>
         public static readonly Framework HYPERLEDGER_FABRIC = new Framework("HYPERLEDGER_FABRIC");
@@ -340,6 +344,10 @@ namespace Amazon.ManagedBlockchain
         /// Constant FAILED for NodeStatus
         /// </summary>
         public static readonly NodeStatus FAILED = new NodeStatus("FAILED");
+        /// <summary>
+        /// Constant UNHEALTHY for NodeStatus
+        /// </summary>
+        public static readonly NodeStatus UNHEALTHY = new NodeStatus("UNHEALTHY");
         /// <summary>
         /// Constant UPDATING for NodeStatus
         /// </summary>

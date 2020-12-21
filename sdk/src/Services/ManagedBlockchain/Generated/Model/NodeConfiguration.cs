@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// Configuration properties of a peer node.
+    /// Configuration properties of a node.
     /// </summary>
     public partial class NodeConfiguration
     {
@@ -44,7 +44,6 @@ namespace Amazon.ManagedBlockchain.Model
         /// The Availability Zone in which the node exists.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -79,8 +78,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property LogPublishingConfiguration. 
         /// <para>
-        /// Configuration properties for logging events associated with a peer node owned by a
-        /// member in a Managed Blockchain network. 
+        /// Configuration properties for logging events associated with a peer node on a Hyperledger
+        /// Fabric network on Managed Blockchain. 
         /// </para>
         /// </summary>
         public NodeLogPublishingConfiguration LogPublishingConfiguration
@@ -101,6 +100,10 @@ namespace Amazon.ManagedBlockchain.Model
         /// The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
         /// When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4
         /// or later, the default is <code>CouchDB</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
         /// </para>
         /// </summary>
         public StateDBType StateDB

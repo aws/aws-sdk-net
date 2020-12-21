@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that
-    /// uses Hyperledger Fabric.
+    /// Attributes of Hyperledger Fabric for a peer node on a Hyperledger Fabric network on
+    /// Managed Blockchain.
     /// </summary>
     public partial class NodeFabricAttributes
     {

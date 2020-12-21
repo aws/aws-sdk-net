@@ -30,7 +30,12 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProposals operation.
-    /// Returns a listing of proposals for the network.
+    /// Returns a list of proposals for the network.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class ListProposalsRequest : AmazonManagedBlockchainRequest
     {

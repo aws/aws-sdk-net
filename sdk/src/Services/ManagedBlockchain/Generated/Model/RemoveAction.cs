@@ -32,6 +32,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// An action to remove a member from a Managed Blockchain network as the result of a
     /// removal proposal that is <code>APPROVED</code>. The member and all associated resources
     /// are deleted from the network.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class RemoveAction
     {

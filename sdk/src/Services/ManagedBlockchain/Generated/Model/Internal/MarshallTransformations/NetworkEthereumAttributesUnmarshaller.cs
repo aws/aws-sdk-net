@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NetworkFrameworkAttributes Object
+    /// Response Unmarshaller for NetworkEthereumAttributes Object
     /// </summary>  
-    public class NetworkFrameworkAttributesUnmarshaller : IUnmarshaller<NetworkFrameworkAttributes, XmlUnmarshallerContext>, IUnmarshaller<NetworkFrameworkAttributes, JsonUnmarshallerContext>
+    public class NetworkEthereumAttributesUnmarshaller : IUnmarshaller<NetworkEthereumAttributes, XmlUnmarshallerContext>, IUnmarshaller<NetworkEthereumAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NetworkFrameworkAttributes IUnmarshaller<NetworkFrameworkAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NetworkEthereumAttributes IUnmarshaller<NetworkEthereumAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NetworkFrameworkAttributes Unmarshall(JsonUnmarshallerContext context)
+        public NetworkEthereumAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            NetworkFrameworkAttributes unmarshalledObject = new NetworkFrameworkAttributes();
+            NetworkEthereumAttributes unmarshalledObject = new NetworkEthereumAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Ethereum", targetDepth))
+                if (context.TestExpression("ChainId", targetDepth))
                 {
-                    var unmarshaller = NetworkEthereumAttributesUnmarshaller.Instance;
-                    unmarshalledObject.Ethereum = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Fabric", targetDepth))
-                {
-                    var unmarshaller = NetworkFabricAttributesUnmarshaller.Instance;
-                    unmarshalledObject.Fabric = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ChainId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         }
 
 
-        private static NetworkFrameworkAttributesUnmarshaller _instance = new NetworkFrameworkAttributesUnmarshaller();        
+        private static NetworkEthereumAttributesUnmarshaller _instance = new NetworkEthereumAttributesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NetworkFrameworkAttributesUnmarshaller Instance
+        public static NetworkEthereumAttributesUnmarshaller Instance
         {
             get
             {

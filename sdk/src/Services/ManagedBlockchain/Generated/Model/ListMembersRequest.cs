@@ -30,7 +30,12 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMembers operation.
-    /// Returns a listing of the members in a network and properties of their configurations.
+    /// Returns a list of the members in a network and properties of their configurations.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class ListMembersRequest : AmazonManagedBlockchainRequest
     {

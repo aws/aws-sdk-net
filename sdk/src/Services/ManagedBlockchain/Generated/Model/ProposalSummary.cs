@@ -30,6 +30,11 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Properties of a proposal.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class ProposalSummary
     {

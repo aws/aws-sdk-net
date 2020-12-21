@@ -32,6 +32,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// Container for the parameters to the RejectInvitation operation.
     /// Rejects an invitation to join a network. This action can be called by a principal
     /// in an AWS account that has received an invitation to create a member and join a network.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class RejectInvitationRequest : AmazonManagedBlockchainRequest
     {

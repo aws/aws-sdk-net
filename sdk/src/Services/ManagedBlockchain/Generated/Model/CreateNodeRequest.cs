@@ -30,7 +30,12 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateNode operation.
-    /// Creates a peer node in a member.
+    /// Creates a node on the specified blockchain network.
+    /// 
+    ///  
+    /// <para>
+    /// Applies to Hyperledger Fabric and Ethereum.
+    /// </para>
     /// </summary>
     public partial class CreateNodeRequest : AmazonManagedBlockchainRequest
     {
@@ -66,8 +71,12 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The unique identifier of the member that owns this node.
         /// </para>
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
+        [AWSProperty(Min=1, Max=32)]
         public string MemberId
         {
             get { return this._memberId; }
@@ -83,8 +92,25 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property NetworkId. 
         /// <para>
-        /// The unique identifier of the network in which this node runs.
+        /// The unique identifier of the network for the node.
         /// </para>
+        ///  
+        /// <para>
+        /// Ethereum public networks have the following <code>NetworkId</code>s:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>n-ethereum-mainnet</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>n-ethereum-rinkeby</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>n-ethereum-ropsten</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
         public string NetworkId

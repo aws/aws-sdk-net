@@ -30,7 +30,12 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the GetNode operation.
-    /// Returns detailed information about a peer node.
+    /// Returns detailed information about a node.
+    /// 
+    ///  
+    /// <para>
+    /// Applies to Hyperledger Fabric and Ethereum.
+    /// </para>
     /// </summary>
     public partial class GetNodeRequest : AmazonManagedBlockchainRequest
     {
@@ -43,8 +48,12 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The unique identifier of the member that owns the node.
         /// </para>
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
+        [AWSProperty(Min=1, Max=32)]
         public string MemberId
         {
             get { return this._memberId; }
@@ -60,7 +69,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property NetworkId. 
         /// <para>
-        /// The unique identifier of the network to which the node belongs.
+        /// The unique identifier of the network that the node is on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

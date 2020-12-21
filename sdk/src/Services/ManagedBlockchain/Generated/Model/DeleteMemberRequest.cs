@@ -37,6 +37,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// as the result of an approved proposal to remove a member. If <code>MemberId</code>
     /// is the last member in a network specified by the last AWS account, the network is
     /// deleted also.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class DeleteMemberRequest : AmazonManagedBlockchainRequest
     {

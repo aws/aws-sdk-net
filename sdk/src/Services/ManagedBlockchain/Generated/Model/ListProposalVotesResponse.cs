@@ -58,7 +58,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property ProposalVotes. 
         /// <para>
-        ///  The listing of votes. 
+        ///  The list of votes. 
         /// </para>
         /// </summary>
         public List<VoteSummary> ProposalVotes

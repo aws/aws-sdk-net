@@ -33,6 +33,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// proposal is approved. Approval may be based on criteria such as the percentage of
     /// <code>YES</code> votes and the duration of the proposal. The policy applies to all
     /// proposals and is specified when the network is created.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class ApprovalThresholdPolicy
     {

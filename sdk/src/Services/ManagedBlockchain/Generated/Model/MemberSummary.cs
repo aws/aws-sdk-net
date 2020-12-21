@@ -30,6 +30,11 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// A summary of configuration properties for a member.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class MemberSummary
     {

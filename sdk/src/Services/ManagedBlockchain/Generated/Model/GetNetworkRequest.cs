@@ -31,6 +31,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// <summary>
     /// Container for the parameters to the GetNetwork operation.
     /// Returns detailed information about a network.
+    /// 
+    ///  
+    /// <para>
+    /// Applies to Hyperledger Fabric and Ethereum.
+    /// </para>
     /// </summary>
     public partial class GetNetworkRequest : AmazonManagedBlockchainRequest
     {

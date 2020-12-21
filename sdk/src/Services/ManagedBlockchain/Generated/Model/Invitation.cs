@@ -30,6 +30,11 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// An invitation to an AWS account to create a member and join the network.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class Invitation
     {

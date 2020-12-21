@@ -30,6 +30,11 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Member configuration properties.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class Member
     {

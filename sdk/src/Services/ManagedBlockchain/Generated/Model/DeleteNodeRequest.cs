@@ -30,8 +30,13 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteNode operation.
-    /// Deletes a peer node from a member that your AWS account owns. All data on the node
-    /// is lost and cannot be recovered.
+    /// Deletes a node that your AWS account owns. All data on the node is lost and cannot
+    /// be recovered.
+    /// 
+    ///  
+    /// <para>
+    /// Applies to Hyperledger Fabric and Ethereum.
+    /// </para>
     /// </summary>
     public partial class DeleteNodeRequest : AmazonManagedBlockchainRequest
     {
@@ -44,8 +49,12 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The unique identifier of the member that owns this node.
         /// </para>
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
+        [AWSProperty(Min=1, Max=32)]
         public string MemberId
         {
             get { return this._memberId; }
@@ -61,8 +70,25 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property NetworkId. 
         /// <para>
-        /// The unique identifier of the network that the node belongs to.
+        /// The unique identifier of the network that the node is on.
         /// </para>
+        ///  
+        /// <para>
+        /// Ethereum public networks have the following <code>NetworkId</code>s:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>n-ethereum-mainnet</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>n-ethereum-rinkeby</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>n-ethereum-ropsten</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
         public string NetworkId

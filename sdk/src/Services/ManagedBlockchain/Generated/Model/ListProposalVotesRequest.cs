@@ -30,8 +30,13 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProposalVotes operation.
-    /// Returns the listing of votes for a specified proposal, including the value of each
-    /// vote and the unique identifier of the member that cast the vote.
+    /// Returns the list of votes for a specified proposal, including the value of each vote
+    /// and the unique identifier of the member that cast the vote.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class ListProposalVotesRequest : AmazonManagedBlockchainRequest
     {

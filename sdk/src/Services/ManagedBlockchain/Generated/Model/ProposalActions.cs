@@ -29,7 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// The actions to carry out if a proposal is <code>APPROVED</code>.
+    /// The actions to carry out if a proposal is <code>APPROVED</code>. 
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class ProposalActions
     {

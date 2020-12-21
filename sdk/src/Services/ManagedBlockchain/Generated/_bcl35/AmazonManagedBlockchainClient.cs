@@ -36,10 +36,24 @@ namespace Amazon.ManagedBlockchain
     /// Implementation for accessing ManagedBlockchain
     ///
     /// Amazon Managed Blockchain is a fully managed service for creating and managing blockchain
-    /// networks using open source frameworks. Blockchain allows you to build applications
+    /// networks using open-source frameworks. Blockchain allows you to build applications
     /// where multiple parties can securely and transparently run transactions and share data
-    /// without the need for a trusted, central authority. Currently, Managed Blockchain supports
-    /// the Hyperledger Fabric open source framework.
+    /// without the need for a trusted, central authority.
+    /// 
+    ///  
+    /// <para>
+    /// Managed Blockchain supports the Hyperledger Fabric and Ethereum open-source frameworks.
+    /// Because of fundamental differences between the frameworks, some API actions or data
+    /// types may only apply in the context of one framework and not the other. For example,
+    /// actions related to Hyperledger Fabric network members such as <code>CreateMember</code>
+    /// and <code>DeleteMember</code> do not apply to Ethereum.
+    /// </para>
+    ///  
+    /// <para>
+    /// The description for each action indicates the framework or frameworks to which it
+    /// applies. Data types and properties that apply only in the context of a particular
+    /// framework are similarly indicated.
+    /// </para>
     /// </summary>
     public partial class AmazonManagedBlockchainClient : AmazonServiceClient, IAmazonManagedBlockchain
     {
@@ -245,6 +259,11 @@ namespace Amazon.ManagedBlockchain
 
         /// <summary>
         /// Creates a member within a Managed Blockchain network.
+        /// 
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMember service method.</param>
         /// 
@@ -328,6 +347,11 @@ namespace Amazon.ManagedBlockchain
 
         /// <summary>
         /// Creates a new blockchain network using Amazon Managed Blockchain.
+        /// 
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetwork service method.</param>
         /// 
@@ -403,7 +427,12 @@ namespace Amazon.ManagedBlockchain
         #region  CreateNode
 
         /// <summary>
-        /// Creates a peer node in a member.
+        /// Creates a node on the specified blockchain network.
+        /// 
+        ///  
+        /// <para>
+        /// Applies to Hyperledger Fabric and Ethereum.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNode service method.</param>
         /// 
@@ -489,6 +518,11 @@ namespace Amazon.ManagedBlockchain
         /// Creates a proposal for a change to the network that other members of the network can
         /// vote on, for example, a proposal to add a new member to the network. Any member can
         /// create a proposal.
+        /// 
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProposal service method.</param>
         /// 
@@ -571,6 +605,11 @@ namespace Amazon.ManagedBlockchain
         /// as the result of an approved proposal to remove a member. If <code>MemberId</code>
         /// is the last member in a network specified by the last AWS account, the network is
         /// deleted also.
+        /// 
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMember service method.</param>
         /// 
@@ -646,8 +685,13 @@ namespace Amazon.ManagedBlockchain
         #region  DeleteNode
 
         /// <summary>
-        /// Deletes a peer node from a member that your AWS account owns. All data on the node
-        /// is lost and cannot be recovered.
+        /// Deletes a node that your AWS account owns. All data on the node is lost and cannot
+        /// be recovered.
+        /// 
+        ///  
+        /// <para>
+        /// Applies to Hyperledger Fabric and Ethereum.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteNode service method.</param>
         /// 
@@ -724,6 +768,11 @@ namespace Amazon.ManagedBlockchain
 
         /// <summary>
         /// Returns detailed information about a member.
+        /// 
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMember service method.</param>
         /// 
@@ -797,6 +846,11 @@ namespace Amazon.ManagedBlockchain
 
         /// <summary>
         /// Returns detailed information about a network.
+        /// 
+        ///  
+        /// <para>
+        /// Applies to Hyperledger Fabric and Ethereum.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetNetwork service method.</param>
         /// 
@@ -869,7 +923,12 @@ namespace Amazon.ManagedBlockchain
         #region  GetNode
 
         /// <summary>
-        /// Returns detailed information about a peer node.
+        /// Returns detailed information about a node.
+        /// 
+        ///  
+        /// <para>
+        /// Applies to Hyperledger Fabric and Ethereum.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetNode service method.</param>
         /// 
@@ -943,6 +1002,11 @@ namespace Amazon.ManagedBlockchain
 
         /// <summary>
         /// Returns detailed information about a proposal.
+        /// 
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProposal service method.</param>
         /// 
@@ -1015,7 +1079,12 @@ namespace Amazon.ManagedBlockchain
         #region  ListInvitations
 
         /// <summary>
-        /// Returns a listing of all invitations for the current AWS account.
+        /// Returns a list of all invitations for the current AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
         /// 
@@ -1092,7 +1161,12 @@ namespace Amazon.ManagedBlockchain
         #region  ListMembers
 
         /// <summary>
-        /// Returns a listing of the members in a network and properties of their configurations.
+        /// Returns a list of the members in a network and properties of their configurations.
+        /// 
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// 
@@ -1161,7 +1235,12 @@ namespace Amazon.ManagedBlockchain
         #region  ListNetworks
 
         /// <summary>
-        /// Returns information about the networks in which the current AWS account has members.
+        /// Returns information about the networks in which the current AWS account participates.
+        /// 
+        ///  
+        /// <para>
+        /// Applies to Hyperledger Fabric and Ethereum.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNetworks service method.</param>
         /// 
@@ -1231,6 +1310,11 @@ namespace Amazon.ManagedBlockchain
 
         /// <summary>
         /// Returns information about the nodes within a network.
+        /// 
+        ///  
+        /// <para>
+        /// Applies to Hyperledger Fabric and Ethereum.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNodes service method.</param>
         /// 
@@ -1299,7 +1383,12 @@ namespace Amazon.ManagedBlockchain
         #region  ListProposals
 
         /// <summary>
-        /// Returns a listing of proposals for the network.
+        /// Returns a list of proposals for the network.
+        /// 
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProposals service method.</param>
         /// 
@@ -1372,8 +1461,13 @@ namespace Amazon.ManagedBlockchain
         #region  ListProposalVotes
 
         /// <summary>
-        /// Returns the listing of votes for a specified proposal, including the value of each
-        /// vote and the unique identifier of the member that cast the vote.
+        /// Returns the list of votes for a specified proposal, including the value of each vote
+        /// and the unique identifier of the member that cast the vote.
+        /// 
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProposalVotes service method.</param>
         /// 
@@ -1444,6 +1538,11 @@ namespace Amazon.ManagedBlockchain
         /// <summary>
         /// Rejects an invitation to join a network. This action can be called by a principal
         /// in an AWS account that has received an invitation to create a member and join a network.
+        /// 
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectInvitation service method.</param>
         /// 
@@ -1520,6 +1619,11 @@ namespace Amazon.ManagedBlockchain
 
         /// <summary>
         /// Updates a member configuration with new parameters.
+        /// 
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMember service method.</param>
         /// 
@@ -1593,6 +1697,11 @@ namespace Amazon.ManagedBlockchain
 
         /// <summary>
         /// Updates a node configuration with new parameters.
+        /// 
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNode service method.</param>
         /// 
@@ -1668,6 +1777,11 @@ namespace Amazon.ManagedBlockchain
         /// Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member
         /// to vote as, specified by <code>VoterMemberId</code>, must be in the same AWS account
         /// as the principal that calls the action.
+        /// 
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VoteOnProposal service method.</param>
         /// 

@@ -30,7 +30,12 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the ListNetworks operation.
-    /// Returns information about the networks in which the current AWS account has members.
+    /// Returns information about the networks in which the current AWS account participates.
+    /// 
+    ///  
+    /// <para>
+    /// Applies to Hyperledger Fabric and Ethereum.
+    /// </para>
     /// </summary>
     public partial class ListNetworksRequest : AmazonManagedBlockchainRequest
     {
@@ -120,6 +125,10 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// An optional status specifier. If provided, only networks currently in this status
         /// are listed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
         /// </para>
         /// </summary>
         public NetworkStatus Status

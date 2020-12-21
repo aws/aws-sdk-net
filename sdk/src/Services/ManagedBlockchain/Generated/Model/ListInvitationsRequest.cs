@@ -30,7 +30,12 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInvitations operation.
-    /// Returns a listing of all invitations for the current AWS account.
+    /// Returns a list of all invitations for the current AWS account.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class ListInvitationsRequest : AmazonManagedBlockchainRequest
     {

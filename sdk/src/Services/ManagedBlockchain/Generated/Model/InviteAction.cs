@@ -31,6 +31,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// <summary>
     /// An action to invite a specific AWS account to create a member and join the network.
     /// The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class InviteAction
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// Configuration properties of a peer node.
+    /// Configuration properties of a node.
     /// </summary>
     public partial class Node
     {
@@ -138,8 +138,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property LogPublishingConfiguration. 
         /// <para>
-        /// Configuration properties for logging events associated with a peer node owned by a
-        /// member in a Managed Blockchain network.
+        /// Configuration properties for logging events associated with a peer node on a Hyperledger
+        /// Fabric network on Managed Blockchain.
         /// </para>
         /// </summary>
         public NodeLogPublishingConfiguration LogPublishingConfiguration
@@ -159,6 +159,10 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The unique identifier of the member to which the node belongs.
         /// </para>
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
         public string MemberId
@@ -176,7 +180,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property NetworkId. 
         /// <para>
-        /// The unique identifier of the network that the node is in.
+        /// The unique identifier of the network that the node is on.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -196,6 +200,10 @@ namespace Amazon.ManagedBlockchain.Model
         /// Gets and sets the property StateDB. 
         /// <para>
         /// The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
         /// </para>
         /// </summary>
         public StateDBType StateDB

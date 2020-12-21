@@ -340,7 +340,7 @@
     <property>Amazon.ManagedBlockchain.Model.Member.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$</pattern>
+    <pattern>^(?!-|[0-9])(?!.*-$)(?!.*?--)[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.Member.NetworkId</property>
@@ -355,7 +355,7 @@
     <property>Amazon.ManagedBlockchain.Model.MemberConfiguration.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$</pattern>
+    <pattern>^(?!-|[0-9])(?!.*-$)(?!.*?--)[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.MemberFabricAttributes.AdminUsername</property>
@@ -388,7 +388,7 @@
     <property>Amazon.ManagedBlockchain.Model.MemberSummary.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$</pattern>
+    <pattern>^(?!-|[0-9])(?!.*-$)(?!.*?--)[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.Network.Description</property>
@@ -473,7 +473,7 @@
     <property>Amazon.ManagedBlockchain.Model.Proposal.ProposedByMemberName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$</pattern>
+    <pattern>^(?!-|[0-9])(?!.*-$)(?!.*?--)[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.ProposalSummary.Description</property>
@@ -493,7 +493,7 @@
     <property>Amazon.ManagedBlockchain.Model.ProposalSummary.ProposedByMemberName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$</pattern>
+    <pattern>^(?!-|[0-9])(?!.*-$)(?!.*?--)[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.RemoveAction.MemberId</property>
@@ -509,6 +509,6 @@
     <property>Amazon.ManagedBlockchain.Model.VoteSummary.MemberName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^(?!-)^[^0-9](?!.*--)[A-Za-z0-9-]+[^- ]$</pattern>
+    <pattern>^(?!-|[0-9])(?!.*-$)(?!.*?--)[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -31,6 +31,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// <summary>
     /// Container for the parameters to the UpdateNode operation.
     /// Updates a node configuration with new parameters.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class UpdateNodeRequest : AmazonManagedBlockchainRequest
     {
@@ -60,10 +65,14 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property MemberId. 
         /// <para>
-        /// The unique ID of the member that owns the node.
+        /// The unique identifier of the member that owns the node.
+        /// </para>
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
+        [AWSProperty(Min=1, Max=32)]
         public string MemberId
         {
             get { return this._memberId; }
@@ -79,7 +88,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property NetworkId. 
         /// <para>
-        /// The unique ID of the Managed Blockchain network to which the node belongs.
+        /// The unique identifier of the network that the node is on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -98,7 +107,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property NodeId. 
         /// <para>
-        /// The unique ID of the node.
+        /// The unique identifier of the node.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

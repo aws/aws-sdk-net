@@ -31,6 +31,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// <summary>
     /// Container for the parameters to the CreateNetwork operation.
     /// Creates a new blockchain network using Amazon Managed Blockchain.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class CreateNetworkRequest : AmazonManagedBlockchainRequest
     {

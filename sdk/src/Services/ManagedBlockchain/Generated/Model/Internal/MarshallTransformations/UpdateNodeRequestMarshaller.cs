@@ -59,16 +59,13 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-24";            
             request.HttpMethod = "PATCH";
 
-            if (!publicRequest.IsSetMemberId())
-                throw new AmazonManagedBlockchainException("Request object does not have required field MemberId set");
-            request.AddPathResource("{memberId}", StringUtils.FromString(publicRequest.MemberId));
             if (!publicRequest.IsSetNetworkId())
                 throw new AmazonManagedBlockchainException("Request object does not have required field NetworkId set");
             request.AddPathResource("{networkId}", StringUtils.FromString(publicRequest.NetworkId));
             if (!publicRequest.IsSetNodeId())
                 throw new AmazonManagedBlockchainException("Request object does not have required field NodeId set");
             request.AddPathResource("{nodeId}", StringUtils.FromString(publicRequest.NodeId));
-            request.ResourcePath = "/networks/{networkId}/members/{memberId}/nodes/{nodeId}";
+            request.ResourcePath = "/networks/{networkId}/nodes/{nodeId}";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -84,6 +81,12 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.LogPublishingConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMemberId())
+                {
+                    context.Writer.WritePropertyName("MemberId");
+                    context.Writer.Write(publicRequest.MemberId);
                 }
 
         

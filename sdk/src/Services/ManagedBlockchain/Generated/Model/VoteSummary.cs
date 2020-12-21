@@ -29,7 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// Properties of an individual vote that a member cast for a proposal.
+    /// Properties of an individual vote that a member cast for a proposal. 
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class VoteSummary
     {

@@ -29,30 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// Configuration properties for logging events associated with a peer node on a Hyperledger
-    /// Fabric network on Managed Blockchain.
+    /// Attributes of Ethereum for a network.
     /// </summary>
-    public partial class NodeLogPublishingConfiguration
+    public partial class NetworkEthereumAttributes
     {
-        private NodeFabricLogPublishingConfiguration _fabric;
+        private string _chainId;
 
         /// <summary>
-        /// Gets and sets the property Fabric. 
+        /// Gets and sets the property ChainId. 
         /// <para>
-        /// Configuration properties for logging events associated with a node that is owned by
-        /// a member of a Managed Blockchain network using the Hyperledger Fabric framework.
+        /// The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs
+        /// are as follows:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// mainnet = <code>1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// rinkeby = <code>4</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ropsten = <code>3</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        public NodeFabricLogPublishingConfiguration Fabric
+        public string ChainId
         {
-            get { return this._fabric; }
-            set { this._fabric = value; }
+            get { return this._chainId; }
+            set { this._chainId = value; }
         }
 
-        // Check to see if Fabric property is set
-        internal bool IsSetFabric()
+        // Check to see if ChainId property is set
+        internal bool IsSetChainId()
         {
-            return this._fabric != null;
+            return this._chainId != null;
         }
 
     }

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// A summary of configuration properties for a peer node.
+    /// A summary of configuration properties for a node.
     /// </summary>
     public partial class NodeSummary
     {

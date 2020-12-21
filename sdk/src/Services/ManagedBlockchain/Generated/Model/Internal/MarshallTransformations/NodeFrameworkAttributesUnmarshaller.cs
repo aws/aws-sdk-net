@@ -64,6 +64,12 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Ethereum", targetDepth))
+                {
+                    var unmarshaller = NodeEthereumAttributesUnmarshaller.Instance;
+                    unmarshalledObject.Ethereum = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Fabric", targetDepth))
                 {
                     var unmarshaller = NodeFabricAttributesUnmarshaller.Instance;
