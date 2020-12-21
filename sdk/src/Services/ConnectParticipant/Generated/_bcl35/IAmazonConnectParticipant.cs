@@ -55,6 +55,65 @@ namespace Amazon.ConnectParticipant
 
 
         
+        #region  CompleteAttachmentUpload
+
+
+        /// <summary>
+        /// Allows you to confirm that the attachment has been uploaded using the pre-signed URL
+        /// provided in StartAttachmentUpload API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteAttachmentUpload service method.</param>
+        /// 
+        /// <returns>The response from the CompleteAttachmentUpload service method, as returned by ConnectParticipant.</returns>
+        /// <exception cref="Amazon.ConnectParticipant.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ConflictException">
+        /// An attachment with that identifier is already being uploaded.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon Connect service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ServiceQuotaExceededException">
+        /// The number of attachments per contact exceeds the quota.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Amazon Connect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CompleteAttachmentUpload">REST API Reference for CompleteAttachmentUpload Operation</seealso>
+        CompleteAttachmentUploadResponse CompleteAttachmentUpload(CompleteAttachmentUploadRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CompleteAttachmentUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CompleteAttachmentUpload operation on AmazonConnectParticipantClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteAttachmentUpload
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CompleteAttachmentUpload">REST API Reference for CompleteAttachmentUpload Operation</seealso>
+        IAsyncResult BeginCompleteAttachmentUpload(CompleteAttachmentUploadRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CompleteAttachmentUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteAttachmentUpload.</param>
+        /// 
+        /// <returns>Returns a  CompleteAttachmentUploadResult from ConnectParticipant.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CompleteAttachmentUpload">REST API Reference for CompleteAttachmentUpload Operation</seealso>
+        CompleteAttachmentUploadResponse EndCompleteAttachmentUpload(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateParticipantConnection
 
 
@@ -64,8 +123,8 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  
         /// <para>
-        /// The participant token is valid for the lifetime of the participant – until the they
-        /// are part of a contact.
+        /// The participant token is valid for the lifetime of the participant – until they are
+        /// part of a contact.
         /// </para>
         ///  
         /// <para>
@@ -87,6 +146,12 @@ namespace Amazon.ConnectParticipant
         /// clients need to call this API again to obtain a new websocket URL and perform the
         /// same steps as before.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4 authentication</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateParticipantConnection service method.</param>
         /// 
@@ -140,6 +205,12 @@ namespace Amazon.ConnectParticipant
         /// <summary>
         /// Disconnects a participant. Note that ConnectionToken is used for invoking this API
         /// instead of ParticipantToken.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4 authentication</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisconnectParticipant service method.</param>
         /// 
@@ -187,12 +258,71 @@ namespace Amazon.ConnectParticipant
 
         #endregion
         
+        #region  GetAttachment
+
+
+        /// <summary>
+        /// Provides a pre-signed URL for download of a completed attachment. This is an asynchronous
+        /// API for use with active contacts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAttachment service method.</param>
+        /// 
+        /// <returns>The response from the GetAttachment service method, as returned by ConnectParticipant.</returns>
+        /// <exception cref="Amazon.ConnectParticipant.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon Connect service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Amazon Connect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetAttachment">REST API Reference for GetAttachment Operation</seealso>
+        GetAttachmentResponse GetAttachment(GetAttachmentRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAttachment operation on AmazonConnectParticipantClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetAttachment">REST API Reference for GetAttachment Operation</seealso>
+        IAsyncResult BeginGetAttachment(GetAttachmentRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAttachment.</param>
+        /// 
+        /// <returns>Returns a  GetAttachmentResult from ConnectParticipant.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetAttachment">REST API Reference for GetAttachment Operation</seealso>
+        GetAttachmentResponse EndGetAttachment(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetTranscript
 
 
         /// <summary>
-        /// Retrieves a transcript of the session. Note that ConnectionToken is used for invoking
-        /// this API instead of ParticipantToken.
+        /// Retrieves a transcript of the session, including details about any attachments. Note
+        /// that ConnectionToken is used for invoking this API instead of ParticipantToken.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4 authentication</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTranscript service method.</param>
         /// 
@@ -246,6 +376,12 @@ namespace Amazon.ConnectParticipant
         /// <summary>
         /// Sends an event. Note that ConnectionToken is used for invoking this API instead of
         /// ParticipantToken.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4 authentication</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendEvent service method.</param>
         /// 
@@ -299,6 +435,13 @@ namespace Amazon.ConnectParticipant
         /// <summary>
         /// Sends a message. Note that ConnectionToken is used for invoking this API instead of
         /// ParticipantToken.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4 authentication</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendMessage service method.</param>
         /// 
@@ -343,6 +486,62 @@ namespace Amazon.ConnectParticipant
         /// <returns>Returns a  SendMessageResult from ConnectParticipant.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/SendMessage">REST API Reference for SendMessage Operation</seealso>
         SendMessageResponse EndSendMessage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartAttachmentUpload
+
+
+        /// <summary>
+        /// Provides a pre-signed Amazon S3 URL in response for uploading the file directly to
+        /// S3.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAttachmentUpload service method.</param>
+        /// 
+        /// <returns>The response from the StartAttachmentUpload service method, as returned by ConnectParticipant.</returns>
+        /// <exception cref="Amazon.ConnectParticipant.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon Connect service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ServiceQuotaExceededException">
+        /// The number of attachments per contact exceeds the quota.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Amazon Connect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/StartAttachmentUpload">REST API Reference for StartAttachmentUpload Operation</seealso>
+        StartAttachmentUploadResponse StartAttachmentUpload(StartAttachmentUploadRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAttachmentUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAttachmentUpload operation on AmazonConnectParticipantClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAttachmentUpload
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/StartAttachmentUpload">REST API Reference for StartAttachmentUpload Operation</seealso>
+        IAsyncResult BeginStartAttachmentUpload(StartAttachmentUploadRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAttachmentUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAttachmentUpload.</param>
+        /// 
+        /// <returns>Returns a  StartAttachmentUploadResult from ConnectParticipant.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/StartAttachmentUpload">REST API Reference for StartAttachmentUpload Operation</seealso>
+        StartAttachmentUploadResponse EndStartAttachmentUpload(IAsyncResult asyncResult);
 
         #endregion
         

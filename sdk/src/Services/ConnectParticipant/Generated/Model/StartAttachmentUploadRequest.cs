@@ -29,31 +29,63 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
-    /// Container for the parameters to the SendEvent operation.
-    /// Sends an event. Note that ConnectionToken is used for invoking this API instead of
-    /// ParticipantToken.
-    /// 
-    ///  
-    /// <para>
-    /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-    /// Version 4 authentication</a>.
-    /// </para>
+    /// Container for the parameters to the StartAttachmentUpload operation.
+    /// Provides a pre-signed Amazon S3 URL in response for uploading the file directly to
+    /// S3.
     /// </summary>
-    public partial class SendEventRequest : AmazonConnectParticipantRequest
+    public partial class StartAttachmentUploadRequest : AmazonConnectParticipantRequest
     {
+        private string _attachmentName;
+        private long? _attachmentSizeInBytes;
         private string _clientToken;
         private string _connectionToken;
-        private string _content;
         private string _contentType;
+
+        /// <summary>
+        /// Gets and sets the property AttachmentName. 
+        /// <para>
+        /// A case-sensitive name of the attachment being uploaded.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string AttachmentName
+        {
+            get { return this._attachmentName; }
+            set { this._attachmentName = value; }
+        }
+
+        // Check to see if AttachmentName property is set
+        internal bool IsSetAttachmentName()
+        {
+            return this._attachmentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachmentSizeInBytes. 
+        /// <para>
+        /// The size of the attachment in bytes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1)]
+        public long AttachmentSizeInBytes
+        {
+            get { return this._attachmentSizeInBytes.GetValueOrDefault(); }
+            set { this._attachmentSizeInBytes = value; }
+        }
+
+        // Check to see if AttachmentSizeInBytes property is set
+        internal bool IsSetAttachmentSizeInBytes()
+        {
+            return this._attachmentSizeInBytes.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// A unique case sensitive identifier to support idempotency of request.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=500)]
+        [AWSProperty(Min=1, Max=500)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -86,40 +118,14 @@ namespace Amazon.ConnectParticipant.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Content. 
-        /// <para>
-        /// The content of the event to be sent (for example, message text). This is not yet supported.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string Content
-        {
-            get { return this._content; }
-            set { this._content = value; }
-        }
-
-        // Check to see if Content property is set
-        internal bool IsSetContent()
-        {
-            return this._content != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The content type of the request. Supported types are:
+        /// Describes the MIME file type of the attachment. For a list of supported file types,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+        /// specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// application/vnd.amazonaws.connect.event.typing
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// application/vnd.amazonaws.connect.event.connection.acknowledged
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ContentType
         {
             get { return this._contentType; }

@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.CompleteAttachmentUploadRequest.ClientToken</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.CompleteAttachmentUploadRequest.ConnectionToken</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.CreateParticipantConnectionRequest.ParticipantToken</property>
     <min>1</min>
     <max>1000</max>
@@ -13,6 +23,21 @@
     <property>Amazon.ConnectParticipant.Model.DisconnectParticipantRequest.ConnectionToken</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.GetAttachmentRequest.AttachmentId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.GetAttachmentRequest.ConnectionToken</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.GetAttachmentResponse.Url</property>
+    <min>1</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.GetTranscriptRequest.ConnectionToken</property>
@@ -103,6 +128,50 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.StartAttachmentUploadRequest.AttachmentName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.StartAttachmentUploadRequest.AttachmentSizeInBytes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.StartAttachmentUploadRequest.ClientToken</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.StartAttachmentUploadRequest.ConnectionToken</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.StartAttachmentUploadRequest.ContentType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.StartAttachmentUploadResponse.AttachmentId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.AttachmentItem.AttachmentId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.AttachmentItem.AttachmentName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.AttachmentItem.ContentType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.ConnectionCredentials.ConnectionToken</property>
     <min>1</min>
     <max>1000</max>
@@ -151,6 +220,11 @@
     <property>Amazon.ConnectParticipant.Model.StartPosition.MostRecent</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectParticipant.Model.UploadMetadata.Url</property>
+    <min>1</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.Websocket.Url</property>

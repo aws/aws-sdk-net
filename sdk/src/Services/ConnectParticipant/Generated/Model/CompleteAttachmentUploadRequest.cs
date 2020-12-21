@@ -29,22 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
-    /// Container for the parameters to the SendEvent operation.
-    /// Sends an event. Note that ConnectionToken is used for invoking this API instead of
-    /// ParticipantToken.
-    /// 
-    ///  
-    /// <para>
-    /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-    /// Version 4 authentication</a>.
-    /// </para>
+    /// Container for the parameters to the CompleteAttachmentUpload operation.
+    /// Allows you to confirm that the attachment has been uploaded using the pre-signed URL
+    /// provided in StartAttachmentUpload API.
     /// </summary>
-    public partial class SendEventRequest : AmazonConnectParticipantRequest
+    public partial class CompleteAttachmentUploadRequest : AmazonConnectParticipantRequest
     {
+        private List<string> _attachmentIds = new List<string>();
         private string _clientToken;
         private string _connectionToken;
-        private string _content;
-        private string _contentType;
+
+        /// <summary>
+        /// Gets and sets the property AttachmentIds. 
+        /// <para>
+        /// A list of unique identifiers for the attachments.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1)]
+        public List<string> AttachmentIds
+        {
+            get { return this._attachmentIds; }
+            set { this._attachmentIds = value; }
+        }
+
+        // Check to see if AttachmentIds property is set
+        internal bool IsSetAttachmentIds()
+        {
+            return this._attachmentIds != null && this._attachmentIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -53,7 +65,7 @@ namespace Amazon.ConnectParticipant.Model
         /// the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=500)]
+        [AWSProperty(Min=1, Max=500)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -83,53 +95,6 @@ namespace Amazon.ConnectParticipant.Model
         internal bool IsSetConnectionToken()
         {
             return this._connectionToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Content. 
-        /// <para>
-        /// The content of the event to be sent (for example, message text). This is not yet supported.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string Content
-        {
-            get { return this._content; }
-            set { this._content = value; }
-        }
-
-        // Check to see if Content property is set
-        internal bool IsSetContent()
-        {
-            return this._content != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ContentType. 
-        /// <para>
-        /// The content type of the request. Supported types are:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// application/vnd.amazonaws.connect.event.typing
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// application/vnd.amazonaws.connect.event.connection.acknowledged
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string ContentType
-        {
-            get { return this._contentType; }
-            set { this._contentType = value; }
-        }
-
-        // Check to see if ContentType property is set
-        internal bool IsSetContentType()
-        {
-            return this._contentType != null;
         }
 
     }

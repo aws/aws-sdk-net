@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Item Object
+    /// Response Unmarshaller for AttachmentItem Object
     /// </summary>  
-    public class ItemUnmarshaller : IUnmarshaller<Item, XmlUnmarshallerContext>, IUnmarshaller<Item, JsonUnmarshallerContext>
+    public class AttachmentItemUnmarshaller : IUnmarshaller<AttachmentItem, XmlUnmarshallerContext>, IUnmarshaller<AttachmentItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Item IUnmarshaller<Item, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AttachmentItem IUnmarshaller<AttachmentItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Item Unmarshall(JsonUnmarshallerContext context)
+        public AttachmentItem Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Item unmarshalledObject = new Item();
+            AttachmentItem unmarshalledObject = new AttachmentItem();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AbsoluteTime", targetDepth))
+                if (context.TestExpression("AttachmentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AbsoluteTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AttachmentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Attachments", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AttachmentItem, AttachmentItemUnmarshaller>(AttachmentItemUnmarshaller.Instance);
-                    unmarshalledObject.Attachments = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Content", targetDepth))
+                if (context.TestExpression("AttachmentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AttachmentName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ContentType", targetDepth))
@@ -88,34 +82,10 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContentType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DisplayName", targetDepth))
+                if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ParticipantId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParticipantId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ParticipantRole", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParticipantRole = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -124,12 +94,12 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         }
 
 
-        private static ItemUnmarshaller _instance = new ItemUnmarshaller();        
+        private static AttachmentItemUnmarshaller _instance = new AttachmentItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ItemUnmarshaller Instance
+        public static AttachmentItemUnmarshaller Instance
         {
             get
             {

@@ -29,39 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisconnectParticipant operation.
-    /// Disconnects a participant. Note that ConnectionToken is used for invoking this API
-    /// instead of ParticipantToken.
-    /// 
-    ///  
-    /// <para>
-    /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-    /// Version 4 authentication</a>.
-    /// </para>
+    /// Container for the parameters to the GetAttachment operation.
+    /// Provides a pre-signed URL for download of a completed attachment. This is an asynchronous
+    /// API for use with active contacts.
     /// </summary>
-    public partial class DisconnectParticipantRequest : AmazonConnectParticipantRequest
+    public partial class GetAttachmentRequest : AmazonConnectParticipantRequest
     {
-        private string _clientToken;
+        private string _attachmentId;
         private string _connectionToken;
 
         /// <summary>
-        /// Gets and sets the property ClientToken. 
+        /// Gets and sets the property AttachmentId. 
         /// <para>
-        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// A unique identifier for the attachment.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=500)]
-        public string ClientToken
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string AttachmentId
         {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
+            get { return this._attachmentId; }
+            set { this._attachmentId = value; }
         }
 
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
+        // Check to see if AttachmentId property is set
+        internal bool IsSetAttachmentId()
         {
-            return this._clientToken != null;
+            return this._attachmentId != null;
         }
 
         /// <summary>
