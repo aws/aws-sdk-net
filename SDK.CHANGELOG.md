@@ -1,3 +1,24 @@
+### 3.5.79.0 (2020-12-22 19:23 UTC)
+* Connect (3.5.5.0)
+	* This release adds support for quick connects. For details, see the Release Notes in the Amazon Connect Administrator Guide.
+* CostExplorer (3.5.7.0)
+	* This release adds additional metadata that may be applicable to the Rightsizing Recommendations.
+* ElastiCache (3.5.1.31)
+	* Documentation updates for elasticache
+* Glue (3.5.10.0)
+	* AWS Glue Find Matches machine learning transforms now support column importance scores.
+* IoTWireless (3.5.1.0)
+	* Adding the ability to use Fingerprint in GetPartnerAccount and ListPartnerAccounts API responses to protect sensitive customer account information.
+* RDS (3.5.9.0)
+	* Adds customer-owned IP address (CoIP) support to Amazon RDS on AWS Outposts.
+* SimpleSystemsManagement (3.5.8.0)
+	* SSM Maintenance Window support for registering/updating maintenance window tasks without targets.
+* Core 3.5.1.55
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.78.1 (2020-12-21 23:07 UTC)
 * Glacier (3.5.0.54)
 	* Fix issue with Glacier download job failing when inventory vault output
