@@ -1042,6 +1042,12 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RightsizingRecommendationMetadata.AdditionalMetadata</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.RightsizingRecommendationMetadata.GenerationTimestamp</property>
     <min>0</min>
     <max>1024</max>

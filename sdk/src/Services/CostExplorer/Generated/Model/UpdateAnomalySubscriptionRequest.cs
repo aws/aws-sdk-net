@@ -63,7 +63,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonitorArnList. 
         /// <para>
-        ///  A list of cost anomaly subscription ARNs. 
+        ///  A list of cost anomaly monitor ARNs. 
         /// </para>
         /// </summary>
         public List<string> MonitorArnList
