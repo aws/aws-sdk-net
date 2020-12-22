@@ -30,8 +30,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateLambdaFunction operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Remove the Lambda function from the drop-down options available in the relevant contact
     /// flow blocks.
+    /// </para>
     /// </summary>
     public partial class DisassociateLambdaFunctionRequest : AmazonConnectRequest
     {

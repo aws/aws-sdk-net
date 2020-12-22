@@ -30,10 +30,14 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateInstanceStorageConfig operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Associates a storage resource type for the first time. You can only associate one
     /// type of storage configuration in a single call. This means, for example, that you
     /// can't define an instance with multiple S3 buckets for storing chat transcripts.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This API does not create a resource that doesn't exist. It only associates it to the

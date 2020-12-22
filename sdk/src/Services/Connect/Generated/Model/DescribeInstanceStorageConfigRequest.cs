@@ -30,8 +30,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceStorageConfig operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Retrieves the current storage configurations for the specified resource type, association
     /// ID, and instance ID.
+    /// </para>
     /// </summary>
     public partial class DescribeInstanceStorageConfigRequest : AmazonConnectRequest
     {

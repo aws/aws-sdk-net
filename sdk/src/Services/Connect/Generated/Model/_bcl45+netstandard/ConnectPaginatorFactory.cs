@@ -149,6 +149,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListQuickConnects operation
+        ///</summary>
+        public IListQuickConnectsPaginator ListQuickConnects(ListQuickConnectsRequest request) 
+        {
+            return new ListQuickConnectsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRoutingProfileQueues operation
         ///</summary>
         public IListRoutingProfileQueuesPaginator ListRoutingProfileQueues(ListRoutingProfileQueuesRequest request) 

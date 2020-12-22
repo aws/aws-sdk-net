@@ -30,8 +30,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLexBots operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Returns a paginated list of all the Amazon Lex bots currently associated with the
     /// instance.
+    /// </para>
     /// </summary>
     public partial class ListLexBotsRequest : AmazonConnectRequest
     {

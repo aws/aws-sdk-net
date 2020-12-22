@@ -30,8 +30,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLambdaFunctions operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Returns a paginated list of all the Lambda functions that show up in the drop-down
     /// options in the relevant contact flow blocks.
+    /// </para>
     /// </summary>
     public partial class ListLambdaFunctionsRequest : AmazonConnectRequest
     {

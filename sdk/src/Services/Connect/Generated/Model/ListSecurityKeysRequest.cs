@@ -30,7 +30,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSecurityKeys operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Returns a paginated list of all security keys associated with the instance.
+    /// </para>
     /// </summary>
     public partial class ListSecurityKeysRequest : AmazonConnectRequest
     {

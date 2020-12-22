@@ -110,6 +110,21 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreateQuickConnectRequest.Description</property>
+    <min>0</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateQuickConnectRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateQuickConnectRequest.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateRoutingProfileRequest.Description</property>
     <min>1</min>
     <max>250</max>
@@ -174,6 +189,11 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteQuickConnectRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DeleteUseCaseRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -224,6 +244,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeInstanceStorageConfigRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeQuickConnectRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -451,6 +476,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListQueuesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListQuickConnectsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListQuickConnectsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -731,6 +766,26 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateQuickConnectConfigRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateQuickConnectNameRequest.Description</property>
+    <min>0</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateQuickConnectNameRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateQuickConnectNameRequest.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateRoutingProfileConcurrencyRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -923,9 +978,28 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.QueueQuickConnectConfig.ContactFlowId</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.QueueSummary.Name</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.QuickConnect.Description</property>
+    <min>0</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.QuickConnect.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.QuickConnectSummary.Name</property>
+    <min>1</min>
+    <max>127</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Reference.Value</property>
@@ -1020,6 +1094,10 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UserPhoneConfig.AfterContactWorkTimeLimit</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UserQuickConnectConfig.ContactFlowId</property>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserSummary.Username</property>

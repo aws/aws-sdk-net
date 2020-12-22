@@ -30,8 +30,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateInstanceStorageConfig operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Removes the storage type configurations for the specified resource type and association
     /// ID.
+    /// </para>
     /// </summary>
     public partial class DisassociateInstanceStorageConfigRequest : AmazonConnectRequest
     {

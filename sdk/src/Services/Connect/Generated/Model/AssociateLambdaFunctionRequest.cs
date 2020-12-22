@@ -30,7 +30,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateLambdaFunction operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Allows the specified Amazon Connect instance to access the specified Lambda function.
+    /// </para>
     /// </summary>
     public partial class AssociateLambdaFunctionRequest : AmazonConnectRequest
     {

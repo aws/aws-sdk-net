@@ -30,7 +30,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateSecurityKey operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Associates a security key to the instance.
+    /// </para>
     /// </summary>
     public partial class AssociateSecurityKeyRequest : AmazonConnectRequest
     {

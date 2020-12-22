@@ -30,9 +30,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstance operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Returns the current state of the specified instance identifier. It tracks the instance
     /// while it is being created and returns an error status if applicable. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// If an instance is not created successfully, the instance status reason field returns

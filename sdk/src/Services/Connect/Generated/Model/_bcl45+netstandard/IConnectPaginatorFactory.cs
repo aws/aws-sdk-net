@@ -97,6 +97,11 @@ namespace Amazon.Connect.Model
         IListQueuesPaginator ListQueues(ListQueuesRequest request);
 
         /// <summary>
+        /// Paginator for ListQuickConnects operation
+        ///</summary>
+        IListQuickConnectsPaginator ListQuickConnects(ListQuickConnectsRequest request);
+
+        /// <summary>
         /// Paginator for ListRoutingProfileQueues operation
         ///</summary>
         IListRoutingProfileQueuesPaginator ListRoutingProfileQueues(ListRoutingProfileQueuesRequest request);

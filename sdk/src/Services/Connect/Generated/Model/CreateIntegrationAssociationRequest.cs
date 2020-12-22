@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// Create an AppIntegration association with anAmazon Connect instance.
+    /// Create an AppIntegration association with an Amazon Connect instance.
     /// </para>
     /// </summary>
     public partial class CreateIntegrationAssociationRequest : AmazonConnectRequest

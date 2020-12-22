@@ -30,7 +30,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateSecurityKey operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Deletes the specified security key.
+    /// </para>
     /// </summary>
     public partial class DisassociateSecurityKeyRequest : AmazonConnectRequest
     {

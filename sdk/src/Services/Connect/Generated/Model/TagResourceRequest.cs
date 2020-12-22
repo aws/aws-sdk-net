@@ -34,7 +34,8 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// The supported resource types are users, routing profiles, and contact flows.
+    /// The supported resource types are users, routing profiles, quick connects, and contact
+    /// flows.
     /// </para>
     ///  
     /// <para>

@@ -268,7 +268,12 @@ namespace Amazon.Connect
         #region  AssociateApprovedOrigin
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Associates an approved origin to an Amazon Connect instance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateApprovedOrigin service method.</param>
         /// 
@@ -343,10 +348,14 @@ namespace Amazon.Connect
         #region  AssociateInstanceStorageConfig
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Associates a storage resource type for the first time. You can only associate one
         /// type of storage configuration in a single call. This means, for example, that you
         /// can't define an instance with multiple S3 buckets for storing chat transcripts.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// This API does not create a resource that doesn't exist. It only associates it to the
@@ -424,7 +433,12 @@ namespace Amazon.Connect
         #region  AssociateLambdaFunction
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Allows the specified Amazon Connect instance to access the specified Lambda function.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateLambdaFunction service method.</param>
         /// 
@@ -499,7 +513,12 @@ namespace Amazon.Connect
         #region  AssociateLexBot
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateLexBot service method.</param>
         /// 
@@ -643,7 +662,12 @@ namespace Amazon.Connect
         #region  AssociateSecurityKey
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Associates a security key to the instance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateSecurityKey service method.</param>
         /// 
@@ -882,7 +906,7 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// Create an AppIntegration association with anAmazon Connect instance.
+        /// Create an AppIntegration association with an Amazon Connect instance.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegrationAssociation service method.</param>
@@ -945,6 +969,86 @@ namespace Amazon.Connect
         public virtual CreateIntegrationAssociationResponse EndCreateIntegrationAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateIntegrationAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateQuickConnect
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Creates a quick connect for the specified Amazon Connect instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuickConnect service method.</param>
+        /// 
+        /// <returns>The response from the CreateQuickConnect service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect">REST API Reference for CreateQuickConnect Operation</seealso>
+        public virtual CreateQuickConnectResponse CreateQuickConnect(CreateQuickConnectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateQuickConnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQuickConnectResponseUnmarshaller.Instance;
+
+            return Invoke<CreateQuickConnectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateQuickConnect operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuickConnect operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateQuickConnect
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect">REST API Reference for CreateQuickConnect Operation</seealso>
+        public virtual IAsyncResult BeginCreateQuickConnect(CreateQuickConnectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateQuickConnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQuickConnectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateQuickConnect operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateQuickConnect.</param>
+        /// 
+        /// <returns>Returns a  CreateQuickConnectResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect">REST API Reference for CreateQuickConnect Operation</seealso>
+        public virtual CreateQuickConnectResponse EndCreateQuickConnect(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateQuickConnectResponse>(asyncResult);
         }
 
         #endregion
@@ -1395,6 +1499,80 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteQuickConnect
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Deletes a quick connect.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuickConnect service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQuickConnect service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect">REST API Reference for DeleteQuickConnect Operation</seealso>
+        public virtual DeleteQuickConnectResponse DeleteQuickConnect(DeleteQuickConnectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQuickConnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQuickConnectResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQuickConnectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteQuickConnect operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuickConnect operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteQuickConnect
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect">REST API Reference for DeleteQuickConnect Operation</seealso>
+        public virtual IAsyncResult BeginDeleteQuickConnect(DeleteQuickConnectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteQuickConnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQuickConnectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteQuickConnect operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteQuickConnect.</param>
+        /// 
+        /// <returns>Returns a  DeleteQuickConnectResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect">REST API Reference for DeleteQuickConnect Operation</seealso>
+        public virtual DeleteQuickConnectResponse EndDeleteQuickConnect(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteQuickConnectResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteUseCase
 
         /// <summary>
@@ -1697,9 +1875,13 @@ namespace Amazon.Connect
         #region  DescribeInstance
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Returns the current state of the specified instance identifier. It tracks the instance
         /// while it is being created and returns an error status if applicable. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// If an instance is not created successfully, the instance status reason field returns
@@ -1768,7 +1950,12 @@ namespace Amazon.Connect
         #region  DescribeInstanceAttribute
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Describes the specified instance attribute.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service method.</param>
         /// 
@@ -1837,8 +2024,13 @@ namespace Amazon.Connect
         #region  DescribeInstanceStorageConfig
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Retrieves the current storage configurations for the specified resource type, association
         /// ID, and instance ID.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceStorageConfig service method.</param>
         /// 
@@ -1900,6 +2092,80 @@ namespace Amazon.Connect
         public virtual DescribeInstanceStorageConfigResponse EndDescribeInstanceStorageConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstanceStorageConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeQuickConnect
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Describes the quick connect.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQuickConnect service method.</param>
+        /// 
+        /// <returns>The response from the DescribeQuickConnect service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect">REST API Reference for DescribeQuickConnect Operation</seealso>
+        public virtual DescribeQuickConnectResponse DescribeQuickConnect(DescribeQuickConnectRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeQuickConnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQuickConnectResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeQuickConnectResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeQuickConnect operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQuickConnect operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeQuickConnect
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect">REST API Reference for DescribeQuickConnect Operation</seealso>
+        public virtual IAsyncResult BeginDescribeQuickConnect(DescribeQuickConnectRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeQuickConnectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQuickConnectResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeQuickConnect operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeQuickConnect.</param>
+        /// 
+        /// <returns>Returns a  DescribeQuickConnectResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect">REST API Reference for DescribeQuickConnect Operation</seealso>
+        public virtual DescribeQuickConnectResponse EndDescribeQuickConnect(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeQuickConnectResponse>(asyncResult);
         }
 
         #endregion
@@ -2185,7 +2451,12 @@ namespace Amazon.Connect
         #region  DisassociateApprovedOrigin
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Revokes access to integrated applications from Amazon Connect.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateApprovedOrigin service method.</param>
         /// 
@@ -2254,8 +2525,13 @@ namespace Amazon.Connect
         #region  DisassociateInstanceStorageConfig
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Removes the storage type configurations for the specified resource type and association
         /// ID.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateInstanceStorageConfig service method.</param>
         /// 
@@ -2324,8 +2600,13 @@ namespace Amazon.Connect
         #region  DisassociateLambdaFunction
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Remove the Lambda function from the drop-down options available in the relevant contact
         /// flow blocks.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateLambdaFunction service method.</param>
         /// 
@@ -2394,8 +2675,13 @@ namespace Amazon.Connect
         #region  DisassociateLexBot
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Revokes authorization from the specified instance to access the specified Amazon Lex
         /// bot.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateLexBot service method.</param>
         /// 
@@ -2533,7 +2819,12 @@ namespace Amazon.Connect
         #region  DisassociateSecurityKey
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Deletes the specified security key.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateSecurityKey service method.</param>
         /// 
@@ -2887,7 +3178,12 @@ namespace Amazon.Connect
         #region  ListApprovedOrigins
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Returns a paginated list of all approved origins associated with the instance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApprovedOrigins service method.</param>
         /// 
@@ -3400,8 +3696,13 @@ namespace Amazon.Connect
         #region  ListLambdaFunctions
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Returns a paginated list of all the Lambda functions that show up in the drop-down
         /// options in the relevant contact flow blocks.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLambdaFunctions service method.</param>
         /// 
@@ -3470,8 +3771,13 @@ namespace Amazon.Connect
         #region  ListLexBots
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Returns a paginated list of all the Amazon Lex bots currently associated with the
         /// instance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLexBots service method.</param>
         /// 
@@ -3758,6 +4064,81 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListQuickConnects
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Provides information about the quick connects for the specified Amazon Connect instance.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQuickConnects service method.</param>
+        /// 
+        /// <returns>The response from the ListQuickConnects service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects">REST API Reference for ListQuickConnects Operation</seealso>
+        public virtual ListQuickConnectsResponse ListQuickConnects(ListQuickConnectsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListQuickConnectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQuickConnectsResponseUnmarshaller.Instance;
+
+            return Invoke<ListQuickConnectsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListQuickConnects operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListQuickConnects operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListQuickConnects
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects">REST API Reference for ListQuickConnects Operation</seealso>
+        public virtual IAsyncResult BeginListQuickConnects(ListQuickConnectsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListQuickConnectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQuickConnectsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListQuickConnects operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListQuickConnects.</param>
+        /// 
+        /// <returns>Returns a  ListQuickConnectsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects">REST API Reference for ListQuickConnects Operation</seealso>
+        public virtual ListQuickConnectsResponse EndListQuickConnects(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListQuickConnectsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListRoutingProfileQueues
 
         /// <summary>
@@ -3907,7 +4288,12 @@ namespace Amazon.Connect
         #region  ListSecurityKeys
 
         /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
         /// Returns a paginated list of all security keys associated with the instance.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityKeys service method.</param>
         /// 
@@ -4981,7 +5367,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// The supported resource types are users, routing profiles, and contact flows.
+        /// The supported resource types are users, routing profiles, quick connects, and contact
+        /// flows.
         /// </para>
         ///  
         /// <para>
@@ -5513,6 +5900,155 @@ namespace Amazon.Connect
         public virtual UpdateInstanceStorageConfigResponse EndUpdateInstanceStorageConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateInstanceStorageConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateQuickConnectConfig
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Updates the configuration settings for the specified quick connect.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuickConnectConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQuickConnectConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig">REST API Reference for UpdateQuickConnectConfig Operation</seealso>
+        public virtual UpdateQuickConnectConfigResponse UpdateQuickConnectConfig(UpdateQuickConnectConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQuickConnectConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQuickConnectConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQuickConnectConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateQuickConnectConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuickConnectConfig operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateQuickConnectConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig">REST API Reference for UpdateQuickConnectConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateQuickConnectConfig(UpdateQuickConnectConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQuickConnectConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQuickConnectConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateQuickConnectConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateQuickConnectConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateQuickConnectConfigResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig">REST API Reference for UpdateQuickConnectConfig Operation</seealso>
+        public virtual UpdateQuickConnectConfigResponse EndUpdateQuickConnectConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateQuickConnectConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateQuickConnectName
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Updates the name and description of a quick connect. The request accepts the following
+        /// data in JSON format. At least Name or Description must be provided.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuickConnectName service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQuickConnectName service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName">REST API Reference for UpdateQuickConnectName Operation</seealso>
+        public virtual UpdateQuickConnectNameResponse UpdateQuickConnectName(UpdateQuickConnectNameRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQuickConnectNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQuickConnectNameResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQuickConnectNameResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateQuickConnectName operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuickConnectName operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateQuickConnectName
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName">REST API Reference for UpdateQuickConnectName Operation</seealso>
+        public virtual IAsyncResult BeginUpdateQuickConnectName(UpdateQuickConnectNameRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQuickConnectNameRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQuickConnectNameResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateQuickConnectName operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateQuickConnectName.</param>
+        /// 
+        /// <returns>Returns a  UpdateQuickConnectNameResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName">REST API Reference for UpdateQuickConnectName Operation</seealso>
+        public virtual UpdateQuickConnectNameResponse EndUpdateQuickConnectName(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateQuickConnectNameResponse>(asyncResult);
         }
 
         #endregion

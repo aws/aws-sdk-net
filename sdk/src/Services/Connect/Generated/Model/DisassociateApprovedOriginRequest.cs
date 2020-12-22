@@ -30,7 +30,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateApprovedOrigin operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Revokes access to integrated applications from Amazon Connect.
+    /// </para>
     /// </summary>
     public partial class DisassociateApprovedOriginRequest : AmazonConnectRequest
     {

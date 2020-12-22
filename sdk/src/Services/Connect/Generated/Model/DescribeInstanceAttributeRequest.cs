@@ -30,7 +30,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceAttribute operation.
+    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// 
+    ///  
+    /// <para>
     /// Describes the specified instance attribute.
+    /// </para>
     /// </summary>
     public partial class DescribeInstanceAttributeRequest : AmazonConnectRequest
     {
