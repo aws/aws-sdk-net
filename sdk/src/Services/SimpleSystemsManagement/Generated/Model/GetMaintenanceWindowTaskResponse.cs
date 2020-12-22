@@ -99,6 +99,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The maximum number of targets allowed to run this task in parallel.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For maintenance window tasks without a target specified, you cannot supply a value
+        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>,
+        /// which may be reported in the response to this command. This value does not affect
+        /// the running of your task and can be ignored.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
         public string MaxConcurrency
@@ -118,6 +126,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The maximum number of errors allowed before the task stops being scheduled.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For maintenance window tasks without a target specified, you cannot supply a value
+        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>,
+        /// which may be reported in the response to this command. This value does not affect
+        /// the running of your task and can be ignored.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
         public string MaxErrors

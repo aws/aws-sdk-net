@@ -120,8 +120,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The maximum number of targets this task can be run for in parallel.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For maintenance window tasks without a target specified, you cannot supply a value
+        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>.
+        /// This value does not affect the running of your task.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=7)]
+        [AWSProperty(Min=1, Max=7)]
         public string MaxConcurrency
         {
             get { return this._maxConcurrency; }
@@ -139,8 +146,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The maximum number of errors allowed before this task stops being scheduled.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For maintenance window tasks without a target specified, you cannot supply a value
+        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>.
+        /// This value does not affect the running of your task.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=7)]
+        [AWSProperty(Min=1, Max=7)]
         public string MaxErrors
         {
             get { return this._maxErrors; }
@@ -236,7 +250,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The targets (either instances or maintenance window targets).
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// One or more targets must be specified for maintenance window Run Command-type tasks.
+        /// Depending on the task, targets are optional for other maintenance window task types
+        /// (Automation, AWS Lambda, and AWS Step Functions). For more information about running
+        /// tasks that do not specify targets, see see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+        /// maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Specify instances using the following format: 
         /// </para>
@@ -254,7 +276,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets
         {
             get { return this._targets; }
