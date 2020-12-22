@@ -70,10 +70,10 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.AmazonId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("AppServerPrivateKey", targetDepth))
+                if (context.TestExpression("Fingerprint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AppServerPrivateKey = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Fingerprint = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

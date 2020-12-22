@@ -113,7 +113,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property MacVersion. 
         /// <para>
-        /// The MAC version (such as OTAA 1.1 or OTA 1.0.3) to use with this device profile.
+        /// The MAC version (such as OTAA 1.1 or OTAA 1.0.3) to use with this device profile.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

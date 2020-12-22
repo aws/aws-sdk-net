@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// LoRa object for create functions.
+    /// LoRaWAN object for create functions.
     /// </summary>
     public partial class LoRaWANDevice
     {
@@ -44,7 +44,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property AbpV1_0_x. 
         /// <para>
-        /// LoRa object for create APIs
+        /// LoRaWAN object for create APIs
         /// </para>
         /// </summary>
         public AbpV1_0_x AbpV1_0_x

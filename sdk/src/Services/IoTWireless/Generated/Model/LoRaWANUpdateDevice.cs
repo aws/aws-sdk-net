@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// LoRa object for update functions.
+    /// LoRaWAN object for update functions.
     /// </summary>
     public partial class LoRaWANUpdateDevice
     {

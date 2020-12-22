@@ -860,9 +860,9 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.IoTWireless.Model.SidewalkAccountInfoWithFingerprint.AppServerPrivateKey</property>
-    <min>1</min>
-    <max>4096</max>
+    <property>Amazon.IoTWireless.Model.SidewalkAccountInfoWithFingerprint.Fingerprint</property>
+    <min>64</min>
+    <max>64</max>
     <pattern>[a-fA-F0-9]{64}</pattern>
   </property-value-rule>
   <property-value-rule>

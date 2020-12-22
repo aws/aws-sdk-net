@@ -61,10 +61,6 @@ namespace Amazon.IoTWireless.Model
         /// <para>
         /// The Sidewalk account credentials.
         /// </para>
-        ///  
-        /// <para>
-        /// The <code>AppServerPrivateKey</code> value is empty to protect its security.
-        /// </para>
         /// </summary>
         public List<SidewalkAccountInfoWithFingerprint> Sidewalk
         {

@@ -34,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     public partial class SidewalkAccountInfoWithFingerprint
     {
         private string _amazonId;
-        private string _appServerPrivateKey;
+        private string _fingerprint;
 
         /// <summary>
         /// Gets and sets the property AmazonId. 
@@ -56,22 +56,22 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AppServerPrivateKey. 
+        /// Gets and sets the property Fingerprint. 
         /// <para>
-        /// The Sidewalk application server private key.
+        /// Fingerprint for Sidewalk application server private key.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
-        public string AppServerPrivateKey
+        [AWSProperty(Min=64, Max=64)]
+        public string Fingerprint
         {
-            get { return this._appServerPrivateKey; }
-            set { this._appServerPrivateKey = value; }
+            get { return this._fingerprint; }
+            set { this._fingerprint = value; }
         }
 
-        // Check to see if AppServerPrivateKey property is set
-        internal bool IsSetAppServerPrivateKey()
+        // Check to see if Fingerprint property is set
+        internal bool IsSetFingerprint()
         {
-            return this._appServerPrivateKey != null;
+            return this._fingerprint != null;
         }
 
     }

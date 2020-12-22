@@ -176,7 +176,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property ThingName. 
         /// <para>
-        /// The name of the thing associated with the wireless device.
+        /// The name of the thing associated with the wireless device. The value is empty if a
+        /// thing isn't associated with the device.
         /// </para>
         /// </summary>
         public string ThingName
