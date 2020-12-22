@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FindMatchesMetrics Object
+    /// Response Unmarshaller for ColumnImportance Object
     /// </summary>  
-    public class FindMatchesMetricsUnmarshaller : IUnmarshaller<FindMatchesMetrics, XmlUnmarshallerContext>, IUnmarshaller<FindMatchesMetrics, JsonUnmarshallerContext>
+    public class ColumnImportanceUnmarshaller : IUnmarshaller<ColumnImportance, XmlUnmarshallerContext>, IUnmarshaller<ColumnImportance, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FindMatchesMetrics IUnmarshaller<FindMatchesMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ColumnImportance IUnmarshaller<ColumnImportance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,27 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FindMatchesMetrics Unmarshall(JsonUnmarshallerContext context)
+        public ColumnImportance Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FindMatchesMetrics unmarshalledObject = new FindMatchesMetrics();
+            ColumnImportance unmarshalledObject = new ColumnImportance();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AreaUnderPRCurve", targetDepth))
+                if (context.TestExpression("ColumnName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ColumnName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Importance", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.AreaUnderPRCurve = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ColumnImportances", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ColumnImportance, ColumnImportanceUnmarshaller>(ColumnImportanceUnmarshaller.Instance);
-                    unmarshalledObject.ColumnImportances = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ConfusionMatrix", targetDepth))
-                {
-                    var unmarshaller = ConfusionMatrixUnmarshaller.Instance;
-                    unmarshalledObject.ConfusionMatrix = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("F1", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.F1 = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Precision", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.Precision = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Recall", targetDepth))
-                {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
-                    unmarshalledObject.Recall = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Importance = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +82,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static FindMatchesMetricsUnmarshaller _instance = new FindMatchesMetricsUnmarshaller();        
+        private static ColumnImportanceUnmarshaller _instance = new ColumnImportanceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FindMatchesMetricsUnmarshaller Instance
+        public static ColumnImportanceUnmarshaller Instance
         {
             get
             {
