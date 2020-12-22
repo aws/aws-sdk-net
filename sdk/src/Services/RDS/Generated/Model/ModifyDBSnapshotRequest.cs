@@ -129,8 +129,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// You can specify this parameter when you upgrade an Oracle DB snapshot. The same option
         /// group considerations apply when upgrading a DB snapshot as when upgrading a DB instance.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
-        /// Group Considerations</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option
+        /// group considerations</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         public string OptionGroupName

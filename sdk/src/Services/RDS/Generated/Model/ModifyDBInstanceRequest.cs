@@ -55,6 +55,7 @@ namespace Amazon.RDS.Model
         private bool? _deletionProtection;
         private string _domain;
         private string _domainIAMRoleName;
+        private bool? _enableCustomerOwnedIp;
         private bool? _enableIAMDatabaseAuthentication;
         private bool? _enablePerformanceInsights;
         private string _engineVersion;
@@ -613,8 +614,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The new DB subnet group for the DB instance. You can use this parameter to move your
         /// DB instance to a different VPC. If your DB instance isn't in a VPC, you can also use
-        /// this parameter to move your DB instance into a VPC. For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
-        /// the VPC for a DB Instance</a> in the <i>Amazon RDS User Guide.</i> 
+        /// this parameter to move your DB instance into a VPC. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Working
+        /// with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -706,6 +707,42 @@ namespace Amazon.RDS.Model
         internal bool IsSetDomainIAMRoleName()
         {
             return this._domainIAMRoleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableCustomerOwnedIp. 
+        /// <para>
+        /// A value that indicates whether to enable a customer-owned IP address (CoIP) for an
+        /// RDS on Outposts DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <i>CoIP</i> provides local or external connectivity to resources in your Outpost
+        /// subnets through your on-premises network. For some use cases, a CoIP can provide lower
+        /// latency for connections to the DB instance from outside of its virtual private cloud
+        /// (VPC) on your local network.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+        /// with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+        /// IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool EnableCustomerOwnedIp
+        {
+            get { return this._enableCustomerOwnedIp.GetValueOrDefault(); }
+            set { this._enableCustomerOwnedIp = value; }
+        }
+
+        // Check to see if EnableCustomerOwnedIp property is set
+        internal bool IsSetEnableCustomerOwnedIp()
+        {
+            return this._enableCustomerOwnedIp.HasValue; 
         }
 
         /// <summary>

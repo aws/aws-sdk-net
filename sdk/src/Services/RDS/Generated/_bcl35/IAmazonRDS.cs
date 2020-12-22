@@ -972,7 +972,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-        /// <i>RDS on VMware User Guide.</i> </a> 
+        /// RDS on VMware User Guide.</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomAvailabilityZone service method.</param>
@@ -2096,7 +2096,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-        /// <i>RDS on VMware User Guide.</i> </a> 
+        /// RDS on VMware User Guide.</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomAvailabilityZone service method.</param>
@@ -3155,7 +3155,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-        /// <i>RDS on VMware User Guide.</i> </a> 
+        /// RDS on VMware User Guide.</a> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomAvailabilityZones service method.</param>
@@ -5002,7 +5002,8 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Returns a list of the source AWS Regions where the current AWS Region can create a
-        /// read replica or copy a DB snapshot from. This API action supports pagination.
+        /// read replica, copy a DB snapshot from, or replicate automated backups from. This API
+        /// action supports pagination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions service method.</param>
         /// 

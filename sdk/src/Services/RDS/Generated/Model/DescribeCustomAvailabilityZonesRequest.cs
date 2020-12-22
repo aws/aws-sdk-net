@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-    /// <i>RDS on VMware User Guide.</i> </a> 
+    /// RDS on VMware User Guide.</a> 
     /// </para>
     /// </summary>
     public partial class DescribeCustomAvailabilityZonesRequest : AmazonRDSRequest

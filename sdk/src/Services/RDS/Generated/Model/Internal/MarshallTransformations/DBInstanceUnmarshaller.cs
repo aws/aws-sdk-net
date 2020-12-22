@@ -103,6 +103,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.CopyTagsToSnapshot = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CustomerOwnedIpEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.CustomerOwnedIpEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBClusterIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -47,6 +47,7 @@ namespace Amazon.RDS.Model
         private string _caCertificateIdentifier;
         private string _characterSetName;
         private bool? _copyTagsToSnapshot;
+        private bool? _customerOwnedIpEnabled;
         private string _dbClusterIdentifier;
         private string _dbInstanceArn;
         private List<DBInstanceAutomatedBackupsReplication> _dbInstanceAutomatedBackupsReplications = new List<DBInstanceAutomatedBackupsReplication>();
@@ -256,6 +257,42 @@ namespace Amazon.RDS.Model
         internal bool IsSetCopyTagsToSnapshot()
         {
             return this._copyTagsToSnapshot.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerOwnedIpEnabled. 
+        /// <para>
+        /// Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts
+        /// DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <i>CoIP </i>provides local or external connectivity to resources in your Outpost
+        /// subnets through your on-premises network. For some use cases, a CoIP can provide lower
+        /// latency for connections to the DB instance from outside of its virtual private cloud
+        /// (VPC) on your local network.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+        /// with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+        /// IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool CustomerOwnedIpEnabled
+        {
+            get { return this._customerOwnedIpEnabled.GetValueOrDefault(); }
+            set { this._customerOwnedIpEnabled = value; }
+        }
+
+        // Check to see if CustomerOwnedIpEnabled property is set
+        internal bool IsSetCustomerOwnedIpEnabled()
+        {
+            return this._customerOwnedIpEnabled.HasValue; 
         }
 
         /// <summary>

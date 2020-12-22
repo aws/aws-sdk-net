@@ -130,7 +130,7 @@ namespace Amazon.RDS.Model
         /// and your DB instance uses a nondefault option group. If your source DB instance uses
         /// Transparent Data Encryption for Oracle or Microsoft SQL Server, you must specify this
         /// option when copying across AWS Regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
-        /// Group Considerations</a> in the <i>Amazon RDS User Guide.</i> 
+        /// group considerations</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         public string OptionGroupName
