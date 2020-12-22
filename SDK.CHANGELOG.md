@@ -1,3 +1,14 @@
+### 3.5.78.1 (2020-12-21 23:07 UTC)
+* Glacier (3.5.0.54)
+	* Fix issue with Glacier download job failing when inventory vault output
+* RDS (3.5.8.2)
+	* Fix to throw expected argument null exception when null host or username is passed.
+* S3 (3.5.7.1)
+	* Fixes an issue where Amazon.S3.Util.S3EventNotification.ParseJson throws exception for long values by handling condition for UInt values in LitJson library.;Correct unmarshalling of SSES3 shape
+* Core 3.5.1.54
+	* Correct fallback logic for STS region when using SAML;Fix issue with paginators when service returns back empty string for end of the paging.;Support for Content-MD5 trait;Add support for AWS_CONTAINER_CREDENTIALS_FULL_URI environment variable;removed obselete tags from classes responsible for policy generation
+	* All services packages updated to require new Core
+
 ### 3.5.78.0 (2020-12-21 19:19 UTC)
 * APIGateway (3.5.2.19)
 	* Documentation updates for Amazon API Gateway.
