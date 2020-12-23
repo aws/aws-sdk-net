@@ -32,6 +32,20 @@ namespace Amazon.ResourceGroups.Model
     /// Container for the parameters to the DeleteGroup operation.
     /// Deletes the specified resource group. Deleting a resource group does not delete any
     /// resources that are members of the group; it only deletes the group structure.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Minimum permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To run this command, you must have the following permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>resource-groups:DeleteGroup</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteGroupRequest : AmazonResourceGroupsRequest
     {
@@ -60,7 +74,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// Don't use this parameter. Use <code>Group</code> instead.
+        /// Deprecated - don't use this parameter. Use <code>Group</code> instead.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use Group instead.")]

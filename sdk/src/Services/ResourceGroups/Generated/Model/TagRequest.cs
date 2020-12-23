@@ -39,7 +39,19 @@ namespace Amazon.ResourceGroups.Model
     /// information in tags. We use tags to provide you with billing and administration services.
     /// Tags are not intended to be used for private or sensitive data.
     /// </para>
-    ///  </important>
+    ///  </important> 
+    /// <para>
+    ///  <b>Minimum permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To run this command, you must have the following permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>resource-groups:Tag</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class TagRequest : AmazonResourceGroupsRequest
     {

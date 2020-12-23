@@ -31,6 +31,20 @@ namespace Amazon.ResourceGroups.Model
     /// <summary>
     /// Container for the parameters to the ListGroupResources operation.
     /// Returns a list of ARNs of the resources that are members of a specified resource group.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Minimum permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To run this command, you must have the following permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>resource-groups:ListGroupResources</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListGroupResourcesRequest : AmazonResourceGroupsRequest
     {
@@ -108,10 +122,12 @@ namespace Amazon.ResourceGroups.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupName. 
+        /// Gets and sets the property GroupName. <important> 
         /// <para>
-        /// Don't use this parameter. Use <code>Group</code> instead.
+        ///  <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request
+        /// field instead.</b> </i> 
         /// </para>
+        ///  </important>
         /// </summary>
         [Obsolete("This field is deprecated, use Group instead.")]
         [AWSProperty(Min=1, Max=128)]

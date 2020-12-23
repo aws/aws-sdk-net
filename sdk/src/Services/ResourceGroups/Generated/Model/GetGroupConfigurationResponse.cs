@@ -38,7 +38,9 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property GroupConfiguration. 
         /// <para>
-        /// The configuration associated with the specified group.
+        /// The service configuration associated with the specified group. For details about the
+        /// service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+        /// configurations for resource groups</a>.
         /// </para>
         /// </summary>
         public GroupConfiguration GroupConfiguration

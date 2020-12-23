@@ -31,7 +31,25 @@ namespace Amazon.ResourceGroups.Model
     /// <summary>
     /// Container for the parameters to the CreateGroup operation.
     /// Creates a resource group with the specified name and description. You can optionally
-    /// include a resource query, or a service configuration.
+    /// include a resource query, or a service configuration. For more information about constructing
+    /// a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+    /// a tag-based group in Resource Groups</a>. For more information about service configurations,
+    /// see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+    /// configurations for resource groups</a>.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Minimum permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To run this command, you must have the following permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>resource-groups:CreateGroup</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateGroupRequest : AmazonResourceGroupsRequest
     {
@@ -46,12 +64,14 @@ namespace Amazon.ResourceGroups.Model
         /// <para>
         /// A configuration associates the resource group with an AWS service and specifies how
         /// the service can interact with the resources in the group. A configuration is an array
-        /// of <a>GroupConfigurationItem</a> elements.
+        /// of <a>GroupConfigurationItem</a> elements. For details about the syntax of service
+        /// configurations, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+        /// configurations for resource groups</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can specify either a <code>Configuration</code> or a <code>ResourceQuery</code>
-        /// in a group, but not both.
+        /// A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>,
+        /// but not both.
         /// </para>
         ///  </note>
         /// </summary>
@@ -115,10 +135,12 @@ namespace Amazon.ResourceGroups.Model
         /// Gets and sets the property ResourceQuery. 
         /// <para>
         /// The resource query that determines which AWS resources are members of this group.
+        /// For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+        /// a tag-based group in Resource Groups</a>. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can specify either a <code>ResourceQuery</code> or a <code>Configuration</code>,
+        /// A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>,
         /// but not both.
         /// </para>
         ///  </note>

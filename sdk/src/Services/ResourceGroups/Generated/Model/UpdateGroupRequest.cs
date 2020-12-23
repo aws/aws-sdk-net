@@ -32,6 +32,20 @@ namespace Amazon.ResourceGroups.Model
     /// Container for the parameters to the UpdateGroup operation.
     /// Updates the description for an existing group. You cannot update the name of a resource
     /// group.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Minimum permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To run this command, you must have the following permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>resource-groups:UpdateGroup</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateGroupRequest : AmazonResourceGroupsRequest
     {

@@ -31,6 +31,20 @@ namespace Amazon.ResourceGroups.Model
     /// <summary>
     /// Container for the parameters to the GetGroup operation.
     /// Returns information about a specified resource group.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Minimum permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To run this command, you must have the following permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>resource-groups:GetGroup</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetGroupRequest : AmazonResourceGroupsRequest
     {
@@ -59,7 +73,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// Don't use this parameter. Use <code>Group</code> instead.
+        /// Deprecated - don't use this parameter. Use <code>Group</code> instead.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use Group instead.")]

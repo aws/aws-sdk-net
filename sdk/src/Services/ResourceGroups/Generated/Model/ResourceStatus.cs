@@ -29,47 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// A structure that contains the ARN of a resource and its resource type.
+    /// A structure that identifies the current group membership status for a resource. Adding
+    /// a resource to a resource group is performed asynchronously as a background task. A
+    /// <code>PENDING</code> status indicates, for this resource, that the process isn't completed
+    /// yet.
     /// </summary>
-    public partial class ResourceIdentifier
+    public partial class ResourceStatus
     {
-        private string _resourceArn;
-        private string _resourceType;
+        private ResourceStatusValue _name;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The ARN of a resource.
+        /// The current status.
         /// </para>
         /// </summary>
-        public string ResourceArn
+        public ResourceStatusValue Name
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._resourceArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceType. 
-        /// <para>
-        /// The resource type of a resource, such as <code>AWS::EC2::Instance</code>.
-        /// </para>
-        /// </summary>
-        public string ResourceType
-        {
-            get { return this._resourceType; }
-            set { this._resourceType = value; }
-        }
-
-        // Check to see if ResourceType property is set
-        internal bool IsSetResourceType()
-        {
-            return this._resourceType != null;
+            return this._name != null;
         }
 
     }

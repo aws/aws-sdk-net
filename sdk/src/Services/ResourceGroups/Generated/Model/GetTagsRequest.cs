@@ -32,6 +32,20 @@ namespace Amazon.ResourceGroups.Model
     /// Container for the parameters to the GetTags operation.
     /// Returns a list of tags that are associated with a resource group, specified by an
     /// ARN.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Minimum permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To run this command, you must have the following permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>resource-groups:GetTags</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetTagsRequest : AmazonResourceGroupsRequest
     {

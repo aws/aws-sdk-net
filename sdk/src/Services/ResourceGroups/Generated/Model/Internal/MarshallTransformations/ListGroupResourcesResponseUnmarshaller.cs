@@ -69,6 +69,12 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                     response.ResourceIdentifiers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Resources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ListGroupResourcesItem, ListGroupResourcesItemUnmarshaller>(ListGroupResourcesItemUnmarshaller.Instance);
+                    response.Resources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

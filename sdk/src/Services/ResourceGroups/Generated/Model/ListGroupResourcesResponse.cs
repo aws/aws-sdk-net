@@ -36,6 +36,7 @@ namespace Amazon.ResourceGroups.Model
         private string _nextToken;
         private List<QueryError> _queryErrors = new List<QueryError>();
         private List<ResourceIdentifier> _resourceIdentifiers = new List<ResourceIdentifier>();
+        private List<ListGroupResourcesItem> _resources = new List<ListGroupResourcesItem>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -80,11 +81,14 @@ namespace Amazon.ResourceGroups.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceIdentifiers. 
+        /// Gets and sets the property ResourceIdentifiers. <important> 
         /// <para>
-        /// The ARNs and resource types of resources that are members of the group that you specified.
+        ///  <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response
+        /// field instead.</i> </b> 
         /// </para>
+        ///  </important>
         /// </summary>
+        [Obsolete("This field is deprecated, use Resources instead.")]
         public List<ResourceIdentifier> ResourceIdentifiers
         {
             get { return this._resourceIdentifiers; }
@@ -95,6 +99,25 @@ namespace Amazon.ResourceGroups.Model
         internal bool IsSetResourceIdentifiers()
         {
             return this._resourceIdentifiers != null && this._resourceIdentifiers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Resources. 
+        /// <para>
+        /// An array of resources from which you can determine each resource's identity, type,
+        /// and group membership status.
+        /// </para>
+        /// </summary>
+        public List<ListGroupResourcesItem> Resources
+        {
+            get { return this._resources; }
+            set { this._resources = value; }
+        }
+
+        // Check to see if Resources property is set
+        internal bool IsSetResources()
+        {
+            return this._resources != null && this._resources.Count > 0; 
         }
 
     }

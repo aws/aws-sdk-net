@@ -37,7 +37,7 @@ namespace Amazon.ResourceGroups.Model
     ///  <a>ResourceQuery</a> - Use a resource query to specify a set of tag keys and values.
     /// All resources in the same AWS Region and AWS account that have those keys with the
     /// same values are included in the group. You can add a resource query when you create
-    /// the group.
+    /// the group, or later by using the <a>PutGroupConfiguration</a> operation.
     /// </para>
     ///  </li> <li> 
     /// <para>

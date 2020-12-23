@@ -59,16 +59,10 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property GroupConfiguration. 
         /// <para>
-        /// The service configuration associated with the resource group. AWS Resource Groups
-        /// supports adding service configurations for the following resource group types:
+        /// The service configuration associated with the resource group. For details about the
+        /// syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+        /// configurations for resource groups</a>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation
-        /// pools. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">Working
-        /// with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public GroupConfiguration GroupConfiguration
         {
@@ -85,7 +79,9 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property ResourceQuery. 
         /// <para>
-        /// The resource query associated with the group.
+        /// The resource query associated with the group. For more information about resource
+        /// queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+        /// a tag-based group in Resource Groups</a>. 
         /// </para>
         /// </summary>
         public ResourceQuery ResourceQuery

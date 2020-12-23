@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// A parameter for a group configuration item.
+    /// A parameter for a group configuration item. For details about group service configuration
+    /// syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+    /// configurations for resource groups</a>.
     /// </summary>
     public partial class GroupConfigurationParameter
     {
@@ -39,41 +41,12 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the group configuration parameter.
+        /// The name of the group configuration parameter. For the list of parameters that you
+        /// can use with each configuration item type, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
+        /// resource types and parameters</a>.
         /// </para>
-        ///  
-        /// <para>
-        /// You can specify the following string values:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For configuration item type <code>AWS::ResourceGroups::Generic</code>:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>allowed-resource-types</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Specifies the types of resources that you can add to this group by using the <a>GroupResources</a>
-        /// operation.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// For configuration item type <code>AWS::EC2::CapacityReservationPool</code>:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// None - This configuration item type doesn't support any parameters.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information about EC2 capacity reservation groups, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">Working
-        /// with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=40)]
+        [AWSProperty(Required=true, Min=1, Max=80)]
         public string Name
         {
             get { return this._name; }
@@ -89,18 +62,10 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values of for this parameter.
+        /// The value or values to be used for the specified parameter. For the list of values
+        /// you can use with each parameter, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
+        /// resource types and parameters</a>.
         /// </para>
-        ///  
-        /// <para>
-        /// You can specify the following string value:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For item type <code>allowed-resource-types</code>: the only supported parameter value
-        /// is <code>AWS::EC2::CapacityReservation</code>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public List<string> Values
         {

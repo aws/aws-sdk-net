@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UngroupResources operation
+    /// Response Unmarshaller for PutGroupConfiguration operation
     /// </summary>  
-    public class UngroupResourcesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutGroupConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,31 +45,8 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UngroupResourcesResponse response = new UngroupResourcesResponse();
+            PutGroupConfigurationResponse response = new PutGroupConfigurationResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("Failed", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<FailedResource, FailedResourceUnmarshaller>(FailedResourceUnmarshaller.Instance);
-                    response.Failed = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Pending", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<PendingResource, PendingResourceUnmarshaller>(PendingResourceUnmarshaller.Instance);
-                    response.Pending = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Succeeded", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.Succeeded = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -120,9 +97,9 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             return new AmazonResourceGroupsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UngroupResourcesResponseUnmarshaller _instance = new UngroupResourcesResponseUnmarshaller();        
+        private static PutGroupConfigurationResponseUnmarshaller _instance = new PutGroupConfigurationResponseUnmarshaller();        
 
-        internal static UngroupResourcesResponseUnmarshaller GetInstance()
+        internal static PutGroupConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -130,7 +107,7 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UngroupResourcesResponseUnmarshaller Instance
+        public static PutGroupConfigurationResponseUnmarshaller Instance
         {
             get
             {

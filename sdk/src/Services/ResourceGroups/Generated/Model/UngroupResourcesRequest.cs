@@ -31,6 +31,20 @@ namespace Amazon.ResourceGroups.Model
     /// <summary>
     /// Container for the parameters to the UngroupResources operation.
     /// Removes the specified resources from the specified group.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Minimum permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To run this command, you must have the following permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>resource-groups:UngroupResources</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UngroupResourcesRequest : AmazonResourceGroupsRequest
     {

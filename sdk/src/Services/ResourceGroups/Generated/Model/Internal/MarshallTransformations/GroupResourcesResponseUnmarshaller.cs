@@ -57,6 +57,12 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                     response.Failed = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Pending", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PendingResource, PendingResourceUnmarshaller>(PendingResourceUnmarshaller.Instance);
+                    response.Pending = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Succeeded", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

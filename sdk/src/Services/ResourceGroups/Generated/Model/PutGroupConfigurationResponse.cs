@@ -29,31 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// This is the response object from the GetGroupQuery operation.
+    /// This is the response object from the PutGroupConfiguration operation.
     /// </summary>
-    public partial class GetGroupQueryResponse : AmazonWebServiceResponse
+    public partial class PutGroupConfigurationResponse : AmazonWebServiceResponse
     {
-        private GroupQuery _groupQuery;
-
-        /// <summary>
-        /// Gets and sets the property GroupQuery. 
-        /// <para>
-        /// The resource query associated with the specified group. For more information about
-        /// resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
-        /// a tag-based group in Resource Groups</a>.
-        /// </para>
-        /// </summary>
-        public GroupQuery GroupQuery
-        {
-            get { return this._groupQuery; }
-            set { this._groupQuery = value; }
-        }
-
-        // Check to see if GroupQuery property is set
-        internal bool IsSetGroupQuery()
-        {
-            return this._groupQuery != null;
-        }
 
     }
 }

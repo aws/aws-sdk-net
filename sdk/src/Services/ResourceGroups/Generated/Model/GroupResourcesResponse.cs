@@ -34,12 +34,13 @@ namespace Amazon.ResourceGroups.Model
     public partial class GroupResourcesResponse : AmazonWebServiceResponse
     {
         private List<FailedResource> _failed = new List<FailedResource>();
+        private List<PendingResource> _pending = new List<PendingResource>();
         private List<string> _succeeded = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Failed. 
         /// <para>
-        /// The ARNs of the resources that failed to be added to the group by this operation.
+        /// A list of ARNs of any resources that failed to be added to the group by this operation.
         /// </para>
         /// </summary>
         public List<FailedResource> Failed
@@ -55,9 +56,31 @@ namespace Amazon.ResourceGroups.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Pending. 
+        /// <para>
+        /// A list of ARNs of any resources that are still in the process of being added to the
+        /// group by this operation. These pending additions continue asynchronously. You can
+        /// check the status of pending additions by using the <code> <a>ListGroupResources</a>
+        /// </code> operation, and checking the <code>Resources</code> array in the response and
+        /// the <code>Status</code> field of each object in that array. 
+        /// </para>
+        /// </summary>
+        public List<PendingResource> Pending
+        {
+            get { return this._pending; }
+            set { this._pending = value; }
+        }
+
+        // Check to see if Pending property is set
+        internal bool IsSetPending()
+        {
+            return this._pending != null && this._pending.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Succeeded. 
         /// <para>
-        /// The ARNs of the resources that were successfully added to the group by this operation.
+        /// A list of ARNs of resources that were successfully added to the group by this operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

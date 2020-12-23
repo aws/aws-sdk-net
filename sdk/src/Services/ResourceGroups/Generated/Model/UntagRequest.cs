@@ -31,6 +31,20 @@ namespace Amazon.ResourceGroups.Model
     /// <summary>
     /// Container for the parameters to the Untag operation.
     /// Deletes tags from a specified resource group.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Minimum permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To run this command, you must have the following permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>resource-groups:Untag</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UntagRequest : AmazonResourceGroupsRequest
     {
