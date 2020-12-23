@@ -29,21 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// The summary of a recommendation.
+    /// A summary of a finding reason code.
     /// </summary>
-    public partial class Summary
+    public partial class ReasonCodeSummary
     {
-        private Finding _name;
-        private List<ReasonCodeSummary> _reasonCodeSummaries = new List<ReasonCodeSummary>();
+        private FindingReasonCode _name;
         private double? _value;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The finding classification of the recommendation.
+        /// The name of the finding reason code.
         /// </para>
         /// </summary>
-        public Finding Name
+        public FindingReasonCode Name
         {
             get { return this._name; }
             set { this._name = value; }
@@ -56,27 +55,9 @@ namespace Amazon.ComputeOptimizer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReasonCodeSummaries. 
-        /// <para>
-        /// An array of objects that summarize a finding reason code.
-        /// </para>
-        /// </summary>
-        public List<ReasonCodeSummary> ReasonCodeSummaries
-        {
-            get { return this._reasonCodeSummaries; }
-            set { this._reasonCodeSummaries = value; }
-        }
-
-        // Check to see if ReasonCodeSummaries property is set
-        internal bool IsSetReasonCodeSummaries()
-        {
-            return this._reasonCodeSummaries != null && this._reasonCodeSummaries.Count > 0; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the recommendation summary.
+        /// The value of the finding reason code summary.
         /// </para>
         /// </summary>
         public double Value

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Summary Object
+    /// Response Unmarshaller for LambdaFunctionMemoryProjectedMetric Object
     /// </summary>  
-    public class SummaryUnmarshaller : IUnmarshaller<Summary, XmlUnmarshallerContext>, IUnmarshaller<Summary, JsonUnmarshallerContext>
+    public class LambdaFunctionMemoryProjectedMetricUnmarshaller : IUnmarshaller<LambdaFunctionMemoryProjectedMetric, XmlUnmarshallerContext>, IUnmarshaller<LambdaFunctionMemoryProjectedMetric, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Summary IUnmarshaller<Summary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LambdaFunctionMemoryProjectedMetric IUnmarshaller<LambdaFunctionMemoryProjectedMetric, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Summary Unmarshall(JsonUnmarshallerContext context)
+        public LambdaFunctionMemoryProjectedMetric Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Summary unmarshalledObject = new Summary();
+            LambdaFunctionMemoryProjectedMetric unmarshalledObject = new LambdaFunctionMemoryProjectedMetric();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -70,10 +70,10 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("reasonCodeSummaries", targetDepth))
+                if (context.TestExpression("statistic", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ReasonCodeSummary, ReasonCodeSummaryUnmarshaller>(ReasonCodeSummaryUnmarshaller.Instance);
-                    unmarshalledObject.ReasonCodeSummaries = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Statistic = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("value", targetDepth))
@@ -88,12 +88,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         }
 
 
-        private static SummaryUnmarshaller _instance = new SummaryUnmarshaller();        
+        private static LambdaFunctionMemoryProjectedMetricUnmarshaller _instance = new LambdaFunctionMemoryProjectedMetricUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SummaryUnmarshaller Instance
+        public static LambdaFunctionMemoryProjectedMetricUnmarshaller Instance
         {
             get
             {

@@ -31,16 +31,16 @@ namespace Amazon.ComputeOptimizer
     ///
     /// AWS Compute Optimizer is a service that analyzes the configuration and utilization
     /// metrics of your AWS compute resources, such as EC2 instances, Auto Scaling groups,
-    /// and Amazon EBS volumes. It reports whether your resources are optimal, and generates
-    /// optimization recommendations to reduce the cost and improve the performance of your
-    /// workloads. Compute Optimizer also provides recent utilization metric data, as well
-    /// as projected utilization metric data for the recommendations, which you can use to
-    /// evaluate which recommendation provides the best price-performance trade-off. The analysis
-    /// of your usage patterns can help you decide when to move or resize your running resources,
-    /// and still meet your performance and capacity requirements. For more information about
-    /// Compute Optimizer, including the required permissions to use the service, see the
-    /// <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer
-    /// User Guide</a>.
+    /// AWS Lambda functions, and Amazon EBS volumes. It reports whether your resources are
+    /// optimal, and generates optimization recommendations to reduce the cost and improve
+    /// the performance of your workloads. Compute Optimizer also provides recent utilization
+    /// metric data, as well as projected utilization metric data for the recommendations,
+    /// which you can use to evaluate which recommendation provides the best price-performance
+    /// trade-off. The analysis of your usage patterns can help you decide when to move or
+    /// resize your running resources, and still meet your performance and capacity requirements.
+    /// For more information about Compute Optimizer, including the required permissions to
+    /// use the service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS
+    /// Compute Optimizer User Guide</a>.
     /// </summary>
     public partial interface IAmazonComputeOptimizer : IAmazonService, IDisposable
     {
@@ -622,6 +622,77 @@ namespace Amazon.ComputeOptimizer
         /// <returns>Returns a  GetEnrollmentStatusResult from ComputeOptimizer.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEnrollmentStatus">REST API Reference for GetEnrollmentStatus Operation</seealso>
         GetEnrollmentStatusResponse EndGetEnrollmentStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetLambdaFunctionRecommendations
+
+
+        /// <summary>
+        /// Returns AWS Lambda function recommendations.
+        /// 
+        ///  
+        /// <para>
+        /// AWS Compute Optimizer generates recommendations for functions that meet a specific
+        /// set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLambdaFunctionRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the GetLambdaFunctionRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
+        /// The request exceeds a limit of the service.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to AWS Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations">REST API Reference for GetLambdaFunctionRecommendations Operation</seealso>
+        GetLambdaFunctionRecommendationsResponse GetLambdaFunctionRecommendations(GetLambdaFunctionRecommendationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLambdaFunctionRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLambdaFunctionRecommendations operation on AmazonComputeOptimizerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLambdaFunctionRecommendations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations">REST API Reference for GetLambdaFunctionRecommendations Operation</seealso>
+        IAsyncResult BeginGetLambdaFunctionRecommendations(GetLambdaFunctionRecommendationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLambdaFunctionRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLambdaFunctionRecommendations.</param>
+        /// 
+        /// <returns>Returns a  GetLambdaFunctionRecommendationsResult from ComputeOptimizer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations">REST API Reference for GetLambdaFunctionRecommendations Operation</seealso>
+        GetLambdaFunctionRecommendationsResponse EndGetLambdaFunctionRecommendations(IAsyncResult asyncResult);
 
         #endregion
         

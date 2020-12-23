@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Summary Object
+    /// Response Unmarshaller for ReasonCodeSummary Object
     /// </summary>  
-    public class SummaryUnmarshaller : IUnmarshaller<Summary, XmlUnmarshallerContext>, IUnmarshaller<Summary, JsonUnmarshallerContext>
+    public class ReasonCodeSummaryUnmarshaller : IUnmarshaller<ReasonCodeSummary, XmlUnmarshallerContext>, IUnmarshaller<ReasonCodeSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Summary IUnmarshaller<Summary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ReasonCodeSummary IUnmarshaller<ReasonCodeSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Summary Unmarshall(JsonUnmarshallerContext context)
+        public ReasonCodeSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Summary unmarshalledObject = new Summary();
+            ReasonCodeSummary unmarshalledObject = new ReasonCodeSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -68,12 +68,6 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("reasonCodeSummaries", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ReasonCodeSummary, ReasonCodeSummaryUnmarshaller>(ReasonCodeSummaryUnmarshaller.Instance);
-                    unmarshalledObject.ReasonCodeSummaries = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("value", targetDepth))
@@ -88,12 +82,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         }
 
 
-        private static SummaryUnmarshaller _instance = new SummaryUnmarshaller();        
+        private static ReasonCodeSummaryUnmarshaller _instance = new ReasonCodeSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SummaryUnmarshaller Instance
+        public static ReasonCodeSummaryUnmarshaller Instance
         {
             get
             {

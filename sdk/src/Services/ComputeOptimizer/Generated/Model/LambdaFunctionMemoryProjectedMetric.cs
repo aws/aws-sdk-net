@@ -29,21 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// The summary of a recommendation.
+    /// Describes a projected utilization metric of an AWS Lambda function recommendation
+    /// option.
     /// </summary>
-    public partial class Summary
+    public partial class LambdaFunctionMemoryProjectedMetric
     {
-        private Finding _name;
-        private List<ReasonCodeSummary> _reasonCodeSummaries = new List<ReasonCodeSummary>();
+        private LambdaFunctionMemoryMetricName _name;
+        private LambdaFunctionMemoryMetricStatistic _statistic;
         private double? _value;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The finding classification of the recommendation.
+        /// The name of the projected utilization metric.
         /// </para>
         /// </summary>
-        public Finding Name
+        public LambdaFunctionMemoryMetricName Name
         {
             get { return this._name; }
             set { this._name = value; }
@@ -56,27 +57,27 @@ namespace Amazon.ComputeOptimizer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReasonCodeSummaries. 
+        /// Gets and sets the property Statistic. 
         /// <para>
-        /// An array of objects that summarize a finding reason code.
+        /// The statistic of the projected utilization metric.
         /// </para>
         /// </summary>
-        public List<ReasonCodeSummary> ReasonCodeSummaries
+        public LambdaFunctionMemoryMetricStatistic Statistic
         {
-            get { return this._reasonCodeSummaries; }
-            set { this._reasonCodeSummaries = value; }
+            get { return this._statistic; }
+            set { this._statistic = value; }
         }
 
-        // Check to see if ReasonCodeSummaries property is set
-        internal bool IsSetReasonCodeSummaries()
+        // Check to see if Statistic property is set
+        internal bool IsSetStatistic()
         {
-            return this._reasonCodeSummaries != null && this._reasonCodeSummaries.Count > 0; 
+            return this._statistic != null;
         }
 
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the recommendation summary.
+        /// The values of the projected utilization metrics.
         /// </para>
         /// </summary>
         public double Value
