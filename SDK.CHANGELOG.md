@@ -1,3 +1,16 @@
+### 3.5.80.0 (2020-12-23 19:12 UTC)
+* ComputeOptimizer (3.5.3.0)
+	* This release enables AWS Compute Optimizer to analyze and generate optimization recommendations for lambda functions.
+* DatabaseMigrationService (3.5.8.0)
+	* AWS DMS launches support for AWS Secrets Manager to manage Oracle ASM Database credentials
+* ResourceGroups (3.5.1.0)
+	* Add operation `PutGroupConfiguration`. Support dedicated hosts and add `Pending` in operations `Un/GroupResources`. Add `Resources` in `ListGroupResources` and deprecate `ResourceIdentifiers`.
+* Core 3.5.1.56
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.79.0 (2020-12-22 19:23 UTC)
 * Connect (3.5.5.0)
 	* This release adds support for quick connects. For details, see the Release Notes in the Amazon Connect Administrator Guide.

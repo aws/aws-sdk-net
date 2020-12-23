@@ -32,7 +32,7 @@ namespace Amazon.Synthetics
     public partial class AmazonSyntheticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.5.2.18");
+            InternalSDKUtils.BuildUserAgentString("3.5.2.19");
 
         private string _userAgent = UserAgentString;
 
