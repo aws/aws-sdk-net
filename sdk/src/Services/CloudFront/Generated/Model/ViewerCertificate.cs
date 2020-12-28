@@ -118,7 +118,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVerison</code>
+        /// If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVersion</code>
         /// and <code>SSLSupportMethod</code>. 
         /// </para>
         /// </summary>
@@ -245,7 +245,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVerison</code>
+        /// If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code>
         /// and <code>SSLSupportMethod</code>. 
         /// </para>
         /// </summary>
