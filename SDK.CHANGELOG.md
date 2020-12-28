@@ -1,3 +1,7 @@
+### 3.5.81.0 (2020-12-28 19:11 UTC)
+* CloudFront (3.5.6.0)
+	* Amazon CloudFront has deprecated the CreateStreamingDistribution and CreateStreamingDistributionWithTags APIs as part of discontinuing support for Real-Time Messaging Protocol (RTMP) distributions.
+
 ### 3.5.80.0 (2020-12-23 19:12 UTC)
 * ComputeOptimizer (3.5.3.0)
 	* This release enables AWS Compute Optimizer to analyze and generate optimization recommendations for lambda functions.
