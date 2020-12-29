@@ -29,7 +29,6 @@ using System.Net;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime;
 using Amazon.Util.Internal;
-using System.Text.RegularExpressions;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
@@ -68,8 +67,6 @@ namespace Amazon.Util
         private const int DefaultMaxIdleTime = 50 * 1000; // 50 seconds
 
         private const int MaxIsSetMethodsCacheSize = 50;
-
-        private static readonly Regex CompressWhitespaceRegex = new Regex("\\s+", RegexOptions.Compiled);
 
         public static readonly DateTime EPOCH_START = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
