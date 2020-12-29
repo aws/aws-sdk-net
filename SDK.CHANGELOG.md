@@ -1,3 +1,9 @@
+### 3.5.82.0 (2020-12-29 19:09 UTC)
+* ACMPCA (3.5.1.0)
+	* This release adds a new parameter "CsrExtensions" in the "CertificateAuthorityConfiguration" data structure, which allows customers to add the addition of KU and SIA into the CA CSR.
+* ApiGatewayV2 (3.5.3.0)
+	* Amazon API Gateway now supports data mapping for HTTP APIs which allows customers to modify HTTP Request before sending it to their integration and HTTP Response before sending it to the invoker.
+
 ### 3.5.81.0 (2020-12-28 19:11 UTC)
 * CloudFront (3.5.6.0)
 	* Amazon CloudFront has deprecated the CreateStreamingDistribution and CreateStreamingDistributionWithTags APIs as part of discontinuing support for Real-Time Messaging Protocol (RTMP) distributions.
