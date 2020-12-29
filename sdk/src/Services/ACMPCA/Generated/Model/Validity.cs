@@ -100,7 +100,12 @@ namespace Amazon.ACMPCA.Model
         /// <para>
         /// Output expiration date: 01/10/2020 12:34:54 UTC
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// The minimum validity duration for a certificate using relative time (<code>DAYS</code>)
+        /// is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code>
+        /// or <code>END_DATE</code>) is one second.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ValidityPeriodType Type

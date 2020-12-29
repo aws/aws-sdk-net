@@ -38,12 +38,10 @@ namespace Amazon.ACMPCA
     /// <summary>
     /// Implementation for accessing ACMPCA
     ///
-    /// <note>  </note> 
-    /// <para>
     /// This is the <i>ACM Private CA API Reference</i>. It provides descriptions, syntax,
     /// and usage examples for each of the actions and data types involved in creating and
     /// managing private certificate authorities (CA) for your organization.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// The documentation for each action shows the Query API request parameters and the XML
@@ -310,7 +308,7 @@ namespace Amazon.ACMPCA
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidPolicyException">
         /// The resource policy is invalid or is missing a required statement. For general information
-        /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
+        /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
         /// of JSON Policies</a>.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidTagException">
@@ -369,7 +367,7 @@ namespace Amazon.ACMPCA
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidPolicyException">
         /// The resource policy is invalid or is missing a required statement. For general information
-        /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
+        /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
         /// of JSON Policies</a>.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidTagException">
@@ -537,8 +535,8 @@ namespace Amazon.ACMPCA
         /// If the private CA and the ACM certificates reside in different accounts, then permissions
         /// cannot be used to enable automatic renewals. Instead, the ACM certificate owner must
         /// set up a resource-based policy to enable cross-account issuance and renewals. For
-        /// more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource
-        /// Based Policy with ACM Private CA</a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
+        /// a Resource Based Policy with ACM Private CA</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -605,8 +603,8 @@ namespace Amazon.ACMPCA
         /// If the private CA and the ACM certificates reside in different accounts, then permissions
         /// cannot be used to enable automatic renewals. Instead, the ACM certificate owner must
         /// set up a resource-based policy to enable cross-account issuance and renewals. For
-        /// more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource
-        /// Based Policy with ACM Private CA</a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
+        /// a Resource Based Policy with ACM Private CA</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -818,8 +816,8 @@ namespace Amazon.ACMPCA
         /// If the private CA and the ACM certificates reside in different accounts, then permissions
         /// cannot be used to enable automatic renewals. Instead, the ACM certificate owner must
         /// set up a resource-based policy to enable cross-account issuance and renewals. For
-        /// more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource
-        /// Based Policy with ACM Private CA</a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
+        /// a Resource Based Policy with ACM Private CA</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -884,8 +882,8 @@ namespace Amazon.ACMPCA
         /// If the private CA and the ACM certificates reside in different accounts, then permissions
         /// cannot be used to enable automatic renewals. Instead, the ACM certificate owner must
         /// set up a resource-based policy to enable cross-account issuance and renewals. For
-        /// more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource
-        /// Based Policy with ACM Private CA</a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
+        /// a Resource Based Policy with ACM Private CA</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -949,8 +947,8 @@ namespace Amazon.ACMPCA
         /// <para>
         /// A policy grants access on a private CA to an AWS customer account, to AWS Organizations,
         /// or to an AWS Organizations unit. Policies are under the control of a CA administrator.
-        /// For more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
-        /// Resource Based Policy with ACM Private CA</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
+        /// a Resource Based Policy with ACM Private CA</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -968,8 +966,8 @@ namespace Amazon.ACMPCA
         ///  </li> <li> 
         /// <para>
         /// Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information,
-        /// see <a href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-        /// (RAM) with ACM Private CA</a>.
+        /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+        /// a Policy for Cross-Account Access</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1034,8 +1032,8 @@ namespace Amazon.ACMPCA
         /// <para>
         /// A policy grants access on a private CA to an AWS customer account, to AWS Organizations,
         /// or to an AWS Organizations unit. Policies are under the control of a CA administrator.
-        /// For more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
-        /// Resource Based Policy with ACM Private CA</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
+        /// a Resource Based Policy with ACM Private CA</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1053,8 +1051,8 @@ namespace Amazon.ACMPCA
         ///  </li> <li> 
         /// <para>
         /// Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information,
-        /// see <a href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-        /// (RAM) with ACM Private CA</a>.
+        /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+        /// a Policy for Cross-Account Access</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1543,7 +1541,7 @@ namespace Amazon.ACMPCA
         ///  
         /// <para>
         /// The policy can be attached or updated with <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html">PutPolicy</a>
-        /// and removed with <a href="acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
+        /// and removed with <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
         /// </para>
         ///  <p class="title"> <b>About Policies</b> 
         /// </para>
@@ -1551,8 +1549,8 @@ namespace Amazon.ACMPCA
         /// <para>
         /// A policy grants access on a private CA to an AWS customer account, to AWS Organizations,
         /// or to an AWS Organizations unit. Policies are under the control of a CA administrator.
-        /// For more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
-        /// Resource Based Policy with ACM Private CA</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
+        /// a Resource Based Policy with ACM Private CA</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1570,8 +1568,8 @@ namespace Amazon.ACMPCA
         ///  </li> <li> 
         /// <para>
         /// Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information,
-        /// see <a href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-        /// (RAM) with ACM Private CA</a>.
+        /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+        /// a Policy for Cross-Account Access</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1610,7 +1608,7 @@ namespace Amazon.ACMPCA
         ///  
         /// <para>
         /// The policy can be attached or updated with <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html">PutPolicy</a>
-        /// and removed with <a href="acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
+        /// and removed with <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
         /// </para>
         ///  <p class="title"> <b>About Policies</b> 
         /// </para>
@@ -1618,8 +1616,8 @@ namespace Amazon.ACMPCA
         /// <para>
         /// A policy grants access on a private CA to an AWS customer account, to AWS Organizations,
         /// or to an AWS Organizations unit. Policies are under the control of a CA administrator.
-        /// For more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
-        /// Resource Based Policy with ACM Private CA</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
+        /// a Resource Based Policy with ACM Private CA</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1637,8 +1635,8 @@ namespace Amazon.ACMPCA
         ///  </li> <li> 
         /// <para>
         /// Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information,
-        /// see <a href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-        /// (RAM) with ACM Private CA</a>.
+        /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+        /// a Policy for Cross-Account Access</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1703,15 +1701,32 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// The following requirements apply when you import a CA certificate.
+        /// ACM Private CA supports three scenarios for installing a CA certificate:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You cannot import a non-self-signed certificate for use as a root CA.
+        /// Installing a certificate for a root CA hosted by ACM Private CA.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot import a self-signed certificate for use as a subordinate CA.
+        /// Installing a subordinate CA certificate whose parent authority is hosted by ACM Private
+        /// CA.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Installing a subordinate CA certificate whose parent authority is externally hosted.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following addtitional requirements apply when you import a CA certificate.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Only a self-signed certificate can be imported as a root CA.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A self-signed certificate cannot be imported as a subordinate CA.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1719,10 +1734,10 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Your ACM Private CA-hosted or on-premises CA certificate must be the last certificate
-        /// in your chain. The subordinate certificate, if any, that your root CA signed must
-        /// be next to last. The subordinate certificate signed by the preceding subordinate CA
-        /// must come next, and so on until your chain is built. 
+        /// Your root CA must be the last certificate in your chain. The subordinate certificate,
+        /// if any, that your root CA signed must be next to last. The subordinate certificate
+        /// signed by the preceding subordinate CA must come next, and so on until your chain
+        /// is built. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1894,15 +1909,32 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// The following requirements apply when you import a CA certificate.
+        /// ACM Private CA supports three scenarios for installing a CA certificate:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You cannot import a non-self-signed certificate for use as a root CA.
+        /// Installing a certificate for a root CA hosted by ACM Private CA.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot import a self-signed certificate for use as a subordinate CA.
+        /// Installing a subordinate CA certificate whose parent authority is hosted by ACM Private
+        /// CA.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Installing a subordinate CA certificate whose parent authority is externally hosted.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following addtitional requirements apply when you import a CA certificate.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Only a self-signed certificate can be imported as a root CA.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A self-signed certificate cannot be imported as a subordinate CA.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1910,10 +1942,10 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Your ACM Private CA-hosted or on-premises CA certificate must be the last certificate
-        /// in your chain. The subordinate certificate, if any, that your root CA signed must
-        /// be next to last. The subordinate certificate signed by the preceding subordinate CA
-        /// must come next, and so on until your chain is built. 
+        /// Your root CA must be the last certificate in your chain. The subordinate certificate,
+        /// if any, that your root CA signed must be next to last. The subordinate certificate
+        /// signed by the preceding subordinate CA must come next, and so on until your chain
+        /// is built. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2250,8 +2282,8 @@ namespace Amazon.ACMPCA
         /// If the private CA and the ACM certificates reside in different accounts, then permissions
         /// cannot be used to enable automatic renewals. Instead, the ACM certificate owner must
         /// set up a resource-based policy to enable cross-account issuance and renewals. For
-        /// more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource
-        /// Based Policy with ACM Private CA</a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
+        /// a Resource Based Policy with ACM Private CA</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2319,8 +2351,8 @@ namespace Amazon.ACMPCA
         /// If the private CA and the ACM certificates reside in different accounts, then permissions
         /// cannot be used to enable automatic renewals. Instead, the ACM certificate owner must
         /// set up a resource-based policy to enable cross-account issuance and renewals. For
-        /// more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource
-        /// Based Policy with ACM Private CA</a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
+        /// a Resource Based Policy with ACM Private CA</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2436,8 +2468,9 @@ namespace Amazon.ACMPCA
         /// 
         ///  
         /// <para>
-        /// A policy can also be applied by <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">sharing</a>
-        /// a private CA through AWS Resource Access Manager (RAM).
+        /// A policy can also be applied by sharing a private CA through AWS Resource Access Manager
+        /// (RAM). For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+        /// a Policy for Cross-Account Access</a>.
         /// </para>
         ///  
         /// <para>
@@ -2450,8 +2483,8 @@ namespace Amazon.ACMPCA
         /// <para>
         /// A policy grants access on a private CA to an AWS customer account, to AWS Organizations,
         /// or to an AWS Organizations unit. Policies are under the control of a CA administrator.
-        /// For more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
-        /// Resource Based Policy with ACM Private CA</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
+        /// a Resource Based Policy with ACM Private CA</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2469,8 +2502,8 @@ namespace Amazon.ACMPCA
         ///  </li> <li> 
         /// <para>
         /// Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information,
-        /// see <a href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-        /// (RAM) with ACM Private CA</a>.
+        /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+        /// a Policy for Cross-Account Access</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2485,7 +2518,7 @@ namespace Amazon.ACMPCA
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidPolicyException">
         /// The resource policy is invalid or is missing a required statement. For general information
-        /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
+        /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
         /// of JSON Policies</a>.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
@@ -2519,8 +2552,9 @@ namespace Amazon.ACMPCA
         /// 
         ///  
         /// <para>
-        /// A policy can also be applied by <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">sharing</a>
-        /// a private CA through AWS Resource Access Manager (RAM).
+        /// A policy can also be applied by sharing a private CA through AWS Resource Access Manager
+        /// (RAM). For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+        /// a Policy for Cross-Account Access</a>.
         /// </para>
         ///  
         /// <para>
@@ -2533,8 +2567,8 @@ namespace Amazon.ACMPCA
         /// <para>
         /// A policy grants access on a private CA to an AWS customer account, to AWS Organizations,
         /// or to an AWS Organizations unit. Policies are under the control of a CA administrator.
-        /// For more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
-        /// Resource Based Policy with ACM Private CA</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
+        /// a Resource Based Policy with ACM Private CA</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2552,8 +2586,8 @@ namespace Amazon.ACMPCA
         ///  </li> <li> 
         /// <para>
         /// Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information,
-        /// see <a href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-        /// (RAM) with ACM Private CA</a>.
+        /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+        /// a Policy for Cross-Account Access</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2571,7 +2605,7 @@ namespace Amazon.ACMPCA
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidPolicyException">
         /// The resource policy is invalid or is missing a required statement. For general information
-        /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
+        /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
         /// of JSON Policies</a>.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
@@ -3045,7 +3079,7 @@ namespace Amazon.ACMPCA
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidPolicyException">
         /// The resource policy is invalid or is missing a required statement. For general information
-        /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
+        /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
         /// of JSON Policies</a>.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
@@ -3098,7 +3132,7 @@ namespace Amazon.ACMPCA
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidPolicyException">
         /// The resource policy is invalid or is missing a required statement. For general information
-        /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
+        /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
         /// of JSON Policies</a>.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">

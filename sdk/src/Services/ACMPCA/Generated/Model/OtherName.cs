@@ -29,48 +29,52 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// This is the response object from the GetCertificate operation.
+    /// Defines a custom ASN.1 X.400 <code>GeneralName</code> using an object identifier (OID)
+    /// and value. The OID must satisfy the regular expression shown below. For more information,
+    /// see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object
+    /// Identifier (OID)</a>.
     /// </summary>
-    public partial class GetCertificateResponse : AmazonWebServiceResponse
+    public partial class OtherName
     {
-        private string _certificate;
-        private string _certificateChain;
+        private string _typeId;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property Certificate. 
+        /// Gets and sets the property TypeId. 
         /// <para>
-        /// The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.
+        /// Specifies an OID. 
         /// </para>
         /// </summary>
-        public string Certificate
+        [AWSProperty(Required=true, Min=0, Max=64)]
+        public string TypeId
         {
-            get { return this._certificate; }
-            set { this._certificate = value; }
+            get { return this._typeId; }
+            set { this._typeId = value; }
         }
 
-        // Check to see if Certificate property is set
-        internal bool IsSetCertificate()
+        // Check to see if TypeId property is set
+        internal bool IsSetTypeId()
         {
-            return this._certificate != null;
+            return this._typeId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property CertificateChain. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// The base64 PEM-encoded certificate chain that chains up to the root CA certificate
-        /// that you used to sign your private CA certificate. 
+        /// Specifies an OID value.
         /// </para>
         /// </summary>
-        public string CertificateChain
+        [AWSProperty(Required=true, Min=0, Max=256)]
+        public string Value
         {
-            get { return this._certificateChain; }
-            set { this._certificateChain = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if CertificateChain property is set
-        internal bool IsSetCertificateChain()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._certificateChain != null;
+            return this._value != null;
         }
 
     }

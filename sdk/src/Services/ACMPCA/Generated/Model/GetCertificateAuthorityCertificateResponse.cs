@@ -58,9 +58,9 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property CertificateChain. 
         /// <para>
         /// Base64-encoded certificate chain that includes any intermediate certificates and chains
-        /// up to root on-premises certificate that you used to sign your private CA certificate.
-        /// The chain does not include your private CA certificate. If this is a root CA, the
-        /// value will be null.
+        /// up to root certificate that you used to sign your private CA certificate. The chain
+        /// does not include your private CA certificate. If this is a root CA, the value will
+        /// be null.
         /// </para>
         /// </summary>
         public string CertificateChain

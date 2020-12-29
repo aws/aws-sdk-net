@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CertificateAuthorityConfiguration Object
+    /// Response Unmarshaller for AccessDescription Object
     /// </summary>  
-    public class CertificateAuthorityConfigurationUnmarshaller : IUnmarshaller<CertificateAuthorityConfiguration, XmlUnmarshallerContext>, IUnmarshaller<CertificateAuthorityConfiguration, JsonUnmarshallerContext>
+    public class AccessDescriptionUnmarshaller : IUnmarshaller<AccessDescription, XmlUnmarshallerContext>, IUnmarshaller<AccessDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CertificateAuthorityConfiguration IUnmarshaller<CertificateAuthorityConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AccessDescription IUnmarshaller<AccessDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CertificateAuthorityConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public AccessDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CertificateAuthorityConfiguration unmarshalledObject = new CertificateAuthorityConfiguration();
+            AccessDescription unmarshalledObject = new AccessDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CsrExtensions", targetDepth))
+                if (context.TestExpression("AccessLocation", targetDepth))
                 {
-                    var unmarshaller = CsrExtensionsUnmarshaller.Instance;
-                    unmarshalledObject.CsrExtensions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = GeneralNameUnmarshaller.Instance;
+                    unmarshalledObject.AccessLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("KeyAlgorithm", targetDepth))
+                if (context.TestExpression("AccessMethod", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyAlgorithm = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SigningAlgorithm", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SigningAlgorithm = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Subject", targetDepth))
-                {
-                    var unmarshaller = ASN1SubjectUnmarshaller.Instance;
-                    unmarshalledObject.Subject = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AccessMethodUnmarshaller.Instance;
+                    unmarshalledObject.AccessMethod = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         }
 
 
-        private static CertificateAuthorityConfigurationUnmarshaller _instance = new CertificateAuthorityConfigurationUnmarshaller();        
+        private static AccessDescriptionUnmarshaller _instance = new AccessDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CertificateAuthorityConfigurationUnmarshaller Instance
+        public static AccessDescriptionUnmarshaller Instance
         {
             get
             {

@@ -183,7 +183,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property ExpirationInDays. 
         /// <para>
-        /// Number of days until a certificate expires.
+        /// Validity period of the CRL in days.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]

@@ -58,7 +58,13 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property CommonName. 
         /// <para>
-        /// Fully qualified domain name (FQDN) associated with the certificate subject.
+        /// For CA and end-entity certificates in a private PKI, the common name (CN) can be any
+        /// string within the length limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Note: In publicly trusted certificates, the common name must be a fully qualified
+        /// domain name (FQDN) associated with the certificate subject.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]

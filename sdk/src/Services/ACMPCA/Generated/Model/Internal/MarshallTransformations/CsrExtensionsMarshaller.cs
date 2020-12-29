@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CertificateAuthorityConfiguration Marshaller
+    /// CsrExtensions Marshaller
     /// </summary>       
-    public class CertificateAuthorityConfigurationMarshaller : IRequestMarshaller<CertificateAuthorityConfiguration, JsonMarshallerContext> 
+    public class CsrExtensionsMarshaller : IRequestMarshaller<CsrExtensions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,40 +43,33 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CertificateAuthorityConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(CsrExtensions requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCsrExtensions())
+            if(requestObject.IsSetKeyUsage())
             {
-                context.Writer.WritePropertyName("CsrExtensions");
+                context.Writer.WritePropertyName("KeyUsage");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = CsrExtensionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.CsrExtensions, context);
+                var marshaller = KeyUsageMarshaller.Instance;
+                marshaller.Marshall(requestObject.KeyUsage, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetKeyAlgorithm())
+            if(requestObject.IsSetSubjectInformationAccess())
             {
-                context.Writer.WritePropertyName("KeyAlgorithm");
-                context.Writer.Write(requestObject.KeyAlgorithm);
-            }
+                context.Writer.WritePropertyName("SubjectInformationAccess");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSubjectInformationAccessListValue in requestObject.SubjectInformationAccess)
+                {
+                    context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetSigningAlgorithm())
-            {
-                context.Writer.WritePropertyName("SigningAlgorithm");
-                context.Writer.Write(requestObject.SigningAlgorithm);
-            }
+                    var marshaller = AccessDescriptionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSubjectInformationAccessListValue, context);
 
-            if(requestObject.IsSetSubject())
-            {
-                context.Writer.WritePropertyName("Subject");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ASN1SubjectMarshaller.Instance;
-                marshaller.Marshall(requestObject.Subject, context);
-
-                context.Writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -84,7 +77,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static CertificateAuthorityConfigurationMarshaller Instance = new CertificateAuthorityConfigurationMarshaller();
+        public readonly static CsrExtensionsMarshaller Instance = new CsrExtensionsMarshaller();
 
     }
 }

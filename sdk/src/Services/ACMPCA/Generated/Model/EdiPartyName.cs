@@ -29,48 +29,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// This is the response object from the GetCertificate operation.
+    /// Describes an Electronic Data Interchange (EDI) entity as described in as defined in
+    /// <a href="https://tools.ietf.org/html/rfc5280">Subject Alternative Name</a> in RFC
+    /// 5280.
     /// </summary>
-    public partial class GetCertificateResponse : AmazonWebServiceResponse
+    public partial class EdiPartyName
     {
-        private string _certificate;
-        private string _certificateChain;
+        private string _nameAssigner;
+        private string _partyName;
 
         /// <summary>
-        /// Gets and sets the property Certificate. 
+        /// Gets and sets the property NameAssigner. 
         /// <para>
-        /// The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.
+        /// Specifies the name assigner.
         /// </para>
         /// </summary>
-        public string Certificate
+        [AWSProperty(Min=0, Max=256)]
+        public string NameAssigner
         {
-            get { return this._certificate; }
-            set { this._certificate = value; }
+            get { return this._nameAssigner; }
+            set { this._nameAssigner = value; }
         }
 
-        // Check to see if Certificate property is set
-        internal bool IsSetCertificate()
+        // Check to see if NameAssigner property is set
+        internal bool IsSetNameAssigner()
         {
-            return this._certificate != null;
+            return this._nameAssigner != null;
         }
 
         /// <summary>
-        /// Gets and sets the property CertificateChain. 
+        /// Gets and sets the property PartyName. 
         /// <para>
-        /// The base64 PEM-encoded certificate chain that chains up to the root CA certificate
-        /// that you used to sign your private CA certificate. 
+        /// Specifies the party name.
         /// </para>
         /// </summary>
-        public string CertificateChain
+        [AWSProperty(Required=true, Min=0, Max=256)]
+        public string PartyName
         {
-            get { return this._certificateChain; }
-            set { this._certificateChain = value; }
+            get { return this._partyName; }
+            set { this._partyName = value; }
         }
 
-        // Check to see if CertificateChain property is set
-        internal bool IsSetCertificateChain()
+        // Check to see if PartyName property is set
+        internal bool IsSetPartyName()
         {
-            return this._certificateChain != null;
+            return this._partyName != null;
         }
 
     }

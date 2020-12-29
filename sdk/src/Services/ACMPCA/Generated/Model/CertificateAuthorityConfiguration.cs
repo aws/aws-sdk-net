@@ -38,9 +38,29 @@ namespace Amazon.ACMPCA.Model
     /// </summary>
     public partial class CertificateAuthorityConfiguration
     {
+        private CsrExtensions _csrExtensions;
         private KeyAlgorithm _keyAlgorithm;
         private SigningAlgorithm _signingAlgorithm;
         private ASN1Subject _subject;
+
+        /// <summary>
+        /// Gets and sets the property CsrExtensions. 
+        /// <para>
+        /// Specifies information to be added to the extension section of the certificate signing
+        /// request (CSR).
+        /// </para>
+        /// </summary>
+        public CsrExtensions CsrExtensions
+        {
+            get { return this._csrExtensions; }
+            set { this._csrExtensions = value; }
+        }
+
+        // Check to see if CsrExtensions property is set
+        internal bool IsSetCsrExtensions()
+        {
+            return this._csrExtensions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KeyAlgorithm. 

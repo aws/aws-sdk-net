@@ -30,7 +30,7 @@ namespace Amazon.ACMPCA.Model
 {
     /// <summary>
     /// The resource policy is invalid or is missing a required statement. For general information
-    /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
+    /// about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview
     /// of JSON Policies</a>.
     /// </summary>
     #if !NETSTANDARD

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CertificateAuthorityConfiguration Object
+    /// Response Unmarshaller for EdiPartyName Object
     /// </summary>  
-    public class CertificateAuthorityConfigurationUnmarshaller : IUnmarshaller<CertificateAuthorityConfiguration, XmlUnmarshallerContext>, IUnmarshaller<CertificateAuthorityConfiguration, JsonUnmarshallerContext>
+    public class EdiPartyNameUnmarshaller : IUnmarshaller<EdiPartyName, XmlUnmarshallerContext>, IUnmarshaller<EdiPartyName, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CertificateAuthorityConfiguration IUnmarshaller<CertificateAuthorityConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EdiPartyName IUnmarshaller<EdiPartyName, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CertificateAuthorityConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public EdiPartyName Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CertificateAuthorityConfiguration unmarshalledObject = new CertificateAuthorityConfiguration();
+            EdiPartyName unmarshalledObject = new EdiPartyName();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CsrExtensions", targetDepth))
-                {
-                    var unmarshaller = CsrExtensionsUnmarshaller.Instance;
-                    unmarshalledObject.CsrExtensions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("KeyAlgorithm", targetDepth))
+                if (context.TestExpression("NameAssigner", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KeyAlgorithm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NameAssigner = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SigningAlgorithm", targetDepth))
+                if (context.TestExpression("PartyName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SigningAlgorithm = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Subject", targetDepth))
-                {
-                    var unmarshaller = ASN1SubjectUnmarshaller.Instance;
-                    unmarshalledObject.Subject = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PartyName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
         }
 
 
-        private static CertificateAuthorityConfigurationUnmarshaller _instance = new CertificateAuthorityConfigurationUnmarshaller();        
+        private static EdiPartyNameUnmarshaller _instance = new EdiPartyNameUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CertificateAuthorityConfigurationUnmarshaller Instance
+        public static EdiPartyNameUnmarshaller Instance
         {
             get
             {

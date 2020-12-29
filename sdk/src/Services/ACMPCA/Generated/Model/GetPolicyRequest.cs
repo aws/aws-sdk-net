@@ -37,7 +37,7 @@ namespace Amazon.ACMPCA.Model
     ///  
     /// <para>
     /// The policy can be attached or updated with <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_PutPolicy.html">PutPolicy</a>
-    /// and removed with <a href="acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
+    /// and removed with <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeletePolicy.html">DeletePolicy</a>.
     /// </para>
     ///  <p class="title"> <b>About Policies</b> 
     /// </para>
@@ -45,8 +45,8 @@ namespace Amazon.ACMPCA.Model
     /// <para>
     /// A policy grants access on a private CA to an AWS customer account, to AWS Organizations,
     /// or to an AWS Organizations unit. Policies are under the control of a CA administrator.
-    /// For more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a
-    /// Resource Based Policy with ACM Private CA</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
+    /// a Resource Based Policy with ACM Private CA</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -64,8 +64,8 @@ namespace Amazon.ACMPCA.Model
     ///  </li> <li> 
     /// <para>
     /// Updates made in AWS Resource Manager (RAM) are reflected in policies. For more information,
-    /// see <a href="acm-pca/latest/userguide/pca-ram.html">Using AWS Resource Access Manager
-    /// (RAM) with ACM Private CA</a>.
+    /// see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-ram.html">Attach
+    /// a Policy for Cross-Account Access</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
