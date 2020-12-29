@@ -166,6 +166,28 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetResponseParameters())
+                {
+                    context.Writer.WritePropertyName("responseParameters");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestResponseParametersKvp in publicRequest.ResponseParameters)
+                    {
+                        context.Writer.WritePropertyName(publicRequestResponseParametersKvp.Key);
+                        var publicRequestResponseParametersValue = publicRequestResponseParametersKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestResponseParametersValueKvp in publicRequestResponseParametersValue)
+                        {
+                            context.Writer.WritePropertyName(publicRequestResponseParametersValueKvp.Key);
+                            var publicRequestResponseParametersValueValue = publicRequestResponseParametersValueKvp.Value;
+
+                                context.Writer.Write(publicRequestResponseParametersValueValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTemplateSelectionExpression())
                 {
                     context.Writer.WritePropertyName("templateSelectionExpression");

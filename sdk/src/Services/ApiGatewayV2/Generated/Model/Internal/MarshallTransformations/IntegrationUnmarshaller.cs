@@ -160,6 +160,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.RequestTemplates = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("responseParameters", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                    unmarshalledObject.ResponseParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("templateSelectionExpression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
