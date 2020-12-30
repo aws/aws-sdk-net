@@ -39,8 +39,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Criterion. 
         /// <para>
-        /// A condition that specifies the property, operator, and value to use to filter the
-        /// results.
+        /// A condition that specifies the property, operator, and one or more values to use to
+        /// filter the results.
         /// </para>
         /// </summary>
         public Dictionary<string, CriterionAdditionalProperties> Criterion

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies the operator to use in an attribute-based condition that filters the results
+    /// Specifies the operator to use in a property-based condition that filters the results
     /// of a query for information about S3 buckets.
     /// </summary>
     public partial class BucketCriteriaAdditionalProperties
@@ -45,7 +45,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Eq. 
         /// <para>
-        /// An equal to condition to apply to a specified attribute value for buckets.
+        /// The value for the property matches (equals) the specified value. If you specify multiple
+        /// values, Macie uses OR logic to join the values.
         /// </para>
         /// </summary>
         public List<string> Eq
@@ -63,7 +64,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Gt. 
         /// <para>
-        /// A greater than condition to apply to a specified attribute value for buckets.
+        /// The value for the property is greater than the specified value.
         /// </para>
         /// </summary>
         public long Gt
@@ -81,7 +82,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Gte. 
         /// <para>
-        /// A greater than or equal to condition to apply to a specified attribute value for buckets.
+        /// The value for the property is greater than or equal to the specified value.
         /// </para>
         /// </summary>
         public long Gte
@@ -99,7 +100,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Lt. 
         /// <para>
-        /// A less than condition to apply to a specified attribute value for buckets.
+        /// The value for the property is less than the specified value.
         /// </para>
         /// </summary>
         public long Lt
@@ -117,7 +118,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Lte. 
         /// <para>
-        /// A less than or equal to condition to apply to a specified attribute value for buckets.
+        /// The value for the property is less than or equal to the specified value.
         /// </para>
         /// </summary>
         public long Lte
@@ -135,7 +136,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Neq. 
         /// <para>
-        /// A not equal to condition to apply to a specified attribute value for buckets.
+        /// The value for the property doesn't match (doesn't equal) the specified value. If you
+        /// specify multiple values, Amazon Macie uses OR logic to join the values.
         /// </para>
         /// </summary>
         public List<string> Neq
@@ -153,7 +155,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// The prefix of the buckets to include in the results.
+        /// The name of the bucket begins with the specified value.
         /// </para>
         /// </summary>
         public string Prefix

@@ -30,7 +30,9 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Specifies the operator to use in a property-based condition that filters the results
-    /// of a query for findings.
+    /// of a query for findings. For detailed information and examples of each operator, see
+    /// <a href="https://docs.aws.amazon.com/macie/latest/user/findings-filter-basics.html">Fundamentals
+    /// of filtering findings</a> in the <i>Amazon Macie User Guide</i>.
     /// </summary>
     public partial class CriterionAdditionalProperties
     {
@@ -45,7 +47,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Eq. 
         /// <para>
-        /// An equal to condition to apply to a specified property value for findings.
+        /// The value for the property matches (equals) the specified value. If you specify multiple
+        /// values, Macie uses OR logic to join the values.
         /// </para>
         /// </summary>
         public List<string> Eq
@@ -63,7 +66,12 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property EqExactMatch. 
         /// <para>
-        /// A condition that requires an array field to exactly match the specified property values.
+        /// The value for the property exclusively matches (equals an exact match for) all the
+        /// specified values. If you specify multiple values, Amazon Macie uses AND logic to join
+        /// the values.
+        /// </para>
+        ///  
+        /// <para>
         /// You can use this operator with the following properties: customDataIdentifiers.detections.arn,
         /// customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key, resourcesAffected.s3Bucket.tags.value,
         /// resourcesAffected.s3Object.tags.key, resourcesAffected.s3Object.tags.value, sensitiveData.category,
@@ -85,7 +93,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Gt. 
         /// <para>
-        /// A greater than condition to apply to a specified property value for findings.
+        /// The value for the property is greater than the specified value.
         /// </para>
         /// </summary>
         public long Gt
@@ -103,7 +111,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Gte. 
         /// <para>
-        /// A greater than or equal to condition to apply to a specified property value for findings.
+        /// The value for the property is greater than or equal to the specified value.
         /// </para>
         /// </summary>
         public long Gte
@@ -121,7 +129,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Lt. 
         /// <para>
-        /// A less than condition to apply to a specified property value for findings.
+        /// The value for the property is less than the specified value.
         /// </para>
         /// </summary>
         public long Lt
@@ -139,7 +147,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Lte. 
         /// <para>
-        /// A less than or equal to condition to apply to a specified property value for findings.
+        /// The value for the property is less than or equal to the specified value.
         /// </para>
         /// </summary>
         public long Lte
@@ -157,7 +165,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Neq. 
         /// <para>
-        /// A not equal to condition to apply to a specified property value for findings.
+        /// The value for the property doesn't match (doesn't equal) the specified value. If you
+        /// specify multiple values, Macie uses OR logic to join the values.
         /// </para>
         /// </summary>
         public List<string> Neq

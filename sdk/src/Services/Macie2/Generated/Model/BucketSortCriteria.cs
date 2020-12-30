@@ -39,7 +39,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The name of the attribute to sort the results by. This value can be the name of any
+        /// The name of the property to sort the results by. This value can be the name of any
         /// property that Amazon Macie defines as bucket metadata, such as bucketName or accountId.
         /// </para>
         /// </summary>
