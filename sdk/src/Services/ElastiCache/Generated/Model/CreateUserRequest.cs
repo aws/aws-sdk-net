@@ -46,7 +46,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AccessString. 
         /// <para>
-        /// Access permissions string used for this user account.
+        /// Access permissions string used for this user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +65,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Must be Redis. 
+        /// The current supported value is Redis. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +84,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NoPasswordRequired. 
         /// <para>
-        /// Indicates a password is not required for this user account.
+        /// Indicates a password is not required for this user.
         /// </para>
         /// </summary>
         public bool NoPasswordRequired
@@ -102,8 +102,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Passwords. 
         /// <para>
-        /// Passwords used for this user account. You can create up to two passwords for each
-        /// user.
+        /// Passwords used for this user. You can create up to two passwords for each user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AccessString. 
         /// <para>
-        /// Access permissions string used for this user account.
+        /// Access permissions string used for this user.
         /// </para>
         /// </summary>
         public string AccessString
@@ -63,7 +63,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the user account.
+        /// The Amazon Resource Name (ARN) of the user.
         /// </para>
         /// </summary>
         public string ARN
@@ -99,7 +99,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Must be Redis. 
+        /// The current supported value is Redis.
         /// </para>
         /// </summary>
         public string Engine

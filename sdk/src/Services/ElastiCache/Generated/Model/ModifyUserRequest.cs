@@ -43,7 +43,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AccessString. 
         /// <para>
-        /// Access permissions string used for this user account.
+        /// Access permissions string used for this user.
         /// </para>
         /// </summary>
         public string AccessString
@@ -79,7 +79,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NoPasswordRequired. 
         /// <para>
-        /// Indicates no password is required for the user account.
+        /// Indicates no password is required for the user.
         /// </para>
         /// </summary>
         public bool NoPasswordRequired
@@ -97,7 +97,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Passwords. 
         /// <para>
-        /// The passwords belonging to the user account. You are allowed up to two.
+        /// The passwords belonging to the user. You are allowed up to two.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

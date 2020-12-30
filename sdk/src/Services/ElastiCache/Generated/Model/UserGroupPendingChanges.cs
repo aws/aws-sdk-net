@@ -57,7 +57,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property UserIdsToRemove. 
         /// <para>
-        /// The list of user group IDs ro remove.
+        /// The list of user IDs to remove.
         /// </para>
         /// </summary>
         public List<string> UserIdsToRemove

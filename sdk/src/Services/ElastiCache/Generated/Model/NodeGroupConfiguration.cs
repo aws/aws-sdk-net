@@ -84,7 +84,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PrimaryOutpostArn. 
         /// <para>
-        /// The output ARN of the primary node.
+        /// The outpost ARN of the primary node.
         /// </para>
         /// </summary>
         public string PrimaryOutpostArn

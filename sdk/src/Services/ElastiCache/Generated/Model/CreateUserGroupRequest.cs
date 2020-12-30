@@ -43,7 +43,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Must be Redis. 
+        /// The current supported value is Redis. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
