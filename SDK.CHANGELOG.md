@@ -1,3 +1,14 @@
+### 3.5.82.1 (2020-12-30 19:10 UTC)
+* ElastiCache (3.5.1.33)
+	* Documentation updates for elasticache
+* Macie2 (3.5.6.17)
+	* This release of the Amazon Macie API includes miscellaneous updates and improvements to the documentation.
+* Core 3.5.1.57
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.82.0 (2020-12-29 19:09 UTC)
 * ACMPCA (3.5.1.0)
 	* This release adds a new parameter "CsrExtensions" in the "CertificateAuthorityConfiguration" data structure, which allows customers to add the addition of KU and SIA into the CA CSR.
