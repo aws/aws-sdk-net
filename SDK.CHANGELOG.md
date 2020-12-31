@@ -1,3 +1,7 @@
+### 3.5.83.0 (2020-12-31 19:09 UTC)
+* ServiceCatalog (3.5.8.0)
+	* Enhanced Service Catalog DescribeProvisioningParameters API to return new parameter constraints, i.e., MinLength, MaxLength, MinValue, MaxValue, ConstraintDescription and AllowedPattern
+
 ### 3.5.82.1 (2020-12-30 19:10 UTC)
 * ElastiCache (3.5.1.33)
 	* Documentation updates for elasticache
