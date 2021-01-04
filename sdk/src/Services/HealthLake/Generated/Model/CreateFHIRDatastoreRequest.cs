@@ -30,7 +30,7 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFHIRDatastore operation.
-    /// Creates a datastore that can ingest and export FHIR data.
+    /// Creates a Data Store that can ingest and export FHIR formatted data.
     /// </summary>
     public partial class CreateFHIRDatastoreRequest : AmazonHealthLakeRequest
     {
@@ -61,7 +61,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreName. 
         /// <para>
-        /// The user generated name for the datastore.
+        /// The user generated name for the Data Store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -80,7 +80,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreTypeVersion. 
         /// <para>
-        /// The FHIR version of the datastore. The only supported version is R4.
+        /// The FHIR version of the Data Store. The only supported version is R4.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,7 +99,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property PreloadDataConfig. 
         /// <para>
-        /// Optional parameter to preload data upon creation of the datastore. Currently, the
+        /// Optional parameter to preload data upon creation of the Data Store. Currently, the
         /// only supported preloaded data is synthetic data generated from Synthea.
         /// </para>
         /// </summary>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// Displays the properties of the datastore, including the ID, Arn, name, and the status
-    /// of the datastore.
+    /// Displays the properties of the Data Store, including the ID, Arn, name, and the status
+    /// of the Data Store.
     /// </summary>
     public partial class DatastoreProperties
     {
@@ -46,7 +46,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time that a datastore was created. 
+        /// The time that a Data Store was created. 
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -64,7 +64,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreArn. 
         /// <para>
-        /// The Amazon Resource Name used in the creation of the datastore.
+        /// The Amazon Resource Name used in the creation of the Data Store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,8 +83,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreEndpoint. 
         /// <para>
-        /// The AWS endpoint for the datastore. Each datastore will have it's own endpoint with
-        /// datastore ID in the endpoint URL.
+        /// The AWS endpoint for the Data Store. Each Data Store will have it's own endpoint with
+        /// Data Store ID in the endpoint URL.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10000)]
@@ -103,7 +103,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS-generated ID number for the datastore.
+        /// The AWS-generated ID number for the Data Store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -122,7 +122,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreName. 
         /// <para>
-        /// The user-generated name for the datastore.
+        /// The user-generated name for the Data Store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -141,7 +141,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreStatus. 
         /// <para>
-        /// The status of the datastore. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING',
+        /// The status of the Data Store. Possible statuses are 'CREATING', 'ACTIVE', 'DELETING',
         /// or 'DELETED'.
         /// </para>
         /// </summary>
@@ -180,7 +180,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property PreloadDataConfig. 
         /// <para>
-        /// The preloaded data configuration for the datastore. Only data preloaded from Synthea
+        /// The preloaded data configuration for the Data Store. Only data preloaded from Synthea
         /// is supported.
         /// </para>
         /// </summary>

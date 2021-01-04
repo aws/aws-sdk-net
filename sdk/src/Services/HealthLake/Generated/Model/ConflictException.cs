@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The datastore is in a transition state and the user requested action can not be performed.
+    /// The Data Store is in a transition state and the user requested action can not be performed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

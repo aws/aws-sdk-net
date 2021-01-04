@@ -29,31 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeFHIRDatastore operation.
+    /// The output data configuration that was supplied when the export job was created.
     /// </summary>
-    public partial class DescribeFHIRDatastoreResponse : AmazonWebServiceResponse
+    public partial class OutputDataConfig
     {
-        private DatastoreProperties _datastoreProperties;
+        private string _s3Uri;
 
         /// <summary>
-        /// Gets and sets the property DatastoreProperties. 
+        /// Gets and sets the property S3Uri. 
         /// <para>
-        /// All properties associated with a Data Store, including the Data Store ID, Data Store
-        /// ARN, Data Store name, Data Store status, created at, Data Store type version, and
-        /// Data Store endpoint.
+        /// The S3Uri is the user specified S3 location to which data will be exported from a
+        /// FHIR Data Store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public DatastoreProperties DatastoreProperties
+        [AWSProperty(Max=1024)]
+        public string S3Uri
         {
-            get { return this._datastoreProperties; }
-            set { this._datastoreProperties = value; }
+            get { return this._s3Uri; }
+            set { this._s3Uri = value; }
         }
 
-        // Check to see if DatastoreProperties property is set
-        internal bool IsSetDatastoreProperties()
+        // Check to see if S3Uri property is set
+        internal bool IsSetS3Uri()
         {
-            return this._datastoreProperties != null;
+            return this._s3Uri != null;
         }
 
     }

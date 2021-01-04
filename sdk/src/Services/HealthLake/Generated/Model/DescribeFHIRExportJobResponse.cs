@@ -29,31 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeFHIRDatastore operation.
+    /// This is the response object from the DescribeFHIRExportJob operation.
     /// </summary>
-    public partial class DescribeFHIRDatastoreResponse : AmazonWebServiceResponse
+    public partial class DescribeFHIRExportJobResponse : AmazonWebServiceResponse
     {
-        private DatastoreProperties _datastoreProperties;
+        private ExportJobProperties _exportJobProperties;
 
         /// <summary>
-        /// Gets and sets the property DatastoreProperties. 
+        /// Gets and sets the property ExportJobProperties. 
         /// <para>
-        /// All properties associated with a Data Store, including the Data Store ID, Data Store
-        /// ARN, Data Store name, Data Store status, created at, Data Store type version, and
-        /// Data Store endpoint.
+        /// Displays the properties of the export job, including the ID, Arn, Name, and the status
+        /// of the job. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DatastoreProperties DatastoreProperties
+        public ExportJobProperties ExportJobProperties
         {
-            get { return this._datastoreProperties; }
-            set { this._datastoreProperties = value; }
+            get { return this._exportJobProperties; }
+            set { this._exportJobProperties = value; }
         }
 
-        // Check to see if DatastoreProperties property is set
-        internal bool IsSetDatastoreProperties()
+        // Check to see if ExportJobProperties property is set
+        internal bool IsSetExportJobProperties()
         {
-            return this._datastoreProperties != null;
+            return this._exportJobProperties != null;
         }
 
     }

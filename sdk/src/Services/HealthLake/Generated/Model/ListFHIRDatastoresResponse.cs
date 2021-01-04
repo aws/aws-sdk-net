@@ -39,7 +39,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastorePropertiesList. 
         /// <para>
-        /// All properties associated with the listed datastores.
+        /// All properties associated with the listed Data Stores.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

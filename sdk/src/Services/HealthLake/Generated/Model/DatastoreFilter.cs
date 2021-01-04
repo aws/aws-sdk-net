@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The filters applied to datastore query.
+    /// The filters applied to Data Store query.
     /// </summary>
     public partial class DatastoreFilter
     {
@@ -41,7 +41,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property CreatedAfter. 
         /// <para>
-        /// A filter that allows the user to set cutoff dates for records. All datastores created
+        /// A filter that allows the user to set cutoff dates for records. All Data Stores created
         /// after the specified date will be included in the results.
         /// </para>
         /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property CreatedBefore. 
         /// <para>
-        /// A filter that allows the user to set cutoff dates for records. All datastores created
+        /// A filter that allows the user to set cutoff dates for records. All Data Stores created
         /// before the specified date will be included in the results. 
         /// </para>
         /// </summary>
@@ -79,7 +79,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreName. 
         /// <para>
-        /// Allows the user to filter datastore results by name.
+        /// Allows the user to filter Data Store results by name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -98,7 +98,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreStatus. 
         /// <para>
-        /// Allows the user to filter datastore results by status.
+        /// Allows the user to filter Data Store results by status.
         /// </para>
         /// </summary>
         public DatastoreStatus DatastoreStatus

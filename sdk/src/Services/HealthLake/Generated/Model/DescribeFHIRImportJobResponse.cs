@@ -39,7 +39,7 @@ namespace Amazon.HealthLake.Model
         /// Gets and sets the property ImportJobProperties. 
         /// <para>
         /// The properties of the Import job request, including the ID, ARN, name, and the status
-        /// of the datastore.
+        /// of the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

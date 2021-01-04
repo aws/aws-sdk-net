@@ -31,7 +31,7 @@ namespace Amazon.HealthLake.Model
     /// <summary>
     /// Container for the parameters to the DescribeFHIRImportJob operation.
     /// Displays the properties of a FHIR import job, including the ID, ARN, name, and the
-    /// status of the datastore.
+    /// status of the job.
     /// </summary>
     public partial class DescribeFHIRImportJobRequest : AmazonHealthLakeRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS-generated ID of the datastore.
+        /// The AWS-generated ID of the Data Store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

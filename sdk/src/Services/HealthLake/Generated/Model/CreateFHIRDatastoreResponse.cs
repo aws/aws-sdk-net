@@ -41,8 +41,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreArn. 
         /// <para>
-        /// The datastore ARN is generated during the creation of the datastore and can be found
-        /// in the output from the initial datastore creation call.
+        /// The datastore ARN is generated during the creation of the Data Store and can be found
+        /// in the output from the initial Data Store creation call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreEndpoint. 
         /// <para>
-        /// The AWS endpoint for the created datastore. For preview, only US-east-1 endpoints
+        /// The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints
         /// are supported.
         /// </para>
         /// </summary>
@@ -81,7 +81,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS-generated datastore id. This id is in the output from the initial datastore
+        /// The AWS-generated Data Store id. This id is in the output from the initial Data Store
         /// creation call.
         /// </para>
         /// </summary>
@@ -101,7 +101,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreStatus. 
         /// <para>
-        /// The status of the FHIR datastore. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’,
+        /// The status of the FHIR Data Store. Possible statuses are ‘CREATING’, ‘ACTIVE’, ‘DELETING’,
         /// ‘DELETED’.
         /// </para>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The input properties for the preloaded datastore. Only data preloaded from Synthea
+    /// The input properties for the preloaded Data Store. Only data preloaded from Synthea
     /// is supported.
     /// </summary>
     public partial class PreloadDataConfig

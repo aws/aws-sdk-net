@@ -29,21 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartFHIRImportJob operation.
-    /// Begins a FHIR Import job.
+    /// Container for the parameters to the StartFHIRExportJob operation.
+    /// Begins a FHIR export job.
     /// </summary>
-    public partial class StartFHIRImportJobRequest : AmazonHealthLakeRequest
+    public partial class StartFHIRExportJobRequest : AmazonHealthLakeRequest
     {
         private string _clientToken;
         private string _dataAccessRoleArn;
         private string _datastoreId;
-        private InputDataConfig _inputDataConfig;
         private string _jobName;
+        private OutputDataConfig _outputDataConfig;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Optional user provided token used for ensuring idempotency.
+        /// An optional user provided token used for ensuring idempotency.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -62,7 +62,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+        /// The Amazon Resource Name used during the initiation of the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -81,7 +81,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS-generated Data Store ID.
+        /// The AWS generated ID for the Data Store from which files are being exported for an
+        /// export job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -98,28 +99,9 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputDataConfig. 
-        /// <para>
-        /// The input properties of the FHIR Import job in the StartFHIRImport job request.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public InputDataConfig InputDataConfig
-        {
-            get { return this._inputDataConfig; }
-            set { this._inputDataConfig = value; }
-        }
-
-        // Check to see if InputDataConfig property is set
-        internal bool IsSetInputDataConfig()
-        {
-            return this._inputDataConfig != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the FHIR Import job in the StartFHIRImport job request.
+        /// The user generated name for an export job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -133,6 +115,25 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetJobName()
         {
             return this._jobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputDataConfig. 
+        /// <para>
+        /// The output data configuration that was supplied when the export job was created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public OutputDataConfig OutputDataConfig
+        {
+            get { return this._outputDataConfig; }
+            set { this._outputDataConfig = value; }
+        }
+
+        // Check to see if OutputDataConfig property is set
+        internal bool IsSetOutputDataConfig()
+        {
+            return this._outputDataConfig != null;
         }
 
     }

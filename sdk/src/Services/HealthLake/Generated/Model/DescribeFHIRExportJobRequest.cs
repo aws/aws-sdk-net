@@ -29,22 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeFHIRDatastore operation.
-    /// Gets the properties associated with the FHIR Data Store, including the Data Store
-    /// ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type
-    /// version, and Data Store endpoint.
+    /// Container for the parameters to the DescribeFHIRExportJob operation.
+    /// Displays the properties of a FHIR export job, including the ID, ARN, name, and the
+    /// status of the job.
     /// </summary>
-    public partial class DescribeFHIRDatastoreRequest : AmazonHealthLakeRequest
+    public partial class DescribeFHIRExportJobRequest : AmazonHealthLakeRequest
     {
         private string _datastoreId;
+        private string _jobId;
 
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+        /// The AWS generated ID for the Data Store from which files are being exported from for
+        /// an export job.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=32)]
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public string DatastoreId
         {
             get { return this._datastoreId; }
@@ -55,6 +56,25 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetDatastoreId()
         {
             return this._datastoreId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobId. 
+        /// <para>
+        /// The AWS generated ID for an export job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
+        public string JobId
+        {
+            get { return this._jobId; }
+            set { this._jobId = value; }
+        }
+
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
+        {
+            return this._jobId != null;
         }
 
     }

@@ -30,7 +30,7 @@ namespace Amazon.HealthLake
     /// Interface for accessing HealthLake
     ///
     /// Amazon HealthLake is a HIPAA eligibile service that allows customers to store, transform,
-    /// query, and analyze their data in a consistent fashion in the cloud.
+    /// query, and analyze their FHIR-formatted data in a consistent fashion in the cloud.
     /// </summary>
     public partial interface IAmazonHealthLake : IAmazonService, IDisposable
     {
@@ -49,7 +49,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Creates a datastore that can ingest and export FHIR data.
+        /// Creates a Data Store that can ingest and export FHIR formatted data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFHIRDatastore service method.</param>
         /// 
@@ -98,7 +98,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Deletes a datastore.
+        /// Deletes a Data Store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFHIRDatastore service method.</param>
         /// 
@@ -107,13 +107,13 @@ namespace Amazon.HealthLake
         /// Access is denied. Your account is not authorized to perform this operation.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ConflictException">
-        /// The datastore is in a transition state and the user requested action can not be performed.
+        /// The Data Store is in a transition state and the user requested action can not be performed.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
         /// Unknown error occurs in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested datastore was not found.
+        /// The requested Data Store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -156,9 +156,9 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Gets the properties associated with the FHIR datastore, including the datastore ID,
-        /// datastore ARN, datastore name, datastore status, created at, datastore type version,
-        /// and datastore endpoint.
+        /// Gets the properties associated with the FHIR Data Store, including the Data Store
+        /// ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type
+        /// version, and Data Store endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFHIRDatastore service method.</param>
         /// 
@@ -167,7 +167,7 @@ namespace Amazon.HealthLake
         /// Unknown error occurs in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested datastore was not found.
+        /// The requested Data Store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -206,12 +206,65 @@ namespace Amazon.HealthLake
 
         #endregion
         
+        #region  DescribeFHIRExportJob
+
+
+        /// <summary>
+        /// Displays the properties of a FHIR export job, including the ID, ARN, name, and the
+        /// status of the job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFHIRExportJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFHIRExportJob service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// Unknown error occurs in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested Data Store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRExportJob">REST API Reference for DescribeFHIRExportJob Operation</seealso>
+        DescribeFHIRExportJobResponse DescribeFHIRExportJob(DescribeFHIRExportJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeFHIRExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFHIRExportJob operation on AmazonHealthLakeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFHIRExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRExportJob">REST API Reference for DescribeFHIRExportJob Operation</seealso>
+        IAsyncResult BeginDescribeFHIRExportJob(DescribeFHIRExportJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeFHIRExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFHIRExportJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeFHIRExportJobResult from HealthLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRExportJob">REST API Reference for DescribeFHIRExportJob Operation</seealso>
+        DescribeFHIRExportJobResponse EndDescribeFHIRExportJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeFHIRImportJob
 
 
         /// <summary>
         /// Displays the properties of a FHIR import job, including the ID, ARN, name, and the
-        /// status of the datastore.
+        /// status of the job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFHIRImportJob service method.</param>
         /// 
@@ -220,7 +273,7 @@ namespace Amazon.HealthLake
         /// Unknown error occurs in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested datastore was not found.
+        /// The requested Data Store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
@@ -263,7 +316,7 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Lists all FHIR datastores that are in the user’s account, regardless of datastore
+        /// Lists all FHIR Data Stores that are in the user’s account, regardless of Data Store
         /// status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFHIRDatastores service method.</param>
@@ -309,6 +362,61 @@ namespace Amazon.HealthLake
 
         #endregion
         
+        #region  StartFHIRExportJob
+
+
+        /// <summary>
+        /// Begins a FHIR export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartFHIRExportJob service method.</param>
+        /// 
+        /// <returns>The response from the StartFHIRExportJob service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// Unknown error occurs in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested Data Store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRExportJob">REST API Reference for StartFHIRExportJob Operation</seealso>
+        StartFHIRExportJobResponse StartFHIRExportJob(StartFHIRExportJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartFHIRExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartFHIRExportJob operation on AmazonHealthLakeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartFHIRExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRExportJob">REST API Reference for StartFHIRExportJob Operation</seealso>
+        IAsyncResult BeginStartFHIRExportJob(StartFHIRExportJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartFHIRExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartFHIRExportJob.</param>
+        /// 
+        /// <returns>Returns a  StartFHIRExportJobResult from HealthLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartFHIRExportJob">REST API Reference for StartFHIRExportJob Operation</seealso>
+        StartFHIRExportJobResponse EndStartFHIRExportJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartFHIRImportJob
 
 
@@ -325,7 +433,7 @@ namespace Amazon.HealthLake
         /// Unknown error occurs in the service.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
-        /// The requested datastore was not found.
+        /// The requested Data Store was not found.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
         /// The user has exceeded their maximum number of allowed calls to the given API.
