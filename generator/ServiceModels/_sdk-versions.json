@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.83.0",
+    "ProductVersion" : "3.5.84.0",
     "CoreVersion"    : "3.5.1.57",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -46,7 +46,7 @@
             "InPreview"               : false
         },
         "CloudSearch"    : {
-            "Version" : "3.5.0.57",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.57"
@@ -1986,7 +1986,7 @@
             "InPreview"               : false
         },
         "HealthLake"                      : {
-            "Version" : "3.5.0.10",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.57"
