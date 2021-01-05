@@ -1,3 +1,9 @@
+### 3.5.85.0 (2021-01-05 19:10 UTC)
+* ApplicationAutoScaling (3.5.2.36)
+	* Documentation updates for Application Auto Scaling
+* CostExplorer (3.5.8.0)
+	* - ### Features    - Add new GetCostcategories API - Support filter for GetDimensions, GetTags and GetCostcategories api - Support sortBy metrics for GetDimensions, GetTags and GetCostcategories api
+
 ### 3.5.84.0 (2021-01-04 19:10 UTC)
 * CloudSearch (3.5.1.0)
 	* This release adds support for new Amazon CloudSearch instances.

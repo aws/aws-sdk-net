@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.84.0",
+    "ProductVersion" : "3.5.85.0",
     "CoreVersion"    : "3.5.1.57",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -554,7 +554,7 @@
             "InPreview"               : false
         },
         "ApplicationAutoScaling"          : {
-            "Version" : "3.5.2.35",
+            "Version" : "3.5.2.36",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.57"
@@ -858,7 +858,7 @@
             "InPreview"               : false
         },
         "CostExplorer"                    : {
-            "Version" : "3.5.7.2",
+            "Version" : "3.5.8.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.57"
