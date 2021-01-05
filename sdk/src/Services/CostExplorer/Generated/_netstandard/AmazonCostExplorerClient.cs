@@ -828,6 +828,63 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetCostCategories
+
+        internal virtual GetCostCategoriesResponse GetCostCategories(GetCostCategoriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCostCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCostCategoriesResponseUnmarshaller.Instance;
+
+            return Invoke<GetCostCategoriesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves an array of Cost Category names and values incurred cost.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If some Cost Category names and values are not associated with any cost, they will
+        /// not be returned by this API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostCategories service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCostCategories service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
+        /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
+        /// Your request parameters changed between pages. Try again with the old parameters or
+        /// without a pagination token.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories">REST API Reference for GetCostCategories Operation</seealso>
+        public virtual Task<GetCostCategoriesResponse> GetCostCategoriesAsync(GetCostCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCostCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCostCategoriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCostCategoriesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCostForecast
 
         internal virtual GetCostForecastResponse GetCostForecast(GetCostForecastRequest request)

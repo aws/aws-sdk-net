@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetTags Request Marshaller
+    /// GetCostCategories Request Marshaller
     /// </summary>       
-    public class GetTagsRequestMarshaller : IMarshaller<IRequest, GetTagsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetCostCategoriesRequestMarshaller : IMarshaller<IRequest, GetCostCategoriesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetTagsRequest)input);
+            return this.Marshall((GetCostCategoriesRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetTagsRequest publicRequest)
+        public IRequest Marshall(GetCostCategoriesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CostExplorer");
-            string target = "AWSInsightsIndexService.GetTags";
+            string target = "AWSInsightsIndexService.GetCostCategories";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-25";            
@@ -68,6 +68,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCostCategoryName())
+                {
+                    context.Writer.WritePropertyName("CostCategoryName");
+                    context.Writer.Write(publicRequest.CostCategoryName);
+                }
+
                 if(publicRequest.IsSetFilter())
                 {
                     context.Writer.WritePropertyName("Filter");
@@ -113,12 +119,6 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetTagKey())
-                {
-                    context.Writer.WritePropertyName("TagKey");
-                    context.Writer.Write(publicRequest.TagKey);
-                }
-
                 if(publicRequest.IsSetTimePeriod())
                 {
                     context.Writer.WritePropertyName("TimePeriod");
@@ -139,9 +139,9 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetTagsRequestMarshaller _instance = new GetTagsRequestMarshaller();        
+        private static GetCostCategoriesRequestMarshaller _instance = new GetCostCategoriesRequestMarshaller();        
 
-        internal static GetTagsRequestMarshaller GetInstance()
+        internal static GetCostCategoriesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -149,7 +149,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTagsRequestMarshaller Instance
+        public static GetCostCategoriesRequestMarshaller Instance
         {
             get
             {

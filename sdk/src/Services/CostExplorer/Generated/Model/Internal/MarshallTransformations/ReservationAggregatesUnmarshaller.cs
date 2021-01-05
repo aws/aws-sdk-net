@@ -100,6 +100,18 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.PurchasedUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RealizedSavings", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RealizedSavings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RICostForUnusedHours", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RICostForUnusedHours = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TotalActualHours", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +134,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TotalPotentialRISavings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UnrealizedSavings", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UnrealizedSavings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UnusedHours", targetDepth))

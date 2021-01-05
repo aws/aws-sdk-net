@@ -29,19 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetTags operation.
-    /// Queries for available tag keys and tag values for a specified period. You can search
-    /// the tag values for an arbitrary string.
+    /// Container for the parameters to the GetCostCategories operation.
+    /// Retrieves an array of Cost Category names and values incurred cost.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If some Cost Category names and values are not associated with any cost, they will
+    /// not be returned by this API.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class GetTagsRequest : AmazonCostExplorerRequest
+    public partial class GetCostCategoriesRequest : AmazonCostExplorerRequest
     {
+        private string _costCategoryName;
         private Expression _filter;
         private int? _maxResults;
         private string _nextPageToken;
         private string _searchString;
         private List<SortDefinition> _sortBy = new List<SortDefinition>();
-        private string _tagKey;
         private DateInterval _timePeriod;
+
+        /// <summary>
+        /// Gets and sets the property CostCategoryName.
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CostCategoryName
+        {
+            get { return this._costCategoryName; }
+            set { this._costCategoryName = value; }
+        }
+
+        // Check to see if CostCategoryName property is set
+        internal bool IsSetCostCategoryName()
+        {
+            return this._costCategoryName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Filter.
@@ -61,9 +83,13 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// This field is only used when SortBy is provided in the request. The maximum number
-        /// of objects that to be returned for this request. If MaxResults is not specified with
-        /// SortBy, the request will return 1000 results as the default value for this parameter.
+        /// This field is only used when <code>SortBy</code> is provided in the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of objects that to be returned for this request. If <code>MaxResults</code>
+        /// is not specified with <code>SortBy</code>, the request will return 1000 results as
+        /// the default value for this parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -82,8 +108,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// The token to retrieve the next set of results. AWS provides the token when the response
-        /// from a previous call has more results than the maximum page size.
+        /// If the number of objects that are still available for retrieval exceeds the limit,
+        /// AWS returns a NextPageToken value in the response. To retrieve the next batch of objects,
+        /// provide the NextPageToken from the prior call in your next request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]
@@ -102,7 +129,14 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SearchString. 
         /// <para>
-        /// The value that you want to search for.
+        /// The value that you want to search the filter values for.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will
+        /// be used to filter Cost Category names that match the <code>SearchString</code> pattern.
+        /// If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code> will
+        /// be used to filter Cost Category values that match the <code>SearchString</code> pattern.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -178,33 +212,7 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKey. 
-        /// <para>
-        /// The key of the tag that you want to return values for.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
-        public string TagKey
-        {
-            get { return this._tagKey; }
-            set { this._tagKey = value; }
-        }
-
-        // Check to see if TagKey property is set
-        internal bool IsSetTagKey()
-        {
-            return this._tagKey != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TimePeriod. 
-        /// <para>
-        /// The start and end dates for retrieving the dimension values. The start date is inclusive,
-        /// but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
-        /// and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved
-        /// from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
-        /// <code>2017-05-01</code>.
-        /// </para>
+        /// Gets and sets the property TimePeriod.
         /// </summary>
         [AWSProperty(Required=true)]
         public DateInterval TimePeriod

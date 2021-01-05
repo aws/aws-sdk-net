@@ -51,6 +51,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DimensionValueAttributes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DimensionValuesWithAttributes, DimensionValuesWithAttributesUnmarshaller>(DimensionValuesWithAttributesUnmarshaller.Instance);
+                    response.DimensionValueAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GroupDefinitions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<GroupDefinition, GroupDefinitionUnmarshaller>(GroupDefinitionUnmarshaller.Instance);

@@ -40,7 +40,9 @@ namespace Amazon.CostExplorer.Model
         private Expression _filter;
         private Granularity _granularity;
         private List<GroupDefinition> _groupBy = new List<GroupDefinition>();
+        private int? _maxResults;
         private string _nextPageToken;
+        private SortDefinition _sortBy;
         private DateInterval _timePeriod;
 
         /// <summary>
@@ -157,6 +159,27 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of objects that you returned for this request. If more objects
+        /// are available, in the response, AWS provides a NextPageToken value that you can use
+        /// in a subsequent call to get the next batch of objects.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
         /// The token to retrieve the next set of results. AWS provides the token when the response
@@ -174,6 +197,100 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetNextPageToken()
         {
             return this._nextPageToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// The value by which you want to sort the data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following values are supported for <code>Key</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>UtilizationPercentage</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UtilizationPercentageInUnits</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PurchasedHours</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PurchasedUnits</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TotalActualHours</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TotalActualUnits</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UnusedHours</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UnusedUnits</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OnDemandCostOfRIHoursUsed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NetRISavings</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TotalPotentialRISavings</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AmortizedUpfrontFee</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AmortizedRecurringFee</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TotalAmortizedFee</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RICostForUnusedHours</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RealizedSavings</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UnrealizedSavings</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+        /// </para>
+        /// </summary>
+        public SortDefinition SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null;
         }
 
         /// <summary>

@@ -58,6 +58,7 @@ namespace Amazon.CostExplorer.Model
     {
         private string _accountId;
         private AccountScope _accountScope;
+        private Expression _filter;
         private LookbackPeriodInDays _lookbackPeriodInDays;
         private string _nextPageToken;
         private int? _pageSize;
@@ -104,6 +105,21 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetAccountScope()
         {
             return this._accountScope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filter.
+        /// </summary>
+        public Expression Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The time period that you want the usage and costs for.
+    /// The time period of the request.
     /// </summary>
     public partial class DateInterval
     {
@@ -39,9 +39,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property End. 
         /// <para>
-        /// The end of the time period that you want the usage and costs for. The end date is
-        /// exclusive. For example, if <code>end</code> is <code>2017-05-01</code>, AWS retrieves
-        /// cost and usage data from the start date up to, but not including, <code>2017-05-01</code>.
+        /// The end of the time period. The end date is exclusive. For example, if <code>end</code>
+        /// is <code>2017-05-01</code>, AWS retrieves cost and usage data from the start date
+        /// up to, but not including, <code>2017-05-01</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=40)]
@@ -60,10 +60,10 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Start. 
         /// <para>
-        /// The beginning of the time period that you want the usage and costs for. The start
-        /// date is inclusive. For example, if <code>start</code> is <code>2017-01-01</code>,
-        /// AWS retrieves cost and usage data starting at <code>2017-01-01</code> up to the end
-        /// date.
+        /// The beginning of the time period. The start date is inclusive. For example, if <code>start</code>
+        /// is <code>2017-01-01</code>, AWS retrieves cost and usage data starting at <code>2017-01-01</code>
+        /// up to the end date. The start date must be equal to or no later than the current date
+        /// to avoid a validation error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=40)]

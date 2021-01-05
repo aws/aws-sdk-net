@@ -385,6 +385,14 @@ namespace Amazon.CostExplorer
     {
 
         /// <summary>
+        /// Constant AGREEMENT_END_DATE_TIME_AFTER for Dimension
+        /// </summary>
+        public static readonly Dimension AGREEMENT_END_DATE_TIME_AFTER = new Dimension("AGREEMENT_END_DATE_TIME_AFTER");
+        /// <summary>
+        /// Constant AGREEMENT_END_DATE_TIME_BEFORE for Dimension
+        /// </summary>
+        public static readonly Dimension AGREEMENT_END_DATE_TIME_BEFORE = new Dimension("AGREEMENT_END_DATE_TIME_BEFORE");
+        /// <summary>
         /// Constant AZ for Dimension
         /// </summary>
         public static readonly Dimension AZ = new Dimension("AZ");
@@ -704,6 +712,10 @@ namespace Amazon.CostExplorer
     public class MatchOption : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ABSENT for MatchOption
+        /// </summary>
+        public static readonly MatchOption ABSENT = new MatchOption("ABSENT");
         /// <summary>
         /// Constant CASE_INSENSITIVE for MatchOption
         /// </summary>
@@ -1206,6 +1218,114 @@ namespace Amazon.CostExplorer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RightsizingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SavingsPlansDataType.
+    /// </summary>
+    public class SavingsPlansDataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMORTIZED_COMMITMENT for SavingsPlansDataType
+        /// </summary>
+        public static readonly SavingsPlansDataType AMORTIZED_COMMITMENT = new SavingsPlansDataType("AMORTIZED_COMMITMENT");
+        /// <summary>
+        /// Constant ATTRIBUTES for SavingsPlansDataType
+        /// </summary>
+        public static readonly SavingsPlansDataType ATTRIBUTES = new SavingsPlansDataType("ATTRIBUTES");
+        /// <summary>
+        /// Constant SAVINGS for SavingsPlansDataType
+        /// </summary>
+        public static readonly SavingsPlansDataType SAVINGS = new SavingsPlansDataType("SAVINGS");
+        /// <summary>
+        /// Constant UTILIZATION for SavingsPlansDataType
+        /// </summary>
+        public static readonly SavingsPlansDataType UTILIZATION = new SavingsPlansDataType("UTILIZATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SavingsPlansDataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SavingsPlansDataType FindValue(string value)
+        {
+            return FindValue<SavingsPlansDataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SavingsPlansDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASCENDING = new SortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESCENDING = new SortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
         }

@@ -45,10 +45,30 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetSavingsPlansUtilizationDetailsRequest : AmazonCostExplorerRequest
     {
+        private List<string> _dataType = new List<string>();
         private Expression _filter;
         private int? _maxResults;
         private string _nextToken;
+        private SortDefinition _sortBy;
         private DateInterval _timePeriod;
+
+        /// <summary>
+        /// Gets and sets the property DataType. 
+        /// <para>
+        /// The data type.
+        /// </para>
+        /// </summary>
+        public List<string> DataType
+        {
+            get { return this._dataType; }
+            set { this._dataType = value; }
+        }
+
+        // Check to see if DataType property is set
+        internal bool IsSetDataType()
+        {
+            return this._dataType != null && this._dataType.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Filter. 
@@ -133,6 +153,60 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// The value by which you want to sort the data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following values are supported for <code>Key</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>UtilizationPercentage</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TotalCommitment</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UsedCommitment</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UnusedCommitment</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NetSavings</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AmortizedRecurringCommitment</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AmortizedUpfrontCommitment</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+        /// </para>
+        /// </summary>
+        public SortDefinition SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null;
         }
 
         /// <summary>

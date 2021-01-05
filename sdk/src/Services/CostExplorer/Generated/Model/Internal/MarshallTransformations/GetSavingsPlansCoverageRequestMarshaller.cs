@@ -124,6 +124,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetSortBy())
+                {
+                    context.Writer.WritePropertyName("SortBy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SortDefinitionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SortBy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTimePeriod())
                 {
                     context.Writer.WritePropertyName("TimePeriod");

@@ -96,8 +96,10 @@ namespace Amazon.CostExplorer.Model
         private Expression _filter;
         private Granularity _granularity;
         private List<GroupDefinition> _groupBy = new List<GroupDefinition>();
+        private int? _maxResults;
         private List<string> _metrics = new List<string>();
         private string _nextPageToken;
+        private SortDefinition _sortBy;
         private DateInterval _timePeriod;
 
         /// <summary>
@@ -271,6 +273,27 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of objects that you returned for this request. If more objects
+        /// are available, in the response, AWS provides a NextPageToken value that you can use
+        /// in a subsequent call to get the next batch of objects.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
         /// The measurement that you want your reservation coverage reported in.
@@ -311,6 +334,72 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetNextPageToken()
         {
             return this._nextPageToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// The value by which you want to sort the data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following values are supported for <code>Key</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>OnDemandCost</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CoverageHoursPercentage</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OnDemandHours</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ReservedHours</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TotalRunningHours</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CoverageNormalizedUnitsPercentage</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OnDemandNormalizedUnits</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ReservedNormalizedUnits</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TotalRunningNormalizedUnits</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Time</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+        /// </para>
+        /// </summary>
+        public SortDefinition SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null;
         }
 
         /// <summary>

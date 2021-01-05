@@ -66,6 +66,7 @@ namespace Amazon.CostExplorer.Model
         private int? _maxResults;
         private List<string> _metrics = new List<string>();
         private string _nextToken;
+        private SortDefinition _sortBy;
         private DateInterval _timePeriod;
 
         /// <summary>
@@ -213,6 +214,60 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// The value by which you want to sort the data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following values are supported for <code>Key</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>SpendCoveredBySavingsPlan</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OnDemandCost</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CoveragePercentage</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TotalCost</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InstanceFamily</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Region</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Service</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+        /// </para>
+        /// </summary>
+        public SortDefinition SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null;
         }
 
         /// <summary>

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetCostAndUsageWithResources operation
+    /// Response Unmarshaller for GetCostCategories operation
     /// </summary>  
-    public class GetCostAndUsageWithResourcesResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetCostCategoriesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetCostAndUsageWithResourcesResponse response = new GetCostAndUsageWithResourcesResponse();
+            GetCostCategoriesResponse response = new GetCostCategoriesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DimensionValueAttributes", targetDepth))
+                if (context.TestExpression("CostCategoryNames", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DimensionValuesWithAttributes, DimensionValuesWithAttributesUnmarshaller>(DimensionValuesWithAttributesUnmarshaller.Instance);
-                    response.DimensionValueAttributes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.CostCategoryNames = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("GroupDefinitions", targetDepth))
+                if (context.TestExpression("CostCategoryValues", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<GroupDefinition, GroupDefinitionUnmarshaller>(GroupDefinitionUnmarshaller.Instance);
-                    response.GroupDefinitions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.CostCategoryValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NextPageToken", targetDepth))
@@ -69,10 +69,16 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     response.NextPageToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResultsByTime", targetDepth))
+                if (context.TestExpression("ReturnSize", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ResultByTime, ResultByTimeUnmarshaller>(ResultByTimeUnmarshaller.Instance);
-                    response.ResultsByTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.ReturnSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TotalSize", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.TotalSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -122,9 +128,9 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             return new AmazonCostExplorerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetCostAndUsageWithResourcesResponseUnmarshaller _instance = new GetCostAndUsageWithResourcesResponseUnmarshaller();        
+        private static GetCostCategoriesResponseUnmarshaller _instance = new GetCostCategoriesResponseUnmarshaller();        
 
-        internal static GetCostAndUsageWithResourcesResponseUnmarshaller GetInstance()
+        internal static GetCostCategoriesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -132,7 +138,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetCostAndUsageWithResourcesResponseUnmarshaller Instance
+        public static GetCostCategoriesResponseUnmarshaller Instance
         {
             get
             {

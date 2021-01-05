@@ -1044,6 +1044,83 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetCostCategories
+
+        /// <summary>
+        /// Retrieves an array of Cost Category names and values incurred cost.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If some Cost Category names and values are not associated with any cost, they will
+        /// not be returned by this API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostCategories service method.</param>
+        /// 
+        /// <returns>The response from the GetCostCategories service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
+        /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
+        /// Your request parameters changed between pages. Try again with the old parameters or
+        /// without a pagination token.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories">REST API Reference for GetCostCategories Operation</seealso>
+        public virtual GetCostCategoriesResponse GetCostCategories(GetCostCategoriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCostCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCostCategoriesResponseUnmarshaller.Instance;
+
+            return Invoke<GetCostCategoriesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCostCategories operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCostCategories operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCostCategories
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories">REST API Reference for GetCostCategories Operation</seealso>
+        public virtual IAsyncResult BeginGetCostCategories(GetCostCategoriesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCostCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCostCategoriesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCostCategories operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCostCategories.</param>
+        /// 
+        /// <returns>Returns a  GetCostCategoriesResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories">REST API Reference for GetCostCategories Operation</seealso>
+        public virtual GetCostCategoriesResponse EndGetCostCategories(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCostCategoriesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetCostForecast
 
         /// <summary>

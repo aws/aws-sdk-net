@@ -145,9 +145,41 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetCostCategoriesRequest.CostCategoryName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?! )[\p{L}\p{N}\p{Z}-_]*(?&lt;! )$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetCostCategoriesRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetCostCategoriesRequest.NextPageToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetCostCategoriesRequest.SearchString</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetCostCategoriesResponse.NextPageToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetCostForecastRequest.PredictionIntervalLevel</property>
     <min>51</min>
     <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetDimensionValuesRequest.MaxResults</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetDimensionValuesRequest.NextPageToken</property>
@@ -166,6 +198,10 @@
     <min>0</min>
     <max>8192</max>
     <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetReservationCoverageRequest.MaxResults</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetReservationCoverageRequest.NextPageToken</property>
@@ -206,6 +242,10 @@
     <min>0</min>
     <max>8192</max>
     <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetReservationUtilizationRequest.MaxResults</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetReservationUtilizationRequest.NextPageToken</property>
@@ -288,6 +328,10 @@
     <min>0</min>
     <max>8192</max>
     <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetTagsRequest.MaxResults</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetTagsRequest.NextPageToken</property>
@@ -1373,6 +1417,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.SavingsPlansUtilization.UtilizationPercentage</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.SortDefinition.Key</property>
     <min>0</min>
     <max>1024</max>
     <pattern>[\S\s]*</pattern>

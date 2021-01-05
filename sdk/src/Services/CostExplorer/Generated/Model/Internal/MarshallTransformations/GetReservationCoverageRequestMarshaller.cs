@@ -101,6 +101,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
                 if(publicRequest.IsSetMetrics())
                 {
                     context.Writer.WritePropertyName("Metrics");
@@ -116,6 +122,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("NextPageToken");
                     context.Writer.Write(publicRequest.NextPageToken);
+                }
+
+                if(publicRequest.IsSetSortBy())
+                {
+                    context.Writer.WritePropertyName("SortBy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SortDefinitionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SortBy, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTimePeriod())

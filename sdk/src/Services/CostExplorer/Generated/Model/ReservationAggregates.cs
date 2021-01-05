@@ -39,10 +39,13 @@ namespace Amazon.CostExplorer.Model
         private string _onDemandCostOfRIHoursUsed;
         private string _purchasedHours;
         private string _purchasedUnits;
+        private string _realizedSavings;
+        private string _riCostForUnusedHours;
         private string _totalActualHours;
         private string _totalActualUnits;
         private string _totalAmortizedFee;
         private string _totalPotentialRISavings;
+        private string _unrealizedSavings;
         private string _unusedHours;
         private string _unusedUnits;
         private string _utilizationPercentage;
@@ -160,6 +163,42 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RealizedSavings. 
+        /// <para>
+        /// The realized savings due to purchasing and using a reservation.
+        /// </para>
+        /// </summary>
+        public string RealizedSavings
+        {
+            get { return this._realizedSavings; }
+            set { this._realizedSavings = value; }
+        }
+
+        // Check to see if RealizedSavings property is set
+        internal bool IsSetRealizedSavings()
+        {
+            return this._realizedSavings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RICostForUnusedHours. 
+        /// <para>
+        /// The cost of unused hours for your reservation.
+        /// </para>
+        /// </summary>
+        public string RICostForUnusedHours
+        {
+            get { return this._riCostForUnusedHours; }
+            set { this._riCostForUnusedHours = value; }
+        }
+
+        // Check to see if RICostForUnusedHours property is set
+        internal bool IsSetRICostForUnusedHours()
+        {
+            return this._riCostForUnusedHours != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TotalActualHours. 
         /// <para>
         /// The total number of reservation hours that you used.
@@ -231,6 +270,24 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetTotalPotentialRISavings()
         {
             return this._totalPotentialRISavings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnrealizedSavings. 
+        /// <para>
+        /// The unrealized savings due to purchasing and using a reservation.
+        /// </para>
+        /// </summary>
+        public string UnrealizedSavings
+        {
+            get { return this._unrealizedSavings; }
+            set { this._unrealizedSavings = value; }
+        }
+
+        // Check to see if UnrealizedSavings property is set
+        internal bool IsSetUnrealizedSavings()
+        {
+            return this._unrealizedSavings != null;
         }
 
         /// <summary>

@@ -68,6 +68,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDataType())
+                {
+                    context.Writer.WritePropertyName("DataType");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDataTypeListValue in publicRequest.DataType)
+                    {
+                            context.Writer.Write(publicRequestDataTypeListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetFilter())
                 {
                     context.Writer.WritePropertyName("Filter");
@@ -89,6 +100,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("NextToken");
                     context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetSortBy())
+                {
+                    context.Writer.WritePropertyName("SortBy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SortDefinitionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SortBy, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetTimePeriod())

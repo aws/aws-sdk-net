@@ -80,6 +80,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AccountScope);
                 }
 
+                if(publicRequest.IsSetFilter())
+                {
+                    context.Writer.WritePropertyName("Filter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExpressionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Filter, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLookbackPeriodInDays())
                 {
                     context.Writer.WritePropertyName("LookbackPeriodInDays");

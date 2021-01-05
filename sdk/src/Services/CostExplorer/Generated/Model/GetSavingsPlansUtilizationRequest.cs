@@ -45,6 +45,7 @@ namespace Amazon.CostExplorer.Model
     {
         private Expression _filter;
         private Granularity _granularity;
+        private SortDefinition _sortBy;
         private DateInterval _timePeriod;
 
         /// <summary>
@@ -117,6 +118,52 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetGranularity()
         {
             return this._granularity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// The value by which you want to sort the data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following values are supported for <code>Key</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>UtilizationPercentage</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TotalCommitment</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UsedCommitment</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UnusedCommitment</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NetSavings</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+        /// </para>
+        /// </summary>
+        public SortDefinition SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null;
         }
 
         /// <summary>

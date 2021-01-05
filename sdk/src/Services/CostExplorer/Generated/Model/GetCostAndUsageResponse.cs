@@ -33,9 +33,29 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetCostAndUsageResponse : AmazonWebServiceResponse
     {
+        private List<DimensionValuesWithAttributes> _dimensionValueAttributes = new List<DimensionValuesWithAttributes>();
         private List<GroupDefinition> _groupDefinitions = new List<GroupDefinition>();
         private string _nextPageToken;
         private List<ResultByTime> _resultsByTime = new List<ResultByTime>();
+
+        /// <summary>
+        /// Gets and sets the property DimensionValueAttributes. 
+        /// <para>
+        /// The attributes that apply to a specific dimension value. For example, if the value
+        /// is a linked account, the attribute is that account name.
+        /// </para>
+        /// </summary>
+        public List<DimensionValuesWithAttributes> DimensionValueAttributes
+        {
+            get { return this._dimensionValueAttributes; }
+            set { this._dimensionValueAttributes = value; }
+        }
+
+        // Check to see if DimensionValueAttributes property is set
+        internal bool IsSetDimensionValueAttributes()
+        {
+            return this._dimensionValueAttributes != null && this._dimensionValueAttributes.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property GroupDefinitions. 
