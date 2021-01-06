@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.85.0",
+    "ProductVersion" : "3.5.86.0",
     "CoreVersion"    : "3.5.1.57",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -14,7 +14,7 @@
             "InPreview"               : false
         },
         "AutoScaling" : {
-            "Version" : "3.5.3.9",
+            "Version" : "3.5.3.10",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.57"
@@ -1042,7 +1042,7 @@
             "InPreview"               : false
         },
         "AutoScalingPlans"                : {
-            "Version" : "3.5.0.57",
+            "Version" : "3.5.0.58",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.57"
@@ -1258,7 +1258,7 @@
             "InPreview"               : false
         },
         "Transfer"                        : {
-            "Version" : "3.5.1.30",
+            "Version" : "3.5.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.57"
