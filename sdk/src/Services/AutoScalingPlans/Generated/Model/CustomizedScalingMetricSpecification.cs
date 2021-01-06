@@ -51,8 +51,9 @@ namespace Amazon.AutoScalingPlans.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
-    /// CloudWatch Concepts</a>. 
+    /// For information about terminology, available metrics, or how to publish new metrics,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
+    /// CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class CustomizedScalingMetricSpecification

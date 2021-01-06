@@ -31,20 +31,48 @@ namespace Amazon.AutoScalingPlans
     ///
     /// AWS Auto Scaling 
     /// <para>
-    /// Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application
-    /// and configure dynamic scaling and predictive scaling for your resources using scaling
-    /// plans. Use this service in conjunction with the Amazon EC2 Auto Scaling, Application
-    /// Auto Scaling, Amazon CloudWatch, and AWS CloudFormation services. 
+    /// Use AWS Auto Scaling to create scaling plans for your applications to automatically
+    /// scale your scalable AWS resources. 
     /// </para>
     ///  
     /// <para>
-    /// Currently, predictive scaling is only available for Amazon EC2 Auto Scaling groups.
+    ///  <b>API Summary</b> 
     /// </para>
     ///  
     /// <para>
-    /// For more information about AWS Auto Scaling, including information about granting
-    /// IAM users required permissions for AWS Auto Scaling actions, see the <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS
-    /// Auto Scaling User Guide</a>.
+    /// You can use the AWS Auto Scaling service API to accomplish the following tasks:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Create and manage scaling plans
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Define target tracking scaling policies to dynamically scale your resources based
+    /// on utilization
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Scale Amazon EC2 Auto Scaling groups using predictive scaling and dynamic scaling
+    /// to scale your Amazon EC2 capacity faster
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Set minimum and maximum capacity limits
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Retrieve information on existing scaling plans
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Access current forecast data and historical forecast data for up to 56 days previous
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// To learn more about AWS Auto Scaling, including information about granting IAM users
+    /// required permissions for AWS Auto Scaling actions, see the <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS
+    /// Auto Scaling User Guide</a>. 
     /// </para>
     /// </summary>
     public partial interface IAmazonAutoScalingPlans : IAmazonService, IDisposable

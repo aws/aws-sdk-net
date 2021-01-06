@@ -36,8 +36,7 @@ namespace Amazon.AutoScalingPlans.Model
     /// <para>
     /// For predictive scaling to work with a customized load metric specification, AWS Auto
     /// Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that
-    /// CloudWatch computes from metric data. Statistics are calculations used to aggregate
-    /// data over specified time periods.
+    /// CloudWatch computes from metric data.
     /// </para>
     ///  
     /// <para>
@@ -49,13 +48,26 @@ namespace Amazon.AutoScalingPlans.Model
     /// the number of requests processed by your Auto Scaling group. If the <code>Sum</code>
     /// statistic represents the total request count processed by the group, then the <code>Average</code>
     /// statistic for the specified metric must represent the average request count processed
-    /// by each instance of the group.
+    /// by each instance of the group. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If you publish your own metrics, you can aggregate the data points at a given interval
+    /// and then publish the aggregated data points to CloudWatch. Before AWS Auto Scaling
+    /// generates the forecast, it sums up all the metric data points that occurred within
+    /// each hour to match the granularity period that is used in the forecast (60 minutes).
     /// </para>
     ///  
     /// <para>
     /// For information about terminology, available metrics, or how to publish new metrics,
     /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
     /// CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// After creating your scaling plan, you can use the AWS Auto Scaling console to visualize
+    /// forecasts for the specified metric. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource">View
+    /// Scaling Information for a Resource</a> in the <i>AWS Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CustomizedLoadMetricSpecification
@@ -130,8 +142,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
-        /// The statistic of the metric. Currently, the value must always be <code>Sum</code>.
-        /// 
+        /// The statistic of the metric. The only valid value is <code>Sum</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

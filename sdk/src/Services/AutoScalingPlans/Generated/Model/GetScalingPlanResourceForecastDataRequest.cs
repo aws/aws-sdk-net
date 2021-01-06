@@ -119,40 +119,10 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the resource. This string consists of the resource type and unique identifier.
-        /// 
+        /// The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>)
+        /// followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example:
+        /// <code>autoScalingGroup/my-asg</code>. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique
-        /// identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// ECS service - The resource type is <code>service</code> and the unique identifier
-        /// is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the
-        /// unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DynamoDB table - The resource type is <code>table</code> and the unique identifier
-        /// is the resource ID. Example: <code>table/my-table</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DynamoDB global secondary index - The resource type is <code>index</code> and the
-        /// unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier
-        /// is the cluster name. Example: <code>cluster:my-db-cluster</code>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceId
@@ -170,7 +140,8 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property ScalableDimension. 
         /// <para>
-        /// The scalable dimension for the resource.
+        /// The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -208,7 +179,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property ScalingPlanVersion. 
         /// <para>
-        /// The version number of the scaling plan.
+        /// The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -227,7 +198,8 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property ServiceNamespace. 
         /// <para>
-        /// The namespace of the AWS service.
+        /// The namespace of the AWS service. The only valid value is <code>autoscaling</code>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

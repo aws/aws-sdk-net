@@ -29,14 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// Describes a scaling instruction for a scalable resource.
+    /// Describes a scaling instruction for a scalable resource in a scaling plan. Each scaling
+    /// instruction applies to one resource.
     /// 
-    ///  
-    /// <para>
-    /// The scaling instruction is used in combination with a scaling plan, which is a set
-    /// of instructions for configuring dynamic scaling and predictive scaling for the scalable
-    /// resources in your application. Each scaling instruction applies to one resource.
-    /// </para>
     ///  
     /// <para>
     /// AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions.
@@ -54,17 +49,14 @@ namespace Amazon.AutoScalingPlans.Model
     /// forecasts with traffic predictions for the two days ahead and schedules scaling actions
     /// that proactively add and remove resource capacity to match the forecast. 
     /// </para>
-    ///  
+    ///  <important> 
     /// <para>
     /// We recommend waiting a minimum of 24 hours after creating an Auto Scaling group to
     /// configure predictive scaling. At minimum, there must be 24 hours of historical data
-    /// to generate a forecast.
+    /// to generate a forecast. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-best-practices.html">Best
+    /// Practices for AWS Auto Scaling</a> in the <i>AWS Auto Scaling User Guide</i>.
     /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/auto-scaling-getting-started.html">Getting
-    /// Started with AWS Auto Scaling</a>.
-    /// </para>
+    ///  </important>
     /// </summary>
     public partial class ScalingInstruction
     {
@@ -481,19 +473,8 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property TargetTrackingConfigurations. 
         /// <para>
-        /// The structure that defines new target tracking configurations (up to 10). Each of
-        /// these structures includes a specific scaling metric and a target value for the metric,
-        /// along with various parameters to use with dynamic scaling. 
-        /// </para>
-        ///  
-        /// <para>
-        /// With predictive scaling and dynamic scaling, the resource scales based on the target
-        /// tracking configuration that provides the largest capacity for both scale in and scale
-        /// out. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Condition: The scaling metric must be unique across target tracking configurations.
+        /// The target tracking configurations (up to 10). Each of these structures must specify
+        /// a unique scaling metric and a target value for the metric. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

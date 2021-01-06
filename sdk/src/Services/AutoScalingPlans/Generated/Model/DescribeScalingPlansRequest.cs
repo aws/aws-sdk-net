@@ -118,9 +118,13 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property ScalingPlanVersion. 
         /// <para>
-        /// The version number of the scaling plan. If you specify a scaling plan version, you
-        /// must also specify a scaling plan name.
+        /// The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify a scaling plan version, you must also specify a scaling plan name.
+        /// </para>
+        ///  </note>
         /// </summary>
         public long ScalingPlanVersion
         {

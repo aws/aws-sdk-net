@@ -50,6 +50,11 @@ namespace Amazon.AutoScalingPlans.Model
         /// <para>
         /// A CloudFormation stack or set of tags.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a>
+        /// in the <i>AWS Auto Scaling API Reference</i>.
+        /// </para>
         /// </summary>
         public ApplicationSource ApplicationSource
         {
@@ -67,6 +72,11 @@ namespace Amazon.AutoScalingPlans.Model
         /// Gets and sets the property ScalingInstructions. 
         /// <para>
         /// The scaling instructions.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a>
+        /// in the <i>AWS Auto Scaling API Reference</i>.
         /// </para>
         /// </summary>
         public List<ScalingInstruction> ScalingInstructions
@@ -103,7 +113,8 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property ScalingPlanVersion. 
         /// <para>
-        /// The version number of the scaling plan.
+        /// The version number of the scaling plan. The only valid value is <code>1</code>. Currently,
+        /// you cannot have multiple scaling plan versions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
