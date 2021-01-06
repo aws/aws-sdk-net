@@ -35,6 +35,7 @@ namespace Amazon.Transfer.Model
     {
         private string _arn;
         private string _certificate;
+        private Domain _domain;
         private EndpointDetails _endpointDetails;
         private EndpointType _endpointType;
         private string _hostKeyFingerprint;
@@ -85,6 +86,21 @@ namespace Amazon.Transfer.Model
         internal bool IsSetCertificate()
         {
             return this._certificate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Domain.
+        /// </summary>
+        public Domain Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
         }
 
         /// <summary>

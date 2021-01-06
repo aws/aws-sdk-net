@@ -46,6 +46,7 @@ namespace Amazon.Transfer.Model
         private List<HomeDirectoryMapEntry> _homeDirectoryMappings = new List<HomeDirectoryMapEntry>();
         private HomeDirectoryType _homeDirectoryType;
         private string _policy;
+        private PosixProfile _posixProfile;
         private string _role;
         private string _serverId;
         private string _userName;
@@ -178,6 +179,21 @@ namespace Amazon.Transfer.Model
         internal bool IsSetPolicy()
         {
             return this._policy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PosixProfile.
+        /// </summary>
+        public PosixProfile PosixProfile
+        {
+            get { return this._posixProfile; }
+            set { this._posixProfile = value; }
+        }
+
+        // Check to see if PosixProfile property is set
+        internal bool IsSetPosixProfile()
+        {
+            return this._posixProfile != null;
         }
 
         /// <summary>

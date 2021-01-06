@@ -70,6 +70,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Domain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Domain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndpointType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -94,6 +94,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Policy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PosixProfile", targetDepth))
+                {
+                    var unmarshaller = PosixProfileUnmarshaller.Instance;
+                    unmarshalledObject.PosixProfile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Role", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

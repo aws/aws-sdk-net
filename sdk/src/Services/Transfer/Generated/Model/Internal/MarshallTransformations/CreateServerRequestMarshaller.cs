@@ -74,6 +74,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Certificate);
                 }
 
+                if(publicRequest.IsSetDomain())
+                {
+                    context.Writer.WritePropertyName("Domain");
+                    context.Writer.Write(publicRequest.Domain);
+                }
+
                 if(publicRequest.IsSetEndpointDetails())
                 {
                     context.Writer.WritePropertyName("EndpointDetails");

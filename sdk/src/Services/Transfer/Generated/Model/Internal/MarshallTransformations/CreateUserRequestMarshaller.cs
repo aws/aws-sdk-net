@@ -102,6 +102,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Policy);
                 }
 
+                if(publicRequest.IsSetPosixProfile())
+                {
+                    context.Writer.WritePropertyName("PosixProfile");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PosixProfileMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PosixProfile, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRole())
                 {
                     context.Writer.WritePropertyName("Role");

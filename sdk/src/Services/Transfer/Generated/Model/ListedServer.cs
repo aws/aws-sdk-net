@@ -34,6 +34,7 @@ namespace Amazon.Transfer.Model
     public partial class ListedServer
     {
         private string _arn;
+        private Domain _domain;
         private EndpointType _endpointType;
         private IdentityProviderType _identityProviderType;
         private string _loggingRole;
@@ -58,6 +59,21 @@ namespace Amazon.Transfer.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Domain.
+        /// </summary>
+        public Domain Domain
+        {
+            get { return this._domain; }
+            set { this._domain = value; }
+        }
+
+        // Check to see if Domain property is set
+        internal bool IsSetDomain()
+        {
+            return this._domain != null;
         }
 
         /// <summary>

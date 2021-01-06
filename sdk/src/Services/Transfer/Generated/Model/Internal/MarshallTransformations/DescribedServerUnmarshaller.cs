@@ -76,6 +76,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Certificate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Domain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Domain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndpointDetails", targetDepth))
                 {
                     var unmarshaller = EndpointDetailsUnmarshaller.Instance;
