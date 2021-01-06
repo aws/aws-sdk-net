@@ -605,8 +605,13 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Creates an Auto Scaling group with the specified name and attributes. 
+        /// <b>We strongly recommend using a launch template when calling this operation to ensure
+        /// full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b> 
         /// 
+        ///  
+        /// <para>
+        /// Creates an Auto Scaling group with the specified name and attributes. 
+        /// </para>
         ///  
         /// <para>
         /// If you exceed your maximum limit of Auto Scaling groups, the call fails. To query
@@ -656,8 +661,13 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Creates an Auto Scaling group with the specified name and attributes. 
+        /// <b>We strongly recommend using a launch template when calling this operation to ensure
+        /// full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b> 
         /// 
+        ///  
+        /// <para>
+        /// Creates an Auto Scaling group with the specified name and attributes. 
+        /// </para>
         ///  
         /// <para>
         /// If you exceed your maximum limit of Auto Scaling groups, the call fails. To query
@@ -4225,8 +4235,13 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Updates the configuration for the specified Auto Scaling group.
+        /// <b>We strongly recommend that all Auto Scaling groups use launch templates to ensure
+        /// full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b> 
         /// 
+        ///  
+        /// <para>
+        /// Updates the configuration for the specified Auto Scaling group.
+        /// </para>
         ///  
         /// <para>
         /// To update an Auto Scaling group, specify the name of the group and the parameter that
@@ -4300,8 +4315,13 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Updates the configuration for the specified Auto Scaling group.
+        /// <b>We strongly recommend that all Auto Scaling groups use launch templates to ensure
+        /// full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b> 
         /// 
+        ///  
+        /// <para>
+        /// Updates the configuration for the specified Auto Scaling group.
+        /// </para>
         ///  
         /// <para>
         /// To update an Auto Scaling group, specify the name of the group and the parameter that

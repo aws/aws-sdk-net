@@ -30,8 +30,13 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAutoScalingGroup operation.
-    /// Updates the configuration for the specified Auto Scaling group.
+    /// <b>We strongly recommend that all Auto Scaling groups use launch templates to ensure
+    /// full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b> 
     /// 
+    ///  
+    /// <para>
+    /// Updates the configuration for the specified Auto Scaling group.
+    /// </para>
     ///  
     /// <para>
     /// To update an Auto Scaling group, specify the name of the group and the parameter that

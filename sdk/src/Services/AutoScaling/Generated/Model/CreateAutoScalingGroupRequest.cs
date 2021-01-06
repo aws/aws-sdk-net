@@ -30,8 +30,13 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAutoScalingGroup operation.
-    /// Creates an Auto Scaling group with the specified name and attributes. 
+    /// <b>We strongly recommend using a launch template when calling this operation to ensure
+    /// full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b> 
     /// 
+    ///  
+    /// <para>
+    /// Creates an Auto Scaling group with the specified name and attributes. 
+    /// </para>
     ///  
     /// <para>
     /// If you exceed your maximum limit of Auto Scaling groups, the call fails. To query
@@ -294,8 +299,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
-        /// Parameters used to specify the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html">launch
-        /// template</a> and version to use to launch instances. 
+        /// Parameters used to specify the launch template and version to use to launch instances.
+        /// 
         /// </para>
         ///  
         /// <para>

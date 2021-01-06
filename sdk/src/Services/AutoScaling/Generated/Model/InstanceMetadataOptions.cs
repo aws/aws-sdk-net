@@ -73,10 +73,6 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Default: 1
         /// </para>
-        ///  
-        /// <para>
-        /// Possible values: Integers from 1 to 64
-        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public int HttpPutResponseHopLimit

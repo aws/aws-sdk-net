@@ -182,7 +182,16 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleState. 
         /// <para>
-        /// The lifecycle state for the instance.
+        /// The lifecycle state for the instance. The <code>Quarantined</code> state is not used.
+        /// For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+        /// lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code>
+        /// | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code>
+        /// | <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code>
+        /// | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
