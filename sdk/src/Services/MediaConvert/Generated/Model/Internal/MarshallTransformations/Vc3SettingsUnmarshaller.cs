@@ -94,6 +94,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.InterlaceMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("scanTypeConversionMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScanTypeConversionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("slowPal", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

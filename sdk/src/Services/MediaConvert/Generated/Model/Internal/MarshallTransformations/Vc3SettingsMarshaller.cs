@@ -75,6 +75,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InterlaceMode);
             }
 
+            if(requestObject.IsSetScanTypeConversionMode())
+            {
+                context.Writer.WritePropertyName("scanTypeConversionMode");
+                context.Writer.Write(requestObject.ScanTypeConversionMode);
+            }
+
             if(requestObject.IsSetSlowPal())
             {
                 context.Writer.WritePropertyName("slowPal");

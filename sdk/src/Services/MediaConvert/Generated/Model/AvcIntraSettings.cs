@@ -31,16 +31,19 @@ namespace Amazon.MediaConvert.Model
     /// <summary>
     /// Required when you set your output video codec to AVC-Intra. For more information about
     /// the AVC-I settings, see the relevant specification. For detailed information about
-    /// SD and HD in AVC-I, see https://ieeexplore.ieee.org/document/7290936.
+    /// SD and HD in AVC-I, see https://ieeexplore.ieee.org/document/7290936. For information
+    /// about 4K/2K in AVC-I, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
     /// </summary>
     public partial class AvcIntraSettings
     {
         private AvcIntraClass _avcIntraClass;
+        private AvcIntraUhdSettings _avcIntraUhdSettings;
         private AvcIntraFramerateControl _framerateControl;
         private AvcIntraFramerateConversionAlgorithm _framerateConversionAlgorithm;
         private int? _framerateDenominator;
         private int? _framerateNumerator;
         private AvcIntraInterlaceMode _interlaceMode;
+        private AvcIntraScanTypeConversionMode _scanTypeConversionMode;
         private AvcIntraSlowPal _slowPal;
         private AvcIntraTelecine _telecine;
 
@@ -48,7 +51,8 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property AvcIntraClass. Specify the AVC-Intra class of your output.
         /// The AVC-Intra class selection determines the output video bit rate depending on the
         /// frame rate of the output. Outputs with higher class values have higher bitrates and
-        /// improved image quality.
+        /// improved image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2
+        /// chroma subsampling.
         /// </summary>
         public AvcIntraClass AvcIntraClass
         {
@@ -60,6 +64,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAvcIntraClass()
         {
             return this._avcIntraClass != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvcIntraUhdSettings. Optional when you set AVC-Intra class
+        /// (avcIntraClass) to Class 4K/2K (CLASS_4K_2K). When you set AVC-Intra class to a different
+        /// value, this object isn't allowed.
+        /// </summary>
+        public AvcIntraUhdSettings AvcIntraUhdSettings
+        {
+            get { return this._avcIntraUhdSettings; }
+            set { this._avcIntraUhdSettings = value; }
+        }
+
+        // Check to see if AvcIntraUhdSettings property is set
+        internal bool IsSetAvcIntraUhdSettings()
+        {
+            return this._avcIntraUhdSettings != null;
         }
 
         /// <summary>
@@ -176,6 +197,32 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetInterlaceMode()
         {
             return this._interlaceMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanTypeConversionMode. Use this setting for interlaced
+        /// outputs, when your output frame rate is half of your input frame rate. In this situation,
+        /// choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+        /// output. In this case, each progressive frame from the input corresponds to an interlaced
+        /// field in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+        /// other output frame rates. With basic interlacing, MediaConvert performs any frame
+        /// rate conversion first and then interlaces the frames. When you choose Optimized interlacing
+        /// and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+        /// MediaConvert automatically falls back to basic interlacing. Required settings: To
+        /// use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft
+        /// (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also
+        /// set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+        /// </summary>
+        public AvcIntraScanTypeConversionMode ScanTypeConversionMode
+        {
+            get { return this._scanTypeConversionMode; }
+            set { this._scanTypeConversionMode = value; }
+        }
+
+        // Check to see if ScanTypeConversionMode property is set
+        internal bool IsSetScanTypeConversionMode()
+        {
+            return this._scanTypeConversionMode != null;
         }
 
         /// <summary>

@@ -1927,6 +1927,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly AvcIntraClass CLASS_200 = new AvcIntraClass("CLASS_200");
         /// <summary>
+        /// Constant CLASS_4K_2K for AvcIntraClass
+        /// </summary>
+        public static readonly AvcIntraClass CLASS_4K_2K = new AvcIntraClass("CLASS_4K_2K");
+        /// <summary>
         /// Constant CLASS_50 for AvcIntraClass
         /// </summary>
         public static readonly AvcIntraClass CLASS_50 = new AvcIntraClass("CLASS_50");
@@ -2133,6 +2137,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type AvcIntraScanTypeConversionMode.
+    /// </summary>
+    public class AvcIntraScanTypeConversionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERLACED for AvcIntraScanTypeConversionMode
+        /// </summary>
+        public static readonly AvcIntraScanTypeConversionMode INTERLACED = new AvcIntraScanTypeConversionMode("INTERLACED");
+        /// <summary>
+        /// Constant INTERLACED_OPTIMIZE for AvcIntraScanTypeConversionMode
+        /// </summary>
+        public static readonly AvcIntraScanTypeConversionMode INTERLACED_OPTIMIZE = new AvcIntraScanTypeConversionMode("INTERLACED_OPTIMIZE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AvcIntraScanTypeConversionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AvcIntraScanTypeConversionMode FindValue(string value)
+        {
+            return FindValue<AvcIntraScanTypeConversionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AvcIntraScanTypeConversionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AvcIntraSlowPal.
     /// </summary>
     public class AvcIntraSlowPal : ConstantClass
@@ -2226,6 +2280,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AvcIntraTelecine(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AvcIntraUhdQualityTuningLevel.
+    /// </summary>
+    public class AvcIntraUhdQualityTuningLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MULTI_PASS for AvcIntraUhdQualityTuningLevel
+        /// </summary>
+        public static readonly AvcIntraUhdQualityTuningLevel MULTI_PASS = new AvcIntraUhdQualityTuningLevel("MULTI_PASS");
+        /// <summary>
+        /// Constant SINGLE_PASS for AvcIntraUhdQualityTuningLevel
+        /// </summary>
+        public static readonly AvcIntraUhdQualityTuningLevel SINGLE_PASS = new AvcIntraUhdQualityTuningLevel("SINGLE_PASS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AvcIntraUhdQualityTuningLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AvcIntraUhdQualityTuningLevel FindValue(string value)
+        {
+            return FindValue<AvcIntraUhdQualityTuningLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AvcIntraUhdQualityTuningLevel(string value)
         {
             return FindValue(value);
         }
@@ -3504,6 +3608,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CmfcAudioDuration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CmfcIFrameOnlyManifest.
+    /// </summary>
+    public class CmfcIFrameOnlyManifest : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXCLUDE for CmfcIFrameOnlyManifest
+        /// </summary>
+        public static readonly CmfcIFrameOnlyManifest EXCLUDE = new CmfcIFrameOnlyManifest("EXCLUDE");
+        /// <summary>
+        /// Constant INCLUDE for CmfcIFrameOnlyManifest
+        /// </summary>
+        public static readonly CmfcIFrameOnlyManifest INCLUDE = new CmfcIFrameOnlyManifest("INCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CmfcIFrameOnlyManifest(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmfcIFrameOnlyManifest FindValue(string value)
+        {
+            return FindValue<CmfcIFrameOnlyManifest>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmfcIFrameOnlyManifest(string value)
         {
             return FindValue(value);
         }
@@ -7409,6 +7563,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type H264ScanTypeConversionMode.
+    /// </summary>
+    public class H264ScanTypeConversionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERLACED for H264ScanTypeConversionMode
+        /// </summary>
+        public static readonly H264ScanTypeConversionMode INTERLACED = new H264ScanTypeConversionMode("INTERLACED");
+        /// <summary>
+        /// Constant INTERLACED_OPTIMIZE for H264ScanTypeConversionMode
+        /// </summary>
+        public static readonly H264ScanTypeConversionMode INTERLACED_OPTIMIZE = new H264ScanTypeConversionMode("INTERLACED_OPTIMIZE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H264ScanTypeConversionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H264ScanTypeConversionMode FindValue(string value)
+        {
+            return FindValue<H264ScanTypeConversionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H264ScanTypeConversionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type H264SceneChangeDetect.
     /// </summary>
     public class H264SceneChangeDetect : ConstantClass
@@ -8626,6 +8830,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator H265SampleAdaptiveOffsetFilterMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type H265ScanTypeConversionMode.
+    /// </summary>
+    public class H265ScanTypeConversionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERLACED for H265ScanTypeConversionMode
+        /// </summary>
+        public static readonly H265ScanTypeConversionMode INTERLACED = new H265ScanTypeConversionMode("INTERLACED");
+        /// <summary>
+        /// Constant INTERLACED_OPTIMIZE for H265ScanTypeConversionMode
+        /// </summary>
+        public static readonly H265ScanTypeConversionMode INTERLACED_OPTIMIZE = new H265ScanTypeConversionMode("INTERLACED_OPTIMIZE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H265ScanTypeConversionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H265ScanTypeConversionMode FindValue(string value)
+        {
+            return FindValue<H265ScanTypeConversionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H265ScanTypeConversionMode(string value)
         {
             return FindValue(value);
         }
@@ -13817,6 +14071,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type Mpeg2ScanTypeConversionMode.
+    /// </summary>
+    public class Mpeg2ScanTypeConversionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERLACED for Mpeg2ScanTypeConversionMode
+        /// </summary>
+        public static readonly Mpeg2ScanTypeConversionMode INTERLACED = new Mpeg2ScanTypeConversionMode("INTERLACED");
+        /// <summary>
+        /// Constant INTERLACED_OPTIMIZE for Mpeg2ScanTypeConversionMode
+        /// </summary>
+        public static readonly Mpeg2ScanTypeConversionMode INTERLACED_OPTIMIZE = new Mpeg2ScanTypeConversionMode("INTERLACED_OPTIMIZE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Mpeg2ScanTypeConversionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Mpeg2ScanTypeConversionMode FindValue(string value)
+        {
+            return FindValue<Mpeg2ScanTypeConversionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Mpeg2ScanTypeConversionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Mpeg2SceneChangeDetect.
     /// </summary>
     public class Mpeg2SceneChangeDetect : ConstantClass
@@ -15155,6 +15459,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type ProresScanTypeConversionMode.
+    /// </summary>
+    public class ProresScanTypeConversionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERLACED for ProresScanTypeConversionMode
+        /// </summary>
+        public static readonly ProresScanTypeConversionMode INTERLACED = new ProresScanTypeConversionMode("INTERLACED");
+        /// <summary>
+        /// Constant INTERLACED_OPTIMIZE for ProresScanTypeConversionMode
+        /// </summary>
+        public static readonly ProresScanTypeConversionMode INTERLACED_OPTIMIZE = new ProresScanTypeConversionMode("INTERLACED_OPTIMIZE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProresScanTypeConversionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProresScanTypeConversionMode FindValue(string value)
+        {
+            return FindValue<ProresScanTypeConversionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProresScanTypeConversionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProresSlowPal.
     /// </summary>
     public class ProresSlowPal : ConstantClass
@@ -16426,6 +16780,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Vc3InterlaceMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Vc3ScanTypeConversionMode.
+    /// </summary>
+    public class Vc3ScanTypeConversionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERLACED for Vc3ScanTypeConversionMode
+        /// </summary>
+        public static readonly Vc3ScanTypeConversionMode INTERLACED = new Vc3ScanTypeConversionMode("INTERLACED");
+        /// <summary>
+        /// Constant INTERLACED_OPTIMIZE for Vc3ScanTypeConversionMode
+        /// </summary>
+        public static readonly Vc3ScanTypeConversionMode INTERLACED_OPTIMIZE = new Vc3ScanTypeConversionMode("INTERLACED_OPTIMIZE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Vc3ScanTypeConversionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Vc3ScanTypeConversionMode FindValue(string value)
+        {
+            return FindValue<Vc3ScanTypeConversionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Vc3ScanTypeConversionMode(string value)
         {
             return FindValue(value);
         }

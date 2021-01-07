@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AudioDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("iFrameOnlyManifest", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IFrameOnlyManifest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scte35Esam", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

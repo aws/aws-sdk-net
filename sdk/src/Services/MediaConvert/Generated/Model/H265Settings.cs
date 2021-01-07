@@ -62,6 +62,7 @@ namespace Amazon.MediaConvert.Model
         private H265QvbrSettings _qvbrSettings;
         private H265RateControlMode _rateControlMode;
         private H265SampleAdaptiveOffsetFilterMode _sampleAdaptiveOffsetFilterMode;
+        private H265ScanTypeConversionMode _scanTypeConversionMode;
         private H265SceneChangeDetect _sceneChangeDetect;
         private int? _slices;
         private H265SlowPal _slowPal;
@@ -621,6 +622,32 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSampleAdaptiveOffsetFilterMode()
         {
             return this._sampleAdaptiveOffsetFilterMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanTypeConversionMode. Use this setting for interlaced
+        /// outputs, when your output frame rate is half of your input frame rate. In this situation,
+        /// choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+        /// output. In this case, each progressive frame from the input corresponds to an interlaced
+        /// field in the output. Keep the default value, Basic interlacing (INTERLACED), for all
+        /// other output frame rates. With basic interlacing, MediaConvert performs any frame
+        /// rate conversion first and then interlaces the frames. When you choose Optimized interlacing
+        /// and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+        /// MediaConvert automatically falls back to basic interlacing. Required settings: To
+        /// use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft
+        /// (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also
+        /// set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+        /// </summary>
+        public H265ScanTypeConversionMode ScanTypeConversionMode
+        {
+            get { return this._scanTypeConversionMode; }
+            set { this._scanTypeConversionMode = value; }
+        }
+
+        // Check to see if ScanTypeConversionMode property is set
+        internal bool IsSetScanTypeConversionMode()
+        {
+            return this._scanTypeConversionMode != null;
         }
 
         /// <summary>

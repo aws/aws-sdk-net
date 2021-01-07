@@ -51,6 +51,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AvcIntraClass);
             }
 
+            if(requestObject.IsSetAvcIntraUhdSettings())
+            {
+                context.Writer.WritePropertyName("avcIntraUhdSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AvcIntraUhdSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AvcIntraUhdSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFramerateControl())
             {
                 context.Writer.WritePropertyName("framerateControl");
@@ -79,6 +90,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("interlaceMode");
                 context.Writer.Write(requestObject.InterlaceMode);
+            }
+
+            if(requestObject.IsSetScanTypeConversionMode())
+            {
+                context.Writer.WritePropertyName("scanTypeConversionMode");
+                context.Writer.Write(requestObject.ScanTypeConversionMode);
             }
 
             if(requestObject.IsSetSlowPal())

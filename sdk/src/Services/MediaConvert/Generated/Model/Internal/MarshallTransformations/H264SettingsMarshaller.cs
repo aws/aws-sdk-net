@@ -230,6 +230,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RepeatPps);
             }
 
+            if(requestObject.IsSetScanTypeConversionMode())
+            {
+                context.Writer.WritePropertyName("scanTypeConversionMode");
+                context.Writer.Write(requestObject.ScanTypeConversionMode);
+            }
+
             if(requestObject.IsSetSceneChangeDetect())
             {
                 context.Writer.WritePropertyName("sceneChangeDetect");

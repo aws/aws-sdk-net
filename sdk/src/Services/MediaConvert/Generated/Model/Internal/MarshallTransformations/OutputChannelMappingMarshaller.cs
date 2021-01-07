@@ -56,6 +56,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetInputChannelsFineTune())
+            {
+                context.Writer.WritePropertyName("inputChannelsFineTune");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInputChannelsFineTuneListValue in requestObject.InputChannelsFineTune)
+                {
+                        context.Writer.Write(requestObjectInputChannelsFineTuneListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

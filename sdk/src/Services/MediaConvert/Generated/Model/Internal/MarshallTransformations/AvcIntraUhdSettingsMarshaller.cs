@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CmfcSettings Marshaller
+    /// AvcIntraUhdSettings Marshaller
     /// </summary>       
-    public class CmfcSettingsMarshaller : IRequestMarshaller<CmfcSettings, JsonMarshallerContext> 
+    public class AvcIntraUhdSettingsMarshaller : IRequestMarshaller<AvcIntraUhdSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CmfcSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(AvcIntraUhdSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAudioDuration())
+            if(requestObject.IsSetQualityTuningLevel())
             {
-                context.Writer.WritePropertyName("audioDuration");
-                context.Writer.Write(requestObject.AudioDuration);
-            }
-
-            if(requestObject.IsSetIFrameOnlyManifest())
-            {
-                context.Writer.WritePropertyName("iFrameOnlyManifest");
-                context.Writer.Write(requestObject.IFrameOnlyManifest);
-            }
-
-            if(requestObject.IsSetScte35Esam())
-            {
-                context.Writer.WritePropertyName("scte35Esam");
-                context.Writer.Write(requestObject.Scte35Esam);
-            }
-
-            if(requestObject.IsSetScte35Source())
-            {
-                context.Writer.WritePropertyName("scte35Source");
-                context.Writer.Write(requestObject.Scte35Source);
+                context.Writer.WritePropertyName("qualityTuningLevel");
+                context.Writer.Write(requestObject.QualityTuningLevel);
             }
 
         }
@@ -74,7 +56,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static CmfcSettingsMarshaller Instance = new CmfcSettingsMarshaller();
+        public readonly static AvcIntraUhdSettingsMarshaller Instance = new AvcIntraUhdSettingsMarshaller();
 
     }
 }

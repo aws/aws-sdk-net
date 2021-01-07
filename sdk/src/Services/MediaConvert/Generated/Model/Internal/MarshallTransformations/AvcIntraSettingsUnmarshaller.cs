@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.AvcIntraClass = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("avcIntraUhdSettings", targetDepth))
+                {
+                    var unmarshaller = AvcIntraUhdSettingsUnmarshaller.Instance;
+                    unmarshalledObject.AvcIntraUhdSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("framerateControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InterlaceMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scanTypeConversionMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScanTypeConversionMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("slowPal", targetDepth))

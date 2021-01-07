@@ -150,7 +150,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Preset. Use Preset (Preset) to specifiy a preset for your
+        /// Gets and sets the property Preset. Use Preset (Preset) to specify a preset for your
         /// transcoding settings. Provide the system or custom preset name. You can specify either
         /// Preset (Preset) or Container settings (ContainerSettings), but not both.
         /// </summary>

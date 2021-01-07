@@ -34,9 +34,11 @@ namespace Amazon.MediaConvert.Model
     public partial class OutputChannelMapping
     {
         private List<int> _inputChannels = new List<int>();
+        private List<double> _inputChannelsFineTune = new List<double>();
 
         /// <summary>
-        /// Gets and sets the property InputChannels. List of input channels
+        /// Gets and sets the property InputChannels. Use this setting to specify your remix values
+        /// when they are integers, such as -10, 0, or 4.
         /// </summary>
         public List<int> InputChannels
         {
@@ -48,6 +50,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetInputChannels()
         {
             return this._inputChannels != null && this._inputChannels.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputChannelsFineTune. Use this setting to specify your
+        /// remix values when they have a decimal component, such as  -10.312, 0.08, or 4.9. MediaConvert
+        /// rounds your remixing values to the nearest thousandth.
+        /// </summary>
+        public List<double> InputChannelsFineTune
+        {
+            get { return this._inputChannelsFineTune; }
+            set { this._inputChannelsFineTune = value; }
+        }
+
+        // Check to see if InputChannelsFineTune property is set
+        internal bool IsSetInputChannelsFineTune()
+        {
+            return this._inputChannelsFineTune != null && this._inputChannelsFineTune.Count > 0; 
         }
 
     }

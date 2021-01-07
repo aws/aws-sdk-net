@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OutputChannelMapping Object
+    /// Response Unmarshaller for AvcIntraUhdSettings Object
     /// </summary>  
-    public class OutputChannelMappingUnmarshaller : IUnmarshaller<OutputChannelMapping, XmlUnmarshallerContext>, IUnmarshaller<OutputChannelMapping, JsonUnmarshallerContext>
+    public class AvcIntraUhdSettingsUnmarshaller : IUnmarshaller<AvcIntraUhdSettings, XmlUnmarshallerContext>, IUnmarshaller<AvcIntraUhdSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OutputChannelMapping IUnmarshaller<OutputChannelMapping, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AvcIntraUhdSettings IUnmarshaller<AvcIntraUhdSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public OutputChannelMapping Unmarshall(JsonUnmarshallerContext context)
+        public AvcIntraUhdSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            OutputChannelMapping unmarshalledObject = new OutputChannelMapping();
+            AvcIntraUhdSettings unmarshalledObject = new AvcIntraUhdSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("inputChannels", targetDepth))
+                if (context.TestExpression("qualityTuningLevel", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
-                    unmarshalledObject.InputChannels = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inputChannelsFineTune", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
-                    unmarshalledObject.InputChannelsFineTune = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QualityTuningLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static OutputChannelMappingUnmarshaller _instance = new OutputChannelMappingUnmarshaller();        
+        private static AvcIntraUhdSettingsUnmarshaller _instance = new AvcIntraUhdSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OutputChannelMappingUnmarshaller Instance
+        public static AvcIntraUhdSettingsUnmarshaller Instance
         {
             get
             {

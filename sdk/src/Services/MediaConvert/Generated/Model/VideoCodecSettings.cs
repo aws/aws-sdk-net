@@ -71,6 +71,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property AvcIntraSettings. Required when you set your output video
         /// codec to AVC-Intra. For more information about the AVC-I settings, see the relevant
         /// specification. For detailed information about SD and HD in AVC-I, see https://ieeexplore.ieee.org/document/7290936.
+        /// For information about 4K/2K in AVC-I, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
         /// </summary>
         public AvcIntraSettings AvcIntraSettings
         {
