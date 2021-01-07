@@ -633,6 +633,10 @@ namespace Amazon.CodePipeline
     {
 
         /// <summary>
+        /// Constant Cancelled for PipelineExecutionStatus
+        /// </summary>
+        public static readonly PipelineExecutionStatus Cancelled = new PipelineExecutionStatus("Cancelled");
+        /// <summary>
         /// Constant Failed for PipelineExecutionStatus
         /// </summary>
         public static readonly PipelineExecutionStatus Failed = new PipelineExecutionStatus("Failed");
@@ -698,6 +702,10 @@ namespace Amazon.CodePipeline
     public class StageExecutionStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Cancelled for StageExecutionStatus
+        /// </summary>
+        public static readonly StageExecutionStatus Cancelled = new StageExecutionStatus("Cancelled");
         /// <summary>
         /// Constant Failed for StageExecutionStatus
         /// </summary>

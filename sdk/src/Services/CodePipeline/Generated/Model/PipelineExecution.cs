@@ -38,6 +38,7 @@ namespace Amazon.CodePipeline.Model
         private string _pipelineName;
         private int? _pipelineVersion;
         private PipelineExecutionStatus _status;
+        private string _statusSummary;
 
         /// <summary>
         /// Gets and sets the property ArtifactRevisions. 
@@ -120,6 +121,11 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// Cancelled: The pipeline’s definition was updated before the pipeline execution could
+        /// be completed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// InProgress: The pipeline execution is currently running.
         /// </para>
         ///  </li> <li> 
@@ -162,6 +168,24 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusSummary. 
+        /// <para>
+        /// A summary that contains a description of the pipeline execution status.
+        /// </para>
+        /// </summary>
+        public string StatusSummary
+        {
+            get { return this._statusSummary; }
+            set { this._statusSummary = value; }
+        }
+
+        // Check to see if StatusSummary property is set
+        internal bool IsSetStatusSummary()
+        {
+            return this._statusSummary != null;
         }
 
     }
