@@ -1,3 +1,16 @@
+### 3.5.87.0 (2021-01-07 19:16 UTC)
+* CodePipeline (3.5.2.0)
+	* Adding cancelled status and summary for executions aborted by pipeline updates.
+* DevOpsGuru (3.5.2.0)
+	* Add resourceHours field in GetAccountHealth API to show total number of resource hours AWS Dev Ops Guru has done work for in the last hour.
+* MediaConvert (3.5.5.0)
+	* AWS Elemental MediaConvert SDK has added support for I-Frame-only HLS manifest generation in CMAF outputs.
+* Core 3.5.1.58
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.86.0 (2021-01-06 19:14 UTC)
 * AutoScaling (3.5.3.10)
 	* This update increases the number of instance types that can be added to the overrides within an mixed instances group configuration.
