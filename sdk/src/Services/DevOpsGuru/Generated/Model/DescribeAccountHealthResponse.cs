@@ -36,6 +36,7 @@ namespace Amazon.DevOpsGuru.Model
         private int? _metricsAnalyzed;
         private int? _openProactiveInsights;
         private int? _openReactiveInsights;
+        private long? _resourceHours;
 
         /// <summary>
         /// Gets and sets the property MetricsAnalyzed. 
@@ -95,6 +96,26 @@ namespace Amazon.DevOpsGuru.Model
         internal bool IsSetOpenReactiveInsights()
         {
             return this._openReactiveInsights.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceHours. 
+        /// <para>
+        /// The number of Amazon DevOps Guru resource analysis hours billed to the current AWS
+        /// account in the last hour. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public long ResourceHours
+        {
+            get { return this._resourceHours.GetValueOrDefault(); }
+            set { this._resourceHours = value; }
+        }
+
+        // Check to see if ResourceHours property is set
+        internal bool IsSetResourceHours()
+        {
+            return this._resourceHours.HasValue; 
         }
 
     }

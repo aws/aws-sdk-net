@@ -69,6 +69,12 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     response.OpenReactiveInsights = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceHours", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.ResourceHours = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
