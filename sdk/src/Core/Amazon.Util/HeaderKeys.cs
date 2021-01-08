@@ -100,5 +100,8 @@ namespace Amazon.Util
 
         public const string XAwsEc2MetadataTokenTtlSeconds = "x-aws-ec2-metadata-token-ttl-seconds";
         public const string XAwsEc2MetadataToken = "x-aws-ec2-metadata-token";
+
+        public const string AmzSdkInvocationId = "amz-sdk-invocation-id";
+        public const string AmzSdkRequest = "amz-sdk-request";
     }
 }

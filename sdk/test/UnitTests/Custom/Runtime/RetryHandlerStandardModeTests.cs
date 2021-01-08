@@ -2,11 +2,13 @@
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.S3;
+using Amazon.Util;
 using AWSSDK_DotNet35.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 
 namespace AWSSDK.UnitTests
@@ -29,16 +31,20 @@ namespace AWSSDK.UnitTests
             return config;
         }
                 
-        public void RunRetryTest(Action<IExecutionContext, MockStandardRetryPolicy> DoAction, AmazonS3Config config, CapacityManager capacityManager = null)
+        public void RunRetryTest(Action<IExecutionContext, MockStandardRetryPolicy> DoAction, AmazonS3Config config,
+            CapacityManager capacityManager = null, double? exponentialPower = null, double? exponentialBase = null)
         {
             try
             {
-                if(capacityManager != null)
+                if (capacityManager != null)
                 {                    
                     MockStandardRetryPolicy.SetCapacityManagerInstance(capacityManager);
                 }
 
                 var retryPolicy = new MockStandardRetryPolicy(config);
+                retryPolicy.ExponentialBase = exponentialBase ?? retryPolicy.ExponentialBase;
+                retryPolicy.ExponentialPower = exponentialPower ?? retryPolicy.ExponentialPower;
+
                 Handler = new RetryHandler(retryPolicy);
                 if(RuntimePipeline.Handlers.Find(h => h is RetryHandler) != null)
                 {
@@ -407,19 +413,136 @@ namespace AWSSDK.UnitTests
                 retryPolicy.AssertDelaysMatch(new int[] { 1000, 2000 });
             }, config);
         }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void RetryHeader_Invoke1_ThreeRetries_NoSkew()
+        {
+            var config = CreateConfig();
+            config.ReadWriteTimeout = new TimeSpan(0, 0, 10);
+            RunRetryTest((executionContext, retryPolicy) =>
+            {
+                Tester.Reset();
+                Tester.Action = (int callCount) =>
+                {
+                    var request = executionContext.RequestContext.Request;                    
+                    retryPolicy.RecordedSdkInvocationIds.Add(request.Headers[HeaderKeys.AmzSdkInvocationId]);
+                    retryPolicy.RecordedSdkRequests.Add(request.Headers[HeaderKeys.AmzSdkRequest]);
+
+                    switch (callCount)
+                    {
+                        case 1:                            
+                        case 2:
+                            throw new AmazonServiceException($"Mocked service error ({callCount})", new WebException(), HttpStatusCode.InternalServerError);
+                        case 3:
+                            //Return nothing so that a successful response is returned.
+                            break;
+                        default:
+                            throw new Exception($"Invalid number of calls ({callCount})");
+                    }
+                };
+                                
+                RuntimePipeline.InvokeSync(executionContext);
+
+                var capacity = MockStandardRetryPolicy.CurrentCapacityManagerInstance.GetRetryCapacity(config.ServiceURL);
+                Assert.AreEqual(DefaultMaxRetries, executionContext.RequestContext.Retries);
+                Assert.AreEqual(3, Tester.CallCount);                                
+
+                retryPolicy.AssertDelaysMatch(new int[] { 1000, 1000 });
+                retryPolicy.AssertSdkInvocationIdsMatch(new string[] { retryPolicy.RecordedSdkInvocationIds[0],
+                    retryPolicy.RecordedSdkInvocationIds[0], retryPolicy.RecordedSdkInvocationIds[0]}, false);
+                retryPolicy.AssertSdkRequestMatch(new string[] { "attempt=1; max=3",
+                    "attempt=2; max=3",
+                    "attempt=3; max=3" });
+            }, config, capacityManager: null, exponentialPower: 1, exponentialBase: 1);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void RetryHeader_Invoke2_ThreeOperations_NoSkew()
+        {
+            var config = CreateConfig();
+            config.ReadWriteTimeout = new TimeSpan(0, 0, 10);
+            RunRetryTest((executionContext, retryPolicy) =>
+            {
+                Tester.Reset();
+                Tester.Action = (int callCount) =>
+                {
+                    var request = executionContext.RequestContext.Request;
+                    retryPolicy.RecordedSdkInvocationIds.Add(request.Headers[HeaderKeys.AmzSdkInvocationId]);
+                    retryPolicy.RecordedSdkRequests.Add(request.Headers[HeaderKeys.AmzSdkRequest]);
+
+                    //Return nothing so that a successful response is returned.                    
+                };
+                                
+                RuntimePipeline.InvokeSync(executionContext);
+                executionContext = CreateTestContext(null, null, config);
+                RuntimePipeline.InvokeSync(executionContext);
+                executionContext = CreateTestContext(null, null, config);
+                RuntimePipeline.InvokeSync(executionContext);
+
+                var capacity = MockStandardRetryPolicy.CurrentCapacityManagerInstance.GetRetryCapacity(config.ServiceURL);                
+                Assert.AreEqual(3, Tester.CallCount);
+                                
+                retryPolicy.AssertSdkInvocationIdsMatch(new string[] { retryPolicy.RecordedSdkInvocationIds[0],
+                    retryPolicy.RecordedSdkInvocationIds[1], retryPolicy.RecordedSdkInvocationIds[2]}, true);
+                retryPolicy.AssertSdkRequestMatch(new string[] { "attempt=1; max=3", "attempt=1; max=3", "attempt=1; max=3" });
+            }, config, capacityManager: null, exponentialPower: 1, exponentialBase: 1);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void RetryHeader_Invoke3_ThreeOperations_Skew()
+        {
+            var config = CreateConfig();
+            RunRetryTest((executionContext, retryPolicy) =>
+            {
+                Tester.Reset();
+                Tester.Action = (int callCount) =>
+                {
+                    var request = executionContext.RequestContext.Request;
+                    retryPolicy.RecordedSdkInvocationIds.Add(request.Headers[HeaderKeys.AmzSdkInvocationId]);
+                    retryPolicy.RecordedSdkRequests.Add(request.Headers[HeaderKeys.AmzSdkRequest]);
+
+                    switch (callCount)
+                    {
+                        case 1:
+                        case 2:
+                            throw new AmazonServiceException($"Mocked service error ({callCount})", new WebException(), HttpStatusCode.InternalServerError);
+                        case 3:
+                            //Return nothing so that a successful response is returned.
+                            break;
+                        default:
+                            throw new Exception($"Invalid number of calls ({callCount})");
+                    }
+                };
+
+                RuntimePipeline.InvokeSync(executionContext);
+
+                var capacity = MockStandardRetryPolicy.CurrentCapacityManagerInstance.GetRetryCapacity(config.ServiceURL);
+                Assert.AreEqual(DefaultMaxRetries, executionContext.RequestContext.Retries);
+                Assert.AreEqual(3, Tester.CallCount);
+
+                retryPolicy.AssertDelaysMatch(new int[] { 1000, 1000 });
+                retryPolicy.AssertSdkInvocationIdsMatch(new string[] { retryPolicy.RecordedSdkInvocationIds[0],
+                    retryPolicy.RecordedSdkInvocationIds[0], retryPolicy.RecordedSdkInvocationIds[0]}, false);
+                retryPolicy.AssertSdkRequestMatch(new string[] { "attempt=1; max=3",
+                    "attempt=2; max=3",
+                    "attempt=3; max=3" });
+            }, config, capacityManager: null, exponentialPower: 1, exponentialBase: 1);
+        }
     }
 
     public class MockStandardRetryPolicy : StandardRetryPolicy
     {
         private static CapacityManager _originalCapacityManager;
-        private double _exponentialBase;
-        private double _exponentialPower;        
 
         public MockStandardRetryPolicy(IClientConfig config)
             : base(config)
         {
-            _exponentialBase = 1;
-            _exponentialPower = 2;
         }
 
         public static void SetCapacityManagerInstance(CapacityManager capacityManager)
@@ -437,31 +560,55 @@ namespace AWSSDK.UnitTests
 
         public List<int> RecordedDelays { get; set; } = new List<int>();
 
-        public void AssertDelaysMatch(int[] expectedDelays) 
-        { 
-            if(RecordedDelays.Count != expectedDelays.Length)
+        public List<string> RecordedSdkInvocationIds { get; set; } = new List<string>();
+        public List<string> RecordedSdkRequests { get; set; } = new List<string>();
+
+        public double ExponentialBase { get; set; } = 1;
+
+        public double ExponentialPower { get; set; } = 2;
+
+        private void AssertListMatch<T>(string typeName, List<T> recordedValues, T[] expectedValues)
+        {
+            if (recordedValues.Count != expectedValues.Length)
             {
-                throw new AssertFailedException($"Recorded {RecordedDelays.Count} delays but expected {expectedDelays.Length} delays.");
+                throw new AssertFailedException($"Recorded {recordedValues.Count} {typeName}s but expected {expectedValues.Length} {typeName}s.");
             }
 
-            for(var delay = 0; delay < expectedDelays.Length; delay++)
+            for (var index = 0; index < expectedValues.Length; index++)
             {
-                if(RecordedDelays[delay] != expectedDelays[delay])
+                if (recordedValues[index].ToString() != expectedValues[index].ToString())
                 {
-                    throw new AssertFailedException($"Delay index {delay} has recorded value of {RecordedDelays[delay]} but expected the value {expectedDelays[delay]}.");
+                    throw new AssertFailedException($"{typeName} index {index} has recorded value of {recordedValues[index]} but expected the value {expectedValues[index]}.");
                 }
-            }        
+            }
+        }
+
+        public void AssertDelaysMatch(int[] expectedDelays)
+        {
+            AssertListMatch("Delay", RecordedDelays, expectedDelays);
+        }
+
+        public void AssertSdkInvocationIdsMatch(string[] expectedSdkInvocationIds, bool allUnique)
+        {
+            AssertListMatch("SdkInvocationId", RecordedSdkInvocationIds, expectedSdkInvocationIds);
+            Assert.IsTrue(allUnique == (RecordedSdkInvocationIds.Distinct().Count() == RecordedSdkInvocationIds.Count()));
+            RecordedSdkInvocationIds.ForEach((id) => Assert.IsTrue(Guid.TryParse(id, out _)));
+        }
+
+        public void AssertSdkRequestMatch(string[] expectedSdkRequests)
+        {
+            AssertListMatch("SdkRequest", RecordedSdkRequests, expectedSdkRequests);
         }
 
         public override void WaitBeforeRetry(IExecutionContext executionContext)
         {
-            var msDelay = WaitBeforeRetry(executionContext.RequestContext.Retries, this.MaxBackoffInMilliseconds, _exponentialBase, _exponentialPower);
+            var msDelay = WaitBeforeRetry(executionContext.RequestContext.Retries, this.MaxBackoffInMilliseconds, this.ExponentialBase, this.ExponentialPower);
             RecordedDelays.Add(msDelay);
-        }       
+        }
 
         public static int WaitBeforeRetry(int retries, int maxBackoffInMilliseconds, double exponentialBase, double exponentialPower)
         {
-            return Convert.ToInt32(Math.Min(exponentialBase * Math.Pow(exponentialPower, retries - 1) * 1000.0, maxBackoffInMilliseconds));            
+            return Convert.ToInt32(Math.Min(exponentialBase * Math.Pow(exponentialPower, retries - 1) * 1000.0, maxBackoffInMilliseconds));
         }
     }
 }
