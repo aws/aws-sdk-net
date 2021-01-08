@@ -331,45 +331,32 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Finds all structure shapes under the current shape that contain no members
+        /// Finds all structure MarshallNames under the current shape that contain no members
         /// </summary>
-        public IList<Shape> FindStructureShapesWithoutMembers()
+        public IList<string> FindMarshallNamesWithoutMembers()
         {
-            List<Shape> foundShapes = new List<Shape>();            
-            HashSet<string> processedShapes = new HashSet<string>();
-            Queue<Shape> shapes = new Queue<Shape>();
-            shapes.Enqueue(this);
-            
-            while(shapes.Count > 0)
-            {
-                var current = shapes.Dequeue();
-                var marshallName = current.IsList ? current.ListMarshallName ?? "member" : current.MarshallName;
-                if (processedShapes.Contains(marshallName))
-                {
-                    continue;
-                }
+            List<string> emptyMembers = new List<string>();
+            HashSet<string> processedMembers = new HashSet<string>();
+            Queue<Shape> shapeQueue = new Queue<Shape>();
+            shapeQueue.Enqueue(this);
+            processedMembers.Add(this.MarshallName);
 
-                processedShapes.Add(marshallName);
-                
-                if (this != current && current.Members.Count == 0)
+            while (shapeQueue.Count > 0)
+            {
+                var currentShape = shapeQueue.Dequeue();
+                foreach (var child in currentShape.Members)
                 {
-                    foundShapes.Add(current);
-                    continue;
-                }
-                
-                foreach (var child in current.Members.Where(m => m.IsStructure || m.IsList))
-                {
-                    var shape = child.Shape.IsList ? child.Shape.ListShape : child.Shape;
-                    if(!shape.IsStructure && !shape.IsList)
+                    if (child.IsStructure && !processedMembers.Contains(child.MarshallName))
                     {
-                        continue;
+                        processedMembers.Add(child.MarshallName);
+                        if (child.Shape.Members.Count != 0)
+                            shapeQueue.Enqueue(child.Shape);
+                        else
+                            emptyMembers.Add(child.MarshallName);
                     }
-                    
-                    shapes.Enqueue(shape);
                 }
             }
-
-            return foundShapes;
+            return emptyMembers;
         }
 
 

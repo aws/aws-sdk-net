@@ -36,10 +36,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
         }
 
-		foreach(var shape in this.Structure.FindStructureShapesWithoutMembers())
+		foreach(var marshallName in this.Structure.FindMarshallNamesWithoutMembers())
 		{
 #>
-			context.AllowEmptyElementLookup.Add("<#=shape.MarshallName#>");
+			context.AllowEmptyElementLookup.Add("<#=marshallName#>");
 <#
 		}
 #>
