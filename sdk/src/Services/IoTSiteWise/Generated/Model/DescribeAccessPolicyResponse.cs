@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -107,7 +107,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AccessPolicyIdentity. 
         /// <para>
-        /// The AWS SSO identity (user or group) to which this access policy applies.
+        /// The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy
+        /// applies.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

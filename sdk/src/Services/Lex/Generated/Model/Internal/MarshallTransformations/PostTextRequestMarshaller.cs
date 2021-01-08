@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -75,6 +75,22 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetActiveContexts())
+                {
+                    context.Writer.WritePropertyName("activeContexts");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestActiveContextsListValue in publicRequest.ActiveContexts)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ActiveContextMarshaller.Instance;
+                        marshaller.Marshall(publicRequestActiveContextsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetInputText())
                 {
                     context.Writer.WritePropertyName("inputText");

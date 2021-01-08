@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -61,6 +61,11 @@ namespace Amazon.EC2.Model
         ///  <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code>
         /// | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>
         /// | <code>rejected</code> | <code>failed</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>vpc-endpoint-type</code> - The type of VPC endpoint (<code>Interface</code>
+        /// | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,11 +37,43 @@ namespace Amazon.DocDB.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeCertificates operation
+        ///</summary>
+        public IDescribeCertificatesPaginator DescribeCertificates(DescribeCertificatesRequest request) 
+        {
+            return new DescribeCertificatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBClusterParameterGroups operation
+        ///</summary>
+        public IDescribeDBClusterParameterGroupsPaginator DescribeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest request) 
+        {
+            return new DescribeDBClusterParameterGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBClusterParameters operation
+        ///</summary>
+        public IDescribeDBClusterParametersPaginator DescribeDBClusterParameters(DescribeDBClusterParametersRequest request) 
+        {
+            return new DescribeDBClusterParametersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeDBClusters operation
         ///</summary>
         public IDescribeDBClustersPaginator DescribeDBClusters(DescribeDBClustersRequest request) 
         {
             return new DescribeDBClustersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeDBClusterSnapshots operation
+        ///</summary>
+        public IDescribeDBClusterSnapshotsPaginator DescribeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest request) 
+        {
+            return new DescribeDBClusterSnapshotsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -82,6 +114,14 @@ namespace Amazon.DocDB.Model
         public IDescribeOrderableDBInstanceOptionsPaginator DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request) 
         {
             return new DescribeOrderableDBInstanceOptionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribePendingMaintenanceActions operation
+        ///</summary>
+        public IDescribePendingMaintenanceActionsPaginator DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request) 
+        {
+            return new DescribePendingMaintenanceActionsPaginator(this.client, request);
         }
     }
 }

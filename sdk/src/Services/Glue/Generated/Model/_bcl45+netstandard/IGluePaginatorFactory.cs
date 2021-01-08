@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -77,9 +77,19 @@ namespace Amazon.Glue.Model
         IGetMLTransformsPaginator GetMLTransforms(GetMLTransformsRequest request);
 
         /// <summary>
+        /// Paginator for GetPartitionIndexes operation
+        ///</summary>
+        IGetPartitionIndexesPaginator GetPartitionIndexes(GetPartitionIndexesRequest request);
+
+        /// <summary>
         /// Paginator for GetPartitions operation
         ///</summary>
         IGetPartitionsPaginator GetPartitions(GetPartitionsRequest request);
+
+        /// <summary>
+        /// Paginator for GetResourcePolicies operation
+        ///</summary>
+        IGetResourcePoliciesPaginator GetResourcePolicies(GetResourcePoliciesRequest request);
 
         /// <summary>
         /// Paginator for GetSecurityConfigurations operation
@@ -130,6 +140,21 @@ namespace Amazon.Glue.Model
         /// Paginator for ListMLTransforms operation
         ///</summary>
         IListMLTransformsPaginator ListMLTransforms(ListMLTransformsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRegistries operation
+        ///</summary>
+        IListRegistriesPaginator ListRegistries(ListRegistriesRequest request);
+
+        /// <summary>
+        /// Paginator for ListSchemas operation
+        ///</summary>
+        IListSchemasPaginator ListSchemas(ListSchemasRequest request);
+
+        /// <summary>
+        /// Paginator for ListSchemaVersions operation
+        ///</summary>
+        IListSchemaVersionsPaginator ListSchemaVersions(ListSchemaVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListTriggers operation

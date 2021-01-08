@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,8 +38,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property PublicAccessBlockConfiguration. 
         /// <para>
-        /// The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon
-        /// Web Services account.
+        /// The <code>PublicAccessBlock</code> configuration currently in effect for this AWS
+        /// account.
         /// </para>
         /// </summary>
         public PublicAccessBlockConfiguration PublicAccessBlockConfiguration

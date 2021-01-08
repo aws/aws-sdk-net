@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         private string _egressPackets;
         private string _ingressBytes;
         private string _ingressPackets;
+        private List<string> _postureComplianceStatuses = new List<string>();
         private ClientVpnConnectionStatus _status;
         private string _timestamp;
         private string _username;
@@ -226,6 +227,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIngressPackets()
         {
             return this._ingressPackets != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostureComplianceStatuses. 
+        /// <para>
+        /// The statuses returned by the client connect handler for posture compliance, if applicable.
+        /// </para>
+        /// </summary>
+        public List<string> PostureComplianceStatuses
+        {
+            get { return this._postureComplianceStatuses; }
+            set { this._postureComplianceStatuses = value; }
+        }
+
+        // Check to see if PostureComplianceStatuses property is set
+        internal bool IsSetPostureComplianceStatuses()
+        {
+            return this._postureComplianceStatuses != null && this._postureComplianceStatuses.Count > 0; 
         }
 
         /// <summary>

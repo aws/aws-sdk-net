@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,6 +51,9 @@ namespace Amazon.ConnectParticipant
     /// The APIs described here are used by chat participants, such as agents and customers.
     /// </para>
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonConnectParticipantClient : AmazonServiceClient, IAmazonConnectParticipant
     {
         private static IServiceMetadata serviceMetadata = new AmazonConnectParticipantMetadata();
@@ -269,6 +272,59 @@ namespace Amazon.ConnectParticipant
         #endregion
 
 
+        #region  CompleteAttachmentUpload
+
+        internal virtual CompleteAttachmentUploadResponse CompleteAttachmentUpload(CompleteAttachmentUploadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteAttachmentUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteAttachmentUploadResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteAttachmentUploadResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allows you to confirm that the attachment has been uploaded using the pre-signed URL
+        /// provided in StartAttachmentUpload API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteAttachmentUpload service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CompleteAttachmentUpload service method, as returned by ConnectParticipant.</returns>
+        /// <exception cref="Amazon.ConnectParticipant.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ConflictException">
+        /// An attachment with that identifier is already being uploaded.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon Connect service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ServiceQuotaExceededException">
+        /// The number of attachments per contact exceeds the quota.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Amazon Connect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/CompleteAttachmentUpload">REST API Reference for CompleteAttachmentUpload Operation</seealso>
+        public virtual Task<CompleteAttachmentUploadResponse> CompleteAttachmentUploadAsync(CompleteAttachmentUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteAttachmentUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteAttachmentUploadResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CompleteAttachmentUploadResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateParticipantConnection
 
         internal virtual CreateParticipantConnectionResponse CreateParticipantConnection(CreateParticipantConnectionRequest request)
@@ -288,8 +344,8 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  
         /// <para>
-        /// The participant token is valid for the lifetime of the participant – until the they
-        /// are part of a contact.
+        /// The participant token is valid for the lifetime of the participant – until they are
+        /// part of a contact.
         /// </para>
         ///  
         /// <para>
@@ -311,6 +367,12 @@ namespace Amazon.ConnectParticipant
         /// clients need to call this API again to obtain a new websocket URL and perform the
         /// same steps as before.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4 authentication</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateParticipantConnection service method.</param>
         /// <param name="cancellationToken">
@@ -358,6 +420,12 @@ namespace Amazon.ConnectParticipant
         /// <summary>
         /// Disconnects a participant. Note that ConnectionToken is used for invoking this API
         /// instead of ParticipantToken.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4 authentication</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisconnectParticipant service method.</param>
         /// <param name="cancellationToken">
@@ -389,6 +457,53 @@ namespace Amazon.ConnectParticipant
 
         #endregion
         
+        #region  GetAttachment
+
+        internal virtual GetAttachmentResponse GetAttachment(GetAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<GetAttachmentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides a pre-signed URL for download of a completed attachment. This is an asynchronous
+        /// API for use with active contacts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAttachment service method, as returned by ConnectParticipant.</returns>
+        /// <exception cref="Amazon.ConnectParticipant.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon Connect service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Amazon Connect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/GetAttachment">REST API Reference for GetAttachment Operation</seealso>
+        public virtual Task<GetAttachmentResponse> GetAttachmentAsync(GetAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTranscript
 
         internal virtual GetTranscriptResponse GetTranscript(GetTranscriptRequest request)
@@ -403,8 +518,14 @@ namespace Amazon.ConnectParticipant
 
 
         /// <summary>
-        /// Retrieves a transcript of the session. Note that ConnectionToken is used for invoking
-        /// this API instead of ParticipantToken.
+        /// Retrieves a transcript of the session, including details about any attachments. Note
+        /// that ConnectionToken is used for invoking this API instead of ParticipantToken.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4 authentication</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTranscript service method.</param>
         /// <param name="cancellationToken">
@@ -452,6 +573,12 @@ namespace Amazon.ConnectParticipant
         /// <summary>
         /// Sends an event. Note that ConnectionToken is used for invoking this API instead of
         /// ParticipantToken.
+        /// 
+        ///  
+        /// <para>
+        /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4 authentication</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendEvent service method.</param>
         /// <param name="cancellationToken">
@@ -499,6 +626,13 @@ namespace Amazon.ConnectParticipant
         /// <summary>
         /// Sends a message. Note that ConnectionToken is used for invoking this API instead of
         /// ParticipantToken.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+        /// Version 4 authentication</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendMessage service method.</param>
         /// <param name="cancellationToken">
@@ -526,6 +660,56 @@ namespace Amazon.ConnectParticipant
             options.ResponseUnmarshaller = SendMessageResponseUnmarshaller.Instance;
 
             return InvokeAsync<SendMessageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartAttachmentUpload
+
+        internal virtual StartAttachmentUploadResponse StartAttachmentUpload(StartAttachmentUploadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAttachmentUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAttachmentUploadResponseUnmarshaller.Instance;
+
+            return Invoke<StartAttachmentUploadResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides a pre-signed Amazon S3 URL in response for uploading the file directly to
+        /// S3.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAttachmentUpload service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAttachmentUpload service method, as returned by ConnectParticipant.</returns>
+        /// <exception cref="Amazon.ConnectParticipant.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon Connect service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ServiceQuotaExceededException">
+        /// The number of attachments per contact exceeds the quota.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectParticipant.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Amazon Connect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectparticipant-2018-09-07/StartAttachmentUpload">REST API Reference for StartAttachmentUpload Operation</seealso>
+        public virtual Task<StartAttachmentUploadResponse> StartAttachmentUploadAsync(StartAttachmentUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAttachmentUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAttachmentUploadResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartAttachmentUploadResponse>(request, options, cancellationToken);
         }
 
         #endregion

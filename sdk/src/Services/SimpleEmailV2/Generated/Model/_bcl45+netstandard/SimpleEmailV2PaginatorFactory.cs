@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,6 +50,22 @@ namespace Amazon.SimpleEmailV2.Model
         public IListConfigurationSetsPaginator ListConfigurationSets(ListConfigurationSetsRequest request) 
         {
             return new ListConfigurationSetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListContactLists operation
+        ///</summary>
+        public IListContactListsPaginator ListContactLists(ListContactListsRequest request) 
+        {
+            return new ListContactListsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListContacts operation
+        ///</summary>
+        public IListContactsPaginator ListContacts(ListContactsRequest request) 
+        {
+            return new ListContactsPaginator(this.client, request);
         }
 
         /// <summary>

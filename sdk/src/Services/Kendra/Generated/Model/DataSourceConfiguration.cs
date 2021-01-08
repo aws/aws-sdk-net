@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,7 +33,9 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class DataSourceConfiguration
     {
+        private ConfluenceConfiguration _confluenceConfiguration;
         private DatabaseConfiguration _databaseConfiguration;
+        private GoogleDriveConfiguration _googleDriveConfiguration;
         private OneDriveConfiguration _oneDriveConfiguration;
         private S3DataSourceConfiguration _s3Configuration;
         private SalesforceConfiguration _salesforceConfiguration;
@@ -41,9 +43,27 @@ namespace Amazon.Kendra.Model
         private SharePointConfiguration _sharePointConfiguration;
 
         /// <summary>
+        /// Gets and sets the property ConfluenceConfiguration. 
+        /// <para>
+        /// Provides configuration information for connecting to a Confluence data source.
+        /// </para>
+        /// </summary>
+        public ConfluenceConfiguration ConfluenceConfiguration
+        {
+            get { return this._confluenceConfiguration; }
+            set { this._confluenceConfiguration = value; }
+        }
+
+        // Check to see if ConfluenceConfiguration property is set
+        internal bool IsSetConfluenceConfiguration()
+        {
+            return this._confluenceConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DatabaseConfiguration. 
         /// <para>
-        /// Provides information necessary to create a connector for a database.
+        /// Provides information necessary to create a data source connector for a database.
         /// </para>
         /// </summary>
         public DatabaseConfiguration DatabaseConfiguration
@@ -59,9 +79,27 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GoogleDriveConfiguration. 
+        /// <para>
+        /// Provides configuration for data sources that connect to Google Drive. 
+        /// </para>
+        /// </summary>
+        public GoogleDriveConfiguration GoogleDriveConfiguration
+        {
+            get { return this._googleDriveConfiguration; }
+            set { this._googleDriveConfiguration = value; }
+        }
+
+        // Check to see if GoogleDriveConfiguration property is set
+        internal bool IsSetGoogleDriveConfiguration()
+        {
+            return this._googleDriveConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OneDriveConfiguration. 
         /// <para>
-        /// Provided configuration for data sources that connect to Microsoft OneDrive.
+        /// Provides configuration for data sources that connect to Microsoft OneDrive.
         /// </para>
         /// </summary>
         public OneDriveConfiguration OneDriveConfiguration
@@ -79,8 +117,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property S3Configuration. 
         /// <para>
-        /// Provides information to create a connector for a document repository in an Amazon
-        /// S3 bucket.
+        /// Provides information to create a data source connector for a document repository in
+        /// an Amazon S3 bucket.
         /// </para>
         /// </summary>
         public S3DataSourceConfiguration S3Configuration
@@ -134,7 +172,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property SharePointConfiguration. 
         /// <para>
-        /// Provides information necessary to create a connector for a Microsoft SharePoint site.
+        /// Provides information necessary to create a data source connector for a Microsoft SharePoint
+        /// site.
         /// </para>
         /// </summary>
         public SharePointConfiguration SharePointConfiguration

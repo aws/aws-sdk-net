@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.XRay.Model
 {
     /// <summary>
     /// Information about an application that processed requests, users that made requests,
-    /// or downstream services, resources and applications that an application used.
+    /// or downstream services, resources, and applications that an application used.
     /// </summary>
     public partial class Service
     {
@@ -272,8 +272,8 @@ namespace Amazon.XRay.Model
         ///  <ul> <li> 
         /// <para>
         /// AWS Resource - The type of an AWS resource. For example, <code>AWS::EC2::Instance</code>
-        /// for a application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for an
-        /// Amazon DynamoDB table that the application used.
+        /// for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code> for
+        /// an Amazon DynamoDB table that the application used.
         /// </para>
         ///  </li> <li> 
         /// <para>

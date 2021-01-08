@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -103,10 +103,32 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetLineageConfiguration())
+                {
+                    context.Writer.WritePropertyName("LineageConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LineageConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LineageConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetRecrawlPolicy())
+                {
+                    context.Writer.WritePropertyName("RecrawlPolicy");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RecrawlPolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RecrawlPolicy, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetRole())

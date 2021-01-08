@@ -3,27 +3,27 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AttachInstancesRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AttachLoadBalancersRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.AttachLoadBalancerTargetGroupsRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.BatchDeleteScheduledActionRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.BatchPutScheduledUpdateGroupActionRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.CancelInstanceRefreshRequest.AutoScalingGroupName</property>
@@ -74,7 +74,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest.LaunchConfigurationName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest.PlacementGroup</property>
@@ -153,17 +153,17 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DeleteAutoScalingGroupRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DeleteLaunchConfigurationRequest.LaunchConfigurationName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DeleteLifecycleHookRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DeleteLifecycleHookRequest.LifecycleHookName</property>
@@ -174,17 +174,17 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DeleteNotificationConfigurationRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DeleteNotificationConfigurationRequest.TopicARN</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DeletePolicyRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DeletePolicyRequest.PolicyName</property>
@@ -194,12 +194,12 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DeleteScheduledActionRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DeleteScheduledActionRequest.ScheduledActionName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeAutoScalingGroupsRequest.NextToken</property>
@@ -233,12 +233,12 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeLifecycleHooksRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeLoadBalancersRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeLoadBalancersRequest.NextToken</property>
@@ -249,7 +249,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeLoadBalancerTargetGroupsRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeLoadBalancerTargetGroupsRequest.NextToken</property>
@@ -266,7 +266,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribePoliciesRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribePoliciesRequest.NextToken</property>
@@ -277,7 +277,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeScalingActivitiesRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeScalingActivitiesRequest.NextToken</property>
@@ -288,7 +288,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeScheduledActionsRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DescribeScheduledActionsRequest.NextToken</property>
@@ -305,27 +305,27 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DetachInstancesRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DetachLoadBalancersRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DetachLoadBalancerTargetGroupsRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.DisableMetricsCollectionRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.EnableMetricsCollectionRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.EnableMetricsCollectionRequest.Granularity</property>
@@ -335,12 +335,12 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.EnterStandbyRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.ExecutePolicyRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.ExecutePolicyRequest.PolicyName</property>
@@ -350,12 +350,12 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.ExitStandbyRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutLifecycleHookRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutLifecycleHookRequest.LifecycleHookName</property>
@@ -371,22 +371,22 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutLifecycleHookRequest.NotificationTargetARN</property>
     <min>0</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutLifecycleHookRequest.RoleARN</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutNotificationConfigurationRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutNotificationConfigurationRequest.TopicARN</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutScalingPolicyRequest.AdjustmentType</property>
@@ -396,7 +396,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutScalingPolicyRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutScalingPolicyRequest.MetricAggregationType</property>
@@ -421,7 +421,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutScheduledUpdateGroupActionRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PutScheduledUpdateGroupActionRequest.Recurrence</property>
@@ -457,12 +457,12 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.ResumeProcessesRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.SetDesiredCapacityRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.SetInstanceHealthRequest.HealthStatus</property>
@@ -477,7 +477,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.SetInstanceProtectionRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.StartInstanceRefreshRequest.AutoScalingGroupName</property>
@@ -492,7 +492,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.SuspendProcessesRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.TerminateInstanceInAutoScalingGroupRequest.InstanceId</property>
@@ -502,7 +502,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest.HealthCheckType</property>
@@ -512,7 +512,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest.LaunchConfigurationName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest.PlacementGroup</property>
@@ -852,7 +852,7 @@
     <property>Amazon.AutoScaling.Model.LaunchTemplateSpecification.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LaunchTemplateSpecification.Version</property>
@@ -862,7 +862,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHook.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHook.LifecycleHookName</property>
@@ -877,13 +877,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHook.NotificationTargetARN</property>
-    <min>1</min>
-    <max>1600</max>
+    <min>0</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHook.RoleARN</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHookSpecification.LifecycleHookName</property>
@@ -899,12 +899,12 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHookSpecification.NotificationTargetARN</property>
     <min>0</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LifecycleHookSpecification.RoleARN</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.LoadBalancerState.LoadBalancerName</property>
@@ -939,7 +939,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.NotificationConfiguration.AutoScalingGroupName</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.NotificationConfiguration.NotificationType</property>
@@ -949,7 +949,7 @@
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.NotificationConfiguration.TopicARN</property>
     <min>1</min>
-    <max>1600</max>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScaling.Model.PredefinedMetricSpecification.ResourceLabel</property>

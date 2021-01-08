@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -32,7 +32,7 @@ namespace Amazon.S3.Util
     /// </summary>
     public class AmazonS3Uri
     {
-        private const string EndpointPattern = @"^(.+\.)?s3[.-]([a-z0-9-]+)\.";
+        private static readonly Regex EndpointRegexMatch = new Regex(@"^(.+\.)?s3[.-]([a-z0-9-]+)\.", RegexOptions.Compiled);
 
         /// <summary>
         /// True if the URI contains the bucket in the path, false if it contains the bucket in the authority.
@@ -77,7 +77,7 @@ namespace Amazon.S3.Util
             if (string.IsNullOrEmpty(uri.Host))
                 throw new ArgumentException("Invalid URI - no hostname present");
 
-            var match = new Regex(EndpointPattern).Match(uri.Host);
+            var match = EndpointRegexMatch.Match(uri.Host);
             if (!match.Success)
                 throw new ArgumentException("Invalid S3 URI - hostname does not appear to be a valid S3 endpoint");
 
@@ -186,16 +186,21 @@ namespace Amazon.S3.Util
         /// <returns>true if the Uri is an AmazonS3Endpoint, and the out paramter has been filled in, false otherwise</returns>
         public static bool TryParseAmazonS3Uri(Uri uri, out AmazonS3Uri amazonS3Uri)
         {
-            if (IsAmazonS3Endpoint(uri))
+            try
             {
-                amazonS3Uri = new AmazonS3Uri(uri);
-                return true;
+                if (IsAmazonS3Endpoint(uri))
+                {
+                    amazonS3Uri = new AmazonS3Uri(uri);
+                    return true;
+                }
             }
-            else
-            {
-                amazonS3Uri = null;
-                return false;
-            }
+            // intentionally suppress all exceptions, because this is a try method
+#pragma warning disable CA1031 // Do not catch general exception types
+            catch { }
+#pragma warning restore CA1031 // Do not catch general exception types
+
+            amazonS3Uri = null;
+            return false;
         }
 
         /// <summary>
@@ -221,16 +226,14 @@ namespace Amazon.S3.Util
             if (uri == null)
                 throw new ArgumentNullException("uri");
 
-            var match = new Regex(EndpointPattern).Match(uri.Host);
             if (uri.Host.EndsWith("amazonaws.com", StringComparison.OrdinalIgnoreCase) || uri.Host.EndsWith("amazonaws.com.cn", StringComparison.OrdinalIgnoreCase))
             {
-                return match.Success;
+                return EndpointRegexMatch.Match(uri.Host).Success;
             }
             else
             {
                 return false;
             }
-
         }
 
         /// <summary>

@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2012-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,7 +48,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public async Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             var documents = await DocumentSearch.GetNextSetHelperAsync(cancellationToken).ConfigureAwait(false);
-            List<T> items = SourceContext.FromDocuments<T>(documents).ToList();
+            List<T> items = SourceContext.FromDocumentsHelper<T>(documents, this.Config).ToList();
             return items;
         }
 
@@ -63,7 +63,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public async Task<List<T>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             var documents = await DocumentSearch.GetRemainingHelperAsync(cancellationToken).ConfigureAwait(false);
-            List<T> items = SourceContext.FromDocuments<T>(documents).ToList();
+            List<T> items = SourceContext.FromDocumentsHelper<T>(documents, this.Config).ToList();
             return items;
         }
 

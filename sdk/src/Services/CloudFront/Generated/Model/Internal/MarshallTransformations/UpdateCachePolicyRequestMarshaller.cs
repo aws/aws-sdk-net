@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -120,6 +120,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             xmlWriter.WriteEndElement();
                         }
+                        if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.IsSetEnableAcceptEncodingBrotli())
+                            xmlWriter.WriteElementString("EnableAcceptEncodingBrotli", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingBrotli));                 
+        
                         if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.IsSetEnableAcceptEncodingGzip())
                             xmlWriter.WriteElementString("EnableAcceptEncodingGzip", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingGzip));                 
         

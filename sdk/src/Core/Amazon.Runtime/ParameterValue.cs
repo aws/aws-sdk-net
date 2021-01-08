@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -74,5 +74,32 @@ namespace Amazon.Runtime
         }
 
         internal StringListParameterValue() { }
+    }
+
+    /// <summary>
+    /// Double list parameter value.
+    /// </summary>
+    public class DoubleListParameterValue : ParameterValue
+    {
+        /// <summary>
+        /// List of doubles value of the parameter.
+        /// </summary>
+        public List<double> Value
+        {
+            get; set;
+        }
+
+        /// <summary>
+        /// Constructs ParameterValue for a list of doubles.
+        /// </summary>
+        /// <param name="values"></param>
+        public DoubleListParameterValue(List<double> values)
+        {
+            Value = values;
+        }
+
+        internal DoubleListParameterValue()
+        {
+        }
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _arn;
         private List<ColumnGroup> _columnGroups = new List<ColumnGroup>();
+        private List<ColumnLevelPermissionRule> _columnLevelPermissionRules = new List<ColumnLevelPermissionRule>();
         private long? _consumedSpiceCapacityInBytes;
         private DateTime? _createdTime;
         private string _dataSetId;
@@ -82,6 +83,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetColumnGroups()
         {
             return this._columnGroups != null && this._columnGroups.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ColumnLevelPermissionRules. 
+        /// <para>
+        /// A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ColumnLevelPermissionRule> ColumnLevelPermissionRules
+        {
+            get { return this._columnLevelPermissionRules; }
+            set { this._columnLevelPermissionRules = value; }
+        }
+
+        // Check to see if ColumnLevelPermissionRules property is set
+        internal bool IsSetColumnLevelPermissionRules()
+        {
+            return this._columnLevelPermissionRules != null && this._columnLevelPermissionRules.Count > 0; 
         }
 
         /// <summary>
@@ -142,7 +162,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ImportMode. 
         /// <para>
-        /// Indicates whether you want to import the data into SPICE.
+        /// A value that indicates whether you want to import the data into SPICE.
         /// </para>
         /// </summary>
         public DataSetImportMode ImportMode
@@ -181,7 +201,7 @@ namespace Amazon.QuickSight.Model
         /// Configures the combination and transformation of the data from the physical tables.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=32)]
+        [AWSProperty(Min=1, Max=64)]
         public Dictionary<string, LogicalTable> LogicalTableMap
         {
             get { return this._logicalTableMap; }
@@ -238,7 +258,7 @@ namespace Amazon.QuickSight.Model
         /// Declares the physical tables that are available in the underlying data sources.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=16)]
+        [AWSProperty(Min=1, Max=32)]
         public Dictionary<string, PhysicalTable> PhysicalTableMap
         {
             get { return this._physicalTableMap; }

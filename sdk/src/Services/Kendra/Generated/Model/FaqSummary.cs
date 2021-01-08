@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ namespace Amazon.Kendra.Model
     public partial class FaqSummary
     {
         private DateTime? _createdAt;
+        private FaqFileFormat _fileFormat;
         private string _id;
         private string _name;
         private FaqStatus _status;
@@ -56,6 +57,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileFormat. 
+        /// <para>
+        /// The file type used to create the FAQ. 
+        /// </para>
+        /// </summary>
+        public FaqFileFormat FileFormat
+        {
+            get { return this._fileFormat; }
+            set { this._fileFormat = value; }
+        }
+
+        // Check to see if FileFormat property is set
+        internal bool IsSetFileFormat()
+        {
+            return this._fileFormat != null;
         }
 
         /// <summary>

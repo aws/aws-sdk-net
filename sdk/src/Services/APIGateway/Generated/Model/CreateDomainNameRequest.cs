@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ namespace Amazon.APIGateway.Model
         private string _certificatePrivateKey;
         private string _domainName;
         private EndpointConfiguration _endpointConfiguration;
+        private MutualTlsAuthenticationInput _mutualTlsAuthentication;
         private string _regionalCertificateArn;
         private string _regionalCertificateName;
         private SecurityPolicy _securityPolicy;
@@ -167,7 +168,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property EndpointConfiguration. 
         /// <para>
         /// The endpoint configuration of this <a>DomainName</a> showing the endpoint types of
-        /// the domain name. 
+        /// the domain name.
         /// </para>
         /// </summary>
         public EndpointConfiguration EndpointConfiguration
@@ -180,6 +181,21 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetEndpointConfiguration()
         {
             return this._endpointConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MutualTlsAuthentication.
+        /// </summary>
+        public MutualTlsAuthenticationInput MutualTlsAuthentication
+        {
+            get { return this._mutualTlsAuthentication; }
+            set { this._mutualTlsAuthentication = value; }
+        }
+
+        // Check to see if MutualTlsAuthentication property is set
+        internal bool IsSetMutualTlsAuthentication()
+        {
+            return this._mutualTlsAuthentication != null;
         }
 
         /// <summary>

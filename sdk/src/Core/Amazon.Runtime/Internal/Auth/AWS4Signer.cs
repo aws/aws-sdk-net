@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -149,15 +149,16 @@ namespace Amazon.Runtime.Internal.Auth
                                              string awsAccessKeyId,
                                              string awsSecretAccessKey)
         {
+            ValidateRequest(request);
             var signedAt = InitializeHeaders(request.Headers, request.Endpoint);
-            var service = DetermineService(clientConfig);
+            var service = !string.IsNullOrEmpty(request.OverrideSigningServiceName) ? request.OverrideSigningServiceName : DetermineService(clientConfig);
             request.DeterminedSigningRegion = DetermineSigningRegion(clientConfig, service, request.AlternateEndpoint, request);
 
             var parametersToCanonicalize = GetParametersToCanonicalize(request);
             var canonicalParameters = CanonicalizeQueryParameters(parametersToCanonicalize);
             var bodyHash = SetRequestBodyHash(request, SignPayload);
             var sortedHeaders = SortAndPruneHeaders(request.Headers);
-            
+
             var canonicalRequest = CanonicalizeRequest(request.Endpoint,
                                                        request.ResourcePath,
                                                        request.HttpMethod,
@@ -234,6 +235,17 @@ namespace Amazon.Runtime.Internal.Auth
             }
         }
 
+        private static void ValidateRequest(IRequest request)
+        {
+            Uri url = request.Endpoint;
+
+            // Before we sign the request, we need to validate if the request is being 
+            // sent over https when DisablePayloadSigning is true.
+            if((request.DisablePayloadSigning ?? false) && url.Scheme != "https")
+            {
+                throw new AmazonClientException("When DisablePayloadSigning is true, the request must be sent over HTTPS.");
+            }
+        }
 
         /// <summary>
         /// Computes and returns an AWS4 signature for the specified canonicalized request
@@ -405,7 +417,7 @@ namespace Amazon.Runtime.Internal.Auth
         public static string SetRequestBodyHash(IRequest request, bool signPayload)
         {
             // if unsigned payload, set the magic string in the header and return it
-            if (!signPayload)
+            if (request.DisablePayloadSigning != null ? request.DisablePayloadSigning.Value : !signPayload)
                 return SetPayloadSignatureHeader(request, UnsignedPayload);
 
             // if the body hash has been precomputed and already placed in the header, just extract and return it
@@ -584,7 +596,7 @@ namespace Amazon.Runtime.Internal.Auth
 
         internal static string DetermineService(IClientConfig clientConfig)
         {
-            return !string.IsNullOrEmpty(clientConfig.AuthenticationServiceName) 
+            return (!string.IsNullOrEmpty(clientConfig.AuthenticationServiceName)) 
                 ? clientConfig.AuthenticationServiceName 
                 : AWSSDKUtils.DetermineService(clientConfig.DetermineServiceURL());
         }

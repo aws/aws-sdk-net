@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// The account-level and bucket-level permissions settings for an S3 bucket.
+    /// Provides information about the account-level and bucket-level permissions settings
+    /// for an S3 bucket.
     /// </summary>
     public partial class BucketPermissionConfiguration
     {

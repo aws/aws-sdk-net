@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ namespace Amazon.XRay.Model
     {
         private string _filterExpression;
         private string _groupName;
+        private InsightsConfiguration _insightsConfiguration;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -77,7 +78,72 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property InsightsConfiguration. 
+        /// <para>
+        /// The structure containing configurations related to insights.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The InsightsEnabled boolean can be set to true to enable insights for the new group
+        /// or false to disable insights for the new group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The NotifcationsEnabled boolean can be set to true to enable insights notifications
+        /// for the new group. Notifications may only be enabled on a group with InsightsEnabled
+        /// set to true.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public InsightsConfiguration InsightsConfiguration
+        {
+            get { return this._insightsConfiguration; }
+            set { this._insightsConfiguration = value; }
+        }
+
+        // Check to see if InsightsConfiguration property is set
+        internal bool IsSetInsightsConfiguration()
+        {
+            return this._insightsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map that contains one or more tag keys and tag values to attach to an X-Ray group.
+        /// For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS resources</a> in the <i>AWS General Reference</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following restrictions apply to tags:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum number of user-applied tags per resource: 50
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum tag key length: 128 Unicode characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum tag value length: 256 Unicode characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters:
+        /// _ . : / = + - and @
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tag keys and values are case sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<Tag> Tags

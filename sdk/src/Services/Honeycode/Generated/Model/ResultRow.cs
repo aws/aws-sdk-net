@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -61,6 +61,7 @@ namespace Amazon.Honeycode.Model
         /// The ID for a particular row.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=77, Max=77)]
         public string RowId
         {
             get { return this._rowId; }

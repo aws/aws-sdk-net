@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ namespace Amazon.IoTAnalytics.Model
     {
         private string _datastoreName;
         private DatastoreStorage _datastoreStorage;
+        private FileFormatConfiguration _fileFormatConfiguration;
         private RetentionPeriod _retentionPeriod;
         private List<Tag> _tags = new List<Tag>();
 
@@ -61,9 +62,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatastoreStorage. 
         /// <para>
-        /// Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3"
-        /// storage. If not specified, the default is "serviceManagedS3". This cannot be changed
-        /// after the data store is created.
+        /// Where data store data is stored. You can choose one of <code>serviceManagedS3</code>
+        /// or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
+        /// You cannot change this storage option after the data store is created.
         /// </para>
         /// </summary>
         public DatastoreStorage DatastoreStorage
@@ -79,9 +80,36 @@ namespace Amazon.IoTAnalytics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FileFormatConfiguration. 
+        /// <para>
+        /// Contains the configuration information of file formats. AWS IoT Analytics data stores
+        /// support JSON and <a href="https://parquet.apache.org/">Parquet</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default file format is JSON. You can specify only one format.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't change the file format after you create the data store.
+        /// </para>
+        /// </summary>
+        public FileFormatConfiguration FileFormatConfiguration
+        {
+            get { return this._fileFormatConfiguration; }
+            set { this._fileFormatConfiguration = value; }
+        }
+
+        // Check to see if FileFormatConfiguration property is set
+        internal bool IsSetFileFormatConfiguration()
+        {
+            return this._fileFormatConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// How long, in days, message data is kept for the data store. When "customerManagedS3"
+        /// How long, in days, message data is kept for the data store. When <code>customerManagedS3</code>
         /// storage is selected, this parameter is ignored.
         /// </para>
         /// </summary>

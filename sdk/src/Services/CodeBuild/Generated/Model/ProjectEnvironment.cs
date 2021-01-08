@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,7 +45,10 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// The certificate to use with this build project.
+        /// The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix, and
+        /// object key that contains the PEM-encoded certificate for the build project. For more
+        /// information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
+        /// in the <i>AWS CodeBuild User Guide</i>.
         /// </para>
         /// </summary>
         public string Certificate
@@ -147,14 +150,15 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For an image tag: <code>registry/repository:tag</code>. For example, to specify an
-        /// image with the tag "latest," use <code>registry/repository:latest</code>.
+        /// For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For
+        /// example, in the Docker repository that CodeBuild uses to manage its Docker images,
+        /// this would be <code>aws/codebuild/standard:4.0</code>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an image digest: <code>registry/repository@digest</code>. For example, to specify
-        /// an image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf,"
-        /// use <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+        /// For an image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>.
+        /// For example, to specify an image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf,"
+        /// use <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

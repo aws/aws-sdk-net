@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -103,6 +103,10 @@ namespace Amazon.CodeArtifact.Model
         ///  <code>maven</code>: A Maven package that contains compiled code in a distributable
         /// format, such as a JAR file. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nuget</code>: A NuGet package. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public PackageFormat Format
@@ -155,6 +159,11 @@ namespace Amazon.CodeArtifact.Model
         ///  A Python package does not contain a corresponding component, so Python packages do
         /// not have a namespace. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  A NuGet package does not contain a corresponding component, so NuGet packages do
+        /// not have a namespace. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -193,8 +202,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property PackagePrefix. 
         /// <para>
-        ///  A prefix used to filter returned repositories. Only repositories with names that
-        /// start with <code>repositoryPrefix</code> are returned. 
+        ///  A prefix used to filter returned packages. Only packages with names that start with
+        /// <code>packagePrefix</code> are returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

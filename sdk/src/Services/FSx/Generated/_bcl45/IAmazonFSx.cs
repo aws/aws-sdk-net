@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,6 +42,80 @@ namespace Amazon.FSx
         /// </summary>
         IFSxPaginatorFactory Paginators { get; }
 
+        
+        #region  AssociateFileSystemAliases
+
+
+        /// <summary>
+        /// Use this action to associate one or more Domain Name Server (DNS) aliases with an
+        /// existing Amazon FSx for Windows File Server file system. A file systen can have a
+        /// maximum of 50 DNS aliases associated with it at any one time. If you try to associate
+        /// a DNS alias that is already associated with the file system, FSx takes no action on
+        /// that alias in the request. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+        /// with DNS Aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+        /// 5: Using DNS aliases to access your file system</a>, including additional steps you
+        /// must take to be able to access your file system using a DNS alias.
+        /// 
+        ///  
+        /// <para>
+        /// The system response shows the DNS aliases that Amazon FSx is attempting to associate
+        /// with the file system. Use the API operation to monitor the status of the aliases Amazon
+        /// FSx is associating with the file system.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFileSystemAliases service method.</param>
+        /// 
+        /// <returns>The response from the AssociateFileSystemAliases service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AssociateFileSystemAliases">REST API Reference for AssociateFileSystemAliases Operation</seealso>
+        AssociateFileSystemAliasesResponse AssociateFileSystemAliases(AssociateFileSystemAliasesRequest request);
+
+
+
+        /// <summary>
+        /// Use this action to associate one or more Domain Name Server (DNS) aliases with an
+        /// existing Amazon FSx for Windows File Server file system. A file systen can have a
+        /// maximum of 50 DNS aliases associated with it at any one time. If you try to associate
+        /// a DNS alias that is already associated with the file system, FSx takes no action on
+        /// that alias in the request. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+        /// with DNS Aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+        /// 5: Using DNS aliases to access your file system</a>, including additional steps you
+        /// must take to be able to access your file system using a DNS alias.
+        /// 
+        ///  
+        /// <para>
+        /// The system response shows the DNS aliases that Amazon FSx is attempting to associate
+        /// with the file system. Use the API operation to monitor the status of the aliases Amazon
+        /// FSx is associating with the file system.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateFileSystemAliases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateFileSystemAliases service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AssociateFileSystemAliases">REST API Reference for AssociateFileSystemAliases Operation</seealso>
+        Task<AssociateFileSystemAliasesResponse> AssociateFileSystemAliasesAsync(AssociateFileSystemAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
         
         #region  CancelDataRepositoryTask
 
@@ -163,7 +237,8 @@ namespace Amazon.FSx
         /// </para>
         ///  
         /// <para>
-        /// For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+        /// For more information about backing up Amazon FSx for Windows file systems, see <a
+        /// href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
         /// with FSx for Windows backups</a>.
         /// </para>
         ///  
@@ -257,7 +332,8 @@ namespace Amazon.FSx
         /// </para>
         ///  
         /// <para>
-        /// For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+        /// For more information about backing up Amazon FSx for Windows file systems, see <a
+        /// href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
         /// with FSx for Windows backups</a>.
         /// </para>
         ///  
@@ -339,10 +415,10 @@ namespace Amazon.FSx
         /// changes, including POSIX metadata, to files, directories, and symbolic links (symlinks)
         /// from your FSx file system to its linked data repository. A <code>CreateDataRepositoryTask</code>
         /// operation will fail if a data repository is not linked to the FSx file system. To
-        /// learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using
-        /// Data Repository Tasks</a>. To learn more about linking a data repository to your file
-        /// system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repository.html#export-prefix">Setting
-        /// the Export Prefix</a>.
+        /// learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data
+        /// Repository Tasks</a>. To learn more about linking a data repository to your file system,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-fs-linked-data-repo.html">Linking
+        /// your file system to an S3 bucket</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataRepositoryTask service method.</param>
         /// 
@@ -384,10 +460,10 @@ namespace Amazon.FSx
         /// changes, including POSIX metadata, to files, directories, and symbolic links (symlinks)
         /// from your FSx file system to its linked data repository. A <code>CreateDataRepositoryTask</code>
         /// operation will fail if a data repository is not linked to the FSx file system. To
-        /// learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using
-        /// Data Repository Tasks</a>. To learn more about linking a data repository to your file
-        /// system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repository.html#export-prefix">Setting
-        /// the Export Prefix</a>.
+        /// learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data
+        /// Repository Tasks</a>. To learn more about linking a data repository to your file system,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-fs-linked-data-repo.html">Linking
+        /// your file system to an S3 bucket</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataRepositoryTask service method.</param>
         /// <param name="cancellationToken">
@@ -1197,6 +1273,58 @@ namespace Amazon.FSx
 
         #endregion
         
+        #region  DescribeFileSystemAliases
+
+
+        /// <summary>
+        /// Returns the DNS aliases that are associated with the specified Amazon FSx for Windows
+        /// File Server file system. A history of all DNS aliases that have been associated with
+        /// and disassociated from the file system is available in the list of <a>AdministrativeAction</a>
+        /// provided in the <a>DescribeFileSystems</a> operation response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFileSystemAliases service method.</param>
+        /// 
+        /// <returns>The response from the DescribeFileSystemAliases service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystemAliases">REST API Reference for DescribeFileSystemAliases Operation</seealso>
+        DescribeFileSystemAliasesResponse DescribeFileSystemAliases(DescribeFileSystemAliasesRequest request);
+
+
+
+        /// <summary>
+        /// Returns the DNS aliases that are associated with the specified Amazon FSx for Windows
+        /// File Server file system. A history of all DNS aliases that have been associated with
+        /// and disassociated from the file system is available in the list of <a>AdministrativeAction</a>
+        /// provided in the <a>DescribeFileSystems</a> operation response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFileSystemAliases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFileSystemAliases service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystemAliases">REST API Reference for DescribeFileSystemAliases Operation</seealso>
+        Task<DescribeFileSystemAliasesResponse> DescribeFileSystemAliasesAsync(DescribeFileSystemAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeFileSystems
 
 
@@ -1310,6 +1438,74 @@ namespace Amazon.FSx
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystems">REST API Reference for DescribeFileSystems Operation</seealso>
         Task<DescribeFileSystemsResponse> DescribeFileSystemsAsync(DescribeFileSystemsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisassociateFileSystemAliases
+
+
+        /// <summary>
+        /// Use this action to disassociate, or remove, one or more Domain Name Service (DNS)
+        /// aliases from an Amazon FSx for Windows File Server file system. If you attempt to
+        /// disassociate a DNS alias that is not associated with the file system, Amazon FSx responds
+        /// with a 400 Bad Request. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+        /// with DNS Aliases</a>.
+        /// 
+        ///  
+        /// <para>
+        /// The system generated response showing the DNS aliases that Amazon FSx is attempting
+        /// to disassociate from the file system. Use the API operation to monitor the status
+        /// of the aliases Amazon FSx is disassociating with the file system.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFileSystemAliases service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateFileSystemAliases service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DisassociateFileSystemAliases">REST API Reference for DisassociateFileSystemAliases Operation</seealso>
+        DisassociateFileSystemAliasesResponse DisassociateFileSystemAliases(DisassociateFileSystemAliasesRequest request);
+
+
+
+        /// <summary>
+        /// Use this action to disassociate, or remove, one or more Domain Name Service (DNS)
+        /// aliases from an Amazon FSx for Windows File Server file system. If you attempt to
+        /// disassociate a DNS alias that is not associated with the file system, Amazon FSx responds
+        /// with a 400 Bad Request. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+        /// with DNS Aliases</a>.
+        /// 
+        ///  
+        /// <para>
+        /// The system generated response showing the DNS aliases that Amazon FSx is attempting
+        /// to disassociate from the file system. Use the API operation to monitor the status
+        /// of the aliases Amazon FSx is disassociating with the file system.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFileSystemAliases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateFileSystemAliases service method, as returned by FSx.</returns>
+        /// <exception cref="Amazon.FSx.Model.BadRequestException">
+        /// A generic error indicating a failure with a client request.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.FileSystemNotFoundException">
+        /// No Amazon FSx file systems were found based upon supplied parameters.
+        /// </exception>
+        /// <exception cref="Amazon.FSx.Model.InternalServerErrorException">
+        /// A generic error indicating a server-side failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DisassociateFileSystemAliases">REST API Reference for DisassociateFileSystemAliases Operation</seealso>
+        Task<DisassociateFileSystemAliasesResponse> DisassociateFileSystemAliasesAsync(DisassociateFileSystemAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1613,6 +1809,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// StorageCapacity
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// WeeklyMaintenanceStartTime
         /// </para>
         ///  </li> </ul>
@@ -1697,6 +1897,10 @@ namespace Amazon.FSx
         ///  </li> <li> 
         /// <para>
         /// DailyAutomaticBackupStartTime
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// StorageCapacity
         /// </para>
         ///  </li> <li> 
         /// <para>

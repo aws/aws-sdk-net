@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,10 +35,29 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class ListUpdatesRequest : AmazonEKSRequest
     {
+        private string _addonName;
         private int? _maxResults;
         private string _name;
         private string _nextToken;
         private string _nodegroupName;
+
+        /// <summary>
+        /// Gets and sets the property AddonName. 
+        /// <para>
+        /// The names of the installed add-ons that have available updates.
+        /// </para>
+        /// </summary>
+        public string AddonName
+        {
+            get { return this._addonName; }
+            set { this._addonName = value; }
+        }
+
+        // Check to see if AddonName property is set
+        internal bool IsSetAddonName()
+        {
+            return this._addonName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

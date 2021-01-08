@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,18 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = EntityRecognizerAnnotationsUnmarshaller.Instance;
                     unmarshalledObject.Annotations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AugmentedManifests", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AugmentedManifestsListItem, AugmentedManifestsListItemUnmarshaller>(AugmentedManifestsListItemUnmarshaller.Instance);
+                    unmarshalledObject.AugmentedManifests = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DataFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Documents", targetDepth))

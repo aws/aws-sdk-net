@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,6 +63,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     response.Input = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inputDetails", targetDepth))
+                {
+                    var unmarshaller = CloudWatchEventsExecutionDataDetailsUnmarshaller.Instance;
+                    response.InputDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -73,6 +79,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Output = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("outputDetails", targetDepth))
+                {
+                    var unmarshaller = CloudWatchEventsExecutionDataDetailsUnmarshaller.Instance;
+                    response.OutputDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("startDate", targetDepth))
@@ -97,6 +109,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.StopDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("traceHeader", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TraceHeader = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

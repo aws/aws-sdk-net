@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property IncludeRelationalDatabaseAvailabilityZones. 
         /// <para>
-        /// &gt;A Boolean value indicating whether to also include Availability Zones for databases
+        /// A Boolean value indicating whether to also include Availability Zones for databases
         /// in your get regions request. Availability Zones are indicated with a letter (e.g.,
         /// <code>us-east-2a</code>).
         /// </para>

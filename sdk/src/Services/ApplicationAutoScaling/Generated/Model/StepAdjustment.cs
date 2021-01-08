@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -131,7 +131,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// The amount by which to scale, based on the specified adjustment type. A positive value
         /// adds to the current capacity while a negative number removes from the current capacity.
-        /// 
+        /// For exact capacity, you must specify a positive value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

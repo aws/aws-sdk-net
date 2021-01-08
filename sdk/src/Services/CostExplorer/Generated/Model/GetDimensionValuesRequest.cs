@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,8 +37,11 @@ namespace Amazon.CostExplorer.Model
     {
         private Context _context;
         private Dimension _dimension;
+        private Expression _filter;
+        private int? _maxResults;
         private string _nextPageToken;
         private string _searchString;
+        private List<SortDefinition> _sortBy = new List<SortDefinition>();
         private DateInterval _timePeriod;
 
         /// <summary>
@@ -110,6 +113,10 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch
         /// – Alarms. The response for this operation includes a unit attribute.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// REGION - The AWS Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -234,6 +241,42 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Filter.
+        /// </summary>
+        public Expression Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// This field is only used when SortBy is provided in the request. The maximum number
+        /// of objects that to be returned for this request. If MaxResults is not specified with
+        /// SortBy, the request will return 1000 results as the default value for this parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
         /// The token to retrieve the next set of results. AWS provides the token when the response
@@ -270,6 +313,66 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetSearchString()
         {
             return this._searchString != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// The value by which you want to sort the data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The key represents cost and usage metrics. The following values are supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>BlendedCost</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UnblendedCost</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AmortizedCost</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NetAmortizedCost</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NetUnblendedCost</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UsageQuantity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NormalizedUsageAmount</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>.
+        /// Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
+        /// are not supported.
+        /// </para>
+        /// </summary>
+        public List<SortDefinition> SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null && this._sortBy.Count > 0; 
         }
 
         /// <summary>

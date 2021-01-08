@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-    /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+    /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+    /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
     /// increase.
     /// </summary>
     #if !NETSTANDARD

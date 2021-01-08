@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -69,6 +69,9 @@ namespace Amazon.IoT
     /// Direct Calls to AWS Services</a>.
     /// </para>
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonIoTClient : AmazonServiceClient, IAmazonIoT
     {
         private static IServiceMetadata serviceMetadata = new AmazonIoTMetadata();
@@ -878,8 +881,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Cancels an audit that is in progress. The audit can be either scheduled or on-demand.
-        /// If the audit is not in progress, an "InvalidRequestException" occurs.
+        /// Cancels an audit that is in progress. The audit can be either scheduled or on demand.
+        /// If the audit isn't in progress, an "InvalidRequestException" occurs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelAuditTask service method.</param>
         /// <param name="cancellationToken">
@@ -1027,6 +1030,52 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = CancelCertificateTransferResponseUnmarshaller.Instance;
 
             return InvokeAsync<CancelCertificateTransferResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelDetectMitigationActionsTask
+
+        internal virtual CancelDetectMitigationActionsTaskResponse CancelDetectMitigationActionsTask(CancelDetectMitigationActionsTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelDetectMitigationActionsTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelDetectMitigationActionsTaskResponseUnmarshaller.Instance;
+
+            return Invoke<CancelDetectMitigationActionsTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Cancels a Device Defender ML Detect mitigation action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelDetectMitigationActionsTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelDetectMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CancelDetectMitigationActionsTask">REST API Reference for CancelDetectMitigationActionsTask Operation</seealso>
+        public virtual Task<CancelDetectMitigationActionsTaskResponse> CancelDetectMitigationActionsTaskAsync(CancelDetectMitigationActionsTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelDetectMitigationActionsTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelDetectMitigationActionsTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelDetectMitigationActionsTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1700,6 +1749,55 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = CreateCertificateFromCsrResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCertificateFromCsrResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCustomMetric
+
+        internal virtual CreateCustomMetricResponse CreateCustomMetric(CreateCustomMetricRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomMetricRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomMetricResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomMetricResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Use this API to define a Custom Metric published by your devices to Device Defender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomMetric service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCustomMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateCustomMetric">REST API Reference for CreateCustomMetric Operation</seealso>
+        public virtual Task<CreateCustomMetricResponse> CreateCustomMetricAsync(CreateCustomMetricRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomMetricRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomMetricResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCustomMetricResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3472,6 +3570,59 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DeleteCustomMetric
+
+        internal virtual DeleteCustomMetricResponse DeleteCustomMetric(DeleteCustomMetricRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomMetricRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomMetricResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomMetricResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        /// Before you can delete a custom metric, you must first remove the custom metric from
+        /// all security profiles it's a part of. The security profile associated with the custom
+        /// metric can be found using the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html">ListSecurityProfiles</a>
+        /// API with <code>metricName</code> set to your custom metric name.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Deletes a Device Defender detect custom metric. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomMetric service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCustomMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteCustomMetric">REST API Reference for DeleteCustomMetric Operation</seealso>
+        public virtual Task<DeleteCustomMetricResponse> DeleteCustomMetricAsync(DeleteCustomMetricRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomMetricRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomMetricResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCustomMetricResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDimension
 
         internal virtual DeleteDimensionResponse DeleteDimension(DeleteDimensionRequest request)
@@ -4085,6 +4236,10 @@ namespace Amazon.IoT
         /// </param>
         /// 
         /// <returns>The response from the DeleteProvisioningTemplate service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
         /// You can't delete the resource because it is attached to one or more resources.
         /// </exception>
@@ -4137,6 +4292,10 @@ namespace Amazon.IoT
         /// </param>
         /// 
         /// <returns>The response from the DeleteProvisioningTemplateVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.DeleteConflictException">
         /// You can't delete the resource because it is attached to one or more resources.
         /// </exception>
@@ -4905,7 +5064,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Gets information about a single audit finding. Properties include the reason for noncompliance,
-        /// the severity of the issue, and when the audit that returned the finding was started.
+        /// the severity of the issue, and the start time when the audit that returned the finding.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAuditFinding service method.</param>
         /// <param name="cancellationToken">
@@ -5315,6 +5474,52 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DescribeCustomMetric
+
+        internal virtual DescribeCustomMetricResponse DescribeCustomMetric(DescribeCustomMetricRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomMetricRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomMetricResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCustomMetricResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about a Device Defender detect custom metric.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomMetric service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCustomMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeCustomMetric">REST API Reference for DescribeCustomMetric Operation</seealso>
+        public virtual Task<DescribeCustomMetricResponse> DescribeCustomMetricAsync(DescribeCustomMetricRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomMetricRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomMetricResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCustomMetricResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDefaultAuthorizer
 
         internal virtual DescribeDefaultAuthorizerResponse DescribeDefaultAuthorizer(DescribeDefaultAuthorizerRequest request)
@@ -5363,6 +5568,52 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = DescribeDefaultAuthorizerResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDefaultAuthorizerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDetectMitigationActionsTask
+
+        internal virtual DescribeDetectMitigationActionsTaskResponse DescribeDetectMitigationActionsTask(DescribeDetectMitigationActionsTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDetectMitigationActionsTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDetectMitigationActionsTaskResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDetectMitigationActionsTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about a Device Defender ML Detect mitigation action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDetectMitigationActionsTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDetectMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeDetectMitigationActionsTask">REST API Reference for DescribeDetectMitigationActionsTask Operation</seealso>
+        public virtual Task<DescribeDetectMitigationActionsTaskResponse> DescribeDetectMitigationActionsTaskAsync(DescribeDetectMitigationActionsTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDetectMitigationActionsTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDetectMitigationActionsTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDetectMitigationActionsTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6711,6 +6962,52 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  GetBehaviorModelTrainingSummaries
+
+        internal virtual GetBehaviorModelTrainingSummariesResponse GetBehaviorModelTrainingSummaries(GetBehaviorModelTrainingSummariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBehaviorModelTrainingSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBehaviorModelTrainingSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<GetBehaviorModelTrainingSummariesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a Device Defender's ML Detect Security Profile training model's status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBehaviorModelTrainingSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBehaviorModelTrainingSummaries service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetBehaviorModelTrainingSummaries">REST API Reference for GetBehaviorModelTrainingSummaries Operation</seealso>
+        public virtual Task<GetBehaviorModelTrainingSummariesResponse> GetBehaviorModelTrainingSummariesAsync(GetBehaviorModelTrainingSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBehaviorModelTrainingSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBehaviorModelTrainingSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBehaviorModelTrainingSummariesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCardinality
 
         internal virtual GetCardinalityResponse GetCardinality(GetCardinalityRequest request)
@@ -7666,7 +7963,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Lists the findings (results) of a Device Defender audit or of the audits performed
-        /// during a specified time period. (Findings are retained for 180 days.)
+        /// during a specified time period. (Findings are retained for 90 days.)
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAuditFindings service method.</param>
         /// <param name="cancellationToken">
@@ -8154,6 +8451,135 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = ListCertificatesByCAResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCertificatesByCAResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCustomMetrics
+
+        internal virtual ListCustomMetricsResponse ListCustomMetrics(ListCustomMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCustomMetricsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists your Device Defender detect custom metrics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomMetrics service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListCustomMetrics">REST API Reference for ListCustomMetrics Operation</seealso>
+        public virtual Task<ListCustomMetricsResponse> ListCustomMetricsAsync(ListCustomMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomMetricsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCustomMetricsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDetectMitigationActionsExecutions
+
+        internal virtual ListDetectMitigationActionsExecutionsResponse ListDetectMitigationActionsExecutions(ListDetectMitigationActionsExecutionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDetectMitigationActionsExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDetectMitigationActionsExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDetectMitigationActionsExecutionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists mitigation actions executions for a Device Defender ML Detect Security Profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDetectMitigationActionsExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDetectMitigationActionsExecutions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsExecutions">REST API Reference for ListDetectMitigationActionsExecutions Operation</seealso>
+        public virtual Task<ListDetectMitigationActionsExecutionsResponse> ListDetectMitigationActionsExecutionsAsync(ListDetectMitigationActionsExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDetectMitigationActionsExecutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDetectMitigationActionsExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDetectMitigationActionsExecutionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDetectMitigationActionsTasks
+
+        internal virtual ListDetectMitigationActionsTasksResponse ListDetectMitigationActionsTasks(ListDetectMitigationActionsTasksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDetectMitigationActionsTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDetectMitigationActionsTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListDetectMitigationActionsTasksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List of Device Defender ML Detect mitigation actions tasks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDetectMitigationActionsTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDetectMitigationActionsTasks service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListDetectMitigationActionsTasks">REST API Reference for ListDetectMitigationActionsTasks Operation</seealso>
+        public virtual Task<ListDetectMitigationActionsTasksResponse> ListDetectMitigationActionsTasksAsync(ListDetectMitigationActionsTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDetectMitigationActionsTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDetectMitigationActionsTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDetectMitigationActionsTasksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -9210,9 +9636,15 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists the Device Defender security profiles you have created. You can use filters
-        /// to list only those security profiles associated with a thing group or only those associated
-        /// with your account.
+        /// Lists the Device Defender security profiles you've created. You can filter security
+        /// profiles by dimension or custom metric.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>dimensionName</code> and <code>metricName</code> cannot be used in the same
+        /// request.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfiles service method.</param>
         /// <param name="cancellationToken">
@@ -9518,6 +9950,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroups">REST API Reference for ListThingGroups Operation</seealso>
         public virtual Task<ListThingGroupsResponse> ListThingGroupsAsync(ListThingGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -9560,6 +9995,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingGroupsForThing">REST API Reference for ListThingGroupsForThing Operation</seealso>
         public virtual Task<ListThingGroupsForThingResponse> ListThingGroupsForThingAsync(ListThingGroupsForThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9935,6 +10373,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsInThingGroup">REST API Reference for ListThingsInThingGroup Operation</seealso>
         public virtual Task<ListThingsInThingGroupResponse> ListThingsInThingGroupAsync(ListThingsInThingGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -11009,6 +11450,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.NotConfiguredException">
         /// The resource is not configured.
         /// </exception>
@@ -11102,8 +11546,8 @@ namespace Amazon.IoT
         /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.TaskAlreadyExistsException">
-        /// This exception occurs if you attempt to start a task with the same task-id as an existing
-        /// task but with a different clientRequestToken.
+        /// This exception occurs if you attempt to start a task with the same task-id as an
+        /// existing task but with a different clientRequestToken.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ThrottlingException">
         /// The rate exceeds the limit.
@@ -11116,6 +11560,56 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = StartAuditMitigationActionsTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartAuditMitigationActionsTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartDetectMitigationActionsTask
+
+        internal virtual StartDetectMitigationActionsTaskResponse StartDetectMitigationActionsTask(StartDetectMitigationActionsTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDetectMitigationActionsTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDetectMitigationActionsTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartDetectMitigationActionsTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a Device Defender ML Detect mitigation actions task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDetectMitigationActionsTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDetectMitigationActionsTask service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.TaskAlreadyExistsException">
+        /// This exception occurs if you attempt to start a task with the same task-id as an
+        /// existing task but with a different clientRequestToken.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/StartDetectMitigationActionsTask">REST API Reference for StartDetectMitigationActionsTask Operation</seealso>
+        public virtual Task<StartDetectMitigationActionsTaskResponse> StartDetectMitigationActionsTaskAsync(StartDetectMitigationActionsTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDetectMitigationActionsTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDetectMitigationActionsTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartDetectMitigationActionsTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -11980,6 +12474,52 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  UpdateCustomMetric
+
+        internal virtual UpdateCustomMetricResponse UpdateCustomMetric(UpdateCustomMetricRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCustomMetricRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomMetricResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCustomMetricResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a Device Defender detect custom metric.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomMetric service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCustomMetric service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateCustomMetric">REST API Reference for UpdateCustomMetric Operation</seealso>
+        public virtual Task<UpdateCustomMetricResponse> UpdateCustomMetricAsync(UpdateCustomMetricRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCustomMetricRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomMetricResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCustomMetricResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateDimension
 
         internal virtual UpdateDimensionResponse UpdateDimension(UpdateDimensionRequest request)
@@ -11995,7 +12535,7 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Updates the definition for a dimension. You cannot change the type of a dimension
-        /// after it is created (you can delete it and re-create it).
+        /// after it is created (you can delete it and recreate it).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDimension service method.</param>
         /// <param name="cancellationToken">

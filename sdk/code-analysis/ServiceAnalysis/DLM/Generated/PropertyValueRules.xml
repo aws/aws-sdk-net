@@ -67,6 +67,12 @@
     <pattern>policy-[A-Za-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DLM.Model.Action.Name</property>
+    <min>0</min>
+    <max>120</max>
+    <pattern>[0-9A-Za-z _-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DLM.Model.CreateRule.CronExpression</property>
     <min>17</min>
     <max>106</max>
@@ -75,6 +81,12 @@
   <property-value-rule>
     <property>Amazon.DLM.Model.CreateRule.Interval</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.CrossRegionCopyAction.Target</property>
+    <min>0</min>
+    <max>16</max>
+    <pattern>^[\\w:\\-\\/\\*]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.CrossRegionCopyRetainRule.Interval</property>
@@ -91,6 +103,17 @@
     <min>0</min>
     <max>16</max>
     <pattern>([a-z]+-){2,3}\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.EncryptionConfiguration.CmkArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z]{1,3}){0,2}:kms:([a-z]+-){2,3}\d:\d+:key/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.EventParameters.DescriptionRegex</property>
+    <min>0</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.FastRestoreRule.Count</property>
@@ -165,6 +188,11 @@
     <property>Amazon.DLM.Model.Schedule.Name</property>
     <min>0</min>
     <max>120</max>
+    <pattern>[0-9A-Za-z _-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.ShareRule.UnshareInterval</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.Tag.Key</property>

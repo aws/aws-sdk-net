@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,22 +60,19 @@ namespace Amazon.AppMesh.Model
         /// <para>
         /// Specify one of the following modes.
         /// </para>
-        ///          <ul>            <li>               
+        ///  <ul> <li> 
         /// <para>
-        ///                   <b/>STRICT – Listener only accepts connections with TLS        
-        ///       enabled. 
+        ///  <b/>STRICT – Listener only accepts connections with TLS enabled. 
         /// </para>
-        ///             </li>            <li>               
+        ///  </li> <li> 
         /// <para>
-        ///                   <b/>PERMISSIVE – Listener accepts connections with or          
-        ///     without TLS enabled.
+        ///  <b/>PERMISSIVE – Listener accepts connections with or without TLS enabled.
         /// </para>
-        ///             </li>            <li>               
+        ///  </li> <li> 
         /// <para>
-        ///                   <b/>DISABLED – Listener only accepts connections without       
-        ///        TLS. 
+        ///  <b/>DISABLED – Listener only accepts connections without TLS. 
         /// </para>
-        ///             </li>         </ul>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public VirtualGatewayListenerTlsMode Mode

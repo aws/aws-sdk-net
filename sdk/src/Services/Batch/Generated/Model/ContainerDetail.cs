@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,26 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing the details of a container that is part of a job.
+    /// An object representing the details of a container that's part of a job.
     /// </summary>
     public partial class ContainerDetail
     {
         private List<string> _command = new List<string>();
         private string _containerInstanceArn;
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
+        private string _executionRoleArn;
         private int? _exitCode;
+        private FargatePlatformConfiguration _fargatePlatformConfiguration;
         private string _image;
         private string _instanceType;
         private string _jobRoleArn;
         private LinuxParameters _linuxParameters;
+        private LogConfiguration _logConfiguration;
         private string _logStreamName;
         private int? _memory;
         private List<MountPoint> _mountPoints = new List<MountPoint>();
+        private NetworkConfiguration _networkConfiguration;
         private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
         private bool? _privileged;
         private bool? _readonlyRootFilesystem;
         private string _reason;
         private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
+        private List<Secret> _secrets = new List<Secret>();
         private string _taskArn;
         private List<Ulimit> _ulimits = new List<Ulimit>();
         private string _user;
@@ -58,7 +63,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Command. 
         /// <para>
-        /// The command that is passed to the container.
+        /// The command that's passed to the container.
         /// </para>
         /// </summary>
         public List<string> Command
@@ -76,8 +81,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerInstanceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the container instance on which the container is
-        /// running.
+        /// The Amazon Resource Name (ARN) of the container instance that the container is running
+        /// on.
         /// </para>
         /// </summary>
         public string ContainerInstanceArn
@@ -117,6 +122,26 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExecutionRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For
+        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">AWS
+        /// Batch execution IAM role</a> in the <i>AWS Batch User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string ExecutionRoleArn
+        {
+            get { return this._executionRoleArn; }
+            set { this._executionRoleArn = value; }
+        }
+
+        // Check to see if ExecutionRoleArn property is set
+        internal bool IsSetExecutionRoleArn()
+        {
+            return this._executionRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ExitCode. 
         /// <para>
         /// The exit code to return upon completion.
@@ -132,6 +157,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetExitCode()
         {
             return this._exitCode.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FargatePlatformConfiguration. 
+        /// <para>
+        /// The platform configuration for jobs running on Fargate resources. Jobs running on
+        /// EC2 resources must not specify this parameter.
+        /// </para>
+        /// </summary>
+        public FargatePlatformConfiguration FargatePlatformConfiguration
+        {
+            get { return this._fargatePlatformConfiguration; }
+            set { this._fargatePlatformConfiguration = value; }
+        }
+
+        // Check to see if FargatePlatformConfiguration property is set
+        internal bool IsSetFargatePlatformConfiguration()
+        {
+            return this._fargatePlatformConfiguration != null;
         }
 
         /// <summary>
@@ -157,6 +201,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The instance type of the underlying host infrastructure of a multi-node parallel job.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string InstanceType
         {
@@ -208,6 +257,61 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogConfiguration. 
+        /// <para>
+        /// The log configuration specification for the container.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+        /// Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// run</a>. By default, containers use the same logging driver that the Docker daemon
+        /// uses. However the container might use a different logging driver than the Docker daemon
+        /// by specifying a log driver with this parameter in the container definition. To use
+        /// a different logging driver for a container, the log system must be configured properly
+        /// on the container instance. Or, alternatively, it must be configured on a different
+        /// log server for remote logging options. For more information on the options for different
+        /// supported log drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure
+        /// logging drivers</a> in the Docker documentation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// AWS Batch currently supports a subset of the logging drivers available to the Docker
+        /// daemon (shown in the <a>LogConfiguration</a> data type). Additional log drivers might
+        /// be available in future releases of the Amazon ECS container agent.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This parameter requires version 1.18 of the Docker Remote API or greater on your container
+        /// instance. To check the Docker Remote API version on your container instance, log into
+        /// your container instance and run the following command: <code>sudo docker version |
+        /// grep "Server API version"</code> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The Amazon ECS container agent running on a container instance must register the logging
+        /// drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code>
+        /// environment variable before containers placed on that instance can use these log configuration
+        /// options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+        /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public LogConfiguration LogConfiguration
+        {
+            get { return this._logConfiguration; }
+            set { this._logConfiguration = value; }
+        }
+
+        // Check to see if LogConfiguration property is set
+        internal bool IsSetLogConfiguration()
+        {
+            return this._logConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogStreamName. 
         /// <para>
         /// The name of the CloudWatch Logs log stream associated with the container. The log
@@ -230,7 +334,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The number of MiB of memory reserved for the job.
+        /// For jobs run on EC2 resources that didn't specify memory requirements using <code>ResourceRequirement</code>,
+        /// the number of MiB of memory reserved for the job. For other jobs, including all run
+        /// on Fargate resources, see <code>resourceRequirements</code>.
         /// </para>
         /// </summary>
         public int Memory
@@ -264,6 +370,25 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkConfiguration. 
+        /// <para>
+        /// The network configuration for jobs running on Fargate resources. Jobs running on EC2
+        /// resources must not specify this parameter.
+        /// </para>
+        /// </summary>
+        public NetworkConfiguration NetworkConfiguration
+        {
+            get { return this._networkConfiguration; }
+            set { this._networkConfiguration = value; }
+        }
+
+        // Check to see if NetworkConfiguration property is set
+        internal bool IsSetNetworkConfiguration()
+        {
+            return this._networkConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
         /// The network interfaces associated with the job.
@@ -284,9 +409,15 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Privileged. 
         /// <para>
-        /// When this parameter is true, the container is given elevated privileges on the host
-        /// container instance (similar to the <code>root</code> user).
+        /// When this parameter is true, the container is given elevated permissions on the host
+        /// container instance (similar to the <code>root</code> user). The default value is false.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
+        /// be provided, or specified as false.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool Privileged
         {
@@ -304,7 +435,10 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ReadonlyRootFilesystem. 
         /// <para>
         /// When this parameter is true, the container is given read-only access to its root file
-        /// system.
+        /// system. This parameter maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+        /// Remote API</a> and the <code>--read-only</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/">
+        /// <code>docker run</code> </a>.
         /// </para>
         /// </summary>
         public bool ReadonlyRootFilesystem
@@ -341,8 +475,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ResourceRequirements. 
         /// <para>
-        /// The type and amount of a resource to assign to a container. Currently, the only supported
-        /// resource is <code>GPU</code>.
+        /// The type and amount of resources to assign to a container. The supported resources
+        /// include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
         /// </para>
         /// </summary>
         public List<ResourceRequirement> ResourceRequirements
@@ -358,10 +492,29 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Secrets. 
+        /// <para>
+        /// The secrets to pass to the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+        /// sensitive data</a> in the <i>AWS Batch User Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<Secret> Secrets
+        {
+            get { return this._secrets; }
+            set { this._secrets = value; }
+        }
+
+        // Check to see if Secrets property is set
+        internal bool IsSetSecrets()
+        {
+            return this._secrets != null && this._secrets.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the
-        /// container job. Each container attempt receives a task ARN when they reach the <code>STARTING</code>
+        /// The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the container
+        /// job. Each container attempt receives a task ARN when they reach the <code>STARTING</code>
         /// status.
         /// </para>
         /// </summary>
@@ -380,8 +533,17 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Ulimits. 
         /// <para>
-        /// A list of <code>ulimit</code> values to set in the container.
+        /// A list of <code>ulimit</code> values to set in the container. This parameter maps
+        /// to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+        /// Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// run</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<Ulimit> Ulimits
         {
@@ -398,7 +560,11 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// The user name to use inside the container.
+        /// The user name to use inside the container. This parameter maps to <code>User</code>
+        /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+        /// Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// run</a>.
         /// </para>
         /// </summary>
         public string User
@@ -416,8 +582,22 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Vcpus. 
         /// <para>
-        /// The number of VCPUs allocated for the job.
+        /// The number of vCPUs reserved for the container. Jobs running on EC2 resources can
+        /// specify the vCPU requirement for the job using <code>resourceRequirements</code> but
+        /// the vCPU requirements can't be specified both here and in the <code>resourceRequirement</code>
+        /// object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+        /// Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one
+        /// vCPU. This is required but can be specified in several places. It must be specified
+        /// for each node at least once.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources. Jobs running
+        /// on Fargate resources must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int Vcpus
         {

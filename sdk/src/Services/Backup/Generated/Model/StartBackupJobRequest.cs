@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,10 +30,11 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the StartBackupJob operation.
-    /// Starts a job to create a one-time backup of the specified resource.
+    /// Starts an on-demand backup job for the specified resource.
     /// </summary>
     public partial class StartBackupJobRequest : AmazonBackupRequest
     {
+        private Dictionary<string, string> _backupOptions = new Dictionary<string, string>();
         private string _backupVaultName;
         private long? _completeWindowMinutes;
         private string _iamRoleArn;
@@ -42,6 +43,31 @@ namespace Amazon.Backup.Model
         private Dictionary<string, string> _recoveryPointTags = new Dictionary<string, string>();
         private string _resourceArn;
         private long? _startWindowMinutes;
+
+        /// <summary>
+        /// Gets and sets the property BackupOptions. 
+        /// <para>
+        /// Specifies the backup option for a selected resource. This option is only available
+        /// for Windows VSS backup jobs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup
+        /// option and create a VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a
+        /// regular backup. The WindowsVSS option is not enabled by default.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> BackupOptions
+        {
+            get { return this._backupOptions; }
+            set { this._backupOptions = value; }
+        }
+
+        // Check to see if BackupOptions property is set
+        internal bool IsSetBackupOptions()
+        {
+            return this._backupOptions != null && this._backupOptions.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property BackupVaultName. 

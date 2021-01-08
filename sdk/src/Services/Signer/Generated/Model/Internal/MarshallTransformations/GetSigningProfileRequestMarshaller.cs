@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -61,8 +61,12 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetProfileName())
                 throw new AmazonSignerException("Request object does not have required field ProfileName set");
             request.AddPathResource("{profileName}", StringUtils.FromString(publicRequest.ProfileName));
+            
+            if (publicRequest.IsSetProfileOwner())
+                request.Parameters.Add("profileOwner", StringUtils.FromString(publicRequest.ProfileOwner));
             request.ResourcePath = "/signing-profiles/{profileName}";
             request.MarshallerVersion = 2;
+            request.UseQueryString = true;
 
             return request;
         }

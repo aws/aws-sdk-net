@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,12 +49,6 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// The category of the custom action, such as a build action or a test action.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Although <code>Source</code> and <code>Approval</code> are listed as valid values,
-        /// they are not currently functional. These values are reserved for future use.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public ActionCategory Category

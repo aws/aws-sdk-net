@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -208,6 +208,10 @@ namespace Amazon.GroundStation
         /// Constant AWS_CANCELLED for ContactStatus
         /// </summary>
         public static readonly ContactStatus AWS_CANCELLED = new ContactStatus("AWS_CANCELLED");
+        /// <summary>
+        /// Constant AWS_FAILED for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus AWS_FAILED = new ContactStatus("AWS_FAILED");
         /// <summary>
         /// Constant CANCELLED for ContactStatus
         /// </summary>

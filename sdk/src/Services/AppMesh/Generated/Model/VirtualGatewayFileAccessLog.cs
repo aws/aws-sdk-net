@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,10 +39,10 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Path. 
         /// <para>
         /// The file path to write access logs to. You can use <code>/dev/stdout</code> to send
-        ///         access logs to standard out and configure your Envoy container to use a log
-        /// driver, such as            <code>awslogs</code>, to export the access logs to a log
-        /// storage service such as Amazon         CloudWatch Logs. You can also specify a path
-        /// in the Envoy container's file system to write         the files to disk.
+        /// access logs to standard out and configure your Envoy container to use a log driver,
+        /// such as <code>awslogs</code>, to export the access logs to a log storage service such
+        /// as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file
+        /// system to write the files to disk.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

@@ -498,6 +498,16 @@
     <pattern>^[\w][\w@.-]{2,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.PosixProfile.Gid</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.PosixProfile.Uid</property>
+    <min>0</min>
+    <max>4294967295</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.SshPublicKey.SshPublicKeyBody</property>
     <max>2048</max>
     <pattern>^ssh-rsa\s+[A-Za-z0-9+/]+[=]{0,3}(\s+.+)?\s*$</pattern>

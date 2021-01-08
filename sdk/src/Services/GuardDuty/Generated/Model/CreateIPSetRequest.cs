@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,7 +33,8 @@ namespace Amazon.GuardDuty.Model
     /// Creates a new IPSet, which is called a trusted IP list in the console user interface.
     /// An IPSet is a list of IP addresses that are trusted for secure communication with
     /// AWS infrastructure and applications. GuardDuty doesn't generate findings for IP addresses
-    /// that are included in IPSets. Only users from the master account can use this operation.
+    /// that are included in IPSets. Only users from the administrator account can use this
+    /// operation.
     /// </summary>
     public partial class CreateIPSetRequest : AmazonGuardDutyRequest
     {

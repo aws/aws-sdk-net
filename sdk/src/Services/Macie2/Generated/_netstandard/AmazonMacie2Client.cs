@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,6 +46,9 @@ namespace Amazon.Macie2
     /// for you. If Macie detects sensitive data or potential data access issues, it generates
     /// detailed findings for you to review and act upon as necessary.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonMacie2Client : AmazonServiceClient, IAmazonMacie2
     {
         private static IServiceMetadata serviceMetadata = new AmazonMacie2Metadata();
@@ -1133,7 +1136,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves information about the status and settings for a classification job.
+        /// Retrieves the status and settings for a classification job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClassificationJob service method.</param>
         /// <param name="cancellationToken">
@@ -1194,7 +1197,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves information about the Amazon Macie configuration settings for an AWS organization.
+        /// Retrieves the Amazon Macie configuration settings for an AWS organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1316,7 +1319,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Disables an account as a delegated administrator of Amazon Macie for an AWS organization.
+        /// Disables an account as the delegated Amazon Macie administrator account for an AWS
+        /// organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1560,7 +1564,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Enables an account as a delegated administrator of Amazon Macie for an AWS organization.
+        /// Designates an account as the delegated Amazon Macie administrator account for an AWS
+        /// organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1744,7 +1749,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves information about the criteria and other settings for a custom data identifier.
+        /// Retrieves the criteria and other settings for a custom data identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCustomDataIdentifier service method.</param>
         /// <param name="cancellationToken">
@@ -1805,7 +1810,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves information about one or more findings.
+        /// Retrieves the details of one or more findings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindings service method.</param>
         /// <param name="cancellationToken">
@@ -1866,7 +1871,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves information about the criteria and other settings for a findings filter.
+        /// Retrieves the criteria and other settings for a findings filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingsFilter service method.</param>
         /// <param name="cancellationToken">
@@ -2050,8 +2055,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves information about the current status and configuration settings for an Amazon
-        /// Macie account.
+        /// Retrieves the current status and configuration settings for an Amazon Macie account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMacieSession service method.</param>
         /// <param name="cancellationToken">
@@ -2725,8 +2729,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves information about the account that's designated as the delegated administrator
-        /// of Amazon Macie for an AWS organization.
+        /// Retrieves information about the delegated Amazon Macie administrator account for an
+        /// AWS organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>
         /// <param name="cancellationToken">
@@ -3014,7 +3018,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Cancels a classification job.
+        /// Changes the status of a classification job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateClassificationJob service method.</param>
         /// <param name="cancellationToken">
@@ -3259,7 +3263,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Updates Amazon Macie configuration settings for an AWS organization.
+        /// Updates the Amazon Macie configuration settings for an AWS organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationConfiguration service method.</param>
         /// <param name="cancellationToken">

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,6 +44,11 @@ namespace Amazon.AutoScalingPlans.Model
         /// A CloudFormation stack or set of tags. You can create one scaling plan per application
         /// source.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ApplicationSource.html">ApplicationSource</a>
+        /// in the <i>AWS Auto Scaling API Reference</i>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ApplicationSource ApplicationSource
@@ -62,6 +67,11 @@ namespace Amazon.AutoScalingPlans.Model
         /// Gets and sets the property ScalingInstructions. 
         /// <para>
         /// The scaling instructions.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_ScalingInstruction.html">ScalingInstruction</a>
+        /// in the <i>AWS Auto Scaling API Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

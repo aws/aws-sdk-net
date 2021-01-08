@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// The identifier of the member (user or group)that owns the mailbox.
+        /// The identifier of the member (user or group) that owns the mailbox.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=256)]
@@ -82,7 +82,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the organization under which the member (user or group) exists.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=34, Max=34)]
         public string OrganizationId
         {
             get { return this._organizationId; }

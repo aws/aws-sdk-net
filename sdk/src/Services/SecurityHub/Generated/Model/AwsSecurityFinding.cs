@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ namespace Amazon.SecurityHub.Model
         private Network _network;
         private List<NetworkPathComponent> _networkPath = new List<NetworkPathComponent>();
         private Note _note;
+        private PatchSummary _patchSummary;
         private ProcessDetails _process;
         private string _productArn;
         private Dictionary<string, string> _productFields = new Dictionary<string, string>();
@@ -374,6 +375,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetNote()
         {
             return this._note != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PatchSummary. 
+        /// <para>
+        /// Provides an overview of the patch compliance status for an instance against a selected
+        /// compliance standard.
+        /// </para>
+        /// </summary>
+        public PatchSummary PatchSummary
+        {
+            get { return this._patchSummary; }
+            set { this._patchSummary = value; }
+        }
+
+        // Check to see if PatchSummary property is set
+        internal bool IsSetPatchSummary()
+        {
+            return this._patchSummary != null;
         }
 
         /// <summary>

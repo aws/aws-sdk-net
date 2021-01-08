@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -54,10 +54,6 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// You cannot perform this operation on a CMK in a different AWS account.
-    /// </para>
-    ///  
-    /// <para>
     /// For more information about scheduling a CMK for deletion, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
     /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
     /// </para>
@@ -68,6 +64,29 @@ namespace Amazon.KeyManagementService.Model
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
+    /// AWS account.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ScheduleKeyDeletion</a>
+    /// (key policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CancelKeyDeletion</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DisableKey</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ScheduleKeyDeletionRequest : AmazonKeyManagementServiceRequest
     {

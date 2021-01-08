@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ namespace Amazon.Macie2.Model
         private string _jobId;
         private JobStatus _jobStatus;
         private JobType _jobType;
+        private LastRunErrorStatus _lastRunErrorStatus;
         private DateTime? _lastRunTime;
         private string _name;
         private S3JobDefinition _s3JobDefinition;
@@ -49,6 +50,7 @@ namespace Amazon.Macie2.Model
         private JobScheduleFrequency _scheduleFrequency;
         private Statistics _statistics;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private UserPausedDetails _userPausedDetails;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -126,7 +128,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property InitialRun. 
         /// <para>
-        /// Specifies whether the job has run for the first time.
+        /// Specifies whether the job is configured to analyze all existing, eligible objects
+        /// immediately after it's created.
         /// </para>
         /// </summary>
         public bool InitialRun
@@ -184,27 +187,36 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// CANCELLED - The job was cancelled by you or a user of the master account for your
-        /// organization. A job might also be cancelled if ownership of an S3 bucket changed while
-        /// the job was running, and that change affected the job's access to the bucket.
+        /// CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and
+        /// didn't resume it within 30 days.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// COMPLETE - Amazon Macie finished processing all the data specified for the job.
+        /// COMPLETE - For a one-time job, Amazon Macie finished processing the data specified
+        /// for the job. This value doesn't apply to recurring jobs.
         /// </para>
         /// </li> <li>
         /// <para>
         /// IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled
-        /// run is pending. This value doesn't apply to jobs that occur only once.
+        /// run is pending. This value doesn't apply to one-time jobs.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// PAUSED - Amazon Macie started the job, but completion of the job would exceed one
-        /// or more quotas for your account.
+        /// PAUSED - Amazon Macie started running the job but additional processing would exceed
+        /// the monthly sensitive data discovery quota for your account or one or more member
+        /// accounts that the job analyzes data for.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// RUNNING - The job is in progress.
+        /// RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled
+        /// run is in progress.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING
+        /// and you don't resume it within 30 days of pausing it, the job or job run will expire
+        /// and be cancelled, depending on the job's type. To check the expiration date, refer
+        /// to the UserPausedDetails.jobExpiresAt property.
         /// </para>
         /// </li></ul>
         /// </summary>
@@ -227,7 +239,7 @@ namespace Amazon.Macie2.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// ONE_TIME - The job ran or will run only once.
+        /// ONE_TIME - The job runs only once.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -249,9 +261,30 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastRunErrorStatus. 
+        /// <para>
+        /// Specifies whether any account- or bucket-level access errors occurred when the job
+        /// ran. For a recurring job, this value indicates the error status of the job's most
+        /// recent run.
+        /// </para>
+        /// </summary>
+        public LastRunErrorStatus LastRunErrorStatus
+        {
+            get { return this._lastRunErrorStatus; }
+            set { this._lastRunErrorStatus = value; }
+        }
+
+        // Check to see if LastRunErrorStatus property is set
+        internal bool IsSetLastRunErrorStatus()
+        {
+            return this._lastRunErrorStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastRunTime. 
         /// <para>
-        /// The date and time, in UTC and extended ISO 8601 format, when the job last ran.
+        /// The date and time, in UTC and extended ISO 8601 format, when the job started. If the
+        /// job is a recurring job, this value indicates when the most recent run started.
         /// </para>
         /// </summary>
         public DateTime LastRunTime
@@ -305,8 +338,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property SamplingPercentage. 
         /// <para>
-        /// The sampling depth, as a percentage, that determines the number of objects that the
-        /// job processes.
+        /// The sampling depth, as a percentage, that determines the percentage of eligible objects
+        /// that the job analyzes.
         /// </para>
         /// </summary>
         public int SamplingPercentage
@@ -343,8 +376,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Statistics. 
         /// <para>
-        /// The number of times that the job has run and processing statistics for the job's most
-        /// recent run.
+        /// The number of times that the job has run and processing statistics for the job's current
+        /// run.
         /// </para>
         /// </summary>
         public Statistics Statistics
@@ -362,7 +395,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A map of key-value pairs that identifies the tags (keys and values) that are associated
+        /// A map of key-value pairs that specifies which tags (keys and values) are associated
         /// with the classification job.
         /// </para>
         /// </summary>
@@ -376,6 +409,26 @@ namespace Amazon.Macie2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserPausedDetails. 
+        /// <para>
+        /// If the current status of the job is USER_PAUSED, specifies when the job was paused
+        /// and when the job or job run will expire and be cancelled if it isn't resumed. This
+        /// value is present only if the value for jobStatus is USER_PAUSED.
+        /// </para>
+        /// </summary>
+        public UserPausedDetails UserPausedDetails
+        {
+            get { return this._userPausedDetails; }
+            set { this._userPausedDetails = value; }
+        }
+
+        // Check to see if UserPausedDetails property is set
+        internal bool IsSetUserPausedDetails()
+        {
+            return this._userPausedDetails != null;
         }
 
     }

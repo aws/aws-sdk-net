@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -91,9 +91,10 @@ namespace Amazon.MediaConvert.Model
         /// (VideoDescription), contains the group of settings related to video encoding. The
         /// settings in this group vary depending on the value that you choose for Video codec
         /// (Codec). For each codec enum that you choose, define the corresponding settings object.
-        /// The following lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings
-        /// * AV1, Av1Settings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings
-        /// * PRORES, ProresSettings * VP8, Vp8Settings * VP9, Vp9Settings
+        /// The following lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA,
+        /// AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings * H_265,
+        /// H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3, Vc3Settings *
+        /// VP8, Vp8Settings * VP9, Vp9Settings
         /// </summary>
         public VideoCodecSettings CodecSettings
         {

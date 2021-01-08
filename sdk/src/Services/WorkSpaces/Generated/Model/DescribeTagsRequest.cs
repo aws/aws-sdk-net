@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,7 +40,8 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
-        /// registered directories, images, custom bundles, and IP access control groups.
+        /// registered directories, images, custom bundles, IP access control groups, and connection
+        /// aliases.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -75,6 +75,7 @@ namespace Amazon.EC2.Model
     {
         private FleetExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
         private string _fleetId;
+        private List<FleetLaunchTemplateConfigRequest> _launchTemplateConfigs = new List<FleetLaunchTemplateConfigRequest>();
         private TargetCapacitySpecificationRequest _targetCapacitySpecification;
 
         /// <summary>
@@ -116,12 +117,30 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LaunchTemplateConfigs. 
+        /// <para>
+        /// The launch template and overrides.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<FleetLaunchTemplateConfigRequest> LaunchTemplateConfigs
+        {
+            get { return this._launchTemplateConfigs; }
+            set { this._launchTemplateConfigs = value; }
+        }
+
+        // Check to see if LaunchTemplateConfigs property is set
+        internal bool IsSetLaunchTemplateConfigs()
+        {
+            return this._launchTemplateConfigs != null && this._launchTemplateConfigs.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetCapacitySpecification. 
         /// <para>
         /// The size of the EC2 Fleet.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public TargetCapacitySpecificationRequest TargetCapacitySpecification
         {
             get { return this._targetCapacitySpecification; }

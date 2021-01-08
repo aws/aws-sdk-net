@@ -29,6 +29,19 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     var shouldMarshallPayload = (payload != null && payload.IsStructure);
     if( this.Operation.ResponseHasBodyMembers || shouldMarshallPayload)
     {
+        if(this.Operation.AllowEmptyResult){
+#>
+            if (context.ResponseData.IsSuccessStatusCode && context.ResponseData.ContentLength == 0)
+                return response;
+<#
+        }
+
+		foreach(var shape in this.Structure.FindStructureShapesWithoutMembers())
+		{
+#>
+			context.AllowEmptyElementLookup.Add("<#=shape.MarshallName#>");
+<#
+		}
 #>
             UnmarshallResult(context,response);
 <#    
@@ -75,15 +88,32 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			if(member.Shape.IsList)
 			{
 				var listMarshallName = member.Shape.ListMarshallName ?? "member";
+
+                if(member.Shape.IsFlattened)
+                {
 #>
-					if (context.TestExpression("<#=member.MarshallName#>/<#=listMarshallName#>", targetDepth))
+					if (context.TestExpression("<#=listMarshallName#>", targetDepth))
 					{
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
 						continue;
 					}
+<#              
+                }
+
+
+                else
+                {
+#>
+				    if (context.TestExpression("<#=member.MarshallName#>/<#=listMarshallName#>", targetDepth))
+				    {
+					    var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
+					    response.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
+					    continue;
+				    }
 <#
-			}
+			    }
+            }
 			else
 			{
 #>

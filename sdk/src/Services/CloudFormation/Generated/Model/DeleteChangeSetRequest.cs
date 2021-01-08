@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,6 +37,13 @@ namespace Amazon.CloudFormation.Model
     /// <para>
     /// If the call successfully completes, AWS CloudFormation successfully deleted the change
     /// set.
+    /// </para>
+    ///  
+    /// <para>
+    /// If <code>IncludeNestedStacks</code> specifies <code>True</code> during the creation
+    /// of the nested change set, then <code>DeleteChangeSet</code> will delete all change
+    /// sets that belong to the stacks hierarchy and will also delete all change sets for
+    /// nested stacks with the status of <code>REVIEW_IN_PROGRESS</code>.
     /// </para>
     /// </summary>
     public partial class DeleteChangeSetRequest : AmazonCloudFormationRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class FederatedAuthenticationRequest
     {
         private string _samlProviderArn;
+        private string _selfServiceSAMLProviderArn;
 
         /// <summary>
         /// Gets and sets the property SAMLProviderArn. 
@@ -51,6 +52,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetSAMLProviderArn()
         {
             return this._samlProviderArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfServiceSAMLProviderArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service
+        /// portal.
+        /// </para>
+        /// </summary>
+        public string SelfServiceSAMLProviderArn
+        {
+            get { return this._selfServiceSAMLProviderArn; }
+            set { this._selfServiceSAMLProviderArn = value; }
+        }
+
+        // Check to see if SelfServiceSAMLProviderArn property is set
+        internal bool IsSetSelfServiceSAMLProviderArn()
+        {
+            return this._selfServiceSAMLProviderArn != null;
         }
 
     }

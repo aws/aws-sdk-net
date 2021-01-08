@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ValidCores. 
         /// <para>
-        /// List of the valid number of cores that can be configured for the instance type.
+        /// The valid number of cores that can be configured for the instance type.
         /// </para>
         /// </summary>
         public List<int> ValidCores
@@ -114,8 +114,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ValidThreadsPerCore. 
         /// <para>
-        /// List of the valid number of threads per core that can be configured for the instance
-        /// type. 
+        /// The valid number of threads per core that can be configured for the instance type.
+        /// 
         /// </para>
         /// </summary>
         public List<int> ValidThreadsPerCore

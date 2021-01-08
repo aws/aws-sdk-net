@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,14 +33,34 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class RightsizingRecommendationMetadata
     {
+        private string _additionalMetadata;
         private string _generationTimestamp;
         private LookbackPeriodInDays _lookbackPeriodInDays;
         private string _recommendationId;
 
         /// <summary>
+        /// Gets and sets the property AdditionalMetadata. 
+        /// <para>
+        /// Additional metadata that may be applicable to the recommendation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string AdditionalMetadata
+        {
+            get { return this._additionalMetadata; }
+            set { this._additionalMetadata = value; }
+        }
+
+        // Check to see if AdditionalMetadata property is set
+        internal bool IsSetAdditionalMetadata()
+        {
+            return this._additionalMetadata != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GenerationTimestamp. 
         /// <para>
-        ///  The timestamp for when Amazon Web Services made this recommendation.
+        ///  The timestamp for when AWS made this recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -59,8 +79,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property LookbackPeriodInDays. 
         /// <para>
-        ///  How many days of previous usage that Amazon Web Services considers when making this
-        /// recommendation.
+        ///  How many days of previous usage that AWS considers when making this recommendation.
         /// </para>
         /// </summary>
         public LookbackPeriodInDays LookbackPeriodInDays

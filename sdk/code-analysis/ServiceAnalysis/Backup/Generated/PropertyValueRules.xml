@@ -165,6 +165,9 @@
     <property>Amazon.Backup.Model.UpdateRecoveryPointLifecycleRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.AdvancedBackupSetting.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.BackupJob.AccountId</property>
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>

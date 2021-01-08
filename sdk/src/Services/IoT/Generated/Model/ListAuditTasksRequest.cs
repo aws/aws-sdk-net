@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -101,7 +101,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property StartTimeUtc. 
         /// <para>
         /// The beginning of the time period. Audit information is retained for a limited time
-        /// (180 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".
+        /// (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -201,7 +201,7 @@ namespace Amazon.IoT.Model
         ///  
         /// <para>
         /// The beginning of the time period. Audit information is retained for a limited time
-        /// (180 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".
+        /// (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DescribeSourceRegions operation.
     /// Returns a list of the source AWS Regions where the current AWS Region can create a
-    /// read replica or copy a DB snapshot from. This API action supports pagination.
+    /// read replica, copy a DB snapshot from, or replicate automated backups from. This API
+    /// action supports pagination.
     /// </summary>
     public partial class DescribeSourceRegionsRequest : AmazonRDSRequest
     {

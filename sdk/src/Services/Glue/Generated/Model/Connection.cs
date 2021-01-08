@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -157,6 +157,23 @@ namespace Amazon.Glue.Model
         ///  <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of
         /// the CA cert file or not. AWS Glue validates for three algorithms: SHA256withRSA, SHA384withRSA
         /// and SHA512withRSA. Default value is "false".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or
+        /// CUSTOM connection.
         /// </para>
         ///  </li> </ul>
         /// </summary>

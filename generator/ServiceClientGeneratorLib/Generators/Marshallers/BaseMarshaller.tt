@@ -183,7 +183,7 @@ using Amazon.Runtime.Internal.Util;
                 }
                 else if (member.IsList)
                 {
-					if(!member.Shape.ListShape.IsString)
+					if(!member.Shape.ListShape.IsString && !member.Shape.ListShape.IsDouble)
 					{
 						throw new NotImplementedException(string.Format(CultureInfo.InvariantCulture,
 							"Marshalling list of {0} as query string param is not implemented.",
@@ -235,5 +235,50 @@ using Amazon.Runtime.Internal.Util;
 #>            
             request.HostPrefix = $"<#=operation.EndpointHostPrefix.Replace("{", "{hostPrefixLabels.")#>";
 <#+
+	}
+
+	protected void GetArnFieldNamesForOperation(Operation operation) {
+		if (this.Config.ServiceModel.Customizations.ArnFields != null)
+        {
+            if (string.IsNullOrEmpty(operation.RequestStructure.Name)
+            || !this.Config.ServiceModel.Customizations.ArnFields.ContainsKey(operation.RequestStructure.Name))
+            {
+                throw new ArgumentException($"Operation {operation.RequestStructure.Name} does not exist in the operationArnField customization. Please edit the service customization json file.");
+            }
+                                                                                               
+            if (this.Config.ServiceModel.Customizations.ArnFields[operation.RequestStructure.Name].ArnFieldExists)
+            {
+                var arnFieldItem = this.Config.ServiceModel.Customizations.ArnFields[operation.RequestStructure.Name].ArnFieldName;
+#>
+            if (Arn.IsArn(publicRequest.<#=arnFieldItem#>))
+            {
+                publicRequest.AccountId = Amazon.S3Control.Internal.S3ArnUtils.GetAccountIdBasedOnArn(
+                    publicRequest.AccountId,
+                    Arn.Parse(publicRequest.<#=arnFieldItem#>).AccountId
+                );
+            }
+<#+
+            }
+        }
+	}
+	protected void CheckContentMd5Header(Operation operation, string requestContent) 
+    {
+		if (operation.HttpChecksumRequired) 
+        {
+#>
+                var checksum = Amazon.Util.AWSSDKUtils.GenerateChecksumForContent(<#=requestContent#>, true);
+<#+
+        var member = operation.RequestStructure.Members.FirstOrDefault(m => string.Equals(m.LocationName, "Content-MD5"));
+        if (member != default(Member)) 
+        {
+#>
+                if (publicRequest.IsSet<#=member.PropertyName#>())
+                    checksum = publicRequest.<#=member.PropertyName#>;
+<#+
+        }
+#>
+                request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = checksum;
+<#+
+        }
 	}
 #>

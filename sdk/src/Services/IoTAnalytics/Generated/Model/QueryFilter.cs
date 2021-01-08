@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Information which is used to filter message data, to segregate it according to the
-    /// time frame in which it arrives.
+    /// Information that is used to filter message data, to segregate it according to the
+    /// timeframe in which it arrives.
     /// </summary>
     public partial class QueryFilter
     {

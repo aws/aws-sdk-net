@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,12 +31,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancers operation.
     /// Describes the specified load balancers or all of your load balancers.
-    /// 
-    ///  
-    /// <para>
-    /// To describe the listeners for a load balancer, use <a>DescribeListeners</a>. To describe
-    /// the attributes for a load balancer, use <a>DescribeLoadBalancerAttributes</a>.
-    /// </para>
     /// </summary>
     public partial class DescribeLoadBalancersRequest : AmazonElasticLoadBalancingV2Request
     {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,15 +30,29 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancerAttributes operation.
-    /// Describes the attributes for the specified Application Load Balancer or Network Load
-    /// Balancer.
+    /// Describes the attributes for the specified Application Load Balancer, Network Load
+    /// Balancer, or Gateway Load Balancer.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
-    /// Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
-    /// Balancer Attributes</a> in the <i>Network Load Balancers Guide</i>.
+    /// For more information, see the following:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
+    /// balancer attributes</a> in the <i>Application Load Balancers Guide</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
+    /// balancer attributes</a> in the <i>Network Load Balancers Guide</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html#load-balancer-attributes">Load
+    /// balancer attributes</a> in the <i>Gateway Load Balancers Guide</i> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeLoadBalancerAttributesRequest : AmazonElasticLoadBalancingV2Request
     {

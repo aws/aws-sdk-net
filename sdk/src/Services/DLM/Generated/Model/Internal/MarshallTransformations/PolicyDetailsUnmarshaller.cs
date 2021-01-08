@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,6 +64,18 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Actions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Action, ActionUnmarshaller>(ActionUnmarshaller.Instance);
+                    unmarshalledObject.Actions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EventSource", targetDepth))
+                {
+                    var unmarshaller = EventSourceUnmarshaller.Instance;
+                    unmarshalledObject.EventSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Parameters", targetDepth))
                 {
                     var unmarshaller = ParametersUnmarshaller.Instance;

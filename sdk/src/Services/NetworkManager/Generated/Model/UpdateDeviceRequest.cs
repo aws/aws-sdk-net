@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class UpdateDeviceRequest : AmazonNetworkManagerRequest
     {
+        private AWSLocation _awsLocation;
         private string _description;
         private string _deviceId;
         private string _globalNetworkId;
@@ -44,6 +45,24 @@ namespace Amazon.NetworkManager.Model
         private string _siteId;
         private string _type;
         private string _vendor;
+
+        /// <summary>
+        /// Gets and sets the property AWSLocation. 
+        /// <para>
+        /// The AWS location of the device.
+        /// </para>
+        /// </summary>
+        public AWSLocation AWSLocation
+        {
+            get { return this._awsLocation; }
+            set { this._awsLocation = value; }
+        }
+
+        // Check to see if AWSLocation property is set
+        internal bool IsSetAWSLocation()
+        {
+            return this._awsLocation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

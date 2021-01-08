@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,6 +31,13 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the DisassociateFromMasterAccount operation.
     /// Disassociates the current Security Hub member account from the associated master account.
+    /// 
+    ///  
+    /// <para>
+    /// This operation is only used by accounts that are not part of an organization. For
+    /// organization accounts, only the master account (the designated Security Hub administrator)
+    /// can disassociate a member account.
+    /// </para>
     /// </summary>
     public partial class DisassociateFromMasterAccountRequest : AmazonSecurityHubRequest
     {

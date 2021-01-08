@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,7 +43,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// The password for the member's initial administrative user. The <code>AdminPassword</code>
         /// must be at least eight characters long and no more than 32 characters. It must contain
         /// at least one uppercase letter, one lowercase letter, and one digit. It cannot have
-        /// a single quote(‘), double quote(“), forward slash(/), backward slash(\), @, or a space.
+        /// a single quotation mark (‘), a double quotation marks (“), a forward slash(/), a backward
+        /// slash(\), @, or a space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=8, Max=32)]

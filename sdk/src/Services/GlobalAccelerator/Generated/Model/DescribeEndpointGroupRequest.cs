@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,7 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEndpointGroup operation.
-    /// Describe an endpoint group. To see an AWS CLI example of describing an endpoint group,
-    /// scroll down to <b>Example</b>.
+    /// Describe an endpoint group.
     /// </summary>
     public partial class DescribeEndpointGroupRequest : AmazonGlobalAcceleratorRequest
     {

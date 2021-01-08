@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ namespace Amazon.Macie2.Model
         private long? _external;
         private long? _internal;
         private long? _notShared;
+        private long? _unknown;
 
         /// <summary>
         /// Gets and sets the property External. 
@@ -79,7 +80,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property NotShared. 
         /// <para>
-        /// The total number of buckets that aren't shared with any other AWS accounts.
+        /// The total number of buckets that aren't shared with other AWS accounts.
         /// </para>
         /// </summary>
         public long NotShared
@@ -92,6 +93,26 @@ namespace Amazon.Macie2.Model
         internal bool IsSetNotShared()
         {
             return this._notShared.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Unknown. 
+        /// <para>
+        /// The total number of buckets that Amazon Macie wasn't able to evaluate shared access
+        /// settings for. Macie can't determine whether these buckets are shared with other AWS
+        /// accounts.
+        /// </para>
+        /// </summary>
+        public long Unknown
+        {
+            get { return this._unknown.GetValueOrDefault(); }
+            set { this._unknown = value; }
+        }
+
+        // Check to see if Unknown property is set
+        internal bool IsSetUnknown()
+        {
+            return this._unknown.HasValue; 
         }
 
     }

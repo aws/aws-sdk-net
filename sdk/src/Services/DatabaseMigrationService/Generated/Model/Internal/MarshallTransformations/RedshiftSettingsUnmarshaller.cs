@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -88,6 +88,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.BucketName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CaseSensitiveNames", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CaseSensitiveNames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CompUpdate", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.CompUpdate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConnectionTimeout", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -116,6 +128,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExplicitIds", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ExplicitIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FileTransferUploadStreams", targetDepth))
@@ -164,6 +182,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplaceInvalidChars = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecretsManagerAccessRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretsManagerAccessRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecretsManagerSecretId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretsManagerSecretId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ServerName", targetDepth))

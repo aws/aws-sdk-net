@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -76,6 +76,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("egressAccessLogs", targetDepth))
+                {
+                    var unmarshaller = EgressAccessLogsUnmarshaller.Instance;
+                    unmarshalledObject.EgressAccessLogs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hlsIngest", targetDepth))
                 {
                     var unmarshaller = HlsIngestUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ingressAccessLogs", targetDepth))
+                {
+                    var unmarshaller = IngressAccessLogsUnmarshaller.Instance;
+                    unmarshalledObject.IngressAccessLogs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))

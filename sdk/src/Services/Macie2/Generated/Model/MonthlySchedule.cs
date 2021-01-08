@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,7 +39,13 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property DayOfMonth. 
         /// <para>
         /// The numeric day of the month when Amazon Macie runs the job. This value can be an
-        /// integer from 1 through 30.
+        /// integer from 1 through 31.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this value exceeds the number of days in a certain month, Macie runs the job on
+        /// the last day of that month. For example, if this value is 31 and a month has only
+        /// 30 days, Macie runs the job on day 30 of that month.
         /// </para>
         /// </summary>
         public int DayOfMonth

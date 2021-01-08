@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1381,7 +1381,7 @@ namespace Amazon.Macie2
         #region  DescribeClassificationJob
 
         /// <summary>
-        /// Retrieves information about the status and settings for a classification job.
+        /// Retrieves the status and settings for a classification job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClassificationJob service method.</param>
         /// 
@@ -1462,7 +1462,7 @@ namespace Amazon.Macie2
         #region  DescribeOrganizationConfiguration
 
         /// <summary>
-        /// Retrieves information about the Amazon Macie configuration settings for an AWS organization.
+        /// Retrieves the Amazon Macie configuration settings for an AWS organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
         /// 
@@ -1624,7 +1624,8 @@ namespace Amazon.Macie2
         #region  DisableOrganizationAdminAccount
 
         /// <summary>
-        /// Disables an account as a delegated administrator of Amazon Macie for an AWS organization.
+        /// Disables an account as the delegated Amazon Macie administrator account for an AWS
+        /// organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
         /// 
@@ -1948,7 +1949,8 @@ namespace Amazon.Macie2
         #region  EnableOrganizationAdminAccount
 
         /// <summary>
-        /// Enables an account as a delegated administrator of Amazon Macie for an AWS organization.
+        /// Designates an account as the delegated Amazon Macie administrator account for an AWS
+        /// organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
         /// 
@@ -2192,7 +2194,7 @@ namespace Amazon.Macie2
         #region  GetCustomDataIdentifier
 
         /// <summary>
-        /// Retrieves information about the criteria and other settings for a custom data identifier.
+        /// Retrieves the criteria and other settings for a custom data identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCustomDataIdentifier service method.</param>
         /// 
@@ -2273,7 +2275,7 @@ namespace Amazon.Macie2
         #region  GetFindings
 
         /// <summary>
-        /// Retrieves information about one or more findings.
+        /// Retrieves the details of one or more findings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindings service method.</param>
         /// 
@@ -2354,7 +2356,7 @@ namespace Amazon.Macie2
         #region  GetFindingsFilter
 
         /// <summary>
-        /// Retrieves information about the criteria and other settings for a findings filter.
+        /// Retrieves the criteria and other settings for a findings filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingsFilter service method.</param>
         /// 
@@ -2598,8 +2600,7 @@ namespace Amazon.Macie2
         #region  GetMacieSession
 
         /// <summary>
-        /// Retrieves information about the current status and configuration settings for an Amazon
-        /// Macie account.
+        /// Retrieves the current status and configuration settings for an Amazon Macie account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMacieSession service method.</param>
         /// 
@@ -3493,8 +3494,8 @@ namespace Amazon.Macie2
         #region  ListOrganizationAdminAccounts
 
         /// <summary>
-        /// Retrieves information about the account that's designated as the delegated administrator
-        /// of Amazon Macie for an AWS organization.
+        /// Retrieves information about the delegated Amazon Macie administrator account for an
+        /// AWS organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>
         /// 
@@ -3902,7 +3903,7 @@ namespace Amazon.Macie2
         #region  UpdateClassificationJob
 
         /// <summary>
-        /// Cancels a classification job.
+        /// Changes the status of a classification job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateClassificationJob service method.</param>
         /// 
@@ -4227,7 +4228,7 @@ namespace Amazon.Macie2
         #region  UpdateOrganizationConfiguration
 
         /// <summary>
-        /// Updates Amazon Macie configuration settings for an AWS organization.
+        /// Updates the Amazon Macie configuration settings for an AWS organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationConfiguration service method.</param>
         /// 

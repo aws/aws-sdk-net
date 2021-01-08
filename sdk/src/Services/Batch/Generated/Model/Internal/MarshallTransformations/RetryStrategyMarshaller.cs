@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,6 +49,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("attempts");
                 context.Writer.Write(requestObject.Attempts);
+            }
+
+            if(requestObject.IsSetEvaluateOnExit())
+            {
+                context.Writer.WritePropertyName("evaluateOnExit");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEvaluateOnExitListValue in requestObject.EvaluateOnExit)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EvaluateOnExitMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEvaluateOnExitListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }

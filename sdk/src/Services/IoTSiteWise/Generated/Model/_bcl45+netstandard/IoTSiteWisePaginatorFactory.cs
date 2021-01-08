@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -66,6 +66,14 @@ namespace Amazon.IoTSiteWise.Model
         public IListAssetModelsPaginator ListAssetModels(ListAssetModelsRequest request) 
         {
             return new ListAssetModelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAssetRelationships operation
+        ///</summary>
+        public IListAssetRelationshipsPaginator ListAssetRelationships(ListAssetRelationshipsRequest request) 
+        {
+            return new ListAssetRelationshipsPaginator(this.client, request);
         }
 
         /// <summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -105,6 +105,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
+
+            var hostPrefixLabels = new
+            {
+                AccountId = StringUtils.FromString(publicRequest.AccountId),
+            };
+
+            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.AccountId))
+                throw new AmazonS3ControlException("AccountId can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");        
+            
+            request.HostPrefix = $"{hostPrefixLabels.AccountId}.";
             return request;
         }
         private static PutJobTaggingRequestMarshaller _instance = new PutJobTaggingRequestMarshaller();        

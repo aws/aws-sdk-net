@@ -199,6 +199,12 @@
     <pattern>^[a-zA-Z0-9/+]*={0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.ListTagsForResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:*:.+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceQuotas.Model.PutServiceQuotaIncreaseRequestIntoTemplateRequest.AwsRegion</property>
     <min>1</min>
     <max>64</max>
@@ -237,6 +243,18 @@
     <min>1</min>
     <max>63</max>
     <pattern>[a-zA-Z][a-zA-Z0-9-]{1,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.TagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:*:.+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.UntagResourceRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:*:.+:[0-9]{12}:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceQuotas.Model.MetricInfo.MetricStatisticRecommendation</property>
@@ -312,5 +330,17 @@
     <min>1</min>
     <max>63</max>
     <pattern>[a-zA-Z][a-zA-Z0-9-]{1,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceQuotas.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
 </property-value-rules>

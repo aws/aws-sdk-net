@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -107,6 +107,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetEnableCustomerOwnedIp())
+                {
+                    request.Parameters.Add("EnableCustomerOwnedIp", StringUtils.FromBool(publicRequest.EnableCustomerOwnedIp));
+                }
                 if(publicRequest.IsSetEnableIAMDatabaseAuthentication())
                 {
                     request.Parameters.Add("EnableIAMDatabaseAuthentication", StringUtils.FromBool(publicRequest.EnableIAMDatabaseAuthentication));
@@ -122,6 +126,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLicenseModel())
                 {
                     request.Parameters.Add("LicenseModel", StringUtils.FromString(publicRequest.LicenseModel));
+                }
+                if(publicRequest.IsSetMaxAllocatedStorage())
+                {
+                    request.Parameters.Add("MaxAllocatedStorage", StringUtils.FromInt(publicRequest.MaxAllocatedStorage));
                 }
                 if(publicRequest.IsSetMultiAZ())
                 {
@@ -158,6 +166,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetRestoreTimeUtc())
                 {
                     request.Parameters.Add("RestoreTime", StringUtils.FromDateTimeToISO8601(publicRequest.RestoreTimeUtc));
+                }
+                if(publicRequest.IsSetSourceDBInstanceAutomatedBackupsArn())
+                {
+                    request.Parameters.Add("SourceDBInstanceAutomatedBackupsArn", StringUtils.FromString(publicRequest.SourceDBInstanceAutomatedBackupsArn));
                 }
                 if(publicRequest.IsSetSourceDBInstanceIdentifier())
                 {

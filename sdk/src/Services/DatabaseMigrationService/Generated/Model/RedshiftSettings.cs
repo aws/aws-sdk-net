@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,11 +37,14 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _afterConnectScript;
         private string _bucketFolder;
         private string _bucketName;
+        private bool? _caseSensitiveNames;
+        private bool? _compUpdate;
         private int? _connectionTimeout;
         private string _databaseName;
         private string _dateFormat;
         private bool? _emptyAsNull;
         private EncryptionModeValue _encryptionMode;
+        private bool? _explicitIds;
         private int? _fileTransferUploadStreams;
         private int? _loadTimeout;
         private int? _maxFileSize;
@@ -50,6 +53,8 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _removeQuotes;
         private string _replaceChars;
         private string _replaceInvalidChars;
+        private string _secretsManagerAccessRoleArn;
+        private string _secretsManagerSecretId;
         private string _serverName;
         private string _serverSideEncryptionKmsKeyId;
         private string _serviceAccessRoleArn;
@@ -107,8 +112,21 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property BucketFolder. 
         /// <para>
-        /// The location where the comma-separated value (.csv) files are stored before being
-        /// uploaded to the S3 bucket. 
+        /// An S3 folder where the comma-separated-value (.csv) files are stored before being
+        /// uploaded to the target Redshift cluster. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For full load mode, AWS DMS converts source records into .csv files and loads them
+        /// to the <i>BucketFolder/TableID</i> path. AWS DMS uses the Redshift <code>COPY</code>
+        /// command to upload the .csv files to the target table. The files are deleted once the
+        /// <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a>
+        /// in the <i>Amazon Redshift Database Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For change-data-capture (CDC) mode, AWS DMS creates a <i>NetChanges</i> table, and
+        /// loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.
         /// </para>
         /// </summary>
         public string BucketFolder
@@ -126,7 +144,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The name of the S3 bucket you want to use
+        /// The name of the intermediate S3 bucket used to store .csv files before uploading data
+        /// to Redshift.
         /// </para>
         /// </summary>
         public string BucketName
@@ -139,6 +158,47 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetBucketName()
         {
             return this._bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaseSensitiveNames. 
+        /// <para>
+        /// If Amazon Redshift is configured to support case sensitive schema names, set <code>CaseSensitiveNames</code>
+        /// to <code>true</code>. The default is <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool CaseSensitiveNames
+        {
+            get { return this._caseSensitiveNames.GetValueOrDefault(); }
+            set { this._caseSensitiveNames = value; }
+        }
+
+        // Check to see if CaseSensitiveNames property is set
+        internal bool IsSetCaseSensitiveNames()
+        {
+            return this._caseSensitiveNames.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompUpdate. 
+        /// <para>
+        /// If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic
+        /// compression if the table is empty. This applies even if the table columns already
+        /// have encodings other than <code>RAW</code>. If you set <code>CompUpdate</code> to
+        /// <code>false</code>, automatic compression is disabled and existing column encodings
+        /// aren't changed. The default is <code>true</code>.
+        /// </para>
+        /// </summary>
+        public bool CompUpdate
+        {
+            get { return this._compUpdate.GetValueOrDefault(); }
+            set { this._compUpdate = value; }
+        }
+
+        // Check to see if CompUpdate property is set
+        internal bool IsSetCompUpdate()
+        {
+            return this._compUpdate.HasValue; 
         }
 
         /// <summary>
@@ -258,10 +318,42 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExplicitIds. 
+        /// <para>
+        /// This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code>
+        /// to <code>true</code> to have tables with <code>IDENTITY</code> columns override their
+        /// auto-generated values with explicit values loaded from the source data files used
+        /// to populate the tables. The default is <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool ExplicitIds
+        {
+            get { return this._explicitIds.GetValueOrDefault(); }
+            set { this._explicitIds = value; }
+        }
+
+        // Check to see if ExplicitIds property is set
+        internal bool IsSetExplicitIds()
+        {
+            return this._explicitIds.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FileTransferUploadStreams. 
         /// <para>
         /// The number of threads used to upload a single file. This parameter accepts a value
         /// from 1 through 64. It defaults to 10.
+        /// </para>
+        ///  
+        /// <para>
+        /// The number of parallel streams used to upload a single .csv file to an S3 bucket using
+        /// S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+        /// upload overview</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults
+        /// to 10.
         /// </para>
         /// </summary>
         public int FileTransferUploadStreams
@@ -279,8 +371,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property LoadTimeout. 
         /// <para>
-        /// The amount of time to wait (in milliseconds) before timing out, beginning from when
-        /// you begin loading.
+        /// The amount of time to wait (in milliseconds) before timing out of operations performed
+        /// by AWS DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.
         /// </para>
         /// </summary>
         public int LoadTimeout
@@ -298,8 +390,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MaxFileSize. 
         /// <para>
-        /// The maximum size (in KB) of any .csv file used to transfer data to Amazon Redshift.
-        /// This accepts a value from 1 through 1,048,576. It defaults to 32,768 KB (32 MB).
+        /// The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer
+        /// data to Amazon Redshift. It defaults to 1048576KB (1 GB).
         /// </para>
         /// </summary>
         public int MaxFileSize
@@ -405,6 +497,58 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetReplaceInvalidChars()
         {
             return this._replaceInvalidChars != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManagerAccessRoleArn. 
+        /// <para>
+        /// The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the
+        /// trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+        /// <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret
+        /// that allows access to the Amazon Redshift endpoint.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can specify one of two sets of values for these permissions. You can specify the
+        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
+        /// clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>,
+        /// and <code>Port</code>. You can't specify both. For more information on creating this
+        /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
+        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database
+        /// Migration Service User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string SecretsManagerAccessRoleArn
+        {
+            get { return this._secretsManagerAccessRoleArn; }
+            set { this._secretsManagerAccessRoleArn = value; }
+        }
+
+        // Check to see if SecretsManagerAccessRoleArn property is set
+        internal bool IsSetSecretsManagerAccessRoleArn()
+        {
+            return this._secretsManagerAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManagerSecretId. 
+        /// <para>
+        /// The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
+        /// that contains the Amazon Redshift endpoint connection details.
+        /// </para>
+        /// </summary>
+        public string SecretsManagerSecretId
+        {
+            get { return this._secretsManagerSecretId; }
+            set { this._secretsManagerSecretId = value; }
+        }
+
+        // Check to see if SecretsManagerSecretId property is set
+        internal bool IsSetSecretsManagerSecretId()
+        {
+            return this._secretsManagerSecretId != null;
         }
 
         /// <summary>
@@ -552,8 +696,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property WriteBufferSize. 
         /// <para>
-        /// The size of the write buffer to use in rows. Valid values range from 1 through 2,048.
-        /// The default is 1,024. Use this setting to tune performance. 
+        /// The size (in KB) of the in-memory file write buffer used when generating .csv files
+        /// on the local disk at the DMS replication instance. The default value is 1000 (buffer
+        /// size is 1000KB).
         /// </para>
         /// </summary>
         public int WriteBufferSize

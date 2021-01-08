@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,41 @@ namespace Amazon.KeyManagementService.Model
     /// Key Store feature</a> feature in AWS KMS, which combines the convenience and extensive
     /// integration of AWS KMS with the isolation and control of a single-tenant key store.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a custom key store
+    /// in a different AWS account.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:DeleteCustomKeyStore</a>
+    /// (IAM policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>ConnectCustomKeyStore</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateCustomKeyStore</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeCustomKeyStores</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DisconnectCustomKeyStore</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateCustomKeyStore</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteCustomKeyStoreRequest : AmazonKeyManagementServiceRequest
     {

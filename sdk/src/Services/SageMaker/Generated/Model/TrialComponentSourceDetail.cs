@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -97,7 +97,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TransformJob. 
         /// <para>
-        /// Information about a transform job that's the source of the trial component.
+        /// Information about a transform job that's the source of a trial component.
         /// </para>
         /// </summary>
         public TransformJob TransformJob

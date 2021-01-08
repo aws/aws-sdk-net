@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ namespace Amazon.Elasticsearch.Model
         private string _packageID;
         private string _packageName;
         private PackageType _packageType;
+        private string _packageVersion;
         private string _referencePath;
 
         /// <summary>
@@ -168,6 +169,21 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetPackageType()
         {
             return this._packageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PackageVersion.
+        /// </summary>
+        public string PackageVersion
+        {
+            get { return this._packageVersion; }
+            set { this._packageVersion = value; }
+        }
+
+        // Check to see if PackageVersion property is set
+        internal bool IsSetPackageVersion()
+        {
+            return this._packageVersion != null;
         }
 
         /// <summary>

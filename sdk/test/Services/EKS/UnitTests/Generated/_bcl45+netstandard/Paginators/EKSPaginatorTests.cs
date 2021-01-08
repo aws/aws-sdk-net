@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,6 +39,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         {
             _mockClient = new Mock<AmazonEKSClient>("access key", "secret", Amazon.RegionEndpoint.USEast1);
         }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EKS")]
+        public void DescribeAddonVersionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeAddonVersionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribeAddonVersionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribeAddonVersionsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribeAddonVersions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribeAddonVersions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EKS")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribeAddonVersionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeAddonVersionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribeAddonVersionsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.DescribeAddonVersions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribeAddonVersions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EKS")]
+        public void ListAddonsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAddonsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListAddonsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListAddonsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListAddons(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListAddons(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EKS")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListAddonsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAddonsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListAddonsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListAddons(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListAddons(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
 
         [TestMethod]
         [TestCategory("UnitTest")]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,9 @@ namespace Amazon.Greengrass
     /// the cost of transmitting data to the cloud by allowing you to author AWS Lambda functions
     /// that execute locally.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonGreengrassClient : AmazonServiceClient, IAmazonGreengrass
     {
         private static IServiceMetadata serviceMetadata = new AmazonGreengrassMetadata();
@@ -2299,6 +2302,46 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  GetThingRuntimeConfiguration
+
+        internal virtual GetThingRuntimeConfigurationResponse GetThingRuntimeConfiguration(GetThingRuntimeConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThingRuntimeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThingRuntimeConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetThingRuntimeConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the runtime configuration of a thing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetThingRuntimeConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetThingRuntimeConfiguration service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetThingRuntimeConfiguration">REST API Reference for GetThingRuntimeConfiguration Operation</seealso>
+        public virtual Task<GetThingRuntimeConfigurationResponse> GetThingRuntimeConfigurationAsync(GetThingRuntimeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetThingRuntimeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetThingRuntimeConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetThingRuntimeConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListBulkDeploymentDetailedReports
 
         internal virtual ListBulkDeploymentDetailedReportsResponse ListBulkDeploymentDetailedReports(ListBulkDeploymentDetailedReportsRequest request)
@@ -3626,6 +3669,46 @@ namespace Amazon.Greengrass
             options.ResponseUnmarshaller = UpdateSubscriptionDefinitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSubscriptionDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateThingRuntimeConfiguration
+
+        internal virtual UpdateThingRuntimeConfigurationResponse UpdateThingRuntimeConfiguration(UpdateThingRuntimeConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThingRuntimeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThingRuntimeConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThingRuntimeConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the runtime configuration of a thing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThingRuntimeConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateThingRuntimeConfiguration service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <exception cref="Amazon.Greengrass.Model.InternalServerErrorException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateThingRuntimeConfiguration">REST API Reference for UpdateThingRuntimeConfiguration Operation</seealso>
+        public virtual Task<UpdateThingRuntimeConfigurationResponse> UpdateThingRuntimeConfigurationAsync(UpdateThingRuntimeConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateThingRuntimeConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThingRuntimeConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateThingRuntimeConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

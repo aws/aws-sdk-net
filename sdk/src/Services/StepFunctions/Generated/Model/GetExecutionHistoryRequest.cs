@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ namespace Amazon.StepFunctions.Model
     public partial class GetExecutionHistoryRequest : AmazonStepFunctionsRequest
     {
         private string _executionArn;
+        private bool? _includeExecutionData;
         private int? _maxResults;
         private string _nextToken;
         private bool? _reverseOrder;
@@ -71,6 +72,25 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetExecutionArn()
         {
             return this._executionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeExecutionData. 
+        /// <para>
+        /// You can select whether execution data (input or output of a history event) is returned.
+        /// The default is <code>true</code>.
+        /// </para>
+        /// </summary>
+        public bool IncludeExecutionData
+        {
+            get { return this._includeExecutionData.GetValueOrDefault(); }
+            set { this._includeExecutionData = value; }
+        }
+
+        // Check to see if IncludeExecutionData property is set
+        internal bool IsSetIncludeExecutionData()
+        {
+            return this._includeExecutionData.HasValue; 
         }
 
         /// <summary>

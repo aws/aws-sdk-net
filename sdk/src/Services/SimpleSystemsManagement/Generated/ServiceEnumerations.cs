@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -533,6 +533,10 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant AutomationSubtype for AutomationExecutionFilterKey
+        /// </summary>
+        public static readonly AutomationExecutionFilterKey AutomationSubtype = new AutomationExecutionFilterKey("AutomationSubtype");
+        /// <summary>
         /// Constant AutomationType for AutomationExecutionFilterKey
         /// </summary>
         public static readonly AutomationExecutionFilterKey AutomationType = new AutomationExecutionFilterKey("AutomationType");
@@ -553,6 +557,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly AutomationExecutionFilterKey ExecutionStatus = new AutomationExecutionFilterKey("ExecutionStatus");
         /// <summary>
+        /// Constant OpsItemId for AutomationExecutionFilterKey
+        /// </summary>
+        public static readonly AutomationExecutionFilterKey OpsItemId = new AutomationExecutionFilterKey("OpsItemId");
+        /// <summary>
         /// Constant ParentExecutionId for AutomationExecutionFilterKey
         /// </summary>
         public static readonly AutomationExecutionFilterKey ParentExecutionId = new AutomationExecutionFilterKey("ParentExecutionId");
@@ -568,6 +576,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant TagKey for AutomationExecutionFilterKey
         /// </summary>
         public static readonly AutomationExecutionFilterKey TagKey = new AutomationExecutionFilterKey("TagKey");
+        /// <summary>
+        /// Constant TargetResourceGroup for AutomationExecutionFilterKey
+        /// </summary>
+        public static readonly AutomationExecutionFilterKey TargetResourceGroup = new AutomationExecutionFilterKey("TargetResourceGroup");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -611,6 +623,10 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant Approved for AutomationExecutionStatus
+        /// </summary>
+        public static readonly AutomationExecutionStatus Approved = new AutomationExecutionStatus("Approved");
+        /// <summary>
         /// Constant Cancelled for AutomationExecutionStatus
         /// </summary>
         public static readonly AutomationExecutionStatus Cancelled = new AutomationExecutionStatus("Cancelled");
@@ -618,6 +634,22 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Cancelling for AutomationExecutionStatus
         /// </summary>
         public static readonly AutomationExecutionStatus Cancelling = new AutomationExecutionStatus("Cancelling");
+        /// <summary>
+        /// Constant ChangeCalendarOverrideApproved for AutomationExecutionStatus
+        /// </summary>
+        public static readonly AutomationExecutionStatus ChangeCalendarOverrideApproved = new AutomationExecutionStatus("ChangeCalendarOverrideApproved");
+        /// <summary>
+        /// Constant ChangeCalendarOverrideRejected for AutomationExecutionStatus
+        /// </summary>
+        public static readonly AutomationExecutionStatus ChangeCalendarOverrideRejected = new AutomationExecutionStatus("ChangeCalendarOverrideRejected");
+        /// <summary>
+        /// Constant CompletedWithFailure for AutomationExecutionStatus
+        /// </summary>
+        public static readonly AutomationExecutionStatus CompletedWithFailure = new AutomationExecutionStatus("CompletedWithFailure");
+        /// <summary>
+        /// Constant CompletedWithSuccess for AutomationExecutionStatus
+        /// </summary>
+        public static readonly AutomationExecutionStatus CompletedWithSuccess = new AutomationExecutionStatus("CompletedWithSuccess");
         /// <summary>
         /// Constant Failed for AutomationExecutionStatus
         /// </summary>
@@ -630,6 +662,26 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Pending for AutomationExecutionStatus
         /// </summary>
         public static readonly AutomationExecutionStatus Pending = new AutomationExecutionStatus("Pending");
+        /// <summary>
+        /// Constant PendingApproval for AutomationExecutionStatus
+        /// </summary>
+        public static readonly AutomationExecutionStatus PendingApproval = new AutomationExecutionStatus("PendingApproval");
+        /// <summary>
+        /// Constant PendingChangeCalendarOverride for AutomationExecutionStatus
+        /// </summary>
+        public static readonly AutomationExecutionStatus PendingChangeCalendarOverride = new AutomationExecutionStatus("PendingChangeCalendarOverride");
+        /// <summary>
+        /// Constant Rejected for AutomationExecutionStatus
+        /// </summary>
+        public static readonly AutomationExecutionStatus Rejected = new AutomationExecutionStatus("Rejected");
+        /// <summary>
+        /// Constant RunbookInProgress for AutomationExecutionStatus
+        /// </summary>
+        public static readonly AutomationExecutionStatus RunbookInProgress = new AutomationExecutionStatus("RunbookInProgress");
+        /// <summary>
+        /// Constant Scheduled for AutomationExecutionStatus
+        /// </summary>
+        public static readonly AutomationExecutionStatus Scheduled = new AutomationExecutionStatus("Scheduled");
         /// <summary>
         /// Constant Success for AutomationExecutionStatus
         /// </summary>
@@ -672,6 +724,52 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AutomationExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutomationSubtype.
+    /// </summary>
+    public class AutomationSubtype : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ChangeRequest for AutomationSubtype
+        /// </summary>
+        public static readonly AutomationSubtype ChangeRequest = new AutomationSubtype("ChangeRequest");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomationSubtype(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomationSubtype FindValue(string value)
+        {
+            return FindValue<AutomationSubtype>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomationSubtype(string value)
         {
             return FindValue(value);
         }
@@ -1545,6 +1643,52 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type DocumentMetadataEnum.
+    /// </summary>
+    public class DocumentMetadataEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DocumentReviews for DocumentMetadataEnum
+        /// </summary>
+        public static readonly DocumentMetadataEnum DocumentReviews = new DocumentMetadataEnum("DocumentReviews");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentMetadataEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentMetadataEnum FindValue(string value)
+        {
+            return FindValue<DocumentMetadataEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentMetadataEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DocumentParameterType.
     /// </summary>
     public class DocumentParameterType : ConstantClass
@@ -1641,6 +1785,110 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type DocumentReviewAction.
+    /// </summary>
+    public class DocumentReviewAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Approve for DocumentReviewAction
+        /// </summary>
+        public static readonly DocumentReviewAction Approve = new DocumentReviewAction("Approve");
+        /// <summary>
+        /// Constant Reject for DocumentReviewAction
+        /// </summary>
+        public static readonly DocumentReviewAction Reject = new DocumentReviewAction("Reject");
+        /// <summary>
+        /// Constant SendForReview for DocumentReviewAction
+        /// </summary>
+        public static readonly DocumentReviewAction SendForReview = new DocumentReviewAction("SendForReview");
+        /// <summary>
+        /// Constant UpdateReview for DocumentReviewAction
+        /// </summary>
+        public static readonly DocumentReviewAction UpdateReview = new DocumentReviewAction("UpdateReview");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentReviewAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentReviewAction FindValue(string value)
+        {
+            return FindValue<DocumentReviewAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentReviewAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DocumentReviewCommentType.
+    /// </summary>
+    public class DocumentReviewCommentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Comment for DocumentReviewCommentType
+        /// </summary>
+        public static readonly DocumentReviewCommentType Comment = new DocumentReviewCommentType("Comment");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentReviewCommentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentReviewCommentType FindValue(string value)
+        {
+            return FindValue<DocumentReviewCommentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentReviewCommentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DocumentStatus.
     /// </summary>
     public class DocumentStatus : ConstantClass
@@ -1720,6 +1968,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Automation for DocumentType
         /// </summary>
         public static readonly DocumentType Automation = new DocumentType("Automation");
+        /// <summary>
+        /// Constant AutomationChangeTemplate for DocumentType
+        /// </summary>
+        public static readonly DocumentType AutomationChangeTemplate = new DocumentType("Automation.ChangeTemplate");
         /// <summary>
         /// Constant ChangeCalendar for DocumentType
         /// </summary>
@@ -2607,6 +2859,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly OperatingSystem DEBIAN = new OperatingSystem("DEBIAN");
         /// <summary>
+        /// Constant MACOS for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem MACOS = new OperatingSystem("MACOS");
+        /// <summary>
         /// Constant ORACLE_LINUX for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem ORACLE_LINUX = new OperatingSystem("ORACLE_LINUX");
@@ -2779,11 +3035,111 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type OpsItemEventFilterKey.
+    /// </summary>
+    public class OpsItemEventFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OpsItemId for OpsItemEventFilterKey
+        /// </summary>
+        public static readonly OpsItemEventFilterKey OpsItemId = new OpsItemEventFilterKey("OpsItemId");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OpsItemEventFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OpsItemEventFilterKey FindValue(string value)
+        {
+            return FindValue<OpsItemEventFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OpsItemEventFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OpsItemEventFilterOperator.
+    /// </summary>
+    public class OpsItemEventFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Equal for OpsItemEventFilterOperator
+        /// </summary>
+        public static readonly OpsItemEventFilterOperator Equal = new OpsItemEventFilterOperator("Equal");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OpsItemEventFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OpsItemEventFilterOperator FindValue(string value)
+        {
+            return FindValue<OpsItemEventFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OpsItemEventFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OpsItemFilterKey.
     /// </summary>
     public class OpsItemFilterKey : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ActualEndTime for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey ActualEndTime = new OpsItemFilterKey("ActualEndTime");
+        /// <summary>
+        /// Constant ActualStartTime for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey ActualStartTime = new OpsItemFilterKey("ActualStartTime");
         /// <summary>
         /// Constant AutomationId for OpsItemFilterKey
         /// </summary>
@@ -2792,6 +3148,30 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Category for OpsItemFilterKey
         /// </summary>
         public static readonly OpsItemFilterKey Category = new OpsItemFilterKey("Category");
+        /// <summary>
+        /// Constant ChangeRequestByApproverArn for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey ChangeRequestByApproverArn = new OpsItemFilterKey("ChangeRequestByApproverArn");
+        /// <summary>
+        /// Constant ChangeRequestByApproverName for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey ChangeRequestByApproverName = new OpsItemFilterKey("ChangeRequestByApproverName");
+        /// <summary>
+        /// Constant ChangeRequestByRequesterArn for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey ChangeRequestByRequesterArn = new OpsItemFilterKey("ChangeRequestByRequesterArn");
+        /// <summary>
+        /// Constant ChangeRequestByRequesterName for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey ChangeRequestByRequesterName = new OpsItemFilterKey("ChangeRequestByRequesterName");
+        /// <summary>
+        /// Constant ChangeRequestByTargetsResourceGroup for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey ChangeRequestByTargetsResourceGroup = new OpsItemFilterKey("ChangeRequestByTargetsResourceGroup");
+        /// <summary>
+        /// Constant ChangeRequestByTemplate for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey ChangeRequestByTemplate = new OpsItemFilterKey("ChangeRequestByTemplate");
         /// <summary>
         /// Constant CreatedBy for OpsItemFilterKey
         /// </summary>
@@ -2820,6 +3200,18 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant OpsItemId for OpsItemFilterKey
         /// </summary>
         public static readonly OpsItemFilterKey OpsItemId = new OpsItemFilterKey("OpsItemId");
+        /// <summary>
+        /// Constant OpsItemType for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey OpsItemType = new OpsItemFilterKey("OpsItemType");
+        /// <summary>
+        /// Constant PlannedEndTime for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey PlannedEndTime = new OpsItemFilterKey("PlannedEndTime");
+        /// <summary>
+        /// Constant PlannedStartTime for OpsItemFilterKey
+        /// </summary>
+        public static readonly OpsItemFilterKey PlannedStartTime = new OpsItemFilterKey("PlannedStartTime");
         /// <summary>
         /// Constant Priority for OpsItemFilterKey
         /// </summary>
@@ -2945,6 +3337,38 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant Approved for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus Approved = new OpsItemStatus("Approved");
+        /// <summary>
+        /// Constant Cancelled for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus Cancelled = new OpsItemStatus("Cancelled");
+        /// <summary>
+        /// Constant Cancelling for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus Cancelling = new OpsItemStatus("Cancelling");
+        /// <summary>
+        /// Constant ChangeCalendarOverrideApproved for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus ChangeCalendarOverrideApproved = new OpsItemStatus("ChangeCalendarOverrideApproved");
+        /// <summary>
+        /// Constant ChangeCalendarOverrideRejected for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus ChangeCalendarOverrideRejected = new OpsItemStatus("ChangeCalendarOverrideRejected");
+        /// <summary>
+        /// Constant CompletedWithFailure for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus CompletedWithFailure = new OpsItemStatus("CompletedWithFailure");
+        /// <summary>
+        /// Constant CompletedWithSuccess for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus CompletedWithSuccess = new OpsItemStatus("CompletedWithSuccess");
+        /// <summary>
+        /// Constant Failed for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus Failed = new OpsItemStatus("Failed");
+        /// <summary>
         /// Constant InProgress for OpsItemStatus
         /// </summary>
         public static readonly OpsItemStatus InProgress = new OpsItemStatus("InProgress");
@@ -2953,9 +3377,37 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly OpsItemStatus Open = new OpsItemStatus("Open");
         /// <summary>
+        /// Constant Pending for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus Pending = new OpsItemStatus("Pending");
+        /// <summary>
+        /// Constant PendingApproval for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus PendingApproval = new OpsItemStatus("PendingApproval");
+        /// <summary>
+        /// Constant PendingChangeCalendarOverride for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus PendingChangeCalendarOverride = new OpsItemStatus("PendingChangeCalendarOverride");
+        /// <summary>
+        /// Constant Rejected for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus Rejected = new OpsItemStatus("Rejected");
+        /// <summary>
         /// Constant Resolved for OpsItemStatus
         /// </summary>
         public static readonly OpsItemStatus Resolved = new OpsItemStatus("Resolved");
+        /// <summary>
+        /// Constant RunbookInProgress for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus RunbookInProgress = new OpsItemStatus("RunbookInProgress");
+        /// <summary>
+        /// Constant Scheduled for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus Scheduled = new OpsItemStatus("Scheduled");
+        /// <summary>
+        /// Constant TimedOut for OpsItemStatus
+        /// </summary>
+        public static readonly OpsItemStatus TimedOut = new OpsItemStatus("TimedOut");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3405,13 +3857,37 @@ namespace Amazon.SimpleSystemsManagement
     {
 
         /// <summary>
+        /// Constant ADVISORY_ID for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey ADVISORY_ID = new PatchFilterKey("ADVISORY_ID");
+        /// <summary>
+        /// Constant ARCH for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey ARCH = new PatchFilterKey("ARCH");
+        /// <summary>
+        /// Constant BUGZILLA_ID for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey BUGZILLA_ID = new PatchFilterKey("BUGZILLA_ID");
+        /// <summary>
         /// Constant CLASSIFICATION for PatchFilterKey
         /// </summary>
         public static readonly PatchFilterKey CLASSIFICATION = new PatchFilterKey("CLASSIFICATION");
         /// <summary>
+        /// Constant CVE_ID for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey CVE_ID = new PatchFilterKey("CVE_ID");
+        /// <summary>
+        /// Constant EPOCH for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey EPOCH = new PatchFilterKey("EPOCH");
+        /// <summary>
         /// Constant MSRC_SEVERITY for PatchFilterKey
         /// </summary>
         public static readonly PatchFilterKey MSRC_SEVERITY = new PatchFilterKey("MSRC_SEVERITY");
+        /// <summary>
+        /// Constant NAME for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey NAME = new PatchFilterKey("NAME");
         /// <summary>
         /// Constant PATCH_ID for PatchFilterKey
         /// </summary>
@@ -3433,13 +3909,29 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly PatchFilterKey PRODUCT_FAMILY = new PatchFilterKey("PRODUCT_FAMILY");
         /// <summary>
+        /// Constant RELEASE for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey RELEASE = new PatchFilterKey("RELEASE");
+        /// <summary>
+        /// Constant REPOSITORY for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey REPOSITORY = new PatchFilterKey("REPOSITORY");
+        /// <summary>
         /// Constant SECTION for PatchFilterKey
         /// </summary>
         public static readonly PatchFilterKey SECTION = new PatchFilterKey("SECTION");
         /// <summary>
+        /// Constant SECURITY for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey SECURITY = new PatchFilterKey("SECURITY");
+        /// <summary>
         /// Constant SEVERITY for PatchFilterKey
         /// </summary>
         public static readonly PatchFilterKey SEVERITY = new PatchFilterKey("SEVERITY");
+        /// <summary>
+        /// Constant VERSION for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey VERSION = new PatchFilterKey("VERSION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3963,6 +4455,64 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type ReviewStatus.
+    /// </summary>
+    public class ReviewStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for ReviewStatus
+        /// </summary>
+        public static readonly ReviewStatus APPROVED = new ReviewStatus("APPROVED");
+        /// <summary>
+        /// Constant NOT_REVIEWED for ReviewStatus
+        /// </summary>
+        public static readonly ReviewStatus NOT_REVIEWED = new ReviewStatus("NOT_REVIEWED");
+        /// <summary>
+        /// Constant PENDING for ReviewStatus
+        /// </summary>
+        public static readonly ReviewStatus PENDING = new ReviewStatus("PENDING");
+        /// <summary>
+        /// Constant REJECTED for ReviewStatus
+        /// </summary>
+        public static readonly ReviewStatus REJECTED = new ReviewStatus("REJECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReviewStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReviewStatus FindValue(string value)
+        {
+            return FindValue<ReviewStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReviewStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SessionFilterKey.
     /// </summary>
     public class SessionFilterKey : ConstantClass
@@ -3980,6 +4530,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Owner for SessionFilterKey
         /// </summary>
         public static readonly SessionFilterKey Owner = new SessionFilterKey("Owner");
+        /// <summary>
+        /// Constant SessionId for SessionFilterKey
+        /// </summary>
+        public static readonly SessionFilterKey SessionId = new SessionFilterKey("SessionId");
         /// <summary>
         /// Constant Status for SessionFilterKey
         /// </summary>

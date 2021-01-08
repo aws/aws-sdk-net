@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateComputer operation.
-    /// Creates a computer account in the specified directory, and joins the computer to the
-    /// directory.
+    /// Creates an Active Directory computer object in the specified directory.
     /// </summary>
     public partial class CreateComputerRequest : AmazonDirectoryServiceRequest
     {

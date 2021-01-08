@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -395,6 +395,23 @@ namespace Amazon.RDS.Model
         /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
         /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>audit</code>, <code>error</code>, <code>general</code>,
+        /// and <code>slowquery</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Aurora PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>postgresql</code> and <code>upgrade</code>. 
+        /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
         {
@@ -511,16 +528,32 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineMode. 
         /// <para>
-        /// The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
+        /// The DB engine mode of the DB cluster, either <code>provisioned</code> <code>serverless</code>,
         /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        ///  <code>global</code> engine mode only applies for global database clusters created
-        /// with Aurora MySQL version 5.6.10a. For higher Aurora MySQL versions, the clusters
-        /// in a global database use <code>provisioned</code> engine mode. 
+        /// The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version
+        /// 1.23 and higher 1.x versions, and version 2.09 and higher 2.x versions.
         /// </para>
-        ///  </note> 
+        ///  
+        /// <para>
+        /// The <code>global</code> engine mode isn't required for Aurora MySQL version 1.22 and
+        /// higher 1.x versions, and <code>global</code> engine mode isn't required for any 2.x
+        /// versions.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>multimaster</code> engine mode only applies for DB clusters created with
+        /// Aurora MySQL version 5.6.10a.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both
+        /// the <code>parallelquery</code> and the <code>multimaster</code> engine modes currently
+        /// aren't supported.
+        /// </para>
+        ///  
         /// <para>
         /// Limitations and requirements apply to some DB engine modes. For more information,
         /// see the following sections in the <i>Amazon Aurora User Guide</i>:
@@ -538,7 +571,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-        /// Requirements for Aurora Global Databases</a> 
+        /// Limitations of Aurora Global Databases</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -650,36 +683,35 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key.
-        /// If you are creating a DB cluster with the same AWS account that owns the KMS encryption
-        /// key used to encrypt the new DB cluster, then you can use the KMS key alias instead
-        /// of the ARN for the KMS encryption key.
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK). To use a CMK in a different AWS account, specify
+        /// the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>
-        /// If an encryption key isn't specified in <code>KmsKeyId</code>:
+        /// When a CMK isn't specified in <code>KmsKeyId</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon
-        /// RDS will use the encryption key used to encrypt the source. Otherwise, Amazon RDS
-        /// will use your default encryption key. 
+        /// RDS will use the CMK used to encrypt the source. Otherwise, Amazon RDS will use your
+        /// default CMK. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code>
-        /// isn't specified, then Amazon RDS will use your default encryption key.
+        /// isn't specified, then Amazon RDS will use your default CMK.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// AWS KMS creates the default encryption key for your AWS account. Your AWS account
-        /// has a different default encryption key for each AWS Region.
+        /// There is a default CMK for your AWS account. Your AWS account has a different default
+        /// CMK for each AWS Region.
         /// </para>
         ///  
         /// <para>
         /// If you create a read replica of an encrypted DB cluster in another AWS Region, you
-        /// must set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS
-        /// Region. This key is used to encrypt the read replica in that AWS Region.
+        /// must set <code>KmsKeyId</code> to a AWS KMS key identifier that is valid in the destination
+        /// AWS Region. This CMK is used to encrypt the read replica in that AWS Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -907,8 +939,8 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt
         /// the copy of the DB cluster in the destination AWS Region. This should refer to the
-        /// same KMS key for both the <code>CreateDBCluster</code> action that is called in the
-        /// destination AWS Region, and the action contained in the pre-signed URL.
+        /// same AWS KMS CMK for both the <code>CreateDBCluster</code> action that is called in
+        /// the destination AWS Region, and the action contained in the pre-signed URL.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
     /// If you choose to host your model using Amazon SageMaker hosting services, you can
     /// use the resulting model artifacts as part of the model. You can also use the artifacts
     /// in a machine learning service other than Amazon SageMaker, provided that you know
-    /// how to use them for inferences. 
+    /// how to use them for inference. 
     /// </para>
     ///  
     /// <para>
@@ -81,7 +81,7 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>RoleARN</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes
+    ///  <code>RoleArn</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes
     /// to perform tasks on your behalf during model training. You must grant this role the
     /// necessary permissions so that Amazon SageMaker can successfully complete model training.
     /// 
@@ -111,6 +111,8 @@ namespace Amazon.SageMaker.Model
         private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
         private List<Channel> _inputDataConfig = new List<Channel>();
         private OutputDataConfig _outputDataConfig;
+        private ProfilerConfig _profilerConfig;
+        private List<ProfilerRuleConfiguration> _profilerRuleConfigurations = new List<ProfilerRuleConfiguration>();
         private ResourceConfig _resourceConfig;
         private string _roleArn;
         private StoppingCondition _stoppingCondition;
@@ -179,7 +181,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DebugRuleConfigurations. 
         /// <para>
-        /// Configuration information for debugging rules.
+        /// Configuration information for Debugger rules for debugging output tensors.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -367,6 +369,40 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProfilerConfig.
+        /// </summary>
+        public ProfilerConfig ProfilerConfig
+        {
+            get { return this._profilerConfig; }
+            set { this._profilerConfig = value; }
+        }
+
+        // Check to see if ProfilerConfig property is set
+        internal bool IsSetProfilerConfig()
+        {
+            return this._profilerConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfilerRuleConfigurations. 
+        /// <para>
+        /// Configuration information for Debugger rules for profiling system and framework metrics.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<ProfilerRuleConfiguration> ProfilerRuleConfigurations
+        {
+            get { return this._profilerRuleConfigurations; }
+            set { this._profilerRuleConfigurations = value; }
+        }
+
+        // Check to see if ProfilerRuleConfigurations property is set
+        internal bool IsSetProfilerRuleConfigurations()
+        {
+            return this._profilerRuleConfigurations != null && this._profilerRuleConfigurations.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceConfig. 
         /// <para>
         /// The resources, including the ML compute instances and ML storage volumes, to use for
@@ -459,9 +495,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
-        /// 
+        /// An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// different ways, for example, by purpose, owner, or environment. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS Resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

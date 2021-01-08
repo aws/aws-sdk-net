@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -128,11 +128,11 @@ namespace Amazon.RDS.Util
             if (port < 0 || port > 65535)
                 throw new ArgumentException(String.Format(CultureInfo.InvariantCulture, "{0} is an invalid port. Port must be 0 to 65535.", port));
 
-            hostname = hostname.Trim();
+            hostname = hostname?.Trim();
             if (string.IsNullOrEmpty(hostname))
                 throw new ArgumentException("Hostname must not be null or empty.");
 
-            dbUser = dbUser.Trim();
+            dbUser = dbUser?.Trim();
             if (string.IsNullOrEmpty(dbUser))
                 throw new ArgumentException("DBUser must not be null or empty.");
 

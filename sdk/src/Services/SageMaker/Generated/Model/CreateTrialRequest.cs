@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -56,6 +56,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _displayName;
         private string _experimentName;
+        private MetadataProperties _metadataProperties;
         private List<Tag> _tags = new List<Tag>();
         private string _trialName;
 
@@ -66,7 +67,7 @@ namespace Amazon.SageMaker.Model
         /// isn't specified, <code>TrialName</code> is displayed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=82)]
+        [AWSProperty(Min=1, Max=120)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -85,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the experiment to associate the trial with.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=82)]
+        [AWSProperty(Required=true, Min=1, Max=120)]
         public string ExperimentName
         {
             get { return this._experimentName; }
@@ -96,6 +97,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExperimentName()
         {
             return this._experimentName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataProperties.
+        /// </summary>
+        public MetadataProperties MetadataProperties
+        {
+            get { return this._metadataProperties; }
+            set { this._metadataProperties = value; }
+        }
+
+        // Check to see if MetadataProperties property is set
+        internal bool IsSetMetadataProperties()
+        {
+            return this._metadataProperties != null;
         }
 
         /// <summary>
@@ -124,7 +140,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the trial. The name must be unique in your AWS account and is not case-sensitive.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=82)]
+        [AWSProperty(Required=true, Min=1, Max=120)]
         public string TrialName
         {
             get { return this._trialName; }

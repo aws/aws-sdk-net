@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachPolicy operation.
-    /// Detaches a policy from a target root, organizational unit (OU), or account. 
+    /// Detaches a policy from a target root, organizational unit (OU), or account.
     /// 
     ///  <important> 
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's master account.
+    /// This operation can be called only from the organization's management account.
     /// </para>
     /// </summary>
     public partial class DetachPolicyRequest : AmazonOrganizationsRequest

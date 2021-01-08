@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,8 +32,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// Container for the parameters to the CreateListener operation.
     /// Create a listener to process inbound connections from clients to an accelerator. Connections
     /// arrive to assigned static IP addresses on a port, port range, or list of port ranges
-    /// that you specify. To see an AWS CLI example of creating a listener, scroll down to
-    /// <b>Example</b>.
+    /// that you specify.
     /// </summary>
     public partial class CreateListenerRequest : AmazonGlobalAcceleratorRequest
     {
@@ -67,7 +66,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <para>
         /// Client affinity lets you direct all requests from a user to the same endpoint, if
         /// you have stateful applications, regardless of the port and protocol of the client
-        /// request. Clienty affinity gives you control over whether to always route each client
+        /// request. Client affinity gives you control over whether to always route each client
         /// to the same specific endpoint.
         /// </para>
         ///  

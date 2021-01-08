@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -203,6 +203,52 @@ namespace Amazon.IoTSiteWise
 
 
     /// <summary>
+    /// Constants used for properties of type AssetRelationshipType.
+    /// </summary>
+    public class AssetRelationshipType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIERARCHY for AssetRelationshipType
+        /// </summary>
+        public static readonly AssetRelationshipType HIERARCHY = new AssetRelationshipType("HIERARCHY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetRelationshipType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetRelationshipType FindValue(string value)
+        {
+            return FindValue<AssetRelationshipType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetRelationshipType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssetState.
     /// </summary>
     public class AssetState : ConstantClass
@@ -258,6 +304,56 @@ namespace Amazon.IoTSiteWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AssetState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AuthMode.
+    /// </summary>
+    public class AuthMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IAM for AuthMode
+        /// </summary>
+        public static readonly AuthMode IAM = new AuthMode("IAM");
+        /// <summary>
+        /// Constant SSO for AuthMode
+        /// </summary>
+        public static readonly AuthMode SSO = new AuthMode("SSO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthMode FindValue(string value)
+        {
+            return FindValue<AuthMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthMode(string value)
         {
             return FindValue(value);
         }
@@ -397,6 +493,110 @@ namespace Amazon.IoTSiteWise
 
 
     /// <summary>
+    /// Constants used for properties of type ConfigurationState.
+    /// </summary>
+    public class ConfigurationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ConfigurationState
+        /// </summary>
+        public static readonly ConfigurationState ACTIVE = new ConfigurationState("ACTIVE");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ConfigurationState
+        /// </summary>
+        public static readonly ConfigurationState UPDATE_FAILED = new ConfigurationState("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for ConfigurationState
+        /// </summary>
+        public static readonly ConfigurationState UPDATE_IN_PROGRESS = new ConfigurationState("UPDATE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationState FindValue(string value)
+        {
+            return FindValue<ConfigurationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EncryptionType.
+    /// </summary>
+    public class EncryptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KMS_BASED_ENCRYPTION for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType KMS_BASED_ENCRYPTION = new EncryptionType("KMS_BASED_ENCRYPTION");
+        /// <summary>
+        /// Constant SITEWISE_DEFAULT_ENCRYPTION for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType SITEWISE_DEFAULT_ENCRYPTION = new EncryptionType("SITEWISE_DEFAULT_ENCRYPTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionType FindValue(string value)
+        {
+            return FindValue<EncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ErrorCode.
     /// </summary>
     public class ErrorCode : ConstantClass
@@ -456,6 +656,10 @@ namespace Amazon.IoTSiteWise
         /// Constant GROUP for IdentityType
         /// </summary>
         public static readonly IdentityType GROUP = new IdentityType("GROUP");
+        /// <summary>
+        /// Constant IAM for IdentityType
+        /// </summary>
+        public static readonly IdentityType IAM = new IdentityType("IAM");
         /// <summary>
         /// Constant USER for IdentityType
         /// </summary>
@@ -834,6 +1038,10 @@ namespace Amazon.IoTSiteWise
         /// Constant STRING for PropertyDataType
         /// </summary>
         public static readonly PropertyDataType STRING = new PropertyDataType("STRING");
+        /// <summary>
+        /// Constant STRUCT for PropertyDataType
+        /// </summary>
+        public static readonly PropertyDataType STRUCT = new PropertyDataType("STRUCT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1118,6 +1326,52 @@ namespace Amazon.IoTSiteWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TraversalDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TraversalType.
+    /// </summary>
+    public class TraversalType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PATH_TO_ROOT for TraversalType
+        /// </summary>
+        public static readonly TraversalType PATH_TO_ROOT = new TraversalType("PATH_TO_ROOT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TraversalType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TraversalType FindValue(string value)
+        {
+            return FindValue<TraversalType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TraversalType(string value)
         {
             return FindValue(value);
         }

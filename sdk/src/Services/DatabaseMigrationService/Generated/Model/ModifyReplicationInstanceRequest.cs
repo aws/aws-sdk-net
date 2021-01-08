@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -119,7 +119,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// A value that indicates that minor version upgrades are applied automatically to the
         /// replication instance during the maintenance window. Changing this parameter doesn't
-        /// result in an outage, except in the case dsecribed following. The change is asynchronously
+        /// result in an outage, except in the case described following. The change is asynchronously
         /// applied as soon as possible. 
         /// </para>
         ///  

@@ -4,7 +4,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#
-    AddLicenseHeader("2020");
+    AddLicenseHeader();
 
     AddCommonUsingStatements();
 #>

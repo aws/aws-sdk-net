@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, provides the configuration
-    /// information about an input processor. Currently, the only input processor available
-    /// is <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>.
+    /// For a SQL-based Kinesis Data Analytics application, provides the configuration information
+    /// about an input processor. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS
+    /// Lambda</a>.
     /// </summary>
     public partial class InputProcessingConfigurationDescription
     {

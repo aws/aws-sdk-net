@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,56 @@ namespace Amazon.Batch
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ArrayJobDependency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssignPublicIp.
+    /// </summary>
+    public class AssignPublicIp : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AssignPublicIp
+        /// </summary>
+        public static readonly AssignPublicIp DISABLED = new AssignPublicIp("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AssignPublicIp
+        /// </summary>
+        public static readonly AssignPublicIp ENABLED = new AssignPublicIp("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssignPublicIp(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssignPublicIp FindValue(string value)
+        {
+            return FindValue<AssignPublicIp>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssignPublicIp(string value)
         {
             return FindValue(value);
         }
@@ -304,6 +354,14 @@ namespace Amazon.Batch
         /// Constant EC2 for CRType
         /// </summary>
         public static readonly CRType EC2 = new CRType("EC2");
+        /// <summary>
+        /// Constant FARGATE for CRType
+        /// </summary>
+        public static readonly CRType FARGATE = new CRType("FARGATE");
+        /// <summary>
+        /// Constant FARGATE_SPOT for CRType
+        /// </summary>
+        public static readonly CRType FARGATE_SPOT = new CRType("FARGATE_SPOT");
         /// <summary>
         /// Constant SPOT for CRType
         /// </summary>
@@ -635,6 +693,126 @@ namespace Amazon.Batch
 
 
     /// <summary>
+    /// Constants used for properties of type LogDriver.
+    /// </summary>
+    public class LogDriver : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Awslogs for LogDriver
+        /// </summary>
+        public static readonly LogDriver Awslogs = new LogDriver("awslogs");
+        /// <summary>
+        /// Constant Fluentd for LogDriver
+        /// </summary>
+        public static readonly LogDriver Fluentd = new LogDriver("fluentd");
+        /// <summary>
+        /// Constant Gelf for LogDriver
+        /// </summary>
+        public static readonly LogDriver Gelf = new LogDriver("gelf");
+        /// <summary>
+        /// Constant Journald for LogDriver
+        /// </summary>
+        public static readonly LogDriver Journald = new LogDriver("journald");
+        /// <summary>
+        /// Constant JsonFile for LogDriver
+        /// </summary>
+        public static readonly LogDriver JsonFile = new LogDriver("json-file");
+        /// <summary>
+        /// Constant Splunk for LogDriver
+        /// </summary>
+        public static readonly LogDriver Splunk = new LogDriver("splunk");
+        /// <summary>
+        /// Constant Syslog for LogDriver
+        /// </summary>
+        public static readonly LogDriver Syslog = new LogDriver("syslog");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogDriver(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogDriver FindValue(string value)
+        {
+            return FindValue<LogDriver>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogDriver(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PlatformCapability.
+    /// </summary>
+    public class PlatformCapability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EC2 for PlatformCapability
+        /// </summary>
+        public static readonly PlatformCapability EC2 = new PlatformCapability("EC2");
+        /// <summary>
+        /// Constant FARGATE for PlatformCapability
+        /// </summary>
+        public static readonly PlatformCapability FARGATE = new PlatformCapability("FARGATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PlatformCapability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PlatformCapability FindValue(string value)
+        {
+            return FindValue<PlatformCapability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PlatformCapability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -644,6 +822,14 @@ namespace Amazon.Batch
         /// Constant GPU for ResourceType
         /// </summary>
         public static readonly ResourceType GPU = new ResourceType("GPU");
+        /// <summary>
+        /// Constant MEMORY for ResourceType
+        /// </summary>
+        public static readonly ResourceType MEMORY = new ResourceType("MEMORY");
+        /// <summary>
+        /// Constant VCPU for ResourceType
+        /// </summary>
+        public static readonly ResourceType VCPU = new ResourceType("VCPU");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -674,6 +860,56 @@ namespace Amazon.Batch
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RetryAction.
+    /// </summary>
+    public class RetryAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXIT for RetryAction
+        /// </summary>
+        public static readonly RetryAction EXIT = new RetryAction("EXIT");
+        /// <summary>
+        /// Constant RETRY for RetryAction
+        /// </summary>
+        public static readonly RetryAction RETRY = new RetryAction("RETRY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RetryAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetryAction FindValue(string value)
+        {
+            return FindValue<RetryAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetryAction(string value)
         {
             return FindValue(value);
         }

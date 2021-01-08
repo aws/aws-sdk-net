@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,6 +55,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("assetCompositeModels", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AssetCompositeModel, AssetCompositeModelUnmarshaller>(AssetCompositeModelUnmarshaller.Instance);
+                    response.AssetCompositeModels = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("assetCreationDate", targetDepth))

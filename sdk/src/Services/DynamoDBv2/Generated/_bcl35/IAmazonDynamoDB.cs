@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -65,6 +65,55 @@ namespace Amazon.DynamoDBv2
 #endif
 
 
+        
+        #region  BatchExecuteStatement
+
+
+        /// <summary>
+        /// This operation allows you to perform batch reads and writes on data stored in DynamoDB,
+        /// using PartiQL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement service method.</param>
+        /// 
+        /// <returns>The response from the BatchExecuteStatement service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
+        /// increase.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
+        BatchExecuteStatementResponse BatchExecuteStatement(BatchExecuteStatementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchExecuteStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchExecuteStatement operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchExecuteStatement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
+        IAsyncResult BeginBatchExecuteStatement(BatchExecuteStatementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchExecuteStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchExecuteStatement.</param>
+        /// 
+        /// <returns>Returns a  BatchExecuteStatementResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement">REST API Reference for BatchExecuteStatement Operation</seealso>
+        BatchExecuteStatementResponse EndBatchExecuteStatement(IAsyncResult asyncResult);
+
+        #endregion
         
         #region  BatchGetItem
 
@@ -156,8 +205,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -253,8 +302,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -350,8 +399,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -513,8 +562,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -645,8 +694,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -770,7 +819,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableInUseException">
@@ -916,7 +965,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
@@ -985,7 +1034,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="tableName">The name of the table to create.</param>
         /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <code>KeySchemaElement</code> in the array is composed of: <ul> <li>  <code>AttributeName</code> - The name of this key attribute. </li> <li>  <code>KeyType</code> - The role that the key attribute will assume: <ul> <li>  <code>HASH</code> - partition key </li> <li>  <code>RANGE</code> - sort key </li> </ul> </li> </ul> <note> The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from the DynamoDB usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values. The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value. </note> For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>. For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="attributeDefinitions">An array of attributes that describe the key schema for the table and indexes.</param>
-        /// <param name="provisionedThroughput">Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.  If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.  For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="provisionedThroughput">Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.  If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property. For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the CreateTable service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -1009,7 +1058,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -1069,7 +1118,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -1150,7 +1199,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteBackup">REST API Reference for DeleteBackup Operation</seealso>
@@ -1231,8 +1280,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1290,8 +1339,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1347,8 +1396,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -1446,7 +1495,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -1515,7 +1564,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -1764,6 +1813,73 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeExport
+
+
+        /// <summary>
+        /// Describes an existing table export.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExport service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExport service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ExportNotFoundException">
+        /// The specified export was not found.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport">REST API Reference for DescribeExport Operation</seealso>
+        DescribeExportResponse DescribeExport(DescribeExportRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExport operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport">REST API Reference for DescribeExport Operation</seealso>
+        IAsyncResult BeginDescribeExport(DescribeExportRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExport.</param>
+        /// 
+        /// <returns>Returns a  DescribeExportResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport">REST API Reference for DescribeExport Operation</seealso>
+        DescribeExportResponse EndDescribeExport(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeGlobalTable
 
 
@@ -1872,28 +1988,75 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DescribeKinesisStreamingDestination
+
+
+        /// <summary>
+        /// Returns information about the status of Kinesis streaming.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKinesisStreamingDestination service method.</param>
+        /// 
+        /// <returns>The response from the DescribeKinesisStreamingDestination service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination">REST API Reference for DescribeKinesisStreamingDestination Operation</seealso>
+        DescribeKinesisStreamingDestinationResponse DescribeKinesisStreamingDestination(DescribeKinesisStreamingDestinationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeKinesisStreamingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKinesisStreamingDestination operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeKinesisStreamingDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination">REST API Reference for DescribeKinesisStreamingDestination Operation</seealso>
+        IAsyncResult BeginDescribeKinesisStreamingDestination(DescribeKinesisStreamingDestinationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeKinesisStreamingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeKinesisStreamingDestination.</param>
+        /// 
+        /// <returns>Returns a  DescribeKinesisStreamingDestinationResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination">REST API Reference for DescribeKinesisStreamingDestination Operation</seealso>
+        DescribeKinesisStreamingDestinationResponse EndDescribeKinesisStreamingDestination(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeLimits
 
 
         /// <summary>
-        /// Returns the current provisioned-capacity limits for your AWS account in a Region,
+        /// Returns the current provisioned-capacity quotas for your AWS account in a Region,
         /// both for the Region as a whole and for any one DynamoDB table that you create there.
         /// 
         ///  
         /// <para>
-        /// When you establish an AWS account, the account has initial limits on the maximum read
+        /// When you establish an AWS account, the account has initial quotas on the maximum read
         /// capacity units and write capacity units that you can provision across all of your
-        /// DynamoDB tables in a given Region. Also, there are per-table limits that apply when
-        /// you create a table there. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-        /// page in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// DynamoDB tables in a given Region. Also, there are per-table quotas that apply when
+        /// you create a table there. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+        /// Account, and Table Quotas</a> page in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Although you can increase these limits by filing a case at <a href="https://console.aws.amazon.com/support/home#/">AWS
+        /// Although you can increase these quotas by filing a case at <a href="https://console.aws.amazon.com/support/home#/">AWS
         /// Support Center</a>, obtaining the increase is not instantaneous. The <code>DescribeLimits</code>
         /// action lets you write code to compare the capacity you are currently using to those
-        /// limits imposed by your account so that you have enough time to apply for an increase
-        /// before you hit a limit.
+        /// quotas imposed by your account so that you have enough time to apply for an increase
+        /// before you hit a quota.
         /// </para>
         ///  
         /// <para>
@@ -1902,7 +2065,7 @@ namespace Amazon.DynamoDBv2
         ///  <ol> <li> 
         /// <para>
         /// Call <code>DescribeLimits</code> for a particular Region to obtain your current account
-        /// limits on provisioned capacity there.
+        /// quotas on provisioned capacity there.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1934,25 +2097,25 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Report the account limits for that Region returned by <code>DescribeLimits</code>,
+        /// Report the account quotas for that Region returned by <code>DescribeLimits</code>,
         /// along with the total current provisioned capacity levels you have calculated.
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// This will let you see whether you are getting close to your account-level limits.
+        /// This will let you see whether you are getting close to your account-level quotas.
         /// </para>
         ///  
         /// <para>
-        /// The per-table limits apply only when you are creating a new table. They restrict the
+        /// The per-table quotas apply only when you are creating a new table. They restrict the
         /// sum of the provisioned capacity of the new table itself and all its global secondary
         /// indexes.
         /// </para>
         ///  
         /// <para>
         /// For existing tables and their GSIs, DynamoDB doesn't let you increase provisioned
-        /// capacity extremely rapidly. But the only upper limit that applies is that the aggregate
+        /// capacity extremely rapidly, but the only quota that applies is that the aggregate
         /// provisioned capacity over all your tables and GSIs cannot exceed either of the per-account
-        /// limits.
+        /// quotas.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2203,6 +2366,615 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  DisableKinesisStreamingDestination
+
+
+        /// <summary>
+        /// Stops replication from the DynamoDB table to the Kinesis data stream. This is done
+        /// without deleting either of the resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableKinesisStreamingDestination service method.</param>
+        /// 
+        /// <returns>The response from the DisableKinesisStreamingDestination service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination">REST API Reference for DisableKinesisStreamingDestination Operation</seealso>
+        DisableKinesisStreamingDestinationResponse DisableKinesisStreamingDestination(DisableKinesisStreamingDestinationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableKinesisStreamingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableKinesisStreamingDestination operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableKinesisStreamingDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination">REST API Reference for DisableKinesisStreamingDestination Operation</seealso>
+        IAsyncResult BeginDisableKinesisStreamingDestination(DisableKinesisStreamingDestinationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableKinesisStreamingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableKinesisStreamingDestination.</param>
+        /// 
+        /// <returns>Returns a  DisableKinesisStreamingDestinationResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination">REST API Reference for DisableKinesisStreamingDestination Operation</seealso>
+        DisableKinesisStreamingDestinationResponse EndDisableKinesisStreamingDestination(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  EnableKinesisStreamingDestination
+
+
+        /// <summary>
+        /// Starts table data replication to the specified Kinesis data stream at a timestamp
+        /// chosen during the enable workflow. If this operation doesn't return results immediately,
+        /// use DescribeKinesisStreamingDestination to check if streaming to the Kinesis data
+        /// stream is ACTIVE.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableKinesisStreamingDestination service method.</param>
+        /// 
+        /// <returns>The response from the EnableKinesisStreamingDestination service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
+        /// The operation conflicts with the resource's availability. For example, you attempted
+        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination">REST API Reference for EnableKinesisStreamingDestination Operation</seealso>
+        EnableKinesisStreamingDestinationResponse EnableKinesisStreamingDestination(EnableKinesisStreamingDestinationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableKinesisStreamingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableKinesisStreamingDestination operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableKinesisStreamingDestination
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination">REST API Reference for EnableKinesisStreamingDestination Operation</seealso>
+        IAsyncResult BeginEnableKinesisStreamingDestination(EnableKinesisStreamingDestinationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableKinesisStreamingDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableKinesisStreamingDestination.</param>
+        /// 
+        /// <returns>Returns a  EnableKinesisStreamingDestinationResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination">REST API Reference for EnableKinesisStreamingDestination Operation</seealso>
+        EnableKinesisStreamingDestinationResponse EndEnableKinesisStreamingDestination(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ExecuteStatement
+
+
+        /// <summary>
+        /// This operation allows you to perform reads and singleton writes on data stored in
+        /// DynamoDB, using PartiQL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteStatement service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
+        /// A condition specified in the operation could not be evaluated.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.DuplicateItemException">
+        /// There was an attempt to insert an item with the same primary key as an item that
+        /// already exists in the DynamoDB table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ItemCollectionSizeLimitExceededException">
+        /// An item collection is too large. This exception is only returned for tables that have
+        /// one or more local secondary indexes.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
+        /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
+        /// Operation was rejected because there is an ongoing transaction for the item.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">REST API Reference for ExecuteStatement Operation</seealso>
+        ExecuteStatementResponse ExecuteStatement(ExecuteStatementRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteStatement
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">REST API Reference for ExecuteStatement Operation</seealso>
+        IAsyncResult BeginExecuteStatement(ExecuteStatementRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExecuteStatement operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteStatement.</param>
+        /// 
+        /// <returns>Returns a  ExecuteStatementResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement">REST API Reference for ExecuteStatement Operation</seealso>
+        ExecuteStatementResponse EndExecuteStatement(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ExecuteTransaction
+
+
+        /// <summary>
+        /// This operation allows you to perform transactional reads or writes on data stored
+        /// in DynamoDB, using PartiQL.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteTransaction service method.</param>
+        /// 
+        /// <returns>The response from the ExecuteTransaction service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.IdempotentParameterMismatchException">
+        /// DynamoDB rejected the request because you retried a request with a different payload
+        /// but with an idempotent token that was already used.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ProvisionedThroughputExceededException">
+        /// Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests
+        /// that receive this exception. Your request is eventually successful, unless your retry
+        /// queue is too large to finish. Reduce the frequency of requests and use exponential
+        /// backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
+        /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TransactionCanceledException">
+        /// The entire transaction request was canceled.
+        /// 
+        ///  
+        /// <para>
+        /// DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A condition in one of the condition expressions is not met.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A table in the <code>TransactWriteItems</code> request is in a different account or
+        /// region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// More than one action in the <code>TransactWriteItems</code> operation targets the
+        /// same item.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is insufficient provisioned capacity for the transaction to be completed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An item size becomes too large (larger than 400 KB), or a local secondary index (LSI)
+        /// becomes too large, or a similar validation error occurs because of changes made by
+        /// the transaction.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is a user error, such as an invalid data format.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// There is an ongoing <code>TransactGetItems</code> operation that conflicts with a
+        /// concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code>
+        /// or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code>
+        /// operation fails with a <code>TransactionCanceledException</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A table in the <code>TransactGetItems</code> request is in a different account or
+        /// region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is insufficient provisioned capacity for the transaction to be completed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is a user error, such as an invalid data format.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code>
+        /// property. This property is not set for other languages. Transaction cancellation reasons
+        /// are ordered in the order of requested items, if an item has no error it will have
+        /// <code>NONE</code> code and <code>Null</code> message.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Cancellation reason codes and possible error messages:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// No Errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>NONE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: <code>null</code> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Conditional Check Failed:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ConditionalCheckFailed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: The conditional request failed. 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Item Collection Size Limit Exceeded:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ItemCollectionSizeLimitExceeded</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: Collection size exceeded.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Transaction Conflict:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>TransactionConflict</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Message: Transaction is ongoing for the item.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Provisioned Throughput Exceeded:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ProvisionedThroughputExceeded</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The level of configured provisioned throughput for the table was exceeded. Consider
+        /// increasing your provisioning level with the UpdateTable API.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This Message is received when provisioned throughput is exceeded is on a provisioned
+        /// DynamoDB table.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The level of configured provisioned throughput for one or more global secondary indexes
+        /// of the table was exceeded. Consider increasing your provisioning level for the under-provisioned
+        /// global secondary indexes with the UpdateTable API.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when provisioned throughput is exceeded is on a provisioned
+        /// GSI.
+        /// </para>
+        ///  </note> </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        /// Throttling Error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ThrottlingError</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Throughput exceeds the current capacity of your table or index. DynamoDB is automatically
+        /// scaling your table or index so please try again shortly. If exceptions persist, check
+        /// if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when writes get throttled on an On-Demand table as DynamoDB
+        /// is automatically scaling the table.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// Throughput exceeds the current capacity for one or more global secondary indexes.
+        /// DynamoDB is automatically scaling your index so please try again shortly.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB
+        /// is automatically scaling the GSI.
+        /// </para>
+        ///  </note> </li> </ul> </li> </ul> </li> <li> 
+        /// <para>
+        /// Validation Error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Code: <code>ValidationError</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Messages: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// One or more parameter values were invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The update expression attempted to update the secondary index key beyond allowed size
+        /// limits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The update expression attempted to update the secondary index key to unsupported type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An operand in the update expression has an incorrect data type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Item size to update has exceeded the maximum allowed size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Number overflow. Attempting to store a number with magnitude larger than supported
+        /// range.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Type mismatch for attribute to update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Nesting Levels have exceeded supported limits.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The document path provided in the update expression is invalid for update.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The provided expression refers to an attribute that does not exist in the item.
+        /// </para>
+        ///  </li> </ul> </li> </ul> </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TransactionInProgressException">
+        /// The transaction with the given request token is already in progress.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction">REST API Reference for ExecuteTransaction Operation</seealso>
+        ExecuteTransactionResponse ExecuteTransaction(ExecuteTransactionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExecuteTransaction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExecuteTransaction operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteTransaction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction">REST API Reference for ExecuteTransaction Operation</seealso>
+        IAsyncResult BeginExecuteTransaction(ExecuteTransactionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExecuteTransaction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteTransaction.</param>
+        /// 
+        /// <returns>Returns a  ExecuteTransactionResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction">REST API Reference for ExecuteTransaction Operation</seealso>
+        ExecuteTransactionResponse EndExecuteTransaction(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ExportTableToPointInTime
+
+
+        /// <summary>
+        /// Exports table data to an S3 bucket. The table must have point in time recovery enabled,
+        /// and you can export data from any time within the point in time recovery window.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportTableToPointInTime service method.</param>
+        /// 
+        /// <returns>The response from the ExportTableToPointInTime service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ExportConflictException">
+        /// There was a conflict when writing to the specified S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InvalidExportTimeException">
+        /// The specified <code>ExportTime</code> is outside of the point in time recovery window.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.PointInTimeRecoveryUnavailableException">
+        /// Point in time recovery has not yet been enabled for this source table.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
+        /// A source table with the name <code>TableName</code> does not currently exist within
+        /// the subscriber's account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime">REST API Reference for ExportTableToPointInTime Operation</seealso>
+        ExportTableToPointInTimeResponse ExportTableToPointInTime(ExportTableToPointInTimeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportTableToPointInTime operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportTableToPointInTime operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportTableToPointInTime
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime">REST API Reference for ExportTableToPointInTime Operation</seealso>
+        IAsyncResult BeginExportTableToPointInTime(ExportTableToPointInTimeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportTableToPointInTime operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportTableToPointInTime.</param>
+        /// 
+        /// <returns>Returns a  ExportTableToPointInTimeResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime">REST API Reference for ExportTableToPointInTime Operation</seealso>
+        ExportTableToPointInTimeResponse EndExportTableToPointInTime(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetItem
 
 
@@ -2234,8 +3006,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -2274,8 +3046,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -2312,8 +3084,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -2357,13 +3129,13 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// List backups associated with an AWS account. To list backups for a given table, specify
         /// <code>TableName</code>. <code>ListBackups</code> returns a paginated list of results
-        /// with at most 1 MB worth of items in a page. You can also specify a limit for the maximum
-        /// number of entries to be returned in a page. 
+        /// with at most 1 MB worth of items in a page. You can also specify a maximum number
+        /// of entries to be returned in a page. 
         /// 
         ///  
         /// <para>
         /// In the request, start time is inclusive, but end time is exclusive. Note that these
-        /// limits are for the time at which the original backup was requested.
+        /// boundaries are for the time at which the original backup was requested.
         /// </para>
         ///  
         /// <para>
@@ -2452,6 +3224,70 @@ namespace Amazon.DynamoDBv2
         /// <returns>Returns a  ListContributorInsightsResult from DynamoDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">REST API Reference for ListContributorInsights Operation</seealso>
         ListContributorInsightsResponse EndListContributorInsights(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListExports
+
+
+        /// <summary>
+        /// Lists completed exports within the past 90 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
+        /// 
+        /// <returns>The response from the ListExports service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
+        /// There is no limit to the number of daily on-demand backups that can be taken. 
+        /// 
+        ///  
+        /// <para>
+        /// Up to 50 simultaneous table operations are allowed per account. These operations include
+        /// <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
+        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The only exception is when you are creating a table with one or more secondary indexes.
+        /// You can have up to 25 such requests running at a time; however, if the table or index
+        /// specifications are complex, DynamoDB might temporarily reduce the number of concurrent
+        /// operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a soft account quota of 256 tables.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">REST API Reference for ListExports Operation</seealso>
+        ListExportsResponse ListExports(ListExportsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExports operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">REST API Reference for ListExports Operation</seealso>
+        IAsyncResult BeginListExports(ListExportsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExports.</param>
+        /// 
+        /// <returns>Returns a  ListExportsResult from DynamoDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports">REST API Reference for ListExports Operation</seealso>
+        ListExportsResponse EndListExports(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2777,8 +3613,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -2906,8 +3742,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -3033,8 +3869,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -3159,8 +3995,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -3271,7 +4107,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableAlreadyExistsException">
@@ -3414,7 +4250,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.PointInTimeRecoveryUnavailableException">
@@ -3518,8 +4354,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -3583,8 +4419,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -3649,8 +4485,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -3713,8 +4549,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -3791,7 +4627,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -3883,8 +4719,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4261,8 +5097,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4580,7 +5416,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -4858,7 +5694,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ReplicaNotFoundException">
@@ -4939,8 +5775,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -4990,8 +5826,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -5038,8 +5874,8 @@ namespace Amazon.DynamoDBv2
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
-        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
-        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a limit
+        /// Throughput exceeds the current throughput quota for your account. Please contact AWS
+        /// Support at <a href="https://aws.amazon.com/support">AWS Support</a> to request a quota
         /// increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
@@ -5142,7 +5978,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -5215,7 +6051,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -5295,7 +6131,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
@@ -5406,7 +6242,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// There is a soft account limit of 256 tables.
+        /// There is a soft account quota of 256 tables.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">

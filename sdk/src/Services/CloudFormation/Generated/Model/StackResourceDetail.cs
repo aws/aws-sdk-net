@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ namespace Amazon.CloudFormation.Model
         private DateTime? _lastUpdatedTimestamp;
         private string _logicalResourceId;
         private string _metadata;
+        private ModuleInfo _moduleInfo;
         private string _physicalResourceId;
         private ResourceStatus _resourceStatus;
         private string _resourceStatusReason;
@@ -141,6 +142,25 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetMetadata()
         {
             return this._metadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModuleInfo. 
+        /// <para>
+        /// Contains information about the module from which the resource was created, if the
+        /// resource was created from a module included in the stack template.
+        /// </para>
+        /// </summary>
+        public ModuleInfo ModuleInfo
+        {
+            get { return this._moduleInfo; }
+            set { this._moduleInfo = value; }
+        }
+
+        // Check to see if ModuleInfo property is set
+        internal bool IsSetModuleInfo()
+        {
+            return this._moduleInfo != null;
         }
 
         /// <summary>

@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,14 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Paginator for ListCodeSigningConfigs operation
+        ///</summary>
+        public IListCodeSigningConfigsPaginator ListCodeSigningConfigs(ListCodeSigningConfigsRequest request) 
+        {
+            return new ListCodeSigningConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEventSourceMappings operation
         ///</summary>
         public IListEventSourceMappingsPaginator ListEventSourceMappings(ListEventSourceMappingsRequest request) 
@@ -66,6 +74,14 @@ namespace Amazon.Lambda.Model
         public IListFunctionsPaginator ListFunctions(ListFunctionsRequest request) 
         {
             return new ListFunctionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFunctionsByCodeSigningConfig operation
+        ///</summary>
+        public IListFunctionsByCodeSigningConfigPaginator ListFunctionsByCodeSigningConfig(ListFunctionsByCodeSigningConfigRequest request) 
+        {
+            return new ListFunctionsByCodeSigningConfigPaginator(this.client, request);
         }
 
         /// <summary>

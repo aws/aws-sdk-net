@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ClusterId. 
         /// <para>
-        ///  Specifies the ID of the cluster for which the managed scaling policy will be fetched.
+        /// Specifies the ID of the cluster for which the managed scaling policy will be fetched.
         /// 
         /// </para>
         /// </summary>

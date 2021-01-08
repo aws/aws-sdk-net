@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DataSources. 
         /// <para>
-        /// An object describes which data sources will be updated.
+        /// Describes which data sources will be updated.
         /// </para>
         /// </summary>
         public DataSourceConfigurations DataSources
@@ -78,7 +78,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The detector ID of the master account.
+        /// The detector ID of the administrator account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

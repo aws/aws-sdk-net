@@ -69,7 +69,7 @@ namespace AWSSDK_NetStandard.UnitTests
         {
             Assert.Equal("s3-external-1.amazonaws.com", RegionEndpoint.GetBySystemName("s3-external-1").GetEndpointForService("s3").Hostname);
             Assert.Equal("budgets.amazonaws.com", RegionEndpoint.GetBySystemName("aws-global").GetEndpointForService("budgets").Hostname);
-            Assert.Equal("s3-fips-us-gov-west-1.amazonaws.com", RegionEndpoint.GetBySystemName("fips-us-gov-west-1").GetEndpointForService("s3").Hostname);
+            Assert.Equal("s3-fips.us-gov-west-1.amazonaws.com", RegionEndpoint.GetBySystemName("fips-us-gov-west-1").GetEndpointForService("s3").Hostname);
             Assert.Equal("iam.us-gov.amazonaws.com", RegionEndpoint.GetBySystemName("aws-us-gov-global").GetEndpointForService("iam").Hostname);
         }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,16 +51,44 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CreateAuthChallenge);
             }
 
+            if(requestObject.IsSetCustomEmailSender())
+            {
+                context.Writer.WritePropertyName("CustomEmailSender");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomEmailLambdaVersionConfigTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomEmailSender, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCustomMessage())
             {
                 context.Writer.WritePropertyName("CustomMessage");
                 context.Writer.Write(requestObject.CustomMessage);
             }
 
+            if(requestObject.IsSetCustomSMSSender())
+            {
+                context.Writer.WritePropertyName("CustomSMSSender");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomSMSLambdaVersionConfigTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomSMSSender, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDefineAuthChallenge())
             {
                 context.Writer.WritePropertyName("DefineAuthChallenge");
                 context.Writer.Write(requestObject.DefineAuthChallenge);
+            }
+
+            if(requestObject.IsSetKMSKeyID())
+            {
+                context.Writer.WritePropertyName("KMSKeyID");
+                context.Writer.Write(requestObject.KMSKeyID);
             }
 
             if(requestObject.IsSetPostAuthentication())

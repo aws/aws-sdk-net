@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,9 +30,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplicationOutput operation.
-    /// Deletes the output destination configuration from your SQL-based Amazon Kinesis Data
-    /// Analytics application's configuration. Kinesis Data Analytics will no longer write
-    /// data from the corresponding in-application stream to the external output destination.
+    /// Deletes the output destination configuration from your SQL-based Kinesis Data Analytics
+    /// application's configuration. Kinesis Data Analytics will no longer write data from
+    /// the corresponding in-application stream to the external output destination.
     /// </summary>
     public partial class DeleteApplicationOutputRequest : AmazonKinesisAnalyticsV2Request
     {

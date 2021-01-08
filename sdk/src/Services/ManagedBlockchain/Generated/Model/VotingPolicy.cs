@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// The voting rules for the network to decide if a proposal is accepted
+    /// The voting rules for the network to decide if a proposal is accepted 
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class VotingPolicy
     {

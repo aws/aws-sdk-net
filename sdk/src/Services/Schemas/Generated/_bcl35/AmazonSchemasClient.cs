@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1097,6 +1097,81 @@ namespace Amazon.Schemas
         public virtual DescribeSchemaResponse EndDescribeSchema(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSchemaResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ExportSchema
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportSchema service method.</param>
+        /// 
+        /// <returns>The response from the ExportSchema service method, as returned by Schemas.</returns>
+        /// <exception cref="Amazon.Schemas.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ForbiddenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.InternalServerErrorException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.ServiceUnavailableException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Schemas.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema">REST API Reference for ExportSchema Operation</seealso>
+        public virtual ExportSchemaResponse ExportSchema(ExportSchemaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportSchemaResponseUnmarshaller.Instance;
+
+            return Invoke<ExportSchemaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportSchema operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportSchema operation on AmazonSchemasClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportSchema
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema">REST API Reference for ExportSchema Operation</seealso>
+        public virtual IAsyncResult BeginExportSchema(ExportSchemaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportSchemaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportSchemaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportSchema operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportSchema.</param>
+        /// 
+        /// <returns>Returns a  ExportSchemaResult from Schemas.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema">REST API Reference for ExportSchema Operation</seealso>
+        public virtual ExportSchemaResponse EndExportSchema(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExportSchemaResponse>(asyncResult);
         }
 
         #endregion

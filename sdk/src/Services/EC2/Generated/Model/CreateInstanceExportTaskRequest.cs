@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -72,6 +72,7 @@ namespace Amazon.EC2.Model
         /// The format and location for an instance export task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ExportToS3TaskSpecification ExportToS3Task
         {
             get { return this._exportToS3Task; }
@@ -127,6 +128,7 @@ namespace Amazon.EC2.Model
         /// The target virtualization environment.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public ExportEnvironment TargetEnvironment
         {
             get { return this._targetEnvironment; }

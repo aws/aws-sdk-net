@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,192 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("Route53")]
+        public void ActivateKeySigningKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("ActivateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<ActivateKeySigningKeyRequest>();
+            var marshaller = new ActivateKeySigningKeyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ActivateKeySigningKey", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ActivateKeySigningKeyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ActivateKeySigningKeyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void ActivateKeySigningKey_ConcurrentModificationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ActivateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<ActivateKeySigningKeyRequest>();
+            var marshaller = new ActivateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ActivateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConcurrentModificationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ActivateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void ActivateKeySigningKey_InvalidKeySigningKeyStatusExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ActivateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<ActivateKeySigningKeyRequest>();
+            var marshaller = new ActivateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ActivateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidKeySigningKeyStatusException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ActivateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void ActivateKeySigningKey_InvalidKMSArnExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ActivateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<ActivateKeySigningKeyRequest>();
+            var marshaller = new ActivateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ActivateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidKMSArnException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ActivateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void ActivateKeySigningKey_InvalidSigningStatusExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ActivateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<ActivateKeySigningKeyRequest>();
+            var marshaller = new ActivateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ActivateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSigningStatusException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ActivateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void ActivateKeySigningKey_NoSuchKeySigningKeyExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ActivateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<ActivateKeySigningKeyRequest>();
+            var marshaller = new ActivateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ActivateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NoSuchKeySigningKeyException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ActivateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
         public void AssociateVPCWithHostedZoneMarshallTest()
         {
             var operation = service_model.FindOperation("AssociateVPCWithHostedZone");
@@ -63,7 +249,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = AssociateVPCWithHostedZoneResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -341,7 +528,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ChangeResourceRecordSetsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -526,7 +714,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ChangeTagsForResourceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -712,7 +901,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateHealthCheckResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -839,7 +1029,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateHostedZoneResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -1139,6 +1330,358 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("Route53")]
+        public void CreateKeySigningKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<CreateKeySigningKeyRequest>();
+            var marshaller = new CreateKeySigningKeyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateKeySigningKey", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateKeySigningKeyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateKeySigningKeyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void CreateKeySigningKey_ConcurrentModificationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<CreateKeySigningKeyRequest>();
+            var marshaller = new CreateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConcurrentModificationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void CreateKeySigningKey_InvalidArgumentExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<CreateKeySigningKeyRequest>();
+            var marshaller = new CreateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidArgumentException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void CreateKeySigningKey_InvalidInputExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<CreateKeySigningKeyRequest>();
+            var marshaller = new CreateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void CreateKeySigningKey_InvalidKeySigningKeyNameExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<CreateKeySigningKeyRequest>();
+            var marshaller = new CreateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidKeySigningKeyNameException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void CreateKeySigningKey_InvalidKeySigningKeyStatusExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<CreateKeySigningKeyRequest>();
+            var marshaller = new CreateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidKeySigningKeyStatusException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void CreateKeySigningKey_InvalidKMSArnExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<CreateKeySigningKeyRequest>();
+            var marshaller = new CreateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidKMSArnException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void CreateKeySigningKey_InvalidSigningStatusExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<CreateKeySigningKeyRequest>();
+            var marshaller = new CreateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSigningStatusException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void CreateKeySigningKey_KeySigningKeyAlreadyExistsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<CreateKeySigningKeyRequest>();
+            var marshaller = new CreateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KeySigningKeyAlreadyExistsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void CreateKeySigningKey_NoSuchHostedZoneExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<CreateKeySigningKeyRequest>();
+            var marshaller = new CreateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NoSuchHostedZoneException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void CreateKeySigningKey_TooManyKeySigningKeysExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<CreateKeySigningKeyRequest>();
+            var marshaller = new CreateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyKeySigningKeysException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
         public void CreateQueryLoggingConfigMarshallTest()
         {
             var operation = service_model.FindOperation("CreateQueryLoggingConfig");
@@ -1158,7 +1701,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateQueryLoggingConfigResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -1381,7 +1925,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateReusableDelegationSetResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -1636,7 +2181,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateTrafficPolicyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -1795,7 +2341,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateTrafficPolicyInstanceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -1986,7 +2533,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateTrafficPolicyVersionResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -2176,7 +2724,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateVPCAssociationAuthorizationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -2343,6 +2892,223 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("Route53")]
+        public void DeactivateKeySigningKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeactivateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<DeactivateKeySigningKeyRequest>();
+            var marshaller = new DeactivateKeySigningKeyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeactivateKeySigningKey", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeactivateKeySigningKeyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeactivateKeySigningKeyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DeactivateKeySigningKey_ConcurrentModificationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeactivateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<DeactivateKeySigningKeyRequest>();
+            var marshaller = new DeactivateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeactivateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConcurrentModificationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeactivateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DeactivateKeySigningKey_InvalidKeySigningKeyStatusExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeactivateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<DeactivateKeySigningKeyRequest>();
+            var marshaller = new DeactivateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeactivateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidKeySigningKeyStatusException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeactivateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DeactivateKeySigningKey_InvalidSigningStatusExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeactivateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<DeactivateKeySigningKeyRequest>();
+            var marshaller = new DeactivateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeactivateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSigningStatusException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeactivateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DeactivateKeySigningKey_KeySigningKeyInParentDSRecordExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeactivateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<DeactivateKeySigningKeyRequest>();
+            var marshaller = new DeactivateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeactivateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KeySigningKeyInParentDSRecordException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeactivateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DeactivateKeySigningKey_KeySigningKeyInUseExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeactivateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<DeactivateKeySigningKeyRequest>();
+            var marshaller = new DeactivateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeactivateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KeySigningKeyInUseException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeactivateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DeactivateKeySigningKey_NoSuchKeySigningKeyExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeactivateKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<DeactivateKeySigningKeyRequest>();
+            var marshaller = new DeactivateKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeactivateKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NoSuchKeySigningKeyException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeactivateKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
         public void DeleteHealthCheckMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteHealthCheck");
@@ -2361,7 +3127,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteHealthCheckResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -2484,7 +3251,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteHostedZoneResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -2651,6 +3419,192 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("Route53")]
+        public void DeleteKeySigningKeyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<DeleteKeySigningKeyRequest>();
+            var marshaller = new DeleteKeySigningKeyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteKeySigningKey", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteKeySigningKeyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteKeySigningKeyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DeleteKeySigningKey_ConcurrentModificationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<DeleteKeySigningKeyRequest>();
+            var marshaller = new DeleteKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConcurrentModificationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DeleteKeySigningKey_InvalidKeySigningKeyStatusExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<DeleteKeySigningKeyRequest>();
+            var marshaller = new DeleteKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidKeySigningKeyStatusException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DeleteKeySigningKey_InvalidKMSArnExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<DeleteKeySigningKeyRequest>();
+            var marshaller = new DeleteKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidKMSArnException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DeleteKeySigningKey_InvalidSigningStatusExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<DeleteKeySigningKeyRequest>();
+            var marshaller = new DeleteKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSigningStatusException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DeleteKeySigningKey_NoSuchKeySigningKeyExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteKeySigningKey");
+
+            var request = InstantiateClassGenerator.Execute<DeleteKeySigningKeyRequest>();
+            var marshaller = new DeleteKeySigningKeyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteKeySigningKey", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NoSuchKeySigningKeyException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteKeySigningKeyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
         public void DeleteQueryLoggingConfigMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteQueryLoggingConfig");
@@ -2669,7 +3623,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteQueryLoggingConfigResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -2792,7 +3747,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteReusableDelegationSetResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -2946,7 +3902,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteTrafficPolicyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3100,7 +4057,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteTrafficPolicyInstanceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3223,7 +4181,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteVPCAssociationAuthorizationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3390,6 +4349,254 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("Route53")]
+        public void DisableHostedZoneDNSSECMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<DisableHostedZoneDNSSECRequest>();
+            var marshaller = new DisableHostedZoneDNSSECRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DisableHostedZoneDNSSEC", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DisableHostedZoneDNSSECResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DisableHostedZoneDNSSECResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DisableHostedZoneDNSSEC_ConcurrentModificationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<DisableHostedZoneDNSSECRequest>();
+            var marshaller = new DisableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DisableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConcurrentModificationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DisableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DisableHostedZoneDNSSEC_DNSSECNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<DisableHostedZoneDNSSECRequest>();
+            var marshaller = new DisableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DisableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DNSSECNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DisableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DisableHostedZoneDNSSEC_InvalidArgumentExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<DisableHostedZoneDNSSECRequest>();
+            var marshaller = new DisableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DisableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidArgumentException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DisableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DisableHostedZoneDNSSEC_InvalidKeySigningKeyStatusExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<DisableHostedZoneDNSSECRequest>();
+            var marshaller = new DisableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DisableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidKeySigningKeyStatusException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DisableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DisableHostedZoneDNSSEC_InvalidKMSArnExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<DisableHostedZoneDNSSECRequest>();
+            var marshaller = new DisableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DisableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidKMSArnException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DisableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DisableHostedZoneDNSSEC_KeySigningKeyInParentDSRecordExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<DisableHostedZoneDNSSECRequest>();
+            var marshaller = new DisableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DisableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KeySigningKeyInParentDSRecordException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DisableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void DisableHostedZoneDNSSEC_NoSuchHostedZoneExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<DisableHostedZoneDNSSECRequest>();
+            var marshaller = new DisableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DisableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NoSuchHostedZoneException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DisableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
         public void DisassociateVPCFromHostedZoneMarshallTest()
         {
             var operation = service_model.FindOperation("DisassociateVPCFromHostedZone");
@@ -3408,7 +4615,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DisassociateVPCFromHostedZoneResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3575,6 +4783,285 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("Route53")]
+        public void EnableHostedZoneDNSSECMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<EnableHostedZoneDNSSECRequest>();
+            var marshaller = new EnableHostedZoneDNSSECRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("EnableHostedZoneDNSSEC", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = EnableHostedZoneDNSSECResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as EnableHostedZoneDNSSECResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void EnableHostedZoneDNSSEC_ConcurrentModificationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<EnableHostedZoneDNSSECRequest>();
+            var marshaller = new EnableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("EnableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConcurrentModificationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = EnableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void EnableHostedZoneDNSSEC_DNSSECNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<EnableHostedZoneDNSSECRequest>();
+            var marshaller = new EnableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("EnableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("DNSSECNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = EnableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void EnableHostedZoneDNSSEC_HostedZonePartiallyDelegatedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<EnableHostedZoneDNSSECRequest>();
+            var marshaller = new EnableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("EnableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("HostedZonePartiallyDelegatedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = EnableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void EnableHostedZoneDNSSEC_InvalidArgumentExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<EnableHostedZoneDNSSECRequest>();
+            var marshaller = new EnableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("EnableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidArgumentException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = EnableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void EnableHostedZoneDNSSEC_InvalidKeySigningKeyStatusExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<EnableHostedZoneDNSSECRequest>();
+            var marshaller = new EnableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("EnableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidKeySigningKeyStatusException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = EnableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void EnableHostedZoneDNSSEC_InvalidKMSArnExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<EnableHostedZoneDNSSECRequest>();
+            var marshaller = new EnableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("EnableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidKMSArnException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = EnableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void EnableHostedZoneDNSSEC_KeySigningKeyWithActiveStatusNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<EnableHostedZoneDNSSECRequest>();
+            var marshaller = new EnableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("EnableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KeySigningKeyWithActiveStatusNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = EnableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void EnableHostedZoneDNSSEC_NoSuchHostedZoneExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableHostedZoneDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<EnableHostedZoneDNSSECRequest>();
+            var marshaller = new EnableHostedZoneDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("EnableHostedZoneDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NoSuchHostedZoneException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = EnableHostedZoneDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
         public void GetAccountLimitMarshallTest()
         {
             var operation = service_model.FindOperation("GetAccountLimit");
@@ -3593,7 +5080,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetAccountLimitResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3654,7 +5142,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetChangeResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3746,12 +5235,106 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetCheckerIpRangesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetCheckerIpRangesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void GetDNSSECMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<GetDNSSECRequest>();
+            var marshaller = new GetDNSSECRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetDNSSEC", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetDNSSECResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetDNSSECResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void GetDNSSEC_InvalidArgumentExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<GetDNSSECRequest>();
+            var marshaller = new GetDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidArgumentException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("Route53")]
+        public void GetDNSSEC_NoSuchHostedZoneExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDNSSEC");
+
+            var request = InstantiateClassGenerator.Execute<GetDNSSECRequest>();
+            var marshaller = new GetDNSSECRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetDNSSEC", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NoSuchHostedZoneException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetDNSSECResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -3776,7 +5359,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetGeoLocationResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3868,7 +5452,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHealthCheckResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -3991,7 +5576,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHealthCheckCountResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4021,7 +5607,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHealthCheckLastFailureReasonResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4113,7 +5700,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHealthCheckStatusResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4205,7 +5793,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHostedZoneResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4297,7 +5886,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHostedZoneCountResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4358,7 +5948,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetHostedZoneLimitResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4481,7 +6072,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetQueryLoggingConfigResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4573,7 +6165,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetReusableDelegationSetResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4696,7 +6289,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetReusableDelegationSetLimitResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4788,7 +6382,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetTrafficPolicyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4880,7 +6475,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetTrafficPolicyInstanceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -4972,7 +6568,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetTrafficPolicyInstanceCountResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5002,7 +6599,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListGeoLocationsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5063,7 +6661,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListHealthChecksResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5155,7 +6754,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListHostedZonesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5278,7 +6878,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListHostedZonesByNameResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5370,7 +6971,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListHostedZonesByVPCResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5462,7 +7064,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListQueryLoggingConfigsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5585,7 +7188,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListResourceRecordSetsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5677,7 +7281,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListReusableDelegationSetsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5738,7 +7343,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -5923,7 +7529,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTagsForResourcesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6108,7 +7715,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTrafficPoliciesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6169,7 +7777,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTrafficPolicyInstancesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6261,7 +7870,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTrafficPolicyInstancesByHostedZoneResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6384,7 +7994,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTrafficPolicyInstancesByPolicyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6507,7 +8118,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListTrafficPolicyVersionsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6599,7 +8211,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListVPCAssociationAuthorizationsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6722,7 +8335,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = TestDNSAnswerResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6814,7 +8428,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateHealthCheckResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -6937,7 +8552,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateHostedZoneCommentResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -7029,7 +8645,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateTrafficPolicyCommentResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -7152,7 +8769,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateTrafficPolicyInstanceResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,6 +64,23 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.AddPathResource("{datasetName}", StringUtils.FromString(publicRequest.DatasetName));
             request.ResourcePath = "/datasets/{datasetName}/content";
             request.MarshallerVersion = 2;
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetVersionId())
+                {
+                    context.Writer.WritePropertyName("versionId");
+                    context.Writer.Write(publicRequest.VersionId);
+                }
+
+        
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
 
             return request;
         }

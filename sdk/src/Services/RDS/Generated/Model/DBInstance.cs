@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -47,8 +47,10 @@ namespace Amazon.RDS.Model
         private string _caCertificateIdentifier;
         private string _characterSetName;
         private bool? _copyTagsToSnapshot;
+        private bool? _customerOwnedIpEnabled;
         private string _dbClusterIdentifier;
         private string _dbInstanceArn;
+        private List<DBInstanceAutomatedBackupsReplication> _dbInstanceAutomatedBackupsReplications = new List<DBInstanceAutomatedBackupsReplication>();
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private int? _dbInstancePort;
@@ -77,6 +79,7 @@ namespace Amazon.RDS.Model
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
         private bool? _multiAZ;
+        private string _ncharCharacterSetName;
         private List<OptionGroupMembership> _optionGroupMemberships = new List<OptionGroupMembership>();
         private PendingModifiedValues _pendingModifiedValues;
         private bool? _performanceInsightsEnabled;
@@ -95,6 +98,7 @@ namespace Amazon.RDS.Model
         private List<DBInstanceStatusInfo> _statusInfos = new List<DBInstanceStatusInfo>();
         private bool? _storageEncrypted;
         private string _storageType;
+        private List<Tag> _tagList = new List<Tag>();
         private string _tdeCredentialArn;
         private string _timezone;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
@@ -256,6 +260,42 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomerOwnedIpEnabled. 
+        /// <para>
+        /// Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts
+        /// DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <i>CoIP </i>provides local or external connectivity to resources in your Outpost
+        /// subnets through your on-premises network. For some use cases, a CoIP can provide lower
+        /// latency for connections to the DB instance from outside of its virtual private cloud
+        /// (VPC) on your local network.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+        /// with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+        /// IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool CustomerOwnedIpEnabled
+        {
+            get { return this._customerOwnedIpEnabled.GetValueOrDefault(); }
+            set { this._customerOwnedIpEnabled = value; }
+        }
+
+        // Check to see if CustomerOwnedIpEnabled property is set
+        internal bool IsSetCustomerOwnedIpEnabled()
+        {
+            return this._customerOwnedIpEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// If the DB instance is a member of a DB cluster, contains the name of the DB cluster
@@ -290,6 +330,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceArn()
         {
             return this._dbInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBInstanceAutomatedBackupsReplications. 
+        /// <para>
+        /// The list of replicated automated backups associated with the DB instance.
+        /// </para>
+        /// </summary>
+        public List<DBInstanceAutomatedBackupsReplication> DBInstanceAutomatedBackupsReplications
+        {
+            get { return this._dbInstanceAutomatedBackupsReplications; }
+            set { this._dbInstanceAutomatedBackupsReplications = value; }
+        }
+
+        // Check to see if DBInstanceAutomatedBackupsReplications property is set
+        internal bool IsSetDBInstanceAutomatedBackupsReplications()
+        {
+            return this._dbInstanceAutomatedBackupsReplications != null && this._dbInstanceAutomatedBackupsReplications.Count > 0; 
         }
 
         /// <summary>
@@ -375,8 +433,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DbiResourceId. 
         /// <para>
         /// The AWS Region-unique, immutable identifier for the DB instance. This identifier is
-        /// found in AWS CloudTrail log entries whenever the AWS KMS key for the DB instance is
-        /// accessed.
+        /// found in AWS CloudTrail log entries whenever the AWS KMS customer master key (CMK)
+        /// for the DB instance is accessed.
         /// </para>
         /// </summary>
         public string DbiResourceId
@@ -571,7 +629,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Provides the name of the database engine to be used for this DB instance.
+        /// The name of the database engine to be used for this DB instance.
         /// </para>
         /// </summary>
         public string Engine
@@ -701,6 +759,11 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted
         /// DB instance. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK).
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -863,6 +926,26 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NcharCharacterSetName. 
+        /// <para>
+        /// The name of the NCHAR character set for the Oracle DB instance. This character set
+        /// specifies the Unicode encoding for data stored in table columns of type NCHAR, NCLOB,
+        /// or NVARCHAR2. 
+        /// </para>
+        /// </summary>
+        public string NcharCharacterSetName
+        {
+            get { return this._ncharCharacterSetName; }
+            set { this._ncharCharacterSetName = value; }
+        }
+
+        // Check to see if NcharCharacterSetName property is set
+        internal bool IsSetNcharCharacterSetName()
+        {
+            return this._ncharCharacterSetName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OptionGroupMemberships. 
         /// <para>
         /// Provides the list of option group memberships for this DB instance.
@@ -920,9 +1003,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsKMSKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for encryption of Performance Insights data. The KMS key
-        /// ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-        /// the KMS encryption key.
+        /// The AWS KMS key identifier for encryption of Performance Insights data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK).
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId
@@ -1229,6 +1315,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageType()
         {
             return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList.
+        /// </summary>
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && this._tagList.Count > 0; 
         }
 
         /// <summary>

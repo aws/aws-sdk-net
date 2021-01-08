@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -117,11 +117,27 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Paginator for GetPartitionIndexes operation
+        ///</summary>
+        public IGetPartitionIndexesPaginator GetPartitionIndexes(GetPartitionIndexesRequest request) 
+        {
+            return new GetPartitionIndexesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetPartitions operation
         ///</summary>
         public IGetPartitionsPaginator GetPartitions(GetPartitionsRequest request) 
         {
             return new GetPartitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetResourcePolicies operation
+        ///</summary>
+        public IGetResourcePoliciesPaginator GetResourcePolicies(GetResourcePoliciesRequest request) 
+        {
+            return new GetResourcePoliciesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -202,6 +218,30 @@ namespace Amazon.Glue.Model
         public IListMLTransformsPaginator ListMLTransforms(ListMLTransformsRequest request) 
         {
             return new ListMLTransformsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRegistries operation
+        ///</summary>
+        public IListRegistriesPaginator ListRegistries(ListRegistriesRequest request) 
+        {
+            return new ListRegistriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSchemas operation
+        ///</summary>
+        public IListSchemasPaginator ListSchemas(ListSchemasRequest request) 
+        {
+            return new ListSchemasPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSchemaVersions operation
+        ///</summary>
+        public IListSchemaVersionsPaginator ListSchemaVersions(ListSchemaVersionsRequest request) 
+        {
+            return new ListSchemaVersionsPaginator(this.client, request);
         }
 
         /// <summary>

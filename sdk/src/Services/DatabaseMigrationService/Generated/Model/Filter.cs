@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,8 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Identifies the name and value of a filter object. This filter is used to limit the
     /// number and type of AWS DMS objects that are returned for a particular <code>Describe*</code>
-    /// or similar operation.
+    /// call or similar operation. Filters are used as an optional parameter for certain API
+    /// operations.
     /// </summary>
     public partial class Filter
     {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Identifies the bounding box around the label, face, or text. The <code>left</code>
-    /// (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the
-    /// top and left sides of the bounding box. Note that the upper-left corner of the image
-    /// is the origin (0,0). 
+    /// Identifies the bounding box around the label, face, text or personal protective equipment.
+    /// The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates
+    /// representing the top and left sides of the bounding box. Note that the upper-left
+    /// corner of the image is the origin (0,0). 
     /// 
     ///  
     /// <para>

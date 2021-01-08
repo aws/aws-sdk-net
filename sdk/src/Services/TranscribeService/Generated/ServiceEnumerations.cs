@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -313,6 +313,10 @@ namespace Amazon.TranscribeService
     {
 
         /// <summary>
+        /// Constant Amr for MediaFormat
+        /// </summary>
+        public static readonly MediaFormat Amr = new MediaFormat("amr");
+        /// <summary>
         /// Constant Flac for MediaFormat
         /// </summary>
         public static readonly MediaFormat Flac = new MediaFormat("flac");
@@ -325,9 +329,17 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly MediaFormat Mp4 = new MediaFormat("mp4");
         /// <summary>
+        /// Constant Ogg for MediaFormat
+        /// </summary>
+        public static readonly MediaFormat Ogg = new MediaFormat("ogg");
+        /// <summary>
         /// Constant Wav for MediaFormat
         /// </summary>
         public static readonly MediaFormat Wav = new MediaFormat("wav");
+        /// <summary>
+        /// Constant Webm for MediaFormat
+        /// </summary>
+        public static readonly MediaFormat Webm = new MediaFormat("webm");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

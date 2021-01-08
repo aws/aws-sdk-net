@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -97,10 +97,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Image. 
         /// <para>
-        /// The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.
-        /// If you are using your own custom algorithm instead of an algorithm provided by Amazon
-        /// SageMaker, the inference code must meet Amazon SageMaker requirements. Amazon SageMaker
-        /// supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
+        /// The path where inference code is stored. This can be either in Amazon EC2 Container
+        /// Registry or in a Docker registry that is accessible from the same VPC that you configure
+        /// for your endpoint. If you are using your own custom algorithm instead of an algorithm
+        /// provided by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements.
+        /// Amazon SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
         /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
         /// Your Own Algorithms with Amazon SageMaker</a> 
         /// </para>
@@ -122,8 +123,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ImageConfig. 
         /// <para>
         /// Specifies whether the model container is in Amazon ECR or a private Docker registry
-        /// in your Amazon Virtual Private Cloud (VPC). For information about storing containers
-        /// in a private Docker registry, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
+        /// accessible from your Amazon Virtual Private Cloud (VPC). For information about storing
+        /// containers in a private Docker registry, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
         /// a Private Docker Registry for Real-Time Inference Containers</a> 
         /// </para>
         /// </summary>
@@ -166,7 +167,12 @@ namespace Amazon.SageMaker.Model
         /// own algorithms. For more information on built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
         /// Parameters</a>. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The model artifacts must be in an S3 bucket that is in the same region as the model
+        /// or endpoint you are creating.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token
         /// Service to download model artifacts from the S3 path you provide. AWS STS is activated
@@ -201,7 +207,7 @@ namespace Amazon.SageMaker.Model
         /// The name or Amazon Resource Name (ARN) of the model package to use to create the model.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=170)]
+        [AWSProperty(Min=1, Max=176)]
         public string ModelPackageName
         {
             get { return this._modelPackageName; }

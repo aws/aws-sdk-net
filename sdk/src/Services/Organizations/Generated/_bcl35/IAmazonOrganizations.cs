@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,7 +49,7 @@ namespace Amazon.Organizations
 
         /// <summary>
         /// Sends a response to the originator of a handshake agreeing to the action proposed
-        /// by the handshake request. 
+        /// by the handshake request.
         /// 
         ///  
         /// <para>
@@ -59,7 +59,7 @@ namespace Amazon.Organizations
         ///  <ul> <li> 
         /// <para>
         ///  <b>Invitation to join</b> or <b>Approve all features request</b> handshakes: only
-        /// a principal from the member account. 
+        /// a principal from the member account.
         /// </para>
         ///  
         /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         ///  <b>Enable all features final confirmation</b> handshake: only a principal from the
-        /// master account.
+        /// management account.
         /// </para>
         ///  
         /// <para>
@@ -197,6 +197,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -206,6 +210,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -282,6 +290,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
@@ -339,27 +355,27 @@ namespace Amazon.Organizations
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">AISERVICES_OPT_OUT_POLICY</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">BACKUP_POLICY</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">TAG_POLICY</a>
         /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachPolicy service method.</param>
@@ -393,9 +409,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -444,7 +460,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -480,10 +496,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -494,19 +510,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -589,6 +605,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -598,6 +618,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -674,6 +698,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyChangesInProgressException">
@@ -694,7 +726,8 @@ namespace Amazon.Organizations
         /// Try again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
+        /// specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -746,7 +779,6 @@ namespace Amazon.Organizations
         /// <summary>
         /// Cancels a handshake. Canceling a handshake sets the handshake state to <code>CANCELED</code>.
         /// 
-        /// 
         ///  
         /// <para>
         /// This operation can be called only from the account that originated the handshake.
@@ -797,6 +829,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -806,6 +842,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -881,6 +921,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -942,8 +990,9 @@ namespace Amazon.Organizations
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>OperationId</code> response element from this operation to provide as
-        /// a parameter to the <a>DescribeCreateAccountStatus</a> operation.
+        /// Use the <code>Id</code> member of the <code>CreateAccountStatus</code> response element
+        /// from this operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a>
+        /// operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -952,7 +1001,7 @@ namespace Amazon.Organizations
         /// the Activity in Your Organization</a> in the <i>AWS Organizations User Guide.</i>
         /// 
         /// </para>
-        ///  </li> </ul>  
+        ///  </li> </ul> 
         /// <para>
         /// The user who calls the API to create an account must have the <code>organizations:CreateAccount</code>
         /// permission. If you enabled all features in the organization, AWS Organizations creates
@@ -962,15 +1011,20 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// AWS Organizations preconfigures the new member account with a role (named <code>OrganizationAccountAccessRole</code>
-        /// by default) that grants users in the master account administrator permissions in the
-        /// new member account. Principals in the master account can assume the role. AWS Organizations
-        /// clones the company name and address information for the new account from the organization's
-        /// master account.
+        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// permission.
         /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// AWS Organizations preconfigures the new member account with a role (named <code>OrganizationAccountAccessRole</code>
+        /// by default) that grants users in the management account administrator permissions
+        /// in the new member account. Principals in the management account can assume the role.
+        /// AWS Organizations clones the company name and address information for the new account
+        /// from the organization's management account.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation can be called only from the organization's management account.
         /// </para>
         ///  
         /// <para>
@@ -1052,9 +1106,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1103,7 +1157,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -1139,10 +1193,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1153,19 +1207,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -1251,6 +1305,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -1260,6 +1318,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1336,6 +1398,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
@@ -1400,23 +1470,26 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You already have an account in the AWS GovCloud (US) Region that is associated with
-        /// your master account in the commercial Region. 
+        /// You already have an account in the AWS GovCloud (US) Region that is paired with a
+        /// management account of an organization in the commercial Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You call this action from the master account of your organization in the commercial
+        /// You call this action from the management account of your organization in the commercial
         /// Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You have the <code>organizations:CreateGovCloudAccount</code> permission. AWS Organizations
-        /// creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
+        /// You have the <code>organizations:CreateGovCloudAccount</code> permission. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// AWS Organizations automatically creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
         /// For more information, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">AWS
         /// Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide.</i>
         /// 
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// AWS automatically enables AWS CloudTrail for AWS GovCloud (US) accounts, but you should
         /// also do the following:
@@ -1436,10 +1509,18 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You call this action from the master account of your organization in the commercial
+        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// permission. The tags are attached to the commercial account associated with the GovCloud
+        /// account, rather than the GovCloud account itself. To add tags to the GovCloud account,
+        /// call the <a>TagResource</a> operation in the GovCloud Region after the new GovCloud
+        /// account exists.
+        /// </para>
+        ///  
+        /// <para>
+        /// You call this action from the management account of your organization in the commercial
         /// Region to create a standalone AWS account in the AWS GovCloud (US) Region. After the
-        /// account is created, the master account of an organization in the AWS GovCloud (US)
-        /// Region can invite it to that organization. For more information on inviting standalone
+        /// account is created, the management account of an organization in the AWS GovCloud
+        /// (US) Region can invite it to that organization. For more information on inviting standalone
         /// accounts in the AWS GovCloud (US) to join an organization, see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
@@ -1473,12 +1554,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// A role is created in the new account in the commercial Region that allows the master
+        /// A role is created in the new account in the commercial Region that allows the management
         /// account in the organization in the commercial Region to assume it. An AWS GovCloud
         /// (US) account is then created and associated with the commercial account that you just
-        /// created. A role is created in the new AWS GovCloud (US) account that can be assumed
-        /// by the AWS GovCloud (US) account that is associated with the master account of the
-        /// commercial organization. For more information and to view a diagram that explains
+        /// created. A role is also created in the new AWS GovCloud (US) account that can be assumed
+        /// by the AWS GovCloud (US) account that is associated with the management account of
+        /// the commercial organization. For more information and to view a diagram that explains
         /// how account access works, see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
@@ -1562,9 +1643,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1613,7 +1694,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -1649,10 +1730,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1663,19 +1744,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -1761,6 +1842,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -1770,6 +1855,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1846,6 +1935,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
@@ -1901,14 +1998,14 @@ namespace Amazon.Organizations
 
         /// <summary>
         /// Creates an AWS organization. The account whose user is calling the <code>CreateOrganization</code>
-        /// operation automatically becomes the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
+        /// operation automatically becomes the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">management
         /// account</a> of the new organization.
         /// 
         ///  
         /// <para>
         /// This operation must be called using credentials from the account that is to become
-        /// the new organization's master account. The principal must also have the relevant IAM
-        /// permissions.
+        /// the new organization's management account. The principal must also have the relevant
+        /// IAM permissions.
         /// </para>
         ///  
         /// <para>
@@ -1956,9 +2053,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2007,7 +2104,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -2043,10 +2140,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2057,19 +2154,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -2149,6 +2246,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -2158,6 +2259,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2234,6 +2339,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
@@ -2289,7 +2402,7 @@ namespace Amazon.Organizations
         /// for accounts that enables you to organize your accounts to apply policies according
         /// to your business requirements. The number of levels deep that you can nest OUs is
         /// dependent upon the policy types enabled for that root. For service control policies,
-        /// the limit is five. 
+        /// the limit is five.
         /// 
         ///  
         /// <para>
@@ -2298,7 +2411,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// permission.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOrganizationalUnit service method.</param>
@@ -2332,9 +2450,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2383,7 +2501,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -2419,10 +2537,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2433,19 +2551,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -2528,6 +2646,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -2537,6 +2659,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2613,6 +2739,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ParentNotFoundException">
@@ -2677,7 +2811,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// permission.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicy service method.</param>
@@ -2711,9 +2850,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2762,7 +2901,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -2798,10 +2937,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2812,19 +2951,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -2907,6 +3046,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -2916,6 +3059,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2991,6 +3138,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3111,6 +3266,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -3120,6 +3279,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3195,6 +3358,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3248,7 +3419,7 @@ namespace Amazon.Organizations
 
         /// <summary>
         /// Deletes the organization. You can delete an organization only by using credentials
-        /// from the master account. The organization must be empty of member accounts.
+        /// from the management account. The organization must be empty of member accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOrganization service method.</param>
         /// 
@@ -3279,6 +3450,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -3288,6 +3463,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3364,11 +3543,19 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.OrganizationNotEmptyException">
         /// The organization isn't empty. To delete an organization, you must first remove all
-        /// accounts except the master account, delete all OUs, and delete all policies.
+        /// accounts except the management account, delete all OUs, and delete all policies.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// AWS Organizations can't complete your request because of an internal service error.
@@ -3424,7 +3611,7 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOrganizationalUnit service method.</param>
@@ -3456,6 +3643,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -3465,6 +3656,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3540,6 +3735,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3604,7 +3807,7 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
@@ -3636,6 +3839,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -3645,6 +3852,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3720,6 +3931,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3801,7 +4020,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterDelegatedAdministrator service method.</param>
@@ -3843,9 +4062,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3894,7 +4113,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -3930,10 +4149,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3944,19 +4163,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -4036,6 +4255,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -4045,6 +4268,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4120,6 +4347,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -4179,8 +4414,8 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccount service method.</param>
@@ -4213,6 +4448,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -4222,6 +4461,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4297,6 +4540,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -4353,8 +4604,8 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCreateAccountStatus service method.</param>
@@ -4386,6 +4637,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -4395,6 +4650,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4470,6 +4729,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -4528,7 +4795,7 @@ namespace Amazon.Organizations
         /// Returns the contents of the effective policy for specified policy type and account.
         /// The effective policy is the aggregation of any policies of the specified type that
         /// the account inherits, plus any policy of that type that is directly attached to the
-        /// account. 
+        /// account.
         /// 
         ///  
         /// <para>
@@ -4542,8 +4809,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEffectivePolicy service method.</param>
@@ -4573,9 +4840,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4624,7 +4891,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -4660,10 +4927,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4674,19 +4941,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -4755,8 +5022,8 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.EffectivePolicyNotFoundException">
-        /// If you ran this action on the master account, this policy type is not enabled. If
-        /// you ran the action on a member account, the account doesn't have an effective policy
+        /// If you ran this action on the management account, this policy type is not enabled.
+        /// If you ran the action on a member account, the account doesn't have an effective policy
         /// of this type. Contact the administrator of your organization about attaching a policy
         /// of this type to the account.
         /// </exception>
@@ -4772,6 +5039,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -4781,6 +5052,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4857,6 +5132,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
@@ -4864,7 +5147,8 @@ namespace Amazon.Organizations
         /// Try again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
+        /// specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -4957,6 +5241,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -4966,6 +5254,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5041,6 +5333,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -5177,8 +5477,8 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationalUnit service method.</param>
@@ -5206,6 +5506,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -5215,6 +5519,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5290,6 +5598,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -5349,8 +5665,8 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePolicy service method.</param>
@@ -5378,6 +5694,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -5387,6 +5707,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5463,6 +5787,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
@@ -5520,7 +5852,7 @@ namespace Amazon.Organizations
 
 
         /// <summary>
-        /// Detaches a policy from a target root, organizational unit (OU), or account. 
+        /// Detaches a policy from a target root, organizational unit (OU), or account.
         /// 
         ///  <important> 
         /// <para>
@@ -5542,7 +5874,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachPolicy service method.</param>
@@ -5576,9 +5908,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5627,7 +5959,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -5663,10 +5995,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5677,19 +6009,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -5769,6 +6101,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -5778,6 +6114,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5854,6 +6194,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyChangesInProgressException">
@@ -5871,7 +6219,8 @@ namespace Amazon.Organizations
         /// Try again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
+        /// specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -5954,7 +6303,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableAWSServiceAccess service method.</param>
@@ -5988,9 +6337,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6039,7 +6388,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -6075,10 +6424,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6089,19 +6438,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -6181,6 +6530,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -6190,6 +6543,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6265,6 +6622,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -6332,11 +6697,10 @@ namespace Amazon.Organizations
         /// a policy type for a root, it still appears enabled for the organization if <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
         /// features</a> are enabled for the organization. AWS recommends that you first use <a>ListRoots</a>
         /// to see the status of policy types for a specified root, and then use this operation.
-        /// 
         /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         ///  
         /// <para>
@@ -6374,9 +6738,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6425,7 +6789,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -6461,10 +6825,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6475,19 +6839,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -6567,6 +6931,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -6576,6 +6944,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6651,6 +7023,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -6749,15 +7129,15 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// After you enable all features in your organization, the master account in the organization
-        /// can apply policies on all member accounts. These policies can restrict what users
-        /// and even administrators in those accounts can do. The master account can apply policies
-        /// that prevent accounts from leaving the organization. Ensure that your account administrators
-        /// are aware of this.
+        /// After you enable all features in your organization, the management account in the
+        /// organization can apply policies on all member accounts. These policies can restrict
+        /// what users and even administrators in those accounts can do. The management account
+        /// can apply policies that prevent accounts from leaving the organization. Ensure that
+        /// your account administrators are aware of this.
         /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account. 
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableAllFeatures service method.</param>
@@ -6850,6 +7230,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -6859,6 +7243,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6934,6 +7322,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -7010,7 +7406,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account and only
+        /// This operation can be called only from the organization's management account and only
         /// if the organization has <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
         /// all features</a>.
         /// </para>
@@ -7046,9 +7442,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7097,7 +7493,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -7133,10 +7529,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7147,19 +7543,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -7239,6 +7635,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -7248,6 +7648,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7323,6 +7727,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -7386,11 +7798,11 @@ namespace Amazon.Organizations
         /// <para>
         /// This is an asynchronous request that AWS performs in the background. AWS recommends
         /// that you first use <a>ListRoots</a> to see the status of policy types for a specified
-        /// root, and then use this operation. 
+        /// root, and then use this operation.
         /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         ///  
         /// <para>
@@ -7430,9 +7842,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7481,7 +7893,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -7517,10 +7929,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7531,19 +7943,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -7623,6 +8035,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -7632,6 +8048,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7707,6 +8127,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -7785,11 +8213,11 @@ namespace Amazon.Organizations
         /// 
         ///  <important> <ul> <li> 
         /// <para>
-        /// You can invite AWS accounts only from the same seller as the master account. For example,
-        /// if your organization's master account was created by Amazon Internet Services Pvt.
-        /// Ltd (AISPL), an AWS seller in India, you can invite only other AISPL accounts to your
-        /// organization. You can't combine accounts from AISPL and AWS or from any other AWS
-        /// seller. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
+        /// You can invite AWS accounts only from the same seller as the management account. For
+        /// example, if your organization's management account was created by Amazon Internet
+        /// Services Pvt. Ltd (AISPL), an AWS seller in India, you can invite only other AISPL
+        /// accounts to your organization. You can't combine accounts from AISPL and AWS or from
+        /// any other AWS seller. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
         /// Billing in India</a>.
         /// </para>
         ///  </li> <li> 
@@ -7801,7 +8229,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> </ul> </important> 
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// permission.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteAccountToOrganization service method.</param>
@@ -7815,8 +8248,8 @@ namespace Amazon.Organizations
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountOwnerNotVerifiedException">
         /// You can't invite an existing account to your organization until you verify that you
-        /// own the email address associated with the master account. For more information, see
-        /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_create.html#about-email-verification">Email
+        /// own the email address associated with the management account. For more information,
+        /// see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_create.html#about-email-verification">Email
         /// Address Verification</a> in the <i>AWS Organizations User Guide.</i>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
@@ -7826,6 +8259,201 @@ namespace Amazon.Organizations
         /// <exception cref="Amazon.Organizations.Model.ConcurrentModificationException">
         /// The target of the operation is currently being modified by a different request. Try
         /// again later.
+        /// </exception>
+        /// <exception cref="Amazon.Organizations.Model.ConstraintViolationException">
+        /// Performing this operation violates a minimum or maximum value limit. For example,
+        /// attempting to remove the last service control policy (SCP) from an OU or root, inviting
+        /// or creating too many accounts to the organization, or attaching too many policies
+        /// to an account, OU, or root. This exception includes a reason that contains additional
+        /// information about the violated limit:
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Some of the reasons in the following list might not be applicable to this specific
+        /// API or operation.
+        /// </para>
+        ///  </note> <ul> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization
+        /// that doesn't yet have enough information to exist as a standalone account. This account
+        /// requires you to first agree to the AWS Customer Agreement. Follow the steps at <a
+        /// href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing
+        /// a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account
+        /// from the organization that doesn't yet have enough information to exist as a standalone
+        /// account. This account requires you to first complete phone verification. Follow the
+        /// steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing
+        /// a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
+        /// that you can create in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of
+        /// accounts in an organization. If you need more accounts, contact <a href="https://console.aws.amazon.com/support/home#/">AWS
+        /// Support</a> to request an increase in your limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Or the number of invitations that you tried to send would cause you to exceed the
+        /// limit of accounts in your organization. Send fewer invitations or contact AWS Support
+        /// to request an increase in the number of accounts.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Deleted and closed accounts still count toward your limit.
+        /// </para>
+        ///  </note> <important> 
+        /// <para>
+        /// If you get this exception when running a command immediately after creating the organization,
+        /// wait one hour and try again. After an hour, if the command continues to fail with
+        /// this error, contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
+        /// </para>
+        ///  </important> </li> <li> 
+        /// <para>
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
+        /// account of the organization as a delegated administrator for an AWS service integrated
+        /// with Organizations. You can designate only a member account as a delegated administrator.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account
+        /// that is registered as a delegated administrator for a service integrated with your
+        /// organization. To complete this operation, you must first deregister this account as
+        /// a delegated administrator. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization
+        /// in the specified region, you must enable all features mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS
+        /// account as a delegated administrator for an AWS service that already has a delegated
+        /// administrator. To complete this operation, you must first deregister any existing
+        /// delegated administrators for this service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited
+        /// period of time. You must resubmit the request and generate a new verfication code.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that
+        /// you can send in one day.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China.
+        /// To create an organization, the master must have an valid business license. For more
+        /// information, contact customer support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
+        /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
+        /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
+        /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide.</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED: You attempted to register
+        /// more delegated administrators than allowed for the service principal. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies
+        /// of a certain type that can be attached to an entity at one time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MAX_TAG_LIMIT_EXCEEDED: You have exceeded the number of tags allowed on this resource.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member
+        /// account, you first must associate a valid payment instrument, such as a credit card,
+        /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
+        /// leave an organization when all required account information has not yet been provided</a>
+        /// in the <i>AWS Organizations User Guide.</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an
+        /// entity that would cause the entity to have fewer than the minimum number of policies
+        /// of a certain type required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that
+        /// requires the organization to be configured to support all features. An organization
+        /// that supports only consolidated billing features can't perform this operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels
+        /// deep.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have
+        /// in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than
+        /// the maximum size.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that
+        /// you can have in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that
+        /// are not compliant with the tag policy requirements for this account.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.DuplicateHandshakeException">
         /// A handshake with the same action and target already exists. For example, if you invited
@@ -7913,6 +8541,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -7922,6 +8554,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7998,6 +8634,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
@@ -8051,7 +8695,7 @@ namespace Amazon.Organizations
         /// <summary>
         /// Removes a member account from its parent organization. This version of the operation
         /// is performed by the account that wants to leave. To remove a member account as a user
-        /// in the master account, use <a>RemoveAccountFromOrganization</a> instead.
+        /// in the management account, use <a>RemoveAccountFromOrganization</a> instead.
         /// 
         ///  
         /// <para>
@@ -8059,10 +8703,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  <important> <ul> <li> 
         /// <para>
-        /// The master account in an organization with all features enabled can set service control
-        /// policies (SCPs) that can restrict what administrators of member accounts can do. This
-        /// includes preventing them from successfully calling <code>LeaveOrganization</code>
-        /// and leaving the organization. 
+        /// The management account in an organization with all features enabled can set service
+        /// control policies (SCPs) that can restrict what administrators of member accounts can
+        /// do. This includes preventing them from successfully calling <code>LeaveOrganization</code>
+        /// and leaving the organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8100,6 +8744,12 @@ namespace Amazon.Organizations
         /// your account. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
         /// Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
         /// Management User Guide.</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After the account leaves the organization, all tags that were attached to the account
+        /// object in the organization are deleted. AWS accounts outside of an organization do
+        /// not support tags.
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
@@ -8139,9 +8789,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8190,7 +8840,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -8226,10 +8876,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8240,19 +8890,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -8332,6 +8982,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -8341,6 +8995,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8417,12 +9075,20 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.MasterCannotLeaveOrganizationException">
-        /// You can't remove a master account from an organization. If you want the master account
-        /// to become a member account in another organization, you must first delete the current
-        /// organization of the master account.
+        /// You can't remove a management account from an organization. If you want the management
+        /// account to become a member account in another organization, you must first delete
+        /// the current organization of the management account.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// AWS Organizations can't complete your request because of an internal service error.
@@ -8486,8 +9152,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccounts service method.</param>
@@ -8515,6 +9181,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -8524,6 +9194,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8599,6 +9273,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -8667,8 +9349,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountsForParent service method.</param>
@@ -8696,6 +9378,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -8705,6 +9391,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8781,6 +9471,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ParentNotFoundException">
@@ -8848,8 +9546,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAWSServiceAccessForOrganization service method.</param>
@@ -8879,9 +9577,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8930,7 +9628,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -8966,10 +9664,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8980,19 +9678,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -9072,6 +9770,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -9081,6 +9783,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9156,6 +9862,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -9225,8 +9939,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChildren service method.</param>
@@ -9254,6 +9968,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -9263,6 +9981,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9338,6 +10060,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -9406,8 +10136,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCreateAccountStatus service method.</param>
@@ -9435,6 +10165,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -9444,6 +10178,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9519,6 +10257,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -9578,8 +10324,8 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDelegatedAdministrators service method.</param>
@@ -9609,9 +10355,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9660,7 +10406,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -9696,10 +10442,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9710,19 +10456,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -9802,6 +10548,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -9811,6 +10561,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9886,6 +10640,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -9943,11 +10705,10 @@ namespace Amazon.Organizations
         /// <summary>
         /// List the AWS services for which the specified account is a delegated administrator.
         /// 
-        /// 
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDelegatedServicesForAccount service method.</param>
@@ -9985,9 +10746,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10036,7 +10797,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -10072,10 +10833,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10086,19 +10847,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -10178,6 +10939,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -10187,6 +10952,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10262,6 +11031,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -10364,6 +11141,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -10373,6 +11154,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10448,6 +11233,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -10521,8 +11314,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHandshakesForOrganization service method.</param>
@@ -10554,6 +11347,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -10563,6 +11360,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10638,6 +11439,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -10702,8 +11511,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationalUnitsForParent service method.</param>
@@ -10731,6 +11540,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -10740,6 +11553,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10815,6 +11632,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -10884,12 +11709,12 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         ///  <note> 
         /// <para>
-        /// In the current release, a child can have only a single parent. 
+        /// In the current release, a child can have only a single parent.
         /// </para>
         ///  </note>
         /// </summary>
@@ -10922,6 +11747,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -10931,6 +11760,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11006,6 +11839,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -11070,8 +11911,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicies service method.</param>
@@ -11099,6 +11940,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -11108,6 +11953,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11183,6 +12032,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -11252,8 +12109,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPoliciesForTarget service method.</param>
@@ -11281,6 +12138,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -11290,6 +12151,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11366,6 +12231,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
@@ -11373,7 +12246,8 @@ namespace Amazon.Organizations
         /// Try again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
+        /// specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -11435,8 +12309,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         ///  <note> 
         /// <para>
@@ -11473,6 +12347,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -11482,6 +12360,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11557,6 +12439,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -11609,16 +12499,32 @@ namespace Amazon.Organizations
 
 
         /// <summary>
-        /// Lists tags for the specified resource. 
+        /// Lists tags that are attached to the specified resource.
         /// 
         ///  
         /// <para>
-        /// Currently, you can list tags on an account in AWS Organizations.
+        /// You can attach tags to the following resources in AWS Organizations.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// AWS account
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Organization root
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Organizational unit (OU)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Policy (any type)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -11646,6 +12552,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -11655,6 +12565,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11731,6 +12645,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
@@ -11738,7 +12660,8 @@ namespace Amazon.Organizations
         /// Try again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
+        /// specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -11798,8 +12721,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation can be called only from the organization's master account or by a member
-        /// account that is a delegated administrator for an AWS service.
+        /// This operation can be called only from the organization's management account or by
+        /// a member account that is a delegated administrator for an AWS service.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTargetsForPolicy service method.</param>
@@ -11827,6 +12750,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -11836,6 +12763,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11911,6 +12842,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -11974,7 +12913,7 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MoveAccount service method.</param>
@@ -12018,6 +12957,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -12027,6 +12970,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12102,6 +13049,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -12171,7 +13126,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterDelegatedAdministrator service method.</param>
@@ -12213,9 +13168,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12264,7 +13219,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -12300,10 +13255,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12314,19 +13269,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -12406,6 +13361,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -12415,6 +13374,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12490,6 +13453,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -12551,15 +13522,15 @@ namespace Amazon.Organizations
         /// <para>
         /// The removed account becomes a standalone account that isn't a member of any organization.
         /// It's no longer subject to any policies and is responsible for its own bill payments.
-        /// The organization's master account is no longer charged for any expenses accrued by
-        /// the member account after it's removed from the organization.
+        /// The organization's management account is no longer charged for any expenses accrued
+        /// by the member account after it's removed from the organization.
         /// </para>
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account. Member accounts
-        /// can remove themselves with <a>LeaveOrganization</a> instead.
+        /// This operation can be called only from the organization's management account. Member
+        /// accounts can remove themselves with <a>LeaveOrganization</a> instead.
         /// </para>
-        ///  <important> 
+        ///  <important> <ul> <li> 
         /// <para>
         /// You can remove an account from your organization only if the account is configured
         /// with the information required to operate as a standalone account. When you create
@@ -12574,7 +13545,13 @@ namespace Amazon.Organizations
         /// To leave an organization when all required account information has not yet been provided</a>
         /// in the <i>AWS Organizations User Guide.</i> 
         /// </para>
-        ///  </important>
+        ///  </li> <li> 
+        /// <para>
+        /// After the account leaves the organization, all tags that were attached to the account
+        /// object in the organization are deleted. AWS accounts outside of an organization do
+        /// not support tags.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveAccountFromOrganization service method.</param>
         /// 
@@ -12612,9 +13589,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12663,7 +13640,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -12699,10 +13676,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12713,19 +13690,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -12805,6 +13782,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -12814,6 +13795,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12890,12 +13875,20 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.MasterCannotLeaveOrganizationException">
-        /// You can't remove a master account from an organization. If you want the master account
-        /// to become a member account in another organization, you must first delete the current
-        /// organization of the master account.
+        /// You can't remove a management account from an organization. If you want the management
+        /// account to become a member account in another organization, you must first delete
+        /// the current organization of the management account.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// AWS Organizations can't complete your request because of an internal service error.
@@ -12950,11 +13943,27 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// Currently, you can tag and untag accounts in AWS Organizations.
+        /// Currently, you can attach tags to the following resources in AWS Organizations.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// AWS account
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Organization root
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Organizational unit (OU)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Policy (any type)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -12988,9 +13997,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13039,7 +14048,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -13075,10 +14084,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13089,19 +14098,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -13181,6 +14190,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -13190,6 +14203,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13266,6 +14283,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
@@ -13273,7 +14298,8 @@ namespace Amazon.Organizations
         /// Try again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
+        /// specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -13320,15 +14346,31 @@ namespace Amazon.Organizations
 
 
         /// <summary>
-        /// Removes a tag from the specified resource. 
+        /// Removes any tags with the specified keys from the specified resource.
         /// 
         ///  
         /// <para>
-        /// Currently, you can tag and untag accounts in AWS Organizations.
+        /// You can attach tags to the following resources in AWS Organizations.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// AWS account
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Organization root
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Organizational unit (OU)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Policy (any type)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -13362,9 +14404,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13413,7 +14455,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -13449,10 +14491,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13463,19 +14505,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -13555,6 +14597,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -13564,6 +14610,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13640,6 +14690,14 @@ namespace Amazon.Organizations
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
@@ -13647,7 +14705,8 @@ namespace Amazon.Organizations
         /// Try again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
+        /// specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -13697,10 +14756,9 @@ namespace Amazon.Organizations
         /// Renames the specified organizational unit (OU). The ID and ARN don't change. The child
         /// OUs and accounts remain in place, and any attached policies of the OU remain attached.
         /// 
-        /// 
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationalUnit service method.</param>
@@ -13735,6 +14793,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -13744,6 +14806,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13819,6 +14885,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -13879,7 +14953,7 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// This operation can be called only from the organization's master account.
+        /// This operation can be called only from the organization's management account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePolicy service method.</param>
@@ -13913,9 +14987,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from
-        /// the organization. You can't remove the master account. Instead, after you remove all
-        /// member accounts, delete the organization itself.
+        /// ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from
+        /// the organization. You can't remove the management account. Instead, after you remove
+        /// all member accounts, delete the organization itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13964,7 +15038,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master
+        /// CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management
         /// account of the organization as a delegated administrator for an AWS service integrated
         /// with Organizations. You can designate only a member account as a delegated administrator.
         /// </para>
@@ -14000,10 +15074,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization,
-        /// you first must migrate the organization's master account to the marketplace that corresponds
-        /// to the master account's address. For example, accounts with India addresses must be
-        /// associated with the AISPL marketplace. All accounts in an organization must be associated
-        /// with the same marketplace.
+        /// you first must migrate the organization's management account to the marketplace that
+        /// corresponds to the management account's address. For example, accounts with India
+        /// addresses must be associated with the AISPL marketplace. All accounts in an organization
+        /// must be associated with the same marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14014,19 +15088,19 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide
-        /// a valid contact address and phone number for the master account. Then try the operation
-        /// again.
+        /// a valid contact address and phone number for the management account. Then try the
+        /// operation again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account
+        /// MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account
         /// must have an associated account in the AWS GovCloud (US-West) Region. For more information,
         /// see <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
         /// Organizations</a> in the <i>AWS GovCloud User Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master
+        /// MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management
         /// account, you first must associate a valid payment instrument, such as a credit card,
         /// with the account. Follow the steps at <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">To
         /// leave an organization when all required account information has not yet been provided</a>
@@ -14109,6 +15183,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
+        /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
         /// </para>
         ///  </li> <li> 
@@ -14118,6 +15196,10 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ENUM: You specified an invalid value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14193,6 +15275,14 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
         /// </para>
         ///  </li> </ul>
         /// </exception>

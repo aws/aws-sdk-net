@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,6 +31,12 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the DeleteInvitations operation.
     /// Deletes invitations received by the AWS account to become a member account.
+    /// 
+    ///  
+    /// <para>
+    /// This operation is only used by accounts that are not part of an organization. Organization
+    /// accounts do not receive invitations.
+    /// </para>
     /// </summary>
     public partial class DeleteInvitationsRequest : AmazonSecurityHubRequest
     {

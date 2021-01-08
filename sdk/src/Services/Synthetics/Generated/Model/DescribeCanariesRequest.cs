@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -74,6 +74,7 @@ namespace Amazon.Synthetics.Model
         /// a subsequent operation to retrieve the next set of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=252)]
         public string NextToken
         {
             get { return this._nextToken; }

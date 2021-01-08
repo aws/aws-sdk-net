@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,14 @@ namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTranscript operation.
-    /// Retrieves a transcript of the session. Note that ConnectionToken is used for invoking
-    /// this API instead of ParticipantToken.
+    /// Retrieves a transcript of the session, including details about any attachments. Note
+    /// that ConnectionToken is used for invoking this API instead of ParticipantToken.
+    /// 
+    ///  
+    /// <para>
+    /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4 authentication</a>.
+    /// </para>
     /// </summary>
     public partial class GetTranscriptRequest : AmazonConnectParticipantRequest
     {

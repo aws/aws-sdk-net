@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes configuration parameters for Amazon CloudWatch logging for a Java-based
+    /// Describes configuration parameters for Amazon CloudWatch logging for a Flink-based
     /// Kinesis Data Analytics application. For more information about CloudWatch logging,
     /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>.
     /// </summary>
@@ -81,7 +81,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property MetricsLevel. 
         /// <para>
-        /// Describes the granularity of the CloudWatch Logs for an application.
+        /// Describes the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code>
+        /// level is not recommended for applications with a Parallelism over 64 due to excessive
+        /// costs.
         /// </para>
         /// </summary>
         public MetricsLevel MetricsLevel

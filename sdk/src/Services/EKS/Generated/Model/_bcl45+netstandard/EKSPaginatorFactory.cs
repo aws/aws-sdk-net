@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,22 @@ namespace Amazon.EKS.Model
         internal EKSPaginatorFactory(IAmazonEKS client) 
         {
             this.client = client;
+        }
+
+        /// <summary>
+        /// Paginator for DescribeAddonVersions operation
+        ///</summary>
+        public IDescribeAddonVersionsPaginator DescribeAddonVersions(DescribeAddonVersionsRequest request) 
+        {
+            return new DescribeAddonVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAddons operation
+        ///</summary>
+        public IListAddonsPaginator ListAddons(ListAddonsRequest request) 
+        {
+            return new ListAddonsPaginator(this.client, request);
         }
 
         /// <summary>

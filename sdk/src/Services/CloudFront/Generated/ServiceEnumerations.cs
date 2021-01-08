@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1188,6 +1188,10 @@ namespace Amazon.CloudFront
         /// Constant SniOnly for SSLSupportMethod
         /// </summary>
         public static readonly SSLSupportMethod SniOnly = new SSLSupportMethod("sni-only");
+        /// <summary>
+        /// Constant StaticIp for SSLSupportMethod
+        /// </summary>
+        public static readonly SSLSupportMethod StaticIp = new SSLSupportMethod("static-ip");
         /// <summary>
         /// Constant Vip for SSLSupportMethod
         /// </summary>

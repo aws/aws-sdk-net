@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ namespace Amazon.XRay.Model
     {
         private DateTime? _endTime;
         private string _entitySelectorExpression;
+        private bool? _forecastStatistics;
         private string _groupARN;
         private string _groupName;
         private string _nextToken;
@@ -83,9 +84,28 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ForecastStatistics. 
+        /// <para>
+        /// The forecasted high and low fault count values. Forecast enabled requests require
+        /// the EntitySelectorExpression ID be provided.
+        /// </para>
+        /// </summary>
+        public bool ForecastStatistics
+        {
+            get { return this._forecastStatistics.GetValueOrDefault(); }
+            set { this._forecastStatistics = value; }
+        }
+
+        // Check to see if ForecastStatistics property is set
+        internal bool IsSetForecastStatistics()
+        {
+            return this._forecastStatistics.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property GroupARN. 
         /// <para>
-        /// The ARN of the group for which to pull statistics from.
+        /// The Amazon Resource Name (ARN) of the group for which to pull statistics from.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=400)]

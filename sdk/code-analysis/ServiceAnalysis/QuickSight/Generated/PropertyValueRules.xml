@@ -909,6 +909,11 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.GetDashboardEmbedUrlRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.GetDashboardEmbedUrlRequest.SessionLifetimeInMinutes</property>
     <min>15</min>
     <max>600</max>
@@ -1774,6 +1779,11 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.ColumnDescription.Text</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.CredentialPair.Password</property>
     <min>1</min>
     <max>1024</max>
@@ -2014,6 +2024,26 @@
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.OracleParameters.Database</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.OracleParameters.Host</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.OracleParameters.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.OutputColumn.Description</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.OutputColumn.Name</property>
     <min>1</min>
     <max>128</max>
@@ -2078,6 +2108,10 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.RelationalTable.Catalog</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.RelationalTable.Name</property>
     <min>1</min>
     <max>64</max>
@@ -2110,6 +2144,16 @@
     <property>Amazon.QuickSight.Model.ServiceNowParameters.SiteBaseUrl</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.Sheet.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.Sheet.SheetId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.SnowflakeParameters.Database</property>

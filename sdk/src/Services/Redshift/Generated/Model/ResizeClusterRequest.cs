@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -69,6 +69,10 @@ namespace Amazon.Redshift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// ra3.xlplus
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// ra3.4xlarge
     /// </para>
     ///  </li> <li> 
@@ -115,7 +119,7 @@ namespace Amazon.Redshift.Model
         /// The unique identifier for the cluster to resize.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -134,6 +138,7 @@ namespace Amazon.Redshift.Model
         /// The new cluster type for the specified cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterType
         {
             get { return this._clusterType; }
@@ -153,6 +158,7 @@ namespace Amazon.Redshift.Model
         /// node type is used.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string NodeType
         {
             get { return this._nodeType; }

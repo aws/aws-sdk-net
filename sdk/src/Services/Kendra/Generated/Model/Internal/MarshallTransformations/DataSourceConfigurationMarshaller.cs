@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataSourceConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConfluenceConfiguration())
+            {
+                context.Writer.WritePropertyName("ConfluenceConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConfluenceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConfluenceConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDatabaseConfiguration())
             {
                 context.Writer.WritePropertyName("DatabaseConfiguration");
@@ -52,6 +63,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 
                 var marshaller = DatabaseConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatabaseConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetGoogleDriveConfiguration())
+            {
+                context.Writer.WritePropertyName("GoogleDriveConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GoogleDriveConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.GoogleDriveConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }

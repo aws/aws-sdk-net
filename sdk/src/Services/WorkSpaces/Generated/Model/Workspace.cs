@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -201,6 +201,16 @@ namespace Amazon.WorkSpaces.Model
         /// <para>
         /// The operational state of the WorkSpace.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned only
+        /// briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely
+        /// returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by
+        /// using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+        /// DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has
+        /// been successfully terminated.
+        /// </para>
+        ///  </note>
         /// </summary>
         public WorkspaceState State
         {

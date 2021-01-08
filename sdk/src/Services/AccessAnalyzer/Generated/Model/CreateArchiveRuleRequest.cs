@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// <summary>
     /// Container for the parameters to the CreateArchiveRule operation.
     /// Creates an archive rule for the specified analyzer. Archive rules automatically archive
-    /// findings that meet the criteria you define when you create the rule.
+    /// new findings that meet the criteria you define when you create the rule.
     /// </summary>
     public partial class CreateArchiveRuleRequest : AmazonAccessAnalyzerRequest
     {

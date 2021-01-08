@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -205,6 +205,10 @@ namespace Amazon.CodeGuruReviewer
         /// </summary>
         public static readonly RepositoryAssociationState Associating = new RepositoryAssociationState("Associating");
         /// <summary>
+        /// Constant Disassociated for RepositoryAssociationState
+        /// </summary>
+        public static readonly RepositoryAssociationState Disassociated = new RepositoryAssociationState("Disassociated");
+        /// <summary>
         /// Constant Disassociating for RepositoryAssociationState
         /// </summary>
         public static readonly RepositoryAssociationState Disassociating = new RepositoryAssociationState("Disassociating");
@@ -258,6 +262,10 @@ namespace Amazon.CodeGuruReviewer
         /// Constant PullRequest for Type
         /// </summary>
         public static readonly Type PullRequest = new Type("PullRequest");
+        /// <summary>
+        /// Constant RepositoryAnalysis for Type
+        /// </summary>
+        public static readonly Type RepositoryAnalysis = new Type("RepositoryAnalysis");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

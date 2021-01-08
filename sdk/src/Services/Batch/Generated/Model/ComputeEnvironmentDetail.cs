@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ namespace Amazon.Batch.Model
         private CEState _state;
         private CEStatus _status;
         private string _statusReason;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private CEType _type;
 
         /// <summary>
@@ -65,7 +66,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentName. 
         /// <para>
-        /// The name of the compute environment.
+        /// The name of the compute environment. Up to 128 letters (uppercase and lowercase),
+        /// numbers, hyphens, and underscores are allowed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +86,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ComputeResources. 
         /// <para>
-        /// The compute resources defined for the compute environment.
+        /// The compute resources defined for the compute environment. For more information, see
+        /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+        /// Environments</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         public ComputeResource ComputeResources
@@ -123,7 +127,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ServiceRole. 
         /// <para>
         /// The service role associated with the compute environment that allows AWS Batch to
-        /// make calls to AWS API operations on your behalf.
+        /// make calls to AWS API operations on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">AWS
+        /// Batch service IAM role</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         public string ServiceRole
@@ -153,10 +158,10 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt
+        /// If the state is <code>DISABLED</code>, then the AWS Batch scheduler doesn't attempt
         /// to place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
         /// state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
-        /// state do not scale out. However, they scale in to <code>minvCpus</code> value after
+        /// state don't scale out. However, they scale in to <code>minvCpus</code> value after
         /// instances become idle.
         /// </para>
         /// </summary>
@@ -211,9 +216,30 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags applied to the compute environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the compute environment.
+        /// The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+        /// Environments</a> in the <i>AWS Batch User Guide</i>.
         /// </para>
         /// </summary>
         public CEType Type

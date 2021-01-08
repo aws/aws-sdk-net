@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,8 +41,13 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
-    /// Amazon SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Amazon
+    /// Amazon SNS notifications when your Auto Scaling group scales</a> in the <i>Amazon
     /// EC2 Auto Scaling User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you exceed your maximum limit of SNS topics, which is 10 per Auto Scaling group,
+    /// the call fails.
     /// </para>
     /// </summary>
     public partial class PutNotificationConfigurationRequest : AmazonAutoScalingRequest
@@ -57,7 +62,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -98,7 +103,7 @@ namespace Amazon.AutoScaling.Model
         /// topic.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string TopicARN
         {
             get { return this._topicARN; }

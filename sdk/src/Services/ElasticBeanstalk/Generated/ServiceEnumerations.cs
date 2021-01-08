@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -677,9 +677,21 @@ namespace Amazon.ElasticBeanstalk
     {
 
         /// <summary>
+        /// Constant Aborting for EnvironmentStatus
+        /// </summary>
+        public static readonly EnvironmentStatus Aborting = new EnvironmentStatus("Aborting");
+        /// <summary>
         /// Constant Launching for EnvironmentStatus
         /// </summary>
         public static readonly EnvironmentStatus Launching = new EnvironmentStatus("Launching");
+        /// <summary>
+        /// Constant LinkingFrom for EnvironmentStatus
+        /// </summary>
+        public static readonly EnvironmentStatus LinkingFrom = new EnvironmentStatus("LinkingFrom");
+        /// <summary>
+        /// Constant LinkingTo for EnvironmentStatus
+        /// </summary>
+        public static readonly EnvironmentStatus LinkingTo = new EnvironmentStatus("LinkingTo");
         /// <summary>
         /// Constant Ready for EnvironmentStatus
         /// </summary>

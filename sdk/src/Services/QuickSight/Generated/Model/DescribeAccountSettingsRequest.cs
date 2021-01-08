@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the DescribeAccountSettings operation.
     /// Describes the settings that were used when your QuickSight subscription was first
-    /// created in this AWS Account.
+    /// created in this AWS account.
     /// </summary>
     public partial class DescribeAccountSettingsRequest : AmazonQuickSightRequest
     {

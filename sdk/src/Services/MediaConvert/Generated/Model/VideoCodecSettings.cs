@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,19 +33,21 @@ namespace Amazon.MediaConvert.Model
     /// of settings related to video encoding. The settings in this group vary depending on
     /// the value that you choose for Video codec (Codec). For each codec enum that you choose,
     /// define the corresponding settings object. The following lists the codec enum, settings
-    /// object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings
-    /// * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings
-    /// * VP9, Vp9Settings
+    /// object pairs. * AV1, Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
+    /// * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings
+    /// * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings
     /// </summary>
     public partial class VideoCodecSettings
     {
         private Av1Settings _av1Settings;
+        private AvcIntraSettings _avcIntraSettings;
         private VideoCodec _codec;
         private FrameCaptureSettings _frameCaptureSettings;
         private H264Settings _h264Settings;
         private H265Settings _h265Settings;
         private Mpeg2Settings _mpeg2Settings;
         private ProresSettings _proresSettings;
+        private Vc3Settings _vc3Settings;
         private Vp8Settings _vp8Settings;
         private Vp9Settings _vp9Settings;
 
@@ -63,6 +65,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAv1Settings()
         {
             return this._av1Settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvcIntraSettings. Required when you set your output video
+        /// codec to AVC-Intra. For more information about the AVC-I settings, see the relevant
+        /// specification. For detailed information about SD and HD in AVC-I, see https://ieeexplore.ieee.org/document/7290936.
+        /// For information about 4K/2K in AVC-I, see https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
+        /// </summary>
+        public AvcIntraSettings AvcIntraSettings
+        {
+            get { return this._avcIntraSettings; }
+            set { this._avcIntraSettings = value; }
+        }
+
+        // Check to see if AvcIntraSettings property is set
+        internal bool IsSetAvcIntraSettings()
+        {
+            return this._avcIntraSettings != null;
         }
 
         /// <summary>
@@ -158,6 +178,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetProresSettings()
         {
             return this._proresSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Vc3Settings. Required when you set (Codec) under (VideoDescription)>(CodecSettings)
+        /// to the value VC3
+        /// </summary>
+        public Vc3Settings Vc3Settings
+        {
+            get { return this._vc3Settings; }
+            set { this._vc3Settings = value; }
+        }
+
+        // Check to see if Vc3Settings property is set
+        internal bool IsSetVc3Settings()
+        {
+            return this._vc3Settings != null;
         }
 
         /// <summary>

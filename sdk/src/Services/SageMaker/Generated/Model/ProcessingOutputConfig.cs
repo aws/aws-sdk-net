@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
-        /// Output configuration information for a processing job.
+        /// List of output configurations for the processing job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]

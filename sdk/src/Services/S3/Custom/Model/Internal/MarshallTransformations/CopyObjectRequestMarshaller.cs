@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.Globalization;
 using Amazon.Util;
+using Amazon.S3.Internal;
 
 #pragma warning disable 1591
 
@@ -122,6 +123,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (copyObjectRequest.IsSetRequestPayer())
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(copyObjectRequest.RequestPayer.ToString()));
 
+            if (copyObjectRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(copyObjectRequest.ExpectedBucketOwner));
+
+            if (copyObjectRequest.IsSetExpectedSourceBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedSourceBucketOwner, S3Transforms.ToStringValue(copyObjectRequest.ExpectedSourceBucketOwner));
+
+            if (copyObjectRequest.IsSetBucketKeyEnabled())
+                request.Headers.Add(S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(copyObjectRequest.BucketKeyEnabled));
+
+
             AmazonS3Util.SetMetadataHeaders(request, copyObjectRequest.Metadata);
 
             if (string.IsNullOrEmpty(copyObjectRequest.DestinationBucket))
@@ -146,7 +157,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             string source;
             if (!String.IsNullOrEmpty(key))
             {
-                var isAccessPoint = IsS3AccessPointsArn(bucket);
+                var isAccessPoint = S3ArnUtils.IsS3AccessPointsArn(bucket) || S3ArnUtils.IsS3OutpostsArn(bucket);
                 // 'object/' needed appended to key for copy header with access points
                 source = AmazonS3Util.UrlEncode(String.Concat(bucket, isAccessPoint ? "/object/" : "/", key), !isAccessPoint);
                 if (!String.IsNullOrEmpty(version))
@@ -160,17 +171,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return source;
-        }
-
-        private static bool IsS3AccessPointsArn(string bucket)
-        {
-            Arn arn;
-            if (Arn.TryParse(bucket, out arn))
-            {
-                string accessPointString;
-                return arn.TryParseAccessPoint(out accessPointString);
-            }
-            return false;
         }
 
         private static CopyObjectRequestMarshaller _instance;

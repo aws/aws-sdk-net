@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The set of tags associated with the Amazon S3 Batch Operations job.
+        /// The set of tags associated with the S3 Batch Operations job.
         /// </para>
         /// </summary>
         public List<S3Tag> Tags

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -172,8 +172,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Include this value, if it was returned by the previous call, to get the next set of
-        /// data points.
+        /// Include this value, if it was returned by the previous <code>GetMetricData</code>
+        /// operation, to get the next set of data points.
         /// </para>
         /// </summary>
         public string NextToken

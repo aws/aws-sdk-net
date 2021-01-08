@@ -37,6 +37,7 @@
     <property>Amazon.Imagebuilder.Model.CreateComponentRequest.Data</property>
     <min>1</min>
     <max>16000</max>
+    <pattern>[^\x00]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateComponentRequest.Description</property>
@@ -67,6 +68,64 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateComponentResponse.RequestId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.CreateContainerRecipeRequest.ClientToken</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.CreateContainerRecipeRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.CreateContainerRecipeRequest.DockerfileTemplateData</property>
+    <min>1</min>
+    <max>16000</max>
+    <pattern>[^\x00]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.CreateContainerRecipeRequest.ImageOsVersionOverride</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.CreateContainerRecipeRequest.KmsKeyId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.CreateContainerRecipeRequest.Name</property>
+    <pattern>^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.CreateContainerRecipeRequest.ParentImage</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.CreateContainerRecipeRequest.SemanticVersion</property>
+    <pattern>^[0-9]+\.[0-9]+\.[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.CreateContainerRecipeRequest.WorkingDirectory</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.CreateContainerRecipeResponse.ClientToken</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.CreateContainerRecipeResponse.ContainerRecipeArn</property>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):container-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.CreateContainerRecipeResponse.RequestId</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -104,6 +163,10 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.CreateImageRequest.ContainerRecipeArn</property>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):container-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateImageRequest.DistributionConfigurationArn</property>
     <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$</pattern>
   </property-value-rule>
@@ -133,6 +196,10 @@
     <property>Amazon.Imagebuilder.Model.CreateImagePipelineRequest.ClientToken</property>
     <min>1</min>
     <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.CreateImagePipelineRequest.ContainerRecipeArn</property>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):container-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.CreateImagePipelineRequest.Description</property>
@@ -272,6 +339,19 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.DeleteContainerRecipeRequest.ContainerRecipeArn</property>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):container-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.DeleteContainerRecipeResponse.ContainerRecipeArn</property>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):container-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.DeleteContainerRecipeResponse.RequestId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.DeleteDistributionConfigurationRequest.DistributionConfigurationArn</property>
     <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):distribution-configuration/[a-z0-9-_]+$</pattern>
   </property-value-rule>
@@ -356,6 +436,29 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.GetComponentPolicyResponse.RequestId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.GetContainerRecipeRequest.ContainerRecipeArn</property>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):container-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.GetContainerRecipeResponse.RequestId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.GetContainerRecipePolicyRequest.ContainerRecipeArn</property>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):container-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.GetContainerRecipePolicyResponse.Policy</property>
+    <min>1</min>
+    <max>30000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.GetContainerRecipePolicyResponse.RequestId</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -491,12 +594,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListComponentBuildVersionsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListComponentBuildVersionsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListComponentBuildVersionsResponse.RequestId</property>
@@ -511,15 +614,35 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListComponentsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListComponentsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListComponentsResponse.RequestId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListContainerRecipesRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListContainerRecipesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListContainerRecipesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ListContainerRecipesResponse.RequestId</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -531,12 +654,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListDistributionConfigurationsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListDistributionConfigurationsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListDistributionConfigurationsResponse.RequestId</property>
@@ -555,12 +678,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImageBuildVersionsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImageBuildVersionsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImageBuildVersionsResponse.RequestId</property>
@@ -579,12 +702,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagePipelineImagesRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagePipelineImagesResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagePipelineImagesResponse.RequestId</property>
@@ -599,12 +722,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagePipelinesRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagePipelinesResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagePipelinesResponse.RequestId</property>
@@ -619,12 +742,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImageRecipesRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImageRecipesResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImageRecipesResponse.RequestId</property>
@@ -639,12 +762,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagesRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagesResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListImagesResponse.RequestId</property>
@@ -659,12 +782,12 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListInfrastructureConfigurationsRequest.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListInfrastructureConfigurationsResponse.NextToken</property>
     <min>1</min>
-    <max>1024</max>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListInfrastructureConfigurationsResponse.RequestId</property>
@@ -673,7 +796,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ListTagsForResourceRequest.ResourceArn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.PutComponentPolicyRequest.ComponentArn</property>
@@ -690,6 +813,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.PutComponentPolicyResponse.RequestId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.PutContainerRecipePolicyRequest.ContainerRecipeArn</property>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):container-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.PutContainerRecipePolicyRequest.Policy</property>
+    <min>1</min>
+    <max>30000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.PutContainerRecipePolicyResponse.ContainerRecipeArn</property>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):container-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.PutContainerRecipePolicyResponse.RequestId</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -754,11 +895,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.TagResourceRequest.ResourceArn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UntagResourceRequest.ResourceArn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateDistributionConfigurationRequest.ClientToken</property>
@@ -792,6 +933,10 @@
     <property>Amazon.Imagebuilder.Model.UpdateImagePipelineRequest.ClientToken</property>
     <min>1</min>
     <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.UpdateImagePipelineRequest.ContainerRecipeArn</property>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):container-recipe/[a-z0-9-_]+/\d+\.\d+\.\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.UpdateImagePipelineRequest.Description</property>
@@ -876,6 +1021,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.Ami.AccountId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.Ami.Description</property>
     <min>1</min>
     <max>1024</max>
@@ -913,7 +1063,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.Component.Arn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.Component.ChangeDescription</property>
@@ -949,7 +1099,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ComponentSummary.Arn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ComponentSummary.ChangeDescription</property>
@@ -976,7 +1126,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ComponentVersion.Arn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ComponentVersion.Description</property>
@@ -997,13 +1147,78 @@
     <pattern>^[0-9]+\.[0-9]+\.[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.Container.Region</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ContainerDistributionConfiguration.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ContainerRecipe.Arn</property>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ContainerRecipe.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ContainerRecipe.KmsKeyId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ContainerRecipe.Name</property>
+    <pattern>^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ContainerRecipe.Owner</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ContainerRecipe.ParentImage</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ContainerRecipe.Version</property>
+    <pattern>^[0-9]+\.[0-9]+\.[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ContainerRecipe.WorkingDirectory</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ContainerRecipeSummary.Arn</property>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ContainerRecipeSummary.Name</property>
+    <pattern>^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ContainerRecipeSummary.Owner</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ContainerRecipeSummary.ParentImage</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.Distribution.Region</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.DistributionConfiguration.Arn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.DistributionConfiguration.Description</property>
@@ -1021,7 +1236,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.DistributionConfigurationSummary.Arn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.DistributionConfigurationSummary.Description</property>
@@ -1058,7 +1273,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.Image.Arn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.Image.Name</property>
@@ -1078,7 +1293,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImagePipeline.Arn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImagePipeline.Description</property>
@@ -1091,7 +1306,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImageRecipe.Arn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImageRecipe.Description</property>
@@ -1123,7 +1338,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImageRecipeSummary.Arn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImageRecipeSummary.Name</property>
@@ -1146,7 +1361,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImageSummary.Arn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImageSummary.Name</property>
@@ -1172,7 +1387,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImageVersion.Arn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImageVersion.Name</property>
@@ -1193,7 +1408,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.InfrastructureConfiguration.Arn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.InfrastructureConfiguration.Description</property>
@@ -1226,7 +1441,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.InfrastructureConfigurationSummary.Arn</property>
-    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:\d{12}|aws):(?:image-recipe|container-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline)/[a-z0-9-_]+(?:/(?:(?:x|\d+)\.(?:x|\d+)\.(?:x|\d+))(?:/\d+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.InfrastructureConfigurationSummary.Description</property>
@@ -1264,6 +1479,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.Schedule.ScheduleExpression</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.TargetContainerRepository.RepositoryName</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>

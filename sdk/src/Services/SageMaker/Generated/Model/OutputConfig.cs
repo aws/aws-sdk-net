@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
     public partial class OutputConfig
     {
         private string _compilerOptions;
+        private string _kmsKeyId;
         private string _s3OutputLocation;
         private TargetDevice _targetDevice;
         private TargetPlatform _targetPlatform;
@@ -49,7 +50,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Specifies additional parameters for compiler options in JSON format. The compiler
         /// options are <code>TargetPlatform</code> specific. It is required for NVIDIA accelerators
-        /// and highly recommended for CPU compliations. For any other cases, it is optional to
+        /// and highly recommended for CPU compilations. For any other cases, it is optional to
         /// specify <code>CompilerOptions.</code> 
         /// </para>
         ///  <ul> <li> 
@@ -116,9 +117,31 @@ namespace Amazon.SageMaker.Model
         ///  <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
         /// compiling for ARM 32-bit platform with NEON support.
         /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed
+        /// in as a JSON string. For example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores
+        /// 2 -O2\""</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about supported compiler options, see <a href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
+        /// Neuron Compiler CLI</a>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CoreML</code>: Compilation for the CoreML <a>OutputConfig$TargetDevice</a>
+        /// supports the following compiler options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>class_labels</code>: Specifies the classification labels file name inside input
+        /// tar.gz file. For example, <code>{"class_labels": "imagenet_labels_1000.txt"}</code>.
+        /// Labels inside the txt file should be separated by newlines.
+        /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
-        [AWSProperty(Min=7, Max=1024)]
+        [AWSProperty(Min=3, Max=1024)]
         public string CompilerOptions
         {
             get { return this._compilerOptions; }
@@ -129,6 +152,50 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCompilerOptions()
         {
             return this._compilerOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt
+        /// data on the storage volume after compilation job. If you don't provide a KMS key ID,
+        /// Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account
+        /// </para>
+        ///  
+        /// <para>
+        /// The KmsKeyId can be any of the following formats: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name: <code>alias/ExampleAlias</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

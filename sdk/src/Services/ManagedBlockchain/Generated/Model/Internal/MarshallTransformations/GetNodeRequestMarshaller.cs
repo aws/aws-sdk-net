@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -58,17 +58,18 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-24";            
             request.HttpMethod = "GET";
 
-            if (!publicRequest.IsSetMemberId())
-                throw new AmazonManagedBlockchainException("Request object does not have required field MemberId set");
-            request.AddPathResource("{memberId}", StringUtils.FromString(publicRequest.MemberId));
             if (!publicRequest.IsSetNetworkId())
                 throw new AmazonManagedBlockchainException("Request object does not have required field NetworkId set");
             request.AddPathResource("{networkId}", StringUtils.FromString(publicRequest.NetworkId));
             if (!publicRequest.IsSetNodeId())
                 throw new AmazonManagedBlockchainException("Request object does not have required field NodeId set");
             request.AddPathResource("{nodeId}", StringUtils.FromString(publicRequest.NodeId));
-            request.ResourcePath = "/networks/{networkId}/members/{memberId}/nodes/{nodeId}";
+            
+            if (publicRequest.IsSetMemberId())
+                request.Parameters.Add("memberId", StringUtils.FromString(publicRequest.MemberId));
+            request.ResourcePath = "/networks/{networkId}/nodes/{nodeId}";
             request.MarshallerVersion = 2;
+            request.UseQueryString = true;
 
             return request;
         }

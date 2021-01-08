@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,7 +49,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the model package to describe.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=170)]
+        [AWSProperty(Required=true, Min=1, Max=176)]
         public string ModelPackageName
         {
             get { return this._modelPackageName; }

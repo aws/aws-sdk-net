@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,6 +39,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         {
             _mockClient = new Mock<AmazonServiceCatalogClient>("access key", "secret", Amazon.RegionEndpoint.USEast1);
         }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ServiceCatalog")]
+        public void DescribePortfolioSharesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribePortfolioSharesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<DescribePortfolioSharesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<DescribePortfolioSharesResponse>();
+            secondResponse.NextPageToken = null;
+
+            _mockClient.SetupSequence(x => x.DescribePortfolioShares(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.DescribePortfolioShares(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ServiceCatalog")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void DescribePortfolioSharesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribePortfolioSharesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<DescribePortfolioSharesResponse>();
+            response.NextPageToken = null;
+
+            _mockClient.Setup(x => x.DescribePortfolioShares(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.DescribePortfolioShares(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ServiceCatalog")]
+        public void GetProvisionedProductOutputsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetProvisionedProductOutputsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetProvisionedProductOutputsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetProvisionedProductOutputsResponse>();
+            secondResponse.NextPageToken = null;
+
+            _mockClient.SetupSequence(x => x.GetProvisionedProductOutputs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetProvisionedProductOutputs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ServiceCatalog")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetProvisionedProductOutputsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetProvisionedProductOutputsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetProvisionedProductOutputsResponse>();
+            response.NextPageToken = null;
+
+            _mockClient.Setup(x => x.GetProvisionedProductOutputs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetProvisionedProductOutputs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
 
         [TestMethod]
         [TestCategory("UnitTest")]

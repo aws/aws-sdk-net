@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,13 @@ namespace Amazon.ConnectParticipant.Model
     /// Container for the parameters to the SendMessage operation.
     /// Sends a message. Note that ConnectionToken is used for invoking this API instead of
     /// ParticipantToken.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4 authentication</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SendMessageRequest : AmazonConnectParticipantRequest
     {

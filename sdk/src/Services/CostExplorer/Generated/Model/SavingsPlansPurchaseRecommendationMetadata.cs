@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,8 +33,28 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class SavingsPlansPurchaseRecommendationMetadata
     {
+        private string _additionalMetadata;
         private string _generationTimestamp;
         private string _recommendationId;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalMetadata. 
+        /// <para>
+        /// Additional metadata that may be applicable to the recommendation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string AdditionalMetadata
+        {
+            get { return this._additionalMetadata; }
+            set { this._additionalMetadata = value; }
+        }
+
+        // Check to see if AdditionalMetadata property is set
+        internal bool IsSetAdditionalMetadata()
+        {
+            return this._additionalMetadata != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GenerationTimestamp. 

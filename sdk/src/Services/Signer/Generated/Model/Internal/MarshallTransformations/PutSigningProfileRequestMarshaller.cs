@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,6 +84,17 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("platformId");
                     context.Writer.Write(publicRequest.PlatformId);
+                }
+
+                if(publicRequest.IsSetSignatureValidityPeriod())
+                {
+                    context.Writer.WritePropertyName("signatureValidityPeriod");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SignatureValidityPeriodMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SignatureValidityPeriod, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetSigningMaterial())

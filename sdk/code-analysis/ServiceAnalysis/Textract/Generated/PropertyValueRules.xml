@@ -57,6 +57,12 @@
     <pattern>[a-zA-Z0-9_.\-:]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Textract.Model.StartDocumentAnalysisRequest.KMSKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Textract.Model.StartDocumentAnalysisResponse.JobId</property>
     <min>1</min>
     <max>64</max>
@@ -73,6 +79,12 @@
     <min>1</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9_.\-:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.StartDocumentTextDetectionRequest.KMSKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Textract.Model.StartDocumentTextDetectionResponse.JobId</property>
@@ -147,6 +159,18 @@
     <min>20</min>
     <max>1024</max>
     <pattern>(^arn:([a-z\d-]+):sns:[a-zA-Z\d-]{1,20}:\w{12}:.+$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.OutputConfig.S3Bucket</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[0-9A-Za-z\.\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Textract.Model.OutputConfig.S3Prefix</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Textract.Model.S3Object.Bucket</property>

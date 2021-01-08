@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,15 +36,14 @@ namespace Amazon.CodeArtifact.Model
     /// 
     ///  
     /// <para>
-    ///  To view all disposed package versions in a repository, use <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>
-    /// </code> and set the <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
-    /// </code> parameter to <code>Disposed</code>. 
+    ///  To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
+    /// <code>ListPackageVersions</code> </a> and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">
+    /// <code>status</code> </a> parameter to <code>Disposed</code>. 
     /// </para>
     ///  
     /// <para>
-    ///  To view information about a disposed package version, use <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
-    /// </code> and set the <code> <a href="https://docs.aws.amazon.com/API_ListPackageVersions.html#codeartifact-ListPackageVersions-response-status">status</a>
-    /// </code> parameter to <code>Disposed</code>. 
+    ///  To view information about a disposed package version, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
+    /// <code>DescribePackageVersion</code> </a>.. 
     /// </para>
     /// </summary>
     public partial class DisposePackageVersionsRequest : AmazonCodeArtifactRequest
@@ -155,6 +154,10 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  <code>maven</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nuget</code> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -187,6 +190,11 @@ namespace Amazon.CodeArtifact.Model
         ///  </li> <li> 
         /// <para>
         ///  A Python package does not contain a corresponding component, so Python packages do
+        /// not have a namespace. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  A NuGet package does not contain a corresponding component, so NuGet packages do
         /// not have a namespace. 
         /// </para>
         ///  </li> </ul>
@@ -267,7 +275,7 @@ namespace Amazon.CodeArtifact.Model
         ///  The versions of the package you want to dispose. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=100)]
         public List<string> Versions
         {
             get { return this._versions; }

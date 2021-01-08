@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -313,6 +313,10 @@ namespace Amazon.Textract
         /// </summary>
         public static readonly RelationshipType CHILD = new RelationshipType("CHILD");
         /// <summary>
+        /// Constant COMPLEX_FEATURES for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType COMPLEX_FEATURES = new RelationshipType("COMPLEX_FEATURES");
+        /// <summary>
         /// Constant VALUE for RelationshipType
         /// </summary>
         public static readonly RelationshipType VALUE = new RelationshipType("VALUE");
@@ -396,6 +400,56 @@ namespace Amazon.Textract
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SelectionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TextType.
+    /// </summary>
+    public class TextType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HANDWRITING for TextType
+        /// </summary>
+        public static readonly TextType HANDWRITING = new TextType("HANDWRITING");
+        /// <summary>
+        /// Constant PRINTED for TextType
+        /// </summary>
+        public static readonly TextType PRINTED = new TextType("PRINTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TextType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TextType FindValue(string value)
+        {
+            return FindValue<TextType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TextType(string value)
         {
             return FindValue(value);
         }

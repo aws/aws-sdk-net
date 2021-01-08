@@ -117,6 +117,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.GetResolverDnssecConfigRequest.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Resolver.Model.GetResolverEndpointRequest.ResolverEndpointId</property>
     <min>1</min>
     <max>64</max>
@@ -158,6 +163,11 @@
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.GetResolverRulePolicyResponse.ResolverRulePolicy</property>
     <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ListResolverDnssecConfigsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ListResolverEndpointIpAddressesRequest.MaxResults</property>
@@ -263,6 +273,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.UpdateResolverDnssecConfigRequest.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateResolverEndpointRequest.Name</property>
     <max>64</max>
     <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
@@ -335,6 +350,21 @@
     <property>Amazon.Route53Resolver.Model.IpAddressUpdate.SubnetId</property>
     <min>1</min>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverDnssecConfig.Id</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverDnssecConfig.OwnerId</property>
+    <min>12</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.ResolverDnssecConfig.ResourceId</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.ResolverEndpoint.Arn</property>

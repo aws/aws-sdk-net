@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,9 +36,11 @@ namespace Amazon.Redshift.Model
         private bool? _allowVersionUpgrade;
         private int? _automatedSnapshotRetentionPeriod;
         private string _availabilityZone;
+        private string _availabilityZoneRelocationStatus;
         private string _clusterAvailabilityStatus;
         private DateTime? _clusterCreateTime;
         private string _clusterIdentifier;
+        private string _clusterNamespaceArn;
         private List<ClusterNode> _clusterNodes = new List<ClusterNode>();
         private List<ClusterParameterGroupStatus> _clusterParameterGroups = new List<ClusterParameterGroupStatus>();
         private string _clusterPublicKey;
@@ -123,6 +125,7 @@ namespace Amazon.Redshift.Model
         /// The name of the Availability Zone in which the cluster is located.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -133,6 +136,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneRelocationStatus. 
+        /// <para>
+        /// Describes the status of the Availability Zone relocation operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string AvailabilityZoneRelocationStatus
+        {
+            get { return this._availabilityZoneRelocationStatus; }
+            set { this._availabilityZoneRelocationStatus = value; }
+        }
+
+        // Check to see if AvailabilityZoneRelocationStatus property is set
+        internal bool IsSetAvailabilityZoneRelocationStatus()
+        {
+            return this._availabilityZoneRelocationStatus != null;
         }
 
         /// <summary>
@@ -164,6 +186,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterAvailabilityStatus
         {
             get { return this._clusterAvailabilityStatus; }
@@ -200,6 +223,7 @@ namespace Amazon.Redshift.Model
         /// The unique identifier of the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -210,6 +234,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetClusterIdentifier()
         {
             return this._clusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterNamespaceArn. 
+        /// <para>
+        /// The namespace Amazon Resource Name (ARN) of the cluster.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string ClusterNamespaceArn
+        {
+            get { return this._clusterNamespaceArn; }
+            set { this._clusterNamespaceArn = value; }
+        }
+
+        // Check to see if ClusterNamespaceArn property is set
+        internal bool IsSetClusterNamespaceArn()
+        {
+            return this._clusterNamespaceArn != null;
         }
 
         /// <summary>
@@ -255,6 +298,7 @@ namespace Amazon.Redshift.Model
         /// The public key for the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterPublicKey
         {
             get { return this._clusterPublicKey; }
@@ -273,6 +317,7 @@ namespace Amazon.Redshift.Model
         /// The specific revision number of the database in the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterRevisionNumber
         {
             get { return this._clusterRevisionNumber; }
@@ -417,6 +462,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterStatus
         {
             get { return this._clusterStatus; }
@@ -436,6 +482,7 @@ namespace Amazon.Redshift.Model
         /// valid only when the cluster is in a VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterSubnetGroupName
         {
             get { return this._clusterSubnetGroupName; }
@@ -454,6 +501,7 @@ namespace Amazon.Redshift.Model
         /// The version ID of the Amazon Redshift engine that is running on the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterVersion
         {
             get { return this._clusterVersion; }
@@ -489,6 +537,7 @@ namespace Amazon.Redshift.Model
         /// specified, a database named <code>dev</code>dev was created by default. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string DBName
         {
             get { return this._dbName; }
@@ -544,6 +593,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ElasticResizeNumberOfNodeOptions
         {
             get { return this._elasticResizeNumberOfNodeOptions; }
@@ -657,6 +707,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ExpectedNextSnapshotScheduleTimeStatus
         {
             get { return this._expectedNextSnapshotScheduleTimeStatus; }
@@ -718,6 +769,7 @@ namespace Amazon.Redshift.Model
         /// data in the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -736,6 +788,7 @@ namespace Amazon.Redshift.Model
         /// The name of the maintenance track for the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string MaintenanceTrackName
         {
             get { return this._maintenanceTrackName; }
@@ -779,6 +832,7 @@ namespace Amazon.Redshift.Model
         /// that is specified in the <b>DBName</b> parameter. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string MasterUsername
         {
             get { return this._masterUsername; }
@@ -797,6 +851,7 @@ namespace Amazon.Redshift.Model
         /// The status of a modify operation, if any, initiated for the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ModifyStatus
         {
             get { return this._modifyStatus; }
@@ -833,6 +888,7 @@ namespace Amazon.Redshift.Model
         /// The node type for the nodes in the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string NodeType
         {
             get { return this._nodeType; }
@@ -907,6 +963,7 @@ namespace Amazon.Redshift.Model
         /// can occur.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string PreferredMaintenanceWindow
         {
             get { return this._preferredMaintenanceWindow; }
@@ -990,6 +1047,7 @@ namespace Amazon.Redshift.Model
         /// A unique identifier for the cluster snapshot schedule.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SnapshotScheduleIdentifier
         {
             get { return this._snapshotScheduleIdentifier; }
@@ -1044,6 +1102,7 @@ namespace Amazon.Redshift.Model
         /// The identifier of the VPC the cluster is in, if the cluster is in a VPC.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string VpcId
         {
             get { return this._vpcId; }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,6 +36,8 @@ namespace Amazon.Lambda.Model
     {
         private string _arn;
         private long? _codeSize;
+        private string _signingJobArn;
+        private string _signingProfileVersionArn;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -72,6 +74,42 @@ namespace Amazon.Lambda.Model
         internal bool IsSetCodeSize()
         {
             return this._codeSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SigningJobArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a signing job.
+        /// </para>
+        /// </summary>
+        public string SigningJobArn
+        {
+            get { return this._signingJobArn; }
+            set { this._signingJobArn = value; }
+        }
+
+        // Check to see if SigningJobArn property is set
+        internal bool IsSetSigningJobArn()
+        {
+            return this._signingJobArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SigningProfileVersionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for a signing profile version.
+        /// </para>
+        /// </summary>
+        public string SigningProfileVersionArn
+        {
+            get { return this._signingProfileVersionArn; }
+            set { this._signingProfileVersionArn = value; }
+        }
+
+        // Check to see if SigningProfileVersionArn property is set
+        internal bool IsSetSigningProfileVersionArn()
+        {
+            return this._signingProfileVersionArn != null;
         }
 
     }

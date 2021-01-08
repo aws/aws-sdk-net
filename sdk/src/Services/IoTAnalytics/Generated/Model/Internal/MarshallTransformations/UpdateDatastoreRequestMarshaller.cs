@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -76,6 +76,17 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
                     var marshaller = DatastoreStorageMarshaller.Instance;
                     marshaller.Marshall(publicRequest.DatastoreStorage, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetFileFormatConfiguration())
+                {
+                    context.Writer.WritePropertyName("fileFormatConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FileFormatConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FileFormatConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
                 }

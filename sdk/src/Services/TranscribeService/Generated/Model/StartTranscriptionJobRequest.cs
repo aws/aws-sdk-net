@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,14 +35,17 @@ namespace Amazon.TranscribeService.Model
     public partial class StartTranscriptionJobRequest : AmazonTranscribeServiceRequest
     {
         private ContentRedaction _contentRedaction;
+        private bool? _identifyLanguage;
         private JobExecutionSettings _jobExecutionSettings;
         private LanguageCode _languageCode;
+        private List<string> _languageOptions = new List<string>();
         private Media _media;
         private MediaFormat _mediaFormat;
         private int? _mediaSampleRateHertz;
         private ModelSettings _modelSettings;
         private string _outputBucketName;
         private string _outputEncryptionKMSKeyId;
+        private string _outputKey;
         private Settings _settings;
         private string _transcriptionJobName;
 
@@ -62,6 +65,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetContentRedaction()
         {
             return this._contentRedaction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentifyLanguage. 
+        /// <para>
+        /// Set this field to <code>true</code> to enable automatic language identification. Automatic
+        /// language identification is disabled by default. You receive a <code>BadRequestException</code>
+        /// error if you enter a value for a <code>LanguageCode</code>.
+        /// </para>
+        /// </summary>
+        public bool IdentifyLanguage
+        {
+            get { return this._identifyLanguage.GetValueOrDefault(); }
+            set { this._identifyLanguage = value; }
+        }
+
+        // Check to see if IdentifyLanguage property is set
+        internal bool IsSetIdentifyLanguage()
+        {
+            return this._identifyLanguage.HasValue; 
         }
 
         /// <summary>
@@ -90,7 +113,6 @@ namespace Amazon.TranscribeService.Model
         /// The language code for the language used in the input media file.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public LanguageCode LanguageCode
         {
             get { return this._languageCode; }
@@ -101,6 +123,27 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetLanguageCode()
         {
             return this._languageCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LanguageOptions. 
+        /// <para>
+        /// An object containing a list of languages that might be present in your collection
+        /// of audio files. Automatic language identification chooses a language that best matches
+        /// the source audio from that list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2)]
+        public List<string> LanguageOptions
+        {
+            get { return this._languageOptions; }
+            set { this._languageOptions = value; }
+        }
+
+        // Check to see if LanguageOptions property is set
+        internal bool IsSetLanguageOptions()
+        {
+            return this._languageOptions != null && this._languageOptions.Count > 0; 
         }
 
         /// <summary>
@@ -283,6 +326,45 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetOutputEncryptionKMSKeyId()
         {
             return this._outputEncryptionKMSKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputKey. 
+        /// <para>
+        /// You can specify a location in an Amazon S3 bucket to store the output of your transcription
+        /// job.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify an output key, Amazon Transcribe stores the output of your transcription
+        /// job in the Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use output keys to specify the Amazon S3 prefix and file name of the transcription
+        /// output. For example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output
+        /// key would lead to the output being stored as "folder1/folder2/your-transcription-job-name.json".
+        /// If you specify "my-other-job-name.json" as the output key, the object key is changed
+        /// to "my-other-job-name.json". You can use an output key to change both the prefix and
+        /// the file name, for example "folder/my-other-job-name.json".
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
+        /// parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string OutputKey
+        {
+            get { return this._outputKey; }
+            set { this._outputKey = value; }
+        }
+
+        // Check to see if OutputKey property is set
+        internal bool IsSetOutputKey()
+        {
+            return this._outputKey != null;
         }
 
         /// <summary>

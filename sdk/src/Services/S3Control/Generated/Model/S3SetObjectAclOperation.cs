@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Contains the configuration parameters for a Set Object ACL operation. Amazon S3 Batch
-    /// Operations passes each value through to the underlying PUT Object acl API. For more
-    /// information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html">PUT
+    /// Contains the configuration parameters for a Set Object ACL operation. S3 Batch Operations
+    /// passes each value through to the underlying PUT Object acl API. For more information
+    /// about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html">PUT
     /// Object acl</a>.
     /// </summary>
     public partial class S3SetObjectAclOperation

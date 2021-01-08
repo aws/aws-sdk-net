@@ -179,6 +179,11 @@
     <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.StartFlowResponse.ExecutionId</property>
+    <max>256</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.StartFlowResponse.FlowArn</property>
     <max>512</max>
     <pattern>arn:aws:appflow:.*:[0-9]+:.*</pattern>
@@ -410,6 +415,11 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.IncrementalPullConfig.DatetimeTypeFieldName</property>
+    <max>256</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.InforNexusConnectorProfileCredentials.AccessKeyId</property>
     <max>256</max>
     <pattern>\S+</pattern>
@@ -539,6 +549,12 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.ClientCredentialsArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws:secretsmanager:.*:[0-9]+:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.RefreshToken</property>
     <max>512</max>
     <pattern>\S+</pattern>
@@ -566,6 +582,7 @@
   <property-value-rule>
     <property>Amazon.Appflow.Model.ScheduledTriggerProperties.Timezone</property>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ServiceNowConnectorProfileCredentials.Password</property>
@@ -703,6 +720,17 @@
     <property>Amazon.Appflow.Model.TrendmicroSourceProperties.Object</property>
     <max>512</max>
     <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.UpsolverDestinationProperties.BucketName</property>
+    <min>16</min>
+    <max>63</max>
+    <pattern>^(upsolver-appflow)\S*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.UpsolverDestinationProperties.BucketPrefix</property>
+    <max>512</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.VeevaConnectorProfileCredentials.Password</property>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,10 +55,11 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property EventBusName. 
         /// <para>
-        /// The name of the event bus associated with the rule.
+        /// The name or ARN of the event bus associated with the rule. If you omit this, the default
+        /// event bus is used.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=1600)]
         public string EventBusName
         {
             get { return this._eventBusName; }

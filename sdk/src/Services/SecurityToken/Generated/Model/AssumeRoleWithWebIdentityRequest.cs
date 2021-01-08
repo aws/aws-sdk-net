@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -190,7 +190,7 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html">
+    ///  <a href="https://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/">
     /// Web Identity Federation Playground</a>. Walk through the process of authenticating
     /// through Login with Amazon, Facebook, or Google, getting temporary security credentials,
     /// and then using those credentials to make a request to AWS. 

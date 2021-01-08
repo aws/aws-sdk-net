@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -95,8 +95,8 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Scope. 
         /// <para>
         /// Specifies whether this is for an AWS CloudFront distribution or for a regional application.
-        /// A regional application can be an Application Load Balancer (ALB) or an API Gateway
-        /// stage. 
+        /// A regional application can be an Application Load Balancer (ALB), an API Gateway REST
+        /// API, or an AppSync GraphQL API. 
         /// </para>
         ///  
         /// <para>

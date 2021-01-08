@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private int? _iops;
         private string _kmsKeyId;
         private string _snapshotId;
+        private int? _throughput;
         private int? _volumeSize;
         private VolumeType _volumeType;
 
@@ -129,6 +130,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSnapshotId()
         {
             return this._snapshotId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Throughput. 
+        /// <para>
+        /// The throughput that the volume supports, in MiB/s.
+        /// </para>
+        /// </summary>
+        public int Throughput
+        {
+            get { return this._throughput.GetValueOrDefault(); }
+            set { this._throughput = value; }
+        }
+
+        // Check to see if Throughput property is set
+        internal bool IsSetThroughput()
+        {
+            return this._throughput.HasValue; 
         }
 
         /// <summary>

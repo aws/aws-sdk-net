@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,16 +63,19 @@ namespace Amazon.RDS.Model
         private string _domain;
         private string _domainIAMRoleName;
         private List<string> _enableCloudwatchLogsExports = new List<string>();
+        private bool? _enableCustomerOwnedIp;
         private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
         private int? _iops;
         private string _licenseModel;
+        private int? _maxAllocatedStorage;
         private bool? _multiAZ;
         private string _optionGroupName;
         private int? _port;
         private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
         private bool? _publiclyAccessible;
         private DateTime? _restoreTimeUtc;
+        private string _sourceDBInstanceAutomatedBackupsArn;
         private string _sourceDBInstanceIdentifier;
         private string _sourceDbiResourceId;
         private string _storageType;
@@ -375,11 +378,46 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableCustomerOwnedIp. 
+        /// <para>
+        /// A value that indicates whether to enable a customer-owned IP address (CoIP) for an
+        /// RDS on Outposts DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <i>CoIP</i> provides local or external connectivity to resources in your Outpost
+        /// subnets through your on-premises network. For some use cases, a CoIP can provide lower
+        /// latency for connections to the DB instance from outside of its virtual private cloud
+        /// (VPC) on your local network.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+        /// with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+        /// IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool EnableCustomerOwnedIp
+        {
+            get { return this._enableCustomerOwnedIp.GetValueOrDefault(); }
+            set { this._enableCustomerOwnedIp = value; }
+        }
+
+        // Check to see if EnableCustomerOwnedIp property is set
+        internal bool IsSetEnableCustomerOwnedIp()
+        {
+            return this._enableCustomerOwnedIp.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled. For information
-        /// about the supported DB engines, see <a>CreateDBInstance</a>.
+        /// (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         ///  
         /// <para>
@@ -531,6 +569,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetLicenseModel()
         {
             return this._licenseModel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxAllocatedStorage. 
+        /// <para>
+        /// The upper limit to which Amazon RDS can automatically scale the storage of the DB
+        /// instance.
+        /// </para>
+        /// </summary>
+        public int MaxAllocatedStorage
+        {
+            get { return this._maxAllocatedStorage.GetValueOrDefault(); }
+            set { this._maxAllocatedStorage = value; }
+        }
+
+        // Check to see if MaxAllocatedStorage property is set
+        internal bool IsSetMaxAllocatedStorage()
+        {
+            return this._maxAllocatedStorage.HasValue; 
         }
 
         /// <summary>
@@ -696,6 +753,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetRestoreTimeUtc()
         {
             return this._restoreTimeUtc.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceDBInstanceAutomatedBackupsArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the replicated automated backups from which to restore,
+        /// for example, <code>arn:aws:rds:useast-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+        /// </para>
+        /// </summary>
+        public string SourceDBInstanceAutomatedBackupsArn
+        {
+            get { return this._sourceDBInstanceAutomatedBackupsArn; }
+            set { this._sourceDBInstanceAutomatedBackupsArn = value; }
+        }
+
+        // Check to see if SourceDBInstanceAutomatedBackupsArn property is set
+        internal bool IsSetSourceDBInstanceAutomatedBackupsArn()
+        {
+            return this._sourceDBInstanceAutomatedBackupsArn != null;
         }
 
         /// <summary>

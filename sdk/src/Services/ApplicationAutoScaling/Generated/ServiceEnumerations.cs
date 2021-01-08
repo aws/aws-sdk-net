@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -249,6 +249,10 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly MetricType ECSServiceAverageMemoryUtilization = new MetricType("ECSServiceAverageMemoryUtilization");
         /// <summary>
+        /// Constant KafkaBrokerStorageUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType KafkaBrokerStorageUtilization = new MetricType("KafkaBrokerStorageUtilization");
+        /// <summary>
         /// Constant LambdaProvisionedConcurrencyUtilization for MetricType
         /// </summary>
         public static readonly MetricType LambdaProvisionedConcurrencyUtilization = new MetricType("LambdaProvisionedConcurrencyUtilization");
@@ -373,6 +377,10 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly ScalableDimension ComprehendDocumentClassifierEndpointDesiredInferenceUnits = new ScalableDimension("comprehend:document-classifier-endpoint:DesiredInferenceUnits");
         /// <summary>
+        /// Constant ComprehendEntityRecognizerEndpointDesiredInferenceUnits for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension ComprehendEntityRecognizerEndpointDesiredInferenceUnits = new ScalableDimension("comprehend:entity-recognizer-endpoint:DesiredInferenceUnits");
+        /// <summary>
         /// Constant CustomResourceResourceTypeProperty for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension CustomResourceResourceTypeProperty = new ScalableDimension("custom-resource:ResourceType:Property");
@@ -404,6 +412,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant ElasticmapreduceInstancegroupInstanceCount for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension ElasticmapreduceInstancegroupInstanceCount = new ScalableDimension("elasticmapreduce:instancegroup:InstanceCount");
+        /// <summary>
+        /// Constant KafkaBrokerStorageVolumeSize for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension KafkaBrokerStorageVolumeSize = new ScalableDimension("kafka:broker-storage:VolumeSize");
         /// <summary>
         /// Constant LambdaFunctionProvisionedConcurrency for ScalableDimension
         /// </summary>
@@ -556,6 +568,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant Elasticmapreduce for ServiceNamespace
         /// </summary>
         public static readonly ServiceNamespace Elasticmapreduce = new ServiceNamespace("elasticmapreduce");
+        /// <summary>
+        /// Constant Kafka for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace Kafka = new ServiceNamespace("kafka");
         /// <summary>
         /// Constant Lambda for ServiceNamespace
         /// </summary>

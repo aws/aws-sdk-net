@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -131,7 +131,10 @@ namespace Amazon.Textract.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property QuotaCode.
+        /// Gets and sets the property QuotaCode. 
+        /// <para>
+        /// The quota code.
+        /// </para>
         /// </summary>
         public string QuotaCode
         {
@@ -146,7 +149,10 @@ namespace Amazon.Textract.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType.
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The resource type.
+        /// </para>
         /// </summary>
         public string ResourceType
         {
@@ -161,7 +167,10 @@ namespace Amazon.Textract.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceCode.
+        /// Gets and sets the property ServiceCode. 
+        /// <para>
+        /// The service code.
+        /// </para>
         /// </summary>
         public string ServiceCode
         {

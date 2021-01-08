@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,10 +39,10 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The egress filter type. By default, the type is <code>DROP_ALL</code>, which allows
-        ///         egress only from virtual nodes to other defined resources in the service mesh
-        /// (and any         traffic to <code>*.amazonaws.com</code> for AWS API calls). You can
-        /// set the egress filter         type to <code>ALLOW_ALL</code> to allow egress to any
-        /// endpoint inside or outside of the         service mesh.
+        /// egress only from virtual nodes to other defined resources in the service mesh (and
+        /// any traffic to <code>*.amazonaws.com</code> for AWS API calls). You can set the egress
+        /// filter type to <code>ALLOW_ALL</code> to allow egress to any endpoint inside or outside
+        /// of the service mesh.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

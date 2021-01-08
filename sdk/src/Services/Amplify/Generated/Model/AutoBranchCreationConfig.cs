@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ namespace Amazon.Amplify.Model
         private string _buildSpec;
         private bool? _enableAutoBuild;
         private bool? _enableBasicAuth;
+        private bool? _enablePerformanceMode;
         private bool? _enablePullRequestPreview;
         private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
         private string _framework;
@@ -118,9 +119,33 @@ namespace Amazon.Amplify.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnablePerformanceMode. 
+        /// <para>
+        /// Enables performance mode for the branch.
+        /// </para>
+        ///  
+        /// <para>
+        /// Performance mode optimizes for faster hosting performance by keeping content cached
+        /// at the edge for a longer interval. When performance mode is enabled, hosting configuration
+        /// or code changes can take up to 10 minutes to roll out. 
+        /// </para>
+        /// </summary>
+        public bool EnablePerformanceMode
+        {
+            get { return this._enablePerformanceMode.GetValueOrDefault(); }
+            set { this._enablePerformanceMode = value; }
+        }
+
+        // Check to see if EnablePerformanceMode property is set
+        internal bool IsSetEnablePerformanceMode()
+        {
+            return this._enablePerformanceMode.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnablePullRequestPreview. 
         /// <para>
-        ///  Enables pull request preview for the autocreated branch. 
+        ///  Enables pull request previews for the autocreated branch. 
         /// </para>
         /// </summary>
         public bool EnablePullRequestPreview

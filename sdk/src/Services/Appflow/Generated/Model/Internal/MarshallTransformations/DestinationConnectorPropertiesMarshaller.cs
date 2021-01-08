@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -96,6 +96,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 
                 var marshaller = SnowflakeDestinationPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Snowflake, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetUpsolver())
+            {
+                context.Writer.WritePropertyName("Upsolver");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UpsolverDestinationPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Upsolver, context);
 
                 context.Writer.WriteObjectEnd();
             }

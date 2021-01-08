@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -87,6 +87,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
                     var marshaller = JdbcTargetMarshaller.Instance;
                     marshaller.Marshall(requestObjectJdbcTargetsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetMongoDBTargets())
+            {
+                context.Writer.WritePropertyName("MongoDBTargets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectMongoDBTargetsListValue in requestObject.MongoDBTargets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MongoDBTargetMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMongoDBTargetsListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -100,6 +100,16 @@ namespace Amazon.ElastiCache.Model
         /// Paginator for DescribeUpdateActions operation
         ///</summary>
         IDescribeUpdateActionsPaginator DescribeUpdateActions(DescribeUpdateActionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeUserGroups operation
+        ///</summary>
+        IDescribeUserGroupsPaginator DescribeUserGroups(DescribeUserGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeUsers operation
+        ///</summary>
+        IDescribeUsersPaginator DescribeUsers(DescribeUsersRequest request);
     }
 }
 #endif

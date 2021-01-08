@@ -423,6 +423,7 @@ namespace ServiceClientGenerator
         public const string ExamplesKey = "examples";
         public const string GenerateUnmarshallerKey = "generateUnmarshaller";
         public const string SkipUriPropertyValidationKey = "skipUriPropertyValidation";
+        public const string OperationArnFieldKey = "operationArnField";
         JsonData _documentRoot;
 
         SimpleMethodFormsModel _simpleMethodsModel;
@@ -632,6 +633,24 @@ namespace ServiceClientGenerator
                 if (data == null)
                     return false;
                 return true;
+            }
+        }
+
+        public Dictionary<string, ArnFieldProperties> ArnFields
+        {
+            get
+            {
+                var data = _documentRoot[OperationArnFieldKey];
+                if (data == null)
+                {
+                    return null;
+                }
+                var arnFields = new Dictionary<string, ArnFieldProperties>();
+                foreach(KeyValuePair<string, JsonData> kvp in data)
+                {
+                    arnFields.Add(kvp.Key, new ArnFieldProperties(bool.Parse(kvp.Value["containsArnField"].ToString()), kvp.Value["field"]?.ToString()));
+                }
+                return arnFields;
             }
         }
 
@@ -1225,6 +1244,8 @@ namespace ServiceClientGenerator
                 modifiers.IsDeprecated = (bool)operation[OperationModifiers.DeprecatedKey];
             if (operation[OperationModifiers.UseWrappingResultKey] != null && operation[OperationModifiers.UseWrappingResultKey].IsBoolean)
                 modifiers.UseWrappingResult = (bool)operation[OperationModifiers.UseWrappingResultKey];
+            if (operation[OperationModifiers.AllowEmptyResultKey] != null && operation[OperationModifiers.AllowEmptyResultKey].IsBoolean)
+                modifiers.AllowEmptyResult = (bool)operation[OperationModifiers.AllowEmptyResultKey];
             if (operation[OperationModifiers.WrappedResultShapeKey] != null && operation[OperationModifiers.WrappedResultShapeKey].IsString)
                 modifiers.WrappedResultShape = (string)operation[OperationModifiers.WrappedResultShapeKey];
             if (operation[OperationModifiers.WrappedResultMemberKey] != null && operation[OperationModifiers.WrappedResultMemberKey].IsString)
@@ -1279,6 +1300,19 @@ namespace ServiceClientGenerator
             public const string SolutionPathKey = "solutionPath";
         }
         #endregion
+        
+        #region OperationArnFieldData
+        public class OperationArnFieldData
+        {
+            public OperationArnFieldData(string field, bool hasArnField)
+            {
+                ArnField = field;
+                HasArnField = hasArnField;
+            }
+            public string ArnField { get; }
+            public bool HasArnField { get; }
+        }
+        #endregion
 
         #region OperationModifiers
 
@@ -1292,6 +1326,7 @@ namespace ServiceClientGenerator
             public const string ExcludeKey = "exclude";
             public const string InternalKey = "internal";
             public const string UseWrappingResultKey = "useWrappingResult";
+            public const string AllowEmptyResultKey = "allowEmptyResult";
             public const string WrappedResultShapeKey = "wrappedResultShape";
             public const string WrappedResultMemberKey = "wrappedResultMember";
             public const string MarshallNameOverrides = "marshallNameOverrides";
@@ -1347,6 +1382,15 @@ namespace ServiceClientGenerator
                 set;
             }
 
+            /// <summary>
+            /// Allows the operation to return an empty result when the operation is modeled to return body result structure.
+            /// </summary>
+            public bool AllowEmptyResult
+            {
+                get;
+                set;
+            }
+
             public string WrappedResultShape
             {
                 get;
@@ -1396,6 +1440,17 @@ namespace ServiceClientGenerator
 
                 return overrideData;
             }
+        }
+
+        public class ArnFieldProperties
+        {
+            public ArnFieldProperties(bool arnFieldExists, string arnFieldName)
+            {
+                ArnFieldExists = arnFieldExists;
+                ArnFieldName = arnFieldName;
+            }
+            public bool ArnFieldExists { get; set; }
+            public string ArnFieldName { get; set; }
         }
 
         /// <summary>

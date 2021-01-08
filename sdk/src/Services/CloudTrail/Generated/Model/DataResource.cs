@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,6 +38,11 @@ namespace Amazon.CloudTrail.Model
     /// <para>
     /// The total number of allowed data resources is 250. This number can be distributed
     /// between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you are using advanced event selectors, the maximum total number of values for
+    /// all conditions, across all advanced event selectors for the trail, is 500.
     /// </para>
     ///  </note> 
     /// <para>

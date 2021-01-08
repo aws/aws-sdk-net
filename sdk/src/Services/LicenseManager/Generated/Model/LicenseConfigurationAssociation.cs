@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,10 +33,29 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class LicenseConfigurationAssociation
     {
+        private string _amiAssociationScope;
         private DateTime? _associationTime;
         private string _resourceArn;
         private string _resourceOwnerId;
         private ResourceType _resourceType;
+
+        /// <summary>
+        /// Gets and sets the property AmiAssociationScope. 
+        /// <para>
+        /// Scope of AMI associations. The possible value is <code>cross-account</code>.
+        /// </para>
+        /// </summary>
+        public string AmiAssociationScope
+        {
+            get { return this._amiAssociationScope; }
+            set { this._amiAssociationScope = value; }
+        }
+
+        // Check to see if AmiAssociationScope property is set
+        internal bool IsSetAmiAssociationScope()
+        {
+            return this._amiAssociationScope != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AssociationTime. 

@@ -125,8 +125,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationS3Request.S3BucketArn</property>
-    <max>76</max>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):s3:::([^/]*)$</pattern>
+    <max>156</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):(s3|s3-outposts):[a-z\-0-9]*:[0-9]*:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.CreateLocationS3Request.Subdirectory</property>
@@ -523,6 +523,11 @@
     <property>Amazon.DataSync.Model.UpdateTaskRequest.TaskArn</property>
     <max>128</max>
     <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataSync.Model.UpdateTaskExecutionRequest.TaskExecutionArn</property>
+    <max>128</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\-0-9]*:[0-9]{12}:task/task-[0-9a-f]{17}/execution/exec-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataSync.Model.AgentListEntry.AgentArn</property>

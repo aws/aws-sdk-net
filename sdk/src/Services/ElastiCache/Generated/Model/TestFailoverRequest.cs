@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -69,12 +69,12 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Cache cluster message: <code>Failover from master node &lt;primary-node-id&gt; to
+    /// Cache cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
     /// replica node &lt;node-id&gt; completed</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Replication group message: <code>Failover from master node &lt;primary-node-id&gt;
+    /// Replication group message: <code>Failover from primary node &lt;primary-node-id&gt;
     /// to replica node &lt;node-id&gt; completed</code> 
     /// </para>
     ///  </li> <li> 

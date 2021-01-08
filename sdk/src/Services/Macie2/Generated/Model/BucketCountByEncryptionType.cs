@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,8 +42,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property KmsManaged.  
         /// <para>
         /// The total number of buckets that use an AWS Key Management Service (AWS KMS) customer
-        /// master key (CMK) to encrypt objects. These buckets use AWS KMS AWS-managed (AWS-KMS)
-        /// encryption or AWS KMS customer-managed (SSE-KMS) encryption.
+        /// master key (CMK) by default to encrypt objects. These buckets use AWS managed AWS
+        /// KMS (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS) encryption.
         /// </para>
         /// </summary>
         public long KmsManaged
@@ -61,8 +61,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property S3Managed. 
         /// <para>
-        /// The total number of buckets that use an Amazon S3-managed key to encrypt objects.
-        /// These buckets use Amazon S3-managed (SSE-S3) encryption.
+        /// The total number of buckets that use an Amazon S3 managed key by default to encrypt
+        /// objects. These buckets use Amazon S3 managed (SSE-S3) encryption.
         /// </para>
         /// </summary>
         public long S3Managed

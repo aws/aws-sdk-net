@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
@@ -120,7 +120,7 @@ namespace Amazon.WorkDocs.Utils
                 content.RemoveHttpContentHeader("Content-Type");
                 content.AddHttpContentHeader("Content-Type", uploadDocumentStreamRequest.ContentType);
 
-                await httpClient.PutRequestUriAsync(uploadUrl, content, requestHeaders);
+                await httpClient.PutRequestUriAsync(uploadUrl, content, requestHeaders).ConfigureAwait(false);
                 var task = CompleteUpload(documentId, versionId);
 
                 UploadDocumentStreamResponse uploadDocumentStreamResponse = new UploadDocumentStreamResponse(uploadDocumentStreamRequest)

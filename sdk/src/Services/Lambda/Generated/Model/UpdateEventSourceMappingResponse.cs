@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,15 +39,22 @@ namespace Amazon.Lambda.Model
         private DestinationConfig _destinationConfig;
         private string _eventSourceArn;
         private string _functionArn;
+        private List<string> _functionResponseTypes = new List<string>();
         private DateTime? _lastModified;
         private string _lastProcessingResult;
         private int? _maximumBatchingWindowInSeconds;
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
         private int? _parallelizationFactor;
+        private List<string> _queues = new List<string>();
+        private SelfManagedEventSource _selfManagedEventSource;
+        private List<SourceAccessConfiguration> _sourceAccessConfigurations = new List<SourceAccessConfiguration>();
+        private EventSourcePosition _startingPosition;
+        private DateTime? _startingPositionTimestamp;
         private string _state;
         private string _stateTransitionReason;
         private List<string> _topics = new List<string>();
+        private int? _tumblingWindowInSeconds;
         private string _uuid;
 
         /// <summary>
@@ -72,7 +79,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property BisectBatchOnFunctionError. 
         /// <para>
-        /// (Streams) If the function returns an error, split the batch in two and retry.
+        /// (Streams) If the function returns an error, split the batch in two and retry. The
+        /// default value is false.
         /// </para>
         /// </summary>
         public bool BisectBatchOnFunctionError
@@ -142,6 +150,25 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FunctionResponseTypes. 
+        /// <para>
+        /// (Streams) A list of current response type enums applied to the event source mapping.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> FunctionResponseTypes
+        {
+            get { return this._functionResponseTypes; }
+            set { this._functionResponseTypes = value; }
+        }
+
+        // Check to see if FunctionResponseTypes property is set
+        internal bool IsSetFunctionResponseTypes()
+        {
+            return this._functionResponseTypes != null && this._functionResponseTypes.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
         /// The date that the event source mapping was last updated, or its state changed.
@@ -180,8 +207,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumBatchingWindowInSeconds. 
         /// <para>
-        /// (Streams) The maximum amount of time to gather records before invoking the function,
-        /// in seconds.
+        /// (Streams and SQS standard queues) The maximum amount of time to gather records before
+        /// invoking the function, in seconds. The default value is zero.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=300)]
@@ -200,7 +227,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRecordAgeInSeconds. 
         /// <para>
-        /// (Streams) The maximum age of a record that Lambda sends to a function for processing.
+        /// (Streams) Discard records older than the specified age. The default value is infinite
+        /// (-1). When set to infinite (-1), failed records are retried until the record expires.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=604800)]
@@ -219,7 +247,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// (Streams) The maximum number of times to retry when the function returns an error.
+        /// (Streams) Discard records after the specified number of retries. The default value
+        /// is infinite (-1). When set to infinite (-1), failed records are retried until the
+        /// record expires.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]
@@ -238,7 +268,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ParallelizationFactor. 
         /// <para>
-        /// (Streams) The number of batches to process from each shard concurrently.
+        /// (Streams) The number of batches to process from each shard concurrently. The default
+        /// value is 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -252,6 +283,102 @@ namespace Amazon.Lambda.Model
         internal bool IsSetParallelizationFactor()
         {
             return this._parallelizationFactor.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Queues. 
+        /// <para>
+        ///  (MQ) The name of the Amazon MQ broker destination queue to consume. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> Queues
+        {
+            get { return this._queues; }
+            set { this._queues = value; }
+        }
+
+        // Check to see if Queues property is set
+        internal bool IsSetQueues()
+        {
+            return this._queues != null && this._queues.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfManagedEventSource. 
+        /// <para>
+        /// The Self-Managed Apache Kafka cluster for your event source.
+        /// </para>
+        /// </summary>
+        public SelfManagedEventSource SelfManagedEventSource
+        {
+            get { return this._selfManagedEventSource; }
+            set { this._selfManagedEventSource = value; }
+        }
+
+        // Check to see if SelfManagedEventSource property is set
+        internal bool IsSetSelfManagedEventSource()
+        {
+            return this._selfManagedEventSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceAccessConfigurations. 
+        /// <para>
+        /// An array of the authentication protocol, or the VPC components to secure your event
+        /// source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=22)]
+        public List<SourceAccessConfiguration> SourceAccessConfigurations
+        {
+            get { return this._sourceAccessConfigurations; }
+            set { this._sourceAccessConfigurations = value; }
+        }
+
+        // Check to see if SourceAccessConfigurations property is set
+        internal bool IsSetSourceAccessConfigurations()
+        {
+            return this._sourceAccessConfigurations != null && this._sourceAccessConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartingPosition. 
+        /// <para>
+        /// The position in a stream from which to start reading. Required for Amazon Kinesis,
+        /// Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only
+        /// supported for Amazon Kinesis streams.
+        /// </para>
+        /// </summary>
+        public EventSourcePosition StartingPosition
+        {
+            get { return this._startingPosition; }
+            set { this._startingPosition = value; }
+        }
+
+        // Check to see if StartingPosition property is set
+        internal bool IsSetStartingPosition()
+        {
+            return this._startingPosition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartingPositionTimestamp. 
+        /// <para>
+        /// With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from
+        /// which to start reading.
+        /// </para>
+        /// </summary>
+        public DateTime StartingPositionTimestamp
+        {
+            get { return this._startingPositionTimestamp.GetValueOrDefault(); }
+            set { this._startingPositionTimestamp = value; }
+        }
+
+        // Check to see if StartingPositionTimestamp property is set
+        internal bool IsSetStartingPositionTimestamp()
+        {
+            return this._startingPositionTimestamp.HasValue; 
         }
 
         /// <summary>
@@ -296,7 +423,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Topics. 
         /// <para>
-        ///  (MSK) The name of the Kafka topic. 
+        /// The name of the Kafka topic.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -310,6 +437,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetTopics()
         {
             return this._topics != null && this._topics.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TumblingWindowInSeconds. 
+        /// <para>
+        /// (Streams) The duration of a processing window in seconds. The range is between 1 second
+        /// up to 15 minutes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=900)]
+        public int TumblingWindowInSeconds
+        {
+            get { return this._tumblingWindowInSeconds.GetValueOrDefault(); }
+            set { this._tumblingWindowInSeconds = value; }
+        }
+
+        // Check to see if TumblingWindowInSeconds property is set
+        internal bool IsSetTumblingWindowInSeconds()
+        {
+            return this._tumblingWindowInSeconds.HasValue; 
         }
 
         /// <summary>

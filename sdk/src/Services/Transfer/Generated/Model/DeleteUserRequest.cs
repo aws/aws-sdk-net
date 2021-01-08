@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,8 +50,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for a file transfer protocol-enabled server instance
-        /// that has the user assigned to it.
+        /// A system-assigned unique identifier for a server instance that has the user assigned
+        /// to it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
@@ -70,8 +70,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// A unique string that identifies a user that is being deleted from a file transfer
-        /// protocol-enabled server.
+        /// A unique string that identifies a user that is being deleted from a server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=100)]

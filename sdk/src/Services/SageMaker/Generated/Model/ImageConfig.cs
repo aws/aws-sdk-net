@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Specifies whether the model container is in Amazon ECR or a private Docker registry
-    /// in your Amazon Virtual Private Cloud (VPC).
+    /// accessible from your Amazon Virtual Private Cloud (VPC).
     /// </summary>
     public partial class ImageConfig
     {
@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VPC</code> - The model image is hosted in a private Docker registry in your
+        ///  <code>Vpc</code> - The model image is hosted in a private Docker registry in your
         /// VPC.
         /// </para>
         ///  </li> </ul>

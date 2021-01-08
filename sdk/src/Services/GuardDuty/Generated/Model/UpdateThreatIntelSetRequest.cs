@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -82,7 +82,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The updated URI of the file that contains the ThreateIntelSet. For example: https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+        /// The updated URI of the file that contains the ThreateIntelSet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

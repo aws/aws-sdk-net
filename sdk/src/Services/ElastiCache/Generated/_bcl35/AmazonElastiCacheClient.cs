@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1083,6 +1083,12 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidSubnetException">
         /// An invalid subnet identifier was specified.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.SubnetNotAllowedException">
+        /// At least one subnet ID does not match the other subnet IDs. This mismatch typically
+        /// occurs when a user sets one subnet ID to a regional Availability Zone and a different
+        /// one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed
+        /// on this service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup">REST API Reference for CreateCacheSubnetGroup Operation</seealso>
         public virtual CreateCacheSubnetGroupResponse CreateCacheSubnetGroup(CreateCacheSubnetGroupRequest request)
         {
@@ -1135,7 +1141,7 @@ namespace Amazon.ElastiCache
         /// Global Datastore for Redis offers fully managed, fast, reliable and secure cross-region
         /// replication. Using Global Datastore for Redis, you can create cross-region read replica
         /// clusters for ElastiCache for Redis to enable low-latency reads and disaster recovery
-        /// across regions. For more information, see <a href="/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters.html">Replication
+        /// across regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html">Replication
         /// Across Regions Using Global Datastore</a>. 
         /// 
         ///  <ul> <li> 
@@ -1294,6 +1300,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
+        /// The user group is not in an active state.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
         /// </exception>
@@ -1316,6 +1325,9 @@ namespace Amazon.ElastiCache
         /// The request cannot be processed because it would cause the resource to have more than
         /// the allowed number of tags. The maximum number of tags permitted on a resource is
         /// 50.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">REST API Reference for CreateReplicationGroup Operation</seealso>
         public virtual CreateReplicationGroupResponse CreateReplicationGroup(CreateReplicationGroupRequest request)
@@ -1460,6 +1472,151 @@ namespace Amazon.ElastiCache
         public virtual CreateSnapshotResponse EndCreateSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSnapshotResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateUser
+
+        /// <summary>
+        /// For Redis engine version 6.x onwards: Creates a Redis user. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// Role Based Access Control (RBAC)</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
+        /// 
+        /// <returns>The response from the CreateUser service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.DuplicateUserNameException">
+        /// A user with this username already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserAlreadyExistsException">
+        /// A user with this ID already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserQuotaExceededException">
+        /// The quota of users has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        public virtual CreateUserResponse CreateUser(CreateUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUser operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        public virtual IAsyncResult BeginCreateUser(CreateUserRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUser.</param>
+        /// 
+        /// <returns>Returns a  CreateUserResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        public virtual CreateUserResponse EndCreateUser(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateUserResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateUserGroup
+
+        /// <summary>
+        /// For Redis engine version 6.x onwards: Creates a Redis user group. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// Role Based Access Control (RBAC)</a>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateUserGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.DefaultUserRequiredException">
+        /// You must add default user to a user group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.DuplicateUserNameException">
+        /// A user with this username already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupAlreadyExistsException">
+        /// The user group with this ID already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupQuotaExceededException">
+        /// The number of users exceeds the user group limit.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUserGroup">REST API Reference for CreateUserGroup Operation</seealso>
+        public virtual CreateUserGroupResponse CreateUserGroup(CreateUserGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUserGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserGroup operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUserGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUserGroup">REST API Reference for CreateUserGroup Operation</seealso>
+        public virtual IAsyncResult BeginCreateUserGroup(CreateUserGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateUserGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUserGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateUserGroupResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUserGroup">REST API Reference for CreateUserGroup Operation</seealso>
+        public virtual CreateUserGroupResponse EndCreateUserGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateUserGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -2212,6 +2369,141 @@ namespace Amazon.ElastiCache
         public virtual DeleteSnapshotResponse EndDeleteSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSnapshotResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteUser
+
+        /// <summary>
+        /// For Redis engine version 6.x onwards: Deletes a user. The user will be removed from
+        /// all user groups and in turn removed from all replication groups. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// Role Based Access Control (RBAC)</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUser service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.DefaultUserAssociatedToUserGroupException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserStateException">
+        /// The user is not in active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUser operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        public virtual IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUser.</param>
+        /// 
+        /// <returns>Returns a  DeleteUserResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        public virtual DeleteUserResponse EndDeleteUser(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteUserResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteUserGroup
+
+        /// <summary>
+        /// For Redis engine version 6.x onwards: Deletes a ser group. The user group must first
+        /// be disassociated from the replcation group before it can be deleted. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// Role Based Access Control (RBAC)</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUserGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
+        /// The user group is not in an active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUserGroup">REST API Reference for DeleteUserGroup Operation</seealso>
+        public virtual DeleteUserGroupResponse DeleteUserGroup(DeleteUserGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserGroup operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUserGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUserGroup">REST API Reference for DeleteUserGroup Operation</seealso>
+        public virtual IAsyncResult BeginDeleteUserGroup(DeleteUserGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUserGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteUserGroupResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUserGroup">REST API Reference for DeleteUserGroup Operation</seealso>
+        public virtual DeleteUserGroupResponse EndDeleteUserGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteUserGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -3452,6 +3744,126 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  DescribeUserGroups
+
+        /// <summary>
+        /// Returns a list of user groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeUserGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUserGroups">REST API Reference for DescribeUserGroups Operation</seealso>
+        public virtual DescribeUserGroupsResponse DescribeUserGroups(DescribeUserGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUserGroupsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUserGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserGroups operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeUserGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUserGroups">REST API Reference for DescribeUserGroups Operation</seealso>
+        public virtual IAsyncResult BeginDescribeUserGroups(DescribeUserGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeUserGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeUserGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribeUserGroupsResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUserGroups">REST API Reference for DescribeUserGroups Operation</seealso>
+        public virtual DescribeUserGroupsResponse EndDescribeUserGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeUserGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeUsers
+
+        /// <summary>
+        /// Returns a list of users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsers service method.</param>
+        /// 
+        /// <returns>The response from the DescribeUsers service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
+        public virtual DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUsersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUsersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsers operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeUsers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
+        public virtual IAsyncResult BeginDescribeUsers(DescribeUsersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUsersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeUsers.</param>
+        /// 
+        /// <returns>Returns a  DescribeUsersResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
+        public virtual DescribeUsersResponse EndDescribeUsers(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeUsersResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateGlobalReplicationGroup
 
         /// <summary>
@@ -4086,6 +4498,12 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.SubnetInUseException">
         /// The requested subnet is being used by another cache subnet group.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.SubnetNotAllowedException">
+        /// At least one subnet ID does not match the other subnet IDs. This mismatch typically
+        /// occurs when a user sets one subnet ID to a regional Availability Zone and a different
+        /// one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed
+        /// on this service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup">REST API Reference for ModifyCacheSubnetGroup Operation</seealso>
         public virtual ModifyCacheSubnetGroupResponse ModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request)
         {
@@ -4254,6 +4672,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <code>available</code> state.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
+        /// The user group is not in an active state.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
         /// </exception>
@@ -4267,6 +4688,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">REST API Reference for ModifyReplicationGroup Operation</seealso>
         public virtual ModifyReplicationGroupResponse ModifyReplicationGroup(ModifyReplicationGroupRequest request)
@@ -4399,6 +4823,147 @@ namespace Amazon.ElastiCache
         public virtual ModifyReplicationGroupShardConfigurationResponse EndModifyReplicationGroupShardConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyReplicationGroupShardConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyUser
+
+        /// <summary>
+        /// Changes user password(s) and/or access string.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyUser service method.</param>
+        /// 
+        /// <returns>The response from the ModifyUser service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserStateException">
+        /// The user is not in active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUser">REST API Reference for ModifyUser Operation</seealso>
+        public virtual ModifyUserResponse ModifyUser(ModifyUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyUserResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyUserResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyUser operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyUser
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUser">REST API Reference for ModifyUser Operation</seealso>
+        public virtual IAsyncResult BeginModifyUser(ModifyUserRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyUserResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyUser operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyUser.</param>
+        /// 
+        /// <returns>Returns a  ModifyUserResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUser">REST API Reference for ModifyUser Operation</seealso>
+        public virtual ModifyUserResponse EndModifyUser(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyUserResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyUserGroup
+
+        /// <summary>
+        /// Changes the list of users that belong to the user group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyUserGroup service method.</param>
+        /// 
+        /// <returns>The response from the ModifyUserGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.DefaultUserRequiredException">
+        /// You must add default user to a user group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.DuplicateUserNameException">
+        /// A user with this username already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
+        /// The user group is not in an active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUserGroup">REST API Reference for ModifyUserGroup Operation</seealso>
+        public virtual ModifyUserGroupResponse ModifyUserGroup(ModifyUserGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyUserGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyUserGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyUserGroupResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyUserGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyUserGroup operation on AmazonElastiCacheClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyUserGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUserGroup">REST API Reference for ModifyUserGroup Operation</seealso>
+        public virtual IAsyncResult BeginModifyUserGroup(ModifyUserGroupRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyUserGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyUserGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyUserGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyUserGroup.</param>
+        /// 
+        /// <returns>Returns a  ModifyUserGroupResult from ElastiCache.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUserGroup">REST API Reference for ModifyUserGroup Operation</seealso>
+        public virtual ModifyUserGroupResponse EndModifyUserGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyUserGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -4939,12 +5504,12 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cache cluster message: <code>Failover from master node &lt;primary-node-id&gt; to
+        /// Cache cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
         /// replica node &lt;node-id&gt; completed</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replication group message: <code>Failover from master node &lt;primary-node-id&gt;
+        /// Replication group message: <code>Failover from primary node &lt;primary-node-id&gt;
         /// to replica node &lt;node-id&gt; completed</code> 
         /// </para>
         ///  </li> <li> 

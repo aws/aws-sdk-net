@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
 
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.S3.Util;
 
 #pragma warning disable 1591
 
@@ -36,6 +37,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.Suppress404Exceptions = true;
             request.HttpMethod = "GET";
+
+            if (getInventoryConfigurationRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(getInventoryConfigurationRequest.ExpectedBucketOwner));
 
             if (string.IsNullOrEmpty(getInventoryConfigurationRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketInventoryConfigurationRequest.BucketName");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -956,6 +956,10 @@ namespace Amazon.Route53
         /// Constant CNAME for RRType
         /// </summary>
         public static readonly RRType CNAME = new RRType("CNAME");
+        /// <summary>
+        /// Constant DS for RRType
+        /// </summary>
+        public static readonly RRType DS = new RRType("DS");
         /// <summary>
         /// Constant MX for RRType
         /// </summary>

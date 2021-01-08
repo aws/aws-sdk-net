@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,33 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PolicyDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetActions())
+            {
+                context.Writer.WritePropertyName("Actions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectActionsListValue in requestObject.Actions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ActionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectActionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetEventSource())
+            {
+                context.Writer.WritePropertyName("EventSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EventSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.EventSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");

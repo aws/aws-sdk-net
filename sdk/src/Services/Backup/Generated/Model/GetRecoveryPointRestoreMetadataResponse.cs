@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -76,7 +76,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreMetadata. 
         /// <para>
-        /// The set of metadata key-value pairs that describes the original configuration of the
+        /// The set of metadata key-value pairs that describe the original configuration of the
         /// backed-up resource. These values vary depending on the service that is being restored.
         /// </para>
         /// </summary>

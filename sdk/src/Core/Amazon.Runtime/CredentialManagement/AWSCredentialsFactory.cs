@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -314,11 +314,13 @@ namespace Amazon.Runtime.CredentialManagement
                     credentials = new EnvironmentVariablesAWSCredentials();
                     break;
                 case CredentialSourceType.EcsContainer:
-                    string uri = Environment.GetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
-                    if (string.IsNullOrEmpty(uri))
+                    var relativeUri = Environment.GetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsURIEnvVariable);
+                    var fullUri = Environment.GetEnvironmentVariable(ECSTaskCredentials.ContainerCredentialsFullURIEnvVariable);
+
+                    if (string.IsNullOrEmpty(relativeUri) && string.IsNullOrEmpty(fullUri))
                     {
-                        return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
-                            "Container environment variable {0} is not set.", ECSTaskCredentials.ContainerCredentialsURIEnvVariable), null, throwIfInvalid);
+                        return ThrowOrReturnNull($"Cannot fetch credentials from container - neither {ECSTaskCredentials.ContainerCredentialsURIEnvVariable} or {ECSTaskCredentials.ContainerCredentialsFullURIEnvVariable}" +
+                                                 " environment variables are set.", null, throwIfInvalid);
                     }
 
                     credentials = new ECSTaskCredentials(null);

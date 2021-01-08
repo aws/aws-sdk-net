@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,6 +55,117 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("CreateAccessPoint", request, internalRequest, service_model);            
 
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateAccessPointResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateAccessPointResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void CreateBucketMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateBucket");
+
+            var request = InstantiateClassGenerator.Execute<CreateBucketRequest>();
+            var marshaller = new CreateBucketRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateBucket", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateBucketResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateBucketResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void CreateBucket_BucketAlreadyExistsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateBucket");
+
+            var request = InstantiateClassGenerator.Execute<CreateBucketRequest>();
+            var marshaller = new CreateBucketRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateBucket", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BucketAlreadyExistsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateBucketResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void CreateBucket_BucketAlreadyOwnedByYouExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateBucket");
+
+            var request = InstantiateClassGenerator.Execute<CreateBucketRequest>();
+            var marshaller = new CreateBucketRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateBucket", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BucketAlreadyOwnedByYouException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"Location","Location_Value"},
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                }
+            };
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateBucketResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
@@ -79,7 +190,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = CreateJobResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -247,6 +359,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("S3Control")]
+        public void DeleteBucketMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteBucket");
+
+            var request = InstantiateClassGenerator.Execute<DeleteBucketRequest>();
+            var marshaller = new DeleteBucketRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteBucket", request, internalRequest, service_model);            
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void DeleteBucketLifecycleConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteBucketLifecycleConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteBucketLifecycleConfigurationRequest>();
+            var marshaller = new DeleteBucketLifecycleConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteBucketLifecycleConfiguration", request, internalRequest, service_model);            
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void DeleteBucketPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteBucketPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteBucketPolicyRequest>();
+            var marshaller = new DeleteBucketPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteBucketPolicy", request, internalRequest, service_model);            
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void DeleteBucketTaggingMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteBucketTagging");
+
+            var request = InstantiateClassGenerator.Execute<DeleteBucketTaggingRequest>();
+            var marshaller = new DeleteBucketTaggingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteBucketTagging", request, internalRequest, service_model);            
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
         public void DeleteJobTaggingMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteJobTagging");
@@ -265,7 +441,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DeleteJobTaggingResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -386,6 +563,53 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("S3Control")]
+        public void DeleteStorageLensConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteStorageLensConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteStorageLensConfigurationRequest>();
+            var marshaller = new DeleteStorageLensConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteStorageLensConfiguration", request, internalRequest, service_model);            
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void DeleteStorageLensConfigurationTaggingMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteStorageLensConfigurationTagging");
+
+            var request = InstantiateClassGenerator.Execute<DeleteStorageLensConfigurationTaggingRequest>();
+            var marshaller = new DeleteStorageLensConfigurationTaggingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteStorageLensConfigurationTagging", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteStorageLensConfigurationTaggingResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
         public void DescribeJobMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeJob");
@@ -404,7 +628,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = DescribeJobResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -558,7 +783,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetAccessPointResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -588,7 +814,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetAccessPointPolicyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -618,11 +845,136 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetAccessPointPolicyStatusResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetAccessPointPolicyStatusResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void GetBucketMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetBucket");
+
+            var request = InstantiateClassGenerator.Execute<GetBucketRequest>();
+            var marshaller = new GetBucketRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetBucket", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetBucketResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetBucketResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void GetBucketLifecycleConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetBucketLifecycleConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetBucketLifecycleConfigurationRequest>();
+            var marshaller = new GetBucketLifecycleConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetBucketLifecycleConfiguration", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetBucketLifecycleConfigurationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetBucketLifecycleConfigurationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void GetBucketPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetBucketPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetBucketPolicyRequest>();
+            var marshaller = new GetBucketPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetBucketPolicy", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetBucketPolicyResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void GetBucketTaggingMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetBucketTagging");
+
+            var request = InstantiateClassGenerator.Execute<GetBucketTaggingRequest>();
+            var marshaller = new GetBucketTaggingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetBucketTagging", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetBucketTaggingResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -648,7 +1000,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetJobTaggingResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -771,7 +1124,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -814,6 +1168,68 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("S3Control")]
+        public void GetStorageLensConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetStorageLensConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetStorageLensConfigurationRequest>();
+            var marshaller = new GetStorageLensConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetStorageLensConfiguration", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetStorageLensConfigurationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetStorageLensConfigurationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void GetStorageLensConfigurationTaggingMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetStorageLensConfigurationTagging");
+
+            var request = InstantiateClassGenerator.Execute<GetStorageLensConfigurationTaggingRequest>();
+            var marshaller = new GetStorageLensConfigurationTaggingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetStorageLensConfigurationTagging", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetStorageLensConfigurationTaggingResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
         public void ListAccessPointsMarshallTest()
         {
             var operation = service_model.FindOperation("ListAccessPoints");
@@ -832,7 +1248,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListAccessPointsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -862,7 +1279,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = ListJobsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -967,6 +1385,68 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("S3Control")]
+        public void ListRegionalBucketsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListRegionalBuckets");
+
+            var request = InstantiateClassGenerator.Execute<ListRegionalBucketsRequest>();
+            var marshaller = new ListRegionalBucketsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListRegionalBuckets", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListRegionalBucketsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListRegionalBucketsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void ListStorageLensConfigurationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListStorageLensConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<ListStorageLensConfigurationsRequest>();
+            var marshaller = new ListStorageLensConfigurationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListStorageLensConfigurations", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListStorageLensConfigurationsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListStorageLensConfigurationsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
         public void PutAccessPointPolicyMarshallTest()
         {
             var operation = service_model.FindOperation("PutAccessPointPolicy");
@@ -976,6 +1456,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("PutAccessPointPolicy", request, internalRequest, service_model);            
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void PutBucketLifecycleConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutBucketLifecycleConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<PutBucketLifecycleConfigurationRequest>();
+            var marshaller = new PutBucketLifecycleConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutBucketLifecycleConfiguration", request, internalRequest, service_model);            
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void PutBucketPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutBucketPolicy");
+
+            var request = InstantiateClassGenerator.Execute<PutBucketPolicyRequest>();
+            var marshaller = new PutBucketPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutBucketPolicy", request, internalRequest, service_model);            
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void PutBucketTaggingMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutBucketTagging");
+
+            var request = InstantiateClassGenerator.Execute<PutBucketTaggingRequest>();
+            var marshaller = new PutBucketTaggingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutBucketTagging", request, internalRequest, service_model);            
 
         }
 
@@ -1001,7 +1529,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = PutJobTaggingResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -1153,6 +1682,53 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("S3Control")]
+        public void PutStorageLensConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutStorageLensConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<PutStorageLensConfigurationRequest>();
+            var marshaller = new PutStorageLensConfigurationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutStorageLensConfiguration", request, internalRequest, service_model);            
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void PutStorageLensConfigurationTaggingMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutStorageLensConfigurationTagging");
+
+            var request = InstantiateClassGenerator.Execute<PutStorageLensConfigurationTaggingRequest>();
+            var marshaller = new PutStorageLensConfigurationTaggingRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutStorageLensConfigurationTagging", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutStorageLensConfigurationTaggingResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
         public void UpdateJobPriorityMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateJobPriority");
@@ -1171,7 +1747,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateJobPriorityResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
@@ -1325,7 +1902,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                 }
             };
             
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = UpdateJobStatusResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)

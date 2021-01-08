@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,12 +32,6 @@ namespace Amazon.ConfigService.Model
     /// Container for the parameters to the DescribeOrganizationConformancePacks operation.
     /// Returns a list of organization conformance packs. 
     /// 
-    ///  
-    /// <para>
-    /// Only a master account and a delegated administrator account can call this API. When
-    /// calling this API with a delegated administrator, you must ensure AWS Organizations
-    /// <code>ListDelegatedAdministrator</code> permissions are added.
-    /// </para>
     ///  <note> 
     /// <para>
     /// When you specify the limit and the next token, you receive a paginated response. 

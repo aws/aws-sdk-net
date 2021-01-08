@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -80,6 +80,10 @@ namespace Amazon.ManagedBlockchain
     public class Framework : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ETHEREUM for Framework
+        /// </summary>
+        public static readonly Framework ETHEREUM = new Framework("ETHEREUM");
         /// <summary>
         /// Constant HYPERLEDGER_FABRIC for Framework
         /// </summary>
@@ -341,6 +345,10 @@ namespace Amazon.ManagedBlockchain
         /// </summary>
         public static readonly NodeStatus FAILED = new NodeStatus("FAILED");
         /// <summary>
+        /// Constant UNHEALTHY for NodeStatus
+        /// </summary>
+        public static readonly NodeStatus UNHEALTHY = new NodeStatus("UNHEALTHY");
+        /// <summary>
         /// Constant UPDATING for NodeStatus
         /// </summary>
         public static readonly NodeStatus UPDATING = new NodeStatus("UPDATING");
@@ -436,6 +444,56 @@ namespace Amazon.ManagedBlockchain
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProposalStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StateDBType.
+    /// </summary>
+    public class StateDBType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CouchDB for StateDBType
+        /// </summary>
+        public static readonly StateDBType CouchDB = new StateDBType("CouchDB");
+        /// <summary>
+        /// Constant LevelDB for StateDBType
+        /// </summary>
+        public static readonly StateDBType LevelDB = new StateDBType("LevelDB");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StateDBType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StateDBType FindValue(string value)
+        {
+            return FindValue<StateDBType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StateDBType(string value)
         {
             return FindValue(value);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model
     /// <para>
     /// CloudFront sends a request when it can’t find an object in its cache that matches
     /// the request. If you want to send values to the origin and also include them in the
-    /// cache key, use <code>CreateCachePolicy</code>.
+    /// cache key, use <code>CachePolicy</code>.
     /// </para>
     /// </summary>
     public partial class OriginRequestPolicy

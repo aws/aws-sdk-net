@@ -181,8 +181,8 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DeregisterTypeRequest.TypeName</property>
     <min>10</min>
-    <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <max>204</max>
+    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}(::MODULE){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DeregisterTypeRequest.VersionId</property>
@@ -236,6 +236,16 @@
     <property>Amazon.CloudFormation.Model.DescribeChangeSetResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeChangeSetResponse.ParentChangeSetId</property>
+    <min>1</min>
+    <pattern>arn:[-a-zA-Z0-9:/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.DescribeChangeSetResponse.RootChangeSetId</property>
+    <min>1</min>
+    <pattern>arn:[-a-zA-Z0-9:/]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeStackDriftDetectionStatusRequest.StackDriftDetectionId</property>
@@ -309,8 +319,8 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeTypeRequest.TypeName</property>
     <min>10</min>
-    <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <max>204</max>
+    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}(::MODULE){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeTypeRequest.VersionId</property>
@@ -356,8 +366,8 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeTypeResponse.TypeName</property>
     <min>10</min>
-    <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <max>204</max>
+    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}(::MODULE){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.DescribeTypeRegistrationRequest.RegistrationToken</property>
@@ -622,8 +632,8 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ListTypeRegistrationsRequest.TypeName</property>
     <min>10</min>
-    <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <max>204</max>
+    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}(::MODULE){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ListTypeRegistrationsResponse.NextToken</property>
@@ -663,8 +673,8 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ListTypeVersionsRequest.TypeName</property>
     <min>10</min>
-    <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <max>204</max>
+    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}(::MODULE){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ListTypeVersionsResponse.NextToken</property>
@@ -711,8 +721,8 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.RegisterTypeRequest.TypeName</property>
     <min>10</min>
-    <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <max>204</max>
+    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}(::MODULE){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.RegisterTypeResponse.RegistrationToken</property>
@@ -738,8 +748,8 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.SetTypeDefaultVersionRequest.TypeName</property>
     <min>10</min>
-    <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <max>204</max>
+    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}(::MODULE){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.SetTypeDefaultVersionRequest.VersionId</property>
@@ -892,6 +902,16 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ChangeSetSummary.ParentChangeSetId</property>
+    <min>1</min>
+    <pattern>arn:[-a-zA-Z0-9:/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ChangeSetSummary.RootChangeSetId</property>
+    <min>1</min>
+    <pattern>arn:[-a-zA-Z0-9:/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.LoggingConfig.LogGroupName</property>
     <min>1</min>
     <max>512</max>
@@ -912,6 +932,11 @@
     <property>Amazon.CloudFormation.Model.ParameterDeclaration.Description</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ResourceChange.ChangeSetId</property>
+    <min>1</min>
+    <pattern>arn:[-a-zA-Z0-9:/]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ResourceChange.ResourceType</property>
@@ -1154,8 +1179,8 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.TypeSummary.TypeName</property>
     <min>10</min>
-    <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <max>204</max>
+    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}(::MODULE){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.TypeVersionSummary.Arn</property>
@@ -1170,8 +1195,8 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.TypeVersionSummary.TypeName</property>
     <min>10</min>
-    <max>196</max>
-    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}</pattern>
+    <max>204</max>
+    <pattern>[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}::[A-Za-z0-9]{2,64}(::MODULE){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.TypeVersionSummary.VersionId</property>

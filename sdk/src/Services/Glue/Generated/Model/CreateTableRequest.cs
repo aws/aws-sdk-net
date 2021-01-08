@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private string _catalogId;
         private string _databaseName;
+        private List<PartitionIndex> _partitionIndexes = new List<PartitionIndex>();
         private TableInput _tableInput;
 
         /// <summary>
@@ -76,6 +77,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PartitionIndexes. 
+        /// <para>
+        /// A list of partition indexes, <code>PartitionIndex</code> structures, to create in
+        /// the table.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=3)]
+        public List<PartitionIndex> PartitionIndexes
+        {
+            get { return this._partitionIndexes; }
+            set { this._partitionIndexes = value; }
+        }
+
+        // Check to see if PartitionIndexes property is set
+        internal bool IsSetPartitionIndexes()
+        {
+            return this._partitionIndexes != null && this._partitionIndexes.Count > 0; 
         }
 
         /// <summary>

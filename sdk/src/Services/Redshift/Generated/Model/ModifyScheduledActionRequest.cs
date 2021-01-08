@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -88,6 +88,7 @@ namespace Amazon.Redshift.Model
         /// this parameter, see <a>ScheduledAction</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string IamRole
         {
             get { return this._iamRole; }
@@ -107,6 +108,7 @@ namespace Amazon.Redshift.Model
         /// more information about this parameter, see <a>ScheduledAction</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Schedule
         {
             get { return this._schedule; }
@@ -125,6 +127,7 @@ namespace Amazon.Redshift.Model
         /// A modified description of the scheduled action. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ScheduledActionDescription
         {
             get { return this._scheduledActionDescription; }
@@ -143,7 +146,7 @@ namespace Amazon.Redshift.Model
         /// The name of the scheduled action to modify. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ScheduledActionName
         {
             get { return this._scheduledActionName; }

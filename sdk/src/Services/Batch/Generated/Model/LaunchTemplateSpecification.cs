@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,19 @@ namespace Amazon.Batch.Model
     /// An object representing a launch template associated with a compute resource. You must
     /// specify either the launch template ID or launch template name in the request, but
     /// not both.
+    /// 
+    ///  
+    /// <para>
+    /// If security groups are specified using both the <code>securityGroupIds</code> parameter
+    /// of <code>CreateComputeEnvironment</code> and the launch template, the values in the
+    /// <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> will
+    /// be used.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// This object isn't applicable to jobs running on Fargate resources.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class LaunchTemplateSpecification
     {
@@ -78,11 +91,17 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version number of the launch template.
+        /// The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.
         /// </para>
         ///  
         /// <para>
-        /// Default: The default version of the launch template.
+        /// If the value is <code>$Latest</code>, the latest version of the launch template is
+        /// used. If the value is <code>$Default</code>, the default version of the launch template
+        /// is used.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>$Default</code>.
         /// </para>
         /// </summary>
         public string Version

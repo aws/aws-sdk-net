@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,14 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// The supported resource type is users.
+    /// The supported resource types are users, routing profiles, quick connects, and contact
+    /// flows.
+    /// </para>
+    ///  
+    /// <para>
+    /// For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon
+    /// Connect Identity-Based Policy Examples</a> in the <i>Amazon Connect Administrator
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonConnectRequest
@@ -67,7 +74,7 @@ namespace Amazon.Connect.Model
         /// One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

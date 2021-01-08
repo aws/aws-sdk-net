@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain network that
-    /// uses Hyperledger Fabric.
+    /// Attributes of Hyperledger Fabric for a peer node on a Hyperledger Fabric network on
+    /// Managed Blockchain.
     /// </summary>
     public partial class NodeFabricAttributes
     {

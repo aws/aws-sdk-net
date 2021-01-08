@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ namespace Amazon.RDS.Model
         private List<CharacterSet> _supportedCharacterSets = new List<CharacterSet>();
         private List<string> _supportedEngineModes = new List<string>();
         private List<string> _supportedFeatureNames = new List<string>();
+        private List<CharacterSet> _supportedNcharCharacterSets = new List<CharacterSet>();
         private List<Timezone> _supportedTimezones = new List<Timezone>();
         private bool? _supportsGlobalDatabases;
         private bool? _supportsLogExportsToCloudwatchLogs;
@@ -205,8 +206,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportedCharacterSets. 
         /// <para>
-        ///  A list of the character sets supported by this engine for the <code>CharacterSetName</code>
-        /// parameter of the <code>CreateDBInstance</code> action. 
+        /// A list of the character sets supported by this engine for the <code>CharacterSetName</code>
+        /// parameter of the <code>CreateDBInstance</code> operation. 
         /// </para>
         /// </summary>
         public List<CharacterSet> SupportedCharacterSets
@@ -226,13 +227,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A list of the supported DB engine modes.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <code>global</code> engine mode only applies for global database clusters created
-        /// with Aurora MySQL version 5.6.10a. For higher Aurora MySQL versions, the clusters
-        /// in a global database use <code>provisioned</code> engine mode. 
-        /// </para>
-        ///  </note>
         /// </summary>
         public List<string> SupportedEngineModes
         {
@@ -268,6 +262,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportedFeatureNames()
         {
             return this._supportedFeatureNames != null && this._supportedFeatureNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedNcharCharacterSets. 
+        /// <para>
+        /// A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+        /// parameter of the <code>CreateDBInstance</code> operation. 
+        /// </para>
+        /// </summary>
+        public List<CharacterSet> SupportedNcharCharacterSets
+        {
+            get { return this._supportedNcharCharacterSets; }
+            set { this._supportedNcharCharacterSets = value; }
+        }
+
+        // Check to see if SupportedNcharCharacterSets property is set
+        internal bool IsSetSupportedNcharCharacterSets()
+        {
+            return this._supportedNcharCharacterSets != null && this._supportedNcharCharacterSets.Count > 0; 
         }
 
         /// <summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MQ.Model
 {
     /// <summary>
-    /// Returns a list of all ActiveMQ users.
+    /// Returns a list of all broker users.
     /// </summary>
     public partial class UserSummary
     {
@@ -37,7 +37,7 @@ namespace Amazon.MQ.Model
         private string _username;
 
         /// <summary>
-        /// Gets and sets the property PendingChange. The type of change pending for the ActiveMQ
+        /// Gets and sets the property PendingChange. The type of change pending for the broker
         /// user.
         /// </summary>
         public ChangeType PendingChange
@@ -53,9 +53,9 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Username. Required. The username of the ActiveMQ user.
-        /// This value can contain only alphanumeric characters, dashes, periods, underscores,
-        /// and tildes (- . _ ~). This value must be 2-100 characters long.
+        /// Gets and sets the property Username. Required. The username of the broker user. This
+        /// value can contain only alphanumeric characters, dashes, periods, underscores, and
+        /// tildes (- . _ ~). This value must be 2-100 characters long.
         /// </summary>
         public string Username
         {

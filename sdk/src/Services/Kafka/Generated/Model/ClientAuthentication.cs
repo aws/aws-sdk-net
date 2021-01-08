@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,7 +33,26 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class ClientAuthentication
     {
+        private Sasl _sasl;
         private Tls _tls;
+
+        /// <summary>
+        /// Gets and sets the property Sasl.             
+        /// <para>
+        /// Details for ClientAuthentication using SASL.
+        /// </para>
+        /// </summary>
+        public Sasl Sasl
+        {
+            get { return this._sasl; }
+            set { this._sasl = value; }
+        }
+
+        // Check to see if Sasl property is set
+        internal bool IsSetSasl()
+        {
+            return this._sasl != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Tls.             

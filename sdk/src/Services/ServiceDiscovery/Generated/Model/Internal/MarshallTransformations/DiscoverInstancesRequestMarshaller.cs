@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,6 +84,20 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("NamespaceName");
                     context.Writer.Write(publicRequest.NamespaceName);
+                }
+
+                if(publicRequest.IsSetOptionalParameters())
+                {
+                    context.Writer.WritePropertyName("OptionalParameters");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestOptionalParametersKvp in publicRequest.OptionalParameters)
+                    {
+                        context.Writer.WritePropertyName(publicRequestOptionalParametersKvp.Key);
+                        var publicRequestOptionalParametersValue = publicRequestOptionalParametersKvp.Value;
+
+                            context.Writer.Write(publicRequestOptionalParametersValue);
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetQueryParameters())

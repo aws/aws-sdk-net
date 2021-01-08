@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,8 +68,8 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of event. This property corresponds to the <code>EVENT_TYPE</code> field
-        /// of the Interactions schema.
+        /// The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code>
+        /// field of your Interactions schema and depends on the types of events you are tracking.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

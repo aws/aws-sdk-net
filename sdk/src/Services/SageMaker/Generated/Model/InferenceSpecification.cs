@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -82,8 +82,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A list of the instance types that are used to generate inferences in real-time.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required for unversioned models, and optional for versioned models.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<string> SupportedRealtimeInferenceInstanceTypes
         {
             get { return this._supportedRealtimeInferenceInstanceTypes; }
@@ -121,8 +124,12 @@ namespace Amazon.SageMaker.Model
         /// A list of the instance types on which a transformation job can be run or on which
         /// an endpoint can be deployed.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required for unversioned models, and optional for versioned models.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public List<string> SupportedTransformInstanceTypes
         {
             get { return this._supportedTransformInstanceTypes; }

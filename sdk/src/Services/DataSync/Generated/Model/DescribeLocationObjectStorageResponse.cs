@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,7 +45,9 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property AccessKey. 
         /// <para>
         /// Optional. The access key is used if credentials are required to access the self-managed
-        /// object storage server.
+        /// object storage server. If your object storage requires a user name and password to
+        /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the
+        /// user name and password, respectively.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=200)]

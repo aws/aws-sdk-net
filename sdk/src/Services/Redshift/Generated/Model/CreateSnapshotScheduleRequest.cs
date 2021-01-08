@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -97,6 +97,7 @@ namespace Amazon.Redshift.Model
         /// The description of the snapshot schedule.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ScheduleDescription
         {
             get { return this._scheduleDescription; }
@@ -116,6 +117,7 @@ namespace Amazon.Redshift.Model
         /// for the identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ScheduleIdentifier
         {
             get { return this._scheduleIdentifier; }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -70,6 +70,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Av1Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("avcIntraSettings", targetDepth))
+                {
+                    var unmarshaller = AvcIntraSettingsUnmarshaller.Instance;
+                    unmarshalledObject.AvcIntraSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("codec", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ProresSettingsUnmarshaller.Instance;
                     unmarshalledObject.ProresSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vc3Settings", targetDepth))
+                {
+                    var unmarshaller = Vc3SettingsUnmarshaller.Instance;
+                    unmarshalledObject.Vc3Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("vp8Settings", targetDepth))

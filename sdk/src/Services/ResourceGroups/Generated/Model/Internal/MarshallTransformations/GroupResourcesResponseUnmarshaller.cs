@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,6 +55,12 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<FailedResource, FailedResourceUnmarshaller>(FailedResourceUnmarshaller.Instance);
                     response.Failed = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Pending", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PendingResource, PendingResourceUnmarshaller>(PendingResourceUnmarshaller.Instance);
+                    response.Pending = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Succeeded", targetDepth))

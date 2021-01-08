@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -75,12 +75,14 @@ namespace Amazon.ECS.Model
         /// <para>
         ///  <code>COMPLETE</code> - This condition validates that a dependent container runs
         /// to completion (exits) before permitting other containers to start. This can be useful
-        /// for nonessential containers that run a script and then exit.
+        /// for nonessential containers that run a script and then exit. This condition cannot
+        /// be set on an essential container.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it
-        /// also requires that the container exits with a <code>zero</code> status.
+        /// also requires that the container exits with a <code>zero</code> status. This condition
+        /// cannot be set on an essential container.
         /// </para>
         ///  </li> <li> 
         /// <para>

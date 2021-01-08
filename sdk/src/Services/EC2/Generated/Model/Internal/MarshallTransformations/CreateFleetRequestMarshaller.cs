@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -203,6 +203,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.SpotOptions.IsSetInstancePoolsToUseCount())
                     {
                         request.Parameters.Add("SpotOptions" + "." + "InstancePoolsToUseCount", StringUtils.FromInt(publicRequest.SpotOptions.InstancePoolsToUseCount));
+                    }
+                    if(publicRequest.SpotOptions.IsSetMaintenanceStrategies())
+                    {
+                        if(publicRequest.SpotOptions.MaintenanceStrategies.IsSetCapacityRebalance())
+                        {
+                            if(publicRequest.SpotOptions.MaintenanceStrategies.CapacityRebalance.IsSetReplacementStrategy())
+                            {
+                                request.Parameters.Add("SpotOptions" + "." + "MaintenanceStrategies" + "." + "CapacityRebalance" + "." + "ReplacementStrategy", StringUtils.FromString(publicRequest.SpotOptions.MaintenanceStrategies.CapacityRebalance.ReplacementStrategy));
+                            }
+                        }
                     }
                     if(publicRequest.SpotOptions.IsSetMaxTotalPrice())
                     {

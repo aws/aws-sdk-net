@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class SubnetMapping
     {
         private string _allocationId;
+        private string _iPv6Address;
         private string _privateIPv4Address;
         private string _subnetId;
 
@@ -54,6 +55,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetAllocationId()
         {
             return this._allocationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IPv6Address. 
+        /// <para>
+        /// [Network Load Balancers] The IPv6 address.
+        /// </para>
+        /// </summary>
+        public string IPv6Address
+        {
+            get { return this._iPv6Address; }
+            set { this._iPv6Address = value; }
+        }
+
+        // Check to see if IPv6Address property is set
+        internal bool IsSetIPv6Address()
+        {
+            return this._iPv6Address != null;
         }
 
         /// <summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -784,11 +784,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// <code>DeleteReportGroup</code>: Deletes a report group. Before you delete a report
-        /// group, you must delete its reports. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a>
-        /// to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a>
-        /// to delete the reports. If you call <code>DeleteReportGroup</code> for a report group
-        /// that contains one or more reports, an exception is thrown.
+        /// Deletes a report group. Before you delete a report group, you must delete its reports.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReportGroup service method.</param>
         /// 
@@ -1053,6 +1049,52 @@ namespace Amazon.CodeBuild
         /// <returns>Returns a  DescribeTestCasesResult from CodeBuild.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeTestCases">REST API Reference for DescribeTestCases Operation</seealso>
         DescribeTestCasesResponse EndDescribeTestCases(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetReportGroupTrend
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReportGroupTrend service method.</param>
+        /// 
+        /// <returns>The response from the GetReportGroupTrend service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetReportGroupTrend">REST API Reference for GetReportGroupTrend Operation</seealso>
+        GetReportGroupTrendResponse GetReportGroupTrend(GetReportGroupTrendRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReportGroupTrend operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReportGroupTrend operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetReportGroupTrend
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetReportGroupTrend">REST API Reference for GetReportGroupTrend Operation</seealso>
+        IAsyncResult BeginGetReportGroupTrend(GetReportGroupTrendRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetReportGroupTrend operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetReportGroupTrend.</param>
+        /// 
+        /// <returns>Returns a  GetReportGroupTrendResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetReportGroupTrend">REST API Reference for GetReportGroupTrend Operation</seealso>
+        GetReportGroupTrendResponse EndGetReportGroupTrend(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1823,7 +1865,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Restarts a batch build.
+        /// Restarts a failed batch build. Only batch builds that have failed can be retried.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetryBuildBatch service method.</param>
         /// 

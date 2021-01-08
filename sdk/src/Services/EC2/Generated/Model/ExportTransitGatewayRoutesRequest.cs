@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,9 +84,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code>
-        /// | <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code>
-        /// | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+        ///  <code>state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -94,7 +92,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>type</code> - The type of route (<code>active</code> | <code>blackhole</code>).
+        ///  <code>type</code> - The type of route (<code>propagated</code> | <code>static</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

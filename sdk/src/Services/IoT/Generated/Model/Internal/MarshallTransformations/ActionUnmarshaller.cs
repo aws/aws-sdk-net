@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -130,6 +130,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.IotSiteWise = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kafka", targetDepth))
+                {
+                    var unmarshaller = KafkaActionUnmarshaller.Instance;
+                    unmarshalledObject.Kafka = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("kinesis", targetDepth))
                 {
                     var unmarshaller = KinesisActionUnmarshaller.Instance;
@@ -176,6 +182,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StepFunctionsActionUnmarshaller.Instance;
                     unmarshalledObject.StepFunctions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("timestream", targetDepth))
+                {
+                    var unmarshaller = TimestreamActionUnmarshaller.Instance;
+                    unmarshalledObject.Timestream = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

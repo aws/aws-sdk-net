@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Attributes for Kerberos configuration when Kerberos authentication is enabled using
     /// a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
-    /// Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+    /// Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.
     /// </summary>
     public partial class KerberosAttributes
     {

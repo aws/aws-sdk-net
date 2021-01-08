@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -70,12 +70,6 @@ namespace Amazon.ECS.Model
         /// Port mappings that are automatically assigned in this way do not count toward the
         /// 100 reserved ports limit of a container instance.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// You cannot expose the same container port for multiple protocols. An error will be
-        /// returned if this is attempted.
-        /// </para>
-        ///  </important>
         /// </summary>
         public int ContainerPort
         {

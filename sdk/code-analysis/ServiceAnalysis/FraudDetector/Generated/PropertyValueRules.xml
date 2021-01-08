@@ -89,6 +89,66 @@
     <pattern>^([1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteEntityTypeRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteEventRequest.EventId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteEventRequest.EventTypeName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteEventTypeRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteExternalModelRequest.ModelEndpoint</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[0-9A-Za-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteLabelRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteModelRequest.ModelId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteModelVersionRequest.ModelId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteModelVersionRequest.ModelVersionNumber</property>
+    <min>3</min>
+    <max>7</max>
+    <pattern>^[1-9][0-9]{0,3}\.[0-9]{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FraudDetector.Model.DeleteOutcomeRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9a-z_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FraudDetector.Model.DescribeDetectorRequest.DetectorId</property>
     <min>1</min>
     <max>64</max>
@@ -357,8 +417,8 @@
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.PutKMSEncryptionKeyRequest.KmsEncryptionKeyArn</property>
     <min>7</min>
-    <max>80</max>
-    <pattern>^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$|DEFAULT|arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key:[a-zA-Z0-9-_]+|[a-zA-Z0-9-_]\S+</pattern>
+    <max>90</max>
+    <pattern>^DEFAULT|arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key\/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.PutLabelRequest.Description</property>
@@ -583,8 +643,8 @@
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.KMSKey.KmsEncryptionKeyArn</property>
     <min>7</min>
-    <max>80</max>
-    <pattern>^\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$|DEFAULT|arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key:[a-zA-Z0-9-_]+|[a-zA-Z0-9-_]\S+</pattern>
+    <max>90</max>
+    <pattern>^DEFAULT|arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key\/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FraudDetector.Model.Label.Arn</property>

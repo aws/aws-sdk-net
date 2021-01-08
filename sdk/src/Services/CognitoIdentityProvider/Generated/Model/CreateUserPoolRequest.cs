@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -173,7 +173,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailVerificationMessage. 
         /// <para>
-        /// A string representing the email verification message.
+        /// A string representing the email verification message. EmailVerificationMessage is
+        /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+        /// is DEVELOPER. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=20000)]
@@ -192,7 +194,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailVerificationSubject. 
         /// <para>
-        /// A string representing the email verification subject.
+        /// A string representing the email verification subject. EmailVerificationSubject is
+        /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a>
+        /// is DEVELOPER. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=140)]

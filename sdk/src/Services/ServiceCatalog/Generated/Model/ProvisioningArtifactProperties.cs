@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -81,12 +81,24 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Info. 
         /// <para>
+        /// Specify the template source with one of the following options, but not both. Keys
+        /// accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]
+        /// </para>
+        ///  
+        /// <para>
         /// The URL of the CloudFormation template in Amazon S3. Specify the URL in JSON format
         /// as follows:
         /// </para>
         ///  
         /// <para>
         ///  <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ImportFromPhysicalId</code>: The physical id of the resource that contains
+        /// the template. Currently only supports CloudFormation stack arn. Specify the physical
+        /// id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
         /// 
         /// </para>
         /// </summary>

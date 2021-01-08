@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// Container for the parameters to the Subscribe operation.
     /// Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email,
     /// or if the endpoint and the topic are not in the same AWS account, the endpoint owner
-    /// must the <code>ConfirmSubscription</code> action to confirm the subscription.
+    /// must run the <code>ConfirmSubscription</code> action to confirm the subscription.
     /// 
     ///  
     /// <para>
@@ -233,7 +233,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Sets whether the response from the <code>Subscribe</code> request includes the subscription
         /// ARN, even if the subscription is not yet confirmed.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
         /// If you set this parameter to <code>true</code>, the response includes the ARN in all
         /// cases, even if the subscription is not yet confirmed. In addition to the ARN for confirmed
@@ -242,7 +242,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
         /// token.
         /// </para>
-        ///  </li> </ul>  
+        ///   
         /// <para>
         /// The default value is <code>false</code>.
         /// </para>

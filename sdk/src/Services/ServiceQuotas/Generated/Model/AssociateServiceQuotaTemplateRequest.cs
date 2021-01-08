@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,11 +30,10 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateServiceQuotaTemplate operation.
-    /// Associates the Service Quotas template with your organization so that when new accounts
-    /// are created in your organization, the template submits increase requests for the specified
-    /// service quotas. Use the Service Quotas template to request an increase for any adjustable
-    /// quota value. After you define the Service Quotas template, use this operation to associate,
-    /// or enable, the template.
+    /// Associates your quota request template with your organization. When a new account
+    /// is created in your organization, the quota increase requests in the template are automatically
+    /// applied to the account. You can add a quota increase request for any adjustable quota
+    /// to your template.
     /// </summary>
     public partial class AssociateServiceQuotaTemplateRequest : AmazonServiceQuotasRequest
     {

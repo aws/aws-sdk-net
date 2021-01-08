@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// this value in <a>ModifyClusterDbRevision</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string DatabaseRevision
         {
             get { return this._databaseRevision; }
@@ -81,6 +82,7 @@ namespace Amazon.Redshift.Model
         /// when it is updated to the corresponding <a>ClusterDbRevision</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Description
         {
             get { return this._description; }

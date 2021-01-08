@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCertificates operation.
-    /// For the specified directory, lists all the certificates registered for a secured LDAP
-    /// connection.
+    /// For the specified directory, lists all the certificates registered for a secure LDAP
+    /// or client certificate authentication.
     /// </summary>
     public partial class ListCertificatesRequest : AmazonDirectoryServiceRequest
     {

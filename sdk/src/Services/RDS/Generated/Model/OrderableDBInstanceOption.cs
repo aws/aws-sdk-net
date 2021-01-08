@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -383,13 +383,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A list of the supported DB engine modes.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <code>global</code> engine mode only applies for global database clusters created
-        /// with Aurora MySQL version 5.6.10a. For higher Aurora MySQL versions, the clusters
-        /// in a global database use <code>provisioned</code> engine mode. 
-        /// </para>
-        ///  </note>
         /// </summary>
         public List<string> SupportedEngineModes
         {

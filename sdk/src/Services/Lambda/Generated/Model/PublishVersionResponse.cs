@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ namespace Amazon.Lambda.Model
         private string _functionArn;
         private string _functionName;
         private string _handler;
+        private ImageConfigResponse _imageConfigResponse;
         private string _kmsKeyArn;
         private string _lastModified;
         private LastUpdateStatus _lastUpdateStatus;
@@ -50,9 +51,12 @@ namespace Amazon.Lambda.Model
         private List<Layer> _layers = new List<Layer>();
         private string _masterArn;
         private int? _memorySize;
+        private PackageType _packageType;
         private string _revisionId;
         private string _role;
         private Runtime _runtime;
+        private string _signingJobArn;
+        private string _signingProfileVersionArn;
         private State _state;
         private string _stateReason;
         private StateReasonCode _stateReasonCode;
@@ -228,6 +232,24 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageConfigResponse. 
+        /// <para>
+        /// The function's image configuration values.
+        /// </para>
+        /// </summary>
+        public ImageConfigResponse ImageConfigResponse
+        {
+            get { return this._imageConfigResponse; }
+            set { this._imageConfigResponse = value; }
+        }
+
+        // Check to see if ImageConfigResponse property is set
+        internal bool IsSetImageConfigResponse()
+        {
+            return this._imageConfigResponse != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
         /// The KMS key that's used to encrypt the function's environment variables. This key
@@ -360,10 +382,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
-        /// The memory that's allocated to the function.
+        /// The amount of memory available to the function at runtime. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=128, Max=3008)]
+        [AWSProperty(Min=128, Max=10240)]
         public int MemorySize
         {
             get { return this._memorySize.GetValueOrDefault(); }
@@ -374,6 +396,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetMemorySize()
         {
             return this._memorySize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PackageType. 
+        /// <para>
+        /// The type of deployment package. Set to <code>Image</code> for container image and
+        /// set <code>Zip</code> for .zip file archive.
+        /// </para>
+        /// </summary>
+        public PackageType PackageType
+        {
+            get { return this._packageType; }
+            set { this._packageType = value; }
+        }
+
+        // Check to see if PackageType property is set
+        internal bool IsSetPackageType()
+        {
+            return this._packageType != null;
         }
 
         /// <summary>
@@ -428,6 +469,42 @@ namespace Amazon.Lambda.Model
         internal bool IsSetRuntime()
         {
             return this._runtime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SigningJobArn. 
+        /// <para>
+        /// The ARN of the signing job.
+        /// </para>
+        /// </summary>
+        public string SigningJobArn
+        {
+            get { return this._signingJobArn; }
+            set { this._signingJobArn = value; }
+        }
+
+        // Check to see if SigningJobArn property is set
+        internal bool IsSetSigningJobArn()
+        {
+            return this._signingJobArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SigningProfileVersionArn. 
+        /// <para>
+        /// The ARN of the signing profile version.
+        /// </para>
+        /// </summary>
+        public string SigningProfileVersionArn
+        {
+            get { return this._signingProfileVersionArn; }
+            set { this._signingProfileVersionArn = value; }
+        }
+
+        // Check to see if SigningProfileVersionArn property is set
+        internal bool IsSetSigningProfileVersionArn()
+        {
+            return this._signingProfileVersionArn != null;
         }
 
         /// <summary>

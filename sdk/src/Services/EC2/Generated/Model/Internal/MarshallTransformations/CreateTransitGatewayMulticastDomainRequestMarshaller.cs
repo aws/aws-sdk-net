@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -58,6 +58,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetOptions())
+                {
+                    if(publicRequest.Options.IsSetAutoAcceptSharedAssociations())
+                    {
+                        request.Parameters.Add("Options" + "." + "AutoAcceptSharedAssociations", StringUtils.FromString(publicRequest.Options.AutoAcceptSharedAssociations));
+                    }
+                    if(publicRequest.Options.IsSetIgmpv2Support())
+                    {
+                        request.Parameters.Add("Options" + "." + "Igmpv2Support", StringUtils.FromString(publicRequest.Options.Igmpv2Support));
+                    }
+                    if(publicRequest.Options.IsSetStaticSourcesSupport())
+                    {
+                        request.Parameters.Add("Options" + "." + "StaticSourcesSupport", StringUtils.FromString(publicRequest.Options.StaticSourcesSupport));
+                    }
+                }
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     int publicRequestlistValueIndex = 1;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -65,6 +65,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -112,7 +113,7 @@ namespace Amazon.Redshift.Model
         /// The name of a cluster parameter group for which to return details.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ParameterGroupName
         {
             get { return this._parameterGroupName; }
@@ -141,6 +142,7 @@ namespace Amazon.Redshift.Model
         /// Valid Values: <code>user</code> | <code>engine-default</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Source
         {
             get { return this._source; }

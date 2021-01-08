@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,24 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DomainEndpointOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomEndpoint())
+            {
+                context.Writer.WritePropertyName("CustomEndpoint");
+                context.Writer.Write(requestObject.CustomEndpoint);
+            }
+
+            if(requestObject.IsSetCustomEndpointCertificateArn())
+            {
+                context.Writer.WritePropertyName("CustomEndpointCertificateArn");
+                context.Writer.Write(requestObject.CustomEndpointCertificateArn);
+            }
+
+            if(requestObject.IsSetCustomEndpointEnabled())
+            {
+                context.Writer.WritePropertyName("CustomEndpointEnabled");
+                context.Writer.Write(requestObject.CustomEndpointEnabled);
+            }
+
             if(requestObject.IsSetEnforceHTTPS())
             {
                 context.Writer.WritePropertyName("EnforceHTTPS");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,11 +32,12 @@ namespace Amazon.CodeArtifact
     /// Interface for accessing CodeArtifact
     ///
     /// AWS CodeArtifact is a fully managed artifact repository compatible with language-native
-    /// package managers and build tools such as npm, Apache Maven, and pip. You can use CodeArtifact
-    /// to share packages with development teams and pull packages. Packages can be pulled
-    /// from both public and CodeArtifact repositories. You can also create an upstream relationship
-    /// between a CodeArtifact repository and another repository, which effectively merges
-    /// their contents from the point of view of a package manager client. 
+    /// package managers and build tools such as npm, Apache Maven, NuGet, and pip. You can
+    /// use CodeArtifact to share packages with development teams and pull packages. Packages
+    /// can be pulled from both public and CodeArtifact repositories. You can also create
+    /// an upstream relationship between a CodeArtifact repository and another repository,
+    /// which effectively merges their contents from the point of view of a package manager
+    /// client. 
     /// 
     ///  
     /// <para>
@@ -53,8 +54,8 @@ namespace Amazon.CodeArtifact
     /// versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot,
     /// so a single repository can contain packages of any supported type. Each repository
     /// exposes endpoints for fetching and publishing packages using tools like the <b> <code>npm</code>
-    /// </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), and <b> <code>pip</code> </b>.
-    /// You can create up to 100 repositories per AWS account.
+    /// </b> CLI, the <b> <code>NuGet</code> </b> CLI, the Maven CLI (<b> <code>mvn</code>
+    /// </b>), and <b> <code>pip</code> </b>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -86,7 +87,8 @@ namespace Amazon.CodeArtifact
     ///  <b>Package</b>: A <i>package</i> is a bundle of software and the metadata required
     /// to resolve dependencies and install the software. CodeArtifact supports <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>,
     /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>,
-    /// and <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>
+    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>,
+    /// and <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>
     /// package formats.
     /// </para>
     ///  
@@ -243,6 +245,10 @@ namespace Amazon.CodeArtifact
     /// <para>
     ///  <code>maven</code> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>nuget</code> 
+    /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
     ///  <code>GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is
@@ -282,12 +288,24 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>ListTagsForResource</code>: Returns a list of the tags associated with a resource.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>PutDomainPermissionsPolicy</code>: Attaches a resource policy to a domain.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a repository
     /// that specifies permissions to access it. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TagResource</code>: Adds or updates tags for a resource.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UntagResource</code>: Removes a tag from a resource. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -684,10 +702,6 @@ namespace Amazon.CodeArtifact
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
         /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
         /// </exception>
-        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
-        /// The operation did not succeed because the resource requested is not found in the
-        /// service.
-        /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
         /// The operation did not succeed because too many requests are sent to the service.
         /// </exception>
@@ -718,10 +732,6 @@ namespace Amazon.CodeArtifact
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
         /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
-        /// </exception>
-        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
-        /// The operation did not succeed because the resource requested is not found in the
-        /// service.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
         /// The operation did not succeed because too many requests are sent to the service.
@@ -1327,15 +1337,14 @@ namespace Amazon.CodeArtifact
         /// 
         ///  
         /// <para>
-        ///  To view all disposed package versions in a repository, use <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>
-        /// </code> and set the <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
-        /// </code> parameter to <code>Disposed</code>. 
+        ///  To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
+        /// <code>ListPackageVersions</code> </a> and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">
+        /// <code>status</code> </a> parameter to <code>Disposed</code>. 
         /// </para>
         ///  
         /// <para>
-        ///  To view information about a disposed package version, use <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
-        /// </code> and set the <code> <a href="https://docs.aws.amazon.com/API_ListPackageVersions.html#codeartifact-ListPackageVersions-response-status">status</a>
-        /// </code> parameter to <code>Disposed</code>. 
+        ///  To view information about a disposed package version, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
+        /// <code>DescribePackageVersion</code> </a>.. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisposePackageVersions service method.</param>
@@ -1373,15 +1382,14 @@ namespace Amazon.CodeArtifact
         /// 
         ///  
         /// <para>
-        ///  To view all disposed package versions in a repository, use <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>
-        /// </code> and set the <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
-        /// </code> parameter to <code>Disposed</code>. 
+        ///  To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
+        /// <code>ListPackageVersions</code> </a> and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">
+        /// <code>status</code> </a> parameter to <code>Disposed</code>. 
         /// </para>
         ///  
         /// <para>
-        ///  To view information about a disposed package version, use <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
-        /// </code> and set the <code> <a href="https://docs.aws.amazon.com/API_ListPackageVersions.html#codeartifact-ListPackageVersions-response-status">status</a>
-        /// </code> parameter to <code>Disposed</code>. 
+        ///  To view information about a disposed package version, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
+        /// <code>DescribePackageVersion</code> </a>.. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisposePackageVersions service method.</param>
@@ -1419,9 +1427,10 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Generates a temporary authentication token for accessing repositories in the domain.
+        /// Generates a temporary authorization token for accessing repositories in the domain.
         /// This API requires the <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code>
-        /// permissions. 
+        /// permissions. For more information about authorization tokens, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS
+        /// CodeArtifact authentication and tokens</a>. 
         /// 
         ///  <note> 
         /// <para>
@@ -1474,9 +1483,10 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Generates a temporary authentication token for accessing repositories in the domain.
+        /// Generates a temporary authorization token for accessing repositories in the domain.
         /// This API requires the <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code>
-        /// permissions. 
+        /// permissions. For more information about authorization tokens, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS
+        /// CodeArtifact authentication and tokens</a>. 
         /// 
         ///  <note> 
         /// <para>
@@ -1625,6 +1635,9 @@ namespace Amazon.CodeArtifact
         /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
+        /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
         /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
         /// </exception>
@@ -1657,6 +1670,9 @@ namespace Amazon.CodeArtifact
         /// <returns>The response from the GetPackageVersionAsset service method, as returned by CodeArtifact.</returns>
         /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
         /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
         /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
@@ -1776,6 +1792,10 @@ namespace Amazon.CodeArtifact
         /// <para>
         ///  <code>maven</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nuget</code> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRepositoryEndpoint service method.</param>
@@ -1818,6 +1838,10 @@ namespace Amazon.CodeArtifact
         ///  </li> <li> 
         /// <para>
         ///  <code>maven</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nuget</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2367,11 +2391,77 @@ namespace Amazon.CodeArtifact
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
+        /// CodeArtifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
+        /// CodeArtifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutDomainPermissionsPolicy
 
 
         /// <summary>
-        /// Sets a resource policy on a domain that specifies permissions to access it.
+        /// Sets a resource policy on a domain that specifies permissions to access it. 
+        /// 
+        ///  
+        /// <para>
+        ///  When you call <code>PutDomainPermissionsPolicy</code>, the resource policy on the
+        /// domain is ignored when evaluting permissions. This ensures that the owner of a domain
+        /// cannot lock themselves out of the domain, which would prevent them from being able
+        /// to update the resource policy. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDomainPermissionsPolicy service method.</param>
         /// 
@@ -2406,7 +2496,15 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Sets a resource policy on a domain that specifies permissions to access it.
+        /// Sets a resource policy on a domain that specifies permissions to access it. 
+        /// 
+        ///  
+        /// <para>
+        ///  When you call <code>PutDomainPermissionsPolicy</code>, the resource policy on the
+        /// domain is ignored when evaluting permissions. This ensures that the owner of a domain
+        /// cannot lock themselves out of the domain, which would prevent them from being able
+        /// to update the resource policy. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDomainPermissionsPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2448,6 +2546,15 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Sets the resource policy on a repository that specifies permissions to access it.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on
+        /// the repository is ignored when evaluting permissions. This ensures that the owner
+        /// of a repository cannot lock themselves out of the repository, which would prevent
+        /// them from being able to update the resource policy. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRepositoryPermissionsPolicy service method.</param>
         /// 
@@ -2483,6 +2590,15 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Sets the resource policy on a repository that specifies permissions to access it.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on
+        /// the repository is ignored when evaluting permissions. This ensures that the owner
+        /// of a repository cannot lock themselves out of the repository, which would prevent
+        /// them from being able to update the resource policy. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRepositoryPermissionsPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2516,6 +2632,126 @@ namespace Amazon.CodeArtifact
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PutRepositoryPermissionsPolicy">REST API Reference for PutRepositoryPermissionsPolicy Operation</seealso>
         Task<PutRepositoryPermissionsPolicyResponse> PutRepositoryPermissionsPolicyAsync(PutRepositoryPermissionsPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds or updates tags for a resource in AWS CodeArtifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ServiceQuotaExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for
+        /// your account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Adds or updates tags for a resource in AWS CodeArtifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ServiceQuotaExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for
+        /// your account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes tags from a resource in AWS CodeArtifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Removes tags from a resource in AWS CodeArtifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

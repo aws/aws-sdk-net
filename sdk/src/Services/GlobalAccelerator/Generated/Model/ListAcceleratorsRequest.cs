@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,7 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAccelerators operation.
-    /// List the accelerators for an AWS account. To see an AWS CLI example of listing the
-    /// accelerators for an AWS account, scroll down to <b>Example</b>.
+    /// List the accelerators for an AWS account.
     /// </summary>
     public partial class ListAcceleratorsRequest : AmazonGlobalAcceleratorRequest
     {

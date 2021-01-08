@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,12 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// A Sagemaker Groundtruth format manifest file representing the dataset used for testing.
+    /// Sagemaker Groundtruth format manifest files for the input, output and validation datasets
+    /// that are used and created during testing.
     /// </summary>
     public partial class TestingDataResult
     {
         private TestingData _input;
         private TestingData _output;
+        private ValidationData _validation;
 
         /// <summary>
         /// Gets and sets the property Input. 
@@ -71,6 +73,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetOutput()
         {
             return this._output != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Validation. 
+        /// <para>
+        /// The location of the data validation manifest. The data validation manifest is created
+        /// for the test dataset during model training.
+        /// </para>
+        /// </summary>
+        public ValidationData Validation
+        {
+            get { return this._validation; }
+            set { this._validation = value; }
+        }
+
+        // Check to see if Validation property is set
+        internal bool IsSetValidation()
+        {
+            return this._validation != null;
         }
 
     }

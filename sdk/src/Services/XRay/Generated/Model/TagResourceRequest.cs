@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.XRay.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// 
+    /// Applies tags to an existing AWS X-Ray group or sampling rule.
     /// </summary>
     public partial class TagResourceRequest : AmazonXRayRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.XRay.Model
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property ResourceARN.
+        /// Gets and sets the property ResourceARN. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceARN
@@ -54,7 +57,43 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map that contains one or more tag keys and tag values to attach to an X-Ray group
+        /// or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS resources</a> in the <i>AWS General Reference</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following restrictions apply to tags:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum number of user-applied tags per resource: 50
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum tag key length: 128 Unicode characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum tag value length: 256 Unicode characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters:
+        /// _ . : / = + - and @
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tag keys and values are case sensitive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot
+        /// edit or delete system tags.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]
         public List<Tag> Tags

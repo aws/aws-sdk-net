@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Bucket. 
         /// <para>
-        /// The name of the Amazon S3 bucket in which data store data is stored.
+        /// The name of the S3 bucket in which data store data is stored.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]
@@ -59,9 +59,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property KeyPrefix. 
         /// <para>
-        /// [Optional] The prefix used to create the keys of the data store data objects. Each
-        /// object in an Amazon S3 bucket has a key that is its unique identifier within the bucket
-        /// (each object in a bucket has exactly one key). The prefix must end with a '/'.
+        /// Optional. The prefix used to create the keys of the data store data objects. Each
+        /// object in an S3 bucket has a key that is its unique identifier in the bucket. Each
+        /// object in a bucket has exactly one key. The prefix must end with a forward slash (/).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -80,7 +80,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the role which grants AWS IoT Analytics permission to interact with your
+        /// The ARN of the role that grants AWS IoT Analytics permission to interact with your
         /// Amazon S3 resources.
         /// </para>
         /// </summary>

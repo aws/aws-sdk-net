@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -76,6 +76,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("EntitySelectorExpression");
                     context.Writer.Write(publicRequest.EntitySelectorExpression);
+                }
+
+                if(publicRequest.IsSetForecastStatistics())
+                {
+                    context.Writer.WritePropertyName("ForecastStatistics");
+                    context.Writer.Write(publicRequest.ForecastStatistics);
                 }
 
                 if(publicRequest.IsSetGroupARN())

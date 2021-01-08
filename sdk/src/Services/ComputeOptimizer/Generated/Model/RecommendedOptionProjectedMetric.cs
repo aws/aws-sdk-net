@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,6 +30,17 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Describes a projected utilization metric of a recommendation option.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization
+    /// metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code>
+    /// action. Additionally, the <code>Memory</code> metric is returned only for resources
+    /// that have the unified CloudWatch agent installed on them. For more information, see
+    /// <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+    /// Memory Utilization with the CloudWatch Agent</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RecommendedOptionProjectedMetric
     {

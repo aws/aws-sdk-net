@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,13 +46,15 @@ namespace Amazon.Kendra.Model
         private string _documentId;
         private TextWithHighlights _documentTitle;
         private string _documentURI;
+        private string _feedbackToken;
         private string _id;
+        private ScoreAttributes _scoreAttributes;
         private QueryResultType _type;
 
         /// <summary>
         /// Gets and sets the property AdditionalAttributes. 
         /// <para>
-        /// One or more additional attribues associated with the query result.
+        /// One or more additional attributes associated with the query result.
         /// </para>
         /// </summary>
         public List<AdditionalResultAttribute> AdditionalAttributes
@@ -163,6 +165,27 @@ namespace Amazon.Kendra.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FeedbackToken. 
+        /// <para>
+        /// A token that identifies a particular result from a particular query. Use this token
+        /// to provide click-through feedback for the result. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/submitting-feedback.html">
+        /// Submitting feedback </a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string FeedbackToken
+        {
+            get { return this._feedbackToken; }
+            set { this._feedbackToken = value; }
+        }
+
+        // Check to see if FeedbackToken property is set
+        internal bool IsSetFeedbackToken()
+        {
+            return this._feedbackToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique identifier for the query result.
@@ -179,6 +202,33 @@ namespace Amazon.Kendra.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScoreAttributes. 
+        /// <para>
+        /// Indicates the confidence that Amazon Kendra has that a result matches the query that
+        /// you provided. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>,
+        /// <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score
+        /// to determine if a response meets the confidence needed for your application.
+        /// </para>
+        ///  
+        /// <para>
+        /// The field is only set to <code>LOW</code> when the <code>Type</code> field is set
+        /// to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches
+        /// the query.
+        /// </para>
+        /// </summary>
+        public ScoreAttributes ScoreAttributes
+        {
+            get { return this._scoreAttributes; }
+            set { this._scoreAttributes = value; }
+        }
+
+        // Check to see if ScoreAttributes property is set
+        internal bool IsSetScoreAttributes()
+        {
+            return this._scoreAttributes != null;
         }
 
         /// <summary>

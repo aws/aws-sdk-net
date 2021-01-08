@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -83,6 +83,24 @@ namespace Amazon.RDS.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>DescribeValidDBInstanceModifications</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If you call <code>DescribeDBInstances</code>, <code>ProcessorFeature</code> returns
+    /// non-null values only if the following conditions are met:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// You are accessing an Oracle DB instance.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Your Oracle DB instance class supports configuring the number of CPU cores and threads
+    /// per core.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The current number CPU cores and threads is set to a non-default value.
     /// </para>
     ///  </li> </ul> 
     /// <para>

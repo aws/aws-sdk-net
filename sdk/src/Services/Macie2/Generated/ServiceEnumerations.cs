@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -204,6 +204,10 @@ namespace Amazon.Macie2
         /// Constant PUBLIC for EffectivePermission
         /// </summary>
         public static readonly EffectivePermission PUBLIC = new EffectivePermission("PUBLIC");
+        /// <summary>
+        /// Constant UNKNOWN for EffectivePermission
+        /// </summary>
+        public static readonly EffectivePermission UNKNOWN = new EffectivePermission("UNKNOWN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -739,6 +743,114 @@ namespace Amazon.Macie2
 
 
     /// <summary>
+    /// Constants used for properties of type IsDefinedInJob.
+    /// </summary>
+    public class IsDefinedInJob : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FALSE for IsDefinedInJob
+        /// </summary>
+        public static readonly IsDefinedInJob FALSE = new IsDefinedInJob("FALSE");
+        /// <summary>
+        /// Constant TRUE for IsDefinedInJob
+        /// </summary>
+        public static readonly IsDefinedInJob TRUE = new IsDefinedInJob("TRUE");
+        /// <summary>
+        /// Constant UNKNOWN for IsDefinedInJob
+        /// </summary>
+        public static readonly IsDefinedInJob UNKNOWN = new IsDefinedInJob("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IsDefinedInJob(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IsDefinedInJob FindValue(string value)
+        {
+            return FindValue<IsDefinedInJob>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IsDefinedInJob(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IsMonitoredByJob.
+    /// </summary>
+    public class IsMonitoredByJob : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FALSE for IsMonitoredByJob
+        /// </summary>
+        public static readonly IsMonitoredByJob FALSE = new IsMonitoredByJob("FALSE");
+        /// <summary>
+        /// Constant TRUE for IsMonitoredByJob
+        /// </summary>
+        public static readonly IsMonitoredByJob TRUE = new IsMonitoredByJob("TRUE");
+        /// <summary>
+        /// Constant UNKNOWN for IsMonitoredByJob
+        /// </summary>
+        public static readonly IsMonitoredByJob UNKNOWN = new IsMonitoredByJob("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IsMonitoredByJob(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IsMonitoredByJob FindValue(string value)
+        {
+            return FindValue<IsMonitoredByJob>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IsMonitoredByJob(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobComparator.
     /// </summary>
     public class JobComparator : ConstantClass
@@ -834,6 +946,10 @@ namespace Amazon.Macie2
         /// Constant RUNNING for JobStatus
         /// </summary>
         public static readonly JobStatus RUNNING = new JobStatus("RUNNING");
+        /// <summary>
+        /// Constant USER_PAUSED for JobStatus
+        /// </summary>
+        public static readonly JobStatus USER_PAUSED = new JobStatus("USER_PAUSED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -914,6 +1030,56 @@ namespace Amazon.Macie2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JobType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LastRunErrorStatusCode.
+    /// </summary>
+    public class LastRunErrorStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for LastRunErrorStatusCode
+        /// </summary>
+        public static readonly LastRunErrorStatusCode ERROR = new LastRunErrorStatusCode("ERROR");
+        /// <summary>
+        /// Constant NONE for LastRunErrorStatusCode
+        /// </summary>
+        public static readonly LastRunErrorStatusCode NONE = new LastRunErrorStatusCode("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LastRunErrorStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LastRunErrorStatusCode FindValue(string value)
+        {
+            return FindValue<LastRunErrorStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LastRunErrorStatusCode(string value)
         {
             return FindValue(value);
         }
@@ -1410,6 +1576,10 @@ namespace Amazon.Macie2
         /// Constant NOT_SHARED for SharedAccess
         /// </summary>
         public static readonly SharedAccess NOT_SHARED = new SharedAccess("NOT_SHARED");
+        /// <summary>
+        /// Constant UNKNOWN for SharedAccess
+        /// </summary>
+        public static readonly SharedAccess UNKNOWN = new SharedAccess("UNKNOWN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

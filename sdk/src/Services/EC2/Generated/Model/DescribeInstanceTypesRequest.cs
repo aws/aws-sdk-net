@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -47,23 +47,23 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported.
-        /// (<code>true</code> | <code>false</code>)
+        ///  <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported
+        /// (<code>true</code> | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>bare-metal</code> - Indicates whether it is a bare metal instance type. (<code>true</code>
-        /// | <code>false</code>)
+        ///  <code>bare-metal</code> - Indicates whether it is a bare metal instance type (<code>true</code>
+        /// | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>burstable-performance-supported</code> - Indicates whether it is a burstable
-        /// performance instance type. (<code>true</code> | <code>false</code>)
+        /// performance instance type (<code>true</code> | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>current-generation</code> - Indicates whether this instance type is the latest
-        /// generation instance type of an instance family. (<code>true</code> | <code>false</code>)
+        /// generation instance type of an instance family (<code>true</code> | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -72,13 +72,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline
-        /// throughput performance for an EBS-optimized instance type, in MBps.
+        ///  <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output
+        /// storage operations per second for an EBS-optimized instance type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output
-        /// storage operations per second for an EBS-optimized instance type.
+        ///  <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline
+        /// throughput performance for an EBS-optimized instance type, in MB/s.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -87,43 +87,43 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum
-        /// throughput performance for an EBS-optimized instance type, in MBps.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output
         /// storage operations per second for an EBS-optimized instance type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type
-        /// is EBS-optimized. (<code>supported</code> | <code>unsupported</code> | <code>default</code>)
+        ///  <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum
+        /// throughput performance for an EBS-optimized instance type, in MB/s.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported.
-        /// (<code>supported</code> | <code>unsupported</code>)
+        ///  <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type
+        /// is EBS-optimized (<code>supported</code> | <code>unsupported</code> | <code>default</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported
+        /// (<code>supported</code> | <code>unsupported</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express
-        /// (NVMe) is supported or required. (<code>required</code> | <code>supported</code> |
-        /// <code>unsupported</code>)
+        /// (NVMe) is supported for EBS volumes (<code>required</code> | <code>supported</code>
+        /// | <code>unsupported</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>free-tier-eligible</code> - Indicates whether the instance type is eligible
-        /// to use in the free tier. (<code>true</code> | <code>false</code>)
+        /// to use in the free tier (<code>true</code> | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported.
-        /// (<code>true</code> | <code>false</code>)
+        ///  <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported
+        /// (<code>true</code> | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>hypervisor</code> - The hypervisor used. (<code>nitro</code> | <code>xen</code>)
+        ///  <code>hypervisor</code> - The hypervisor (<code>nitro</code> | <code>xen</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -137,7 +137,13 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>instance-storage-info.disk.type</code> - The storage technology for the local
-        /// instance storage disks. (<code>hdd</code> | <code>ssd</code>)
+        /// instance storage disks (<code>hdd</code> | <code>ssd</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile
+        /// memory express (NVMe) is supported for instance store (<code>required</code> | <code>supported</code>)
+        /// | <code>unsupported</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -147,7 +153,12 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>instance-storage-supported</code> - Indicates whether the instance type has
-        /// local instance storage. (<code>true</code> | <code>false</code>)
+        /// local instance storage (<code>true</code> | <code>false</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>instance-type</code> - The instance type (for example <code>c5.2xlarge</code>
+        /// or c5*).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -155,14 +166,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter
-        /// (ENA) is supported or required. (<code>required</code> | <code>supported</code> |
-        /// <code>unsupported</code>)
+        ///  <code>network-info.efa-supported</code> - Indicates whether the instance type supports
+        /// Elastic Fabric Adapter (EFA) (<code>true</code> | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-info.efa-supported</code> - Indicates whether the instance type supports
-        /// Elastic Fabric Adapter (EFA). (<code>true</code> | <code>false</code>)
+        ///  <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter
+        /// (ENA) is supported or required (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -177,7 +187,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports
-        /// IPv6. (<code>true</code> | <code>false</code>)
+        /// IPv6 (<code>true</code> | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -186,12 +196,32 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-info.network-performance</code> - Describes the network performance.
+        ///  <code>network-info.network-performance</code> - The network performance (for example,
+        /// "25 Gigabit").
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code>
+        /// | <code>i386</code> | <code>x86_64</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in
         /// GHz.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+        /// | <code>instance-store</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code>
+        /// | <code>paravirtual</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -207,6 +237,16 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the instance
         /// type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>vcpu-info.valid-cores</code> - The number of cores that can be configured for
+        /// the instance type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>vcpu-info.valid-threads-per-core</code> - The number of threads per core that
+        /// can be configured for the instance type. For example, "1" or "1,2".
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -229,7 +269,7 @@ namespace Amazon.EC2.Model
         /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public List<string> InstanceTypes
         {
             get { return this._instanceTypes; }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -104,6 +104,10 @@ namespace Amazon.S3Control.Model
         /// and the access point doesn't allow access from the public internet. Otherwise, <code>NetworkOrigin</code>
         /// is <code>Internet</code>, and the access point allows access from the public internet,
         /// subject to the access point and bucket access policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// This will always be true for an Amazon S3 on Outposts access point
         /// </para>
         /// </summary>
         public NetworkOrigin NetworkOrigin

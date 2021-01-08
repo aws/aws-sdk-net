@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// The commit diff for the pull request.
+    /// A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+    /// <code>SourceCodeType</code> </a> that specifies the commit diff for a pull request
+    /// on an associated repository.
     /// </summary>
     public partial class CommitDiffSourceCodeType
     {
@@ -39,7 +41,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property DestinationCommit. 
         /// <para>
-        ///  The SHA of the destination commit. 
+        ///  The SHA of the destination commit used to generate a commit diff. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=64)]
@@ -58,7 +60,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property SourceCommit. 
         /// <para>
-        ///  The SHA of the source commit. 
+        ///  The SHA of the source commit used to generate a commit diff. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=64)]

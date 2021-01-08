@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,6 +30,12 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Describes a filter that returns a more specific list of recommendations.
+    /// 
+    ///  
+    /// <para>
+    /// This filter is used with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code>
+    /// actions.
+    /// </para>
     /// </summary>
     public partial class Filter
     {
@@ -43,7 +49,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>Finding</code> to return recommendations with a specific findings classification
+        /// Specify <code>Finding</code> to return recommendations with a specific finding classification
         /// (e.g., <code>Overprovisioned</code>).
         /// </para>
         ///  
@@ -71,21 +77,28 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>name</code> parameter as <code>Finding</code>, and you request
-        /// recommendations for an <i>instance</i>, then the valid values are <code>Underprovisioned</code>,
-        /// <code>Overprovisioned</code>, <code>NotOptimized</code>, or <code>Optimized</code>.
+        /// The valid values for this parameter are as follows, depending on what you specify
+        /// for the <code>name</code> parameter and the resource type that you wish to filter
+        /// results for:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// If you specify the <code>name</code> parameter as <code>Finding</code>, and you request
-        /// recommendations for an <i>Auto Scaling group</i>, then the valid values are <code>Optimized</code>,
-        /// or <code>NotOptimized</code>.
+        /// Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code>
+        /// parameter as <code>Finding</code> and you want to filter results for Auto Scaling
+        /// groups.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// If you specify the <code>name</code> parameter as <code>RecommendationSourceType</code>,
-        /// then the valid values are <code>Ec2Instance</code>, or <code>AutoScalingGroup</code>.
+        /// Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code>
+        /// if you specified the <code>name</code> parameter as <code>Finding</code> and you want
+        /// to filter results for EC2 instances.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified
+        /// the <code>name</code> parameter as <code>RecommendationSourceType</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> Values
         {

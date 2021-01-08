@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,11 +45,27 @@ namespace Amazon.Shield.Model
         }
 
         /// <summary>
+        /// Paginator for ListProtectionGroups operation
+        ///</summary>
+        public IListProtectionGroupsPaginator ListProtectionGroups(ListProtectionGroupsRequest request) 
+        {
+            return new ListProtectionGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProtections operation
         ///</summary>
         public IListProtectionsPaginator ListProtections(ListProtectionsRequest request) 
         {
             return new ListProtectionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListResourcesInProtectionGroup operation
+        ///</summary>
+        public IListResourcesInProtectionGroupPaginator ListResourcesInProtectionGroup(ListResourcesInProtectionGroupRequest request) 
+        {
+            return new ListResourcesInProtectionGroupPaginator(this.client, request);
         }
     }
 }

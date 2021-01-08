@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// When data set contents are created they are delivered to destination specified here.
+    /// When dataset contents are created, they are delivered to destination specified here.
     /// </summary>
     public partial class DatasetContentDeliveryRule
     {
@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The destination to which data set contents are delivered.
+        /// The destination to which dataset contents are delivered.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property EntryName. 
         /// <para>
-        /// The name of the data set content delivery rules entry.
+        /// The name of the dataset content delivery rules entry.
         /// </para>
         /// </summary>
         public string EntryName

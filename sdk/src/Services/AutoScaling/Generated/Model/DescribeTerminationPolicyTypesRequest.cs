@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-    /// Which Auto Scaling Instances Terminate During Scale In</a> in the <i>Amazon EC2 Auto
+    /// which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2 Auto
     /// Scaling User Guide</i>.
     /// </para>
     /// </summary>

@@ -525,19 +525,17 @@
     <property>Amazon.AppMesh.Model.AwsCloudMapInstanceAttribute.Value</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>^([a-zA-Z0-9!-~][ ta-zA-Z0-9!-~]*){0,1}[a-zA-Z0-9!-~]{0,1}$</pattern>
+    <pattern>^([a-zA-Z0-9!-~][  a-zA-Z0-9!-~]*){0,1}[a-zA-Z0-9!-~]{0,1}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.AwsCloudMapServiceDiscovery.NamespaceName</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^.$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.AwsCloudMapServiceDiscovery.ServiceName</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>((?=^.{1,127}$)^([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9])(.([a-zA-Z0-9_][a-zA-Z0-9-_]{0,61}[a-zA-Z0-9_]|[a-zA-Z0-9]))*$)|(^.$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.Duration.Value</property>
@@ -712,6 +710,15 @@
     <max>12</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.OutlierDetection.MaxEjectionPercent</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.OutlierDetection.MaxServerErrors</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.PortMapping.Port</property>
     <min>1</min>
     <max>65535</max>
@@ -802,6 +809,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayGrpcConnectionPool.MaxRequests</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.VirtualGatewayHealthCheckPolicy.HealthyThreshold</property>
     <min>2</min>
     <max>10</max>
@@ -825,6 +836,18 @@
     <property>Amazon.AppMesh.Model.VirtualGatewayHealthCheckPolicy.UnhealthyThreshold</property>
     <min>2</min>
     <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayHttp2ConnectionPool.MaxRequests</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayHttpConnectionPool.MaxConnections</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualGatewayHttpConnectionPool.MaxPendingRequests</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.VirtualGatewayListenerTlsFileCertificate.CertificateChain</property>
@@ -877,6 +900,22 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualNodeGrpcConnectionPool.MaxRequests</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualNodeHttp2ConnectionPool.MaxRequests</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualNodeHttpConnectionPool.MaxConnections</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualNodeHttpConnectionPool.MaxPendingRequests</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppMesh.Model.VirtualNodeRef.MeshName</property>
     <min>1</min>
     <max>255</max>
@@ -900,6 +939,10 @@
     <property>Amazon.AppMesh.Model.VirtualNodeServiceProvider.VirtualNodeName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppMesh.Model.VirtualNodeTcpConnectionPool.MaxConnections</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppMesh.Model.VirtualRouterData.MeshName</property>

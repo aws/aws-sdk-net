@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ namespace Amazon.Organizations.Model
     /// Container for the parameters to the LeaveOrganization operation.
     /// Removes a member account from its parent organization. This version of the operation
     /// is performed by the account that wants to leave. To remove a member account as a user
-    /// in the master account, use <a>RemoveAccountFromOrganization</a> instead.
+    /// in the management account, use <a>RemoveAccountFromOrganization</a> instead.
     /// 
     ///  
     /// <para>
@@ -40,10 +40,10 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  <important> <ul> <li> 
     /// <para>
-    /// The master account in an organization with all features enabled can set service control
-    /// policies (SCPs) that can restrict what administrators of member accounts can do. This
-    /// includes preventing them from successfully calling <code>LeaveOrganization</code>
-    /// and leaving the organization. 
+    /// The management account in an organization with all features enabled can set service
+    /// control policies (SCPs) that can restrict what administrators of member accounts can
+    /// do. This includes preventing them from successfully calling <code>LeaveOrganization</code>
+    /// and leaving the organization.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,6 +81,12 @@ namespace Amazon.Organizations.Model
     /// your account. For more information, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
     /// Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
     /// Management User Guide.</i> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// After the account leaves the organization, all tags that were attached to the account
+    /// object in the organization are deleted. AWS accounts outside of an organization do
+    /// not support tags.
     /// </para>
     ///  </li> </ul> </important>
     /// </summary>

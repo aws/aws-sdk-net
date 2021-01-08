@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -107,7 +107,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Failed
         /// </para>
-        ///  </li> </ul> </li> </ul>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// SessionId: Specify a session ID to return details about the session.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=400)]
         public string Value

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,6 +63,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
                 var marshaller = EFSVolumeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EfsVolumeConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetFsxWindowsFileServerVolumeConfiguration())
+            {
+                context.Writer.WritePropertyName("fsxWindowsFileServerVolumeConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FSxWindowsFileServerVolumeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FsxWindowsFileServerVolumeConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }

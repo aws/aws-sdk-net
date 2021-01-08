@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,8 +34,10 @@ namespace Amazon.EC2.Model
     public partial class LocalGatewayRouteTable
     {
         private string _localGatewayId;
+        private string _localGatewayRouteTableArn;
         private string _localGatewayRouteTableId;
         private string _outpostArn;
+        private string _ownerId;
         private string _state;
         private List<Tag> _tags = new List<Tag>();
 
@@ -55,6 +57,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetLocalGatewayId()
         {
             return this._localGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalGatewayRouteTableArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the local gateway route table.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1283)]
+        public string LocalGatewayRouteTableArn
+        {
+            get { return this._localGatewayRouteTableArn; }
+            set { this._localGatewayRouteTableArn = value; }
+        }
+
+        // Check to see if LocalGatewayRouteTableArn property is set
+        internal bool IsSetLocalGatewayRouteTableArn()
+        {
+            return this._localGatewayRouteTableArn != null;
         }
 
         /// <summary>
@@ -91,6 +112,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetOutpostArn()
         {
             return this._outpostArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The AWS account ID that owns the local gateway route table.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
         }
 
         /// <summary>

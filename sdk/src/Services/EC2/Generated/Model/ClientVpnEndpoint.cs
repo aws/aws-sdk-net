@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private List<AssociatedTargetNetwork> _associatedTargetNetworks = new List<AssociatedTargetNetwork>();
         private List<ClientVpnAuthentication> _authenticationOptions = new List<ClientVpnAuthentication>();
         private string _clientCidrBlock;
+        private ClientConnectResponseOptions _clientConnectOptions;
         private string _clientVpnEndpointId;
         private ConnectionLogResponseOptions _connectionLogOptions;
         private string _creationTime;
@@ -44,6 +45,7 @@ namespace Amazon.EC2.Model
         private string _dnsName;
         private List<string> _dnsServers = new List<string>();
         private List<string> _securityGroupIds = new List<string>();
+        private string _selfServicePortalUrl;
         private string _serverCertificateArn;
         private bool? _splitTunnel;
         private ClientVpnEndpointStatus _status;
@@ -107,6 +109,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientCidrBlock()
         {
             return this._clientCidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientConnectOptions. 
+        /// <para>
+        /// The options for managing connection authorization for new client connections.
+        /// </para>
+        /// </summary>
+        public ClientConnectResponseOptions ClientConnectOptions
+        {
+            get { return this._clientConnectOptions; }
+            set { this._clientConnectOptions = value; }
+        }
+
+        // Check to see if ClientConnectOptions property is set
+        internal bool IsSetClientConnectOptions()
+        {
+            return this._clientConnectOptions != null;
         }
 
         /// <summary>
@@ -251,6 +271,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSecurityGroupIds()
         {
             return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfServicePortalUrl. 
+        /// <para>
+        /// The URL of the self-service portal.
+        /// </para>
+        /// </summary>
+        public string SelfServicePortalUrl
+        {
+            get { return this._selfServicePortalUrl; }
+            set { this._selfServicePortalUrl = value; }
+        }
+
+        // Check to see if SelfServicePortalUrl property is set
+        internal bool IsSetSelfServicePortalUrl()
+        {
+            return this._selfServicePortalUrl != null;
         }
 
         /// <summary>

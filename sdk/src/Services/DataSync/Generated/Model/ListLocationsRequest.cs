@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,7 +46,12 @@ namespace Amazon.DataSync.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Filters.
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>.
+        /// For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code>
+        /// with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.
+        /// </para>
         /// </summary>
         public List<LocationFilter> Filters
         {

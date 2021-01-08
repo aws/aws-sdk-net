@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,15 +60,15 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// After you enable all features in your organization, the master account in the organization
-    /// can apply policies on all member accounts. These policies can restrict what users
-    /// and even administrators in those accounts can do. The master account can apply policies
-    /// that prevent accounts from leaving the organization. Ensure that your account administrators
-    /// are aware of this.
+    /// After you enable all features in your organization, the management account in the
+    /// organization can apply policies on all member accounts. These policies can restrict
+    /// what users and even administrators in those accounts can do. The management account
+    /// can apply policies that prevent accounts from leaving the organization. Ensure that
+    /// your account administrators are aware of this.
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's master account. 
+    /// This operation can be called only from the organization's management account.
     /// </para>
     /// </summary>
     public partial class EnableAllFeaturesRequest : AmazonOrganizationsRequest

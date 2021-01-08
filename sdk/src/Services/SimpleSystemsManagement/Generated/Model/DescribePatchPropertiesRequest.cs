@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,11 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// The following section lists the properties that can be used in filters for each major
     /// operating system type:
     /// </para>
-    ///  <dl> <dt>WINDOWS</dt> <dd> 
-    /// <para>
-    /// Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
-    /// </para>
-    ///  </dd> <dt>AMAZON_LINUX</dt> <dd> 
+    ///  <dl> <dt>AMAZON_LINUX</dt> <dd> 
     /// <para>
     /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
     /// </para>
@@ -52,9 +48,21 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
     /// </para>
-    ///  </dd> <dt>UBUNTU </dt> <dd> 
+    ///  </dd> <dt>CENTOS</dt> <dd> 
+    /// <para>
+    /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+    /// </para>
+    ///  </dd> <dt>DEBIAN</dt> <dd> 
     /// <para>
     /// Valid properties: PRODUCT, PRIORITY
+    /// </para>
+    ///  </dd> <dt>MACOS</dt> <dd> 
+    /// <para>
+    /// Valid properties: PRODUCT, CLASSIFICATION
+    /// </para>
+    ///  </dd> <dt>ORACLE_LINUX</dt> <dd> 
+    /// <para>
+    /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
     /// </para>
     ///  </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> 
     /// <para>
@@ -64,9 +72,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
     /// </para>
-    ///  </dd> <dt>CENTOS</dt> <dd> 
+    ///  </dd> <dt>UBUNTU</dt> <dd> 
     /// <para>
-    /// Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+    /// Valid properties: PRODUCT, PRIORITY
+    /// </para>
+    ///  </dd> <dt>WINDOWS</dt> <dd> 
+    /// <para>
+    /// Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
     /// </para>
     ///  </dd> </dl>
     /// </summary>
@@ -140,7 +152,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property PatchSet. 
         /// <para>
         /// Indicates whether to list patches for the Windows operating system or for Microsoft
-        /// applications. Not applicable for Linux operating systems.
+        /// applications. Not applicable for the Linux or macOS operating systems.
         /// </para>
         /// </summary>
         public PatchSet PatchSet

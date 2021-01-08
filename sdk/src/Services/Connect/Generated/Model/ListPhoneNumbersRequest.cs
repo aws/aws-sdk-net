@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,6 +31,14 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the ListPhoneNumbers operation.
     /// Provides information about the phone numbers for the specified Amazon Connect instance.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
+    /// Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator
+    /// Guide</i>.
+    /// </para>
     /// </summary>
     public partial class ListPhoneNumbersRequest : AmazonConnectRequest
     {

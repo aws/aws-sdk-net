@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -134,7 +134,8 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// The current status of an asynchronous text-detection operation for the document. 
+        /// Returns if the detection job could not be completed. Contains explanation for what
+        /// error occured. 
         /// </para>
         /// </summary>
         public string StatusMessage

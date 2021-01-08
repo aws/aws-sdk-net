@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -70,10 +70,40 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndpointName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndTimeOffset", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndTimeOffset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FeaturesAttribute", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FeaturesAttribute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InferenceAttribute", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InferenceAttribute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LocalPath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LocalPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProbabilityAttribute", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProbabilityAttribute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProbabilityThresholdAttribute", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.ProbabilityThresholdAttribute = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S3DataDistributionType", targetDepth))
@@ -86,6 +116,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3InputMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartTimeOffset", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StartTimeOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

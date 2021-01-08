@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,10 +63,22 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.BackupJobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BackupOptions", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.BackupOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BackupSizeInBytes", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     response.BackupSizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BackupType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.BackupType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("BackupVaultArn", targetDepth))

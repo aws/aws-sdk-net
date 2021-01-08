@@ -7,6 +7,42 @@
     <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Budgets.Model.CreateBudgetActionRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.CreateBudgetActionRequest.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.CreateBudgetActionRequest.ExecutionRoleArn</property>
+    <min>32</min>
+    <max>618</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|us-iso-east-1|us-isob-east-1):iam::\d{12}:role(\u002F[\u0021-\u007F]+\u002F|\u002F)[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.CreateBudgetActionResponse.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.CreateBudgetActionResponse.ActionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.CreateBudgetActionResponse.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Budgets.Model.CreateNotificationRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
@@ -38,6 +74,36 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DeleteBudgetRequest.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DeleteBudgetActionRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DeleteBudgetActionRequest.ActionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DeleteBudgetActionRequest.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DeleteBudgetActionResponse.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DeleteBudgetActionResponse.BudgetName</property>
     <min>1</min>
     <max>100</max>
     <pattern>[^:\\]+</pattern>
@@ -77,6 +143,123 @@
     <min>1</min>
     <max>100</max>
     <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionRequest.ActionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionRequest.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionResponse.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionResponse.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionHistoriesRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionHistoriesRequest.ActionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionHistoriesRequest.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionHistoriesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionHistoriesRequest.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionHistoriesResponse.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionsForAccountRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionsForAccountRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionsForAccountRequest.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionsForAccountResponse.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionsForBudgetRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionsForBudgetRequest.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionsForBudgetRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionsForBudgetRequest.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.DescribeBudgetActionsForBudgetResponse.NextToken</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.DescribeBudgetPerformanceHistoryRequest.AccountId</property>
@@ -189,10 +372,82 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Budgets.Model.ExecuteBudgetActionRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.ExecuteBudgetActionRequest.ActionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.ExecuteBudgetActionRequest.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.ExecuteBudgetActionResponse.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.ExecuteBudgetActionResponse.ActionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.ExecuteBudgetActionResponse.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Budgets.Model.UpdateBudgetRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
     <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.UpdateBudgetActionRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.UpdateBudgetActionRequest.ActionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.UpdateBudgetActionRequest.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.UpdateBudgetActionRequest.ExecutionRoleArn</property>
+    <min>32</min>
+    <max>618</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|us-iso-east-1|us-isob-east-1):iam::\d{12}:role(\u002F[\u0021-\u007F]+\u002F|\u002F)[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.UpdateBudgetActionResponse.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.UpdateBudgetActionResponse.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.UpdateNotificationRequest.AccountId</property>
@@ -219,6 +474,35 @@
     <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Budgets.Model.Action.ActionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.Action.BudgetName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[^:\\]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.Action.ExecutionRoleArn</property>
+    <min>32</min>
+    <max>618</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|us-iso-east-1|us-isob-east-1):iam::\d{12}:role(\u002F[\u0021-\u007F]+\u002F|\u002F)[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.ActionHistoryDetails.Message</property>
+    <min>0</min>
+    <max>2147483647</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.ActionThreshold.ActionThresholdValue</property>
+    <min>0</min>
+    <max>40000000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Budgets.Model.Budget.BudgetName</property>
     <min>1</min>
     <max>100</max>
@@ -231,9 +515,21 @@
     <pattern>[^:\\]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Budgets.Model.IamActionDefinition.PolicyArn</property>
+    <min>25</min>
+    <max>684</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|us-iso-east-1|us-isob-east-1):iam::(\d{12}|aws):policy(\u002F[\u0021-\u007F]+\u002F|\u002F)[\w+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Budgets.Model.Notification.Threshold</property>
     <min>0</min>
-    <max>1000000000</max>
+    <max>40000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.ScpActionDefinition.PolicyId</property>
+    <min>10</min>
+    <max>130</max>
+    <pattern>^p-[0-9a-zA-Z_]{8,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Spend.Amount</property>
@@ -246,6 +542,12 @@
     <min>1</min>
     <max>2147483647</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Budgets.Model.SsmActionDefinition.Region</property>
+    <min>9</min>
+    <max>20</max>
+    <pattern>^\w{2}-\w+(-\w+)?-\d$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Budgets.Model.Subscriber.Address</property>

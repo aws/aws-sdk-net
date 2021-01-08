@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the response is truncated, Amazon SageMaker returns this token. To retrieve the
-        /// next set of jobs, use it in the subsequent reques
+        /// next set of jobs, use it in the subsequent request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

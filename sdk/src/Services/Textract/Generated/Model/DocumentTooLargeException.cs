@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.Textract.Model
 {
     /// <summary>
     /// The document can't be processed because it's too large. The maximum document size
-    /// for synchronous operations 5 MB. The maximum document size for asynchronous operations
+    /// for synchronous operations 10 MB. The maximum document size for asynchronous operations
     /// is 500 MB for PDF files.
     /// </summary>
     #if !NETSTANDARD

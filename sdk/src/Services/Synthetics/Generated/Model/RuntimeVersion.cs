@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -98,13 +98,8 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property VersionName. 
         /// <para>
-        /// The name of the runtime version. Currently, the only valid value is <code>syn-1.0</code>.
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Specifies the runtime version to use for the canary. Currently, the only valid value
-        /// is <code>syn-1.0</code>.
+        /// The name of the runtime version. For a list of valid runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+        /// Canary Runtime Versions</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

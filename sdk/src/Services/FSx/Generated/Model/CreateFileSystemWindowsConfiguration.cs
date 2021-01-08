@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ namespace Amazon.FSx.Model
     public partial class CreateFileSystemWindowsConfiguration
     {
         private string _activeDirectoryId;
+        private List<string> _aliases = new List<string>();
         private int? _automaticBackupRetentionDays;
         private bool? _copyTagsToBackups;
         private string _dailyAutomaticBackupStartTime;
@@ -62,6 +63,65 @@ namespace Amazon.FSx.Model
         internal bool IsSetActiveDirectoryId()
         {
             return this._activeDirectoryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Aliases. 
+        /// <para>
+        /// An array of one or more DNS alias names that you want to associate with the Amazon
+        /// FSx file system. Aliases allow you to use existing DNS names to access the data in
+        /// your Amazon FSx file system. You can associate up to 50 aliases with a file system
+        /// at any time. You can associate additional DNS aliases after you create the file system
+        /// using the AssociateFileSystemAliases operation. You can remove DNS aliases from the
+        /// file system after it is created using the DisassociateFileSystemAliases operation.
+        /// You only need to specify the alias name in the request payload.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
+        /// with DNS Aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
+        /// 5: Using DNS aliases to access your file system</a>, including additional steps you
+        /// must take to be able to access your file system using a DNS alias.
+        /// </para>
+        ///  
+        /// <para>
+        /// An alias name has to meet the following requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for
+        /// example, <code>accounting.example.com</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can contain alphanumeric characters and the hyphen (-).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot start or end with a hyphen.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can start with a numeric.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters
+        /// (a-z), regardless of how you specify them: as uppercase letters, lowercase letters,
+        /// or the corresponding letters in escape codes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<string> Aliases
+        {
+            get { return this._aliases; }
+            set { this._aliases = value; }
+        }
+
+        // Check to see if Aliases property is set
+        internal bool IsSetAliases()
+        {
+            return this._aliases != null && this._aliases.Count > 0; 
         }
 
         /// <summary>

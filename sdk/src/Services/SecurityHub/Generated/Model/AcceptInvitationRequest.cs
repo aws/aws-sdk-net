@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,6 +33,10 @@ namespace Amazon.SecurityHub.Model
     /// Accepts the invitation to be a member account and be monitored by the Security Hub
     /// master account that the invitation was sent from.
     /// 
+    ///  
+    /// <para>
+    /// This operation is only used by member accounts that are not added through Organizations.
+    /// </para>
     ///  
     /// <para>
     /// When the member account accepts the invitation, permission is granted to the master

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,8 +44,8 @@ namespace Amazon.WAFV2.Model
     /// block) for any request that does not match any of the rules. The rules in a Web ACL
     /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
     /// group. You can associate a Web ACL with one or more AWS resources to protect. The
-    /// resources can be Amazon CloudFront, an Amazon API Gateway API, or an Application Load
-    /// Balancer. 
+    /// resources can be Amazon CloudFront, an Amazon API Gateway REST API, an Application
+    /// Load Balancer, or an AWS AppSync GraphQL API. 
     /// </para>
     /// </summary>
     public partial class WebACL

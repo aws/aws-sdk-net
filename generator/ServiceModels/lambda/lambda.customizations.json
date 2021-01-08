@@ -83,6 +83,9 @@
       ],
       "UpdateFunctionConfigurationRequest": [
         "Layers"
+      ],
+      "ImageConfig": [
+          "EntryPoint", "Command"
       ]
     }
 }

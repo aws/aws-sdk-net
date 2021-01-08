@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -140,6 +140,47 @@ namespace Amazon.FraudDetector.Model
         /// <para>
         /// The model version status.
         /// </para>
+        ///  
+        /// <para>
+        /// Possible values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>TRAINING_IN_PROGRESS</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TRAINING_COMPLETE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ACTIVATE_REQUESTED</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ACTIVATE_IN_PROGRESS</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INACTIVATE_REQUESTED</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INACTIVATE_IN_PROGRESS</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INACTIVE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ERROR</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {

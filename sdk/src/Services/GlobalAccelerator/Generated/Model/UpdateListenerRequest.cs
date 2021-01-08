@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,7 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateListener operation.
-    /// Update a listener. To see an AWS CLI example of updating listener, scroll down to
-    /// <b>Example</b>.
+    /// Update a listener.
     /// </summary>
     public partial class UpdateListenerRequest : AmazonGlobalAcceleratorRequest
     {
@@ -45,7 +44,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <para>
         /// Client affinity lets you direct all requests from a user to the same endpoint, if
         /// you have stateful applications, regardless of the port and protocol of the client
-        /// request. Clienty affinity gives you control over whether to always route each client
+        /// request. Client affinity gives you control over whether to always route each client
         /// to the same specific endpoint.
         /// </para>
         ///  

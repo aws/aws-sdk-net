@@ -4,6 +4,7 @@
     <property>Amazon.CodeStarconnections.Model.CreateConnectionRequest.ConnectionName</property>
     <min>1</min>
     <max>32</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.CreateConnectionRequest.HostArn</property>
@@ -20,12 +21,14 @@
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.CreateHostRequest.Name</property>
     <min>1</min>
-    <max>32</max>
+    <max>64</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.CreateHostRequest.ProviderEndpoint</property>
     <min>1</min>
     <max>512</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.CreateHostResponse.HostArn</property>
@@ -60,12 +63,14 @@
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.GetHostResponse.Name</property>
     <min>1</min>
-    <max>32</max>
+    <max>64</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.GetHostResponse.ProviderEndpoint</property>
     <min>1</min>
     <max>512</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.ListConnectionsRequest.HostArnFilter</property>
@@ -82,11 +87,13 @@
     <property>Amazon.CodeStarconnections.Model.ListConnectionsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.ListConnectionsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.ListHostsRequest.MaxResults</property>
@@ -97,26 +104,43 @@
     <property>Amazon.CodeStarconnections.Model.ListHostsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.ListHostsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
+    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStarconnections.Model.UpdateHostRequest.HostArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws(-[\w]+)*:codestar-connections:.+:[0-9]{12}:host\/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeStarconnections.Model.UpdateHostRequest.ProviderEndpoint</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.Connection.ConnectionArn</property>
@@ -128,6 +152,7 @@
     <property>Amazon.CodeStarconnections.Model.Connection.ConnectionName</property>
     <min>1</min>
     <max>32</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.Connection.HostArn</property>
@@ -150,30 +175,37 @@
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.Host.Name</property>
     <min>1</min>
-    <max>32</max>
+    <max>64</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.Host.ProviderEndpoint</property>
     <min>1</min>
     <max>512</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.VpcConfiguration.TlsCertificate</property>
     <min>1</min>
     <max>16384</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeStarconnections.Model.VpcConfiguration.VpcId</property>
+    <min>12</min>
+    <max>21</max>
     <pattern>vpc-\w{8}(\w{9})?</pattern>
   </property-value-rule>
 </property-value-rules>

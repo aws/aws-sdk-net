@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -258,13 +258,13 @@ namespace Amazon.SageMakerRuntime
         ///  
         /// <para>
         /// Calls to <code>InvokeEndpoint</code> are authenticated by using AWS Signature Version
-        /// 4. For information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+        /// 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
         /// Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
         /// </para>
         ///  
         /// <para>
         /// A customer's model containers must respond to requests within 60 seconds. The model
-        /// itself can have a maximum processing time of 60 seconds before responding to the /invocations.
+        /// itself can have a maximum processing time of 60 seconds before responding to invocations.
         /// If your model is going to take 50-60 seconds of processing time, the SDK socket timeout
         /// should be set to be 70 seconds.
         /// </para>

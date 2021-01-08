@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
-    /// The Service Quotas template is not available in the Region where you are making the
-    /// request. Please make the request in us-east-1.
+    /// The Service Quotas template is not available in this AWS Region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -183,7 +183,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property ExpirationInDays. 
         /// <para>
-        /// Number of days until a certificate expires.
+        /// Validity period of the CRL in days.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]

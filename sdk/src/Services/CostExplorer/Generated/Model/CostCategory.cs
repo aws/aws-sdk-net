@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ namespace Amazon.CostExplorer.Model
         private string _effectiveEnd;
         private string _effectiveStart;
         private string _name;
+        private List<CostCategoryProcessingStatus> _processingStatus = new List<CostCategoryProcessingStatus>();
         private List<CostCategoryRule> _rules = new List<CostCategoryRule>();
         private CostCategoryRuleVersion _ruleVersion;
 
@@ -112,6 +113,25 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProcessingStatus. 
+        /// <para>
+        ///  The list of processing statuses for Cost Management products for a specific cost
+        /// category. 
+        /// </para>
+        /// </summary>
+        public List<CostCategoryProcessingStatus> ProcessingStatus
+        {
+            get { return this._processingStatus; }
+            set { this._processingStatus = value; }
+        }
+
+        // Check to see if ProcessingStatus property is set
+        internal bool IsSetProcessingStatus()
+        {
+            return this._processingStatus != null && this._processingStatus.Count > 0; 
         }
 
         /// <summary>

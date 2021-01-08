@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -78,6 +78,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("AccountScope");
                     context.Writer.Write(publicRequest.AccountScope);
+                }
+
+                if(publicRequest.IsSetFilter())
+                {
+                    context.Writer.WritePropertyName("Filter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExpressionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Filter, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetLookbackPeriodInDays())

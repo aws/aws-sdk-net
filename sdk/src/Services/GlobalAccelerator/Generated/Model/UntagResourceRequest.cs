@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,9 +31,8 @@ namespace Amazon.GlobalAccelerator.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Remove tags from a Global Accelerator resource. When you specify a tag key, the action
-    /// removes both that key and its associated value. To see an AWS CLI example of removing
-    /// tags from an accelerator, scroll down to <b>Example</b>. The operation succeeds even
-    /// if you attempt to remove tags from an accelerator that was already removed.
+    /// removes both that key and its associated value. The operation succeeds even if you
+    /// attempt to remove tags from an accelerator that was already removed.
     /// 
     ///  
     /// <para>

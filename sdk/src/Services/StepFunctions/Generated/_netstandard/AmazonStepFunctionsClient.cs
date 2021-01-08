@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,6 +63,9 @@ namespace Amazon.StepFunctions
     /// Functions Developer Guide</a> </i>.
     /// </para>
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonStepFunctionsClient : AmazonServiceClient, IAmazonStepFunctions
     {
         private static IServiceMetadata serviceMetadata = new AmazonStepFunctionsMetadata();
@@ -378,10 +381,11 @@ namespace Amazon.StepFunctions
         ///  <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create
         /// a duplicate resource if it was already created. <code>CreateStateMachine</code>'s
         /// idempotency check is based on the state machine <code>name</code>, <code>definition</code>,
-        /// <code>type</code>, and <code>LoggingConfiguration</code>. If a following request has
-        /// a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore
-        /// these differences and treat it as an idempotent request of the previous. In this case,
-        /// <code>roleArn</code> and <code>tags</code> will not be updated, even if they are different.
+        /// <code>type</code>, <code>LoggingConfiguration</code> and <code>TracingConfiguration</code>.
+        /// If a following request has a different <code>roleArn</code> or <code>tags</code>,
+        /// Step Functions will ignore these differences and treat it as an idempotent request
+        /// of the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
+        /// be updated, even if they are different.
         /// </para>
         ///  </note>
         /// </summary>
@@ -402,6 +406,10 @@ namespace Amazon.StepFunctions
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
         /// The provided name is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidTracingConfigurationException">
+        /// Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code>
+        /// has not been set to <code>true</code> or <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineAlreadyExistsException">
         /// A state machine with the same name but a different definition or role ARN already
@@ -1270,6 +1278,58 @@ namespace Amazon.StepFunctions
 
         #endregion
         
+        #region  StartSyncExecution
+
+        internal virtual StartSyncExecutionResponse StartSyncExecution(StartSyncExecutionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSyncExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSyncExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartSyncExecutionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a Synchronous Express state machine execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSyncExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSyncExecution service method, as returned by StepFunctions.</returns>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
+        /// The provided Amazon Resource Name (ARN) is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidExecutionInputException">
+        /// The provided JSON input data is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
+        /// The provided name is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDeletingException">
+        /// The specified state machine is being deleted.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
+        /// The specified state machine does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.StateMachineTypeNotSupportedException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution">REST API Reference for StartSyncExecution Operation</seealso>
+        public virtual Task<StartSyncExecutionResponse> StartSyncExecutionAsync(StartSyncExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSyncExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSyncExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartSyncExecutionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopExecution
 
         internal virtual StopExecutionResponse StopExecution(StopExecutionRequest request)
@@ -1455,6 +1515,10 @@ namespace Amazon.StepFunctions
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.InvalidLoggingConfigurationException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.StepFunctions.Model.InvalidTracingConfigurationException">
+        /// Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code>
+        /// has not been set to <code>true</code> or <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.StepFunctions.Model.MissingRequiredParameterException">
         /// Request is missing a required parameter. This error occurs if both <code>definition</code>

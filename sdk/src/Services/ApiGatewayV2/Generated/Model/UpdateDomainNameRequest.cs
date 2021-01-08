@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ namespace Amazon.ApiGatewayV2.Model
     {
         private string _domainName;
         private List<DomainNameConfiguration> _domainNameConfigurations = new List<DomainNameConfiguration>();
+        private MutualTlsAuthenticationInput _mutualTlsAuthentication;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -72,6 +73,24 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetDomainNameConfigurations()
         {
             return this._domainNameConfigurations != null && this._domainNameConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MutualTlsAuthentication. 
+        /// <para>
+        /// The mutual TLS authentication configuration for a custom domain name.
+        /// </para>
+        /// </summary>
+        public MutualTlsAuthenticationInput MutualTlsAuthentication
+        {
+            get { return this._mutualTlsAuthentication; }
+            set { this._mutualTlsAuthentication = value; }
+        }
+
+        // Check to see if MutualTlsAuthentication property is set
+        internal bool IsSetMutualTlsAuthentication()
+        {
+            return this._mutualTlsAuthentication != null;
         }
 
     }

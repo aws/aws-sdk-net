@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -73,8 +73,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The name of the tuning job. This name is the prefix for the names of all training
         /// jobs that this tuning job launches. The name must be unique within the same AWS account
-        /// and AWS Region. The name must have { } to { } characters. Valid characters are a-z,
-        /// A-Z, 0-9, and : + = @ _ % - (hyphen). The name is not case sensitive.
+        /// and AWS Region. The name must have 1 to 32 characters. Valid characters are a-z, A-Z,
+        /// 0-9, and : + = @ _ % - (hyphen). The name is not case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -95,8 +95,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// An array of key-value pairs. You can use tags to categorize your AWS resources in
         /// different ways, for example, by purpose, owner, or environment. For more information,
-        /// see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
-        /// Tagging Strategies</a>.
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS Resources</a>.
         /// </para>
         ///  
         /// <para>

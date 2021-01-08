@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -148,6 +148,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListInputDevices(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListInputDevices(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("MediaLive")]
+        public void ListInputDeviceTransfersTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListInputDeviceTransfersRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListInputDeviceTransfersResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListInputDeviceTransfersResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListInputDeviceTransfers(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListInputDeviceTransfers(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("MediaLive")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListInputDeviceTransfersTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListInputDeviceTransfersRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListInputDeviceTransfersResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListInputDeviceTransfers(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListInputDeviceTransfers(request);
 
             // Should work the first time
             paginator.Responses.ToList();

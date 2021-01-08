@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+    /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
     /// </summary>
     public partial class ApplicationSnapshotConfigurationDescription
     {
@@ -38,7 +38,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property SnapshotsEnabled. 
         /// <para>
-        /// Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+        /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

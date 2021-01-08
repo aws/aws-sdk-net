@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ namespace Amazon.Kendra.Model
         private int? _beginOffset;
         private int? _endOffset;
         private bool? _topAnswer;
+        private HighlightType _type;
 
         /// <summary>
         /// Gets and sets the property BeginOffset. 
@@ -93,6 +94,24 @@ namespace Amazon.Kendra.Model
         internal bool IsSetTopAnswer()
         {
             return this._topAnswer.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The highlight type. 
+        /// </para>
+        /// </summary>
+        public HighlightType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

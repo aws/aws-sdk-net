@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ namespace Amazon.RDS.Model
         private string _sourceRegion;
         private string _status;
         private string _storageType;
+        private List<Tag> _tagList = new List<Tag>();
         private string _tdeCredentialArn;
         private string _timezone;
         private string _vpcId;
@@ -296,6 +297,11 @@ namespace Amazon.RDS.Model
         ///  If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB
         /// snapshot. 
         /// </para>
+        ///  
+        /// <para>
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK).
+        /// </para>
         /// </summary>
         public string KmsKeyId
         {
@@ -421,7 +427,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SnapshotCreateTime. 
         /// <para>
-        /// Specifies when the snapshot was taken in Coodinated Universal Time (UTC).
+        /// Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
         /// </para>
         /// </summary>
         public DateTime SnapshotCreateTime
@@ -525,6 +531,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageType()
         {
             return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList.
+        /// </summary>
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && this._tagList.Count > 0; 
         }
 
         /// <summary>

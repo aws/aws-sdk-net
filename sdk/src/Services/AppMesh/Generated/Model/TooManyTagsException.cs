@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// The request exceeds the maximum allowed number of tags allowed per resource. The current
-    ///         limit is 50 user tags per resource. You must reduce the number of tags in
-    /// the request. None         of the tags in this request were applied.
+    /// limit is 50 user tags per resource. You must reduce the number of tags in the request.
+    /// None of the tags in this request were applied.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

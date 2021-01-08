@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -52,6 +52,17 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                 foreach(var requestObjectEqListValue in requestObject.Eq)
                 {
                         context.Writer.Write(requestObjectEqListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetEqExactMatch())
+            {
+                context.Writer.WritePropertyName("eqExactMatch");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectEqExactMatchListValue in requestObject.EqExactMatch)
+                {
+                        context.Writer.Write(requestObjectEqExactMatchListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }

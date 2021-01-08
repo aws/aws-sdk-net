@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putObjectTaggingRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putObjectTaggingRequest.ExpectedBucketOwner));
+
             if (string.IsNullOrEmpty(putObjectTaggingRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutObjectTaggingRequest.BucketName");
             if (string.IsNullOrEmpty(putObjectTaggingRequest.Key))
@@ -65,7 +68,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
                 request.Headers[HeaderKeys.ContentMD5Header] = checksum;
             }
             catch (EncoderFallbackException e)

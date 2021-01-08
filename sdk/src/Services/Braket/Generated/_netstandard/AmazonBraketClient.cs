@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,6 +41,9 @@ namespace Amazon.Braket
     /// The Amazon Braket API Reference provides information about the operations and structures
     /// supported in Amazon Braket.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonBraketClient : AmazonServiceClient, IAmazonBraket
     {
         private static IServiceMetadata serviceMetadata = new AmazonBraketMetadata();
@@ -288,7 +291,7 @@ namespace Amazon.Braket
         /// An error occurred due to a conflict.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -340,10 +343,10 @@ namespace Amazon.Braket
         /// The specified device is currently offline.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ServiceQuotaExceededException">
-        /// The request failed because a service quota is met.
+        /// The request failed because a service quota is exceeded.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ThrottlingException">
         /// The throttling rate limit is met.
@@ -389,7 +392,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -438,7 +441,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -457,6 +460,49 @@ namespace Amazon.Braket
             options.ResponseUnmarshaller = GetQuantumTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetQuantumTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Shows the tags associated with this resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -487,7 +533,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ThrottlingException">
         /// The throttling rate limit is met.
@@ -533,7 +579,7 @@ namespace Amazon.Braket
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.InternalServiceException">
-        /// The request processing has failed because of an unknown error, exception or failure.
+        /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.Braket.Model.ThrottlingException">
         /// The throttling rate limit is met.
@@ -549,6 +595,92 @@ namespace Amazon.Braket
             options.ResponseUnmarshaller = SearchQuantumTasksResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchQuantumTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Add a tag to the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Remove tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

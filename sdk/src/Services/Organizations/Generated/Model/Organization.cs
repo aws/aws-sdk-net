@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -120,7 +120,7 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization
-        /// ID string requires "o-" followed by from 10 to 32 lower-case letters or digits.
+        /// ID string requires "o-" followed by from 10 to 32 lowercase letters or digits.
         /// </para>
         /// </summary>
         public string Id
@@ -138,8 +138,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property MasterAccountArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the account that is designated as the master account
-        /// for the organization.
+        /// The Amazon Resource Name (ARN) of the account that is designated as the management
+        /// account for the organization.
         /// </para>
         ///  
         /// <para>
@@ -163,7 +163,7 @@ namespace Amazon.Organizations.Model
         /// Gets and sets the property MasterAccountEmail. 
         /// <para>
         /// The email address that is associated with the AWS account that is designated as the
-        /// master account for the organization.
+        /// management account for the organization.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=64)]
@@ -182,7 +182,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property MasterAccountId. 
         /// <para>
-        /// The unique identifier (ID) of the master account of an organization.
+        /// The unique identifier (ID) of the management account of an organization.
         /// </para>
         ///  
         /// <para>

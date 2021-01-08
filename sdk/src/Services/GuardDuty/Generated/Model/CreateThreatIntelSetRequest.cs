@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,8 +31,8 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Container for the parameters to the CreateThreatIntelSet operation.
     /// Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses.
-    /// GuardDuty generates findings based on ThreatIntelSets. Only users of the master account
-    /// can use this operation.
+    /// GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator
+    /// account can use this operation.
     /// </summary>
     public partial class CreateThreatIntelSetRequest : AmazonGuardDutyRequest
     {

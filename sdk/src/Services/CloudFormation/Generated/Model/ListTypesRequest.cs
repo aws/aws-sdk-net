@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ namespace Amazon.CloudFormation.Model
         private int? _maxResults;
         private string _nextToken;
         private ProvisioningType _provisioningType;
+        private RegistryType _type;
         private Visibility _visibility;
 
         /// <summary>
@@ -155,6 +156,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetProvisioningType()
         {
             return this._provisioningType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of extension.
+        /// </para>
+        /// </summary>
+        public RegistryType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>

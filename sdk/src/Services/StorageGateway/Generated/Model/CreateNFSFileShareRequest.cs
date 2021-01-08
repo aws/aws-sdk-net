@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,6 +63,7 @@ namespace Amazon.StorageGateway.Model
         private string _kmsKey;
         private string _locationARN;
         private NFSFileShareDefaults _nfsFileShareDefaults;
+        private string _notificationPolicy;
         private ObjectACL _objectACL;
         private bool? _readOnly;
         private bool? _requesterPays;
@@ -301,6 +302,25 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetNFSFileShareDefaults()
         {
             return this._nfsFileShareDefaults != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationPolicy. 
+        /// <para>
+        /// The notification policy of the file share.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=100)]
+        public string NotificationPolicy
+        {
+            get { return this._notificationPolicy; }
+            set { this._notificationPolicy = value; }
+        }
+
+        // Check to see if NotificationPolicy property is set
+        internal bool IsSetNotificationPolicy()
+        {
+            return this._notificationPolicy != null;
         }
 
         /// <summary>

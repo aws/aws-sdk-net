@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -81,7 +81,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance,
-        /// for example <code>arn:aws:iam::123456789012:role/AccessRole</code>.
+        /// for example, <code>arn:aws:iam::123456789012:role/AccessRole</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

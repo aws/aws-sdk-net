@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about the category, type, and number of occurrences of sensitive
-    /// data that produced a finding.
+    /// Provides information about the category, types, and occurrences of sensitive data
+    /// that produced a sensitive data finding.
     /// </summary>
     public partial class SensitiveDataItem
     {
@@ -41,10 +41,11 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// The category of sensitive data that was detected. For example: FINANCIAL_INFORMATION,
-        /// for financial information such as credit card numbers; PERSONAL_INFORMATION, for personally
-        /// identifiable information such as full names and mailing addresses; or, CUSTOM_IDENTIFIER,
-        /// for data that was detected by a custom data identifier.
+        /// The category of sensitive data that was detected. For example: CREDENTIALS, for credentials
+        /// data such as private keys or AWS secret keys; FINANCIAL_INFORMATION, for financial
+        /// data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information,
+        /// such as health insurance identification numbers, or personally identifiable information,
+        /// such as driver's license identification numbers.
         /// </para>
         /// </summary>
         public SensitiveDataItemCategory Category
@@ -63,7 +64,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Detections. 
         /// <para>
         /// An array of objects, one for each type of sensitive data that was detected. Each object
-        /// reports the number of occurrences of a specific type of sensitive data that was detected.
+        /// reports the number of occurrences of a specific type of sensitive data that was detected,
+        /// and the location of up to 15 of those occurrences.
         /// </para>
         /// </summary>
         public List<DefaultDetection> Detections

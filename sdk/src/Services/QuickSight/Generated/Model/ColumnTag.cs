@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,26 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ColumnTag
     {
+        private ColumnDescription _columnDescription;
         private GeoSpatialDataRole _columnGeographicRole;
+
+        /// <summary>
+        /// Gets and sets the property ColumnDescription. 
+        /// <para>
+        /// A description for a column.
+        /// </para>
+        /// </summary>
+        public ColumnDescription ColumnDescription
+        {
+            get { return this._columnDescription; }
+            set { this._columnDescription = value; }
+        }
+
+        // Check to see if ColumnDescription property is set
+        internal bool IsSetColumnDescription()
+        {
+            return this._columnDescription != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ColumnGeographicRole. 

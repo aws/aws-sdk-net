@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -54,6 +54,9 @@ namespace Amazon.DatabaseMigrationService
     /// 
     /// </para>
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonDatabaseMigrationServiceClient : AmazonServiceClient, IAmazonDatabaseMigrationService
     {
         private static IServiceMetadata serviceMetadata = new AmazonDatabaseMigrationServiceMetadata();
@@ -440,6 +443,9 @@ namespace Amazon.DatabaseMigrationService
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
         /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.S3AccessDeniedException">
+        /// Insufficient privileges are preventing access to an Amazon S3 object.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint">REST API Reference for CreateEndpoint Operation</seealso>
         public virtual Task<CreateEndpointResponse> CreateEndpointAsync(CreateEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2283,6 +2289,52 @@ namespace Amazon.DatabaseMigrationService
             options.ResponseUnmarshaller = ModifyReplicationTaskResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyReplicationTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  MoveReplicationTask
+
+        internal virtual MoveReplicationTaskResponse MoveReplicationTask(MoveReplicationTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MoveReplicationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MoveReplicationTaskResponseUnmarshaller.Instance;
+
+            return Invoke<MoveReplicationTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Moves a replication task from its current replication instance to a different target
+        /// replication instance using the specified parameters. The target replication instance
+        /// must be created with the same or later AWS DMS version as the current replication
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the MoveReplicationTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the MoveReplicationTask service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MoveReplicationTask">REST API Reference for MoveReplicationTask Operation</seealso>
+        public virtual Task<MoveReplicationTaskResponse> MoveReplicationTaskAsync(MoveReplicationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = MoveReplicationTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = MoveReplicationTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<MoveReplicationTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion

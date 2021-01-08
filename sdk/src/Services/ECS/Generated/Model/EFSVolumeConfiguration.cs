@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -85,6 +85,13 @@ namespace Amazon.ECS.Model
         /// the host. If this parameter is omitted, the root of the Amazon EFS volume will be
         /// used. Specifying <code>/</code> will have the same effect as omitting this parameter.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If an EFS access point is specified in the <code>authorizationConfig</code>, the root
+        /// directory parameter must either be omitted or set to <code>/</code> which will enforce
+        /// the path set on the EFS access point.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string RootDirectory
         {

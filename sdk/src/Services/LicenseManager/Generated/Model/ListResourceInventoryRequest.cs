@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,12 @@ namespace Amazon.LicenseManager.Model
         /// <para>
         ///  <code>resource_id</code> - The ID of the resource. Logical operators are <code>EQUALS</code>
         /// | <code>NOT_EQUALS</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>tag:&lt;key&gt;</code> - The key/value combination of a tag assigned to the
+        /// resource. Logical operators are <code>EQUALS</code> (single account) or <code>EQUALS</code>
+        /// | <code>NOT_EQUALS</code> (cross account).
         /// </para>
         ///  </li> </ul>
         /// </summary>

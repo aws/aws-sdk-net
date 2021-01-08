@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// add a custom default theme by using the <code>CreateAccountCustomization</code> or
     /// <code>UpdateAccountCustomization</code> API operation. To further customize QuickSight
     /// by removing QuickSight sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
-    /// QuickSight</a> in the Amazon QuickSight User Guide.
+    /// QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> 
     /// 
     ///  
     /// <para>
@@ -45,10 +45,13 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  
     /// <para>
-    /// Before you add a theme as the namespace default, make sure that you first share the
-    /// theme with the namespace. If you don't share it with the namespace, the theme won't
-    /// be visible to your users even if you use this API operation to make it the default
-    /// theme. 
+    /// Before you use the <code>CreateAccountCustomization</code> API operation to add a
+    /// theme as the namespace default, make sure that you first share the theme with the
+    /// namespace. If you don't share it with the namespace, the theme isn't visible to your
+    /// users even if you make it the default theme. To check if the theme is shared, view
+    /// the current permissions by using the <code> <a>DescribeThemePermissions</a> </code>
+    /// API operation. To share the theme, grant permissions by using the <code> <a>UpdateThemePermissions</a>
+    /// </code> API operation. 
     /// </para>
     /// </summary>
     public partial class CreateAccountCustomizationRequest : AmazonQuickSightRequest
@@ -56,6 +59,7 @@ namespace Amazon.QuickSight.Model
         private AccountCustomization _accountCustomization;
         private string _awsAccountId;
         private string _awsNamespace;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AccountCustomization. 
@@ -65,9 +69,9 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, you could add a default theme by setting <code>AccountCustomization</code>
+        /// For example, you can add a default theme by setting <code>AccountCustomization</code>
         /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT"
-        /// }. </code>. Or, you could add a custom theme by specifying <code>"AccountCustomization":
+        /// }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization":
         /// { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
         /// }</code>. 
         /// </para>
@@ -121,6 +125,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetNamespace()
         {
             return this._awsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of the tags that you want to attach to this resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

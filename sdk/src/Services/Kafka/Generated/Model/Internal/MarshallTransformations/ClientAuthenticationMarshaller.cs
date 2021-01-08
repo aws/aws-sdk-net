@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ClientAuthentication requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetSasl())
+            {
+                context.Writer.WritePropertyName("sasl");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SaslMarshaller.Instance;
+                marshaller.Marshall(requestObject.Sasl, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTls())
             {
                 context.Writer.WritePropertyName("tls");

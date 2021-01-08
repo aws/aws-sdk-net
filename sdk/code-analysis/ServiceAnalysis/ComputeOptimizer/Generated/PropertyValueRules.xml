@@ -10,4 +10,9 @@
     <min>0</min>
     <max>5</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ComputeOptimizer.Model.VolumeRecommendationOption.PerformanceRisk</property>
+    <min>0</min>
+    <max>5</max>
+  </property-value-rule>
 </property-value-rules>

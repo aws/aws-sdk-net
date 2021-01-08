@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DataSources. 
         /// <para>
-        /// An object that describes which data sources are enabled automatically for member accounts.
+        /// Describes which data sources are enabled automatically for member accounts.
         /// </para>
         /// </summary>
         public OrganizationDataSourceConfigurationsResult DataSources
@@ -78,7 +78,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property MemberAccountLimitReached. 
         /// <para>
         /// Indicates whether the maximum number of allowed member accounts are already associated
-        /// with the delegated administrator master account.
+        /// with the delegated administrator account for your organization.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

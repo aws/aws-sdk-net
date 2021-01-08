@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -109,6 +109,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.GetGroups(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.GetGroups(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("XRay")]
+        public void GetInsightEventsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetInsightEventsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetInsightEventsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetInsightEventsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetInsightEvents(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetInsightEvents(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("XRay")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetInsightEventsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetInsightEventsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetInsightEventsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetInsightEvents(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetInsightEvents(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("XRay")]
+        public void GetInsightSummariesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetInsightSummariesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetInsightSummariesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetInsightSummariesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetInsightSummaries(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetInsightSummaries(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("XRay")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetInsightSummariesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetInsightSummariesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetInsightSummariesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetInsightSummaries(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetInsightSummaries(request);
 
             // Should work the first time
             paginator.Responses.ToList();

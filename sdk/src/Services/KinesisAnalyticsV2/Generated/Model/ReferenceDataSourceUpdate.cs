@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// When you update a reference data source configuration for a SQL-based Amazon Kinesis
-    /// Data Analytics application, this object provides all the updated values (such as the
-    /// source bucket name and object key name), the in-application table name that is created,
-    /// and updated mapping information that maps the data in the Amazon S3 object to the
-    /// in-application reference table that is created.
+    /// When you update a reference data source configuration for a SQL-based Kinesis Data
+    /// Analytics application, this object provides all the updated values (such as the source
+    /// bucket name and object key name), the in-application table name that is created, and
+    /// updated mapping information that maps the data in the Amazon S3 object to the in-application
+    /// reference table that is created.
     /// </summary>
     public partial class ReferenceDataSourceUpdate
     {

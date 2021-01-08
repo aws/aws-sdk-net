@@ -1,5 +1,5 @@
 ﻿// /*******************************************************************************
-//  *  Copyright 2008-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+//  *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
 //  *  this file except in compliance with the License. A copy of the License is located at
 //  *
@@ -99,6 +99,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 }
             }
 
+            if (selectObjectContentRequest.IsSetExpectedBucketOwner())
+            {
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, 
+                    S3Transforms.ToStringValue(selectObjectContentRequest.ExpectedBucketOwner));
+            }
+
             // Subresources
             request.AddSubResource("select");
             request.AddSubResource("select-type", "2");
@@ -138,7 +144,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     request.Content = Encoding.UTF8.GetBytes(content);
                     request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                    var checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+                    var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
                     request.Headers[HeaderKeys.ContentMD5Header] = checksum;
                 }
                 catch (EncoderFallbackException e)

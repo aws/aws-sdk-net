@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,11 +36,12 @@ namespace Amazon.CodeArtifact
     /// Implementation for accessing CodeArtifact
     ///
     /// AWS CodeArtifact is a fully managed artifact repository compatible with language-native
-    /// package managers and build tools such as npm, Apache Maven, and pip. You can use CodeArtifact
-    /// to share packages with development teams and pull packages. Packages can be pulled
-    /// from both public and CodeArtifact repositories. You can also create an upstream relationship
-    /// between a CodeArtifact repository and another repository, which effectively merges
-    /// their contents from the point of view of a package manager client. 
+    /// package managers and build tools such as npm, Apache Maven, NuGet, and pip. You can
+    /// use CodeArtifact to share packages with development teams and pull packages. Packages
+    /// can be pulled from both public and CodeArtifact repositories. You can also create
+    /// an upstream relationship between a CodeArtifact repository and another repository,
+    /// which effectively merges their contents from the point of view of a package manager
+    /// client. 
     /// 
     ///  
     /// <para>
@@ -57,8 +58,8 @@ namespace Amazon.CodeArtifact
     /// versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot,
     /// so a single repository can contain packages of any supported type. Each repository
     /// exposes endpoints for fetching and publishing packages using tools like the <b> <code>npm</code>
-    /// </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), and <b> <code>pip</code> </b>.
-    /// You can create up to 100 repositories per AWS account.
+    /// </b> CLI, the <b> <code>NuGet</code> </b> CLI, the Maven CLI (<b> <code>mvn</code>
+    /// </b>), and <b> <code>pip</code> </b>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -90,7 +91,8 @@ namespace Amazon.CodeArtifact
     ///  <b>Package</b>: A <i>package</i> is a bundle of software and the metadata required
     /// to resolve dependencies and install the software. CodeArtifact supports <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>,
     /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>,
-    /// and <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>
+    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>,
+    /// and <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>
     /// package formats.
     /// </para>
     ///  
@@ -247,6 +249,10 @@ namespace Amazon.CodeArtifact
     /// <para>
     ///  <code>maven</code> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>nuget</code> 
+    /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
     ///  <code>GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is
@@ -286,12 +292,24 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>ListTagsForResource</code>: Returns a list of the tags associated with a resource.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>PutDomainPermissionsPolicy</code>: Attaches a resource policy to a domain.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a repository
     /// that specifies permissions to access it. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TagResource</code>: Adds or updates tags for a resource.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>UntagResource</code>: Removes a tag from a resource. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -859,10 +877,6 @@ namespace Amazon.CodeArtifact
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
         /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
-        /// </exception>
-        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
-        /// The operation did not succeed because the resource requested is not found in the
-        /// service.
         /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
         /// The operation did not succeed because too many requests are sent to the service.
@@ -1537,15 +1551,14 @@ namespace Amazon.CodeArtifact
         /// 
         ///  
         /// <para>
-        ///  To view all disposed package versions in a repository, use <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>
-        /// </code> and set the <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
-        /// </code> parameter to <code>Disposed</code>. 
+        ///  To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
+        /// <code>ListPackageVersions</code> </a> and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">
+        /// <code>status</code> </a> parameter to <code>Disposed</code>. 
         /// </para>
         ///  
         /// <para>
-        ///  To view information about a disposed package version, use <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
-        /// </code> and set the <code> <a href="https://docs.aws.amazon.com/API_ListPackageVersions.html#codeartifact-ListPackageVersions-response-status">status</a>
-        /// </code> parameter to <code>Disposed</code>. 
+        ///  To view information about a disposed package version, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
+        /// <code>DescribePackageVersion</code> </a>.. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisposePackageVersions service method.</param>
@@ -1620,9 +1633,10 @@ namespace Amazon.CodeArtifact
         #region  GetAuthorizationToken
 
         /// <summary>
-        /// Generates a temporary authentication token for accessing repositories in the domain.
+        /// Generates a temporary authorization token for accessing repositories in the domain.
         /// This API requires the <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code>
-        /// permissions. 
+        /// permissions. For more information about authorization tokens, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">AWS
+        /// CodeArtifact authentication and tokens</a>. 
         /// 
         ///  <note> 
         /// <para>
@@ -1808,6 +1822,9 @@ namespace Amazon.CodeArtifact
         /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
         /// The operation did not succeed because of an unauthorized access attempt.
         /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
+        /// </exception>
         /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
         /// The operation did not succeed because of an error that occurred inside AWS CodeArtifact.
         /// </exception>
@@ -1965,6 +1982,10 @@ namespace Amazon.CodeArtifact
         ///  </li> <li> 
         /// <para>
         ///  <code>maven</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nuget</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2613,10 +2634,87 @@ namespace Amazon.CodeArtifact
 
         #endregion
         
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
+        /// CodeArtifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonCodeArtifactClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from CodeArtifact.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutDomainPermissionsPolicy
 
         /// <summary>
-        /// Sets a resource policy on a domain that specifies permissions to access it.
+        /// Sets a resource policy on a domain that specifies permissions to access it. 
+        /// 
+        ///  
+        /// <para>
+        ///  When you call <code>PutDomainPermissionsPolicy</code>, the resource policy on the
+        /// domain is ignored when evaluting permissions. This ensures that the owner of a domain
+        /// cannot lock themselves out of the domain, which would prevent them from being able
+        /// to update the resource policy. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDomainPermissionsPolicy service method.</param>
         /// 
@@ -2695,6 +2793,15 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Sets the resource policy on a repository that specifies permissions to access it.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on
+        /// the repository is ignored when evaluting permissions. This ensures that the owner
+        /// of a repository cannot lock themselves out of the repository, which would prevent
+        /// them from being able to update the resource policy. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRepositoryPermissionsPolicy service method.</param>
         /// 
@@ -2765,6 +2872,146 @@ namespace Amazon.CodeArtifact
         public virtual PutRepositoryPermissionsPolicyResponse EndPutRepositoryPermissionsPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutRepositoryPermissionsPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        /// <summary>
+        /// Adds or updates tags for a resource in AWS CodeArtifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ServiceQuotaExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for
+        /// your account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonCodeArtifactClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from CodeArtifact.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes tags from a resource in AWS CodeArtifact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonCodeArtifactClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from CodeArtifact.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
         }
 
         #endregion

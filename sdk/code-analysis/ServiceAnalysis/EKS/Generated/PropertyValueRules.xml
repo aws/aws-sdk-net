@@ -1,10 +1,49 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.EKS.Model.CreateAddonRequest.ClusterName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.CreateAddonRequest.ServiceAccountRoleArn</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EKS.Model.CreateClusterRequest.Name</property>
     <min>1</min>
     <max>100</max>
     <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.DeleteAddonRequest.ClusterName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.DescribeAddonRequest.ClusterName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.DescribeAddonVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.ListAddonsRequest.ClusterName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.ListAddonsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.ListClustersRequest.MaxResults</property>
@@ -25,6 +64,23 @@
     <property>Amazon.EKS.Model.ListUpdatesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.UpdateAddonRequest.ClusterName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.UpdateAddonRequest.ServiceAccountRoleArn</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.Addon.ClusterName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.NodegroupScalingConfig.DesiredSize</property>

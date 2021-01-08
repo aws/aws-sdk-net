@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,71 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAccessPoint operation.
-    /// Creates an access point and associates it with the specified bucket.
+    /// Creates an access point and associates it with the specified bucket. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+    /// Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service
+    /// Developer Guide</i>.
+    /// 
+    ///   
+    /// <para>
+    ///  <b>Using this action with Amazon S3 on Outposts</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// This action: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Requires a virtual private cloud (VPC) configuration as S3 on Outposts only supports
+    /// VPC style access points.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Does not support ACL on S3 on Outposts buckets.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Does not support Public Access on S3 on Outposts buckets.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Does not support object lock for S3 on Outposts buckets.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="AmazonS3/latest/dev/S3onOutposts.html">Using Amazon
+    /// S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide </i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// All Amazon S3 on Outposts REST API requests for this action require an additional
+    /// parameter of <code>x-amz-outpost-id</code> to be passed with the request and an S3
+    /// on Outposts endpoint hostname prefix instead of <code>s3-control</code>. For an example
+    /// of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+    /// hostname prefix and the <code>x-amz-outpost-id</code> derived using the access point
+    /// ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html#API_control_CreateAccessPoint_Examples">Examples</a>
+    /// section.
+    /// </para>
+    ///   
+    /// <para>
+    /// The following actions are related to <code>CreateAccessPoint</code>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html">GetAccessPoint</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html">DeleteAccessPoint</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccessPoints</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateAccessPointRequest : AmazonS3ControlRequest
     {
@@ -64,6 +128,20 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property Bucket. 
         /// <para>
         /// The name of the bucket that you want to associate this access point with.
+        /// </para>
+        ///  
+        /// <para>
+        /// For using this parameter with Amazon S3 on Outposts with the REST API, you must specify
+        /// the name and the x-amz-outpost-id as well.
+        /// </para>
+        ///  
+        /// <para>
+        /// For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify
+        /// the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
+        /// For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code>
+        /// owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the
+        /// URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
+        /// The value must be URL encoded. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=255)]
@@ -119,6 +197,11 @@ namespace Amazon.S3Control.Model
         /// If you include this field, Amazon S3 restricts access to this access point to requests
         /// from the specified virtual private cloud (VPC).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is required for creating an access point for Amazon S3 on Outposts buckets.
+        /// </para>
+        ///  </note>
         /// </summary>
         public VpcConfiguration VpcConfiguration
         {

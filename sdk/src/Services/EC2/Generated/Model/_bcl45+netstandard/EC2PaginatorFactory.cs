@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -373,6 +373,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeNetworkInsightsAnalyses operation
+        ///</summary>
+        public IDescribeNetworkInsightsAnalysesPaginator DescribeNetworkInsightsAnalyses(DescribeNetworkInsightsAnalysesRequest request) 
+        {
+            return new DescribeNetworkInsightsAnalysesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeNetworkInsightsPaths operation
+        ///</summary>
+        public IDescribeNetworkInsightsPathsPaginator DescribeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest request) 
+        {
+            return new DescribeNetworkInsightsPathsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeNetworkInterfacePermissions operation
         ///</summary>
         public IDescribeNetworkInterfacePermissionsPaginator DescribeNetworkInterfacePermissions(DescribeNetworkInterfacePermissionsRequest request) 
@@ -546,6 +562,22 @@ namespace Amazon.EC2.Model
         public IDescribeTransitGatewayAttachmentsPaginator DescribeTransitGatewayAttachments(DescribeTransitGatewayAttachmentsRequest request) 
         {
             return new DescribeTransitGatewayAttachmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeTransitGatewayConnectPeers operation
+        ///</summary>
+        public IDescribeTransitGatewayConnectPeersPaginator DescribeTransitGatewayConnectPeers(DescribeTransitGatewayConnectPeersRequest request) 
+        {
+            return new DescribeTransitGatewayConnectPeersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeTransitGatewayConnects operation
+        ///</summary>
+        public IDescribeTransitGatewayConnectsPaginator DescribeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest request) 
+        {
+            return new DescribeTransitGatewayConnectsPaginator(this.client, request);
         }
 
         /// <summary>

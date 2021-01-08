@@ -108,6 +108,9 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 #>
 				string snippet = stringWriter.ToString();
 				request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+<#
+					CheckContentMd5Header(this.Operation, "snippet");
+#>
 			}
 
 <#
@@ -155,7 +158,11 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 	else if (this.Config.ServiceModel.Type == ServiceType.Json)
 	{
 #>
-            request.Content = System.Text.Encoding.UTF8.GetBytes("{}");
+			var content = "{}";
+            request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+<#
+				CheckContentMd5Header(this.Operation, "content");
+#>
 <#
 	}
 

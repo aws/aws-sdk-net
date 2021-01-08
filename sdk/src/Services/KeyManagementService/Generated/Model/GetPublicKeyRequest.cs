@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -83,6 +83,21 @@ namespace Amazon.KeyManagementService.Model
     /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: Yes. To perform this operation with a CMK in a different
+    /// AWS account, specify the key ARN or alias ARN in the value of the <code>KeyId</code>
+    /// parameter.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetPublicKey</a>
+    /// (key policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b>: <a>CreateKey</a> 
     /// </para>
     /// </summary>
     public partial class GetPublicKeyRequest : AmazonKeyManagementServiceRequest

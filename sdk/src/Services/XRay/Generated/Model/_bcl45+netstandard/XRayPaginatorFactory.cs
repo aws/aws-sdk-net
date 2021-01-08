@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,6 +50,22 @@ namespace Amazon.XRay.Model
         public IGetGroupsPaginator GetGroups(GetGroupsRequest request) 
         {
             return new GetGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetInsightEvents operation
+        ///</summary>
+        public IGetInsightEventsPaginator GetInsightEvents(GetInsightEventsRequest request) 
+        {
+            return new GetInsightEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetInsightSummaries operation
+        ///</summary>
+        public IGetInsightSummariesPaginator GetInsightSummaries(GetInsightSummariesRequest request) 
+        {
+            return new GetInsightSummariesPaginator(this.client, request);
         }
 
         /// <summary>

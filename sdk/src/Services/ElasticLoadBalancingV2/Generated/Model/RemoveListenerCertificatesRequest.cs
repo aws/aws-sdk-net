@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,16 +32,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// Container for the parameters to the RemoveListenerCertificates operation.
     /// Removes the specified certificate from the certificate list for the specified HTTPS
     /// or TLS listener.
-    /// 
-    ///  
-    /// <para>
-    /// You can't remove the default certificate for a listener. To replace the default certificate,
-    /// call <a>ModifyListener</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// To list the certificates for your listener, use <a>DescribeListenerCertificates</a>.
-    /// </para>
     /// </summary>
     public partial class RemoveListenerCertificatesRequest : AmazonElasticLoadBalancingV2Request
     {

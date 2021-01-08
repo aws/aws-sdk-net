@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -228,13 +228,14 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the database engine. Currently, setting this parameter has no
-        /// effect. To upgrade your database engine to the most recent release, use the <a>ApplyPendingMaintenanceAction</a>
-        /// API.
+        /// The version number of the database engine to which you want to upgrade. Changing this
+        /// parameter results in an outage. The change is applied during the next maintenance
+        /// window unless the <code>ApplyImmediately</code> parameter is set to true.
         /// </para>
         ///  
         /// <para>
-        /// For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+        /// For a list of valid engine versions, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html">Engine
+        /// Releases for Amazon Neptune</a>, or call <a href="https://docs.aws.amazon.com/neptune/latest/userguide/api-other-apis.html#DescribeDBEngineVersions">DescribeDBEngineVersions</a>.
         /// </para>
         /// </summary>
         public string EngineVersion

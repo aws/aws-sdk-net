@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,6 +31,12 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the DeleteColumnStatisticsForPartition operation.
     /// Delete the partition column statistics of a column.
+    /// 
+    ///  
+    /// <para>
+    /// The Identity and Access Management (IAM) permission required for this operation is
+    /// <code>DeletePartition</code>.
+    /// </para>
     /// </summary>
     public partial class DeleteColumnStatisticsForPartitionRequest : AmazonGlueRequest
     {

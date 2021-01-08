@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,13 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// An object that represents the AWS Cloud Map attribute information for your virtual
-    ///         node.
+    /// node.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// AWS Cloud Map is not available in the eu-south-1 Region.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AwsCloudMapInstanceAttribute
     {
@@ -41,7 +47,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service
-        ///         instance that contains the specified key and value is returned.
+        /// instance that contains the specified key and value is returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -61,7 +67,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The value of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service
-        ///         instance that contains the specified key and value is returned.
+        /// instance that contains the specified key and value is returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

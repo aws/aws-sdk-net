@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProcessingOutput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAppManaged())
+            {
+                context.Writer.WritePropertyName("AppManaged");
+                context.Writer.Write(requestObject.AppManaged);
+            }
+
+            if(requestObject.IsSetFeatureStoreOutput())
+            {
+                context.Writer.WritePropertyName("FeatureStoreOutput");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProcessingFeatureStoreOutputMarshaller.Instance;
+                marshaller.Marshall(requestObject.FeatureStoreOutput, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOutputName())
             {
                 context.Writer.WritePropertyName("OutputName");

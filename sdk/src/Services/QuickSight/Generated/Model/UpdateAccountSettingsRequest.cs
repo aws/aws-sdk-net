@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccountSettings operation.
-    /// Updates the Amazon QuickSight settings in your AWS Account.
+    /// Updates the Amazon QuickSight settings in your AWS account.
     /// </summary>
     public partial class UpdateAccountSettingsRequest : AmazonQuickSightRequest
     {
@@ -61,9 +61,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DefaultNamespace. 
         /// <para>
-        /// The default namespace for this AWS Account. Currently, the default is <code>default</code>.
-        /// IAM users who register for the first time with QuickSight provide an email that becomes
-        /// associated with the default namespace.
+        /// The default namespace for this AWS account. Currently, the default is <code>default</code>.
+        /// AWS Identity and Access Management (IAM) users that register for the first time with
+        /// QuickSight provide an email that becomes associated with the default namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

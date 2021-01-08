@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,10 +35,10 @@ namespace Amazon.MQ
     /// <summary>
     /// Implementation for accessing MQ
     ///
-    /// Amazon MQ is a managed message broker service for Apache ActiveMQ that makes it easy
-    /// to set up and operate message brokers in the cloud. A message broker allows software
-    /// applications and components to communicate using various programming languages, operating
-    /// systems, and formal messaging protocols.
+    /// Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that
+    /// makes it easy to set up and operate message brokers in the cloud. A message broker
+    /// allows software applications and components to communicate using various programming
+    /// languages, operating systems, and formal messaging protocols.
     /// </summary>
     public partial class AmazonMQClient : AmazonServiceClient, IAmazonMQ
     {

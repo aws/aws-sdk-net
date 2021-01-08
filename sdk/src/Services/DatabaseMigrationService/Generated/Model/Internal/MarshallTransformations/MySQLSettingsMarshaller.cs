@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,34 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MySQLSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAfterConnectScript())
+            {
+                context.Writer.WritePropertyName("AfterConnectScript");
+                context.Writer.Write(requestObject.AfterConnectScript);
+            }
+
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
                 context.Writer.Write(requestObject.DatabaseName);
+            }
+
+            if(requestObject.IsSetEventsPollInterval())
+            {
+                context.Writer.WritePropertyName("EventsPollInterval");
+                context.Writer.Write(requestObject.EventsPollInterval);
+            }
+
+            if(requestObject.IsSetMaxFileSize())
+            {
+                context.Writer.WritePropertyName("MaxFileSize");
+                context.Writer.Write(requestObject.MaxFileSize);
+            }
+
+            if(requestObject.IsSetParallelLoadThreads())
+            {
+                context.Writer.WritePropertyName("ParallelLoadThreads");
+                context.Writer.Write(requestObject.ParallelLoadThreads);
             }
 
             if(requestObject.IsSetPassword())
@@ -63,10 +87,34 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Port);
             }
 
+            if(requestObject.IsSetSecretsManagerAccessRoleArn())
+            {
+                context.Writer.WritePropertyName("SecretsManagerAccessRoleArn");
+                context.Writer.Write(requestObject.SecretsManagerAccessRoleArn);
+            }
+
+            if(requestObject.IsSetSecretsManagerSecretId())
+            {
+                context.Writer.WritePropertyName("SecretsManagerSecretId");
+                context.Writer.Write(requestObject.SecretsManagerSecretId);
+            }
+
             if(requestObject.IsSetServerName())
             {
                 context.Writer.WritePropertyName("ServerName");
                 context.Writer.Write(requestObject.ServerName);
+            }
+
+            if(requestObject.IsSetServerTimezone())
+            {
+                context.Writer.WritePropertyName("ServerTimezone");
+                context.Writer.Write(requestObject.ServerTimezone);
+            }
+
+            if(requestObject.IsSetTargetDbType())
+            {
+                context.Writer.WritePropertyName("TargetDbType");
+                context.Writer.Write(requestObject.TargetDbType);
             }
 
             if(requestObject.IsSetUsername())

@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -65,6 +65,16 @@ namespace Amazon.ElasticMapReduce.Model
         /// Paginator for ListSteps operation
         ///</summary>
         IListStepsPaginator ListSteps(ListStepsRequest request);
+
+        /// <summary>
+        /// Paginator for ListStudios operation
+        ///</summary>
+        IListStudiosPaginator ListStudios(ListStudiosRequest request);
+
+        /// <summary>
+        /// Paginator for ListStudioSessionMappings operation
+        ///</summary>
+        IListStudioSessionMappingsPaginator ListStudioSessionMappings(ListStudioSessionMappingsRequest request);
     }
 }
 #endif

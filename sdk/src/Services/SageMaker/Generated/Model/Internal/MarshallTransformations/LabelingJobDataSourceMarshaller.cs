@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -52,6 +52,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
                 var marshaller = LabelingJobS3DataSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3DataSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSnsDataSource())
+            {
+                context.Writer.WritePropertyName("SnsDataSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LabelingJobSnsDataSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.SnsDataSource, context);
 
                 context.Writer.WriteObjectEnd();
             }

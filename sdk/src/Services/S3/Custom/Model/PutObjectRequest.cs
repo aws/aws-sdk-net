@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -54,9 +54,11 @@ namespace Amazon.S3.Model
         private bool autoResetStreamPosition = true;
         private bool useChunkEncoding = true;
         private RequestPayer requestPayer;
+        private string expectedBucketOwner;
 
         private string md5Digest;
         private List<Tag> tagset = new List<Tag>();
+        private bool? bucketKeyEnabled;
 
         /// <summary>
         /// A canned access control list (CACL) to apply to the object.
@@ -137,6 +139,19 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// <para><b>WARNING: Setting DisableMD5Stream to true disables the MD5 data integrity check 
+        /// on this request.</b></para>
+        /// <para>When true, MD5Stream will not be used in the upload request. This may increase 
+        /// upload performance under high CPU loads. The default value is null. When null, the 
+        /// AWSConfigsS3.DisableMD5Stream property value will be used.</para>
+        /// <para>MD5Stream, SigV4 payload signing, and HTTPS each provide some data integrity 
+        /// verification. If DisableMD5Stream is true and DisablePayloadSigning is true, then the 
+        /// possibility of data corruption is completely dependant on HTTPS being the only remaining 
+        /// source of data integrity verification.</para>
+        /// </summary>
+        public bool? DisableMD5Stream { get; set; }
+
+        /// <summary>
         /// If this value is set to true then a chunked encoding upload will be used for the request.
         /// Default: true.
         /// </summary>
@@ -146,14 +161,38 @@ namespace Amazon.S3.Model
             set { this.useChunkEncoding = value; }
         }
 
+        /// <summary>      
+        /// <para><b>WARNING: Setting DisablePayloadSigning to true disables the SigV4 payload signing 
+        /// data integrity check on this request.</b></para>  
+        /// <para>If using SigV4, the DisablePayloadSigning flag controls if the payload should be 
+        /// signed on a request by request basis. By default this flag is null which will use the 
+        /// default client behavior. The default client behavior is to sign the payload. When 
+        /// DisablePayloadSigning is true, the request will be signed with an UNSIGNED-PAYLOAD value. 
+        /// Setting DisablePayloadSigning to true requires that the request is sent over a HTTPS 
+        /// connection.</para>        
+        /// <para>Under certain circumstances, such as uploading to S3 while using MD5 hashing, it may 
+        /// be desireable to use UNSIGNED-PAYLOAD to decrease signing CPU usage. This flag only applies 
+        /// to Amazon S3 PutObject and UploadPart requests.</para>
+        /// <para>MD5Stream, SigV4 payload signing, and HTTPS each provide some data integrity 
+        /// verification. If DisableMD5Stream is true and DisablePayloadSigning is true, then the 
+        /// possibility of data corruption is completely dependant on HTTPS being the only remaining 
+        /// source of data integrity verification.</para>
+        /// </summary>
+        public bool? DisablePayloadSigning { get; set; }
+
         /// <summary>
-        /// <para>Bucket name to which the PUT operation was initiated.</para>
+        /// <para> The bucket name to which the PUT operation was initiated.</para>
         /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
         /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
-        /// When using this operation using an access point through the AWS SDKs, you provide the access point 
+        /// When using this operation with an access point through the AWS SDKs, you provide the access point 
         /// ARN in place of the bucket name. For more information about access point ARNs, see 
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> 
         /// in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
+        /// <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
+        /// The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. 
+        /// When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. 
+        /// For more information about S3 on Outposts ARNs, see 
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
         /// </summary>
         public string BucketName
         {
@@ -339,8 +378,11 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// The type of storage to use for the object. Defaults to 'STANDARD'.
-        ///  
+        /// <para>By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. 
+        /// The STANDARD storage class provides high durability and high availability. 
+        /// Depending on performance needs, you can specify a different Storage Class. 
+        /// Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see 
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html\">Storage Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</para>
         /// </summary>
         public S3StorageClass StorageClass
         {
@@ -541,6 +583,43 @@ namespace Amazon.S3.Model
         internal bool IsSetTagSet()
         {
             return (this.tagset != null) && (this.tagset.Count > 0);
+        }
+
+        /// <summary>
+        /// The account id of the expected bucket owner. 
+        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+        }
+
+        /// <summary>
+        /// <para>Specifies whether Amazon S3 should use bucket key for object encryption 
+        /// with server-side encryption using AWS KMS (SSE-KMS). Setting this header 
+        /// to <code>true</code> causes Amazon S3 to use bucket key for object encryption with 
+        /// SSE-KMS.</para> <para>Specifying this header with a PUT operation doesn’t affect 
+        /// bucket-level settings for bucket key.</para>",
+        /// </summary>
+        public bool BucketKeyEnabled
+        {
+            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            set { this.bucketKeyEnabled = value; }
+        }
+
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return bucketKeyEnabled.HasValue;
         }
     }
 }

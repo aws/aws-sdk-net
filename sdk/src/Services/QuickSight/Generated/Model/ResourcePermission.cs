@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// The IAM action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+        /// The IAM action to grant or revoke permissions on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=16)]
@@ -62,7 +62,13 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The ARN of an Amazon QuickSight user, group, or namespace. (This is most common.)
+        /// The ARN of an Amazon QuickSight user or group associated with a data source or dataset.
+        /// (This is common.)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis,
+        /// dashboard, template, or theme. (This is common.)
         /// </para>
         ///  </li> <li> 
         /// <para>

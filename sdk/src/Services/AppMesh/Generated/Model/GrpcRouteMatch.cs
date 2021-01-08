@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property MethodName. 
         /// <para>
         /// The method name to match from the request. If you specify a name, you must also specify
-        ///         a <code>serviceName</code>.
+        /// a <code>serviceName</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,9 +42,15 @@ namespace Amazon.Batch.Model
         /// The contents of the <code>host</code> parameter determine whether your data volume
         /// persists on the host container instance and where it is stored. If the host parameter
         /// is empty, then the Docker daemon assigns a host path for your data volume. However,
-        /// the data is not guaranteed to persist after the containers associated with it stop
+        /// the data isn't guaranteed to persist after the containers associated with it stop
         /// running.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources and shouldn't
+        /// be provided.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Host Host
         {

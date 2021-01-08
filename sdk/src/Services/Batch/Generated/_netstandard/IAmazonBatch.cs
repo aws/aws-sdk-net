@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,26 +31,27 @@ namespace Amazon.Batch
     /// <summary>
     /// Interface for accessing Batch
     ///
-    /// AWS Batch enables you to run batch computing workloads on the AWS Cloud. Batch computing
-    /// is a common way for developers, scientists, and engineers to access large amounts
-    /// of compute resources, and AWS Batch removes the undifferentiated heavy lifting of
-    /// configuring and managing the required infrastructure. AWS Batch will be familiar to
-    /// users of traditional batch computing software. This service can efficiently provision
-    /// resources in response to jobs submitted in order to eliminate capacity constraints,
-    /// reduce compute costs, and deliver results quickly.
+    /// Using AWS Batch, you can run batch computing workloads on the AWS Cloud. Batch computing
+    /// is a common means for developers, scientists, and engineers to access large amounts
+    /// of compute resources. AWS Batch utilizes the advantages of this computing workload
+    /// to remove the undifferentiated heavy lifting of configuring and managing required
+    /// infrastructure, while also adopting a familiar batch computing software approach.
+    /// Given these advantages, AWS Batch can help you to efficiently provision resources
+    /// in response to jobs submitted, thus effectively helping to eliminate capacity constraints,
+    /// reduce compute costs, and deliver your results more quickly.
     /// 
     ///  
     /// <para>
-    /// As a fully managed service, AWS Batch enables developers, scientists, and engineers
-    /// to run batch computing workloads of any scale. AWS Batch automatically provisions
-    /// compute resources and optimizes the workload distribution based on the quantity and
-    /// scale of the workloads. With AWS Batch, there is no need to install or manage batch
-    /// computing software, which allows you to focus on analyzing results and solving problems.
-    /// AWS Batch reduces operational complexities, saves time, and reduces costs, which makes
-    /// it easy for developers, scientists, and engineers to run their batch jobs in the AWS
-    /// Cloud.
+    /// As a fully managed service, AWS Batch can run batch computing workloads of any scale.
+    /// AWS Batch automatically provisions compute resources and optimizes workload distribution
+    /// based on the quantity and scale of your specific workloads. With AWS Batch, there's
+    /// no need to install or manage batch computing software. This means that you can focus
+    /// your time and energy on analyzing results and solving your specific problems. 
     /// </para>
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial interface IAmazonBatch : IAmazonService, IDisposable
     {
 #if AWS_ASYNC_ENUMERABLES_API
@@ -66,9 +67,9 @@ namespace Amazon.Batch
 
         /// <summary>
         /// Cancels a job in an AWS Batch job queue. Jobs that are in the <code>SUBMITTED</code>,
-        /// <code>PENDING</code>, or <code>RUNNABLE</code> state are cancelled. Jobs that have
-        /// progressed to <code>STARTING</code> or <code>RUNNING</code> are not cancelled (but
-        /// the API operation still succeeds, even if no job is cancelled); these jobs must be
+        /// <code>PENDING</code>, or <code>RUNNABLE</code> state are canceled. Jobs that have
+        /// progressed to <code>STARTING</code> or <code>RUNNING</code> are not canceled (but
+        /// the API operation still succeeds, even if no job is canceled); these jobs must be
         /// terminated with the <a>TerminateJob</a> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
@@ -80,7 +81,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -96,7 +97,9 @@ namespace Amazon.Batch
 
         /// <summary>
         /// Creates an AWS Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code>
-        /// compute environments.
+        /// compute environments. <code>MANAGED</code> compute environments can use Amazon EC2
+        /// or AWS Fargate resources. <code>UNMANAGED</code> compute environments can only use
+        /// EC2 resources.
         /// 
         ///  
         /// <para>
@@ -104,9 +107,10 @@ namespace Amazon.Batch
         /// of the compute resources within the environment. This is based on the compute resource
         /// specification that you define or the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
         /// template</a> that you specify when you create the compute environment. You can choose
-        /// to use Amazon EC2 On-Demand Instances or Spot Instances in your managed compute environment.
-        /// You can optionally set a maximum price so that Spot Instances only launch when the
-        /// Spot Instance price is below a specified percentage of the On-Demand price.
+        /// either to use EC2 On-Demand Instances and EC2 Spot Instances, or to use Fargate and
+        /// Fargate Spot capacity in your managed compute environment. You can optionally set
+        /// a maximum price so that Spot Instances only launch when the Spot Instance price is
+        /// less than a specified percentage of the On-Demand price.
         /// </para>
         ///  <note> 
         /// <para>
@@ -114,25 +118,26 @@ namespace Amazon.Batch
         /// </para>
         ///  </note> 
         /// <para>
-        /// In an unmanaged compute environment, you can manage your own compute resources. This
-        /// provides more compute resource configuration options, such as using a custom AMI,
-        /// but you must ensure that your AMI meets the Amazon ECS container instance AMI specification.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container
-        /// Instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// In an unmanaged compute environment, you can manage your own EC2 compute resources
+        /// and have a lot of flexibility with how you configure your compute resources. For example,
+        /// you can use custom AMI. However, you need to verify that your AMI meets the Amazon
+        /// ECS container instance AMI specification. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
+        /// instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// After you have created your unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a>
-        /// operation to find the Amazon ECS cluster that is associated with it. Then, manually
+        /// operation to find the Amazon ECS cluster that's associated with it. Then, manually
         /// launch your container instances into that Amazon ECS cluster. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
-        /// an Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service Developer
+        /// an Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// AWS Batch does not upgrade the AMIs in a compute environment after it is created (for
-        /// example, when a newer version of the Amazon ECS-optimized AMI is available). You are
-        /// responsible for the management of the guest operating system (including updates and
-        /// security patches) and any additional application software or utilities that you install
-        /// on the compute resources. To use a new AMI for your AWS Batch jobs:
+        /// AWS Batch doesn't upgrade the AMIs in a compute environment after it's created. For
+        /// example, it doesn't update the AMIs when a newer version of the Amazon ECS-optimized
+        /// AMI is available. Therefore, you're responsible for the management of the guest operating
+        /// system (including updates and security patches) and any additional application software
+        /// or utilities that you install on the compute resources. To use a new AMI for your
+        /// AWS Batch jobs, complete these steps:
         /// </para>
         ///  <ol> <li> 
         /// <para>
@@ -144,11 +149,11 @@ namespace Amazon.Batch
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Remove the old compute environment from your job queue.
+        /// Remove the earlier compute environment from your job queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delete the old compute environment.
+        /// Delete the earlier compute environment.
         /// </para>
         ///  </li> </ol> </note>
         /// </summary>
@@ -161,7 +166,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -197,7 +202,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -218,7 +223,10 @@ namespace Amazon.Batch
         /// <para>
         /// Before you can delete a compute environment, you must set its state to <code>DISABLED</code>
         /// with the <a>UpdateComputeEnvironment</a> API operation and disassociate it from any
-        /// job queues with the <a>UpdateJobQueue</a> API operation.
+        /// job queues with the <a>UpdateJobQueue</a> API operation. Compute environments that
+        /// use AWS Fargate resources must terminate all active jobs on that compute environment
+        /// before deleting the compute environment. If this isn't done, the compute environment
+        /// will end up in an invalid state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteComputeEnvironment service method.</param>
@@ -230,7 +238,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -246,12 +254,13 @@ namespace Amazon.Batch
 
         /// <summary>
         /// Deletes the specified job queue. You must first disable submissions for a queue with
-        /// the <a>UpdateJobQueue</a> operation. All jobs in the queue are terminated when you
-        /// delete a job queue.
+        /// the <a>UpdateJobQueue</a> operation. All jobs in the queue are eventually terminated
+        /// when you delete a job queue. The jobs are terminated at a rate of about 16 jobs each
+        /// second.
         /// 
         ///  
         /// <para>
-        /// It is not necessary to disassociate compute environments from a queue before submitting
+        /// It's not necessary to disassociate compute environments from a queue before submitting
         /// a <code>DeleteJobQueue</code> request.
         /// </para>
         /// </summary>
@@ -264,7 +273,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -279,8 +288,8 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Deregisters an AWS Batch job definition. Job definitions will be permanently deleted
-        /// after 180 days.
+        /// Deregisters an AWS Batch job definition. Job definitions are permanently deleted after
+        /// 180 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterJobDefinition service method.</param>
         /// <param name="cancellationToken">
@@ -291,7 +300,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -310,7 +319,7 @@ namespace Amazon.Batch
         /// 
         ///  
         /// <para>
-        /// If you are using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code>
+        /// If you're using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code>
         /// operation to determine the <code>ecsClusterArn</code> that you should launch your
         /// Amazon ECS container instances into.
         /// </para>
@@ -324,7 +333,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -351,7 +360,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -377,7 +386,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -403,7 +412,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -422,24 +431,24 @@ namespace Amazon.Batch
         /// 
         ///  
         /// <para>
-        /// You must specify only one of the following:
+        /// You must specify only one of the following items:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// a job queue ID to return a list of jobs in that job queue
+        /// A job queue ID to return a list of jobs in that job queue
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// a multi-node parallel job ID to return a list of that job's nodes
+        /// A multi-node parallel job ID to return a list of that job's nodes
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// an array job ID to return a list of that job's children
+        /// An array job ID to return a list of that job's children
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// You can filter the results by job status with the <code>jobStatus</code> parameter.
-        /// If you do not specify a status, only <code>RUNNING</code> jobs are returned.
+        /// If you don't specify a status, only <code>RUNNING</code> jobs are returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
@@ -451,13 +460,41 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">REST API Reference for ListJobs Operation</seealso>
         Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// Lists the tags for an AWS Batch resource. AWS Batch resources that support tags are
+        /// compute environments, jobs, job definitions, and job queues. ARNs for child jobs of
+        /// array and multi-node parallel (MNP) jobs are not supported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -477,7 +514,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -494,6 +531,13 @@ namespace Amazon.Batch
         /// <summary>
         /// Submits an AWS Batch job from a job definition. Parameters specified during <a>SubmitJob</a>
         /// override parameters defined in the job definition.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Jobs run on Fargate resources don't run for more than 14 days. After 14 days, the
+        /// Fargate resources might no longer be available and the job is terminated.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SubmitJob service method.</param>
         /// <param name="cancellationToken">
@@ -504,13 +548,44 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">REST API Reference for SubmitJob Operation</seealso>
         Task<SubmitJobResponse> SubmitJobAsync(SubmitJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+        /// If existing tags on a resource aren't specified in the request parameters, they aren't
+        /// changed. When a resource is deleted, the tags associated with that resource are deleted
+        /// as well. AWS Batch resources that support tags are compute environments, jobs, job
+        /// definitions, and job queues. ARNs for child jobs of array and multi-node parallel
+        /// (MNP) jobs are not supported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -532,13 +607,39 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">REST API Reference for TerminateJob Operation</seealso>
         Task<TerminateJobResponse> TerminateJobAsync(TerminateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// Deletes specified tags from an AWS Batch resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -558,7 +659,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -584,7 +685,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ClientException">
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// specifying an identifier that's not valid.
         /// </exception>
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.

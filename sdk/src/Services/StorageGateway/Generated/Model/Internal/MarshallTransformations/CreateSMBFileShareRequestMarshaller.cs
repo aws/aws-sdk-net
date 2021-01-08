@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccessBasedEnumeration())
+                {
+                    context.Writer.WritePropertyName("AccessBasedEnumeration");
+                    context.Writer.Write(publicRequest.AccessBasedEnumeration);
+                }
+
                 if(publicRequest.IsSetAdminUserList())
                 {
                     context.Writer.WritePropertyName("AdminUserList");
@@ -165,6 +171,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("LocationARN");
                     context.Writer.Write(publicRequest.LocationARN);
+                }
+
+                if(publicRequest.IsSetNotificationPolicy())
+                {
+                    context.Writer.WritePropertyName("NotificationPolicy");
+                    context.Writer.Write(publicRequest.NotificationPolicy);
                 }
 
                 if(publicRequest.IsSetObjectACL())

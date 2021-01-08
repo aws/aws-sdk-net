@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -145,6 +145,23 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.SortingConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetUserContext())
+                {
+                    context.Writer.WritePropertyName("UserContext");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UserContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UserContext, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVisitorId())
+                {
+                    context.Writer.WritePropertyName("VisitorId");
+                    context.Writer.Write(publicRequest.VisitorId);
                 }
 
         

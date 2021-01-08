@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,9 +33,8 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// The finding provider can provide the initial severity, but cannot update it after
-    /// that. The severity can only be updated by a master account. It cannot be updated by
-    /// a member account.
+    /// The finding provider can provide the initial severity. The finding provider can only
+    /// update the severity if it has not been updated using <code>BatchUpdateFindings</code>.
     /// </para>
     ///  
     /// <para>

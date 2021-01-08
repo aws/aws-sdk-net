@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about an account that's designated as a delegated administrator
-    /// of Amazon Macie for an AWS organization.
+    /// Provides information about the delegated Amazon Macie administrator account for an
+    /// AWS organization.
     /// </summary>
     public partial class AdminAccount
     {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -156,7 +156,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The period of time that you want the forecast to cover.
+        /// The period of time that you want the forecast to cover. The start date must be equal
+        /// to or no later than the current date to avoid a validation error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

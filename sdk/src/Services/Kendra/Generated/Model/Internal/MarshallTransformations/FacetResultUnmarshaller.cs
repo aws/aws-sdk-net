@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -74,6 +74,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<DocumentAttributeValueCountPair, DocumentAttributeValueCountPairUnmarshaller>(DocumentAttributeValueCountPairUnmarshaller.Instance);
                     unmarshalledObject.DocumentAttributeValueCountPairs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DocumentAttributeValueType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DocumentAttributeValueType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

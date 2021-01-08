@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ namespace Amazon.LicenseManager.Model
     public partial class CreateLicenseConfigurationRequest : AmazonLicenseManagerRequest
     {
         private string _description;
+        private bool? _disassociateWhenNotFound;
         private long? _licenseCount;
         private bool? _licenseCountHardLimit;
         private LicenseCountingType _licenseCountingType;
@@ -69,6 +70,24 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisassociateWhenNotFound. 
+        /// <para>
+        /// When true, disassociates a resource when software is uninstalled.
+        /// </para>
+        /// </summary>
+        public bool DisassociateWhenNotFound
+        {
+            get { return this._disassociateWhenNotFound.GetValueOrDefault(); }
+            set { this._disassociateWhenNotFound = value; }
+        }
+
+        // Check to see if DisassociateWhenNotFound property is set
+        internal bool IsSetDisassociateWhenNotFound()
+        {
+            return this._disassociateWhenNotFound.HasValue; 
         }
 
         /// <summary>

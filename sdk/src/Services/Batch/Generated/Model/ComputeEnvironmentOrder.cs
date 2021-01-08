@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,18 @@ namespace Amazon.Batch.Model
     /// The order in which compute environments are tried for job placement within a queue.
     /// Compute environments are tried in ascending order. For example, if two compute environments
     /// are associated with a job queue, the compute environment with a lower order integer
-    /// value is tried for job placement first.
+    /// value is tried for job placement first. Compute environments must be in the <code>VALID</code>
+    /// state before you can associate them with a job queue. All of the compute environments
+    /// must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code>
+    /// or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// All compute environments that are associated with a job queue must share the same
+    /// architecture. AWS Batch doesn't support mixing compute environment architecture types
+    /// in a single job queue.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ComputeEnvironmentOrder
     {
@@ -61,7 +72,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Order. 
         /// <para>
-        /// The order of the compute environment.
+        /// The order of the compute environment. Compute environments are tried in ascending
+        /// order. For example, if two compute environments are associated with a job queue, the
+        /// compute environment with a lower <code>order</code> integer value is tried for job
+        /// placement first.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

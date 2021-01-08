@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Contains information on the server side encryption method used in the S3 bucket. See
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/atest/dev/serv-side-encryption.html">S3
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">S3
     /// Server-Side Encryption</a> for more information.
     /// </summary>
     public partial class DefaultServerSideEncryption

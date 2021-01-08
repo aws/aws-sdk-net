@@ -168,6 +168,23 @@
       ],
       "documentation":"<p>Creates a new OpsItem. You must have permission in AWS Identity and Access Management (IAM) to create a new OpsItem. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html\">Getting started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their AWS resources. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html\">AWS Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. </p>"
     },
+    "CreateOpsMetadata":{
+      "name":"CreateOpsMetadata",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateOpsMetadataRequest"},
+      "output":{"shape":"CreateOpsMetadataResult"},
+      "errors":[
+        {"shape":"OpsMetadataAlreadyExistsException"},
+        {"shape":"OpsMetadataTooManyUpdatesException"},
+        {"shape":"OpsMetadataInvalidArgumentException"},
+        {"shape":"OpsMetadataLimitExceededException"},
+        {"shape":"InternalServerError"}
+      ],
+      "documentation":"<p>If you create a new application in Application Manager, Systems Manager calls this API action to specify information about the new application, including the application type.</p>"
+    },
     "CreatePatchBaseline":{
       "name":"CreatePatchBaseline",
       "http":{
@@ -277,6 +294,21 @@
         {"shape":"InternalServerError"}
       ],
       "documentation":"<p>Deletes a maintenance window.</p>"
+    },
+    "DeleteOpsMetadata":{
+      "name":"DeleteOpsMetadata",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteOpsMetadataRequest"},
+      "output":{"shape":"DeleteOpsMetadataResult"},
+      "errors":[
+        {"shape":"OpsMetadataNotFoundException"},
+        {"shape":"OpsMetadataInvalidArgumentException"},
+        {"shape":"InternalServerError"}
+      ],
+      "documentation":"<p>Delete OpsMetadata related to an application.</p>"
     },
     "DeleteParameter":{
       "name":"DeleteParameter",
@@ -734,7 +766,7 @@
         {"shape":"DoesNotExistException"},
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>Lists the tasks in a maintenance window.</p>"
+      "documentation":"<p>Lists the tasks in a maintenance window.</p> <note> <p>For maintenance window tasks without a specified target, you cannot supply values for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. These values do not affect the running of your task and can be ignored.</p> </note>"
     },
     "DescribeMaintenanceWindows":{
       "name":"DescribeMaintenanceWindows",
@@ -843,7 +875,7 @@
       "errors":[
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>Lists the properties of available patches organized by product, product family, classification, severity, and other properties of available patches. You can use the reported properties in the filters you specify in requests for actions such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>, <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.</p> <p>The following section lists the properties that can be used in filters for each major operating system type:</p> <dl> <dt>WINDOWS</dt> <dd> <p>Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY</p> </dd> <dt>AMAZON_LINUX</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>AMAZON_LINUX_2</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>UBUNTU </dt> <dd> <p>Valid properties: PRODUCT, PRIORITY</p> </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>SUSE</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>CENTOS</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> </dl>"
+      "documentation":"<p>Lists the properties of available patches organized by product, product family, classification, severity, and other properties of available patches. You can use the reported properties in the filters you specify in requests for actions such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>, <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.</p> <p>The following section lists the properties that can be used in filters for each major operating system type:</p> <dl> <dt>AMAZON_LINUX</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>AMAZON_LINUX_2</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>CENTOS</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>DEBIAN</dt> <dd> <p>Valid properties: PRODUCT, PRIORITY</p> </dd> <dt>MACOS</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION</p> </dd> <dt>ORACLE_LINUX</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>REDHAT_ENTERPRISE_LINUX</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>SUSE</dt> <dd> <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p> </dd> <dt>UBUNTU</dt> <dd> <p>Valid properties: PRODUCT, PRIORITY</p> </dd> <dt>WINDOWS</dt> <dd> <p>Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY</p> </dd> </dl>"
     },
     "DescribeSessions":{
       "name":"DescribeSessions",
@@ -1065,7 +1097,7 @@
         {"shape":"DoesNotExistException"},
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>Lists the tasks in a maintenance window.</p>"
+      "documentation":"<p>Lists the tasks in a maintenance window.</p> <note> <p>For maintenance window tasks without a specified target, you cannot supply values for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. These values do not affect the running of your task and can be ignored.</p> </note>"
     },
     "GetOpsItem":{
       "name":"GetOpsItem",
@@ -1080,6 +1112,21 @@
         {"shape":"OpsItemNotFoundException"}
       ],
       "documentation":"<p>Get information about an OpsItem by using the ID. You must have permission in AWS Identity and Access Management (IAM) to view information about an OpsItem. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html\">Getting started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their AWS resources. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html\">AWS Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. </p>"
+    },
+    "GetOpsMetadata":{
+      "name":"GetOpsMetadata",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetOpsMetadataRequest"},
+      "output":{"shape":"GetOpsMetadataResult"},
+      "errors":[
+        {"shape":"OpsMetadataNotFoundException"},
+        {"shape":"OpsMetadataInvalidArgumentException"},
+        {"shape":"InternalServerError"}
+      ],
+      "documentation":"<p>View operational metadata related to an application in Application Manager.</p>"
     },
     "GetOpsSummary":{
       "name":"GetOpsSummary",
@@ -1129,7 +1176,7 @@
         {"shape":"InvalidNextToken"},
         {"shape":"InvalidKeyId"}
       ],
-      "documentation":"<p>Query a list of all parameters used by the AWS account.</p>"
+      "documentation":"<p>Retrieves the history of all changes to a parameter.</p>"
     },
     "GetParameters":{
       "name":"GetParameters",
@@ -1317,6 +1364,22 @@
       ],
       "documentation":"<p>Returns a summary count of compliant and non-compliant resources for a compliance type. For example, this call can return State Manager associations, patches, or custom compliance types according to the filter criteria that you specify.</p>"
     },
+    "ListDocumentMetadataHistory":{
+      "name":"ListDocumentMetadataHistory",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListDocumentMetadataHistoryRequest"},
+      "output":{"shape":"ListDocumentMetadataHistoryResponse"},
+      "errors":[
+        {"shape":"InternalServerError"},
+        {"shape":"InvalidDocument"},
+        {"shape":"InvalidDocumentVersion"},
+        {"shape":"InvalidNextToken"}
+      ],
+      "documentation":"<p>Information about approval reviews for a version of an SSM document.</p>"
+    },
     "ListDocumentVersions":{
       "name":"ListDocumentVersions",
       "http":{
@@ -1363,6 +1426,36 @@
         {"shape":"InvalidNextToken"}
       ],
       "documentation":"<p>A list of inventory items returned by the request.</p>"
+    },
+    "ListOpsItemEvents":{
+      "name":"ListOpsItemEvents",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListOpsItemEventsRequest"},
+      "output":{"shape":"ListOpsItemEventsResponse"},
+      "errors":[
+        {"shape":"InternalServerError"},
+        {"shape":"OpsItemNotFoundException"},
+        {"shape":"OpsItemLimitExceededException"},
+        {"shape":"OpsItemInvalidParameterException"}
+      ],
+      "documentation":"<p>Returns a list of all OpsItem events in the current AWS account and Region. You can limit the results to events associated with specific OpsItems by specifying a filter.</p>"
+    },
+    "ListOpsMetadata":{
+      "name":"ListOpsMetadata",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListOpsMetadataRequest"},
+      "output":{"shape":"ListOpsMetadataResult"},
+      "errors":[
+        {"shape":"OpsMetadataInvalidArgumentException"},
+        {"shape":"InternalServerError"}
+      ],
+      "documentation":"<p>Systems Manager calls this API action when displaying all Application Manager OpsMetadata objects or blobs.</p>"
     },
     "ListResourceComplianceSummaries":{
       "name":"ListResourceComplianceSummaries",
@@ -1678,6 +1771,25 @@
       ],
       "documentation":"<p>Initiates execution of an Automation document.</p>"
     },
+    "StartChangeRequestExecution":{
+      "name":"StartChangeRequestExecution",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartChangeRequestExecutionRequest"},
+      "output":{"shape":"StartChangeRequestExecutionResult"},
+      "errors":[
+        {"shape":"AutomationDefinitionNotFoundException"},
+        {"shape":"InvalidAutomationExecutionParametersException"},
+        {"shape":"AutomationExecutionLimitExceededException"},
+        {"shape":"AutomationDefinitionVersionNotFoundException"},
+        {"shape":"IdempotentParameterMismatch"},
+        {"shape":"InternalServerError"},
+        {"shape":"AutomationDefinitionNotApprovedException"}
+      ],
+      "documentation":"<p>Creates a change request for Change Manager. The runbooks (Automation documents) specified in the change request run only after all required approvals for the change request have been received.</p>"
+    },
     "StartSession":{
       "name":"StartSession",
       "http":{
@@ -1802,6 +1914,22 @@
       ],
       "documentation":"<p>Set the default version of a document. </p>"
     },
+    "UpdateDocumentMetadata":{
+      "name":"UpdateDocumentMetadata",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateDocumentMetadataRequest"},
+      "output":{"shape":"UpdateDocumentMetadataResponse"},
+      "errors":[
+        {"shape":"InternalServerError"},
+        {"shape":"InvalidDocument"},
+        {"shape":"InvalidDocumentOperation"},
+        {"shape":"InvalidDocumentVersion"}
+      ],
+      "documentation":"<p>Updates information related to approval reviews for a specific version of a document.</p>"
+    },
     "UpdateMaintenanceWindow":{
       "name":"UpdateMaintenanceWindow",
       "http":{
@@ -1842,7 +1970,7 @@
         {"shape":"DoesNotExistException"},
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>Modifies a task assigned to a maintenance window. You can't change the task type, but you can change the following values:</p> <ul> <li> <p>TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li> <p>TaskInvocationParameters</p> </li> <li> <p>Priority</p> </li> <li> <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul> <p>If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional fields that aren't specified are set to null.</p>"
+      "documentation":"<p>Modifies a task assigned to a maintenance window. You can't change the task type, but you can change the following values:</p> <ul> <li> <p>TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.</p> </li> <li> <p>ServiceRoleArn</p> </li> <li> <p>TaskInvocationParameters</p> </li> <li> <p>Priority</p> </li> <li> <p>MaxConcurrency</p> </li> <li> <p>MaxErrors</p> </li> </ul> <note> <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions). For more information about running tasks that do not specify targets, see see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html\">Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.</p> </note> <p>If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field is not modified. If you set <code>Replace</code> to true, then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional fields that aren't specified are set to null.</p> <important> <p>When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>, you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values you do not specify again are removed. For example, suppose that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p> </important>"
     },
     "UpdateManagedInstanceRole":{
       "name":"UpdateManagedInstanceRole",
@@ -1874,6 +2002,23 @@
         {"shape":"OpsItemInvalidParameterException"}
       ],
       "documentation":"<p>Edit or change an OpsItem. You must have permission in AWS Identity and Access Management (IAM) to update an OpsItem. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html\">Getting started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their AWS resources. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html\">AWS Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. </p>"
+    },
+    "UpdateOpsMetadata":{
+      "name":"UpdateOpsMetadata",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateOpsMetadataRequest"},
+      "output":{"shape":"UpdateOpsMetadataResult"},
+      "errors":[
+        {"shape":"OpsMetadataNotFoundException"},
+        {"shape":"OpsMetadataInvalidArgumentException"},
+        {"shape":"OpsMetadataKeyLimitExceededException"},
+        {"shape":"OpsMetadataTooManyUpdatesException"},
+        {"shape":"InternalServerError"}
+      ],
+      "documentation":"<p>Systems Manager calls this API action when you edit OpsMetadata in Application Manager.</p>"
     },
     "UpdatePatchBaseline":{
       "name":"UpdatePatchBaseline",
@@ -2231,7 +2376,11 @@
         },
         "ApplyOnlyAtCronInterval":{
           "shape":"ApplyOnlyAtCronInterval",
-          "documentation":"<p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it.</p>"
+          "documentation":"<p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter is not supported for rate expressions.</p>"
+        },
+        "TargetLocations":{
+          "shape":"TargetLocations",
+          "documentation":"<p>The combination of AWS Regions and AWS accounts where you want to run the association.</p>"
         }
       },
       "documentation":"<p>Describes the parameters for a document.</p>"
@@ -2432,7 +2581,7 @@
       "members":{
         "key":{
           "shape":"AssociationFilterKey",
-          "documentation":"<p>The name of the filter.</p>"
+          "documentation":"<p>The name of the filter.</p> <note> <p> <code>InstanceId</code> has been deprecated.</p> </note>"
         },
         "value":{
           "shape":"AssociationFilterValue",
@@ -2636,7 +2785,11 @@
         },
         "ApplyOnlyAtCronInterval":{
           "shape":"ApplyOnlyAtCronInterval",
-          "documentation":"<p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it.</p>"
+          "documentation":"<p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter is not supported for rate expressions.</p>"
+        },
+        "TargetLocations":{
+          "shape":"TargetLocations",
+          "documentation":"<p>The combination of AWS Regions and AWS accounts where you wanted to run the association when this association version was created.</p>"
         }
       },
       "documentation":"<p>Information about the association version.</p>"
@@ -2724,7 +2877,7 @@
         },
         "Values":{
           "shape":"AttachmentsSourceValues",
-          "documentation":"<p>The value of a key-value pair that identifies the location of an attachment to a document. The format for <b>Value</b> depends on the type of key you specify.</p> <ul> <li> <p>For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:</p> <p> <code>\"Values\": [ \"s3://my-bucket/my-folder\" ]</code> </p> </li> <li> <p>For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p> <code>\"Values\": [ \"s3://my-bucket/my-folder/my-file.py\" ]</code> </p> </li> <li> <p>For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in your account, a version number of that document, and a file attached to that document version that you want to reuse. For example:</p> <p> <code>\"Values\": [ \"MyOtherDocument/3/my-other-file.py\" ]</code> </p> <p>However, if the SSM document is shared with you from another account, the full SSM document ARN must be specified instead of the document name only. For example:</p> <p> <code>\"Values\": [ \"arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py\" ]</code> </p> </li> </ul>"
+          "documentation":"<p>The value of a key-value pair that identifies the location of an attachment to a document. The format for <b>Value</b> depends on the type of key you specify.</p> <ul> <li> <p>For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:</p> <p> <code>\"Values\": [ \"s3://doc-example-bucket/my-folder\" ]</code> </p> </li> <li> <p>For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:</p> <p> <code>\"Values\": [ \"s3://doc-example-bucket/my-folder/my-file.py\" ]</code> </p> </li> <li> <p>For the key <i>AttachmentReference</i>, the value is constructed from the name of another SSM document in your account, a version number of that document, and a file attached to that document version that you want to reuse. For example:</p> <p> <code>\"Values\": [ \"MyOtherDocument/3/my-other-file.py\" ]</code> </p> <p>However, if the SSM document is shared with you from another account, the full SSM document ARN must be specified instead of the document name only. For example:</p> <p> <code>\"Values\": [ \"arn:aws:ssm:us-east-2:111122223333:document/OtherAccountDocument/3/their-file.py\" ]</code> </p> </li> </ul>"
         },
         "Name":{
           "shape":"AttachmentIdentifier",
@@ -2771,6 +2924,14 @@
     "AutomationActionName":{
       "type":"string",
       "pattern":"^aws:[a-zA-Z]{3,25}$"
+    },
+    "AutomationDefinitionNotApprovedException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "documentation":"<p>Indicates that the Change Manager change template used in the change request was rejected or is still in a pending state.</p>",
+      "exception":true
     },
     "AutomationDefinitionNotFoundException":{
       "type":"structure",
@@ -2891,6 +3052,30 @@
         "ProgressCounters":{
           "shape":"ProgressCounters",
           "documentation":"<p>An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account Automation execution.</p>"
+        },
+        "AutomationSubtype":{
+          "shape":"AutomationSubtype",
+          "documentation":"<p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>"
+        },
+        "ScheduledTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The date and time the Automation operation is scheduled to start.</p>"
+        },
+        "Runbooks":{
+          "shape":"Runbooks",
+          "documentation":"<p>Information about the Automation runbooks (Automation documents) that are run as part of a runbook workflow.</p> <note> <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p> </note>"
+        },
+        "OpsItemId":{
+          "shape":"String",
+          "documentation":"<p>The ID of an OpsItem that is created to represent a Change Manager change request.</p>"
+        },
+        "AssociationId":{
+          "shape":"String",
+          "documentation":"<p>The ID of a State Manager association used in the Automation operation.</p>"
+        },
+        "ChangeRequestName":{
+          "shape":"ChangeRequestName",
+          "documentation":"<p>The name of the Change Manager change request.</p>"
         }
       },
       "documentation":"<p>Detailed information about the current state of an individual Automation execution.</p>"
@@ -2904,7 +3089,7 @@
       "members":{
         "Key":{
           "shape":"AutomationExecutionFilterKey",
-          "documentation":"<p>One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.</p>"
+          "documentation":"<p>One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter, TargetResourceGroup.</p>"
         },
         "Values":{
           "shape":"AutomationExecutionFilterValueList",
@@ -2924,7 +3109,10 @@
         "StartTimeBefore",
         "StartTimeAfter",
         "AutomationType",
-        "TagKey"
+        "TagKey",
+        "TargetResourceGroup",
+        "AutomationSubtype",
+        "OpsItemId"
       ]
     },
     "AutomationExecutionFilterList":{
@@ -3047,6 +3235,30 @@
         "AutomationType":{
           "shape":"AutomationType",
           "documentation":"<p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS Regions and accounts. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html\">Running Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS Systems Manager User Guide</i>. </p>"
+        },
+        "AutomationSubtype":{
+          "shape":"AutomationSubtype",
+          "documentation":"<p>The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.</p>"
+        },
+        "ScheduledTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The date and time the Automation operation is scheduled to start.</p>"
+        },
+        "Runbooks":{
+          "shape":"Runbooks",
+          "documentation":"<p>Information about the Automation runbooks (Automation documents) that are run during a runbook workflow in Change Manager.</p> <note> <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p> </note>"
+        },
+        "OpsItemId":{
+          "shape":"String",
+          "documentation":"<p>The ID of an OpsItem that is created to represent a Change Manager change request.</p>"
+        },
+        "AssociationId":{
+          "shape":"String",
+          "documentation":"<p>The ID of a State Manager association used in the Automation operation.</p>"
+        },
+        "ChangeRequestName":{
+          "shape":"ChangeRequestName",
+          "documentation":"<p>The name of the Change Manager change request.</p>"
         }
       },
       "documentation":"<p>Details about a specific Automation execution.</p>"
@@ -3073,7 +3285,17 @@
         "TimedOut",
         "Cancelling",
         "Cancelled",
-        "Failed"
+        "Failed",
+        "PendingApproval",
+        "Approved",
+        "Rejected",
+        "Scheduled",
+        "RunbookInProgress",
+        "PendingChangeCalendarOverride",
+        "ChangeCalendarOverrideApproved",
+        "ChangeCalendarOverrideRejected",
+        "CompletedWithSuccess",
+        "CompletedWithFailure"
       ]
     },
     "AutomationParameterKey":{
@@ -3106,6 +3328,10 @@
       },
       "documentation":"<p>The specified step name and execution ID don't exist. Verify the information and try again.</p>",
       "exception":true
+    },
+    "AutomationSubtype":{
+      "type":"string",
+      "enum":["ChangeRequest"]
     },
     "AutomationTargetParameterName":{
       "type":"string",
@@ -3189,6 +3415,11 @@
           "documentation":"<p>The ID of the maintenance window execution that has been stopped.</p>"
         }
       }
+    },
+    "ChangeRequestName":{
+      "type":"string",
+      "max":1024,
+      "min":1
     },
     "ClientToken":{
       "type":"string",
@@ -3499,11 +3730,11 @@
         },
         "OutputS3BucketName":{
           "shape":"S3BucketName",
-          "documentation":"<p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p> <p> test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript </p> <p>test_folder is the name of the S3 bucket;</p> <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p> <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of the plugin.</p>"
+          "documentation":"<p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p> <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript </p> <p>doc-example-bucket is the name of the S3 bucket;</p> <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p> <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name of the plugin.</p>"
         },
         "OutputS3KeyPrefix":{
           "shape":"S3KeyPrefix",
-          "documentation":"<p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p> <p> test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript </p> <p>test_folder is the name of the S3 bucket;</p> <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p> <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of the plugin.</p>"
+          "documentation":"<p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p> <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript </p> <p>doc-example-bucket is the name of the S3 bucket;</p> <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p> <p>i-02573cafcfEXAMPLE is the instance ID;</p> <p>awsrunShellScript is the name of the plugin.</p>"
         }
       },
       "documentation":"<p>Describes plugin details.</p>"
@@ -3601,7 +3832,7 @@
         },
         "Status":{
           "shape":"ComplianceStatus",
-          "documentation":"<p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>"
+          "documentation":"<p>The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows patches that aren't applicable).</p>"
         },
         "Severity":{
           "shape":"ComplianceSeverity",
@@ -3941,7 +4172,11 @@
         },
         "ApplyOnlyAtCronInterval":{
           "shape":"ApplyOnlyAtCronInterval",
-          "documentation":"<p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it.</p>"
+          "documentation":"<p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter is not supported for rate expressions.</p>"
+        },
+        "TargetLocations":{
+          "shape":"TargetLocations",
+          "documentation":"<p>Use this action to create an association in multiple Regions and multiple accounts.</p>"
         }
       },
       "documentation":"<p>Describes the association of a Systems Manager SSM document and an instance.</p>"
@@ -4017,7 +4252,11 @@
         },
         "ApplyOnlyAtCronInterval":{
           "shape":"ApplyOnlyAtCronInterval",
-          "documentation":"<p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it.</p>"
+          "documentation":"<p>By default, when you create a new associations, the system runs it immediately after it is created and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you create it. This parameter is not supported for rate expressions.</p>"
+        },
+        "TargetLocations":{
+          "shape":"TargetLocations",
+          "documentation":"<p>A location is a combination of AWS Regions and AWS accounts where you want to run the association. Use this action to create an association in multiple Regions and multiple accounts.</p>"
         }
       }
     },
@@ -4116,11 +4355,11 @@
         },
         "ScheduleTimezone":{
           "shape":"MaintenanceWindowTimezone",
-          "documentation":"<p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: \"America/Los_Angeles\", \"etc/UTC\", or \"Asia/Seoul\". For more information, see the <a href=\"https://www.iana.org/time-zones\">Time Zone Database</a> on the IANA website.</p>"
+          "documentation":"<p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: \"America/Los_Angeles\", \"UTC\", or \"Asia/Seoul\". For more information, see the <a href=\"https://www.iana.org/time-zones\">Time Zone Database</a> on the IANA website.</p>"
         },
         "ScheduleOffset":{
           "shape":"MaintenanceWindowOffset",
-          "documentation":"<p>The number of days to wait after the date and time specified by a CRON expression before running the maintenance window.</p> <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p> <p> <code>cron(0 30 23 ? * TUE#3 *)</code> </p> <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>",
+          "documentation":"<p>The number of days to wait after the date and time specified by a CRON expression before running the maintenance window.</p> <p>For example, the following cron expression schedules a maintenance window to run on the third Tuesday of every month at 11:30 PM.</p> <p> <code>cron(30 23 ? * TUE#3 *)</code> </p> <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>",
           "box":true
         },
         "Duration":{
@@ -4167,6 +4406,10 @@
           "shape":"OpsItemDescription",
           "documentation":"<p>Information about the OpsItem. </p>"
         },
+        "OpsItemType":{
+          "shape":"OpsItemType",
+          "documentation":"<p>The type of OpsItem to create. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>"
+        },
         "OperationalData":{
           "shape":"OpsItemOperationalData",
           "documentation":"<p>Operational data is custom data that provides useful reference details about the OpsItem. For example, you can specify log files, error strings, license keys, troubleshooting tips, or other relevant data. You enter operational data as key-value pairs. The key has a maximum length of 128 characters. The value has a maximum size of 20 KB.</p> <important> <p>Operational data keys <i>can't</i> begin with the following: amazon, aws, amzn, ssm, /amazon, /aws, /amzn, /ssm.</p> </important> <p>You can choose to make the data searchable by other users in the account or you can restrict search access. Searchable data means that all users with access to the OpsItem Overview page (as provided by the <a>DescribeOpsItems</a> API action) can view and search on the specified data. Operational data that is not searchable is only viewable by users who have access to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p> <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view AWS CLI example commands that use these keys, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems\">Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>"
@@ -4202,6 +4445,22 @@
         "Severity":{
           "shape":"OpsItemSeverity",
           "documentation":"<p>Specify a severity to assign to an OpsItem.</p>"
+        },
+        "ActualStartTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
+        },
+        "ActualEndTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
+        },
+        "PlannedStartTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
+        },
+        "PlannedEndTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
         }
       }
     },
@@ -4211,6 +4470,29 @@
         "OpsItemId":{
           "shape":"String",
           "documentation":"<p>The ID of the OpsItem.</p>"
+        }
+      }
+    },
+    "CreateOpsMetadataRequest":{
+      "type":"structure",
+      "required":["ResourceId"],
+      "members":{
+        "ResourceId":{
+          "shape":"OpsMetadataResourceId",
+          "documentation":"<p>A resource ID for a new Application Manager application.</p>"
+        },
+        "Metadata":{
+          "shape":"MetadataMap",
+          "documentation":"<p>Metadata for a new Application Manager application. </p>"
+        }
+      }
+    },
+    "CreateOpsMetadataResult":{
+      "type":"structure",
+      "members":{
+        "OpsMetadataArn":{
+          "shape":"OpsMetadataArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob created by the call.</p>"
         }
       }
     },
@@ -4448,6 +4730,21 @@
           "shape":"MaintenanceWindowId",
           "documentation":"<p>The ID of the deleted maintenance window.</p>"
         }
+      }
+    },
+    "DeleteOpsMetadataRequest":{
+      "type":"structure",
+      "required":["OpsMetadataArn"],
+      "members":{
+        "OpsMetadataArn":{
+          "shape":"OpsMetadataArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>"
+        }
+      }
+    },
+    "DeleteOpsMetadataResult":{
+      "type":"structure",
+      "members":{
       }
     },
     "DeleteParameterRequest":{
@@ -5727,7 +6024,7 @@
         },
         "PatchSet":{
           "shape":"PatchSet",
-          "documentation":"<p>Indicates whether to list patches for the Windows operating system or for Microsoft applications. Not applicable for Linux operating systems.</p>"
+          "documentation":"<p>Indicates whether to list patches for the Windows operating system or for Microsoft applications. Not applicable for the Linux or macOS operating systems.</p>"
         },
         "MaxResults":{
           "shape":"MaxResults",
@@ -5802,6 +6099,7 @@
       "documentation":"<p>The specified document already exists.</p>",
       "exception":true
     },
+    "DocumentAuthor":{"type":"string"},
     "DocumentContent":{
       "type":"string",
       "min":1
@@ -5914,6 +6212,26 @@
         "Requires":{
           "shape":"DocumentRequiresList",
           "documentation":"<p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>"
+        },
+        "Author":{
+          "shape":"DocumentAuthor",
+          "documentation":"<p>The user in your organization who created the document.</p>"
+        },
+        "ReviewInformation":{
+          "shape":"ReviewInformationList",
+          "documentation":"<p>Details about the review of a document.</p>"
+        },
+        "ApprovedVersion":{
+          "shape":"DocumentVersion",
+          "documentation":"<p>The version of the document currently approved for use in the organization.</p>"
+        },
+        "PendingReviewVersion":{
+          "shape":"DocumentVersion",
+          "documentation":"<p>The version of the document that is currently under review.</p>"
+        },
+        "ReviewStatus":{
+          "shape":"ReviewStatus",
+          "documentation":"<p>The current status of the review.</p>"
         }
       },
       "documentation":"<p>Describes a Systems Manager document. </p>"
@@ -6019,6 +6337,14 @@
         "Requires":{
           "shape":"DocumentRequiresList",
           "documentation":"<p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>"
+        },
+        "ReviewStatus":{
+          "shape":"ReviewStatus",
+          "documentation":"<p>The current status of a document review.</p>"
+        },
+        "Author":{
+          "shape":"DocumentAuthor",
+          "documentation":"<p>The user in your organization who created the document.</p>"
         }
       },
       "documentation":"<p>Describes the name of a Systems Manager document.</p>"
@@ -6039,7 +6365,7 @@
           "documentation":"<p>The value for the filter key.</p>"
         }
       },
-      "documentation":"<p>One or more filters. Use a filter to return a more specific list of documents.</p> <p>For keys, you can specify one or more tags that have been applied to a document. </p> <p>Other valid values include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>, <code>DocumentType</code>, and <code>TargetType</code>.</p> <p>Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.</p> <p>If you use Name as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:</p> <p> <code>aws ssm list-documents --filters Key=Name,Values=Te</code> </p> <p>If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.</p> <p>To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p> <p>For example, if you created a Key called region and are using the AWS CLI to call the <code>list-documents</code> command: </p> <p> <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code> </p>"
+      "documentation":"<p>One or more filters. Use a filter to return a more specific list of documents.</p> <p>For keys, you can specify one or more tags that have been applied to a document. </p> <p>You can also use AWS-provided keys, some of which have specific allowed values. These keys and their associated values are as follows:</p> <dl> <dt>DocumentType</dt> <dd> <ul> <li> <p>ApplicationConfiguration</p> </li> <li> <p>ApplicationConfigurationSchema</p> </li> <li> <p>Automation</p> </li> <li> <p>ChangeCalendar</p> </li> <li> <p>Command</p> </li> <li> <p>DeploymentStrategy</p> </li> <li> <p>Package</p> </li> <li> <p>Policy</p> </li> <li> <p>Session</p> </li> </ul> </dd> <dt>Owner</dt> <dd> <p>Note that only one <code>Owner</code> can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.</p> <ul> <li> <p>Amazon</p> </li> <li> <p>Private</p> </li> <li> <p>Public</p> </li> <li> <p>Self</p> </li> <li> <p>ThirdParty</p> </li> </ul> </dd> <dt>PlatformTypes</dt> <dd> <ul> <li> <p>Linux</p> </li> <li> <p>Windows</p> </li> </ul> </dd> </dl> <p> <code>Name</code> is another AWS-provided key. If you use <code>Name</code> as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following command:</p> <p> <code>aws ssm list-documents --filters Key=Name,Values=Te</code> </p> <p>You can also use the <code>TargetType</code> AWS-provided key. For a list of valid resource type values that can be used with this key, see <a href=\"http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html\">AWS resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.</p> <p>If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results.</p> <p>To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p> <p>For example, if you created a key called region and are using the AWS CLI to call the <code>list-documents</code> command: </p> <p> <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code> </p>"
     },
     "DocumentKeyValuesFilterKey":{
       "type":"string",
@@ -6068,6 +6394,20 @@
       },
       "documentation":"<p>You can have at most 500 active Systems Manager documents.</p>",
       "exception":true
+    },
+    "DocumentMetadataEnum":{
+      "type":"string",
+      "enum":["DocumentReviews"]
+    },
+    "DocumentMetadataResponseInfo":{
+      "type":"structure",
+      "members":{
+        "ReviewerResponse":{
+          "shape":"DocumentReviewerResponseList",
+          "documentation":"<p>Details about a reviewer's response to a document review request.</p>"
+        }
+      },
+      "documentation":"<p>Details about the response to a document review request.</p>"
     },
     "DocumentName":{
       "type":"string",
@@ -6142,6 +6482,90 @@
       "member":{"shape":"DocumentRequires"},
       "min":1
     },
+    "DocumentReviewAction":{
+      "type":"string",
+      "enum":[
+        "SendForReview",
+        "UpdateReview",
+        "Approve",
+        "Reject"
+      ]
+    },
+    "DocumentReviewComment":{
+      "type":"string",
+      "max":1024,
+      "min":1,
+      "pattern":"^(?!\\s*$).+"
+    },
+    "DocumentReviewCommentList":{
+      "type":"list",
+      "member":{"shape":"DocumentReviewCommentSource"},
+      "max":1,
+      "min":0
+    },
+    "DocumentReviewCommentSource":{
+      "type":"structure",
+      "members":{
+        "Type":{
+          "shape":"DocumentReviewCommentType",
+          "documentation":"<p>The type of information added to a review request. Currently, only the value <code>Comment</code> is supported.</p>"
+        },
+        "Content":{
+          "shape":"DocumentReviewComment",
+          "documentation":"<p>The content of a comment entered by a user who requests a review of a new document version, or who reviews the new version.</p>"
+        }
+      },
+      "documentation":"<p>Information about comments added to a document review request.</p>"
+    },
+    "DocumentReviewCommentType":{
+      "type":"string",
+      "enum":["Comment"]
+    },
+    "DocumentReviewerResponseList":{
+      "type":"list",
+      "member":{"shape":"DocumentReviewerResponseSource"}
+    },
+    "DocumentReviewerResponseSource":{
+      "type":"structure",
+      "members":{
+        "CreateTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The date and time that a reviewer entered a response to a document review request.</p>"
+        },
+        "UpdatedTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The date and time that a reviewer last updated a response to a document review request.</p>"
+        },
+        "ReviewStatus":{
+          "shape":"ReviewStatus",
+          "documentation":"<p>The current review status of a new custom SSM document created by a member of your organization, or of the latest version of an existing SSM document.</p> <p>Only one version of a document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p> <p>Only one version of a document can be in review, or PENDING, at a time.</p>"
+        },
+        "Comment":{
+          "shape":"DocumentReviewCommentList",
+          "documentation":"<p>The comment entered by a reviewer as part of their document review response.</p>"
+        },
+        "Reviewer":{
+          "shape":"Reviewer",
+          "documentation":"<p>The user in your organization assigned to review a document request.</p>"
+        }
+      },
+      "documentation":"<p>Information about a reviewer's response to a document review request.</p>"
+    },
+    "DocumentReviews":{
+      "type":"structure",
+      "required":["Action"],
+      "members":{
+        "Action":{
+          "shape":"DocumentReviewAction",
+          "documentation":"<p>The action to take on a document approval review request.</p>"
+        },
+        "Comment":{
+          "shape":"DocumentReviewCommentList",
+          "documentation":"<p>A comment entered by a user in your organization about the document review request.</p>"
+        }
+      },
+      "documentation":"<p>Information about a document approval review.</p>"
+    },
     "DocumentSchemaVersion":{
       "type":"string",
       "pattern":"([0-9]+)\\.([0-9]+)"
@@ -6170,7 +6594,8 @@
         "ApplicationConfiguration",
         "ApplicationConfigurationSchema",
         "DeploymentStrategy",
-        "ChangeCalendar"
+        "ChangeCalendar",
+        "Automation.ChangeTemplate"
       ]
     },
     "DocumentVersion":{
@@ -6211,6 +6636,10 @@
         "StatusInformation":{
           "shape":"DocumentStatusInformation",
           "documentation":"<p>A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code> message, \"The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct.\"</p>"
+        },
+        "ReviewStatus":{
+          "shape":"ReviewStatus",
+          "documentation":"<p>The current status of the approval review for the latest version of the document.</p>"
         }
       },
       "documentation":"<p>Version information about the document.</p>"
@@ -6302,7 +6731,8 @@
     "ExecutionRoleName":{
       "type":"string",
       "max":64,
-      "min":1
+      "min":1,
+      "pattern":"[\\w+=,.@-]+"
     },
     "ExpirationDate":{"type":"timestamp"},
     "FailedCreateAssociation":{
@@ -6652,6 +7082,10 @@
         "AttachmentsContent":{
           "shape":"AttachmentContentList",
           "documentation":"<p>A description of the document attachments, including names, locations, sizes, and so on.</p>"
+        },
+        "ReviewStatus":{
+          "shape":"ReviewStatus",
+          "documentation":"<p>The current review status of a new custom Systems Manager document (SSM document) created by a member of your organization, or of the latest version of an existing SSM document.</p> <p>Only one version of an SSM document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p> <p>Only one version of an SSM document can be in review, or PENDING, at a time.</p>"
         }
       }
     },
@@ -6966,7 +7400,7 @@
         },
         "ScheduleTimezone":{
           "shape":"MaintenanceWindowTimezone",
-          "documentation":"<p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: \"America/Los_Angeles\", \"etc/UTC\", or \"Asia/Seoul\". For more information, see the <a href=\"https://www.iana.org/time-zones\">Time Zone Database</a> on the IANA website.</p>"
+          "documentation":"<p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: \"America/Los_Angeles\", \"UTC\", or \"Asia/Seoul\". For more information, see the <a href=\"https://www.iana.org/time-zones\">Time Zone Database</a> on the IANA website.</p>"
         },
         "ScheduleOffset":{
           "shape":"MaintenanceWindowOffset",
@@ -7061,11 +7495,11 @@
         },
         "MaxConcurrency":{
           "shape":"MaxConcurrency",
-          "documentation":"<p>The maximum number of targets allowed to run this task in parallel.</p>"
+          "documentation":"<p>The maximum number of targets allowed to run this task in parallel.</p> <note> <p>For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value does not affect the running of your task and can be ignored.</p> </note>"
         },
         "MaxErrors":{
           "shape":"MaxErrors",
-          "documentation":"<p>The maximum number of errors allowed before the task stops being scheduled.</p>"
+          "documentation":"<p>The maximum number of errors allowed before the task stops being scheduled.</p> <note> <p>For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value does not affect the running of your task and can be ignored.</p> </note>"
         },
         "LoggingInfo":{
           "shape":"LoggingInfo",
@@ -7097,6 +7531,47 @@
         "OpsItem":{
           "shape":"OpsItem",
           "documentation":"<p>The OpsItem.</p>"
+        }
+      }
+    },
+    "GetOpsMetadataMaxResults":{
+      "type":"integer",
+      "max":10,
+      "min":1
+    },
+    "GetOpsMetadataRequest":{
+      "type":"structure",
+      "required":["OpsMetadataArn"],
+      "members":{
+        "OpsMetadataArn":{
+          "shape":"OpsMetadataArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of an OpsMetadata Object to view.</p>"
+        },
+        "MaxResults":{
+          "shape":"GetOpsMetadataMaxResults",
+          "documentation":"<p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>",
+          "box":true
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>A token to start the list. Use this token to get the next set of results.</p>"
+        }
+      }
+    },
+    "GetOpsMetadataResult":{
+      "type":"structure",
+      "members":{
+        "ResourceId":{
+          "shape":"OpsMetadataResourceId",
+          "documentation":"<p>The resource ID of the Application Manager application.</p>"
+        },
+        "Metadata":{
+          "shape":"MetadataMap",
+          "documentation":"<p>OpsMetadata for an Application Manager application.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token for the next set of items to return. Use this token to get the next set of results.</p>"
         }
       }
     },
@@ -7149,7 +7624,7 @@
       "members":{
         "Name":{
           "shape":"PSParameterName",
-          "documentation":"<p>The name of a parameter you want to query.</p>"
+          "documentation":"<p>The name of the parameter for which you want to review history.</p>"
         },
         "WithDecryption":{
           "shape":"Boolean",
@@ -7224,7 +7699,7 @@
         },
         "ParameterFilters":{
           "shape":"ParameterStringFilterList",
-          "documentation":"<p>Filters to limit the request results.</p>"
+          "documentation":"<p>Filters to limit the request results.</p> <note> <p>For <code>GetParametersByPath</code>, the following filter <code>Key</code> names are supported: <code>Type</code>, <code>KeyId</code>, <code>Label</code>, and <code>DataType</code>.</p> <p>The following <code>Key</code> values are not supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> </note>"
         },
         "WithDecryption":{
           "shape":"Boolean",
@@ -7619,11 +8094,11 @@
         },
         "PingStatus":{
           "shape":"PingStatus",
-          "documentation":"<p>Connection status of SSM Agent. </p>"
+          "documentation":"<p>Connection status of SSM Agent. </p> <note> <p>The status <code>Inactive</code> has been deprecated and is no longer in use.</p> </note>"
         },
         "LastPingDateTime":{
           "shape":"DateTime",
-          "documentation":"<p>The date and time when agent last pinged Systems Manager service. </p>",
+          "documentation":"<p>The date and time when the agent last pinged the Systems Manager service. </p>",
           "box":true
         },
         "AgentVersion":{
@@ -7822,7 +8297,7 @@
         },
         "InstalledRejectedCount":{
           "shape":"PatchInstalledRejectedCount",
-          "documentation":"<p>The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.</p> <note> <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of InstalledRejectedCount will always be 0 (zero).</p> </note>",
+          "documentation":"<p>The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list. Patches with a status of <i>InstalledRejected</i> were typically installed before they were added to a <code>RejectedPatches</code> list.</p> <note> <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).</p> </note>",
           "box":true
         },
         "MissingCount":{
@@ -7852,7 +8327,7 @@
         },
         "Operation":{
           "shape":"PatchOperationType",
-          "documentation":"<p>The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL (install missing patches).</p>"
+          "documentation":"<p>The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or <code>INSTALL</code> (install missing patches).</p>"
         },
         "LastNoRebootInstallOperationTime":{
           "shape":"DateTime",
@@ -7886,7 +8361,7 @@
           "documentation":"<p>The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or GreaterThan.</p>"
         }
       },
-      "documentation":"<p>Defines a filter used in DescribeInstancePatchStatesForPatchGroup used to scope down the information returned by the API.</p>"
+      "documentation":"<p>Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> used to scope down the information returned by the API.</p>"
     },
     "InstancePatchStateFilterKey":{
       "type":"string",
@@ -8845,7 +9320,7 @@
       "members":{
         "AssociationFilterList":{
           "shape":"AssociationFilterList",
-          "documentation":"<p>One or more filters. Use a filter to return a more specific list of results.</p>"
+          "documentation":"<p>One or more filters. Use a filter to return a more specific list of results.</p> <note> <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy associations created using the <code>InstanceID</code> attribute. Associations targeting the instance that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code> are not returned.</p> </note>"
         },
         "MaxResults":{
           "shape":"MaxResults",
@@ -9023,6 +9498,61 @@
         }
       }
     },
+    "ListDocumentMetadataHistoryRequest":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "Metadata"
+      ],
+      "members":{
+        "Name":{
+          "shape":"DocumentName",
+          "documentation":"<p>The name of the document.</p>"
+        },
+        "DocumentVersion":{
+          "shape":"DocumentVersion",
+          "documentation":"<p>The version of the document.</p>"
+        },
+        "Metadata":{
+          "shape":"DocumentMetadataEnum",
+          "documentation":"<p>The type of data for which details are being requested. Currently, the only supported value is <code>DocumentReviews</code>.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token for the next set of items to return. (You received this token from a previous call.)</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>",
+          "box":true
+        }
+      }
+    },
+    "ListDocumentMetadataHistoryResponse":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"DocumentName",
+          "documentation":"<p>The name of the document.</p>"
+        },
+        "DocumentVersion":{
+          "shape":"DocumentVersion",
+          "documentation":"<p>The version of the document.</p>"
+        },
+        "Author":{
+          "shape":"DocumentAuthor",
+          "documentation":"<p>The user ID of the person in the organization who requested the document review.</p>"
+        },
+        "Metadata":{
+          "shape":"DocumentMetadataResponseInfo",
+          "documentation":"<p>Information about the response to the document approval request.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>"
+        }
+      }
+    },
     "ListDocumentVersionsRequest":{
       "type":"structure",
       "required":["Name"],
@@ -9149,6 +9679,72 @@
         }
       }
     },
+    "ListOpsItemEventsRequest":{
+      "type":"structure",
+      "members":{
+        "Filters":{
+          "shape":"OpsItemEventFilters",
+          "documentation":"<p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>"
+        },
+        "MaxResults":{
+          "shape":"OpsItemEventMaxResults",
+          "documentation":"<p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results. </p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>A token to start the list. Use this token to get the next set of results. </p>"
+        }
+      }
+    },
+    "ListOpsItemEventsResponse":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The token for the next set of items to return. Use this token to get the next set of results. </p>"
+        },
+        "Summaries":{
+          "shape":"OpsItemEventSummaries",
+          "documentation":"<p>A list of event information for the specified OpsItems.</p>"
+        }
+      }
+    },
+    "ListOpsMetadataMaxResults":{
+      "type":"integer",
+      "max":50,
+      "min":1
+    },
+    "ListOpsMetadataRequest":{
+      "type":"structure",
+      "members":{
+        "Filters":{
+          "shape":"OpsMetadataFilterList",
+          "documentation":"<p>One or more filters to limit the number of OpsMetadata objects returned by the call.</p>"
+        },
+        "MaxResults":{
+          "shape":"ListOpsMetadataMaxResults",
+          "documentation":"<p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>",
+          "box":true
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>A token to start the list. Use this token to get the next set of results.</p>"
+        }
+      }
+    },
+    "ListOpsMetadataResult":{
+      "type":"structure",
+      "members":{
+        "OpsMetadataList":{
+          "shape":"OpsMetadataList",
+          "documentation":"<p>Returns a list of OpsMetadata objects.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>The token for the next set of items to return. Use this token to get the next set of results.</p>"
+        }
+      }
+    },
     "ListResourceComplianceSummariesRequest":{
       "type":"structure",
       "members":{
@@ -9185,7 +9781,7 @@
       "members":{
         "SyncType":{
           "shape":"ResourceDataSyncType",
-          "documentation":"<p>View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 buckets. Specify <code>SyncFromSource</code> to view resource data syncs from AWS Organizations or from multiple AWS Regions. </p>"
+          "documentation":"<p>View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from AWS Organizations or from multiple AWS Regions.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
@@ -9955,6 +10551,40 @@
       "max":50,
       "min":5
     },
+    "MetadataKey":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"^(?!\\s*$).+"
+    },
+    "MetadataKeysToDeleteList":{
+      "type":"list",
+      "member":{"shape":"MetadataKey"},
+      "max":10,
+      "min":1
+    },
+    "MetadataMap":{
+      "type":"map",
+      "key":{"shape":"MetadataKey"},
+      "value":{"shape":"MetadataValue"},
+      "max":5,
+      "min":1
+    },
+    "MetadataValue":{
+      "type":"structure",
+      "members":{
+        "Value":{
+          "shape":"MetadataValueString",
+          "documentation":"<p>Metadata value to assign to an Application Manager application.</p>"
+        }
+      },
+      "documentation":"<p>Metadata to assign to an Application Manager application.</p>"
+    },
+    "MetadataValueString":{
+      "type":"string",
+      "max":4096,
+      "min":1
+    },
     "ModifyDocumentPermissionRequest":{
       "type":"structure",
       "required":[
@@ -10061,7 +10691,8 @@
         "SUSE",
         "CENTOS",
         "ORACLE_LINUX",
-        "DEBIAN"
+        "DEBIAN",
+        "MACOS"
       ]
     },
     "OpsAggregator":{
@@ -10252,6 +10883,10 @@
           "shape":"String",
           "documentation":"<p>The ARN of the AWS account that created the OpsItem.</p>"
         },
+        "OpsItemType":{
+          "shape":"OpsItemType",
+          "documentation":"<p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>"
+        },
         "CreatedTime":{
           "shape":"DateTime",
           "documentation":"<p>The date and time the OpsItem was created.</p>"
@@ -10311,6 +10946,22 @@
         "Severity":{
           "shape":"OpsItemSeverity",
           "documentation":"<p>The severity of the OpsItem. Severity options range from 1 to 4.</p>"
+        },
+        "ActualStartTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
+        },
+        "ActualEndTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
+        },
+        "PlannedStartTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
+        },
+        "PlannedEndTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
         }
       },
       "documentation":"<p>Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their AWS resources. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html\">AWS Systems Manager OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>. </p>"
@@ -10327,12 +10978,14 @@
     "OpsItemCategory":{
       "type":"string",
       "max":64,
-      "min":1
+      "min":1,
+      "pattern":"^(?!\\s*$).+"
     },
     "OpsItemDataKey":{
       "type":"string",
       "max":128,
-      "min":1
+      "min":1,
+      "pattern":"^(?!\\s*$).+"
     },
     "OpsItemDataType":{
       "type":"string",
@@ -10355,11 +11008,103 @@
       },
       "documentation":"<p>An object that defines the value of the key and its type in the OperationalData map.</p>"
     },
-    "OpsItemDataValueString":{"type":"string"},
+    "OpsItemDataValueString":{
+      "type":"string",
+      "pattern":"[\\s\\S]*\\S[\\s\\S]*"
+    },
     "OpsItemDescription":{
       "type":"string",
       "max":1024,
+      "min":1,
+      "pattern":"[\\s\\S]*\\S[\\s\\S]*"
+    },
+    "OpsItemEventFilter":{
+      "type":"structure",
+      "required":[
+        "Key",
+        "Values",
+        "Operator"
+      ],
+      "members":{
+        "Key":{
+          "shape":"OpsItemEventFilterKey",
+          "documentation":"<p>The name of the filter key. Currently, the only supported value is <code>OpsItemId</code>.</p>"
+        },
+        "Values":{
+          "shape":"OpsItemEventFilterValues",
+          "documentation":"<p>The values for the filter, consisting of one or more OpsItem IDs.</p>"
+        },
+        "Operator":{
+          "shape":"OpsItemEventFilterOperator",
+          "documentation":"<p>The operator used by the filter call. Currently, the only supported value is <code>Equal</code>.</p>"
+        }
+      },
+      "documentation":"<p>Describes a filter for a specific list of OpsItem events. You can filter event information by using tags. You specify tags by using a key-value pair mapping. </p>"
+    },
+    "OpsItemEventFilterKey":{
+      "type":"string",
+      "enum":["OpsItemId"]
+    },
+    "OpsItemEventFilterOperator":{
+      "type":"string",
+      "enum":["Equal"]
+    },
+    "OpsItemEventFilterValue":{
+      "type":"string",
+      "max":15,
+      "min":1,
+      "pattern":"^(oi)-[0-9a-f]{12}$"
+    },
+    "OpsItemEventFilterValues":{
+      "type":"list",
+      "member":{"shape":"OpsItemEventFilterValue"}
+    },
+    "OpsItemEventFilters":{
+      "type":"list",
+      "member":{"shape":"OpsItemEventFilter"}
+    },
+    "OpsItemEventMaxResults":{
+      "type":"integer",
+      "max":50,
       "min":1
+    },
+    "OpsItemEventSummaries":{
+      "type":"list",
+      "member":{"shape":"OpsItemEventSummary"}
+    },
+    "OpsItemEventSummary":{
+      "type":"structure",
+      "members":{
+        "OpsItemId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the OpsItem.</p>"
+        },
+        "EventId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the OpsItem event.</p>"
+        },
+        "Source":{
+          "shape":"String",
+          "documentation":"<p>The source of the OpsItem event.</p>"
+        },
+        "DetailType":{
+          "shape":"String",
+          "documentation":"<p>The type of information provided as a detail.</p>"
+        },
+        "Detail":{
+          "shape":"String",
+          "documentation":"<p>Specific information about the OpsItem event.</p>"
+        },
+        "CreatedBy":{
+          "shape":"OpsItemIdentity",
+          "documentation":"<p>Information about the user or resource that created the OpsItem event.</p>"
+        },
+        "CreatedTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The date and time the OpsItem event was created.</p>"
+        }
+      },
+      "documentation":"<p>Summary information about an OpsItem event.</p>"
     },
     "OpsItemFilter":{
       "type":"structure",
@@ -10395,13 +11140,24 @@
         "OpsItemId",
         "CreatedTime",
         "LastModifiedTime",
+        "ActualStartTime",
+        "ActualEndTime",
+        "PlannedStartTime",
+        "PlannedEndTime",
         "OperationalData",
         "OperationalDataKey",
         "OperationalDataValue",
         "ResourceId",
         "AutomationId",
         "Category",
-        "Severity"
+        "Severity",
+        "OpsItemType",
+        "ChangeRequestByRequesterArn",
+        "ChangeRequestByRequesterName",
+        "ChangeRequestByApproverArn",
+        "ChangeRequestByApproverName",
+        "ChangeRequestByTemplate",
+        "ChangeRequestByTargetsResourceGroup"
       ]
     },
     "OpsItemFilterOperator":{
@@ -10425,6 +11181,16 @@
     "OpsItemId":{
       "type":"string",
       "pattern":"^(oi)-[0-9a-f]{12}$"
+    },
+    "OpsItemIdentity":{
+      "type":"structure",
+      "members":{
+        "Arn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem event.</p>"
+        }
+      },
+      "documentation":"<p>Information about the user or resource that created an OpsItem event.</p>"
     },
     "OpsItemInvalidParameterException":{
       "type":"structure",
@@ -10494,19 +11260,36 @@
     "OpsItemSeverity":{
       "type":"string",
       "max":64,
-      "min":1
+      "min":1,
+      "pattern":"^(?!\\s*$).+"
     },
     "OpsItemSource":{
       "type":"string",
-      "max":64,
-      "min":1
+      "max":128,
+      "min":1,
+      "pattern":"^(?!\\s*$).+"
     },
     "OpsItemStatus":{
       "type":"string",
       "enum":[
         "Open",
         "InProgress",
-        "Resolved"
+        "Resolved",
+        "Pending",
+        "TimedOut",
+        "Cancelling",
+        "Cancelled",
+        "Failed",
+        "CompletedWithSuccess",
+        "CompletedWithFailure",
+        "Scheduled",
+        "RunbookInProgress",
+        "PendingChangeCalendarOverride",
+        "ChangeCalendarOverrideApproved",
+        "ChangeCalendarOverrideRejected",
+        "PendingApproval",
+        "Approved",
+        "Rejected"
       ]
     },
     "OpsItemSummaries":{
@@ -10563,6 +11346,26 @@
         "Severity":{
           "shape":"OpsItemSeverity",
           "documentation":"<p>A list of OpsItems by severity.</p>"
+        },
+        "OpsItemType":{
+          "shape":"OpsItemType",
+          "documentation":"<p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>"
+        },
+        "ActualStartTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
+        },
+        "ActualEndTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
+        },
+        "PlannedStartTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
+        },
+        "PlannedEndTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
         }
       },
       "documentation":"<p>A count of OpsItems.</p>"
@@ -10570,7 +11373,142 @@
     "OpsItemTitle":{
       "type":"string",
       "max":1024,
+      "min":1,
+      "pattern":"^(?!\\s*$).+"
+    },
+    "OpsItemType":{"type":"string"},
+    "OpsMetadata":{
+      "type":"structure",
+      "members":{
+        "ResourceId":{
+          "shape":"OpsMetadataResourceId",
+          "documentation":"<p>The ID of the Application Manager application.</p>"
+        },
+        "OpsMetadataArn":{
+          "shape":"OpsMetadataArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the OpsMetadata Object or blob.</p>"
+        },
+        "LastModifiedDate":{
+          "shape":"DateTime",
+          "documentation":"<p>The date the OpsMetadata object was last updated.</p>"
+        },
+        "LastModifiedUser":{
+          "shape":"String",
+          "documentation":"<p>The user name who last updated the OpsMetadata object.</p>"
+        },
+        "CreationDate":{
+          "shape":"DateTime",
+          "documentation":"<p>The date the OpsMetadata objects was created.</p>"
+        }
+      },
+      "documentation":"<p>Operational metadata for an application in Application Manager.</p>"
+    },
+    "OpsMetadataAlreadyExistsException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"String"}
+      },
+      "documentation":"<p>An OpsMetadata object already exists for the selected resource.</p>",
+      "exception":true
+    },
+    "OpsMetadataArn":{
+      "type":"string",
+      "max":1011,
+      "min":1,
+      "pattern":"arn:(aws[a-zA-Z-]*)?:ssm:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:opsmetadata\\/([a-zA-Z0-9-_\\.\\/]*)"
+    },
+    "OpsMetadataFilter":{
+      "type":"structure",
+      "required":[
+        "Key",
+        "Values"
+      ],
+      "members":{
+        "Key":{
+          "shape":"OpsMetadataFilterKey",
+          "documentation":"<p>A filter key.</p>"
+        },
+        "Values":{
+          "shape":"OpsMetadataFilterValueList",
+          "documentation":"<p>A filter value.</p>"
+        }
+      },
+      "documentation":"<p>A filter to limit the number of OpsMetadata objects displayed.</p>"
+    },
+    "OpsMetadataFilterKey":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"^(?!\\s*$).+"
+    },
+    "OpsMetadataFilterList":{
+      "type":"list",
+      "member":{"shape":"OpsMetadataFilter"},
+      "max":10,
+      "min":0
+    },
+    "OpsMetadataFilterValue":{
+      "type":"string",
+      "max":1024,
       "min":1
+    },
+    "OpsMetadataFilterValueList":{
+      "type":"list",
+      "member":{"shape":"OpsMetadataFilterValue"},
+      "max":10,
+      "min":1
+    },
+    "OpsMetadataInvalidArgumentException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"String"}
+      },
+      "documentation":"<p>One of the arguments passed is invalid. </p>",
+      "exception":true
+    },
+    "OpsMetadataKeyLimitExceededException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"String"}
+      },
+      "documentation":"<p>The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to an application in Application Manager.</p>",
+      "exception":true
+    },
+    "OpsMetadataLimitExceededException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"String"}
+      },
+      "documentation":"<p>Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and try again.</p>",
+      "exception":true
+    },
+    "OpsMetadataList":{
+      "type":"list",
+      "member":{"shape":"OpsMetadata"},
+      "max":50,
+      "min":1
+    },
+    "OpsMetadataNotFoundException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"String"}
+      },
+      "documentation":"<p>The OpsMetadata object does not exist. </p>",
+      "exception":true
+    },
+    "OpsMetadataResourceId":{
+      "type":"string",
+      "max":1024,
+      "min":1,
+      "pattern":"^(?!\\s*$).+"
+    },
+    "OpsMetadataTooManyUpdatesException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"String"}
+      },
+      "documentation":"<p>The system is processing too many concurrent updates. Wait a few moments and try again.</p>",
+      "exception":true
     },
     "OpsResultAttribute":{
       "type":"structure",
@@ -10800,7 +11738,7 @@
       "members":{
         "message":{"shape":"String"}
       },
-      "documentation":"<p>The parameter exceeded the maximum number of allowed versions.</p>",
+      "documentation":"<p>Parameter Store retains the 100 most recently created versions of a parameter. After this number of versions has been created, Parameter Store deletes the oldest version when a new one is created. However, if the oldest version has a <i>label</i> attached to it, Parameter Store will not delete the version and instead presents this error message:</p> <p> <code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter operation: You attempted to create a new version of <i>parameter-name</i> by calling the PutParameter API with the overwrite flag. Version <i>version-number</i>, the oldest version, can't be deleted because it has a label associated with it. Move the label to another version of the parameter, and try again.</code> </p> <p>This safeguard is to prevent parameter versions with mission critical labels assigned to them from being deleted. To continue creating new parameters, first move the label from the oldest version of the parameter to a newer one for use in your operations. For information about moving parameter labels, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move\">Move a parameter label (console)</a> or <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move\">Move a parameter label (CLI) </a> in the <i>AWS Systems Manager User Guide</i>. </p>",
       "exception":true
     },
     "ParameterMetadata":{
@@ -10898,18 +11836,18 @@
       "members":{
         "Key":{
           "shape":"ParameterStringFilterKey",
-          "documentation":"<p>The name of the filter.</p>"
+          "documentation":"<p>The name of the filter.</p> <note> <p>The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be used with both actions.</p> <p>For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.</p> <p>For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid: <code>tag</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> <p>For examples of CLI commands demonstrating valid parameter filter constructions, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html\">Searching for Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> </note>"
         },
         "Option":{
           "shape":"ParameterStringQueryOption",
-          "documentation":"<p>For all filters used with <a>DescribeParameters</a>, valid options include <code>Equals</code> and <code>BeginsWith</code>. The <code>Name</code> filter additionally supports the <code>Contains</code> option. (Exception: For filters using the key <code>Path</code>, valid options include <code>Recursive</code> and <code>OneLevel</code>.)</p> <p>For filters used with <a>GetParametersByPath</a>, valid options include <code>Equals</code> and <code>BeginsWith</code>. (Exception: For filters using the key <code>Label</code>, the only valid option is <code>Equals</code>.)</p>"
+          "documentation":"<p>For all filters used with <a>DescribeParameters</a>, valid options include <code>Equals</code> and <code>BeginsWith</code>. The <code>Name</code> filter additionally supports the <code>Contains</code> option. (Exception: For filters using the key <code>Path</code>, valid options include <code>Recursive</code> and <code>OneLevel</code>.)</p> <p>For filters used with <a>GetParametersByPath</a>, valid options include <code>Equals</code> and <code>BeginsWith</code>. (Exception: For filters using <code>Label</code> as the Key name, the only valid option is <code>Equals</code>.)</p>"
         },
         "Values":{
           "shape":"ParameterStringFilterValueList",
           "documentation":"<p>The value you want to search for.</p>"
         }
       },
-      "documentation":"<p>One or more filters. Use a filter to return a more specific list of results.</p> <important> <p>The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API actions. However, not all of the pattern values listed for <code>Key</code> can be used with both actions.</p> <p>For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception of <code>Label</code>.</p> <p>For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code> are not valid: <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> <p>For examples of CLI commands demonstrating valid parameter filter constructions, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html\">Searching for Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> </important>"
+      "documentation":"<p>One or more filters. Use a filter to return a more specific list of results.</p>"
     },
     "ParameterStringFilterKey":{
       "type":"string",
@@ -11025,7 +11963,7 @@
       "members":{
         "Id":{
           "shape":"PatchId",
-          "documentation":"<p>The ID of the patch (this is different than the Microsoft Knowledge Base ID).</p>"
+          "documentation":"<p>The ID of the patch. Applies to Windows patches only.</p> <note> <p>This ID is not the same as the Microsoft Knowledge Base ID.</p> </note>"
         },
         "ReleaseDate":{
           "shape":"DateTime",
@@ -11049,31 +11987,71 @@
         },
         "ProductFamily":{
           "shape":"PatchProductFamily",
-          "documentation":"<p>The product family the patch is applicable for (for example, Windows).</p>"
+          "documentation":"<p>The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.</p>"
         },
         "Product":{
           "shape":"PatchProduct",
-          "documentation":"<p>The specific product the patch is applicable for (for example, WindowsServer2016).</p>"
+          "documentation":"<p>The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>"
         },
         "Classification":{
           "shape":"PatchClassification",
-          "documentation":"<p>The classification of the patch (for example, SecurityUpdates, Updates, CriticalUpdates).</p>"
+          "documentation":"<p>The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or <code>CriticalUpdates</code>.</p>"
         },
         "MsrcSeverity":{
           "shape":"PatchMsrcSeverity",
-          "documentation":"<p>The severity of the patch (for example Critical, Important, Moderate).</p>"
+          "documentation":"<p>The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches only.</p>"
         },
         "KbNumber":{
           "shape":"PatchKbNumber",
-          "documentation":"<p>The Microsoft Knowledge Base ID of the patch.</p>"
+          "documentation":"<p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.</p>"
         },
         "MsrcNumber":{
           "shape":"PatchMsrcNumber",
-          "documentation":"<p>The ID of the MSRC bulletin the patch is related to.</p>"
+          "documentation":"<p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example, <code>MS14-045</code>. Applies to Windows patches only.</p>"
         },
         "Language":{
           "shape":"PatchLanguage",
           "documentation":"<p>The language of the patch if it's language-specific.</p>"
+        },
+        "AdvisoryIds":{
+          "shape":"PatchAdvisoryIdList",
+          "documentation":"<p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based instances only.</p>"
+        },
+        "BugzillaIds":{
+          "shape":"PatchBugzillaIdList",
+          "documentation":"<p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based instances only.</p>"
+        },
+        "CVEIds":{
+          "shape":"PatchCVEIdList",
+          "documentation":"<p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies to Linux-based instances only.</p>"
+        },
+        "Name":{
+          "shape":"PatchName",
+          "documentation":"<p>The name of the patch. Applies to Linux-based instances only.</p>"
+        },
+        "Epoch":{
+          "shape":"PatchEpoch",
+          "documentation":"<p>The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is <code>20180914-2</code>. Applies to Linux-based instances only.</p>"
+        },
+        "Version":{
+          "shape":"PatchVersion",
+          "documentation":"<p>The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by <code>-1</code>. Applies to Linux-based instances only.</p>"
+        },
+        "Release":{
+          "shape":"PatchRelease",
+          "documentation":"<p>The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>. Applies to Linux-based instances only.</p>"
+        },
+        "Arch":{
+          "shape":"PatchArch",
+          "documentation":"<p>The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by <code>x86_64</code>. Applies to Linux-based instances only.</p>"
+        },
+        "Severity":{
+          "shape":"PatchSeverity",
+          "documentation":"<p>The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.</p>"
+        },
+        "Repository":{
+          "shape":"PatchRepository",
+          "documentation":"<p>The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based instances only.</p>"
         }
       },
       "documentation":"<p>Represents metadata about a patch.</p>"
@@ -11085,6 +12063,12 @@
         "BLOCK"
       ]
     },
+    "PatchAdvisoryId":{"type":"string"},
+    "PatchAdvisoryIdList":{
+      "type":"list",
+      "member":{"shape":"PatchAdvisoryId"}
+    },
+    "PatchArch":{"type":"string"},
     "PatchBaselineIdentity":{
       "type":"structure",
       "members":{
@@ -11120,6 +12104,17 @@
       "max":100,
       "min":1
     },
+    "PatchBugzillaId":{"type":"string"},
+    "PatchBugzillaIdList":{
+      "type":"list",
+      "member":{"shape":"PatchBugzillaId"}
+    },
+    "PatchCVEId":{"type":"string"},
+    "PatchCVEIdList":{
+      "type":"list",
+      "member":{"shape":"PatchCVEId"}
+    },
+    "PatchCVEIds":{"type":"string"},
     "PatchClassification":{"type":"string"},
     "PatchComplianceData":{
       "type":"structure",
@@ -11155,6 +12150,10 @@
         "InstalledTime":{
           "shape":"DateTime",
           "documentation":"<p>The date/time the patch was installed on the instance. Note that not all operating systems provide this level of information.</p>"
+        },
+        "CVEIds":{
+          "shape":"PatchCVEIds",
+          "documentation":"<p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p>"
         }
       },
       "documentation":"<p>Information about the state of a patch on a particular instance as it relates to the patch baseline used to patch the instance.</p>"
@@ -11202,6 +12201,7 @@
       ]
     },
     "PatchDescription":{"type":"string"},
+    "PatchEpoch":{"type":"integer"},
     "PatchFailedCount":{"type":"integer"},
     "PatchFilter":{
       "type":"structure",
@@ -11235,15 +12235,25 @@
     "PatchFilterKey":{
       "type":"string",
       "enum":[
+        "ARCH",
+        "ADVISORY_ID",
+        "BUGZILLA_ID",
         "PATCH_SET",
         "PRODUCT",
         "PRODUCT_FAMILY",
         "CLASSIFICATION",
+        "CVE_ID",
+        "EPOCH",
         "MSRC_SEVERITY",
+        "NAME",
         "PATCH_ID",
         "SECTION",
         "PRIORITY",
-        "SEVERITY"
+        "REPOSITORY",
+        "RELEASE",
+        "SEVERITY",
+        "SECURITY",
+        "VERSION"
       ]
     },
     "PatchFilterList":{
@@ -11315,6 +12325,7 @@
     "PatchMissingCount":{"type":"integer"},
     "PatchMsrcNumber":{"type":"string"},
     "PatchMsrcSeverity":{"type":"string"},
+    "PatchName":{"type":"string"},
     "PatchNotApplicableCount":{"type":"integer"},
     "PatchOperationType":{
       "type":"string",
@@ -11379,6 +12390,8 @@
       "key":{"shape":"AttributeName"},
       "value":{"shape":"AttributeValue"}
     },
+    "PatchRelease":{"type":"string"},
+    "PatchRepository":{"type":"string"},
     "PatchRule":{
       "type":"structure",
       "required":["PatchFilterGroup"],
@@ -11510,6 +12523,7 @@
     "PatchTitle":{"type":"string"},
     "PatchUnreportedNotApplicableCount":{"type":"integer"},
     "PatchVendor":{"type":"string"},
+    "PatchVersion":{"type":"string"},
     "PingStatus":{
       "type":"string",
       "enum":[
@@ -11658,7 +12672,7 @@
         },
         "Type":{
           "shape":"ParameterType",
-          "documentation":"<p>The type of parameter that you want to add to the system.</p> <note> <p> <code>SecureString</code> is not currently supported for AWS CloudFormation templates or in the China Regions.</p> </note> <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p> <important> <p>Specifying a parameter type is not required when updating a parameter. You must specify a parameter type when creating a parameter.</p> </important>"
+          "documentation":"<p>The type of parameter that you want to add to the system.</p> <note> <p> <code>SecureString</code> is not currently supported for AWS CloudFormation templates.</p> </note> <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <code>String</code> data type.</p> <important> <p>Specifying a parameter type is not required when updating a parameter. You must specify a parameter type when creating a parameter.</p> </important>"
         },
         "KeyId":{
           "shape":"ParameterKeyId",
@@ -11819,11 +12833,8 @@
       "type":"structure",
       "required":[
         "WindowId",
-        "Targets",
         "TaskArn",
-        "TaskType",
-        "MaxConcurrency",
-        "MaxErrors"
+        "TaskType"
       ],
       "members":{
         "WindowId":{
@@ -11832,7 +12843,8 @@
         },
         "Targets":{
           "shape":"Targets",
-          "documentation":"<p>The targets (either instances or maintenance window targets).</p> <p>Specify instances using the following format: </p> <p> <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code> </p> <p>Specify maintenance window targets using the following format:</p> <p> <code>Key=WindowTargetIds;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code> </p>"
+          "documentation":"<p>The targets (either instances or maintenance window targets).</p> <note> <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions). For more information about running tasks that do not specify targets, see see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html\">Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.</p> </note> <p>Specify instances using the following format: </p> <p> <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code> </p> <p>Specify maintenance window targets using the following format:</p> <p> <code>Key=WindowTargetIds,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code> </p>",
+          "box":true
         },
         "TaskArn":{
           "shape":"MaintenanceWindowTaskArn",
@@ -11861,11 +12873,13 @@
         },
         "MaxConcurrency":{
           "shape":"MaxConcurrency",
-          "documentation":"<p>The maximum number of targets this task can be run for in parallel.</p>"
+          "documentation":"<p>The maximum number of targets this task can be run for in parallel.</p> <note> <p>For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.</p> </note>",
+          "box":true
         },
         "MaxErrors":{
           "shape":"MaxErrors",
-          "documentation":"<p>The maximum number of errors allowed before this task stops being scheduled.</p>"
+          "documentation":"<p>The maximum number of errors allowed before this task stops being scheduled.</p> <note> <p>For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>. This value does not affect the running of your task.</p> </note>",
+          "box":true
         },
         "LoggingInfo":{
           "shape":"LoggingInfo",
@@ -12401,6 +13415,90 @@
         }
       }
     },
+    "ReviewInformation":{
+      "type":"structure",
+      "members":{
+        "ReviewedTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time that the reviewer took action on the document review request.</p>"
+        },
+        "Status":{
+          "shape":"ReviewStatus",
+          "documentation":"<p>The current status of the document review request.</p>"
+        },
+        "Reviewer":{
+          "shape":"Reviewer",
+          "documentation":"<p>The reviewer assigned to take action on the document review request.</p>"
+        }
+      },
+      "documentation":"<p>Information about the result of a document review request.</p>"
+    },
+    "ReviewInformationList":{
+      "type":"list",
+      "member":{"shape":"ReviewInformation"},
+      "min":1
+    },
+    "ReviewStatus":{
+      "type":"string",
+      "enum":[
+        "APPROVED",
+        "NOT_REVIEWED",
+        "PENDING",
+        "REJECTED"
+      ]
+    },
+    "Reviewer":{
+      "type":"string",
+      "max":50,
+      "pattern":"^[a-zA-Z0-9_\\-.]{1,128}$"
+    },
+    "Runbook":{
+      "type":"structure",
+      "required":["DocumentName"],
+      "members":{
+        "DocumentName":{
+          "shape":"DocumentARN",
+          "documentation":"<p>The name of the Automation runbook (Automation document) used in a runbook workflow.</p>"
+        },
+        "DocumentVersion":{
+          "shape":"DocumentVersion",
+          "documentation":"<p>The version of the Automation runbook (Automation document) used in a runbook workflow.</p>",
+          "box":true
+        },
+        "Parameters":{
+          "shape":"AutomationParameterMap",
+          "documentation":"<p>The key-value map of execution parameters, which were supplied when calling <code>StartChangeRequestExecution</code>.</p>"
+        },
+        "TargetParameterName":{
+          "shape":"AutomationParameterKey",
+          "documentation":"<p>The name of the parameter used as the target resource for the rate-controlled runbook workflow. Required if you specify <code>Targets</code>. </p>"
+        },
+        "Targets":{
+          "shape":"Targets",
+          "documentation":"<p>A key-value mapping to target resources that the Runbook operation performs tasks on. Required if you specify <code>TargetParameterName</code>.</p>"
+        },
+        "MaxConcurrency":{
+          "shape":"MaxConcurrency",
+          "documentation":"<p>The <code>MaxConcurrency</code> value specified by the user when the operation started, indicating the maximum number of resources that the runbook operation can run on at the same time.</p>"
+        },
+        "MaxErrors":{
+          "shape":"MaxErrors",
+          "documentation":"<p>The <code>MaxErrors</code> value specified by the user when the execution started, indicating the maximum number of errors that can occur during the operation before the updates are stopped or rolled back.</p>"
+        },
+        "TargetLocations":{
+          "shape":"TargetLocations",
+          "documentation":"<p>Information about the AWS Regions and accounts targeted by the current Runbook operation.</p>",
+          "box":true
+        }
+      },
+      "documentation":"<p>Information about an Automation runbook (Automation document) used in a runbook workflow in Change Manager.</p> <note> <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p> </note>"
+    },
+    "Runbooks":{
+      "type":"list",
+      "member":{"shape":"Runbook"},
+      "max":1,
+      "min":1
+    },
     "S3BucketName":{
       "type":"string",
       "max":63,
@@ -12689,7 +13787,7 @@
         },
         "value":{
           "shape":"SessionFilterValue",
-          "documentation":"<p>The filter value. Valid values for each filter key are as follows:</p> <ul> <li> <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started August 29, 2018, and later.</p> </li> <li> <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started before August 29, 2018.</p> </li> <li> <p>Target: Specify an instance to which session connections have been made.</p> </li> <li> <p>Owner: Specify an AWS user account to see a list of sessions started by that user.</p> </li> <li> <p>Status: Specify a valid session status to see a list of all sessions with that status. Status values you can specify include:</p> <ul> <li> <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p> </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li> <p>Failed</p> </li> </ul> </li> </ul>"
+          "documentation":"<p>The filter value. Valid values for each filter key are as follows:</p> <ul> <li> <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started August 29, 2018, and later.</p> </li> <li> <p>InvokedBefore: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started before August 29, 2018.</p> </li> <li> <p>Target: Specify an instance to which session connections have been made.</p> </li> <li> <p>Owner: Specify an AWS user account to see a list of sessions started by that user.</p> </li> <li> <p>Status: Specify a valid session status to see a list of all sessions with that status. Status values you can specify include:</p> <ul> <li> <p>Connected</p> </li> <li> <p>Connecting</p> </li> <li> <p>Disconnected</p> </li> <li> <p>Terminated</p> </li> <li> <p>Terminating</p> </li> <li> <p>Failed</p> </li> </ul> </li> <li> <p>SessionId: Specify a session ID to return details about the session.</p> </li> </ul>"
         }
       },
       "documentation":"<p>Describes a filter for Session Manager information.</p>"
@@ -12701,13 +13799,14 @@
         "InvokedBefore",
         "Target",
         "Owner",
-        "Status"
+        "Status",
+        "SessionId"
       ]
     },
     "SessionFilterList":{
       "type":"list",
       "member":{"shape":"SessionFilter"},
-      "max":5,
+      "max":6,
       "min":1
     },
     "SessionFilterValue":{
@@ -12938,6 +14037,57 @@
         "AutomationExecutionId":{
           "shape":"AutomationExecutionId",
           "documentation":"<p>The unique ID of a newly scheduled automation execution.</p>"
+        }
+      }
+    },
+    "StartChangeRequestExecutionRequest":{
+      "type":"structure",
+      "required":[
+        "DocumentName",
+        "Runbooks"
+      ],
+      "members":{
+        "ScheduledTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The date and time specified in the change request to run the Automation runbooks.</p> <note> <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p> </note>"
+        },
+        "DocumentName":{
+          "shape":"DocumentARN",
+          "documentation":"<p>The name of the change template document to run during the runbook workflow.</p>"
+        },
+        "DocumentVersion":{
+          "shape":"DocumentVersion",
+          "documentation":"<p>The version of the change template document to run during the runbook workflow.</p>",
+          "box":true
+        },
+        "Parameters":{
+          "shape":"AutomationParameterMap",
+          "documentation":"<p>A key-value map of parameters that match the declared parameters in the change template document.</p>"
+        },
+        "ChangeRequestName":{
+          "shape":"ChangeRequestName",
+          "documentation":"<p>The name of the change request associated with the runbook workflow to be run.</p>"
+        },
+        "ClientToken":{
+          "shape":"IdempotencyToken",
+          "documentation":"<p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>"
+        },
+        "Runbooks":{
+          "shape":"Runbooks",
+          "documentation":"<p>Information about the Automation runbooks (Automation documents) that are run during the runbook workflow.</p> <note> <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p> </note>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for a change request. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a change request to identify an environment or target AWS Region. In this case, you could specify the following key-value pairs:</p> <ul> <li> <p> <code>Key=Environment,Value=Production</code> </p> </li> <li> <p> <code>Key=Region,Value=us-east-2</code> </p> </li> </ul>"
+        }
+      }
+    },
+    "StartChangeRequestExecutionResult":{
+      "type":"structure",
+      "members":{
+        "AutomationExecutionId":{
+          "shape":"AutomationExecutionId",
+          "documentation":"<p>The unique ID of a runbook workflow operation. (A runbook workflow is a type of Automation operation.) </p>"
         }
       }
     },
@@ -13240,7 +14390,7 @@
           "documentation":"<p>User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of <code>ServerRole,WebServer</code>. </p>"
         }
       },
-      "documentation":"<p>An array of search criteria that targets instances using a Key,Value combination that you specify. </p> <p>Supported formats include the following.</p> <ul> <li> <p> <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code> </p> </li> <li> <p> <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code> </p> </li> <li> <p> <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p> </li> <li> <p> <b>Run Command and Maintenance window targets only</b>: <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p> </li> <li> <p> <b>Maintenance window targets only</b>: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code> </p> </li> <li> <p> <b>Automation targets only</b>: <code>Key=ResourceGroup;Values=<i>resource-group-name</i> </code> </p> </li> </ul> <p>For example:</p> <ul> <li> <p> <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code> </p> </li> <li> <p> <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code> </p> </li> <li> <p> <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code> </p> </li> <li> <p> <b>Run Command and Maintenance window targets only</b>: <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code> </p> <p>This example demonstrates how to target all resources in the resource group <b>ProductionResourceGroup</b> in your maintenance window.</p> </li> <li> <p> <b>Maintenance window targets only</b>: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code> </p> <p>This example demonstrates how to target only EC2 instances and VPCs in your maintenance window.</p> </li> <li> <p> <b>Automation targets only</b>: <code>Key=ResourceGroup,Values=MyResourceGroup</code> </p> </li> <li> <p> <b>State Manager association targets only</b>: <code>Key=InstanceIds,Values=<i>*</i> </code> </p> <p>This example demonstrates how to target all managed instances in the AWS Region where the association was created.</p> </li> </ul> <p>For more information about how to send commands that target instances using <code>Key,Value</code> parameters, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting\">Targeting multiple instances</a> in the <i>AWS Systems Manager User Guide</i>.</p>"
+      "documentation":"<p>An array of search criteria that targets instances using a Key,Value combination that you specify. </p> <note> <p> One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions). For more information about running tasks that do not specify targets, see see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html\">Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.</p> </note> <p>Supported formats include the following.</p> <ul> <li> <p> <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code> </p> </li> <li> <p> <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code> </p> </li> <li> <p> <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> </p> </li> <li> <p> <b>Run Command and Maintenance window targets only</b>: <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> </p> </li> <li> <p> <b>Maintenance window targets only</b>: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code> </p> </li> <li> <p> <b>Automation targets only</b>: <code>Key=ResourceGroup;Values=<i>resource-group-name</i> </code> </p> </li> </ul> <p>For example:</p> <ul> <li> <p> <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code> </p> </li> <li> <p> <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code> </p> </li> <li> <p> <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code> </p> </li> <li> <p> <b>Run Command and Maintenance window targets only</b>: <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code> </p> <p>This example demonstrates how to target all resources in the resource group <b>ProductionResourceGroup</b> in your maintenance window.</p> </li> <li> <p> <b>Maintenance window targets only</b>: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code> </p> <p>This example demonstrates how to target only EC2 instances and VPCs in your maintenance window.</p> </li> <li> <p> <b>Automation targets only</b>: <code>Key=ResourceGroup,Values=MyResourceGroup</code> </p> </li> <li> <p> <b>State Manager association targets only</b>: <code>Key=InstanceIds,Values=<i>*</i> </code> </p> <p>This example demonstrates how to target all managed instances in the AWS Region where the association was created.</p> </li> </ul> <p>For more information about how to send commands that target instances using <code>Key,Value</code> parameters, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting\">Targeting multiple instances</a> in the <i>AWS Systems Manager User Guide</i>.</p>"
     },
     "TargetCount":{"type":"integer"},
     "TargetInUseException":{
@@ -13270,17 +14420,17 @@
         },
         "TargetLocationMaxConcurrency":{
           "shape":"MaxConcurrency",
-          "documentation":"<p>The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently </p>",
+          "documentation":"<p>The maximum number of AWS accounts and AWS regions allowed to run the Automation concurrently.</p>",
           "box":true
         },
         "TargetLocationMaxErrors":{
           "shape":"MaxErrors",
-          "documentation":"<p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation. </p>",
+          "documentation":"<p>The maximum number of errors allowed before the system stops queueing additional Automation executions for the currently running Automation.</p>",
           "box":true
         },
         "ExecutionRoleName":{
           "shape":"ExecutionRoleName",
-          "documentation":"<p>The Automation execution role used by the currently running Automation.</p>",
+          "documentation":"<p>The Automation execution role used by the currently running Automation. If not specified, the default value is <code>AWS-SystemsManager-AutomationExecutionRole</code>.</p>",
           "box":true
         }
       },
@@ -13326,7 +14476,7 @@
       "members":{
         "Message":{"shape":"String"}
       },
-      "documentation":"<p>The specified target instance for the session is not fully configured for use with Session Manager. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html\">Getting started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>.</p>",
+      "documentation":"<p>The specified target instance for the session is not fully configured for use with Session Manager. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html\">Getting started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>. This error is also returned if you attempt to start a session on an instance that is located in a different account or Region</p>",
       "exception":true
     },
     "TargetParameterList":{
@@ -13446,7 +14596,7 @@
       "members":{
         "Message":{"shape":"String"}
       },
-      "documentation":"<p>The operating systems you specified is not supported, or the operation is not supported for the operating system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux, and Ubuntu.</p>",
+      "documentation":"<p>The operating systems you specified is not supported, or the operation is not supported for the operating system.</p>",
       "exception":true
     },
     "UnsupportedParameterType":{
@@ -13527,7 +14677,11 @@
         },
         "ApplyOnlyAtCronInterval":{
           "shape":"ApplyOnlyAtCronInterval",
-          "documentation":"<p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it.</p> <p>Also, if you specified this option when you created the association, you can reset it. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>"
+          "documentation":"<p>By default, when you update an association, the system runs it immediately after it is updated and then according to the schedule you specified. Specify this option if you don't want an association to run immediately after you update it. This parameter is not supported for rate expressions.</p> <p>Also, if you specified this option when you created the association, you can reset it. To do so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the association from the command line. This parameter forces the association to run immediately after updating it and according to the interval specified.</p>"
+        },
+        "TargetLocations":{
+          "shape":"TargetLocations",
+          "documentation":"<p>A location is a combination of AWS Regions and AWS accounts where you want to run the association. Use this action to update an association in multiple Regions and multiple accounts.</p>"
         }
       }
     },
@@ -13597,6 +14751,32 @@
         }
       }
     },
+    "UpdateDocumentMetadataRequest":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "DocumentReviews"
+      ],
+      "members":{
+        "Name":{
+          "shape":"DocumentName",
+          "documentation":"<p>The name of the document for which a version is to be updated.</p>"
+        },
+        "DocumentVersion":{
+          "shape":"DocumentVersion",
+          "documentation":"<p>The version of a document to update.</p>"
+        },
+        "DocumentReviews":{
+          "shape":"DocumentReviews",
+          "documentation":"<p>The document review details to update.</p>"
+        }
+      }
+    },
+    "UpdateDocumentMetadataResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "UpdateDocumentRequest":{
       "type":"structure",
       "required":[
@@ -13661,7 +14841,7 @@
         },
         "StartDate":{
           "shape":"MaintenanceWindowStringDateTime",
-          "documentation":"<p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: \"America/Los_Angeles\", \"etc/UTC\", or \"Asia/Seoul\". For more information, see the <a href=\"https://www.iana.org/time-zones\">Time Zone Database</a> on the IANA website.</p>"
+          "documentation":"<p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: \"America/Los_Angeles\", \"UTC\", or \"Asia/Seoul\". For more information, see the <a href=\"https://www.iana.org/time-zones\">Time Zone Database</a> on the IANA website.</p>"
         },
         "EndDate":{
           "shape":"MaintenanceWindowStringDateTime",
@@ -13673,11 +14853,11 @@
         },
         "ScheduleTimezone":{
           "shape":"MaintenanceWindowTimezone",
-          "documentation":"<p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: \"America/Los_Angeles\", \"etc/UTC\", or \"Asia/Seoul\". For more information, see the <a href=\"https://www.iana.org/time-zones\">Time Zone Database</a> on the IANA website.</p>"
+          "documentation":"<p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: \"America/Los_Angeles\", \"UTC\", or \"Asia/Seoul\". For more information, see the <a href=\"https://www.iana.org/time-zones\">Time Zone Database</a> on the IANA website.</p>"
         },
         "ScheduleOffset":{
           "shape":"MaintenanceWindowOffset",
-          "documentation":"<p>The number of days to wait after the date and time specified by a CRON expression before running the maintenance window.</p> <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p> <p> <code>cron(0 30 23 ? * TUE#3 *)</code> </p> <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>",
+          "documentation":"<p>The number of days to wait after the date and time specified by a CRON expression before running the maintenance window.</p> <p>For example, the following cron expression schedules a maintenance window to run the third Tuesday of every month at 11:30 PM.</p> <p> <code>cron(30 23 ? * TUE#3 *)</code> </p> <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days later.</p>",
           "box":true
         },
         "Duration":{
@@ -13736,7 +14916,7 @@
         },
         "ScheduleTimezone":{
           "shape":"MaintenanceWindowTimezone",
-          "documentation":"<p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: \"America/Los_Angeles\", \"etc/UTC\", or \"Asia/Seoul\". For more information, see the <a href=\"https://www.iana.org/time-zones\">Time Zone Database</a> on the IANA website.</p>"
+          "documentation":"<p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: \"America/Los_Angeles\", \"UTC\", or \"Asia/Seoul\". For more information, see the <a href=\"https://www.iana.org/time-zones\">Time Zone Database</a> on the IANA website.</p>"
         },
         "ScheduleOffset":{
           "shape":"MaintenanceWindowOffset",
@@ -13845,7 +15025,7 @@
         },
         "Targets":{
           "shape":"Targets",
-          "documentation":"<p>The targets (either instances or tags) to modify. Instances are specified using Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value. </p>"
+          "documentation":"<p>The targets (either instances or tags) to modify. Instances are specified using Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value. </p> <note> <p>One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions). For more information about running tasks that do not specify targets, see see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html\">Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.</p> </note>"
         },
         "TaskArn":{
           "shape":"MaintenanceWindowTaskArn",
@@ -13861,7 +15041,7 @@
         },
         "TaskInvocationParameters":{
           "shape":"MaintenanceWindowTaskInvocationParameters",
-          "documentation":"<p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty.</p>"
+          "documentation":"<p>The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty.</p> <important> <p>When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>, you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values you do not specify again are removed. For example, suppose that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code> are removed.</p> </important>"
         },
         "Priority":{
           "shape":"MaintenanceWindowTaskPriority",
@@ -13870,11 +15050,11 @@
         },
         "MaxConcurrency":{
           "shape":"MaxConcurrency",
-          "documentation":"<p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of targets that are allowed to run this task in parallel.</p>"
+          "documentation":"<p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of targets that are allowed to run this task in parallel.</p> <note> <p>For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value does not affect the running of your task and can be ignored.</p> </note>"
         },
         "MaxErrors":{
           "shape":"MaxErrors",
-          "documentation":"<p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are allowed before the task stops being scheduled.</p>"
+          "documentation":"<p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are allowed before the task stops being scheduled.</p> <note> <p>For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This value does not affect the running of your task and can be ignored.</p> </note>"
         },
         "LoggingInfo":{
           "shape":"LoggingInfo",
@@ -13890,7 +15070,7 @@
         },
         "Replace":{
           "shape":"Boolean",
-          "documentation":"<p>If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for this API request. Optional fields that are not specified are set to null.</p>",
+          "documentation":"<p>If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for this API request. Optional fields that are not specified are set to null.</p>",
           "box":true
         }
       }
@@ -14021,12 +15201,55 @@
         "Severity":{
           "shape":"OpsItemSeverity",
           "documentation":"<p>Specify a new severity for an OpsItem.</p>"
+        },
+        "ActualStartTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
+        },
+        "ActualEndTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
+        },
+        "PlannedStartTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
+        },
+        "PlannedEndTime":{
+          "shape":"DateTime",
+          "documentation":"<p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>"
         }
       }
     },
     "UpdateOpsItemResponse":{
       "type":"structure",
       "members":{
+      }
+    },
+    "UpdateOpsMetadataRequest":{
+      "type":"structure",
+      "required":["OpsMetadataArn"],
+      "members":{
+        "OpsMetadataArn":{
+          "shape":"OpsMetadataArn",
+          "documentation":"<p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>"
+        },
+        "MetadataToUpdate":{
+          "shape":"MetadataMap",
+          "documentation":"<p>Metadata to add to an OpsMetadata object.</p>"
+        },
+        "KeysToDelete":{
+          "shape":"MetadataKeysToDeleteList",
+          "documentation":"<p>The metadata keys to delete from the OpsMetadata object. </p>"
+        }
+      }
+    },
+    "UpdateOpsMetadataResult":{
+      "type":"structure",
+      "members":{
+        "OpsMetadataArn":{
+          "shape":"OpsMetadataArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the OpsMetadata Object that was updated.</p>"
+        }
       }
     },
     "UpdatePatchBaselineRequest":{

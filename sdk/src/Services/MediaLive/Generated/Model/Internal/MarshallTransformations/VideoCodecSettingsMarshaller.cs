@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -74,6 +74,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
                 var marshaller = H265SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.H265Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetMpeg2Settings())
+            {
+                context.Writer.WritePropertyName("mpeg2Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Mpeg2SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Mpeg2Settings, context);
 
                 context.Writer.WriteObjectEnd();
             }

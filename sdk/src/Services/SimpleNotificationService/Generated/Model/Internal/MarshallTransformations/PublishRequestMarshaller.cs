@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -87,6 +87,14 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                         }
                         mapIndex++;
                     }
+                }
+                if(publicRequest.IsSetMessageDeduplicationId())
+                {
+                    request.Parameters.Add("MessageDeduplicationId", StringUtils.FromString(publicRequest.MessageDeduplicationId));
+                }
+                if(publicRequest.IsSetMessageGroupId())
+                {
+                    request.Parameters.Add("MessageGroupId", StringUtils.FromString(publicRequest.MessageGroupId));
                 }
                 if(publicRequest.IsSetMessageStructure())
                 {

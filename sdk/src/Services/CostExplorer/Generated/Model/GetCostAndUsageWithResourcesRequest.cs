@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,8 +35,8 @@ namespace Amazon.CostExplorer.Model
     /// that you want the request to return. You can also filter and group your data by various
     /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
     /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-    /// operation. Master accounts in an organization in AWS Organizations have access to
-    /// all member accounts. This API is currently available for the Amazon Elastic Compute
+    /// operation. Management account in an organization in AWS Organizations have access
+    /// to all member accounts. This API is currently available for the Amazon Elastic Compute
     /// Cloud – Compute service only.
     /// 
     ///  <note> 
@@ -68,9 +68,11 @@ namespace Amazon.CostExplorer.Model
         ///  
         /// <para>
         /// The <code>GetCostAndUsageWithResources</code> operation requires that you either group
-        /// by or filter by a <code>ResourceId</code>.
+        /// by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public Expression Filter
         {
             get { return this._filter; }
@@ -106,8 +108,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GroupBy. 
         /// <para>
-        /// You can group Amazon Web Services costs using up to two different groups: either dimensions,
-        /// tag keys, or both.
+        /// You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+        /// <code>TAG</code>, <code>COST_CATEGORY</code>.
         /// </para>
         /// </summary>
         public List<GroupDefinition> GroupBy

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ namespace Amazon.XRay.Model
     {
         private EdgeStatistics _edgeSummaryStatistics;
         private List<HistogramEntry> _responseTimeHistogram = new List<HistogramEntry>();
+        private ForecastStatistics _serviceForecastStatistics;
         private ServiceStatistics _serviceSummaryStatistics;
         private DateTime? _timestamp;
 
@@ -69,6 +70,24 @@ namespace Amazon.XRay.Model
         internal bool IsSetResponseTimeHistogram()
         {
             return this._responseTimeHistogram != null && this._responseTimeHistogram.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceForecastStatistics. 
+        /// <para>
+        /// The forecasted high and low fault count values.
+        /// </para>
+        /// </summary>
+        public ForecastStatistics ServiceForecastStatistics
+        {
+            get { return this._serviceForecastStatistics; }
+            set { this._serviceForecastStatistics = value; }
+        }
+
+        // Check to see if ServiceForecastStatistics property is set
+        internal bool IsSetServiceForecastStatistics()
+        {
+            return this._serviceForecastStatistics != null;
         }
 
         /// <summary>

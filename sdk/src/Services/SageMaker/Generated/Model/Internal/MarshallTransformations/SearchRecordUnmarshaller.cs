@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,10 +64,46 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Endpoint", targetDepth))
+                {
+                    var unmarshaller = EndpointUnmarshaller.Instance;
+                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Experiment", targetDepth))
                 {
                     var unmarshaller = ExperimentUnmarshaller.Instance;
                     unmarshalledObject.Experiment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FeatureGroup", targetDepth))
+                {
+                    var unmarshaller = FeatureGroupUnmarshaller.Instance;
+                    unmarshalledObject.FeatureGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ModelPackage", targetDepth))
+                {
+                    var unmarshaller = ModelPackageUnmarshaller.Instance;
+                    unmarshalledObject.ModelPackage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ModelPackageGroup", targetDepth))
+                {
+                    var unmarshaller = ModelPackageGroupUnmarshaller.Instance;
+                    unmarshalledObject.ModelPackageGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Pipeline", targetDepth))
+                {
+                    var unmarshaller = PipelineUnmarshaller.Instance;
+                    unmarshalledObject.Pipeline = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PipelineExecution", targetDepth))
+                {
+                    var unmarshaller = PipelineExecutionUnmarshaller.Instance;
+                    unmarshalledObject.PipelineExecution = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TrainingJob", targetDepth))

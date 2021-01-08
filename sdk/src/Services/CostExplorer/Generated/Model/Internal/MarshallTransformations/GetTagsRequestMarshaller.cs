@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,23 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFilter())
+                {
+                    context.Writer.WritePropertyName("Filter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExpressionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Filter, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
+                }
+
                 if(publicRequest.IsSetNextPageToken())
                 {
                     context.Writer.WritePropertyName("NextPageToken");
@@ -78,6 +95,22 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("SearchString");
                     context.Writer.Write(publicRequest.SearchString);
+                }
+
+                if(publicRequest.IsSetSortBy())
+                {
+                    context.Writer.WritePropertyName("SortBy");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSortByListValue in publicRequest.SortBy)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SortDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSortByListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetTagKey())

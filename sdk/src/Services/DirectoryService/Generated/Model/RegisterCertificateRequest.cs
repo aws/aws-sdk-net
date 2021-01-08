@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,12 +30,14 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterCertificate operation.
-    /// Registers a certificate for secured LDAP connection.
+    /// Registers a certificate for a secure LDAP or client certificate authentication.
     /// </summary>
     public partial class RegisterCertificateRequest : AmazonDirectoryServiceRequest
     {
         private string _certificateData;
+        private ClientCertAuthSettings _clientCertAuthSettings;
         private string _directoryId;
+        private CertificateType _type;
 
         /// <summary>
         /// Gets and sets the property CertificateData. 
@@ -57,6 +59,25 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClientCertAuthSettings. 
+        /// <para>
+        /// A <code>ClientCertAuthSettings</code> object that contains client certificate authentication
+        /// settings.
+        /// </para>
+        /// </summary>
+        public ClientCertAuthSettings ClientCertAuthSettings
+        {
+            get { return this._clientCertAuthSettings; }
+            set { this._clientCertAuthSettings = value; }
+        }
+
+        // Check to see if ClientCertAuthSettings property is set
+        internal bool IsSetClientCertAuthSettings()
+        {
+            return this._clientCertAuthSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
         /// The identifier of the directory.
@@ -73,6 +94,25 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetDirectoryId()
         {
             return this._directoryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code>
+        /// or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
+        /// </para>
+        /// </summary>
+        public CertificateType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

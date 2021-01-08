@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,6 +51,7 @@ namespace Amazon.RDS.Model
         private string _domain;
         private string _domainIAMRoleName;
         private List<string> _enableCloudwatchLogsExports = new List<string>();
+        private bool? _enableCustomerOwnedIp;
         private bool? _enableIAMDatabaseAuthentication;
         private bool? _enablePerformanceInsights;
         private string _engine;
@@ -64,6 +65,7 @@ namespace Amazon.RDS.Model
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
         private bool? _multiAZ;
+        private string _ncharCharacterSetName;
         private string _optionGroupName;
         private string _performanceInsightsKMSKeyId;
         private int? _performanceInsightsRetentionPeriod;
@@ -311,7 +313,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information about RDS on VMware, see the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
-        /// <i>RDS on VMware User Guide.</i> </a> 
+        /// RDS on VMware User Guide.</a> 
         /// </para>
         ///  </note>
         /// </summary>
@@ -572,7 +574,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The name of the database to create when the DB instance is created. If this parameter
-        /// isn't specified, the default "postgres" database is created in the DB instance.
+        /// isn't specified, no database is created in the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -821,6 +823,57 @@ namespace Amazon.RDS.Model
         /// Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database
         /// Service User Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon Aurora</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Not applicable. CloudWatch Logs exports are managed by the DB cluster. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MariaDB</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>audit</code>, <code>error</code>, <code>general</code>,
+        /// and <code>slowquery</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Microsoft SQL Server</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>agent</code> and <code>error</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>MySQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>audit</code>, <code>error</code>, <code>general</code>,
+        /// and <code>slowquery</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Oracle</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>,
+        /// and <code>trace</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values are <code>postgresql</code> and <code>upgrade</code>. 
+        /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
         {
@@ -835,6 +888,42 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableCustomerOwnedIp. 
+        /// <para>
+        /// A value that indicates whether to enable a customer-owned IP address (CoIP) for an
+        /// RDS on Outposts DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <i>CoIP</i> provides local or external connectivity to resources in your Outpost
+        /// subnets through your on-premises network. For some use cases, a CoIP can provide lower
+        /// latency for connections to the DB instance from outside of its virtual private cloud
+        /// (VPC) on your local network.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+        /// with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+        /// IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool EnableCustomerOwnedIp
+        {
+            get { return this._enableCustomerOwnedIp.GetValueOrDefault(); }
+            set { this._enableCustomerOwnedIp = value; }
+        }
+
+        // Check to see if EnableCustomerOwnedIp property is set
+        internal bool IsSetEnableCustomerOwnedIp()
+        {
+            return this._enableCustomerOwnedIp.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// A value that indicates whether to enable mapping of AWS Identity and Access Management
@@ -842,50 +931,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// You can enable IAM database authentication for the following database engines:
+        /// This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database
+        /// accounts is managed by the DB cluster.
         /// </para>
         ///  
-        /// <para>
-        ///  <b>Amazon Aurora</b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB
-        /// cluster.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>MySQL</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For MySQL 5.6, minor version 5.6.34 or higher
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For MySQL 5.7, minor version 5.7.16 or higher
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For MySQL 8.0, minor version 8.0.16 or higher
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  <b>PostgreSQL</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For PostgreSQL 9.5, minor version 9.5.15 or higher
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For PostgreSQL 9.6, minor version 9.6.11 or higher
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// PostgreSQL 10.6, 10.7, and 10.9
-        /// </para>
-        ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User
@@ -1053,8 +1102,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
-        /// and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
+        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">Microsoft
+        /// SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -1130,10 +1179,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key.
-        /// If you are creating a DB instance with the same AWS account that owns the KMS encryption
-        /// key used to encrypt the new DB instance, then you can use the KMS key alias instead
-        /// of the ARN for the KM encryption key.
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK). To use a CMK in a different AWS account, specify
+        /// the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>
@@ -1141,15 +1189,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Not applicable. The KMS key identifier is managed by the DB cluster. For more information,
-        /// see <code>CreateDBCluster</code>.
+        /// Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more
+        /// information, see <code>CreateDBCluster</code>.
         /// </para>
         ///  
         /// <para>
         /// If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
-        /// <code>KmsKeyId</code> parameter, then Amazon RDS will use your default encryption
-        /// key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
-        /// has a different default encryption key for each AWS Region.
+        /// <code>KmsKeyId</code> parameter, then Amazon RDS uses your default CMK. There is a
+        /// default CMK for your AWS account. Your AWS account has a different default CMK for
+        /// each AWS Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -1491,6 +1539,24 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NcharCharacterSetName. 
+        /// <para>
+        /// The name of the NCHAR character set for the Oracle DB instance.
+        /// </para>
+        /// </summary>
+        public string NcharCharacterSetName
+        {
+            get { return this._ncharCharacterSetName; }
+            set { this._ncharCharacterSetName = value; }
+        }
+
+        // Check to see if NcharCharacterSetName property is set
+        internal bool IsSetNcharCharacterSetName()
+        {
+            return this._ncharCharacterSetName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
         /// Indicates that the DB instance should be associated with the specified option group.
@@ -1517,16 +1583,18 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsKMSKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for encryption of Performance Insights data. The KMS key
-        /// ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-        /// the KMS encryption key.
+        /// The AWS KMS key identifier for encryption of Performance Insights data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK).
         /// </para>
         ///  
         /// <para>
         /// If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon
-        /// RDS uses your default encryption key. AWS KMS creates the default encryption key for
-        /// your AWS account. Your AWS account has a different default encryption key for each
-        /// AWS Region.
+        /// RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
+        /// has a different default CMK for each AWS Region.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId

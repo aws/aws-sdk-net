@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -119,6 +119,9 @@ namespace Amazon.StorageGateway
     /// </para>
     ///  </important>
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonStorageGatewayClient : AmazonServiceClient, IAmazonStorageGateway
     {
         private static IServiceMetadata serviceMetadata = new AmazonStorageGatewayMetadata();
@@ -1916,6 +1919,72 @@ namespace Amazon.StorageGateway
             options.ResponseUnmarshaller = DescribeBandwidthRateLimitResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeBandwidthRateLimitResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeBandwidthRateLimitSchedule
+
+        internal virtual DescribeBandwidthRateLimitScheduleResponse DescribeBandwidthRateLimitSchedule(DescribeBandwidthRateLimitScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBandwidthRateLimitScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBandwidthRateLimitScheduleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about the bandwidth rate limit schedule of a gateway. By default,
+        /// gateways do not have bandwidth rate limit schedules, which means no bandwidth rate
+        /// limiting is in effect. This operation is supported only in the volume and tape gateway
+        /// types. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns information about a gateway's bandwidth rate limit schedule.
+        /// A bandwidth rate limit schedule consists of one or more bandwidth rate limit intervals.
+        /// A bandwidth rate limit interval defines a period of time on one or more days of the
+        /// week, during which bandwidth rate limits are specified for uploading, downloading,
+        /// or both. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  A bandwidth rate limit interval consists of one or more days of the week, a start
+        /// hour and minute, an ending hour and minute, and bandwidth rate limits for uploading
+        /// and downloading 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If no bandwidth rate limit schedule intervals are set for the gateway, this operation
+        /// returns an empty response. To specify which gateway to describe, use the Amazon Resource
+        /// Name (ARN) of the gateway in your request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBandwidthRateLimitSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBandwidthRateLimitSchedule service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule">REST API Reference for DescribeBandwidthRateLimitSchedule Operation</seealso>
+        public virtual Task<DescribeBandwidthRateLimitScheduleResponse> DescribeBandwidthRateLimitScheduleAsync(DescribeBandwidthRateLimitScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeBandwidthRateLimitScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeBandwidthRateLimitScheduleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4152,6 +4221,51 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  UpdateBandwidthRateLimitSchedule
+
+        internal virtual UpdateBandwidthRateLimitScheduleResponse UpdateBandwidthRateLimitSchedule(UpdateBandwidthRateLimitScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBandwidthRateLimitScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBandwidthRateLimitScheduleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways
+        /// do not have bandwidth rate limit schedules, which means no bandwidth rate limiting
+        /// is in effect. Use this to initiate or update a gateway's bandwidth rate limit schedule.
+        /// This operation is supported in the volume and tape gateway types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBandwidthRateLimitSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateBandwidthRateLimitSchedule service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule">REST API Reference for UpdateBandwidthRateLimitSchedule Operation</seealso>
+        public virtual Task<UpdateBandwidthRateLimitScheduleResponse> UpdateBandwidthRateLimitScheduleAsync(UpdateBandwidthRateLimitScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateBandwidthRateLimitScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBandwidthRateLimitScheduleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateBandwidthRateLimitScheduleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateChapCredentials
 
         internal virtual UpdateChapCredentialsResponse UpdateChapCredentials(UpdateChapCredentialsRequest request)
@@ -4382,7 +4496,7 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  </note> 
         /// <para>
-        /// Updates the following file share setting:
+        /// Updates the following file share settings:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4404,12 +4518,7 @@ namespace Amazon.StorageGateway
         /// <para>
         /// Write status of your file share
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// To leave a file share field unchanged, set the corresponding input field to null.
-        /// This operation is only supported in file gateways.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNFSFileShare service method.</param>
         /// <param name="cancellationToken">
@@ -4451,12 +4560,12 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Updates a Server Message Block (SMB) file share.
+        /// Updates a Server Message Block (SMB) file share. This operation is only supported
+        /// for file gateways.
         /// 
         ///  <note> 
         /// <para>
         /// To leave a file share field unchanged, set the corresponding input field to null.
-        /// This operation is only supported for file gateways.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -4495,6 +4604,48 @@ namespace Amazon.StorageGateway
             options.ResponseUnmarshaller = UpdateSMBFileShareResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateSMBFileShareResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSMBFileShareVisibility
+
+        internal virtual UpdateSMBFileShareVisibilityResponse UpdateSMBFileShareVisibility(UpdateSMBFileShareVisibilityRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSMBFileShareVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSMBFileShareVisibilityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSMBFileShareVisibilityResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Controls whether the shares on a gateway are visible in a net view or browse list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBFileShareVisibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSMBFileShareVisibility service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility">REST API Reference for UpdateSMBFileShareVisibility Operation</seealso>
+        public virtual Task<UpdateSMBFileShareVisibilityResponse> UpdateSMBFileShareVisibilityAsync(UpdateSMBFileShareVisibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSMBFileShareVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSMBFileShareVisibilityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateSMBFileShareVisibilityResponse>(request, options, cancellationToken);
         }
 
         #endregion

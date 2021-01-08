@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,6 +64,24 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CacheBehaviors", targetDepth))
+                {
+                    var unmarshaller = AwsCloudFrontDistributionCacheBehaviorsUnmarshaller.Instance;
+                    unmarshalledObject.CacheBehaviors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DefaultCacheBehavior", targetDepth))
+                {
+                    var unmarshaller = AwsCloudFrontDistributionDefaultCacheBehaviorUnmarshaller.Instance;
+                    unmarshalledObject.DefaultCacheBehavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DefaultRootObject", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultRootObject = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DomainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +104,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsCloudFrontDistributionLoggingUnmarshaller.Instance;
                     unmarshalledObject.Logging = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OriginGroups", targetDepth))
+                {
+                    var unmarshaller = AwsCloudFrontDistributionOriginGroupsUnmarshaller.Instance;
+                    unmarshalledObject.OriginGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Origins", targetDepth))

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// Details on a Docker volume mount point that is used in a job's container properties.
+    /// Details on a Docker volume mount point that's used in a job's container properties.
     /// This parameter maps to <code>Volumes</code> in the <a href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container">Create
     /// a container</a> section of the Docker Remote API and the <code>--volume</code> option
     /// to docker run.
@@ -43,7 +43,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerPath. 
         /// <para>
-        /// The path on the container at which to mount the host volume.
+        /// The path on the container where the host volume is mounted.
         /// </para>
         /// </summary>
         public string ContainerPath
@@ -61,8 +61,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ReadOnly. 
         /// <para>
-        /// If this value is <code>true</code>, the container has read-only access to the volume;
-        /// otherwise, the container can write to the volume. The default value is <code>false</code>.
+        /// If this value is <code>true</code>, the container has read-only access to the volume.
+        /// Otherwise, the container can write to the volume. The default value is <code>false</code>.
         /// </para>
         /// </summary>
         public bool ReadOnly

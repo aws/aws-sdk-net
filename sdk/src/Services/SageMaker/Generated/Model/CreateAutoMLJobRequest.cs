@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -136,7 +136,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property InputDataConfig. 
         /// <para>
         /// Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum
-        /// of 1000 rows.
+        /// of 500 rows.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

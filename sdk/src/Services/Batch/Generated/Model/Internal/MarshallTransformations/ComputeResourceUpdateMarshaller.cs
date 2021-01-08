@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -61,6 +61,28 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("minvCpus");
                 context.Writer.Write(requestObject.MinvCpus);
+            }
+
+            if(requestObject.IsSetSecurityGroupIds())
+            {
+                context.Writer.WritePropertyName("securityGroupIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
+                {
+                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetSubnets())
+            {
+                context.Writer.WritePropertyName("subnets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSubnetsListValue in requestObject.Subnets)
+                {
+                        context.Writer.Write(requestObjectSubnetsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }

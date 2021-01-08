@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the SuspendProcesses operation.
-    /// Suspends the specified automatic scaling processes, or all processes, for the specified
+    /// Suspends the specified auto scaling processes, or all processes, for the specified
     /// Auto Scaling group.
     /// 
     ///  
@@ -38,7 +38,7 @@ namespace Amazon.AutoScaling.Model
     /// If you suspend either the <code>Launch</code> or <code>Terminate</code> process types,
     /// it can prevent other process types from functioning properly. For more information,
     /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
-    /// and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// and resuming scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -56,7 +56,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }

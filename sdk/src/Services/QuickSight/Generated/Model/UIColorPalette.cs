@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// The theme colors that apply to UI and to charts, excluding data colors. The colors
-    /// description is a hexidecimal color code that consists of six alphanumerical characters,
+    /// description is a hexadecimal color code that consists of six alphanumerical characters,
     /// prefixed with <code>#</code>, for example #37BFF5. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using
     /// Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i>
     /// </summary>

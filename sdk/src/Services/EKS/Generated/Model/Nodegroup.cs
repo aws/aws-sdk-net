@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.EKS.Model
     public partial class Nodegroup
     {
         private AMITypes _amiType;
+        private CapacityTypes _capacityType;
         private string _clusterName;
         private DateTime? _createdAt;
         private int? _diskSize;
@@ -72,6 +73,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetAmiType()
         {
             return this._amiType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityType. 
+        /// <para>
+        /// The capacity type of your managed node group.
+        /// </para>
+        /// </summary>
+        public CapacityTypes CapacityType
+        {
+            get { return this._capacityType; }
+            set { this._capacityType = value; }
+        }
+
+        // Check to see if CapacityType property is set
+        internal bool IsSetCapacityType()
+        {
+            return this._capacityType != null;
         }
 
         /// <summary>
@@ -115,7 +134,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// If the node group wasn't deployed with a launch template, then this is the disk size
         /// in the node group configuration. If the node group was deployed with a launch template,
-        /// then <code>diskSize</code> is <code>null</code>.
+        /// then this is <code>null</code>.
         /// </para>
         /// </summary>
         public int DiskSize
@@ -154,7 +173,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// If the node group wasn't deployed with a launch template, then this is the instance
         /// type that is associated with the node group. If the node group was deployed with a
-        /// launch template, then <code>instanceTypes</code> is <code>null</code>.
+        /// launch template, then this is <code>null</code>.
         /// </para>
         /// </summary>
         public List<string> InstanceTypes
@@ -291,7 +310,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// If the node group was deployed using a launch template with a custom AMI, then this
         /// is the AMI ID that was specified in the launch template. For node groups that weren't
-        /// deployed using a launch template, this is the version of the Amazon EKS-optimized
+        /// deployed using a launch template, this is the version of the Amazon EKS optimized
         /// AMI that the node group was deployed with.
         /// </para>
         /// </summary>
@@ -312,7 +331,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// If the node group wasn't deployed with a launch template, then this is the remote
         /// access configuration that is associated with the node group. If the node group was
-        /// deployed with a launch template, then <code>remoteAccess</code> is <code>null</code>.
+        /// deployed with a launch template, then this is <code>null</code>.
         /// </para>
         /// </summary>
         public RemoteAccessConfig RemoteAccess

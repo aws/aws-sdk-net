@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,8 +34,8 @@ namespace Amazon.S3.Model
         /// </summary>
         public SSES3 SSES3
         {
-            get { return this.SSES3; }
-            set { this.SSES3 = value; }
+            get { return this.sSES3; }
+            set { this.sSES3 = value; }
         }
 
         // Check to see if SSES3 property is set

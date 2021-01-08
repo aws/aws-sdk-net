@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEndpointGroup operation.
-    /// Update an endpoint group. To see an AWS CLI example of updating an endpoint group,
-    /// scroll down to <b>Example</b>.
+    /// Update an endpoint group. A resource must be valid and active when you add it as an
+    /// endpoint.
     /// </summary>
     public partial class UpdateEndpointGroupRequest : AmazonGlobalAcceleratorRequest
     {
@@ -41,13 +41,15 @@ namespace Amazon.GlobalAccelerator.Model
         private string _healthCheckPath;
         private int? _healthCheckPort;
         private HealthCheckProtocol _healthCheckProtocol;
+        private List<PortOverride> _portOverrides = new List<PortOverride>();
         private int? _thresholdCount;
         private float? _trafficDialPercentage;
 
         /// <summary>
         /// Gets and sets the property EndpointConfigurations. 
         /// <para>
-        /// The list of endpoint objects.
+        /// The list of endpoint objects. A resource must be valid and active when you add it
+        /// as an endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -161,6 +163,33 @@ namespace Amazon.GlobalAccelerator.Model
         internal bool IsSetHealthCheckProtocol()
         {
             return this._healthCheckProtocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortOverrides. 
+        /// <para>
+        /// Override specific listener ports used to route traffic to endpoints that are part
+        /// of this endpoint group. For example, you can create a port override in which the listener
+        /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic
+        /// to ports 1080 and 1443, respectively, on the endpoints.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<PortOverride> PortOverrides
+        {
+            get { return this._portOverrides; }
+            set { this._portOverrides = value; }
+        }
+
+        // Check to see if PortOverrides property is set
+        internal bool IsSetPortOverrides()
+        {
+            return this._portOverrides != null && this._portOverrides.Count > 0; 
         }
 
         /// <summary>

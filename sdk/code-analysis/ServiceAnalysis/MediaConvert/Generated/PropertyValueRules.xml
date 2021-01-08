@@ -119,6 +119,21 @@
     <max>8</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AutomatedAbrSettings.MaxAbrBitrate</property>
+    <min>100000</min>
+    <max>100000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AutomatedAbrSettings.MaxRenditions</property>
+    <min>3</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AutomatedAbrSettings.MinAbrBitrate</property>
+    <min>100000</min>
+    <max>100000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.Av1QvbrSettings.QvbrQualityLevel</property>
     <min>1</min>
     <max>10</max>
@@ -152,6 +167,16 @@
     <property>Amazon.MediaConvert.Model.AvailBlanking.AvailBlankingImage</property>
     <min>14</min>
     <pattern>^((s3://(.*?)\.(bmp|BMP|png|PNG))|(https?://(.*?)\.(bmp|BMP|png|PNG)(\?([^&amp;=]+=[^&amp;]+&amp;)*[^&amp;=]+=[^&amp;]+)?))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AvcIntraSettings.FramerateDenominator</property>
+    <min>1</min>
+    <max>1001</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.AvcIntraSettings.FramerateNumerator</property>
+    <min>24</min>
+    <max>60000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.BurninDestinationSettings.BackgroundOpacity</property>
@@ -785,7 +810,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Input.FileInput</property>
-    <pattern>^((s3://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[pP]|[mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][kK][aA]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[wW][eE][bB][mM]|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[xX][mM][lL]))))|(https?://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][kK][aA]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[wW][eE][bB][mM]|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[xX][mM][lL])))(\?([^&amp;=]+=[^&amp;]+&amp;)*[^&amp;=]+=[^&amp;]+)?))$</pattern>
+    <pattern>^((s3://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[pP]|[mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][kK][aA]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[wW][eE][bB][mM]|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[xX][mM][lL]|[oO][gG][gGaA]))))|(https?://([^\/]+\/+)+([^\/\.]+|(([^\/]*)\.([mM]2[vV]|[mM][pP][eE][gG]|[mM][pP]3|[aA][vV][iI]|[mM][pP]4|[fF][lL][vV]|[mM][pP][tT]|[mM][pP][gG]|[mM]4[vV]|[tT][rR][pP]|[fF]4[vV]|[mM]2[tT][sS]|[tT][sS]|264|[hH]264|[mM][kK][vV]|[mM][kK][aA]|[mM][oO][vV]|[mM][tT][sS]|[mM]2[tT]|[wW][mM][vV]|[aA][sS][fF]|[vV][oO][bB]|3[gG][pP]|3[gG][pP][pP]|[mM][xX][fF]|[dD][iI][vV][xX]|[xX][vV][iI][dD]|[rR][aA][wW]|[dD][vV]|[gG][xX][fF]|[mM]1[vV]|3[gG]2|[vV][mM][fF]|[mM]3[uU]8|[wW][eE][bB][mM]|[lL][cC][hH]|[gG][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF]_[mM][pP][eE][gG]2|[mM][xX][fF][hH][dD]|[wW][aA][vV]|[yY]4[mM]|[xX][mM][lL]|[oO][gG][gGaA])))(\?([^&amp;=]+=[^&amp;]+&amp;)*[^&amp;=]+=[^&amp;]+)?))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Input.FilterStrength</property>
@@ -1220,6 +1245,42 @@
     <max>0</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.AdiFilename</property>
+    <pattern>^s3:\/\/</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.AssetId</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.AssetName</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.CbetSourceId</property>
+    <pattern>(^0x[A-Fa-f0-9]{0,8}$|^[1-9][0-9]{0,8}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.EpisodeId</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.MetadataDestination</property>
+    <pattern>^s3:\/\/</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.SourceId</property>
+    <min>0</min>
+    <max>65534</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.TicServerUrl</property>
+    <pattern>^https:\/\/</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.NoiseReducerFilterSettings.Strength</property>
     <min>0</min>
     <max>3</max>
@@ -1400,6 +1461,16 @@
     <property>Amazon.MediaConvert.Model.TrackSourceSettings.TrackNumber</property>
     <min>1</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Vc3Settings.FramerateDenominator</property>
+    <min>1</min>
+    <max>1001</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.Vc3Settings.FramerateNumerator</property>
+    <min>24</min>
+    <max>60000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.VideoDescription.FixedAfd</property>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -61,6 +61,11 @@ namespace Amazon.SecurityHub
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <code> <a>BatchEnableStandards</a> </code> - <code>RateLimit</code> of 1 request
+    /// per second, <code>BurstLimit</code> of 1 request per second.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code> <a>GetFindings</a> </code> - <code>RateLimit</code> of 3 requests per second.
     /// <code>BurstLimit</code> of 6 requests per second.
     /// </para>
@@ -68,6 +73,11 @@ namespace Amazon.SecurityHub
     /// <para>
     ///  <code> <a>UpdateFindings</a> </code> - <code>RateLimit</code> of 1 request per second.
     /// <code>BurstLimit</code> of 5 requests per second.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code> <a>UpdateStandardsControl</a> </code> - <code>RateLimit</code> of 1 request
+    /// per second, <code>BurstLimit</code> of 5 requests per second.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -94,6 +104,10 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
+        /// This operation is only used by member accounts that are not added through Organizations.
+        /// </para>
+        ///  
+        /// <para>
         /// When the member account accepts the invitation, permission is granted to the master
         /// account to view findings generated in the member account.
         /// </para>
@@ -105,7 +119,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -113,7 +129,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -127,6 +143,10 @@ namespace Amazon.SecurityHub
         /// Accepts the invitation to be a member account and be monitored by the Security Hub
         /// master account that the invitation was sent from.
         /// 
+        ///  
+        /// <para>
+        /// This operation is only used by member accounts that are not added through Organizations.
+        /// </para>
         ///  
         /// <para>
         /// When the member account accepts the invitation, permission is granted to the master
@@ -143,7 +163,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -151,7 +173,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -180,7 +202,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -188,7 +212,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">REST API Reference for BatchDisableStandards Operation</seealso>
         BatchDisableStandardsResponse BatchDisableStandards(BatchDisableStandardsRequest request);
@@ -214,7 +238,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -222,7 +248,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">REST API Reference for BatchDisableStandards Operation</seealso>
         Task<BatchDisableStandardsResponse> BatchDisableStandardsAsync(BatchDisableStandardsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -249,7 +275,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -257,7 +285,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">REST API Reference for BatchEnableStandards Operation</seealso>
         BatchEnableStandardsResponse BatchEnableStandards(BatchEnableStandardsRequest request);
@@ -284,7 +312,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -292,7 +322,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">REST API Reference for BatchEnableStandards Operation</seealso>
         Task<BatchEnableStandardsResponse> BatchEnableStandardsAsync(BatchEnableStandardsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -320,27 +350,7 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Confidence</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Criticality</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>Note</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>RelatedFindings</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Severity</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Types</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -354,6 +364,33 @@ namespace Amazon.SecurityHub
         /// <para>
         ///  <code>Workflow</code> 
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <code>BatchImportFindings</code> can be used to update the following finding fields
+        /// and objects only if they have not been updated using <code>BatchUpdateFindings</code>.
+        /// After they are updated using <code>BatchUpdateFindings</code>, these fields cannot
+        /// be updated using <code>BatchImportFindings</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Confidence</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Criticality</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RelatedFindings</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Severity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Types</code> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchImportFindings service method.</param>
@@ -363,7 +400,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -371,7 +410,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">REST API Reference for BatchImportFindings Operation</seealso>
         BatchImportFindingsResponse BatchImportFindings(BatchImportFindingsRequest request);
@@ -396,27 +435,7 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Confidence</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Criticality</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>Note</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>RelatedFindings</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Severity</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Types</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -430,6 +449,33 @@ namespace Amazon.SecurityHub
         /// <para>
         ///  <code>Workflow</code> 
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <code>BatchImportFindings</code> can be used to update the following finding fields
+        /// and objects only if they have not been updated using <code>BatchUpdateFindings</code>.
+        /// After they are updated using <code>BatchUpdateFindings</code>, these fields cannot
+        /// be updated using <code>BatchImportFindings</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Confidence</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Criticality</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RelatedFindings</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Severity</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Types</code> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchImportFindings service method.</param>
@@ -442,7 +488,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -450,7 +498,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">REST API Reference for BatchImportFindings Operation</seealso>
         Task<BatchImportFindingsResponse> BatchImportFindingsAsync(BatchImportFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -473,8 +521,8 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// Master accounts can use <code>BatchUpdateFindings</code> to update the following finding
-        /// fields and objects.
+        /// Master and member accounts can use <code>BatchUpdateFindings</code> to update the
+        /// following finding fields and objects.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -514,7 +562,10 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Member accounts can only use <code>BatchUpdateFindings</code> to update the Note object.
+        /// You can configure IAM policies to restrict access to fields and field values. For
+        /// example, you might not want member accounts to be able to suppress findings or change
+        /// the finding severity. See <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
+        /// access to BatchUpdateFindings</a> in the <i>AWS Security Hub User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindings service method.</param>
@@ -524,7 +575,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -532,7 +585,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">REST API Reference for BatchUpdateFindings Operation</seealso>
         BatchUpdateFindingsResponse BatchUpdateFindings(BatchUpdateFindingsRequest request);
@@ -552,8 +605,8 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// Master accounts can use <code>BatchUpdateFindings</code> to update the following finding
-        /// fields and objects.
+        /// Master and member accounts can use <code>BatchUpdateFindings</code> to update the
+        /// following finding fields and objects.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -593,7 +646,10 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Member accounts can only use <code>BatchUpdateFindings</code> to update the Note object.
+        /// You can configure IAM policies to restrict access to fields and field values. For
+        /// example, you might not want member accounts to be able to suppress findings or change
+        /// the finding severity. See <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring
+        /// access to BatchUpdateFindings</a> in the <i>AWS Security Hub User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFindings service method.</param>
@@ -606,7 +662,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -614,7 +672,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">REST API Reference for BatchUpdateFindings Operation</seealso>
         Task<BatchUpdateFindingsResponse> BatchUpdateFindingsAsync(BatchUpdateFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -640,7 +698,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -648,7 +708,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
@@ -677,7 +737,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -685,7 +747,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
@@ -714,7 +776,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -722,7 +786,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
@@ -751,7 +815,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -759,7 +825,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
@@ -774,22 +840,50 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Creates a member association in Security Hub between the specified accounts and the
-        /// account used to make the request, which is the master account. To successfully create
-        /// a member, you must use this action from an account that already has Security Hub enabled.
-        /// To enable Security Hub, you can use the <code> <a>EnableSecurityHub</a> </code> operation.
+        /// account used to make the request, which is the master account. If you are integrated
+        /// with Organizations, then the master account is the Security Hub administrator account
+        /// that is designated by the organization management account.
         /// 
         ///  
         /// <para>
-        /// After you use <code>CreateMembers</code> to create member account associations in
-        /// Security Hub, you must use the <code> <a>InviteMembers</a> </code> operation to invite
-        /// the accounts to enable Security Hub and become member accounts in Security Hub.
+        ///  <code>CreateMembers</code> is always used to add accounts that are not organization
+        /// members.
         /// </para>
         ///  
         /// <para>
-        /// If the account owner accepts the invitation, the account becomes a member account
-        /// in Security Hub. A permissions policy is added that permits the master account to
-        /// view the findings generated in the member account. When Security Hub is enabled in
-        /// the invited account, findings start to be sent to both the member and master accounts.
+        /// For accounts that are part of an organization, <code>CreateMembers</code> is only
+        /// used in the following cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Security Hub is not configured to automatically add new accounts in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The account was disassociated or deleted in Security Hub.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This action can only be used by an account that has Security Hub enabled. To enable
+        /// Security Hub, you can use the <code> <a>EnableSecurityHub</a> </code> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For accounts that are not organization members, you create the account association
+        /// and then send an invitation to the member account. To send the invitation, you use
+        /// the <code> <a>InviteMembers</a> </code> operation. If the account owner accepts the
+        /// invitation, the account becomes a member account in Security Hub.
+        /// </para>
+        ///  
+        /// <para>
+        /// Accounts that are part of an organization do not receive an invitation. They automatically
+        /// become a member account in Security Hub.
+        /// </para>
+        ///  
+        /// <para>
+        /// A permissions policy is added that permits the master account to view the findings
+        /// generated in the member account. When Security Hub is enabled in a member account,
+        /// findings are sent to both the member and master accounts. 
         /// </para>
         ///  
         /// <para>
@@ -804,7 +898,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -812,7 +908,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
@@ -824,22 +920,50 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Creates a member association in Security Hub between the specified accounts and the
-        /// account used to make the request, which is the master account. To successfully create
-        /// a member, you must use this action from an account that already has Security Hub enabled.
-        /// To enable Security Hub, you can use the <code> <a>EnableSecurityHub</a> </code> operation.
+        /// account used to make the request, which is the master account. If you are integrated
+        /// with Organizations, then the master account is the Security Hub administrator account
+        /// that is designated by the organization management account.
         /// 
         ///  
         /// <para>
-        /// After you use <code>CreateMembers</code> to create member account associations in
-        /// Security Hub, you must use the <code> <a>InviteMembers</a> </code> operation to invite
-        /// the accounts to enable Security Hub and become member accounts in Security Hub.
+        ///  <code>CreateMembers</code> is always used to add accounts that are not organization
+        /// members.
         /// </para>
         ///  
         /// <para>
-        /// If the account owner accepts the invitation, the account becomes a member account
-        /// in Security Hub. A permissions policy is added that permits the master account to
-        /// view the findings generated in the member account. When Security Hub is enabled in
-        /// the invited account, findings start to be sent to both the member and master accounts.
+        /// For accounts that are part of an organization, <code>CreateMembers</code> is only
+        /// used in the following cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Security Hub is not configured to automatically add new accounts in an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The account was disassociated or deleted in Security Hub.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This action can only be used by an account that has Security Hub enabled. To enable
+        /// Security Hub, you can use the <code> <a>EnableSecurityHub</a> </code> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For accounts that are not organization members, you create the account association
+        /// and then send an invitation to the member account. To send the invitation, you use
+        /// the <code> <a>InviteMembers</a> </code> operation. If the account owner accepts the
+        /// invitation, the account becomes a member account in Security Hub.
+        /// </para>
+        ///  
+        /// <para>
+        /// Accounts that are part of an organization do not receive an invitation. They automatically
+        /// become a member account in Security Hub.
+        /// </para>
+        ///  
+        /// <para>
+        /// A permissions policy is added that permits the master account to view the findings
+        /// generated in the member account. When Security Hub is enabled in a member account,
+        /// findings are sent to both the member and master accounts. 
         /// </para>
         ///  
         /// <para>
@@ -857,7 +981,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -865,7 +991,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
@@ -880,6 +1006,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Declines invitations to become a member account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is only used by accounts that are not part of an organization. Organization
+        /// accounts do not receive invitations.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeclineInvitations service method.</param>
         /// 
@@ -888,7 +1020,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -904,6 +1038,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Declines invitations to become a member account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is only used by accounts that are not part of an organization. Organization
+        /// accounts do not receive invitations.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeclineInvitations service method.</param>
         /// <param name="cancellationToken">
@@ -915,7 +1055,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -948,7 +1090,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -981,7 +1125,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1008,7 +1154,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1016,7 +1164,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1039,7 +1187,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1047,7 +1197,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1062,6 +1212,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Deletes invitations received by the AWS account to become a member account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is only used by accounts that are not part of an organization. Organization
+        /// accounts do not receive invitations.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInvitations service method.</param>
         /// 
@@ -1070,7 +1226,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1078,7 +1236,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1090,6 +1248,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Deletes invitations received by the AWS account to become a member account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is only used by accounts that are not part of an organization. Organization
+        /// accounts do not receive invitations.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInvitations service method.</param>
         /// <param name="cancellationToken">
@@ -1101,7 +1265,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1109,7 +1275,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1124,6 +1290,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Deletes the specified member accounts from Security Hub.
+        /// 
+        ///  
+        /// <para>
+        /// Can be used to delete member accounts that belong to an organization as well as member
+        /// accounts that were invited manually.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
         /// 
@@ -1132,7 +1304,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1140,7 +1314,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1152,6 +1326,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Deletes the specified member accounts from Security Hub.
+        /// 
+        ///  
+        /// <para>
+        /// Can be used to delete member accounts that belong to an organization as well as member
+        /// accounts that were invited manually.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
         /// <param name="cancellationToken">
@@ -1163,7 +1343,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1171,7 +1353,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1194,7 +1376,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1221,7 +1405,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1249,7 +1435,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1257,7 +1445,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1281,7 +1469,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1289,13 +1479,75 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeHub">REST API Reference for DescribeHub Operation</seealso>
         Task<DescribeHubResponse> DescribeHubAsync(DescribeHubRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeOrganizationConfiguration
+
+
+        /// <summary>
+        /// Returns information about the Organizations configuration for Security Hub. Can only
+        /// be called from a Security Hub administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeOrganizationConfiguration service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
+        DescribeOrganizationConfigurationResponse DescribeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about the Organizations configuration for Security Hub. Can only
+        /// be called from a Security Hub administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOrganizationConfiguration service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeOrganizationConfiguration">REST API Reference for DescribeOrganizationConfiguration Operation</seealso>
+        Task<DescribeOrganizationConfigurationResponse> DescribeOrganizationConfigurationAsync(DescribeOrganizationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1313,7 +1565,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1321,7 +1575,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">REST API Reference for DescribeProducts Operation</seealso>
         DescribeProductsResponse DescribeProducts(DescribeProductsRequest request);
@@ -1342,7 +1596,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1350,7 +1606,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">REST API Reference for DescribeProducts Operation</seealso>
         Task<DescribeProductsResponse> DescribeProductsAsync(DescribeProductsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1376,7 +1632,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1406,7 +1664,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1436,7 +1696,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1469,7 +1731,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1497,7 +1761,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1505,7 +1771,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1529,7 +1795,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1537,13 +1805,75 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableImportFindingsForProduct">REST API Reference for DisableImportFindingsForProduct Operation</seealso>
         Task<DisableImportFindingsForProductResponse> DisableImportFindingsForProductAsync(DisableImportFindingsForProductRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisableOrganizationAdminAccount
+
+
+        /// <summary>
+        /// Disables a Security Hub administrator account. Can only be called by the organization
+        /// management account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
+        /// 
+        /// <returns>The response from the DisableOrganizationAdminAccount service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
+        DisableOrganizationAdminAccountResponse DisableOrganizationAdminAccount(DisableOrganizationAdminAccountRequest request);
+
+
+
+        /// <summary>
+        /// Disables a Security Hub administrator account. Can only be called by the organization
+        /// management account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationAdminAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableOrganizationAdminAccount service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableOrganizationAdminAccount">REST API Reference for DisableOrganizationAdminAccount Operation</seealso>
+        Task<DisableOrganizationAdminAccountResponse> DisableOrganizationAdminAccountAsync(DisableOrganizationAdminAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1580,11 +1910,13 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1627,11 +1959,13 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1646,6 +1980,13 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Disassociates the current Security Hub member account from the associated master account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is only used by accounts that are not part of an organization. For
+        /// organization accounts, only the master account (the designated Security Hub administrator)
+        /// can disassociate a member account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFromMasterAccount service method.</param>
         /// 
@@ -1654,7 +1995,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1662,7 +2005,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1674,6 +2017,13 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Disassociates the current Security Hub member account from the associated master account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is only used by accounts that are not part of an organization. For
+        /// organization accounts, only the master account (the designated Security Hub administrator)
+        /// can disassociate a member account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFromMasterAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1685,7 +2035,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1693,7 +2045,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1708,6 +2060,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Disassociates the specified member accounts from the associated master account.
+        /// 
+        ///  
+        /// <para>
+        /// Can be used to disassociate both accounts that are in an organization and accounts
+        /// that were invited manually.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
         /// 
@@ -1716,7 +2074,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1724,7 +2084,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1736,6 +2096,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Disassociates the specified member accounts from the associated master account.
+        /// 
+        ///  
+        /// <para>
+        /// Can be used to disassociate both accounts that are in an organization and accounts
+        /// that were invited manually.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
         /// <param name="cancellationToken">
@@ -1747,7 +2113,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1755,7 +2123,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -1785,7 +2153,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1793,7 +2163,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
@@ -1823,7 +2193,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -1831,13 +2203,75 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableImportFindingsForProduct">REST API Reference for EnableImportFindingsForProduct Operation</seealso>
         Task<EnableImportFindingsForProductResponse> EnableImportFindingsForProductAsync(EnableImportFindingsForProductRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableOrganizationAdminAccount
+
+
+        /// <summary>
+        /// Designates the Security Hub administrator account for an organization. Can only be
+        /// called by the organization management account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
+        /// 
+        /// <returns>The response from the EnableOrganizationAdminAccount service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
+        EnableOrganizationAdminAccountResponse EnableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest request);
+
+
+
+        /// <summary>
+        /// Designates the Security Hub administrator account for an organization. Can only be
+        /// called by the organization management account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationAdminAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableOrganizationAdminAccount service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
+        Task<EnableOrganizationAdminAccountResponse> EnableOrganizationAdminAccountAsync(EnableOrganizationAdminAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1898,11 +2332,13 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
@@ -1969,11 +2405,13 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceConflictException">
         /// The resource specified in the request conflicts with an existing resource.
@@ -1996,7 +2434,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2004,7 +2444,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetEnabledStandards">REST API Reference for GetEnabledStandards Operation</seealso>
         GetEnabledStandardsResponse GetEnabledStandards(GetEnabledStandardsRequest request);
@@ -2024,7 +2464,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2032,7 +2474,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetEnabledStandards">REST API Reference for GetEnabledStandards Operation</seealso>
         Task<GetEnabledStandardsResponse> GetEnabledStandardsAsync(GetEnabledStandardsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2052,7 +2494,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2060,7 +2504,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings">REST API Reference for GetFindings Operation</seealso>
         GetFindingsResponse GetFindings(GetFindingsRequest request);
@@ -2080,7 +2524,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2088,7 +2534,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings">REST API Reference for GetFindings Operation</seealso>
         Task<GetFindingsResponse> GetFindingsAsync(GetFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2108,7 +2554,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2116,7 +2564,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2139,7 +2587,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2147,7 +2597,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2170,7 +2620,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2178,7 +2630,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2201,7 +2653,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2209,7 +2663,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2233,7 +2687,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2241,7 +2697,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         GetInvitationsCountResponse GetInvitationsCount(GetInvitationsCountRequest request);
@@ -2262,7 +2718,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2270,7 +2728,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInvitationsCount">REST API Reference for GetInvitationsCount Operation</seealso>
         Task<GetInvitationsCountResponse> GetInvitationsCountAsync(GetInvitationsCountRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2282,6 +2740,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Provides the details for the Security Hub master account for the current member account.
+        /// 
+        ///  
+        /// <para>
+        /// Can be used by both member accounts that are in an organization and accounts that
+        /// were invited manually.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMasterAccount service method.</param>
         /// 
@@ -2290,7 +2754,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2298,7 +2764,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2310,6 +2776,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Provides the details for the Security Hub master account for the current member account.
+        /// 
+        ///  
+        /// <para>
+        /// Can be used by both member accounts that are in an organization and accounts that
+        /// were invited manually.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMasterAccount service method.</param>
         /// <param name="cancellationToken">
@@ -2321,7 +2793,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2329,7 +2803,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2345,6 +2819,17 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// Returns the details for the Security Hub member accounts for the specified account
         /// IDs.
+        /// 
+        ///  
+        /// <para>
+        /// A master account can be either a delegated Security Hub administrator account for
+        /// an organization or a master account that enabled Security Hub manually.
+        /// </para>
+        ///  
+        /// <para>
+        /// The results include both member accounts that are in an organization and accounts
+        /// that were invited manually.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMembers service method.</param>
         /// 
@@ -2353,7 +2838,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2361,7 +2848,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2374,6 +2861,17 @@ namespace Amazon.SecurityHub
         /// <summary>
         /// Returns the details for the Security Hub member accounts for the specified account
         /// IDs.
+        /// 
+        ///  
+        /// <para>
+        /// A master account can be either a delegated Security Hub administrator account for
+        /// an organization or a master account that enabled Security Hub manually.
+        /// </para>
+        ///  
+        /// <para>
+        /// The results include both member accounts that are in an organization and accounts
+        /// that were invited manually.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMembers service method.</param>
         /// <param name="cancellationToken">
@@ -2385,7 +2883,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2393,7 +2893,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2412,13 +2912,19 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
+        /// This operation is only used to invite accounts that do not belong to an organization.
+        /// Organization accounts do not receive invitations.
+        /// </para>
+        ///  
+        /// <para>
         /// Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a>
         /// </code> action to create the member account in Security Hub.
         /// </para>
         ///  
         /// <para>
-        /// When the account owner accepts the invitation to become a member account and enables
-        /// Security Hub, the master account can view the findings generated from the member account.
+        /// When the account owner enables Security Hub and accepts the invitation to become a
+        /// member account, the master account can view the findings generated from the member
+        /// account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteMembers service method.</param>
@@ -2428,7 +2934,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2436,7 +2944,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2452,13 +2960,19 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
+        /// This operation is only used to invite accounts that do not belong to an organization.
+        /// Organization accounts do not receive invitations.
+        /// </para>
+        ///  
+        /// <para>
         /// Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a>
         /// </code> action to create the member account in Security Hub.
         /// </para>
         ///  
         /// <para>
-        /// When the account owner accepts the invitation to become a member account and enables
-        /// Security Hub, the master account can view the findings generated from the member account.
+        /// When the account owner enables Security Hub and accepts the invitation to become a
+        /// member account, the master account can view the findings generated from the member
+        /// account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteMembers service method.</param>
@@ -2471,7 +2985,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2479,7 +2995,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2503,11 +3019,13 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListEnabledProductsForImport">REST API Reference for ListEnabledProductsForImport Operation</seealso>
         ListEnabledProductsForImportResponse ListEnabledProductsForImport(ListEnabledProductsForImportRequest request);
@@ -2528,11 +3046,13 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListEnabledProductsForImport">REST API Reference for ListEnabledProductsForImport Operation</seealso>
         Task<ListEnabledProductsForImportResponse> ListEnabledProductsForImportAsync(ListEnabledProductsForImportRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2544,6 +3064,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Lists all Security Hub membership invitations that were sent to the current AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is only used by accounts that do not belong to an organization. Organization
+        /// accounts do not receive invitations.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
         /// 
@@ -2552,7 +3078,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2560,7 +3088,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         ListInvitationsResponse ListInvitations(ListInvitationsRequest request);
@@ -2569,6 +3097,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Lists all Security Hub membership invitations that were sent to the current AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is only used by accounts that do not belong to an organization. Organization
+        /// accounts do not receive invitations.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvitations service method.</param>
         /// <param name="cancellationToken">
@@ -2580,7 +3114,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2588,7 +3124,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations">REST API Reference for ListInvitations Operation</seealso>
         Task<ListInvitationsResponse> ListInvitationsAsync(ListInvitationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2600,6 +3136,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Lists details about all member accounts for the current Security Hub master account.
+        /// 
+        ///  
+        /// <para>
+        /// The results include both member accounts that belong to an organization and member
+        /// accounts that were invited manually.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// 
@@ -2608,7 +3150,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2616,7 +3160,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListMembers">REST API Reference for ListMembers Operation</seealso>
         ListMembersResponse ListMembers(ListMembersRequest request);
@@ -2625,6 +3169,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Lists details about all member accounts for the current Security Hub master account.
+        /// 
+        ///  
+        /// <para>
+        /// The results include both member accounts that belong to an organization and member
+        /// accounts that were invited manually.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// <param name="cancellationToken">
@@ -2636,7 +3186,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2644,10 +3196,72 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListMembers">REST API Reference for ListMembers Operation</seealso>
         Task<ListMembersResponse> ListMembersAsync(ListMembersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListOrganizationAdminAccounts
+
+
+        /// <summary>
+        /// Lists the Security Hub administrator accounts. Can only be called by the organization
+        /// management account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>
+        /// 
+        /// <returns>The response from the ListOrganizationAdminAccounts service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
+        ListOrganizationAdminAccountsResponse ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the Security Hub administrator accounts. Can only be called by the organization
+        /// management account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationAdminAccounts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOrganizationAdminAccounts service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListOrganizationAdminAccounts">REST API Reference for ListOrganizationAdminAccounts Operation</seealso>
+        Task<ListOrganizationAdminAccountsResponse> ListOrganizationAdminAccountsAsync(ListOrganizationAdminAccountsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2808,7 +3422,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2835,7 +3451,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2870,7 +3488,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2878,7 +3498,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2909,7 +3529,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2917,7 +3539,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2940,7 +3562,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2948,7 +3572,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -2971,7 +3595,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -2979,13 +3605,75 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateInsight">REST API Reference for UpdateInsight Operation</seealso>
         Task<UpdateInsightResponse> UpdateInsightAsync(UpdateInsightRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateOrganizationConfiguration
+
+
+        /// <summary>
+        /// Used to update the configuration related to Organizations. Can only be called from
+        /// a Security Hub administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateOrganizationConfiguration service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
+        UpdateOrganizationConfigurationResponse UpdateOrganizationConfiguration(UpdateOrganizationConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Used to update the configuration related to Organizations. Can only be called from
+        /// a Security Hub administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOrganizationConfiguration service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateOrganizationConfiguration">REST API Reference for UpdateOrganizationConfiguration Operation</seealso>
+        Task<UpdateOrganizationConfigurationResponse> UpdateOrganizationConfigurationAsync(UpdateOrganizationConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3002,7 +3690,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3010,7 +3700,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -3033,7 +3723,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3041,7 +3733,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
-        /// AWS account limits. The error code describes the limit exceeded.
+        /// AWS account or throttling limits. The error code describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
         /// The request was rejected because we can't find the specified resource.
@@ -3064,7 +3756,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for
@@ -3091,7 +3785,9 @@ namespace Amazon.SecurityHub
         /// Internal server error.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
-        /// AWS Security Hub isn't enabled for the account used to make this request.
+        /// There is an issue with the account used to make the request. Either Security Hub is
+        /// not enabled for the account, or the account does not have permission to perform this
+        /// action.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
         /// The request was rejected because you supplied an invalid or out-of-range value for

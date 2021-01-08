@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,7 +38,9 @@ namespace Amazon.SageMaker.Model
         private string _failureReason;
         private DateTime? _lastModifiedTime;
         private ExecutionStatus _monitoringExecutionStatus;
+        private string _monitoringJobDefinitionName;
         private string _monitoringScheduleName;
+        private MonitoringType _monitoringType;
         private string _processingJobArn;
         private DateTime? _scheduledTime;
 
@@ -64,7 +66,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// The name of teh endpoint used to run the monitoring job.
+        /// The name of the endpoint used to run the monitoring job.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]
@@ -138,6 +140,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MonitoringJobDefinitionName. 
+        /// <para>
+        /// The name of the monitoring job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string MonitoringJobDefinitionName
+        {
+            get { return this._monitoringJobDefinitionName; }
+            set { this._monitoringJobDefinitionName = value; }
+        }
+
+        // Check to see if MonitoringJobDefinitionName property is set
+        internal bool IsSetMonitoringJobDefinitionName()
+        {
+            return this._monitoringJobDefinitionName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MonitoringScheduleName. 
         /// <para>
         /// The name of the monitoring schedule.
@@ -154,6 +175,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMonitoringScheduleName()
         {
             return this._monitoringScheduleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringType. 
+        /// <para>
+        /// The type of the monitoring job.
+        /// </para>
+        /// </summary>
+        public MonitoringType MonitoringType
+        {
+            get { return this._monitoringType; }
+            set { this._monitoringType = value; }
+        }
+
+        // Check to see if MonitoringType property is set
+        internal bool IsSetMonitoringType()
+        {
+            return this._monitoringType != null;
         }
 
         /// <summary>

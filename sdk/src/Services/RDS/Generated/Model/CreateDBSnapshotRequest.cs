@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBSnapshot operation.
-    /// Creates a DBSnapshot. The source DBInstance must be in "available" state.
+    /// Creates a snapshot of a DB instance. The source DB instance must be in the <code>available</code>
+    /// or <code>storage-optimization</code> state.
     /// </summary>
     public partial class CreateDBSnapshotRequest : AmazonRDSRequest
     {

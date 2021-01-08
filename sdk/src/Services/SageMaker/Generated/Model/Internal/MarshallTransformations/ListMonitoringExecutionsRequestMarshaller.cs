@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -104,10 +104,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxResults);
                 }
 
+                if(publicRequest.IsSetMonitoringJobDefinitionName())
+                {
+                    context.Writer.WritePropertyName("MonitoringJobDefinitionName");
+                    context.Writer.Write(publicRequest.MonitoringJobDefinitionName);
+                }
+
                 if(publicRequest.IsSetMonitoringScheduleName())
                 {
                     context.Writer.WritePropertyName("MonitoringScheduleName");
                     context.Writer.Write(publicRequest.MonitoringScheduleName);
+                }
+
+                if(publicRequest.IsSetMonitoringTypeEquals())
+                {
+                    context.Writer.WritePropertyName("MonitoringTypeEquals");
+                    context.Writer.Write(publicRequest.MonitoringTypeEquals);
                 }
 
                 if(publicRequest.IsSetNextToken())

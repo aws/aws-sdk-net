@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -97,6 +97,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = EndpointConfigurationUnmarshaller.Instance;
                     response.EndpointConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mutualTlsAuthentication", targetDepth))
+                {
+                    var unmarshaller = MutualTlsAuthenticationUnmarshaller.Instance;
+                    response.MutualTlsAuthentication = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("domainName", targetDepth))

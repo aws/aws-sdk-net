@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -87,6 +87,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.Options.IsSetMulticastSupport())
                     {
                         request.Parameters.Add("Options" + "." + "MulticastSupport", StringUtils.FromString(publicRequest.Options.MulticastSupport));
+                    }
+                    if(publicRequest.Options.IsSetTransitGatewayCidrBlocks())
+                    {
+                        int publicRequestOptionslistValueIndex = 1;
+                        foreach(var publicRequestOptionslistValue in publicRequest.Options.TransitGatewayCidrBlocks)
+                        {
+                            request.Parameters.Add("Options" + "." + "TransitGatewayCidrBlocks" + "." + publicRequestOptionslistValueIndex, StringUtils.FromString(publicRequestOptionslistValue));
+                            publicRequestOptionslistValueIndex++;
+                        }
                     }
                     if(publicRequest.Options.IsSetVpnEcmpSupport())
                     {

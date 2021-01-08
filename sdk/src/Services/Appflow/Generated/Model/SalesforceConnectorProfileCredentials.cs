@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.Appflow.Model
     public partial class SalesforceConnectorProfileCredentials
     {
         private string _accessToken;
+        private string _clientCredentialsArn;
         private ConnectorOAuthRequest _oAuthRequest;
         private string _refreshToken;
 
@@ -57,9 +58,29 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClientCredentialsArn. 
+        /// <para>
+        ///  The secret manager ARN, which contains the client ID and client secret of the connected
+        /// app. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ClientCredentialsArn
+        {
+            get { return this._clientCredentialsArn; }
+            set { this._clientCredentialsArn = value; }
+        }
+
+        // Check to see if ClientCredentialsArn property is set
+        internal bool IsSetClientCredentialsArn()
+        {
+            return this._clientCredentialsArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OAuthRequest. 
         /// <para>
-        ///  The oauth requirement needed to request security tokens from the connector endpoint.
+        ///  The OAuth requirement needed to request security tokens from the connector endpoint.
         /// 
         /// </para>
         /// </summary>

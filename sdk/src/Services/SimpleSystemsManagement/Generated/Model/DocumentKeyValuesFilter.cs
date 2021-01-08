@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,22 +37,94 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// Other valid values include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
-    /// <code>DocumentType</code>, and <code>TargetType</code>.
+    /// You can also use AWS-provided keys, some of which have specific allowed values. These
+    /// keys and their associated values are as follows:
     /// </para>
-    ///  
+    ///  <dl> <dt>DocumentType</dt> <dd> <ul> <li> 
     /// <para>
-    /// Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.
+    /// ApplicationConfiguration
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// If you use Name as a key, you can use a name prefix to return a list of documents.
-    /// For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>,
-    /// run the following command:
+    /// ApplicationConfigurationSchema
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Automation
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// ChangeCalendar
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Command
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// DeploymentStrategy
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Package
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Policy
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Session
+    /// </para>
+    ///  </li> </ul> </dd> <dt>Owner</dt> <dd> 
+    /// <para>
+    /// Note that only one <code>Owner</code> can be specified in a request. For example:
+    /// <code>Key=Owner,Values=Self</code>.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Amazon
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Private
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Public
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Self
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// ThirdParty
+    /// </para>
+    ///  </li> </ul> </dd> <dt>PlatformTypes</dt> <dd> <ul> <li> 
+    /// <para>
+    /// Linux
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Windows
+    /// </para>
+    ///  </li> </ul> </dd> </dl> 
+    /// <para>
+    ///  <code>Name</code> is another AWS-provided key. If you use <code>Name</code> as a
+    /// key, you can use a name prefix to return a list of documents. For example, in the
+    /// AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the
+    /// following command:
     /// </para>
     ///  
     /// <para>
     ///  <code>aws ssm list-documents --filters Key=Name,Values=Te</code> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can also use the <code>TargetType</code> AWS-provided key. For a list of valid
+    /// resource type values that can be used with this key, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+    /// resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -66,7 +138,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// For example, if you created a Key called region and are using the AWS CLI to call
+    /// For example, if you created a key called region and are using the AWS CLI to call
     /// the <code>list-documents</code> command: 
     /// </para>
     ///  

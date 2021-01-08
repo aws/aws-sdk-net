@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -93,6 +93,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     response.FieldStatistics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GeolocationFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GeolocationFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModificationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -115,6 +121,18 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TimestampFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TimeZone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TimeZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UseGeolocationForTimeZone", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.UseGeolocationForTimeZone = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

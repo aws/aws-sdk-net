@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,7 +45,8 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property ApplicationSource. 
         /// <para>
-        /// The application source.
+        /// A CloudFormation stack or a set of tags. You can create one scaling plan per application
+        /// source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

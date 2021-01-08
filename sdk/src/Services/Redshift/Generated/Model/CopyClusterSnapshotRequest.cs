@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -98,6 +98,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SourceSnapshotClusterIdentifier
         {
             get { return this._sourceSnapshotClusterIdentifier; }
@@ -125,7 +126,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string SourceSnapshotIdentifier
         {
             get { return this._sourceSnapshotIdentifier; }
@@ -169,7 +170,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string TargetSnapshotIdentifier
         {
             get { return this._targetSnapshotIdentifier; }

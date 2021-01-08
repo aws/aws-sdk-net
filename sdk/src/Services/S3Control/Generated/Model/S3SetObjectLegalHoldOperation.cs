@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,10 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Contains the configuration parameters for a Set Object Legal Hold operation. Amazon
-    /// S3 Batch Operations passes each value through to the underlying PUT Object Legal Hold
-    /// API. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.htmll#object-lock-legal-holds">PUT
-    /// Object Legal Hold</a>.
+    /// Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch
+    /// Operations job passes each object through to the underlying <code>PutObjectLegalHold</code>
+    /// API. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using
+    /// S3 Object Lock legal hold with S3 Batch Operations</a> in the <i>Amazon Simple Storage
+    /// Service Developer Guide</i>.
     /// </summary>
     public partial class S3SetObjectLegalHoldOperation
     {
@@ -41,8 +42,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property LegalHold. 
         /// <para>
-        /// The Legal Hold contains the status to be applied to all objects in the Batch Operations
-        /// job.
+        /// Contains the Object Lock legal hold status to be applied to all objects in the Batch
+        /// Operations job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

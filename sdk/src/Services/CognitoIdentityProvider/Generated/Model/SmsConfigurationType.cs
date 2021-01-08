@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,7 +68,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
         /// This is the ARN of the IAM role in your AWS account which Cognito will use to send
-        /// SMS messages.
+        /// SMS messages. SMS messages are subject to a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending
+        /// limit</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

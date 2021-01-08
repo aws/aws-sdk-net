@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -90,6 +90,14 @@ namespace Amazon.StorageGateway.Model
         public IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request) 
         {
             return new ListTagsForResourcePaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTapePools operation
+        ///</summary>
+        public IListTapePoolsPaginator ListTapePools(ListTapePoolsRequest request) 
+        {
+            return new ListTapePoolsPaginator(this.client, request);
         }
 
         /// <summary>

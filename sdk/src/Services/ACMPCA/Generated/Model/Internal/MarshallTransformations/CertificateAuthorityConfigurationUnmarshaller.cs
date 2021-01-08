@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,6 +64,12 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CsrExtensions", targetDepth))
+                {
+                    var unmarshaller = CsrExtensionsUnmarshaller.Instance;
+                    unmarshalledObject.CsrExtensions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KeyAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

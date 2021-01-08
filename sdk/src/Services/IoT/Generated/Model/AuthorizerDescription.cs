@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,6 +49,7 @@ namespace Amazon.IoT.Model
         /// The authorizer ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string AuthorizerArn
         {
             get { return this._authorizerArn; }
@@ -67,6 +68,7 @@ namespace Amazon.IoT.Model
         /// The authorizer's Lambda function ARN.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2048)]
         public string AuthorizerFunctionArn
         {
             get { return this._authorizerFunctionArn; }

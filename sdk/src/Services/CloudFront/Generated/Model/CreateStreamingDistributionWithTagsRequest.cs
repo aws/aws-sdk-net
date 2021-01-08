@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,9 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStreamingDistributionWithTags operation.
-    /// Create a new streaming distribution with tags.
+    /// This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol
+    /// (RTMP) distributions on December 31, 2020. For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read
+    /// the announcement</a> on the Amazon CloudFront discussion forum.
     /// </summary>
     public partial class CreateStreamingDistributionWithTagsRequest : AmazonCloudFrontRequest
     {

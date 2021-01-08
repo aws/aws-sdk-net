@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.CloudHSMV2.Model
     public partial class Cluster
     {
         private BackupPolicy _backupPolicy;
+        private BackupRetentionPolicy _backupRetentionPolicy;
         private Certificates _certificates;
         private string _clusterId;
         private DateTime? _createTimestamp;
@@ -64,6 +65,24 @@ namespace Amazon.CloudHSMV2.Model
         internal bool IsSetBackupPolicy()
         {
             return this._backupPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupRetentionPolicy. 
+        /// <para>
+        /// A policy that defines how the service retains backups.
+        /// </para>
+        /// </summary>
+        public BackupRetentionPolicy BackupRetentionPolicy
+        {
+            get { return this._backupRetentionPolicy; }
+            set { this._backupRetentionPolicy = value; }
+        }
+
+        // Check to see if BackupRetentionPolicy property is set
+        internal bool IsSetBackupRetentionPolicy()
+        {
+            return this._backupRetentionPolicy != null;
         }
 
         /// <summary>

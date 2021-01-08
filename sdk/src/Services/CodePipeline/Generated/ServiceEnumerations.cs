@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -633,6 +633,10 @@ namespace Amazon.CodePipeline
     {
 
         /// <summary>
+        /// Constant Cancelled for PipelineExecutionStatus
+        /// </summary>
+        public static readonly PipelineExecutionStatus Cancelled = new PipelineExecutionStatus("Cancelled");
+        /// <summary>
         /// Constant Failed for PipelineExecutionStatus
         /// </summary>
         public static readonly PipelineExecutionStatus Failed = new PipelineExecutionStatus("Failed");
@@ -698,6 +702,10 @@ namespace Amazon.CodePipeline
     public class StageExecutionStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Cancelled for StageExecutionStatus
+        /// </summary>
+        public static readonly StageExecutionStatus Cancelled = new StageExecutionStatus("Cancelled");
         /// <summary>
         /// Constant Failed for StageExecutionStatus
         /// </summary>

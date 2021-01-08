@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,12 +35,12 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// If you want to include query strings in the cache key, use <code>QueryStringsConfig</code>
-    /// in a cache policy. See <code>CreateCachePolicy</code>.
+    /// in a cache policy. See <code>CachePolicy</code>.
     /// </para>
     ///  
     /// <para>
     /// If you want to send query strings to the origin but not include them in the cache
-    /// key, use <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+    /// key, use <code>QueryStringsConfig</code> in an origin request policy. See <code>OriginRequestPolicy</code>.
     /// </para>
     ///  
     /// <para>

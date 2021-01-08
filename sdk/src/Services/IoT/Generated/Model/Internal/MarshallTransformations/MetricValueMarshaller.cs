@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -62,6 +62,23 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Count);
             }
 
+            if(requestObject.IsSetNumber())
+            {
+                context.Writer.WritePropertyName("number");
+                context.Writer.Write(requestObject.Number);
+            }
+
+            if(requestObject.IsSetNumbers())
+            {
+                context.Writer.WritePropertyName("numbers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectNumbersListValue in requestObject.Numbers)
+                {
+                        context.Writer.Write(requestObjectNumbersListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetPorts())
             {
                 context.Writer.WritePropertyName("ports");
@@ -69,6 +86,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 foreach(var requestObjectPortsListValue in requestObject.Ports)
                 {
                         context.Writer.Write(requestObjectPortsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetStrings())
+            {
+                context.Writer.WritePropertyName("strings");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStringsListValue in requestObject.Strings)
+                {
+                        context.Writer.Write(requestObjectStringsListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }

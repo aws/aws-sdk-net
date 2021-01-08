@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,7 +36,9 @@ namespace Amazon.CostExplorer.Model
     /// <para>
     /// Simple dimension values - You can set the dimension name and values for the filters
     /// that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>.
-    /// The <code>Expression</code> for that looks like this:
+    /// For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example,
+    /// <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example looks
+    /// like:
     /// </para>
     ///  
     /// <para>
@@ -78,10 +80,15 @@ namespace Amazon.CostExplorer.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT
-    /// is not supported. OR is not supported between different dimensions, or dimensions
+    /// For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+    /// NOT is not supported. OR is not supported between different dimensions, or dimensions
     /// and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>,
     /// <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported.
+    /// AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.
     /// </para>
     ///  </note>
     /// </summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,23 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGroupQuery operation.
-    /// Updates the resource query of a group.
+    /// Updates the resource query of a group. For more information about resource queries,
+    /// see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+    /// a tag-based group in Resource Groups</a>.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Minimum permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To run this command, you must have the following permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>resource-groups:UpdateGroupQuery</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateGroupQueryRequest : AmazonResourceGroupsRequest
     {
@@ -82,6 +98,12 @@ namespace Amazon.ResourceGroups.Model
         /// <para>
         /// The resource query to determine which AWS resources are members of this resource group.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>,
+        /// but not both.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public ResourceQuery ResourceQuery

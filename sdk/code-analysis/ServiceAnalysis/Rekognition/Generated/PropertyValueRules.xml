@@ -685,6 +685,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.CoversBodyPart.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.CustomLabel.Confidence</property>
     <min>0</min>
     <max>100</max>
@@ -706,6 +711,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.Emotion.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.EquipmentDetection.Confidence</property>
     <min>0</min>
     <max>100</max>
   </property-value-rule>
@@ -872,6 +882,25 @@
     <min>20</min>
     <max>2048</max>
     <pattern>(^arn:[a-z\d-]+:rekognition:[a-z\d-]+:\d{12}:project\/[a-zA-Z0-9_.\-]{1,255}\/version\/[a-zA-Z0-9_.\-]{1,255}\/[0-9]+$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ProtectiveEquipmentBodyPart.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ProtectiveEquipmentPerson.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ProtectiveEquipmentPerson.Id</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.ProtectiveEquipmentSummarizationAttributes.MinConfidence</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.S3Object.Bucket</property>

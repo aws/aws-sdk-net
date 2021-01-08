@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,9 @@ namespace Amazon.AppSync
     /// AWS AppSync provides API actions for creating and interacting with data sources using
     /// GraphQL from your application.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial interface IAmazonAppSync : IAmazonService, IDisposable
     {
                 
@@ -853,7 +856,7 @@ namespace Amazon.AppSync
         /// 
         ///  <note> 
         /// <para>
-        /// API keys are deleted automatically sometime after they expire. However, they may still
+        /// API keys are deleted automatically 60 days after they expire. However, they may still
         /// be included in the response until they have actually been deleted. You can safely
         /// call <code>DeleteApiKey</code> to manually delete a key before it's automatically
         /// deleted.
@@ -1273,7 +1276,7 @@ namespace Amazon.AppSync
 
 
         /// <summary>
-        /// Updates an API key.
+        /// Updates an API key. The key can be updated while it is not deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApiKey service method.</param>
         /// <param name="cancellationToken">

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,6 +64,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetOptions())
                 {
+                    if(publicRequest.Options.IsSetAddTransitGatewayCidrBlocks())
+                    {
+                        int publicRequestOptionslistValueIndex = 1;
+                        foreach(var publicRequestOptionslistValue in publicRequest.Options.AddTransitGatewayCidrBlocks)
+                        {
+                            request.Parameters.Add("Options" + "." + "AddTransitGatewayCidrBlocks" + "." + publicRequestOptionslistValueIndex, StringUtils.FromString(publicRequestOptionslistValue));
+                            publicRequestOptionslistValueIndex++;
+                        }
+                    }
                     if(publicRequest.Options.IsSetAssociationDefaultRouteTableId())
                     {
                         request.Parameters.Add("Options" + "." + "AssociationDefaultRouteTableId", StringUtils.FromString(publicRequest.Options.AssociationDefaultRouteTableId));
@@ -87,6 +96,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.Options.IsSetPropagationDefaultRouteTableId())
                     {
                         request.Parameters.Add("Options" + "." + "PropagationDefaultRouteTableId", StringUtils.FromString(publicRequest.Options.PropagationDefaultRouteTableId));
+                    }
+                    if(publicRequest.Options.IsSetRemoveTransitGatewayCidrBlocks())
+                    {
+                        int publicRequestOptionslistValueIndex = 1;
+                        foreach(var publicRequestOptionslistValue in publicRequest.Options.RemoveTransitGatewayCidrBlocks)
+                        {
+                            request.Parameters.Add("Options" + "." + "RemoveTransitGatewayCidrBlocks" + "." + publicRequestOptionslistValueIndex, StringUtils.FromString(publicRequestOptionslistValue));
+                            publicRequestOptionslistValueIndex++;
+                        }
                     }
                     if(publicRequest.Options.IsSetVpnEcmpSupport())
                     {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -316,8 +316,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateDelegateToResource">REST API Reference for AssociateDelegateToResource Operation</seealso>
         public virtual AssociateDelegateToResourceResponse AssociateDelegateToResource(AssociateDelegateToResourceRequest request)
@@ -354,8 +354,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateDelegateToResource">REST API Reference for AssociateDelegateToResource Operation</seealso>
         public virtual Task<AssociateDelegateToResourceResponse> AssociateDelegateToResourceAsync(AssociateDelegateToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -382,7 +382,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
         /// The identifier supplied for the user, group, or resource does not exist in your organization.
@@ -399,8 +399,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -429,7 +429,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
         /// The identifier supplied for the user, group, or resource does not exist in your organization.
@@ -446,8 +446,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -460,6 +460,87 @@ namespace Amazon.WorkMail
             options.ResponseUnmarshaller = AssociateMemberToGroupResponseUnmarshaller.Instance;
             
             return InvokeAsync<AssociateMemberToGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelMailboxExportJob
+
+
+        /// <summary>
+        /// Cancels a mailbox export job.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the mailbox export job is near completion, it might not be possible to cancel it.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelMailboxExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelMailboxExportJob service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CancelMailboxExportJob">REST API Reference for CancelMailboxExportJob Operation</seealso>
+        public virtual CancelMailboxExportJobResponse CancelMailboxExportJob(CancelMailboxExportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelMailboxExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMailboxExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CancelMailboxExportJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Cancels a mailbox export job.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the mailbox export job is near completion, it might not be possible to cancel it.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelMailboxExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelMailboxExportJob service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CancelMailboxExportJob">REST API Reference for CancelMailboxExportJob Operation</seealso>
+        public virtual Task<CancelMailboxExportJobResponse> CancelMailboxExportJobAsync(CancelMailboxExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelMailboxExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelMailboxExportJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelMailboxExportJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -503,8 +584,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
@@ -556,8 +637,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public virtual Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -585,7 +666,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -598,8 +679,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ReservedNameException">
         /// This user, group, or resource name is not allowed in Amazon WorkMail.
@@ -632,7 +713,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -645,8 +726,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ReservedNameException">
         /// This user, group, or resource name is not allowed in Amazon WorkMail.
@@ -666,6 +747,123 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  CreateOrganization
+
+
+        /// <summary>
+        /// Creates a new Amazon WorkMail organization. Optionally, you can choose to associate
+        /// an existing AWS Directory Service directory with your organization. If an AWS Directory
+        /// Service directory ID is specified, the organization alias must match the directory
+        /// alias. If you choose not to associate an existing directory with your organization,
+        /// then we create a new Amazon WorkMail directory for you. For more information, see
+        /// <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding
+        /// an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You can associate multiple email domains with an organization, then set your default
+        /// email domain from the Amazon WorkMail console. You can also associate a domain that
+        /// is managed in an Amazon Route 53 public hosted zone. For more information, see <a
+        /// href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding
+        /// a domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing
+        /// the default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Optionally, you can use a customer managed master key from AWS Key Management Service
+        /// (AWS KMS) to encrypt email for your organization. If you don't associate an AWS KMS
+        /// key, Amazon WorkMail creates a default AWS managed master key for you.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOrganization service method.</param>
+        /// 
+        /// <returns>The response from the CreateOrganization service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.DirectoryInUseException">
+        /// The directory is already in use by another WorkMail organization in the same account
+        /// and Region.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
+        /// The directory is unavailable. It might be located in another Region or deleted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
+        /// The user, group, or resource name isn't unique in Amazon WorkMail.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization">REST API Reference for CreateOrganization Operation</seealso>
+        public virtual CreateOrganizationResponse CreateOrganization(CreateOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateOrganizationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new Amazon WorkMail organization. Optionally, you can choose to associate
+        /// an existing AWS Directory Service directory with your organization. If an AWS Directory
+        /// Service directory ID is specified, the organization alias must match the directory
+        /// alias. If you choose not to associate an existing directory with your organization,
+        /// then we create a new Amazon WorkMail directory for you. For more information, see
+        /// <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding
+        /// an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// You can associate multiple email domains with an organization, then set your default
+        /// email domain from the Amazon WorkMail console. You can also associate a domain that
+        /// is managed in an Amazon Route 53 public hosted zone. For more information, see <a
+        /// href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding
+        /// a domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing
+        /// the default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Optionally, you can use a customer managed master key from AWS Key Management Service
+        /// (AWS KMS) to encrypt email for your organization. If you don't associate an AWS KMS
+        /// key, Amazon WorkMail creates a default AWS managed master key for you.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateOrganization service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.DirectoryInUseException">
+        /// The directory is already in use by another WorkMail organization in the same account
+        /// and Region.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
+        /// The directory is unavailable. It might be located in another Region or deleted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.NameAvailabilityException">
+        /// The user, group, or resource name isn't unique in Amazon WorkMail.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization">REST API Reference for CreateOrganization Operation</seealso>
+        public virtual Task<CreateOrganizationResponse> CreateOrganizationAsync(CreateOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOrganizationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateOrganizationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateResource
 
 
@@ -679,7 +877,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -692,8 +890,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ReservedNameException">
         /// This user, group, or resource name is not allowed in Amazon WorkMail.
@@ -722,7 +920,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -735,8 +933,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ReservedNameException">
         /// This user, group, or resource name is not allowed in Amazon WorkMail.
@@ -767,7 +965,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -784,8 +982,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ReservedNameException">
         /// This user, group, or resource name is not allowed in Amazon WorkMail.
@@ -818,7 +1016,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
         /// One or more of the input parameters don't match the service's restrictions.
@@ -835,8 +1033,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ReservedNameException">
         /// This user, group, or resource name is not allowed in Amazon WorkMail.
@@ -870,8 +1068,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAccessControlRule">REST API Reference for DeleteAccessControlRule Operation</seealso>
         public virtual DeleteAccessControlRuleResponse DeleteAccessControlRule(DeleteAccessControlRuleRequest request)
@@ -898,8 +1096,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAccessControlRule">REST API Reference for DeleteAccessControlRule Operation</seealso>
         public virtual Task<DeleteAccessControlRuleResponse> DeleteAccessControlRuleAsync(DeleteAccessControlRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -937,8 +1135,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
@@ -975,8 +1173,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public virtual Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1003,7 +1201,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
         /// You are performing an operation on a user, group, or resource that isn't in the expected
@@ -1017,8 +1215,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -1047,7 +1245,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
         /// You are performing an operation on a user, group, or resource that isn't in the expected
@@ -1061,8 +1259,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -1103,8 +1301,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMailboxPermissions">REST API Reference for DeleteMailboxPermissions Operation</seealso>
         public virtual DeleteMailboxPermissionsResponse DeleteMailboxPermissions(DeleteMailboxPermissionsRequest request)
@@ -1141,8 +1339,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMailboxPermissions">REST API Reference for DeleteMailboxPermissions Operation</seealso>
         public virtual Task<DeleteMailboxPermissionsResponse> DeleteMailboxPermissionsAsync(DeleteMailboxPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1152,6 +1350,75 @@ namespace Amazon.WorkMail
             options.ResponseUnmarshaller = DeleteMailboxPermissionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteMailboxPermissionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteOrganization
+
+
+        /// <summary>
+        /// Deletes an Amazon WorkMail organization and all underlying AWS resources managed by
+        /// Amazon WorkMail as part of the organization. You can choose whether to delete the
+        /// associated directory. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing
+        /// an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOrganization service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOrganization service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteOrganization">REST API Reference for DeleteOrganization Operation</seealso>
+        public virtual DeleteOrganizationResponse DeleteOrganization(DeleteOrganizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOrganizationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an Amazon WorkMail organization and all underlying AWS resources managed by
+        /// Amazon WorkMail as part of the organization. You can choose whether to delete the
+        /// associated directory. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing
+        /// an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteOrganization service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteOrganization">REST API Reference for DeleteOrganization Operation</seealso>
+        public virtual Task<DeleteOrganizationResponse> DeleteOrganizationAsync(DeleteOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOrganizationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteOrganizationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1177,8 +1444,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         public virtual DeleteResourceResponse DeleteResource(DeleteResourceRequest request)
@@ -1212,8 +1479,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteResource">REST API Reference for DeleteResource Operation</seealso>
         public virtual Task<DeleteResourceResponse> DeleteResourceAsync(DeleteResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1244,8 +1511,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
         public virtual DeleteRetentionPolicyResponse DeleteRetentionPolicy(DeleteRetentionPolicyRequest request)
@@ -1275,8 +1542,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
         public virtual Task<DeleteRetentionPolicyResponse> DeleteRetentionPolicyAsync(DeleteRetentionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1311,7 +1578,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
         /// You are performing an operation on a user, group, or resource that isn't in the expected
@@ -1325,8 +1592,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -1363,7 +1630,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityStateException">
         /// You are performing an operation on a user, group, or resource that isn't in the expected
@@ -1377,8 +1644,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -1422,8 +1689,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterFromWorkMail">REST API Reference for DeregisterFromWorkMail Operation</seealso>
         public virtual DeregisterFromWorkMailResponse DeregisterFromWorkMail(DeregisterFromWorkMailRequest request)
@@ -1463,8 +1730,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterFromWorkMail">REST API Reference for DeregisterFromWorkMail Operation</seealso>
         public virtual Task<DeregisterFromWorkMailResponse> DeregisterFromWorkMailAsync(DeregisterFromWorkMailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1498,8 +1765,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         public virtual DescribeGroupResponse DescribeGroup(DescribeGroupRequest request)
@@ -1532,8 +1799,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeGroup">REST API Reference for DescribeGroup Operation</seealso>
         public virtual Task<DescribeGroupResponse> DescribeGroupAsync(DescribeGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1543,6 +1810,75 @@ namespace Amazon.WorkMail
             options.ResponseUnmarshaller = DescribeGroupResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeMailboxExportJob
+
+
+        /// <summary>
+        /// Describes the current status of a mailbox export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMailboxExportJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMailboxExportJob service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeMailboxExportJob">REST API Reference for DescribeMailboxExportJob Operation</seealso>
+        public virtual DescribeMailboxExportJobResponse DescribeMailboxExportJob(DescribeMailboxExportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMailboxExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMailboxExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMailboxExportJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the current status of a mailbox export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMailboxExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMailboxExportJob service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeMailboxExportJob">REST API Reference for DescribeMailboxExportJob Operation</seealso>
+        public virtual Task<DescribeMailboxExportJobResponse> DescribeMailboxExportJobAsync(DescribeMailboxExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMailboxExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMailboxExportJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeMailboxExportJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1622,8 +1958,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeResource">REST API Reference for DescribeResource Operation</seealso>
         public virtual DescribeResourceResponse DescribeResource(DescribeResourceRequest request)
@@ -1656,8 +1992,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeResource">REST API Reference for DescribeResource Operation</seealso>
         public virtual Task<DescribeResourceResponse> DescribeResourceAsync(DescribeResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1691,8 +2027,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual DescribeUserResponse DescribeUser(DescribeUserRequest request)
@@ -1725,8 +2061,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeUser">REST API Reference for DescribeUser Operation</seealso>
         public virtual Task<DescribeUserResponse> DescribeUserAsync(DescribeUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1764,8 +2100,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateDelegateFromResource">REST API Reference for DisassociateDelegateFromResource Operation</seealso>
         public virtual DisassociateDelegateFromResourceResponse DisassociateDelegateFromResource(DisassociateDelegateFromResourceRequest request)
@@ -1802,8 +2138,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateDelegateFromResource">REST API Reference for DisassociateDelegateFromResource Operation</seealso>
         public virtual Task<DisassociateDelegateFromResourceResponse> DisassociateDelegateFromResourceAsync(DisassociateDelegateFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1830,7 +2166,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
         /// The identifier supplied for the user, group, or resource does not exist in your organization.
@@ -1847,8 +2183,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -1877,7 +2213,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
         /// The identifier supplied for the user, group, or resource does not exist in your organization.
@@ -1894,8 +2230,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -1933,8 +2269,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect">REST API Reference for GetAccessControlEffect Operation</seealso>
         public virtual GetAccessControlEffectResponse GetAccessControlEffect(GetAccessControlEffectRequest request)
@@ -1968,8 +2304,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect">REST API Reference for GetAccessControlEffect Operation</seealso>
         public virtual Task<GetAccessControlEffectResponse> GetAccessControlEffectAsync(GetAccessControlEffectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2003,8 +2339,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetDefaultRetentionPolicy">REST API Reference for GetDefaultRetentionPolicy Operation</seealso>
         public virtual GetDefaultRetentionPolicyResponse GetDefaultRetentionPolicy(GetDefaultRetentionPolicyRequest request)
@@ -2037,8 +2373,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetDefaultRetentionPolicy">REST API Reference for GetDefaultRetentionPolicy Operation</seealso>
         public virtual Task<GetDefaultRetentionPolicyResponse> GetDefaultRetentionPolicyAsync(GetDefaultRetentionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2069,8 +2405,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails">REST API Reference for GetMailboxDetails Operation</seealso>
         public virtual GetMailboxDetailsResponse GetMailboxDetails(GetMailboxDetailsRequest request)
@@ -2100,8 +2436,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMailboxDetails">REST API Reference for GetMailboxDetails Operation</seealso>
         public virtual Task<GetMailboxDetailsResponse> GetMailboxDetailsAsync(GetMailboxDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2129,8 +2465,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAccessControlRules">REST API Reference for ListAccessControlRules Operation</seealso>
         public virtual ListAccessControlRulesResponse ListAccessControlRules(ListAccessControlRulesRequest request)
@@ -2157,8 +2493,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAccessControlRules">REST API Reference for ListAccessControlRules Operation</seealso>
         public virtual Task<ListAccessControlRulesResponse> ListAccessControlRulesAsync(ListAccessControlRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2196,8 +2532,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual ListAliasesResponse ListAliases(ListAliasesRequest request)
@@ -2234,8 +2570,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public virtual Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2274,8 +2610,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupMembers">REST API Reference for ListGroupMembers Operation</seealso>
         public virtual ListGroupMembersResponse ListGroupMembers(ListGroupMembersRequest request)
@@ -2313,8 +2649,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupMembers">REST API Reference for ListGroupMembers Operation</seealso>
         public virtual Task<ListGroupMembersResponse> ListGroupMembersAsync(ListGroupMembersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2348,8 +2684,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual ListGroupsResponse ListGroups(ListGroupsRequest request)
@@ -2382,8 +2718,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroups">REST API Reference for ListGroups Operation</seealso>
         public virtual Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2393,6 +2729,71 @@ namespace Amazon.WorkMail
             options.ResponseUnmarshaller = ListGroupsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMailboxExportJobs
+
+
+        /// <summary>
+        /// Lists the mailbox export jobs started for the specified organization within the last
+        /// seven days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMailboxExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListMailboxExportJobs service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxExportJobs">REST API Reference for ListMailboxExportJobs Operation</seealso>
+        public virtual ListMailboxExportJobsResponse ListMailboxExportJobs(ListMailboxExportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMailboxExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMailboxExportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMailboxExportJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the mailbox export jobs started for the specified organization within the last
+        /// seven days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMailboxExportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMailboxExportJobs service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxExportJobs">REST API Reference for ListMailboxExportJobs Operation</seealso>
+        public virtual Task<ListMailboxExportJobsResponse> ListMailboxExportJobsAsync(ListMailboxExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMailboxExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMailboxExportJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListMailboxExportJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2417,8 +2818,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions">REST API Reference for ListMailboxPermissions Operation</seealso>
         public virtual ListMailboxPermissionsResponse ListMailboxPermissions(ListMailboxPermissionsRequest request)
@@ -2451,8 +2852,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions">REST API Reference for ListMailboxPermissions Operation</seealso>
         public virtual Task<ListMailboxPermissionsResponse> ListMailboxPermissionsAsync(ListMailboxPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2538,8 +2939,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResourceDelegates">REST API Reference for ListResourceDelegates Operation</seealso>
         public virtual ListResourceDelegatesResponse ListResourceDelegates(ListResourceDelegatesRequest request)
@@ -2577,8 +2978,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResourceDelegates">REST API Reference for ListResourceDelegates Operation</seealso>
         public virtual Task<ListResourceDelegatesResponse> ListResourceDelegatesAsync(ListResourceDelegatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2609,8 +3010,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual ListResourcesResponse ListResources(ListResourcesRequest request)
@@ -2640,8 +3041,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual Task<ListResourcesResponse> ListResourcesAsync(ListResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2719,8 +3120,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual ListUsersResponse ListUsers(ListUsersRequest request)
@@ -2750,8 +3151,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListUsers">REST API Reference for ListUsers Operation</seealso>
         public virtual Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2791,8 +3192,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule">REST API Reference for PutAccessControlRule Operation</seealso>
         public virtual PutAccessControlRuleResponse PutAccessControlRule(PutAccessControlRuleRequest request)
@@ -2831,8 +3232,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule">REST API Reference for PutAccessControlRule Operation</seealso>
         public virtual Task<PutAccessControlRuleResponse> PutAccessControlRuleAsync(PutAccessControlRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2870,8 +3271,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMailboxPermissions">REST API Reference for PutMailboxPermissions Operation</seealso>
         public virtual PutMailboxPermissionsResponse PutMailboxPermissions(PutMailboxPermissionsRequest request)
@@ -2908,8 +3309,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMailboxPermissions">REST API Reference for PutMailboxPermissions Operation</seealso>
         public virtual Task<PutMailboxPermissionsResponse> PutMailboxPermissionsAsync(PutMailboxPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2943,8 +3344,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
         public virtual PutRetentionPolicyResponse PutRetentionPolicy(PutRetentionPolicyRequest request)
@@ -2977,8 +3378,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
         public virtual Task<PutRetentionPolicyResponse> PutRetentionPolicyAsync(PutRetentionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3016,7 +3417,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EmailAddressInUseException">
         /// The email address that you're trying to assign is already created for a different
@@ -3048,8 +3449,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterToWorkMail">REST API Reference for RegisterToWorkMail Operation</seealso>
         public virtual RegisterToWorkMailResponse RegisterToWorkMail(RegisterToWorkMailRequest request)
@@ -3086,7 +3487,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EmailAddressInUseException">
         /// The email address that you're trying to assign is already created for a different
@@ -3118,8 +3519,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterToWorkMail">REST API Reference for RegisterToWorkMail Operation</seealso>
         public virtual Task<RegisterToWorkMailResponse> RegisterToWorkMailAsync(RegisterToWorkMailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3146,7 +3547,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
         /// The identifier supplied for the user, group, or resource does not exist in your organization.
@@ -3167,8 +3568,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -3197,7 +3598,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
         /// The identifier supplied for the user, group, or resource does not exist in your organization.
@@ -3218,8 +3619,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -3236,6 +3637,87 @@ namespace Amazon.WorkMail
 
         #endregion
         
+        #region  StartMailboxExportJob
+
+
+        /// <summary>
+        /// Starts a mailbox export job to export MIME-format email messages and calendar items
+        /// from the specified mailbox to the specified Amazon Simple Storage Service (Amazon
+        /// S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting
+        /// mailbox content</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMailboxExportJob service method.</param>
+        /// 
+        /// <returns>The response from the StartMailboxExportJob service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/StartMailboxExportJob">REST API Reference for StartMailboxExportJob Operation</seealso>
+        public virtual StartMailboxExportJobResponse StartMailboxExportJob(StartMailboxExportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMailboxExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMailboxExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartMailboxExportJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a mailbox export job to export MIME-format email messages and calendar items
+        /// from the specified mailbox to the specified Amazon Simple Storage Service (Amazon
+        /// S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting
+        /// mailbox content</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMailboxExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMailboxExportJob service method, as returned by WorkMail.</returns>
+        /// <exception cref="Amazon.WorkMail.Model.EntityNotFoundException">
+        /// The identifier supplied for the user, group, or resource does not exist in your organization.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.InvalidParameterException">
+        /// One or more of the input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.LimitExceededException">
+        /// The request exceeds the limit of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationNotFoundException">
+        /// An operation received a valid organization identifier that either doesn't belong or
+        /// exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/StartMailboxExportJob">REST API Reference for StartMailboxExportJob Operation</seealso>
+        public virtual Task<StartMailboxExportJobResponse> StartMailboxExportJobAsync(StartMailboxExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMailboxExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMailboxExportJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartMailboxExportJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -3246,8 +3728,8 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the TagResource service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
         /// The resource cannot be found.
@@ -3276,8 +3758,8 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the TagResource service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.ResourceNotFoundException">
         /// The resource cannot be found.
@@ -3368,8 +3850,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota">REST API Reference for UpdateMailboxQuota Operation</seealso>
         public virtual UpdateMailboxQuotaResponse UpdateMailboxQuota(UpdateMailboxQuotaRequest request)
@@ -3406,8 +3888,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota">REST API Reference for UpdateMailboxQuota Operation</seealso>
         public virtual Task<UpdateMailboxQuotaResponse> UpdateMailboxQuotaAsync(UpdateMailboxQuotaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3436,7 +3918,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EmailAddressInUseException">
         /// The email address that you're trying to assign is already created for a different
@@ -3465,8 +3947,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -3497,7 +3979,7 @@ namespace Amazon.WorkMail
         /// The directory service doesn't recognize the credentials supplied by WorkMail.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EmailAddressInUseException">
         /// The email address that you're trying to assign is already created for a different
@@ -3526,8 +4008,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.UnsupportedOperationException">
         /// You can't perform a write operation against a read-only directory.
@@ -3556,7 +4038,7 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the UpdateResource service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EmailAddressInUseException">
         /// The email address that you're trying to assign is already created for a different
@@ -3589,8 +4071,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual UpdateResourceResponse UpdateResource(UpdateResourceRequest request)
@@ -3615,7 +4097,7 @@ namespace Amazon.WorkMail
         /// 
         /// <returns>The response from the UpdateResource service method, as returned by WorkMail.</returns>
         /// <exception cref="Amazon.WorkMail.Model.DirectoryUnavailableException">
-        /// The directory on which you are trying to perform operations isn't available.
+        /// The directory is unavailable. It might be located in another Region or deleted.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.EmailAddressInUseException">
         /// The email address that you're trying to assign is already created for a different
@@ -3648,8 +4130,8 @@ namespace Amazon.WorkMail
         /// exist in the system.
         /// </exception>
         /// <exception cref="Amazon.WorkMail.Model.OrganizationStateException">
-        /// The organization must have a valid state (Active or Synchronizing) to perform certain
-        /// operations on the organization or its members.
+        /// The organization must have a valid state to perform certain operations on the organization
+        /// or its members.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateResource">REST API Reference for UpdateResource Operation</seealso>
         public virtual Task<UpdateResourceResponse> UpdateResourceAsync(UpdateResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

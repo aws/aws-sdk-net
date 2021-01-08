@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,6 +64,7 @@ namespace Amazon.SageMaker.Model
         private string _displayName;
         private DateTime? _endTime;
         private Dictionary<string, TrialComponentArtifact> _inputArtifacts = new Dictionary<string, TrialComponentArtifact>();
+        private MetadataProperties _metadataProperties;
         private Dictionary<string, TrialComponentArtifact> _outputArtifacts = new Dictionary<string, TrialComponentArtifact>();
         private Dictionary<string, TrialComponentParameterValue> _parameters = new Dictionary<string, TrialComponentParameterValue>();
         private DateTime? _startTime;
@@ -78,7 +79,7 @@ namespace Amazon.SageMaker.Model
         /// isn't specified, <code>TrialComponentName</code> is displayed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=82)]
+        [AWSProperty(Min=1, Max=120)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -127,6 +128,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInputArtifacts()
         {
             return this._inputArtifacts != null && this._inputArtifacts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataProperties.
+        /// </summary>
+        public MetadataProperties MetadataProperties
+        {
+            get { return this._metadataProperties; }
+            set { this._metadataProperties = value; }
+        }
+
+        // Check to see if MetadataProperties property is set
+        internal bool IsSetMetadataProperties()
+        {
+            return this._metadataProperties != null;
         }
 
         /// <summary>
@@ -244,7 +260,7 @@ namespace Amazon.SageMaker.Model
         /// case-sensitive.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=82)]
+        [AWSProperty(Required=true, Min=1, Max=120)]
         public string TrialComponentName
         {
             get { return this._trialComponentName; }

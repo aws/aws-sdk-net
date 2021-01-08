@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,11 +30,11 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataset operation.
-    /// Deletes the specified data set.
+    /// Deletes the specified dataset.
     /// 
     ///  
     /// <para>
-    /// You do not have to delete the content of the data set before you perform this operation.
+    /// You do not have to delete the content of the dataset before you perform this operation.
     /// </para>
     /// </summary>
     public partial class DeleteDatasetRequest : AmazonIoTAnalyticsRequest

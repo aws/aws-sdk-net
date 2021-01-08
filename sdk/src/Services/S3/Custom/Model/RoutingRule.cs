@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ namespace Amazon.S3.Model
         /// A container for describing a condition that must be met for the specified redirect to apply. For example, 1. If request is for pages in the
         /// /docs folder, redirect to the /documents folder. 2. If request results in HTTP error 4xx, redirect request to another host where you might
         /// process the error.
+        /// For more information about routing rules, see https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#advanced-conditional-redirects\
         ///  
         /// </summary>
         public RoutingRuleCondition Condition

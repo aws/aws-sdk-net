@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,9 +33,29 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class EC2ResourceUtilization
     {
+        private EBSResourceUtilization _ebsResourceUtilization;
         private string _maxCpuUtilizationPercentage;
         private string _maxMemoryUtilizationPercentage;
         private string _maxStorageUtilizationPercentage;
+
+        /// <summary>
+        /// Gets and sets the property EBSResourceUtilization. 
+        /// <para>
+        ///  The EBS field that contains a list of EBS metrics associated with the current instance.
+        /// 
+        /// </para>
+        /// </summary>
+        public EBSResourceUtilization EBSResourceUtilization
+        {
+            get { return this._ebsResourceUtilization; }
+            set { this._ebsResourceUtilization = value; }
+        }
+
+        // Check to see if EBSResourceUtilization property is set
+        internal bool IsSetEBSResourceUtilization()
+        {
+            return this._ebsResourceUtilization != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxCpuUtilizationPercentage. 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property FileName. 
         /// <para>
-        /// The URI of the location where data set contents are stored, usually the URI of a file
+        /// The URI of the location where dataset contents are stored, usually the URI of a file
         /// in an S3 bucket.
         /// </para>
         /// </summary>

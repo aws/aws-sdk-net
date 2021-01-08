@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,14 +30,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the StartRestoreJob operation.
-    /// Recovers the saved resource identified by an Amazon Resource Name (ARN). 
-    /// 
-    ///  
-    /// <para>
-    /// If the resource ARN is included in the request, then the last complete backup of that
-    /// resource is recovered. If the ARN of a recovery point is supplied, then that recovery
-    /// point is restored.
-    /// </para>
+    /// Recovers the saved resource identified by an Amazon Resource Name (ARN).
     /// </summary>
     public partial class StartRestoreJobRequest : AmazonBackupRequest
     {
@@ -106,8 +99,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by
-        /// AWS Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.
+        ///  <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed
+        /// up by AWS Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -118,7 +111,8 @@ namespace Amazon.Backup.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored
-        /// file system.
+        /// file system. You can specify a key from another AWS account provided that key it is
+        /// properly shared with your account via AWS KMS.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -133,6 +127,12 @@ namespace Amazon.Backup.Model
         /// <para>
         ///  <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery
         /// point is restored to a new Amazon EFS file system.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ItemsToRestore </code>: A serialized list of up to five strings where each
+        /// string is a file path. Use <code>ItemsToRestore</code> to restore specific files or
+        /// directories rather than the entire file system. This parameter is optional.
         /// </para>
         ///  </li> </ul>
         /// </summary>

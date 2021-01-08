@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,6 +31,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// <summary>
     /// An action to invite a specific AWS account to create a member and join the network.
     /// The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class InviteAction
     {

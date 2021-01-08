@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
     public partial class FindMatchesMetrics
     {
         private double? _areaUnderPRCurve;
+        private List<ColumnImportance> _columnImportances = new List<ColumnImportance>();
         private ConfusionMatrix _confusionMatrix;
         private double? _f1;
         private double? _precision;
@@ -67,6 +68,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetAreaUnderPRCurve()
         {
             return this._areaUnderPRCurve.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ColumnImportances. 
+        /// <para>
+        /// A list of <code>ColumnImportance</code> structures containing column importance metrics,
+        /// sorted in order of descending importance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<ColumnImportance> ColumnImportances
+        {
+            get { return this._columnImportances; }
+            set { this._columnImportances = value; }
+        }
+
+        // Check to see if ColumnImportances property is set
+        internal bool IsSetColumnImportances()
+        {
+            return this._columnImportances != null && this._columnImportances.Count > 0; 
         }
 
         /// <summary>

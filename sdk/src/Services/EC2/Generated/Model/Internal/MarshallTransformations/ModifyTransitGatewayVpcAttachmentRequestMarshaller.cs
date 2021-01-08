@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -69,6 +69,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetOptions())
                 {
+                    if(publicRequest.Options.IsSetApplianceModeSupport())
+                    {
+                        request.Parameters.Add("Options" + "." + "ApplianceModeSupport", StringUtils.FromString(publicRequest.Options.ApplianceModeSupport));
+                    }
                     if(publicRequest.Options.IsSetDnsSupport())
                     {
                         request.Parameters.Add("Options" + "." + "DnsSupport", StringUtils.FromString(publicRequest.Options.DnsSupport));

@@ -145,6 +145,14 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                 }
                 else if (type.GetInterface("System.Collections.IList") != null)
                 {
+                    var innerListType = type.GenericTypeArguments[0];
+                    if (null != innerListType && !innerListType.FullName.StartsWith("System."))
+                    {
+                        pushed = tcr.Push(innerListType);
+                        if (!pushed)
+                            return;
+                    }
+
                     var list = value as IList;
                     Assert.IsTrue(member.IsList);
                     ValidateList(list, member, marshalledData);
@@ -162,6 +170,19 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                             foreach (var childMember in member.Shape.ListShape.Members)
                             {
                                 var property = properties.Single(p => childMember.PropertyName == p.Name);
+
+                                // Make sure we aren't encountering a recursive property
+                                if (tcr.Contains(property.PropertyType))
+                                    continue;
+
+                                // or a List of recursive properties
+                                if (typeof(ICollection).IsAssignableFrom(property.PropertyType) &&
+                                    property.PropertyType.IsGenericType &&
+                                    tcr.Contains(property.PropertyType.GenericTypeArguments[0]))
+                                {
+                                    continue;
+                                }
+
                                 var childValue = property.GetValue(item);
                                 var childMarshalledData = GetMarshalledProperty(marshalledListData, childMember.MarshallName);
                                 Visit(childValue, childMember, childMarshalledData, tcr);
@@ -389,7 +410,15 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                             m.PropertyName == property.Name);
                         if (member != null)
                         {
-                            hostPrefixTemplate = hostPrefixTemplate.Replace(string.Format("{{{0}}}", member.MarshallLocationName), (string)property.GetValue(this.Request));                         
+                            // special case for host prefixes such as {AccountId}
+                            if (string.Equals($"{{{member.ModelShape}}}.", hostPrefixTemplate))
+                            {
+                                hostPrefixTemplate = hostPrefixTemplate.Replace(string.Format("{{{0}}}", member.ModelShape), (string)property.GetValue(this.Request));
+                            }
+                            else
+                            {
+                                hostPrefixTemplate = hostPrefixTemplate.Replace(string.Format("{{{0}}}", member.MarshallLocationName), (string)property.GetValue(this.Request));
+                            }                           
                         }
                     }
                 }

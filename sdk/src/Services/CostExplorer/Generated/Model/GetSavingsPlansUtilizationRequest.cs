@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,9 +31,9 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Container for the parameters to the GetSavingsPlansUtilization operation.
     /// Retrieves the Savings Plans utilization for your account across date ranges with daily
-    /// or monthly granularity. Master accounts in an organization have access to member accounts.
-    /// You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine
-    /// the possible dimension values.
+    /// or monthly granularity. Management account in an organization have access to member
+    /// accounts. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code>
+    /// to determine the possible dimension values.
     /// 
     ///  <note> 
     /// <para>
@@ -45,6 +45,7 @@ namespace Amazon.CostExplorer.Model
     {
         private Expression _filter;
         private Granularity _granularity;
+        private SortDefinition _sortBy;
         private DateInterval _timePeriod;
 
         /// <summary>
@@ -117,6 +118,52 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetGranularity()
         {
             return this._granularity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// The value by which you want to sort the data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following values are supported for <code>Key</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>UtilizationPercentage</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TotalCommitment</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UsedCommitment</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UnusedCommitment</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NetSavings</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+        /// </para>
+        /// </summary>
+        public SortDefinition SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null;
         }
 
         /// <summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 
 using Amazon.Runtime;
+using System;
 
 namespace Amazon.S3.Model
 {
@@ -25,15 +26,20 @@ namespace Amazon.S3.Model
         private string bucketName;
         private string key;
         private string versionId;
+        private string expectedBucketOwner;
 
         /// <summary>
-        /// <para>The bucket name containing the object for which to get the tagging information.</para>
+        /// <para>The bucket name containing the object for which to get the tagging information. </para>
         /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
         /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
-        /// When using this operation using an access point through the AWS SDKs, you provide the access point 
-        /// ARN in place of the bucket name. For more information about access point ARNs, see 
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> 
-        /// in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
+        /// When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. 
+        /// For more information about access point ARNs, see 
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para> 
+        /// <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
+        /// The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. 
+        /// When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. 
+        /// For more information about S3 on Outposts ARNs, see 
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
         /// </summary>
         public string BucketName
         {
@@ -86,6 +92,25 @@ namespace Amazon.S3.Model
         internal bool IsSetVersionId()
         {
             return !string.IsNullOrEmpty(this.versionId);
+        }
+
+        /// <summary>
+        /// The account id of the expected bucket owner. 
+        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
     }
 }

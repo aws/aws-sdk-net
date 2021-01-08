@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -500,6 +500,60 @@ namespace Amazon.StepFunctions
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StateMachineType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SyncExecutionStatus.
+    /// </summary>
+    public class SyncExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for SyncExecutionStatus
+        /// </summary>
+        public static readonly SyncExecutionStatus FAILED = new SyncExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant SUCCEEDED for SyncExecutionStatus
+        /// </summary>
+        public static readonly SyncExecutionStatus SUCCEEDED = new SyncExecutionStatus("SUCCEEDED");
+        /// <summary>
+        /// Constant TIMED_OUT for SyncExecutionStatus
+        /// </summary>
+        public static readonly SyncExecutionStatus TIMED_OUT = new SyncExecutionStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SyncExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SyncExecutionStatus FindValue(string value)
+        {
+            return FindValue<SyncExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SyncExecutionStatus(string value)
         {
             return FindValue(value);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -119,6 +119,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestLaunchSpecificationlistValue.Ebs.SnapshotId));
                                 }
+                                if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetThroughput())
+                                {
+                                    request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.Ebs.Throughput));
+                                }
                                 if(publicRequestLaunchSpecificationlistValue.Ebs.IsSetVolumeSize())
                                 {
                                     request.Parameters.Add("LaunchSpecification" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.Ebs.VolumeSize));
@@ -227,6 +231,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     }
                                     publicRequestLaunchSpecificationlistValuelistValueIndex++;
                                 }
+                            }
+                            if(publicRequestLaunchSpecificationlistValue.IsSetNetworkCardIndex())
+                            {
+                                request.Parameters.Add("LaunchSpecification" + "." + "NetworkInterface" + "." + publicRequestLaunchSpecificationlistValueIndex + "." + "NetworkCardIndex", StringUtils.FromInt(publicRequestLaunchSpecificationlistValue.NetworkCardIndex));
                             }
                             if(publicRequestLaunchSpecificationlistValue.IsSetNetworkInterfaceId())
                             {

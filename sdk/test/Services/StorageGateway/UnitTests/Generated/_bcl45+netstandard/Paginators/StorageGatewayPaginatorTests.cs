@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -304,6 +304,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListTagsForResource(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListTagsForResource(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("StorageGateway")]
+        public void ListTapePoolsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTapePoolsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListTapePoolsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListTapePoolsResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.ListTapePools(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListTapePools(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("StorageGateway")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListTapePoolsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTapePoolsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListTapePoolsResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.ListTapePools(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListTapePools(request);
 
             // Should work the first time
             paginator.Responses.ToList();

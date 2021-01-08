@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,6 +30,13 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// An object representing a container instance host device.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This object isn't applicable to jobs running on Fargate resources and shouldn't be
+    /// provided.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class Device
     {
@@ -40,7 +47,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerPath. 
         /// <para>
-        /// The path inside the container at which to expose the host device. By default the <code>hostPath</code>
+        /// The path inside the container used to expose the host device. By default the <code>hostPath</code>
         /// value is used.
         /// </para>
         /// </summary>

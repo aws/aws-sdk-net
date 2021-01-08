@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -175,6 +175,10 @@ namespace Amazon.SQS
         /// </summary>
         public static readonly QueueAttributeName CreatedTimestamp = new QueueAttributeName("CreatedTimestamp");
         /// <summary>
+        /// Constant DeduplicationScope for QueueAttributeName
+        /// </summary>
+        public static readonly QueueAttributeName DeduplicationScope = new QueueAttributeName("DeduplicationScope");
+        /// <summary>
         /// Constant DelaySeconds for QueueAttributeName
         /// </summary>
         public static readonly QueueAttributeName DelaySeconds = new QueueAttributeName("DelaySeconds");
@@ -182,6 +186,10 @@ namespace Amazon.SQS
         /// Constant FifoQueue for QueueAttributeName
         /// </summary>
         public static readonly QueueAttributeName FifoQueue = new QueueAttributeName("FifoQueue");
+        /// <summary>
+        /// Constant FifoThroughputLimit for QueueAttributeName
+        /// </summary>
+        public static readonly QueueAttributeName FifoThroughputLimit = new QueueAttributeName("FifoThroughputLimit");
         /// <summary>
         /// Constant KmsDataKeyReusePeriodSeconds for QueueAttributeName
         /// </summary>

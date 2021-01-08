@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains an access policy that defines an AWS SSO identity's access to an AWS IoT
-    /// SiteWise Monitor resource.
+    /// Contains an access policy that defines an identity's access to an AWS IoT SiteWise
+    /// Monitor resource.
     /// </summary>
     public partial class AccessPolicySummary
     {
@@ -81,7 +81,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
-        /// The AWS SSO identity (a user or group).
+        /// The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

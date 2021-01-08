@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Configuration information for debugging rules.
+    /// Configuration information for SageMaker Debugger rules for debugging. To learn more
+    /// about how to configure the <code>DebugRuleConfiguration</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use
+    /// the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug
+    /// Your Training Job</a>.
     /// </summary>
     public partial class DebugRuleConfiguration
     {
@@ -44,7 +47,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type to deploy for a training job.
+        /// The instance type to deploy a Debugger custom rule for debugging a training job.
         /// </para>
         /// </summary>
         public ProcessingInstanceType InstanceType
@@ -120,10 +123,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RuleParameters. 
         /// <para>
-        ///  Runtime configuration for rule container.
+        /// Runtime configuration for rule container.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=100)]
         public Dictionary<string, string> RuleParameters
         {
             get { return this._ruleParameters; }

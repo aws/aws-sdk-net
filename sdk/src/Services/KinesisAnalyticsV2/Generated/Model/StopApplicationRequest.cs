@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,12 +31,23 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// <summary>
     /// Container for the parameters to the StopApplication operation.
     /// Stops the application from processing data. You can stop an application only if it
-    /// is in the running state. You can use the <a>DescribeApplication</a> operation to find
-    /// the application state.
+    /// is in the running status, unless you set the <code>Force</code> parameter to <code>true</code>.
+    /// 
+    ///  
+    /// <para>
+    /// You can use the <a>DescribeApplication</a> operation to find the application status.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// Kinesis Data Analytics takes a snapshot when the application is stopped, unless <code>Force</code>
+    /// is set to <code>true</code>.
+    /// </para>
     /// </summary>
     public partial class StopApplicationRequest : AmazonKinesisAnalyticsV2Request
     {
         private string _applicationName;
+        private bool? _force;
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -55,6 +66,42 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetApplicationName()
         {
             return this._applicationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// Set to <code>true</code> to force the application to stop. If you set <code>Force</code>
+        /// to <code>true</code>, Kinesis Data Analytics stops the application without taking
+        /// a snapshot. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Force-stopping your application may lead to data loss or duplication. To prevent data
+        /// loss or duplicate processing of data during application restarts, we recommend you
+        /// to take frequent snapshots of your application.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// You can only force stop a Flink-based Kinesis Data Analytics application. You can't
+        /// force stop a SQL-based Kinesis Data Analytics application.
+        /// </para>
+        ///  
+        /// <para>
+        /// The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
+        /// <code>AUTOSCALING</code>, or <code>RUNNING</code> status. 
+        /// </para>
+        /// </summary>
+        public bool Force
+        {
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
         }
 
     }

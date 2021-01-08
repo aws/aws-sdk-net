@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// The ID of the file transfer protocol-enabled server that the user is attached to.
+        /// The ID of the server that the user is attached to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
@@ -58,8 +58,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// A unique string that identifies a user account associated with a file transfer protocol-enabled
-        /// server.
+        /// A unique string that identifies a user account associated with a server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=100)]

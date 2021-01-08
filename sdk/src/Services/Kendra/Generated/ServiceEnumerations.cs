@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,6 +64,368 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AdditionalResultAttributeValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfluenceAttachmentFieldName.
+    /// </summary>
+    public class ConfluenceAttachmentFieldName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHOR for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName AUTHOR = new ConfluenceAttachmentFieldName("AUTHOR");
+        /// <summary>
+        /// Constant CONTENT_TYPE for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName CONTENT_TYPE = new ConfluenceAttachmentFieldName("CONTENT_TYPE");
+        /// <summary>
+        /// Constant CREATED_DATE for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName CREATED_DATE = new ConfluenceAttachmentFieldName("CREATED_DATE");
+        /// <summary>
+        /// Constant DISPLAY_URL for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName DISPLAY_URL = new ConfluenceAttachmentFieldName("DISPLAY_URL");
+        /// <summary>
+        /// Constant FILE_SIZE for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName FILE_SIZE = new ConfluenceAttachmentFieldName("FILE_SIZE");
+        /// <summary>
+        /// Constant ITEM_TYPE for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName ITEM_TYPE = new ConfluenceAttachmentFieldName("ITEM_TYPE");
+        /// <summary>
+        /// Constant PARENT_ID for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName PARENT_ID = new ConfluenceAttachmentFieldName("PARENT_ID");
+        /// <summary>
+        /// Constant SPACE_KEY for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName SPACE_KEY = new ConfluenceAttachmentFieldName("SPACE_KEY");
+        /// <summary>
+        /// Constant SPACE_NAME for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName SPACE_NAME = new ConfluenceAttachmentFieldName("SPACE_NAME");
+        /// <summary>
+        /// Constant URL for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName URL = new ConfluenceAttachmentFieldName("URL");
+        /// <summary>
+        /// Constant VERSION for ConfluenceAttachmentFieldName
+        /// </summary>
+        public static readonly ConfluenceAttachmentFieldName VERSION = new ConfluenceAttachmentFieldName("VERSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfluenceAttachmentFieldName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfluenceAttachmentFieldName FindValue(string value)
+        {
+            return FindValue<ConfluenceAttachmentFieldName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfluenceAttachmentFieldName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfluenceBlogFieldName.
+    /// </summary>
+    public class ConfluenceBlogFieldName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHOR for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName AUTHOR = new ConfluenceBlogFieldName("AUTHOR");
+        /// <summary>
+        /// Constant DISPLAY_URL for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName DISPLAY_URL = new ConfluenceBlogFieldName("DISPLAY_URL");
+        /// <summary>
+        /// Constant ITEM_TYPE for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName ITEM_TYPE = new ConfluenceBlogFieldName("ITEM_TYPE");
+        /// <summary>
+        /// Constant LABELS for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName LABELS = new ConfluenceBlogFieldName("LABELS");
+        /// <summary>
+        /// Constant PUBLISH_DATE for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName PUBLISH_DATE = new ConfluenceBlogFieldName("PUBLISH_DATE");
+        /// <summary>
+        /// Constant SPACE_KEY for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName SPACE_KEY = new ConfluenceBlogFieldName("SPACE_KEY");
+        /// <summary>
+        /// Constant SPACE_NAME for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName SPACE_NAME = new ConfluenceBlogFieldName("SPACE_NAME");
+        /// <summary>
+        /// Constant URL for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName URL = new ConfluenceBlogFieldName("URL");
+        /// <summary>
+        /// Constant VERSION for ConfluenceBlogFieldName
+        /// </summary>
+        public static readonly ConfluenceBlogFieldName VERSION = new ConfluenceBlogFieldName("VERSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfluenceBlogFieldName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfluenceBlogFieldName FindValue(string value)
+        {
+            return FindValue<ConfluenceBlogFieldName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfluenceBlogFieldName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfluencePageFieldName.
+    /// </summary>
+    public class ConfluencePageFieldName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHOR for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName AUTHOR = new ConfluencePageFieldName("AUTHOR");
+        /// <summary>
+        /// Constant CONTENT_STATUS for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName CONTENT_STATUS = new ConfluencePageFieldName("CONTENT_STATUS");
+        /// <summary>
+        /// Constant CREATED_DATE for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName CREATED_DATE = new ConfluencePageFieldName("CREATED_DATE");
+        /// <summary>
+        /// Constant DISPLAY_URL for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName DISPLAY_URL = new ConfluencePageFieldName("DISPLAY_URL");
+        /// <summary>
+        /// Constant ITEM_TYPE for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName ITEM_TYPE = new ConfluencePageFieldName("ITEM_TYPE");
+        /// <summary>
+        /// Constant LABELS for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName LABELS = new ConfluencePageFieldName("LABELS");
+        /// <summary>
+        /// Constant MODIFIED_DATE for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName MODIFIED_DATE = new ConfluencePageFieldName("MODIFIED_DATE");
+        /// <summary>
+        /// Constant PARENT_ID for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName PARENT_ID = new ConfluencePageFieldName("PARENT_ID");
+        /// <summary>
+        /// Constant SPACE_KEY for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName SPACE_KEY = new ConfluencePageFieldName("SPACE_KEY");
+        /// <summary>
+        /// Constant SPACE_NAME for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName SPACE_NAME = new ConfluencePageFieldName("SPACE_NAME");
+        /// <summary>
+        /// Constant URL for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName URL = new ConfluencePageFieldName("URL");
+        /// <summary>
+        /// Constant VERSION for ConfluencePageFieldName
+        /// </summary>
+        public static readonly ConfluencePageFieldName VERSION = new ConfluencePageFieldName("VERSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfluencePageFieldName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfluencePageFieldName FindValue(string value)
+        {
+            return FindValue<ConfluencePageFieldName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfluencePageFieldName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfluenceSpaceFieldName.
+    /// </summary>
+    public class ConfluenceSpaceFieldName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISPLAY_URL for ConfluenceSpaceFieldName
+        /// </summary>
+        public static readonly ConfluenceSpaceFieldName DISPLAY_URL = new ConfluenceSpaceFieldName("DISPLAY_URL");
+        /// <summary>
+        /// Constant ITEM_TYPE for ConfluenceSpaceFieldName
+        /// </summary>
+        public static readonly ConfluenceSpaceFieldName ITEM_TYPE = new ConfluenceSpaceFieldName("ITEM_TYPE");
+        /// <summary>
+        /// Constant SPACE_KEY for ConfluenceSpaceFieldName
+        /// </summary>
+        public static readonly ConfluenceSpaceFieldName SPACE_KEY = new ConfluenceSpaceFieldName("SPACE_KEY");
+        /// <summary>
+        /// Constant URL for ConfluenceSpaceFieldName
+        /// </summary>
+        public static readonly ConfluenceSpaceFieldName URL = new ConfluenceSpaceFieldName("URL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfluenceSpaceFieldName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfluenceSpaceFieldName FindValue(string value)
+        {
+            return FindValue<ConfluenceSpaceFieldName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfluenceSpaceFieldName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConfluenceVersion.
+    /// </summary>
+    public class ConfluenceVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUD for ConfluenceVersion
+        /// </summary>
+        public static readonly ConfluenceVersion CLOUD = new ConfluenceVersion("CLOUD");
+        /// <summary>
+        /// Constant SERVER for ConfluenceVersion
+        /// </summary>
+        public static readonly ConfluenceVersion SERVER = new ConfluenceVersion("SERVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfluenceVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfluenceVersion FindValue(string value)
+        {
+            return FindValue<ConfluenceVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfluenceVersion(string value)
         {
             return FindValue(value);
         }
@@ -329,9 +691,21 @@ namespace Amazon.Kendra
     {
 
         /// <summary>
+        /// Constant CONFLUENCE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType CONFLUENCE = new DataSourceType("CONFLUENCE");
+        /// <summary>
+        /// Constant CUSTOM for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType CUSTOM = new DataSourceType("CUSTOM");
+        /// <summary>
         /// Constant DATABASE for DataSourceType
         /// </summary>
         public static readonly DataSourceType DATABASE = new DataSourceType("DATABASE");
+        /// <summary>
+        /// Constant GOOGLEDRIVE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType GOOGLEDRIVE = new DataSourceType("GOOGLEDRIVE");
         /// <summary>
         /// Constant ONEDRIVE for DataSourceType
         /// </summary>
@@ -497,6 +871,60 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type FaqFileFormat.
+    /// </summary>
+    public class FaqFileFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CSV for FaqFileFormat
+        /// </summary>
+        public static readonly FaqFileFormat CSV = new FaqFileFormat("CSV");
+        /// <summary>
+        /// Constant CSV_WITH_HEADER for FaqFileFormat
+        /// </summary>
+        public static readonly FaqFileFormat CSV_WITH_HEADER = new FaqFileFormat("CSV_WITH_HEADER");
+        /// <summary>
+        /// Constant JSON for FaqFileFormat
+        /// </summary>
+        public static readonly FaqFileFormat JSON = new FaqFileFormat("JSON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FaqFileFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FaqFileFormat FindValue(string value)
+        {
+            return FindValue<FaqFileFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FaqFileFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FaqStatus.
     /// </summary>
     public class FaqStatus : ConstantClass
@@ -552,6 +980,56 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FaqStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HighlightType.
+    /// </summary>
+    public class HighlightType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STANDARD for HighlightType
+        /// </summary>
+        public static readonly HighlightType STANDARD = new HighlightType("STANDARD");
+        /// <summary>
+        /// Constant THESAURUS_SYNONYM for HighlightType
+        /// </summary>
+        public static readonly HighlightType THESAURUS_SYNONYM = new HighlightType("THESAURUS_SYNONYM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HighlightType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HighlightType FindValue(string value)
+        {
+            return FindValue<HighlightType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HighlightType(string value)
         {
             return FindValue(value);
         }
@@ -668,6 +1146,56 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IndexStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KeyLocation.
+    /// </summary>
+    public class KeyLocation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SECRET_MANAGER for KeyLocation
+        /// </summary>
+        public static readonly KeyLocation SECRET_MANAGER = new KeyLocation("SECRET_MANAGER");
+        /// <summary>
+        /// Constant URL for KeyLocation
+        /// </summary>
+        public static readonly KeyLocation URL = new KeyLocation("URL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KeyLocation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeyLocation FindValue(string value)
+        {
+            return FindValue<KeyLocation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KeyLocation(string value)
         {
             return FindValue(value);
         }
@@ -1193,6 +1721,64 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type ScoreConfidence.
+    /// </summary>
+    public class ScoreConfidence : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for ScoreConfidence
+        /// </summary>
+        public static readonly ScoreConfidence HIGH = new ScoreConfidence("HIGH");
+        /// <summary>
+        /// Constant LOW for ScoreConfidence
+        /// </summary>
+        public static readonly ScoreConfidence LOW = new ScoreConfidence("LOW");
+        /// <summary>
+        /// Constant MEDIUM for ScoreConfidence
+        /// </summary>
+        public static readonly ScoreConfidence MEDIUM = new ScoreConfidence("MEDIUM");
+        /// <summary>
+        /// Constant VERY_HIGH for ScoreConfidence
+        /// </summary>
+        public static readonly ScoreConfidence VERY_HIGH = new ScoreConfidence("VERY_HIGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScoreConfidence(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScoreConfidence FindValue(string value)
+        {
+            return FindValue<ScoreConfidence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScoreConfidence(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ServiceNowBuildVersionType.
     /// </summary>
     public class ServiceNowBuildVersionType : ConstantClass
@@ -1332,6 +1918,122 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThesaurusStatus.
+    /// </summary>
+    public class ThesaurusStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ThesaurusStatus
+        /// </summary>
+        public static readonly ThesaurusStatus ACTIVE = new ThesaurusStatus("ACTIVE");
+        /// <summary>
+        /// Constant ACTIVE_BUT_UPDATE_FAILED for ThesaurusStatus
+        /// </summary>
+        public static readonly ThesaurusStatus ACTIVE_BUT_UPDATE_FAILED = new ThesaurusStatus("ACTIVE_BUT_UPDATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for ThesaurusStatus
+        /// </summary>
+        public static readonly ThesaurusStatus CREATING = new ThesaurusStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ThesaurusStatus
+        /// </summary>
+        public static readonly ThesaurusStatus DELETING = new ThesaurusStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ThesaurusStatus
+        /// </summary>
+        public static readonly ThesaurusStatus FAILED = new ThesaurusStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for ThesaurusStatus
+        /// </summary>
+        public static readonly ThesaurusStatus UPDATING = new ThesaurusStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThesaurusStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThesaurusStatus FindValue(string value)
+        {
+            return FindValue<ThesaurusStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThesaurusStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserContextPolicy.
+    /// </summary>
+    public class UserContextPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTRIBUTE_FILTER for UserContextPolicy
+        /// </summary>
+        public static readonly UserContextPolicy ATTRIBUTE_FILTER = new UserContextPolicy("ATTRIBUTE_FILTER");
+        /// <summary>
+        /// Constant USER_TOKEN for UserContextPolicy
+        /// </summary>
+        public static readonly UserContextPolicy USER_TOKEN = new UserContextPolicy("USER_TOKEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserContextPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserContextPolicy FindValue(string value)
+        {
+            return FindValue<UserContextPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserContextPolicy(string value)
         {
             return FindValue(value);
         }

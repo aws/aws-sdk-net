@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,12 @@ namespace Amazon.FraudDetector.Model
     /// Container for the parameters to the DeleteDetector operation.
     /// Deletes the detector. Before deleting a detector, you must first delete all detector
     /// versions and rule versions associated with the detector.
+    /// 
+    ///  
+    /// <para>
+    /// When you delete a detector, Amazon Fraud Detector permanently deletes the detector
+    /// and the data is no longer stored in Amazon Fraud Detector.
+    /// </para>
     /// </summary>
     public partial class DeleteDetectorRequest : AmazonFraudDetectorRequest
     {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property MemberAccountsEnrolled. 
         /// <para>
         /// Confirms the enrollment status of member accounts within the organization, if the
-        /// account is a master account of an organization.
+        /// account is a management account of an organization.
         /// </para>
         /// </summary>
         public bool MemberAccountsEnrolled

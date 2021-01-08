@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,16 @@ namespace Amazon.MediaConnect.Model
         /// Paginator for ListFlows operation
         ///</summary>
         IListFlowsPaginator ListFlows(ListFlowsRequest request);
+
+        /// <summary>
+        /// Paginator for ListOfferings operation
+        ///</summary>
+        IListOfferingsPaginator ListOfferings(ListOfferingsRequest request);
+
+        /// <summary>
+        /// Paginator for ListReservations operation
+        ///</summary>
+        IListReservationsPaginator ListReservations(ListReservationsRequest request);
     }
 }
 #endif

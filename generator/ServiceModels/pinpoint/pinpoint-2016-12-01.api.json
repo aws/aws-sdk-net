@@ -3717,6 +3717,9 @@
         },
         {
           "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "ConflictException"
         }
       ]
     },
@@ -3964,40 +3967,6 @@
         },
         {
           "shape": "PayloadTooLargeException"
-        },
-        {
-          "shape": "ForbiddenException"
-        },
-        {
-          "shape": "NotFoundException"
-        },
-        {
-          "shape": "MethodNotAllowedException"
-        },
-        {
-          "shape": "TooManyRequestsException"
-        }
-      ]
-    },
-    "UpdateTemplateActiveVersion": {
-      "name": "UpdateTemplateActiveVersion",
-      "http": {
-        "method": "PUT",
-        "requestUri": "/v1/templates/{template-name}/{template-type}/active-version",
-        "responseCode": 200
-      },
-      "input": {
-        "shape": "UpdateTemplateActiveVersionRequest"
-      },
-      "output": {
-        "shape": "UpdateTemplateActiveVersionResponse"
-      },
-      "errors": [
-        {
-          "shape": "BadRequestException"
-        },
-        {
-          "shape": "InternalServerErrorException"
         },
         {
           "shape": "ForbiddenException"
@@ -5217,7 +5186,8 @@
         "PENDING_NEXT_RUN",
         "COMPLETED",
         "PAUSED",
-        "DELETED"
+        "DELETED",
+        "INVALID"
       ]
     },
     "CampaignsResponse": {
@@ -5320,6 +5290,21 @@
         "TrueActivity": {
           "shape": "__string"
         }
+      }
+    },
+    "ConflictException": {
+      "type": "structure",
+      "members": {
+        "Message": {
+          "shape": "__string"
+        },
+        "RequestID": {
+          "shape": "__string"
+        }
+      },
+      "exception": true,
+      "error": {
+        "httpStatusCode": 409
       }
     },
     "CreateAppRequest": {
@@ -6977,10 +6962,7 @@
         "MessageActivity": {
           "shape": "__string"
         }
-      },
-      "required": [
-        "Dimensions"
-      ]
+      }
     },
     "EventDimensions": {
       "type": "structure",
@@ -6996,6 +6978,21 @@
         }
       }
     },
+    "EventFilter": {
+      "type": "structure",
+      "members": {
+        "Dimensions": {
+          "shape": "EventDimensions"
+        },
+        "FilterType": {
+          "shape": "FilterType"
+        }
+      },
+      "required": [
+        "FilterType",
+        "Dimensions"
+      ]
+    },
     "EventItemResponse": {
       "type": "structure",
       "members": {
@@ -7004,6 +7001,17 @@
         },
         "StatusCode": {
           "shape": "__integer"
+        }
+      }
+    },
+    "EventStartCondition": {
+      "type": "structure",
+      "members": {
+        "EventFilter": {
+          "shape": "EventFilter"
+        },
+        "SegmentId": {
+          "shape": "__string"
         }
       }
     },
@@ -9336,47 +9344,6 @@
       ],
       "payload": "TemplateVersionsResponse"
     },
-    "ListTemplateVersionsRequest": {
-      "type": "structure",
-      "members": {
-        "NextToken": {
-          "shape": "__string",
-          "location": "querystring",
-          "locationName": "next-token"
-        },
-        "PageSize": {
-          "shape": "__string",
-          "location": "querystring",
-          "locationName": "page-size"
-        },
-        "TemplateName": {
-          "shape": "__string",
-          "location": "uri",
-          "locationName": "template-name"
-        },
-        "TemplateType": {
-          "shape": "__string",
-          "location": "uri",
-          "locationName": "template-type"
-        }
-      },
-      "required": [
-        "TemplateName",
-        "TemplateType"
-      ]
-    },
-    "ListTemplateVersionsResponse": {
-      "type": "structure",
-      "members": {
-        "TemplateVersionsResponse": {
-          "shape": "TemplateVersionsResponse"
-        }
-      },
-      "required": [
-        "TemplateVersionsResponse"
-      ],
-      "payload": "TemplateVersionsResponse"
-    },
     "ListTemplatesRequest": {
       "type": "structure",
       "members": {
@@ -10748,6 +10715,9 @@
       "members": {
         "Description": {
           "shape": "__string"
+        },
+        "EventStartCondition": {
+          "shape": "EventStartCondition"
         },
         "SegmentStartCondition": {
           "shape": "SegmentCondition"

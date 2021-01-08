@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Specifies one or more property- and tag-based conditions that define criteria for
-    /// including or excluding objects from a classification job.
+    /// including or excluding objects from a classification job. If you specify more than
+    /// one condition, Amazon Macie uses an AND operator to join the conditions.
     /// </summary>
     public partial class JobScopingBlock
     {

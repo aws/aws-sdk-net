@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// An object that represents the method and value to match with the header value sent
-    /// in a         request. Specify one match method.
+    /// in a request. Specify one match method.
     /// </summary>
     public partial class HeaderMatchMethod
     {

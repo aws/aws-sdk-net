@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -241,6 +241,88 @@ namespace Amazon.WorkSpaces
         #endregion
 
 
+        #region  AssociateConnectionAlias
+
+        /// <summary>
+        /// Associates the specified connection alias with the specified directory to enable cross-Region
+        /// redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
+        /// DescribeConnectionAliases</a> to make sure that the current state of the connection
+        /// alias is <code>CREATED</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateConnectionAlias service method.</param>
+        /// 
+        /// <returns>The response from the AssociateConnectionAlias service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateConnectionAlias">REST API Reference for AssociateConnectionAlias Operation</seealso>
+        public virtual AssociateConnectionAliasResponse AssociateConnectionAlias(AssociateConnectionAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateConnectionAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateConnectionAliasResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateConnectionAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateConnectionAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateConnectionAlias operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateConnectionAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateConnectionAlias">REST API Reference for AssociateConnectionAlias Operation</seealso>
+        public virtual IAsyncResult BeginAssociateConnectionAlias(AssociateConnectionAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateConnectionAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateConnectionAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateConnectionAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateConnectionAlias.</param>
+        /// 
+        /// <returns>Returns a  AssociateConnectionAliasResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateConnectionAlias">REST API Reference for AssociateConnectionAlias Operation</seealso>
+        public virtual AssociateConnectionAliasResponse EndAssociateConnectionAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateConnectionAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateIpGroups
 
         /// <summary>
@@ -391,7 +473,28 @@ namespace Amazon.WorkSpaces
         #region  CopyWorkspaceImage
 
         /// <summary>
-        /// Copies the specified image from the specified Region to the current Region.
+        /// Copies the specified image from the specified Region to the current Region. For more
+        /// information about copying images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html">
+        /// Copy a Custom WorkSpaces Image</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// In the China (Ningxia) Region, you can copy images only within the same Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the AWS GovCloud (US-West) Region, to copy images to and from other AWS Regions,
+        /// contact AWS Support.
+        /// </para>
+        ///  </note> <important> 
+        /// <para>
+        /// Before copying a shared image, be sure to verify that it has been shared from the
+        /// correct AWS account. To determine if an image has been shared and to see the AWS account
+        /// ID that owns an image, use the <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html">DescribeWorkSpaceImages</a>
+        /// and <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImagePermissions.html">DescribeWorkspaceImagePermissions</a>
+        /// API operations. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyWorkspaceImage service method.</param>
         /// 
@@ -459,6 +562,80 @@ namespace Amazon.WorkSpaces
         public virtual CopyWorkspaceImageResponse EndCopyWorkspaceImage(IAsyncResult asyncResult)
         {
             return EndInvoke<CopyWorkspaceImageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateConnectionAlias
+
+        /// <summary>
+        /// Creates the specified connection alias for use with cross-Region redirection. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionAlias service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectionAlias service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateConnectionAlias">REST API Reference for CreateConnectionAlias Operation</seealso>
+        public virtual CreateConnectionAliasResponse CreateConnectionAlias(CreateConnectionAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectionAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectionAliasResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectionAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnectionAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionAlias operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnectionAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateConnectionAlias">REST API Reference for CreateConnectionAlias Operation</seealso>
+        public virtual IAsyncResult BeginCreateConnectionAlias(CreateConnectionAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateConnectionAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectionAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConnectionAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConnectionAlias.</param>
+        /// 
+        /// <returns>Returns a  CreateConnectionAliasResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateConnectionAlias">REST API Reference for CreateConnectionAlias Operation</seealso>
+        public virtual CreateConnectionAliasResponse EndCreateConnectionAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateConnectionAliasResponse>(asyncResult);
         }
 
         #endregion
@@ -676,6 +853,96 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DeleteConnectionAlias
+
+        /// <summary>
+        /// Deletes the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// 
+        ///  <important> 
+        /// <para>
+        ///  <b>If you will no longer be using a fully qualified domain name (FQDN) as the registration
+        /// code for your WorkSpaces users, you must take certain precautions to prevent potential
+        /// security issues.</b> For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html#cross-region-redirection-security-considerations">
+        /// Security Considerations if You Stop Using Cross-Region Redirection</a>.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// To delete a connection alias that has been shared, the shared account must first disassociate
+        /// the connection alias from any directories it has been associated with. Then you must
+        /// unshare the connection alias from the account it has been shared with. You can delete
+        /// a connection alias only after it is no longer shared with any accounts or associated
+        /// with any directories.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionAlias service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectionAlias service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectionAlias">REST API Reference for DeleteConnectionAlias Operation</seealso>
+        public virtual DeleteConnectionAliasResponse DeleteConnectionAlias(DeleteConnectionAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectionAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConnectionAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionAlias operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnectionAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectionAlias">REST API Reference for DeleteConnectionAlias Operation</seealso>
+        public virtual IAsyncResult BeginDeleteConnectionAlias(DeleteConnectionAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConnectionAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnectionAlias.</param>
+        /// 
+        /// <returns>Returns a  DeleteConnectionAliasResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectionAlias">REST API Reference for DeleteConnectionAlias Operation</seealso>
+        public virtual DeleteConnectionAliasResponse EndDeleteConnectionAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteConnectionAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteIpGroup
 
         /// <summary>
@@ -878,6 +1145,23 @@ namespace Amazon.WorkSpaces
         /// Deregisters the specified directory. This operation is asynchronous and returns before
         /// the WorkSpace directory is deregistered. If any WorkSpaces are registered to this
         /// directory, you must remove them before you can deregister the directory.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces.
+        /// If there are no WorkSpaces being used with your Simple AD or AD Connector directory
+        /// for 30 consecutive days, this directory will be automatically deregistered for use
+        /// with Amazon WorkSpaces, and you will be charged for this directory as per the <a href="http://aws.amazon.com/directoryservice/pricing/">AWS
+        /// Directory Services pricing terms</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete empty directories, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html">
+        /// Delete the Directory for Your WorkSpaces</a>. If you delete your Simple AD or AD Connector
+        /// directory, you can always create a new one when you want to start using WorkSpaces
+        /// again.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterWorkspaceDirectory service method.</param>
         /// 
@@ -1118,6 +1402,139 @@ namespace Amazon.WorkSpaces
         public virtual DescribeClientPropertiesResponse EndDescribeClientProperties(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeClientPropertiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeConnectionAliases
+
+        /// <summary>
+        /// Retrieves a list that describes the connection aliases used for cross-Region redirection.
+        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionAliases service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnectionAliases service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectionAliases">REST API Reference for DescribeConnectionAliases Operation</seealso>
+        public virtual DescribeConnectionAliasesResponse DescribeConnectionAliases(DescribeConnectionAliasesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConnectionAliasesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConnectionAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionAliases operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnectionAliases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectionAliases">REST API Reference for DescribeConnectionAliases Operation</seealso>
+        public virtual IAsyncResult BeginDescribeConnectionAliases(DescribeConnectionAliasesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionAliasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConnectionAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConnectionAliases.</param>
+        /// 
+        /// <returns>Returns a  DescribeConnectionAliasesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectionAliases">REST API Reference for DescribeConnectionAliases Operation</seealso>
+        public virtual DescribeConnectionAliasesResponse EndDescribeConnectionAliases(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeConnectionAliasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeConnectionAliasPermissions
+
+        /// <summary>
+        /// Describes the permissions that the owner of a connection alias has granted to another
+        /// AWS account for the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionAliasPermissions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnectionAliasPermissions service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectionAliasPermissions">REST API Reference for DescribeConnectionAliasPermissions Operation</seealso>
+        public virtual DescribeConnectionAliasPermissionsResponse DescribeConnectionAliasPermissions(DescribeConnectionAliasPermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionAliasPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionAliasPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConnectionAliasPermissionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConnectionAliasPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionAliasPermissions operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnectionAliasPermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectionAliasPermissions">REST API Reference for DescribeConnectionAliasPermissions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeConnectionAliasPermissions(DescribeConnectionAliasPermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionAliasPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionAliasPermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConnectionAliasPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConnectionAliasPermissions.</param>
+        /// 
+        /// <returns>Returns a  DescribeConnectionAliasPermissionsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectionAliasPermissions">REST API Reference for DescribeConnectionAliasPermissions Operation</seealso>
+        public virtual DescribeConnectionAliasPermissionsResponse EndDescribeConnectionAliasPermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeConnectionAliasPermissionsResponse>(asyncResult);
         }
 
         #endregion
@@ -1728,6 +2145,86 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DisassociateConnectionAlias
+
+        /// <summary>
+        /// Disassociates a connection alias from a directory. Disassociating a connection alias
+        /// disables cross-Region redirection between two directories in different AWS Regions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
+        /// DescribeConnectionAliases</a> to make sure that the current state of the connection
+        /// alias is <code>CREATED</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateConnectionAlias service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateConnectionAlias service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateConnectionAlias">REST API Reference for DisassociateConnectionAlias Operation</seealso>
+        public virtual DisassociateConnectionAliasResponse DisassociateConnectionAlias(DisassociateConnectionAliasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateConnectionAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateConnectionAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateConnectionAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateConnectionAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateConnectionAlias operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateConnectionAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateConnectionAlias">REST API Reference for DisassociateConnectionAlias Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateConnectionAlias(DisassociateConnectionAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateConnectionAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateConnectionAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateConnectionAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateConnectionAlias.</param>
+        /// 
+        /// <returns>Returns a  DisassociateConnectionAliasResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateConnectionAlias">REST API Reference for DisassociateConnectionAlias Operation</seealso>
+        public virtual DisassociateConnectionAliasResponse EndDisassociateConnectionAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateConnectionAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateIpGroups
 
         /// <summary>
@@ -1797,9 +2294,11 @@ namespace Amazon.WorkSpaces
         #region  ImportWorkspaceImage
 
         /// <summary>
-        /// Imports the specified Windows 7 or Windows 10 Bring Your Own License (BYOL) image
-        /// into Amazon WorkSpaces. The image must be an already licensed EC2 image that is in
-        /// your AWS account, and you must own the image.
+        /// Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces.
+        /// The image must be an already licensed Amazon EC2 image that is in your AWS account,
+        /// and you must own the image. For more information about creating BYOL images, see <a
+        /// href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// Bring Your Own Windows Desktop Licenses</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage service method.</param>
         /// 
@@ -1875,6 +2374,12 @@ namespace Amazon.WorkSpaces
         /// use for the network management interface when you enable Bring Your Own License (BYOL).
         /// 
         /// 
+        ///  
+        /// <para>
+        /// This operation can be run only by AWS accounts that are enabled for BYOL. If your
+        /// account isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code>
+        /// error.
+        /// </para>
         ///  
         /// <para>
         /// The management network interface is connected to a secure Amazon WorkSpaces management
@@ -2994,21 +3499,42 @@ namespace Amazon.WorkSpaces
         /// <summary>
         /// Terminates the specified WorkSpaces.
         /// 
-        ///  
+        ///  <important> 
         /// <para>
         /// Terminating a WorkSpace is a permanent action and cannot be undone. The user's data
-        /// is destroyed. If you need to archive any user data, contact Amazon Web Services before
-        /// terminating the WorkSpace.
+        /// is destroyed. If you need to archive any user data, contact AWS Support before terminating
+        /// the WorkSpace.
         /// </para>
-        ///  
+        ///  </important> 
         /// <para>
         /// You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.
         /// </para>
         ///  
         /// <para>
         /// This operation is asynchronous and returns before the WorkSpaces have been completely
-        /// terminated.
+        /// terminated. After a WorkSpace is terminated, the <code>TERMINATED</code> state is
+        /// returned only briefly before the WorkSpace directory metadata is cleaned up, so this
+        /// state is rarely returned. To confirm that a WorkSpace is terminated, check for the
+        /// WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+        /// DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has
+        /// been successfully terminated.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces.
+        /// If there are no WorkSpaces being used with your Simple AD or AD Connector directory
+        /// for 30 consecutive days, this directory will be automatically deregistered for use
+        /// with Amazon WorkSpaces, and you will be charged for this directory as per the <a href="http://aws.amazon.com/directoryservice/pricing/">AWS
+        /// Directory Services pricing terms</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete empty directories, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html">
+        /// Delete the Directory for Your WorkSpaces</a>. If you delete your Simple AD or AD Connector
+        /// directory, you can always create a new one when you want to start using WorkSpaces
+        /// again.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateWorkspaces service method.</param>
         /// 
@@ -3055,6 +3581,102 @@ namespace Amazon.WorkSpaces
         public virtual TerminateWorkspacesResponse EndTerminateWorkspaces(IAsyncResult asyncResult)
         {
             return EndInvoke<TerminateWorkspacesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateConnectionAliasPermission
+
+        /// <summary>
+        /// Shares or unshares a connection alias with one account by specifying whether that
+        /// account has permission to associate the connection alias with a directory. If the
+        /// association permission is granted, the connection alias is shared with that account.
+        /// If the association permission is revoked, the connection alias is unshared with the
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html">
+        /// Cross-Region Redirection for Amazon WorkSpaces</a>.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
+        /// DescribeConnectionAliases</a> to make sure that the current state of the connection
+        /// alias is <code>CREATED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To delete a connection alias that has been shared, the shared account must first disassociate
+        /// the connection alias from any directories it has been associated with. Then you must
+        /// unshare the connection alias from the account it has been shared with. You can delete
+        /// a connection alias only after it is no longer shared with any accounts or associated
+        /// with any directories.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionAliasPermission service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectionAliasPermission service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateConnectionAliasPermission">REST API Reference for UpdateConnectionAliasPermission Operation</seealso>
+        public virtual UpdateConnectionAliasPermissionResponse UpdateConnectionAliasPermission(UpdateConnectionAliasPermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectionAliasPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectionAliasPermissionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectionAliasPermissionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConnectionAliasPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionAliasPermission operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnectionAliasPermission
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateConnectionAliasPermission">REST API Reference for UpdateConnectionAliasPermission Operation</seealso>
+        public virtual IAsyncResult BeginUpdateConnectionAliasPermission(UpdateConnectionAliasPermissionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateConnectionAliasPermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectionAliasPermissionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConnectionAliasPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConnectionAliasPermission.</param>
+        /// 
+        /// <returns>Returns a  UpdateConnectionAliasPermissionResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateConnectionAliasPermission">REST API Reference for UpdateConnectionAliasPermission Operation</seealso>
+        public virtual UpdateConnectionAliasPermissionResponse EndUpdateConnectionAliasPermission(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateConnectionAliasPermissionResponse>(asyncResult);
         }
 
         #endregion
@@ -3132,11 +3754,30 @@ namespace Amazon.WorkSpaces
         #region  UpdateWorkspaceImagePermission
 
         /// <summary>
-        /// Shares or unshares an image with one account by specifying whether that account has
-        /// permission to copy the image. If the copy image permission is granted, the image is
-        /// shared with that account. If the copy image permission is revoked, the image is unshared
-        /// with the account.
+        /// Shares or unshares an image with one account in the same AWS Region by specifying
+        /// whether that account has permission to copy the image. If the copy image permission
+        /// is granted, the image is shared with that account. If the copy image permission is
+        /// revoked, the image is unshared with the account.
         /// 
+        ///  
+        /// <para>
+        /// After an image has been shared, the recipient account can copy the image to other
+        /// AWS Regions as needed.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// In the China (Ningxia) Region, you can copy images only within the same Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the AWS GovCloud (US-West) Region, to copy images to and from other AWS Regions,
+        /// contact AWS Support.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
+        /// Share or Unshare a Custom WorkSpaces Image</a>.
+        /// </para>
         ///  <note> <ul> <li> 
         /// <para>
         /// To delete an image that has been shared, you must unshare the image before you delete

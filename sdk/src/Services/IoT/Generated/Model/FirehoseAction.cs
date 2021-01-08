@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,9 +33,36 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class FirehoseAction
     {
+        private bool? _batchMode;
         private string _deliveryStreamName;
         private string _roleArn;
         private string _separator;
+
+        /// <summary>
+        /// Gets and sets the property BatchMode. 
+        /// <para>
+        /// Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+        /// <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates
+        /// to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+        /// <code>PutRecordBatch</code> </a> request. The resulting array can't have more than
+        /// 500 records.
+        /// </para>
+        /// </summary>
+        public bool BatchMode
+        {
+            get { return this._batchMode.GetValueOrDefault(); }
+            set { this._batchMode = value; }
+        }
+
+        // Check to see if BatchMode property is set
+        internal bool IsSetBatchMode()
+        {
+            return this._batchMode.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -96,6 +96,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
                 var marshaller = PassThroughSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PassThroughSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetWavSettings())
+            {
+                context.Writer.WritePropertyName("wavSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = WavSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.WavSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }

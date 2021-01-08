@@ -57,16 +57,11 @@ using System.Runtime.InteropServices;
             
             #line default
             #line hidden
-            this.Write("\")]\r\n[assembly: AssemblyConfiguration(\"\")]\r\n[assembly: AssemblyProduct(\"Amazon We" +
-                    "b Services SDK for .NET\")]\r\n[assembly: AssemblyCompany(\"Amazon.com, Inc\")]\r\n[ass" +
-                    "embly: AssemblyCopyright(\"Copyright 2009-");
-            
-            #line 18 "C:\Users\costleya\Work\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\CodeAnalysis\CodeAnalysisAssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(DateTime.UtcNow.Year));
-            
-            #line default
-            #line hidden
-            this.Write(@" Amazon.com, Inc. or its affiliates. All Rights Reserved."")]
+            this.Write(@""")]
+[assembly: AssemblyConfiguration("""")]
+[assembly: AssemblyProduct(""Amazon Web Services SDK for .NET"")]
+[assembly: AssemblyCompany(""Amazon.com, Inc"")]
+[assembly: AssemblyCopyright(""Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved."")]
 [assembly: AssemblyTrademark("""")]
 [assembly: AssemblyCulture("""")]
 

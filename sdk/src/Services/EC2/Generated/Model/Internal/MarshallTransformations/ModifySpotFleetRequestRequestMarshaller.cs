@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -61,6 +61,61 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExcessCapacityTerminationPolicy())
                 {
                     request.Parameters.Add("ExcessCapacityTerminationPolicy", StringUtils.FromString(publicRequest.ExcessCapacityTerminationPolicy));
+                }
+                if(publicRequest.IsSetLaunchTemplateConfigs())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.LaunchTemplateConfigs)
+                    {
+                        if(publicRequestlistValue.IsSetLaunchTemplateSpecification())
+                        {
+                            if(publicRequestlistValue.LaunchTemplateSpecification.IsSetLaunchTemplateId())
+                            {
+                                request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "LaunchTemplateSpecification" + "." + "LaunchTemplateId", StringUtils.FromString(publicRequestlistValue.LaunchTemplateSpecification.LaunchTemplateId));
+                            }
+                            if(publicRequestlistValue.LaunchTemplateSpecification.IsSetLaunchTemplateName())
+                            {
+                                request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "LaunchTemplateSpecification" + "." + "LaunchTemplateName", StringUtils.FromString(publicRequestlistValue.LaunchTemplateSpecification.LaunchTemplateName));
+                            }
+                            if(publicRequestlistValue.LaunchTemplateSpecification.IsSetVersion())
+                            {
+                                request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "LaunchTemplateSpecification" + "." + "Version", StringUtils.FromString(publicRequestlistValue.LaunchTemplateSpecification.Version));
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetOverrides())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Overrides)
+                            {
+                                if(publicRequestlistValuelistValue.IsSetAvailabilityZone())
+                                {
+                                    request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValuelistValue.AvailabilityZone));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetInstanceType())
+                                {
+                                    request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestlistValuelistValue.InstanceType));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetPriority())
+                                {
+                                    request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "Priority", StringUtils.FromDouble(publicRequestlistValuelistValue.Priority));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetSpotPrice())
+                                {
+                                    request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "SpotPrice", StringUtils.FromString(publicRequestlistValuelistValue.SpotPrice));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetSubnetId())
+                                {
+                                    request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestlistValuelistValue.SubnetId));
+                                }
+                                if(publicRequestlistValuelistValue.IsSetWeightedCapacity())
+                                {
+                                    request.Parameters.Add("LaunchTemplateConfig" + "." + publicRequestlistValueIndex + "." + "Overrides" + "." + publicRequestlistValuelistValueIndex + "." + "WeightedCapacity", StringUtils.FromDouble(publicRequestlistValuelistValue.WeightedCapacity));
+                                }
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        publicRequestlistValueIndex++;
+                    }
                 }
                 if(publicRequest.IsSetOnDemandTargetCapacity())
                 {

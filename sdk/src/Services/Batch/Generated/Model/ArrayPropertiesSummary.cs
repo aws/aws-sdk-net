@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Index. 
         /// <para>
-        /// The job index within the array that is associated with this job. This parameter is
+        /// The job index within the array that's associated with this job. This parameter is
         /// returned for children of array jobs.
         /// </para>
         /// </summary>

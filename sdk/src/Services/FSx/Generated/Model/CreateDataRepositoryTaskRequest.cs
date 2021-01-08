@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,10 +36,10 @@ namespace Amazon.FSx.Model
     /// changes, including POSIX metadata, to files, directories, and symbolic links (symlinks)
     /// from your FSx file system to its linked data repository. A <code>CreateDataRepositoryTask</code>
     /// operation will fail if a data repository is not linked to the FSx file system. To
-    /// learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using
-    /// Data Repository Tasks</a>. To learn more about linking a data repository to your file
-    /// system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repository.html#export-prefix">Setting
-    /// the Export Prefix</a>.
+    /// learn more about data repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data
+    /// Repository Tasks</a>. To learn more about linking a data repository to your file system,
+    /// see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-fs-linked-data-repo.html">Linking
+    /// your file system to an S3 bucket</a>.
     /// </summary>
     public partial class CreateDataRepositoryTaskRequest : AmazonFSxRequest
     {

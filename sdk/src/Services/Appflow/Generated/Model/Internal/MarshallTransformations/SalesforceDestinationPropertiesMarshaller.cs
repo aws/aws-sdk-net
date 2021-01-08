@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -56,10 +56,27 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetIdFieldNames())
+            {
+                context.Writer.WritePropertyName("idFieldNames");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectIdFieldNamesListValue in requestObject.IdFieldNames)
+                {
+                        context.Writer.Write(requestObjectIdFieldNamesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetObject())
             {
                 context.Writer.WritePropertyName("object");
                 context.Writer.Write(requestObject.Object);
+            }
+
+            if(requestObject.IsSetWriteOperationType())
+            {
+                context.Writer.WritePropertyName("writeOperationType");
+                context.Writer.Write(requestObject.WriteOperationType);
             }
 
         }

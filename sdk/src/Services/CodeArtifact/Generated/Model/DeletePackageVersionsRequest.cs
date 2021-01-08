@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -144,6 +144,10 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  <code>maven</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nuget</code> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -176,6 +180,11 @@ namespace Amazon.CodeArtifact.Model
         ///  </li> <li> 
         /// <para>
         ///  A Python package does not contain a corresponding component, so Python packages do
+        /// not have a namespace. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  A NuGet package does not contain a corresponding component, so NuGet packages do
         /// not have a namespace. 
         /// </para>
         ///  </li> </ul>
@@ -237,7 +246,7 @@ namespace Amazon.CodeArtifact.Model
         ///  An array of strings that specify the versions of the package to delete. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=100)]
         public List<string> Versions
         {
             get { return this._versions; }

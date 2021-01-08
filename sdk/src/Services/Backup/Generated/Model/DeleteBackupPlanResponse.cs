@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -100,7 +100,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property VersionId. 
         /// <para>
         /// Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024
-        /// bytes long. Version Ids cannot be edited.
+        /// bytes long. Version IDs cannot be edited.
         /// </para>
         /// </summary>
         public string VersionId

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,6 +63,9 @@ namespace Amazon.ECS
     /// management systems or worry about scaling your management infrastructure.
     /// </para>
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonECSClient : AmazonServiceClient, IAmazonECS
     {
         private static IServiceMetadata serviceMetadata = new AmazonECSMetadata();
@@ -2707,6 +2710,51 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCapacityProvider
+
+        internal virtual UpdateCapacityProviderResponse UpdateCapacityProvider(UpdateCapacityProviderRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCapacityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCapacityProviderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCapacityProviderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the parameters for a capacity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCapacityProvider service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider">REST API Reference for UpdateCapacityProvider Operation</seealso>
+        public virtual Task<UpdateCapacityProviderResponse> UpdateCapacityProviderAsync(UpdateCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCapacityProviderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCapacityProviderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCapacityProviderResponse>(request, options, cancellationToken);
         }
 
         #endregion

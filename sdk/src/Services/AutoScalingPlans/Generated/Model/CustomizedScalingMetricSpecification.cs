@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,8 +51,9 @@ namespace Amazon.AutoScalingPlans.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
-    /// CloudWatch Concepts</a>. 
+    /// For information about terminology, available metrics, or how to publish new metrics,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
+    /// CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class CustomizedScalingMetricSpecification

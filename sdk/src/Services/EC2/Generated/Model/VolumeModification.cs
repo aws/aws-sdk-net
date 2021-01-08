@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,13 +41,17 @@ namespace Amazon.EC2.Model
         private DateTime? _endTime;
         private VolumeModificationState _modificationState;
         private int? _originalIops;
+        private bool? _originalMultiAttachEnabled;
         private int? _originalSize;
+        private int? _originalThroughput;
         private VolumeType _originalVolumeType;
         private long? _progress;
         private DateTime? _startTime;
         private string _statusMessage;
         private int? _targetIops;
+        private bool? _targetMultiAttachEnabled;
         private int? _targetSize;
+        private int? _targetThroughput;
         private VolumeType _targetVolumeType;
         private string _volumeId;
 
@@ -106,6 +110,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OriginalMultiAttachEnabled. 
+        /// <para>
+        /// The original setting for Amazon EBS Multi-Attach.
+        /// </para>
+        /// </summary>
+        public bool OriginalMultiAttachEnabled
+        {
+            get { return this._originalMultiAttachEnabled.GetValueOrDefault(); }
+            set { this._originalMultiAttachEnabled = value; }
+        }
+
+        // Check to see if OriginalMultiAttachEnabled property is set
+        internal bool IsSetOriginalMultiAttachEnabled()
+        {
+            return this._originalMultiAttachEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property OriginalSize. 
         /// <para>
         /// The original size of the volume, in GiB.
@@ -121,6 +143,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetOriginalSize()
         {
             return this._originalSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginalThroughput. 
+        /// <para>
+        /// The original throughput of the volume, in MiB/s.
+        /// </para>
+        /// </summary>
+        public int OriginalThroughput
+        {
+            get { return this._originalThroughput.GetValueOrDefault(); }
+            set { this._originalThroughput = value; }
+        }
+
+        // Check to see if OriginalThroughput property is set
+        internal bool IsSetOriginalThroughput()
+        {
+            return this._originalThroughput.HasValue; 
         }
 
         /// <summary>
@@ -214,6 +254,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TargetMultiAttachEnabled. 
+        /// <para>
+        /// The target setting for Amazon EBS Multi-Attach.
+        /// </para>
+        /// </summary>
+        public bool TargetMultiAttachEnabled
+        {
+            get { return this._targetMultiAttachEnabled.GetValueOrDefault(); }
+            set { this._targetMultiAttachEnabled = value; }
+        }
+
+        // Check to see if TargetMultiAttachEnabled property is set
+        internal bool IsSetTargetMultiAttachEnabled()
+        {
+            return this._targetMultiAttachEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetSize. 
         /// <para>
         /// The target size of the volume, in GiB.
@@ -229,6 +287,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTargetSize()
         {
             return this._targetSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetThroughput. 
+        /// <para>
+        /// The target throughput of the volume, in MiB/s.
+        /// </para>
+        /// </summary>
+        public int TargetThroughput
+        {
+            get { return this._targetThroughput.GetValueOrDefault(); }
+            set { this._targetThroughput = value; }
+        }
+
+        // Check to see if TargetThroughput property is set
+        internal bool IsSetTargetThroughput()
+        {
+            return this._targetThroughput.HasValue; 
         }
 
         /// <summary>

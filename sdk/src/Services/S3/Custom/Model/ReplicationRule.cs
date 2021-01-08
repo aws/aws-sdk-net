@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,16 +55,13 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <p>The priority associated with the rule. If you specify multiple rules in a
-        /// replication configuration, then Amazon S3 applies rule priority in the event
-        /// there are conflicts (two or more rules identify the same object based on
-        /// filter specified). The rule with higher priority takes precedence. For
-        /// example,</p> <ul> <li> <p>Same object quality prefix based filter criteria
-        /// If prefixes you specified in multiple rules overlap. </p> </li> <li> <p>Same
-        /// object qualify tag based filter criteria specified in multiple rules</p> </li>
-        /// </ul> <p>For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">
-        /// Cross-Region Replication (CRR)</a> in the Amazon S3 Developer Guide.</p>
+        /// <para>The priority indicates which rule has priority when there is a conflict. 
+        /// Amazon S3 will attempt to replicate objects according to all replication rules. 
+        /// However, if objects are replicating to the same destination bucket priority will 
+        /// decide which object will attempt to replicate first. The higher the number, the 
+        /// higher the priority. </para> <para>For more information, 
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html\">Replication</a> in 
+        /// the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
         /// </summary>
         public int Priority
         {
@@ -156,12 +153,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <p> Container that describes additional filters in identifying source objects that
+        /// <para> Container that describes additional filters in identifying source objects that
         /// you want to replicate. Currently, Amazon S3 supports only the filter that you can
         /// specify for objects created with server-side encryption using an AWS KMS-managed
-        /// key. You can choose to enable or disable replication of these objects. </p> <p> if
+        /// key. You can choose to enable or disable replication of these objects. </para> <para> if
         /// you want Amazon S3 to replicate objects created with server-side encryption using
-        /// AWS KMS-managed keys. </p>
+        /// AWS KMS-managed keys. </para>
         /// </summary>
         public SourceSelectionCriteria SourceSelectionCriteria
         {

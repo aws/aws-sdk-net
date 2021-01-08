@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ImportDestination requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetContactListDestination())
+            {
+                context.Writer.WritePropertyName("ContactListDestination");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ContactListDestinationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContactListDestination, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSuppressionListDestination())
             {
                 context.Writer.WritePropertyName("SuppressionListDestination");

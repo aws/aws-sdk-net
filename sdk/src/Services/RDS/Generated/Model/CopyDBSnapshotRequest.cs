@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CopyDBSnapshot operation.
-    /// Copies the specified DB snapshot. The source DB snapshot must be in the "available"
+    /// Copies the specified DB snapshot. The source DB snapshot must be in the <code>available</code>
     /// state.
     /// 
     ///  
@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         private string _preSignedUrl;
         private string _sourceDBSnapshotIdentifier;
         private List<Tag> _tags = new List<Tag>();
+        private string _targetCustomAvailabilityZone;
         private string _targetDBSnapshotIdentifier;
 
         /// <summary>
@@ -77,15 +78,16 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon Resource
-        /// Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. 
+        /// The AWS KMS key identifier for an encrypted DB snapshot. The AWS KMS key identifier
+        /// is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+        /// (CMK). 
         /// </para>
         ///  
         /// <para>
         /// If you copy an encrypted DB snapshot from your AWS account, you can specify a value
-        /// for this parameter to encrypt the copy with a new KMS encryption key. If you don't
-        /// specify a value for this parameter, then the copy of the DB snapshot is encrypted
-        /// with the same KMS key as the source DB snapshot. 
+        /// for this parameter to encrypt the copy with a new AWS KMS CMK. If you don't specify
+        /// a value for this parameter, then the copy of the DB snapshot is encrypted with the
+        /// same AWS KMS key as the source DB snapshot. 
         /// </para>
         ///  
         /// <para>
@@ -100,9 +102,9 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// If you copy an encrypted snapshot to a different AWS Region, then you must specify
-        /// a KMS key for the destination AWS Region. KMS encryption keys are specific to the
-        /// AWS Region that they are created in, and you can't use encryption keys from one AWS
-        /// Region in another AWS Region. 
+        /// a AWS KMS key identifier for the destination AWS Region. AWS KMS CMKs are specific
+        /// to the AWS Region that they are created in, and you can't use CMKs from one AWS Region
+        /// in another AWS Region. 
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -128,7 +130,7 @@ namespace Amazon.RDS.Model
         /// and your DB instance uses a nondefault option group. If your source DB instance uses
         /// Transparent Data Encryption for Oracle or Microsoft SQL Server, you must specify this
         /// option when copying across AWS Regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
-        /// Group Considerations</a> in the <i>Amazon RDS User Guide.</i> 
+        /// group considerations</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -179,10 +181,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt
-        /// the copy of the DB snapshot in the destination AWS Region. This is the same identifier
-        /// for both the <code>CopyDBSnapshot</code> action that is called in the destination
-        /// AWS Region, and the action contained in the presigned URL. 
+        ///  <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK)
+        /// to use to encrypt the copy of the DB snapshot in the destination AWS Region. This
+        /// is the same identifier for both the <code>CopyDBSnapshot</code> action that is called
+        /// in the destination AWS Region, and the action contained in the presigned URL. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -292,6 +294,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetCustomAvailabilityZone. 
+        /// <para>
+        /// The external custom Availability Zone (CAZ) identifier for the target CAZ.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>rds-caz-aiqhTgQv</code>.
+        /// </para>
+        /// </summary>
+        public string TargetCustomAvailabilityZone
+        {
+            get { return this._targetCustomAvailabilityZone; }
+            set { this._targetCustomAvailabilityZone = value; }
+        }
+
+        // Check to see if TargetCustomAvailabilityZone property is set
+        internal bool IsSetTargetCustomAvailabilityZone()
+        {
+            return this._targetCustomAvailabilityZone != null;
         }
 
         /// <summary>

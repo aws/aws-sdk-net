@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -182,7 +182,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
+        /// The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or
+        /// an empty string (for Windows patches that aren't applicable).
         /// </para>
         /// </summary>
         public ComplianceStatus Status

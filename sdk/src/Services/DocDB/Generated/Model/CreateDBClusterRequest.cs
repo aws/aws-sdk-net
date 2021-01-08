@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,6 +49,7 @@ namespace Amazon.DocDB.Model
         private int? _port;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private string _preSignedUrl;
         private bool? _storageEncrypted;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
@@ -115,7 +116,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain from 1 to 63 letters, numbers, or hyphens.
+        /// Must contain from 1 to 63 letters, numbers, or hyphens. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -123,7 +124,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// Cannot end with a hyphen or contain two consecutive hyphens. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -146,7 +147,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
         /// <para>
-        ///  The name of the cluster parameter group to associate with this cluster.
+        /// The name of the cluster parameter group to associate with this cluster.
         /// </para>
         /// </summary>
         public string DBClusterParameterGroupName
@@ -213,6 +214,9 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property EnableCloudwatchLogsExports. 
         /// <para>
         /// A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+        /// You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html">
+        /// Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html">
+        /// Profiling Amazon DocumentDB Operations</a>. 
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
@@ -253,7 +257,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the database engine to use.
+        /// The version number of the database engine to use. The --engine-version will default
+        /// to the latest major engine version. For production workloads, we recommend explicitly
+        /// declaring this parameter with the intended major engine version.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -282,29 +288,17 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// If an encryption key is not specified in <code>KmsKeyId</code>:
+        /// If an encryption key is not specified in <code>KmsKeyId</code>: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon
-        /// DocumentDB uses the encryption key that is used to encrypt the source. Otherwise,
-        /// Amazon DocumentDB uses your default encryption key. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the <code>StorageEncrypted</code> parameter is <code>true</code> and <code>ReplicationSourceIdentifier</code>
-        /// is not specified, Amazon DocumentDB uses your default encryption key.
+        /// If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB
+        /// uses your default encryption key. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// AWS KMS creates the default encryption key for your AWS account. Your AWS account
         /// has a different default encryption key for each AWS Region.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you create a replica of an encrypted cluster in another AWS Region, you must set
-        /// <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region.
-        /// This key is used to encrypt the replica in that AWS Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -338,7 +332,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot be a reserved word for the chosen database engine.
+        /// Cannot be a reserved word for the chosen database engine. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -422,7 +416,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must not conflict with the preferred maintenance window.
+        /// Must not conflict with the preferred maintenance window. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -479,6 +473,24 @@ namespace Amazon.DocDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PreSignedUrl. 
+        /// <para>
+        /// Not currently supported. 
+        /// </para>
+        /// </summary>
+        public string PreSignedUrl
+        {
+            get { return this._preSignedUrl; }
+            set { this._preSignedUrl = value; }
+        }
+
+        // Check to see if PreSignedUrl property is set
+        internal bool IsSetPreSignedUrl()
+        {
+            return this._preSignedUrl != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageEncrypted. 
         /// <para>
         /// Specifies whether the cluster is encrypted.
@@ -517,7 +529,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A list of EC2 VPC security groups to associate with this cluster.
+        /// A list of EC2 VPC security groups to associate with this cluster. 
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

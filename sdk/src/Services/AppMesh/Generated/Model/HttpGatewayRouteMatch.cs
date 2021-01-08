@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,12 +38,11 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// Specifies the path to match requests with. This parameter must always start with 
-        ///           <code>/</code>, which by itself matches all requests to the virtual service
-        /// name. You         can also match for path-based routing of requests. For example,
-        /// if your virtual service         name is <code>my-service.local</code> and you want
-        /// the route to match requests to            <code>my-service.local/metrics</code>, your
-        /// prefix should be         <code>/metrics</code>.
+        /// Specifies the path to match requests with. This parameter must always start with <code>/</code>,
+        /// which by itself matches all requests to the virtual service name. You can also match
+        /// for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code>
+        /// and you want the route to match requests to <code>my-service.local/metrics</code>,
+        /// your prefix should be <code>/metrics</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

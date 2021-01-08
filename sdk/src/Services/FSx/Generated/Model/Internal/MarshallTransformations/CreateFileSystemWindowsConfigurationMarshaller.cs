@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,6 +49,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ActiveDirectoryId");
                 context.Writer.Write(requestObject.ActiveDirectoryId);
+            }
+
+            if(requestObject.IsSetAliases())
+            {
+                context.Writer.WritePropertyName("Aliases");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAliasesListValue in requestObject.Aliases)
+                {
+                        context.Writer.Write(requestObjectAliasesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetAutomaticBackupRetentionDays())

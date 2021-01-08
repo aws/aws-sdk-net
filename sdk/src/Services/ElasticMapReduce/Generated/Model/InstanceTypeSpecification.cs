@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,7 +51,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BidPrice. 
         /// <para>
-        /// The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>.
+        /// The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>.
         /// Expressed in USD.
         /// </para>
         /// </summary>
@@ -71,7 +71,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BidPriceAsPercentageOfOnDemandPrice. 
         /// <para>
-        /// The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined
+        /// The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined
         /// by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
         /// </para>
         /// </summary>
@@ -110,7 +110,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsBlockDevices. 
         /// <para>
-        /// The configuration of Amazon Elastic Block Storage (EBS) attached to each instance
+        /// The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance
         /// as defined by <code>InstanceType</code>.
         /// </para>
         /// </summary>

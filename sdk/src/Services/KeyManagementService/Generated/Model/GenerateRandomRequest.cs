@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,6 +42,11 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// For more information about entropy and random number generation, see the <a href="https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf">AWS
     /// Key Management Service Cryptographic Details</a> whitepaper.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a>
+    /// (IAM policy)
     /// </para>
     /// </summary>
     public partial class GenerateRandomRequest : AmazonKeyManagementServiceRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,26 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CanaryRunConfigInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetActiveTracing())
+            {
+                context.Writer.WritePropertyName("ActiveTracing");
+                context.Writer.Write(requestObject.ActiveTracing);
+            }
+
+            if(requestObject.IsSetEnvironmentVariables())
+            {
+                context.Writer.WritePropertyName("EnvironmentVariables");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectEnvironmentVariablesKvp in requestObject.EnvironmentVariables)
+                {
+                    context.Writer.WritePropertyName(requestObjectEnvironmentVariablesKvp.Key);
+                    var requestObjectEnvironmentVariablesValue = requestObjectEnvironmentVariablesKvp.Value;
+
+                        context.Writer.Write(requestObjectEnvironmentVariablesValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMemoryInMB())
             {
                 context.Writer.WritePropertyName("MemoryInMB");

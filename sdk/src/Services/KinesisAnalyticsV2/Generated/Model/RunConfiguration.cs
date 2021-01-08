@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes the starting parameters for an Amazon Kinesis Data Analytics application.
+    /// Describes the starting parameters for an Kinesis Data Analytics application.
     /// </summary>
     public partial class RunConfiguration
     {
@@ -58,8 +58,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property FlinkRunConfiguration. 
         /// <para>
-        /// Describes the starting parameters for an Apache Flink-based Kinesis Data Analytics
-        /// application.
+        /// Describes the starting parameters for a Flink-based Kinesis Data Analytics application.
         /// </para>
         /// </summary>
         public FlinkRunConfiguration FlinkRunConfiguration
@@ -77,7 +76,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property SqlRunConfigurations. 
         /// <para>
-        /// Describes the starting parameters for an SQL-based Kinesis Data Analytics application.
+        /// Describes the starting parameters for a SQL-based Kinesis Data Analytics application
+        /// application.
         /// </para>
         /// </summary>
         public List<SqlRunConfiguration> SqlRunConfigurations

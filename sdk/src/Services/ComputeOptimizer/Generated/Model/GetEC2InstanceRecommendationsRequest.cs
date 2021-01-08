@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,10 +34,10 @@ namespace Amazon.ComputeOptimizer.Model
     /// 
     ///  
     /// <para>
-    /// AWS Compute Optimizer currently generates recommendations for Amazon Elastic Compute
-    /// Cloud (Amazon EC2) and Amazon EC2 Auto Scaling. It generates recommendations for M,
-    /// C, R, T, and X instance families. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is.html">AWS
-    /// Compute Optimizer User Guide</a>.
+    /// AWS Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon
+    /// EC2) instances that meet a specific set of requirements. For more information, see
+    /// the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+    /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetEC2InstanceRecommendationsRequest : AmazonComputeOptimizerRequest
@@ -55,8 +55,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// If your account is the master account of an organization, use this parameter to specify
-        /// the member accounts for which you want to return instance recommendations.
+        /// If your account is the management account of an organization, use this parameter to
+        /// specify the member accounts for which you want to return instance recommendations.
         /// </para>
         ///  
         /// <para>

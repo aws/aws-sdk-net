@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,9 +30,9 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateGlobalCluster operation.
-    /// Creates an Aurora global database spread across multiple regions. The global database
-    /// contains a single primary cluster with read-write capability, and a read-only secondary
-    /// cluster that receives data from the primary cluster through high-speed replication
+    /// Creates an Aurora global database spread across multiple AWS Regions. The global
+    /// database contains a single primary cluster with read-write capability, and a read-only
+    /// secondary cluster that receives data from the primary cluster through high-speed replication
     /// performed by the Aurora storage subsystem. 
     /// 
     ///  
@@ -100,7 +100,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Provides the name of the database engine to be used for this DB cluster.
+        /// The name of the database engine to be used for this DB cluster.
         /// </para>
         /// </summary>
         public string Engine

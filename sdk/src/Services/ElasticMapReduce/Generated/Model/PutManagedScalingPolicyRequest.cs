@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,8 +43,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ClusterId. 
         /// <para>
-        ///  Specifies the ID of an EMR cluster where the managed scaling policy is attached.
-        /// 
+        /// Specifies the ID of an EMR cluster where the managed scaling policy is attached. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +62,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ManagedScalingPolicy. 
         /// <para>
-        ///  Specifies the constraints for the managed scaling policy. 
+        /// Specifies the constraints for the managed scaling policy. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

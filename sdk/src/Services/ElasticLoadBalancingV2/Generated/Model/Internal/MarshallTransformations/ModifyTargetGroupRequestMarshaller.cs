@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -88,6 +88,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetMatcher())
                 {
+                    if(publicRequest.Matcher.IsSetGrpcCode())
+                    {
+                        request.Parameters.Add("Matcher" + "." + "GrpcCode", StringUtils.FromString(publicRequest.Matcher.GrpcCode));
+                    }
                     if(publicRequest.Matcher.IsSetHttpCode())
                     {
                         request.Parameters.Add("Matcher" + "." + "HttpCode", StringUtils.FromString(publicRequest.Matcher.HttpCode));

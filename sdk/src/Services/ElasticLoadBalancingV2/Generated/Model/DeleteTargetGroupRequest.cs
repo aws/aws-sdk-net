@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,7 +35,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     ///  
     /// <para>
     /// You can delete a target group if it is not referenced by any actions. Deleting a target
-    /// group also deletes any associated health checks.
+    /// group also deletes any associated health checks. Deleting a target group does not
+    /// affect its registered targets. For example, any EC2 instances continue to run until
+    /// you stop or terminate them.
     /// </para>
     /// </summary>
     public partial class DeleteTargetGroupRequest : AmazonElasticLoadBalancingV2Request

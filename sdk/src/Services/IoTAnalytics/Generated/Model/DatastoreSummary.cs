@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,6 +36,8 @@ namespace Amazon.IoTAnalytics.Model
         private DateTime? _creationTime;
         private string _datastoreName;
         private DatastoreStorageSummary _datastoreStorage;
+        private FileFormatType _fileFormatType;
+        private DateTime? _lastMessageArrivalTime;
         private DateTime? _lastUpdateTime;
         private DatastoreStatus _status;
 
@@ -92,6 +94,52 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetDatastoreStorage()
         {
             return this._datastoreStorage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileFormatType. 
+        /// <para>
+        /// The file format of the data in the data store.
+        /// </para>
+        /// </summary>
+        public FileFormatType FileFormatType
+        {
+            get { return this._fileFormatType; }
+            set { this._fileFormatType = value; }
+        }
+
+        // Check to see if FileFormatType property is set
+        internal bool IsSetFileFormatType()
+        {
+            return this._fileFormatType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastMessageArrivalTime. 
+        /// <para>
+        /// The last time when a new message arrived in the data store.
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS IoT Analytics updates this value at most once per minute for one data store. Hence,
+        /// the <code>lastMessageArrivalTime</code> value is an approximation.
+        /// </para>
+        ///  
+        /// <para>
+        /// This feature only applies to messages that arrived in the data store after October
+        /// 23, 2020. 
+        /// </para>
+        /// </summary>
+        public DateTime LastMessageArrivalTime
+        {
+            get { return this._lastMessageArrivalTime.GetValueOrDefault(); }
+            set { this._lastMessageArrivalTime = value; }
+        }
+
+        // Check to see if LastMessageArrivalTime property is set
+        internal bool IsSetLastMessageArrivalTime()
+        {
+            return this._lastMessageArrivalTime.HasValue; 
         }
 
         /// <summary>

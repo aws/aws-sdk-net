@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,8 +42,10 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
         /// <para>
-        /// Specifies whether the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a>
-        /// is an absolute number or a percentage of the current capacity. 
+        /// Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a>
+        /// is interpreted (for example, an absolute number or a percentage). The valid values
+        /// are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -67,18 +69,21 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property Cooldown. 
         /// <para>
         /// The amount of time, in seconds, to wait for a previous scaling activity to take effect.
+        /// 
         /// </para>
         ///  
         /// <para>
         /// With scale-out policies, the intention is to continuously (but not excessively) scale
         /// out. After Application Auto Scaling successfully scales out using a step scaling policy,
-        /// it starts to calculate the cooldown time. While the cooldown period is in effect,
-        /// capacity added by the initiating scale-out activity is calculated as part of the desired
-        /// capacity for the next scale-out activity. For example, when an alarm triggers a step
-        /// scaling policy to increase the capacity by 2, the scaling activity completes successfully,
-        /// and a cooldown period starts. If the alarm triggers again during the cooldown period
-        /// but at a more aggressive step adjustment of 3, the previous increase of 2 is considered
-        /// part of the current capacity. Therefore, only 1 is added to the capacity.
+        /// it starts to calculate the cooldown time. The scaling policy won't increase the desired
+        /// capacity again unless either a larger scale out is triggered or the cooldown period
+        /// ends. While the cooldown period is in effect, capacity added by the initiating scale-out
+        /// activity is calculated as part of the desired capacity for the next scale-out activity.
+        /// For example, when an alarm triggers a step scaling policy to increase the capacity
+        /// by 2, the scaling activity completes successfully, and a cooldown period starts. If
+        /// the alarm triggers again during the cooldown period but at a more aggressive step
+        /// adjustment of 3, the previous increase of 2 is considered part of the current capacity.
+        /// Therefore, only 1 is added to the capacity.
         /// </para>
         ///  
         /// <para>
@@ -136,7 +141,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Comprehend document classification endpoints
+        /// Amazon Comprehend document classification and entity recognizer endpoints
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -145,6 +150,10 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         /// Amazon Keyspaces tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon MSK cluster storage
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -183,16 +192,12 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinAdjustmentMagnitude. 
         /// <para>
-        /// The minimum value to scale by when scaling by percentages. For example, suppose that
-        /// you create a step scaling policy to scale out an Amazon ECS service by 25 percent
-        /// and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks
-        /// and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified
-        /// a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the
-        /// service by 2 tasks.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid only if the adjustment type is <code>PercentChangeInCapacity</code>. 
+        /// The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>.
+        /// For example, suppose that you create a step scaling policy to scale out an Amazon
+        /// ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
+        /// 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4
+        /// is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Application
+        /// Auto Scaling scales out the service by 2 tasks.
         /// </para>
         /// </summary>
         public int MinAdjustmentMagnitude

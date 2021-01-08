@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -58,6 +58,14 @@ namespace Amazon.ConfigService.Model
         public IGetResourceConfigHistoryPaginator GetResourceConfigHistory(GetResourceConfigHistoryRequest request) 
         {
             return new GetResourceConfigHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListStoredQueries operation
+        ///</summary>
+        public IListStoredQueriesPaginator ListStoredQueries(ListStoredQueriesRequest request) 
+        {
+            return new ListStoredQueriesPaginator(this.client, request);
         }
 
         /// <summary>

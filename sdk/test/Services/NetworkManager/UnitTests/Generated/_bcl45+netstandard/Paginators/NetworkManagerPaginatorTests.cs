@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -70,6 +70,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.DescribeGlobalNetworks(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.DescribeGlobalNetworks(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("NetworkManager")]
+        public void GetConnectionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetConnectionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetConnectionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetConnectionsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetConnections(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetConnections(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("NetworkManager")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetConnectionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetConnectionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetConnectionsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetConnections(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetConnections(request);
 
             // Should work the first time
             paginator.Responses.ToList();
@@ -265,6 +304,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.GetSites(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.GetSites(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("NetworkManager")]
+        public void GetTransitGatewayConnectPeerAssociationsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<GetTransitGatewayConnectPeerAssociationsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<GetTransitGatewayConnectPeerAssociationsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<GetTransitGatewayConnectPeerAssociationsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.GetTransitGatewayConnectPeerAssociations(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.GetTransitGatewayConnectPeerAssociations(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("NetworkManager")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void GetTransitGatewayConnectPeerAssociationsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<GetTransitGatewayConnectPeerAssociationsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<GetTransitGatewayConnectPeerAssociationsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.GetTransitGatewayConnectPeerAssociations(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.GetTransitGatewayConnectPeerAssociations(request);
 
             // Should work the first time
             paginator.Responses.ToList();

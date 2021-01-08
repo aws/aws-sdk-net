@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -319,6 +319,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PendingModifiedValues", targetDepth))
+                    {
+                        var unmarshaller = ClusterPendingModifiedValuesUnmarshaller.Instance;
+                        unmarshalledObject.PendingModifiedValues = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("PercentProgress", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -378,6 +384,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TagList/Tag", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TagList.Add(item);
                         continue;
                     }
                     if (context.TestExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth))

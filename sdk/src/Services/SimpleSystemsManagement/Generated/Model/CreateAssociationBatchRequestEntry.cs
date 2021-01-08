@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
         private string _scheduleExpression;
         private AssociationSyncCompliance _syncCompliance;
+        private List<TargetLocation> _targetLocations = new List<TargetLocation>();
         private List<Target> _targets = new List<Target>();
 
         /// <summary>
@@ -53,7 +54,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// By default, when you create a new associations, the system runs it immediately after
         /// it is created and then according to the schedule you specified. Specify this option
-        /// if you don't want an association to run immediately after you create it.
+        /// if you don't want an association to run immediately after you create it. This parameter
+        /// is not supported for rate expressions.
         /// </para>
         /// </summary>
         public bool ApplyOnlyAtCronInterval
@@ -357,6 +359,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetSyncCompliance()
         {
             return this._syncCompliance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetLocations. 
+        /// <para>
+        /// Use this action to create an association in multiple Regions and multiple accounts.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<TargetLocation> TargetLocations
+        {
+            get { return this._targetLocations; }
+            set { this._targetLocations = value; }
+        }
+
+        // Check to see if TargetLocations property is set
+        internal bool IsSetTargetLocations()
+        {
+            return this._targetLocations != null && this._targetLocations.Count > 0; 
         }
 
         /// <summary>

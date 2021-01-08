@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -95,7 +95,7 @@ namespace Amazon.Budgets.Model
         /// call, AWS creates the notifications and subscribers for you.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Max=10)]
         public List<NotificationWithSubscribers> NotificationsWithSubscribers
         {
             get { return this._notificationsWithSubscribers; }

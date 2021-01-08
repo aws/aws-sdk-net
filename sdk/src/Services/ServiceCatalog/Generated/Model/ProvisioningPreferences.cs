@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,27 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// The user-defined preferences that will be applied when updating a provisioned product.
-    /// Not all preferences are applicable to all provisioned product types.
+    /// Not all preferences are applicable to all provisioned product type
+    /// 
+    ///  
+    /// <para>
+    /// One or more AWS accounts that will have access to the provisioned product.
+    /// </para>
+    ///  
+    /// <para>
+    /// Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
+    /// </para>
+    ///  
+    /// <para>
+    /// The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code>
+    /// constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use
+    /// the <code>DescribeProvisioningParameters</code> operation.
+    /// </para>
+    ///  
+    /// <para>
+    /// If no values are specified, the default value is all accounts from the <code>STACKSET</code>
+    /// constraint.
+    /// </para>
     /// </summary>
     public partial class ProvisioningPreferences
     {
@@ -44,7 +64,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property StackSetAccounts. 
         /// <para>
-        /// One or more AWS accounts that will have access to the provisioned product.
+        /// One or more AWS accounts where the provisioned product will be available.
         /// </para>
         ///  
         /// <para>
@@ -52,13 +72,13 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code>
+        /// The specified accounts should be within the list of accounts from the <code>STACKSET</code>
         /// constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use
         /// the <code>DescribeProvisioningParameters</code> operation.
         /// </para>
         ///  
         /// <para>
-        /// If no values are specified, the default value is all accounts from the <code>STACKSET</code>
+        /// If no values are specified, the default value is all acounts from the <code>STACKSET</code>
         /// constraint.
         /// </para>
         /// </summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -52,6 +52,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
                 var marshaller = M2tsSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.M2tsSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRawSettings())
+            {
+                context.Writer.WritePropertyName("rawSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RawSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RawSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }

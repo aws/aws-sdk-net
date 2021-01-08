@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,10 +30,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the AddApplicationInputProcessingConfiguration operation.
-    /// Adds an <a>InputProcessingConfiguration</a> to an SQL-based Kinesis Data Analytics
+    /// Adds an <a>InputProcessingConfiguration</a> to a SQL-based Kinesis Data Analytics
     /// application. An input processor pre-processes records on the input stream before the
     /// application's SQL code executes. Currently, the only input processor available is
-    /// <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>.
+    /// <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.
     /// </summary>
     public partial class AddApplicationInputProcessingConfigurationRequest : AmazonKinesisAnalyticsV2Request
     {

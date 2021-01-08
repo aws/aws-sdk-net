@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PI.Model
 {
     /// <summary>
-    /// A time-ordered series of data points, correpsonding to a dimension of a Performance
+    /// A time-ordered series of data points, corresponding to a dimension of a Performance
     /// Insights metric.
     /// </summary>
     public partial class MetricKeyDataPoints

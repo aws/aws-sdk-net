@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,8 +41,27 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateTransitGatewayMulticastDomainRequest : AmazonEC2Request
     {
+        private CreateTransitGatewayMulticastDomainRequestOptions _options;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private string _transitGatewayId;
+
+        /// <summary>
+        /// Gets and sets the property Options. 
+        /// <para>
+        /// The options for the transit gateway multicast domain.
+        /// </para>
+        /// </summary>
+        public CreateTransitGatewayMulticastDomainRequestOptions Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TagSpecifications. 

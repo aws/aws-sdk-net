@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,6 +43,9 @@ namespace Amazon.Lambda
     /// Lambda: How it Works</a> in the <b>AWS Lambda Developer Guide</b>.
     /// </para>
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial interface IAmazonLambda : IAmazonService, IDisposable
     {
 #if AWS_ASYNC_ENUMERABLES_API
@@ -207,6 +210,33 @@ namespace Amazon.Lambda
 
         #endregion
                 
+        #region  CreateCodeSigningConfig
+
+
+
+        /// <summary>
+        /// Creates a code signing configuration. A <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">code
+        /// signing configuration</a> defines a list of allowed signing profiles and defines the
+        /// code-signing validation policy (action to be taken if deployment validation checks
+        /// fail).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCodeSigningConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCodeSigningConfig">REST API Reference for CreateCodeSigningConfig Operation</seealso>
+        Task<CreateCodeSigningConfigResponse> CreateCodeSigningConfigAsync(CreateCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateEventSourceMapping
 
 
@@ -236,8 +266,18 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS Lambda
+        /// with Amazon MQ</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda
         /// with Amazon MSK</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS
+        /// Lambda with Self-Managed Apache Kafka</a> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -257,13 +297,14 @@ namespace Amazon.Lambda
         ///  </li> <li> 
         /// <para>
         ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
-        /// age. Default -1 (infinite). Minimum 60. Maximum 604800.
+        /// age. The default value is infinite (-1). When set to infinite (-1), failed records
+        /// are retried until the record expires
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
-        /// retries. Default -1 (infinite). Minimum 0. Maximum 10000. When infinite, failed records
-        /// will be retried until the record expires.
+        /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
+        /// are retried until the record expires.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -302,11 +343,11 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Creates a Lambda function. To create a function, you need a <a href="https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html">deployment
+        /// Creates a Lambda function. To create a function, you need a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment
         /// package</a> and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
-        /// role</a>. The deployment package contains your function code. The execution role grants
-        /// the function permission to use AWS services, such as Amazon CloudWatch Logs for log
-        /// streaming and AWS X-Ray for request tracing.
+        /// role</a>. The deployment package is a .zip file archive or container image that contains
+        /// your function code. The execution role grants the function permission to use AWS services,
+        /// such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for request tracing.
         /// 
         ///  
         /// <para>
@@ -337,6 +378,15 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
+        /// You can use code signing if your deployment package is a .zip file archive. To enable
+        /// code signing for this function, specify the ARN of a code-signing configuration. When
+        /// a user attempts to deploy a code package with <a>UpdateFunctionCode</a>, Lambda checks
+        /// that the code package has a valid signature from a trusted publisher. The code-signing
+        /// configuration includes set set of signing profiles, which define the trusted publishers
+        /// for this function.
+        /// </para>
+        ///  
+        /// <para>
         /// If another account or an AWS service invokes your function, use <a>AddPermission</a>
         /// to grant permission by creating a resource-based IAM policy. You can grant permissions
         /// at the function level, on a version, or on an alias.
@@ -356,9 +406,20 @@ namespace Amazon.Lambda
         /// </param>
         /// 
         /// <returns>The response from the CreateFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeSigningConfigNotFoundException">
+        /// The specified code signing configuration does not exist.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
         /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
         /// more</a>
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.CodeVerificationFailedException">
+        /// The code signature failed one or more of the validation checks for signature mismatch
+        /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
+        /// The code signature failed the integrity check. Lambda always blocks deployment if
+        /// the integrity check fails, even if code signing policy is set to WARN.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid.
@@ -407,6 +468,37 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteCodeSigningConfig
+
+
+
+        /// <summary>
+        /// Deletes the code signing configuration. You can delete the code signing configuration
+        /// only if no function is using it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCodeSigningConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCodeSigningConfig">REST API Reference for DeleteCodeSigningConfig Operation</seealso>
+        Task<DeleteCodeSigningConfigResponse> DeleteCodeSigningConfigAsync(DeleteCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -525,6 +617,42 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteFunctionCodeSigningConfig
+
+
+
+        /// <summary>
+        /// Removes the code signing configuration from the function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunctionCodeSigningConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFunctionCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeSigningConfigNotFoundException">
+        /// The specified code signing configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionCodeSigningConfig">REST API Reference for DeleteFunctionCodeSigningConfig Operation</seealso>
+        Task<DeleteFunctionCodeSigningConfigResponse> DeleteFunctionCodeSigningConfigAsync(DeleteFunctionCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -712,6 +840,33 @@ namespace Amazon.Lambda
 
         #endregion
                 
+        #region  GetCodeSigningConfig
+
+
+
+        /// <summary>
+        /// Returns information about the specified code signing configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCodeSigningConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCodeSigningConfig">REST API Reference for GetCodeSigningConfig Operation</seealso>
+        Task<GetCodeSigningConfigResponse> GetCodeSigningConfigAsync(GetCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetEventSourceMapping
 
 
@@ -798,6 +953,36 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetFunctionCodeSigningConfig
+
+
+
+        /// <summary>
+        /// Returns the code signing configuration for the specified function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunctionCodeSigningConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFunctionCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionCodeSigningConfig">REST API Reference for GetFunctionCodeSigningConfig Operation</seealso>
+        Task<GetFunctionCodeSigningConfigResponse> GetFunctionCodeSigningConfigAsync(GetFunctionCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1325,6 +1510,33 @@ namespace Amazon.Lambda
 
         #endregion
                 
+        #region  ListCodeSigningConfigs
+
+
+
+        /// <summary>
+        /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code
+        /// signing configurations</a>. A request returns up to 10,000 configurations per call.
+        /// You can use the <code>MaxItems</code> parameter to return fewer configurations per
+        /// call.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodeSigningConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCodeSigningConfigs service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs">REST API Reference for ListCodeSigningConfigs Operation</seealso>
+        Task<ListCodeSigningConfigsResponse> ListCodeSigningConfigsAsync(ListCodeSigningConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListEventSourceMappings
 
 
@@ -1451,6 +1663,35 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListFunctionsByCodeSigningConfig
+
+
+
+        /// <summary>
+        /// List the functions that use the specified code signing configuration. You can use
+        /// this method prior to deleting a code signing configuration, to verify that no functions
+        /// are using it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctionsByCodeSigningConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFunctionsByCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsByCodeSigningConfig">REST API Reference for ListFunctionsByCodeSigningConfig Operation</seealso>
+        Task<ListFunctionsByCodeSigningConfigResponse> ListFunctionsByCodeSigningConfigAsync(ListFunctionsByCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1704,6 +1945,44 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         Task<PublishVersionResponse> PublishVersionAsync(PublishVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutFunctionCodeSigningConfig
+
+
+
+        /// <summary>
+        /// Update the code signing configuration for the function. Changes to the code signing
+        /// configuration take effect the next time a user tries to deploy a code package to the
+        /// function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFunctionCodeSigningConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutFunctionCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeSigningConfigNotFoundException">
+        /// The specified code signing configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionCodeSigningConfig">REST API Reference for PutFunctionCodeSigningConfig Operation</seealso>
+        Task<PutFunctionCodeSigningConfigResponse> PutFunctionCodeSigningConfigAsync(PutFunctionCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2019,6 +2298,34 @@ namespace Amazon.Lambda
 
         #endregion
                 
+        #region  UpdateCodeSigningConfig
+
+
+
+        /// <summary>
+        /// Update the code signing configuration. Changes to the code signing configuration take
+        /// effect the next time a user tries to deploy a code package to the function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCodeSigningConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCodeSigningConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCodeSigningConfig">REST API Reference for UpdateCodeSigningConfig Operation</seealso>
+        Task<UpdateCodeSigningConfigResponse> UpdateCodeSigningConfigAsync(UpdateCodeSigningConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateEventSourceMapping
 
 
@@ -2045,13 +2352,14 @@ namespace Amazon.Lambda
         ///  </li> <li> 
         /// <para>
         ///  <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified
-        /// age. Default -1 (infinite). Minimum 60. Maximum 604800.
+        /// age. The default value is infinite (-1). When set to infinite (-1), failed records
+        /// are retried until the record expires
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>MaximumRetryAttempts</code> - Discard records after the specified number of
-        /// retries. Default -1 (infinite). Minimum 0. Maximum 10000. When infinite, failed records
-        /// will be retried until the record expires.
+        /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
+        /// are retried until the record expires.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2095,13 +2403,22 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Updates a Lambda function's code.
+        /// Updates a Lambda function's code. If code signing is enabled for the function, the
+        /// code package must be signed by a trusted publisher. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">Configuring
+        /// code signing</a>.
         /// 
         ///  
         /// <para>
         /// The function's code is locked when you publish a version. You can't modify the code
         /// of a published version, only the unpublished version.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For a function defined as a container image, Lambda resolves the image tag to an image
+        /// digest. In Amazon ECR, if you update the image tag to a new image, Lambda does not
+        /// automatically update the function.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunctionCode service method.</param>
         /// <param name="cancellationToken">
@@ -2109,9 +2426,20 @@ namespace Amazon.Lambda
         /// </param>
         /// 
         /// <returns>The response from the UpdateFunctionCode service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeSigningConfigNotFoundException">
+        /// The specified code signing configuration does not exist.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
         /// You have exceeded your maximum total code size per account. <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn
         /// more</a>
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.CodeVerificationFailedException">
+        /// The code signature failed one or more of the validation checks for signature mismatch
+        /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
+        /// The code signature failed the integrity check. Lambda always blocks deployment if
+        /// the integrity check fails, even if code signing policy is set to WARN.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid.
@@ -2174,6 +2502,17 @@ namespace Amazon.Lambda
         /// </param>
         /// 
         /// <returns>The response from the UpdateFunctionConfiguration service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeSigningConfigNotFoundException">
+        /// The specified code signing configuration does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.CodeVerificationFailedException">
+        /// The code signature failed one or more of the validation checks for signature mismatch
+        /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
+        /// The code signature failed the integrity check. Lambda always blocks deployment if
+        /// the integrity check fails, even if code signing policy is set to WARN.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is invalid.
         /// </exception>

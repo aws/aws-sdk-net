@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ namespace Amazon.AutoScaling.Model
     /// between Availability Zones. Amazon EC2 Auto Scaling tries to rebalance the group,
     /// and rebalancing might terminate instances in other zones. For more information, see
     /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html#AutoScalingBehavior.InstanceUsage">Rebalancing
-    /// Activities</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// activities</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class TerminateInstanceInAutoScalingGroupRequest : AmazonAutoScalingRequest

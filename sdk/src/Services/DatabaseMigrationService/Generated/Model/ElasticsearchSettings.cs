@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,7 +41,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointUri. 
         /// <para>
-        /// The endpoint for the Elasticsearch cluster.
+        /// The endpoint for the Elasticsearch cluster. AWS DMS uses HTTPS if a transport protocol
+        /// (http/https) is not specified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +81,14 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property FullLoadErrorPercentage. 
         /// <para>
         /// The maximum percentage of records that can fail to be written before a full load operation
-        /// stops. 
+        /// stops.
+        /// </para>
+        ///  
+        /// <para>
+        /// To avoid early failure, this counter is only effective after 1000 records are transferred.
+        /// Elasticsearch also has the concept of error monitoring during the last 10 minutes
+        /// of an Observation Window. If transfer of all records fail in the last 10 minutes,
+        /// the full load operation stops. 
         /// </para>
         /// </summary>
         public int FullLoadErrorPercentage

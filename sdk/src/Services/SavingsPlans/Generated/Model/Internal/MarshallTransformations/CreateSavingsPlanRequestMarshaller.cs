@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -81,6 +81,12 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("commitment");
                     context.Writer.Write(publicRequest.Commitment);
+                }
+
+                if(publicRequest.IsSetPurchaseTime())
+                {
+                    context.Writer.WritePropertyName("purchaseTime");
+                    context.Writer.Write(publicRequest.PurchaseTime);
                 }
 
                 if(publicRequest.IsSetSavingsPlanOfferingId())

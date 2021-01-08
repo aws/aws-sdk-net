@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -188,6 +188,22 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// <para>
         /// From 2017-09-15 to present: Available monthly on the 15th day of the month by 24:00
         /// UTC.
+        /// </para>
+        ///  </li> <li> <strong>disbursed_amount_by_product_with_uncollected_funds</strong> 
+        /// <para>
+        /// This data set is deprecated. Download related reports from AMMP instead!
+        /// </para>
+        ///  </li> <li> <strong>customer_profile_by_industry</strong> 
+        /// <para>
+        /// This data set is deprecated. Download related reports from AMMP instead!
+        /// </para>
+        ///  </li> <li> <strong>customer_profile_by_revenue</strong> 
+        /// <para>
+        /// This data set is deprecated. Download related reports from AMMP instead!
+        /// </para>
+        ///  </li> <li> <strong>customer_profile_by_geography</strong> 
+        /// <para>
+        /// This data set is deprecated. Download related reports from AMMP instead!
         /// </para>
         ///  </li> </ul> 
         /// </para>

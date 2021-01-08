@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -77,6 +77,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetPortalAuthMode())
+                {
+                    context.Writer.WritePropertyName("portalAuthMode");
+                    context.Writer.Write(publicRequest.PortalAuthMode);
+                }
+
                 if(publicRequest.IsSetPortalContactEmail())
                 {
                     context.Writer.WritePropertyName("portalContactEmail");

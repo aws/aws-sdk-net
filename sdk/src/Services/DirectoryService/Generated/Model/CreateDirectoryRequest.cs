@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -100,6 +100,40 @@ namespace Amazon.DirectoryService.Model
         /// <para>
         /// If you need to change the password for the administrator account, you can use the
         /// <a>ResetUserPassword</a> API call.
+        /// </para>
+        ///  
+        /// <para>
+        /// The regex pattern for this string is made up of the following conditions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Length (?=^.{8,64}$) – Must be between 8 and 64 characters
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// AND any 3 of the following password complexity rules required by Active Directory:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For additional information about how Active Directory passwords are enforced, see
+        /// <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password
+        /// must meet complexity requirements</a> on the Microsoft website.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

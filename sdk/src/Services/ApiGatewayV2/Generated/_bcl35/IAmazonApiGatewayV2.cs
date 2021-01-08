@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -2900,6 +2900,53 @@ namespace Amazon.ApiGatewayV2
         /// <returns>Returns a  ReimportApiResult from ApiGatewayV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ReimportApi">REST API Reference for ReimportApi Operation</seealso>
         ReimportApiResponse EndReimportApi(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ResetAuthorizersCache
+
+
+        /// <summary>
+        /// Resets all authorizer cache entries on a stage. Supported only for HTTP APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetAuthorizersCache service method.</param>
+        /// 
+        /// <returns>The response from the ResetAuthorizersCache service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ResetAuthorizersCache">REST API Reference for ResetAuthorizersCache Operation</seealso>
+        ResetAuthorizersCacheResponse ResetAuthorizersCache(ResetAuthorizersCacheRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetAuthorizersCache operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetAuthorizersCache operation on AmazonApiGatewayV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetAuthorizersCache
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ResetAuthorizersCache">REST API Reference for ResetAuthorizersCache Operation</seealso>
+        IAsyncResult BeginResetAuthorizersCache(ResetAuthorizersCacheRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetAuthorizersCache operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetAuthorizersCache.</param>
+        /// 
+        /// <returns>Returns a  ResetAuthorizersCacheResult from ApiGatewayV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ResetAuthorizersCache">REST API Reference for ResetAuthorizersCache Operation</seealso>
+        ResetAuthorizersCacheResponse EndResetAuthorizersCache(IAsyncResult asyncResult);
 
         #endregion
         

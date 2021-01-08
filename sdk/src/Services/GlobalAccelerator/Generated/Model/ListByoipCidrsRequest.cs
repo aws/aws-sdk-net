@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,11 +32,6 @@ namespace Amazon.GlobalAccelerator.Model
     /// Container for the parameters to the ListByoipCidrs operation.
     /// Lists the IP address ranges that were specified in calls to <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>,
     /// including the current state and a history of state changes.
-    /// 
-    ///  
-    /// <para>
-    /// To see an AWS CLI example of listing BYOIP CIDR addresses, scroll down to <b>Example</b>.
-    /// </para>
     /// </summary>
     public partial class ListByoipCidrsRequest : AmazonGlobalAcceleratorRequest
     {

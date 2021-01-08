@@ -16,6 +16,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListInputDeviceTransfersRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.ListInputsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -55,6 +60,11 @@
     <max>31</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.AncillarySourceSettings.SourceAncillaryChannelNumber</property>
+    <min>1</min>
+    <max>4</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.ArchiveGroupSettings.RolloverInterval</property>
     <min>1</min>
   </property-value-rule>
@@ -78,7 +88,15 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.AudioSilenceFailoverSettings.AudioSilenceThresholdMsec</property>
+    <min>1000</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.AudioTrack.Track</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.AutomaticInputFailoverSettings.ErrorClearTimeMsec</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -528,6 +546,10 @@
     <max>1000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.InputLossFailoverSettings.InputLossThresholdMsec</property>
+    <min>100</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.InputSettings.FilterStrength</property>
     <min>1</min>
     <max>5</max>
@@ -604,6 +626,23 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.Mpeg2Settings.FramerateDenominator</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Mpeg2Settings.FramerateNumerator</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Mpeg2Settings.GopClosedCadence</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Mpeg2Settings.GopNumBFrames</property>
+    <min>0</min>
+    <max>7</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.MsSmoothGroupSettings.ConnectionRetryInterval</property>
     <min>0</min>
   </property-value-rule>
@@ -655,7 +694,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.MultiplexSettings.MaximumVideoBufferDelayMilliseconds</property>
-    <min>1000</min>
+    <min>800</min>
     <max>3000</max>
   </property-value-rule>
   <property-value-rule>
@@ -687,6 +726,11 @@
     <property>Amazon.MediaLive.Model.MultiplexStatmuxVideoSettings.MinimumBitrate</property>
     <min>100000</min>
     <max>100000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexStatmuxVideoSettings.Priority</property>
+    <min>-5</min>
+    <max>5</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.MultiplexVideoSettings.ConstantBitrate</property>
@@ -871,6 +915,10 @@
     <property>Amazon.MediaLive.Model.UdpOutputSettings.BufferMsec</property>
     <min>0</min>
     <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.VideoBlackFailoverSettings.VideoBlackThresholdMsec</property>
+    <min>1000</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.VideoDescription.Sharpness</property>

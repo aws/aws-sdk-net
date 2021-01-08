@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DescribeDomainResponse : AmazonWebServiceResponse
     {
+        private AppNetworkAccessType _appNetworkAccessType;
         private AuthMode _authMode;
         private DateTime? _creationTime;
         private UserSettings _defaultUserSettings;
@@ -42,12 +43,41 @@ namespace Amazon.SageMaker.Model
         private string _failureReason;
         private string _homeEfsFileSystemId;
         private string _homeEfsFileSystemKmsKeyId;
+        private string _kmsKeyId;
         private DateTime? _lastModifiedTime;
         private string _singleSignOnManagedApplicationInstanceId;
         private DomainStatus _status;
         private List<string> _subnetIds = new List<string>();
         private string _url;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AppNetworkAccessType. 
+        /// <para>
+        /// Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon
+        /// SageMaker, which allows direct internet access
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AppNetworkAccessType AppNetworkAccessType
+        {
+            get { return this._appNetworkAccessType; }
+            set { this._appNetworkAccessType = value; }
+        }
+
+        // Check to see if AppNetworkAccessType property is set
+        internal bool IsSetAppNetworkAccessType()
+        {
+            return this._appNetworkAccessType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AuthMode. 
@@ -88,7 +118,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultUserSettings. 
         /// <para>
-        /// Settings which are applied to all UserProfile in this domain, if settings are not
+        /// Settings which are applied to all UserProfiles in this domain, if settings are not
         /// explicitly specified in a given UserProfile. 
         /// </para>
         /// </summary>
@@ -202,9 +232,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystemKmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service encryption key ID.
+        /// This member is deprecated and replaced with <code>KmsKeyId</code>.
         /// </para>
         /// </summary>
+        [Obsolete("This property is deprecated, use KmsKeyId instead.")]
         [AWSProperty(Max=2048)]
         public string HomeEfsFileSystemKmsKeyId
         {
@@ -216,6 +247,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHomeEfsFileSystemKmsKeyId()
         {
             return this._homeEfsFileSystemKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>
@@ -276,7 +326,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// Security setting to limit to a set of subnets.
+        /// The VPC subnets that Studio uses for communication.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16)]
@@ -314,7 +364,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the Amazon Virtual Private Cloud.
+        /// The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]

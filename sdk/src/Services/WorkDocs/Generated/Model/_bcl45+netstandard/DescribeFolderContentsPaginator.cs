@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -66,6 +66,7 @@ namespace Amazon.WorkDocs.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var marker = _request.Marker;
             DescribeFolderContentsResponse response;
             do
@@ -75,7 +76,7 @@ namespace Amazon.WorkDocs.Model
                 marker = response.Marker;
                 yield return response;
             }
-            while (marker != null);
+            while (!string.IsNullOrEmpty(marker));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -85,6 +86,7 @@ namespace Amazon.WorkDocs.Model
             {
                 throw new System.InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var marker = _request.Marker;
             DescribeFolderContentsResponse response;
             do
@@ -95,7 +97,7 @@ namespace Amazon.WorkDocs.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (marker != null);
+            while (!string.IsNullOrEmpty(marker));
         }
 #endif
     }

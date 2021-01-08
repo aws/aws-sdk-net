@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,7 +41,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// One or more keys to limit the results. Valid filter keys include the following: DocumentNamePrefix,
-        /// ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter.
+        /// ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter,
+        /// TargetResourceGroup.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

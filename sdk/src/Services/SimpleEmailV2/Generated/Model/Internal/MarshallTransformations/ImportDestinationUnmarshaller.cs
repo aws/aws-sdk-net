@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,6 +64,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ContactListDestination", targetDepth))
+                {
+                    var unmarshaller = ContactListDestinationUnmarshaller.Instance;
+                    unmarshalledObject.ContactListDestination = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SuppressionListDestination", targetDepth))
                 {
                     var unmarshaller = SuppressionListDestinationUnmarshaller.Instance;

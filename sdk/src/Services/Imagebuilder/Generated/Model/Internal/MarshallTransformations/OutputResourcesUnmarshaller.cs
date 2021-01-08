@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<Ami, AmiUnmarshaller>(AmiUnmarshaller.Instance);
                     unmarshalledObject.Amis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("containers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Container, ContainerUnmarshaller>(ContainerUnmarshaller.Instance);
+                    unmarshalledObject.Containers = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

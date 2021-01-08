@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -62,7 +62,7 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// The match options that you can use to filter your results. <code>MatchOptions</code>
         /// is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code>
-        /// is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+        /// are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
         /// </para>
         /// </summary>
         public List<string> MatchOptions

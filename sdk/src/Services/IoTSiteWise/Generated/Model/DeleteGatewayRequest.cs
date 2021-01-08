@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,8 +31,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the DeleteGateway operation.
     /// Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of the gateway's
-    /// files remain in your gateway's file system. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-retention.html">Data
-    /// retention</a> in the <i>AWS IoT SiteWise User Guide</i>.
+    /// files remain in your gateway's file system.
     /// </summary>
     public partial class DeleteGatewayRequest : AmazonIoTSiteWiseRequest
     {

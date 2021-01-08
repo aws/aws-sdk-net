@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// A list of availability zones corresponding to the segments in a trace.
+    /// A list of Availability Zones corresponding to the segments in a trace.
     /// </summary>
     public partial class AvailabilityZoneDetail
     {
@@ -38,7 +38,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a corresponding availability zone.
+        /// The name of a corresponding Availability Zone.
         /// </para>
         /// </summary>
         public string Name

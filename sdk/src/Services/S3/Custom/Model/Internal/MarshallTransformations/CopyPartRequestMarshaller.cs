@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Util;
 using System.Globalization;
+using Amazon.S3.Internal;
 
 #pragma warning disable 1591
 
@@ -82,6 +83,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if(copyPartRequest.IsSetFirstByte() && copyPartRequest.IsSetLastByte())
             	request.Headers.Add(HeaderKeys.XAmzCopySourceRangeHeader, ConstructCopySourceRangeHeader(copyPartRequest.FirstByte, copyPartRequest.LastByte));
 
+            if (copyPartRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(copyPartRequest.ExpectedBucketOwner));
+
+            if (copyPartRequest.IsSetExpectedSourceBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedSourceBucketOwner, S3Transforms.ToStringValue(copyPartRequest.ExpectedSourceBucketOwner));
+
             if (string.IsNullOrEmpty(copyPartRequest.DestinationBucket))
                 throw new System.ArgumentException("DestinationBucket is a required property and must be set before making this call.", "CopyPartRequest.DestinationBucket");
 
@@ -106,7 +113,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             string source;
             if (!String.IsNullOrEmpty(key))
             {
-                var isAccessPoint = IsS3AccessPointsArn(bucket);
+                var isAccessPoint = S3ArnUtils.IsS3AccessPointsArn(bucket) || S3ArnUtils.IsS3OutpostsArn(bucket);
                 // 'object/' needed appended to key for copy header with access points
                 source = AmazonS3Util.UrlEncode(String.Concat(bucket, isAccessPoint ? "/object/" : "/", key), !isAccessPoint);
                 if (!String.IsNullOrEmpty(version))
@@ -125,17 +132,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         static string ConstructCopySourceRangeHeader(long firstByte, long lastByte)
         {
             return string.Format(CultureInfo.InvariantCulture, "bytes={0}-{1}", firstByte, lastByte);
-        }
-
-        private static bool IsS3AccessPointsArn(string bucket)
-        {
-            Arn arn;
-            if (Arn.TryParse(bucket, out arn))
-            {
-                string accessPointString;
-                return arn.TryParseAccessPoint(out accessPointString);
-            }
-            return false;
         }
 
         private static CopyPartRequestMarshaller _instance;

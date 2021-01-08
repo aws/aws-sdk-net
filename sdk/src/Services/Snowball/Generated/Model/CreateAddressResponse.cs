@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,7 +39,8 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property AddressId. 
         /// <para>
         /// The automatically generated ID for a specific address. You'll use this ID when you
-        /// create a job to specify which address you want the Snowball for that job shipped to.
+        /// create a job to specify which address you want the Snow device for that job shipped
+        /// to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

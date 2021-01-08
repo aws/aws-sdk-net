@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// The operating systems you specified is not supported, or the operation is not supported
-    /// for the operating system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux,
-    /// and Ubuntu.
+    /// for the operating system.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

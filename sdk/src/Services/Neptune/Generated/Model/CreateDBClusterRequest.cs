@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -293,12 +293,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// True to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-        /// accounts, and otherwise false.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>false</code> 
+        /// Not supported by Neptune.
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -339,12 +334,11 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the database engine to use. Currently, setting this parameter
-        /// has no effect.
+        /// The version number of the database engine to use for the new DB cluster.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>1.0.1</code> 
+        /// Example: <code>1.0.2.1</code> 
         /// </para>
         /// </summary>
         public string EngineVersion

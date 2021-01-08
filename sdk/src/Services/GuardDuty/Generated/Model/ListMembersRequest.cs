@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMembers operation.
-    /// Lists details about all member accounts for the current GuardDuty master account.
+    /// Lists details about all member accounts for the current GuardDuty administrator account.
     /// </summary>
     public partial class ListMembersRequest : AmazonGuardDutyRequest
     {

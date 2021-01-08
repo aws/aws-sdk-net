@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -47,27 +47,7 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>Confidence</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>Criticality</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <code>Note</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>RelatedFindings</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>Severity</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>Types</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -80,6 +60,33 @@ namespace Amazon.SecurityHub.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>Workflow</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <code>BatchImportFindings</code> can be used to update the following finding fields
+    /// and objects only if they have not been updated using <code>BatchUpdateFindings</code>.
+    /// After they are updated using <code>BatchUpdateFindings</code>, these fields cannot
+    /// be updated using <code>BatchImportFindings</code>.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>Confidence</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Criticality</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>RelatedFindings</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Severity</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>Types</code> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

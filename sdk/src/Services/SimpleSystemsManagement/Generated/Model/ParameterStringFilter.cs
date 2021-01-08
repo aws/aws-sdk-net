@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,30 +30,6 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// One or more filters. Use a filter to return a more specific list of results.
-    /// 
-    ///  <important> 
-    /// <para>
-    /// The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a>
-    /// and <a>GetParametersByPath</a> API actions. However, not all of the pattern values
-    /// listed for <code>Key</code> can be used with both actions.
-    /// </para>
-    ///  
-    /// <para>
-    /// For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception
-    /// of <code>Label</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code>
-    /// are not valid: <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
-    /// </para>
-    ///  
-    /// <para>
-    /// For examples of CLI commands demonstrating valid parameter filter constructions, see
-    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching
-    /// for Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
-    /// </para>
-    ///  </important>
     /// </summary>
     public partial class ParameterStringFilter
     {
@@ -66,6 +42,29 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The name of the filter.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a>
+        /// and <a>GetParametersByPath</a> API actions. However, not all of the pattern values
+        /// listed for <code>Key</code> can be used with both actions.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception
+        /// of <code>Label</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code>
+        /// are not valid: <code>tag</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For examples of CLI commands demonstrating valid parameter filter constructions, see
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching
+        /// for Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=132)]
         public string Key
@@ -91,8 +90,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// For filters used with <a>GetParametersByPath</a>, valid options include <code>Equals</code>
-        /// and <code>BeginsWith</code>. (Exception: For filters using the key <code>Label</code>,
-        /// the only valid option is <code>Equals</code>.)
+        /// and <code>BeginsWith</code>. (Exception: For filters using <code>Label</code> as the
+        /// Key name, the only valid option is <code>Equals</code>.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

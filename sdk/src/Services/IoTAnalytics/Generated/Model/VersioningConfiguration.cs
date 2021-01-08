@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// Information about the versioning of data set contents.
+    /// Information about the versioning of dataset contents.
     /// </summary>
     public partial class VersioningConfiguration
     {
@@ -39,8 +39,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property MaxVersions. 
         /// <para>
-        /// How many versions of data set contents will be kept. The "unlimited" parameter must
-        /// be false.
+        /// How many versions of dataset contents are kept. The <code>unlimited</code> parameter
+        /// must be <code>false</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -59,7 +59,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Unlimited. 
         /// <para>
-        /// If true, unlimited versions of data set contents will be kept.
+        /// If true, unlimited versions of dataset contents are kept.
         /// </para>
         /// </summary>
         public bool Unlimited

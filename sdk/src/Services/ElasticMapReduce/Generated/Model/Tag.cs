@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// A key/value pair containing user-defined metadata that you can associate with an Amazon
+    /// A key-value pair containing user-defined metadata that you can associate with an Amazon
     /// EMR resource. Tags make it easier to associate clusters in various ways, such as grouping
     /// clusters to track your Amazon EMR resource allocation costs. For more information,
     /// see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag

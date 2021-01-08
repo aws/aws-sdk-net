@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -424,6 +424,11 @@ namespace Amazon.RDS.Model
         /// The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
         /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+        /// CreateDBCluster</a>.
+        /// </para>
         /// </summary>
         public string EngineMode
         {
@@ -514,20 +519,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key.
-        /// If you are restoring a DB cluster with the same AWS account that owns the KMS encryption
-        /// key used to encrypt the new DB cluster, then you can use the KMS key alias instead
-        /// of the ARN for the KMS encryption key.
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK). To use a CMK in a different AWS account, specify
+        /// the key ARN or alias ARN.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then the following
+        /// When you don't specify a value for the <code>KmsKeyId</code> parameter, then the following
         /// occurs:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted,
-        /// then the restored DB cluster is encrypted using the KMS key that was used to encrypt
+        /// then the restored DB cluster is encrypted using the AWS KMS CMK that was used to encrypt
         /// the DB snapshot or DB cluster snapshot.
         /// </para>
         ///  </li> <li> 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -395,7 +395,7 @@ namespace Amazon.GameLift.Model
         /// can use this parameter to specify VPCs that you've set up. This property cannot be
         /// updated after the game server group is created, and the corresponding Auto Scaling
         /// group will always use the property value that is set with this request, even if the
-        /// Auto Scaling group is updated directly
+        /// Auto Scaling group is updated directly.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

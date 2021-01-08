@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -77,6 +77,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCodeSigningConfigArn())
+                {
+                    context.Writer.WritePropertyName("CodeSigningConfigArn");
+                    context.Writer.Write(publicRequest.CodeSigningConfigArn);
+                }
+
                 if(publicRequest.IsSetDeadLetterConfig())
                 {
                     context.Writer.WritePropertyName("DeadLetterConfig");
@@ -133,6 +139,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Handler);
                 }
 
+                if(publicRequest.IsSetImageConfig())
+                {
+                    context.Writer.WritePropertyName("ImageConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ImageConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ImageConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetKMSKeyArn())
                 {
                     context.Writer.WritePropertyName("KMSKeyArn");
@@ -154,6 +171,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("MemorySize");
                     context.Writer.Write(publicRequest.MemorySize);
+                }
+
+                if(publicRequest.IsSetPackageType())
+                {
+                    context.Writer.WritePropertyName("PackageType");
+                    context.Writer.Write(publicRequest.PackageType);
                 }
 
                 if(publicRequest.IsSetPublish())

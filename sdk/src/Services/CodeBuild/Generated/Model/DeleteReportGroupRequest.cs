@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,20 +30,17 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteReportGroup operation.
-    /// <code>DeleteReportGroup</code>: Deletes a report group. Before you delete a report
-    /// group, you must delete its reports. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a>
-    /// to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a>
-    /// to delete the reports. If you call <code>DeleteReportGroup</code> for a report group
-    /// that contains one or more reports, an exception is thrown.
+    /// Deletes a report group. Before you delete a report group, you must delete its reports.
     /// </summary>
     public partial class DeleteReportGroupRequest : AmazonCodeBuildRequest
     {
         private string _arn;
+        private bool? _deleteReports;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The ARN of the report group to delete. 
+        /// The ARN of the report group to delete. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -57,6 +54,32 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteReports. 
+        /// <para>
+        /// If <code>true</code>, deletes any reports that belong to a report group before deleting
+        /// the report group. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>false</code>, you must delete any reports in the report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a>
+        /// to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a>
+        /// to delete the reports. If you call <code>DeleteReportGroup</code> for a report group
+        /// that contains one or more reports, an exception is thrown. 
+        /// </para>
+        /// </summary>
+        public bool DeleteReports
+        {
+            get { return this._deleteReports.GetValueOrDefault(); }
+            set { this._deleteReports = value; }
+        }
+
+        // Check to see if DeleteReports property is set
+        internal bool IsSetDeleteReports()
+        {
+            return this._deleteReports.HasValue; 
         }
 
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -57,10 +57,10 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagScopeTerm.  
+        /// Gets and sets the property TagScopeTerm. 
         /// <para>
-        /// A tag-based condition that defines an operator and a tag key and value for including
-        /// or excluding an object from the job.
+        /// A tag-based condition that defines the operator and tag keys or tag key and value
+        /// pairs for including or excluding an object from the job.
         /// </para>
         /// </summary>
         public TagScopeTerm TagScopeTerm

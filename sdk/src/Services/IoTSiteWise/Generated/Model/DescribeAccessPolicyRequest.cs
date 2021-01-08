@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccessPolicy operation.
-    /// Describes an access policy, which specifies an AWS SSO user or group's access to an
-    /// AWS IoT SiteWise Monitor portal or project.
+    /// Describes an access policy, which specifies an identity's access to an AWS IoT SiteWise
+    /// Monitor portal or project.
     /// </summary>
     public partial class DescribeAccessPolicyRequest : AmazonIoTSiteWiseRequest
     {

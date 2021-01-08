@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -62,6 +62,17 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDeadLetterConfig())
+            {
+                context.Writer.WritePropertyName("DeadLetterConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DeadLetterConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.DeadLetterConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEcsParameters())
             {
                 context.Writer.WritePropertyName("EcsParameters");
@@ -120,6 +131,28 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
 
                 var marshaller = KinesisParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.KinesisParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRedshiftDataParameters())
+            {
+                context.Writer.WritePropertyName("RedshiftDataParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RedshiftDataParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.RedshiftDataParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRetryPolicy())
+            {
+                context.Writer.WritePropertyName("RetryPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RetryPolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.RetryPolicy, context);
 
                 context.Writer.WriteObjectEnd();
             }

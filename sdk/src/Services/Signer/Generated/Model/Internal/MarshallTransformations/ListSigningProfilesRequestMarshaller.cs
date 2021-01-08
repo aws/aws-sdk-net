@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -67,6 +67,12 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetPlatformId())
+                request.Parameters.Add("platformId", StringUtils.FromString(publicRequest.PlatformId));
+            
+            if (publicRequest.IsSetStatuses())
+                request.ParameterCollection.Add("statuses", publicRequest.Statuses);
             request.ResourcePath = "/signing-profiles";
             request.MarshallerVersion = 2;
             request.UseQueryString = true;

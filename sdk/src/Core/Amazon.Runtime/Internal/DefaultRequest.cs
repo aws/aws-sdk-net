@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -409,11 +409,31 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         public AWS4SigningResult AWS4SignerResult { get; set; }
 
+        /// <summary>      
+        /// <para><b>WARNING: Setting DisablePayloadSigning to true disables the SigV4 payload signing 
+        /// data integrity check on this request.</b></para>  
+        /// <para>If using SigV4, the DisablePayloadSigning flag controls if the payload should be 
+        /// signed on a request by request basis. By default this flag is null which will use the 
+        /// default client behavior. The default client behavior is to sign the payload. When 
+        /// DisablePayloadSigning is true, the request will be signed with an UNSIGNED-PAYLOAD value. 
+        /// Setting DisablePayloadSigning to true requires that the request is sent over a HTTPS 
+        /// connection.</para>        
+        /// <para>Under certain circumstances, such as uploading to S3 while using MD5 hashing, it may 
+        /// be desireable to use UNSIGNED-PAYLOAD to decrease signing CPU usage. This flag only applies 
+        /// to Amazon S3 PutObject and UploadPart requests.</para>
+        /// <para>MD5Stream, SigV4 payload signing, and HTTPS each provide some data integrity 
+        /// verification. If DisableMD5Stream is true and DisablePayloadSigning is true, then the 
+        /// possibility of data corruption is completely dependant on HTTPS being the only remaining 
+        /// source of data integrity verification.</para>
+        /// </summary>
+        public bool? DisablePayloadSigning { get; set; }
+
         /// <summary>
         /// Determine whether to use a chunked encoding upload for the request
-        /// (applies to Amazon S3 PutObject and UploadPart requests only). 
+        /// (applies to Amazon S3 PutObject and UploadPart requests only).  If 
+        /// DisablePayloadSigning is true, UseChunkEncoding will be automatically 
+        /// set to false.
         /// </summary>
-        /// <returns></returns>
         public bool UseChunkEncoding { get; set; }
 
         /// <summary>
@@ -444,6 +464,13 @@ namespace Amazon.Runtime.Internal
         /// The region in which the service request was signed.
         /// </summary>
         public string DeterminedSigningRegion { get ; set; }
+
+        /// <summary>
+        /// If the request needs to be signed with a different service name 
+        /// than the client config AuthenticationServiceName, set it here to override
+        /// the result of DetermineService in AWS4Signer
+        /// </summary>
+        public string OverrideSigningServiceName { get; set; }
 
         /// <summary>
         /// Checks if the request stream can be rewinded.

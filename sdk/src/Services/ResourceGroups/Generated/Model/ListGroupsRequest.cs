@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,6 +31,20 @@ namespace Amazon.ResourceGroups.Model
     /// <summary>
     /// Container for the parameters to the ListGroups operation.
     /// Returns a list of existing resource groups in your account.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Minimum permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To run this command, you must have the following permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>resource-groups:ListGroups</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListGroupsRequest : AmazonResourceGroupsRequest
     {
@@ -58,7 +72,11 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AWS:EC2::CapacityReservationPool
+        ///  <code>AWS:EC2::CapacityReservationPool</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS:EC2::HostManagement</code> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

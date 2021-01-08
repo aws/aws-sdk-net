@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,11 +38,11 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Destination. The destination for the frame capture files.
         /// Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example,
-        /// s3ssl://sportsDelivery/highlights/20180820/curling_) or the URI for a MediaStore container,
-        /// plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling_).
+        /// s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container,
+        /// plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-).
         /// The final file names consist of the prefix from the destination field (for example,
-        /// "curling_") + name modifier + the counter (5 digits, starting from 00001) + extension
-        /// (which is always .jpg).  For example, curlingLow.00001.jpg
+        /// "curling-") + name modifier + the counter (5 digits, starting from 00001) + extension
+        /// (which is always .jpg).  For example, curling-low.00001.jpg
         /// </summary>
         [AWSProperty(Required=true)]
         public OutputLocationRef Destination

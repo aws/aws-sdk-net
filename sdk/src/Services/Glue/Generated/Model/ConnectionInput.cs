@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -81,6 +81,17 @@ namespace Amazon.Glue.Model
         /// <para>
         ///  <code>NETWORK</code> - Designates a network connection to a data source within an
         /// Amazon Virtual Private Cloud environment (Amazon VPC).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased
+        /// from AWS Marketplace to read from and write to data stores that are not natively supported
+        /// by AWS Glue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CUSTOM</code> - Uses configuration settings contained in a custom connector
+        /// to read from and write to data stores that are not natively supported by AWS Glue.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ namespace Amazon.XRay.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the requested time frame contained more than one page of results, you can use this
-        /// token to retrieve the next page. The first page contains the most most recent results,
+        /// token to retrieve the next page. The first page contains the most recent results,
         /// closest to the end of the time frame.
         /// </para>
         /// </summary>

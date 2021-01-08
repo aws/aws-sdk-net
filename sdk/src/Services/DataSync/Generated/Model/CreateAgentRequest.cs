@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ namespace Amazon.DataSync.Model
     ///  
     /// <para>
     /// You can activate the agent in a VPC (virtual private cloud) or provide the agent access
-    /// to a VPC endpoint so you can run tasks without going over the public Internet.
+    /// to a VPC endpoint so you can run tasks without going over the public internet.
     /// </para>
     ///  
     /// <para>

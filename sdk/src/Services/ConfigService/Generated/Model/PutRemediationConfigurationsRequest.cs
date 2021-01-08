@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,6 +40,12 @@ namespace Amazon.ConfigService.Model
     /// <para>
     /// If you make backward incompatible changes to the SSM document, you must call this
     /// again to ensure the remediations can run.
+    /// </para>
+    ///  
+    /// <para>
+    /// This API does not support adding remediation configurations for service-linked AWS
+    /// Config Rules such as Organization Config rules, the rules deployed by conformance
+    /// packs, and rules deployed by AWS Security Hub.
     /// </para>
     ///  </note>
     /// </summary>

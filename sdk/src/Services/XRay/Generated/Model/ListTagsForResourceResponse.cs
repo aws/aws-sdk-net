@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,7 +37,11 @@ namespace Amazon.XRay.Model
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A pagination token. If multiple pages of results are returned, use the <code>NextToken</code>
+        /// value returned with the current page of results to get the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -52,7 +56,11 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags, as key and value pairs, that is associated with the specified X-Ray
+        /// group or sampling rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<Tag> Tags

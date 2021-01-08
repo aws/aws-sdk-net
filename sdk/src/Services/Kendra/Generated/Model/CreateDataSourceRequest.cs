@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,11 +34,7 @@ namespace Amazon.Kendra.Model
     /// 
     ///  
     /// <para>
-    /// You specify a name, connector type and description for your data source. You can choose
-    /// between an S3 connector, a SharePoint Online connector, and a database connector.
-    /// </para>
-    ///  
-    /// <para>
+    /// You specify a name, data source connector type and description for your data source.
     /// You also specify configuration information such as document metadata (author, source
     /// URI, and so on) and user context information.
     /// </para>
@@ -50,6 +46,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class CreateDataSourceRequest : AmazonKendraRequest
     {
+        private string _clientToken;
         private DataSourceConfiguration _configuration;
         private string _description;
         private string _indexId;
@@ -60,12 +57,42 @@ namespace Amazon.Kendra.Model
         private DataSourceType _type;
 
         /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A token that you provide to identify the request to create a data source. Multiple
+        /// calls to the <code>CreateDataSource</code> operation with the same client token will
+        /// create only one data source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
         /// The connector configuration information that is required to access the repository.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't specify the <code>Configuration</code> parameter when the <code>Type</code>
+        /// parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code>
+        /// exception.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>Configuration</code> parameter is required for all other data sources.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DataSourceConfiguration Configuration
         {
             get { return this._configuration; }
@@ -84,7 +111,7 @@ namespace Amazon.Kendra.Model
         /// A description for the data source.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -143,8 +170,18 @@ namespace Amazon.Kendra.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
         /// Roles for Amazon Kendra</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter
+        /// is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code>
+        /// exception.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>RoleArn</code> parameter is required for all other data sources.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1284)]
+        [AWSProperty(Min=1, Max=1284)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -164,6 +201,12 @@ namespace Amazon.Kendra.Model
         /// and update the index. If you don't set a schedule Amazon Kendra will not periodically
         /// update the index. You can call the <code>StartDataSourceSyncJob</code> operation to
         /// update the index.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter
+        /// is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code>
+        /// exception.
         /// </para>
         /// </summary>
         public string Schedule

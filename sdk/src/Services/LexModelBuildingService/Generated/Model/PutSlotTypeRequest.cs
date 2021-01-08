@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -139,6 +139,11 @@ namespace Amazon.LexModelBuildingService.Model
         /// type can take. Each value can have a list of <code>synonyms</code>, which are additional
         /// values that help train the machine learning model about the values that it resolves
         /// for a slot. 
+        /// </para>
+        ///  
+        /// <para>
+        /// A regular expression slot type doesn't require enumeration values. All other slot
+        /// types require a list of enumeration values.
         /// </para>
         ///  
         /// <para>

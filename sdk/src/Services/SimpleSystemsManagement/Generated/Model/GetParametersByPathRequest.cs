@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -96,6 +96,17 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Filters to limit the request results.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For <code>GetParametersByPath</code>, the following filter <code>Key</code> names
+        /// are supported: <code>Type</code>, <code>KeyId</code>, <code>Label</code>, and <code>DataType</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following <code>Key</code> values are not supported for <code>GetParametersByPath</code>:
+        /// <code>tag</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<ParameterStringFilter> ParameterFilters
         {

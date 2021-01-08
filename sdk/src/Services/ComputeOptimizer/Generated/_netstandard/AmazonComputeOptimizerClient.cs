@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,17 +39,21 @@ namespace Amazon.ComputeOptimizer
     /// Implementation for accessing ComputeOptimizer
     ///
     /// AWS Compute Optimizer is a service that analyzes the configuration and utilization
-    /// metrics of your AWS resources, such as EC2 instances and Auto Scaling groups. It reports
-    /// whether your resources are optimal, and generates optimization recommendations to
-    /// reduce the cost and improve the performance of your workloads. Compute Optimizer also
-    /// provides recent utilization metric data, as well as projected utilization metric data
-    /// for the recommendations, which you can use to evaluate which recommendation provides
-    /// the best price-performance trade-off. The analysis of your usage patterns can help
-    /// you decide when to move or resize your running resources, and still meet your performance
-    /// and capacity requirements. For more information about Compute Optimizer, including
-    /// the required permissions to use the service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS
+    /// metrics of your AWS compute resources, such as EC2 instances, Auto Scaling groups,
+    /// AWS Lambda functions, and Amazon EBS volumes. It reports whether your resources are
+    /// optimal, and generates optimization recommendations to reduce the cost and improve
+    /// the performance of your workloads. Compute Optimizer also provides recent utilization
+    /// metric data, as well as projected utilization metric data for the recommendations,
+    /// which you can use to evaluate which recommendation provides the best price-performance
+    /// trade-off. The analysis of your usage patterns can help you decide when to move or
+    /// resize your running resources, and still meet your performance and capacity requirements.
+    /// For more information about Compute Optimizer, including the required permissions to
+    /// use the service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS
     /// Compute Optimizer User Guide</a>.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonComputeOptimizerClient : AmazonServiceClient, IAmazonComputeOptimizer
     {
         private static IServiceMetadata serviceMetadata = new AmazonComputeOptimizerMetadata();
@@ -473,13 +477,9 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// AWS Compute Optimizer currently generates recommendations for Auto Scaling groups
-        /// that are configured to run instances of the M, C, R, T, and X instance families. The
-        /// service does not generate recommendations for Auto Scaling groups that have a scaling
-        /// policy attached to them, or that do not have the same values for desired, minimum,
-        /// and maximum capacity. In order for Compute Optimizer to analyze your Auto Scaling
-        /// groups, they must be of a fixed size. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is.html">AWS
-        /// Compute Optimizer User Guide</a>.
+        /// AWS Compute Optimizer generates recommendations for Amazon EC2 Auto Scaling groups
+        /// that meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAutoScalingGroupRecommendations service method.</param>
@@ -524,6 +524,71 @@ namespace Amazon.ComputeOptimizer
 
         #endregion
         
+        #region  GetEBSVolumeRecommendations
+
+        internal virtual GetEBSVolumeRecommendationsResponse GetEBSVolumeRecommendations(GetEBSVolumeRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEBSVolumeRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEBSVolumeRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetEBSVolumeRecommendationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns Amazon Elastic Block Store (Amazon EBS) volume recommendations.
+        /// 
+        ///  
+        /// <para>
+        /// AWS Compute Optimizer generates recommendations for Amazon EBS volumes that meet a
+        /// specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEBSVolumeRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEBSVolumeRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to AWS Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetEBSVolumeRecommendations">REST API Reference for GetEBSVolumeRecommendations Operation</seealso>
+        public virtual Task<GetEBSVolumeRecommendationsResponse> GetEBSVolumeRecommendationsAsync(GetEBSVolumeRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEBSVolumeRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEBSVolumeRecommendationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEBSVolumeRecommendationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEC2InstanceRecommendations
 
         internal virtual GetEC2InstanceRecommendationsResponse GetEC2InstanceRecommendations(GetEC2InstanceRecommendationsRequest request)
@@ -542,10 +607,10 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// AWS Compute Optimizer currently generates recommendations for Amazon Elastic Compute
-        /// Cloud (Amazon EC2) and Amazon EC2 Auto Scaling. It generates recommendations for M,
-        /// C, R, T, and X instance families. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is.html">AWS
-        /// Compute Optimizer User Guide</a>.
+        /// AWS Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon
+        /// EC2) instances that meet a specific set of requirements. For more information, see
+        /// the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEC2InstanceRecommendations service method.</param>
@@ -605,6 +670,16 @@ namespace Amazon.ComputeOptimizer
 
         /// <summary>
         /// Returns the projected utilization metrics of Amazon EC2 instance recommendations.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization
+        /// metrics returned when you run this action. Additionally, the <code>Memory</code> metric
+        /// is returned only for resources that have the unified CloudWatch agent installed on
+        /// them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+        /// Memory Utilization with the CloudWatch Agent</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEC2RecommendationProjectedMetrics service method.</param>
         /// <param name="cancellationToken">
@@ -667,7 +742,7 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// If the account is the master account of an organization, this action also confirms
+        /// If the account is the management account of an organization, this action also confirms
         /// the enrollment status of member accounts within the organization.
         /// </para>
         /// </summary>
@@ -703,6 +778,71 @@ namespace Amazon.ComputeOptimizer
             options.ResponseUnmarshaller = GetEnrollmentStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEnrollmentStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLambdaFunctionRecommendations
+
+        internal virtual GetLambdaFunctionRecommendationsResponse GetLambdaFunctionRecommendations(GetLambdaFunctionRecommendationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLambdaFunctionRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLambdaFunctionRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetLambdaFunctionRecommendationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns AWS Lambda function recommendations.
+        /// 
+        ///  
+        /// <para>
+        /// AWS Compute Optimizer generates recommendations for functions that meet a specific
+        /// set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        /// resources and requirements</a> in the <i>AWS Compute Optimizer User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLambdaFunctionRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLambdaFunctionRecommendations service method, as returned by ComputeOptimizer.</returns>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InternalServerException">
+        /// An internal error has occurred. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.InvalidParameterValueException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.LimitExceededException">
+        /// The request exceeds a limit of the service.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.MissingAuthenticationTokenException">
+        /// The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.OptInRequiredException">
+        /// The account is not opted in to AWS Compute Optimizer.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ServiceUnavailableException">
+        /// The request has failed due to a temporary failure of the server.
+        /// </exception>
+        /// <exception cref="Amazon.ComputeOptimizer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetLambdaFunctionRecommendations">REST API Reference for GetLambdaFunctionRecommendations Operation</seealso>
+        public virtual Task<GetLambdaFunctionRecommendationsResponse> GetLambdaFunctionRecommendationsAsync(GetLambdaFunctionRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetLambdaFunctionRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLambdaFunctionRecommendationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLambdaFunctionRecommendationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -788,8 +928,8 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// If the account is a master account of an organization, this action can also be used
-        /// to enroll member accounts within the organization.
+        /// If the account is a management account of an organization, this action can also be
+        /// used to enroll member accounts within the organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEnrollmentStatus service method.</param>

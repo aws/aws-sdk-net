@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -213,6 +213,22 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 
                         var marshaller = SupportedProductConfigMarshaller.Instance;
                         marshaller.Marshall(publicRequestNewSupportedProductsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetPlacementGroupConfigs())
+                {
+                    context.Writer.WritePropertyName("PlacementGroupConfigs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPlacementGroupConfigsListValue in publicRequest.PlacementGroupConfigs)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PlacementGroupConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPlacementGroupConfigsListValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }

@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -226,6 +226,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListEntityRecognizers(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListEntityRecognizers(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Comprehend")]
+        public void ListEventsDetectionJobsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListEventsDetectionJobsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListEventsDetectionJobsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListEventsDetectionJobsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListEventsDetectionJobs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListEventsDetectionJobs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Comprehend")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListEventsDetectionJobsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListEventsDetectionJobsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListEventsDetectionJobsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListEventsDetectionJobs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListEventsDetectionJobs(request);
 
             // Should work the first time
             paginator.Responses.ToList();

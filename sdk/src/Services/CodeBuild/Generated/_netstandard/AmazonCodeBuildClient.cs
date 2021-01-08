@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -221,6 +221,9 @@ namespace Amazon.CodeBuild
     /// </para>
     ///  </li> </ul>
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonCodeBuildClient : AmazonServiceClient, IAmazonCodeBuild
     {
         private static IServiceMetadata serviceMetadata = new AmazonCodeBuildMetadata();
@@ -936,11 +939,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// <code>DeleteReportGroup</code>: Deletes a report group. Before you delete a report
-        /// group, you must delete its reports. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a>
-        /// to get the reports in a report group. Use <a href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a>
-        /// to delete the reports. If you call <code>DeleteReportGroup</code> for a report group
-        /// that contains one or more reports, an exception is thrown.
+        /// Deletes a report group. Before you delete a report group, you must delete its reports.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReportGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1158,6 +1157,46 @@ namespace Amazon.CodeBuild
             options.ResponseUnmarshaller = DescribeTestCasesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTestCasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetReportGroupTrend
+
+        internal virtual GetReportGroupTrendResponse GetReportGroupTrend(GetReportGroupTrendRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReportGroupTrendRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReportGroupTrendResponseUnmarshaller.Instance;
+
+            return Invoke<GetReportGroupTrendResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReportGroupTrend service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetReportGroupTrend service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetReportGroupTrend">REST API Reference for GetReportGroupTrend Operation</seealso>
+        public virtual Task<GetReportGroupTrendResponse> GetReportGroupTrendAsync(GetReportGroupTrendRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReportGroupTrendRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReportGroupTrendResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetReportGroupTrendResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1837,7 +1876,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Restarts a batch build.
+        /// Restarts a failed batch build. Only batch builds that have failed can be retried.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetryBuildBatch service method.</param>
         /// <param name="cancellationToken">

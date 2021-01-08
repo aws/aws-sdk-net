@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -100,7 +100,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property Prefix. 
         /// <para>
         /// An optional prefix to describe where in the specified bucket the job-completion report
-        /// will be stored. Amazon S3 will store the job-completion report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.
+        /// will be stored. Amazon S3 stores the job-completion report at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,8 +33,27 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class GetEventSelectorsResponse : AmazonWebServiceResponse
     {
+        private List<AdvancedEventSelector> _advancedEventSelectors = new List<AdvancedEventSelector>();
         private List<EventSelector> _eventSelectors = new List<EventSelector>();
         private string _trailARN;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedEventSelectors. 
+        /// <para>
+        ///  The advanced event selectors that are configured for the trail. 
+        /// </para>
+        /// </summary>
+        public List<AdvancedEventSelector> AdvancedEventSelectors
+        {
+            get { return this._advancedEventSelectors; }
+            set { this._advancedEventSelectors = value; }
+        }
+
+        // Check to see if AdvancedEventSelectors property is set
+        internal bool IsSetAdvancedEventSelectors()
+        {
+            return this._advancedEventSelectors != null && this._advancedEventSelectors.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property EventSelectors. 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputGroup requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAutomatedEncodingSettings())
+            {
+                context.Writer.WritePropertyName("automatedEncodingSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AutomatedEncodingSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutomatedEncodingSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCustomName())
             {
                 context.Writer.WritePropertyName("customName");

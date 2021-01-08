@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ namespace Amazon.MQ.Model
         private string _ipAddress;
 
         /// <summary>
-        /// Gets and sets the property ConsoleURL. The URL of the broker's ActiveMQ Web Console.
+        /// Gets and sets the property ConsoleURL. The URL of the broker's Web Console.
         /// </summary>
         public string ConsoleURL
         {
@@ -69,7 +69,7 @@ namespace Amazon.MQ.Model
 
         /// <summary>
         /// Gets and sets the property IpAddress. The IP address of the Elastic Network Interface
-        /// (ENI) attached to the broker.
+        /// (ENI) attached to the broker. Does not apply to RabbitMQ brokers
         /// </summary>
         public string IpAddress
         {

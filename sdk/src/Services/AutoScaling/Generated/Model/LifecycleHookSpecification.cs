@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ namespace Amazon.AutoScaling.Model
     ///  </li> </ol> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
-    /// EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// EC2 Auto Scaling lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class LifecycleHookSpecification
@@ -203,7 +203,7 @@ namespace Amazon.AutoScaling.Model
         /// can be either an SQS queue or an SNS topic.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1600)]
+        [AWSProperty(Min=0, Max=255)]
         public string NotificationTargetARN
         {
             get { return this._notificationTargetARN; }
@@ -223,7 +223,7 @@ namespace Amazon.AutoScaling.Model
         /// notification target, for example, an Amazon SNS topic or an Amazon SQS queue.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1600)]
+        [AWSProperty(Min=1, Max=255)]
         public string RoleARN
         {
             get { return this._roleARN; }

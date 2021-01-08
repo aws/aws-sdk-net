@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -162,7 +162,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property LifecycleState. 
         /// <para>
         /// A description of the current lifecycle state. The <code>Quarantined</code> state is
-        /// not used.
+        /// not used. For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+        /// lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

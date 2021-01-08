@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -70,6 +70,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetForce())
                 request.Parameters.Add("force", StringUtils.FromBool(publicRequest.Force));
+            
+            if (publicRequest.IsSetNamespaceId())
+                request.Parameters.Add("namespaceId", StringUtils.FromString(publicRequest.NamespaceId));
             request.ResourcePath = "/things/{thingName}/jobs/{jobId}/executionNumber/{executionNumber}";
             request.MarshallerVersion = 2;
             request.UseQueryString = true;

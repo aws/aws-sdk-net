@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// You can't invite an existing account to your organization until you verify that you
-    /// own the email address associated with the master account. For more information, see
-    /// <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_create.html#about-email-verification">Email
+    /// own the email address associated with the management account. For more information,
+    /// see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_create.html#about-email-verification">Email
     /// Address Verification</a> in the <i>AWS Organizations User Guide.</i>
     /// </summary>
     #if !NETSTANDARD

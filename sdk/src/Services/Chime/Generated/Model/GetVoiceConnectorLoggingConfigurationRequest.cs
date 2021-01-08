@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the GetVoiceConnectorLoggingConfiguration operation.
     /// Retrieves the logging configuration details for the specified Amazon Chime Voice Connector.
-    /// Shows whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
+    /// Shows whether SIP message logs are enabled for sending to Amazon CloudWatch.
     /// </summary>
     public partial class GetVoiceConnectorLoggingConfigurationRequest : AmazonChimeRequest
     {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,12 +34,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// target groups are described. Alternatively, you can specify one of the following to
     /// filter the results: the ARN of the load balancer, the names of one or more target
     /// groups, or the ARNs of one or more target groups.
-    /// 
-    ///  
-    /// <para>
-    /// To describe the targets for a target group, use <a>DescribeTargetHealth</a>. To describe
-    /// the attributes of a target group, use <a>DescribeTargetGroupAttributes</a>.
-    /// </para>
     /// </summary>
     public partial class DescribeTargetGroupsRequest : AmazonElasticLoadBalancingV2Request
     {

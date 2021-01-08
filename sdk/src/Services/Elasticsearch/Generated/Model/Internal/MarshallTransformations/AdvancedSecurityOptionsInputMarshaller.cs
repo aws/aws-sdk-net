@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,6 +64,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
                 var marshaller = MasterUserOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MasterUserOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetSAMLOptions())
+            {
+                context.Writer.WritePropertyName("SAMLOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SAMLOptionsInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.SAMLOptions, context);
 
                 context.Writer.WriteObjectEnd();
             }

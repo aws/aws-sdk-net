@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -104,6 +104,22 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.RetainRule, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetShareRules())
+            {
+                context.Writer.WritePropertyName("ShareRules");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectShareRulesListValue in requestObject.ShareRules)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ShareRuleMarshaller.Instance;
+                    marshaller.Marshall(requestObjectShareRulesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetTagsToAdd())

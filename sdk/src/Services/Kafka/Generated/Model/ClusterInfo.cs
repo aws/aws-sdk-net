@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ namespace Amazon.Kafka.Model
         private StateInfo _stateInfo;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _zookeeperConnectString;
+        private string _zookeeperConnectStringTls;
 
         /// <summary>
         /// Gets and sets the property ActiveOperationArn.             
@@ -217,9 +218,10 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property EnhancedMonitoring.             
         /// <para>
-        /// Specifies which metrics are gathered for the MSK cluster. This property has three
-        /// possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the
-        /// metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
+        /// Specifies which metrics are gathered for the MSK cluster. This property has the following
+        /// possible values: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.
+        /// For a list of the metrics associated with each of these levels of monitoring, see
+        /// <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.
         /// </para>
         /// </summary>
         public EnhancedMonitoring EnhancedMonitoring
@@ -288,7 +290,8 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property State.             
         /// <para>
-        /// The state of the cluster. The possible states are CREATING, ACTIVE, and FAILED.
+        /// The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED,
+        /// HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.
         /// </para>
         /// </summary>
         public ClusterState State
@@ -352,6 +355,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetZookeeperConnectString()
         {
             return this._zookeeperConnectString != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZookeeperConnectStringTls.             
+        /// <para>
+        /// The connection string to use to connect to zookeeper cluster on Tls port.
+        /// </para>
+        /// </summary>
+        public string ZookeeperConnectStringTls
+        {
+            get { return this._zookeeperConnectStringTls; }
+            set { this._zookeeperConnectStringTls = value; }
+        }
+
+        // Check to see if ZookeeperConnectStringTls property is set
+        internal bool IsSetZookeeperConnectStringTls()
+        {
+            return this._zookeeperConnectStringTls != null;
         }
 
     }

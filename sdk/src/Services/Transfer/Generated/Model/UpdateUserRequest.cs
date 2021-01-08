@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ namespace Amazon.Transfer.Model
         private List<HomeDirectoryMapEntry> _homeDirectoryMappings = new List<HomeDirectoryMapEntry>();
         private HomeDirectoryType _homeDirectoryType;
         private string _policy;
+        private PosixProfile _posixProfile;
         private string _role;
         private string _serverId;
         private string _userName;
@@ -53,8 +54,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HomeDirectory. 
         /// <para>
-        /// Specifies the landing directory (folder) for a user when they log in to the file transfer
-        /// protocol-enabled server using their file transfer protocol client.
+        /// Specifies the landing directory (folder) for a user when they log in to the server
+        /// using their file transfer protocol client.
         /// </para>
         ///  
         /// <para>
@@ -123,11 +124,10 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property HomeDirectoryType. 
         /// <para>
         /// The type of landing directory (folder) you want your users' home directory to be when
-        /// they log into the file transfer protocol-enabled server. If you set it to <code>PATH</code>,
-        /// the user will see the absolute Amazon S3 bucket paths as is in their file transfer
-        /// protocol clients. If you set it <code>LOGICAL</code>, you will need to provide mappings
-        /// in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 paths
-        /// visible to your users.
+        /// they log into the server. If you set it to <code>PATH</code>, the user will see the
+        /// absolute Amazon S3 bucket paths as is in their file transfer protocol clients. If
+        /// you set it <code>LOGICAL</code>, you will need to provide mappings in the <code>HomeDirectoryMappings</code>
+        /// for how you want to make Amazon S3 paths visible to your users.
         /// </para>
         /// </summary>
         public HomeDirectoryType HomeDirectoryType
@@ -182,13 +182,28 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PosixProfile.
+        /// </summary>
+        public PosixProfile PosixProfile
+        {
+            get { return this._posixProfile; }
+            set { this._posixProfile = value; }
+        }
+
+        // Check to see if PosixProfile property is set
+        internal bool IsSetPosixProfile()
+        {
+            return this._posixProfile != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
         /// The IAM role that controls your users' access to your Amazon S3 bucket. The policies
         /// attached to this role will determine the level of access you want to provide your
         /// users when transferring files into and out of your Amazon S3 bucket or buckets. The
-        /// IAM role should also contain a trust relationship that allows the file transfer protocol-enabled
-        /// server to access your resources when servicing your users' transfer requests.
+        /// IAM role should also contain a trust relationship that allows the server to access
+        /// your resources when servicing your users' transfer requests.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -207,8 +222,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for a file transfer protocol-enabled server instance
-        /// that the user account is assigned to.
+        /// A system-assigned unique identifier for a server instance that the user account is
+        /// assigned to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
@@ -227,11 +242,11 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// A unique string that identifies a user and is associated with a file transfer protocol-enabled
-        /// server as specified by the <code>ServerId</code>. This user name must be a minimum
-        /// of 3 and a maximum of 100 characters long. The following are valid characters: a-z,
-        /// A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'. The user name can't
-        /// start with a hyphen, period, and at sign.
+        /// A unique string that identifies a user and is associated with a server as specified
+        /// by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum
+        /// of 100 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore
+        /// '_', hyphen '-', period '.', and at sign '@'. The user name can't start with a hyphen,
+        /// period, or at sign.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=100)]

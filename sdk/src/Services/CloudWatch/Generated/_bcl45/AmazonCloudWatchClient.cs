@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -678,7 +678,7 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Retrieves the specified alarms. You can filter the results by specifying a a prefix
+        /// Retrieves the specified alarms. You can filter the results by specifying a prefix
         /// for the alarm name, the alarm state, or a prefix for any action.
         /// </summary>
         /// 
@@ -694,7 +694,7 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Retrieves the specified alarms. You can filter the results by specifying a a prefix
+        /// Retrieves the specified alarms. You can filter the results by specifying a prefix
         /// for the alarm name, the alarm state, or a prefix for any action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarms service method.</param>
@@ -715,7 +715,7 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Retrieves the specified alarms. You can filter the results by specifying a a prefix
+        /// Retrieves the specified alarms. You can filter the results by specifying a prefix
         /// for the alarm name, the alarm state, or a prefix for any action.
         /// </summary>
         /// <param name="cancellationToken">
@@ -733,7 +733,7 @@ namespace Amazon.CloudWatch
         }
 
         /// <summary>
-        /// Retrieves the specified alarms. You can filter the results by specifying a a prefix
+        /// Retrieves the specified alarms. You can filter the results by specifying a prefix
         /// for the alarm name, the alarm state, or a prefix for any action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarms service method.</param>
@@ -763,6 +763,13 @@ namespace Amazon.CloudWatch
         /// <summary>
         /// Retrieves the alarms for the specified metric. To filter the results, specify a statistic,
         /// period, or unit.
+        /// 
+        ///  
+        /// <para>
+        /// This operation retrieves only standard alarms that are based on the specified metric.
+        /// It does not return alarms based on math expressions that use the specified metric,
+        /// or composite alarms that use the specified metric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmsForMetric service method.</param>
         /// 
@@ -781,6 +788,13 @@ namespace Amazon.CloudWatch
         /// <summary>
         /// Retrieves the alarms for the specified metric. To filter the results, specify a statistic,
         /// period, or unit.
+        /// 
+        ///  
+        /// <para>
+        /// This operation retrieves only standard alarms that are based on the specified metric.
+        /// It does not return alarms based on math expressions that use the specified metric,
+        /// or composite alarms that use the specified metric.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmsForMetric service method.</param>
         /// <param name="cancellationToken">
@@ -867,8 +881,7 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Returns a list of all the Contributor Insights rules in your account. All rules in
-        /// your account are returned with a single operation.
+        /// Returns a list of all the Contributor Insights rules in your account.
         /// 
         ///  
         /// <para>
@@ -894,8 +907,7 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Returns a list of all the Contributor Insights rules in your account. All rules in
-        /// your account are returned with a single operation.
+        /// Returns a list of all the Contributor Insights rules in your account.
         /// 
         ///  
         /// <para>
@@ -2264,6 +2276,11 @@ namespace Amazon.CloudWatch
         /// When you update an existing alarm, its state is left unchanged, but the update completely
         /// overwrites the previous configuration of the alarm.
         /// </para>
+        ///  
+        /// <para>
+        /// If you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to
+        /// create a composite alarm that has Systems Manager OpsItem actions.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutCompositeAlarm service method.</param>
         /// 
@@ -2337,6 +2354,11 @@ namespace Amazon.CloudWatch
         /// <para>
         /// When you update an existing alarm, its state is left unchanged, but the update completely
         /// overwrites the previous configuration of the alarm.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to
+        /// create a composite alarm that has Systems Manager OpsItem actions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutCompositeAlarm service method.</param>
@@ -2566,50 +2588,20 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+        /// The <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code> for
-        /// all alarms on EC2 instance status metrics
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ec2:StopInstances</code> for alarms with stop actions
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ec2:TerminateInstances</code> for alarms with terminate actions
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// No specific permissions are needed for alarms with recover actions
+        /// The <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager
+        /// OpsItem actions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you have read/write permissions for Amazon CloudWatch but not for Amazon EC2, you
-        /// can still create an alarm, but the stop or terminate actions are not performed. However,
-        /// if you are later granted the required permissions, the alarm actions that you created
-        /// earlier are performed.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you are using an IAM role (for example, an EC2 instance profile), you cannot stop
-        /// or terminate the instance using alarm actions. However, you can still see the alarm
-        /// state and perform any other actions such as Amazon SNS notifications or Auto Scaling
-        /// policies.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you are using temporary security credentials granted using AWS STS, you cannot
-        /// stop or terminate an EC2 instance using alarm actions.
-        /// </para>
-        ///  
-        /// <para>
         /// The first time you create an alarm in the AWS Management Console, the CLI, or by using
-        /// the PutMetricAlarm API, CloudWatch creates the necessary service-linked role for you.
-        /// The service-linked role is called <code>AWSServiceRoleForCloudWatchEvents</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
+        /// the PutMetricAlarm API, CloudWatch creates the necessary service-linked rolea for
+        /// you. The service-linked roles are called <code>AWSServiceRoleForCloudWatchEvents</code>
+        /// and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
         /// service-linked role</a>.
         /// </para>
         /// </summary>
@@ -2655,50 +2647,20 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+        /// The <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code> for
-        /// all alarms on EC2 instance status metrics
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ec2:StopInstances</code> for alarms with stop actions
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ec2:TerminateInstances</code> for alarms with terminate actions
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// No specific permissions are needed for alarms with recover actions
+        /// The <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager
+        /// OpsItem actions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you have read/write permissions for Amazon CloudWatch but not for Amazon EC2, you
-        /// can still create an alarm, but the stop or terminate actions are not performed. However,
-        /// if you are later granted the required permissions, the alarm actions that you created
-        /// earlier are performed.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you are using an IAM role (for example, an EC2 instance profile), you cannot stop
-        /// or terminate the instance using alarm actions. However, you can still see the alarm
-        /// state and perform any other actions such as Amazon SNS notifications or Auto Scaling
-        /// policies.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you are using temporary security credentials granted using AWS STS, you cannot
-        /// stop or terminate an EC2 instance using alarm actions.
-        /// </para>
-        ///  
-        /// <para>
         /// The first time you create an alarm in the AWS Management Console, the CLI, or by using
-        /// the PutMetricAlarm API, CloudWatch creates the necessary service-linked role for you.
-        /// The service-linked role is called <code>AWSServiceRoleForCloudWatchEvents</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
+        /// the PutMetricAlarm API, CloudWatch creates the necessary service-linked rolea for
+        /// you. The service-linked roles are called <code>AWSServiceRoleForCloudWatchEvents</code>
+        /// and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
         /// service-linked role</a>.
         /// </para>
         /// </summary>
@@ -2760,6 +2722,12 @@ namespace Amazon.CloudWatch
         /// collects. Each dimension consists of a Name and Value pair. For more information about
         /// specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
         /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You specify the time stamp to be associated with each data point. You can specify
+        /// time stamps that are as much as two weeks before the current date, and as much as
+        /// 2 hours after the current day and time.
         /// </para>
         ///  
         /// <para>
@@ -2848,6 +2816,12 @@ namespace Amazon.CloudWatch
         /// collects. Each dimension consists of a Name and Value pair. For more information about
         /// specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
         /// Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You specify the time stamp to be associated with each data point. You can specify
+        /// time stamps that are as much as two weeks before the current date, and as much as
+        /// 2 hours after the current day and time.
         /// </para>
         ///  
         /// <para>

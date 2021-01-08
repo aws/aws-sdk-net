@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,13 +32,6 @@ namespace Amazon.ConfigService.Model
     /// Container for the parameters to the GetOrganizationConformancePackDetailedStatus operation.
     /// Returns detailed status for each member account within an organization for a given
     /// organization conformance pack.
-    /// 
-    ///  
-    /// <para>
-    /// Only a master account and a delegated administrator account can call this API. When
-    /// calling this API with a delegated administrator, you must ensure AWS Organizations
-    /// <code>ListDelegatedAdministrator</code> permissions are added.
-    /// </para>
     /// </summary>
     public partial class GetOrganizationConformancePackDetailedStatusRequest : AmazonConfigServiceRequest
     {

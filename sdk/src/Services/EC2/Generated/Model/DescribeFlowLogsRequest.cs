@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>log-destination-type</code> - The type of destination to which the flow log
         /// publishes data. Possible destination types include <code>cloud-watch-logs</code> and
-        /// <code>S3</code>.
+        /// <code>s3</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

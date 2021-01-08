@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class DescribeAccountCustomizationResponse : AmazonWebServiceResponse
     {
         private AccountCustomization _accountCustomization;
+        private string _arn;
         private string _awsAccountId;
         private string _awsNamespace;
         private string _requestId;
@@ -55,6 +56,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAccountCustomization()
         {
             return this._accountCustomization != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the customization that's associated with this AWS
+        /// account.
+        /// </para>
+        /// </summary>
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
         }
 
         /// <summary>

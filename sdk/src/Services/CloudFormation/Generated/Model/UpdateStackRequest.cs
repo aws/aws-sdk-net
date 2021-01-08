@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -165,9 +165,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Change sets do not currently support nested stacks. If you want to update a stack
-        /// from a stack template that contains macros <i>and</i> nested stacks, you must update
-        /// the stack directly from the template using this capability.
+        /// If you want to update a stack from a stack template that contains macros <i>and</i>
+        /// nested stacks, you must update the stack directly from the template using this capability.
         /// </para>
         ///  <important> 
         /// <para>

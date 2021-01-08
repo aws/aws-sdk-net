@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -77,6 +77,9 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
         
             if(publicRequest.IsSetCustomAttributes())
                 request.Headers["X-Amzn-SageMaker-Custom-Attributes"] = publicRequest.CustomAttributes;
+        
+            if(publicRequest.IsSetInferenceId())
+                request.Headers["X-Amzn-SageMaker-Inference-Id"] = publicRequest.InferenceId;
         
             if(publicRequest.IsSetTargetModel())
                 request.Headers["X-Amzn-SageMaker-Target-Model"] = publicRequest.TargetModel;

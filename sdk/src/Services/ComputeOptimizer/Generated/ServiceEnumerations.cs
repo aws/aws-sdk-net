@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,6 +23,160 @@ using Amazon.Runtime;
 
 namespace Amazon.ComputeOptimizer
 {
+
+    /// <summary>
+    /// Constants used for properties of type EBSFilterName.
+    /// </summary>
+    public class EBSFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Finding for EBSFilterName
+        /// </summary>
+        public static readonly EBSFilterName Finding = new EBSFilterName("Finding");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EBSFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EBSFilterName FindValue(string value)
+        {
+            return FindValue<EBSFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EBSFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EBSFinding.
+    /// </summary>
+    public class EBSFinding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NotOptimized for EBSFinding
+        /// </summary>
+        public static readonly EBSFinding NotOptimized = new EBSFinding("NotOptimized");
+        /// <summary>
+        /// Constant Optimized for EBSFinding
+        /// </summary>
+        public static readonly EBSFinding Optimized = new EBSFinding("Optimized");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EBSFinding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EBSFinding FindValue(string value)
+        {
+            return FindValue<EBSFinding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EBSFinding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EBSMetricName.
+    /// </summary>
+    public class EBSMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant VolumeReadBytesPerSecond for EBSMetricName
+        /// </summary>
+        public static readonly EBSMetricName VolumeReadBytesPerSecond = new EBSMetricName("VolumeReadBytesPerSecond");
+        /// <summary>
+        /// Constant VolumeReadOpsPerSecond for EBSMetricName
+        /// </summary>
+        public static readonly EBSMetricName VolumeReadOpsPerSecond = new EBSMetricName("VolumeReadOpsPerSecond");
+        /// <summary>
+        /// Constant VolumeWriteBytesPerSecond for EBSMetricName
+        /// </summary>
+        public static readonly EBSMetricName VolumeWriteBytesPerSecond = new EBSMetricName("VolumeWriteBytesPerSecond");
+        /// <summary>
+        /// Constant VolumeWriteOpsPerSecond for EBSMetricName
+        /// </summary>
+        public static readonly EBSMetricName VolumeWriteOpsPerSecond = new EBSMetricName("VolumeWriteOpsPerSecond");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EBSMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EBSMetricName FindValue(string value)
+        {
+            return FindValue<EBSMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EBSMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 
     /// <summary>
     /// Constants used for properties of type ExportableAutoScalingGroupField.
@@ -158,6 +312,22 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsCpuMaximum for ExportableAutoScalingGroupField
         /// </summary>
         public static readonly ExportableAutoScalingGroupField UtilizationMetricsCpuMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsCpuMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsReadBytesPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsEbsReadBytesPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsEbsReadBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsReadOpsPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsEbsReadOpsPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsEbsReadOpsPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsWriteBytesPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsEbsWriteBytesPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsEbsWriteBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsWriteOpsPerSecondMaximum for ExportableAutoScalingGroupField
+        /// </summary>
+        public static readonly ExportableAutoScalingGroupField UtilizationMetricsEbsWriteOpsPerSecondMaximum = new ExportableAutoScalingGroupField("UtilizationMetricsEbsWriteOpsPerSecondMaximum");
         /// <summary>
         /// Constant UtilizationMetricsMemoryMaximum for ExportableAutoScalingGroupField
         /// </summary>
@@ -316,6 +486,22 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsCpuMaximum for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField UtilizationMetricsCpuMaximum = new ExportableInstanceField("UtilizationMetricsCpuMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsReadBytesPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsEbsReadBytesPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsEbsReadBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsReadOpsPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsEbsReadOpsPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsEbsReadOpsPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsWriteBytesPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsEbsWriteBytesPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsEbsWriteBytesPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsEbsWriteOpsPerSecondMaximum for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField UtilizationMetricsEbsWriteOpsPerSecondMaximum = new ExportableInstanceField("UtilizationMetricsEbsWriteOpsPerSecondMaximum");
         /// <summary>
         /// Constant UtilizationMetricsMemoryMaximum for ExportableInstanceField
         /// </summary>
@@ -511,6 +697,56 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type FindingReasonCode.
+    /// </summary>
+    public class FindingReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MemoryOverprovisioned for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode MemoryOverprovisioned = new FindingReasonCode("MemoryOverprovisioned");
+        /// <summary>
+        /// Constant MemoryUnderprovisioned for FindingReasonCode
+        /// </summary>
+        public static readonly FindingReasonCode MemoryUnderprovisioned = new FindingReasonCode("MemoryUnderprovisioned");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FindingReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingReasonCode FindValue(string value)
+        {
+            return FindValue<FindingReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobFilterName.
     /// </summary>
     public class JobFilterName : ConstantClass
@@ -619,6 +855,368 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type LambdaFunctionMemoryMetricName.
+    /// </summary>
+    public class LambdaFunctionMemoryMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Duration for LambdaFunctionMemoryMetricName
+        /// </summary>
+        public static readonly LambdaFunctionMemoryMetricName Duration = new LambdaFunctionMemoryMetricName("Duration");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LambdaFunctionMemoryMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LambdaFunctionMemoryMetricName FindValue(string value)
+        {
+            return FindValue<LambdaFunctionMemoryMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LambdaFunctionMemoryMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LambdaFunctionMemoryMetricStatistic.
+    /// </summary>
+    public class LambdaFunctionMemoryMetricStatistic : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Expected for LambdaFunctionMemoryMetricStatistic
+        /// </summary>
+        public static readonly LambdaFunctionMemoryMetricStatistic Expected = new LambdaFunctionMemoryMetricStatistic("Expected");
+        /// <summary>
+        /// Constant LowerBound for LambdaFunctionMemoryMetricStatistic
+        /// </summary>
+        public static readonly LambdaFunctionMemoryMetricStatistic LowerBound = new LambdaFunctionMemoryMetricStatistic("LowerBound");
+        /// <summary>
+        /// Constant UpperBound for LambdaFunctionMemoryMetricStatistic
+        /// </summary>
+        public static readonly LambdaFunctionMemoryMetricStatistic UpperBound = new LambdaFunctionMemoryMetricStatistic("UpperBound");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LambdaFunctionMemoryMetricStatistic(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LambdaFunctionMemoryMetricStatistic FindValue(string value)
+        {
+            return FindValue<LambdaFunctionMemoryMetricStatistic>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LambdaFunctionMemoryMetricStatistic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LambdaFunctionMetricName.
+    /// </summary>
+    public class LambdaFunctionMetricName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Duration for LambdaFunctionMetricName
+        /// </summary>
+        public static readonly LambdaFunctionMetricName Duration = new LambdaFunctionMetricName("Duration");
+        /// <summary>
+        /// Constant Memory for LambdaFunctionMetricName
+        /// </summary>
+        public static readonly LambdaFunctionMetricName Memory = new LambdaFunctionMetricName("Memory");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LambdaFunctionMetricName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LambdaFunctionMetricName FindValue(string value)
+        {
+            return FindValue<LambdaFunctionMetricName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LambdaFunctionMetricName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LambdaFunctionMetricStatistic.
+    /// </summary>
+    public class LambdaFunctionMetricStatistic : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Average for LambdaFunctionMetricStatistic
+        /// </summary>
+        public static readonly LambdaFunctionMetricStatistic Average = new LambdaFunctionMetricStatistic("Average");
+        /// <summary>
+        /// Constant Maximum for LambdaFunctionMetricStatistic
+        /// </summary>
+        public static readonly LambdaFunctionMetricStatistic Maximum = new LambdaFunctionMetricStatistic("Maximum");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LambdaFunctionMetricStatistic(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LambdaFunctionMetricStatistic FindValue(string value)
+        {
+            return FindValue<LambdaFunctionMetricStatistic>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LambdaFunctionMetricStatistic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LambdaFunctionRecommendationFilterName.
+    /// </summary>
+    public class LambdaFunctionRecommendationFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Finding for LambdaFunctionRecommendationFilterName
+        /// </summary>
+        public static readonly LambdaFunctionRecommendationFilterName Finding = new LambdaFunctionRecommendationFilterName("Finding");
+        /// <summary>
+        /// Constant FindingReasonCode for LambdaFunctionRecommendationFilterName
+        /// </summary>
+        public static readonly LambdaFunctionRecommendationFilterName FindingReasonCode = new LambdaFunctionRecommendationFilterName("FindingReasonCode");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LambdaFunctionRecommendationFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LambdaFunctionRecommendationFilterName FindValue(string value)
+        {
+            return FindValue<LambdaFunctionRecommendationFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LambdaFunctionRecommendationFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LambdaFunctionRecommendationFinding.
+    /// </summary>
+    public class LambdaFunctionRecommendationFinding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NotOptimized for LambdaFunctionRecommendationFinding
+        /// </summary>
+        public static readonly LambdaFunctionRecommendationFinding NotOptimized = new LambdaFunctionRecommendationFinding("NotOptimized");
+        /// <summary>
+        /// Constant Optimized for LambdaFunctionRecommendationFinding
+        /// </summary>
+        public static readonly LambdaFunctionRecommendationFinding Optimized = new LambdaFunctionRecommendationFinding("Optimized");
+        /// <summary>
+        /// Constant Unavailable for LambdaFunctionRecommendationFinding
+        /// </summary>
+        public static readonly LambdaFunctionRecommendationFinding Unavailable = new LambdaFunctionRecommendationFinding("Unavailable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LambdaFunctionRecommendationFinding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LambdaFunctionRecommendationFinding FindValue(string value)
+        {
+            return FindValue<LambdaFunctionRecommendationFinding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LambdaFunctionRecommendationFinding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LambdaFunctionRecommendationFindingReasonCode.
+    /// </summary>
+    public class LambdaFunctionRecommendationFindingReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Inconclusive for LambdaFunctionRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly LambdaFunctionRecommendationFindingReasonCode Inconclusive = new LambdaFunctionRecommendationFindingReasonCode("Inconclusive");
+        /// <summary>
+        /// Constant InsufficientData for LambdaFunctionRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly LambdaFunctionRecommendationFindingReasonCode InsufficientData = new LambdaFunctionRecommendationFindingReasonCode("InsufficientData");
+        /// <summary>
+        /// Constant MemoryOverprovisioned for LambdaFunctionRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly LambdaFunctionRecommendationFindingReasonCode MemoryOverprovisioned = new LambdaFunctionRecommendationFindingReasonCode("MemoryOverprovisioned");
+        /// <summary>
+        /// Constant MemoryUnderprovisioned for LambdaFunctionRecommendationFindingReasonCode
+        /// </summary>
+        public static readonly LambdaFunctionRecommendationFindingReasonCode MemoryUnderprovisioned = new LambdaFunctionRecommendationFindingReasonCode("MemoryUnderprovisioned");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LambdaFunctionRecommendationFindingReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LambdaFunctionRecommendationFindingReasonCode FindValue(string value)
+        {
+            return FindValue<LambdaFunctionRecommendationFindingReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LambdaFunctionRecommendationFindingReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MetricName.
     /// </summary>
     public class MetricName : ConstantClass
@@ -628,6 +1226,22 @@ namespace Amazon.ComputeOptimizer
         /// Constant Cpu for MetricName
         /// </summary>
         public static readonly MetricName Cpu = new MetricName("Cpu");
+        /// <summary>
+        /// Constant EBS_READ_BYTES_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName EBS_READ_BYTES_PER_SECOND = new MetricName("EBS_READ_BYTES_PER_SECOND");
+        /// <summary>
+        /// Constant EBS_READ_OPS_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName EBS_READ_OPS_PER_SECOND = new MetricName("EBS_READ_OPS_PER_SECOND");
+        /// <summary>
+        /// Constant EBS_WRITE_BYTES_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName EBS_WRITE_BYTES_PER_SECOND = new MetricName("EBS_WRITE_BYTES_PER_SECOND");
+        /// <summary>
+        /// Constant EBS_WRITE_OPS_PER_SECOND for MetricName
+        /// </summary>
+        public static readonly MetricName EBS_WRITE_OPS_PER_SECOND = new MetricName("EBS_WRITE_OPS_PER_SECOND");
         /// <summary>
         /// Constant Memory for MetricName
         /// </summary>
@@ -729,9 +1343,17 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly RecommendationSourceType AutoScalingGroup = new RecommendationSourceType("AutoScalingGroup");
         /// <summary>
+        /// Constant EbsVolume for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType EbsVolume = new RecommendationSourceType("EbsVolume");
+        /// <summary>
         /// Constant Ec2Instance for RecommendationSourceType
         /// </summary>
         public static readonly RecommendationSourceType Ec2Instance = new RecommendationSourceType("Ec2Instance");
+        /// <summary>
+        /// Constant LambdaFunction for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType LambdaFunction = new RecommendationSourceType("LambdaFunction");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

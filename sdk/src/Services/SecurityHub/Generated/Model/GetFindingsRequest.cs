@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,6 +43,11 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// The finding attributes used to define a condition to filter the returned findings.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can filter by up to 10 finding attributes. For each attribute, you can provide
+        /// up to 20 filter values.
         /// </para>
         ///  
         /// <para>

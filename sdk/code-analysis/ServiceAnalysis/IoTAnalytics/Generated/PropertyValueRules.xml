@@ -43,6 +43,11 @@
     <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.CreateDatasetContentRequest.VersionId</property>
+    <min>7</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.CreateDatasetContentResponse.VersionId</property>
     <min>7</min>
     <max>36</max>
@@ -272,6 +277,17 @@
     <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.Column.Name</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.Column.Type</property>
+    <min>1</min>
+    <max>131072</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.ContainerDatasetAction.ExecutionRoleArn</property>
     <min>20</min>
     <max>2048</max>
@@ -407,6 +423,11 @@
     <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.DeltaTimeSessionWindowConfiguration.TimeoutInMinutes</property>
+    <min>1</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.DeviceRegistryEnrichActivity.Attribute</property>
     <min>1</min>
     <max>256</max>
@@ -512,6 +533,12 @@
     <property>Amazon.IoTAnalytics.Model.LambdaActivity.Next</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.LateDataRule.RuleName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.LoggingOptions.RoleArn</property>

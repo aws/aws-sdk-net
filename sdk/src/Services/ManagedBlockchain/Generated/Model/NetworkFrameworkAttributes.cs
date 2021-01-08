@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,7 +33,27 @@ namespace Amazon.ManagedBlockchain.Model
     /// </summary>
     public partial class NetworkFrameworkAttributes
     {
+        private NetworkEthereumAttributes _ethereum;
         private NetworkFabricAttributes _fabric;
+
+        /// <summary>
+        /// Gets and sets the property Ethereum. 
+        /// <para>
+        /// Attributes of an Ethereum network for Managed Blockchain resources participating in
+        /// an Ethereum network.
+        /// </para>
+        /// </summary>
+        public NetworkEthereumAttributes Ethereum
+        {
+            get { return this._ethereum; }
+            set { this._ethereum = value; }
+        }
+
+        // Check to see if Ethereum property is set
+        internal bool IsSetEthereum()
+        {
+            return this._ethereum != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Fabric. 

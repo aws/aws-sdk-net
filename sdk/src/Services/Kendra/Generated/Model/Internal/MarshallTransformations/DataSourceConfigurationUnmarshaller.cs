@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,10 +64,22 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ConfluenceConfiguration", targetDepth))
+                {
+                    var unmarshaller = ConfluenceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ConfluenceConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DatabaseConfiguration", targetDepth))
                 {
                     var unmarshaller = DatabaseConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DatabaseConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("GoogleDriveConfiguration", targetDepth))
+                {
+                    var unmarshaller = GoogleDriveConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.GoogleDriveConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OneDriveConfiguration", targetDepth))

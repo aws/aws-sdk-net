@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,13 @@ namespace Amazon.CloudWatch.Model
     /// Container for the parameters to the DescribeAlarmsForMetric operation.
     /// Retrieves the alarms for the specified metric. To filter the results, specify a statistic,
     /// period, or unit.
+    /// 
+    ///  
+    /// <para>
+    /// This operation retrieves only standard alarms that are based on the specified metric.
+    /// It does not return alarms based on math expressions that use the specified metric,
+    /// or composite alarms that use the specified metric.
+    /// </para>
     /// </summary>
     public partial class DescribeAlarmsForMetricRequest : AmazonCloudWatchRequest
     {

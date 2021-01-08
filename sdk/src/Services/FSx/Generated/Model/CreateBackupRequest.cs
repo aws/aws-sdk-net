@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -54,7 +54,8 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
+    /// For more information about backing up Amazon FSx for Windows file systems, see <a
+    /// href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
     /// with FSx for Windows backups</a>.
     /// </para>
     ///  

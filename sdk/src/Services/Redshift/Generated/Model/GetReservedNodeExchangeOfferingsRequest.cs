@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ namespace Amazon.Redshift.Model
         /// A value that indicates the starting point for the next set of ReservedNodeOfferings.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -81,7 +82,7 @@ namespace Amazon.Redshift.Model
         /// A string representing the node identifier for the DC1 Reserved Node to be exchanged.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ReservedNodeId
         {
             get { return this._reservedNodeId; }

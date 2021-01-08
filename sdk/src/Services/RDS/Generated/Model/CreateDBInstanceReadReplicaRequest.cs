@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -69,6 +69,7 @@ namespace Amazon.RDS.Model
         private bool? _enablePerformanceInsights;
         private int? _iops;
         private string _kmsKeyId;
+        private int? _maxAllocatedStorage;
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
         private bool? _multiAZ;
@@ -409,8 +410,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled. For information
-        /// about the supported DB engines, see <a>CreateDBInstance</a>.
+        /// (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         ///  
         /// <para>
@@ -477,21 +477,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS KMS key ID for an encrypted read replica. The KMS key ID is the Amazon Resource
-        /// Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+        /// The AWS KMS key identifier for an encrypted read replica.
+        /// </para>
+        ///  
+        /// <para>
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS CMK.
         /// </para>
         ///  
         /// <para>
         /// If you create an encrypted read replica in the same AWS Region as the source DB instance,
-        /// then you do not have to specify a value for this parameter. The read replica is encrypted
-        /// with the same KMS key as the source DB instance.
+        /// then do not specify a value for this parameter. A read replica in the same Region
+        /// is always encrypted with the same AWS KMS CMK as the source DB instance.
         /// </para>
         ///  
         /// <para>
         /// If you create an encrypted read replica in a different AWS Region, then you must specify
-        /// a KMS key for the destination AWS Region. KMS encryption keys are specific to the
-        /// AWS Region that they are created in, and you can't use encryption keys from one AWS
-        /// Region in another AWS Region.
+        /// a AWS KMS key identifier for the destination AWS Region. AWS KMS CMKs are specific
+        /// to the AWS Region that they are created in, and you can't use CMKs from one AWS Region
+        /// in another AWS Region.
         /// </para>
         ///  
         /// <para>
@@ -508,6 +512,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxAllocatedStorage. 
+        /// <para>
+        /// The upper limit to which Amazon RDS can automatically scale the storage of the DB
+        /// instance.
+        /// </para>
+        /// </summary>
+        public int MaxAllocatedStorage
+        {
+            get { return this._maxAllocatedStorage.GetValueOrDefault(); }
+            set { this._maxAllocatedStorage = value; }
+        }
+
+        // Check to see if MaxAllocatedStorage property is set
+        internal bool IsSetMaxAllocatedStorage()
+        {
+            return this._maxAllocatedStorage.HasValue; 
         }
 
         /// <summary>
@@ -618,16 +641,18 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsKMSKeyId. 
         /// <para>
-        /// The AWS KMS key identifier for encryption of Performance Insights data. The KMS key
-        /// ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-        /// the KMS encryption key.
+        /// The AWS KMS key identifier for encryption of Performance Insights data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+        /// AWS KMS customer master key (CMK).
         /// </para>
         ///  
         /// <para>
         /// If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon
-        /// RDS uses your default encryption key. AWS KMS creates the default encryption key for
-        /// your AWS account. Your AWS account has a different default encryption key for each
-        /// AWS Region.
+        /// RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
+        /// has a different default CMK for each AWS Region.
         /// </para>
         /// </summary>
         public string PerformanceInsightsKMSKeyId

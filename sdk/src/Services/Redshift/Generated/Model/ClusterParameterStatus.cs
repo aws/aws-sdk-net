@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ namespace Amazon.Redshift.Model
         /// The error that prevented the parameter from being applied to the database.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ParameterApplyErrorDescription
         {
             get { return this._parameterApplyErrorDescription; }
@@ -100,6 +101,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ParameterApplyStatus
         {
             get { return this._parameterApplyStatus; }
@@ -118,6 +120,7 @@ namespace Amazon.Redshift.Model
         /// The name of the parameter.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ParameterName
         {
             get { return this._parameterName; }

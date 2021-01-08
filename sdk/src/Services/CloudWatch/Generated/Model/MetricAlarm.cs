@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -337,7 +337,7 @@ namespace Amazon.CloudWatch.Model
         /// An array of MetricDataQuery structures, used in an alarm based on a metric math expression.
         /// Each structure either retrieves a metric or performs a math expression. One item in
         /// the Metrics array is the math expression that the alarm watches. This expression by
-        /// designated by having <code>ReturnValue</code> set to true.
+        /// designated by having <code>ReturnData</code> set to true.
         /// </para>
         /// </summary>
         public List<MetricDataQuery> Metrics

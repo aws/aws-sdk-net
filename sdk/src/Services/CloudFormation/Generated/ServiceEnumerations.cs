@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -143,6 +143,10 @@ namespace Amazon.CloudFormation
         /// </summary>
         public static readonly ChangeAction Add = new ChangeAction("Add");
         /// <summary>
+        /// Constant Dynamic for ChangeAction
+        /// </summary>
+        public static readonly ChangeAction Dynamic = new ChangeAction("Dynamic");
+        /// <summary>
         /// Constant Import for ChangeAction
         /// </summary>
         public static readonly ChangeAction Import = new ChangeAction("Import");
@@ -212,6 +216,18 @@ namespace Amazon.CloudFormation
         /// Constant DELETE_COMPLETE for ChangeSetStatus
         /// </summary>
         public static readonly ChangeSetStatus DELETE_COMPLETE = new ChangeSetStatus("DELETE_COMPLETE");
+        /// <summary>
+        /// Constant DELETE_FAILED for ChangeSetStatus
+        /// </summary>
+        public static readonly ChangeSetStatus DELETE_FAILED = new ChangeSetStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for ChangeSetStatus
+        /// </summary>
+        public static readonly ChangeSetStatus DELETE_IN_PROGRESS = new ChangeSetStatus("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETE_PENDING for ChangeSetStatus
+        /// </summary>
+        public static readonly ChangeSetStatus DELETE_PENDING = new ChangeSetStatus("DELETE_PENDING");
         /// <summary>
         /// Constant FAILED for ChangeSetStatus
         /// </summary>
@@ -1008,6 +1024,10 @@ namespace Amazon.CloudFormation
     public class RegistryType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant MODULE for RegistryType
+        /// </summary>
+        public static readonly RegistryType MODULE = new RegistryType("MODULE");
         /// <summary>
         /// Constant RESOURCE for RegistryType
         /// </summary>

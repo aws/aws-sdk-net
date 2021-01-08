@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Identifies the user, the file transfer protocol-enabled server they belong to, and
-    /// the identifier of the SSH public key associated with that user. A user can have more
-    /// than one key on each server that they are associated with.
+    /// Identifies the user, the server they belong to, and the identifier of the SSH public
+    /// key associated with that user. A user can have more than one key on each server that
+    /// they are associated with.
     /// </summary>
     public partial class ImportSshPublicKeyResponse : AmazonWebServiceResponse
     {
@@ -42,7 +42,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for a file transfer protocol-enabled server.
+        /// A system-assigned unique identifier for a server.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLocationObjectStorage operation.
-    /// Returns metadata about a self-managed object storage server location.
+    /// Returns metadata about a self-managed object storage server location. For more information
+    /// about self-managed object storage locations, see <a>create-object-location</a>.
     /// </summary>
     public partial class DescribeLocationObjectStorageRequest : AmazonDataSyncRequest
     {

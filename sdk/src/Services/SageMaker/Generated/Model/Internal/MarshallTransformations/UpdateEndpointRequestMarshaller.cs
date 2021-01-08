@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeploymentConfig())
+                {
+                    context.Writer.WritePropertyName("DeploymentConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeploymentConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeploymentConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEndpointConfigName())
                 {
                     context.Writer.WritePropertyName("EndpointConfigName");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,6 +42,9 @@ namespace Amazon.CloudHSMV2
     /// CloudHSM</a> and the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS
     /// CloudHSM User Guide</a>.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonCloudHSMV2Client : AmazonServiceClient, IAmazonCloudHSMV2
     {
         private static IServiceMetadata serviceMetadata = new AmazonCloudHSMV2Metadata();
@@ -823,6 +826,108 @@ namespace Amazon.CloudHSMV2
             options.ResponseUnmarshaller = ListTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyBackupAttributes
+
+        internal virtual ModifyBackupAttributesResponse ModifyBackupAttributes(ModifyBackupAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyBackupAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyBackupAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyBackupAttributesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies attributes for AWS CloudHSM backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyBackupAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyBackupAttributes service method, as returned by CloudHSMV2.</returns>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmAccessDeniedException">
+        /// The request was rejected because the requester does not have permission to perform
+        /// the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
+        /// The request was rejected because of an AWS CloudHSM internal failure. The request
+        /// can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
+        /// The request was rejected because it is not a valid request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmResourceNotFoundException">
+        /// The request was rejected because it refers to a resource that cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
+        /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyBackupAttributes">REST API Reference for ModifyBackupAttributes Operation</seealso>
+        public virtual Task<ModifyBackupAttributesResponse> ModifyBackupAttributesAsync(ModifyBackupAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyBackupAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyBackupAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyBackupAttributesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyCluster
+
+        internal virtual ModifyClusterResponse ModifyCluster(ModifyClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies AWS CloudHSM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyCluster service method, as returned by CloudHSMV2.</returns>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmAccessDeniedException">
+        /// The request was rejected because the requester does not have permission to perform
+        /// the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInternalFailureException">
+        /// The request was rejected because of an AWS CloudHSM internal failure. The request
+        /// can be retried.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmInvalidRequestException">
+        /// The request was rejected because it is not a valid request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmResourceNotFoundException">
+        /// The request was rejected because it refers to a resource that cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudHSMV2.Model.CloudHsmServiceException">
+        /// The request was rejected because an error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyCluster">REST API Reference for ModifyCluster Operation</seealso>
+        public virtual Task<ModifyClusterResponse> ModifyClusterAsync(ModifyClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyClusterResponse>(request, options, cancellationToken);
         }
 
         #endregion

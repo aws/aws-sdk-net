@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ namespace Amazon.S3.Model
         private int partNumber;
         private ServerSideEncryptionMethod serverSideEncryption;
         private string serverSideEncryptionKeyManagementServiceKeyId;
+        private bool? bucketKeyEnabled;
 
         /// <summary>
         /// The version of the source object that was copied, if you have enabled versioning on the source bucketName.
@@ -124,6 +125,21 @@ namespace Amazon.S3.Model
         internal bool IsSetServerSideEncryptionKeyManagementServiceKeyId()
         {
             return !System.String.IsNullOrEmpty(this.serverSideEncryptionKeyManagementServiceKeyId);
+        }
+
+        /// <summary>
+        /// <para>Indicates whether the multipart upload uses bucket key 
+        /// for server-side encryption with AWS KMS (SSE-KMS).</para>
+        /// </summary>
+        public bool BucketKeyEnabled
+        {
+            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            set { this.bucketKeyEnabled = value; }
+        }
+
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return bucketKeyEnabled.HasValue;
         }
     }
 }

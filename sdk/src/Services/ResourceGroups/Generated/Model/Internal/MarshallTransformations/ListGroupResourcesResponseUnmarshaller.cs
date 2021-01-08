@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -67,6 +67,12 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<ResourceIdentifier, ResourceIdentifierUnmarshaller>(ResourceIdentifierUnmarshaller.Instance);
                     response.ResourceIdentifiers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Resources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ListGroupResourcesItem, ListGroupResourcesItemUnmarshaller>(ListGroupResourcesItemUnmarshaller.Instance);
+                    response.Resources = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

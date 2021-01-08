@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ namespace Amazon.ElastiCache.Model
         private PendingModifiedValues _pendingModifiedValues;
         private string _preferredAvailabilityZone;
         private string _preferredMaintenanceWindow;
+        private string _preferredOutpostArn;
         private string _replicationGroupId;
         private List<SecurityGroupMembership> _securityGroups = new List<SecurityGroupMembership>();
         private int? _snapshotRetentionLimit;
@@ -268,6 +269,22 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
+        ///  <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for
+        /// Memcached engine version 1.5.16 onward).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+        /// <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+        /// <code>cache.m6g.16xlarge</code> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// At this time, M6g node types are available in the following regions: us-east-1, us-west-2,
+        /// us-east-2, eu-central-1, eu-west-1 and ap-northeast-1.
+        /// </para>
+        ///  </note> 
+        /// <para>
         ///  <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
         /// <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
         /// <code>cache.m5.24xlarge</code> 
@@ -327,6 +344,22 @@ namespace Amazon.ElastiCache.Model
         /// Current generation: 
         /// </para>
         ///  
+        /// <para>
+        ///  <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for
+        /// Memcached engine version 1.5.16 onward).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+        /// <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+        /// <code>cache.r6g.16xlarge</code> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// At this time, R6g node types are available in the following regions: us-east-1, us-west-2,
+        /// us-east-2, eu-central-1, eu-west-1 and ap-northeast-1.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
         /// <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
@@ -652,6 +685,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredOutpostArn. 
+        /// <para>
+        /// The outpost ARN in which the cache cluster is created.
+        /// </para>
+        /// </summary>
+        public string PreferredOutpostArn
+        {
+            get { return this._preferredOutpostArn; }
+            set { this._preferredOutpostArn = value; }
+        }
+
+        // Check to see if PreferredOutpostArn property is set
+        internal bool IsSetPreferredOutpostArn()
+        {
+            return this._preferredOutpostArn != null;
         }
 
         /// <summary>

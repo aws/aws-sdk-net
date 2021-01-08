@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,8 +34,8 @@ namespace Amazon.Budgets.Model
     /// 
     ///  
     /// <para>
-    ///  <code>USAGE</code>, <code>RI_UTILIZATION</code>, and <code>RI_COVERAGE</code> budgets
-    /// do not have <code>CostTypes</code>.
+    ///  <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>,
+    /// and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.
     /// </para>
     /// </summary>
     public partial class CostTypes

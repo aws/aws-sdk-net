@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -78,6 +78,7 @@ namespace Amazon.EC2.Model
         private string _networkInterfaceId;
         private string _routeTableId;
         private string _transitGatewayId;
+        private string _vpcEndpointId;
         private string _vpcPeeringConnectionId;
 
         /// <summary>
@@ -304,6 +305,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTransitGatewayId()
         {
             return this._transitGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointId. 
+        /// <para>
+        /// The ID of a VPC endpoint. Supported for Gateway Load Balancer endpoints only.
+        /// </para>
+        /// </summary>
+        public string VpcEndpointId
+        {
+            get { return this._vpcEndpointId; }
+            set { this._vpcEndpointId = value; }
+        }
+
+        // Check to see if VpcEndpointId property is set
+        internal bool IsSetVpcEndpointId()
+        {
+            return this._vpcEndpointId != null;
         }
 
         /// <summary>

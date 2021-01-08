@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -230,6 +230,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Paginator for ListDocumentVersions operation
         ///</summary>
         IListDocumentVersionsPaginator ListDocumentVersions(ListDocumentVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListOpsItemEvents operation
+        ///</summary>
+        IListOpsItemEventsPaginator ListOpsItemEvents(ListOpsItemEventsRequest request);
+
+        /// <summary>
+        /// Paginator for ListOpsMetadata operation
+        ///</summary>
+        IListOpsMetadataPaginator ListOpsMetadata(ListOpsMetadataRequest request);
 
         /// <summary>
         /// Paginator for ListResourceComplianceSummaries operation

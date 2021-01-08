@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ namespace Amazon.Transfer.Model
         private List<HomeDirectoryMapEntry> _homeDirectoryMappings = new List<HomeDirectoryMapEntry>();
         private HomeDirectoryType _homeDirectoryType;
         private string _policy;
+        private PosixProfile _posixProfile;
         private string _role;
         private List<SshPublicKey> _sshPublicKeys = new List<SshPublicKey>();
         private List<Tag> _tags = new List<Tag>();
@@ -158,14 +159,28 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PosixProfile.
+        /// </summary>
+        public PosixProfile PosixProfile
+        {
+            get { return this._posixProfile; }
+            set { this._posixProfile = value; }
+        }
+
+        // Check to see if PosixProfile property is set
+        internal bool IsSetPosixProfile()
+        {
+            return this._posixProfile != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
         /// Specifies the IAM role that controls your users' access to your Amazon S3 bucket.
         /// The policies attached to this role will determine the level of access you want to
         /// provide your users when transferring files into and out of your Amazon S3 bucket or
-        /// buckets. The IAM role should also contain a trust relationship that allows a file
-        /// transfer protocol-enabled server to access your resources when servicing your users'
-        /// transfer requests.
+        /// buckets. The IAM role should also contain a trust relationship that allows a server
+        /// to access your resources when servicing your users' transfer requests.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -226,7 +241,7 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// Specifies the name of the user that was requested to be described. User names are
         /// used for authentication purposes. This is the string that will be used by your user
-        /// when they log in to your file transfer protocol-enabled server.
+        /// when they log in to your server.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=100)]

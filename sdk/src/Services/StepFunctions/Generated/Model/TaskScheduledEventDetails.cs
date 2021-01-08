@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ namespace Amazon.StepFunctions.Model
     /// </summary>
     public partial class TaskScheduledEventDetails
     {
+        private long? _heartbeatInSeconds;
         private string _parameters;
         private string _region;
         private string _resource;
@@ -40,12 +41,31 @@ namespace Amazon.StepFunctions.Model
         private long? _timeoutInSeconds;
 
         /// <summary>
-        /// Gets and sets the property Parameters. 
+        /// Gets and sets the property HeartbeatInSeconds. 
         /// <para>
-        /// The JSON data passed to the resource referenced in a task state.
+        /// The maximum allowed duration between two heartbeats for the task.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=32768)]
+        public long HeartbeatInSeconds
+        {
+            get { return this._heartbeatInSeconds.GetValueOrDefault(); }
+            set { this._heartbeatInSeconds = value; }
+        }
+
+        // Check to see if HeartbeatInSeconds property is set
+        internal bool IsSetHeartbeatInSeconds()
+        {
+            return this._heartbeatInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// The JSON data passed to the resource referenced in a task state. Length constraints
+        /// apply to the payload size, and are expressed as bytes in UTF-8 encoding.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=262144)]
         public string Parameters
         {
             get { return this._parameters; }

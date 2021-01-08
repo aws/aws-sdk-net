@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,9 +30,9 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAccessPolicy operation.
-    /// Deletes an access policy that grants the specified AWS Single Sign-On identity access
-    /// to the specified AWS IoT SiteWise Monitor resource. You can use this operation to
-    /// revoke access to an AWS IoT SiteWise Monitor resource.
+    /// Deletes an access policy that grants the specified identity access to the specified
+    /// AWS IoT SiteWise Monitor resource. You can use this operation to revoke access to
+    /// an AWS IoT SiteWise Monitor resource.
     /// </summary>
     public partial class DeleteAccessPolicyRequest : AmazonIoTSiteWiseRequest
     {

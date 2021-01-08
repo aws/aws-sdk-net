@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -87,7 +87,7 @@ namespace Amazon.PI.Model
         /// </para>
         ///  
         /// <para>
-        /// To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code>
+        /// To use a DB instance as a data source, you specify its <code>DbiResourceId</code>
         /// value - for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> 
         /// </para>
         /// </summary>

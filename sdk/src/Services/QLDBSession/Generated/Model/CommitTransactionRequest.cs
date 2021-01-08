@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,6 +43,12 @@ namespace Amazon.QLDBSession.Model
         /// the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects
         /// the commit with an error if the digest computed on the client does not match the digest
         /// computed by QLDB.
+        /// </para>
+        ///  
+        /// <para>
+        /// The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits
+        /// a transaction if and only if the server has processed the exact set of statements
+        /// sent by the client, in the same order that client sent them, and with no duplicates.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

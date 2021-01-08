@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -134,7 +134,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Identifier and connection information of the game session created for the match. This
         /// information is added to the ticket only after the matchmaking request has been successfully
-        /// completed.
+        /// completed. This parameter is not set when FlexMatch is being used without GameLift
+        /// hosting.
         /// </para>
         /// </summary>
         public GameSessionConnectionInfo GameSessionConnectionInfo

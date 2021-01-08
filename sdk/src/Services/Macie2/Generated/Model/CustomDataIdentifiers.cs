@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about the number of occurrences of the data that produced a sensitive
-    /// data finding, and the custom data identifiers that detected the data for the finding.
+    /// Provides information about custom data identifiers that produced a sensitive data
+    /// finding, and the number of occurrences of the data that they detected for the finding.
     /// </summary>
     public partial class CustomDataIdentifiers
     {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,8 @@ namespace Amazon.ServiceCatalog.Model
     /// Container for the parameters to the EnableAWSOrganizationsAccess operation.
     /// Enable portfolio sharing feature through AWS Organizations. This API will allow Service
     /// Catalog to receive updates on your organization in order to sync your shares with
-    /// the current structure. This API can only be called by the master account in the organization.
+    /// the current structure. This API can only be called by the management account in the
+    /// organization.
     /// 
     ///  
     /// <para>

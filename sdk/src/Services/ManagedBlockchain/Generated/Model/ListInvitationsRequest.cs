@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,12 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInvitations operation.
-    /// Returns a listing of all invitations made on the specified network.
+    /// Returns a list of all invitations for the current AWS account.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class ListInvitationsRequest : AmazonManagedBlockchainRequest
     {

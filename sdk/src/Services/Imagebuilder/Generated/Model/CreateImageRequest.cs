@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class CreateImageRequest : AmazonImagebuilderRequest
     {
         private string _clientToken;
+        private string _containerRecipeArn;
         private string _distributionConfigurationArn;
         private bool? _enhancedImageMetadataEnabled;
         private string _imageRecipeArn;
@@ -60,6 +61,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerRecipeArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the container recipe that defines how images are
+        /// configured and tested.
+        /// </para>
+        /// </summary>
+        public string ContainerRecipeArn
+        {
+            get { return this._containerRecipeArn; }
+            set { this._containerRecipeArn = value; }
+        }
+
+        // Check to see if ContainerRecipeArn property is set
+        internal bool IsSetContainerRecipeArn()
+        {
+            return this._containerRecipeArn != null;
         }
 
         /// <summary>
@@ -108,7 +128,6 @@ namespace Amazon.Imagebuilder.Model
         /// tested, and assessed. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ImageRecipeArn
         {
             get { return this._imageRecipeArn; }

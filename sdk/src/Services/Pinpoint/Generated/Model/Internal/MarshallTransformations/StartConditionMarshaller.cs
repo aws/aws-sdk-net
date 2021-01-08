@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,6 +49,17 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Description");
                 context.Writer.Write(requestObject.Description);
+            }
+
+            if(requestObject.IsSetEventStartCondition())
+            {
+                context.Writer.WritePropertyName("EventStartCondition");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EventStartConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.EventStartCondition, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetSegmentStartCondition())

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -121,7 +121,7 @@ namespace Amazon.EC2.Model
         /// snapshots are encrypted, even if you omit this parameter and encryption by default
         /// is not enabled. You cannot set this parameter to false. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -150,7 +150,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab.
+        /// Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -158,11 +158,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+        /// Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+        /// Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -188,7 +188,7 @@ namespace Amazon.EC2.Model
         /// When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must
         /// supply a pre-signed URL. This parameter is optional for unencrypted snapshots. For
         /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query
-        /// Requests</a>.
+        /// requests</a>.
         /// </para>
         ///  
         /// <para>
@@ -198,8 +198,8 @@ namespace Amazon.EC2.Model
         /// be signed using AWS Signature Version 4. Because EBS snapshots are stored in Amazon
         /// S3, the signing algorithm for this parameter uses the same logic that is described
         /// in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
-        /// Requests by Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon
-        /// Simple Storage Service API Reference</i>. An invalid or improperly signed <code>PresignedUrl</code>
+        /// Requests: Using Query Parameters (AWS Signature Version 4)</a> in the <i>Amazon Simple
+        /// Storage Service API Reference</i>. An invalid or improperly signed <code>PresignedUrl</code>
         /// will cause the copy operation to fail asynchronously, and the snapshot will move to
         /// an <code>error</code> state.
         /// </para>

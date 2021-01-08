@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,15 +38,15 @@ namespace Amazon.Snowball.Model
     /// <para>
     /// The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric characters
     /// and 4 hyphens. This code is used to decrypt the manifest file when it is passed along
-    /// with the manifest to the Snowball through the Snowball client when the client is started
-    /// for the first time.
+    /// with the manifest to the Snow device through the Snowball client when the client is
+    /// started for the first time.
     /// </para>
     ///  
     /// <para>
     /// As a best practice, we recommend that you don't save a copy of the <code>UnlockCode</code>
     /// in the same location as the manifest file for that job. Saving these separately helps
-    /// prevent unauthorized parties from gaining access to the Snowball associated with that
-    /// job.
+    /// prevent unauthorized parties from gaining access to the Snow device associated with
+    /// that job.
     /// </para>
     /// </summary>
     public partial class GetJobUnlockCodeRequest : AmazonSnowballRequest

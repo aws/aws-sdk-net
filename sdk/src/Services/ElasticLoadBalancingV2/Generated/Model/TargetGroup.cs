@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private Matcher _matcher;
         private int? _port;
         private ProtocolEnum _protocol;
+        private string _protocolVersion;
         private string _targetGroupArn;
         private string _targetGroupName;
         private TargetTypeEnum _targetType;
@@ -91,7 +92,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HealthCheckPath. 
         /// <para>
-        /// The destination for the health check request.
+        /// The destination for health checks on the targets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -128,7 +129,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HealthCheckProtocol. 
         /// <para>
-        /// The protocol to use to connect with the target.
+        /// The protocol to use to connect with the target. The GENEVE, TLS, UDP, and TCP_UDP
+        /// protocols are not supported for health checks.
         /// </para>
         /// </summary>
         public ProtocolEnum HealthCheckProtocol
@@ -204,7 +206,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Matcher. 
         /// <para>
-        /// The HTTP codes to use when checking for a successful response from a target.
+        /// The HTTP or gRPC codes to use when checking for a successful response from a target.
         /// </para>
         /// </summary>
         public Matcher Matcher
@@ -257,6 +259,25 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProtocolVersion. 
+        /// <para>
+        /// [HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>,
+        /// <code>HTTP1</code>, and <code>HTTP2</code>.
+        /// </para>
+        /// </summary>
+        public string ProtocolVersion
+        {
+            get { return this._protocolVersion; }
+            set { this._protocolVersion = value; }
+        }
+
+        // Check to see if ProtocolVersion property is set
+        internal bool IsSetProtocolVersion()
+        {
+            return this._protocolVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetGroupArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the target group.
@@ -296,8 +317,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property TargetType. 
         /// <para>
         /// The type of target that you must specify when registering targets with this target
-        /// group. The possible values are <code>instance</code> (targets are specified by instance
-        /// ID) or <code>ip</code> (targets are specified by IP address).
+        /// group. The possible values are <code>instance</code> (register targets by instance
+        /// ID), <code>ip</code> (register targets by IP address), or <code>lambda</code> (register
+        /// a single Lambda function as a target).
         /// </para>
         /// </summary>
         public TargetTypeEnum TargetType

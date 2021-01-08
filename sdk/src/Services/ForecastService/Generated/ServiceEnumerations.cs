@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,10 @@ namespace Amazon.ForecastService
         /// Constant Float for AttributeType
         /// </summary>
         public static readonly AttributeType Float = new AttributeType("float");
+        /// <summary>
+        /// Constant Geolocation for AttributeType
+        /// </summary>
+        public static readonly AttributeType Geolocation = new AttributeType("geolocation");
         /// <summary>
         /// Constant Integer for AttributeType
         /// </summary>

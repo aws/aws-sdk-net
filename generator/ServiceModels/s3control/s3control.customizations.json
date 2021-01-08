@@ -1,9 +1,183 @@
 {
-    "runtimePipelineOverride": {
-        "overrides": [
-            { "operation": "addAfter", "newType": "Amazon.S3Control.Internal.AmazonS3ControlPostMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" },
-            { "operation": "addBefore", "newType": "Amazon.S3Control.Internal.AmazonS3ControlPostUnmarshallHandler", "targetType": "Amazon.Runtime.Internal.Unmarshaller" },
-            { "operation": "addAfter", "newType": "Amazon.S3Control.Internal.AmazonS3ControlExceptionHandler", "targetType": "Amazon.Runtime.Internal.ErrorCallbackHandler" },
-        ]
+  "runtimePipelineOverride": {
+    "overrides": [
+      {
+        "operation": "addBefore",
+        "newType": "Amazon.S3Control.Internal.AmazonS3ControlPreMarshallHandler",
+        "targetType": "Amazon.Runtime.Internal.Marshaller"
+      },
+      {
+        "operation": "addAfter",
+        "newType": "Amazon.S3Control.Internal.AmazonS3ControlPostMarshallHandler",
+        "targetType": "Amazon.Runtime.Internal.Marshaller"
+      },
+      {
+        "operation": "addBefore",
+        "newType": "Amazon.S3Control.Internal.AmazonS3ControlPostUnmarshallHandler",
+        "targetType": "Amazon.Runtime.Internal.Unmarshaller"
+      },
+      {
+        "operation": "addAfter",
+        "newType": "Amazon.S3Control.Internal.AmazonS3ControlExceptionHandler",
+        "targetType": "Amazon.Runtime.Internal.ErrorCallbackHandler"
+      }
+    ]
+  },
+  "operationModifiers": {
+		"CreateAccessPoint":{
+			"allowEmptyResult": true
     }
+  },
+  "operationArnField": {
+    "CreateAccessPointRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
+    "DeleteAccessPointRequest": {
+      "field": "Name",
+      "containsArnField": true
+    },
+    "GetAccessPointRequest": {
+      "field": "Name",
+      "containsArnField": true
+    },
+    "ListAccessPointsRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
+    "PutAccessPointPolicyRequest": {
+      "field": "Name",
+      "containsArnField": true
+    },
+    "GetAccessPointPolicyRequest": {
+      "field": "Name",
+      "containsArnField": true
+    },
+    "DeleteAccessPointPolicyRequest": {
+      "field": "Name",
+      "containsArnField": true
+    },
+    "DeleteBucketRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
+    "DeleteBucketLifecycleRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
+    "DeleteBucketLifecycleConfigurationRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
+    "GetBucketLifecycleConfigurationRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
+    "PutBucketLifecycleConfigurationRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
+    "GetBucketRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
+    "GetBucketPolicyRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
+    "PutBucketPolicyRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
+    "GetBucketTaggingRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
+    "PutBucketTaggingRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
+    "DeleteBucketTaggingRequest": {
+      "field": "Bucket",
+      "containsArnField": true
+    },
+    "CreateBucketRequest": {
+      "containsArnField": false
+    },
+    "CreateJobRequest": {
+      "containsArnField": false
+    },
+    "DeleteBucketPolicyRequest": {
+      "containsArnField": false
+    },
+    "DeleteJobTaggingRequest": {
+      "containsArnField": false
+    },
+    "DeletePublicAccessBlockRequest": {
+      "containsArnField": false
+    },
+    "DeleteStorageInsightsConfigurationRequest": {
+      "containsArnField": false
+    },
+    "DescribeJobRequest": {
+      "containsArnField": false
+    },
+    "GetAccessPointPolicyStatusRequest": {
+      "containsArnField": false
+    },
+    "GetJobTaggingRequest": {
+      "containsArnField": false
+    },
+    "GetPublicAccessBlockRequest": {
+      "containsArnField": false
+    },
+    "GetStorageInsightsConfigurationRequest": {
+      "containsArnField": false
+    },
+    "ListJobsRequest": {
+      "containsArnField": false
+    },
+    "ListRegionalBucketsRequest": {
+      "containsArnField": false
+    },
+    "ListStorageInsightsConfigurationsRequest": {
+      "containsArnField": false
+    },
+    "PutJobTaggingRequest": {
+      "containsArnField": false
+    },
+    "PutPublicAccessBlockRequest": {
+      "containsArnField": false
+    },
+    "PutStorageInsightsConfigurationRequest": {
+      "containsArnField": false
+    },
+    "UpdateJobPriorityRequest": {
+      "containsArnField": false
+    },
+    "UpdateJobStatusRequest": {
+      "containsArnField": false
+    },
+    "DeleteStorageLensConfigurationRequest": {
+      "containsArnField": false
+    },
+    "GetStorageLensConfigurationRequest":{
+      "containsArnField": false
+    },
+    "ListStorageLensConfigurationsRequest":{
+      "containsArnField": false
+    },
+    "PutStorageLensConfigurationRequest":{
+      "containsArnField": false
+    },
+    "DeleteStorageLensConfigurationTaggingRequest":{
+      "containsArnField": false
+    },
+    "GetStorageLensConfigurationTaggingRequest":{
+      "containsArnField": false
+    },
+    "PutStorageLensConfigurationTaggingRequest":{
+      "containsArnField": false
+    }
+  }
 }

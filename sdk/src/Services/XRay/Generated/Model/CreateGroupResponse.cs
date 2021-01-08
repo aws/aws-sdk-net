@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,9 +38,9 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The group that was created. Contains the name of the group that was created, the ARN
-        /// of the group that was generated based on the group name, and the filter expression
-        /// that was assigned to the group.
+        /// The group that was created. Contains the name of the group that was created, the Amazon
+        /// Resource Name (ARN) of the group that was generated based on the group name, the filter
+        /// expression, and the insight configuration that was assigned to the group.
         /// </para>
         /// </summary>
         public Group Group

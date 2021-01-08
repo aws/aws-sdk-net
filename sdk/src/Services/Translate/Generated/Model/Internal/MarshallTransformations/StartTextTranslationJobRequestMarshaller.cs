@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -111,6 +111,17 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.OutputDataConfig, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetParallelDataNames())
+                {
+                    context.Writer.WritePropertyName("ParallelDataNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestParallelDataNamesListValue in publicRequest.ParallelDataNames)
+                    {
+                            context.Writer.Write(publicRequestParallelDataNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetSourceLanguageCode())

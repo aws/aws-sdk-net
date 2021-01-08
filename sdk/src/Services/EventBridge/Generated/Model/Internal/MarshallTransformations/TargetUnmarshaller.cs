@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -76,6 +76,12 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     unmarshalledObject.BatchParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeadLetterConfig", targetDepth))
+                {
+                    var unmarshaller = DeadLetterConfigUnmarshaller.Instance;
+                    unmarshalledObject.DeadLetterConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EcsParameters", targetDepth))
                 {
                     var unmarshaller = EcsParametersUnmarshaller.Instance;
@@ -116,6 +122,18 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = KinesisParametersUnmarshaller.Instance;
                     unmarshalledObject.KinesisParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RedshiftDataParameters", targetDepth))
+                {
+                    var unmarshaller = RedshiftDataParametersUnmarshaller.Instance;
+                    unmarshalledObject.RedshiftDataParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetryPolicy", targetDepth))
+                {
+                    var unmarshaller = RetryPolicyUnmarshaller.Instance;
+                    unmarshalledObject.RetryPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RoleArn", targetDepth))

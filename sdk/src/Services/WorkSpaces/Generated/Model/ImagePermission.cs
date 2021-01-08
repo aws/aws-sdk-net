@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,6 +30,8 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Describes the AWS accounts that have been granted permission to use a shared image.
+    /// For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
+    /// Share or Unshare a Custom WorkSpaces Image</a>.
     /// </summary>
     public partial class ImagePermission
     {

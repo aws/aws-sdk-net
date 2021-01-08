@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -58,13 +58,33 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     /// MaxErrors
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> </ul> <note> 
     /// <para>
-    /// If a parameter is null, then the corresponding field is not modified. Also, if you
-    /// set Replace to true, then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a>
-    /// action are required for this request. Optional fields that aren't specified are set
-    /// to null.
+    /// One or more targets must be specified for maintenance window Run Command-type tasks.
+    /// Depending on the task, targets are optional for other maintenance window task types
+    /// (Automation, AWS Lambda, and AWS Step Functions). For more information about running
+    /// tasks that do not specify targets, see see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+    /// maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
     /// </para>
+    ///  </note> 
+    /// <para>
+    /// If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null,
+    /// then the corresponding field is not modified. If you set <code>Replace</code> to true,
+    /// then all fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are
+    /// required for this request. Optional fields that aren't specified are set to null.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+    /// you must provide again all the <code>TaskInvocationParameters</code> values that you
+    /// want to retain. The values you do not specify again are removed. For example, suppose
+    /// that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code>
+    /// values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>.
+    /// If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code>
+    /// value, the values for <code>Comment</code> and <code>NotificationConfig</code> are
+    /// removed.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateMaintenanceWindowTaskRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -135,6 +155,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code>
         /// is the number of targets that are allowed to run this task in parallel.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For maintenance window tasks without a target specified, you cannot supply a value
+        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>,
+        /// which may be reported in the response to this command. This value does not affect
+        /// the running of your task and can be ignored.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
         public string MaxConcurrency
@@ -155,6 +183,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum
         /// number of errors that are allowed before the task stops being scheduled.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For maintenance window tasks without a target specified, you cannot supply a value
+        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>,
+        /// which may be reported in the response to this command. This value does not affect
+        /// the running of your task and can be ignored.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
         public string MaxErrors
@@ -211,7 +247,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Replace. 
         /// <para>
-        /// If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow
+        /// If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow
         /// action are also required for this API request. Optional fields that are not specified
         /// are set to null.
         /// </para>
@@ -272,6 +308,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The targets (either instances or tags) to modify. Instances are specified using Key=instanceids,Values=instanceID_1,instanceID_2.
         /// Tags are specified using Key=tag_name,Values=tag_value. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// One or more targets must be specified for maintenance window Run Command-type tasks.
+        /// Depending on the task, targets are optional for other maintenance window task types
+        /// (Automation, AWS Lambda, and AWS Step Functions). For more information about running
+        /// tasks that do not specify targets, see see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+        /// maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<Target> Targets
@@ -311,6 +356,18 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameters that the task should use during execution. Populate only the fields
         /// that match the task type. All other fields should be empty.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+        /// you must provide again all the <code>TaskInvocationParameters</code> values that you
+        /// want to retain. The values you do not specify again are removed. For example, suppose
+        /// that when you registered a Run Command task, you specified <code>TaskInvocationParameters</code>
+        /// values for <code>Comment</code>, <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>.
+        /// If you update the maintenance window task and specify only a different <code>OutputS3BucketName</code>
+        /// value, the values for <code>Comment</code> and <code>NotificationConfig</code> are
+        /// removed.
+        /// </para>
+        ///  </important>
         /// </summary>
         public MaintenanceWindowTaskInvocationParameters TaskInvocationParameters
         {

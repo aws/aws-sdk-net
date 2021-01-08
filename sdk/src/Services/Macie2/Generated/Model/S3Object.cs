@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -87,8 +87,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Extension. 
         /// <para>
-        /// The file extension of the object. If the object doesn't have a file extension, this
-        /// value is "".
+        /// The file name extension of the object. If the object doesn't have a file name extension,
+        /// this value is "".
         /// </para>
         /// </summary>
         public string Extension
@@ -179,7 +179,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryption. 
         /// <para>
-        /// The server-side encryption settings for the object.
+        /// The type of server-side encryption that's used for the object.
         /// </para>
         /// </summary>
         public ServerSideEncryption ServerSideEncryption

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,7 +36,12 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// For more information about preventing instances that are part of an Auto Scaling group
     /// from terminating on scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-    /// Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// scale-in protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you exceed your maximum limit of instance IDs, which is 50 per Auto Scaling group,
+    /// the call fails.
     /// </para>
     /// </summary>
     public partial class SetInstanceProtectionRequest : AmazonAutoScalingRequest
@@ -51,7 +56,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }
@@ -67,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// One or more instance IDs.
+        /// One or more instance IDs. You can specify up to 50 instances.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -1,5 +1,5 @@
-/*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+﻿/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,9 +22,6 @@ namespace Amazon.Auth.AccessControlPolicy
     /// <summary>
     /// A factory for creating resources to be used in the policy.
     /// </summary>
-    [Obsolete(
-            "The Amazon.Auth.AccessContolPolicy classes are out of date and are no longer being maintained.\n" +
-            "Please construct policy documents using the information found here: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json")]
     public static class ResourceFactory
     {
         /// <summary>

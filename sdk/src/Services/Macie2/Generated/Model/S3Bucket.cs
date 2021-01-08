@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -80,7 +80,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property DefaultServerSideEncryption. 
         /// <para>
-        /// The server-side encryption settings for the bucket.
+        /// The type of server-side encryption that's used by default to encrypt objects in the
+        /// bucket.
         /// </para>
         /// </summary>
         public ServerSideEncryption DefaultServerSideEncryption

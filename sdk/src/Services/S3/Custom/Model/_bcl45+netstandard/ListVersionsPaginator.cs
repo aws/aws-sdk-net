@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ namespace Amazon.S3.Model
             {
                 throw new InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var keyMarker = _request.KeyMarker;
             var versionIdMarker = _request.VersionIdMarker;
             ListVersionsResponse response;
@@ -84,6 +85,7 @@ namespace Amazon.S3.Model
             {
                 throw new InvalidOperationException("Paginator has already been consumed and cannot be reused. Please create a new instance.");
             }
+            PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var keyMarker = _request.KeyMarker;
             var versionIdMarker = _request.VersionIdMarker;
             ListVersionsResponse response;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ namespace Amazon.CodeBuild.Model
         private ReportExportConfig _exportConfig;
         private DateTime? _lastModified;
         private string _name;
+        private ReportGroupStatusType _status;
         private List<Tag> _tags = new List<Tag>();
         private ReportType _type;
 
@@ -134,6 +135,21 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status.
+        /// </summary>
+        public ReportGroupStatusType Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

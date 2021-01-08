@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,14 @@ namespace Amazon.IoT.Model
         internal IoTPaginatorFactory(IAmazonIoT client) 
         {
             this.client = client;
+        }
+
+        /// <summary>
+        /// Paginator for GetBehaviorModelTrainingSummaries operation
+        ///</summary>
+        public IGetBehaviorModelTrainingSummariesPaginator GetBehaviorModelTrainingSummaries(GetBehaviorModelTrainingSummariesRequest request) 
+        {
+            return new GetBehaviorModelTrainingSummariesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -130,6 +138,30 @@ namespace Amazon.IoT.Model
         public IListCertificatesByCAPaginator ListCertificatesByCA(ListCertificatesByCARequest request) 
         {
             return new ListCertificatesByCAPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCustomMetrics operation
+        ///</summary>
+        public IListCustomMetricsPaginator ListCustomMetrics(ListCustomMetricsRequest request) 
+        {
+            return new ListCustomMetricsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDetectMitigationActionsExecutions operation
+        ///</summary>
+        public IListDetectMitigationActionsExecutionsPaginator ListDetectMitigationActionsExecutions(ListDetectMitigationActionsExecutionsRequest request) 
+        {
+            return new ListDetectMitigationActionsExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDetectMitigationActionsTasks operation
+        ///</summary>
+        public IListDetectMitigationActionsTasksPaginator ListDetectMitigationActionsTasks(ListDetectMitigationActionsTasksRequest request) 
+        {
+            return new ListDetectMitigationActionsTasksPaginator(this.client, request);
         }
 
         /// <summary>
@@ -322,6 +354,14 @@ namespace Amazon.IoT.Model
         public IListThingGroupsForThingPaginator ListThingGroupsForThing(ListThingGroupsForThingRequest request) 
         {
             return new ListThingGroupsForThingPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListThingPrincipals operation
+        ///</summary>
+        public IListThingPrincipalsPaginator ListThingPrincipals(ListThingPrincipalsRequest request) 
+        {
+            return new ListThingPrincipalsPaginator(this.client, request);
         }
 
         /// <summary>

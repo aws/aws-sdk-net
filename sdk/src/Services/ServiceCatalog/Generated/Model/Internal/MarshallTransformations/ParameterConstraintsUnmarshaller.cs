@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,10 +64,46 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AllowedPattern", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AllowedPattern = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AllowedValues", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowedValues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConstraintDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConstraintDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxLength", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaxLength = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxValue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaxValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MinLength", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MinLength = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MinValue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MinValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

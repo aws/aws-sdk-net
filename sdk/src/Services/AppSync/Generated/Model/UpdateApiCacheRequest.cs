@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+        ///  <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -153,7 +153,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  
         /// <para>
-        /// The following legacy instance types are avaible, but their use is discouraged:
+        /// The following legacy instance types are available, but their use is discouraged:
         /// </para>
         ///  <ul> <li> 
         /// <para>

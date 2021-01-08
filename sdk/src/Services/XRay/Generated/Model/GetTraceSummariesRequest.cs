@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -147,7 +147,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property SamplingStrategy. 
         /// <para>
-        /// A paramater to indicate whether to enable sampling on trace summaries. Input parameters
+        /// A parameter to indicate whether to enable sampling on trace summaries. Input parameters
         /// are Name and Value.
         /// </para>
         /// </summary>

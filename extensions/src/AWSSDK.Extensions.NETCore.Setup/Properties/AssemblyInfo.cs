@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("Amazon.com, Inc")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET extensions for .NET Core setup")]
 [assembly: AssemblyDescription("Amazon Web Services SDK for .NET extensions for .NET Core setup")]
-[assembly: AssemblyCopyright("Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.")]
+[assembly: AssemblyCopyright("Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible

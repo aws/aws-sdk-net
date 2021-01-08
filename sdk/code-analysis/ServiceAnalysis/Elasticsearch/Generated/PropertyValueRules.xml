@@ -99,6 +99,10 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.GetPackageVersionHistoryRequest.MaxResults</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Elasticsearch.Model.GetUpgradeHistoryRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -175,6 +179,14 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.UpdatePackageRequest.CommitMessage</property>
+    <max>160</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.UpdatePackageRequest.PackageDescription</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Elasticsearch.Model.UpgradeElasticsearchDomainRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -202,6 +214,12 @@
     <min>1</min>
     <max>55</max>
     <pattern>[\w-]+_[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.DomainEndpointOptions.CustomEndpoint</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DomainInfo.DomainName</property>
@@ -284,6 +302,10 @@
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.PackageVersionHistory.CommitMessage</property>
+    <max>160</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ReservedElasticsearchInstance.ReservationName</property>
     <min>5</min>
     <max>64</max>
@@ -293,6 +315,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ReservedElasticsearchInstanceOffering.ReservedElasticsearchInstanceOfferingId</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.SAMLIdp.EntityId</property>
+    <min>8</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.SAMLIdp.MetadataContent</property>
+    <min>1</min>
+    <max>1048576</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.SAMLOptionsInput.MasterBackendRole</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Elasticsearch.Model.SAMLOptionsInput.MasterUserName</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.Tag.Key</property>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ namespace Amazon.XRay.Model
         private string _filterExpression;
         private string _groupARN;
         private string _groupName;
+        private InsightsConfiguration _insightsConfiguration;
 
         /// <summary>
         /// Gets and sets the property FilterExpression. 
@@ -89,6 +90,35 @@ namespace Amazon.XRay.Model
         internal bool IsSetGroupName()
         {
             return this._groupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InsightsConfiguration. 
+        /// <para>
+        /// The structure containing configurations related to insights.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The InsightsEnabled boolean can be set to true to enable insights for the group or
+        /// false to disable insights for the group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The NotificationsEnabled boolean can be set to true to enable insights notifications.
+        /// Notifications can only be enabled on a group with InsightsEnabled set to true.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public InsightsConfiguration InsightsConfiguration
+        {
+            get { return this._insightsConfiguration; }
+            set { this._insightsConfiguration = value; }
+        }
+
+        // Check to see if InsightsConfiguration property is set
+        internal bool IsSetInsightsConfiguration()
+        {
+            return this._insightsConfiguration != null;
         }
 
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,7 +63,8 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/";
             request.MarshallerVersion = 2;
-            request.Content = System.Text.Encoding.UTF8.GetBytes("{}");
+            var content = "{}";
+            request.Content = System.Text.Encoding.UTF8.GetBytes(content);
 
             return request;
         }

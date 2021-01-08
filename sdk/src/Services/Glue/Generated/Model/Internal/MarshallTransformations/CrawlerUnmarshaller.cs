@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -118,10 +118,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdated = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LineageConfiguration", targetDepth))
+                {
+                    var unmarshaller = LineageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LineageConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RecrawlPolicy", targetDepth))
+                {
+                    var unmarshaller = RecrawlPolicyUnmarshaller.Instance;
+                    unmarshalledObject.RecrawlPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Role", targetDepth))

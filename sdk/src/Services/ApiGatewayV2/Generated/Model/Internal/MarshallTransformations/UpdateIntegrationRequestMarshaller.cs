@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -162,6 +162,28 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                         var publicRequestRequestTemplatesValue = publicRequestRequestTemplatesKvp.Value;
 
                             context.Writer.Write(publicRequestRequestTemplatesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetResponseParameters())
+                {
+                    context.Writer.WritePropertyName("responseParameters");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestResponseParametersKvp in publicRequest.ResponseParameters)
+                    {
+                        context.Writer.WritePropertyName(publicRequestResponseParametersKvp.Key);
+                        var publicRequestResponseParametersValue = publicRequestResponseParametersKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestResponseParametersValueKvp in publicRequestResponseParametersValue)
+                        {
+                            context.Writer.WritePropertyName(publicRequestResponseParametersValueKvp.Key);
+                            var publicRequestResponseParametersValueValue = publicRequestResponseParametersValueKvp.Value;
+
+                                context.Writer.Write(publicRequestResponseParametersValueValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteObjectEnd();
                 }

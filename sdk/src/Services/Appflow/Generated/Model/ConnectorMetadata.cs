@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,6 +49,7 @@ namespace Amazon.Appflow.Model
         private SlackMetadata _slack;
         private SnowflakeMetadata _snowflake;
         private TrendmicroMetadata _trendmicro;
+        private UpsolverMetadata _upsolver;
         private VeevaMetadata _veeva;
         private ZendeskMetadata _zendesk;
 
@@ -320,6 +321,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetTrendmicro()
         {
             return this._trendmicro != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Upsolver. 
+        /// <para>
+        ///  The connector metadata specific to Upsolver. 
+        /// </para>
+        /// </summary>
+        public UpsolverMetadata Upsolver
+        {
+            get { return this._upsolver; }
+            set { this._upsolver = value; }
+        }
+
+        // Check to see if Upsolver property is set
+        internal bool IsSetUpsolver()
+        {
+            return this._upsolver != null;
         }
 
         /// <summary>

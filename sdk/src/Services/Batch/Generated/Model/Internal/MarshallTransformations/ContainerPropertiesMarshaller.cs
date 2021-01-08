@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -72,6 +72,23 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetExecutionRoleArn())
+            {
+                context.Writer.WritePropertyName("executionRoleArn");
+                context.Writer.Write(requestObject.ExecutionRoleArn);
+            }
+
+            if(requestObject.IsSetFargatePlatformConfiguration())
+            {
+                context.Writer.WritePropertyName("fargatePlatformConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FargatePlatformConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FargatePlatformConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("image");
@@ -101,6 +118,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLogConfiguration())
+            {
+                context.Writer.WritePropertyName("logConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LogConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LogConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMemory())
             {
                 context.Writer.WritePropertyName("memory");
@@ -121,6 +149,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetNetworkConfiguration())
+            {
+                context.Writer.WritePropertyName("networkConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NetworkConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.NetworkConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetPrivileged())
@@ -145,6 +184,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
                     var marshaller = ResourceRequirementMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourceRequirementsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetSecrets())
+            {
+                context.Writer.WritePropertyName("secrets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSecretsListValue in requestObject.Secrets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SecretMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSecretsListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

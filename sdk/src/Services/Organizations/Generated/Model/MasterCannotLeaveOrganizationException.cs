@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// You can't remove a master account from an organization. If you want the master account
-    /// to become a member account in another organization, you must first delete the current
-    /// organization of the master account.
+    /// You can't remove a management account from an organization. If you want the management
+    /// account to become a member account in another organization, you must first delete
+    /// the current organization of the management account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,8 +64,24 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DefaultOu. 
         /// <para>
-        /// The default organizational unit (OU) for your WorkSpace directories.
+        /// The default organizational unit (OU) for your WorkSpaces directories. This string
+        /// must be the full Lightweight Directory Access Protocol (LDAP) distinguished name for
+        /// the target domain and OU. It must be in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>,
+        /// where <i>value</i> is any string of characters, and the number of domain components
+        /// (DCs) is two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>.
+        /// 
         /// </para>
+        ///  <important> <ul> <li> 
+        /// <para>
+        /// To avoid errors, certain characters in the distinguished name must be escaped. For
+        /// more information, see <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+        /// Distinguished Names</a> in the Microsoft documentation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The API doesn't validate whether the OU exists.
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         public string DefaultOu
         {

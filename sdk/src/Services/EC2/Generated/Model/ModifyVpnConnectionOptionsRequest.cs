@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVpnConnectionOptions operation.
-    /// Modifies the connection options for your Site-to-Site VPN VPN connection.
+    /// Modifies the connection options for your Site-to-Site VPN connection.
     /// 
     ///  
     /// <para>
@@ -138,7 +138,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpnConnectionId. 
         /// <para>
-        /// The ID of the Site-to-Site VPN VPN connection. 
+        /// The ID of the Site-to-Site VPN connection. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

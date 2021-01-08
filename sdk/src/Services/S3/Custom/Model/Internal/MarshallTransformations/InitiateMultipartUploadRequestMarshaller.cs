@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,6 +41,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (initiateMultipartUploadRequest.IsSetCannedACL())
                 request.Headers.Add(HeaderKeys.XAmzAclHeader, S3Transforms.ToStringValue(initiateMultipartUploadRequest.CannedACL));
+
+            if (initiateMultipartUploadRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(initiateMultipartUploadRequest.ExpectedBucketOwner));
 
             var headers = initiateMultipartUploadRequest.Headers;
             foreach (var key in headers.Keys)
@@ -84,6 +87,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (initiateMultipartUploadRequest.IsSetTagSet())
                 request.Headers.Add(S3Constants.AmzHeaderTagging, AmazonS3Util.TagSetToQueryString(initiateMultipartUploadRequest.TagSet));
+
+            if (initiateMultipartUploadRequest.IsSetBucketKeyEnabled())
+                request.Headers.Add(S3Constants.AmzHeaderBucketKeyEnabled, S3Transforms.ToStringValue(initiateMultipartUploadRequest.BucketKeyEnabled));
 
             AmazonS3Util.SetMetadataHeaders(request, initiateMultipartUploadRequest.Metadata);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Acm. 
         /// <para>
         /// A reference to an object that represents a TLS validation context trust for an AWS
-        /// Certicate Manager (ACM)         certificate.
+        /// Certicate Manager (ACM) certificate.
         /// </para>
         /// </summary>
         public VirtualGatewayTlsValidationContextAcmTrust Acm

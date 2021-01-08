@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,7 +55,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Instantiates TerminateJobFlowsRequest with the parameterized properties
         /// </summary>
-        /// <param name="jobFlowIds">A list of job flows to be shutdown.</param>
+        /// <param name="jobFlowIds">A list of job flows to be shut down.</param>
         public TerminateJobFlowsRequest(List<string> jobFlowIds)
         {
             _jobFlowIds = jobFlowIds;
@@ -64,7 +64,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property JobFlowIds. 
         /// <para>
-        /// A list of job flows to be shutdown.
+        /// A list of job flows to be shut down.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

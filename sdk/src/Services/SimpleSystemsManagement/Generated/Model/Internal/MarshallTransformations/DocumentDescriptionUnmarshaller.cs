@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,10 +64,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ApprovedVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ApprovedVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AttachmentsInformation", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AttachmentInformation, AttachmentInformationUnmarshaller>(AttachmentInformationUnmarshaller.Instance);
                     unmarshalledObject.AttachmentsInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Author", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Author = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreatedDate", targetDepth))
@@ -142,6 +154,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PendingReviewVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PendingReviewVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PlatformTypes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -152,6 +170,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<DocumentRequires, DocumentRequiresUnmarshaller>(DocumentRequiresUnmarshaller.Instance);
                     unmarshalledObject.Requires = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReviewInformation", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ReviewInformation, ReviewInformationUnmarshaller>(ReviewInformationUnmarshaller.Instance);
+                    unmarshalledObject.ReviewInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReviewStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReviewStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SchemaVersion", targetDepth))

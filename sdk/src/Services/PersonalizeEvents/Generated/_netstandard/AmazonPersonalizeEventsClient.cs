@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,6 +42,9 @@ namespace Amazon.PersonalizeEvents
     /// <i>click</i> data, and use it for model training either alone or combined with historical
     /// data. For more information see <a>recording-events</a>.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonPersonalizeEventsClient : AmazonServiceClient, IAmazonPersonalizeEvents
     {
         private static IServiceMetadata serviceMetadata = new AmazonPersonalizeEventsMetadata();
@@ -275,6 +278,86 @@ namespace Amazon.PersonalizeEvents
             options.ResponseUnmarshaller = PutEventsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutItems
+
+        internal virtual PutItemsResponse PutItems(PutItemsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutItemsResponseUnmarshaller.Instance;
+
+            return Invoke<PutItemsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds one or more items to an Items dataset. For more information see <a>importing-items</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutItems service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutItems service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">REST API Reference for PutItems Operation</seealso>
+        public virtual Task<PutItemsResponse> PutItemsAsync(PutItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutItemsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutItemsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutUsers
+
+        internal virtual PutUsersResponse PutUsers(PutUsersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutUsersResponseUnmarshaller.Instance;
+
+            return Invoke<PutUsersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds one or more users to a Users dataset. For more information see <a>importing-users</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutUsers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutUsers service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">REST API Reference for PutUsers Operation</seealso>
+        public virtual Task<PutUsersResponse> PutUsersAsync(PutUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutUsersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutUsersResponse>(request, options, cancellationToken);
         }
 
         #endregion

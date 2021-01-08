@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -90,6 +90,7 @@ namespace Amazon.EKS.Model
     {
         private string _clientRequestToken;
         private List<EncryptionConfig> _encryptionConfig = new List<EncryptionConfig>();
+        private KubernetesNetworkConfigRequest _kubernetesNetworkConfig;
         private Logging _logging;
         private string _name;
         private VpcConfigRequest _resourcesVpcConfig;
@@ -133,6 +134,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetEncryptionConfig()
         {
             return this._encryptionConfig != null && this._encryptionConfig.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KubernetesNetworkConfig. 
+        /// <para>
+        /// The Kubernetes network configuration for the cluster.
+        /// </para>
+        /// </summary>
+        public KubernetesNetworkConfigRequest KubernetesNetworkConfig
+        {
+            get { return this._kubernetesNetworkConfig; }
+            set { this._kubernetesNetworkConfig = value; }
+        }
+
+        // Check to see if KubernetesNetworkConfig property is set
+        internal bool IsSetKubernetesNetworkConfig()
+        {
+            return this._kubernetesNetworkConfig != null;
         }
 
         /// <summary>

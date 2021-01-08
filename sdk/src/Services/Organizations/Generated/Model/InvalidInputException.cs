@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,6 +40,10 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </note> <ul> <li> 
     /// <para>
+    /// DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
     /// </para>
     ///  </li> <li> 
@@ -49,6 +53,10 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// INVALID_ENUM: You specified an invalid value.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -124,6 +132,14 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
     /// in the same root.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
     /// </para>
     ///  </li> </ul>
     /// </summary>

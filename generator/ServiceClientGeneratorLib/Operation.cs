@@ -118,6 +118,20 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Determines if a checksum needs to be sent in the Content-MD5 header.
+        /// </summary>
+        public bool HttpChecksumRequired
+        {
+            get
+            {
+                if (data[ServiceModel.HttpChecksumRequiredKey] != null && data[ServiceModel.HttpChecksumRequiredKey].IsBoolean)
+                    return (bool)data[ServiceModel.HttpChecksumRequiredKey];
+
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Determines if the operation is customized to be only internally accessible.
         /// </summary>
         public bool IsInternal
@@ -159,6 +173,21 @@ namespace ServiceClientGenerator
                 var modifiers = this.model.Customizations.GetOperationModifiers(this.name);
                 if (modifiers != null)
                     return modifiers.UseWrappingResult;
+
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Allows the operation to return an empty result when the operation is modeled to return body result structure.
+        /// </summary>
+        public bool AllowEmptyResult
+        {
+            get
+            {
+                var modifiers = this.model.Customizations.GetOperationModifiers(this.name);
+                if (modifiers != null)
+                    return modifiers.AllowEmptyResult;
 
                 return false;
             }

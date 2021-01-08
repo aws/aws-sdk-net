@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAppNetworkAccessType())
+                {
+                    context.Writer.WritePropertyName("AppNetworkAccessType");
+                    context.Writer.Write(publicRequest.AppNetworkAccessType);
+                }
+
                 if(publicRequest.IsSetAuthMode())
                 {
                     context.Writer.WritePropertyName("AuthMode");
@@ -95,6 +101,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("HomeEfsFileSystemKmsKeyId");
                     context.Writer.Write(publicRequest.HomeEfsFileSystemKmsKeyId);
+                }
+
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("KmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
                 }
 
                 if(publicRequest.IsSetSubnetIds())

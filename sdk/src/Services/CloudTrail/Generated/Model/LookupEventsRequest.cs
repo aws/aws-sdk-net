@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -92,8 +92,8 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// The rate of lookup requests is limited to two per second per account. If this limit
-    /// is exceeded, a throttling error occurs.
+    /// The rate of lookup requests is limited to two per second, per account, per region.
+    /// If this limit is exceeded, a throttling error occurs.
     /// </para>
     ///  </important>
     /// </summary>

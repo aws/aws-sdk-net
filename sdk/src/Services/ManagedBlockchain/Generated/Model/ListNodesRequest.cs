@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,6 +31,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// <summary>
     /// Container for the parameters to the ListNodes operation.
     /// Returns information about the nodes within a network.
+    /// 
+    ///  
+    /// <para>
+    /// Applies to Hyperledger Fabric and Ethereum.
+    /// </para>
     /// </summary>
     public partial class ListNodesRequest : AmazonManagedBlockchainRequest
     {
@@ -64,8 +69,12 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The unique identifier of the member who owns the nodes to list.
         /// </para>
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
+        [AWSProperty(Min=1, Max=32)]
         public string MemberId
         {
             get { return this._memberId; }

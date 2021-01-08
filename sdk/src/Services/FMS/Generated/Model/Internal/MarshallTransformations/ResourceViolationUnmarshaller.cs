@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -80,6 +80,30 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsVPCSecurityGroupViolationUnmarshaller.Instance;
                     unmarshalledObject.AwsVPCSecurityGroupViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFirewallMissingExpectedRTViolation", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallMissingExpectedRTViolationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFirewallMissingExpectedRTViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFirewallMissingFirewallViolation", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallMissingFirewallViolationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFirewallMissingFirewallViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFirewallMissingSubnetViolation", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallMissingSubnetViolationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFirewallMissingSubnetViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NetworkFirewallPolicyModifiedViolation", targetDepth))
+                {
+                    var unmarshaller = NetworkFirewallPolicyModifiedViolationUnmarshaller.Instance;
+                    unmarshalledObject.NetworkFirewallPolicyModifiedViolation = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

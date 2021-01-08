@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,14 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
+        /// Paginator for GetConnections operation
+        ///</summary>
+        public IGetConnectionsPaginator GetConnections(GetConnectionsRequest request) 
+        {
+            return new GetConnectionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetCustomerGatewayAssociations operation
         ///</summary>
         public IGetCustomerGatewayAssociationsPaginator GetCustomerGatewayAssociations(GetCustomerGatewayAssociationsRequest request) 
@@ -82,6 +90,14 @@ namespace Amazon.NetworkManager.Model
         public IGetSitesPaginator GetSites(GetSitesRequest request) 
         {
             return new GetSitesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetTransitGatewayConnectPeerAssociations operation
+        ///</summary>
+        public IGetTransitGatewayConnectPeerAssociationsPaginator GetTransitGatewayConnectPeerAssociations(GetTransitGatewayConnectPeerAssociationsRequest request) 
+        {
+            return new GetTransitGatewayConnectPeerAssociationsPaginator(this.client, request);
         }
 
         /// <summary>

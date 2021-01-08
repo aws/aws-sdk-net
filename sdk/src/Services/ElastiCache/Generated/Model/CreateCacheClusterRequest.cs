@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -52,10 +52,13 @@ namespace Amazon.ElastiCache.Model
         private string _engineVersion;
         private string _notificationTopicArn;
         private int? _numCacheNodes;
+        private OutpostMode _outpostMode;
         private int? _port;
         private string _preferredAvailabilityZone;
         private List<string> _preferredAvailabilityZones = new List<string>();
         private string _preferredMaintenanceWindow;
+        private string _preferredOutpostArn;
+        private List<string> _preferredOutpostArns = new List<string>();
         private string _replicationGroupId;
         private List<string> _securityGroupIds = new List<string>();
         private List<string> _snapshotArns = new List<string>();
@@ -74,7 +77,7 @@ namespace Amazon.ElastiCache.Model
         /// </summary>
         /// <param name="cacheClusterId">The node group (shard) identifier. This parameter is stored as a lowercase string.  <b>Constraints:</b>  <ul> <li> A name must contain from 1 to 50 alphanumeric characters or hyphens. </li> <li> The first character must be a letter. </li> <li> A name cannot end with a hyphen or contain two consecutive hyphens. </li> </ul></param>
         /// <param name="numCacheNodes">The initial number of cache nodes that the cluster has. For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1 and 20. If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</param>
-        /// <param name="cacheNodeType">The compute and memory capacity of the nodes in the node group (shard). The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts. <ul> <li> General purpose: <ul> <li> Current generation:   <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>   <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>   <b>T3 node types:</b> <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code>   <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>  </li> <li> Previous generation: (not recommended)  <b>T1 node types:</b> <code>cache.t1.micro</code>   <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>   <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>  </li> </ul> </li> <li> Compute optimized: <ul> <li> Previous generation: (not recommended)  <b>C1 node types:</b> <code>cache.c1.xlarge</code>  </li> </ul> </li> <li> Memory optimized: <ul> <li> Current generation:   <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>   <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>  </li> <li> Previous generation: (not recommended)  <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>   <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>  </li> </ul> </li> </ul>  <b>Additional node type info</b>  <ul> <li> All current generation instance types are created in Amazon VPC by default. </li> <li> Redis append-only files (AOF) are not supported for T1 or T2 instances. </li> <li> Redis Multi-AZ with automatic failover is not supported on T1 instances. </li> <li> Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later. </li> </ul></param>
+        /// <param name="cacheNodeType">The compute and memory capacity of the nodes in the node group (shard). The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts. <ul> <li> General purpose: <ul> <li> Current generation:   <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).  <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>  <note> At this time, M6g node types are available in the following regions: us-east-1, us-west-2, us-east-2, eu-central-1, eu-west-1 and ap-northeast-1. </note>  <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>   <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>, <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>   <b>T3 node types:</b> <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code>   <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>  </li> <li> Previous generation: (not recommended)  <b>T1 node types:</b> <code>cache.t1.micro</code>   <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>, <code>cache.m1.large</code>, <code>cache.m1.xlarge</code>   <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code>  </li> </ul> </li> <li> Compute optimized: <ul> <li> Previous generation: (not recommended)  <b>C1 node types:</b> <code>cache.c1.xlarge</code>  </li> </ul> </li> <li> Memory optimized: <ul> <li> Current generation:   <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).  <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code>  <note> At this time, R6g node types are available in the following regions: us-east-1, us-west-2, us-east-2, eu-central-1, eu-west-1 and ap-northeast-1. </note>  <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>   <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>, <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code>  </li> <li> Previous generation: (not recommended)  <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>, <code>cache.m2.4xlarge</code>   <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>  </li> </ul> </li> </ul>  <b>Additional node type info</b>  <ul> <li> All current generation instance types are created in Amazon VPC by default. </li> <li> Redis append-only files (AOF) are not supported for T1 or T2 instances. </li> <li> Redis Multi-AZ with automatic failover is not supported on T1 instances. </li> <li> Redis configuration variables <code>appendonly</code> and <code>appendfsync</code> are not supported on Redis version 2.8.22 and later. </li> </ul></param>
         /// <param name="engine">The name of the cache engine to be used for this cluster. Valid values for this parameter are: <code>memcached</code> | <code>redis</code> </param>
         /// <param name="cacheSecurityGroupNames">A list of security group names to associate with this cluster. Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</param>
         public CreateCacheClusterRequest(string cacheClusterId, int numCacheNodes, string cacheNodeType, string engine, List<string> cacheSecurityGroupNames)
@@ -229,6 +232,22 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
+        ///  <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for
+        /// Memcached engine version 1.5.16 onward).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+        /// <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+        /// <code>cache.m6g.16xlarge</code> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// At this time, M6g node types are available in the following regions: us-east-1, us-west-2,
+        /// us-east-2, eu-central-1, eu-west-1 and ap-northeast-1.
+        /// </para>
+        ///  </note> 
+        /// <para>
         ///  <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
         /// <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
         /// <code>cache.m5.24xlarge</code> 
@@ -288,6 +307,22 @@ namespace Amazon.ElastiCache.Model
         /// Current generation: 
         /// </para>
         ///  
+        /// <para>
+        ///  <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for
+        /// Memcached engine version 1.5.16 onward).
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+        /// <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+        /// <code>cache.r6g.16xlarge</code> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// At this time, R6g node types are available in the following regions: us-east-1, us-west-2,
+        /// us-east-2, eu-central-1, eu-west-1 and ap-northeast-1.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
         /// <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
@@ -524,6 +559,25 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutpostMode. 
+        /// <para>
+        /// Specifies whether the nodes in the cluster are created in a single outpost or across
+        /// multiple outposts.
+        /// </para>
+        /// </summary>
+        public OutpostMode OutpostMode
+        {
+            get { return this._outpostMode; }
+            set { this._outpostMode = value; }
+        }
+
+        // Check to see if OutpostMode property is set
+        internal bool IsSetOutpostMode()
+        {
+            return this._outpostMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
         /// The port number on which each of the cache nodes accepts connections.
@@ -671,6 +725,42 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredOutpostArn. 
+        /// <para>
+        /// The outpost ARN in which the cache cluster is created.
+        /// </para>
+        /// </summary>
+        public string PreferredOutpostArn
+        {
+            get { return this._preferredOutpostArn; }
+            set { this._preferredOutpostArn = value; }
+        }
+
+        // Check to see if PreferredOutpostArn property is set
+        internal bool IsSetPreferredOutpostArn()
+        {
+            return this._preferredOutpostArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredOutpostArns. 
+        /// <para>
+        /// The outpost ARNs in which the cache cluster is created.
+        /// </para>
+        /// </summary>
+        public List<string> PreferredOutpostArns
+        {
+            get { return this._preferredOutpostArns; }
+            set { this._preferredOutpostArns = value; }
+        }
+
+        // Check to see if PreferredOutpostArns property is set
+        internal bool IsSetPreferredOutpostArns()
+        {
+            return this._preferredOutpostArns != null && this._preferredOutpostArns.Count > 0; 
         }
 
         /// <summary>

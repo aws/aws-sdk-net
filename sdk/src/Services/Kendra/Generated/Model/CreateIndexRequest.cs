@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,13 +50,15 @@ namespace Amazon.Kendra.Model
         private string _roleArn;
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
         private List<Tag> _tags = new List<Tag>();
+        private UserContextPolicy _userContextPolicy;
+        private List<UserTokenConfiguration> _userTokenConfigurations = new List<UserTokenConfiguration>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create an index. Multiple calls
         /// to the <code>CreateIndex</code> operation with the same client token will create only
-        /// one index.”
+        /// one index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -78,7 +80,7 @@ namespace Amazon.Kendra.Model
         /// A description for the index.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -98,6 +100,11 @@ namespace Amazon.Kendra.Model
         /// for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code>
         /// for your production databases. Once you set the edition for an index, it can't be
         /// changed. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>Edition</code> parameter is optional. If you don't supply a value, the default
+        /// is <code>ENTERPRISE_EDITION</code>.
         /// </para>
         /// </summary>
         public IndexEdition Edition
@@ -134,9 +141,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch
-        /// logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code>
-        /// operation to index documents from an Amazon S3 bucket.
+        /// An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions
+        /// to access your Amazon CloudWatch logs and metrics. This is also the role used when
+        /// you use the <code>BatchPutDocument</code> operation to index documents from an Amazon
+        /// S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1284)]
@@ -189,6 +197,54 @@ namespace Amazon.Kendra.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserContextPolicy. 
+        /// <para>
+        /// The user context policy.
+        /// </para>
+        ///  <dl> <dt>ATTRIBUTE_FILTER</dt> <dd> 
+        /// <para>
+        /// All indexed content is searchable and displayable for all users. If there is an access
+        /// control list, it is ignored. You can filter on user and group attributes. 
+        /// </para>
+        ///  </dd> <dt>USER_TOKEN</dt> <dd> 
+        /// <para>
+        /// Enables SSO and token-based user access control. All documents with no access control
+        /// and all documents accessible to the user will be searchable and displayable. 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        public UserContextPolicy UserContextPolicy
+        {
+            get { return this._userContextPolicy; }
+            set { this._userContextPolicy = value; }
+        }
+
+        // Check to see if UserContextPolicy property is set
+        internal bool IsSetUserContextPolicy()
+        {
+            return this._userContextPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserTokenConfigurations. 
+        /// <para>
+        /// The user token configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<UserTokenConfiguration> UserTokenConfigurations
+        {
+            get { return this._userTokenConfigurations; }
+            set { this._userTokenConfigurations = value; }
+        }
+
+        // Check to see if UserTokenConfigurations property is set
+        internal bool IsSetUserTokenConfigurations()
+        {
+            return this._userTokenConfigurations != null && this._userTokenConfigurations.Count > 0; 
         }
 
     }

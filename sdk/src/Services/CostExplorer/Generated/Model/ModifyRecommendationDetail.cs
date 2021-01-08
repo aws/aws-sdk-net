@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TargetInstances. 
         /// <para>
-        /// Identifies whether this instance type is the Amazon Web Services default recommendation.
+        /// Identifies whether this instance type is the AWS default recommendation.
         /// </para>
         /// </summary>
         public List<TargetInstance> TargetInstances

@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,6 +25,11 @@ namespace Amazon.IoT.Model
     ///</summary>
     public interface IIoTPaginatorFactory
     {
+
+        /// <summary>
+        /// Paginator for GetBehaviorModelTrainingSummaries operation
+        ///</summary>
+        IGetBehaviorModelTrainingSummariesPaginator GetBehaviorModelTrainingSummaries(GetBehaviorModelTrainingSummariesRequest request);
 
         /// <summary>
         /// Paginator for ListActiveViolations operation
@@ -85,6 +90,21 @@ namespace Amazon.IoT.Model
         /// Paginator for ListCertificatesByCA operation
         ///</summary>
         IListCertificatesByCAPaginator ListCertificatesByCA(ListCertificatesByCARequest request);
+
+        /// <summary>
+        /// Paginator for ListCustomMetrics operation
+        ///</summary>
+        IListCustomMetricsPaginator ListCustomMetrics(ListCustomMetricsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDetectMitigationActionsExecutions operation
+        ///</summary>
+        IListDetectMitigationActionsExecutionsPaginator ListDetectMitigationActionsExecutions(ListDetectMitigationActionsExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDetectMitigationActionsTasks operation
+        ///</summary>
+        IListDetectMitigationActionsTasksPaginator ListDetectMitigationActionsTasks(ListDetectMitigationActionsTasksRequest request);
 
         /// <summary>
         /// Paginator for ListDimensions operation
@@ -205,6 +225,11 @@ namespace Amazon.IoT.Model
         /// Paginator for ListThingGroupsForThing operation
         ///</summary>
         IListThingGroupsForThingPaginator ListThingGroupsForThing(ListThingGroupsForThingRequest request);
+
+        /// <summary>
+        /// Paginator for ListThingPrincipals operation
+        ///</summary>
+        IListThingPrincipalsPaginator ListThingPrincipals(ListThingPrincipalsRequest request);
 
         /// <summary>
         /// Paginator for ListThingRegistrationTaskReports operation

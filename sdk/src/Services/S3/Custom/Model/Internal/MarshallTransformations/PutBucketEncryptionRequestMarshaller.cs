@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,6 +40,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putBucketEncryptionRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putBucketEncryptionRequest.ExpectedBucketOwner));
+
             if (string.IsNullOrEmpty(putBucketEncryptionRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketEncryptionRequest.BucketName");
 
@@ -76,6 +79,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                     }
                                     xmlWriter.WriteEndElement();
                                 }
+
+                                if (serverSideEncryptionRule.IsSetBucketKeyEnabled())
+                                {
+                                    xmlWriter.WriteElementString("BucketKeyEnabled", "", S3Transforms.ToXmlStringValue(serverSideEncryptionRule.BucketKeyEnabled));
+                                }
                             }
                             xmlWriter.WriteEndElement();
                         }
@@ -90,7 +98,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
                 if (putBucketEncryptionRequest.IsSetContentMD5())
                     checksum = putBucketEncryptionRequest.ContentMD5;
                 

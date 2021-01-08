@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,8 +31,8 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the DeletePortfolioShare operation.
     /// Stops sharing the specified portfolio with the specified account or organization node.
-    /// Shares to an organization node can only be deleted by the master account of an organization
-    /// or by a delegated administrator.
+    /// Shares to an organization node can only be deleted by the management account of an
+    /// organization or by a delegated administrator.
     /// 
     ///  
     /// <para>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -154,7 +154,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LabelCategoryConfigS3Uri. 
         /// <para>
-        /// The S3 URL of the file that defines the categories used to label the data objects.
+        /// The S3 URI of the file that defines the categories used to label the data objects.
         /// </para>
         ///  
         /// <para>

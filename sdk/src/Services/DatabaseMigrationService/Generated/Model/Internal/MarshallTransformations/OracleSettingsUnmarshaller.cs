@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,6 +64,42 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AccessAlternateDirectly", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AccessAlternateDirectly = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AdditionalArchivedLogDestId", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalArchivedLogDestId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AddSupplementalLogging", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AddSupplementalLogging = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AllowSelectNestedTables", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AllowSelectNestedTables = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ArchivedLogDestId", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ArchivedLogDestId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ArchivedLogsOnly", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ArchivedLogsOnly = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AsmPassword", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -82,10 +118,58 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AsmUser = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CharLengthSemantics", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CharLengthSemantics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DatabaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DirectPathNoLog", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DirectPathNoLog = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DirectPathParallelLoad", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DirectPathParallelLoad = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EnableHomogenousTablespace", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableHomogenousTablespace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FailTasksOnLobTruncation", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.FailTasksOnLobTruncation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NumberDatatypeScale", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberDatatypeScale = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OraclePathPrefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OraclePathPrefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ParallelAsmReadThreads", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ParallelAsmReadThreads = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Password", targetDepth))
@@ -98,6 +182,54 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReadAheadBlocks", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ReadAheadBlocks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReadTableSpaceName", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ReadTableSpaceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReplacePathPrefix", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ReplacePathPrefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RetryInterval", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RetryInterval = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecretsManagerAccessRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretsManagerAccessRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecretsManagerOracleAsmAccessRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretsManagerOracleAsmAccessRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecretsManagerOracleAsmSecretId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretsManagerOracleAsmSecretId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SecretsManagerSecretId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretsManagerSecretId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SecurityDbEncryption", targetDepth))
@@ -116,6 +248,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServerName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UseAlternateFolderForOnline", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseAlternateFolderForOnline = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UsePathPrefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UsePathPrefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Username", targetDepth))

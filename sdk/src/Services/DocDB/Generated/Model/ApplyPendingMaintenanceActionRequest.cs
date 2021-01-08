@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the ApplyPendingMaintenanceAction operation.
-    /// Applies a pending maintenance action to a resource (for example, to a DB instance).
+    /// Applies a pending maintenance action to a resource (for example, to an Amazon DocumentDB
+    /// instance).
     /// </summary>
     public partial class ApplyPendingMaintenanceActionRequest : AmazonDocDBRequest
     {
@@ -78,7 +79,7 @@ namespace Amazon.DocDB.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>next-maintenance</code> - Apply the maintenance action during the next maintenance
-        /// window for the resource.
+        /// window for the resource. 
         /// </para>
         ///  </li> <li> 
         /// <para>

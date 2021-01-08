@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the specified bucket has more access points than can be returned in one call to
-        /// this API, then this field contains a continuation token that you can provide in subsequent
+        /// this API, this field contains a continuation token that you can provide in subsequent
         /// calls to this API to retrieve additional access points.
         /// </para>
         /// </summary>

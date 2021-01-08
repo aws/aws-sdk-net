@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,8 +39,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Criterion. 
         /// <para>
-        /// A condition that specifies the property, operator, and value to use to filter the
-        /// results.
+        /// A condition that specifies the property, operator, and one or more values to use to
+        /// filter the results.
         /// </para>
         /// </summary>
         public Dictionary<string, CriterionAdditionalProperties> Criterion

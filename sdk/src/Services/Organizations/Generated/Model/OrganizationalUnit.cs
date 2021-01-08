@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -70,9 +70,9 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organizational
-        /// unit ID string requires "ou-" followed by from 4 to 32 lower-case letters or digits
+        /// unit ID string requires "ou-" followed by from 4 to 32 lowercase letters or digits
         /// (the ID of the root that contains the OU). This string is followed by a second "-"
-        /// dash and from 8 to 32 additional lower-case letters or digits.
+        /// dash and from 8 to 32 additional lowercase letters or digits.
         /// </para>
         /// </summary>
         [AWSProperty(Max=68)]

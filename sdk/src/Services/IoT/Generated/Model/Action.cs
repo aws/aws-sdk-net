@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
         private IotAnalyticsAction _iotAnalytics;
         private IotEventsAction _iotEvents;
         private IotSiteWiseAction _iotSiteWise;
+        private KafkaAction _kafka;
         private KinesisAction _kinesis;
         private LambdaAction _lambda;
         private RepublishAction _republish;
@@ -52,6 +53,7 @@ namespace Amazon.IoT.Model
         private SnsAction _sns;
         private SqsAction _sqs;
         private StepFunctionsAction _stepFunctions;
+        private TimestreamAction _timestream;
 
         /// <summary>
         /// Gets and sets the property CloudwatchAlarm. 
@@ -254,6 +256,25 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Kafka. 
+        /// <para>
+        /// Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed
+        /// Apache Kafka cluster.
+        /// </para>
+        /// </summary>
+        public KafkaAction Kafka
+        {
+            get { return this._kafka; }
+            set { this._kafka = value; }
+        }
+
+        // Check to see if Kafka property is set
+        internal bool IsSetKafka()
+        {
+            return this._kafka != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Kinesis. 
         /// <para>
         /// Write data to an Amazon Kinesis stream.
@@ -395,6 +416,26 @@ namespace Amazon.IoT.Model
         internal bool IsSetStepFunctions()
         {
             return this._stepFunctions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timestream. 
+        /// <para>
+        /// The Timestream rule action writes attributes (measures) from an MQTT message into
+        /// an Amazon Timestream table. For more information, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+        /// topic rule action documentation.
+        /// </para>
+        /// </summary>
+        public TimestreamAction Timestream
+        {
+            get { return this._timestream; }
+            set { this._timestream = value; }
+        }
+
+        // Check to see if Timestream property is set
+        internal bool IsSetTimestream()
+        {
+            return this._timestream != null;
         }
 
     }

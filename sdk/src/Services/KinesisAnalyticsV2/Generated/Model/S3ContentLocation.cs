@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For a Java-based Amazon Kinesis Data Analytics application, provides a description
-    /// of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket,
-    /// the name of the Amazon S3 object that contains the data, and the version number of
-    /// the Amazon S3 object that contains the data.
+    /// For a Flink-based Kinesis Data Analytics application, provides a description of an
+    /// Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name
+    /// of the Amazon S3 object that contains the data, and the version number of the Amazon
+    /// S3 object that contains the data.
     /// </summary>
     public partial class S3ContentLocation
     {
@@ -84,6 +84,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The version of the object containing the application code.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
         public string ObjectVersion
         {
             get { return this._objectVersion; }

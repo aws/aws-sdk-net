@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,7 @@ namespace Amazon.S3.Model
         private string bucketName;
 
         /// <summary>
-        /// Date the bucket was created.
-        ///  
+        /// <para>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</para>
         /// </summary>
         public DateTime CreationDate
         {

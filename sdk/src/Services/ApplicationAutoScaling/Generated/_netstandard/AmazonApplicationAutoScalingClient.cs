@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -75,7 +75,7 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon Comprehend document classification endpoints
+    /// Amazon Comprehend document classification and entity recognizer endpoints
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -84,6 +84,10 @@ namespace Amazon.ApplicationAutoScaling
     ///  </li> <li> 
     /// <para>
     /// Amazon Keyspaces (for Apache Cassandra) tables
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon Managed Streaming for Apache Kafka cluster storage
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -121,6 +125,9 @@ namespace Amazon.ApplicationAutoScaling
     /// Auto Scaling User Guide</a>.
     /// </para>
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonApplicationAutoScalingClient : AmazonServiceClient, IAmazonApplicationAutoScaling
     {
         private static IServiceMetadata serviceMetadata = new AmazonApplicationAutoScalingMetadata();
@@ -974,7 +981,8 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// When you register a new scalable target, you must specify values for minimum and maximum
-        /// capacity. Application Auto Scaling scaling policies will not scale capacity to values
+        /// capacity. Current capacity will be adjusted within the specified range when scaling
+        /// starts. Application Auto Scaling scaling policies will not scale capacity to values
         /// that are outside of this range.
         /// </para>
         ///  

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -86,7 +86,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"Values": [ "s3://my-bucket/my-folder" ]</code> 
+        ///  <code>"Values": [ "s3://doc-example-bucket/my-folder" ]</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -94,7 +94,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code> 
+        ///  <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

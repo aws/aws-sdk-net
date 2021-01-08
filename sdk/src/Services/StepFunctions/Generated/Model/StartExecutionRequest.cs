@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -47,6 +47,7 @@ namespace Amazon.StepFunctions.Model
         private string _input;
         private string _name;
         private string _stateMachineArn;
+        private string _traceHeader;
 
         /// <summary>
         /// Gets and sets the property Input. 
@@ -62,9 +63,13 @@ namespace Amazon.StepFunctions.Model
         /// If you don't include any JSON input data, you still must include the two braces, for
         /// example: <code>"input": "{}"</code> 
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// Length constraints apply to the payload size, and are expressed as bytes in UTF-8
+        /// encoding.
+        /// </para>
         /// </summary>
-        [AWSProperty(Max=32768)]
+        [AWSProperty(Max=262144)]
         public string Input
         {
             get { return this._input; }
@@ -145,6 +150,26 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetStateMachineArn()
         {
             return this._stateMachineArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceHeader. 
+        /// <para>
+        /// Passes the AWS X-Ray trace header. The trace header can also be passed in the request
+        /// payload.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string TraceHeader
+        {
+            get { return this._traceHeader; }
+            set { this._traceHeader = value; }
+        }
+
+        // Check to see if TraceHeader property is set
+        internal bool IsSetTraceHeader()
+        {
+            return this._traceHeader != null;
         }
 
     }

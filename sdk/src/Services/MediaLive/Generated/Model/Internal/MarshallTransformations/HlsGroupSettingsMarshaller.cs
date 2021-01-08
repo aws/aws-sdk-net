@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -137,6 +137,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DirectoryStructure);
             }
 
+            if(requestObject.IsSetDiscontinuityTags())
+            {
+                context.Writer.WritePropertyName("discontinuityTags");
+                context.Writer.Write(requestObject.DiscontinuityTags);
+            }
+
             if(requestObject.IsSetEncryptionType())
             {
                 context.Writer.WritePropertyName("encryptionType");
@@ -164,6 +170,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("iFrameOnlyPlaylists");
                 context.Writer.Write(requestObject.IFrameOnlyPlaylists);
+            }
+
+            if(requestObject.IsSetIncompleteSegmentBehavior())
+            {
+                context.Writer.WritePropertyName("incompleteSegmentBehavior");
+                context.Writer.Write(requestObject.IncompleteSegmentBehavior);
             }
 
             if(requestObject.IsSetIndexNSegments())

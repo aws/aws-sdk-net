@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -337,8 +337,8 @@ namespace Amazon.IoTSiteWise
         ///  </li> </ul> <important> 
         /// <para>
         /// With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp
-        /// of no more than 15 minutes in the past and no more than 5 minutes in the future. AWS
-        /// IoT SiteWise rejects timestamps outside of the inclusive range of [-15, +5] minutes
+        /// of no more than 7 days in the past and no more than 5 minutes in the future. AWS IoT
+        /// SiteWise rejects timestamps outside of the inclusive range of [-7 days, +5 minutes]
         /// and returns a <code>TimestampOutOfRangeException</code> error.
         /// </para>
         ///  
@@ -422,8 +422,8 @@ namespace Amazon.IoTSiteWise
         ///  </li> </ul> <important> 
         /// <para>
         /// With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp
-        /// of no more than 15 minutes in the past and no more than 5 minutes in the future. AWS
-        /// IoT SiteWise rejects timestamps outside of the inclusive range of [-15, +5] minutes
+        /// of no more than 7 days in the past and no more than 5 minutes in the future. AWS IoT
+        /// SiteWise rejects timestamps outside of the inclusive range of [-7 days, +5 minutes]
         /// and returns a <code>TimestampOutOfRangeException</code> error.
         /// </para>
         ///  
@@ -493,8 +493,9 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Creates an access policy that grants the specified AWS Single Sign-On user or group
-        /// access to the specified AWS IoT SiteWise Monitor portal or project resource.
+        /// Creates an access policy that grants the specified identity (AWS SSO user, AWS SSO
+        /// group, or IAM user) access to the specified AWS IoT SiteWise Monitor portal or project
+        /// resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessPolicy service method.</param>
         /// 
@@ -537,8 +538,9 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Creates an access policy that grants the specified AWS Single Sign-On user or group
-        /// access to the specified AWS IoT SiteWise Monitor portal or project resource.
+        /// Creates an access policy that grants the specified identity (AWS SSO user, AWS SSO
+        /// group, or IAM user) access to the specified AWS IoT SiteWise Monitor portal or project
+        /// resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -999,15 +1001,13 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Creates a portal, which can contain projects and dashboards. Before you can create
-        /// a portal, you must enable AWS Single Sign-On. AWS IoT SiteWise Monitor uses AWS SSO
-        /// to manage user permissions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-        /// AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// Creates a portal, which can contain projects and dashboards. AWS IoT SiteWise Monitor
+        /// uses AWS SSO or IAM to authenticate portal users and manage user permissions.
         /// 
         ///  <note> 
         /// <para>
-        /// Before you can sign in to a new portal, you must add at least one AWS SSO user or
-        /// group to that portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
+        /// Before you can sign in to a new portal, you must add at least one identity to that
+        /// portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
         /// or removing portal administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         ///  </note>
@@ -1053,15 +1053,13 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Creates a portal, which can contain projects and dashboards. Before you can create
-        /// a portal, you must enable AWS Single Sign-On. AWS IoT SiteWise Monitor uses AWS SSO
-        /// to manage user permissions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-        /// AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// Creates a portal, which can contain projects and dashboards. AWS IoT SiteWise Monitor
+        /// uses AWS SSO or IAM to authenticate portal users and manage user permissions.
         /// 
         ///  <note> 
         /// <para>
-        /// Before you can sign in to a new portal, you must add at least one AWS SSO user or
-        /// group to that portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
+        /// Before you can sign in to a new portal, you must add at least one identity to that
+        /// portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
         /// or removing portal administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         ///  </note>
@@ -1205,9 +1203,9 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Deletes an access policy that grants the specified AWS Single Sign-On identity access
-        /// to the specified AWS IoT SiteWise Monitor resource. You can use this operation to
-        /// revoke access to an AWS IoT SiteWise Monitor resource.
+        /// Deletes an access policy that grants the specified identity access to the specified
+        /// AWS IoT SiteWise Monitor resource. You can use this operation to revoke access to
+        /// an AWS IoT SiteWise Monitor resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPolicy service method.</param>
         /// 
@@ -1239,9 +1237,9 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Deletes an access policy that grants the specified AWS Single Sign-On identity access
-        /// to the specified AWS IoT SiteWise Monitor resource. You can use this operation to
-        /// revoke access to an AWS IoT SiteWise Monitor resource.
+        /// Deletes an access policy that grants the specified identity access to the specified
+        /// AWS IoT SiteWise Monitor resource. You can use this operation to revoke access to
+        /// an AWS IoT SiteWise Monitor resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1530,8 +1528,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of the gateway's
-        /// files remain in your gateway's file system. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-retention.html">Data
-        /// retention</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// files remain in your gateway's file system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGateway service method.</param>
         /// 
@@ -1564,8 +1561,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of the gateway's
-        /// files remain in your gateway's file system. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-retention.html">Data
-        /// retention</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// files remain in your gateway's file system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGateway service method.</param>
         /// <param name="cancellationToken">
@@ -1751,8 +1747,8 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Describes an access policy, which specifies an AWS SSO user or group's access to an
-        /// AWS IoT SiteWise Monitor portal or project.
+        /// Describes an access policy, which specifies an identity's access to an AWS IoT SiteWise
+        /// Monitor portal or project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccessPolicy service method.</param>
         /// 
@@ -1784,8 +1780,8 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Describes an access policy, which specifies an AWS SSO user or group's access to an
-        /// AWS IoT SiteWise Monitor portal or project.
+        /// Describes an access policy, which specifies an identity's access to an AWS IoT SiteWise
+        /// Monitor portal or project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccessPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2120,6 +2116,74 @@ namespace Amazon.IoTSiteWise
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDashboard">REST API Reference for DescribeDashboard Operation</seealso>
         Task<DescribeDashboardResponse> DescribeDashboardAsync(DescribeDashboardRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeDefaultEncryptionConfiguration
+
+
+        /// <summary>
+        /// Retrieves information about the default encryption configuration for the AWS account
+        /// in the default or specified region. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
+        /// management</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultEncryptionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDefaultEncryptionConfiguration service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// AWS IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of AWS IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration">REST API Reference for DescribeDefaultEncryptionConfiguration Operation</seealso>
+        DescribeDefaultEncryptionConfigurationResponse DescribeDefaultEncryptionConfiguration(DescribeDefaultEncryptionConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about the default encryption configuration for the AWS account
+        /// in the default or specified region. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
+        /// management</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDefaultEncryptionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDefaultEncryptionConfiguration service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// AWS IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of AWS IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeDefaultEncryptionConfiguration">REST API Reference for DescribeDefaultEncryptionConfiguration Operation</seealso>
+        Task<DescribeDefaultEncryptionConfigurationResponse> DescribeDefaultEncryptionConfigurationAsync(DescribeDefaultEncryptionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2889,8 +2953,9 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Retrieves a paginated list of access policies for an AWS SSO identity (a user or group)
-        /// or an AWS IoT SiteWise Monitor resource (a portal or project).
+        /// Retrieves a paginated list of access policies for an identity (an AWS SSO user, an
+        /// AWS SSO group, or an IAM user) or an AWS IoT SiteWise Monitor resource (a portal or
+        /// project).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessPolicies service method.</param>
         /// 
@@ -2919,8 +2984,9 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Retrieves a paginated list of access policies for an AWS SSO identity (a user or group)
-        /// or an AWS IoT SiteWise Monitor resource (a portal or project).
+        /// Retrieves a paginated list of access policies for an identity (an AWS SSO user, an
+        /// AWS SSO group, or an IAM user) or an AWS IoT SiteWise Monitor resource (a portal or
+        /// project).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessPolicies service method.</param>
         /// <param name="cancellationToken">
@@ -3012,6 +3078,80 @@ namespace Amazon.IoTSiteWise
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModels">REST API Reference for ListAssetModels Operation</seealso>
         Task<ListAssetModelsResponse> ListAssetModelsAsync(ListAssetModelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAssetRelationships
+
+
+        /// <summary>
+        /// Retrieves a paginated list of asset relationships for an asset. You can use this operation
+        /// to identify an asset's root asset and all associated assets between that asset and
+        /// its root.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetRelationships service method.</param>
+        /// 
+        /// <returns>The response from the ListAssetRelationships service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// AWS IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of AWS IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships">REST API Reference for ListAssetRelationships Operation</seealso>
+        ListAssetRelationshipsResponse ListAssetRelationships(ListAssetRelationshipsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a paginated list of asset relationships for an asset. You can use this operation
+        /// to identify an asset's root asset and all associated assets between that asset and
+        /// its root.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetRelationships service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssetRelationships service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// AWS IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of AWS IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetRelationships">REST API Reference for ListAssetRelationships Operation</seealso>
+        Task<ListAssetRelationshipsResponse> ListAssetRelationshipsAsync(ListAssetRelationshipsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3552,12 +3692,27 @@ namespace Amazon.IoTSiteWise
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
         /// AWS IoT SiteWise can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
         /// The request isn't valid. This can occur if your request contains malformed JSON or
         /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
         /// The requested resource can't be found.
@@ -3572,6 +3727,9 @@ namespace Amazon.IoTSiteWise
         /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
         /// in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.UnauthorizedException">
+        /// You are not authorized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -3587,12 +3745,27 @@ namespace Amazon.IoTSiteWise
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
         /// AWS IoT SiteWise can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
         /// The request isn't valid. This can occur if your request contains malformed JSON or
         /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
         /// The requested resource can't be found.
@@ -3608,8 +3781,109 @@ namespace Amazon.IoTSiteWise
         /// in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.UnauthorizedException">
+        /// You are not authorized.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutDefaultEncryptionConfiguration
+
+
+        /// <summary>
+        /// Sets the default encryption configuration for the AWS account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
+        /// management</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDefaultEncryptionConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutDefaultEncryptionConfiguration service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// AWS IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of AWS IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration">REST API Reference for PutDefaultEncryptionConfiguration Operation</seealso>
+        PutDefaultEncryptionConfigurationResponse PutDefaultEncryptionConfiguration(PutDefaultEncryptionConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Sets the default encryption configuration for the AWS account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key
+        /// management</a> in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDefaultEncryptionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutDefaultEncryptionConfiguration service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
+        /// AWS IoT SiteWise can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ThrottlingException">
+        /// Your request exceeded a rate limit. For example, you might have exceeded the number
+        /// of AWS IoT SiteWise assets that can be created per second, the allowed number of messages
+        /// per second, and so on.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutDefaultEncryptionConfiguration">REST API Reference for PutDefaultEncryptionConfiguration Operation</seealso>
+        Task<PutDefaultEncryptionConfigurationResponse> PutDefaultEncryptionConfigurationAsync(PutDefaultEncryptionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3701,12 +3975,27 @@ namespace Amazon.IoTSiteWise
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
         /// AWS IoT SiteWise can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
         /// The request isn't valid. This can occur if your request contains malformed JSON or
         /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
         /// The requested resource can't be found.
@@ -3726,6 +4015,9 @@ namespace Amazon.IoTSiteWise
         /// You've reached the limit for the number of tags allowed for a resource. For more information,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
         /// naming limits and requirements</a> in the <i>AWS General Reference</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.UnauthorizedException">
+        /// You are not authorized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -3742,12 +4034,27 @@ namespace Amazon.IoTSiteWise
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
         /// AWS IoT SiteWise can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
         /// The request isn't valid. This can occur if your request contains malformed JSON or
         /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
         /// The requested resource can't be found.
@@ -3768,6 +4075,9 @@ namespace Amazon.IoTSiteWise
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
         /// naming limits and requirements</a> in the <i>AWS General Reference</i>.
         /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.UnauthorizedException">
+        /// You are not authorized.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -3782,12 +4092,27 @@ namespace Amazon.IoTSiteWise
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
         /// AWS IoT SiteWise can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
         /// The request isn't valid. This can occur if your request contains malformed JSON or
         /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
         /// The requested resource can't be found.
@@ -3802,6 +4127,9 @@ namespace Amazon.IoTSiteWise
         /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
         /// in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.UnauthorizedException">
+        /// You are not authorized.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -3817,12 +4145,27 @@ namespace Amazon.IoTSiteWise
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by IoTSiteWise.</returns>
+        /// <exception cref="Amazon.IoTSiteWise.Model.ConflictingOperationException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InternalFailureException">
         /// AWS IoT SiteWise can't process your request right now. Try again later.
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.InvalidRequestException">
         /// The request isn't valid. This can occur if your request contains malformed JSON or
         /// unsupported characters. Check your request and try again.
+        /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.LimitExceededException">
+        /// You've reached the limit for a resource. For example, this can occur if you're trying
+        /// to associate more than the allowed number of child assets or attempting to create
+        /// more than the allowed number of properties for an asset model.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
+        /// in the <i>AWS IoT SiteWise User Guide</i>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.IoTSiteWise.Model.ResourceNotFoundException">
         /// The requested resource can't be found.
@@ -3838,6 +4181,9 @@ namespace Amazon.IoTSiteWise
         /// in the <i>AWS IoT SiteWise User Guide</i>.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.IoTSiteWise.Model.UnauthorizedException">
+        /// You are not authorized.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -3847,8 +4193,8 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Updates an existing access policy that specifies an AWS SSO user or group's access
-        /// to an AWS IoT SiteWise Monitor portal or project resource.
+        /// Updates an existing access policy that specifies an identity's access to an AWS IoT
+        /// SiteWise Monitor portal or project resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccessPolicy service method.</param>
         /// 
@@ -3880,8 +4226,8 @@ namespace Amazon.IoTSiteWise
 
 
         /// <summary>
-        /// Updates an existing access policy that specifies an AWS SSO user or group's access
-        /// to an AWS IoT SiteWise Monitor portal or project resource.
+        /// Updates an existing access policy that specifies an identity's access to an AWS IoT
+        /// SiteWise Monitor portal or project resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccessPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -4018,10 +4364,10 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  
         /// <para>
-        /// If you remove a property from an asset model or update a property's formula expression,
-        /// AWS IoT SiteWise deletes all previous data for that property. If you remove a hierarchy
-        /// definition from an asset model, AWS IoT SiteWise disassociates every asset associated
-        /// with that hierarchy. You can't change the type or data type of an existing property.
+        /// If you remove a property from an asset model, AWS IoT SiteWise deletes all previous
+        /// data for that property. If you remove a hierarchy definition from an asset model,
+        /// AWS IoT SiteWise disassociates every asset associated with that hierarchy. You can't
+        /// change the type or data type of an existing property.
         /// </para>
         ///  </important>
         /// </summary>
@@ -4086,10 +4432,10 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  
         /// <para>
-        /// If you remove a property from an asset model or update a property's formula expression,
-        /// AWS IoT SiteWise deletes all previous data for that property. If you remove a hierarchy
-        /// definition from an asset model, AWS IoT SiteWise disassociates every asset associated
-        /// with that hierarchy. You can't change the type or data type of an existing property.
+        /// If you remove a property from an asset model, AWS IoT SiteWise deletes all previous
+        /// data for that property. If you remove a hierarchy definition from an asset model,
+        /// AWS IoT SiteWise disassociates every asset associated with that hierarchy. You can't
+        /// change the type or data type of an existing property.
         /// </para>
         ///  </important>
         /// </summary>

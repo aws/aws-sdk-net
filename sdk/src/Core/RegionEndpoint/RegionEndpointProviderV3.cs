@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2008-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -381,6 +381,32 @@ namespace Amazon.Internal
                     }
                 }
                 return _allRegionEndpoints;
+            }
+        }
+
+        private object _allRegionRegexLock = new object();
+        private IEnumerable<string> _allRegionRegex;
+        public IEnumerable<string> AllRegionRegex
+        {
+            get
+            {
+                lock (_allRegionRegexLock)
+                lock (_regionEndpointMapLock)
+                {
+                    if (_allRegionRegex == null)
+                    {
+                        JsonData partitions = _root["partitions"];
+                        var allRegionRegex = new List<string>();
+                        foreach (JsonData partition in partitions)
+                        {
+                            var regionRegex = (string)partition["regionRegex"];
+                            allRegionRegex.Add(regionRegex);
+                        }
+
+                        _allRegionRegex = allRegionRegex;
+                    }
+                }
+                return _allRegionRegex;
             }
         }
 

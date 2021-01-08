@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,14 +48,14 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AdditionalMetricsToRetain. 
         /// <para>
-        /// A list of metrics whose data is retained (stored). By default, data is retained for
-        /// any metric used in the profile's <code>behaviors</code>, but it is also retained for
-        /// any metric specified here.
+        ///  <i>Please use <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
+        /// 
         /// </para>
         ///  
         /// <para>
-        ///  <b>Note:</b> This API field is deprecated. Please use <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a>
-        /// instead.
+        /// A list of metrics whose data is retained (stored). By default, data is retained for
+        /// any metric used in the profile's <code>behaviors</code>, but it is also retained for
+        /// any metric specified here. Can be used with custom metrics; cannot be used with dimensions.
         /// </para>
         /// </summary>
         [Obsolete("Use additionalMetricsToRetainV2.")]
@@ -76,7 +76,7 @@ namespace Amazon.IoT.Model
         /// <para>
         /// A list of metrics whose data is retained (stored). By default, data is retained for
         /// any metric used in the profile's behaviors, but it is also retained for any metric
-        /// specified here.
+        /// specified here. Can be used with custom metrics; cannot be used with dimensions.
         /// </para>
         /// </summary>
         public List<MetricToRetain> AdditionalMetricsToRetainV2

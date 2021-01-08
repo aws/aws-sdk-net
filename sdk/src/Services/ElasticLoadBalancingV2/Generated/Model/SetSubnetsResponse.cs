@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,11 +34,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class SetSubnetsResponse : AmazonWebServiceResponse
     {
         private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
+        private IpAddressType _ipAddressType;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// Information about the subnet and Availability Zone.
+        /// Information about the subnets.
         /// </para>
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones
@@ -51,6 +52,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// [Network Load Balancers] The IP address type.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
     }

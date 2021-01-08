@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// Amazon Textract isn't able to read the document.
+    /// Amazon Textract isn't able to read the document. For more information on the document
+    /// limits in Amazon Textract, see <a>limits</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

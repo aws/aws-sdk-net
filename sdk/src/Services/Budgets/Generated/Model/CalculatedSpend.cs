@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,9 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// The spend objects that are associated with this budget. The <code>actualSpend</code>
-    /// tracks how much you've used, cost, usage, or RI units, and the <code>forecastedSpend</code>
-    /// tracks how much you are predicted to spend if your current usage remains steady.
+    /// tracks how much you've used, cost, usage, RI units, or Savings Plans units and the
+    /// <code>forecastedSpend</code> tracks how much you are predicted to spend based on your
+    /// historical usage profile.
     /// 
     ///  
     /// <para>
@@ -48,7 +49,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property ActualSpend. 
         /// <para>
-        /// The amount of cost, usage, or RI units that you have used.
+        /// The amount of cost, usage, RI units, or Savings Plans units that you have used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,7 +68,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property ForecastedSpend. 
         /// <para>
-        /// The amount of cost, usage, or RI units that you are forecasted to use.
+        /// The amount of cost, usage, RI units, or Savings Plans units that you are forecasted
+        /// to use.
         /// </para>
         /// </summary>
         public Spend ForecastedSpend

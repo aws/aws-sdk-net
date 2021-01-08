@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,8 +59,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationVersionId. 
         /// <para>
-        /// The updated application version ID. Amazon Kinesis Data Analytics increments this
-        /// ID when the application is updated.
+        /// The updated application version ID. Kinesis Data Analytics increments this ID when
+        /// the application is updated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999999999)]

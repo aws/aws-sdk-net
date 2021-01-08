@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,6 +60,10 @@ namespace Amazon.Kendra.Model
     /// You can specify that the query return only one type of result using the <code>QueryResultTypeConfig</code>
     /// parameter.
     /// </para>
+    ///  
+    /// <para>
+    /// Each query returns the 100 most relevant results. 
+    /// </para>
     /// </summary>
     public partial class QueryRequest : AmazonKendraRequest
     {
@@ -72,6 +76,8 @@ namespace Amazon.Kendra.Model
         private string _queryText;
         private List<string> _requestedDocumentAttributes = new List<string>();
         private SortingConfiguration _sortingConfiguration;
+        private UserContext _userContext;
+        private string _visitorId;
 
         /// <summary>
         /// Gets and sets the property AttributeFilter. 
@@ -259,6 +265,45 @@ namespace Amazon.Kendra.Model
         internal bool IsSetSortingConfiguration()
         {
             return this._sortingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserContext. 
+        /// <para>
+        /// The user context token.
+        /// </para>
+        /// </summary>
+        public UserContext UserContext
+        {
+            get { return this._userContext; }
+            set { this._userContext = value; }
+        }
+
+        // Check to see if UserContext property is set
+        internal bool IsSetUserContext()
+        {
+            return this._userContext != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VisitorId. 
+        /// <para>
+        /// Provides an identifier for a specific user. The <code>VisitorId</code> should be a
+        /// unique identifier, such as a GUID. Don't use personally identifiable information,
+        /// such as the user's email address, as the <code>VisitorId</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string VisitorId
+        {
+            get { return this._visitorId; }
+            set { this._visitorId = value; }
+        }
+
+        // Check to see if VisitorId property is set
+        internal bool IsSetVisitorId()
+        {
+            return this._visitorId != null;
         }
 
     }

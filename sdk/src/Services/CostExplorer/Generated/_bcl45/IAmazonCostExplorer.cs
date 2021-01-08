@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,6 +63,84 @@ namespace Amazon.CostExplorer
         ICostExplorerPaginatorFactory Paginators { get; }
 
         
+        #region  CreateAnomalyMonitor
+
+
+        /// <summary>
+        /// Creates a new cost anomaly detection monitor with the requested type and monitor specification.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnomalyMonitor service method.</param>
+        /// 
+        /// <returns>The response from the CreateAnomalyMonitor service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalyMonitor">REST API Reference for CreateAnomalyMonitor Operation</seealso>
+        CreateAnomalyMonitorResponse CreateAnomalyMonitor(CreateAnomalyMonitorRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new cost anomaly detection monitor with the requested type and monitor specification.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnomalyMonitor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAnomalyMonitor service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalyMonitor">REST API Reference for CreateAnomalyMonitor Operation</seealso>
+        Task<CreateAnomalyMonitorResponse> CreateAnomalyMonitorAsync(CreateAnomalyMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAnomalySubscription
+
+
+        /// <summary>
+        /// Adds a subscription to a cost anomaly detection monitor. You can use each subscription
+        /// to define subscribers with email or SNS notifications. Email subscribers can set a
+        /// dollar threshold and a time frequency for receiving notifications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnomalySubscription service method.</param>
+        /// 
+        /// <returns>The response from the CreateAnomalySubscription service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownMonitorException">
+        /// The cost anomaly monitor does not exist for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalySubscription">REST API Reference for CreateAnomalySubscription Operation</seealso>
+        CreateAnomalySubscriptionResponse CreateAnomalySubscription(CreateAnomalySubscriptionRequest request);
+
+
+
+        /// <summary>
+        /// Adds a subscription to a cost anomaly detection monitor. You can use each subscription
+        /// to define subscribers with email or SNS notifications. Email subscribers can set a
+        /// dollar threshold and a time frequency for receiving notifications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnomalySubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAnomalySubscription service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownMonitorException">
+        /// The cost anomaly monitor does not exist for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalySubscription">REST API Reference for CreateAnomalySubscription Operation</seealso>
+        Task<CreateAnomalySubscriptionResponse> CreateAnomalySubscriptionAsync(CreateAnomalySubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateCostCategoryDefinition
 
 
@@ -77,7 +155,7 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
         /// You've reached the limit on the number of resources you can create, or exceeded the
-        /// size of an individual resources.
+        /// size of an individual resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">REST API Reference for CreateCostCategoryDefinition Operation</seealso>
         CreateCostCategoryDefinitionResponse CreateCostCategoryDefinition(CreateCostCategoryDefinitionRequest request);
@@ -98,10 +176,90 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
         /// You've reached the limit on the number of resources you can create, or exceeded the
-        /// size of an individual resources.
+        /// size of an individual resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">REST API Reference for CreateCostCategoryDefinition Operation</seealso>
         Task<CreateCostCategoryDefinitionResponse> CreateCostCategoryDefinitionAsync(CreateCostCategoryDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAnomalyMonitor
+
+
+        /// <summary>
+        /// Deletes a cost anomaly monitor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnomalyMonitor service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAnomalyMonitor service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownMonitorException">
+        /// The cost anomaly monitor does not exist for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalyMonitor">REST API Reference for DeleteAnomalyMonitor Operation</seealso>
+        DeleteAnomalyMonitorResponse DeleteAnomalyMonitor(DeleteAnomalyMonitorRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a cost anomaly monitor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnomalyMonitor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAnomalyMonitor service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownMonitorException">
+        /// The cost anomaly monitor does not exist for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalyMonitor">REST API Reference for DeleteAnomalyMonitor Operation</seealso>
+        Task<DeleteAnomalyMonitorResponse> DeleteAnomalyMonitorAsync(DeleteAnomalyMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAnomalySubscription
+
+
+        /// <summary>
+        /// Deletes a cost anomaly subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnomalySubscription service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAnomalySubscription service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownSubscriptionException">
+        /// The cost anomaly subscription does not exist for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalySubscription">REST API Reference for DeleteAnomalySubscription Operation</seealso>
+        DeleteAnomalySubscriptionResponse DeleteAnomalySubscription(DeleteAnomalySubscriptionRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a cost anomaly subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnomalySubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAnomalySubscription service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownSubscriptionException">
+        /// The cost anomaly subscription does not exist for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalySubscription">REST API Reference for DeleteAnomalySubscription Operation</seealso>
+        Task<DeleteAnomalySubscriptionResponse> DeleteAnomalySubscriptionAsync(DeleteAnomalySubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -205,6 +363,144 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetAnomalies
+
+
+        /// <summary>
+        /// Retrieves all of the cost anomalies detected on your account, during the time period
+        /// specified by the <code>DateInterval</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnomalies service method.</param>
+        /// 
+        /// <returns>The response from the GetAnomalies service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalies">REST API Reference for GetAnomalies Operation</seealso>
+        GetAnomaliesResponse GetAnomalies(GetAnomaliesRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves all of the cost anomalies detected on your account, during the time period
+        /// specified by the <code>DateInterval</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnomalies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAnomalies service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalies">REST API Reference for GetAnomalies Operation</seealso>
+        Task<GetAnomaliesResponse> GetAnomaliesAsync(GetAnomaliesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAnomalyMonitors
+
+
+        /// <summary>
+        /// Retrieves the cost anomaly monitor definitions for your account. You can filter using
+        /// a list of cost anomaly monitor Amazon Resource Names (ARNs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnomalyMonitors service method.</param>
+        /// 
+        /// <returns>The response from the GetAnomalyMonitors service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownMonitorException">
+        /// The cost anomaly monitor does not exist for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalyMonitors">REST API Reference for GetAnomalyMonitors Operation</seealso>
+        GetAnomalyMonitorsResponse GetAnomalyMonitors(GetAnomalyMonitorsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the cost anomaly monitor definitions for your account. You can filter using
+        /// a list of cost anomaly monitor Amazon Resource Names (ARNs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnomalyMonitors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAnomalyMonitors service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownMonitorException">
+        /// The cost anomaly monitor does not exist for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalyMonitors">REST API Reference for GetAnomalyMonitors Operation</seealso>
+        Task<GetAnomalyMonitorsResponse> GetAnomalyMonitorsAsync(GetAnomalyMonitorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAnomalySubscriptions
+
+
+        /// <summary>
+        /// Retrieves the cost anomaly subscription objects for your account. You can filter using
+        /// a list of cost anomaly monitor Amazon Resource Names (ARNs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnomalySubscriptions service method.</param>
+        /// 
+        /// <returns>The response from the GetAnomalySubscriptions service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownSubscriptionException">
+        /// The cost anomaly subscription does not exist for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalySubscriptions">REST API Reference for GetAnomalySubscriptions Operation</seealso>
+        GetAnomalySubscriptionsResponse GetAnomalySubscriptions(GetAnomalySubscriptionsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the cost anomaly subscription objects for your account. You can filter using
+        /// a list of cost anomaly monitor Amazon Resource Names (ARNs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnomalySubscriptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAnomalySubscriptions service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownSubscriptionException">
+        /// The cost anomaly subscription does not exist for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalySubscriptions">REST API Reference for GetAnomalySubscriptions Operation</seealso>
+        Task<GetAnomalySubscriptionsResponse> GetAnomalySubscriptionsAsync(GetAnomalySubscriptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetCostAndUsage
 
 
@@ -214,8 +510,14 @@ namespace Amazon.CostExplorer
         /// that you want the request to return. You can also filter and group your data by various
         /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
         /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-        /// operation. Master accounts in an organization in AWS Organizations have access to
-        /// all member accounts.
+        /// operation. Management account in an organization in AWS Organizations have access
+        /// to all member accounts.
+        /// 
+        ///  
+        /// <para>
+        /// For information about filter limitations, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-limits.html">Quotas
+        /// and restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsage service method.</param>
         /// 
@@ -247,8 +549,14 @@ namespace Amazon.CostExplorer
         /// that you want the request to return. You can also filter and group your data by various
         /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
         /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-        /// operation. Master accounts in an organization in AWS Organizations have access to
-        /// all member accounts.
+        /// operation. Management account in an organization in AWS Organizations have access
+        /// to all member accounts.
+        /// 
+        ///  
+        /// <para>
+        /// For information about filter limitations, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-limits.html">Quotas
+        /// and restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsage service method.</param>
         /// <param name="cancellationToken">
@@ -286,8 +594,8 @@ namespace Amazon.CostExplorer
         /// that you want the request to return. You can also filter and group your data by various
         /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
         /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-        /// operation. Master accounts in an organization in AWS Organizations have access to
-        /// all member accounts. This API is currently available for the Amazon Elastic Compute
+        /// operation. Management account in an organization in AWS Organizations have access
+        /// to all member accounts. This API is currently available for the Amazon Elastic Compute
         /// Cloud – Compute service only.
         /// 
         ///  <note> 
@@ -328,8 +636,8 @@ namespace Amazon.CostExplorer
         /// that you want the request to return. You can also filter and group your data by various
         /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
         /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-        /// operation. Master accounts in an organization in AWS Organizations have access to
-        /// all member accounts. This API is currently available for the Amazon Elastic Compute
+        /// operation. Management account in an organization in AWS Organizations have access
+        /// to all member accounts. This API is currently available for the Amazon Elastic Compute
         /// Cloud – Compute service only.
         /// 
         ///  <note> 
@@ -364,6 +672,80 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsageWithResources">REST API Reference for GetCostAndUsageWithResources Operation</seealso>
         Task<GetCostAndUsageWithResourcesResponse> GetCostAndUsageWithResourcesAsync(GetCostAndUsageWithResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCostCategories
+
+
+        /// <summary>
+        /// Retrieves an array of Cost Category names and values incurred cost.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If some Cost Category names and values are not associated with any cost, they will
+        /// not be returned by this API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostCategories service method.</param>
+        /// 
+        /// <returns>The response from the GetCostCategories service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
+        /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
+        /// Your request parameters changed between pages. Try again with the old parameters or
+        /// without a pagination token.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories">REST API Reference for GetCostCategories Operation</seealso>
+        GetCostCategoriesResponse GetCostCategories(GetCostCategoriesRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves an array of Cost Category names and values incurred cost.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If some Cost Category names and values are not associated with any cost, they will
+        /// not be returned by this API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostCategories service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCostCategories service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
+        /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.RequestChangedException">
+        /// Your request parameters changed between pages. Try again with the old parameters or
+        /// without a pagination token.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostCategories">REST API Reference for GetCostCategories Operation</seealso>
+        Task<GetCostCategoriesResponse> GetCostCategoriesAsync(GetCostCategoriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -477,7 +859,7 @@ namespace Amazon.CostExplorer
         /// <summary>
         /// Retrieves the reservation coverage for your account. This enables you to see how much
         /// of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
-        /// Service, or Amazon Redshift usage is covered by a reservation. An organization's master
+        /// Service, or Amazon Redshift usage is covered by a reservation. An organization's management
         /// account can see the coverage of the associated member accounts. This supports dimensions,
         /// Cost Categories, and nested expressions. For any time period, you can filter data
         /// about reservation usage by the following dimensions:
@@ -556,7 +938,7 @@ namespace Amazon.CostExplorer
         /// <summary>
         /// Retrieves the reservation coverage for your account. This enables you to see how much
         /// of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
-        /// Service, or Amazon Redshift usage is covered by a reservation. An organization's master
+        /// Service, or Amazon Redshift usage is covered by a reservation. An organization's management
         /// account can see the coverage of the associated member accounts. This supports dimensions,
         /// Cost Categories, and nested expressions. For any time period, you can filter data
         /// about reservation usage by the following dimensions:
@@ -729,7 +1111,7 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves the reservation utilization for your account. Master accounts in an organization
+        /// Retrieves the reservation utilization for your account. Management account in an organization
         /// have access to member accounts. You can filter data by dimensions in a time period.
         /// You can use <code>GetDimensionValues</code> to determine the possible dimension values.
         /// Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
@@ -752,7 +1134,7 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves the reservation utilization for your account. Master accounts in an organization
+        /// Retrieves the reservation utilization for your account. Management account in an organization
         /// have access to member accounts. You can filter data by dimensions in a time period.
         /// You can use <code>GetDimensionValues</code> to determine the possible dimension values.
         /// Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
@@ -842,10 +1224,10 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves the Savings Plans covered for your account. This enables you to see how
-        /// much of your cost is covered by a Savings Plan. An organization’s master account can
-        /// see the coverage of the associated member accounts. This supports dimensions, Cost
-        /// Categories, and nested expressions. For any time period, you can filter data for Savings
-        /// Plans usage with the following dimensions:
+        /// much of your cost is covered by a Savings Plan. An organization’s management account
+        /// can see the coverage of the associated member accounts. This supports dimensions,
+        /// Cost Categories, and nested expressions. For any time period, you can filter data
+        /// for Savings Plans usage with the following dimensions:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -888,10 +1270,10 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves the Savings Plans covered for your account. This enables you to see how
-        /// much of your cost is covered by a Savings Plan. An organization’s master account can
-        /// see the coverage of the associated member accounts. This supports dimensions, Cost
-        /// Categories, and nested expressions. For any time period, you can filter data for Savings
-        /// Plans usage with the following dimensions:
+        /// much of your cost is covered by a Savings Plan. An organization’s management account
+        /// can see the coverage of the associated member accounts. This supports dimensions,
+        /// Cost Categories, and nested expressions. For any time period, you can filter data
+        /// for Savings Plans usage with the following dimensions:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -980,9 +1362,9 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves the Savings Plans utilization for your account across date ranges with daily
-        /// or monthly granularity. Master accounts in an organization have access to member accounts.
-        /// You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine
-        /// the possible dimension values.
+        /// or monthly granularity. Management account in an organization have access to member
+        /// accounts. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code>
+        /// to determine the possible dimension values.
         /// 
         ///  <note> 
         /// <para>
@@ -1006,9 +1388,9 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves the Savings Plans utilization for your account across date ranges with daily
-        /// or monthly granularity. Master accounts in an organization have access to member accounts.
-        /// You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine
-        /// the possible dimension values.
+        /// or monthly granularity. Management account in an organization have access to member
+        /// accounts. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code>
+        /// to determine the possible dimension values.
         /// 
         ///  <note> 
         /// <para>
@@ -1259,6 +1641,128 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  ProvideAnomalyFeedback
+
+
+        /// <summary>
+        /// Modifies the feedback property of a given cost anomaly.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ProvideAnomalyFeedback service method.</param>
+        /// 
+        /// <returns>The response from the ProvideAnomalyFeedback service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback">REST API Reference for ProvideAnomalyFeedback Operation</seealso>
+        ProvideAnomalyFeedbackResponse ProvideAnomalyFeedback(ProvideAnomalyFeedbackRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the feedback property of a given cost anomaly.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ProvideAnomalyFeedback service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ProvideAnomalyFeedback service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback">REST API Reference for ProvideAnomalyFeedback Operation</seealso>
+        Task<ProvideAnomalyFeedbackResponse> ProvideAnomalyFeedbackAsync(ProvideAnomalyFeedbackRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAnomalyMonitor
+
+
+        /// <summary>
+        /// Updates an existing cost anomaly monitor. The changes made are applied going forward,
+        /// and does not change anomalies detected in the past.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnomalyMonitor service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAnomalyMonitor service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownMonitorException">
+        /// The cost anomaly monitor does not exist for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalyMonitor">REST API Reference for UpdateAnomalyMonitor Operation</seealso>
+        UpdateAnomalyMonitorResponse UpdateAnomalyMonitor(UpdateAnomalyMonitorRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing cost anomaly monitor. The changes made are applied going forward,
+        /// and does not change anomalies detected in the past.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnomalyMonitor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAnomalyMonitor service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownMonitorException">
+        /// The cost anomaly monitor does not exist for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalyMonitor">REST API Reference for UpdateAnomalyMonitor Operation</seealso>
+        Task<UpdateAnomalyMonitorResponse> UpdateAnomalyMonitorAsync(UpdateAnomalyMonitorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAnomalySubscription
+
+
+        /// <summary>
+        /// Updates an existing cost anomaly monitor subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnomalySubscription service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAnomalySubscription service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownMonitorException">
+        /// The cost anomaly monitor does not exist for the account.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownSubscriptionException">
+        /// The cost anomaly subscription does not exist for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalySubscription">REST API Reference for UpdateAnomalySubscription Operation</seealso>
+        UpdateAnomalySubscriptionResponse UpdateAnomalySubscription(UpdateAnomalySubscriptionRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing cost anomaly monitor subscription.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAnomalySubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAnomalySubscription service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownMonitorException">
+        /// The cost anomaly monitor does not exist for the account.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.UnknownSubscriptionException">
+        /// The cost anomaly subscription does not exist for the account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalySubscription">REST API Reference for UpdateAnomalySubscription Operation</seealso>
+        Task<UpdateAnomalySubscriptionResponse> UpdateAnomalySubscriptionAsync(UpdateAnomalySubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateCostCategoryDefinition
 
 
@@ -1278,7 +1782,7 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
         /// You've reached the limit on the number of resources you can create, or exceeded the
-        /// size of an individual resources.
+        /// size of an individual resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostCategoryDefinition">REST API Reference for UpdateCostCategoryDefinition Operation</seealso>
         UpdateCostCategoryDefinitionResponse UpdateCostCategoryDefinition(UpdateCostCategoryDefinitionRequest request);
@@ -1304,7 +1808,7 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
         /// You've reached the limit on the number of resources you can create, or exceeded the
-        /// size of an individual resources.
+        /// size of an individual resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostCategoryDefinition">REST API Reference for UpdateCostCategoryDefinition Operation</seealso>
         Task<UpdateCostCategoryDefinitionResponse> UpdateCostCategoryDefinitionAsync(UpdateCostCategoryDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));

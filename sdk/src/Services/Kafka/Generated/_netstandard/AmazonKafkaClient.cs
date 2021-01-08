@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,6 +40,9 @@ namespace Amazon.Kafka
     ///
     /// The operations for managing an Amazon MSK cluster.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonKafkaClient : AmazonServiceClient, IAmazonKafka
     {
         private static IServiceMetadata serviceMetadata = new AmazonKafkaMetadata();
@@ -258,6 +261,116 @@ namespace Amazon.Kafka
         #endregion
 
 
+        #region  BatchAssociateScramSecret
+
+        internal virtual BatchAssociateScramSecretResponse BatchAssociateScramSecret(BatchAssociateScramSecretRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAssociateScramSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAssociateScramSecretResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAssociateScramSecretResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates one or more Scram Secrets with an Amazon MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAssociateScramSecret service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchAssociateScramSecret service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchAssociateScramSecret">REST API Reference for BatchAssociateScramSecret Operation</seealso>
+        public virtual Task<BatchAssociateScramSecretResponse> BatchAssociateScramSecretAsync(BatchAssociateScramSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAssociateScramSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAssociateScramSecretResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchAssociateScramSecretResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDisassociateScramSecret
+
+        internal virtual BatchDisassociateScramSecretResponse BatchDisassociateScramSecret(BatchDisassociateScramSecretRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisassociateScramSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisassociateScramSecretResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDisassociateScramSecretResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates one or more Scram Secrets from an Amazon MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateScramSecret service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDisassociateScramSecret service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchDisassociateScramSecret">REST API Reference for BatchDisassociateScramSecret Operation</seealso>
+        public virtual Task<BatchDisassociateScramSecretResponse> BatchDisassociateScramSecretAsync(BatchDisassociateScramSecretRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDisassociateScramSecretRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDisassociateScramSecretResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDisassociateScramSecretResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCluster
 
         internal virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
@@ -1049,6 +1162,61 @@ namespace Amazon.Kafka
             options.ResponseUnmarshaller = ListNodesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListNodesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListScramSecrets
+
+        internal virtual ListScramSecretsResponse ListScramSecrets(ListScramSecretsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScramSecretsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScramSecretsResponseUnmarshaller.Instance;
+
+            return Invoke<ListScramSecretsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of the Scram Secrets associated with an Amazon MSK cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListScramSecrets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListScramSecrets service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListScramSecrets">REST API Reference for ListScramSecrets Operation</seealso>
+        public virtual Task<ListScramSecretsResponse> ListScramSecretsAsync(ListScramSecretsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListScramSecretsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListScramSecretsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListScramSecretsResponse>(request, options, cancellationToken);
         }
 
         #endregion

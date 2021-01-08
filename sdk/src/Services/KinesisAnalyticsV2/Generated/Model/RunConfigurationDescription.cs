@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class RunConfigurationDescription
     {
         private ApplicationRestoreConfiguration _applicationRestoreConfigurationDescription;
+        private FlinkRunConfiguration _flinkRunConfigurationDescription;
 
         /// <summary>
         /// Gets and sets the property ApplicationRestoreConfigurationDescription. 
@@ -51,6 +52,21 @@ namespace Amazon.KinesisAnalyticsV2.Model
         internal bool IsSetApplicationRestoreConfigurationDescription()
         {
             return this._applicationRestoreConfigurationDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlinkRunConfigurationDescription.
+        /// </summary>
+        public FlinkRunConfiguration FlinkRunConfigurationDescription
+        {
+            get { return this._flinkRunConfigurationDescription; }
+            set { this._flinkRunConfigurationDescription = value; }
+        }
+
+        // Check to see if FlinkRunConfigurationDescription property is set
+        internal bool IsSetFlinkRunConfigurationDescription()
+        {
+            return this._flinkRunConfigurationDescription != null;
         }
 
     }

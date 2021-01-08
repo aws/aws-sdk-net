@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.ConnectParticipant.Model
     public partial class Item
     {
         private string _absoluteTime;
+        private List<AttachmentItem> _attachments = new List<AttachmentItem>();
         private string _content;
         private string _contentType;
         private string _displayName;
@@ -63,6 +64,24 @@ namespace Amazon.ConnectParticipant.Model
         internal bool IsSetAbsoluteTime()
         {
             return this._absoluteTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Attachments. 
+        /// <para>
+        /// Provides information about the attachments.
+        /// </para>
+        /// </summary>
+        public List<AttachmentItem> Attachments
+        {
+            get { return this._attachments; }
+            set { this._attachments = value; }
+        }
+
+        // Check to see if Attachments property is set
+        internal bool IsSetAttachments()
+        {
+            return this._attachments != null && this._attachments.Count > 0; 
         }
 
         /// <summary>

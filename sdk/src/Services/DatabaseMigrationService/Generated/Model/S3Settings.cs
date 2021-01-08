@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,11 +37,16 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _bucketName;
         private bool? _cdcInsertsAndUpdates;
         private bool? _cdcInsertsOnly;
+        private string _cdcPath;
         private CompressionTypeValue _compressionType;
         private string _csvDelimiter;
+        private string _csvNoSupValue;
         private string _csvRowDelimiter;
         private DataFormatValue _dataFormat;
         private int? _dataPageSize;
+        private DatePartitionDelimiterValue _datePartitionDelimiter;
+        private bool? _datePartitionEnabled;
+        private DatePartitionSequenceValue _datePartitionSequence;
         private int? _dictPageSizeLimit;
         private bool? _enableStatistics;
         private EncodingTypeValue _encodingType;
@@ -50,10 +55,12 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _includeOpForFullLoad;
         private bool? _parquetTimestampInMillisecond;
         private ParquetVersionValue _parquetVersion;
+        private bool? _preserveTransactions;
         private int? _rowGroupLength;
         private string _serverSideEncryptionKmsKeyId;
         private string _serviceAccessRoleArn;
         private string _timestampColumnName;
+        private bool? _useCsvNoSupValue;
 
         /// <summary>
         /// Gets and sets the property BucketFolder. 
@@ -190,6 +197,55 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CdcPath. 
+        /// <para>
+        /// Specifies the folder path of CDC files. For an S3 source, this setting is required
+        /// if a task captures change data; otherwise, it's optional. If <code>CdcPath</code>
+        /// is set, AWS DMS reads CDC files from this path and replicates the data changes to
+        /// the target endpoint. For an S3 target if you set <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+        /// <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that
+        /// you have set this parameter to a folder path on your S3 target where AWS DMS can save
+        /// the transaction order for the CDC load. AWS DMS creates this CDC folder path in either
+        /// your S3 target working directory or the S3 target location specified by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+        /// <code>BucketFolder</code> </a> and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+        /// <code>BucketName</code> </a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and
+        /// you specify <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
+        /// <code>BucketFolder</code>, AWS DMS creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code>
+        /// as <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>,
+        /// AWS DMS creates the CDC folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on CDC including transaction order on an S3 target, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+        /// data changes (CDC) including transaction order on the S3 target</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This setting is supported in AWS DMS versions 3.4.2 and later.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string CdcPath
+        {
+            get { return this._cdcPath; }
+            set { this._cdcPath = value; }
+        }
+
+        // Check to see if CdcPath property is set
+        internal bool IsSetCdcPath()
+        {
+            return this._cdcPath != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CompressionType. 
         /// <para>
         /// An optional parameter to use GZIP to compress the target files. Set to GZIP to compress
@@ -227,6 +283,34 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetCsvDelimiter()
         {
             return this._csvDelimiter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CsvNoSupValue. 
+        /// <para>
+        /// This setting only applies if your Amazon S3 output files during a change data capture
+        /// (CDC) load are written in .csv format. If <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+        /// <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you
+        /// want AWS DMS to use for all columns not included in the supplemental log. If you do
+        /// not specify a string value, AWS DMS uses the null value for these columns regardless
+        /// of the <code>UseCsvNoSupValue</code> setting.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This setting is supported in AWS DMS versions 3.4.1 and later.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string CsvNoSupValue
+        {
+            get { return this._csvNoSupValue; }
+            set { this._csvNoSupValue = value; }
+        }
+
+        // Check to see if CsvNoSupValue property is set
+        internal bool IsSetCsvNoSupValue()
+        {
+            return this._csvNoSupValue != null;
         }
 
         /// <summary>
@@ -295,6 +379,67 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDataPageSize()
         {
             return this._dataPageSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatePartitionDelimiter. 
+        /// <para>
+        /// Specifies a date separating delimiter to use during folder partitioning. The default
+        /// value is <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code>
+        /// is set to <code>true</code>.
+        /// </para>
+        /// </summary>
+        public DatePartitionDelimiterValue DatePartitionDelimiter
+        {
+            get { return this._datePartitionDelimiter; }
+            set { this._datePartitionDelimiter = value; }
+        }
+
+        // Check to see if DatePartitionDelimiter property is set
+        internal bool IsSetDatePartitionDelimiter()
+        {
+            return this._datePartitionDelimiter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatePartitionEnabled. 
+        /// <para>
+        /// When set to <code>true</code>, this parameter partitions S3 bucket folders based on
+        /// transaction commit dates. The default value is <code>false</code>. For more information
+        /// about date-based folder partitoning, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+        /// date-based folder partitioning</a>.
+        /// </para>
+        /// </summary>
+        public bool DatePartitionEnabled
+        {
+            get { return this._datePartitionEnabled.GetValueOrDefault(); }
+            set { this._datePartitionEnabled = value; }
+        }
+
+        // Check to see if DatePartitionEnabled property is set
+        internal bool IsSetDatePartitionEnabled()
+        {
+            return this._datePartitionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatePartitionSequence. 
+        /// <para>
+        /// Identifies the sequence of the date format to use during folder partitioning. The
+        /// default value is <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code>
+        /// is set to <code>true</code>.
+        /// </para>
+        /// </summary>
+        public DatePartitionSequenceValue DatePartitionSequence
+        {
+            get { return this._datePartitionSequence; }
+            set { this._datePartitionSequence = value; }
+        }
+
+        // Check to see if DatePartitionSequence property is set
+        internal bool IsSetDatePartitionSequence()
+        {
+            return this._datePartitionSequence != null;
         }
 
         /// <summary>
@@ -579,6 +724,32 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PreserveTransactions. 
+        /// <para>
+        /// If set to <code>true</code>, AWS DMS saves the transaction order for a change data
+        /// capture (CDC) load on the Amazon S3 target specified by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+        /// <code>CdcPath</code> </a>. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing
+        /// data changes (CDC) including transaction order on the S3 target</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This setting is supported in AWS DMS versions 3.4.2 and later.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool PreserveTransactions
+        {
+            get { return this._preserveTransactions.GetValueOrDefault(); }
+            set { this._preserveTransactions = value; }
+        }
+
+        // Check to see if PreserveTransactions property is set
+        internal bool IsSetPreserveTransactions()
+        {
+            return this._preserveTransactions.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RowGroupLength. 
         /// <para>
         /// The number of rows in a row group. A smaller row group size provides faster reads.
@@ -697,6 +868,33 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetTimestampColumnName()
         {
             return this._timestampColumnName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseCsvNoSupValue. 
+        /// <para>
+        /// This setting applies if the S3 output files during a change data capture (CDC) load
+        /// are written in .csv format. If set to <code>true</code> for columns not included in
+        /// the supplemental log, AWS DMS uses the value specified by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+        /// <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS
+        /// uses the null value for these columns.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This setting is supported in AWS DMS versions 3.4.1 and later.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool UseCsvNoSupValue
+        {
+            get { return this._useCsvNoSupValue.GetValueOrDefault(); }
+            set { this._useCsvNoSupValue = value; }
+        }
+
+        // Check to see if UseCsvNoSupValue property is set
+        internal bool IsSetUseCsvNoSupValue()
+        {
+            return this._useCsvNoSupValue.HasValue; 
         }
 
     }

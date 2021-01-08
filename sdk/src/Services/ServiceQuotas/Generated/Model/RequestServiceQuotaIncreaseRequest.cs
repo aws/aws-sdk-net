@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,7 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the RequestServiceQuotaIncrease operation.
-    /// Retrieves the details of a service quota increase request. The response to this command
-    /// provides the details in the <a>RequestedServiceQuotaChange</a> object.
+    /// Submits a quota increase request for the specified quota.
     /// </summary>
     public partial class RequestServiceQuotaIncreaseRequest : AmazonServiceQuotasRequest
     {
@@ -42,7 +41,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property DesiredValue. 
         /// <para>
-        /// Specifies the value submitted in the service quota increase request. 
+        /// The new, increased value for the quota.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000000000)]
@@ -61,7 +60,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// Specifies the service quota that you want to use.
+        /// The quota identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -80,7 +79,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Specifies the service that you want to use.
+        /// The service identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,6 +37,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// as the result of an approved proposal to remove a member. If <code>MemberId</code>
     /// is the last member in a network specified by the last AWS account, the network is
     /// deleted also.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class DeleteMemberRequest : AmazonManagedBlockchainRequest
     {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -53,7 +53,8 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// Used for web ACLs that are scoped for regional applications. A regional application
-        /// can be an Application Load Balancer (ALB) or an API Gateway stage. 
+        /// can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync
+        /// GraphQL API. 
         /// </para>
         /// </summary>
         public ResourceType ResourceType

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,7 +39,8 @@ namespace Amazon.XRay.Model
         /// Gets and sets the property Group. 
         /// <para>
         /// The group that was updated. Contains the name of the group that was updated, the ARN
-        /// of the group that was updated, and the updated filter expression assigned to the group.
+        /// of the group that was updated, the updated filter expression, and the updated insight
+        /// configuration assigned to the group.
         /// </para>
         /// </summary>
         public Group Group

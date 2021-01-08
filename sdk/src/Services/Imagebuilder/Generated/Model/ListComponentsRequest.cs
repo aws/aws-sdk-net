@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,10 +34,29 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListComponentsRequest : AmazonImagebuilderRequest
     {
+        private bool? _byName;
         private List<Filter> _filters = new List<Filter>();
         private int? _maxResults;
         private string _nextToken;
         private Ownership _owner;
+
+        /// <summary>
+        /// Gets and sets the property ByName. 
+        /// <para>
+        /// Returns the list of component build versions for the specified semantic version.
+        /// </para>
+        /// </summary>
+        public bool ByName
+        {
+            get { return this._byName.GetValueOrDefault(); }
+            set { this._byName = value; }
+        }
+
+        // Check to see if ByName property is set
+        internal bool IsSetByName()
+        {
+            return this._byName.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -84,7 +103,7 @@ namespace Amazon.Imagebuilder.Model
         /// truncated response. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=65535)]
         public string NextToken
         {
             get { return this._nextToken; }

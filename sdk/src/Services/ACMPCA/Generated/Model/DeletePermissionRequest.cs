@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,8 +63,8 @@ namespace Amazon.ACMPCA.Model
     /// If the private CA and the ACM certificates reside in different accounts, then permissions
     /// cannot be used to enable automatic renewals. Instead, the ACM certificate owner must
     /// set up a resource-based policy to enable cross-account issuance and renewals. For
-    /// more information, see <a href="acm-pca/latest/userguide/pca-rbp.html">Using a Resource
-    /// Based Policy with ACM Private CA</a>.
+    /// more information, see <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/pca-rbp.html">Using
+    /// a Resource Based Policy with ACM Private CA</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

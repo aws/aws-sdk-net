@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -75,6 +75,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AuthorizerCredentialsArn);
                 }
 
+                if(publicRequest.IsSetAuthorizerPayloadFormatVersion())
+                {
+                    context.Writer.WritePropertyName("authorizerPayloadFormatVersion");
+                    context.Writer.Write(publicRequest.AuthorizerPayloadFormatVersion);
+                }
+
                 if(publicRequest.IsSetAuthorizerResultTtlInSeconds())
                 {
                     context.Writer.WritePropertyName("authorizerResultTtlInSeconds");
@@ -91,6 +97,12 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("authorizerUri");
                     context.Writer.Write(publicRequest.AuthorizerUri);
+                }
+
+                if(publicRequest.IsSetEnableSimpleResponses())
+                {
+                    context.Writer.WritePropertyName("enableSimpleResponses");
+                    context.Writer.Write(publicRequest.EnableSimpleResponses);
                 }
 
                 if(publicRequest.IsSetIdentitySource())

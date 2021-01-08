@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -142,6 +142,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier
+        /// are specified using the endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Lambda provisioned concurrency - The resource type is <code>function</code> and the
         /// unique identifier is the function name with a function version or alias name suffix
         /// that is not <code>$LATEST</code>. Example: <code>function:my-function:prod</code>
@@ -151,6 +156,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier
         /// is the table name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon MSK cluster - The resource type and unique identifier are specified using the
+        /// cluster ARN. Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -235,6 +245,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number
+        /// of inference units for an Amazon Comprehend entity recognizer endpoint.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency
         /// for a Lambda function.
         /// </para>
@@ -247,6 +262,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         ///  <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
         /// for an Amazon Keyspaces table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB)
+        /// for brokers in an Amazon MSK cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -312,12 +332,13 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-        /// Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+        /// For cron expressions, <i>fields</i> is a cron expression. The supported cron format
+        /// consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month]
+        /// [Month] [Day_of_Week] [Year].
         /// </para>
         ///  
         /// <para>
-        /// For examples of using these expressions, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
+        /// For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
         /// Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>

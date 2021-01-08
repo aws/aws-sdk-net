@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ namespace Amazon.Imagebuilder.Model
         private string _kmsKeyId;
         private LaunchPermissionConfiguration _launchPermission;
         private string _name;
+        private List<string> _targetAccountIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property AmiTags. 
@@ -61,7 +62,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the distribution configuration. 
+        /// The description of the distribution configuration. Minimum and maximum length are
+        /// in characters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -132,6 +134,25 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetAccountIds. 
+        /// <para>
+        ///  The ID of an account to which you want to distribute an image. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1536)]
+        public List<string> TargetAccountIds
+        {
+            get { return this._targetAccountIds; }
+            set { this._targetAccountIds = value; }
+        }
+
+        // Check to see if TargetAccountIds property is set
+        internal bool IsSetTargetAccountIds()
+        {
+            return this._targetAccountIds != null && this._targetAccountIds.Count > 0; 
         }
 
     }

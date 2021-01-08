@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -79,7 +79,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property ClientSecret. 
         /// <para>
-        ///  The client secret used by the oauth client to authenticate to the authorization server.
+        ///  The client secret used by the OAuth client to authenticate to the authorization server.
         /// 
         /// </para>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property OAuthRequest. 
         /// <para>
-        ///  The oauth requirement needed to request security tokens from the connector endpoint.
+        ///  The OAuth requirement needed to request security tokens from the connector endpoint.
         /// 
         /// </para>
         /// </summary>

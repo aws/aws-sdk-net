@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -363,6 +363,10 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </summary>
         public static readonly LoadBalancerTypeEnum Application = new LoadBalancerTypeEnum("application");
         /// <summary>
+        /// Constant Gateway for LoadBalancerTypeEnum
+        /// </summary>
+        public static readonly LoadBalancerTypeEnum Gateway = new LoadBalancerTypeEnum("gateway");
+        /// <summary>
         /// Constant Network for LoadBalancerTypeEnum
         /// </summary>
         public static readonly LoadBalancerTypeEnum Network = new LoadBalancerTypeEnum("network");
@@ -408,6 +412,10 @@ namespace Amazon.ElasticLoadBalancingV2
     public class ProtocolEnum : ConstantClass
     {
 
+        /// <summary>
+        /// Constant GENEVE for ProtocolEnum
+        /// </summary>
+        public static readonly ProtocolEnum GENEVE = new ProtocolEnum("GENEVE");
         /// <summary>
         /// Constant HTTP for ProtocolEnum
         /// </summary>

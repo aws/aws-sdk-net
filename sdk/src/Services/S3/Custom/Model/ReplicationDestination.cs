@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,11 +34,11 @@ namespace Amazon.S3.Model
         private Metrics metrics;
 
         /// <summary>
-        /// <p> Amazon resource name (ARN) of the bucket where you want Amazon
-        /// S3 to store replicas of the object identified by the rule. </p> <p>
-        /// If you have multiple rules in your replication configuration, all
+        /// <para> Amazon resource name (ARN) of the bucket where you want Amazon
+        /// S3 to store replicas of the object identified by the rule. </para>
+        /// <para> If you have multiple rules in your replication configuration, all
         /// rules must specify the same bucket as the destination. A replication
-        /// configuration can replicate objects only to one destination bucket. </p>
+        /// configuration can replicate objects only to one destination bucket. </para>
         /// </summary>
         public string BucketArn
         {
@@ -72,11 +72,11 @@ namespace Amazon.S3.Model
             return this.storageClass != null;
         }
         /// <summary>
-        /// <p> Account ID of the destination bucket. Currently Amazon S3 verifies this
-        /// value only if Access Control Translation is enabled. </p> <p> In a cross-account
+        /// <para> Account ID of the destination bucket. Currently Amazon S3 verifies this
+        /// value only if Access Control Translation is enabled. </para> <para> In a cross-account
         /// scenario, if you tell Amazon S3 to change replica ownership to the AWS account
         /// that owns the destination bucket by adding the <code>AccessControlTranslation</code>
-        /// element, this is the account ID of the destination bucket owner. </p>
+        /// element, this is the account ID of the destination bucket owner. </para>
         /// </summary>
         public string AccountId
         {
@@ -90,12 +90,12 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <p> Container for information regarding the access control for replicas. </p>
-        /// <p> Use only in a cross-account scenario, where source and destination bucket
+        /// <para> Container for information regarding the access control for replicas. </para>
+        /// <para> Use only in a cross-account scenario, where source and destination bucket
         /// owners are not the same, when you want to change replica ownership to the AWS
         /// account that owns the destination bucket. If you don't add this element to the
         /// replication configuration, the replicas are owned by same AWS account that
-        /// owns the source object. </p>
+        /// owns the source object. </para>
         /// </summary>
         public AccessControlTranslation AccessControlTranslation
         {
@@ -110,9 +110,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// <p> Container that provides encryption-related information. You must
+        /// <para> Container that provides encryption-related information. You must
         /// specify this element if the <code>SourceSelectionCriteria</code> is
-        /// specified. </p>
+        /// specified. </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration
         {
@@ -143,10 +143,7 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// A container specifying replication metrics-related information, including whether 
-        /// emitting metrics and Amazon S3 events for replication are enabled. In addition, 
-        /// contains configurations related to specific metrics or events. Must be specified 
-        /// together with a <code>ReplicationTime</code> block.
+        /// <para>A container specifying settings for configuring replication metrics and events. </para>
         /// </summary>
         public Metrics Metrics
         {

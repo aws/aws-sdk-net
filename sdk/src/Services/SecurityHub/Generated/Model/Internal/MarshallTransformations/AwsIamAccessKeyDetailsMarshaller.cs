@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsIamAccessKeyDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAccessKeyId())
+            {
+                context.Writer.WritePropertyName("AccessKeyId");
+                context.Writer.Write(requestObject.AccessKeyId);
+            }
+
+            if(requestObject.IsSetAccountId())
+            {
+                context.Writer.WritePropertyName("AccountId");
+                context.Writer.Write(requestObject.AccountId);
+            }
+
             if(requestObject.IsSetCreatedAt())
             {
                 context.Writer.WritePropertyName("CreatedAt");
@@ -67,6 +79,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("PrincipalType");
                 context.Writer.Write(requestObject.PrincipalType);
+            }
+
+            if(requestObject.IsSetSessionContext())
+            {
+                context.Writer.WritePropertyName("SessionContext");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsIamAccessKeySessionContextMarshaller.Instance;
+                marshaller.Marshall(requestObject.SessionContext, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetStatus())

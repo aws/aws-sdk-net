@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -73,6 +73,10 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  <code>maven</code>: A Maven package that contains compiled code in a distributable
         /// format, such as a JAR file. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>nuget</code>: A NuGet package. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

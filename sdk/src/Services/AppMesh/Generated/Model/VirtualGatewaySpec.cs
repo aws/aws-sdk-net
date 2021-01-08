@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Listeners. 
         /// <para>
         /// The listeners that the mesh endpoint is expected to receive inbound traffic from.
-        /// You         can specify one listener.
+        /// You can specify one listener.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,8 +59,14 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetBehaviorCriteriaType())
+                request.Parameters.Add("behaviorCriteriaType", StringUtils.FromString(publicRequest.BehaviorCriteriaType));
+            
             if (publicRequest.IsSetEndTimeUtc())
                 request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
+            
+            if (publicRequest.IsSetListSuppressedAlerts())
+                request.Parameters.Add("listSuppressedAlerts", StringUtils.FromBool(publicRequest.ListSuppressedAlerts));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));

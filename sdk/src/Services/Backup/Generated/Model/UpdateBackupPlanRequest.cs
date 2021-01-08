@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,9 +30,8 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateBackupPlan operation.
-    /// Replaces the body of a saved backup plan identified by its <code>backupPlanId</code>
-    /// with the input document in JSON format. The new version is uniquely identified by
-    /// a <code>VersionId</code>.
+    /// Updates an existing backup plan identified by its <code>backupPlanId</code> with the
+    /// input document in JSON format. The new version is uniquely identified by a <code>VersionId</code>.
     /// </summary>
     public partial class UpdateBackupPlanRequest : AmazonBackupRequest
     {

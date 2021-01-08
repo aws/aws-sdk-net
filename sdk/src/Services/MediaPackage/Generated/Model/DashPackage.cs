@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,6 +46,8 @@ namespace Amazon.MediaPackage.Model
         private SegmentTemplateFormat _segmentTemplateFormat;
         private StreamSelection _streamSelection;
         private int? _suggestedPresentationDelaySeconds;
+        private UtcTiming _utcTiming;
+        private string _utcTimingUri;
 
         /// <summary>
         /// Gets and sets the property AdsOnDeliveryRestrictions.
@@ -259,6 +261,38 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetSuggestedPresentationDelaySeconds()
         {
             return this._suggestedPresentationDelaySeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UtcTiming. Determines the type of UTCTiming included in
+        /// the Media Presentation Description (MPD)
+        /// </summary>
+        public UtcTiming UtcTiming
+        {
+            get { return this._utcTiming; }
+            set { this._utcTiming = value; }
+        }
+
+        // Check to see if UtcTiming property is set
+        internal bool IsSetUtcTiming()
+        {
+            return this._utcTiming != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UtcTimingUri. Specifies the value attribute of the UTCTiming
+        /// field when utcTiming is set to HTTP-ISO or HTTP-HEAD
+        /// </summary>
+        public string UtcTimingUri
+        {
+            get { return this._utcTimingUri; }
+            set { this._utcTimingUri = value; }
+        }
+
+        // Check to see if UtcTimingUri property is set
+        internal bool IsSetUtcTimingUri()
+        {
+            return this._utcTimingUri != null;
         }
 
     }

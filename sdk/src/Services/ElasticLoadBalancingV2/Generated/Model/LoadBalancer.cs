@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
         private string _canonicalHostedZoneId;
         private DateTime? _createdTime;
+        private string _customerOwnedIpv4Pool;
         private string _dnsName;
         private IpAddressType _ipAddressType;
         private string _loadBalancerArn;
@@ -49,7 +50,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// The Availability Zones for the load balancer.
+        /// The subnets for the load balancer.
         /// </para>
         /// </summary>
         public List<AvailabilityZone> AvailabilityZones
@@ -98,6 +99,25 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetCreatedTime()
         {
             return this._createdTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerOwnedIpv4Pool. 
+        /// <para>
+        /// [Application Load Balancers on Outposts] The ID of the customer-owned address pool.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string CustomerOwnedIpv4Pool
+        {
+            get { return this._customerOwnedIpv4Pool; }
+            set { this._customerOwnedIpv4Pool = value; }
+        }
+
+        // Check to see if CustomerOwnedIpv4Pool property is set
+        internal bool IsSetCustomerOwnedIpv4Pool()
+        {
+            return this._customerOwnedIpv4Pool != null;
         }
 
         /// <summary>

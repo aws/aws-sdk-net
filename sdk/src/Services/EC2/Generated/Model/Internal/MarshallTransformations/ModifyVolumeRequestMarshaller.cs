@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -62,9 +62,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Iops", StringUtils.FromInt(publicRequest.Iops));
                 }
+                if(publicRequest.IsSetMultiAttachEnabled())
+                {
+                    request.Parameters.Add("MultiAttachEnabled", StringUtils.FromBool(publicRequest.MultiAttachEnabled));
+                }
                 if(publicRequest.IsSetSize())
                 {
                     request.Parameters.Add("Size", StringUtils.FromInt(publicRequest.Size));
+                }
+                if(publicRequest.IsSetThroughput())
+                {
+                    request.Parameters.Add("Throughput", StringUtils.FromInt(publicRequest.Throughput));
                 }
                 if(publicRequest.IsSetVolumeId())
                 {

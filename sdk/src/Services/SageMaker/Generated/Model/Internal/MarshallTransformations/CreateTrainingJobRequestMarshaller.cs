@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -185,6 +185,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.OutputDataConfig, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetProfilerConfig())
+                {
+                    context.Writer.WritePropertyName("ProfilerConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProfilerConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProfilerConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetProfilerRuleConfigurations())
+                {
+                    context.Writer.WritePropertyName("ProfilerRuleConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestProfilerRuleConfigurationsListValue in publicRequest.ProfilerRuleConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProfilerRuleConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestProfilerRuleConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetResourceConfig())

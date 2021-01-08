@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies a tag key and value, as a pair, to use in a tag-based condition for a classification
-    /// job.
+    /// Specifies a tag key or tag key and value pair to use in a tag-based condition for
+    /// a classification job.
     /// </summary>
     public partial class TagValuePair
     {
@@ -58,7 +58,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The tag value, associated with the specified tag key, to use in the condition.
+        /// The tag value, associated with the specified tag key (key), to use in the condition.
+        /// To specify only a tag key for a condition, specify the tag key for the key property
+        /// and set this value to an empty string.
         /// </para>
         /// </summary>
         public string Value

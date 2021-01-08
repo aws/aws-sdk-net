@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -90,7 +90,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsSubscriptionArn. 
         /// <para>
-        /// The ARN of a resource that represents your subscription to a supported standard.
+        /// The ARN of a resource that represents your subscription to a supported standard. To
+        /// get the subscription ARNs of the standards you have enabled, use the <code> <a>GetEnabledStandards</a>
+        /// </code> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

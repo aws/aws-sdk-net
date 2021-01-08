@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -75,6 +75,7 @@ namespace Amazon.EC2.Model
     public partial class ModifySpotFleetRequestRequest : AmazonEC2Request
     {
         private ExcessCapacityTerminationPolicy _excessCapacityTerminationPolicy;
+        private List<LaunchTemplateConfig> _launchTemplateConfigs = new List<LaunchTemplateConfig>();
         private int? _onDemandTargetCapacity;
         private string _spotFleetRequestId;
         private int? _targetCapacity;
@@ -96,6 +97,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetExcessCapacityTerminationPolicy()
         {
             return this._excessCapacityTerminationPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchTemplateConfigs. 
+        /// <para>
+        /// The launch template and overrides. You can only use this parameter if you specified
+        /// a launch template (<code>LaunchTemplateConfigs</code>) in your Spot Fleet request.
+        /// If you specified <code>LaunchSpecifications</code> in your Spot Fleet request, then
+        /// omit this parameter.
+        /// </para>
+        /// </summary>
+        public List<LaunchTemplateConfig> LaunchTemplateConfigs
+        {
+            get { return this._launchTemplateConfigs; }
+            set { this._launchTemplateConfigs = value; }
+        }
+
+        // Check to see if LaunchTemplateConfigs property is set
+        internal bool IsSetLaunchTemplateConfigs()
+        {
+            return this._launchTemplateConfigs != null && this._launchTemplateConfigs.Count > 0; 
         }
 
         /// <summary>

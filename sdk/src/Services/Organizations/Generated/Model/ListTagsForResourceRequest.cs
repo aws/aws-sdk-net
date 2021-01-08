@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,16 +30,32 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists tags for the specified resource. 
+    /// Lists tags that are attached to the specified resource.
     /// 
     ///  
     /// <para>
-    /// Currently, you can list tags on an account in AWS Organizations.
+    /// You can attach tags to the following resources in AWS Organizations.
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// This operation can be called only from the organization's master account or by a member
-    /// account that is a delegated administrator for an AWS service.
+    /// AWS account
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Organization root
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Organizational unit (OU)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Policy (any type)
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// This operation can be called only from the organization's management account or by
+    /// a member account that is a delegated administrator for an AWS service.
     /// </para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonOrganizationsRequest
@@ -72,10 +88,34 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the resource that you want to retrieve tags for. 
+        /// The ID of the resource with the tags to list.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify any of the following taggable resources.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// AWS account – specify the account ID number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks
+        /// similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Root – specify the root ID that begins with <code>r-</code> and looks similar to:
+        /// <code>r-<i>1a2b</i> </code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+        /// <code>p-<i>12abcdefg3</i> </code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Max=12)]
+        [AWSProperty(Required=true, Max=130)]
         public string ResourceId
         {
             get { return this._resourceId; }

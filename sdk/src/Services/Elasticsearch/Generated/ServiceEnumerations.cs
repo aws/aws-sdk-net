@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -598,6 +598,10 @@ namespace Amazon.Elasticsearch
     public class LogType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AUDIT_LOGS for LogType
+        /// </summary>
+        public static readonly LogType AUDIT_LOGS = new LogType("AUDIT_LOGS");
         /// <summary>
         /// Constant ES_APPLICATION_LOGS for LogType
         /// </summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,6 +31,12 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the GetMasterAccount operation.
     /// Provides the details for the Security Hub master account for the current member account.
+    /// 
+    ///  
+    /// <para>
+    /// Can be used by both member accounts that are in an organization and accounts that
+    /// were invited manually.
+    /// </para>
     /// </summary>
     public partial class GetMasterAccountRequest : AmazonSecurityHubRequest
     {

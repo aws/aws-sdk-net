@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -91,6 +91,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetGeolocationFormat())
+                {
+                    context.Writer.WritePropertyName("GeolocationFormat");
+                    context.Writer.Write(publicRequest.GeolocationFormat);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
@@ -111,6 +117,18 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("TimestampFormat");
                     context.Writer.Write(publicRequest.TimestampFormat);
+                }
+
+                if(publicRequest.IsSetTimeZone())
+                {
+                    context.Writer.WritePropertyName("TimeZone");
+                    context.Writer.Write(publicRequest.TimeZone);
+                }
+
+                if(publicRequest.IsSetUseGeolocationForTimeZone())
+                {
+                    context.Writer.WritePropertyName("UseGeolocationForTimeZone");
+                    context.Writer.Write(publicRequest.UseGeolocationForTimeZone);
                 }
 
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property ResourceName. 
         /// <para>
         /// The Amazon DocumentDB resource that the tags are added to. This value is an Amazon
-        /// Resource Name (ARN).
+        /// Resource Name .
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the Amazon DocumentDB resource. 
+        /// The tags to be assigned to the Amazon DocumentDB resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

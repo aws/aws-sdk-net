@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,8 +17,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using Amazon.Util;
 using Amazon.S3.Util;
 
@@ -28,7 +26,7 @@ using Amazon.Runtime.Internal;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-    public static class S3Transforms
+	public static class S3Transforms
     {
         #region Uri/headers converters
 
@@ -117,6 +115,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         internal static string ToString(string value)
         {
             return value;
+        }
+        internal static bool ToBool(string value)
+        {
+            bool boolValue = bool.Parse(value);
+            return boolValue;
         }
 
         internal static T Unmarshall<T>(string text)

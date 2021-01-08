@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     public partial class ArchiveContainerSettings
     {
         private M2tsSettings _m2tsSettings;
+        private RawSettings _rawSettings;
 
         /// <summary>
         /// Gets and sets the property M2tsSettings.
@@ -48,6 +49,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetM2tsSettings()
         {
             return this._m2tsSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RawSettings.
+        /// </summary>
+        public RawSettings RawSettings
+        {
+            get { return this._rawSettings; }
+            set { this._rawSettings = value; }
+        }
+
+        // Check to see if RawSettings property is set
+        internal bool IsSetRawSettings()
+        {
+            return this._rawSettings != null;
         }
 
     }

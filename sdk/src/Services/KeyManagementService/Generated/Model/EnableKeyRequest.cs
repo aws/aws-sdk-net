@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ namespace Amazon.KeyManagementService.Model
     /// Container for the parameters to the EnableKey operation.
     /// Sets the key state of a customer master key (CMK) to enabled. This allows you to use
     /// the CMK for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-    /// operations</a>. You cannot perform this operation on a CMK in a different AWS account.
+    /// operations</a>. 
     /// 
     ///  
     /// <para>
@@ -40,6 +40,20 @@ namespace Amazon.KeyManagementService.Model
     /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
     /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
     /// Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Cross-account use</b>: No. You cannot perform this operation on a CMK in a different
+    /// AWS account.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:EnableKey</a>
+    /// (key policy)
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Related operations</b>: <a>DisableKey</a> 
     /// </para>
     /// </summary>
     public partial class EnableKeyRequest : AmazonKeyManagementServiceRequest

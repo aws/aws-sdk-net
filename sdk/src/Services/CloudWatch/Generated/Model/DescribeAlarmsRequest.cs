@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAlarms operation.
-    /// Retrieves the specified alarms. You can filter the results by specifying a a prefix
+    /// Retrieves the specified alarms. You can filter the results by specifying a prefix
     /// for the alarm name, the alarm state, or a prefix for any action.
     /// </summary>
     public partial class DescribeAlarmsRequest : AmazonCloudWatchRequest

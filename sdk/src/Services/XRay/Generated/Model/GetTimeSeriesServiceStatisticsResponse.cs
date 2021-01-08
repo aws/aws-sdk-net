@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ namespace Amazon.XRay.Model
         /// Gets and sets the property ContainsOldGroupVersions. 
         /// <para>
         /// A flag indicating whether or not a group's filter expression has been consistent,
-        /// or if a returned aggregation may show statistics from an older version of the group's
+        /// or if a returned aggregation might show statistics from an older version of the group's
         /// filter expression.
         /// </para>
         /// </summary>

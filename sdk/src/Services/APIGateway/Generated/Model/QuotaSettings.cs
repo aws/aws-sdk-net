@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -58,7 +58,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Offset. 
         /// <para>
-        /// The number of requests subtracted from the given limit in the initial time period.
+        /// The day that a time period starts. For example, with a time period of <code>WEEK</code>,
+        /// an offset of <code>0</code> starts on Sunday, and an offset of <code>1</code> starts
+        /// on Monday.
         /// </para>
         /// </summary>
         public int Offset

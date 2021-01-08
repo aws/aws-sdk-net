@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -124,7 +124,7 @@ namespace Amazon.DataSync
         ///  
         /// <para>
         /// You can activate the agent in a VPC (virtual private cloud) or provide the agent access
-        /// to a VPC endpoint so you can run tasks without going over the public Internet.
+        /// to a VPC endpoint so you can run tasks without going over the public internet.
         /// </para>
         ///  
         /// <para>
@@ -322,7 +322,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Creates an endpoint for a self-managed object storage bucket.
+        /// Creates an endpoint for a self-managed object storage bucket. For more information
+        /// about self-managed object storage locations, see <a>create-object-location</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationObjectStorage service method.</param>
         /// 
@@ -372,15 +373,8 @@ namespace Amazon.DataSync
         /// 
         ///  
         /// <para>
-        /// For AWS DataSync to access a destination S3 bucket, it needs an AWS Identity and Access
-        /// Management (IAM) role that has the required permissions. You can set up the required
-        /// permissions by creating an IAM policy that grants the required permissions and attaching
-        /// the policy to the role. An example of such a policy is shown in the examples section.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location
-        /// in the <i>AWS DataSync User Guide.</i> 
+        /// For more information, see https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli
+        /// in the <i>AWS DataSync User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLocationS3 service method.</param>
@@ -492,7 +486,7 @@ namespace Amazon.DataSync
         /// status for more than a few minutes, it means that your agent might be having trouble
         /// mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail. Mount
         /// issues are often caused by either a misconfigured firewall or a mistyped NFS server
-        /// host name.
+        /// hostname.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTask service method.</param>
@@ -866,7 +860,8 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Returns metadata about a self-managed object storage server location.
+        /// Returns metadata about a self-managed object storage server location. For more information
+        /// about self-managed object storage locations, see <a>create-object-location</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLocationObjectStorage service method.</param>
         /// 
@@ -1583,6 +1578,66 @@ namespace Amazon.DataSync
         /// <returns>Returns a  UpdateTaskResult from DataSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTask">REST API Reference for UpdateTask Operation</seealso>
         UpdateTaskResponse EndUpdateTask(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateTaskExecution
+
+
+        /// <summary>
+        /// Updates execution of a task.
+        /// 
+        ///  
+        /// <para>
+        /// You can modify bandwidth throttling for a task execution that is running or queued.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/working-with-task-executions.html#adjust-bandwidth-throttling">Adjusting
+        /// Bandwidth Throttling for a Task Execution</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The only <code>Option</code> that can be modified by <code>UpdateTaskExecution</code>
+        /// is <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
+        /// </code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskExecution service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTaskExecution service method, as returned by DataSync.</returns>
+        /// <exception cref="Amazon.DataSync.Model.InternalException">
+        /// This exception is thrown when an error occurs in the AWS DataSync service.
+        /// </exception>
+        /// <exception cref="Amazon.DataSync.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">REST API Reference for UpdateTaskExecution Operation</seealso>
+        UpdateTaskExecutionResponse UpdateTaskExecution(UpdateTaskExecutionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTaskExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTaskExecution operation on AmazonDataSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTaskExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">REST API Reference for UpdateTaskExecution Operation</seealso>
+        IAsyncResult BeginUpdateTaskExecution(UpdateTaskExecutionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTaskExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTaskExecution.</param>
+        /// 
+        /// <returns>Returns a  UpdateTaskExecutionResult from DataSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateTaskExecution">REST API Reference for UpdateTaskExecution Operation</seealso>
+        UpdateTaskExecutionResponse EndUpdateTaskExecution(IAsyncResult asyncResult);
 
         #endregion
         

@@ -7,7 +7,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CreateCanaryRequest.ExecutionRoleArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CreateCanaryRequest.FailureRetentionPeriodInDays</property>
@@ -43,11 +45,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.DescribeCanariesRequest.NextToken</property>
-    <pattern>^[a-zA-Z0-9=/+_.-]{4,252}$</pattern>
+    <min>4</min>
+    <max>252</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.DescribeCanariesResponse.NextToken</property>
-    <pattern>^[a-zA-Z0-9=/+_.-]{4,252}$</pattern>
+    <min>4</min>
+    <max>252</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.DescribeCanariesLastRunRequest.MaxResults</property>
@@ -56,11 +60,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.DescribeCanariesLastRunRequest.NextToken</property>
-    <pattern>^[a-zA-Z0-9=/+_.-]{4,252}$</pattern>
+    <min>4</min>
+    <max>252</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.DescribeCanariesLastRunResponse.NextToken</property>
-    <pattern>^[a-zA-Z0-9=/+_.-]{4,252}$</pattern>
+    <min>4</min>
+    <max>252</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.DescribeRuntimeVersionsRequest.MaxResults</property>
@@ -69,11 +75,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.DescribeRuntimeVersionsRequest.NextToken</property>
-    <pattern>^[a-zA-Z0-9=/+_.-]{4,252}$</pattern>
+    <min>4</min>
+    <max>252</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.DescribeRuntimeVersionsResponse.NextToken</property>
-    <pattern>^[a-zA-Z0-9=/+_.-]{4,252}$</pattern>
+    <min>4</min>
+    <max>252</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.GetCanaryRequest.Name</property>
@@ -94,15 +102,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.GetCanaryRunsRequest.NextToken</property>
-    <pattern>^[a-zA-Z0-9=/+_.-]{4,252}$</pattern>
+    <min>4</min>
+    <max>252</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.GetCanaryRunsResponse.NextToken</property>
-    <pattern>^[a-zA-Z0-9=/+_.-]{4,252}$</pattern>
+    <min>4</min>
+    <max>252</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.ListTagsForResourceRequest.ResourceArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:canary:[0-9a-z_\-]{1,21}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.StartCanaryRequest.Name</property>
@@ -118,15 +130,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.TagResourceRequest.ResourceArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:canary:[0-9a-z_\-]{1,21}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.UntagResourceRequest.ResourceArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:canary:[0-9a-z_\-]{1,21}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.UpdateCanaryRequest.ExecutionRoleArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.UpdateCanaryRequest.FailureRetentionPeriodInDays</property>
@@ -156,11 +174,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.Canary.EngineArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.Canary.ExecutionRoleArn</property>
-    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.Canary.FailureRetentionPeriodInDays</property>
@@ -234,6 +256,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Synthetics.Model.CanaryRun.Id</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryRun.Name</property>
     <min>1</min>
     <max>21</max>
@@ -246,8 +272,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryRunConfigInput.TimeoutInSeconds</property>
-    <min>60</min>
-    <max>900</max>
+    <min>3</min>
+    <max>840</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryRunConfigOutput.MemoryInMB</property>
@@ -256,8 +282,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryRunConfigOutput.TimeoutInSeconds</property>
-    <min>60</min>
-    <max>900</max>
+    <min>3</min>
+    <max>840</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Synthetics.Model.CanaryRunStatus.StateReason</property>

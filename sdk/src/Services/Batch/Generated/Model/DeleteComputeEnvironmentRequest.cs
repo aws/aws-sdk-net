@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,7 +36,10 @@ namespace Amazon.Batch.Model
     /// <para>
     /// Before you can delete a compute environment, you must set its state to <code>DISABLED</code>
     /// with the <a>UpdateComputeEnvironment</a> API operation and disassociate it from any
-    /// job queues with the <a>UpdateJobQueue</a> API operation.
+    /// job queues with the <a>UpdateJobQueue</a> API operation. Compute environments that
+    /// use AWS Fargate resources must terminate all active jobs on that compute environment
+    /// before deleting the compute environment. If this isn't done, the compute environment
+    /// will end up in an invalid state.
     /// </para>
     /// </summary>
     public partial class DeleteComputeEnvironmentRequest : AmazonBatchRequest

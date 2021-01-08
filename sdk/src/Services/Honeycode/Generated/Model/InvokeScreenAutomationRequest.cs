@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,7 +51,7 @@ namespace Amazon.Honeycode.Model
         /// The ID of the app that contains the screen automation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string AppId
         {
             get { return this._appId; }
@@ -100,6 +100,7 @@ namespace Amazon.Honeycode.Model
         /// or list. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=77, Max=77)]
         public string RowId
         {
             get { return this._rowId; }
@@ -118,7 +119,7 @@ namespace Amazon.Honeycode.Model
         /// The ID of the automation action to be performed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string ScreenAutomationId
         {
             get { return this._screenAutomationId; }
@@ -137,7 +138,7 @@ namespace Amazon.Honeycode.Model
         /// The ID of the screen that contains the screen automation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string ScreenId
         {
             get { return this._screenId; }
@@ -153,10 +154,10 @@ namespace Amazon.Honeycode.Model
         /// <summary>
         /// Gets and sets the property Variables. 
         /// <para>
-        ///  Variables are optional and are needed only if the screen requires them to render
-        /// correctly. Variables are specified as a map where the key is the name of the variable
-        /// as defined on the screen. The value is an object which currently has only one property,
-        /// rawValue, which holds the value of the variable to be passed to the screen. 
+        ///  Variables are specified as a map where the key is the name of the variable as defined
+        /// on the screen. The value is an object which currently has only one property, rawValue,
+        /// which holds the value of the variable to be passed to the screen. Any variables defined
+        /// in a screen are required to be passed in the call. 
         /// </para>
         /// </summary>
         public Dictionary<string, VariableValue> Variables
@@ -177,7 +178,7 @@ namespace Amazon.Honeycode.Model
         /// The ID of the workbook that contains the screen automation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string WorkbookId
         {
             get { return this._workbookId; }

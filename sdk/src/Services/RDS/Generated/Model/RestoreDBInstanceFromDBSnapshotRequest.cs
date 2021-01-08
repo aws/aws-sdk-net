@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,20 +31,20 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the RestoreDBInstanceFromDBSnapshot operation.
     /// Creates a new DB instance from a DB snapshot. The target database is created from
-    /// the source database restore point with the most of original configuration with the
-    /// default security group and the default DB parameter group. By default, the new DB
-    /// instance is created as a single-AZ deployment except when the instance is a SQL Server
-    /// instance that has an option group that is associated with mirroring; in this case,
-    /// the instance becomes a mirrored AZ deployment and not a single-AZ deployment.
+    /// the source database restore point with most of the source's original configuration,
+    /// including the default security group and DB parameter group. By default, the new DB
+    /// instance is created as a Single-AZ deployment, except when the instance is a SQL Server
+    /// instance that has an option group associated with mirroring. In this case, the instance
+    /// becomes a Multi-AZ deployment, not a Single-AZ deployment.
     /// 
     ///  
     /// <para>
-    /// If your intent is to replace your original DB instance with the new, restored DB instance,
+    /// If you want to replace your original DB instance with the new, restored DB instance,
     /// then rename your original DB instance before you call the RestoreDBInstanceFromDBSnapshot
-    /// action. RDS doesn't allow two DB instances with the same name. Once you have renamed
+    /// action. RDS doesn't allow two DB instances with the same name. After you have renamed
     /// your original DB instance with a different identifier, then you can pass the original
     /// name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot
-    /// action. The result is that you will replace the original DB instance with the DB instance
+    /// action. The result is that you replace the original DB instance with the DB instance
     /// created from the snapshot.
     /// </para>
     ///  
@@ -74,6 +74,7 @@ namespace Amazon.RDS.Model
         private string _domain;
         private string _domainIAMRoleName;
         private List<string> _enableCloudwatchLogsExports = new List<string>();
+        private bool? _enableCustomerOwnedIp;
         private bool? _enableIAMDatabaseAuthentication;
         private string _engine;
         private int? _iops;
@@ -436,8 +437,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The list of logs that the restored DB instance is to export to CloudWatch Logs. The
         /// values in the list depend on the DB engine being used. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
-        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
+        /// href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+        /// Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         /// </summary>
         public List<string> EnableCloudwatchLogsExports
@@ -453,11 +454,46 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableCustomerOwnedIp. 
+        /// <para>
+        /// A value that indicates whether to enable a customer-owned IP address (CoIP) for an
+        /// RDS on Outposts DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <i>CoIP</i> provides local or external connectivity to resources in your Outpost
+        /// subnets through your on-premises network. For some use cases, a CoIP can provide lower
+        /// latency for connections to the DB instance from outside of its virtual private cloud
+        /// (VPC) on your local network.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
+        /// with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
+        /// IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool EnableCustomerOwnedIp
+        {
+            get { return this._enableCustomerOwnedIp.GetValueOrDefault(); }
+            set { this._enableCustomerOwnedIp = value; }
+        }
+
+        // Check to see if EnableCustomerOwnedIp property is set
+        internal bool IsSetEnableCustomerOwnedIp()
+        {
+            return this._enableCustomerOwnedIp.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
         /// A value that indicates whether to enable mapping of AWS Identity and Access Management
-        /// (IAM) accounts to database accounts. By default, mapping is disabled. For information
-        /// about the supported DB engines, see <a>CreateDBInstance</a>.
+        /// (IAM) accounts to database accounts. By default, mapping is disabled.
         /// </para>
         ///  
         /// <para>

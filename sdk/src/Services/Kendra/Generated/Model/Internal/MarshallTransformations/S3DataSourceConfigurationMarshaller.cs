@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -80,6 +80,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 foreach(var requestObjectExclusionPatternsListValue in requestObject.ExclusionPatterns)
                 {
                         context.Writer.Write(requestObjectExclusionPatternsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetInclusionPatterns())
+            {
+                context.Writer.WritePropertyName("InclusionPatterns");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInclusionPatternsListValue in requestObject.InclusionPatterns)
+                {
+                        context.Writer.Write(requestObjectInclusionPatternsListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }

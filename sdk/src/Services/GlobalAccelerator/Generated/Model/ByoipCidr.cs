@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -126,8 +126,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// A history of status changes for an IP address range that that you bring to AWS Global
-        /// Accelerator through bring your own IP address (BYOIP).
+        /// A history of status changes for an IP address range that you bring to AWS Global Accelerator
+        /// through bring your own IP address (BYOIP).
         /// </para>
         /// </summary>
         public List<ByoipCidrEvent> Events

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ namespace Amazon.Transfer.Model
         /// When you can get additional results from the <code>ListServers</code> operation, a
         /// <code>NextToken</code> parameter is returned in the output. In a following command,
         /// you can pass in the <code>NextToken</code> parameter to continue listing additional
-        /// file transfer protocol-enabled servers.
+        /// servers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]
@@ -61,7 +61,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Servers. 
         /// <para>
-        /// An array of file transfer protocol-enabled servers that were listed.
+        /// An array of servers that were listed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

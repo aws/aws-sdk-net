@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,6 +39,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         {
             _mockClient = new Mock<AmazonRoute53ResolverClient>("access key", "secret", Amazon.RegionEndpoint.USEast1);
         }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        public void ListResolverDnssecConfigsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListResolverDnssecConfigsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListResolverDnssecConfigsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListResolverDnssecConfigsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListResolverDnssecConfigs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListResolverDnssecConfigs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Route53Resolver")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListResolverDnssecConfigsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListResolverDnssecConfigsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListResolverDnssecConfigsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListResolverDnssecConfigs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListResolverDnssecConfigs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
 
         [TestMethod]
         [TestCategory("UnitTest")]

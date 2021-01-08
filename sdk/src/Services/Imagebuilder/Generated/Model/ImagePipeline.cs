@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class ImagePipeline
     {
         private string _arn;
+        private string _containerRecipeArn;
         private string _dateCreated;
         private string _dateLastRun;
         private string _dateNextRun;
@@ -66,6 +67,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerRecipeArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.
+        /// </para>
+        /// </summary>
+        public string ContainerRecipeArn
+        {
+            get { return this._containerRecipeArn; }
+            set { this._containerRecipeArn = value; }
+        }
+
+        // Check to see if ContainerRecipeArn property is set
+        internal bool IsSetContainerRecipeArn()
+        {
+            return this._containerRecipeArn != null;
         }
 
         /// <summary>

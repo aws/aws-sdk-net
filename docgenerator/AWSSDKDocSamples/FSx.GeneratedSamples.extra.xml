@@ -29,7 +29,7 @@
         <value>
             <example>
                 <para>
-                    This operation creates a new file system.
+                    This operation creates a new Amazon FSx for Windows File Server file system.
                 </para>
                 <code
                     title="To create a new file system"

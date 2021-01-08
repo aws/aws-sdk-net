@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,11 +42,30 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBInstanceAutomatedBackupsRequest : AmazonRDSRequest
     {
+        private string _dbInstanceAutomatedBackupsArn;
         private string _dbInstanceIdentifier;
         private string _dbiResourceId;
         private List<Filter> _filters = new List<Filter>();
         private string _marker;
         private int? _maxRecords;
+
+        /// <summary>
+        /// Gets and sets the property DBInstanceAutomatedBackupsArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the replicated automated backups, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+        /// </para>
+        /// </summary>
+        public string DBInstanceAutomatedBackupsArn
+        {
+            get { return this._dbInstanceAutomatedBackupsArn; }
+            set { this._dbInstanceAutomatedBackupsArn = value; }
+        }
+
+        // Check to see if DBInstanceAutomatedBackupsArn property is set
+        internal bool IsSetDBInstanceAutomatedBackupsArn()
+        {
+            return this._dbInstanceAutomatedBackupsArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
@@ -106,7 +125,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>retained</code> - automated backups for deleted instances
+        ///  <code>retained</code> - automated backups for deleted instances and after backup
+        /// replication is stopped
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -116,14 +136,14 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource
-        /// Names (ARNs) for DB instances. The results list includes only information about the
-        /// DB instance automated backupss identified by these ARNs.
+        /// Names (ARNs). The results list includes only information about the DB instance automated
+        /// backups identified by these ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dbi-resource-id</code> - Accepts DB instance resource identifiers and DB Amazon
-        /// Resource Names (ARNs) for DB instances. The results list includes only information
-        /// about the DB instance resources identified by these ARNs.
+        ///  <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource
+        /// Names (ARNs). The results list includes only information about the DB instance resources
+        /// identified by these ARNs.
         /// </para>
         ///  </li> </ul> 
         /// <para>

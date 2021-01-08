@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -57,7 +57,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentName. 
         /// <para>
-        /// The name of the compute environment.
+        /// The name of the compute environment. Up to 128 letters (uppercase and lowercase),
+        /// numbers, hyphens, and underscores are allowed.
         /// </para>
         /// </summary>
         public string ComputeEnvironmentName

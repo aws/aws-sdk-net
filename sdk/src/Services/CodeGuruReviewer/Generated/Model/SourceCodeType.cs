@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,16 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Information about the source code type.
+    /// Specifies the source code that is analyzed in a code review. A code review can analyze
+    /// the source code that is specified using a pull request diff or a branch in an associated
+    /// repository.
     /// </summary>
     public partial class SourceCodeType
     {
         private CommitDiffSourceCodeType _commitDiff;
+        private RepositoryHeadSourceCodeType _repositoryHead;
 
         /// <summary>
         /// Gets and sets the property CommitDiff. 
         /// <para>
-        ///  The commit diff for the pull request. 
+        ///  A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+        /// <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request
+        /// on an associated repository. 
         /// </para>
         /// </summary>
         public CommitDiffSourceCodeType CommitDiff
@@ -51,6 +56,21 @@ namespace Amazon.CodeGuruReviewer.Model
         internal bool IsSetCommitDiff()
         {
             return this._commitDiff != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RepositoryHead.
+        /// </summary>
+        public RepositoryHeadSourceCodeType RepositoryHead
+        {
+            get { return this._repositoryHead; }
+            set { this._repositoryHead = value; }
+        }
+
+        // Check to see if RepositoryHead property is set
+        internal bool IsSetRepositoryHead()
+        {
+            return this._repositoryHead != null;
         }
 
     }

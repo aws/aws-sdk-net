@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,8 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  <note> 
     /// <para>
-    /// New monitoring schedules are immediately started after creation.
+    /// By default, when you successfully create a new schedule, the status of a monitoring
+    /// schedule is <code>scheduled</code>.
     /// </para>
     ///  </note>
     /// </summary>

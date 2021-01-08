@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,9 +59,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The Unix timestamp (in seconds and milliseconds) for when the attempt was started
-        /// (when the attempt transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>
-        /// state).
+        /// The Unix timestamp (in milliseconds) for when the attempt was started (when the attempt
+        /// transitioned from the <code>STARTING</code> state to the <code>RUNNING</code> state).
         /// </para>
         /// </summary>
         public long StartedAt
@@ -98,9 +97,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The Unix timestamp (in seconds and milliseconds) for when the attempt was stopped
-        /// (when the attempt transitioned from the <code>RUNNING</code> state to a terminal state,
-        /// such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+        /// The Unix timestamp (in milliseconds) for when the attempt was stopped (when the attempt
+        /// transitioned from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code>
+        /// or <code>FAILED</code>).
         /// </para>
         /// </summary>
         public long StoppedAt

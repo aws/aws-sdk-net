@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -80,7 +80,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property ReservoirQuota. 
         /// <para>
-        /// The number of requests per second that X-Ray allocated this service.
+        /// The number of requests per second that X-Ray allocated for this service.
         /// </para>
         /// </summary>
         public int ReservoirQuota

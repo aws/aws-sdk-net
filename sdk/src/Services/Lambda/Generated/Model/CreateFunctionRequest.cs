@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,11 +30,11 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFunction operation.
-    /// Creates a Lambda function. To create a function, you need a <a href="https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html">deployment
+    /// Creates a Lambda function. To create a function, you need a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment
     /// package</a> and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
-    /// role</a>. The deployment package contains your function code. The execution role grants
-    /// the function permission to use AWS services, such as Amazon CloudWatch Logs for log
-    /// streaming and AWS X-Ray for request tracing.
+    /// role</a>. The deployment package is a .zip file archive or container image that contains
+    /// your function code. The execution role grants the function permission to use AWS services,
+    /// such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for request tracing.
     /// 
     ///  
     /// <para>
@@ -65,6 +65,15 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  
     /// <para>
+    /// You can use code signing if your deployment package is a .zip file archive. To enable
+    /// code signing for this function, specify the ARN of a code-signing configuration. When
+    /// a user attempts to deploy a code package with <a>UpdateFunctionCode</a>, Lambda checks
+    /// that the code package has a valid signature from a trusted publisher. The code-signing
+    /// configuration includes set set of signing profiles, which define the trusted publishers
+    /// for this function.
+    /// </para>
+    ///  
+    /// <para>
     /// If another account or an AWS service invokes your function, use <a>AddPermission</a>
     /// to grant permission by creating a resource-based IAM policy. You can grant permissions
     /// at the function level, on a version, or on an alias.
@@ -81,15 +90,18 @@ namespace Amazon.Lambda.Model
     public partial class CreateFunctionRequest : AmazonLambdaRequest
     {
         private FunctionCode _code;
+        private string _codeSigningConfigArn;
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
         private Environment _environment;
         private List<FileSystemConfig> _fileSystemConfigs = new List<FileSystemConfig>();
         private string _functionName;
         private string _handler;
+        private ImageConfig _imageConfig;
         private string _kmsKeyArn;
         private List<string> _layers = new List<string>();
         private int? _memorySize;
+        private PackageType _packageType;
         private bool? _publish;
         private string _role;
         private Runtime _runtime;
@@ -115,6 +127,27 @@ namespace Amazon.Lambda.Model
         internal bool IsSetCode()
         {
             return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeSigningConfigArn. 
+        /// <para>
+        /// To enable code signing for this function, specify the ARN of a code-signing configuration.
+        /// A code-signing configuration includes a set of signing profiles, which define the
+        /// trusted publishers for this function.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=200)]
+        public string CodeSigningConfigArn
+        {
+            get { return this._codeSigningConfigArn; }
+            set { this._codeSigningConfigArn = value; }
+        }
+
+        // Check to see if CodeSigningConfigArn property is set
+        internal bool IsSetCodeSigningConfigArn()
+        {
+            return this._codeSigningConfigArn != null;
         }
 
         /// <summary>
@@ -240,7 +273,7 @@ namespace Amazon.Lambda.Model
         /// Model</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=128)]
+        [AWSProperty(Max=128)]
         public string Handler
         {
             get { return this._handler; }
@@ -251,6 +284,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetHandler()
         {
             return this._handler != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageConfig. 
+        /// <para>
+        /// Configuration values that override the container image Dockerfile.
+        /// </para>
+        /// </summary>
+        public ImageConfig ImageConfig
+        {
+            get { return this._imageConfig; }
+            set { this._imageConfig = value; }
+        }
+
+        // Check to see if ImageConfig property is set
+        internal bool IsSetImageConfig()
+        {
+            return this._imageConfig != null;
         }
 
         /// <summary>
@@ -296,12 +347,12 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MemorySize. 
         /// <para>
-        /// The amount of memory that your function has access to. Increasing the function's memory
-        /// also increases its CPU allocation. The default value is 128 MB. The value must be
-        /// a multiple of 64 MB.
+        /// The amount of memory available to the function at runtime. Increasing the function's
+        /// memory also increases its CPU allocation. The default value is 128 MB. The value can
+        /// be any multiple of 1 MB.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=128, Max=3008)]
+        [AWSProperty(Min=128, Max=10240)]
         public int MemorySize
         {
             get { return this._memorySize.GetValueOrDefault(); }
@@ -312,6 +363,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetMemorySize()
         {
             return this._memorySize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PackageType. 
+        /// <para>
+        /// The type of deployment package. Set to <code>Image</code> for container image and
+        /// set <code>Zip</code> for ZIP archive.
+        /// </para>
+        /// </summary>
+        public PackageType PackageType
+        {
+            get { return this._packageType; }
+            set { this._packageType = value; }
+        }
+
+        // Check to see if PackageType property is set
+        internal bool IsSetPackageType()
+        {
+            return this._packageType != null;
         }
 
         /// <summary>
@@ -357,7 +427,6 @@ namespace Amazon.Lambda.Model
         /// The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Runtime Runtime
         {
             get { return this._runtime; }

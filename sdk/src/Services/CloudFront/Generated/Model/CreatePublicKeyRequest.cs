@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,9 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePublicKey operation.
-    /// Add a new public key to CloudFront to use, for example, for field-level encryption.
-    /// You can add a maximum of 10 public keys with one AWS account.
+    /// Uploads a public key to CloudFront that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed
+    /// URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+    /// encryption</a>.
     /// </summary>
     public partial class CreatePublicKeyRequest : AmazonCloudFrontRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property PublicKeyConfig. 
         /// <para>
-        /// The request to add a public key to CloudFront.
+        /// A CloudFront public key configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

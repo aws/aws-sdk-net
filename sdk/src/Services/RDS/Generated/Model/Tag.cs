@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,8 +41,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A key is the required name of the tag. The string value can be from 1 to 128 Unicode
         /// characters in length and can't be prefixed with "aws:" or "rds:". The string can only
-        /// contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=',
-        /// '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+        /// contain only the set of Unicode letters, digits, white-space, '_', '.', ':', '/',
+        /// '=', '+', '-', '@' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$").
         /// </para>
         /// </summary>
         public string Key
@@ -62,8 +62,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A value is the optional value of the tag. The string value can be from 1 to 256 Unicode
         /// characters in length and can't be prefixed with "aws:" or "rds:". The string can only
-        /// contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=',
-        /// '+', '-' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").
+        /// contain only the set of Unicode letters, digits, white-space, '_', '.', ':', '/',
+        /// '=', '+', '-', '@' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$").
         /// </para>
         /// </summary>
         public string Value

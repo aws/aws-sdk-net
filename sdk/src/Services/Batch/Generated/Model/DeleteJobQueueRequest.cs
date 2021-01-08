@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,12 +31,13 @@ namespace Amazon.Batch.Model
     /// <summary>
     /// Container for the parameters to the DeleteJobQueue operation.
     /// Deletes the specified job queue. You must first disable submissions for a queue with
-    /// the <a>UpdateJobQueue</a> operation. All jobs in the queue are terminated when you
-    /// delete a job queue.
+    /// the <a>UpdateJobQueue</a> operation. All jobs in the queue are eventually terminated
+    /// when you delete a job queue. The jobs are terminated at a rate of about 16 jobs each
+    /// second.
     /// 
     ///  
     /// <para>
-    /// It is not necessary to disassociate compute environments from a queue before submitting
+    /// It's not necessary to disassociate compute environments from a queue before submitting
     /// a <code>DeleteJobQueue</code> request.
     /// </para>
     /// </summary>

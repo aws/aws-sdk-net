@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -69,6 +69,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CdcInsertsOnly);
             }
 
+            if(requestObject.IsSetCdcPath())
+            {
+                context.Writer.WritePropertyName("CdcPath");
+                context.Writer.Write(requestObject.CdcPath);
+            }
+
             if(requestObject.IsSetCompressionType())
             {
                 context.Writer.WritePropertyName("CompressionType");
@@ -79,6 +85,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("CsvDelimiter");
                 context.Writer.Write(requestObject.CsvDelimiter);
+            }
+
+            if(requestObject.IsSetCsvNoSupValue())
+            {
+                context.Writer.WritePropertyName("CsvNoSupValue");
+                context.Writer.Write(requestObject.CsvNoSupValue);
             }
 
             if(requestObject.IsSetCsvRowDelimiter())
@@ -97,6 +109,24 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("DataPageSize");
                 context.Writer.Write(requestObject.DataPageSize);
+            }
+
+            if(requestObject.IsSetDatePartitionDelimiter())
+            {
+                context.Writer.WritePropertyName("DatePartitionDelimiter");
+                context.Writer.Write(requestObject.DatePartitionDelimiter);
+            }
+
+            if(requestObject.IsSetDatePartitionEnabled())
+            {
+                context.Writer.WritePropertyName("DatePartitionEnabled");
+                context.Writer.Write(requestObject.DatePartitionEnabled);
+            }
+
+            if(requestObject.IsSetDatePartitionSequence())
+            {
+                context.Writer.WritePropertyName("DatePartitionSequence");
+                context.Writer.Write(requestObject.DatePartitionSequence);
             }
 
             if(requestObject.IsSetDictPageSizeLimit())
@@ -147,6 +177,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ParquetVersion);
             }
 
+            if(requestObject.IsSetPreserveTransactions())
+            {
+                context.Writer.WritePropertyName("PreserveTransactions");
+                context.Writer.Write(requestObject.PreserveTransactions);
+            }
+
             if(requestObject.IsSetRowGroupLength())
             {
                 context.Writer.WritePropertyName("RowGroupLength");
@@ -169,6 +205,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("TimestampColumnName");
                 context.Writer.Write(requestObject.TimestampColumnName);
+            }
+
+            if(requestObject.IsSetUseCsvNoSupValue())
+            {
+                context.Writer.WritePropertyName("UseCsvNoSupValue");
+                context.Writer.Write(requestObject.UseCsvNoSupValue);
             }
 
         }

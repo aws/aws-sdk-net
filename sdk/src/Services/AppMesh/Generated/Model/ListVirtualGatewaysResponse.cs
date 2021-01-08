@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,10 +40,9 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code>
-        ///         request. When the results of a <code>ListVirtualGateways</code> request exceed
-        ///            <code>limit</code>, you can use this value to retrieve the next page of
-        /// results. This         value is <code>null</code> when there are no more results to
-        /// return.
+        /// request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>,
+        /// you can use this value to retrieve the next page of results. This value is <code>null</code>
+        /// when there are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken

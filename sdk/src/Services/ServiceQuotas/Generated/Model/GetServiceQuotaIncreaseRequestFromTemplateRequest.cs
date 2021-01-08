@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the GetServiceQuotaIncreaseRequestFromTemplate operation.
-    /// Returns the details of the service quota increase request in your template.
+    /// Retrieves information about the specified quota increase request in your quota request
+    /// template.
     /// </summary>
     public partial class GetServiceQuotaIncreaseRequestFromTemplateRequest : AmazonServiceQuotasRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// Specifies the AWS Region for the quota that you want to use.
+        /// The AWS Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -60,7 +61,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// Specifies the quota you want.
+        /// The quota identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -79,7 +80,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// Specifies the service that you want to use.
+        /// The service identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

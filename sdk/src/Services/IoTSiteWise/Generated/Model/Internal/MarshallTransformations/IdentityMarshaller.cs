@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -52,6 +52,17 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
                 var marshaller = GroupIdentityMarshaller.Instance;
                 marshaller.Marshall(requestObject.Group, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetIamUser())
+            {
+                context.Writer.WritePropertyName("iamUser");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IAMUserIdentityMarshaller.Instance;
+                marshaller.Marshall(requestObject.IamUser, context);
 
                 context.Writer.WriteObjectEnd();
             }

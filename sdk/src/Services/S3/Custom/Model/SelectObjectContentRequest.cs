@@ -1,5 +1,5 @@
 ﻿// /*******************************************************************************
-//  *  Copyright 2008-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+//  *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
 //  *  this file except in compliance with the License. A copy of the License is located at
 //  *
@@ -20,6 +20,7 @@
 //  */
 
 using Amazon.Runtime;
+using System;
 
 namespace Amazon.S3.Model
 {
@@ -40,6 +41,7 @@ namespace Amazon.S3.Model
         /// The S3 Bucket.
         /// </summary>
         public string Bucket { get; set; }
+        private string expectedBucketOwner;
 
         internal bool IsSetBucket() => Bucket != null;
 
@@ -122,5 +124,24 @@ namespace Amazon.S3.Model
         public ScanRange ScanRange { get; set; }
 
         internal bool IsSetScanRange() => ScanRange != null;
+
+        /// <summary>
+        /// The account id of the expected bucket owner. 
+        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+        }
     }
 }

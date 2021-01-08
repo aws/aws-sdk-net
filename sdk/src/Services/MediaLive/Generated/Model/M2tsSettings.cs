@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -236,9 +236,11 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BufferModel. If set to multiplex, use multiplex buffer
-        /// model for accurate interleaving.  Setting to bufferModel to none can lead to lower
-        /// latency, but low-memory devices may not be able to play back the stream without interruptions.
+        /// Gets and sets the property BufferModel. Controls the timing accuracy for output network
+        /// traffic. Leave as MULTIPLEX to ensure accurate network packet timing. Or set to NONE,
+        /// which might result in lower latency but will result in more variability in output
+        /// network packet timing. This variability might cause interruptions, jitter, or bursty
+        /// behavior in your playback or receiving devices.
         /// </summary>
         public M2tsBufferModel BufferModel
         {

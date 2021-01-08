@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,6 +64,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AppManaged", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AppManaged = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DatasetDefinition", targetDepth))
+                {
+                    var unmarshaller = DatasetDefinitionUnmarshaller.Instance;
+                    unmarshalledObject.DatasetDefinition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InputName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

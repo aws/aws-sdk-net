@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,15 +36,15 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// The removed account becomes a standalone account that isn't a member of any organization.
     /// It's no longer subject to any policies and is responsible for its own bill payments.
-    /// The organization's master account is no longer charged for any expenses accrued by
-    /// the member account after it's removed from the organization.
+    /// The organization's management account is no longer charged for any expenses accrued
+    /// by the member account after it's removed from the organization.
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's master account. Member accounts
-    /// can remove themselves with <a>LeaveOrganization</a> instead.
+    /// This operation can be called only from the organization's management account. Member
+    /// accounts can remove themselves with <a>LeaveOrganization</a> instead.
     /// </para>
-    ///  <important> 
+    ///  <important> <ul> <li> 
     /// <para>
     /// You can remove an account from your organization only if the account is configured
     /// with the information required to operate as a standalone account. When you create
@@ -59,7 +59,13 @@ namespace Amazon.Organizations.Model
     /// To leave an organization when all required account information has not yet been provided</a>
     /// in the <i>AWS Organizations User Guide.</i> 
     /// </para>
-    ///  </important>
+    ///  </li> <li> 
+    /// <para>
+    /// After the account leaves the organization, all tags that were attached to the account
+    /// object in the organization are deleted. AWS accounts outside of an organization do
+    /// not support tags.
+    /// </para>
+    ///  </li> </ul> </important>
     /// </summary>
     public partial class RemoveAccountFromOrganizationRequest : AmazonOrganizationsRequest
     {

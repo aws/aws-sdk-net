@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -79,8 +79,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property InputId. 
         /// <para>
-        /// The input ID that is associated with the application input. This is the ID that Amazon
-        /// Kinesis Data Analytics assigns to each input configuration that you add to your application.
+        /// The input ID that is associated with the application input. This is the ID that Kinesis
+        /// Data Analytics assigns to each input configuration that you add to your application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

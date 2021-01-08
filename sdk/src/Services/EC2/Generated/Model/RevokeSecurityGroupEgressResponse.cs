@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,6 +33,45 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class RevokeSecurityGroupEgressResponse : AmazonWebServiceResponse
     {
+        private bool? _return;
+        private List<IpPermission> _unknownIpPermissions = new List<IpPermission>();
+
+        /// <summary>
+        /// Gets and sets the property Return. 
+        /// <para>
+        /// Returns <code>true</code> if the request succeeds; otherwise, returns an error.
+        /// </para>
+        /// </summary>
+        public bool Return
+        {
+            get { return this._return.GetValueOrDefault(); }
+            set { this._return = value; }
+        }
+
+        // Check to see if Return property is set
+        internal bool IsSetReturn()
+        {
+            return this._return.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnknownIpPermissions. 
+        /// <para>
+        /// The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code>
+        /// might be in a different format from the request parameter. 
+        /// </para>
+        /// </summary>
+        public List<IpPermission> UnknownIpPermissions
+        {
+            get { return this._unknownIpPermissions; }
+            set { this._unknownIpPermissions = value; }
+        }
+
+        // Check to see if UnknownIpPermissions property is set
+        internal bool IsSetUnknownIpPermissions()
+        {
+            return this._unknownIpPermissions != null && this._unknownIpPermissions.Count > 0; 
+        }
 
     }
 }

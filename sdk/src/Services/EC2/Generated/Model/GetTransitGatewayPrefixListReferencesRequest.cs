@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,8 +51,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>attachment.resource-type</code> - The type of resource for the attachment (<code>vpc</code>
-        /// | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+        ///  <code>attachment.resource-type</code> - The type of resource for the attachment.
+        /// Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code>
+        /// | <code>peering</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

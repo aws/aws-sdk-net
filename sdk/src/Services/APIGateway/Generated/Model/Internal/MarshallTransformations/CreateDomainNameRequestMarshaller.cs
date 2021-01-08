@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -109,6 +109,17 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
                     var marshaller = EndpointConfigurationMarshaller.Instance;
                     marshaller.Marshall(publicRequest.EndpointConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMutualTlsAuthentication())
+                {
+                    context.Writer.WritePropertyName("mutualTlsAuthentication");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MutualTlsAuthenticationInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MutualTlsAuthentication, context);
 
                     context.Writer.WriteObjectEnd();
                 }

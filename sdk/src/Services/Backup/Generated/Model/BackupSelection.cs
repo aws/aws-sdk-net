@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,7 +41,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// The ARN of the IAM role that AWS Backup uses to authenticate when restoring the target
+        /// The ARN of the IAM role that AWS Backup uses to authenticate when backing up the target
         /// resource; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
         /// </para>
         /// </summary>
@@ -62,7 +62,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ListOfTags. 
         /// <para>
         /// An array of conditions used to specify a set of resources to assign to a backup plan;
-        /// for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
+        /// for example, <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
         /// </para>
         /// </summary>
         public List<Condition> ListOfTags

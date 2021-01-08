@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -415,6 +415,14 @@ namespace Amazon.CloudSearch
     {
 
         /// <summary>
+        /// Constant Search2xlarge for PartitionInstanceType
+        /// </summary>
+        public static readonly PartitionInstanceType Search2xlarge = new PartitionInstanceType("search.2xlarge");
+        /// <summary>
+        /// Constant SearchLarge for PartitionInstanceType
+        /// </summary>
+        public static readonly PartitionInstanceType SearchLarge = new PartitionInstanceType("search.large");
+        /// <summary>
         /// Constant SearchM1Large for PartitionInstanceType
         /// </summary>
         public static readonly PartitionInstanceType SearchM1Large = new PartitionInstanceType("search.m1.large");
@@ -446,6 +454,18 @@ namespace Amazon.CloudSearch
         /// Constant SearchM3Xlarge for PartitionInstanceType
         /// </summary>
         public static readonly PartitionInstanceType SearchM3Xlarge = new PartitionInstanceType("search.m3.xlarge");
+        /// <summary>
+        /// Constant SearchMedium for PartitionInstanceType
+        /// </summary>
+        public static readonly PartitionInstanceType SearchMedium = new PartitionInstanceType("search.medium");
+        /// <summary>
+        /// Constant SearchSmall for PartitionInstanceType
+        /// </summary>
+        public static readonly PartitionInstanceType SearchSmall = new PartitionInstanceType("search.small");
+        /// <summary>
+        /// Constant SearchXlarge for PartitionInstanceType
+        /// </summary>
+        public static readonly PartitionInstanceType SearchXlarge = new PartitionInstanceType("search.xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

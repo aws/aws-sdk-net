@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.QLDBSession.Model
     public partial class StartSessionResult
     {
         private string _sessionToken;
+        private TimingInformation _timingInformation;
 
         /// <summary>
         /// Gets and sets the property SessionToken. 
@@ -53,6 +54,24 @@ namespace Amazon.QLDBSession.Model
         internal bool IsSetSessionToken()
         {
             return this._sessionToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimingInformation. 
+        /// <para>
+        /// Contains server-side performance information for the command.
+        /// </para>
+        /// </summary>
+        public TimingInformation TimingInformation
+        {
+            get { return this._timingInformation; }
+            set { this._timingInformation = value; }
+        }
+
+        // Check to see if TimingInformation property is set
+        internal bool IsSetTimingInformation()
+        {
+            return this._timingInformation != null;
         }
 
     }

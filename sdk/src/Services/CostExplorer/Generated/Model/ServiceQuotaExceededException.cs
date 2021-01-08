@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// You've reached the limit on the number of resources you can create, or exceeded the
-    /// size of an individual resources.
+    /// size of an individual resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

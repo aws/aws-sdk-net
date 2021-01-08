@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Defines a column containing error.
+    /// Encapsulates a <code>ColumnStatistics</code> object that failed and the reason for
+    /// failure.
     /// </summary>
     public partial class ColumnStatisticsError
     {
@@ -39,7 +40,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ColumnStatistics. 
         /// <para>
-        /// The ColumnStatistics of the column.
+        /// The <code>ColumnStatistics</code> of the column.
         /// </para>
         /// </summary>
         public ColumnStatistics ColumnStatistics
@@ -57,7 +58,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// The error message occurred during operation.
+        /// An error message with the reason for the failure of an operation.
         /// </para>
         /// </summary>
         public ErrorDetail Error

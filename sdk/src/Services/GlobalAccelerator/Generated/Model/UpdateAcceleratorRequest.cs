@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,12 +30,12 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAccelerator operation.
-    /// Update an accelerator. To see an AWS CLI example of updating an accelerator, scroll
-    /// down to <b>Example</b>.
+    /// Update an accelerator. 
     /// 
     ///  <important> 
     /// <para>
-    /// You must specify the US West (Oregon) Region to create or update accelerators.
+    /// Global Accelerator is a global service that supports endpoints in multiple AWS Regions
+    /// but you must specify the US West (Oregon) Region to create or update accelerators.
     /// </para>
     ///  </important>
     /// </summary>
@@ -92,7 +92,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The value for the address type must be IPv4. 
+        /// The IP address type, which must be IPv4.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType

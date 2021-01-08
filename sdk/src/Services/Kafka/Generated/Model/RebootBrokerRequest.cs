@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,7 +40,8 @@ namespace Amazon.Kafka.Model
         /// <summary>
         /// Gets and sets the property BrokerIds.             
         /// <para>
-        /// The list of broker IDs to be rebooted.
+        /// The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting
+        /// one broker at a time.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

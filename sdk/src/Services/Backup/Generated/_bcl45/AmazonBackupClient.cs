@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -263,8 +263,9 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Backup plans are documents that contain information that AWS Backup uses to schedule
-        /// tasks that create recovery points of resources.
+        /// Creates a backup plan using a backup plan name and backup rules. A backup plan is
+        /// a document that contains information that AWS Backup uses to schedule tasks that create
+        /// recovery points for resources.
         /// 
         ///  
         /// <para>
@@ -304,8 +305,9 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Backup plans are documents that contain information that AWS Backup uses to schedule
-        /// tasks that create recovery points of resources.
+        /// Creates a backup plan using a backup plan name and backup rules. A backup plan is
+        /// a document that contains information that AWS Backup uses to schedule tasks that create
+        /// recovery points for resources.
         /// 
         ///  
         /// <para>
@@ -374,7 +376,7 @@ namespace Amazon.Backup
         /// </para>
         ///  
         /// <para>
-        ///  <code>ConditionType:"STRINGEQUALS"</code> 
+        ///  <code>ConditionType:"StringEquals"</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -386,19 +388,19 @@ namespace Amazon.Backup
         /// </para>
         ///  
         /// <para>
-        ///  <code>ConditionType:"STRINGEQUALS"</code> 
+        ///  <code>ConditionType:"StringEquals"</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Using these patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes
         /// that are tagged as <code>"department=finance"</code>, <code>"importance=critical"</code>,
-        /// in addition to an EBS volume with the specified volume Id.
+        /// in addition to an EBS volume with the specified volume ID.
         /// </para>
         ///  
         /// <para>
         /// Resources and conditions are additive in that all resources that match the pattern
         /// are selected. This shouldn't be confused with a logical AND, where all conditions
-        /// must match. The matching patterns are logically 'put together using the OR operator.
+        /// must match. The matching patterns are logically put together using the OR operator.
         /// In other words, all patterns that match are selected for backup.
         /// </para>
         /// </summary>
@@ -456,7 +458,7 @@ namespace Amazon.Backup
         /// </para>
         ///  
         /// <para>
-        ///  <code>ConditionType:"STRINGEQUALS"</code> 
+        ///  <code>ConditionType:"StringEquals"</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -468,19 +470,19 @@ namespace Amazon.Backup
         /// </para>
         ///  
         /// <para>
-        ///  <code>ConditionType:"STRINGEQUALS"</code> 
+        ///  <code>ConditionType:"StringEquals"</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Using these patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes
         /// that are tagged as <code>"department=finance"</code>, <code>"importance=critical"</code>,
-        /// in addition to an EBS volume with the specified volume Id.
+        /// in addition to an EBS volume with the specified volume ID.
         /// </para>
         ///  
         /// <para>
         /// Resources and conditions are additive in that all resources that match the pattern
         /// are selected. This shouldn't be confused with a logical AND, where all conditions
-        /// must match. The matching patterns are logically 'put together using the OR operator.
+        /// must match. The matching patterns are logically put together using the OR operator.
         /// In other words, all patterns that match are selected for backup.
         /// </para>
         /// </summary>
@@ -1050,7 +1052,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns metadata associated with creating a backup of a resource.
+        /// Returns backup job details for the specified <code>BackupJobId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBackupJob service method.</param>
         /// 
@@ -1084,7 +1086,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns metadata associated with creating a backup of a resource.
+        /// Returns backup job details for the specified <code>BackupJobId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBackupJob service method.</param>
         /// <param name="cancellationToken">
@@ -1255,6 +1257,53 @@ namespace Amazon.Backup
 
         #endregion
         
+        #region  DescribeGlobalSettings
+
+
+        /// <summary>
+        /// The current feature settings for the AWS Account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalSettings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeGlobalSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings">REST API Reference for DescribeGlobalSettings Operation</seealso>
+        public virtual DescribeGlobalSettingsResponse DescribeGlobalSettings(DescribeGlobalSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGlobalSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGlobalSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeGlobalSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// The current feature settings for the AWS Account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeGlobalSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings">REST API Reference for DescribeGlobalSettings Operation</seealso>
+        public virtual Task<DescribeGlobalSettingsResponse> DescribeGlobalSettingsAsync(DescribeGlobalSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeGlobalSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeGlobalSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeGlobalSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeProtectedResource
 
 
@@ -1397,11 +1446,11 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns the current service opt-in settings for the Region. If the service has a value
-        /// set to <code>true</code>, AWS Backup attempts to protect that service's resources
-        /// in this Region, when included in an on-demand backup or scheduled backup plan. If
-        /// the value is set to <code>false</code> for a service, AWS Backup does not attempt
-        /// to protect that service's resources in this Region.
+        /// Returns the current service opt-in settings for the Region. If service-opt-in is enabled
+        /// for a service, AWS Backup tries to protect that service's resources in this Region,
+        /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
+        /// AWS Backup does not try to protect that service's resources in this Region, AWS Backup
+        /// does not try to protect that service's resources in this Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRegionSettings service method.</param>
         /// 
@@ -1421,11 +1470,11 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns the current service opt-in settings for the Region. If the service has a value
-        /// set to <code>true</code>, AWS Backup attempts to protect that service's resources
-        /// in this Region, when included in an on-demand backup or scheduled backup plan. If
-        /// the value is set to <code>false</code> for a service, AWS Backup does not attempt
-        /// to protect that service's resources in this Region.
+        /// Returns the current service opt-in settings for the Region. If service-opt-in is enabled
+        /// for a service, AWS Backup tries to protect that service's resources in this Region,
+        /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
+        /// AWS Backup does not try to protect that service's resources in this Region, AWS Backup
+        /// does not try to protect that service's resources in this Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRegionSettings service method.</param>
         /// <param name="cancellationToken">
@@ -1594,6 +1643,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
+        /// Returns <code>BackupPlan</code> details for the specified <code>BackupPlanId</code>.
         /// Returns the body of a backup plan in JSON format, in addition to plan metadata.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackupPlan service method.</param>
@@ -1624,6 +1674,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
+        /// Returns <code>BackupPlan</code> details for the specified <code>BackupPlanId</code>.
         /// Returns the body of a backup plan in JSON format, in addition to plan metadata.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackupPlan service method.</param>
@@ -2122,7 +2173,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns metadata about your backup jobs.
+        /// Returns a list of existing backup jobs for an authenticated account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBackupJobs service method.</param>
         /// 
@@ -2146,7 +2197,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns metadata about your backup jobs.
+        /// Returns a list of existing backup jobs for an authenticated account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBackupJobs service method.</param>
         /// <param name="cancellationToken">
@@ -2177,9 +2228,10 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns metadata of your saved backup plans, including Amazon Resource Names (ARNs),
-        /// plan IDs, creation and deletion dates, version IDs, plan names, and creator request
-        /// IDs.
+        /// Returns a list of existing backup plans for an authenticated account. The list is
+        /// populated only if the advanced option is set for the backup plan. The list contains
+        /// information such as Amazon Resource Names (ARNs), plan IDs, creation and deletion
+        /// dates, version IDs, plan names, and creator request IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBackupPlans service method.</param>
         /// 
@@ -2209,9 +2261,10 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns metadata of your saved backup plans, including Amazon Resource Names (ARNs),
-        /// plan IDs, creation and deletion dates, version IDs, plan names, and creator request
-        /// IDs.
+        /// Returns a list of existing backup plans for an authenticated account. The list is
+        /// populated only if the advanced option is set for the backup plan. The list contains
+        /// information such as Amazon Resource Names (ARNs), plan IDs, creation and deletion
+        /// dates, version IDs, plan names, and creator request IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBackupPlans service method.</param>
         /// <param name="cancellationToken">
@@ -3058,7 +3111,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Starts a job to create a one-time backup of the specified resource.
+        /// Starts an on-demand backup job for the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartBackupJob service method.</param>
         /// 
@@ -3066,6 +3119,10 @@ namespace Amazon.Backup
         /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
         /// Indicates that something is wrong with a parameter's value. For example, the value
         /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
         /// </exception>
         /// <exception cref="Amazon.Backup.Model.LimitExceededException">
         /// A limit in the request has been exceeded; for example, a maximum number of items allowed
@@ -3092,7 +3149,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Starts a job to create a one-time backup of the specified resource.
+        /// Starts an on-demand backup job for the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartBackupJob service method.</param>
         /// <param name="cancellationToken">
@@ -3103,6 +3160,10 @@ namespace Amazon.Backup
         /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
         /// Indicates that something is wrong with a parameter's value. For example, the value
         /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
         /// </exception>
         /// <exception cref="Amazon.Backup.Model.LimitExceededException">
         /// A limit in the request has been exceeded; for example, a maximum number of items allowed
@@ -3208,14 +3269,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Recovers the saved resource identified by an Amazon Resource Name (ARN). 
-        /// 
-        ///  
-        /// <para>
-        /// If the resource ARN is included in the request, then the last complete backup of that
-        /// resource is recovered. If the ARN of a recovery point is supplied, then that recovery
-        /// point is restored.
-        /// </para>
+        /// Recovers the saved resource identified by an Amazon Resource Name (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartRestoreJob service method.</param>
         /// 
@@ -3245,14 +3299,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Recovers the saved resource identified by an Amazon Resource Name (ARN). 
-        /// 
-        ///  
-        /// <para>
-        /// If the resource ARN is included in the request, then the last complete backup of that
-        /// resource is recovered. If the ARN of a recovery point is supplied, then that recovery
-        /// point is restored.
-        /// </para>
+        /// Recovers the saved resource identified by an Amazon Resource Name (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartRestoreJob service method.</param>
         /// <param name="cancellationToken">
@@ -3510,9 +3557,8 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Replaces the body of a saved backup plan identified by its <code>backupPlanId</code>
-        /// with the input document in JSON format. The new version is uniquely identified by
-        /// a <code>VersionId</code>.
+        /// Updates an existing backup plan identified by its <code>backupPlanId</code> with the
+        /// input document in JSON format. The new version is uniquely identified by a <code>VersionId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBackupPlan service method.</param>
         /// 
@@ -3542,9 +3588,8 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Replaces the body of a saved backup plan identified by its <code>backupPlanId</code>
-        /// with the input document in JSON format. The new version is uniquely identified by
-        /// a <code>VersionId</code>.
+        /// Updates an existing backup plan identified by its <code>backupPlanId</code> with the
+        /// input document in JSON format. The new version is uniquely identified by a <code>VersionId</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBackupPlan service method.</param>
         /// <param name="cancellationToken">
@@ -3573,6 +3618,77 @@ namespace Amazon.Backup
             options.ResponseUnmarshaller = UpdateBackupPlanResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateBackupPlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateGlobalSettings
+
+
+        /// <summary>
+        /// Updates the current global settings for the AWS Account. Use the <code>DescribeGlobalSettings</code>
+        /// API to determine the current settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGlobalSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
+        public virtual UpdateGlobalSettingsResponse UpdateGlobalSettings(UpdateGlobalSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGlobalSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlobalSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlobalSettingsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the current global settings for the AWS Account. Use the <code>DescribeGlobalSettings</code>
+        /// API to determine the current settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGlobalSettings service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings">REST API Reference for UpdateGlobalSettings Operation</seealso>
+        public virtual Task<UpdateGlobalSettingsResponse> UpdateGlobalSettingsAsync(UpdateGlobalSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateGlobalSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlobalSettingsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateGlobalSettingsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3676,11 +3792,11 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates the current service opt-in settings for the Region. If the service has a value
-        /// set to <code>true</code>, AWS Backup attempts to protect that service's resources
-        /// in this Region, when included in an on-demand backup or scheduled backup plan. If
-        /// the value is set to <code>false</code> for a service, AWS Backup does not attempt
-        /// to protect that service's resources in this Region.
+        /// Updates the current service opt-in settings for the Region. If service-opt-in is enabled
+        /// for a service, AWS Backup tries to protect that service's resources in this Region,
+        /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
+        /// AWS Backup does not try to protect that service's resources in this Region. Use the
+        /// <code>DescribeRegionSettings</code> API to determine the resource types that are supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegionSettings service method.</param>
         /// 
@@ -3707,11 +3823,11 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates the current service opt-in settings for the Region. If the service has a value
-        /// set to <code>true</code>, AWS Backup attempts to protect that service's resources
-        /// in this Region, when included in an on-demand backup or scheduled backup plan. If
-        /// the value is set to <code>false</code> for a service, AWS Backup does not attempt
-        /// to protect that service's resources in this Region.
+        /// Updates the current service opt-in settings for the Region. If service-opt-in is enabled
+        /// for a service, AWS Backup tries to protect that service's resources in this Region,
+        /// when the resource is included in an on-demand backup or scheduled backup plan. Otherwise,
+        /// AWS Backup does not try to protect that service's resources in this Region. Use the
+        /// <code>DescribeRegionSettings</code> API to determine the resource types that are supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegionSettings service method.</param>
         /// <param name="cancellationToken">

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private bool? _ebsOptimized;
         private List<ElasticGpuSpecification> _elasticGpuSpecifications = new List<ElasticGpuSpecification>();
         private List<LaunchTemplateElasticInferenceAccelerator> _elasticInferenceAccelerators = new List<LaunchTemplateElasticInferenceAccelerator>();
+        private LaunchTemplateEnclaveOptionsRequest _enclaveOptions;
         private LaunchTemplateHibernationOptionsRequest _hibernationOptions;
         private LaunchTemplateIamInstanceProfileSpecificationRequest _iamInstanceProfile;
         private string _imageId;
@@ -214,6 +215,30 @@ namespace Amazon.EC2.Model
         internal bool IsSetElasticInferenceAccelerators()
         {
             return this._elasticInferenceAccelerators != null && this._elasticInferenceAccelerators.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnclaveOptions. 
+        /// <para>
+        /// Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information,
+        /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
+        /// What is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateEnclaveOptionsRequest EnclaveOptions
+        {
+            get { return this._enclaveOptions; }
+            set { this._enclaveOptions = value; }
+        }
+
+        // Check to see if EnclaveOptions property is set
+        internal bool IsSetEnclaveOptions()
+        {
+            return this._enclaveOptions != null;
         }
 
         /// <summary>

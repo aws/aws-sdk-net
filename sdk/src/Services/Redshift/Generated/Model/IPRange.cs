@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ namespace Amazon.Redshift.Model
         /// The IP range in Classless Inter-Domain Routing (CIDR) notation.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string CIDRIP
         {
             get { return this._cidrip; }
@@ -61,6 +62,7 @@ namespace Amazon.Redshift.Model
         /// The status of the IP range, for example, "authorized".
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Status
         {
             get { return this._status; }

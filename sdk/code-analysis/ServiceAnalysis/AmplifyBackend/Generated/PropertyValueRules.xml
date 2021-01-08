@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.AmplifyBackend.Model.ListBackendJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AmplifyBackend.Model.ListBackendJobReqObj.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+</property-value-rules>

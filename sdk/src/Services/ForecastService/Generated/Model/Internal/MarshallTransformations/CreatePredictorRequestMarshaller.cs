@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -111,6 +111,17 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ForecastHorizon");
                     context.Writer.Write(publicRequest.ForecastHorizon);
+                }
+
+                if(publicRequest.IsSetForecastTypes())
+                {
+                    context.Writer.WritePropertyName("ForecastTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestForecastTypesListValue in publicRequest.ForecastTypes)
+                    {
+                            context.Writer.Write(publicRequestForecastTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetHPOConfig())

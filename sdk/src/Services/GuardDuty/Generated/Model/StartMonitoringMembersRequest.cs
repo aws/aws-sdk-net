@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -61,8 +61,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector of the GuardDuty master account associated with the
-        /// member accounts to monitor.
+        /// The unique ID of the detector of the GuardDuty administrator account associated with
+        /// the member accounts to monitor.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

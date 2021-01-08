@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,6 +41,9 @@ namespace Amazon.Transfer
     /// for processing, analytics, machine learning, and archiving. Getting started with AWS
     /// Transfer Family is easy since there is no infrastructure to buy and set up.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial interface IAmazonTransfer : IAmazonService, IDisposable
     {
 #if AWS_ASYNC_ENUMERABLES_API
@@ -596,10 +599,14 @@ namespace Amazon.Transfer
         /// Changes the state of a file transfer protocol-enabled server from <code>ONLINE</code>
         /// to <code>OFFLINE</code>. An <code>OFFLINE</code> server cannot accept and process
         /// file transfer jobs. Information tied to your server, such as server and user properties,
-        /// are not affected by stopping your server. Stopping the server will not reduce or impact
-        /// your file transfer protocol endpoint billing.
+        /// are not affected by stopping your server.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Stopping the server will not reduce or impact your file transfer protocol endpoint
+        /// billing; you must delete the server to stop being billed.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The state of <code>STOPPING</code> indicates that the server is in an intermediate
         /// state, either not fully able to respond, or not fully offline. The values of <code>STOP_FAILED</code>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        ///  The currency code that Amazon Web Services used to calculate the costs for this instance.
+        ///  The currency code that AWS used to calculate the costs for this instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -62,8 +62,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property DefaultTargetInstance. 
         /// <para>
-        ///  Indicates whether or not this recommendation is the defaulted Amazon Web Services
-        /// recommendation.
+        ///  Indicates whether this recommendation is the defaulted AWS recommendation.
         /// </para>
         /// </summary>
         public bool DefaultTargetInstance

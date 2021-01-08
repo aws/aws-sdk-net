@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -62,8 +62,8 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for the new user. Simple AD or AD Connector user names have a maximum length
-        /// of 20. All others have a maximum length of 64.
+        /// The name for the new user. WorkMail directory user names have a maximum length of
+        /// 64. All others have a maximum length of 20.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -85,7 +85,7 @@ namespace Amazon.WorkMail.Model
         /// The identifier of the organization for which the user is created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=34, Max=34)]
         public string OrganizationId
         {
             get { return this._organizationId; }

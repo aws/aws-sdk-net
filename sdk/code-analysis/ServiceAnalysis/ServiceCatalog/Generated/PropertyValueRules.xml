@@ -476,6 +476,27 @@
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DescribePortfolioSharesRequest.PageSize</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DescribePortfolioSharesRequest.PageToken</property>
+    <max>2024</max>
+    <pattern>[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DescribePortfolioSharesRequest.PortfolioId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DescribePortfolioSharesResponse.NextPageToken</property>
+    <max>2024</max>
+    <pattern>[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.DescribePortfolioShareStatusRequest.PortfolioShareToken</property>
     <min>1</min>
     <max>100</max>
@@ -526,6 +547,12 @@
     <max>8191</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DescribeProductAsAdminRequest.SourcePortfolioId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.DescribeProductViewRequest.AcceptLanguage</property>
     <max>100</max>
   </property-value-rule>
@@ -544,6 +571,12 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.DescribeProvisionedProductRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9._-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.DescribeProvisionedProductPlanRequest.AcceptLanguage</property>
@@ -793,6 +826,65 @@
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.GetProvisionedProductOutputsRequest.AcceptLanguage</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.GetProvisionedProductOutputsRequest.PageSize</property>
+    <min>0</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.GetProvisionedProductOutputsRequest.PageToken</property>
+    <max>2024</max>
+    <pattern>[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.GetProvisionedProductOutputsRequest.ProvisionedProductId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.GetProvisionedProductOutputsRequest.ProvisionedProductName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9._-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.GetProvisionedProductOutputsResponse.NextPageToken</property>
+    <max>2024</max>
+    <pattern>[\u0009\u000a\u000d\u0020-\uD7FF\uE000-\uFFFD]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ImportAsProvisionedProductRequest.AcceptLanguage</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ImportAsProvisionedProductRequest.IdempotencyToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ImportAsProvisionedProductRequest.ProductId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ImportAsProvisionedProductRequest.ProvisionedProductName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9._-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ImportAsProvisionedProductRequest.ProvisioningArtifactId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ListAcceptedPortfolioSharesRequest.AcceptLanguage</property>
     <max>100</max>
   </property-value-rule>
@@ -930,7 +1022,7 @@
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ListPortfolioAccessRequest.PageSize</property>
     <min>0</min>
-    <max>20</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ListPortfolioAccessRequest.PageToken</property>
@@ -1411,6 +1503,26 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdatePortfolioShareRequest.AcceptLanguage</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdatePortfolioShareRequest.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdatePortfolioShareRequest.PortfolioId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.UpdatePortfolioShareResponse.PortfolioShareToken</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.UpdateProductRequest.AcceptLanguage</property>
     <max>100</max>
   </property-value-rule>
@@ -1716,6 +1828,12 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.PortfolioShareDetail.PrincipalId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.Principal.PrincipalARN</property>
     <min>1</min>
     <max>1000</max>
@@ -1850,6 +1968,12 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.ProvisionedProductDetail.LaunchRoleArn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:iam::[a-z0-9-\.]{0,63}:role\/.{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.ProvisionedProductDetail.Name</property>
@@ -2024,6 +2148,12 @@
     <property>Amazon.ServiceCatalog.Model.ProvisioningPreferences.StackSetMaxConcurrencyPercentage</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ServiceCatalog.Model.RecordDetail.LaunchRoleArn</property>
+    <min>1</min>
+    <max>1224</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:iam::[a-z0-9-\.]{0,63}:role\/.{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ServiceCatalog.Model.RecordDetail.PathId</property>

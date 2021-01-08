@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -69,6 +69,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.DeviceSettingsSyncState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deviceUpdateStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DeviceUpdateStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hdDeviceSettings", targetDepth))
                 {
                     var unmarshaller = InputDeviceHdSettingsUnmarshaller.Instance;
@@ -109,6 +115,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Type = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("uhdDeviceSettings", targetDepth))
+                {
+                    var unmarshaller = InputDeviceUhdSettingsUnmarshaller.Instance;
+                    response.UhdDeviceSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

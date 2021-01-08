@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,12 +30,31 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBInstanceAutomatedBackup operation.
-    /// Deletes automated backups based on the source instance's <code>DbiResourceId</code>
-    /// value or the restorable instance's resource ID.
+    /// Deletes automated backups using the <code>DbiResourceId</code> value of the source
+    /// DB instance or the Amazon Resource Name (ARN) of the automated backups.
     /// </summary>
     public partial class DeleteDBInstanceAutomatedBackupRequest : AmazonRDSRequest
     {
+        private string _dbInstanceAutomatedBackupsArn;
         private string _dbiResourceId;
+
+        /// <summary>
+        /// Gets and sets the property DBInstanceAutomatedBackupsArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the automated backups to delete, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+        /// </para>
+        /// </summary>
+        public string DBInstanceAutomatedBackupsArn
+        {
+            get { return this._dbInstanceAutomatedBackupsArn; }
+            set { this._dbInstanceAutomatedBackupsArn = value; }
+        }
+
+        // Check to see if DBInstanceAutomatedBackupsArn property is set
+        internal bool IsSetDBInstanceAutomatedBackupsArn()
+        {
+            return this._dbInstanceAutomatedBackupsArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DbiResourceId. 
@@ -44,7 +63,6 @@ namespace Amazon.RDS.Model
         /// to an AWS Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string DbiResourceId
         {
             get { return this._dbiResourceId; }

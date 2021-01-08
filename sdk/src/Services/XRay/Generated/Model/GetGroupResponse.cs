@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ namespace Amazon.XRay.Model
         /// Gets and sets the property Group. 
         /// <para>
         /// The group that was requested. Contains the name of the group, the ARN of the group,
-        /// and the filter expression that assigned to the group.
+        /// the filter expression, and the insight configuration assigned to the group.
         /// </para>
         /// </summary>
         public Group Group

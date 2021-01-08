@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -79,7 +79,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Listeners. 
         /// <para>
         /// The listener that the virtual node is expected to receive inbound traffic from. You
-        /// can         specify one listener.
+        /// can specify one listener.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -117,8 +117,8 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property ServiceDiscovery. 
         /// <para>
         /// The service discovery information for the virtual node. If your virtual node does
-        /// not         expect ingress traffic, you can omit this parameter. If you specify a
-        ///         <code>listener</code>, then you must specify service discovery information.
+        /// not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>,
+        /// then you must specify service discovery information.
         /// </para>
         /// </summary>
         public ServiceDiscovery ServiceDiscovery

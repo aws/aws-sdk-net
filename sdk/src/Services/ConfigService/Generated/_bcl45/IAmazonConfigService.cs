@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1440,6 +1440,46 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DeleteStoredQuery
+
+
+        /// <summary>
+        /// Deletes the stored query for an AWS account in an AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStoredQuery service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">REST API Reference for DeleteStoredQuery Operation</seealso>
+        DeleteStoredQueryResponse DeleteStoredQuery(DeleteStoredQueryRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the stored query for an AWS account in an AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStoredQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">REST API Reference for DeleteStoredQuery Operation</seealso>
+        Task<DeleteStoredQueryResponse> DeleteStoredQueryAsync(DeleteStoredQueryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeliverConfigSnapshot
 
 
@@ -2731,12 +2771,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns a list of organization config rules. 
         /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.&#x2028;
-        /// </para>
         ///  <note> 
         /// <para>
         /// When you specify the limit and the next token, you receive a paginated response. Limit
@@ -2776,12 +2810,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns a list of organization config rules. 
         /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.&#x2028;
-        /// </para>
         ///  <note> 
         /// <para>
         /// When you specify the limit and the next token, you receive a paginated response. Limit
@@ -2827,12 +2855,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Provides organization config rule deployment status for an organization.
         /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         ///  <note> 
         /// <para>
         /// The status is not considered successful until organization config rule is successfully
@@ -2877,12 +2899,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Provides organization config rule deployment status for an organization.
         /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         ///  <note> 
         /// <para>
         /// The status is not considered successful until organization config rule is successfully
@@ -2933,12 +2949,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns a list of organization conformance packs. 
         /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         ///  <note> 
         /// <para>
         /// When you specify the limit and the next token, you receive a paginated response. 
@@ -2988,12 +2998,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns a list of organization conformance packs. 
         /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         ///  <note> 
         /// <para>
         /// When you specify the limit and the next token, you receive a paginated response. 
@@ -3049,12 +3053,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Provides organization conformance pack deployment status for an organization. 
         /// 
-        ///  
-        /// <para>
-        ///  Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         ///  <note> 
         /// <para>
         /// The status is not considered successful until organization conformance pack is successfully
@@ -3105,12 +3103,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Provides organization conformance pack deployment status for an organization. 
         /// 
-        ///  
-        /// <para>
-        ///  Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         ///  <note> 
         /// <para>
         /// The status is not considered successful until organization conformance pack is successfully
@@ -4155,13 +4147,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns detailed status for each member account within an organization for a given
         /// organization config rule.
-        /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationConfigRuleDetailedStatus service method.</param>
         /// 
@@ -4194,13 +4179,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns detailed status for each member account within an organization for a given
         /// organization config rule.
-        /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationConfigRuleDetailedStatus service method.</param>
         /// <param name="cancellationToken">
@@ -4239,13 +4217,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns detailed status for each member account within an organization for a given
         /// organization conformance pack.
-        /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationConformancePackDetailedStatus service method.</param>
         /// 
@@ -4284,13 +4255,6 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns detailed status for each member account within an organization for a given
         /// organization conformance pack.
-        /// 
-        ///  
-        /// <para>
-        /// Only a master account and a delegated administrator account can call this API. When
-        /// calling this API with a delegated administrator, you must ensure AWS Organizations
-        /// <code>ListDelegatedAdministrator</code> permissions are added.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationConformancePackDetailedStatus service method.</param>
         /// <param name="cancellationToken">
@@ -4434,6 +4398,46 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         Task<GetResourceConfigHistoryResponse> GetResourceConfigHistoryAsync(GetResourceConfigHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetStoredQuery
+
+
+        /// <summary>
+        /// Returns the details of a specific stored query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStoredQuery service method.</param>
+        /// 
+        /// <returns>The response from the GetStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery">REST API Reference for GetStoredQuery Operation</seealso>
+        GetStoredQueryResponse GetStoredQuery(GetStoredQueryRequest request);
+
+
+
+        /// <summary>
+        /// Returns the details of a specific stored query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStoredQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery">REST API Reference for GetStoredQuery Operation</seealso>
+        Task<GetStoredQueryResponse> GetStoredQueryAsync(GetStoredQueryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4600,6 +4604,48 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         Task<ListDiscoveredResourcesResponse> ListDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListStoredQueries
+
+
+        /// <summary>
+        /// List the stored queries for an AWS account in an AWS Region. The default is 100.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStoredQueries service method.</param>
+        /// 
+        /// <returns>The response from the ListStoredQueries service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">REST API Reference for ListStoredQueries Operation</seealso>
+        ListStoredQueriesResponse ListStoredQueries(ListStoredQueriesRequest request);
+
+
+
+        /// <summary>
+        /// List the stored queries for an AWS account in an AWS Region. The default is 100.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStoredQueries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStoredQueries service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">REST API Reference for ListStoredQueries Operation</seealso>
+        Task<ListStoredQueriesResponse> ListStoredQueriesAsync(ListStoredQueriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5597,6 +5643,50 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  PutExternalEvaluation
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutExternalEvaluation service method.</param>
+        /// 
+        /// <returns>The response from the PutExternalEvaluation service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation">REST API Reference for PutExternalEvaluation Operation</seealso>
+        PutExternalEvaluationResponse PutExternalEvaluation(PutExternalEvaluationRequest request);
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutExternalEvaluation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutExternalEvaluation service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation">REST API Reference for PutExternalEvaluation Operation</seealso>
+        Task<PutExternalEvaluationResponse> PutExternalEvaluationAsync(PutExternalEvaluationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutOrganizationConfigRule
 
 
@@ -6246,6 +6336,12 @@ namespace Amazon.ConfigService
         /// If you make backward incompatible changes to the SSM document, you must call this
         /// again to ensure the remediations can run.
         /// </para>
+        ///  
+        /// <para>
+        /// This API does not support adding remediation configurations for service-linked AWS
+        /// Config Rules such as Organization Config rules, the rules deployed by conformance
+        /// packs, and rules deployed by AWS Security Hub.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRemediationConfigurations service method.</param>
@@ -6305,6 +6401,12 @@ namespace Amazon.ConfigService
         /// <para>
         /// If you make backward incompatible changes to the SSM document, you must call this
         /// again to ensure the remediations can run.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API does not support adding remediation configurations for service-linked AWS
+        /// Config Rules such as Organization Config rules, the rules deployed by conformance
+        /// packs, and rules deployed by AWS Security Hub.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6702,6 +6804,60 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">REST API Reference for PutRetentionConfiguration Operation</seealso>
         Task<PutRetentionConfigurationResponse> PutRetentionConfigurationAsync(PutRetentionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutStoredQuery
+
+
+        /// <summary>
+        /// Saves a new query or updates an existing saved query. The <code>QueryName</code> must
+        /// be unique for an AWS account in an AWS Region. You can create upto 300 queries in
+        /// an AWS account in an AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutStoredQuery service method.</param>
+        /// 
+        /// <returns>The response from the PutStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceConcurrentModificationException">
+        /// Two users are trying to modify the same query at the same time. Wait for a moment
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.TooManyTagsException">
+        /// You have reached the limit of the number of tags you can use. You have more than 50
+        /// tags.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">REST API Reference for PutStoredQuery Operation</seealso>
+        PutStoredQueryResponse PutStoredQuery(PutStoredQueryRequest request);
+
+
+
+        /// <summary>
+        /// Saves a new query or updates an existing saved query. The <code>QueryName</code> must
+        /// be unique for an AWS account in an AWS Region. You can create upto 300 queries in
+        /// an AWS account in an AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutStoredQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutStoredQuery service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceConcurrentModificationException">
+        /// Two users are trying to modify the same query at the same time. Wait for a moment
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.TooManyTagsException">
+        /// You have reached the limit of the number of tags you can use. You have more than 50
+        /// tags.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">REST API Reference for PutStoredQuery Operation</seealso>
+        Task<PutStoredQueryResponse> PutStoredQueryAsync(PutStoredQueryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

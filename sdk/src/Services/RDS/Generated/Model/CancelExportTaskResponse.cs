@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -152,10 +152,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the AWS KMS key that is used to encrypt the snapshot when it's exported
-        /// to Amazon S3. The KMS key ID is the Amazon Resource Name (ARN), the KMS key identifier,
-        /// or the KMS key alias for the KMS encryption key. The IAM role used for the snapshot
-        /// export must have encryption and decryption permissions to use this KMS key. 
+        /// The key identifier of the AWS KMS customer master key (CMK) that is used to encrypt
+        /// the snapshot when it's exported to Amazon S3. The AWS KMS CMK identifier is its key
+        /// ARN, key ID, alias ARN, or alias name. The IAM role used for the snapshot export must
+        /// have encryption and decryption permissions to use this AWS KMS CMK. 
         /// </para>
         /// </summary>
         public string KmsKeyId

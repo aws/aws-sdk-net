@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based application, provides additional mapping information when the record
-    /// format uses delimiters, such as CSV. For example, the following sample records use
-    /// CSV format, where the records use the <i>'\n'</i> as the row delimiter and a comma
-    /// (",") as the column delimiter: 
+    /// For a SQL-based Kinesis Data Analytics application, provides additional mapping information
+    /// when the record format uses delimiters, such as CSV. For example, the following sample
+    /// records use CSV format, where the records use the <i>'\n'</i> as the row delimiter
+    /// and a comma (",") as the column delimiter: 
     /// 
     ///  
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// delimiter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string RecordColumnDelimiter
         {
             get { return this._recordColumnDelimiter; }
@@ -74,7 +74,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row delimiter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string RecordRowDelimiter
         {
             get { return this._recordRowDelimiter; }

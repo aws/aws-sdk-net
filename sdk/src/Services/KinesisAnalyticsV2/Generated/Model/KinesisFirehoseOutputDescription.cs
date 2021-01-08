@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application's output, describes the
-    /// Kinesis Data Firehose delivery stream that is configured as its destination.
+    /// For a SQL-based Kinesis Data Analytics application's output, describes the Kinesis
+    /// Data Firehose delivery stream that is configured as its destination.
     /// </summary>
     public partial class KinesisFirehoseOutputDescription
     {

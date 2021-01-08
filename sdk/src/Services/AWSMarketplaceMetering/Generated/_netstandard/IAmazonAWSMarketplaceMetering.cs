@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -94,6 +94,9 @@ namespace Amazon.AWSMarketplaceMetering
     /// CloudTrail User Guide</a> </i>.
     /// </para>
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial interface IAmazonAWSMarketplaceMetering : IAmazonService, IDisposable
     {
                 
@@ -119,6 +122,16 @@ namespace Amazon.AWSMarketplaceMetering
         /// <para>
         /// BatchMeterUsage can process up to 25 UsageRecords at a time.
         /// </para>
+        ///  
+        /// <para>
+        /// A UsageRecord can optionally include multiple usage allocations, to provide customers
+        /// with usagedata split into buckets by tags that you define (or allow the customer to
+        /// define).
+        /// </para>
+        ///  
+        /// <para>
+        /// BatchMeterUsage requests must be less than 1MB in size.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchMeterUsage service method.</param>
         /// <param name="cancellationToken">
@@ -138,6 +151,13 @@ namespace Amazon.AWSMarketplaceMetering
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
         /// The product code passed does not match the product code used for publishing the product.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidTagException">
+        /// The tag is invalid, or the number of tags is greater than 5.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageAllocationsException">
+        /// The usage allocation objects are invalid, or the number of allocations is greater
+        /// than 500 for a single usage record.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
         /// The usage dimension does not match one of the UsageDimensions associated with products.
@@ -166,6 +186,12 @@ namespace Amazon.AWSMarketplaceMetering
         /// MeterUsage is authenticated on the buyer's AWS account using credentials from the
         /// EC2 instance, ECS task, or EKS pod.
         /// </para>
+        ///  
+        /// <para>
+        /// MeterUsage can optionally include multiple usage allocations, to provide customers
+        /// with usage data split into buckets by tags that you define (or allow the customer
+        /// to define).
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MeterUsage service method.</param>
         /// <param name="cancellationToken">
@@ -191,6 +217,13 @@ namespace Amazon.AWSMarketplaceMetering
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
         /// The product code passed does not match the product code used for publishing the product.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidTagException">
+        /// The tag is invalid, or the number of tags is greater than 5.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageAllocationsException">
+        /// The usage allocation objects are invalid, or the number of allocations is greater
+        /// than 500 for a single usage record.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
         /// The usage dimension does not match one of the UsageDimensions associated with products.

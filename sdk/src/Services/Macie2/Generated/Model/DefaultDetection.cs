@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,18 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about sensitive data that was detected by managed data identifiers
-    /// and produced a sensitive data finding.
+    /// Provides information about a type of sensitive data that was detected by managed data
+    /// identifiers and produced a sensitive data finding.
     /// </summary>
     public partial class DefaultDetection
     {
         private long? _count;
+        private Occurrences _occurrences;
         private string _type;
 
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The total number of occurrences of the type of data that was detected.
+        /// The total number of occurrences of the type of sensitive data that was detected.
         /// </para>
         /// </summary>
         public long Count
@@ -56,10 +57,29 @@ namespace Amazon.Macie2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Occurrences. 
+        /// <para>
+        /// The location of 1-15 occurrences of the sensitive data that was detected. A finding
+        /// includes location data for a maximum of 15 occurrences of sensitive data.
+        /// </para>
+        /// </summary>
+        public Occurrences Occurrences
+        {
+            get { return this._occurrences; }
+            set { this._occurrences = value; }
+        }
+
+        // Check to see if Occurrences property is set
+        internal bool IsSetOccurrences()
+        {
+            return this._occurrences != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or
-        /// ADDRESS.
+        /// The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER,
+        /// or ADDRESS.
         /// </para>
         /// </summary>
         public string Type

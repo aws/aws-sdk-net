@@ -68,6 +68,10 @@
       <Project>{FE28FA91-1F9C-417B-844C-AF73189EFA3A}</Project>
       <Name>AWSSDK.Amplify.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AmplifyBackend/AWSSDK.AmplifyBackend.CodeAnalysis.csproj">
+      <Project>{2AEECD2D-ED63-40C2-9419-AF3850254796}</Project>
+      <Name>AWSSDK.AmplifyBackend.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/APIGateway/AWSSDK.APIGateway.CodeAnalysis.csproj">
       <Project>{AFBED677-F602-4CE6-96D0-CE2DF0DA800E}</Project>
       <Name>AWSSDK.APIGateway.CodeAnalysis</Name>
@@ -88,6 +92,10 @@
       <Project>{46F6224C-A560-4D5C-A932-0D4A587F205F}</Project>
       <Name>AWSSDK.Appflow.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AppIntegrationsService/AWSSDK.AppIntegrationsService.CodeAnalysis.csproj">
+      <Project>{8881FD55-C6AF-47D1-AF85-7C8D659D8E35}</Project>
+      <Name>AWSSDK.AppIntegrationsService.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ApplicationAutoScaling/AWSSDK.ApplicationAutoScaling.CodeAnalysis.csproj">
       <Project>{E016F5A7-11FD-4EEC-9FCF-47F95A920CE5}</Project>
       <Name>AWSSDK.ApplicationAutoScaling.CodeAnalysis</Name>
@@ -104,6 +112,10 @@
       <Project>{FAC77777-B66C-4D36-B883-A37A41C40A2D}</Project>
       <Name>AWSSDK.AppMesh.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AppRegistry/AWSSDK.AppRegistry.CodeAnalysis.csproj">
+      <Project>{16CFB3C8-BF63-4517-ADC4-87F48F7D4B22}</Project>
+      <Name>AWSSDK.AppRegistry.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/AppStream/AWSSDK.AppStream.CodeAnalysis.csproj">
       <Project>{D26A9B8A-A715-4131-A1C8-9882EA414C4B}</Project>
       <Name>AWSSDK.AppStream.CodeAnalysis</Name>
@@ -115,6 +127,10 @@
     <ProjectReference Include="../ServiceAnalysis/Athena/AWSSDK.Athena.CodeAnalysis.csproj">
       <Project>{3F35B8E9-41B1-4D5A-8CFA-47B00E4030E3}</Project>
       <Name>AWSSDK.Athena.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AuditManager/AWSSDK.AuditManager.CodeAnalysis.csproj">
+      <Project>{4D9F6E2D-73AE-4F89-BD08-437993F8CEE6}</Project>
+      <Name>AWSSDK.AuditManager.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/AugmentedAIRuntime/AWSSDK.AugmentedAIRuntime.CodeAnalysis.csproj">
       <Project>{56A7FFCA-113E-4D89-AA75-84718D256F18}</Project>
@@ -288,6 +304,10 @@
       <Project>{E51E5A8A-4B72-47BE-B25C-42999CF5D6FC}</Project>
       <Name>AWSSDK.Connect.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ConnectContactLens/AWSSDK.ConnectContactLens.CodeAnalysis.csproj">
+      <Project>{D6283E41-B330-46FF-8497-EFB7F15D3222}</Project>
+      <Name>AWSSDK.ConnectContactLens.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ConnectParticipant/AWSSDK.ConnectParticipant.CodeAnalysis.csproj">
       <Project>{9AC947B6-6DC4-4B32-BA81-F7FBFCBE09F5}</Project>
       <Name>AWSSDK.ConnectParticipant.CodeAnalysis</Name>
@@ -299,6 +319,10 @@
     <ProjectReference Include="../ServiceAnalysis/CostExplorer/AWSSDK.CostExplorer.CodeAnalysis.csproj">
       <Project>{4DCD9C3E-1F35-4122-8362-E221E0873C1A}</Project>
       <Name>AWSSDK.CostExplorer.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CustomerProfiles/AWSSDK.CustomerProfiles.CodeAnalysis.csproj">
+      <Project>{0BE73AC1-2901-4B9A-BB9E-C0F5AF07EB84}</Project>
+      <Name>AWSSDK.CustomerProfiles.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/DatabaseMigrationService/AWSSDK.DatabaseMigrationService.CodeAnalysis.csproj">
       <Project>{60511AFD-1450-43E9-BD01-D658223C12E0}</Project>
@@ -327,6 +351,10 @@
     <ProjectReference Include="../ServiceAnalysis/DeviceFarm/AWSSDK.DeviceFarm.CodeAnalysis.csproj">
       <Project>{1B5FACCC-9694-4A5A-AA84-6A6ACF9F7904}</Project>
       <Name>AWSSDK.DeviceFarm.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/DevOpsGuru/AWSSDK.DevOpsGuru.CodeAnalysis.csproj">
+      <Project>{FE7CB2C6-EE88-4AC8-AE64-9709EFD9F75E}</Project>
+      <Name>AWSSDK.DevOpsGuru.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/DirectConnect/AWSSDK.DirectConnect.CodeAnalysis.csproj">
       <Project>{10FC5F28-B6FC-4DA8-8408-18139B2C4E7B}</Project>
@@ -363,6 +391,10 @@
     <ProjectReference Include="../ServiceAnalysis/ECR/AWSSDK.ECR.CodeAnalysis.csproj">
       <Project>{F5371954-6310-4702-A8C2-EBAE8D4D9556}</Project>
       <Name>AWSSDK.ECR.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ECRPublic/AWSSDK.ECRPublic.CodeAnalysis.csproj">
+      <Project>{1275E2E6-EACB-499D-AABC-C5382097F19C}</Project>
+      <Name>AWSSDK.ECRPublic.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ECS/AWSSDK.ECS.CodeAnalysis.csproj">
       <Project>{55B3C3E4-5D68-415D-80A1-BAD78A9FC7B1}</Project>
@@ -408,6 +440,10 @@
       <Project>{806022E5-5F4C-49FC-A902-AE2AC19298E9}</Project>
       <Name>AWSSDK.ElasticTranscoder.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/EMRContainers/AWSSDK.EMRContainers.CodeAnalysis.csproj">
+      <Project>{32155965-B54C-4833-9ACD-7FF1694AA241}</Project>
+      <Name>AWSSDK.EMRContainers.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/EventBridge/AWSSDK.EventBridge.CodeAnalysis.csproj">
       <Project>{939272C0-C5BD-4D23-8590-9D0B2D8B4188}</Project>
       <Name>AWSSDK.EventBridge.CodeAnalysis</Name>
@@ -448,9 +484,17 @@
       <Project>{27740509-BBD9-4E6F-A880-73ADC6B5CEB4}</Project>
       <Name>AWSSDK.Glue.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/GlueDataBrew/AWSSDK.GlueDataBrew.CodeAnalysis.csproj">
+      <Project>{9BBDE0BF-C3FA-4862-9B3B-0DF678722F7A}</Project>
+      <Name>AWSSDK.GlueDataBrew.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Greengrass/AWSSDK.Greengrass.CodeAnalysis.csproj">
       <Project>{30C980A1-7313-47B7-82FB-BB1DDFAD0307}</Project>
       <Name>AWSSDK.Greengrass.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/GreengrassV2/AWSSDK.GreengrassV2.CodeAnalysis.csproj">
+      <Project>{B7A9791A-E2E3-4336-BCC7-58A45D29F09C}</Project>
+      <Name>AWSSDK.GreengrassV2.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/GroundStation/AWSSDK.GroundStation.CodeAnalysis.csproj">
       <Project>{D75FFB89-ED4B-4EEE-A101-F9FCB00B18D1}</Project>
@@ -459,6 +503,10 @@
     <ProjectReference Include="../ServiceAnalysis/GuardDuty/AWSSDK.GuardDuty.CodeAnalysis.csproj">
       <Project>{9E695E0B-766A-40BB-8BBB-0376B3C88E3C}</Project>
       <Name>AWSSDK.GuardDuty.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/HealthLake/AWSSDK.HealthLake.CodeAnalysis.csproj">
+      <Project>{B08CE3C3-4F9A-46C5-B7BB-371C9752CAFA}</Project>
+      <Name>AWSSDK.HealthLake.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Honeycode/AWSSDK.Honeycode.CodeAnalysis.csproj">
       <Project>{7514CF83-2AF7-4EAC-9006-24E159F9D62A}</Project>
@@ -504,6 +552,10 @@
       <Project>{A9FDDCD4-38EE-4DAF-A89D-F605D917BC05}</Project>
       <Name>AWSSDK.IotData.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IoTDeviceAdvisor/AWSSDK.IoTDeviceAdvisor.CodeAnalysis.csproj">
+      <Project>{B657BE29-914F-4778-941B-92B4657F1C56}</Project>
+      <Name>AWSSDK.IoTDeviceAdvisor.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IoTEvents/AWSSDK.IoTEvents.CodeAnalysis.csproj">
       <Project>{3980C0CC-5E69-4E87-80BA-F9CAEBD4DB81}</Project>
       <Name>AWSSDK.IoTEvents.CodeAnalysis</Name>
@@ -511,6 +563,10 @@
     <ProjectReference Include="../ServiceAnalysis/IoTEventsData/AWSSDK.IoTEventsData.CodeAnalysis.csproj">
       <Project>{D014FBA6-A964-4D00-A248-5F518D0B8CC1}</Project>
       <Name>AWSSDK.IoTEventsData.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IoTFleetHub/AWSSDK.IoTFleetHub.CodeAnalysis.csproj">
+      <Project>{7473EA8B-E5A7-4964-93AE-21E3935A7490}</Project>
+      <Name>AWSSDK.IoTFleetHub.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IoTJobsDataPlane/AWSSDK.IoTJobsDataPlane.CodeAnalysis.csproj">
       <Project>{1FF0B940-2F0B-4D80-90CC-AB3795ACE6E0}</Project>
@@ -527,6 +583,10 @@
     <ProjectReference Include="../ServiceAnalysis/IoTThingsGraph/AWSSDK.IoTThingsGraph.CodeAnalysis.csproj">
       <Project>{E1340219-BBFF-4AFA-AB2E-0AEB09614F70}</Project>
       <Name>AWSSDK.IoTThingsGraph.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IoTWireless/AWSSDK.IoTWireless.CodeAnalysis.csproj">
+      <Project>{81AABF2B-4A9F-4E8D-9E46-56564BD36920}</Project>
+      <Name>AWSSDK.IoTWireless.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IVS/AWSSDK.IVS.CodeAnalysis.csproj">
       <Project>{F432AF25-9775-41B8-A42E-7890CD7189BB}</Project>
@@ -599,6 +659,14 @@
     <ProjectReference Include="../ServiceAnalysis/Lightsail/AWSSDK.Lightsail.CodeAnalysis.csproj">
       <Project>{33C9A310-95F4-4A30-B411-6E6679034FF3}</Project>
       <Name>AWSSDK.Lightsail.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/LocationService/AWSSDK.LocationService.CodeAnalysis.csproj">
+      <Project>{083186B8-3B42-407F-9797-A1C9E93A0CDE}</Project>
+      <Name>AWSSDK.LocationService.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/LookoutforVision/AWSSDK.LookoutforVision.CodeAnalysis.csproj">
+      <Project>{AEAAF64A-F230-4C3C-8AA4-8E2182617E19}</Project>
+      <Name>AWSSDK.LookoutforVision.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MachineLearning/AWSSDK.MachineLearning.CodeAnalysis.csproj">
       <Project>{BFEE58EE-DF58-4F52-A99B-01D05FB251AF}</Project>
@@ -680,9 +748,17 @@
       <Project>{4A9F55E5-9F5B-4CA3-BCBE-1BD152F6BCEA}</Project>
       <Name>AWSSDK.MTurk.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MWAA/AWSSDK.MWAA.CodeAnalysis.csproj">
+      <Project>{8805FBEB-EB40-4EE5-AA6C-98F85578FD1C}</Project>
+      <Name>AWSSDK.MWAA.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Neptune/AWSSDK.Neptune.CodeAnalysis.csproj">
       <Project>{58F7BFE2-830C-489D-BEE8-58C02C1CFF8A}</Project>
       <Name>AWSSDK.Neptune.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/NetworkFirewall/AWSSDK.NetworkFirewall.CodeAnalysis.csproj">
+      <Project>{8B7D3321-CC00-4673-975E-571DDB8FFBC6}</Project>
+      <Name>AWSSDK.NetworkFirewall.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/NetworkManager/AWSSDK.NetworkManager.CodeAnalysis.csproj">
       <Project>{43F64B0B-FD8E-4C5B-B31C-9FDF68364301}</Project>
@@ -740,6 +816,10 @@
       <Project>{75A49D4B-F3B7-4185-81BC-4F1AA1974BBE}</Project>
       <Name>AWSSDK.Pricing.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/PrometheusService/AWSSDK.PrometheusService.CodeAnalysis.csproj">
+      <Project>{45941DC4-E121-43D5-8A3D-B2A6D8429943}</Project>
+      <Name>AWSSDK.PrometheusService.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/QLDB/AWSSDK.QLDB.CodeAnalysis.csproj">
       <Project>{41DAC2D4-C9AE-4BFE-9F36-14E9F46D036C}</Project>
       <Name>AWSSDK.QLDB.CodeAnalysis</Name>
@@ -767,6 +847,10 @@
     <ProjectReference Include="../ServiceAnalysis/Redshift/AWSSDK.Redshift.CodeAnalysis.csproj">
       <Project>{CCB1A157-6336-4465-8BAC-6812A705B76E}</Project>
       <Name>AWSSDK.Redshift.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/RedshiftDataAPIService/AWSSDK.RedshiftDataAPIService.CodeAnalysis.csproj">
+      <Project>{BA41F83C-C9E4-4878-81F1-321E865DF4CD}</Project>
+      <Name>AWSSDK.RedshiftDataAPIService.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Rekognition/AWSSDK.Rekognition.CodeAnalysis.csproj">
       <Project>{413B40F1-01B7-4290-A8BE-54CBA529A5FE}</Project>
@@ -804,9 +888,21 @@
       <Project>{D8DE315A-EC9C-41D5-87F9-5C40FBB56FCD}</Project>
       <Name>AWSSDK.S3Control.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/S3Outposts/AWSSDK.S3Outposts.CodeAnalysis.csproj">
+      <Project>{9252CDC4-069F-4025-AE2C-18EE00A73F47}</Project>
+      <Name>AWSSDK.S3Outposts.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SageMaker/AWSSDK.SageMaker.CodeAnalysis.csproj">
       <Project>{3314BA0F-1C6A-4E4A-80F8-EB858D20D048}</Project>
       <Name>AWSSDK.SageMaker.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SagemakerEdgeManager/AWSSDK.SagemakerEdgeManager.CodeAnalysis.csproj">
+      <Project>{2D75EA51-ED06-449F-A756-12D33C6976E5}</Project>
+      <Name>AWSSDK.SagemakerEdgeManager.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SageMakerFeatureStoreRuntime/AWSSDK.SageMakerFeatureStoreRuntime.CodeAnalysis.csproj">
+      <Project>{FC99DFC4-831C-4B14-8D6F-6852BE29C478}</Project>
+      <Name>AWSSDK.SageMakerFeatureStoreRuntime.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SageMakerRuntime/AWSSDK.SageMakerRuntime.CodeAnalysis.csproj">
       <Project>{D706F3A1-9553-4B25-8BEC-7B68DE5360FD}</Project>
@@ -896,6 +992,10 @@
       <Project>{1D5634B9-7F53-48CC-BC00-4CE57AE8457E}</Project>
       <Name>AWSSDK.SSO.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SSOAdmin/AWSSDK.SSOAdmin.CodeAnalysis.csproj">
+      <Project>{941EB53D-999B-4EF3-AFAC-09AF610CB312}</Project>
+      <Name>AWSSDK.SSOAdmin.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SSOOIDC/AWSSDK.SSOOIDC.CodeAnalysis.csproj">
       <Project>{45750F34-213E-4AFD-B98C-20069902DBA3}</Project>
       <Name>AWSSDK.SSOOIDC.CodeAnalysis</Name>
@@ -915,6 +1015,14 @@
     <ProjectReference Include="../ServiceAnalysis/Textract/AWSSDK.Textract.CodeAnalysis.csproj">
       <Project>{7405B582-7CF7-4142-A230-3E9AA662244F}</Project>
       <Name>AWSSDK.Textract.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/TimestreamQuery/AWSSDK.TimestreamQuery.CodeAnalysis.csproj">
+      <Project>{69DD9851-0751-4D95-A13E-9B2A98EEC412}</Project>
+      <Name>AWSSDK.TimestreamQuery.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/TimestreamWrite/AWSSDK.TimestreamWrite.CodeAnalysis.csproj">
+      <Project>{98DF67C0-394D-47FF-82E7-D86EAA973B69}</Project>
+      <Name>AWSSDK.TimestreamWrite.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/TranscribeService/AWSSDK.TranscribeService.CodeAnalysis.csproj">
       <Project>{1569BF27-B6F7-4B32-BD44-36D1D4E028BC}</Project>
@@ -939,6 +1047,10 @@
     <ProjectReference Include="../ServiceAnalysis/WAFV2/AWSSDK.WAFV2.CodeAnalysis.csproj">
       <Project>{23480004-2A15-497C-8CCA-21222F1DCB5F}</Project>
       <Name>AWSSDK.WAFV2.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/WellArchitected/AWSSDK.WellArchitected.CodeAnalysis.csproj">
+      <Project>{BDCA2140-D2F2-4C8A-8EEF-DD31603077D3}</Project>
+      <Name>AWSSDK.WellArchitected.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/WorkDocs/AWSSDK.WorkDocs.CodeAnalysis.csproj">
       <Project>{D2D05C00-79A7-47E4-9B77-FE08B1E7FC1D}</Project>

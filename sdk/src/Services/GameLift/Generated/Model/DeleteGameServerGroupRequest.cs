@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -130,8 +130,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SAFE_DELETE</code> – Terminates the game server group and EC2 Auto Scaling
-        /// group only when it has no game servers that are in <code>UTILIZED</code> status.
+        ///  <code>SAFE_DELETE</code> – (default) Terminates the game server group and EC2 Auto
+        /// Scaling group only when it has no game servers that are in <code>UTILIZED</code> status.
         /// </para>
         ///  </li> <li> 
         /// <para>

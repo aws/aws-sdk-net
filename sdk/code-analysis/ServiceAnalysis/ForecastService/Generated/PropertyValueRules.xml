@@ -35,9 +35,18 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateDatasetImportJobRequest.GeolocationFormat</property>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.CreateDatasetImportJobRequest.TimestampFormat</property>
     <max>256</max>
     <pattern>^[a-zA-Z0-9\-\:\.\,\'\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreateDatasetImportJobRequest.TimeZone</property>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.CreateDatasetImportJobResponse.DatasetImportJobArn</property>
@@ -86,6 +95,20 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreatePredictorBacktestExportJobRequest.PredictorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreatePredictorBacktestExportJobRequest.PredictorBacktestExportJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.CreatePredictorBacktestExportJobResponse.PredictorBacktestExportJobArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.DeleteDatasetRequest.DatasetArn</property>
     <max>256</max>
   </property-value-rule>
@@ -107,6 +130,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DeletePredictorRequest.PredictorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DeletePredictorBacktestExportJobRequest.PredictorBacktestExportJobArn</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -168,6 +195,11 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeDatasetImportJobResponse.GeolocationFormat</property>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribeDatasetImportJobResponse.Status</property>
     <max>256</max>
   </property-value-rule>
@@ -175,6 +207,10 @@
     <property>Amazon.ForecastService.Model.DescribeDatasetImportJobResponse.TimestampFormat</property>
     <max>256</max>
     <pattern>^[a-zA-Z0-9\-\:\.\,\'\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribeDatasetImportJobResponse.TimeZone</property>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribeForecastRequest.ForecastArn</property>
@@ -246,6 +282,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.DescribePredictorResponse.Status</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribePredictorBacktestExportJobRequest.PredictorBacktestExportJobArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribePredictorBacktestExportJobResponse.PredictorArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribePredictorBacktestExportJobResponse.PredictorBacktestExportJobArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribePredictorBacktestExportJobResponse.PredictorBacktestExportJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.DescribePredictorBacktestExportJobResponse.Status</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -324,6 +382,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.ListForecastsResponse.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListPredictorBacktestExportJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListPredictorBacktestExportJobsRequest.NextToken</property>
+    <min>1</min>
+    <max>3000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.ListPredictorBacktestExportJobsResponse.NextToken</property>
     <min>1</min>
     <max>3000</max>
   </property-value-rule>
@@ -414,6 +487,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ForecastService.Model.ErrorMetric.ForecastType</property>
+    <pattern>(^0?\.\d\d?$|^mean$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ForecastService.Model.EvaluationResult.AlgorithmArn</property>
     <max>256</max>
   </property-value-rule>
@@ -480,6 +557,20 @@
     <min>1</min>
     <max>63</max>
     <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.PredictorBacktestExportJobSummary.PredictorBacktestExportJobArn</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.PredictorBacktestExportJobSummary.PredictorBacktestExportJobName</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ForecastService.Model.PredictorBacktestExportJobSummary.Status</property>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ForecastService.Model.PredictorExecution.AlgorithmArn</property>

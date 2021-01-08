@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,7 +60,9 @@ namespace Amazon.Textract.Model
         private string _clientRequestToken;
         private DocumentLocation _documentLocation;
         private string _jobTag;
+        private string _kmsKeyId;
         private NotificationChannel _notificationChannel;
+        private OutputConfig _outputConfig;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -127,6 +129,28 @@ namespace Amazon.Textract.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KMSKeyId. 
+        /// <para>
+        /// The KMS key used to encrypt the inference results. This can be in either Key ID or
+        /// Key Alias format. When a KMS key is provided, the KMS key will be used for server-side
+        /// encryption of the objects in the customer bucket. When this parameter is not enabled,
+        /// the result will be encrypted server side,using SSE-S3.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KMSKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KMSKeyId property is set
+        internal bool IsSetKMSKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NotificationChannel. 
         /// <para>
         /// The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status
@@ -143,6 +167,26 @@ namespace Amazon.Textract.Model
         internal bool IsSetNotificationChannel()
         {
             return this._notificationChannel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputConfig. 
+        /// <para>
+        /// Sets if the output will go to a customer defined bucket. By default Amazon Textract
+        /// will save the results internally to be accessed with the GetDocumentTextDetection
+        /// operation.
+        /// </para>
+        /// </summary>
+        public OutputConfig OutputConfig
+        {
+            get { return this._outputConfig; }
+            set { this._outputConfig = value; }
+        }
+
+        // Check to see if OutputConfig property is set
+        internal bool IsSetOutputConfig()
+        {
+            return this._outputConfig != null;
         }
 
     }

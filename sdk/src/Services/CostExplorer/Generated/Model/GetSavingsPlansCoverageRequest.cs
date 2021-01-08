@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,10 +31,10 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Container for the parameters to the GetSavingsPlansCoverage operation.
     /// Retrieves the Savings Plans covered for your account. This enables you to see how
-    /// much of your cost is covered by a Savings Plan. An organization’s master account can
-    /// see the coverage of the associated member accounts. This supports dimensions, Cost
-    /// Categories, and nested expressions. For any time period, you can filter data for Savings
-    /// Plans usage with the following dimensions:
+    /// much of your cost is covered by a Savings Plan. An organization’s management account
+    /// can see the coverage of the associated member accounts. This supports dimensions,
+    /// Cost Categories, and nested expressions. For any time period, you can filter data
+    /// for Savings Plans usage with the following dimensions:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -66,6 +66,7 @@ namespace Amazon.CostExplorer.Model
         private int? _maxResults;
         private List<string> _metrics = new List<string>();
         private string _nextToken;
+        private SortDefinition _sortBy;
         private DateInterval _timePeriod;
 
         /// <summary>
@@ -213,6 +214,60 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// The value by which you want to sort the data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following values are supported for <code>Key</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>SpendCoveredBySavingsPlan</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OnDemandCost</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CoveragePercentage</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TotalCost</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>InstanceFamily</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Region</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Service</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+        /// </para>
+        /// </summary>
+        public SortDefinition SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null;
         }
 
         /// <summary>

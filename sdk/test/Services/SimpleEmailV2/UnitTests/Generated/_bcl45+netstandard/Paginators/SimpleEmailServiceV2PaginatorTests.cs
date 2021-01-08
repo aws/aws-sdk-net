@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -109,6 +109,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListConfigurationSets(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListConfigurationSets(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SimpleEmailV2")]
+        public void ListContactListsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListContactListsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListContactListsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListContactListsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListContactLists(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListContactLists(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SimpleEmailV2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListContactListsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListContactListsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListContactListsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListContactLists(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListContactLists(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SimpleEmailV2")]
+        public void ListContactsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListContactsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListContactsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListContactsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListContacts(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListContacts(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SimpleEmailV2")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListContactsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListContactsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListContactsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListContacts(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListContacts(request);
 
             // Should work the first time
             paginator.Responses.ToList();

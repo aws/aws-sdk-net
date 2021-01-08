@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -237,6 +237,16 @@ namespace Amazon.EC2.Model
         IDescribeNetworkAclsPaginator DescribeNetworkAcls(DescribeNetworkAclsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeNetworkInsightsAnalyses operation
+        ///</summary>
+        IDescribeNetworkInsightsAnalysesPaginator DescribeNetworkInsightsAnalyses(DescribeNetworkInsightsAnalysesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeNetworkInsightsPaths operation
+        ///</summary>
+        IDescribeNetworkInsightsPathsPaginator DescribeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeNetworkInterfacePermissions operation
         ///</summary>
         IDescribeNetworkInterfacePermissionsPaginator DescribeNetworkInterfacePermissions(DescribeNetworkInterfacePermissionsRequest request);
@@ -345,6 +355,16 @@ namespace Amazon.EC2.Model
         /// Paginator for DescribeTransitGatewayAttachments operation
         ///</summary>
         IDescribeTransitGatewayAttachmentsPaginator DescribeTransitGatewayAttachments(DescribeTransitGatewayAttachmentsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTransitGatewayConnectPeers operation
+        ///</summary>
+        IDescribeTransitGatewayConnectPeersPaginator DescribeTransitGatewayConnectPeers(DescribeTransitGatewayConnectPeersRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTransitGatewayConnects operation
+        ///</summary>
+        IDescribeTransitGatewayConnectsPaginator DescribeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest request);
 
         /// <summary>
         /// Paginator for DescribeTransitGatewayMulticastDomains operation

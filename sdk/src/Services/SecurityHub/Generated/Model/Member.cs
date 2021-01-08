@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -119,6 +119,40 @@ namespace Amazon.SecurityHub.Model
         /// The status of the relationship between the member account and its master account.
         /// 
         /// </para>
+        ///  
+        /// <para>
+        /// The status can have one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATED</code> - Indicates that the master account added the member account,
+        /// but has not yet invited the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INVITED</code> - Indicates that the master account invited the member account.
+        /// The member account has not yet responded to the invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ENABLED</code> - Indicates that the member account is currently active. For
+        /// manually invited member accounts, indicates that the member account accepted the invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REMOVED</code> - Indicates that the master account disassociated the member
+        /// account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RESIGNED</code> - Indicates that the member account disassociated themselves
+        /// from the master account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETED</code> - Indicates that the master account deleted the member account.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string MemberStatus
         {

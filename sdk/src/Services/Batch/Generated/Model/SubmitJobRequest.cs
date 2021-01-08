@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,13 @@ namespace Amazon.Batch.Model
     /// Container for the parameters to the SubmitJob operation.
     /// Submits an AWS Batch job from a job definition. Parameters specified during <a>SubmitJob</a>
     /// override parameters defined in the job definition.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Jobs run on Fargate resources don't run for more than 14 days. After 14 days, the
+    /// Fargate resources might no longer be available and the job is terminated.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class SubmitJobRequest : AmazonBatchRequest
     {
@@ -43,7 +50,9 @@ namespace Amazon.Batch.Model
         private string _jobQueue;
         private NodeOverrides _nodeOverrides;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private bool? _propagateTags;
         private RetryStrategy _retryStrategy;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private JobTimeout _timeout;
 
         /// <summary>
@@ -72,7 +81,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// A list of container overrides in JSON format that specify the name of a container
         /// in the specified job definition and the overrides it should receive. You can override
-        /// the default command for a container (that is specified in the job definition or the
+        /// the default command for a container (that's specified in the job definition or the
         /// Docker image) with a <code>command</code> override. You can also override existing
         /// environment variables (that are specified in the job definition or Docker image) on
         /// a container or add new environment variables to it with an <code>environment</code>
@@ -181,6 +190,12 @@ namespace Amazon.Batch.Model
         /// A list of node overrides in JSON format that specify the node range to target and
         /// the container overrides for that node range.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs running on Fargate resources; use <code>containerOverrides</code>
+        /// instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         public NodeOverrides NodeOverrides
         {
@@ -216,6 +231,29 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PropagateTags. 
+        /// <para>
+        /// Specifies whether to propagate the tags from the job or job definition to the corresponding
+        /// Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only
+        /// be propagated to the tasks during task creation. For tags with the same name, job
+        /// tags are given priority over job definitions tags. If the total number of combined
+        /// tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code>
+        /// state. When specified, this overrides the tag propagation setting in the job definition.
+        /// </para>
+        /// </summary>
+        public bool PropagateTags
+        {
+            get { return this._propagateTags.GetValueOrDefault(); }
+            set { this._propagateTags = value; }
+        }
+
+        // Check to see if PropagateTags property is set
+        internal bool IsSetPropagateTags()
+        {
+            return this._propagateTags.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RetryStrategy. 
         /// <para>
         /// The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When
@@ -236,13 +274,35 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags that you apply to the job request to help you categorize and organize your
+        /// resources. Each tag consists of a key and an optional value. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS Resources</a> in <i>AWS General Reference</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
         /// The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout
-        /// duration after which AWS Batch terminates your jobs if they have not finished. If
-        /// a job is terminated due to a timeout, it is not retried. The minimum value for the
-        /// timeout is 60 seconds. This configuration overrides any timeout configuration specified
-        /// in the job definition. For array jobs, child jobs have the same timeout configuration
+        /// duration after which AWS Batch terminates your jobs if they haven't finished. If a
+        /// job is terminated due to a timeout, it isn't retried. The minimum value for the timeout
+        /// is 60 seconds. This configuration overrides any timeout configuration specified in
+        /// the job definition. For array jobs, child jobs have the same timeout configuration
         /// as the parent job. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
         /// Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>

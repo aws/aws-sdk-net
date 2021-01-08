@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,8 +32,8 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the EnableMetricsCollection operation.
     /// Enables group metrics for the specified Auto Scaling group. For more information,
     /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring
-    /// Your Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User
-    /// Guide</i>.
+    /// CloudWatch metrics for your Auto Scaling groups and instances</a> in the <i>Amazon
+    /// EC2 Auto Scaling User Guide</i>.
     /// </summary>
     public partial class EnableMetricsCollectionRequest : AmazonAutoScalingRequest
     {
@@ -47,7 +47,7 @@ namespace Amazon.AutoScaling.Model
         /// The name of the Auto Scaling group.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1600)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string AutoScalingGroupName
         {
             get { return this._autoScalingGroupName; }

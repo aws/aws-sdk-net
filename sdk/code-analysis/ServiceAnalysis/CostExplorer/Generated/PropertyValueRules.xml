@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CreateAnomalyMonitorResponse.MonitorArn</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CreateAnomalySubscriptionResponse.SubscriptionArn</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.CreateCostCategoryDefinitionRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -17,6 +29,18 @@
     <min>20</min>
     <max>25</max>
     <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.DeleteAnomalyMonitorRequest.MonitorArn</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.DeleteAnomalySubscriptionRequest.SubscriptionArn</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.DeleteCostCategoryDefinitionRequest.CostCategoryArn</property>
@@ -49,6 +73,54 @@
     <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetAnomaliesRequest.MonitorArn</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetAnomaliesRequest.NextPageToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetAnomaliesResponse.NextPageToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetAnomalyMonitorsRequest.NextPageToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetAnomalyMonitorsResponse.NextPageToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetAnomalySubscriptionsRequest.MonitorArn</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetAnomalySubscriptionsRequest.NextPageToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetAnomalySubscriptionsResponse.NextPageToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetCostAndUsageRequest.NextPageToken</property>
     <min>0</min>
     <max>8192</max>
@@ -73,9 +145,41 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetCostCategoriesRequest.CostCategoryName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^(?! )[\p{L}\p{N}\p{Z}-_]*(?&lt;! )$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetCostCategoriesRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetCostCategoriesRequest.NextPageToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetCostCategoriesRequest.SearchString</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetCostCategoriesResponse.NextPageToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetCostForecastRequest.PredictionIntervalLevel</property>
     <min>51</min>
     <max>99</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetDimensionValuesRequest.MaxResults</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetDimensionValuesRequest.NextPageToken</property>
@@ -94,6 +198,10 @@
     <min>0</min>
     <max>8192</max>
     <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetReservationCoverageRequest.MaxResults</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetReservationCoverageRequest.NextPageToken</property>
@@ -134,6 +242,10 @@
     <min>0</min>
     <max>8192</max>
     <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetReservationUtilizationRequest.MaxResults</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetReservationUtilizationRequest.NextPageToken</property>
@@ -218,6 +330,10 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetTagsRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetTagsRequest.NextPageToken</property>
     <min>0</min>
     <max>8192</max>
@@ -270,6 +386,58 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ProvideAnomalyFeedbackRequest.AnomalyId</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ProvideAnomalyFeedbackResponse.AnomalyId</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.UpdateAnomalyMonitorRequest.MonitorArn</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.UpdateAnomalyMonitorRequest.MonitorName</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.UpdateAnomalyMonitorResponse.MonitorArn</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.UpdateAnomalySubscriptionRequest.SubscriptionArn</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.UpdateAnomalySubscriptionRequest.SubscriptionName</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.UpdateAnomalySubscriptionRequest.Threshold</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.UpdateAnomalySubscriptionResponse.SubscriptionArn</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.UpdateCostCategoryDefinitionRequest.CostCategoryArn</property>
     <min>20</min>
     <max>2048</max>
@@ -286,6 +454,104 @@
     <min>20</min>
     <max>25</max>
     <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.Anomaly.AnomalyEndDate</property>
+    <min>0</min>
+    <max>40</max>
+    <pattern>(\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.Anomaly.AnomalyId</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.Anomaly.AnomalyStartDate</property>
+    <min>0</min>
+    <max>40</max>
+    <pattern>(\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.Anomaly.DimensionValue</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.Anomaly.MonitorArn</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.AnomalyDateInterval.EndDate</property>
+    <min>0</min>
+    <max>40</max>
+    <pattern>(\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.AnomalyDateInterval.StartDate</property>
+    <min>0</min>
+    <max>40</max>
+    <pattern>(\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.AnomalyMonitor.CreationDate</property>
+    <min>0</min>
+    <max>40</max>
+    <pattern>(\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.AnomalyMonitor.DimensionalValueCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.AnomalyMonitor.LastEvaluatedDate</property>
+    <min>0</min>
+    <max>40</max>
+    <pattern>(\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.AnomalyMonitor.LastUpdatedDate</property>
+    <min>0</min>
+    <max>40</max>
+    <pattern>(\d{4}-\d{2}-\d{2})(T\d{2}:\d{2}:\d{2}Z)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.AnomalyMonitor.MonitorArn</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.AnomalyMonitor.MonitorName</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.AnomalySubscription.AccountId</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.AnomalySubscription.SubscriptionArn</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.AnomalySubscription.SubscriptionName</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.AnomalySubscription.Threshold</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.CostCategory.CostCategoryArn</property>
@@ -413,6 +679,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.DimensionValuesWithAttributes.Value</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.EBSResourceUtilization.EbsReadBytesPerSecond</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.EBSResourceUtilization.EbsReadOpsPerSecond</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.EBSResourceUtilization.EbsWriteBytesPerSecond</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.EBSResourceUtilization.EbsWriteOpsPerSecond</property>
     <min>0</min>
     <max>1024</max>
     <pattern>[\S\s]*</pattern>
@@ -796,6 +1086,12 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RightsizingRecommendationMetadata.AdditionalMetadata</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.RightsizingRecommendationMetadata.GenerationTimestamp</property>
     <min>0</min>
     <max>1024</max>
@@ -827,6 +1123,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.RightsizingRecommendationSummary.TotalRecommendationCount</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RootCause.LinkedAccount</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RootCause.Region</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RootCause.Service</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.RootCause.UsageType</property>
     <min>0</min>
     <max>1024</max>
     <pattern>[\S\s]*</pattern>
@@ -982,6 +1302,12 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.SavingsPlansPurchaseRecommendationMetadata.AdditionalMetadata</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.SavingsPlansPurchaseRecommendationMetadata.GenerationTimestamp</property>
     <min>0</min>
     <max>1024</max>
@@ -1094,6 +1420,18 @@
     <min>0</min>
     <max>1024</max>
     <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.SortDefinition.Key</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.Subscriber.Address</property>
+    <min>6</min>
+    <max>302</max>
+    <pattern>(^[a-zA-Z0-9.!#$%&amp;'*+=?^_‘{|}~-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$)|(^arn:(aws[a-zA-Z-]*):sns:[a-zA-Z0-9-]+:[0-9]{12}:[a-zA-Z0-9_-]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.TagValues.Key</property>

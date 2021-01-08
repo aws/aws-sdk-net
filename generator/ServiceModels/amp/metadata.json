@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "(New Service) Amazon Managed Service for Prometheus is a fully managed Prometheus-compatible monitoring service that makes it easy to monitor containerized applications securely and at scale.",
+  "generate-client-constructors": true
+}

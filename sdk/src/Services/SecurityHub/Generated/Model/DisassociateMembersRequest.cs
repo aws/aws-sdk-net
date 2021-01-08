@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,6 +31,12 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the DisassociateMembers operation.
     /// Disassociates the specified member accounts from the associated master account.
+    /// 
+    ///  
+    /// <para>
+    /// Can be used to disassociate both accounts that are in an organization and accounts
+    /// that were invited manually.
+    /// </para>
     /// </summary>
     public partial class DisassociateMembersRequest : AmazonSecurityHubRequest
     {
@@ -42,6 +48,7 @@ namespace Amazon.SecurityHub.Model
         /// The account IDs of the member accounts to disassociate from the master account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -103,6 +103,7 @@ namespace Amazon.Redshift.Model
         /// marker value in the <code>Marker</code> parameter and retrying the request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -176,6 +177,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string SourceIdentifier
         {
             get { return this._sourceIdentifier; }

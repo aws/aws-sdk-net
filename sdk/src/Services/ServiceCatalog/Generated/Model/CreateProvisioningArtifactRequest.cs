@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,12 @@ namespace Amazon.ServiceCatalog.Model
     ///  
     /// <para>
     /// You cannot create a provisioning artifact for a product that was shared with you.
+    /// </para>
+    ///  
+    /// <para>
+    /// The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
+    /// IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code>
+    /// template source in the information data section.
     /// </para>
     /// </summary>
     public partial class CreateProvisioningArtifactRequest : AmazonServiceCatalogRequest

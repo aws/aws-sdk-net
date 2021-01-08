@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
+    /// A map that contains tag keys and tag values to attach to an AWS X-Ray group or sampling
+    /// rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+    /// AWS resources</a> in the <i>AWS General Reference</i>.
     /// 
+    ///  
+    /// <para>
+    /// The following restrictions apply to tags:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Maximum number of user-applied tags per resource: 50
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Tag keys and values are case sensitive.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot
+    /// edit or delete system tags.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Tag
     {
@@ -37,7 +58,13 @@ namespace Amazon.XRay.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Key.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty.
+        /// The key can be a maximum of 128 characters, and can contain only Unicode letters,
+        /// numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string Key
@@ -53,7 +80,12 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// An optional tag value, such as <code>Production</code> or <code>test-only</code>.
+        /// The value can be a maximum of 255 characters, and contain only Unicode letters, numbers,
+        /// or separators, or the following special characters: <code>+ - = . _ : /</code> 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value

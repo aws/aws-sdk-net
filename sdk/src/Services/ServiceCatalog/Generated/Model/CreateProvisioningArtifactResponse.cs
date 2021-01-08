@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,7 +40,29 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Info. 
         /// <para>
-        /// The URL of the CloudFormation template in Amazon S3, in JSON format.
+        /// Specify the template source with one of the following options, but not both. Keys
+        /// accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].
+        /// </para>
+        ///  
+        /// <para>
+        /// The URL of the CloudFormation template in Amazon S3, in JSON format. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>LoadTemplateFromURL</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the URL of the CloudFormation template in Amazon S3 in JSON format.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ImportFromPhysicalId</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the physical id of the resource that contains the template; currently supports
+        /// CloudFormation stack ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

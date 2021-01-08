@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -94,6 +94,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.FunctionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FunctionResponseTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.FunctionResponseTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModified", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -130,6 +136,36 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.ParallelizationFactor = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Queues", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Queues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SelfManagedEventSource", targetDepth))
+                {
+                    var unmarshaller = SelfManagedEventSourceUnmarshaller.Instance;
+                    unmarshalledObject.SelfManagedEventSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SourceAccessConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SourceAccessConfiguration, SourceAccessConfigurationUnmarshaller>(SourceAccessConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.SourceAccessConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartingPosition", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StartingPosition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartingPositionTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartingPositionTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -146,6 +182,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Topics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TumblingWindowInSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TumblingWindowInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("UUID", targetDepth))

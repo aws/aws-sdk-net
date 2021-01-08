@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,8 +41,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property F1Score. 
         /// <para>
-        /// A measure of how accurate the recognizer results are for for a specific entity type
-        /// in the test data. It is derived from the <code>Precision</code> and <code>Recall</code>
+        /// A measure of how accurate the recognizer results are for a specific entity type in
+        /// the test data. It is derived from the <code>Precision</code> and <code>Recall</code>
         /// values. The <code>F1Score</code> is the harmonic average of the two scores. The highest
         /// score is 1, and the worst score is 0. 
         /// </para>

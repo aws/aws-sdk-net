@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,25 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Describes a projected utilization metric of a recommendation option, such as an Amazon
-    /// EC2 instance.
+    /// EC2 instance. This represents the projected utilization of a recommendation option
+    /// had you used that resource during the analyzed period.
+    /// 
+    ///  
+    /// <para>
+    /// Compare the utilization metric data of your resource against its projected utilization
+    /// metric data to determine the performance difference between your current resource
+    /// and the recommended option.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization
+    /// metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code>
+    /// action. Additionally, the <code>Memory</code> metric is returned only for resources
+    /// that have the unified CloudWatch agent installed on them. For more information, see
+    /// <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+    /// Memory Utilization with the CloudWatch Agent</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ProjectedMetric
     {
@@ -43,13 +61,43 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// The name of the projected utilization metric.
         /// </para>
+        ///  
+        /// <para>
+        /// The following projected utilization metrics are returned:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Cpu</code> - The projected percentage of allocated EC2 compute units that would
+        /// be in use on the recommendation option had you used that resource during the analyzed
+        /// period. This metric identifies the processing power required to run an application
+        /// on the recommendation option.
+        /// </para>
+        ///  
+        /// <para>
+        /// Depending on the instance type, tools in your operating system can show a lower percentage
+        /// than CloudWatch when the instance is not allocated a full processor core.
+        /// </para>
+        ///  
+        /// <para>
+        /// Units: Percent
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Memory</code> - The percentage of memory that would be in use on the recommendation
+        /// option had you used that resource during the analyzed period. This metric identifies
+        /// the amount of memory required to run an application on the recommendation option.
+        /// </para>
+        ///  
+        /// <para>
+        /// Units: Percent
+        /// </para>
         ///  <note> 
         /// <para>
-        /// Memory metrics are only returned for resources that have the unified CloudWatch agent
-        /// installed on them. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
+        /// The <code>Memory</code> metric is returned only for resources that have the unified
+        /// CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
         /// Memory Utilization with the CloudWatch Agent</a>.
         /// </para>
-        ///  </note>
+        ///  </note> </li> </ul>
         /// </summary>
         public MetricName Name
         {

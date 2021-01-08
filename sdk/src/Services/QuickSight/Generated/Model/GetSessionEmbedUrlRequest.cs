@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -161,12 +161,12 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// IAM users and IAM role-based sessions authenticated through Federated Single Sign-On
-        /// using SAML, OpenID Connect, or IAM federation
+        /// AWS Identity and Access Management (IAM) users and IAM role-based sessions authenticated
+        /// through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+        /// Omit this parameter for users in the third group, IAM users and IAM role-based sessions.
         /// </para>
         /// </summary>
         public string UserArn

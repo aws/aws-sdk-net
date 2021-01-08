@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -93,6 +93,14 @@ namespace Amazon.SageMakerRuntime.Model
         /// 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). If
         /// the customer wants the custom attribute returned, the model must set the custom attribute
         /// to be included on the way back. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The code in your model is responsible for setting or updating any custom attributes
+        /// in the response. If your code does not set this value in the response, an empty value
+        /// is returned. For example, if a custom attribute represents the trace ID, your model
+        /// can prepend the custom attribute with <code>Trace ID:</code> in your post-processing
+        /// function.
         /// </para>
         ///  
         /// <para>

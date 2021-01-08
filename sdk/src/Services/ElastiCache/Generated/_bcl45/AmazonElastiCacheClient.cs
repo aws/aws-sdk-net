@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1298,6 +1298,12 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidSubnetException">
         /// An invalid subnet identifier was specified.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.SubnetNotAllowedException">
+        /// At least one subnet ID does not match the other subnet IDs. This mismatch typically
+        /// occurs when a user sets one subnet ID to a regional Availability Zone and a different
+        /// one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed
+        /// on this service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup">REST API Reference for CreateCacheSubnetGroup Operation</seealso>
         public virtual CreateCacheSubnetGroupResponse CreateCacheSubnetGroup(CreateCacheSubnetGroupRequest request)
         {
@@ -1339,6 +1345,12 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidSubnetException">
         /// An invalid subnet identifier was specified.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.SubnetNotAllowedException">
+        /// At least one subnet ID does not match the other subnet IDs. This mismatch typically
+        /// occurs when a user sets one subnet ID to a regional Availability Zone and a different
+        /// one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed
+        /// on this service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateCacheSubnetGroup">REST API Reference for CreateCacheSubnetGroup Operation</seealso>
         public virtual Task<CreateCacheSubnetGroupResponse> CreateCacheSubnetGroupAsync(CreateCacheSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1358,7 +1370,7 @@ namespace Amazon.ElastiCache
         /// Global Datastore for Redis offers fully managed, fast, reliable and secure cross-region
         /// replication. Using Global Datastore for Redis, you can create cross-region read replica
         /// clusters for ElastiCache for Redis to enable low-latency reads and disaster recovery
-        /// across regions. For more information, see <a href="/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters.html">Replication
+        /// across regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html">Replication
         /// Across Regions Using Global Datastore</a>. 
         /// 
         ///  <ul> <li> 
@@ -1405,7 +1417,7 @@ namespace Amazon.ElastiCache
         /// Global Datastore for Redis offers fully managed, fast, reliable and secure cross-region
         /// replication. Using Global Datastore for Redis, you can create cross-region read replica
         /// clusters for ElastiCache for Redis to enable low-latency reads and disaster recovery
-        /// across regions. For more information, see <a href="/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters.html">Replication
+        /// across regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html">Replication
         /// Across Regions Using Global Datastore</a>. 
         /// 
         ///  <ul> <li> 
@@ -1534,6 +1546,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
+        /// The user group is not in an active state.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
         /// </exception>
@@ -1556,6 +1571,9 @@ namespace Amazon.ElastiCache
         /// The request cannot be processed because it would cause the resource to have more than
         /// the allowed number of tags. The maximum number of tags permitted on a resource is
         /// 50.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">REST API Reference for CreateReplicationGroup Operation</seealso>
         public virtual CreateReplicationGroupResponse CreateReplicationGroup(CreateReplicationGroupRequest request)
@@ -1650,6 +1668,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
         /// The value for a parameter is invalid.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
+        /// The user group is not in an active state.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
         /// </exception>
@@ -1672,6 +1693,9 @@ namespace Amazon.ElastiCache
         /// The request cannot be processed because it would cause the resource to have more than
         /// the allowed number of tags. The maximum number of tags permitted on a resource is
         /// 50.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateReplicationGroup">REST API Reference for CreateReplicationGroup Operation</seealso>
         public virtual Task<CreateReplicationGroupResponse> CreateReplicationGroupAsync(CreateReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1816,6 +1840,162 @@ namespace Amazon.ElastiCache
             options.ResponseUnmarshaller = CreateSnapshotResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateSnapshotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateUser
+
+
+        /// <summary>
+        /// For Redis engine version 6.x onwards: Creates a Redis user. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// Role Based Access Control (RBAC)</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
+        /// 
+        /// <returns>The response from the CreateUser service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.DuplicateUserNameException">
+        /// A user with this username already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserAlreadyExistsException">
+        /// A user with this ID already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserQuotaExceededException">
+        /// The quota of users has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        public virtual CreateUserResponse CreateUser(CreateUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// For Redis engine version 6.x onwards: Creates a Redis user. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// Role Based Access Control (RBAC)</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateUser service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.DuplicateUserNameException">
+        /// A user with this username already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserAlreadyExistsException">
+        /// A user with this ID already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserQuotaExceededException">
+        /// The quota of users has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        public virtual Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateUserResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateUserGroup
+
+
+        /// <summary>
+        /// For Redis engine version 6.x onwards: Creates a Redis user group. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// Role Based Access Control (RBAC)</a>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateUserGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.DefaultUserRequiredException">
+        /// You must add default user to a user group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.DuplicateUserNameException">
+        /// A user with this username already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupAlreadyExistsException">
+        /// The user group with this ID already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupQuotaExceededException">
+        /// The number of users exceeds the user group limit.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUserGroup">REST API Reference for CreateUserGroup Operation</seealso>
+        public virtual CreateUserGroupResponse CreateUserGroup(CreateUserGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// For Redis engine version 6.x onwards: Creates a Redis user group. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// Role Based Access Control (RBAC)</a>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateUserGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.DefaultUserRequiredException">
+        /// You must add default user to a user group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.DuplicateUserNameException">
+        /// A user with this username already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupAlreadyExistsException">
+        /// The user group with this ID already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupQuotaExceededException">
+        /// The number of users exceeds the user group limit.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateUserGroup">REST API Reference for CreateUserGroup Operation</seealso>
+        public virtual Task<CreateUserGroupResponse> CreateUserGroupAsync(CreateUserGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateUserGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateUserGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2717,6 +2897,142 @@ namespace Amazon.ElastiCache
             options.ResponseUnmarshaller = DeleteSnapshotResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteSnapshotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUser
+
+
+        /// <summary>
+        /// For Redis engine version 6.x onwards: Deletes a user. The user will be removed from
+        /// all user groups and in turn removed from all replication groups. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// Role Based Access Control (RBAC)</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUser service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.DefaultUserAssociatedToUserGroupException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserStateException">
+        /// The user is not in active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        public virtual DeleteUserResponse DeleteUser(DeleteUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// For Redis engine version 6.x onwards: Deletes a user. The user will be removed from
+        /// all user groups and in turn removed from all replication groups. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// Role Based Access Control (RBAC)</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteUser service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.DefaultUserAssociatedToUserGroupException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserStateException">
+        /// The user is not in active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        public virtual Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUserGroup
+
+
+        /// <summary>
+        /// For Redis engine version 6.x onwards: Deletes a ser group. The user group must first
+        /// be disassociated from the replcation group before it can be deleted. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// Role Based Access Control (RBAC)</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUserGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
+        /// The user group is not in an active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUserGroup">REST API Reference for DeleteUserGroup Operation</seealso>
+        public virtual DeleteUserGroupResponse DeleteUserGroup(DeleteUserGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// For Redis engine version 6.x onwards: Deletes a ser group. The user group must first
+        /// be disassociated from the replcation group before it can be deleted. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+        /// Role Based Access Control (RBAC)</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteUserGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
+        /// The user group is not in an active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteUserGroup">REST API Reference for DeleteUserGroup Operation</seealso>
+        public virtual Task<DeleteUserGroupResponse> DeleteUserGroupAsync(DeleteUserGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteUserGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteUserGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4228,6 +4544,112 @@ namespace Amazon.ElastiCache
 
         #endregion
         
+        #region  DescribeUserGroups
+
+
+        /// <summary>
+        /// Returns a list of user groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeUserGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUserGroups">REST API Reference for DescribeUserGroups Operation</seealso>
+        public virtual DescribeUserGroupsResponse DescribeUserGroups(DescribeUserGroupsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUserGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of user groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeUserGroups service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUserGroups">REST API Reference for DescribeUserGroups Operation</seealso>
+        public virtual Task<DescribeUserGroupsResponse> DescribeUserGroupsAsync(DescribeUserGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUserGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUserGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeUserGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeUsers
+
+
+        /// <summary>
+        /// Returns a list of users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsers service method.</param>
+        /// 
+        /// <returns>The response from the DescribeUsers service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
+        public virtual DescribeUsersResponse DescribeUsers(DescribeUsersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUsersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUsersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUsers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeUsers service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUsers">REST API Reference for DescribeUsers Operation</seealso>
+        public virtual Task<DescribeUsersResponse> DescribeUsersAsync(DescribeUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeUsersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeUsersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeUsersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateGlobalReplicationGroup
 
 
@@ -4940,6 +5362,12 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.SubnetInUseException">
         /// The requested subnet is being used by another cache subnet group.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.SubnetNotAllowedException">
+        /// At least one subnet ID does not match the other subnet IDs. This mismatch typically
+        /// occurs when a user sets one subnet ID to a regional Availability Zone and a different
+        /// one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed
+        /// on this service.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup">REST API Reference for ModifyCacheSubnetGroup Operation</seealso>
         public virtual ModifyCacheSubnetGroupResponse ModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request)
         {
@@ -4972,6 +5400,12 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.SubnetInUseException">
         /// The requested subnet is being used by another cache subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.SubnetNotAllowedException">
+        /// At least one subnet ID does not match the other subnet IDs. This mismatch typically
+        /// occurs when a user sets one subnet ID to a regional Availability Zone and a different
+        /// one to an outpost. Or when a user sets the subnet ID to an Outpost when not subscribed
+        /// on this service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyCacheSubnetGroup">REST API Reference for ModifyCacheSubnetGroup Operation</seealso>
         public virtual Task<ModifyCacheSubnetGroupResponse> ModifyCacheSubnetGroupAsync(ModifyCacheSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5104,6 +5538,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <code>available</code> state.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
+        /// The user group is not in an active state.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
         /// </exception>
@@ -5117,6 +5554,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">REST API Reference for ModifyReplicationGroup Operation</seealso>
         public virtual ModifyReplicationGroupResponse ModifyReplicationGroup(ModifyReplicationGroupRequest request)
@@ -5189,6 +5629,9 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <code>available</code> state.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
+        /// The user group is not in an active state.
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
         /// </exception>
@@ -5202,6 +5645,9 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyReplicationGroup">REST API Reference for ModifyReplicationGroup Operation</seealso>
         public virtual Task<ModifyReplicationGroupResponse> ModifyReplicationGroupAsync(ModifyReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5322,6 +5768,154 @@ namespace Amazon.ElastiCache
             options.ResponseUnmarshaller = ModifyReplicationGroupShardConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyReplicationGroupShardConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyUser
+
+
+        /// <summary>
+        /// Changes user password(s) and/or access string.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyUser service method.</param>
+        /// 
+        /// <returns>The response from the ModifyUser service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserStateException">
+        /// The user is not in active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUser">REST API Reference for ModifyUser Operation</seealso>
+        public virtual ModifyUserResponse ModifyUser(ModifyUserRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyUserResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyUserResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Changes user password(s) and/or access string.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyUser service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserStateException">
+        /// The user is not in active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUser">REST API Reference for ModifyUser Operation</seealso>
+        public virtual Task<ModifyUserResponse> ModifyUserAsync(ModifyUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyUserRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyUserResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyUserResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyUserGroup
+
+
+        /// <summary>
+        /// Changes the list of users that belong to the user group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyUserGroup service method.</param>
+        /// 
+        /// <returns>The response from the ModifyUserGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.DefaultUserRequiredException">
+        /// You must add default user to a user group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.DuplicateUserNameException">
+        /// A user with this username already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
+        /// The user group is not in an active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUserGroup">REST API Reference for ModifyUserGroup Operation</seealso>
+        public virtual ModifyUserGroupResponse ModifyUserGroup(ModifyUserGroupRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyUserGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyUserGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyUserGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Changes the list of users that belong to the user group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyUserGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyUserGroup service method, as returned by ElastiCache.</returns>
+        /// <exception cref="Amazon.ElastiCache.Model.DefaultUserRequiredException">
+        /// You must add default user to a user group.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.DuplicateUserNameException">
+        /// A user with this username already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
+        /// Two or more incompatible parameters were specified.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
+        /// The user group is not in an active state.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserGroupNotFoundException">
+        /// The user group was not found or does not exist
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.UserNotFoundException">
+        /// The user does not exist or could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyUserGroup">REST API Reference for ModifyUserGroup Operation</seealso>
+        public virtual Task<ModifyUserGroupResponse> ModifyUserGroupAsync(ModifyUserGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyUserGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyUserGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyUserGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5888,12 +6482,12 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cache cluster message: <code>Failover from master node &lt;primary-node-id&gt; to
+        /// Cache cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
         /// replica node &lt;node-id&gt; completed</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replication group message: <code>Failover from master node &lt;primary-node-id&gt;
+        /// Replication group message: <code>Failover from primary node &lt;primary-node-id&gt;
         /// to replica node &lt;node-id&gt; completed</code> 
         /// </para>
         ///  </li> <li> 
@@ -6008,12 +6602,12 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cache cluster message: <code>Failover from master node &lt;primary-node-id&gt; to
+        /// Cache cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
         /// replica node &lt;node-id&gt; completed</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replication group message: <code>Failover from master node &lt;primary-node-id&gt;
+        /// Replication group message: <code>Failover from primary node &lt;primary-node-id&gt;
         /// to replica node &lt;node-id&gt; completed</code> 
         /// </para>
         ///  </li> <li> 

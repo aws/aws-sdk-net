@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -85,7 +85,7 @@ namespace Amazon.Batch.Model
         /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeJobDefinitions</code>
+        /// value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code>
         /// returns up to 100 results and a <code>nextToken</code> value if applicable.
         /// </para>
         /// </summary>
@@ -112,7 +112,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This token should be treated as an opaque identifier that is only used to retrieve
+        /// This token should be treated as an opaque identifier that's only used to retrieve
         /// the next items in a list and not for other programmatic purposes.
         /// </para>
         ///  </note>
@@ -132,7 +132,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status with which to filter job definitions.
+        /// The status used to filter job definitions.
         /// </para>
         /// </summary>
         public string Status

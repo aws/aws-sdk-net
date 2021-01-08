@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,6 +49,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Key");
                 context.Writer.Write(requestObject.Key);
+            }
+
+            if(requestObject.IsSetMatchOptions())
+            {
+                context.Writer.WritePropertyName("MatchOptions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectMatchOptionsListValue in requestObject.MatchOptions)
+                {
+                        context.Writer.Write(requestObjectMatchOptionsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetValues())

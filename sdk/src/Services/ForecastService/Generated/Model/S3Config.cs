@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,8 +33,7 @@ namespace Amazon.ForecastService.Model
     /// an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
     /// access the file(s). Optionally, includes an AWS Key Management Service (KMS) key.
     /// This object is part of the <a>DataSource</a> object that is submitted in the <a>CreateDatasetImportJob</a>
-    /// request, and part of the <a>DataDestination</a> object that is submitted in the <a>CreateForecastExportJob</a>
-    /// request.
+    /// request, and part of the <a>DataDestination</a> object.
     /// </summary>
     public partial class S3Config
     {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,10 +30,10 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// An object that represents a target and its relative weight. Traffic is distributed
-    ///         across targets according to their relative weight. For example, a weighted
-    /// target with a         relative weight of 50 receives five times as much traffic as
-    /// one with a relative weight of         10. The total weight for all targets combined
-    /// must be less than or equal to 100.
+    /// across targets according to their relative weight. For example, a weighted target
+    /// with a relative weight of 50 receives five times as much traffic as one with a relative
+    /// weight of 10. The total weight for all targets combined must be less than or equal
+    /// to 100.
     /// </summary>
     public partial class WeightedTarget
     {

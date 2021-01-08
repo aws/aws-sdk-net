@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -65,14 +65,23 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field DashboardId set");
             request.AddPathResource("{DashboardId}", StringUtils.FromString(publicRequest.DashboardId));
             
+            if (publicRequest.IsSetAdditionalDashboardIds())
+                request.ParameterCollection.Add("additional-dashboard-ids", publicRequest.AdditionalDashboardIds);
+            
             if (publicRequest.IsSetIdentityType())
                 request.Parameters.Add("creds-type", StringUtils.FromString(publicRequest.IdentityType));
+            
+            if (publicRequest.IsSetNamespace())
+                request.Parameters.Add("namespace", StringUtils.FromString(publicRequest.Namespace));
             
             if (publicRequest.IsSetResetDisabled())
                 request.Parameters.Add("reset-disabled", StringUtils.FromBool(publicRequest.ResetDisabled));
             
             if (publicRequest.IsSetSessionLifetimeInMinutes())
                 request.Parameters.Add("session-lifetime", StringUtils.FromLong(publicRequest.SessionLifetimeInMinutes));
+            
+            if (publicRequest.IsSetStatePersistenceEnabled())
+                request.Parameters.Add("state-persistence-enabled", StringUtils.FromBool(publicRequest.StatePersistenceEnabled));
             
             if (publicRequest.IsSetUndoRedoDisabled())
                 request.Parameters.Add("undo-redo-disabled", StringUtils.FromBool(publicRequest.UndoRedoDisabled));

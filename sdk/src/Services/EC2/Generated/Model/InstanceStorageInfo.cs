@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,12 +34,13 @@ namespace Amazon.EC2.Model
     public partial class InstanceStorageInfo
     {
         private List<DiskInfo> _disks = new List<DiskInfo>();
+        private EphemeralNvmeSupport _nvmeSupport;
         private long? _totalSizeInGB;
 
         /// <summary>
         /// Gets and sets the property Disks. 
         /// <para>
-        /// Array describing the disks that are available for the instance type.
+        /// Describes the disks that are available for the instance type.
         /// </para>
         /// </summary>
         public List<DiskInfo> Disks
@@ -52,6 +53,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDisks()
         {
             return this._disks != null && this._disks.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NvmeSupport. 
+        /// <para>
+        /// Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+        /// </para>
+        /// </summary>
+        public EphemeralNvmeSupport NvmeSupport
+        {
+            get { return this._nvmeSupport; }
+            set { this._nvmeSupport = value; }
+        }
+
+        // Check to see if NvmeSupport property is set
+        internal bool IsSetNvmeSupport()
+        {
+            return this._nvmeSupport != null;
         }
 
         /// <summary>

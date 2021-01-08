@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,6 +55,46 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
                     var marshaller = DeviceMarshaller.Instance;
                     marshaller.Marshall(requestObjectDevicesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetInitProcessEnabled())
+            {
+                context.Writer.WritePropertyName("initProcessEnabled");
+                context.Writer.Write(requestObject.InitProcessEnabled);
+            }
+
+            if(requestObject.IsSetMaxSwap())
+            {
+                context.Writer.WritePropertyName("maxSwap");
+                context.Writer.Write(requestObject.MaxSwap);
+            }
+
+            if(requestObject.IsSetSharedMemorySize())
+            {
+                context.Writer.WritePropertyName("sharedMemorySize");
+                context.Writer.Write(requestObject.SharedMemorySize);
+            }
+
+            if(requestObject.IsSetSwappiness())
+            {
+                context.Writer.WritePropertyName("swappiness");
+                context.Writer.Write(requestObject.Swappiness);
+            }
+
+            if(requestObject.IsSetTmpfs())
+            {
+                context.Writer.WritePropertyName("tmpfs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTmpfsListValue in requestObject.Tmpfs)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TmpfsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTmpfsListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

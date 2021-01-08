@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -147,6 +147,18 @@ namespace Amazon.Kafka
         /// </summary>
         public static readonly ClusterState FAILED = new ClusterState("FAILED");
         /// <summary>
+        /// Constant HEALING for ClusterState
+        /// </summary>
+        public static readonly ClusterState HEALING = new ClusterState("HEALING");
+        /// <summary>
+        /// Constant MAINTENANCE for ClusterState
+        /// </summary>
+        public static readonly ClusterState MAINTENANCE = new ClusterState("MAINTENANCE");
+        /// <summary>
+        /// Constant REBOOTING_BROKER for ClusterState
+        /// </summary>
+        public static readonly ClusterState REBOOTING_BROKER = new ClusterState("REBOOTING_BROKER");
+        /// <summary>
         /// Constant UPDATING for ClusterState
         /// </summary>
         public static readonly ClusterState UPDATING = new ClusterState("UPDATING");
@@ -258,6 +270,10 @@ namespace Amazon.Kafka
         /// Constant PER_TOPIC_PER_BROKER for EnhancedMonitoring
         /// </summary>
         public static readonly EnhancedMonitoring PER_TOPIC_PER_BROKER = new EnhancedMonitoring("PER_TOPIC_PER_BROKER");
+        /// <summary>
+        /// Constant PER_TOPIC_PER_PARTITION for EnhancedMonitoring
+        /// </summary>
+        public static readonly EnhancedMonitoring PER_TOPIC_PER_PARTITION = new EnhancedMonitoring("PER_TOPIC_PER_PARTITION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

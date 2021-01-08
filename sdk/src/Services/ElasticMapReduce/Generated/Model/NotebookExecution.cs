@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -324,7 +324,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags associated with a notebook execution. Tags are user-defined key value
+        /// A list of tags associated with a notebook execution. Tags are user-defined key-value
         /// pairs that consist of a required key string with a maximum of 128 characters and an
         /// optional value string with a maximum of 256 characters.
         /// </para>

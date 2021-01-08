@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,10 +33,30 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class RelationalTable
     {
+        private string _catalog;
         private string _dataSourceArn;
         private List<InputColumn> _inputColumns = new List<InputColumn>();
         private string _name;
         private string _schema;
+
+        /// <summary>
+        /// Gets and sets the property Catalog. 
+        /// <para>
+        /// The catalog associated with a table.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string Catalog
+        {
+            get { return this._catalog; }
+            set { this._catalog = value; }
+        }
+
+        // Check to see if Catalog property is set
+        internal bool IsSetCatalog()
+        {
+            return this._catalog != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataSourceArn. 

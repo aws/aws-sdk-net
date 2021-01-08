@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,7 +43,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses)
         /// and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal load balancers
-        /// must use <code>ipv4</code>. Network Load Balancers must use <code>ipv4</code>.
+        /// must use <code>ipv4</code>. You can’t specify <code>dualstack</code> for a load balancer
+        /// with a UDP or TCP_UDP listener.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

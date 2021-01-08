@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,9 +30,9 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDomainEntry operation.
-    /// Creates one of the following entry records associated with the domain: Address (A),
-    /// canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority
-    /// (SOA), service locator (SRV), or text (TXT).
+    /// Creates one of the following domain name system (DNS) records in a domain DNS zone:
+    /// Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS), start
+    /// of authority (SOA), service locator (SRV), or text (TXT).
     /// 
     ///  
     /// <para>

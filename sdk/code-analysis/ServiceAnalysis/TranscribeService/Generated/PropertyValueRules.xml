@@ -323,6 +323,12 @@
     <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TranscribeService.Model.StartMedicalTranscriptionJobRequest.OutputKey</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9-_.!*'()/]{1,1024}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeService.Model.StartTranscriptionJobRequest.MediaSampleRateHertz</property>
     <min>8000</min>
     <max>48000</max>
@@ -337,6 +343,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.StartTranscriptionJobRequest.OutputKey</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9-_.!*'()/]{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.StartTranscriptionJobRequest.TranscriptionJobName</property>

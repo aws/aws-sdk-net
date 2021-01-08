@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,8 +39,9 @@ namespace Amazon.Organizations.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Use the <code>OperationId</code> response element from this operation to provide as
-    /// a parameter to the <a>DescribeCreateAccountStatus</a> operation.
+    /// Use the <code>Id</code> member of the <code>CreateAccountStatus</code> response element
+    /// from this operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a>
+    /// operation.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -49,7 +50,7 @@ namespace Amazon.Organizations.Model
     /// the Activity in Your Organization</a> in the <i>AWS Organizations User Guide.</i>
     /// 
     /// </para>
-    ///  </li> </ul>  
+    ///  </li> </ul> 
     /// <para>
     /// The user who calls the API to create an account must have the <code>organizations:CreateAccount</code>
     /// permission. If you enabled all features in the organization, AWS Organizations creates
@@ -59,15 +60,20 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// AWS Organizations preconfigures the new member account with a role (named <code>OrganizationAccountAccessRole</code>
-    /// by default) that grants users in the master account administrator permissions in the
-    /// new member account. Principals in the master account can assume the role. AWS Organizations
-    /// clones the company name and address information for the new account from the organization's
-    /// master account.
+    /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+    /// permission.
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's master account.
+    /// AWS Organizations preconfigures the new member account with a role (named <code>OrganizationAccountAccessRole</code>
+    /// by default) that grants users in the management account administrator permissions
+    /// in the new member account. Principals in the management account can assume the role.
+    /// AWS Organizations clones the company name and address information for the new account
+    /// from the organization's management account.
+    /// </para>
+    ///  
+    /// <para>
+    /// This operation can be called only from the organization's management account.
     /// </para>
     ///  
     /// <para>
@@ -124,6 +130,7 @@ namespace Amazon.Organizations.Model
         private string _email;
         private IAMUserAccessToBilling _iamUserAccessToBilling;
         private string _roleName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AccountName. 
@@ -203,9 +210,9 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// The name of an IAM role that AWS Organizations automatically preconfigures in the
-        /// new member account. This role trusts the master account, allowing users in the master
-        /// account to assume the role, as permitted by the master account administrator. The
-        /// role has administrator permissions in the new member account.
+        /// new member account. This role trusts the management account, allowing users in the
+        /// management account to assume the role, as permitted by the management account administrator.
+        /// The role has administrator permissions in the new member account.
         /// </para>
         ///  
         /// <para>
@@ -246,6 +253,34 @@ namespace Amazon.Organizations.Model
         internal bool IsSetRoleName()
         {
             return this._roleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that you want to attach to the newly created account. For each tag
+        /// in the list, you must specify both a tag key and a value. You can set the value to
+        /// an empty string, but you can't set it to <code>null</code>. For more information about
+        /// tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+        /// AWS Organizations resources</a> in the AWS Organizations User Guide.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If any one of the tags is invalid or if you exceed the allowed number of tags for
+        /// an account, then the entire request fails and the account is not created.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

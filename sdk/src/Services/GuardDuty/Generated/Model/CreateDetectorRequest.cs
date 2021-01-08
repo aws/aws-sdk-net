@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DataSources. 
         /// <para>
-        /// An object that describes which data sources will be enabled for the detector.
+        /// Describes which data sources will be enabled for the detector.
         /// </para>
         /// </summary>
         public DataSourceConfigurations DataSources
@@ -102,7 +102,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FindingPublishingFrequency. 
         /// <para>
-        /// An enum value that specifies how frequently updated findings are exported.
+        /// A value that specifies how frequently updated findings are exported.
         /// </para>
         /// </summary>
         public FindingPublishingFrequency FindingPublishingFrequency

@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.AssociateConnectionAliasRequest.AliasId</property>
+    <min>13</min>
+    <max>68</max>
+    <pattern>^wsca-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.AssociateConnectionAliasRequest.ResourceId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.AssociateConnectionAliasResponse.ConnectionIdentifier</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.AssociateIpGroupsRequest.DirectoryId</property>
     <min>10</min>
     <max>65</max>
@@ -37,12 +53,30 @@
     <pattern>wsi-[0-9a-z]{9,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CreateConnectionAliasRequest.ConnectionString</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[.0-9a-zA-Z\-]{1,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.CreateConnectionAliasResponse.AliasId</property>
+    <min>13</min>
+    <max>68</max>
+    <pattern>^wsca-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.CreateIpGroupResponse.GroupId</property>
     <pattern>wsipg-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.CreateTagsRequest.ResourceId</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DeleteConnectionAliasRequest.AliasId</property>
+    <min>13</min>
+    <max>68</max>
+    <pattern>^wsca-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DeleteIpGroupRequest.GroupId</property>
@@ -69,12 +103,58 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeAccountModificationsRequest.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeAccountModificationsResponse.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeConnectionAliasesRequest.Limit</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeConnectionAliasesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeConnectionAliasesRequest.ResourceId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeConnectionAliasesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeConnectionAliasPermissionsRequest.AliasId</property>
+    <min>13</min>
+    <max>68</max>
+    <pattern>^wsca-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeConnectionAliasPermissionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeConnectionAliasPermissionsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeConnectionAliasPermissionsResponse.AliasId</property>
+    <min>13</min>
+    <max>68</max>
+    <pattern>^wsca-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DescribeConnectionAliasPermissionsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeIpGroupsRequest.MaxResults</property>
@@ -84,12 +164,12 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeIpGroupsRequest.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeIpGroupsResponse.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeTagsRequest.ResourceId</property>
@@ -98,12 +178,12 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspaceBundlesRequest.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspaceBundlesResponse.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspaceDirectoriesRequest.Limit</property>
@@ -113,12 +193,12 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspaceDirectoriesRequest.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspaceDirectoriesResponse.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspaceImagePermissionsRequest.ImageId</property>
@@ -132,7 +212,7 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspaceImagePermissionsRequest.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspaceImagePermissionsResponse.ImageId</property>
@@ -141,7 +221,7 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspaceImagePermissionsResponse.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspaceImagesRequest.MaxResults</property>
@@ -151,12 +231,12 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspaceImagesRequest.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspaceImagesResponse.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspacesRequest.BundleId</property>
@@ -176,7 +256,7 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspacesRequest.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspacesRequest.UserName</property>
@@ -186,21 +266,27 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspacesResponse.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspacesConnectionStatusRequest.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspacesConnectionStatusResponse.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DescribeWorkspaceSnapshotsRequest.WorkspaceId</property>
     <pattern>^ws-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.DisassociateConnectionAliasRequest.AliasId</property>
+    <min>13</min>
+    <max>68</max>
+    <pattern>^wsca-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DisassociateIpGroupsRequest.DirectoryId</property>
@@ -240,12 +326,12 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.ListAvailableManagementCidrRangesRequest.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.ListAvailableManagementCidrRangesResponse.NextToken</property>
     <min>1</min>
-    <max>63</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.MigrateWorkspaceRequest.BundleId</property>
@@ -312,6 +398,12 @@
     <pattern>wsipg-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.UpdateConnectionAliasPermissionRequest.AliasId</property>
+    <min>13</min>
+    <max>68</max>
+    <pattern>^wsca-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpaces.Model.UpdateRulesOfIpGroupRequest.GroupId</property>
     <pattern>wsipg-[0-9a-z]{8,63}$</pattern>
   </property-value-rule>
@@ -330,6 +422,40 @@
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.ClientPropertiesResult.ResourceId</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ConnectionAlias.AliasId</property>
+    <min>13</min>
+    <max>68</max>
+    <pattern>^wsca-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ConnectionAlias.ConnectionString</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[.0-9a-zA-Z\-]{1,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ConnectionAlias.OwnerAccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ConnectionAliasAssociation.AssociatedAccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ConnectionAliasAssociation.ConnectionIdentifier</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ConnectionAliasAssociation.ResourceId</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpaces.Model.ConnectionAliasPermission.SharedAccountId</property>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpaces.Model.DefaultWorkspaceCreationProperties.CustomSecurityGroupId</property>

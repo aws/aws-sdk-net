@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object representing the details of a container that is part of a job attempt.
+    /// An object representing the details of a container that's part of a job attempt.
     /// </summary>
     public partial class AttemptContainerDetail
     {
@@ -137,8 +137,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the
-        /// job attempt. Each container attempt receives a task ARN when they reach the <code>STARTING</code>
+        /// The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the job
+        /// attempt. Each container attempt receives a task ARN when they reach the <code>STARTING</code>
         /// status.
         /// </para>
         /// </summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -942,6 +942,10 @@ namespace Amazon.Organizations
     public class InvalidInputExceptionReason : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DUPLICATE_TAG_KEY for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason DUPLICATE_TAG_KEY = new InvalidInputExceptionReason("DUPLICATE_TAG_KEY");
         /// <summary>
         /// Constant IMMUTABLE_POLICY for InvalidInputExceptionReason
         /// </summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -86,6 +86,7 @@ namespace Amazon.ElasticMapReduce.Model
         private ManagedScalingPolicy _managedScalingPolicy;
         private string _name;
         private List<SupportedProductConfig> _newSupportedProducts = new List<SupportedProductConfig>();
+        private List<PlacementGroupConfig> _placementGroupConfigs = new List<PlacementGroupConfig>();
         private string _releaseLabel;
         private RepoUpgradeOnBoot _repoUpgradeOnBoot;
         private ScaleDownBehavior _scaleDownBehavior;
@@ -265,8 +266,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsRootVolumeSize. 
         /// <para>
-        /// The size, in GiB, of the EBS root device volume of the Linux AMI that is used for
-        /// each EC2 instance. Available in Amazon EMR version 4.x and later.
+        /// The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used
+        /// for each EC2 instance. Available in Amazon EMR version 4.x and later.
         /// </para>
         /// </summary>
         public int EbsRootVolumeSize
@@ -327,7 +328,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// Attributes for Kerberos configuration when Kerberos authentication is enabled using
         /// a security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
-        /// Kerberos Authentication</a> in the <i>EMR Management Guide</i>.
+        /// Kerberos Authentication</a> in the <i>Amazon EMR Management Guide</i>.
         /// </para>
         /// </summary>
         public KerberosAttributes KerberosAttributes
@@ -346,8 +347,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property LogEncryptionKmsKeyId. 
         /// <para>
         /// The AWS KMS customer master key (CMK) used for encrypting log files. If a value is
-        /// not provided, the logs will remain encrypted by AES-256. This attribute is only available
-        /// with EMR version 5.30.0 and later, excluding EMR 6.0.0.
+        /// not provided, the logs remain encrypted by AES-256. This attribute is only available
+        /// with Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10280)]
@@ -481,6 +482,24 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PlacementGroupConfigs. 
+        /// <para>
+        /// The specified placement group configuration for an Amazon EMR cluster.
+        /// </para>
+        /// </summary>
+        public List<PlacementGroupConfig> PlacementGroupConfigs
+        {
+            get { return this._placementGroupConfigs; }
+            set { this._placementGroupConfigs = value; }
+        }
+
+        // Check to see if PlacementGroupConfigs property is set
+        internal bool IsSetPlacementGroupConfigs()
+        {
+            return this._placementGroupConfigs != null && this._placementGroupConfigs.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ReleaseLabel. 
         /// <para>
         /// The Amazon EMR release label, which determines the version of open-source application
@@ -535,12 +554,13 @@ namespace Amazon.ElasticMapReduce.Model
         /// indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless
         /// of when the request to terminate the instance was submitted. This option is only available
         /// with Amazon EMR 5.1.0 and later and is the default for clusters created using that
-        /// version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
-        /// and drains tasks from nodes before terminating the Amazon EC2 instances, regardless
-        /// of the instance-hour boundary. With either behavior, Amazon EMR removes the least
-        /// active nodes first and blocks instance termination if it could lead to HDFS corruption.
-        /// <code>TERMINATE_AT_TASK_COMPLETION</code> available only in Amazon EMR version 4.1.0
-        /// and later, and is the default for versions of Amazon EMR earlier than 5.1.0.
+        /// version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds
+        /// nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2
+        /// instances, regardless of the instance-hour boundary. With either behavior, Amazon
+        /// EMR removes the least active nodes first and blocks instance termination if it could
+        /// lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only
+        /// in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+        /// earlier than 5.1.0.
         /// </para>
         /// </summary>
         public ScaleDownBehavior ScaleDownBehavior

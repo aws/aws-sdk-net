@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -119,7 +119,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property MasterId. 
         /// <para>
-        /// The master account ID.
+        /// The administrator account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -138,7 +138,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property RelationshipStatus. 
         /// <para>
-        /// The status of the relationship between the member and the master.
+        /// The status of the relationship between the member and the administrator.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -105,6 +105,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Handler = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ImageConfigResponse", targetDepth))
+                {
+                    var unmarshaller = ImageConfigResponseUnmarshaller.Instance;
+                    response.ImageConfigResponse = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KMSKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -153,6 +159,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.MemorySize = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PackageType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PackageType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RevisionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -169,6 +181,18 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Runtime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SigningJobArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SigningJobArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SigningProfileVersionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SigningProfileVersionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("State", targetDepth))
@@ -236,9 +260,21 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("CodeSigningConfigNotFoundException"))
+                {
+                    return CodeSigningConfigNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CodeStorageExceededException"))
                 {
                     return CodeStorageExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("CodeVerificationFailedException"))
+                {
+                    return CodeVerificationFailedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCodeSignatureException"))
+                {
+                    return InvalidCodeSignatureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
                 {

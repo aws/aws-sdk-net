@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -117,6 +117,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Handler");
                     context.Writer.Write(publicRequest.Handler);
+                }
+
+                if(publicRequest.IsSetImageConfig())
+                {
+                    context.Writer.WritePropertyName("ImageConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ImageConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ImageConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetKMSKeyArn())

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,20 @@ namespace Amazon.ResourceGroups.Model
     /// Container for the parameters to the GetTags operation.
     /// Returns a list of tags that are associated with a resource group, specified by an
     /// ARN.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Minimum permissions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// To run this command, you must have the following permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>resource-groups:GetTags</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetTagsRequest : AmazonResourceGroupsRequest
     {

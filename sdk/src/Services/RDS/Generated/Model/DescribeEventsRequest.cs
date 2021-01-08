@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,13 @@ namespace Amazon.RDS.Model
     /// groups, DB snapshots, and DB cluster snapshots for the past 14 days. Events specific
     /// to a particular DB instances, DB clusters, DB parameter groups, DB security groups,
     /// DB snapshots, and DB cluster snapshots group can be obtained by providing the name
-    /// as a parameter. By default, the past hour of events are returned.
+    /// as a parameter.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// By default, the past hour of events are returned.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeEventsRequest : AmazonRDSRequest
     {

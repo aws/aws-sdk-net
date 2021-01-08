@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -70,6 +70,12 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("platformDisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlatformDisplayName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("platformId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -80,6 +86,24 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProfileName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("profileVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProfileVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("profileVersionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProfileVersionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("signatureValidityPeriod", targetDepth))
+                {
+                    var unmarshaller = SignatureValidityPeriodUnmarshaller.Instance;
+                    unmarshalledObject.SignatureValidityPeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("signingMaterial", targetDepth))

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the DescribeAuditFinding operation.
     /// Gets information about a single audit finding. Properties include the reason for noncompliance,
-    /// the severity of the issue, and when the audit that returned the finding was started.
+    /// the severity of the issue, and the start time when the audit that returned the finding.
     /// </summary>
     public partial class DescribeAuditFindingRequest : AmazonIoTRequest
     {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,21 +43,43 @@ namespace Amazon.IoTSiteWise.Model
     /// </para>
     ///  
     /// <para>
-    /// If you remove a property from an asset model or update a property's formula expression,
-    /// AWS IoT SiteWise deletes all previous data for that property. If you remove a hierarchy
-    /// definition from an asset model, AWS IoT SiteWise disassociates every asset associated
-    /// with that hierarchy. You can't change the type or data type of an existing property.
+    /// If you remove a property from an asset model, AWS IoT SiteWise deletes all previous
+    /// data for that property. If you remove a hierarchy definition from an asset model,
+    /// AWS IoT SiteWise disassociates every asset associated with that hierarchy. You can't
+    /// change the type or data type of an existing property.
     /// </para>
     ///  </important>
     /// </summary>
     public partial class UpdateAssetModelRequest : AmazonIoTSiteWiseRequest
     {
+        private List<AssetModelCompositeModel> _assetModelCompositeModels = new List<AssetModelCompositeModel>();
         private string _assetModelDescription;
         private List<AssetModelHierarchy> _assetModelHierarchies = new List<AssetModelHierarchy>();
         private string _assetModelId;
         private string _assetModelName;
         private List<AssetModelProperty> _assetModelProperties = new List<AssetModelProperty>();
         private string _clientToken;
+
+        /// <summary>
+        /// Gets and sets the property AssetModelCompositeModels. 
+        /// <para>
+        /// The composite asset models that are part of this asset model. Composite asset models
+        /// are asset models that contain specific properties. Each composite model has a type
+        /// that defines the properties that the composite model supports. Use composite asset
+        /// models to define alarms on this asset model.
+        /// </para>
+        /// </summary>
+        public List<AssetModelCompositeModel> AssetModelCompositeModels
+        {
+            get { return this._assetModelCompositeModels; }
+            set { this._assetModelCompositeModels = value; }
+        }
+
+        // Check to see if AssetModelCompositeModels property is set
+        internal bool IsSetAssetModelCompositeModels()
+        {
+            return this._assetModelCompositeModels != null && this._assetModelCompositeModels.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AssetModelDescription. 

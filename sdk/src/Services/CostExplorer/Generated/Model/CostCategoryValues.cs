@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,10 +30,24 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// The Cost Categories values used for filtering the costs.
+    /// 
+    ///  
+    /// <para>
+    /// If <code>Values</code> and <code>Key</code> are not specified, the <code>ABSENT</code>
+    /// <code>MatchOption</code> is applied to all Cost Categories. That is, filtering on
+    /// resources that are not mapped to any Cost Categories.
+    /// </para>
+    ///  
+    /// <para>
+    /// If <code>Values</code> is provided and <code>Key</code> is not specified, the <code>ABSENT</code>
+    /// <code>MatchOption</code> is applied to the Cost Categories <code>Key</code> only.
+    /// That is, filtering on resources without the given Cost Categories key.
+    /// </para>
     /// </summary>
     public partial class CostCategoryValues
     {
         private string _key;
+        private List<string> _matchOptions = new List<string>();
         private List<string> _values = new List<string>();
 
         /// <summary>
@@ -50,6 +64,26 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetKey()
         {
             return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MatchOptions. 
+        /// <para>
+        ///  The match options that you can use to filter your results. MatchOptions is only applicable
+        /// for actions related to cost category. The default values for <code>MatchOptions</code>
+        /// is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>. 
+        /// </para>
+        /// </summary>
+        public List<string> MatchOptions
+        {
+            get { return this._matchOptions; }
+            set { this._matchOptions = value; }
+        }
+
+        // Check to see if MatchOptions property is set
+        internal bool IsSetMatchOptions()
+        {
+            return this._matchOptions != null && this._matchOptions.Count > 0; 
         }
 
         /// <summary>

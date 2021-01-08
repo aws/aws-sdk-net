@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -128,6 +128,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         {
                                             request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.SnapshotId));
                                         }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.IsSetThroughput())
+                                        {
+                                            request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.Throughput));
+                                        }
                                         if(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.IsSetVolumeSize())
                                         {
                                             request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "BlockDeviceMapping" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.Ebs.VolumeSize));
@@ -239,6 +243,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             }
                                             publicRequestSpotFleetRequestConfiglistValuelistValuelistValueIndex++;
                                         }
+                                    }
+                                    if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetNetworkCardIndex())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "NetworkInterfaceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "NetworkCardIndex", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.NetworkCardIndex));
                                     }
                                     if(publicRequestSpotFleetRequestConfiglistValuelistValue.IsSetNetworkInterfaceId())
                                     {
@@ -464,6 +472,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.SpotFleetRequestConfig.IsSetReplaceUnhealthyInstances())
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "ReplaceUnhealthyInstances", StringUtils.FromBool(publicRequest.SpotFleetRequestConfig.ReplaceUnhealthyInstances));
+                    }
+                    if(publicRequest.SpotFleetRequestConfig.IsSetSpotMaintenanceStrategies())
+                    {
+                        if(publicRequest.SpotFleetRequestConfig.SpotMaintenanceStrategies.IsSetCapacityRebalance())
+                        {
+                            if(publicRequest.SpotFleetRequestConfig.SpotMaintenanceStrategies.CapacityRebalance.IsSetReplacementStrategy())
+                            {
+                                request.Parameters.Add("SpotFleetRequestConfig" + "." + "SpotMaintenanceStrategies" + "." + "CapacityRebalance" + "." + "ReplacementStrategy", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.SpotMaintenanceStrategies.CapacityRebalance.ReplacementStrategy));
+                            }
+                        }
                     }
                     if(publicRequest.SpotFleetRequestConfig.IsSetSpotMaxTotalPrice())
                     {

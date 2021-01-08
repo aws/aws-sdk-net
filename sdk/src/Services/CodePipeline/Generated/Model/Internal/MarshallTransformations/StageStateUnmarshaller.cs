@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<ActionState, ActionStateUnmarshaller>(ActionStateUnmarshaller.Instance);
                     unmarshalledObject.ActionStates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("inboundExecution", targetDepth))
+                {
+                    var unmarshaller = StageExecutionUnmarshaller.Instance;
+                    unmarshalledObject.InboundExecution = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("inboundTransitionState", targetDepth))

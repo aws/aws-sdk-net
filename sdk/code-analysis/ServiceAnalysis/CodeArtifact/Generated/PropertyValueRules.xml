@@ -67,7 +67,7 @@
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.CreateDomainRequest.EncryptionKey</property>
     <min>1</min>
-    <max>2048</max>
+    <max>1011</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -847,6 +847,12 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeArtifact.Model.PutDomainPermissionsPolicyRequest.Domain</property>
     <min>2</min>
     <max>50</max>
@@ -897,6 +903,18 @@
     <min>2</min>
     <max>100</max>
     <pattern>[A-Za-z0-9][A-Za-z0-9._\-]{1,99}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.UpdatePackageVersionsStatusRequest.Domain</property>
@@ -960,13 +978,13 @@
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DomainDescription.Arn</property>
     <min>1</min>
-    <max>2048</max>
+    <max>1011</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DomainDescription.EncryptionKey</property>
     <min>1</min>
-    <max>2048</max>
+    <max>1011</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -982,15 +1000,21 @@
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.DomainDescription.S3BucketArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DomainSummary.Arn</property>
     <min>1</min>
-    <max>2048</max>
+    <max>1011</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.DomainSummary.EncryptionKey</property>
     <min>1</min>
-    <max>2048</max>
+    <max>1011</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1079,7 +1103,7 @@
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.RepositoryDescription.Arn</property>
     <min>1</min>
-    <max>2048</max>
+    <max>1011</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1118,7 +1142,7 @@
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.RepositorySummary.Arn</property>
     <min>1</min>
-    <max>2048</max>
+    <max>1011</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1152,7 +1176,7 @@
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.ResourcePolicy.ResourceArn</property>
     <min>1</min>
-    <max>2048</max>
+    <max>1011</max>
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1160,6 +1184,16 @@
     <min>1</min>
     <max>100</max>
     <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeArtifact.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeArtifact.Model.UpstreamRepository.RepositoryName</property>

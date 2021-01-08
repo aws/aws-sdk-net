@@ -244,6 +244,12 @@
     <max>1400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.NotificationPolicy</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>^\{[\w\s:\{\}\[\]"]*}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateNFSFileShareRequest.Role</property>
     <min>20</min>
     <max>2048</max>
@@ -298,6 +304,12 @@
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.LocationARN</property>
     <min>16</min>
     <max>1400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.NotificationPolicy</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>^\{[\w\s:\{\}\[\]"]*}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CreateSMBFileShareRequest.Role</property>
@@ -615,6 +627,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.DescribeBandwidthRateLimitResponse.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeBandwidthRateLimitScheduleRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.DescribeBandwidthRateLimitScheduleResponse.GatewayARN</property>
     <min>50</min>
     <max>500</max>
   </property-value-rule>
@@ -1251,6 +1273,16 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateBandwidthRateLimitScheduleRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateBandwidthRateLimitScheduleResponse.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateChapCredentialsRequest.InitiatorName</property>
     <min>1</min>
     <max>255</max>
@@ -1369,6 +1401,12 @@
     <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.NotificationPolicy</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>^\{[\w\s:\{\}\[\]"]*}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateNFSFileShareRequest.Squash</property>
     <min>5</min>
     <max>15</max>
@@ -1404,7 +1442,23 @@
     <pattern>(^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateSMBFileShareRequest.NotificationPolicy</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>^\{[\w\s:\{\}\[\]"]*}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.UpdateSMBFileShareResponse.FileShareARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateSMBFileShareVisibilityRequest.GatewayARN</property>
+    <min>50</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.UpdateSMBFileShareVisibilityResponse.GatewayARN</property>
     <min>50</min>
     <max>500</max>
   </property-value-rule>
@@ -1478,6 +1532,34 @@
     <min>1</min>
     <max>4</max>
     <pattern>^[A-Z]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.BandwidthRateLimitInterval.AverageDownloadRateLimitInBitsPerSec</property>
+    <min>102400</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.BandwidthRateLimitInterval.AverageUploadRateLimitInBitsPerSec</property>
+    <min>51200</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.BandwidthRateLimitInterval.EndHourOfDay</property>
+    <min>0</min>
+    <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.BandwidthRateLimitInterval.EndMinuteOfHour</property>
+    <min>0</min>
+    <max>59</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.BandwidthRateLimitInterval.StartHourOfDay</property>
+    <min>0</min>
+    <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.BandwidthRateLimitInterval.StartMinuteOfHour</property>
+    <min>0</min>
+    <max>59</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.CachediSCSIVolume.KMSKey</property>
@@ -1664,6 +1746,12 @@
     <max>1400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StorageGateway.Model.NFSFileShareInfo.NotificationPolicy</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>^\{[\w\s:\{\}\[\]"]*}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StorageGateway.Model.NFSFileShareInfo.Role</property>
     <min>20</min>
     <max>2048</max>
@@ -1739,6 +1827,12 @@
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.LocationARN</property>
     <min>16</min>
     <max>1400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StorageGateway.Model.SMBFileShareInfo.NotificationPolicy</property>
+    <min>2</min>
+    <max>100</max>
+    <pattern>^\{[\w\s:\{\}\[\]"]*}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StorageGateway.Model.SMBFileShareInfo.Role</property>

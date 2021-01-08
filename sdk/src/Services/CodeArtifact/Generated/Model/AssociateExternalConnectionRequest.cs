@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -114,6 +114,10 @@ namespace Amazon.CodeArtifact.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>public:maven-commonsware</code> - for the CommonsWare Android repository. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>public:nuget-org</code> - for the NuGet Gallery. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

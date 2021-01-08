@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,7 +59,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property IncludeExecutionData. 
         /// <para>
-        /// Determines whether execution data is included in your log. When set to <code>FALSE</code>,
+        /// Determines whether execution data is included in your log. When set to <code>false</code>,
         /// data is excluded.
         /// </para>
         /// </summary>

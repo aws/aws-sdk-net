@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VirtualGatewayListener requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConnectionPool())
+            {
+                context.Writer.WritePropertyName("connectionPool");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VirtualGatewayConnectionPoolMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConnectionPool, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetHealthCheck())
             {
                 context.Writer.WritePropertyName("healthCheck");

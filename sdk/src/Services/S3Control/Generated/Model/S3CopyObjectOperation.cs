@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch
-    /// Operations passes each value through to the underlying PUT Copy object API. For more
-    /// information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT
+    /// Contains the configuration parameters for a PUT Copy object operation. S3 Batch Operations
+    /// passes each value through to the underlying PUT Copy object API. For more information
+    /// about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT
     /// Object - Copy</a>.
     /// </summary>
     public partial class S3CopyObjectOperation
@@ -146,7 +146,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property ObjectLockLegalHoldStatus. 
         /// <para>
-        /// The Legal Hold status to be applied to all objects in the Batch Operations job.
+        /// The legal hold status to be applied to all objects in the Batch Operations job.
         /// </para>
         /// </summary>
         public S3ObjectLockLegalHoldStatus ObjectLockLegalHoldStatus
@@ -164,7 +164,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property ObjectLockMode. 
         /// <para>
-        /// The Retention mode to be applied to all objects in the Batch Operations job.
+        /// The retention mode to be applied to all objects in the Batch Operations job.
         /// </para>
         /// </summary>
         public S3ObjectLockMode ObjectLockMode
@@ -182,8 +182,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property ObjectLockRetainUntilDate. 
         /// <para>
-        /// The date when the applied Object Retention configuration will expire on all objects
-        /// in the Batch Operations job.
+        /// The date when the applied object retention configuration expires on all objects in
+        /// the Batch Operations job.
         /// </para>
         /// </summary>
         public DateTime ObjectLockRetainUntilDate
@@ -199,7 +199,11 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RedirectLocation.
+        /// Gets and sets the property RedirectLocation. 
+        /// <para>
+        /// Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>.
+        /// Allows webpage redirects if the object is accessed through a website endpoint.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string RedirectLocation
@@ -261,7 +265,12 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetKeyPrefix.
+        /// Gets and sets the property TargetKeyPrefix. 
+        /// <para>
+        /// Specifies the folder prefix into which you would like the objects to be copied. For
+        /// example, to copy objects into a folder named "Folder1" in the destination bucket,
+        /// set the TargetKeyPrefix to "Folder1/".
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string TargetKeyPrefix
@@ -277,7 +286,11 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetResource.
+        /// Gets and sets the property TargetResource. 
+        /// <para>
+        /// Specifies the destination bucket ARN for the batch copy operation. For example, to
+        /// copy objects to a bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
         public string TargetResource

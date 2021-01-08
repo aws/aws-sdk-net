@@ -107,7 +107,10 @@
         {"shape":"NoSuchCachePolicy"},
         {"shape":"TooManyDistributionsAssociatedToCachePolicy"},
         {"shape":"NoSuchOriginRequestPolicy"},
-        {"shape":"TooManyDistributionsAssociatedToOriginRequestPolicy"}
+        {"shape":"TooManyDistributionsAssociatedToOriginRequestPolicy"},
+        {"shape":"TooManyDistributionsAssociatedToKeyGroup"},
+        {"shape":"TooManyKeyGroupsAssociatedToDistribution"},
+        {"shape":"TrustedKeyGroupDoesNotExist"}
       ]
     },
     "CreateDistributionWithTags":{
@@ -169,7 +172,10 @@
         {"shape":"NoSuchCachePolicy"},
         {"shape":"TooManyDistributionsAssociatedToCachePolicy"},
         {"shape":"NoSuchOriginRequestPolicy"},
-        {"shape":"TooManyDistributionsAssociatedToOriginRequestPolicy"}
+        {"shape":"TooManyDistributionsAssociatedToOriginRequestPolicy"},
+        {"shape":"TooManyDistributionsAssociatedToKeyGroup"},
+        {"shape":"TooManyKeyGroupsAssociatedToDistribution"},
+        {"shape":"TrustedKeyGroupDoesNotExist"}
       ]
     },
     "CreateFieldLevelEncryptionConfig":{
@@ -231,6 +237,22 @@
         {"shape":"InconsistentQuantities"}
       ]
     },
+    "CreateKeyGroup":{
+      "name":"CreateKeyGroup2020_05_31",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2020-05-31/key-group",
+        "responseCode":201
+      },
+      "input":{"shape":"CreateKeyGroupRequest"},
+      "output":{"shape":"CreateKeyGroupResult"},
+      "errors":[
+        {"shape":"InvalidArgument"},
+        {"shape":"KeyGroupAlreadyExists"},
+        {"shape":"TooManyKeyGroups"},
+        {"shape":"TooManyPublicKeysInKeyGroup"}
+      ]
+    },
     "CreateMonitoringSubscription":{
       "name":"CreateMonitoringSubscription2020_05_31",
       "http":{
@@ -277,6 +299,26 @@
         {"shape":"PublicKeyAlreadyExists"},
         {"shape":"InvalidArgument"},
         {"shape":"TooManyPublicKeys"}
+      ]
+    },
+    "CreateRealtimeLogConfig":{
+      "name":"CreateRealtimeLogConfig2020_05_31",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2020-05-31/realtime-log-config",
+        "responseCode":201
+      },
+      "input":{
+        "shape":"CreateRealtimeLogConfigRequest",
+        "locationName":"CreateRealtimeLogConfigRequest",
+        "xmlNamespace":{"uri":"http://cloudfront.amazonaws.com/doc/2020-05-31/"}
+      },
+      "output":{"shape":"CreateRealtimeLogConfigResult"},
+      "errors":[
+        {"shape":"RealtimeLogConfigAlreadyExists"},
+        {"shape":"TooManyRealtimeLogConfigs"},
+        {"shape":"InvalidArgument"},
+        {"shape":"AccessDenied"}
       ]
     },
     "CreateStreamingDistribution":{
@@ -409,6 +451,21 @@
         {"shape":"FieldLevelEncryptionProfileInUse"}
       ]
     },
+    "DeleteKeyGroup":{
+      "name":"DeleteKeyGroup2020_05_31",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/2020-05-31/key-group/{Id}",
+        "responseCode":204
+      },
+      "input":{"shape":"DeleteKeyGroupRequest"},
+      "errors":[
+        {"shape":"InvalidIfMatchVersion"},
+        {"shape":"NoSuchResource"},
+        {"shape":"PreconditionFailed"},
+        {"shape":"ResourceInUse"}
+      ]
+    },
     "DeleteMonitoringSubscription":{
       "name":"DeleteMonitoringSubscription2020_05_31",
       "http":{
@@ -453,6 +510,25 @@
         {"shape":"InvalidIfMatchVersion"},
         {"shape":"NoSuchPublicKey"},
         {"shape":"PreconditionFailed"}
+      ]
+    },
+    "DeleteRealtimeLogConfig":{
+      "name":"DeleteRealtimeLogConfig2020_05_31",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2020-05-31/delete-realtime-log-config/",
+        "responseCode":204
+      },
+      "input":{
+        "shape":"DeleteRealtimeLogConfigRequest",
+        "locationName":"DeleteRealtimeLogConfigRequest",
+        "xmlNamespace":{"uri":"http://cloudfront.amazonaws.com/doc/2020-05-31/"}
+      },
+      "errors":[
+        {"shape":"NoSuchRealtimeLogConfig"},
+        {"shape":"RealtimeLogConfigInUse"},
+        {"shape":"InvalidArgument"},
+        {"shape":"AccessDenied"}
       ]
     },
     "DeleteStreamingDistribution":{
@@ -615,6 +691,30 @@
         {"shape":"AccessDenied"}
       ]
     },
+    "GetKeyGroup":{
+      "name":"GetKeyGroup2020_05_31",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2020-05-31/key-group/{Id}"
+      },
+      "input":{"shape":"GetKeyGroupRequest"},
+      "output":{"shape":"GetKeyGroupResult"},
+      "errors":[
+        {"shape":"NoSuchResource"}
+      ]
+    },
+    "GetKeyGroupConfig":{
+      "name":"GetKeyGroupConfig2020_05_31",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2020-05-31/key-group/{Id}/config"
+      },
+      "input":{"shape":"GetKeyGroupConfigRequest"},
+      "output":{"shape":"GetKeyGroupConfigResult"},
+      "errors":[
+        {"shape":"NoSuchResource"}
+      ]
+    },
     "GetMonitoringSubscription":{
       "name":"GetMonitoringSubscription2020_05_31",
       "http":{
@@ -678,6 +778,24 @@
       "errors":[
         {"shape":"AccessDenied"},
         {"shape":"NoSuchPublicKey"}
+      ]
+    },
+    "GetRealtimeLogConfig":{
+      "name":"GetRealtimeLogConfig2020_05_31",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2020-05-31/get-realtime-log-config/"
+      },
+      "input":{
+        "shape":"GetRealtimeLogConfigRequest",
+        "locationName":"GetRealtimeLogConfigRequest",
+        "xmlNamespace":{"uri":"http://cloudfront.amazonaws.com/doc/2020-05-31/"}
+      },
+      "output":{"shape":"GetRealtimeLogConfigResult"},
+      "errors":[
+        {"shape":"NoSuchRealtimeLogConfig"},
+        {"shape":"InvalidArgument"},
+        {"shape":"AccessDenied"}
       ]
     },
     "GetStreamingDistribution":{
@@ -758,6 +876,19 @@
         {"shape":"AccessDenied"}
       ]
     },
+    "ListDistributionsByKeyGroup":{
+      "name":"ListDistributionsByKeyGroup2020_05_31",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2020-05-31/distributionsByKeyGroupId/{KeyGroupId}"
+      },
+      "input":{"shape":"ListDistributionsByKeyGroupRequest"},
+      "output":{"shape":"ListDistributionsByKeyGroupResult"},
+      "errors":[
+        {"shape":"NoSuchResource"},
+        {"shape":"InvalidArgument"}
+      ]
+    },
     "ListDistributionsByOriginRequestPolicyId":{
       "name":"ListDistributionsByOriginRequestPolicyId2020_05_31",
       "http":{
@@ -770,6 +901,22 @@
         {"shape":"NoSuchOriginRequestPolicy"},
         {"shape":"InvalidArgument"},
         {"shape":"AccessDenied"}
+      ]
+    },
+    "ListDistributionsByRealtimeLogConfig":{
+      "name":"ListDistributionsByRealtimeLogConfig2020_05_31",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2020-05-31/distributionsByRealtimeLogConfig/"
+      },
+      "input":{
+        "shape":"ListDistributionsByRealtimeLogConfigRequest",
+        "locationName":"ListDistributionsByRealtimeLogConfigRequest",
+        "xmlNamespace":{"uri":"http://cloudfront.amazonaws.com/doc/2020-05-31/"}
+      },
+      "output":{"shape":"ListDistributionsByRealtimeLogConfigResult"},
+      "errors":[
+        {"shape":"InvalidArgument"}
       ]
     },
     "ListDistributionsByWebACLId":{
@@ -823,6 +970,18 @@
         {"shape":"AccessDenied"}
       ]
     },
+    "ListKeyGroups":{
+      "name":"ListKeyGroups2020_05_31",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2020-05-31/key-group"
+      },
+      "input":{"shape":"ListKeyGroupsRequest"},
+      "output":{"shape":"ListKeyGroupsResult"},
+      "errors":[
+        {"shape":"InvalidArgument"}
+      ]
+    },
     "ListOriginRequestPolicies":{
       "name":"ListOriginRequestPolicies2020_05_31",
       "http":{
@@ -847,6 +1006,20 @@
       "output":{"shape":"ListPublicKeysResult"},
       "errors":[
         {"shape":"InvalidArgument"}
+      ]
+    },
+    "ListRealtimeLogConfigs":{
+      "name":"ListRealtimeLogConfigs2020_05_31",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2020-05-31/realtime-log-config"
+      },
+      "input":{"shape":"ListRealtimeLogConfigsRequest"},
+      "output":{"shape":"ListRealtimeLogConfigsResult"},
+      "errors":[
+        {"shape":"InvalidArgument"},
+        {"shape":"AccessDenied"},
+        {"shape":"NoSuchRealtimeLogConfig"}
       ]
     },
     "ListStreamingDistributions":{
@@ -1004,7 +1177,10 @@
         {"shape":"NoSuchCachePolicy"},
         {"shape":"TooManyDistributionsAssociatedToCachePolicy"},
         {"shape":"NoSuchOriginRequestPolicy"},
-        {"shape":"TooManyDistributionsAssociatedToOriginRequestPolicy"}
+        {"shape":"TooManyDistributionsAssociatedToOriginRequestPolicy"},
+        {"shape":"TooManyDistributionsAssociatedToKeyGroup"},
+        {"shape":"TooManyKeyGroupsAssociatedToDistribution"},
+        {"shape":"TrustedKeyGroupDoesNotExist"}
       ]
     },
     "UpdateFieldLevelEncryptionConfig":{
@@ -1052,6 +1228,23 @@
         {"shape":"TooManyFieldLevelEncryptionFieldPatterns"}
       ]
     },
+    "UpdateKeyGroup":{
+      "name":"UpdateKeyGroup2020_05_31",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/2020-05-31/key-group/{Id}"
+      },
+      "input":{"shape":"UpdateKeyGroupRequest"},
+      "output":{"shape":"UpdateKeyGroupResult"},
+      "errors":[
+        {"shape":"InvalidIfMatchVersion"},
+        {"shape":"NoSuchResource"},
+        {"shape":"PreconditionFailed"},
+        {"shape":"KeyGroupAlreadyExists"},
+        {"shape":"InvalidArgument"},
+        {"shape":"TooManyPublicKeysInKeyGroup"}
+      ]
+    },
     "UpdateOriginRequestPolicy":{
       "name":"UpdateOriginRequestPolicy2020_05_31",
       "http":{
@@ -1092,6 +1285,24 @@
         {"shape":"PreconditionFailed"}
       ]
     },
+    "UpdateRealtimeLogConfig":{
+      "name":"UpdateRealtimeLogConfig2020_05_31",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/2020-05-31/realtime-log-config/"
+      },
+      "input":{
+        "shape":"UpdateRealtimeLogConfigRequest",
+        "locationName":"UpdateRealtimeLogConfigRequest",
+        "xmlNamespace":{"uri":"http://cloudfront.amazonaws.com/doc/2020-05-31/"}
+      },
+      "output":{"shape":"UpdateRealtimeLogConfigResult"},
+      "errors":[
+        {"shape":"NoSuchRealtimeLogConfig"},
+        {"shape":"InvalidArgument"},
+        {"shape":"AccessDenied"}
+      ]
+    },
     "UpdateStreamingDistribution":{
       "name":"UpdateStreamingDistribution2020_05_31",
       "http":{
@@ -1125,6 +1336,18 @@
       },
       "error":{"httpStatusCode":403},
       "exception":true
+    },
+    "ActiveTrustedKeyGroups":{
+      "type":"structure",
+      "required":[
+        "Enabled",
+        "Quantity"
+      ],
+      "members":{
+        "Enabled":{"shape":"boolean"},
+        "Quantity":{"shape":"integer"},
+        "Items":{"shape":"KGKeyPairIdsList"}
+      }
     },
     "ActiveTrustedSigners":{
       "type":"structure",
@@ -1207,19 +1430,20 @@
       "required":[
         "PathPattern",
         "TargetOriginId",
-        "TrustedSigners",
         "ViewerProtocolPolicy"
       ],
       "members":{
         "PathPattern":{"shape":"string"},
         "TargetOriginId":{"shape":"string"},
         "TrustedSigners":{"shape":"TrustedSigners"},
+        "TrustedKeyGroups":{"shape":"TrustedKeyGroups"},
         "ViewerProtocolPolicy":{"shape":"ViewerProtocolPolicy"},
         "AllowedMethods":{"shape":"AllowedMethods"},
         "SmoothStreaming":{"shape":"boolean"},
         "Compress":{"shape":"boolean"},
         "LambdaFunctionAssociations":{"shape":"LambdaFunctionAssociations"},
         "FieldLevelEncryptionId":{"shape":"string"},
+        "RealtimeLogConfigArn":{"shape":"string"},
         "CachePolicyId":{"shape":"string"},
         "OriginRequestPolicyId":{"shape":"string"},
         "ForwardedValues":{
@@ -1757,6 +1981,35 @@
       },
       "payload":"Invalidation"
     },
+    "CreateKeyGroupRequest":{
+      "type":"structure",
+      "required":["KeyGroupConfig"],
+      "members":{
+        "KeyGroupConfig":{
+          "shape":"KeyGroupConfig",
+          "locationName":"KeyGroupConfig",
+          "xmlNamespace":{"uri":"http://cloudfront.amazonaws.com/doc/2020-05-31/"}
+        }
+      },
+      "payload":"KeyGroupConfig"
+    },
+    "CreateKeyGroupResult":{
+      "type":"structure",
+      "members":{
+        "KeyGroup":{"shape":"KeyGroup"},
+        "Location":{
+          "shape":"string",
+          "location":"header",
+          "locationName":"Location"
+        },
+        "ETag":{
+          "shape":"string",
+          "location":"header",
+          "locationName":"ETag"
+        }
+      },
+      "payload":"KeyGroup"
+    },
     "CreateMonitoringSubscriptionRequest":{
       "type":"structure",
       "required":[
@@ -1841,6 +2094,27 @@
         }
       },
       "payload":"PublicKey"
+    },
+    "CreateRealtimeLogConfigRequest":{
+      "type":"structure",
+      "required":[
+        "EndPoints",
+        "Fields",
+        "Name",
+        "SamplingRate"
+      ],
+      "members":{
+        "EndPoints":{"shape":"EndPointList"},
+        "Fields":{"shape":"FieldList"},
+        "Name":{"shape":"string"},
+        "SamplingRate":{"shape":"long"}
+      }
+    },
+    "CreateRealtimeLogConfigResult":{
+      "type":"structure",
+      "members":{
+        "RealtimeLogConfig":{"shape":"RealtimeLogConfig"}
+      }
     },
     "CreateStreamingDistributionRequest":{
       "type":"structure",
@@ -1953,18 +2227,19 @@
       "type":"structure",
       "required":[
         "TargetOriginId",
-        "TrustedSigners",
         "ViewerProtocolPolicy"
       ],
       "members":{
         "TargetOriginId":{"shape":"string"},
         "TrustedSigners":{"shape":"TrustedSigners"},
+        "TrustedKeyGroups":{"shape":"TrustedKeyGroups"},
         "ViewerProtocolPolicy":{"shape":"ViewerProtocolPolicy"},
         "AllowedMethods":{"shape":"AllowedMethods"},
         "SmoothStreaming":{"shape":"boolean"},
         "Compress":{"shape":"boolean"},
         "LambdaFunctionAssociations":{"shape":"LambdaFunctionAssociations"},
         "FieldLevelEncryptionId":{"shape":"string"},
+        "RealtimeLogConfigArn":{"shape":"string"},
         "CachePolicyId":{"shape":"string"},
         "OriginRequestPolicyId":{"shape":"string"},
         "ForwardedValues":{
@@ -2065,6 +2340,22 @@
         }
       }
     },
+    "DeleteKeyGroupRequest":{
+      "type":"structure",
+      "required":["Id"],
+      "members":{
+        "Id":{
+          "shape":"string",
+          "location":"uri",
+          "locationName":"Id"
+        },
+        "IfMatch":{
+          "shape":"string",
+          "location":"header",
+          "locationName":"If-Match"
+        }
+      }
+    },
     "DeleteMonitoringSubscriptionRequest":{
       "type":"structure",
       "required":["DistributionId"],
@@ -2113,6 +2404,13 @@
         }
       }
     },
+    "DeleteRealtimeLogConfigRequest":{
+      "type":"structure",
+      "members":{
+        "Name":{"shape":"string"},
+        "ARN":{"shape":"string"}
+      }
+    },
     "DeleteStreamingDistributionRequest":{
       "type":"structure",
       "required":["Id"],
@@ -2138,7 +2436,6 @@
         "LastModifiedTime",
         "InProgressInvalidationBatches",
         "DomainName",
-        "ActiveTrustedSigners",
         "DistributionConfig"
       ],
       "members":{
@@ -2149,6 +2446,7 @@
         "InProgressInvalidationBatches":{"shape":"integer"},
         "DomainName":{"shape":"string"},
         "ActiveTrustedSigners":{"shape":"ActiveTrustedSigners"},
+        "ActiveTrustedKeyGroups":{"shape":"ActiveTrustedKeyGroups"},
         "DistributionConfig":{"shape":"DistributionConfig"},
         "AliasICPRecordals":{"shape":"AliasICPRecordals"}
       }
@@ -2330,6 +2628,18 @@
         "locationName":"EncryptionEntity"
       }
     },
+    "EndPoint":{
+      "type":"structure",
+      "required":["StreamType"],
+      "members":{
+        "StreamType":{"shape":"string"},
+        "KinesisStreamConfig":{"shape":"KinesisStreamConfig"}
+      }
+    },
+    "EndPointList":{
+      "type":"list",
+      "member":{"shape":"EndPoint"}
+    },
     "EventType":{
       "type":"string",
       "enum":[
@@ -2497,6 +2807,13 @@
       "member":{
         "shape":"FieldLevelEncryptionSummary",
         "locationName":"FieldLevelEncryptionSummary"
+      }
+    },
+    "FieldList":{
+      "type":"list",
+      "member":{
+        "shape":"string",
+        "locationName":"Field"
       }
     },
     "FieldPatternList":{
@@ -2807,6 +3124,52 @@
       },
       "payload":"Invalidation"
     },
+    "GetKeyGroupConfigRequest":{
+      "type":"structure",
+      "required":["Id"],
+      "members":{
+        "Id":{
+          "shape":"string",
+          "location":"uri",
+          "locationName":"Id"
+        }
+      }
+    },
+    "GetKeyGroupConfigResult":{
+      "type":"structure",
+      "members":{
+        "KeyGroupConfig":{"shape":"KeyGroupConfig"},
+        "ETag":{
+          "shape":"string",
+          "location":"header",
+          "locationName":"ETag"
+        }
+      },
+      "payload":"KeyGroupConfig"
+    },
+    "GetKeyGroupRequest":{
+      "type":"structure",
+      "required":["Id"],
+      "members":{
+        "Id":{
+          "shape":"string",
+          "location":"uri",
+          "locationName":"Id"
+        }
+      }
+    },
+    "GetKeyGroupResult":{
+      "type":"structure",
+      "members":{
+        "KeyGroup":{"shape":"KeyGroup"},
+        "ETag":{
+          "shape":"string",
+          "location":"header",
+          "locationName":"ETag"
+        }
+      },
+      "payload":"KeyGroup"
+    },
     "GetMonitoringSubscriptionRequest":{
       "type":"structure",
       "required":["DistributionId"],
@@ -2916,6 +3279,19 @@
         }
       },
       "payload":"PublicKey"
+    },
+    "GetRealtimeLogConfigRequest":{
+      "type":"structure",
+      "members":{
+        "Name":{"shape":"string"},
+        "ARN":{"shape":"string"}
+      }
+    },
+    "GetRealtimeLogConfigResult":{
+      "type":"structure",
+      "members":{
+        "RealtimeLogConfig":{"shape":"RealtimeLogConfig"}
+      }
     },
     "GetStreamingDistributionConfigRequest":{
       "type":"structure",
@@ -3280,6 +3656,80 @@
         "all"
       ]
     },
+    "KGKeyPairIds":{
+      "type":"structure",
+      "members":{
+        "KeyGroupId":{"shape":"string"},
+        "KeyPairIds":{"shape":"KeyPairIds"}
+      }
+    },
+    "KGKeyPairIdsList":{
+      "type":"list",
+      "member":{
+        "shape":"KGKeyPairIds",
+        "locationName":"KeyGroup"
+      }
+    },
+    "KeyGroup":{
+      "type":"structure",
+      "required":[
+        "Id",
+        "LastModifiedTime",
+        "KeyGroupConfig"
+      ],
+      "members":{
+        "Id":{"shape":"string"},
+        "LastModifiedTime":{"shape":"timestamp"},
+        "KeyGroupConfig":{"shape":"KeyGroupConfig"}
+      }
+    },
+    "KeyGroupAlreadyExists":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"string"}
+      },
+      "error":{"httpStatusCode":409},
+      "exception":true
+    },
+    "KeyGroupConfig":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "Items"
+      ],
+      "members":{
+        "Name":{"shape":"string"},
+        "Items":{"shape":"PublicKeyIdList"},
+        "Comment":{"shape":"string"}
+      }
+    },
+    "KeyGroupList":{
+      "type":"structure",
+      "required":[
+        "MaxItems",
+        "Quantity"
+      ],
+      "members":{
+        "NextMarker":{"shape":"string"},
+        "MaxItems":{"shape":"integer"},
+        "Quantity":{"shape":"integer"},
+        "Items":{"shape":"KeyGroupSummaryList"}
+      }
+    },
+    "KeyGroupSummary":{
+      "type":"structure",
+      "required":["KeyGroup"],
+      "members":{
+        "KeyGroup":{"shape":"KeyGroup"}
+      }
+    },
+    "KeyGroupSummaryList":{
+      "type":"list",
+      "member":{
+        "shape":"KeyGroupSummary",
+        "locationName":"KeyGroupSummary"
+      }
+    },
     "KeyPairIdList":{
       "type":"list",
       "member":{
@@ -3293,6 +3743,17 @@
       "members":{
         "Quantity":{"shape":"integer"},
         "Items":{"shape":"KeyPairIdList"}
+      }
+    },
+    "KinesisStreamConfig":{
+      "type":"structure",
+      "required":[
+        "RoleARN",
+        "StreamARN"
+      ],
+      "members":{
+        "RoleARN":{"shape":"string"},
+        "StreamARN":{"shape":"string"}
       }
     },
     "LambdaFunctionARN":{"type":"string"},
@@ -3400,6 +3861,34 @@
       },
       "payload":"DistributionIdList"
     },
+    "ListDistributionsByKeyGroupRequest":{
+      "type":"structure",
+      "required":["KeyGroupId"],
+      "members":{
+        "Marker":{
+          "shape":"string",
+          "location":"querystring",
+          "locationName":"Marker"
+        },
+        "MaxItems":{
+          "shape":"string",
+          "location":"querystring",
+          "locationName":"MaxItems"
+        },
+        "KeyGroupId":{
+          "shape":"string",
+          "location":"uri",
+          "locationName":"KeyGroupId"
+        }
+      }
+    },
+    "ListDistributionsByKeyGroupResult":{
+      "type":"structure",
+      "members":{
+        "DistributionIdList":{"shape":"DistributionIdList"}
+      },
+      "payload":"DistributionIdList"
+    },
     "ListDistributionsByOriginRequestPolicyIdRequest":{
       "type":"structure",
       "required":["OriginRequestPolicyId"],
@@ -3427,6 +3916,22 @@
         "DistributionIdList":{"shape":"DistributionIdList"}
       },
       "payload":"DistributionIdList"
+    },
+    "ListDistributionsByRealtimeLogConfigRequest":{
+      "type":"structure",
+      "members":{
+        "Marker":{"shape":"string"},
+        "MaxItems":{"shape":"string"},
+        "RealtimeLogConfigName":{"shape":"string"},
+        "RealtimeLogConfigArn":{"shape":"string"}
+      }
+    },
+    "ListDistributionsByRealtimeLogConfigResult":{
+      "type":"structure",
+      "members":{
+        "DistributionList":{"shape":"DistributionList"}
+      },
+      "payload":"DistributionList"
     },
     "ListDistributionsByWebACLIdRequest":{
       "type":"structure",
@@ -3550,6 +4055,28 @@
       },
       "payload":"InvalidationList"
     },
+    "ListKeyGroupsRequest":{
+      "type":"structure",
+      "members":{
+        "Marker":{
+          "shape":"string",
+          "location":"querystring",
+          "locationName":"Marker"
+        },
+        "MaxItems":{
+          "shape":"string",
+          "location":"querystring",
+          "locationName":"MaxItems"
+        }
+      }
+    },
+    "ListKeyGroupsResult":{
+      "type":"structure",
+      "members":{
+        "KeyGroupList":{"shape":"KeyGroupList"}
+      },
+      "payload":"KeyGroupList"
+    },
     "ListOriginRequestPoliciesRequest":{
       "type":"structure",
       "members":{
@@ -3598,6 +4125,28 @@
         "PublicKeyList":{"shape":"PublicKeyList"}
       },
       "payload":"PublicKeyList"
+    },
+    "ListRealtimeLogConfigsRequest":{
+      "type":"structure",
+      "members":{
+        "MaxItems":{
+          "shape":"string",
+          "location":"querystring",
+          "locationName":"MaxItems"
+        },
+        "Marker":{
+          "shape":"string",
+          "location":"querystring",
+          "locationName":"Marker"
+        }
+      }
+    },
+    "ListRealtimeLogConfigsResult":{
+      "type":"structure",
+      "members":{
+        "RealtimeLogConfigs":{"shape":"RealtimeLogConfigs"}
+      },
+      "payload":"RealtimeLogConfigs"
     },
     "ListStreamingDistributionsRequest":{
       "type":"structure",
@@ -3778,6 +4327,14 @@
       "error":{"httpStatusCode":404},
       "exception":true
     },
+    "NoSuchRealtimeLogConfig":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"string"}
+      },
+      "error":{"httpStatusCode":404},
+      "exception":true
+    },
     "NoSuchResource":{
       "type":"structure",
       "members":{
@@ -3808,7 +4365,8 @@
         "S3OriginConfig":{"shape":"S3OriginConfig"},
         "CustomOriginConfig":{"shape":"CustomOriginConfig"},
         "ConnectionAttempts":{"shape":"integer"},
-        "ConnectionTimeout":{"shape":"integer"}
+        "ConnectionTimeout":{"shape":"integer"},
+        "OriginShield":{"shape":"OriginShield"}
       }
     },
     "OriginCustomHeader":{
@@ -4039,6 +4597,20 @@
         "custom"
       ]
     },
+    "OriginShield":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{"shape":"boolean"},
+        "OriginShieldRegion":{"shape":"OriginShieldRegion"}
+      }
+    },
+    "OriginShieldRegion":{
+      "type":"string",
+      "max":32,
+      "min":1,
+      "pattern":"[a-z]{2}-[a-z]+-\\d"
+    },
     "OriginSslProtocols":{
       "type":"structure",
       "required":[
@@ -4071,6 +4643,7 @@
       ],
       "members":{
         "EnableAcceptEncodingGzip":{"shape":"boolean"},
+        "EnableAcceptEncodingBrotli":{"shape":"boolean"},
         "HeadersConfig":{"shape":"CachePolicyHeadersConfig"},
         "CookiesConfig":{"shape":"CachePolicyCookiesConfig"},
         "QueryStringsConfig":{"shape":"CachePolicyQueryStringsConfig"}
@@ -4140,6 +4713,13 @@
         "Name":{"shape":"string"},
         "EncodedKey":{"shape":"string"},
         "Comment":{"shape":"string"}
+      }
+    },
+    "PublicKeyIdList":{
+      "type":"list",
+      "member":{
+        "shape":"string",
+        "locationName":"PublicKey"
       }
     },
     "PublicKeyInUse":{
@@ -4258,6 +4838,58 @@
         "locationName":"Name"
       }
     },
+    "RealtimeLogConfig":{
+      "type":"structure",
+      "required":[
+        "ARN",
+        "Name",
+        "SamplingRate",
+        "EndPoints",
+        "Fields"
+      ],
+      "members":{
+        "ARN":{"shape":"string"},
+        "Name":{"shape":"string"},
+        "SamplingRate":{"shape":"long"},
+        "EndPoints":{"shape":"EndPointList"},
+        "Fields":{"shape":"FieldList"}
+      }
+    },
+    "RealtimeLogConfigAlreadyExists":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"string"}
+      },
+      "error":{"httpStatusCode":409},
+      "exception":true
+    },
+    "RealtimeLogConfigInUse":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"string"}
+      },
+      "error":{"httpStatusCode":400},
+      "exception":true
+    },
+    "RealtimeLogConfigList":{
+      "type":"list",
+      "member":{"shape":"RealtimeLogConfig"}
+    },
+    "RealtimeLogConfigs":{
+      "type":"structure",
+      "required":[
+        "MaxItems",
+        "IsTruncated",
+        "Marker"
+      ],
+      "members":{
+        "MaxItems":{"shape":"integer"},
+        "Items":{"shape":"RealtimeLogConfigList"},
+        "IsTruncated":{"shape":"boolean"},
+        "Marker":{"shape":"string"},
+        "NextMarker":{"shape":"string"}
+      }
+    },
     "RealtimeMetricsSubscriptionConfig":{
       "type":"structure",
       "required":["RealtimeMetricsSubscriptionStatus"],
@@ -4275,6 +4907,14 @@
     "ResourceARN":{
       "type":"string",
       "pattern":"arn:aws(-cn)?:cloudfront::[0-9]+:.*"
+    },
+    "ResourceInUse":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"string"}
+      },
+      "error":{"httpStatusCode":409},
+      "exception":true
     },
     "Restrictions":{
       "type":"structure",
@@ -4305,7 +4945,8 @@
       "type":"string",
       "enum":[
         "sni-only",
-        "vip"
+        "vip",
+        "static-ip"
       ]
     },
     "Signer":{
@@ -4644,6 +5285,14 @@
       "error":{"httpStatusCode":400},
       "exception":true
     },
+    "TooManyDistributionsAssociatedToKeyGroup":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"string"}
+      },
+      "error":{"httpStatusCode":400},
+      "exception":true
+    },
     "TooManyDistributionsAssociatedToOriginRequestPolicy":{
       "type":"structure",
       "members":{
@@ -4748,6 +5397,22 @@
       "error":{"httpStatusCode":400},
       "exception":true
     },
+    "TooManyKeyGroups":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"string"}
+      },
+      "error":{"httpStatusCode":400},
+      "exception":true
+    },
+    "TooManyKeyGroupsAssociatedToDistribution":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"string"}
+      },
+      "error":{"httpStatusCode":400},
+      "exception":true
+    },
     "TooManyLambdaFunctionAssociations":{
       "type":"structure",
       "members":{
@@ -4796,6 +5461,14 @@
       "error":{"httpStatusCode":400},
       "exception":true
     },
+    "TooManyPublicKeysInKeyGroup":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"string"}
+      },
+      "error":{"httpStatusCode":400},
+      "exception":true
+    },
     "TooManyQueryStringParameters":{
       "type":"structure",
       "members":{
@@ -4813,6 +5486,14 @@
       "exception":true
     },
     "TooManyQueryStringsInOriginRequestPolicy":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"string"}
+      },
+      "error":{"httpStatusCode":400},
+      "exception":true
+    },
+    "TooManyRealtimeLogConfigs":{
       "type":"structure",
       "members":{
         "Message":{"shape":"string"}
@@ -4843,6 +5524,33 @@
       },
       "error":{"httpStatusCode":400},
       "exception":true
+    },
+    "TrustedKeyGroupDoesNotExist":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"string"}
+      },
+      "error":{"httpStatusCode":400},
+      "exception":true
+    },
+    "TrustedKeyGroupIdList":{
+      "type":"list",
+      "member":{
+        "shape":"string",
+        "locationName":"KeyGroup"
+      }
+    },
+    "TrustedKeyGroups":{
+      "type":"structure",
+      "required":[
+        "Enabled",
+        "Quantity"
+      ],
+      "members":{
+        "Enabled":{"shape":"boolean"},
+        "Quantity":{"shape":"integer"},
+        "Items":{"shape":"TrustedKeyGroupIdList"}
+      }
     },
     "TrustedSignerDoesNotExist":{
       "type":"structure",
@@ -5069,6 +5777,43 @@
       },
       "payload":"FieldLevelEncryptionProfile"
     },
+    "UpdateKeyGroupRequest":{
+      "type":"structure",
+      "required":[
+        "KeyGroupConfig",
+        "Id"
+      ],
+      "members":{
+        "KeyGroupConfig":{
+          "shape":"KeyGroupConfig",
+          "locationName":"KeyGroupConfig",
+          "xmlNamespace":{"uri":"http://cloudfront.amazonaws.com/doc/2020-05-31/"}
+        },
+        "Id":{
+          "shape":"string",
+          "location":"uri",
+          "locationName":"Id"
+        },
+        "IfMatch":{
+          "shape":"string",
+          "location":"header",
+          "locationName":"If-Match"
+        }
+      },
+      "payload":"KeyGroupConfig"
+    },
+    "UpdateKeyGroupResult":{
+      "type":"structure",
+      "members":{
+        "KeyGroup":{"shape":"KeyGroup"},
+        "ETag":{
+          "shape":"string",
+          "location":"header",
+          "locationName":"ETag"
+        }
+      },
+      "payload":"KeyGroup"
+    },
     "UpdateOriginRequestPolicyRequest":{
       "type":"structure",
       "required":[
@@ -5142,6 +5887,22 @@
         }
       },
       "payload":"PublicKey"
+    },
+    "UpdateRealtimeLogConfigRequest":{
+      "type":"structure",
+      "members":{
+        "EndPoints":{"shape":"EndPointList"},
+        "Fields":{"shape":"FieldList"},
+        "Name":{"shape":"string"},
+        "ARN":{"shape":"string"},
+        "SamplingRate":{"shape":"long"}
+      }
+    },
+    "UpdateRealtimeLogConfigResult":{
+      "type":"structure",
+      "members":{
+        "RealtimeLogConfig":{"shape":"RealtimeLogConfig"}
+      }
     },
     "UpdateStreamingDistributionRequest":{
       "type":"structure",

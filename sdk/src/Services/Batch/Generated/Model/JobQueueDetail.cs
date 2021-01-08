@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,13 +40,14 @@ namespace Amazon.Batch.Model
         private JQState _state;
         private JQStatus _status;
         private string _statusReason;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ComputeEnvironmentOrder. 
         /// <para>
-        /// The compute environments that are attached to the job queue and the order in which
-        /// job placement is preferred. Compute environments are selected for job placement in
-        /// ascending order.
+        /// The compute environments that are attached to the job queue and the order that job
+        /// placement is preferred. Compute environments are selected for job placement in ascending
+        /// order.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -103,7 +104,14 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// The priority of the job queue.
+        /// The priority of the job queue. Job queues with a higher priority (or a higher integer
+        /// value for the <code>priority</code> parameter) are evaluated first when associated
+        /// with the same compute environment. Priority is determined in descending order, for
+        /// example, a job queue with a priority value of <code>10</code> is given scheduling
+        /// preference over a job queue with a priority value of <code>1</code>. All of the compute
+        /// environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate
+        /// (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments
+        /// cannot be mixed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -122,7 +130,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Describes the ability of the queue to accept new jobs.
+        /// Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
+        /// it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs
+        /// can't be added to the queue, but jobs already in the queue can finish.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -173,6 +183,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetStatusReason()
         {
             return this._statusReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags applied to the job queue. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
+        /// your AWS Batch resources</a> in <i>AWS Batch User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

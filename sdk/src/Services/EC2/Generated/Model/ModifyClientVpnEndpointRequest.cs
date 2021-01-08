@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,15 +35,35 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyClientVpnEndpointRequest : AmazonEC2Request
     {
+        private ClientConnectOptions _clientConnectOptions;
         private string _clientVpnEndpointId;
         private ConnectionLogOptions _connectionLogOptions;
         private string _description;
         private DnsServersOptionsModifyStructure _dnsServers;
         private List<string> _securityGroupIds = new List<string>();
+        private SelfServicePortal _selfServicePortal;
         private string _serverCertificateArn;
         private bool? _splitTunnel;
         private string _vpcId;
         private int? _vpnPort;
+
+        /// <summary>
+        /// Gets and sets the property ClientConnectOptions. 
+        /// <para>
+        /// The options for managing connection authorization for new client connections.
+        /// </para>
+        /// </summary>
+        public ClientConnectOptions ClientConnectOptions
+        {
+            get { return this._clientConnectOptions; }
+            set { this._clientConnectOptions = value; }
+        }
+
+        // Check to see if ClientConnectOptions property is set
+        internal bool IsSetClientConnectOptions()
+        {
+            return this._clientConnectOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientVpnEndpointId. 
@@ -157,6 +177,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSecurityGroupIds()
         {
             return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfServicePortal. 
+        /// <para>
+        /// Specify whether to enable the self-service portal for the Client VPN endpoint.
+        /// </para>
+        /// </summary>
+        public SelfServicePortal SelfServicePortal
+        {
+            get { return this._selfServicePortal; }
+            set { this._selfServicePortal = value; }
+        }
+
+        // Check to see if SelfServicePortal property is set
+        internal bool IsSetSelfServicePortal()
+        {
+            return this._selfServicePortal != null;
         }
 
         /// <summary>

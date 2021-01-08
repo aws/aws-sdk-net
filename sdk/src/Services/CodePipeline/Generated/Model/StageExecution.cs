@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,6 +60,12 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// The status of the stage, or for a completed stage, the last status of the stage.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// A status of cancelled means that the pipeline’s definition was updated before the
+        /// stage execution could be completed.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public StageExecutionStatus Status

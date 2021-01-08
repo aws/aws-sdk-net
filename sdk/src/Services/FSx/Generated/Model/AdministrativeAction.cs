@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Describes a specific Amazon FSx Administrative Action for the current Windows file
-    /// system.
+    /// Describes a specific Amazon FSx administrative action for the current Windows or Lustre
+    /// file system.
     /// </summary>
     public partial class AdministrativeAction
     {
@@ -75,7 +75,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ProgressPercent. 
         /// <para>
         /// Provides the percent complete of a <code>STORAGE_OPTIMIZATION</code> administrative
-        /// action.
+        /// action. Does not apply to any other administrative action type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -135,7 +135,9 @@ namespace Amazon.FSx.Model
         ///  <code>UPDATED_OPTIMIZING</code> - For a storage capacity increase update, Amazon
         /// FSx has updated the file system with the new storage capacity, and is now performing
         /// the storage optimization process. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-        /// Storage Capacity</a>.
+        /// storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i> and
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
+        /// storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -154,9 +156,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property TargetFileSystemValues. 
         /// <para>
-        /// Describes the target <code>StorageCapacity</code> or <code>ThroughputCapacity</code>
-        /// value provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code>
-        /// administrative actions. 
+        /// Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
+        /// operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions. 
         /// </para>
         /// </summary>
         public FileSystem TargetFileSystemValues

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// Container for the parameters to the RejectInvitation operation.
     /// Rejects an invitation to join a network. This action can be called by a principal
     /// in an AWS account that has received an invitation to create a member and join a network.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class RejectInvitationRequest : AmazonManagedBlockchainRequest
     {

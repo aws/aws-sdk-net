@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the StartApplication operation.
-    /// Starts the specified Amazon Kinesis Data Analytics application. After creating an
-    /// application, you must exclusively call this operation to start your application.
+    /// Starts the specified Kinesis Data Analytics application. After creating an application,
+    /// you must exclusively call this operation to start your application.
     /// </summary>
     public partial class StartApplicationRequest : AmazonKinesisAnalyticsV2Request
     {

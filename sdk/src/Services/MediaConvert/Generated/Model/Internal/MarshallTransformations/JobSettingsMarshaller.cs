@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -107,6 +107,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
                 var marshaller = NielsenConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NielsenConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetNielsenNonLinearWatermark())
+            {
+                context.Writer.WritePropertyName("nielsenNonLinearWatermark");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NielsenNonLinearWatermarkSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.NielsenNonLinearWatermark, context);
 
                 context.Writer.WriteObjectEnd();
             }

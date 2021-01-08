@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,7 +35,9 @@ namespace Amazon.Backup.Model
     {
         private string _accountId;
         private string _backupJobId;
+        private Dictionary<string, string> _backupOptions = new Dictionary<string, string>();
         private long? _backupSizeInBytes;
+        private string _backupType;
         private string _backupVaultArn;
         private string _backupVaultName;
         private long? _bytesTransferred;
@@ -89,6 +91,24 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BackupOptions. 
+        /// <para>
+        /// Represents the options specified as part of backup plan or on-demand backup job.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> BackupOptions
+        {
+            get { return this._backupOptions; }
+            set { this._backupOptions = value; }
+        }
+
+        // Check to see if BackupOptions property is set
+        internal bool IsSetBackupOptions()
+        {
+            return this._backupOptions != null && this._backupOptions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property BackupSizeInBytes. 
         /// <para>
         /// The size, in bytes, of a backup.
@@ -104,6 +124,26 @@ namespace Amazon.Backup.Model
         internal bool IsSetBackupSizeInBytes()
         {
             return this._backupSizeInBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupType. 
+        /// <para>
+        /// Represents the actual backup type selected for a backup job. For example, if a successful
+        /// WindowsVSS backup was taken, <code>BackupType</code> returns "WindowsVSS". If <code>BackupType</code>
+        /// is empty, then the backup type that was is a regular backup.
+        /// </para>
+        /// </summary>
+        public string BackupType
+        {
+            get { return this._backupType; }
+            set { this._backupType = value; }
+        }
+
+        // Check to see if BackupType property is set
+        internal bool IsSetBackupType()
+        {
+            return this._backupType != null;
         }
 
         /// <summary>

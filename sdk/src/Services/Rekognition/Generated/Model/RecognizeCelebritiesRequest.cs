@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,10 +35,10 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    ///  <code>RecognizeCelebrities</code> returns the 100 largest faces in the image. It
-    /// lists recognized celebrities in the <code>CelebrityFaces</code> array and unrecognized
-    /// faces in the <code>UnrecognizedFaces</code> array. <code>RecognizeCelebrities</code>
-    /// doesn't return celebrities whose faces aren't among the largest 100 faces in the image.
+    ///  <code>RecognizeCelebrities</code> returns the 64 largest faces in the image. It lists
+    /// recognized celebrities in the <code>CelebrityFaces</code> array and unrecognized faces
+    /// in the <code>UnrecognizedFaces</code> array. <code>RecognizeCelebrities</code> doesn't
+    /// return celebrities whose faces aren't among the largest 64 faces in the image.
     /// </para>
     ///  
     /// <para>

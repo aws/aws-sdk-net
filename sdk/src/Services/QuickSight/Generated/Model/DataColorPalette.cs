@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// The theme colors that are used for data colors in charts. The colors description is
-    /// a hexidecimal color code that consists of six alphanumerical characters, prefixed
+    /// a hexadecimal color code that consists of six alphanumerical characters, prefixed
     /// with <code>#</code>, for example #37BFF5.
     /// </summary>
     public partial class DataColorPalette

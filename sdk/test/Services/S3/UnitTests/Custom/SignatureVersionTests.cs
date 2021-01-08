@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,8 +18,10 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.S3;
 using Amazon.S3.Internal;
 using Amazon.S3.Model;
+using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AWSSDK.UnitTests
 {
@@ -55,6 +57,31 @@ namespace AWSSDK.UnitTests
             TestS3Signer(true, "4", true, true);
             TestS3Signer(true, "garbage", false, true);
             TestS3Signer(true, "garbage", true, true);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestS3OutpostsSigner()
+        {
+            var signer = new S3Signer();
+            
+            var outpostsArn = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint";
+            var putObjectRequest = new PutObjectRequest()
+            {
+                BucketName = outpostsArn,
+                Key = "foo.txt",
+                ContentBody = "data"
+            };
+            var config = new AmazonS3Config
+            {
+                UseArnRegion = true,
+                RegionEndpoint = RegionEndpoint.USWest2
+            };
+            var iRequest = S3ArnTestUtils.RunMockRequest(putObjectRequest, PutObjectRequestMarshaller.Instance, config);
+            signer.Sign(iRequest, config, new RequestMetrics(), "ACCESS", "SECRET");
+
+            Assert.IsTrue(iRequest.Headers.ContainsKey(HeaderKeys.AuthorizationHeader));
+            Assert.IsTrue((iRequest.Headers["Authorization"]).Contains("s3-outposts"));
         }
 
         private void TestS3Signer(bool requestUseSigV4, string clientConfigSignatureVersion,

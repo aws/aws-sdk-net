@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,36 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<Device, DeviceUnmarshaller>(DeviceUnmarshaller.Instance);
                     unmarshalledObject.Devices = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("initProcessEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.InitProcessEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("maxSwap", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxSwap = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sharedMemorySize", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.SharedMemorySize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("swappiness", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Swappiness = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tmpfs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tmpfs, TmpfsUnmarshaller>(TmpfsUnmarshaller.Instance);
+                    unmarshalledObject.Tmpfs = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

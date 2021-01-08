@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -141,8 +141,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property ProgressSummary. 
         /// <para>
-        /// Describes the total number of tasks that the specified job has executed, the number
-        /// of tasks that succeeded, and the number of tasks that failed.
+        /// Describes the total number of tasks that the specified job has run, the number of
+        /// tasks that succeeded, and the number of tasks that failed.
         /// </para>
         /// </summary>
         public JobProgressSummary ProgressSummary

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
-    /// An object that represents a Transport Layer Security (TLS) client policy.
+    /// A reference to an object that represents a Transport Layer Security (TLS) client policy.
     /// </summary>
     public partial class ClientPolicyTls
     {
@@ -41,7 +41,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Enforce. 
         /// <para>
         /// Whether the policy is enforced. The default is <code>True</code>, if a value isn't
-        ///         specified.
+        /// specified.
         /// </para>
         /// </summary>
         public bool Enforce

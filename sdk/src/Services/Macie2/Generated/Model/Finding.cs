@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about a finding.
+    /// Provides the details of a finding.
     /// </summary>
     public partial class Finding
     {
@@ -129,7 +129,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The total number of occurrences of this finding.
+        /// The total number of occurrences of the finding. For sensitive data findings, this
+        /// value is always 1. All sensitive data findings are considered new (unique) because
+        /// they derive from individual classification jobs.
         /// </para>
         /// </summary>
         public long Count
@@ -311,7 +313,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity of the finding.
+        /// The severity level and score for the finding.
         /// </para>
         /// </summary>
         public Severity Severity
@@ -367,7 +369,8 @@ namespace Amazon.Macie2.Model
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when the finding was last
         /// updated. For sensitive data findings, this value is the same as the value for the
-        /// createdAt property. Sensitive data findings aren't updated.
+        /// createdAt property. All sensitive data findings are considered new (unique) because
+        /// they derive from individual classification jobs.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

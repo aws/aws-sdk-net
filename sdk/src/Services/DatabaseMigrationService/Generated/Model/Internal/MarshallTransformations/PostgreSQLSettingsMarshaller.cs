@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,46 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PostgreSQLSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAfterConnectScript())
+            {
+                context.Writer.WritePropertyName("AfterConnectScript");
+                context.Writer.Write(requestObject.AfterConnectScript);
+            }
+
+            if(requestObject.IsSetCaptureDdls())
+            {
+                context.Writer.WritePropertyName("CaptureDdls");
+                context.Writer.Write(requestObject.CaptureDdls);
+            }
+
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
                 context.Writer.Write(requestObject.DatabaseName);
+            }
+
+            if(requestObject.IsSetDdlArtifactsSchema())
+            {
+                context.Writer.WritePropertyName("DdlArtifactsSchema");
+                context.Writer.Write(requestObject.DdlArtifactsSchema);
+            }
+
+            if(requestObject.IsSetExecuteTimeout())
+            {
+                context.Writer.WritePropertyName("ExecuteTimeout");
+                context.Writer.Write(requestObject.ExecuteTimeout);
+            }
+
+            if(requestObject.IsSetFailTasksOnLobTruncation())
+            {
+                context.Writer.WritePropertyName("FailTasksOnLobTruncation");
+                context.Writer.Write(requestObject.FailTasksOnLobTruncation);
+            }
+
+            if(requestObject.IsSetMaxFileSize())
+            {
+                context.Writer.WritePropertyName("MaxFileSize");
+                context.Writer.Write(requestObject.MaxFileSize);
             }
 
             if(requestObject.IsSetPassword())
@@ -63,10 +99,28 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Port);
             }
 
+            if(requestObject.IsSetSecretsManagerAccessRoleArn())
+            {
+                context.Writer.WritePropertyName("SecretsManagerAccessRoleArn");
+                context.Writer.Write(requestObject.SecretsManagerAccessRoleArn);
+            }
+
+            if(requestObject.IsSetSecretsManagerSecretId())
+            {
+                context.Writer.WritePropertyName("SecretsManagerSecretId");
+                context.Writer.Write(requestObject.SecretsManagerSecretId);
+            }
+
             if(requestObject.IsSetServerName())
             {
                 context.Writer.WritePropertyName("ServerName");
                 context.Writer.Write(requestObject.ServerName);
+            }
+
+            if(requestObject.IsSetSlotName())
+            {
+                context.Writer.WritePropertyName("SlotName");
+                context.Writer.Write(requestObject.SlotName);
             }
 
             if(requestObject.IsSetUsername())

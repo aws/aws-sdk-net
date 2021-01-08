@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -118,7 +118,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVerison</code>
+        /// If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVersion</code>
         /// and <code>SSLSupportMethod</code>. 
         /// </para>
         /// </summary>
@@ -245,7 +245,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVerison</code>
+        /// If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code>
         /// and <code>SSLSupportMethod</code>. 
         /// </para>
         /// </summary>
@@ -330,6 +330,13 @@ namespace Amazon.CloudFront.Model
         ///  <code>vip</code> – The distribution accepts HTTPS connections from all viewers including
         /// those that don’t support SNI. This is not recommended, and results in additional monthly
         /// charges from CloudFront.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>static-ip</code> - Do not specify this value unless your distribution has been
+        /// enabled for this feature by the CloudFront team. If you have a use case that requires
+        /// static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
+        /// Support Center</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

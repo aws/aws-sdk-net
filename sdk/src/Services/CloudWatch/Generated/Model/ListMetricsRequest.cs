@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,7 +63,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// The dimensions to filter against.
+        /// The dimensions to filter against. Only the dimensions that match exactly will be returned.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
@@ -82,7 +82,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// The name of the metric to filter against.
+        /// The name of the metric to filter against. Only the metrics with names that match exactly
+        /// will be returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -101,7 +102,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace to filter against.
+        /// The metric namespace to filter against. Only the namespace that matches exactly will
+        /// be returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,6 +30,13 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Describes a utilization metric of a resource, such as an Amazon EC2 instance.
+    /// 
+    ///  
+    /// <para>
+    /// Compare the utilization metric data of your resource against its projected utilization
+    /// metric data to determine the performance difference between your current resource
+    /// and the recommended option.
+    /// </para>
     /// </summary>
     public partial class UtilizationMetric
     {
@@ -42,13 +49,78 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// The name of the utilization metric.
         /// </para>
+        ///  
+        /// <para>
+        /// The following utilization metrics are available:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Cpu</code> - The percentage of allocated EC2 compute units that are currently
+        /// in use on the instance. This metric identifies the processing power required to run
+        /// an application on the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Depending on the instance type, tools in your operating system can show a lower percentage
+        /// than CloudWatch when the instance is not allocated a full processor core.
+        /// </para>
+        ///  
+        /// <para>
+        /// Units: Percent
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Memory</code> - The percentage of memory that is currently in use on the instance.
+        /// This metric identifies the amount of memory required to run an application on the
+        /// instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Units: Percent
+        /// </para>
         ///  <note> 
         /// <para>
-        /// Memory metrics are only returned for resources that have the unified CloudWatch agent
-        /// installed on them. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html">Enabling
+        /// The <code>Memory</code> metric is returned only for resources that have the unified
+        /// CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
         /// Memory Utilization with the CloudWatch Agent</a>.
         /// </para>
-        ///  </note>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS
+        /// volumes attached to the instance in a specified period of time.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed write operations to all EBS
+        /// volumes attached to the instance in a specified period of time.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EBS_READ_BYTES_PER_SECOND</code> - The bytes read from all EBS volumes attached
+        /// to the instance in a specified period of time.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Bytes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EBS_WRITE_BYTES_PER_SECOND</code> - The bytes written to all EBS volumes attached
+        /// to the instance in a specified period of time.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Bytes
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public MetricName Name
         {
@@ -67,6 +139,21 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// The statistic of the utilization metric.
         /// </para>
+        ///  
+        /// <para>
+        /// The following statistics are available:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Average</code> - This is the value of Sum / SampleCount during the specified
+        /// period, or the average value observed during the specified period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Maximum</code> - The highest value observed during the specified period. Use
+        /// this value to determine high volumes of activity for your application.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public MetricStatistic Statistic
         {

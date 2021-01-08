@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,6 +55,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _certificateArn;
         private string _databaseName;
         private DmsTransferSettings _dmsTransferSettings;
+        private DocDbSettings _docDbSettings;
         private DynamoDbSettings _dynamoDbSettings;
         private ElasticsearchSettings _elasticsearchSettings;
         private string _endpointArn;
@@ -166,6 +167,21 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDmsTransferSettings()
         {
             return this._dmsTransferSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocDbSettings.
+        /// </summary>
+        public DocDbSettings DocDbSettings
+        {
+            get { return this._docDbSettings; }
+            set { this._docDbSettings = value; }
+        }
+
+        // Check to see if DocDbSettings property is set
+        internal bool IsSetDocDbSettings()
+        {
+            return this._docDbSettings != null;
         }
 
         /// <summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -57,11 +57,12 @@ namespace Amazon.ResourceGroups.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Groups. 
+        /// Gets and sets the property Groups. <important> 
         /// <para>
-        /// This output element is deprecated and shouldn't be used. Refer to <code>GroupIdentifiers</code>
-        /// instead.
+        ///  <i> <b>Deprecated - don't use this field. Use the <code>GroupIdentifiers</code> response
+        /// field instead.</b> </i> 
         /// </para>
+        ///  </important>
         /// </summary>
         [Obsolete("This field is deprecated, use GroupIdentifiers instead.")]
         public List<Group> Groups

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApiKey operation.
-    /// Updates an API key.
+    /// Updates an API key. The key can be updated while it is not deleted.
     /// </summary>
     public partial class UpdateApiKeyRequest : AmazonAppSyncRequest
     {

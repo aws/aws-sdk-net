@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,8 +41,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ActionName. 
         /// <para>
-        /// The friendly name for the mitigation action. You can't change the name by using <code>UpdateMitigationAction</code>.
-        /// Instead, you must delete and re-create the mitigation action with the new name.
+        /// The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>.
+        /// Instead, you must delete and recreate the mitigation action with the new name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

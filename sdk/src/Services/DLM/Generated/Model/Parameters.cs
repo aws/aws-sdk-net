@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ namespace Amazon.DLM.Model
     public partial class Parameters
     {
         private bool? _excludeBootVolume;
+        private bool? _noReboot;
 
         /// <summary>
         /// Gets and sets the property ExcludeBootVolume. 
@@ -54,6 +55,28 @@ namespace Amazon.DLM.Model
         internal bool IsSetExcludeBootVolume()
         {
             return this._excludeBootVolume.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NoReboot. 
+        /// <para>
+        /// Applies to AMI lifecycle policies only. Indicates whether targeted instances are rebooted
+        /// when the lifecycle policy runs. <code>true</code> indicates that targeted instances
+        /// are not rebooted when the policy runs. <code>false</code> indicates that target instances
+        /// are rebooted when the policy runs. The default is <code>true</code> (instances are
+        /// not rebooted).
+        /// </para>
+        /// </summary>
+        public bool NoReboot
+        {
+            get { return this._noReboot.GetValueOrDefault(); }
+            set { this._noReboot = value; }
+        }
+
+        // Check to see if NoReboot property is set
+        internal bool IsSetNoReboot()
+        {
+            return this._noReboot.HasValue; 
         }
 
     }

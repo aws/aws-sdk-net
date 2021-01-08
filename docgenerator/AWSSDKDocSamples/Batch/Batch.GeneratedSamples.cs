@@ -292,6 +292,20 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
             #endregion
         }
 
+        public void BatchListTagsForResource()
+        {
+            #region listtagsforresource-example-1591293003710
+
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            {
+                ResourceArn = "arn:aws:batch:us-east-1:123456789012:job-definition/sleep30:1"
+            });
+
+            Dictionary<string, string> tags = response.Tags;
+
+            #endregion
+        }
+
         public void BatchRegisterJobDefinition()
         {
             #region to-register-a-job-definition-1481154325325
@@ -318,6 +332,36 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
             #endregion
         }
 
+        public void BatchRegisterJobDefinition()
+        {
+            #region registerjobdefinition-with-tags-1591290509028
+
+            var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest 
+            {
+                Type = "container",
+                ContainerProperties = new ContainerProperties {
+                    Command = new List<string> {
+                        "sleep",
+                        "30"
+                    },
+                    Image = "busybox",
+                    Memory = 128,
+                    Vcpus = 1
+                },
+                JobDefinitionName = "sleep30",
+                Tags = new Dictionary<string, string> {
+                    { "Department", "Engineering" },
+                    { "User", "JaneDoe" }
+                }
+            });
+
+            string jobDefinitionArn = response.JobDefinitionArn;
+            string jobDefinitionName = response.JobDefinitionName;
+            int revision = response.Revision;
+
+            #endregion
+        }
+
         public void BatchSubmitJob()
         {
             #region to-submit-a-job-to-a-queue-1481154481673
@@ -335,6 +379,22 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
             #endregion
         }
 
+        public void BatchTagResource()
+        {
+            #region tagresource-example-1591291959952
+
+            var response = client.TagResource(new TagResourceRequest 
+            {
+                ResourceArn = "arn:aws:batch:us-east-1:123456789012:job-definition/sleep30:1",
+                Tags = new Dictionary<string, string> {
+                    { "Stage", "Alpha" }
+                }
+            });
+
+
+            #endregion
+        }
+
         public void BatchTerminateJob()
         {
             #region to-terminate-a-job-1481154558276
@@ -343,6 +403,22 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
             {
                 JobId = "61e743ed-35e4-48da-b2de-5c8333821c84",
                 Reason = "Terminating job."
+            });
+
+
+            #endregion
+        }
+
+        public void BatchUntagResource()
+        {
+            #region untagresource-example-1591292811042
+
+            var response = client.UntagResource(new UntagResourceRequest 
+            {
+                ResourceArn = "arn:aws:batch:us-east-1:123456789012:job-definition/sleep30:1",
+                TagKeys = new List<string> {
+                    "Stage"
+                }
             });
 
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ namespace Amazon.ElastiCache.Model
         private int? _newReplicaCount;
         private string _nodeGroupId;
         private List<string> _preferredAvailabilityZones = new List<string>();
+        private List<string> _preferredOutpostArns = new List<string>();
 
         /// <summary>
         /// Gets and sets the property NewReplicaCount. 
@@ -124,6 +125,24 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetPreferredAvailabilityZones()
         {
             return this._preferredAvailabilityZones != null && this._preferredAvailabilityZones.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredOutpostArns. 
+        /// <para>
+        /// The outpost ARNs in which the cache cluster is created.
+        /// </para>
+        /// </summary>
+        public List<string> PreferredOutpostArns
+        {
+            get { return this._preferredOutpostArns; }
+            set { this._preferredOutpostArns = value; }
+        }
+
+        // Check to see if PreferredOutpostArns property is set
+        internal bool IsSetPreferredOutpostArns()
+        {
+            return this._preferredOutpostArns != null && this._preferredOutpostArns.Count > 0; 
         }
 
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,11 +38,6 @@ namespace Amazon.FMS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// A Shield Advanced policy, which applies Shield Advanced protection to specified accounts
-    /// and resources
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     /// An AWS WAF policy (type WAFV2), which defines rule groups to run first in the corresponding
     /// AWS WAF web ACL and rule groups to run last in the web ACL.
     /// </para>
@@ -52,8 +47,18 @@ namespace Amazon.FMS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// A Shield Advanced policy, which applies Shield Advanced protection to specified accounts
+    /// and resources.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// A security group policy, which manages VPC security groups across your AWS organization.
     /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// An AWS Network Firewall policy, which provides firewall rules to filter network traffic
+    /// in specified Amazon VPCs.
     /// </para>
     ///  </li> </ul> 
     /// <para>

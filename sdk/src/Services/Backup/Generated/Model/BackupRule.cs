@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -167,7 +167,11 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// A CRON expression specifying when AWS Backup initiates a backup job.
+        /// A CRON expression specifying when AWS Backup initiates a backup job. For more information
+        /// about cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+        /// Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior
+        /// to specifying a value for this parameter, we recommend testing your cron expression
+        /// using one of the many available cron generator and testing tools.
         /// </para>
         /// </summary>
         public string ScheduleExpression

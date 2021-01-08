@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -92,6 +92,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             if(publicRequestlistValue.Ebs.IsSetSnapshotId())
                             {
                                 request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestlistValue.Ebs.SnapshotId));
+                            }
+                            if(publicRequestlistValue.Ebs.IsSetThroughput())
+                            {
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestlistValue.Ebs.Throughput));
                             }
                             if(publicRequestlistValue.Ebs.IsSetVolumeSize())
                             {
@@ -191,6 +195,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             request.Parameters.Add("ElasticInferenceAccelerator" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
                         }
                         publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetEnclaveOptions())
+                {
+                    if(publicRequest.EnclaveOptions.IsSetEnabled())
+                    {
+                        request.Parameters.Add("EnclaveOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.EnclaveOptions.Enabled));
                     }
                 }
                 if(publicRequest.IsSetHibernationOptions())
@@ -384,6 +395,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 }
                                 publicRequestlistValuelistValueIndex++;
                             }
+                        }
+                        if(publicRequestlistValue.IsSetNetworkCardIndex())
+                        {
+                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "NetworkCardIndex", StringUtils.FromInt(publicRequestlistValue.NetworkCardIndex));
                         }
                         if(publicRequestlistValue.IsSetNetworkInterfaceId())
                         {

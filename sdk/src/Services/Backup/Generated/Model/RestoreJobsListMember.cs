@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -224,6 +224,7 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The resource type of the listed restore jobs; for example, an Amazon Elastic Block
         /// Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+        /// For VSS Windows backups, the only supported resource type is Amazon EC2.
         /// </para>
         /// </summary>
         public string ResourceType

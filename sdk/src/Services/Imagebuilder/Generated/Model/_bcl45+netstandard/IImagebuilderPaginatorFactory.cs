@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,11 @@ namespace Amazon.Imagebuilder.Model
         /// Paginator for ListComponents operation
         ///</summary>
         IListComponentsPaginator ListComponents(ListComponentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListContainerRecipes operation
+        ///</summary>
+        IListContainerRecipesPaginator ListContainerRecipes(ListContainerRecipesRequest request);
 
         /// <summary>
         /// Paginator for ListDistributionConfigurations operation

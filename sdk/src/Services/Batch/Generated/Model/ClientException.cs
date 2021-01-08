@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ namespace Amazon.Batch.Model
     /// <summary>
     /// These errors are usually caused by a client action, such as using an action or resource
     /// on behalf of a user that doesn't have permissions to use the action or resource, or
-    /// specifying an identifier that is not valid.
+    /// specifying an identifier that's not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,6 +33,31 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class CreateAccessPointResponse : AmazonWebServiceResponse
     {
+        private string _accessPointArn;
+
+        /// <summary>
+        /// Gets and sets the property AccessPointArn. 
+        /// <para>
+        /// The ARN of the access point.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This is only supported by Amazon S3 on Outposts.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=4, Max=128)]
+        public string AccessPointArn
+        {
+            get { return this._accessPointArn; }
+            set { this._accessPointArn = value; }
+        }
+
+        // Check to see if AccessPointArn property is set
+        internal bool IsSetAccessPointArn()
+        {
+            return this._accessPointArn != null;
+        }
 
     }
 }

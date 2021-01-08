@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -66,14 +66,16 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code>
-        /// | <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+        ///  <code>resource-type</code> - The resource type. Valid values are <code>vpc</code>
+        /// | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> |
+        /// <code>connect</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code>
-        /// | <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code>
-        /// | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+        ///  <code>state</code> - The state of the attachment. Valid values are <code>available</code>
+        /// | <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code>
+        /// | <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code>
+        /// | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

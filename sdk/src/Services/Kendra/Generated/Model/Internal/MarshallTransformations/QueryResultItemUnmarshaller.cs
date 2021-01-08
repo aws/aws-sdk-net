@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -100,10 +100,22 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.DocumentURI = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FeedbackToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FeedbackToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ScoreAttributes", targetDepth))
+                {
+                    var unmarshaller = ScoreAttributesUnmarshaller.Instance;
+                    unmarshalledObject.ScoreAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))

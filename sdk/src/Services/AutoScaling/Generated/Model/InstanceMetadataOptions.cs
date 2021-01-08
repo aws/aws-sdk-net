@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-    /// Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+    /// The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring
+    /// the Instance Metadata Options</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </summary>
     public partial class InstanceMetadataOptions
     {
@@ -72,10 +72,6 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// Default: 1
-        /// </para>
-        ///  
-        /// <para>
-        /// Possible values: Integers from 1 to 64
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

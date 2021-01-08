@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -69,6 +69,17 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetChannelMessages())
+                {
+                    context.Writer.WritePropertyName("channelMessages");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ChannelMessagesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ChannelMessages, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEndTime())
                 {
                     context.Writer.WritePropertyName("endTime");

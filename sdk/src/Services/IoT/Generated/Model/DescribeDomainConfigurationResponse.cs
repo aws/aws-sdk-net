@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ namespace Amazon.IoT.Model
         private DomainConfigurationStatus _domainConfigurationStatus;
         private string _domainName;
         private DomainType _domainType;
+        private DateTime? _lastStatusChangeDate;
         private List<ServerCertificateSummary> _serverCertificates = new List<ServerCertificateSummary>();
         private ServiceType _serviceType;
 
@@ -150,6 +151,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetDomainType()
         {
             return this._domainType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastStatusChangeDate. 
+        /// <para>
+        /// The date and time the domain configuration's status was last changed.
+        /// </para>
+        /// </summary>
+        public DateTime LastStatusChangeDate
+        {
+            get { return this._lastStatusChangeDate.GetValueOrDefault(); }
+            set { this._lastStatusChangeDate = value; }
+        }
+
+        // Check to see if LastStatusChangeDate property is set
+        internal bool IsSetLastStatusChangeDate()
+        {
+            return this._lastStatusChangeDate.HasValue; 
         }
 
         /// <summary>

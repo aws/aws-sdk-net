@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ namespace Amazon.EventBridge.Model
     {
         private string _arn;
         private BatchParameters _batchParameters;
+        private DeadLetterConfig _deadLetterConfig;
         private EcsParameters _ecsParameters;
         private HttpParameters _httpParameters;
         private string _id;
@@ -52,6 +53,8 @@ namespace Amazon.EventBridge.Model
         private string _inputPath;
         private InputTransformer _inputTransformer;
         private KinesisParameters _kinesisParameters;
+        private RedshiftDataParameters _redshiftDataParameters;
+        private RetryPolicy _retryPolicy;
         private string _roleArn;
         private RunCommandParameters _runCommandParameters;
         private SqsParameters _sqsParameters;
@@ -93,6 +96,25 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetBatchParameters()
         {
             return this._batchParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeadLetterConfig. 
+        /// <para>
+        /// The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter
+        /// queue events to.
+        /// </para>
+        /// </summary>
+        public DeadLetterConfig DeadLetterConfig
+        {
+            get { return this._deadLetterConfig; }
+            set { this._deadLetterConfig = value; }
+        }
+
+        // Check to see if DeadLetterConfig property is set
+        internal bool IsSetDeadLetterConfig()
+        {
+            return this._deadLetterConfig != null;
         }
 
         /// <summary>
@@ -238,6 +260,48 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetKinesisParameters()
         {
             return this._kinesisParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedshiftDataParameters. 
+        /// <para>
+        /// Contains the Redshift Data API parameters to use when the target is a Redshift cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a Redshift Cluster as a Target, you can use this to specify parameters
+        /// to invoke the Redshift Data API ExecuteStatement based on EventBridge events.
+        /// </para>
+        /// </summary>
+        public RedshiftDataParameters RedshiftDataParameters
+        {
+            get { return this._redshiftDataParameters; }
+            set { this._redshiftDataParameters = value; }
+        }
+
+        // Check to see if RedshiftDataParameters property is set
+        internal bool IsSetRedshiftDataParameters()
+        {
+            return this._redshiftDataParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryPolicy. 
+        /// <para>
+        /// The <code>RetryPolicy</code> object that contains the retry policy configuration to
+        /// use for the dead-letter queue.
+        /// </para>
+        /// </summary>
+        public RetryPolicy RetryPolicy
+        {
+            get { return this._retryPolicy; }
+            set { this._retryPolicy = value; }
+        }
+
+        // Check to see if RetryPolicy property is set
+        internal bool IsSetRetryPolicy()
+        {
+            return this._retryPolicy != null;
         }
 
         /// <summary>

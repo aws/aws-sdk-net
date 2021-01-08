@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,6 +43,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
+            if (putPutPublicAccessBlockRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(putPutPublicAccessBlockRequest.ExpectedBucketOwner));
+
             if (string.IsNullOrEmpty(putPutPublicAccessBlockRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "putPutPublicAccessBlockRequest.BucketName");
 
@@ -83,7 +86,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                string checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+                string checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
                 if (putPutPublicAccessBlockRequest.IsSetContentMD5())
                     checksum = putPutPublicAccessBlockRequest.ContentMD5;
                 request.Headers[HeaderKeys.ContentMD5Header] = checksum;

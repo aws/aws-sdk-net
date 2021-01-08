@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -69,6 +69,7 @@ namespace Amazon.Redshift.Model
         /// The IP range to be added the Amazon Redshift security group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string CIDRIP
         {
             get { return this._cidrip; }
@@ -87,7 +88,7 @@ namespace Amazon.Redshift.Model
         /// The name of the security group to which the ingress rule is added.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=2147483647)]
         public string ClusterSecurityGroupName
         {
             get { return this._clusterSecurityGroupName; }
@@ -106,6 +107,7 @@ namespace Amazon.Redshift.Model
         /// The EC2 security group to be added the Amazon Redshift security group.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string EC2SecurityGroupName
         {
             get { return this._ec2SecurityGroupName; }
@@ -129,6 +131,7 @@ namespace Amazon.Redshift.Model
         /// Example: <code>111122223333</code> 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string EC2SecurityGroupOwnerId
         {
             get { return this._ec2SecurityGroupOwnerId; }

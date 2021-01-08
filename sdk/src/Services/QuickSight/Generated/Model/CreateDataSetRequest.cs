@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _awsAccountId;
         private List<ColumnGroup> _columnGroups = new List<ColumnGroup>();
+        private List<ColumnLevelPermissionRule> _columnLevelPermissionRules = new List<ColumnLevelPermissionRule>();
         private string _dataSetId;
         private DataSetImportMode _importMode;
         private Dictionary<string, LogicalTable> _logicalTableMap = new Dictionary<string, LogicalTable>();
@@ -85,6 +86,25 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ColumnLevelPermissionRules. 
+        /// <para>
+        /// A set of one or more definitions of a <code> <a>ColumnLevelPermissionRule</a> </code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<ColumnLevelPermissionRule> ColumnLevelPermissionRules
+        {
+            get { return this._columnLevelPermissionRules; }
+            set { this._columnLevelPermissionRules = value; }
+        }
+
+        // Check to see if ColumnLevelPermissionRules property is set
+        internal bool IsSetColumnLevelPermissionRules()
+        {
+            return this._columnLevelPermissionRules != null && this._columnLevelPermissionRules.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property DataSetId. 
         /// <para>
         /// An ID for the dataset that you want to create. This ID is unique per AWS Region for
@@ -129,7 +149,7 @@ namespace Amazon.QuickSight.Model
         /// Configures the combination and transformation of the data from the physical tables.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=32)]
+        [AWSProperty(Min=1, Max=64)]
         public Dictionary<string, LogicalTable> LogicalTableMap
         {
             get { return this._logicalTableMap; }
@@ -186,7 +206,7 @@ namespace Amazon.QuickSight.Model
         /// Declares the physical tables that are available in the underlying data sources.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=16)]
+        [AWSProperty(Required=true, Min=1, Max=32)]
         public Dictionary<string, PhysicalTable> PhysicalTableMap
         {
             get { return this._physicalTableMap; }

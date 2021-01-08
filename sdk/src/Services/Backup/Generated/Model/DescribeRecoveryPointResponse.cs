@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,6 +48,7 @@ namespace Amazon.Backup.Model
         private string _recoveryPointArn;
         private string _resourceArn;
         private string _resourceType;
+        private string _sourceBackupVaultArn;
         private RecoveryPointStatus _status;
         private StorageClass _storageClass;
 
@@ -347,6 +348,27 @@ namespace Amazon.Backup.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceBackupVaultArn. 
+        /// <para>
+        /// An Amazon Resource Name (ARN) that uniquely identifies the source vault where the
+        /// resource was originally backed up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>.
+        /// If the recovery is restored to the same AWS account or Region, this value will be
+        /// <code>null</code>.
+        /// </para>
+        /// </summary>
+        public string SourceBackupVaultArn
+        {
+            get { return this._sourceBackupVaultArn; }
+            set { this._sourceBackupVaultArn = value; }
+        }
+
+        // Check to see if SourceBackupVaultArn property is set
+        internal bool IsSetSourceBackupVaultArn()
+        {
+            return this._sourceBackupVaultArn != null;
         }
 
         /// <summary>

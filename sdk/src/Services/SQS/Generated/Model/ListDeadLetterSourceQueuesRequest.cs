@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,6 +35,16 @@ namespace Amazon.SQS.Model
     /// 
     ///  
     /// <para>
+    ///  The <code>ListDeadLetterSourceQueues</code> methods supports pagination. Set parameter
+    /// <code>MaxResults</code> in the request to specify the maximum number of results to
+    /// be returned in the response. If you do not set <code>MaxResults</code>, the response
+    /// includes a maximum of 1,000 results. If you set <code>MaxResults</code> and there
+    /// are additional results to display, the response includes a value for <code>NextToken</code>.
+    /// Use <code>NextToken</code> as a parameter in your next request to <code>ListDeadLetterSourceQueues</code>
+    /// to receive the next page of results. 
+    /// </para>
+    ///  
+    /// <para>
     /// For more information about using dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
     /// Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer
     /// Guide</i>.
@@ -49,7 +59,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of results to include in the response.
+        /// Maximum number of results to include in the response. Value range is 1 to 1000. You
+        /// must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in
+        /// the response.
         /// </para>
         /// </summary>
         public int MaxResults

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -105,7 +105,10 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Segments. 
         /// <para>
-        /// An array of segments detected in a video.
+        /// An array of segments detected in a video. The array is sorted by the segment types
+        /// (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input parameter
+        /// of <code>StartSegmentDetection</code>. Within each segment type the array is sorted
+        /// by timestamp values.
         /// </para>
         /// </summary>
         public List<SegmentDetection> Segments

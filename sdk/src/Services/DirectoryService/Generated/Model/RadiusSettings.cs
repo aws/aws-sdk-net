@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -121,8 +121,9 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property RadiusServers. 
         /// <para>
-        /// An array of strings that contains the IP addresses of the RADIUS server endpoints,
-        /// or the IP addresses of your RADIUS server load balancer.
+        /// An array of strings that contains the fully qualified domain name (FQDN) or IP addresses
+        /// of the RADIUS server endpoints, or the FQDN or IP addresses of your RADIUS server
+        /// load balancer.
         /// </para>
         /// </summary>
         public List<string> RadiusServers

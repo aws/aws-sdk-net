@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ namespace Amazon.Redshift.Model
         /// The name of the cluster subnet group for which information is requested.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ClusterSubnetGroupName
         {
             get { return this._clusterSubnetGroupName; }
@@ -85,6 +86,7 @@ namespace Amazon.Redshift.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }

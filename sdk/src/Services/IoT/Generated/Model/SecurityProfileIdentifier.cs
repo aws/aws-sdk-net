@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -58,7 +58,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name you have given to the security profile.
+        /// The name you've given to the security profile.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

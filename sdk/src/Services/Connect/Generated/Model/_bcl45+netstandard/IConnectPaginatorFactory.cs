@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,6 +37,11 @@ namespace Amazon.Connect.Model
         IGetMetricDataPaginator GetMetricData(GetMetricDataRequest request);
 
         /// <summary>
+        /// Paginator for ListApprovedOrigins operation
+        ///</summary>
+        IListApprovedOriginsPaginator ListApprovedOrigins(ListApprovedOriginsRequest request);
+
+        /// <summary>
         /// Paginator for ListContactFlows operation
         ///</summary>
         IListContactFlowsPaginator ListContactFlows(ListContactFlowsRequest request);
@@ -47,9 +52,44 @@ namespace Amazon.Connect.Model
         IListHoursOfOperationsPaginator ListHoursOfOperations(ListHoursOfOperationsRequest request);
 
         /// <summary>
+        /// Paginator for ListInstanceAttributes operation
+        ///</summary>
+        IListInstanceAttributesPaginator ListInstanceAttributes(ListInstanceAttributesRequest request);
+
+        /// <summary>
+        /// Paginator for ListInstances operation
+        ///</summary>
+        IListInstancesPaginator ListInstances(ListInstancesRequest request);
+
+        /// <summary>
+        /// Paginator for ListInstanceStorageConfigs operation
+        ///</summary>
+        IListInstanceStorageConfigsPaginator ListInstanceStorageConfigs(ListInstanceStorageConfigsRequest request);
+
+        /// <summary>
+        /// Paginator for ListIntegrationAssociations operation
+        ///</summary>
+        IListIntegrationAssociationsPaginator ListIntegrationAssociations(ListIntegrationAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListLambdaFunctions operation
+        ///</summary>
+        IListLambdaFunctionsPaginator ListLambdaFunctions(ListLambdaFunctionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListLexBots operation
+        ///</summary>
+        IListLexBotsPaginator ListLexBots(ListLexBotsRequest request);
+
+        /// <summary>
         /// Paginator for ListPhoneNumbers operation
         ///</summary>
         IListPhoneNumbersPaginator ListPhoneNumbers(ListPhoneNumbersRequest request);
+
+        /// <summary>
+        /// Paginator for ListPrompts operation
+        ///</summary>
+        IListPromptsPaginator ListPrompts(ListPromptsRequest request);
 
         /// <summary>
         /// Paginator for ListQueues operation
@@ -57,14 +97,34 @@ namespace Amazon.Connect.Model
         IListQueuesPaginator ListQueues(ListQueuesRequest request);
 
         /// <summary>
+        /// Paginator for ListQuickConnects operation
+        ///</summary>
+        IListQuickConnectsPaginator ListQuickConnects(ListQuickConnectsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRoutingProfileQueues operation
+        ///</summary>
+        IListRoutingProfileQueuesPaginator ListRoutingProfileQueues(ListRoutingProfileQueuesRequest request);
+
+        /// <summary>
         /// Paginator for ListRoutingProfiles operation
         ///</summary>
         IListRoutingProfilesPaginator ListRoutingProfiles(ListRoutingProfilesRequest request);
 
         /// <summary>
+        /// Paginator for ListSecurityKeys operation
+        ///</summary>
+        IListSecurityKeysPaginator ListSecurityKeys(ListSecurityKeysRequest request);
+
+        /// <summary>
         /// Paginator for ListSecurityProfiles operation
         ///</summary>
         IListSecurityProfilesPaginator ListSecurityProfiles(ListSecurityProfilesRequest request);
+
+        /// <summary>
+        /// Paginator for ListUseCases operation
+        ///</summary>
+        IListUseCasesPaginator ListUseCases(ListUseCasesRequest request);
 
         /// <summary>
         /// Paginator for ListUserHierarchyGroups operation

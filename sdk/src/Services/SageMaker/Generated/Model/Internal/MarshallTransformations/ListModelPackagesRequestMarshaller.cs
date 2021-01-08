@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,6 +84,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("MaxResults");
                     context.Writer.Write(publicRequest.MaxResults);
+                }
+
+                if(publicRequest.IsSetModelApprovalStatus())
+                {
+                    context.Writer.WritePropertyName("ModelApprovalStatus");
+                    context.Writer.Write(publicRequest.ModelApprovalStatus);
+                }
+
+                if(publicRequest.IsSetModelPackageGroupName())
+                {
+                    context.Writer.WritePropertyName("ModelPackageGroupName");
+                    context.Writer.Write(publicRequest.ModelPackageGroupName);
+                }
+
+                if(publicRequest.IsSetModelPackageType())
+                {
+                    context.Writer.WritePropertyName("ModelPackageType");
+                    context.Writer.Write(publicRequest.ModelPackageType);
                 }
 
                 if(publicRequest.IsSetNameContains())

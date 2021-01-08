@@ -71,9 +71,6 @@
     <Compile Include="ThirdParty\Json\*.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Templates\SiteCatalyst.snippet" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="output-files\favicon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

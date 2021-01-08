@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,7 @@ namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAssociationForServiceQuotaTemplate operation.
-    /// Retrieves the <code>ServiceQuotaTemplateAssociationStatus</code> value from the service.
-    /// Use this action to determine if the Service Quota template is associated, or enabled.
+    /// Retrieves the status of the association for the quota request template.
     /// </summary>
     public partial class GetAssociationForServiceQuotaTemplateRequest : AmazonServiceQuotasRequest
     {

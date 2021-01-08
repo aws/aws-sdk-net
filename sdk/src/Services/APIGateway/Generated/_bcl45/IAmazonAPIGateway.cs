@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -2861,6 +2861,9 @@ namespace Amazon.APIGateway
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
         /// The requested service is not available. For details see the accompanying error message.
         /// Retry after the specified time period.
@@ -2888,6 +2891,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// The submitted request is not valid, for example, the input is incomplete or incorrect.
         /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// The requested resource is not found. Make sure that the request URI is correct.
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ServiceUnavailableException">
         /// The requested service is not available. For details see the accompanying error message.

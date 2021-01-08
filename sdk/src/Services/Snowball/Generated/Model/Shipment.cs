@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property TrackingNumber. 
         /// <para>
         /// The tracking number for this job. Using this tracking number with your region's carrier's
-        /// website, you can track a Snowball as the carrier transports it.
+        /// website, you can track a Snow device as the carrier transports it.
         /// </para>
         ///  
         /// <para>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -56,7 +56,8 @@ namespace Amazon.S3.Model
 
         private bool lastPart;
         private RequestPayer requestPayer;
-        
+        private string expectedBucketOwner;
+
         internal int IVSize { get; set; }
 
         /// <summary>
@@ -68,6 +69,19 @@ namespace Amazon.S3.Model
             get { return this.lastPart; }
             set { this.lastPart = value; }
         }
+
+        /// <summary>
+        /// <para><b>WARNING: Setting DisableMD5Stream to true disables the MD5 data integrity check 
+        /// on this request.</b></para>
+        /// <para>When true, MD5Stream will not be used in the upload request. This may increase 
+        /// upload performance under high CPU loads. The default value is null. When null, the 
+        /// AWSConfigsS3.DisableMD5Stream property value will be used.</para>
+        /// <para>MD5Stream, SigV4 payload signing, and HTTPS each provide some data integrity 
+        /// verification. If DisableMD5Stream is true and DisablePayloadSigning is true, then the 
+        /// possibility of data corruption is completely dependant on HTTPS being the only remaining 
+        /// source of data integrity verification.</para>
+        /// </summary>
+        public bool? DisableMD5Stream { get; set; }
 
         /// <summary>
         /// Input stream for the request; content for the request will be read from the stream.
@@ -85,7 +99,17 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The name of the bucket containing the object to receive the part.
+        /// <para>The name of the bucket to which the multipart upload was initiated.</para> 
+        /// <para>When using this API with an access point, you must direct requests to the access point hostname. 
+        /// The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. 
+        /// When using this operation with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. 
+        /// For more information about access point ARNs, see 
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para> 
+        /// <para>When using this API with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. 
+        /// The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. 
+        /// When using this operation using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. 
+        /// For more information about S3 on Outposts ARNs, see 
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</para>
         /// </summary>
         public string BucketName
         {
@@ -287,6 +311,25 @@ namespace Amazon.S3.Model
             set { this.useChunkEncoding = value; }
         }
 
+        /// <summary>      
+        /// <para><b>WARNING: Setting DisablePayloadSigning to true disables the SigV4 payload signing 
+        /// data integrity check on this request.</b></para>  
+        /// <para>If using SigV4, the DisablePayloadSigning flag controls if the payload should be 
+        /// signed on a request by request basis. By default this flag is null which will use the 
+        /// default client behavior. The default client behavior is to sign the payload. When 
+        /// DisablePayloadSigning is true, the request will be signed with an UNSIGNED-PAYLOAD value. 
+        /// Setting DisablePayloadSigning to true requires that the request is sent over a HTTPS 
+        /// connection.</para>        
+        /// <para>Under certain circumstances, such as uploading to S3 while using MD5 hashing, it may 
+        /// be desireable to use UNSIGNED-PAYLOAD to decrease signing CPU usage. This flag only applies 
+        /// to Amazon S3 PutObject and UploadPart requests.</para>
+        /// <para>MD5Stream, SigV4 payload signing, and HTTPS each provide some data integrity 
+        /// verification. If DisableMD5Stream is true and DisablePayloadSigning is true, then the 
+        /// possibility of data corruption is completely dependant on HTTPS being the only remaining 
+        /// source of data integrity verification.</para>
+        /// </summary>
+        public bool? DisablePayloadSigning { get; set; }
+
         /// <summary>
         /// Checks if the FilePosition property is set.
         /// </summary>
@@ -360,6 +403,25 @@ namespace Amazon.S3.Model
         internal bool IsSetRequestPayer()
         {
             return requestPayer != null;
+        }
+
+        /// <summary>
+        /// The account id of the expected bucket owner. 
+        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// </summary>
+        public string ExpectedBucketOwner
+        {
+            get { return this.expectedBucketOwner; }
+            set { this.expectedBucketOwner = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if ExpectedBucketOwner is set.
+        /// </summary>
+        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this.expectedBucketOwner);
         }
     }
 }

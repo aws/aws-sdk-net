@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,6 +30,12 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// The <code>ulimit</code> settings to pass to the container.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This object isn't applicable to jobs running on Fargate resources.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class Ulimit
     {

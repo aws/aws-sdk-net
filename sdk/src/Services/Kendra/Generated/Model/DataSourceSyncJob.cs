@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -142,7 +142,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property Metrics. 
         /// <para>
         /// Maps a batch delete document request to a specific data source sync job. This is optional
-        /// and should only be supplied when documents are deleted by a connector.
+        /// and should only be supplied when documents are deleted by a data source connector.
         /// </para>
         /// </summary>
         public DataSourceSyncJobMetrics Metrics

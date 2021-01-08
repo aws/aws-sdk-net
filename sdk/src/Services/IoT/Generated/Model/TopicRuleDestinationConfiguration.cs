@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.IoT.Model
     public partial class TopicRuleDestinationConfiguration
     {
         private HttpUrlDestinationConfiguration _httpUrlConfiguration;
+        private VpcDestinationConfiguration _vpcConfiguration;
 
         /// <summary>
         /// Gets and sets the property HttpUrlConfiguration. 
@@ -51,6 +52,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetHttpUrlConfiguration()
         {
             return this._httpUrlConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// Configuration of the virtual private cloud (VPC) connection.
+        /// </para>
+        /// </summary>
+        public VpcDestinationConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
         }
 
     }

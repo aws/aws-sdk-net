@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -121,6 +121,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.PathPattern = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("RealtimeLogConfigArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RealtimeLogConfigArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SmoothStreaming", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -131,6 +137,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.TargetOriginId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TrustedKeyGroups", targetDepth))
+                    {
+                        var unmarshaller = TrustedKeyGroupsUnmarshaller.Instance;
+                        unmarshalledObject.TrustedKeyGroups = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TrustedSigners", targetDepth))

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -57,7 +57,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ServiceManagedS3. 
         /// <para>
-        /// Used to store channel data in an S3 bucket managed by the AWS IoT Analytics service.
+        /// Used to store channel data in an S3 bucket managed by AWS IoT Analytics.
         /// </para>
         /// </summary>
         public ServiceManagedChannelS3StorageSummary ServiceManagedS3

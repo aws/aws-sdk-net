@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private string _endpointName;
         private EndpointStatus _endpointStatus;
         private string _failureReason;
+        private DeploymentConfig _lastDeploymentConfig;
         private DateTime? _lastModifiedTime;
         private List<ProductionVariantSummary> _productionVariants = new List<ProductionVariantSummary>();
 
@@ -214,6 +215,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastDeploymentConfig. 
+        /// <para>
+        /// The most recent deployment configuration for the endpoint.
+        /// </para>
+        /// </summary>
+        public DeploymentConfig LastDeploymentConfig
+        {
+            get { return this._lastDeploymentConfig; }
+            set { this._lastDeploymentConfig = value; }
+        }
+
+        // Check to see if LastDeploymentConfig property is set
+        internal bool IsSetLastDeploymentConfig()
+        {
+            return this._lastDeploymentConfig != null;
         }
 
         /// <summary>

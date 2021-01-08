@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,9 +30,10 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBackupPlans operation.
-    /// Returns metadata of your saved backup plans, including Amazon Resource Names (ARNs),
-    /// plan IDs, creation and deletion dates, version IDs, plan names, and creator request
-    /// IDs.
+    /// Returns a list of existing backup plans for an authenticated account. The list is
+    /// populated only if the advanced option is set for the backup plan. The list contains
+    /// information such as Amazon Resource Names (ARNs), plan IDs, creation and deletion
+    /// dates, version IDs, plan names, and creator request IDs.
     /// </summary>
     public partial class ListBackupPlansRequest : AmazonBackupRequest
     {

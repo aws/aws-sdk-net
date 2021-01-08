@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// 
+    /// Whether S3 Object Lock legal hold will be applied to objects in an S3 Batch Operations
+    /// job.
     /// </summary>
     public partial class S3ObjectLockLegalHold
     {
@@ -38,7 +39,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The Legal Hold status to be applied to all objects in the Batch Operations job.
+        /// The Object Lock legal hold status to be applied to all objects in the Batch Operations
+        /// job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

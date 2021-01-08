@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private bool? _managesVpcEndpoints;
         private string _owner;
         private string _privateDnsName;
+        private List<PrivateDnsDetails> _privateDnsNames = new List<PrivateDnsDetails>();
         private DnsNameState _privateDnsNameVerificationState;
         private string _serviceId;
         private string _serviceName;
@@ -154,6 +155,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPrivateDnsName()
         {
             return this._privateDnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsNames. 
+        /// <para>
+        /// The private DNS names assigned to the VPC endpoint service. 
+        /// </para>
+        /// </summary>
+        public List<PrivateDnsDetails> PrivateDnsNames
+        {
+            get { return this._privateDnsNames; }
+            set { this._privateDnsNames = value; }
+        }
+
+        // Check to see if PrivateDnsNames property is set
+        internal bool IsSetPrivateDnsNames()
+        {
+            return this._privateDnsNames != null && this._privateDnsNames.Count > 0; 
         }
 
         /// <summary>

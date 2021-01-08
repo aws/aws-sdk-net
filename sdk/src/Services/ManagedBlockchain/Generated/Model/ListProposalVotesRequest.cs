@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,13 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProposalVotes operation.
-    /// Returns the listing of votes for a specified proposal, including the value of each
-    /// vote and the unique identifier of the member that cast the vote.
+    /// Returns the list of votes for a specified proposal, including the value of each vote
+    /// and the unique identifier of the member that cast the vote.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class ListProposalVotesRequest : AmazonManagedBlockchainRequest
     {

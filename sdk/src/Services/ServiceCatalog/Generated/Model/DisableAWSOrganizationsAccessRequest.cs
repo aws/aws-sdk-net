@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,8 +33,8 @@ namespace Amazon.ServiceCatalog.Model
     /// Disable portfolio sharing through AWS Organizations feature. This feature will not
     /// delete your current shares but it will prevent you from creating new shares throughout
     /// your organization. Current shares will not be in sync with your organization structure
-    /// if it changes after calling this API. This API can only be called by the master account
-    /// in the organization.
+    /// if it changes after calling this API. This API can only be called by the management
+    /// account in the organization.
     /// 
     ///  
     /// <para>

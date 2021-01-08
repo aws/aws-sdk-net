@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,6 +63,7 @@ namespace Amazon.SimpleEmailV2.Model
         private string _feedbackForwardingEmailAddressIdentityArn;
         private string _fromEmailAddress;
         private string _fromEmailAddressIdentityArn;
+        private ListManagementOptions _listManagementOptions;
         private List<string> _replyToAddresses = new List<string>();
 
         /// <summary>
@@ -245,6 +246,25 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetFromEmailAddressIdentityArn()
         {
             return this._fromEmailAddressIdentityArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListManagementOptions. 
+        /// <para>
+        /// An object used to specify a list or topic to which an email belongs, which will be
+        /// used when a contact chooses to unsubscribe.
+        /// </para>
+        /// </summary>
+        public ListManagementOptions ListManagementOptions
+        {
+            get { return this._listManagementOptions; }
+            set { this._listManagementOptions = value; }
+        }
+
+        // Check to see if ListManagementOptions property is set
+        internal bool IsSetListManagementOptions()
+        {
+            return this._listManagementOptions != null;
         }
 
         /// <summary>

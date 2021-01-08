@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,32 @@ namespace Amazon.Kendra.Model
     /// Specifies the document attribute to use to sort the response to a Amazon Kendra query.
     /// You can specify a single attribute for sorting. The attribute must have the <code>Sortable</code>
     /// flag set to <code>true</code>, otherwise Amazon Kendra returns an exception.
+    /// 
+    ///  
+    /// <para>
+    /// You can sort attributes of the following types.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Date value
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Long value
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// String value
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can't sort attributes of the following type.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// String list value
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class SortingConfiguration
     {

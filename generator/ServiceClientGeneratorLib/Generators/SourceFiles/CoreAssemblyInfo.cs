@@ -40,7 +40,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     " Unknown platform constant - unable to set correct AssemblyDescription\r\n#endif\r\n" +
                     "\r\n[assembly: AssemblyConfiguration(\"\")]\r\n[assembly: AssemblyProduct(\"Amazon Web " +
                     "Services SDK for .NET\")]\r\n[assembly: AssemblyCompany(\"Amazon.com, Inc\")]\r\n[assem" +
-                    "bly: AssemblyCopyright(\"Copyright 2009-2015 Amazon.com, Inc. or its affiliates. " +
+                    "bly: AssemblyCopyright(\"Copyright Amazon.com, Inc. or its affiliates. " +
                     "All Rights Reserved.\")]\r\n[assembly: AssemblyTrademark(\"\")]\r\n[assembly: AssemblyC" +
                     "ulture(\"\")]\r\n\r\n// Setting ComVisible to false makes the types in this assembly n" +
                     "ot visible \r\n// to COM components.  If you need to access a type in this assembl" +

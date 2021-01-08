@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -162,11 +162,14 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property StorageLocation. 
         /// <para>
-        /// Information indicating where your game build files are stored. Use this parameter
-        /// only when creating a build with files stored in an S3 bucket that you own. The storage
-        /// location must specify an S3 bucket name and key. The location must also specify a
-        /// role ARN that you set up to allow Amazon GameLift to access your S3 bucket. The S3
-        /// bucket and your new build must be in the same Region.
+        /// The location where your game build files are stored. Use this parameter only when
+        /// creating a build using files that are stored in an S3 bucket that you own. Identify
+        /// an S3 bucket name and key, which must in the same Region where you're creating a build.
+        /// This parameter must also specify the ARN for an IAM role that you've set up to give
+        /// Amazon GameLift access your S3 bucket. To call this operation with a storage location,
+        /// you must have IAM PassRole permission. For more details on IAM roles and PassRole
+        /// permissions, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">
+        /// Set up a role for GameLift access</a>. 
         /// </para>
         /// </summary>
         public S3Location StorageLocation

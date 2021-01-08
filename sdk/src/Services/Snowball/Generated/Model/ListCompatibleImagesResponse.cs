@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property CompatibleImages. 
         /// <para>
         /// A JSON-formatted object that describes a compatible AMI, including the ID and name
-        /// for a Snowball Edge AMI.
+        /// for a Snow device AMI.
         /// </para>
         /// </summary>
         public List<CompatibleImage> CompatibleImages

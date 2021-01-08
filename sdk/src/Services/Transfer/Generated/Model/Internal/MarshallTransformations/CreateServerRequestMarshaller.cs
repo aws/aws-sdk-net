@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -72,6 +72,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Certificate");
                     context.Writer.Write(publicRequest.Certificate);
+                }
+
+                if(publicRequest.IsSetDomain())
+                {
+                    context.Writer.WritePropertyName("Domain");
+                    context.Writer.Write(publicRequest.Domain);
                 }
 
                 if(publicRequest.IsSetEndpointDetails())

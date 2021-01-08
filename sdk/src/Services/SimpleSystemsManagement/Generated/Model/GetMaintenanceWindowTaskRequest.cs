@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,6 +31,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the GetMaintenanceWindowTask operation.
     /// Lists the tasks in a maintenance window.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// For maintenance window tasks without a specified target, you cannot supply values
+    /// for <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system
+    /// inserts a placeholder value of <code>1</code>, which may be reported in the response
+    /// to this command. These values do not affect the running of your task and can be ignored.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetMaintenanceWindowTaskRequest : AmazonSimpleSystemsManagementRequest
     {

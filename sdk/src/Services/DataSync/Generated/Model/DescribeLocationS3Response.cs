@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,11 +33,33 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class DescribeLocationS3Response : AmazonWebServiceResponse
     {
+        private List<string> _agentArns = new List<string>();
         private DateTime? _creationTime;
         private string _locationArn;
         private string _locationUri;
         private S3Config _s3Config;
         private S3StorageClass _s3StorageClass;
+
+        /// <summary>
+        /// Gets and sets the property AgentArns. 
+        /// <para>
+        /// If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs) of the
+        /// EC2 agents deployed on your Outpost. For more information about launching a DataSync
+        /// agent on an AWS Outpost, see <a>outposts-agent</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4)]
+        public List<string> AgentArns
+        {
+            get { return this._agentArns; }
+            set { this._agentArns = value; }
+        }
+
+        // Check to see if AgentArns property is set
+        internal bool IsSetAgentArns()
+        {
+            return this._agentArns != null && this._agentArns.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -60,7 +82,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket location.
+        /// The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -115,10 +137,9 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// The Amazon S3 storage class that you chose to store your files in when this location
         /// is used as a task destination. For more information about S3 storage classes, see
-        /// <a href="https://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>
-        /// in the <i>Amazon Simple Storage Service Developer Guide</i>. Some storage classes
-        /// have behaviors that can affect your S3 storage cost. For detailed information, see
-        /// <a>using-storage-classes</a>.
+        /// <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>.
+        /// Some storage classes have behaviors that can affect your S3 storage cost. For detailed
+        /// information, see <a>using-storage-classes</a>.
         /// </para>
         /// </summary>
         public S3StorageClass S3StorageClass

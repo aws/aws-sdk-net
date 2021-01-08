@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,8 +39,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The ID you wish to assign to the message. Each "messageId" must be unique within each
-        /// batch sent.
+        /// The ID you want to assign to the message. Each <code>messageId</code> must be unique
+        /// within each batch sent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -59,8 +59,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        /// The payload of the message. This may be a JSON string or a Base64-encoded string representing
-        /// binary data (in which case you must decode it by means of a pipeline activity).
+        /// The payload of the message. This can be a JSON string or a base64-encoded string representing
+        /// binary data, in which case you must decode it by means of a pipeline activity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

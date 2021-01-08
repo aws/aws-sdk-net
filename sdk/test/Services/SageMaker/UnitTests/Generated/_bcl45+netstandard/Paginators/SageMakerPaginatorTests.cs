@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,6 +39,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         {
             _mockClient = new Mock<AmazonSageMakerClient>("access key", "secret", Amazon.RegionEndpoint.USEast1);
         }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListActionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListActionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListActionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListActionsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListActions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListActions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListActionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListActionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListActionsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListActions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListActions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -82,6 +121,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("SageMaker")]
+        public void ListAppImageConfigsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAppImageConfigsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListAppImageConfigsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListAppImageConfigsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListAppImageConfigs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListAppImageConfigs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListAppImageConfigsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAppImageConfigsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListAppImageConfigsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListAppImageConfigs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListAppImageConfigs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
         public void ListAppsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListAppsRequest>();
@@ -109,6 +187,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListApps(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListApps(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListArtifactsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListArtifactsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListArtifactsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListArtifactsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListArtifacts(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListArtifacts(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListArtifactsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListArtifactsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListArtifactsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListArtifacts(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListArtifacts(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListAssociationsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAssociationsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListAssociationsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListAssociationsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListAssociations(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListAssociations(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListAssociationsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAssociationsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListAssociationsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListAssociations(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListAssociations(request);
 
             // Should work the first time
             paginator.Responses.ToList();
@@ -277,6 +433,162 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("SageMaker")]
+        public void ListContextsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListContextsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListContextsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListContextsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListContexts(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListContexts(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListContextsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListContextsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListContextsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListContexts(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListContexts(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListDataQualityJobDefinitionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDataQualityJobDefinitionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListDataQualityJobDefinitionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListDataQualityJobDefinitionsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListDataQualityJobDefinitions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListDataQualityJobDefinitions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListDataQualityJobDefinitionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDataQualityJobDefinitionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListDataQualityJobDefinitionsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListDataQualityJobDefinitions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListDataQualityJobDefinitions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListDeviceFleetsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDeviceFleetsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListDeviceFleetsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListDeviceFleetsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListDeviceFleets(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListDeviceFleets(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListDeviceFleetsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDeviceFleetsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListDeviceFleetsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListDeviceFleets(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListDeviceFleets(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListDevicesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDevicesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListDevicesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListDevicesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListDevices(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListDevices(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListDevicesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDevicesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListDevicesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListDevices(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListDevices(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
         public void ListDomainsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListDomainsRequest>();
@@ -304,6 +616,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListDomains(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListDomains(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListEdgePackagingJobsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListEdgePackagingJobsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListEdgePackagingJobsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListEdgePackagingJobsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListEdgePackagingJobs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListEdgePackagingJobs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListEdgePackagingJobsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListEdgePackagingJobsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListEdgePackagingJobsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListEdgePackagingJobs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListEdgePackagingJobs(request);
 
             // Should work the first time
             paginator.Responses.ToList();
@@ -433,6 +784,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("SageMaker")]
+        public void ListFeatureGroupsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFeatureGroupsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListFeatureGroupsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListFeatureGroupsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListFeatureGroups(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListFeatureGroups(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListFeatureGroupsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFeatureGroupsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListFeatureGroupsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListFeatureGroups(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListFeatureGroups(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
         public void ListFlowDefinitionsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListFlowDefinitionsRequest>();
@@ -550,6 +940,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("SageMaker")]
+        public void ListImagesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListImagesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListImagesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListImagesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListImages(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListImages(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListImagesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListImagesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListImagesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListImages(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListImages(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListImageVersionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListImageVersionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListImageVersionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListImageVersionsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListImageVersions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListImageVersions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListImageVersionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListImageVersionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListImageVersionsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListImageVersions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListImageVersions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
         public void ListLabelingJobsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListLabelingJobsRequest>();
@@ -628,6 +1096,123 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("SageMaker")]
+        public void ListModelBiasJobDefinitionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListModelBiasJobDefinitionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListModelBiasJobDefinitionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListModelBiasJobDefinitionsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListModelBiasJobDefinitions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListModelBiasJobDefinitions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListModelBiasJobDefinitionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListModelBiasJobDefinitionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListModelBiasJobDefinitionsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListModelBiasJobDefinitions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListModelBiasJobDefinitions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListModelExplainabilityJobDefinitionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListModelExplainabilityJobDefinitionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListModelExplainabilityJobDefinitionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListModelExplainabilityJobDefinitionsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListModelExplainabilityJobDefinitions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListModelExplainabilityJobDefinitions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListModelExplainabilityJobDefinitionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListModelExplainabilityJobDefinitionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListModelExplainabilityJobDefinitionsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListModelExplainabilityJobDefinitions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListModelExplainabilityJobDefinitions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListModelPackageGroupsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListModelPackageGroupsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListModelPackageGroupsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListModelPackageGroupsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListModelPackageGroups(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListModelPackageGroups(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListModelPackageGroupsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListModelPackageGroupsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListModelPackageGroupsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListModelPackageGroups(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListModelPackageGroups(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
         public void ListModelPackagesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListModelPackagesRequest>();
@@ -655,6 +1240,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListModelPackages(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListModelPackages(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListModelQualityJobDefinitionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListModelQualityJobDefinitionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListModelQualityJobDefinitionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListModelQualityJobDefinitionsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListModelQualityJobDefinitions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListModelQualityJobDefinitions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListModelQualityJobDefinitionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListModelQualityJobDefinitionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListModelQualityJobDefinitionsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListModelQualityJobDefinitions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListModelQualityJobDefinitions(request);
 
             // Should work the first time
             paginator.Responses.ToList();
@@ -862,6 +1486,162 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("SageMaker")]
+        public void ListPipelineExecutionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPipelineExecutionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListPipelineExecutionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListPipelineExecutionsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListPipelineExecutions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListPipelineExecutions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListPipelineExecutionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPipelineExecutionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListPipelineExecutionsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListPipelineExecutions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListPipelineExecutions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListPipelineExecutionStepsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPipelineExecutionStepsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListPipelineExecutionStepsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListPipelineExecutionStepsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListPipelineExecutionSteps(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListPipelineExecutionSteps(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListPipelineExecutionStepsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPipelineExecutionStepsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListPipelineExecutionStepsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListPipelineExecutionSteps(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListPipelineExecutionSteps(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListPipelineParametersForExecutionTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPipelineParametersForExecutionRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListPipelineParametersForExecutionResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListPipelineParametersForExecutionResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListPipelineParametersForExecution(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListPipelineParametersForExecution(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListPipelineParametersForExecutionTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPipelineParametersForExecutionRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListPipelineParametersForExecutionResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListPipelineParametersForExecution(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListPipelineParametersForExecution(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListPipelinesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPipelinesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListPipelinesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListPipelinesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListPipelines(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListPipelines(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListPipelinesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListPipelinesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListPipelinesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListPipelines(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListPipelines(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
         public void ListProcessingJobsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListProcessingJobsRequest>();
@@ -889,6 +1669,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListProcessingJobs(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListProcessingJobs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        public void ListProjectsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListProjectsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListProjectsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListProjectsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListProjects(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListProjects(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("SageMaker")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListProjectsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListProjectsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListProjectsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListProjects(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListProjects(request);
 
             // Should work the first time
             paginator.Responses.ToList();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -58,6 +58,7 @@ namespace Amazon.CostExplorer.Model
     {
         private string _accountId;
         private AccountScope _accountScope;
+        private Expression _filter;
         private LookbackPeriodInDays _lookbackPeriodInDays;
         private string _nextPageToken;
         private int? _pageSize;
@@ -89,9 +90,9 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property AccountScope. 
         /// <para>
         /// The account scope that you want your recommendations for. Amazon Web Services calculates
-        /// recommendations including the payer account and linked accounts if the value is set
-        /// to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated
-        /// for individual linked accounts only.
+        /// recommendations including the management account and member accounts if the value
+        /// is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations
+        /// are calculated for individual member accounts only.
         /// </para>
         /// </summary>
         public AccountScope AccountScope
@@ -104,6 +105,21 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetAccountScope()
         {
             return this._accountScope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filter.
+        /// </summary>
+        public Expression Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
         }
 
         /// <summary>

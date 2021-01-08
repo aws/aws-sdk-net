@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -107,6 +107,7 @@ namespace Amazon.Synthetics.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ExecutionRoleArn
         {
             get { return this._executionRoleArn; }
@@ -184,8 +185,8 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property RuntimeVersion. 
         /// <para>
-        /// Specifies the runtime version to use for the canary. Currently, the only valid value
-        /// is <code>syn-1.0</code>. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
+        /// Specifies the runtime version to use for the canary. For a list of valid runtime versions
+        /// and for more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
         /// Canary Runtime Versions</a>.
         /// </para>
         /// </summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -85,6 +85,7 @@ namespace Amazon.Redshift.Model
         /// response records have been retrieved for the request. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string Marker
         {
             get { return this._marker; }
@@ -125,6 +126,7 @@ namespace Amazon.Redshift.Model
         /// example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ResourceName
         {
             get { return this._resourceName; }
@@ -190,6 +192,7 @@ namespace Amazon.Redshift.Model
         /// Cluster Management Guide. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=2147483647)]
         public string ResourceType
         {
             get { return this._resourceType; }

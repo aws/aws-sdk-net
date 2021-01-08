@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, describes the mapping
-    /// of each data element in the streaming source to the corresponding column in the in-application
+    /// For a SQL-based Kinesis Data Analytics application, describes the mapping of each
+    /// data element in the streaming source to the corresponding column in the in-application
     /// stream.
     /// 
     ///  
@@ -50,6 +50,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// A reference to the data element in the streaming input or the reference data source.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=65535)]
         public string Mapping
         {
             get { return this._mapping; }
@@ -69,7 +70,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -88,7 +89,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The type of column created in the in-application input stream or reference table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string SqlType
         {
             get { return this._sqlType; }

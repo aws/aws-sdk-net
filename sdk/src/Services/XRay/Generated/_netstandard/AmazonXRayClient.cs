@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,6 +41,9 @@ namespace Amazon.XRay
     /// AWS X-Ray provides APIs for managing debug traces and retrieving service maps and
     /// other data created by processing those traces.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonXRayClient : AmazonServiceClient, IAmazonXRay
     {
         private static IServiceMetadata serviceMetadata = new AmazonXRayMetadata();
@@ -590,6 +593,173 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  GetInsight
+
+        internal virtual GetInsightResponse GetInsight(GetInsightRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightResponseUnmarshaller.Instance;
+
+            return Invoke<GetInsightResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the summary information of an insight. This includes impact to clients and
+        /// root cause services, the top anomalous services, the category, the state of the insight,
+        /// and the start and end time of the insight.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsight service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInsight service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight">REST API Reference for GetInsight Operation</seealso>
+        public virtual Task<GetInsightResponse> GetInsightAsync(GetInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInsightResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetInsightEvents
+
+        internal virtual GetInsightEventsResponse GetInsightEvents(GetInsightEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightEventsResponseUnmarshaller.Instance;
+
+            return Invoke<GetInsightEventsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// X-Ray reevaluates insights periodically until they're resolved, and records each intermediate
+        /// state as an event. You can review an insight's events in the Impact Timeline on the
+        /// Inspect page in the X-Ray console.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInsightEvents service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents">REST API Reference for GetInsightEvents Operation</seealso>
+        public virtual Task<GetInsightEventsResponse> GetInsightEventsAsync(GetInsightEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInsightEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetInsightImpactGraph
+
+        internal virtual GetInsightImpactGraphResponse GetInsightImpactGraph(GetInsightImpactGraphRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightImpactGraphRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightImpactGraphResponseUnmarshaller.Instance;
+
+            return Invoke<GetInsightImpactGraphResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a service graph structure filtered by the specified insight. The service
+        /// graph is limited to only structural information. For a complete service graph, use
+        /// this API with the GetServiceGraph API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightImpactGraph service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInsightImpactGraph service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph">REST API Reference for GetInsightImpactGraph Operation</seealso>
+        public virtual Task<GetInsightImpactGraphResponse> GetInsightImpactGraphAsync(GetInsightImpactGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightImpactGraphRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightImpactGraphResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInsightImpactGraphResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetInsightSummaries
+
+        internal virtual GetInsightSummariesResponse GetInsightSummaries(GetInsightSummariesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightSummariesResponseUnmarshaller.Instance;
+
+            return Invoke<GetInsightSummariesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the summaries of all insights in the specified group matching the provided
+        /// filter values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInsightSummaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInsightSummaries service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries">REST API Reference for GetInsightSummaries Operation</seealso>
+        public virtual Task<GetInsightSummariesResponse> GetInsightSummariesAsync(GetInsightSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInsightSummariesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInsightSummariesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInsightSummariesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSamplingRules
 
         internal virtual GetSamplingRulesResponse GetSamplingRules(GetSamplingRulesRequest request)
@@ -915,7 +1085,8 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// 
+        /// Returns a list of tags that are applied to the specified AWS X-Ray group or sampling
+        /// rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -927,7 +1098,8 @@ namespace Amazon.XRay
         /// The request is missing required parameters or has invalid parameters.
         /// </exception>
         /// <exception cref="Amazon.XRay.Model.ResourceNotFoundException">
-        /// 
+        /// The resource was not found. Verify that the name or Amazon Resource Name (ARN) of
+        /// the resource is correct.
         /// </exception>
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
@@ -1049,7 +1221,7 @@ namespace Amazon.XRay
         /// see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS
         /// X-Ray Segment Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
         /// </para>
-        ///  <p class="title"> <b>Required Segment Document Fields</b> 
+        ///  <p class="title"> <b>Required segment document fields</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1079,10 +1251,10 @@ namespace Amazon.XRay
         ///  </li> <li> 
         /// <para>
         ///  <code>in_progress</code> - Set to <code>true</code> instead of specifying an <code>end_time</code>
-        /// to record that a segment has been started, but is not complete. Send an in progress
+        /// to record that a segment has been started, but is not complete. Send an in-progress
         /// segment when your application receives a request that will take a long time to serve,
-        /// to trace the fact that the request was received. When the response is sent, send the
-        /// complete segment to overwrite the in-progress segment.
+        /// to trace that the request was received. When the response is sent, send the complete
+        /// segment to overwrite the in-progress segment.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1093,7 +1265,7 @@ namespace Amazon.XRay
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The version number, i.e. <code>1</code>.
+        /// The version number, for instance, <code>1</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1145,7 +1317,7 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// 
+        /// Applies tags to an existing AWS X-Ray group or sampling rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1157,13 +1329,14 @@ namespace Amazon.XRay
         /// The request is missing required parameters or has invalid parameters.
         /// </exception>
         /// <exception cref="Amazon.XRay.Model.ResourceNotFoundException">
-        /// 
+        /// The resource was not found. Verify that the name or Amazon Resource Name (ARN) of
+        /// the resource is correct.
         /// </exception>
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.
         /// </exception>
         /// <exception cref="Amazon.XRay.Model.TooManyTagsException">
-        /// 
+        /// You have exceeded the maximum number of tags you can apply to this resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1191,7 +1364,8 @@ namespace Amazon.XRay
 
 
         /// <summary>
-        /// 
+        /// Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or delete system
+        /// tags (those with an <code>aws:</code> prefix).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1203,7 +1377,8 @@ namespace Amazon.XRay
         /// The request is missing required parameters or has invalid parameters.
         /// </exception>
         /// <exception cref="Amazon.XRay.Model.ResourceNotFoundException">
-        /// 
+        /// The resource was not found. Verify that the name or Amazon Resource Name (ARN) of
+        /// the resource is correct.
         /// </exception>
         /// <exception cref="Amazon.XRay.Model.ThrottledException">
         /// The request exceeds the maximum number of requests per second.

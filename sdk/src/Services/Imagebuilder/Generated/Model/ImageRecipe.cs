@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,6 +43,7 @@ namespace Amazon.Imagebuilder.Model
         private string _parentImage;
         private Platform _platform;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private ImageType _type;
         private string _version;
         private string _workingDirectory;
 
@@ -229,6 +230,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Specifies which type of image is created by the recipe - an AMI or a container image.
+        /// </para>
+        /// </summary>
+        public ImageType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>

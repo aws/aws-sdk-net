@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -343,6 +343,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
 
             _mockClient.Setup(x => x.ListSteps(request)).Returns(response);
             var paginator = _mockClient.Object.Paginators.ListSteps(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ElasticMapReduce")]
+        public void ListStudiosTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListStudiosRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListStudiosResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListStudiosResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.ListStudios(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListStudios(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ElasticMapReduce")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListStudiosTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListStudiosRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListStudiosResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.ListStudios(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListStudios(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ElasticMapReduce")]
+        public void ListStudioSessionMappingsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListStudioSessionMappingsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListStudioSessionMappingsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListStudioSessionMappingsResponse>();
+            secondResponse.Marker = null;
+
+            _mockClient.SetupSequence(x => x.ListStudioSessionMappings(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListStudioSessionMappings(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("ElasticMapReduce")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListStudioSessionMappingsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListStudioSessionMappingsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListStudioSessionMappingsResponse>();
+            response.Marker = null;
+
+            _mockClient.Setup(x => x.ListStudioSessionMappings(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListStudioSessionMappings(request);
 
             // Should work the first time
             paginator.Responses.ToList();

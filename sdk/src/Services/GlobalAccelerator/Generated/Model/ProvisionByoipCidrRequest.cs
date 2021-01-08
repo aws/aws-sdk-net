@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,11 +35,6 @@ namespace Amazon.GlobalAccelerator.Model
     /// is provisioned, it is ready to be advertised using <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/AdvertiseByoipCidr.html">
     /// AdvertiseByoipCidr</a>.
     /// 
-    ///  
-    /// <para>
-    /// To see an AWS CLI example of provisioning an address range for BYOIP, scroll down
-    /// to <b>Example</b>.
-    /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring

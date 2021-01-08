@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -76,12 +76,12 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OWNER_EMAIL</code> - Specifies the email address associated with the master
+        ///  <code>OWNER_EMAIL</code> - Specifies the email address associated with the management
         /// account. Included as information about an organization. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OWNER_NAME</code> - Specifies the name associated with the master account.
+        ///  <code>OWNER_NAME</code> - Specifies the name associated with the management account.
         /// Included as information about an organization. 
         /// </para>
         ///  </li> <li> 

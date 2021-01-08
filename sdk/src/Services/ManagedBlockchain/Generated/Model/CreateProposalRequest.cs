@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,6 +33,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// Creates a proposal for a change to the network that other members of the network can
     /// vote on, for example, a proposal to add a new member to the network. Any member can
     /// create a proposal.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class CreateProposalRequest : AmazonManagedBlockchainRequest
     {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -97,7 +97,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Priority. 
         /// <para>
         /// The priority for the route. Routes are matched based on the specified value, where
-        /// 0 is         the highest priority.
+        /// 0 is the highest priority.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]

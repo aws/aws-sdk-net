@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ namespace Amazon.ApiGatewayV2.Model
         private Cors _corsConfiguration;
         private string _credentialsArn;
         private string _description;
+        private bool? _disableExecuteApiEndpoint;
         private bool? _disableSchemaValidation;
         private string _name;
         private string _routeKey;
@@ -110,9 +111,9 @@ namespace Amazon.ApiGatewayV2.Model
         /// an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN).
         /// To require that the caller's identity be passed through from the request, specify
         /// arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services,
-        /// specify null. Currently, this property is not used for HTTP integrations. If provided,
-        /// this value replaces the credentials associated with the quick create integration.
-        /// Supported only for HTTP APIs.
+        /// don't specify this parameter. Currently, this property is not used for HTTP integrations.
+        /// If provided, this value replaces the credentials associated with the quick create
+        /// integration. Supported only for HTTP APIs.
         /// </para>
         /// </summary>
         public string CredentialsArn
@@ -143,6 +144,27 @@ namespace Amazon.ApiGatewayV2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableExecuteApiEndpoint. 
+        /// <para>
+        /// Specifies whether clients can invoke your API by using the default execute-api endpoint.
+        /// By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
+        /// endpoint. To require that clients use a custom domain name to invoke your API, disable
+        /// the default endpoint.
+        /// </para>
+        /// </summary>
+        public bool DisableExecuteApiEndpoint
+        {
+            get { return this._disableExecuteApiEndpoint.GetValueOrDefault(); }
+            set { this._disableExecuteApiEndpoint = value; }
+        }
+
+        // Check to see if DisableExecuteApiEndpoint property is set
+        internal bool IsSetDisableExecuteApiEndpoint()
+        {
+            return this._disableExecuteApiEndpoint.HasValue; 
         }
 
         /// <summary>

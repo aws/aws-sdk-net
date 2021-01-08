@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class OutputResources
     {
         private List<Ami> _amis = new List<Ami>();
+        private List<Container> _containers = new List<Container>();
 
         /// <summary>
         /// Gets and sets the property Amis. 
@@ -51,6 +52,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetAmis()
         {
             return this._amis != null && this._amis.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Containers. 
+        /// <para>
+        /// Container images that the pipeline has generated and stored in the output repository.
+        /// </para>
+        /// </summary>
+        public List<Container> Containers
+        {
+            get { return this._containers; }
+            set { this._containers = value; }
+        }
+
+        // Check to see if Containers property is set
+        internal bool IsSetContainers()
+        {
+            return this._containers != null && this._containers.Count > 0; 
         }
 
     }

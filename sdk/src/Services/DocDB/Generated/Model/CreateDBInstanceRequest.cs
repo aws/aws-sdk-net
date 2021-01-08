@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  The Amazon EC2 Availability Zone that the instance is created in.
+        /// The Amazon EC2 Availability Zone that the instance is created in. 
         /// </para>
         ///  
         /// <para>
@@ -78,13 +78,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        ///  Example: <code>us-east-1d</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the
-        /// <code>MultiAZ</code> parameter is set to <code>true</code>. The specified Availability
-        /// Zone must be in the same AWS Region as the current endpoint. 
+        /// Example: <code>us-east-1d</code> 
         /// </para>
         /// </summary>
         public string AvailabilityZone

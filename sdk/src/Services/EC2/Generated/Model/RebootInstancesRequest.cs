@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// If an instance does not cleanly shut down within four minutes, Amazon EC2 performs
+    /// If an instance does not cleanly shut down within a few minutes, Amazon EC2 performs
     /// a hard reboot.
     /// </para>
     ///  

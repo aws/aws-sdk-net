@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,6 +55,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ActiveTrustedKeyGroups", targetDepth))
+                    {
+                        var unmarshaller = ActiveTrustedKeyGroupsUnmarshaller.Instance;
+                        unmarshalledObject.ActiveTrustedKeyGroups = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ActiveTrustedSigners", targetDepth))
                     {
                         var unmarshaller = ActiveTrustedSignersUnmarshaller.Instance;

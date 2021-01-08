@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Describes the total number of tasks that the specified job has executed, the number
+    /// Describes the total number of tasks that the specified job has started, the number
     /// of tasks that succeeded, and the number of tasks that failed.
     /// </summary>
     public partial class JobProgressSummary

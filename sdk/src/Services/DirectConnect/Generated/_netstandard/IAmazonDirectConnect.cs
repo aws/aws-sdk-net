@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,6 +40,9 @@ namespace Amazon.DirectConnect
     /// (China) Ningxia Regions. AWS resources in the China Regions can only be accessed through
     /// locations associated with those Regions.
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial interface IAmazonDirectConnect : IAmazonService, IDisposable
     {
                 
@@ -769,30 +772,30 @@ namespace Amazon.DirectConnect
 
         /// <summary>
         /// Creates a link aggregation group (LAG) with the specified number of bundled physical
-        /// connections between the customer network and a specific AWS Direct Connect location.
-        /// A LAG is a logical interface that uses the Link Aggregation Control Protocol (LACP)
-        /// to aggregate multiple interfaces, enabling you to treat them as a single interface.
+        /// dedicated connections between the customer network and a specific AWS Direct Connect
+        /// location. A LAG is a logical interface that uses the Link Aggregation Control Protocol
+        /// (LACP) to aggregate multiple interfaces, enabling you to treat them as a single interface.
         /// 
         ///  
         /// <para>
-        /// All connections in a LAG must use the same bandwidth and must terminate at the same
-        /// AWS Direct Connect endpoint.
+        /// All connections in a LAG must use the same bandwidth (either 1Gbps or 10Gbps) and
+        /// must terminate at the same AWS Direct Connect endpoint.
         /// </para>
         ///  
         /// <para>
-        /// You can have up to 10 connections per LAG. Regardless of this limit, if you request
-        /// more connections for the LAG than AWS Direct Connect can allocate on a single endpoint,
-        /// no LAG is created.
+        /// You can have up to 10 dedicated connections per LAG. Regardless of this limit, if
+        /// you request more connections for the LAG than AWS Direct Connect can allocate on a
+        /// single endpoint, no LAG is created.
         /// </para>
         ///  
         /// <para>
-        /// You can specify an existing physical connection or interconnect to include in the
-        /// LAG (which counts towards the total number of connections). Doing so interrupts the
-        /// current physical connection or hosted connections, and re-establishes them as a member
-        /// of the LAG. The LAG will be created on the same AWS Direct Connect endpoint to which
-        /// the connection terminates. Any virtual interfaces associated with the connection are
-        /// automatically disassociated and re-associated with the LAG. The connection ID does
-        /// not change.
+        /// You can specify an existing physical dedicated connection or interconnect to include
+        /// in the LAG (which counts towards the total number of connections). Doing so interrupts
+        /// the current physical dedicated connection, and re-establishes them as a member of
+        /// the LAG. The LAG will be created on the same AWS Direct Connect endpoint to which
+        /// the dedicated connection terminates. Any virtual interfaces associated with the dedicated
+        /// connection are automatically disassociated and re-associated with the LAG. The connection
+        /// ID does not change.
         /// </para>
         ///  
         /// <para>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,6 +33,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member
     /// to vote as, specified by <code>VoterMemberId</code>, must be in the same AWS account
     /// as the principal that calls the action.
+    /// 
+    ///  
+    /// <para>
+    /// Applies only to Hyperledger Fabric.
+    /// </para>
     /// </summary>
     public partial class VoteOnProposalRequest : AmazonManagedBlockchainRequest
     {

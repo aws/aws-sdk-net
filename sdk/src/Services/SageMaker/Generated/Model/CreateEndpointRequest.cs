@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -91,6 +91,51 @@ namespace Amazon.SageMaker.Model
     /// and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
     /// User Guide</i>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    ///  To add the IAM role policies for using this API operation, go to the <a href="https://console.aws.amazon.com/iam/">IAM
+    /// console</a>, and choose Roles in the left navigation pane. Search the IAM role that
+    /// you want to grant access to use the <a>CreateEndpoint</a> and <a>CreateEndpointConfig</a>
+    /// API operations, add the following policies to the role. 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Option 1: For a full Amazon SageMaker access, search and attach the <code>AmazonSageMakerFullAccess</code>
+    /// policy.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Option 2: For granting a limited access to an IAM role, paste the following Action
+    /// elements manually into the JSON file of the IAM role: 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>"Action": ["sagemaker:CreateEndpoint", "sagemaker:CreateEndpointConfig"]</code>
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>"Resource": [</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>"arn:aws:sagemaker:region:account-id:endpoint/endpointName"</code> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>"arn:aws:sagemaker:region:account-id:endpoint-config/endpointConfigName"</code>
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>]</code> 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">Amazon
+    /// SageMaker API Permissions: Actions, Permissions, and Resources Reference</a>.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
     public partial class CreateEndpointRequest : AmazonSageMakerRequest
     {
@@ -121,8 +166,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// The name of the endpoint. The name must be unique within an AWS Region in your AWS
-        /// account.
+        /// The name of the endpoint.The name must be unique within an AWS Region in your AWS
+        /// account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case
+        /// is preserved and must be matched in .
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=63)]
@@ -141,9 +187,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-        /// Cost Allocation Tags</a>in the <i>AWS Billing and Cost Management User Guide</i>.
-        /// 
+        /// An array of key-value pairs. You can use tags to categorize your AWS resources in
+        /// different ways, for example, by purpose, owner, or environment. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// AWS Resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

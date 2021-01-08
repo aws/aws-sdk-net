@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -105,6 +105,20 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     var marshaller = WorldCountMarshaller.Instance;
                     marshaller.Marshall(publicRequest.WorldCount, context);
 
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetWorldTags())
+                {
+                    context.Writer.WritePropertyName("worldTags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestWorldTagsKvp in publicRequest.WorldTags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestWorldTagsKvp.Key);
+                        var publicRequestWorldTagsValue = publicRequestWorldTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestWorldTagsValue);
+                    }
                     context.Writer.WriteObjectEnd();
                 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -103,8 +103,8 @@ namespace Amazon.FMS.Model
         /// <para>
         /// The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
         /// Resource Types Reference</a>. Supported resource types are: <code>AWS::EC2::Instance</code>,
-        /// <code>AWS::EC2::NetworkInterface</code>, or <code>AWS::EC2::SecurityGroup</code>.
-        /// 
+        /// <code>AWS::EC2::NetworkInterface</code>, <code>AWS::EC2::SecurityGroup</code>, <code>AWS::NetworkFirewall::FirewallPolicy</code>,
+        /// and <code>AWS::EC2::Subnet</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

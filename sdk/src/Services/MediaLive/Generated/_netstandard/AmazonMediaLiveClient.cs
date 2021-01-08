@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,6 +40,9 @@ namespace Amazon.MediaLive
     ///
     /// API for AWS Elemental MediaLive
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonMediaLiveClient : AmazonServiceClient, IAmazonMediaLive
     {
         private static IServiceMetadata serviceMetadata = new AmazonMediaLiveMetadata();
@@ -258,6 +261,242 @@ namespace Amazon.MediaLive
         #endregion
 
 
+        #region  AcceptInputDeviceTransfer
+
+        internal virtual AcceptInputDeviceTransferResponse AcceptInputDeviceTransfer(AcceptInputDeviceTransferRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptInputDeviceTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptInputDeviceTransferResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptInputDeviceTransferResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Accept an incoming input device transfer. The ownership of the device will transfer
+        /// to your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptInputDeviceTransfer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptInputDeviceTransfer service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AcceptInputDeviceTransfer">REST API Reference for AcceptInputDeviceTransfer Operation</seealso>
+        public virtual Task<AcceptInputDeviceTransferResponse> AcceptInputDeviceTransferAsync(AcceptInputDeviceTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptInputDeviceTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptInputDeviceTransferResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AcceptInputDeviceTransferResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDelete
+
+        internal virtual BatchDeleteResponse BatchDelete(BatchDeleteRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts delete of resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDelete service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDelete service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDelete">REST API Reference for BatchDelete Operation</seealso>
+        public virtual Task<BatchDeleteResponse> BatchDeleteAsync(BatchDeleteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDeleteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchStart
+
+        internal virtual BatchStartResponse BatchStart(BatchStartRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchStartRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchStartResponseUnmarshaller.Instance;
+
+            return Invoke<BatchStartResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts existing resources
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchStart service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchStart service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart">REST API Reference for BatchStart Operation</seealso>
+        public virtual Task<BatchStartResponse> BatchStartAsync(BatchStartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchStartRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchStartResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchStartResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchStop
+
+        internal virtual BatchStopResponse BatchStop(BatchStopRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchStopRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchStopResponseUnmarshaller.Instance;
+
+            return Invoke<BatchStopResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops running resources
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchStop service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchStop service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop">REST API Reference for BatchStop Operation</seealso>
+        public virtual Task<BatchStopResponse> BatchStopAsync(BatchStopRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchStopRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchStopResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchStopResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchUpdateSchedule
 
         internal virtual BatchUpdateScheduleResponse BatchUpdateSchedule(BatchUpdateScheduleRequest request)
@@ -312,6 +551,67 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = BatchUpdateScheduleResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchUpdateScheduleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelInputDeviceTransfer
+
+        internal virtual CancelInputDeviceTransferResponse CancelInputDeviceTransfer(CancelInputDeviceTransferRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelInputDeviceTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelInputDeviceTransferResponseUnmarshaller.Instance;
+
+            return Invoke<CancelInputDeviceTransferResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Cancel an input device transfer that you have requested.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelInputDeviceTransfer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelInputDeviceTransfer service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CancelInputDeviceTransfer">REST API Reference for CancelInputDeviceTransfer Operation</seealso>
+        public virtual Task<CancelInputDeviceTransferResponse> CancelInputDeviceTransferAsync(CancelInputDeviceTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CancelInputDeviceTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelInputDeviceTransferResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelInputDeviceTransferResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1740,6 +2040,63 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  ListInputDeviceTransfers
+
+        internal virtual ListInputDeviceTransfersResponse ListInputDeviceTransfers(ListInputDeviceTransfersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInputDeviceTransfersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInputDeviceTransfersResponseUnmarshaller.Instance;
+
+            return Invoke<ListInputDeviceTransfersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List input devices that are currently being transferred. List input devices that you
+        /// are transferring from your AWS account or input devices that another AWS account is
+        /// transferring to you.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInputDeviceTransfers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInputDeviceTransfers service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDeviceTransfers">REST API Reference for ListInputDeviceTransfers Operation</seealso>
+        public virtual Task<ListInputDeviceTransfersResponse> ListInputDeviceTransfersAsync(ListInputDeviceTransfersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInputDeviceTransfersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInputDeviceTransfersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListInputDeviceTransfersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListInputs
 
         internal virtual ListInputsResponse ListInputs(ListInputsRequest request)
@@ -2159,6 +2516,67 @@ namespace Amazon.MediaLive
 
         #endregion
         
+        #region  RejectInputDeviceTransfer
+
+        internal virtual RejectInputDeviceTransferResponse RejectInputDeviceTransfer(RejectInputDeviceTransferRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectInputDeviceTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectInputDeviceTransferResponseUnmarshaller.Instance;
+
+            return Invoke<RejectInputDeviceTransferResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Reject the transfer of the specified input device to your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectInputDeviceTransfer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectInputDeviceTransfer service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RejectInputDeviceTransfer">REST API Reference for RejectInputDeviceTransfer Operation</seealso>
+        public virtual Task<RejectInputDeviceTransferResponse> RejectInputDeviceTransferAsync(RejectInputDeviceTransferRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectInputDeviceTransferRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectInputDeviceTransferResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RejectInputDeviceTransferResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartChannel
 
         internal virtual StartChannelResponse StartChannel(StartChannelRequest request)
@@ -2388,6 +2806,68 @@ namespace Amazon.MediaLive
             options.ResponseUnmarshaller = StopMultiplexResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopMultiplexResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TransferInputDevice
+
+        internal virtual TransferInputDeviceResponse TransferInputDevice(TransferInputDeviceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TransferInputDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TransferInputDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<TransferInputDeviceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Start an input device transfer to another AWS account. After you make the request,
+        /// the other account must accept or reject the transfer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TransferInputDevice service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TransferInputDevice service method, as returned by MediaLive.</returns>
+        /// <exception cref="Amazon.MediaLive.Model.BadGatewayException">
+        /// Placeholder documentation for BadGatewayException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.BadRequestException">
+        /// Placeholder documentation for BadRequestException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ConflictException">
+        /// Placeholder documentation for ConflictException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.ForbiddenException">
+        /// Placeholder documentation for ForbiddenException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.GatewayTimeoutException">
+        /// Placeholder documentation for GatewayTimeoutException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.InternalServerErrorException">
+        /// Placeholder documentation for InternalServerErrorException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.NotFoundException">
+        /// Placeholder documentation for NotFoundException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.TooManyRequestsException">
+        /// Placeholder documentation for TooManyRequestsException
+        /// </exception>
+        /// <exception cref="Amazon.MediaLive.Model.UnprocessableEntityException">
+        /// Placeholder documentation for UnprocessableEntityException
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TransferInputDevice">REST API Reference for TransferInputDevice Operation</seealso>
+        public virtual Task<TransferInputDeviceResponse> TransferInputDeviceAsync(TransferInputDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TransferInputDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TransferInputDeviceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TransferInputDeviceResponse>(request, options, cancellationToken);
         }
 
         #endregion

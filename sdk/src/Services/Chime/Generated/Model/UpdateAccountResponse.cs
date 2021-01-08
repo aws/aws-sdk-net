@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,10 +36,7 @@ namespace Amazon.Chime.Model
         private Account _account;
 
         /// <summary>
-        /// Gets and sets the property Account. 
-        /// <para>
-        /// The updated Amazon Chime account details.
-        /// </para>
+        /// Gets and sets the property Account.
         /// </summary>
         public Account Account
         {

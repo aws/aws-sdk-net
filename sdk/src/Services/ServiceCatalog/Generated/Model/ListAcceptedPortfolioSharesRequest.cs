@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -117,8 +117,8 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the master account of
-        /// your organization
+        ///  <code>AWS_ORGANIZATIONS</code> - List portfolios shared by the management account
+        /// of your organization
         /// </para>
         ///  </li> <li> 
         /// <para>

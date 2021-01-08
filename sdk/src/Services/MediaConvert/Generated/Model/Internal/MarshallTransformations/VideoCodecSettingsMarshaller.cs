@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -52,6 +52,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
                 var marshaller = Av1SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Av1Settings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAvcIntraSettings())
+            {
+                context.Writer.WritePropertyName("avcIntraSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AvcIntraSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AvcIntraSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -113,6 +124,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 
                 var marshaller = ProresSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProresSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetVc3Settings())
+            {
+                context.Writer.WritePropertyName("vc3Settings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Vc3SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Vc3Settings, context);
 
                 context.Writer.WriteObjectEnd();
             }

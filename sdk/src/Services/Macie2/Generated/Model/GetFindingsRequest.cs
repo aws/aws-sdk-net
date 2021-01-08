@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFindings operation.
-    /// Retrieves information about one or more findings.
+    /// Retrieves the details of one or more findings.
     /// </summary>
     public partial class GetFindingsRequest : AmazonMacie2Request
     {
@@ -40,8 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property FindingIds. 
         /// <para>
-        /// An array of strings that lists the unique identifiers for the findings to retrieve
-        /// information about.
+        /// An array of strings that lists the unique identifiers for the findings to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

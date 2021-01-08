@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.AppMesh.Model
 {
     /// <summary>
     /// An object that represents the backends that a virtual node is expected to send outbound
-    ///         traffic to.
+    /// traffic to.
     /// </summary>
     public partial class Backend
     {
@@ -39,7 +39,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property VirtualService. 
         /// <para>
-        /// Specifies a virtual service to use as a backend for a virtual node. 
+        /// Specifies a virtual service to use as a backend. 
         /// </para>
         /// </summary>
         public VirtualServiceBackend VirtualService

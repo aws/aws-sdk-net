@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -92,6 +92,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SnowflakeDestinationPropertiesUnmarshaller.Instance;
                     unmarshalledObject.Snowflake = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Upsolver", targetDepth))
+                {
+                    var unmarshaller = UpsolverDestinationPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.Upsolver = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

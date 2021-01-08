@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ namespace Amazon.MQ.Model
 
         /// <summary>
         /// Gets and sets the property Audit. Enables audit logging. Every user management action
-        /// made using JMX or the ActiveMQ Web Console is logged.
+        /// made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.
         /// </summary>
         public bool Audit
         {

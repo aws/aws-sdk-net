@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,8 +35,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class MonitoringBaselineConfig
     {
+        private string _baseliningJobName;
         private MonitoringConstraintsResource _constraintsResource;
         private MonitoringStatisticsResource _statisticsResource;
+
+        /// <summary>
+        /// Gets and sets the property BaseliningJobName. 
+        /// <para>
+        /// The name of the job that performs baselining for the monitoring job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string BaseliningJobName
+        {
+            get { return this._baseliningJobName; }
+            set { this._baseliningJobName = value; }
+        }
+
+        // Check to see if BaseliningJobName property is set
+        internal bool IsSetBaseliningJobName()
+        {
+            return this._baseliningJobName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConstraintsResource. 

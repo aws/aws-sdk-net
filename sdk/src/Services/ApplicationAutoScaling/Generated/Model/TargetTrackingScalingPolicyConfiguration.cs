@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -160,7 +160,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Comprehend document classification endpoints
+        /// Amazon Comprehend document classification and entity recognizer endpoints
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -169,6 +169,10 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         /// Amazon Keyspaces tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon MSK cluster storage
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -194,9 +198,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// With the <i>scale-out cooldown period</i>, the intention is to continuously (but not
         /// excessively) scale out. After Application Auto Scaling successfully scales out using
-        /// a target tracking scaling policy, it starts to calculate the cooldown time. While
-        /// the scale-out cooldown period is in effect, the capacity added by the initiating scale-out
-        /// activity is calculated as part of the desired capacity for the next scale-out activity.
+        /// a target tracking scaling policy, it starts to calculate the cooldown time. The scaling
+        /// policy won't increase the desired capacity again unless either a larger scale out
+        /// is triggered or the cooldown period ends. While the cooldown period is in effect,
+        /// the capacity added by the initiating scale-out activity is calculated as part of the
+        /// desired capacity for the next scale-out activity.
         /// </para>
         ///  
         /// <para>
@@ -245,7 +251,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Comprehend document classification endpoints
+        /// Amazon Comprehend document classification and entity recognizer endpoints
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -254,6 +260,10 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> <li> 
         /// <para>
         /// Amazon Keyspaces tables
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon MSK cluster storage
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -272,8 +282,12 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property TargetValue. 
         /// <para>
-        /// The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base
-        /// 10) or 2e-360 to 2e360 (Base 2).
+        /// The target value for the metric. Although this property accepts numbers of type Double,
+        /// it won't accept values that are either too small or too large. Values must be in the
+        /// range of -2^360 to 2^360. The value must be a valid number based on the choice of
+        /// metric. For example, if the metric is CPU utilization, then the target value is a
+        /// percent value that represents how much of the CPU can be used before scaling out.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

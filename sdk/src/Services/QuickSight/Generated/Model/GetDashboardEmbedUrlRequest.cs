@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -58,19 +58,45 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-    /// Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i> .
+    /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
+    /// Analytics</a> in the <i>Amazon QuickSight User Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetDashboardEmbedUrlRequest : AmazonQuickSightRequest
     {
+        private List<string> _additionalDashboardIds = new List<string>();
         private string _awsAccountId;
         private string _dashboardId;
-        private IdentityType _identityType;
+        private EmbeddingIdentityType _identityType;
+        private string _awsNamespace;
         private bool? _resetDisabled;
         private long? _sessionLifetimeInMinutes;
+        private bool? _statePersistenceEnabled;
         private bool? _undoRedoDisabled;
         private string _userArn;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalDashboardIds. 
+        /// <para>
+        /// A list of one or more dashboard IDs that you want to add to a session that includes
+        /// anonymous users. The <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code>
+        /// for this to work, because other identity types authenticate as QuickSight or IAM users.
+        /// For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3
+        /// identity-type ANONYMOUS</code>", the session can access all three dashboards. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<string> AdditionalDashboardIds
+        {
+            get { return this._additionalDashboardIds; }
+            set { this._additionalDashboardIds = value; }
+        }
+
+        // Check to see if AdditionalDashboardIds property is set
+        internal bool IsSetAdditionalDashboardIds()
+        {
+            return this._additionalDashboardIds != null && this._additionalDashboardIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -94,7 +120,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardId. 
         /// <para>
-        /// The ID for the dashboard, also added to the IAM policy.
+        /// The ID for the dashboard, also added to the AWS Identity and Access Management (IAM)
+        /// policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -117,7 +144,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public IdentityType IdentityType
+        public EmbeddingIdentityType IdentityType
         {
             get { return this._identityType; }
             set { this._identityType = value; }
@@ -127,6 +154,26 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetIdentityType()
         {
             return this._identityType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// The QuickSight namespace that contains the dashboard IDs in this request. If you're
+        /// not using a custom namespace, set this to "<code>default</code>".
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string Namespace
+        {
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
+        }
+
+        // Check to see if Namespace property is set
+        internal bool IsSetNamespace()
+        {
+            return this._awsNamespace != null;
         }
 
         /// <summary>
@@ -165,6 +212,30 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSessionLifetimeInMinutes()
         {
             return this._sessionLifetimeInMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatePersistenceEnabled. 
+        /// <para>
+        /// Adds persistence of state for the user session in an embedded dashboard. Persistence
+        /// applies to the sheet and the parameter settings. These are control settings that the
+        /// dashboard subscriber (QuickSight reader) chooses while viewing the dashboard. If this
+        /// is set to <code>TRUE</code>, the settings are the same when the subscriber reopens
+        /// the same dashboard URL. The state is stored in QuickSight, not in a browser cookie.
+        /// If this is set to FALSE, the state of the user session is not persisted. The default
+        /// is <code>FALSE</code>.
+        /// </para>
+        /// </summary>
+        public bool StatePersistenceEnabled
+        {
+            get { return this._statePersistenceEnabled.GetValueOrDefault(); }
+            set { this._statePersistenceEnabled = value; }
+        }
+
+        // Check to see if StatePersistenceEnabled property is set
+        internal bool IsSetStatePersistenceEnabled()
+        {
+            return this._statePersistenceEnabled.HasValue; 
         }
 
         /// <summary>

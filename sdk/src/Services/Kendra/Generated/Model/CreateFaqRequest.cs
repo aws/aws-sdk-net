@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,9 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class CreateFaqRequest : AmazonKendraRequest
     {
+        private string _clientToken;
         private string _description;
+        private FaqFileFormat _fileFormat;
         private string _indexId;
         private string _name;
         private string _roleArn;
@@ -42,12 +44,33 @@ namespace Amazon.Kendra.Model
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A token that you provide to identify the request to create a FAQ. Multiple calls to
+        /// the <code>CreateFaqRequest</code> operation with the same client token will create
+        /// only one FAQ. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A description of the FAQ.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=0, Max=1000)]
         public string Description
         {
             get { return this._description; }
@@ -58,6 +81,36 @@ namespace Amazon.Kendra.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileFormat. 
+        /// <para>
+        /// The format of the input file. You can choose between a basic CSV format, a CSV format
+        /// that includes customs attributes in a header, and a JSON format that includes custom
+        /// attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// The format must match the format of the file stored in the S3 bucket identified in
+        /// the <code>S3Path</code> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+        /// questions and answers</a>.
+        /// </para>
+        /// </summary>
+        public FaqFileFormat FileFormat
+        {
+            get { return this._fileFormat; }
+            set { this._fileFormat = value; }
+        }
+
+        // Check to see if FileFormat property is set
+        internal bool IsSetFileFormat()
+        {
+            return this._fileFormat != null;
         }
 
         /// <summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,13 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// Configuration properties of a peer node.
+    /// Configuration properties of a node.
     /// </summary>
     public partial class NodeConfiguration
     {
         private string _availabilityZone;
         private string _instanceType;
         private NodeLogPublishingConfiguration _logPublishingConfiguration;
+        private StateDBType _stateDB;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -43,7 +44,6 @@ namespace Amazon.ManagedBlockchain.Model
         /// The Availability Zone in which the node exists.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string AvailabilityZone
         {
             get { return this._availabilityZone; }
@@ -76,7 +76,11 @@ namespace Amazon.ManagedBlockchain.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogPublishingConfiguration.
+        /// Gets and sets the property LogPublishingConfiguration. 
+        /// <para>
+        /// Configuration properties for logging events associated with a peer node on a Hyperledger
+        /// Fabric network on Managed Blockchain. 
+        /// </para>
         /// </summary>
         public NodeLogPublishingConfiguration LogPublishingConfiguration
         {
@@ -88,6 +92,30 @@ namespace Amazon.ManagedBlockchain.Model
         internal bool IsSetLogPublishingConfiguration()
         {
             return this._logPublishingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateDB. 
+        /// <para>
+        /// The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+        /// When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4
+        /// or later, the default is <code>CouchDB</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
+        /// </summary>
+        public StateDBType StateDB
+        {
+            get { return this._stateDB; }
+            set { this._stateDB = value; }
+        }
+
+        // Check to see if StateDB property is set
+        internal bool IsSetStateDB()
+        {
+            return this._stateDB != null;
         }
 
     }

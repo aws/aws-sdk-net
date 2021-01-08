@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -155,6 +155,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Timeout");
                     context.Writer.Write(publicRequest.Timeout);
+                }
+
+                if(publicRequest.IsSetTransformEncryption())
+                {
+                    context.Writer.WritePropertyName("TransformEncryption");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TransformEncryptionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TransformEncryption, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetWorkerType())

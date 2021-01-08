@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,17 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAgentArns())
+                {
+                    context.Writer.WritePropertyName("AgentArns");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAgentArnsListValue in publicRequest.AgentArns)
+                    {
+                            context.Writer.Write(publicRequestAgentArnsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetS3BucketArn())
                 {
                     context.Writer.WritePropertyName("S3BucketArn");

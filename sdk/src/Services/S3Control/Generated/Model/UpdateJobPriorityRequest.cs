@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,9 +30,9 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateJobPriority operation.
-    /// Updates an existing Amazon S3 Batch Operations job's priority. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
-    /// S3 Batch Operations</a> in the Amazon Simple Storage Service Developer Guide.
+    /// Updates an existing S3 Batch Operations job's priority. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3
+    /// Batch Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
     /// 
     ///   
     /// <para>
@@ -40,19 +40,23 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateJob</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListJobs</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListJobs.html">ListJobs</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>DescribeJob</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html">DescribeJob</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UpdateJobStatus</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>

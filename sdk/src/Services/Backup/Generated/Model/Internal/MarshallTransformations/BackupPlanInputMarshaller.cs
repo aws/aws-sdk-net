@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,22 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BackupPlanInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAdvancedBackupSettings())
+            {
+                context.Writer.WritePropertyName("AdvancedBackupSettings");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAdvancedBackupSettingsListValue in requestObject.AdvancedBackupSettings)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AdvancedBackupSettingMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAdvancedBackupSettingsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetBackupPlanName())
             {
                 context.Writer.WritePropertyName("BackupPlanName");

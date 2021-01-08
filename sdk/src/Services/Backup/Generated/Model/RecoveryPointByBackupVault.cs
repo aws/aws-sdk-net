@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,6 +48,7 @@ namespace Amazon.Backup.Model
         private string _recoveryPointArn;
         private string _resourceArn;
         private string _resourceType;
+        private string _sourceBackupVaultArn;
         private RecoveryPointStatus _status;
 
         /// <summary>
@@ -335,7 +336,7 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The type of AWS resource saved as a recovery point; for example, an Amazon Elastic
         /// Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
-        /// database.
+        /// database. For VSS Windows backups, the only supported resource type is Amazon EC2.
         /// </para>
         /// </summary>
         public string ResourceType
@@ -348,6 +349,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceBackupVaultArn. 
+        /// <para>
+        /// The backup vault where the recovery point was originally copied from. If the recovery
+        /// point is restored to the same account this value will be <code>null</code>.
+        /// </para>
+        /// </summary>
+        public string SourceBackupVaultArn
+        {
+            get { return this._sourceBackupVaultArn; }
+            set { this._sourceBackupVaultArn = value; }
+        }
+
+        // Check to see if SourceBackupVaultArn property is set
+        internal bool IsSetSourceBackupVaultArn()
+        {
+            return this._sourceBackupVaultArn != null;
         }
 
         /// <summary>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,9 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBackupPlan operation.
-    /// Backup plans are documents that contain information that AWS Backup uses to schedule
-    /// tasks that create recovery points of resources.
+    /// Creates a backup plan using a backup plan name and backup rules. A backup plan is
+    /// a document that contains information that AWS Backup uses to schedule tasks that create
+    /// recovery points for resources.
     /// 
     ///  
     /// <para>
@@ -89,7 +90,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// Identifies the request and allows failed requests to be retried without the risk of
-        /// executing the operation twice. If the request includes a <code>CreatorRequestId</code>
+        /// running the operation twice. If the request includes a <code>CreatorRequestId</code>
         /// that matches an existing backup plan, that plan is returned. This parameter is optional.
         /// </para>
         /// </summary>

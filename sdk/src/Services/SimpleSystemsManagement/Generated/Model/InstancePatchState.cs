@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -152,14 +152,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstalledRejectedCount. 
         /// <para>
-        /// The number of instances with patches installed that are specified in a RejectedPatches
+        /// The number of patches installed on an instance that are specified in a <code>RejectedPatches</code>
         /// list. Patches with a status of <i>InstalledRejected</i> were typically installed before
-        /// they were added to a RejectedPatches list.
+        /// they were added to a <code>RejectedPatches</code> list.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value
-        /// of InstalledRejectedCount will always be 0 (zero).
+        /// If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>,
+        /// the value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
         /// </para>
         ///  </note>
         /// </summary>
@@ -285,8 +285,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// The type of patching operation that was performed: SCAN (assess patch compliance state)
-        /// or INSTALL (install missing patches).
+        /// The type of patching operation that was performed: <code>SCAN</code> (assess patch
+        /// compliance state) or <code>INSTALL</code> (install missing patches).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

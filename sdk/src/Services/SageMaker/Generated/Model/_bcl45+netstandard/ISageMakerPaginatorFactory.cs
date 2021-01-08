@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,14 +27,34 @@ namespace Amazon.SageMaker.Model
     {
 
         /// <summary>
+        /// Paginator for ListActions operation
+        ///</summary>
+        IListActionsPaginator ListActions(ListActionsRequest request);
+
+        /// <summary>
         /// Paginator for ListAlgorithms operation
         ///</summary>
         IListAlgorithmsPaginator ListAlgorithms(ListAlgorithmsRequest request);
 
         /// <summary>
+        /// Paginator for ListAppImageConfigs operation
+        ///</summary>
+        IListAppImageConfigsPaginator ListAppImageConfigs(ListAppImageConfigsRequest request);
+
+        /// <summary>
         /// Paginator for ListApps operation
         ///</summary>
         IListAppsPaginator ListApps(ListAppsRequest request);
+
+        /// <summary>
+        /// Paginator for ListArtifacts operation
+        ///</summary>
+        IListArtifactsPaginator ListArtifacts(ListArtifactsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAssociations operation
+        ///</summary>
+        IListAssociationsPaginator ListAssociations(ListAssociationsRequest request);
 
         /// <summary>
         /// Paginator for ListAutoMLJobs operation
@@ -57,9 +77,34 @@ namespace Amazon.SageMaker.Model
         IListCompilationJobsPaginator ListCompilationJobs(ListCompilationJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListContexts operation
+        ///</summary>
+        IListContextsPaginator ListContexts(ListContextsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataQualityJobDefinitions operation
+        ///</summary>
+        IListDataQualityJobDefinitionsPaginator ListDataQualityJobDefinitions(ListDataQualityJobDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDeviceFleets operation
+        ///</summary>
+        IListDeviceFleetsPaginator ListDeviceFleets(ListDeviceFleetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDevices operation
+        ///</summary>
+        IListDevicesPaginator ListDevices(ListDevicesRequest request);
+
+        /// <summary>
         /// Paginator for ListDomains operation
         ///</summary>
         IListDomainsPaginator ListDomains(ListDomainsRequest request);
+
+        /// <summary>
+        /// Paginator for ListEdgePackagingJobs operation
+        ///</summary>
+        IListEdgePackagingJobsPaginator ListEdgePackagingJobs(ListEdgePackagingJobsRequest request);
 
         /// <summary>
         /// Paginator for ListEndpointConfigs operation
@@ -77,6 +122,11 @@ namespace Amazon.SageMaker.Model
         IListExperimentsPaginator ListExperiments(ListExperimentsRequest request);
 
         /// <summary>
+        /// Paginator for ListFeatureGroups operation
+        ///</summary>
+        IListFeatureGroupsPaginator ListFeatureGroups(ListFeatureGroupsRequest request);
+
+        /// <summary>
         /// Paginator for ListFlowDefinitions operation
         ///</summary>
         IListFlowDefinitionsPaginator ListFlowDefinitions(ListFlowDefinitionsRequest request);
@@ -92,6 +142,16 @@ namespace Amazon.SageMaker.Model
         IListHyperParameterTuningJobsPaginator ListHyperParameterTuningJobs(ListHyperParameterTuningJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListImages operation
+        ///</summary>
+        IListImagesPaginator ListImages(ListImagesRequest request);
+
+        /// <summary>
+        /// Paginator for ListImageVersions operation
+        ///</summary>
+        IListImageVersionsPaginator ListImageVersions(ListImageVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListLabelingJobs operation
         ///</summary>
         IListLabelingJobsPaginator ListLabelingJobs(ListLabelingJobsRequest request);
@@ -102,9 +162,29 @@ namespace Amazon.SageMaker.Model
         IListLabelingJobsForWorkteamPaginator ListLabelingJobsForWorkteam(ListLabelingJobsForWorkteamRequest request);
 
         /// <summary>
+        /// Paginator for ListModelBiasJobDefinitions operation
+        ///</summary>
+        IListModelBiasJobDefinitionsPaginator ListModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListModelExplainabilityJobDefinitions operation
+        ///</summary>
+        IListModelExplainabilityJobDefinitionsPaginator ListModelExplainabilityJobDefinitions(ListModelExplainabilityJobDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListModelPackageGroups operation
+        ///</summary>
+        IListModelPackageGroupsPaginator ListModelPackageGroups(ListModelPackageGroupsRequest request);
+
+        /// <summary>
         /// Paginator for ListModelPackages operation
         ///</summary>
         IListModelPackagesPaginator ListModelPackages(ListModelPackagesRequest request);
+
+        /// <summary>
+        /// Paginator for ListModelQualityJobDefinitions operation
+        ///</summary>
+        IListModelQualityJobDefinitionsPaginator ListModelQualityJobDefinitions(ListModelQualityJobDefinitionsRequest request);
 
         /// <summary>
         /// Paginator for ListModels operation
@@ -132,9 +212,34 @@ namespace Amazon.SageMaker.Model
         IListNotebookInstancesPaginator ListNotebookInstances(ListNotebookInstancesRequest request);
 
         /// <summary>
+        /// Paginator for ListPipelineExecutions operation
+        ///</summary>
+        IListPipelineExecutionsPaginator ListPipelineExecutions(ListPipelineExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPipelineExecutionSteps operation
+        ///</summary>
+        IListPipelineExecutionStepsPaginator ListPipelineExecutionSteps(ListPipelineExecutionStepsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPipelineParametersForExecution operation
+        ///</summary>
+        IListPipelineParametersForExecutionPaginator ListPipelineParametersForExecution(ListPipelineParametersForExecutionRequest request);
+
+        /// <summary>
+        /// Paginator for ListPipelines operation
+        ///</summary>
+        IListPipelinesPaginator ListPipelines(ListPipelinesRequest request);
+
+        /// <summary>
         /// Paginator for ListProcessingJobs operation
         ///</summary>
         IListProcessingJobsPaginator ListProcessingJobs(ListProcessingJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListProjects operation
+        ///</summary>
+        IListProjectsPaginator ListProjects(ListProjectsRequest request);
 
         /// <summary>
         /// Paginator for ListSubscribedWorkteams operation

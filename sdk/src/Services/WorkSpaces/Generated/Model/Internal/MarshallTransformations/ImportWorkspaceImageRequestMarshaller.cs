@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,6 +68,17 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApplications())
+                {
+                    context.Writer.WritePropertyName("Applications");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestApplicationsListValue in publicRequest.Applications)
+                    {
+                            context.Writer.Write(publicRequestApplicationsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetEc2ImageId())
                 {
                     context.Writer.WritePropertyName("Ec2ImageId");

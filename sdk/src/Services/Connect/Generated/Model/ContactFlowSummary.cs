@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,6 +30,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Contains summary information about a contact flow.
+    /// 
+    ///  
+    /// <para>
+    /// You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon
+    /// Connect Flow language</a>.
+    /// </para>
     /// </summary>
     public partial class ContactFlowSummary
     {
@@ -99,6 +105,7 @@ namespace Amazon.Connect.Model
         /// The name of the contact flow.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Name
         {
             get { return this._name; }

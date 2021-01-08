@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -61,7 +61,7 @@ namespace Amazon.DocDB.Model
         ///  </li> <li> 
         /// <para>
         /// If the source parameter group is in a different AWS Region than the copy, specify
-        /// a valid cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
+        /// a valid cluster parameter group ARN; for example, <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -130,7 +130,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must contain from 1 to 255 letters, numbers, or hyphens.
+        /// Must contain from 1 to 255 letters, numbers, or hyphens. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -138,7 +138,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// Cannot end with a hyphen or contain two consecutive hyphens. 
         /// </para>
         ///  </li> </ul> 
         /// <para>

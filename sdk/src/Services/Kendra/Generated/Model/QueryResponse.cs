@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -98,8 +98,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property TotalNumberOfResults. 
         /// <para>
-        /// The number of items returned by the search. Use this to determine when you have requested
-        /// the last set of results.
+        /// The total number of items found by the search; however, you can only retrieve up to
+        /// 100 items. For example, if the search found 192 items, you can only retrieve the first
+        /// 100 of the items.
         /// </para>
         /// </summary>
         public int TotalNumberOfResults

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,8 +32,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// Container for the parameters to the DeprovisionByoipCidr operation.
     /// Releases the specified address range that you provisioned to use with your AWS resources
     /// through bring your own IP addresses (BYOIP) and deletes the corresponding address
-    /// pool. To see an AWS CLI example of deprovisioning an address range, scroll down to
-    /// <b>Example</b>.
+    /// pool. 
     /// 
     ///  
     /// <para>

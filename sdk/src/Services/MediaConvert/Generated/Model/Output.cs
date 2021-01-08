@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -150,7 +150,7 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Preset. Use Preset (Preset) to specifiy a preset for your
+        /// Gets and sets the property Preset. Use Preset (Preset) to specify a preset for your
         /// transcoding settings. Provide the system or custom preset name. You can specify either
         /// Preset (Preset) or Container settings (ContainerSettings), but not both.
         /// </summary>

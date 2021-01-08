@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -704,6 +704,10 @@ namespace Amazon.Polly
         /// Constant Nicole for VoiceId
         /// </summary>
         public static readonly VoiceId Nicole = new VoiceId("Nicole");
+        /// <summary>
+        /// Constant Olivia for VoiceId
+        /// </summary>
+        public static readonly VoiceId Olivia = new VoiceId("Olivia");
         /// <summary>
         /// Constant Penelope for VoiceId
         /// </summary>

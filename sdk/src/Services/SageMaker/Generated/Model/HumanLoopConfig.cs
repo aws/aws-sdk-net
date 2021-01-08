@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TaskAvailabilityLifetimeInSeconds. 
         /// <para>
-        /// The length of time that a task remains available for labeling by human workers.
+        /// The length of time that a task remains available for review by human workers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=864000)]
@@ -159,7 +159,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TaskTimeLimitInSeconds. 
         /// <para>
-        /// The amount of time that a worker has to complete a task.
+        /// The amount of time that a worker has to complete a task. The default value is 3,600
+        /// seconds (1 hour)
         /// </para>
         /// </summary>
         [AWSProperty(Min=30, Max=28800)]

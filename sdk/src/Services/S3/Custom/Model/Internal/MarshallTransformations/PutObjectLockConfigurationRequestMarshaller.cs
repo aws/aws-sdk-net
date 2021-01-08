@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -67,6 +67,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(publicRequest.RequestPayer.ToString()));
             if (publicRequest.IsSetToken())
                 request.Headers.Add("x-amz-bucket-object-lock-token", publicRequest.Token);
+            if (publicRequest.IsSetExpectedBucketOwner())
+                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(publicRequest.ExpectedBucketOwner));
             if (!publicRequest.IsSetBucketName())
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "publicRequest.BucketName");
             uriResourcePath = uriResourcePath.Replace("{Bucket}", StringUtils.FromString(publicRequest.BucketName));
@@ -118,7 +120,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                var checksum = AmazonS3Util.GenerateChecksumForContent(content, true);
+                var checksum = AWSSDKUtils.GenerateChecksumForContent(content, true);
                 request.Headers[HeaderKeys.ContentMD5Header] = checksum;
             } 
             catch (EncoderFallbackException e) 

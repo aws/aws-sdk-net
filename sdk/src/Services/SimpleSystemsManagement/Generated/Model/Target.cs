@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// An array of search criteria that targets instances using a Key,Value combination that
     /// you specify. 
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    ///  One or more targets must be specified for maintenance window Run Command-type tasks.
+    /// Depending on the task, targets are optional for other maintenance window task types
+    /// (Automation, AWS Lambda, and AWS Step Functions). For more information about running
+    /// tasks that do not specify targets, see see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+    /// maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Supported formats include the following.
     /// </para>

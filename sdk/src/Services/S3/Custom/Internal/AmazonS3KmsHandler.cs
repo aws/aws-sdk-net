@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -80,11 +80,11 @@ namespace Amazon.S3.Internal
         internal static void EvaluateIfSigV4Required(IRequest request)
         {
             // Skip this for S3-compatible storage provider endpoints
-            if ((request.OriginalRequest is S3.Model.GetObjectRequest) && (AmazonS3Uri.IsAmazonS3Endpoint(request.Endpoint)))
+            if (request.OriginalRequest is S3.Model.GetObjectRequest && 
+                AmazonS3Uri.TryParseAmazonS3Uri(request.Endpoint, out var amazonS3Uri) && 
+                amazonS3Uri.Region != RegionEndpoint.USEast1)     
             {
-                var region = new AmazonS3Uri(request.Endpoint.OriginalString).Region;
-                if(region != RegionEndpoint.USEast1)
-                    request.UseSigV4 = true;
+                request.UseSigV4 = true;
             }
         }
     }

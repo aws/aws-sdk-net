@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,11 +33,56 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class MicrosoftSQLServerSettings
     {
+        private int? _bcpPacketSize;
+        private string _controlTablesFileGroup;
         private string _databaseName;
         private string _password;
         private int? _port;
+        private bool? _readBackupOnly;
+        private SafeguardPolicy _safeguardPolicy;
+        private string _secretsManagerAccessRoleArn;
+        private string _secretsManagerSecretId;
         private string _serverName;
+        private bool? _useBcpFullLoad;
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property BcpPacketSize. 
+        /// <para>
+        /// The maximum size of the packets (in bytes) used to transfer data using BCP.
+        /// </para>
+        /// </summary>
+        public int BcpPacketSize
+        {
+            get { return this._bcpPacketSize.GetValueOrDefault(); }
+            set { this._bcpPacketSize = value; }
+        }
+
+        // Check to see if BcpPacketSize property is set
+        internal bool IsSetBcpPacketSize()
+        {
+            return this._bcpPacketSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ControlTablesFileGroup. 
+        /// <para>
+        /// Specifies a file group for the AWS DMS internal tables. When the replication task
+        /// starts, all the internal AWS DMS control tables (awsdms_ apply_exception, awsdms_apply,
+        /// awsdms_changes) are created for the specified file group.
+        /// </para>
+        /// </summary>
+        public string ControlTablesFileGroup
+        {
+            get { return this._controlTablesFileGroup; }
+            set { this._controlTablesFileGroup = value; }
+        }
+
+        // Check to see if ControlTablesFileGroup property is set
+        internal bool IsSetControlTablesFileGroup()
+        {
+            return this._controlTablesFileGroup != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DatabaseName. 
@@ -94,6 +139,117 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReadBackupOnly. 
+        /// <para>
+        /// When this attribute is set to <code>Y</code>, AWS DMS only reads changes from transaction
+        /// log backups and doesn't read from the active transaction log file during ongoing replication.
+        /// Setting this parameter to <code>Y</code> enables you to control active transaction
+        /// log file growth during full load and ongoing replication tasks. However, it can add
+        /// some source latency to ongoing replication.
+        /// </para>
+        /// </summary>
+        public bool ReadBackupOnly
+        {
+            get { return this._readBackupOnly.GetValueOrDefault(); }
+            set { this._readBackupOnly = value; }
+        }
+
+        // Check to see if ReadBackupOnly property is set
+        internal bool IsSetReadBackupOnly()
+        {
+            return this._readBackupOnly.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SafeguardPolicy. 
+        /// <para>
+        /// Use this attribute to minimize the need to access the backup log and enable AWS DMS
+        /// to prevent truncation using one of the following two methods.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Start transactions in the database:</i> This is the default method. When this
+        /// method is used, AWS DMS prevents TLOG truncation by mimicking a transaction in the
+        /// database. As long as such a transaction is open, changes that appear after the transaction
+        /// started aren't truncated. If you need Microsoft Replication to be enabled in your
+        /// database, then you must choose this method.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Exclusively use sp_repldone within a single task</i>: When this method is used,
+        /// AWS DMS reads the changes and then uses sp_repldone to mark the TLOG transactions
+        /// as ready for truncation. Although this method doesn't involve any transactional activities,
+        /// it can only be used when Microsoft Replication isn't running. Also, when using this
+        /// method, only one AWS DMS task can access the database at any given time. Therefore,
+        /// if you need to run parallel AWS DMS tasks against the same database, use the default
+        /// method.
+        /// </para>
+        /// </summary>
+        public SafeguardPolicy SafeguardPolicy
+        {
+            get { return this._safeguardPolicy; }
+            set { this._safeguardPolicy = value; }
+        }
+
+        // Check to see if SafeguardPolicy property is set
+        internal bool IsSetSafeguardPolicy()
+        {
+            return this._safeguardPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManagerAccessRoleArn. 
+        /// <para>
+        /// The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the
+        /// trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
+        /// <code>SecretsManagerSecret</code> has the value of the AWS Secrets Manager secret
+        /// that allows access to the SQL Server endpoint.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can specify one of two sets of values for these permissions. You can specify the
+        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
+        /// clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>,
+        /// and <code>Port</code>. You can't specify both. For more information on creating this
+        /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
+        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// secrets to access AWS Database Migration Service resources</a> in the <i>AWS Database
+        /// Migration Service User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string SecretsManagerAccessRoleArn
+        {
+            get { return this._secretsManagerAccessRoleArn; }
+            set { this._secretsManagerAccessRoleArn = value; }
+        }
+
+        // Check to see if SecretsManagerAccessRoleArn property is set
+        internal bool IsSetSecretsManagerAccessRoleArn()
+        {
+            return this._secretsManagerAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManagerSecretId. 
+        /// <para>
+        /// The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
+        /// that contains the SQL Server endpoint connection details.
+        /// </para>
+        /// </summary>
+        public string SecretsManagerSecretId
+        {
+            get { return this._secretsManagerSecretId; }
+            set { this._secretsManagerSecretId = value; }
+        }
+
+        // Check to see if SecretsManagerSecretId property is set
+        internal bool IsSetSecretsManagerSecretId()
+        {
+            return this._secretsManagerSecretId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerName. 
         /// <para>
         /// Fully qualified domain name of the endpoint.
@@ -109,6 +265,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseBcpFullLoad. 
+        /// <para>
+        /// Use this to attribute to transfer data for full-load operations using BCP. When the
+        /// target table contains an identity column that does not exist in the source table,
+        /// you must disable the use BCP for loading table option.
+        /// </para>
+        /// </summary>
+        public bool UseBcpFullLoad
+        {
+            get { return this._useBcpFullLoad.GetValueOrDefault(); }
+            set { this._useBcpFullLoad = value; }
+        }
+
+        // Check to see if UseBcpFullLoad property is set
+        internal bool IsSetUseBcpFullLoad()
+        {
+            return this._useBcpFullLoad.HasValue; 
         }
 
         /// <summary>

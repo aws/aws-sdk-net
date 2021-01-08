@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupNames. 
         /// <para>
-        /// The names of the Auto Scaling groups. Each name can be a maximum of 1600 characters.
-        /// By default, you can only specify up to 50 names. You can optionally increase this
-        /// limit using the <code>MaxRecords</code> parameter.
+        /// The names of the Auto Scaling groups. By default, you can only specify up to 50 names.
+        /// You can optionally increase this limit using the <code>MaxRecords</code> parameter.
         /// </para>
         ///  
         /// <para>

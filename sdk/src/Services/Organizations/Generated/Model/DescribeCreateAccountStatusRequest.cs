@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,8 +34,8 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// This operation can be called only from the organization's master account or by a member
-    /// account that is a delegated administrator for an AWS service.
+    /// This operation can be called only from the organization's management account or by
+    /// a member account that is a delegated administrator for an AWS service.
     /// </para>
     /// </summary>
     public partial class DescribeCreateAccountStatusRequest : AmazonOrganizationsRequest
@@ -45,9 +45,10 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property CreateAccountRequestId. 
         /// <para>
-        /// Specifies the <code>operationId</code> that uniquely identifies the request. You can
-        /// get the ID from the response to an earlier <a>CreateAccount</a> request, or from the
-        /// <a>ListCreateAccountStatus</a> operation.
+        /// Specifies the <code>Id</code> value that uniquely identifies the <code>CreateAccount</code>
+        /// request. You can get the value from the <code>CreateAccountStatus.Id</code> response
+        /// in an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>

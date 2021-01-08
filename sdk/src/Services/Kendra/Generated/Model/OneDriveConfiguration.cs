@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,12 +33,32 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class OneDriveConfiguration
     {
+        private bool? _disableLocalGroups;
         private List<string> _exclusionPatterns = new List<string>();
         private List<DataSourceToIndexFieldMapping> _fieldMappings = new List<DataSourceToIndexFieldMapping>();
         private List<string> _inclusionPatterns = new List<string>();
         private OneDriveUsers _oneDriveUsers;
         private string _secretArn;
         private string _tenantDomain;
+
+        /// <summary>
+        /// Gets and sets the property DisableLocalGroups. 
+        /// <para>
+        /// A Boolean value that specifies whether local groups are disabled (<code>True</code>)
+        /// or enabled (<code>False</code>). 
+        /// </para>
+        /// </summary>
+        public bool DisableLocalGroups
+        {
+            get { return this._disableLocalGroups.GetValueOrDefault(); }
+            set { this._disableLocalGroups = value; }
+        }
+
+        // Check to see if DisableLocalGroups property is set
+        internal bool IsSetDisableLocalGroups()
+        {
+            return this._disableLocalGroups.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ExclusionPatterns. 
@@ -156,7 +176,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property TenantDomain. 
         /// <para>
-        /// Tha Azure Active Directory domain of the organization. 
+        /// The Azure Active Directory domain of the organization. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

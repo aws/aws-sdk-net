@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,6 +84,9 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
         
             if(publicRequest.IsSetAccept())
                 request.Headers["Accept"] = publicRequest.Accept;
+        
+            if(publicRequest.IsSetActiveContexts())
+                request.Headers["x-amz-lex-active-contexts"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(publicRequest.ActiveContexts));
         
             if(publicRequest.IsSetContentType())
                 request.Headers["Content-Type"] = publicRequest.ContentType;

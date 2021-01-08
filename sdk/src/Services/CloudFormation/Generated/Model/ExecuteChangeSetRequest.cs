@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,11 @@ namespace Amazon.CloudFormation.Model
     /// If a stack policy is associated with the stack, AWS CloudFormation enforces the policy
     /// during the update. You can't specify a temporary stack policy that overrides the current
     /// policy.
+    /// </para>
+    ///  
+    /// <para>
+    /// To create a change set for the entire stack hierachy, <code>IncludeNestedStacks</code>
+    /// must have been set to <code>True</code>.
     /// </para>
     /// </summary>
     public partial class ExecuteChangeSetRequest : AmazonCloudFormationRequest

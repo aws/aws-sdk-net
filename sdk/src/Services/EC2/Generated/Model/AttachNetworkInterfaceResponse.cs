@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     public partial class AttachNetworkInterfaceResponse : AmazonWebServiceResponse
     {
         private string _attachmentId;
+        private int? _networkCardIndex;
 
         /// <summary>
         /// Gets and sets the property AttachmentId. 
@@ -51,6 +52,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAttachmentId()
         {
             return this._attachmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkCardIndex. 
+        /// <para>
+        /// The index of the network card.
+        /// </para>
+        /// </summary>
+        public int NetworkCardIndex
+        {
+            get { return this._networkCardIndex.GetValueOrDefault(); }
+            set { this._networkCardIndex = value; }
+        }
+
+        // Check to see if NetworkCardIndex property is set
+        internal bool IsSetNetworkCardIndex()
+        {
+            return this._networkCardIndex.HasValue; 
         }
 
     }

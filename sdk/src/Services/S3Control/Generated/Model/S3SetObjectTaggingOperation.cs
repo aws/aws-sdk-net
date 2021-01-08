@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Contains the configuration parameters for a Set Object Tagging operation. Amazon S3
-    /// Batch Operations passes each value through to the underlying PUT Object tagging API.
-    /// For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT
+    /// Contains the configuration parameters for a Set Object Tagging operation. S3 Batch
+    /// Operations passes each value through to the underlying PUT Object tagging API. For
+    /// more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT
     /// Object tagging</a>.
     /// </summary>
     public partial class S3SetObjectTaggingOperation

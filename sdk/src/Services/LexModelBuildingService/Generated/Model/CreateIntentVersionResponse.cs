@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,11 @@ namespace Amazon.LexModelBuildingService.Model
         private CodeHook _dialogCodeHook;
         private FollowUpPrompt _followUpPrompt;
         private FulfillmentActivity _fulfillmentActivity;
+        private List<InputContext> _inputContexts = new List<InputContext>();
         private KendraConfiguration _kendraConfiguration;
         private DateTime? _lastUpdatedDate;
         private string _name;
+        private List<OutputContext> _outputContexts = new List<OutputContext>();
         private string _parentIntentSignature;
         private Statement _rejectionStatement;
         private List<string> _sampleUtterances = new List<string>();
@@ -199,10 +201,30 @@ namespace Amazon.LexModelBuildingService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InputContexts. 
+        /// <para>
+        /// An array of <code>InputContext</code> objects that lists the contexts that must be
+        /// active for Amazon Lex to choose the intent in a conversation with the user.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<InputContext> InputContexts
+        {
+            get { return this._inputContexts; }
+            set { this._inputContexts = value; }
+        }
+
+        // Check to see if InputContexts property is set
+        internal bool IsSetInputContexts()
+        {
+            return this._inputContexts != null && this._inputContexts.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property KendraConfiguration. 
         /// <para>
-        /// Configuration information, if any, for connectin an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code>
-        /// intent.
+        /// Configuration information, if any, for connecting an Amazon Kendra index with the
+        /// <code>AMAZON.KendraSearchIntent</code> intent.
         /// </para>
         /// </summary>
         public KendraConfiguration KendraConfiguration
@@ -252,6 +274,26 @@ namespace Amazon.LexModelBuildingService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputContexts. 
+        /// <para>
+        /// An array of <code>OutputContext</code> objects that lists the contexts that the intent
+        /// activates when the intent is fulfilled.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<OutputContext> OutputContexts
+        {
+            get { return this._outputContexts; }
+            set { this._outputContexts = value; }
+        }
+
+        // Check to see if OutputContexts property is set
+        internal bool IsSetOutputContexts()
+        {
+            return this._outputContexts != null && this._outputContexts.Count > 0; 
         }
 
         /// <summary>

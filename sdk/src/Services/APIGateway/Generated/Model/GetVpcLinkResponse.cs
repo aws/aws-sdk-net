@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,7 +44,7 @@ namespace Amazon.APIGateway.Model
     /// <code>VPC_LINK</code>. The integration uses the <code>connectionId</code> property
     /// to identify the <a>VpcLink</a> used.
     /// </para>
-    ///  
+    /// 
     /// </para>
     ///  </div>
     /// </summary>
@@ -118,7 +118,7 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>,
         /// <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status
-        /// is <code>PENDING</code> and will fail if the status is <code>DELETING</code>. 
+        /// is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.
         /// </para>
         /// </summary>
         public VpcLinkStatus Status

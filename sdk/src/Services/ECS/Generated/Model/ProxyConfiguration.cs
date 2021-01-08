@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,12 +39,7 @@ namespace Amazon.ECS.Model
     /// from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they
     /// contain the required versions of the container agent and <code>ecs-init</code>. For
     /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-    /// ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// For tasks using the Fargate launch type, the task or service requires platform version
-    /// 1.3.0 or later.
+    /// ECS-optimized Linux AMI</a> 
     /// </para>
     /// </summary>
     public partial class ProxyConfiguration

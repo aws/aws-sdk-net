@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,12 +33,30 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class RtmpGroupSettings
     {
+        private List<string> _adMarkers = new List<string>();
         private AuthenticationScheme _authenticationScheme;
         private RtmpCacheFullBehavior _cacheFullBehavior;
         private int? _cacheLength;
         private RtmpCaptionData _captionData;
         private InputLossActionForRtmpOut _inputLossAction;
         private int? _restartDelay;
+
+        /// <summary>
+        /// Gets and sets the property AdMarkers. Choose the ad marker type for this output group.
+        /// MediaLive will create a message based on the content of each SCTE-35 message, format
+        /// it for that marker type, and insert it in the datastream.
+        /// </summary>
+        public List<string> AdMarkers
+        {
+            get { return this._adMarkers; }
+            set { this._adMarkers = value; }
+        }
+
+        // Check to see if AdMarkers property is set
+        internal bool IsSetAdMarkers()
+        {
+            return this._adMarkers != null && this._adMarkers.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AuthenticationScheme. Authentication scheme to use when

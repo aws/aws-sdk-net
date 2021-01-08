@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,14 @@ namespace Amazon.Translate.Model
         internal TranslatePaginatorFactory(IAmazonTranslate client) 
         {
             this.client = client;
+        }
+
+        /// <summary>
+        /// Paginator for ListParallelData operation
+        ///</summary>
+        public IListParallelDataPaginator ListParallelData(ListParallelDataRequest request) 
+        {
+            return new ListParallelDataPaginator(this.client, request);
         }
 
         /// <summary>

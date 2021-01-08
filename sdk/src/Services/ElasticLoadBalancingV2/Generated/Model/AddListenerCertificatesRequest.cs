@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,14 +40,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </para>
     ///  
     /// <para>
-    /// To get the certificate list for a listener, use <a>DescribeListenerCertificates</a>.
-    /// To remove certificates from the certificate list for a listener, use <a>RemoveListenerCertificates</a>.
-    /// To replace the default certificate for a listener, use <a>ModifyListener</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
-    /// Certificates</a> in the <i>Application Load Balancers Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html">HTTPS
+    /// listeners</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS
+    /// listeners</a> in the <i>Network Load Balancers Guide</i>.
     /// </para>
     /// </summary>
     public partial class AddListenerCertificatesRequest : AmazonElasticLoadBalancingV2Request

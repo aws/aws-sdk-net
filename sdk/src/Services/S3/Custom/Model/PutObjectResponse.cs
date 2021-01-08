@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,12 +35,18 @@ namespace Amazon.S3.Model
         private string serverSideEncryptionCustomerProvidedKeyMD5;
         private string serverSideEncryptionKeyManagementServiceEncryptionContext;
         private RequestCharged requestCharged;
+        private bool? bucketKeyEnabled;
 
         /// <summary>
         /// Gets and sets the Expiration property.
         /// Specifies the expiration date for the object and the
         /// rule governing the expiration.
         /// Is null if expiration is not applicable.
+        /// If the expiration is configured for the object (see https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html\), 
+        /// the response includes this header. 
+        /// It includes the expiry-date and rule-id key-value pairs that provide information about object expiration. 
+        /// The value of the rule-id is URL encoded."
+
         /// </summary>
         public Expiration Expiration
         {
@@ -154,6 +160,20 @@ namespace Amazon.S3.Model
         internal bool IsSetRequestCharged()
         {
             return requestCharged != null;
+        }
+
+        /// <summary>
+        /// <para>Indicates whether the uploaded object uses bucket key for server-side encryption with AWS KMS (SSE-KMS).</para>
+        /// </summary>
+        public bool BucketKeyEnabled
+        {
+            get { return this.bucketKeyEnabled.GetValueOrDefault(); }
+            set { this.bucketKeyEnabled = value; }
+        }
+
+        internal bool IsSetBucketKeyEnabled()
+        {
+            return bucketKeyEnabled.HasValue;
         }
     }
 }

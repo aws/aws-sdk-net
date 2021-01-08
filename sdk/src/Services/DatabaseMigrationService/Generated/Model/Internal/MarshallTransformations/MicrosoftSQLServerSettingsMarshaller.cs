@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,18 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MicrosoftSQLServerSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBcpPacketSize())
+            {
+                context.Writer.WritePropertyName("BcpPacketSize");
+                context.Writer.Write(requestObject.BcpPacketSize);
+            }
+
+            if(requestObject.IsSetControlTablesFileGroup())
+            {
+                context.Writer.WritePropertyName("ControlTablesFileGroup");
+                context.Writer.Write(requestObject.ControlTablesFileGroup);
+            }
+
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
@@ -63,10 +75,40 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Port);
             }
 
+            if(requestObject.IsSetReadBackupOnly())
+            {
+                context.Writer.WritePropertyName("ReadBackupOnly");
+                context.Writer.Write(requestObject.ReadBackupOnly);
+            }
+
+            if(requestObject.IsSetSafeguardPolicy())
+            {
+                context.Writer.WritePropertyName("SafeguardPolicy");
+                context.Writer.Write(requestObject.SafeguardPolicy);
+            }
+
+            if(requestObject.IsSetSecretsManagerAccessRoleArn())
+            {
+                context.Writer.WritePropertyName("SecretsManagerAccessRoleArn");
+                context.Writer.Write(requestObject.SecretsManagerAccessRoleArn);
+            }
+
+            if(requestObject.IsSetSecretsManagerSecretId())
+            {
+                context.Writer.WritePropertyName("SecretsManagerSecretId");
+                context.Writer.Write(requestObject.SecretsManagerSecretId);
+            }
+
             if(requestObject.IsSetServerName())
             {
                 context.Writer.WritePropertyName("ServerName");
                 context.Writer.Write(requestObject.ServerName);
+            }
+
+            if(requestObject.IsSetUseBcpFullLoad())
+            {
+                context.Writer.WritePropertyName("UseBcpFullLoad");
+                context.Writer.Write(requestObject.UseBcpFullLoad);
             }
 
             if(requestObject.IsSetUsername())

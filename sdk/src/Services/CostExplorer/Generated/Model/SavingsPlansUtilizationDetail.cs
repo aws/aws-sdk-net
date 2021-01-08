@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// A single daily or monthly Savings Plans utilization rate, and details for your account.
-    /// Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code>
-    /// to determine the possible dimension values.
+    /// A management account in an organization have access to member accounts. You can use
+    /// <code>GetDimensionValues</code> to determine the possible dimension values.
     /// </summary>
     public partial class SavingsPlansUtilizationDetail
     {

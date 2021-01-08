@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -82,6 +82,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                         var marshaller = ColumnGroupMarshaller.Instance;
                         marshaller.Marshall(publicRequestColumnGroupsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetColumnLevelPermissionRules())
+                {
+                    context.Writer.WritePropertyName("ColumnLevelPermissionRules");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestColumnLevelPermissionRulesListValue in publicRequest.ColumnLevelPermissionRules)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ColumnLevelPermissionRuleMarshaller.Instance;
+                        marshaller.Marshall(publicRequestColumnLevelPermissionRulesListValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -150,8 +150,8 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  MISSING_PAYMENT_INSTRUMENT: You must configure the master account with a valid payment
-        /// method, such as a credit card.
+        ///  MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid
+        /// payment method, such as a credit card.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -196,7 +196,7 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account
-        /// request ID string requires "car-" followed by from 8 to 32 lower-case letters or digits.
+        /// request ID string requires "car-" followed by from 8 to 32 lowercase letters or digits.
         /// </para>
         /// </summary>
         [AWSProperty(Max=36)]

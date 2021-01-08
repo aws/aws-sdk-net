@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -53,7 +53,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// When omitted, the response includes all of your certificates in the AWS region where
+        /// When omitted, the response includes all of your certificates in the AWS Region where
         /// the request is made.
         /// </para>
         /// </summary>
@@ -81,7 +81,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// When omitted, the response includes all of your certificates in the AWS region where
+        /// When omitted, the response includes all of your certificates in the AWS Region where
         /// the request is made, regardless of their current status.
         /// </para>
         /// </summary>

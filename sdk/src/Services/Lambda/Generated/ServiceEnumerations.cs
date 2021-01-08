@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,6 +23,102 @@ using Amazon.Runtime;
 
 namespace Amazon.Lambda
 {
+
+    /// <summary>
+    /// Constants used for properties of type CodeSigningPolicy.
+    /// </summary>
+    public class CodeSigningPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Enforce for CodeSigningPolicy
+        /// </summary>
+        public static readonly CodeSigningPolicy Enforce = new CodeSigningPolicy("Enforce");
+        /// <summary>
+        /// Constant Warn for CodeSigningPolicy
+        /// </summary>
+        public static readonly CodeSigningPolicy Warn = new CodeSigningPolicy("Warn");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CodeSigningPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CodeSigningPolicy FindValue(string value)
+        {
+            return FindValue<CodeSigningPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CodeSigningPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EndPointType.
+    /// </summary>
+    public class EndPointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KAFKA_BOOTSTRAP_SERVERS for EndPointType
+        /// </summary>
+        public static readonly EndPointType KAFKA_BOOTSTRAP_SERVERS = new EndPointType("KAFKA_BOOTSTRAP_SERVERS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndPointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndPointType FindValue(string value)
+        {
+            return FindValue<EndPointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndPointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 
     /// <summary>
     /// Constants used for properties of type EventSourcePosition.
@@ -72,6 +168,52 @@ namespace Amazon.Lambda
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventSourcePosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FunctionResponseType.
+    /// </summary>
+    public class FunctionResponseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ReportBatchItemFailures for FunctionResponseType
+        /// </summary>
+        public static readonly FunctionResponseType ReportBatchItemFailures = new FunctionResponseType("ReportBatchItemFailures");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FunctionResponseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FunctionResponseType FindValue(string value)
+        {
+            return FindValue<FunctionResponseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FunctionResponseType(string value)
         {
             return FindValue(value);
         }
@@ -243,6 +385,14 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly LastUpdateStatusReasonCode EniLimitExceeded = new LastUpdateStatusReasonCode("EniLimitExceeded");
         /// <summary>
+        /// Constant ImageAccessDenied for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode ImageAccessDenied = new LastUpdateStatusReasonCode("ImageAccessDenied");
+        /// <summary>
+        /// Constant ImageDeleted for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode ImageDeleted = new LastUpdateStatusReasonCode("ImageDeleted");
+        /// <summary>
         /// Constant InsufficientRolePermissions for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode InsufficientRolePermissions = new LastUpdateStatusReasonCode("InsufficientRolePermissions");
@@ -254,6 +404,10 @@ namespace Amazon.Lambda
         /// Constant InvalidConfiguration for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode InvalidConfiguration = new LastUpdateStatusReasonCode("InvalidConfiguration");
+        /// <summary>
+        /// Constant InvalidImage for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode InvalidImage = new LastUpdateStatusReasonCode("InvalidImage");
         /// <summary>
         /// Constant InvalidSecurityGroup for LastUpdateStatusReasonCode
         /// </summary>
@@ -346,6 +500,56 @@ namespace Amazon.Lambda
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackageType.
+    /// </summary>
+    public class PackageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Image for PackageType
+        /// </summary>
+        public static readonly PackageType Image = new PackageType("Image");
+        /// <summary>
+        /// Constant Zip for PackageType
+        /// </summary>
+        public static readonly PackageType Zip = new PackageType("Zip");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageType FindValue(string value)
+        {
+            return FindValue<PackageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageType(string value)
         {
             return FindValue(value);
         }
@@ -541,6 +745,68 @@ namespace Amazon.Lambda
 
 
     /// <summary>
+    /// Constants used for properties of type SourceAccessType.
+    /// </summary>
+    public class SourceAccessType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASIC_AUTH for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType BASIC_AUTH = new SourceAccessType("BASIC_AUTH");
+        /// <summary>
+        /// Constant SASL_SCRAM_256_AUTH for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType SASL_SCRAM_256_AUTH = new SourceAccessType("SASL_SCRAM_256_AUTH");
+        /// <summary>
+        /// Constant SASL_SCRAM_512_AUTH for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType SASL_SCRAM_512_AUTH = new SourceAccessType("SASL_SCRAM_512_AUTH");
+        /// <summary>
+        /// Constant VPC_SECURITY_GROUP for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType VPC_SECURITY_GROUP = new SourceAccessType("VPC_SECURITY_GROUP");
+        /// <summary>
+        /// Constant VPC_SUBNET for SourceAccessType
+        /// </summary>
+        public static readonly SourceAccessType VPC_SUBNET = new SourceAccessType("VPC_SUBNET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceAccessType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceAccessType FindValue(string value)
+        {
+            return FindValue<SourceAccessType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceAccessType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type State.
     /// </summary>
     public class State : ConstantClass
@@ -617,6 +883,14 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly StateReasonCode Idle = new StateReasonCode("Idle");
         /// <summary>
+        /// Constant ImageAccessDenied for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode ImageAccessDenied = new StateReasonCode("ImageAccessDenied");
+        /// <summary>
+        /// Constant ImageDeleted for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode ImageDeleted = new StateReasonCode("ImageDeleted");
+        /// <summary>
         /// Constant InsufficientRolePermissions for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode InsufficientRolePermissions = new StateReasonCode("InsufficientRolePermissions");
@@ -628,6 +902,10 @@ namespace Amazon.Lambda
         /// Constant InvalidConfiguration for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode InvalidConfiguration = new StateReasonCode("InvalidConfiguration");
+        /// <summary>
+        /// Constant InvalidImage for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode InvalidImage = new StateReasonCode("InvalidImage");
         /// <summary>
         /// Constant InvalidSecurityGroup for StateReasonCode
         /// </summary>

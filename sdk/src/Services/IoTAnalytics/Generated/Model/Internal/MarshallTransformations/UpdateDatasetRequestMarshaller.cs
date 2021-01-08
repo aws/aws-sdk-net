@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -95,6 +95,22 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 
                         var marshaller = DatasetContentDeliveryRuleMarshaller.Instance;
                         marshaller.Marshall(publicRequestContentDeliveryRulesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetLateDataRules())
+                {
+                    context.Writer.WritePropertyName("lateDataRules");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestLateDataRulesListValue in publicRequest.LateDataRules)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LateDataRuleMarshaller.Instance;
+                        marshaller.Marshall(publicRequestLateDataRulesListValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }

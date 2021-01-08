@@ -12,6 +12,210 @@
     "jsonVersion": "1.1"
   },
   "operations": {
+    "AcceptInputDeviceTransfer": {
+      "name": "AcceptInputDeviceTransfer",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/inputDevices/{inputDeviceId}/accept",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "AcceptInputDeviceTransferRequest"
+      },
+      "output": {
+        "shape": "AcceptInputDeviceTransferResponse",
+        "documentation": "Your request to accept this device transfer has succeeded."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "UnprocessableEntityException",
+          "documentation": "Transfer operation failed, input could not be validated."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to accept input device transfers."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad gateway error."
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "Input device not found."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on transfer device calls to the input device service."
+        },
+        {
+          "shape": "ConflictException",
+          "documentation": "Input device transfer could not be accepted."
+        }
+      ],
+      "documentation": "Accept an incoming input device transfer. The ownership of the device will transfer to your AWS account."
+    },
+    "BatchDelete": {
+      "name": "BatchDelete",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/batch/delete",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "BatchDeleteRequest"
+      },
+      "output": {
+        "shape": "BatchDeleteResponse",
+        "documentation": "Delete was successfully initiated."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid"
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to delete the resources."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad Gateway Error"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "The resources you're requesting to delete do not exist."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on delete resources calls."
+        },
+        {
+          "shape": "ConflictException",
+          "documentation": "The resources are unable to delete."
+        }
+      ],
+      "documentation": "Starts delete of resources."
+    },
+    "BatchStart": {
+      "name": "BatchStart",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/batch/start",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "BatchStartRequest"
+      },
+      "output": {
+        "shape": "BatchStartResponse",
+        "documentation": "Successfully initiated start of resources."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to start the resources."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad Gateway Error"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "The resources you're requesting to start do not exist."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on start resources calls to resource service."
+        },
+        {
+          "shape": "ConflictException",
+          "documentation": "The resources are unable to start."
+        }
+      ],
+      "documentation": "Starts existing resources"
+    },
+    "BatchStop": {
+      "name": "BatchStop",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/batch/stop",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "BatchStopRequest"
+      },
+      "output": {
+        "shape": "BatchStopResponse",
+        "documentation": "Successfully initiated stop of the resources."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to stop the resources."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad Gateway Error"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "The resources you're requesting to stop do not exist."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on stop resources."
+        },
+        {
+          "shape": "ConflictException",
+          "documentation": "The resources are unable to stop."
+        }
+      ],
+      "documentation": "Stops running resources"
+    },
     "BatchUpdateSchedule": {
       "name": "BatchUpdateSchedule",
       "http": {
@@ -61,6 +265,60 @@
         }
       ],
       "documentation": "Update a channel schedule"
+    },
+    "CancelInputDeviceTransfer": {
+      "name": "CancelInputDeviceTransfer",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/inputDevices/{inputDeviceId}/cancel",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "CancelInputDeviceTransferRequest"
+      },
+      "output": {
+        "shape": "CancelInputDeviceTransferResponse",
+        "documentation": "Your cancel request has succeeded."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "UnprocessableEntityException",
+          "documentation": "Transfer operation failed, input could not be validated."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to cancel input device transfers."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad gateway error."
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "Input device not found."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on transfer device calls to the input device service."
+        },
+        {
+          "shape": "ConflictException",
+          "documentation": "Input device transfer could not be canceled."
+        }
+      ],
+      "documentation": "Cancel an input device transfer that you have requested."
     },
     "CreateChannel": {
       "name": "CreateChannel",
@@ -229,11 +487,11 @@
         },
         {
           "shape": "BadGatewayException",
-          "documentation": "Bad Gateway Error."
+          "documentation": "Bad Gateway Error"
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -279,11 +537,11 @@
         },
         {
           "shape": "BadGatewayException",
-          "documentation": "Bad Gateway Error."
+          "documentation": "Bad Gateway Error"
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -501,7 +759,7 @@
         },
         {
           "shape": "BadGatewayException",
-          "documentation": "Bad Gateway Error."
+          "documentation": "Bad Gateway Error"
         },
         {
           "shape": "NotFoundException",
@@ -509,7 +767,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -551,7 +809,7 @@
         },
         {
           "shape": "BadGatewayException",
-          "documentation": "Bad Gateway Error."
+          "documentation": "Bad Gateway Error"
         },
         {
           "shape": "NotFoundException",
@@ -559,7 +817,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -609,7 +867,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway timeout error"
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -827,7 +1085,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway timeout error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -873,7 +1131,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway timeout error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -957,7 +1215,7 @@
         },
         {
           "shape": "BadGatewayException",
-          "documentation": "Bad Gateway Error."
+          "documentation": "Bad Gateway Error"
         },
         {
           "shape": "NotFoundException",
@@ -965,7 +1223,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1003,7 +1261,7 @@
         },
         {
           "shape": "BadGatewayException",
-          "documentation": "Bad Gateway Error."
+          "documentation": "Bad Gateway Error"
         },
         {
           "shape": "NotFoundException",
@@ -1011,7 +1269,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1057,7 +1315,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway timeout error"
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1103,7 +1361,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway timeout error"
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1200,6 +1458,52 @@
       ],
       "documentation": "Produces list of channels that have been created"
     },
+    "ListInputDeviceTransfers": {
+      "name": "ListInputDeviceTransfers",
+      "http": {
+        "method": "GET",
+        "requestUri": "/prod/inputDeviceTransfers",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ListInputDeviceTransfersRequest"
+      },
+      "output": {
+        "shape": "ListInputDeviceTransfersResponse",
+        "documentation": "An array of input devices that are currently being transferred."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "UnprocessableEntityException",
+          "documentation": "Transfer operation failed, input could not be validated."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to list transferring devices."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad gateway error."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on list devices calls to the input device service."
+        }
+      ],
+      "documentation": "List input devices that are currently being transferred. List input devices that you are transferring from your AWS account or input devices that another AWS account is transferring to you."
+    },
     "ListInputDevices": {
       "name": "ListInputDevices",
       "http": {
@@ -1233,7 +1537,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway timeout error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1355,7 +1659,7 @@
         },
         {
           "shape": "BadGatewayException",
-          "documentation": "Bad Gateway Error."
+          "documentation": "Bad Gateway Error"
         },
         {
           "shape": "NotFoundException",
@@ -1363,7 +1667,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1401,11 +1705,11 @@
         },
         {
           "shape": "BadGatewayException",
-          "documentation": "Bad Gateway Error."
+          "documentation": "Bad Gateway Error"
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1447,7 +1751,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway timeout error"
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1489,7 +1793,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway timeout error"
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1569,7 +1873,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway timeout error"
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1581,6 +1885,60 @@
         }
       ],
       "documentation": "Purchase an offering and create a reservation."
+    },
+    "RejectInputDeviceTransfer": {
+      "name": "RejectInputDeviceTransfer",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/inputDevices/{inputDeviceId}/reject",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "RejectInputDeviceTransferRequest"
+      },
+      "output": {
+        "shape": "RejectInputDeviceTransferResponse",
+        "documentation": "Your reject request has succeeded."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "UnprocessableEntityException",
+          "documentation": "Transfer operation failed, input could not be validated."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to reject input device transfers."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad gateway error."
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "Input device not found."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on transfer device calls to the input device service."
+        },
+        {
+          "shape": "ConflictException",
+          "documentation": "Input device transfer could not be rejected."
+        }
+      ],
+      "documentation": "Reject the transfer of the specified input device to your AWS account."
     },
     "StartChannel": {
       "name": "StartChannel",
@@ -1661,7 +2019,7 @@
         },
         {
           "shape": "BadGatewayException",
-          "documentation": "Bad Gateway Error."
+          "documentation": "Bad Gateway Error"
         },
         {
           "shape": "NotFoundException",
@@ -1669,7 +2027,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1761,7 +2119,7 @@
         },
         {
           "shape": "BadGatewayException",
-          "documentation": "Bad Gateway Error."
+          "documentation": "Bad Gateway Error"
         },
         {
           "shape": "NotFoundException",
@@ -1769,7 +2127,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1781,6 +2139,60 @@
         }
       ],
       "documentation": "Stops a running multiplex. If the multiplex isn't running, this action has no effect."
+    },
+    "TransferInputDevice": {
+      "name": "TransferInputDevice",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/inputDevices/{inputDeviceId}/transfer",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "TransferInputDeviceRequest"
+      },
+      "output": {
+        "shape": "TransferInputDeviceResponse",
+        "documentation": "The device transfer request has started."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "UnprocessableEntityException",
+          "documentation": "Transfer operation failed, input could not be validated."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to transfer input devices."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad gateway error."
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "Input device not found."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on transfer device calls to the input device service."
+        },
+        {
+          "shape": "ConflictException",
+          "documentation": "Input device could not be transferred."
+        }
+      ],
+      "documentation": "Start an input device transfer to another AWS account. After you make the request, the other account must accept or reject the transfer."
     },
     "UpdateChannel": {
       "name": "UpdateChannel",
@@ -1969,7 +2381,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway timeout error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2057,7 +2469,7 @@
         },
         {
           "shape": "BadGatewayException",
-          "documentation": "Bad Gateway Error."
+          "documentation": "Bad Gateway Error"
         },
         {
           "shape": "NotFoundException",
@@ -2065,7 +2477,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "ConflictException",
@@ -2107,7 +2519,7 @@
         },
         {
           "shape": "BadGatewayException",
-          "documentation": "Bad Gateway Error."
+          "documentation": "Bad Gateway Error"
         },
         {
           "shape": "NotFoundException",
@@ -2115,7 +2527,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error."
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "ConflictException",
@@ -2161,7 +2573,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway timeout error"
+          "documentation": "Gateway Timeout Error"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2378,6 +2790,27 @@
       },
       "documentation": "Ac3 Settings"
     },
+    "AcceptInputDeviceTransferRequest": {
+      "type": "structure",
+      "members": {
+        "InputDeviceId": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "inputDeviceId",
+          "documentation": "The unique ID of the input device to accept. For example, hd-123456789abcdef."
+        }
+      },
+      "required": [
+        "InputDeviceId"
+      ],
+      "documentation": "Placeholder documentation for AcceptInputDeviceTransferRequest"
+    },
+    "AcceptInputDeviceTransferResponse": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Placeholder documentation for AcceptInputDeviceTransferResponse"
+    },
     "AccessDenied": {
       "type": "structure",
       "members": {
@@ -2397,12 +2830,27 @@
         "NONE"
       ]
     },
+    "AncillarySourceSettings": {
+      "type": "structure",
+      "members": {
+        "SourceAncillaryChannelNumber": {
+          "shape": "__integerMin1Max4",
+          "locationName": "sourceAncillaryChannelNumber",
+          "documentation": "Specifies the number (1 to 4) of the captions channel you want to extract from the ancillary captions. If you plan to convert the ancillary captions to another format, complete this field. If you plan to choose Embedded as the captions destination in the output (to pass through all the channels in the ancillary captions), leave this field blank because MediaLive ignores the field."
+        }
+      },
+      "documentation": "Ancillary Source Settings"
+    },
     "ArchiveContainerSettings": {
       "type": "structure",
       "members": {
         "M2tsSettings": {
           "shape": "M2tsSettings",
           "locationName": "m2tsSettings"
+        },
+        "RawSettings": {
+          "shape": "RawSettings",
+          "locationName": "rawSettings"
         }
       },
       "documentation": "Archive Container Settings"
@@ -2452,12 +2900,14 @@
     },
     "AribDestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Arib Destination Settings"
     },
     "AribSourceSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Arib Source Settings"
     },
     "AudioChannelMapping": {
@@ -2502,6 +2952,10 @@
         "PassThroughSettings": {
           "shape": "PassThroughSettings",
           "locationName": "passThroughSettings"
+        },
+        "WavSettings": {
+          "shape": "WavSettings",
+          "locationName": "wavSettings"
         }
       },
       "documentation": "Audio Codec Settings"
@@ -2740,6 +3194,25 @@
       },
       "documentation": "Audio Selector Settings"
     },
+    "AudioSilenceFailoverSettings": {
+      "type": "structure",
+      "members": {
+        "AudioSelectorName": {
+          "shape": "__string",
+          "locationName": "audioSelectorName",
+          "documentation": "The name of the audio selector in the input that MediaLive should monitor to detect silence. Select your most important rendition. If you didn't create an audio selector in this input, leave blank."
+        },
+        "AudioSilenceThresholdMsec": {
+          "shape": "__integerMin1000",
+          "locationName": "audioSilenceThresholdMsec",
+          "documentation": "The amount of time (in milliseconds) that the active input must be silent before automatic input failover occurs. Silence is defined as audio loss or audio quieter than -50 dBFS."
+        }
+      },
+      "required": [
+        "AudioSelectorName"
+      ],
+      "documentation": "Placeholder documentation for AudioSilenceFailoverSettings"
+    },
     "AudioTrack": {
       "type": "structure",
       "members": {
@@ -2760,7 +3233,7 @@
         "Tracks": {
           "shape": "__listOfAudioTrack",
           "locationName": "tracks",
-          "documentation": "Selects one or more unique audio tracks from within an mp4 source."
+          "documentation": "Selects one or more unique audio tracks from within a source."
         }
       },
       "documentation": "Audio Track Selection",
@@ -2789,6 +3262,16 @@
     "AutomaticInputFailoverSettings": {
       "type": "structure",
       "members": {
+        "ErrorClearTimeMsec": {
+          "shape": "__integerMin1",
+          "locationName": "errorClearTimeMsec",
+          "documentation": "This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this time, MediaLive will switch back to the primary input."
+        },
+        "FailoverConditions": {
+          "shape": "__listOfFailoverCondition",
+          "locationName": "failoverConditions",
+          "documentation": "A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input."
+        },
         "InputPreference": {
           "shape": "InputPreference",
           "locationName": "inputPreference",
@@ -2882,6 +3365,116 @@
       },
       "documentation": "Placeholder documentation for BadRequestException"
     },
+    "BatchDelete": {
+      "type": "structure",
+      "members": {
+        "ChannelIds": {
+          "shape": "__listOf__string",
+          "locationName": "channelIds",
+          "documentation": "List of channel IDs"
+        },
+        "InputIds": {
+          "shape": "__listOf__string",
+          "locationName": "inputIds",
+          "documentation": "List of input IDs"
+        },
+        "InputSecurityGroupIds": {
+          "shape": "__listOf__string",
+          "locationName": "inputSecurityGroupIds",
+          "documentation": "List of input security group IDs"
+        },
+        "MultiplexIds": {
+          "shape": "__listOf__string",
+          "locationName": "multiplexIds",
+          "documentation": "List of multiplex IDs"
+        }
+      },
+      "documentation": "Batch delete resource request"
+    },
+    "BatchDeleteRequest": {
+      "type": "structure",
+      "members": {
+        "ChannelIds": {
+          "shape": "__listOf__string",
+          "locationName": "channelIds",
+          "documentation": "List of channel IDs"
+        },
+        "InputIds": {
+          "shape": "__listOf__string",
+          "locationName": "inputIds",
+          "documentation": "List of input IDs"
+        },
+        "InputSecurityGroupIds": {
+          "shape": "__listOf__string",
+          "locationName": "inputSecurityGroupIds",
+          "documentation": "List of input security group IDs"
+        },
+        "MultiplexIds": {
+          "shape": "__listOf__string",
+          "locationName": "multiplexIds",
+          "documentation": "List of multiplex IDs"
+        }
+      },
+      "documentation": "A request to delete resources"
+    },
+    "BatchDeleteResponse": {
+      "type": "structure",
+      "members": {
+        "Failed": {
+          "shape": "__listOfBatchFailedResultModel",
+          "locationName": "failed",
+          "documentation": "List of failed operations"
+        },
+        "Successful": {
+          "shape": "__listOfBatchSuccessfulResultModel",
+          "locationName": "successful",
+          "documentation": "List of successful operations"
+        }
+      },
+      "documentation": "Placeholder documentation for BatchDeleteResponse"
+    },
+    "BatchDeleteResultModel": {
+      "type": "structure",
+      "members": {
+        "Failed": {
+          "shape": "__listOfBatchFailedResultModel",
+          "locationName": "failed",
+          "documentation": "List of failed operations"
+        },
+        "Successful": {
+          "shape": "__listOfBatchSuccessfulResultModel",
+          "locationName": "successful",
+          "documentation": "List of successful operations"
+        }
+      },
+      "documentation": "Batch delete resource results"
+    },
+    "BatchFailedResultModel": {
+      "type": "structure",
+      "members": {
+        "Arn": {
+          "shape": "__string",
+          "locationName": "arn",
+          "documentation": "ARN of the resource"
+        },
+        "Code": {
+          "shape": "__string",
+          "locationName": "code",
+          "documentation": "Error code for the failed operation"
+        },
+        "Id": {
+          "shape": "__string",
+          "locationName": "id",
+          "documentation": "ID of the resource"
+        },
+        "Message": {
+          "shape": "__string",
+          "locationName": "message",
+          "documentation": "Error message for the failed operation"
+        }
+      },
+      "documentation": "Details from a failed operation"
+    },
     "BatchScheduleActionCreateRequest": {
       "type": "structure",
       "members": {
@@ -2937,6 +3530,155 @@
       "required": [
         "ScheduleActions"
       ]
+    },
+    "BatchStart": {
+      "type": "structure",
+      "members": {
+        "ChannelIds": {
+          "shape": "__listOf__string",
+          "locationName": "channelIds",
+          "documentation": "List of channel IDs"
+        },
+        "MultiplexIds": {
+          "shape": "__listOf__string",
+          "locationName": "multiplexIds",
+          "documentation": "List of multiplex IDs"
+        }
+      },
+      "documentation": "Batch start resource request"
+    },
+    "BatchStartRequest": {
+      "type": "structure",
+      "members": {
+        "ChannelIds": {
+          "shape": "__listOf__string",
+          "locationName": "channelIds",
+          "documentation": "List of channel IDs"
+        },
+        "MultiplexIds": {
+          "shape": "__listOf__string",
+          "locationName": "multiplexIds",
+          "documentation": "List of multiplex IDs"
+        }
+      },
+      "documentation": "A request to start resources"
+    },
+    "BatchStartResponse": {
+      "type": "structure",
+      "members": {
+        "Failed": {
+          "shape": "__listOfBatchFailedResultModel",
+          "locationName": "failed",
+          "documentation": "List of failed operations"
+        },
+        "Successful": {
+          "shape": "__listOfBatchSuccessfulResultModel",
+          "locationName": "successful",
+          "documentation": "List of successful operations"
+        }
+      },
+      "documentation": "Placeholder documentation for BatchStartResponse"
+    },
+    "BatchStartResultModel": {
+      "type": "structure",
+      "members": {
+        "Failed": {
+          "shape": "__listOfBatchFailedResultModel",
+          "locationName": "failed",
+          "documentation": "List of failed operations"
+        },
+        "Successful": {
+          "shape": "__listOfBatchSuccessfulResultModel",
+          "locationName": "successful",
+          "documentation": "List of successful operations"
+        }
+      },
+      "documentation": "Batch start resource results"
+    },
+    "BatchStop": {
+      "type": "structure",
+      "members": {
+        "ChannelIds": {
+          "shape": "__listOf__string",
+          "locationName": "channelIds",
+          "documentation": "List of channel IDs"
+        },
+        "MultiplexIds": {
+          "shape": "__listOf__string",
+          "locationName": "multiplexIds",
+          "documentation": "List of multiplex IDs"
+        }
+      },
+      "documentation": "Batch stop resource request"
+    },
+    "BatchStopRequest": {
+      "type": "structure",
+      "members": {
+        "ChannelIds": {
+          "shape": "__listOf__string",
+          "locationName": "channelIds",
+          "documentation": "List of channel IDs"
+        },
+        "MultiplexIds": {
+          "shape": "__listOf__string",
+          "locationName": "multiplexIds",
+          "documentation": "List of multiplex IDs"
+        }
+      },
+      "documentation": "A request to stop resources"
+    },
+    "BatchStopResponse": {
+      "type": "structure",
+      "members": {
+        "Failed": {
+          "shape": "__listOfBatchFailedResultModel",
+          "locationName": "failed",
+          "documentation": "List of failed operations"
+        },
+        "Successful": {
+          "shape": "__listOfBatchSuccessfulResultModel",
+          "locationName": "successful",
+          "documentation": "List of successful operations"
+        }
+      },
+      "documentation": "Placeholder documentation for BatchStopResponse"
+    },
+    "BatchStopResultModel": {
+      "type": "structure",
+      "members": {
+        "Failed": {
+          "shape": "__listOfBatchFailedResultModel",
+          "locationName": "failed",
+          "documentation": "List of failed operations"
+        },
+        "Successful": {
+          "shape": "__listOfBatchSuccessfulResultModel",
+          "locationName": "successful",
+          "documentation": "List of successful operations"
+        }
+      },
+      "documentation": "Batch stop resource results"
+    },
+    "BatchSuccessfulResultModel": {
+      "type": "structure",
+      "members": {
+        "Arn": {
+          "shape": "__string",
+          "locationName": "arn",
+          "documentation": "ARN of the resource"
+        },
+        "Id": {
+          "shape": "__string",
+          "locationName": "id",
+          "documentation": "ID of the resource"
+        },
+        "State": {
+          "shape": "__string",
+          "locationName": "state",
+          "documentation": "Current state of the resource"
+        }
+      },
+      "documentation": "Details from a successful operation"
     },
     "BatchUpdateScheduleRequest": {
       "type": "structure",
@@ -3192,6 +3934,27 @@
         "SCALED"
       ]
     },
+    "CancelInputDeviceTransferRequest": {
+      "type": "structure",
+      "members": {
+        "InputDeviceId": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "inputDeviceId",
+          "documentation": "The unique ID of the input device to cancel. For example, hd-123456789abcdef."
+        }
+      },
+      "required": [
+        "InputDeviceId"
+      ],
+      "documentation": "Placeholder documentation for CancelInputDeviceTransferRequest"
+    },
+    "CancelInputDeviceTransferResponse": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Placeholder documentation for CancelInputDeviceTransferResponse"
+    },
     "CaptionDescription": {
       "type": "structure",
       "members": {
@@ -3338,6 +4101,10 @@
     "CaptionSelectorSettings": {
       "type": "structure",
       "members": {
+        "AncillarySourceSettings": {
+          "shape": "AncillarySourceSettings",
+          "locationName": "ancillarySourceSettings"
+        },
         "AribSourceSettings": {
           "shape": "AribSourceSettings",
           "locationName": "aribSourceSettings"
@@ -3365,6 +4132,27 @@
       },
       "documentation": "Caption Selector Settings"
     },
+    "CdiInputResolution": {
+      "type": "string",
+      "documentation": "Maximum CDI input resolution; SD is 480i and 576i up to 30 frames-per-second (fps), HD is 720p up to 60 fps / 1080i up to 30 fps, FHD is 1080p up to 60 fps, UHD is 2160p up to 60 fps\n",
+      "enum": [
+        "SD",
+        "HD",
+        "FHD",
+        "UHD"
+      ]
+    },
+    "CdiInputSpecification": {
+      "type": "structure",
+      "members": {
+        "Resolution": {
+          "shape": "CdiInputResolution",
+          "locationName": "resolution",
+          "documentation": "Maximum CDI input resolution"
+        }
+      },
+      "documentation": "Placeholder documentation for CdiInputSpecification"
+    },
     "Channel": {
       "type": "structure",
       "members": {
@@ -3372,6 +4160,11 @@
           "shape": "__string",
           "locationName": "arn",
           "documentation": "The unique arn of the channel."
+        },
+        "CdiInputSpecification": {
+          "shape": "CdiInputSpecification",
+          "locationName": "cdiInputSpecification",
+          "documentation": "Specification of CDI inputs for this channel"
         },
         "ChannelClass": {
           "shape": "ChannelClass",
@@ -3404,7 +4197,8 @@
         },
         "InputSpecification": {
           "shape": "InputSpecification",
-          "locationName": "inputSpecification"
+          "locationName": "inputSpecification",
+          "documentation": "Specification of network and file inputs for this channel"
         },
         "LogLevel": {
           "shape": "LogLevel",
@@ -3502,6 +4296,11 @@
           "locationName": "arn",
           "documentation": "The unique arn of the channel."
         },
+        "CdiInputSpecification": {
+          "shape": "CdiInputSpecification",
+          "locationName": "cdiInputSpecification",
+          "documentation": "Specification of CDI inputs for this channel"
+        },
         "ChannelClass": {
           "shape": "ChannelClass",
           "locationName": "channelClass",
@@ -3529,7 +4328,8 @@
         },
         "InputSpecification": {
           "shape": "InputSpecification",
-          "locationName": "inputSpecification"
+          "locationName": "inputSpecification",
+          "documentation": "Specification of network and file inputs for this channel"
         },
         "LogLevel": {
           "shape": "LogLevel",
@@ -3565,7 +4365,8 @@
     },
     "ColorSpacePassthroughSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Passthrough applies no color space conversion to the output"
     },
     "ConflictException": {
@@ -3585,6 +4386,11 @@
     "CreateChannel": {
       "type": "structure",
       "members": {
+        "CdiInputSpecification": {
+          "shape": "CdiInputSpecification",
+          "locationName": "cdiInputSpecification",
+          "documentation": "Specification of CDI inputs for this channel"
+        },
         "ChannelClass": {
           "shape": "ChannelClass",
           "locationName": "channelClass",
@@ -3606,7 +4412,7 @@
         "InputSpecification": {
           "shape": "InputSpecification",
           "locationName": "inputSpecification",
-          "documentation": "Specification of input for this channel (max. bitrate, resolution, codec, etc.)"
+          "documentation": "Specification of network and file inputs for this channel"
         },
         "LogLevel": {
           "shape": "LogLevel",
@@ -3646,6 +4452,11 @@
     "CreateChannelRequest": {
       "type": "structure",
       "members": {
+        "CdiInputSpecification": {
+          "shape": "CdiInputSpecification",
+          "locationName": "cdiInputSpecification",
+          "documentation": "Specification of CDI inputs for this channel"
+        },
         "ChannelClass": {
           "shape": "ChannelClass",
           "locationName": "channelClass",
@@ -3667,7 +4478,7 @@
         "InputSpecification": {
           "shape": "InputSpecification",
           "locationName": "inputSpecification",
-          "documentation": "Specification of input for this channel (max. bitrate, resolution, codec, etc.)"
+          "documentation": "Specification of network and file inputs for this channel"
         },
         "LogLevel": {
           "shape": "LogLevel",
@@ -4122,6 +4933,11 @@
           "locationName": "arn",
           "documentation": "The unique arn of the channel."
         },
+        "CdiInputSpecification": {
+          "shape": "CdiInputSpecification",
+          "locationName": "cdiInputSpecification",
+          "documentation": "Specification of CDI inputs for this channel"
+        },
         "ChannelClass": {
           "shape": "ChannelClass",
           "locationName": "channelClass",
@@ -4153,7 +4969,8 @@
         },
         "InputSpecification": {
           "shape": "InputSpecification",
-          "locationName": "inputSpecification"
+          "locationName": "inputSpecification",
+          "documentation": "Specification of network and file inputs for this channel"
         },
         "LogLevel": {
           "shape": "LogLevel",
@@ -4209,7 +5026,8 @@
     },
     "DeleteInputResponse": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Placeholder documentation for DeleteInputResponse"
     },
     "DeleteInputSecurityGroupRequest": {
@@ -4229,7 +5047,8 @@
     },
     "DeleteInputSecurityGroupResponse": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Placeholder documentation for DeleteInputSecurityGroupResponse"
     },
     "DeleteMultiplexProgramRequest": {
@@ -4271,6 +5090,11 @@
           "shape": "MultiplexProgramPacketIdentifiersMap",
           "locationName": "packetIdentifiersMap",
           "documentation": "The packet identifier map for this multiplex program."
+        },
+        "PipelineDetails": {
+          "shape": "__listOfMultiplexProgramPipelineDetail",
+          "locationName": "pipelineDetails",
+          "documentation": "Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time."
         },
         "ProgramName": {
           "shape": "__string",
@@ -4479,7 +5303,8 @@
     },
     "DeleteScheduleResponse": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Placeholder documentation for DeleteScheduleResponse"
     },
     "DeleteTagsRequest": {
@@ -4526,6 +5351,11 @@
           "locationName": "arn",
           "documentation": "The unique arn of the channel."
         },
+        "CdiInputSpecification": {
+          "shape": "CdiInputSpecification",
+          "locationName": "cdiInputSpecification",
+          "documentation": "Specification of CDI inputs for this channel"
+        },
         "ChannelClass": {
           "shape": "ChannelClass",
           "locationName": "channelClass",
@@ -4557,7 +5387,8 @@
         },
         "InputSpecification": {
           "shape": "InputSpecification",
-          "locationName": "inputSpecification"
+          "locationName": "inputSpecification",
+          "documentation": "Specification of network and file inputs for this channel"
         },
         "LogLevel": {
           "shape": "LogLevel",
@@ -4629,6 +5460,11 @@
           "locationName": "deviceSettingsSyncState",
           "documentation": "The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration."
         },
+        "DeviceUpdateStatus": {
+          "shape": "DeviceUpdateStatus",
+          "locationName": "deviceUpdateStatus",
+          "documentation": "The status of software on the input device."
+        },
         "HdDeviceSettings": {
           "shape": "InputDeviceHdSettings",
           "locationName": "hdDeviceSettings",
@@ -4663,6 +5499,11 @@
           "shape": "InputDeviceType",
           "locationName": "type",
           "documentation": "The type of the input device."
+        },
+        "UhdDeviceSettings": {
+          "shape": "InputDeviceUhdSettings",
+          "locationName": "uhdDeviceSettings",
+          "documentation": "Settings that describe an input device that is type UHD."
         }
       },
       "documentation": "Placeholder documentation for DescribeInputDeviceResponse"
@@ -4909,6 +5750,11 @@
           "shape": "MultiplexProgramPacketIdentifiersMap",
           "locationName": "packetIdentifiersMap",
           "documentation": "The packet identifier map for this multiplex program."
+        },
+        "PipelineDetails": {
+          "shape": "__listOfMultiplexProgramPipelineDetail",
+          "locationName": "pipelineDetails",
+          "documentation": "Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time."
         },
         "ProgramName": {
           "shape": "__string",
@@ -5223,6 +6069,14 @@
       "enum": [
         "SYNCED",
         "SYNCING"
+      ]
+    },
+    "DeviceUpdateStatus": {
+      "type": "string",
+      "documentation": "The status of software on the input device.",
+      "enum": [
+        "UP_TO_DATE",
+        "NOT_UP_TO_DATE"
       ]
     },
     "DvbNitSettings": {
@@ -5703,7 +6557,7 @@
         "FontFamily": {
           "shape": "__string",
           "locationName": "fontFamily",
-          "documentation": "Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to \"monospaced\". (If styleControl is set to exclude, the font family is always set to \"monospaced\".)\n\nYou specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.\n\n- Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font).\n- Leave blank to set the family to “monospace”."
+          "documentation": "Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to \"monospaced\". (If styleControl is set to exclude, the font family is always set to \"monospaced\".)\n\nYou specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.\n\n- Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as \u201cArial\u201d), or a generic font family (such as \u201cserif\u201d), or \u201cdefault\u201d (to let the downstream player choose the font).\n- Leave blank to set the family to \u201cmonospace\u201d."
         },
         "StyleControl": {
           "shape": "EbuTtDDestinationStyleControl",
@@ -5739,12 +6593,14 @@
     },
     "EmbeddedDestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Embedded Destination Settings"
     },
     "EmbeddedPlusScte20DestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Embedded Plus Scte20 Destination Settings"
     },
     "EmbeddedScte20Detection": {
@@ -5783,7 +6639,8 @@
     },
     "Empty": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Placeholder documentation for Empty"
     },
     "EncoderSettings": {
@@ -5849,6 +6706,38 @@
         "OutputGroups",
         "TimecodeConfig"
       ]
+    },
+    "FailoverCondition": {
+      "type": "structure",
+      "members": {
+        "FailoverConditionSettings": {
+          "shape": "FailoverConditionSettings",
+          "locationName": "failoverConditionSettings",
+          "documentation": "Failover condition type-specific settings."
+        }
+      },
+      "documentation": "Failover Condition settings. There can be multiple failover conditions inside AutomaticInputFailoverSettings."
+    },
+    "FailoverConditionSettings": {
+      "type": "structure",
+      "members": {
+        "AudioSilenceSettings": {
+          "shape": "AudioSilenceFailoverSettings",
+          "locationName": "audioSilenceSettings",
+          "documentation": "MediaLive will perform a failover if the specified audio selector is silent for the specified period."
+        },
+        "InputLossSettings": {
+          "shape": "InputLossFailoverSettings",
+          "locationName": "inputLossSettings",
+          "documentation": "MediaLive will perform a failover if content is not detected in this input for the specified period."
+        },
+        "VideoBlackSettings": {
+          "shape": "VideoBlackFailoverSettings",
+          "locationName": "videoBlackSettings",
+          "documentation": "MediaLive will perform a failover if content is considered black for the specified period."
+        }
+      },
+      "documentation": "Settings for one failover condition."
     },
     "FeatureActivations": {
       "type": "structure",
@@ -6014,7 +6903,7 @@
         "Destination": {
           "shape": "OutputLocationRef",
           "locationName": "destination",
-          "documentation": "The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling_) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling_). The final file names consist of the prefix from the destination field (for example, \"curling_\") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg).  For example, curlingLow.00001.jpg"
+          "documentation": "The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, \"curling-\") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg).  For example, curling-low.00001.jpg"
         }
       },
       "documentation": "Frame Capture Group Settings",
@@ -7039,6 +7928,14 @@
         "SUBDIRECTORY_PER_STREAM"
       ]
     },
+    "HlsDiscontinuityTags": {
+      "type": "string",
+      "documentation": "Hls Discontinuity Tags",
+      "enum": [
+        "INSERT",
+        "NEVER_INSERT"
+      ]
+    },
     "HlsEncryptionType": {
       "type": "string",
       "documentation": "Hls Encryption Type",
@@ -7110,6 +8007,11 @@
           "locationName": "directoryStructure",
           "documentation": "Place segments in subdirectories."
         },
+        "DiscontinuityTags": {
+          "shape": "HlsDiscontinuityTags",
+          "locationName": "discontinuityTags",
+          "documentation": "Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group.\nTypically, choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an important purpose.\nChoose Never Insert only if the downstream system is doing real-time failover (without using the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags."
+        },
         "EncryptionType": {
           "shape": "HlsEncryptionType",
           "locationName": "encryptionType",
@@ -7130,10 +8032,15 @@
           "locationName": "iFrameOnlyPlaylists",
           "documentation": "DISABLED: Do not create an I-frame-only manifest, but do create the master and media manifests (according to the Output Selection field).\n\nSTANDARD: Create an I-frame-only manifest for each output that contains video, as well as the other manifests (according to the Output Selection field). The I-frame manifest contains a #EXT-X-I-FRAMES-ONLY tag to indicate it is I-frame only, and one or more #EXT-X-BYTERANGE entries identifying the I-frame position. For example, #EXT-X-BYTERANGE:160364@1461888\""
         },
+        "IncompleteSegmentBehavior": {
+          "shape": "HlsIncompleteSegmentBehavior",
+          "locationName": "incompleteSegmentBehavior",
+          "documentation": "Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing output because of a channel stop, a channel pause or a loss of input to the pipeline.\nAuto means that MediaLive decides whether to include the final segment, depending on the channel class and the types of output groups.\nSuppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control the behavior."
+        },
         "IndexNSegments": {
           "shape": "__integerMin3",
           "locationName": "indexNSegments",
-          "documentation": "Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be less than or equal to the Keep Segments field."
+          "documentation": "Applies only if Mode field is LIVE.\n\nSpecifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field."
         },
         "InputLossAction": {
           "shape": "InputLossActionForHlsOut",
@@ -7153,7 +8060,7 @@
         "KeepSegments": {
           "shape": "__integerMin1",
           "locationName": "keepSegments",
-          "documentation": "Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the destination directory."
+          "documentation": "Applies only if Mode field is LIVE.\n\nSpecifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).\n\nIf this \"keep segments\" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player."
         },
         "KeyFormat": {
           "shape": "__string",
@@ -7284,6 +8191,14 @@
       "enum": [
         "DISABLED",
         "ENABLED"
+      ]
+    },
+    "HlsIncompleteSegmentBehavior": {
+      "type": "string",
+      "documentation": "Hls Incomplete Segment Behavior",
+      "enum": [
+        "AUTO",
+        "SUPPRESS"
       ]
     },
     "HlsInputSettings": {
@@ -7558,7 +8473,8 @@
     },
     "ImmediateModeScheduleActionStartSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Settings to configure an action so that it occurs as soon as possible."
     },
     "Input": {
@@ -7813,6 +8729,11 @@
           "locationName": "deviceSettingsSyncState",
           "documentation": "The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration."
         },
+        "DeviceUpdateStatus": {
+          "shape": "DeviceUpdateStatus",
+          "locationName": "deviceUpdateStatus",
+          "documentation": "The status of software on the input device."
+        },
         "HdDeviceSettings": {
           "shape": "InputDeviceHdSettings",
           "locationName": "hdDeviceSettings",
@@ -7847,6 +8768,11 @@
           "shape": "InputDeviceType",
           "locationName": "type",
           "documentation": "The type of the input device."
+        },
+        "UhdDeviceSettings": {
+          "shape": "InputDeviceUhdSettings",
+          "locationName": "uhdDeviceSettings",
+          "documentation": "Settings that describe an input device that is type UHD."
         }
       },
       "documentation": "An input device."
@@ -8049,6 +8975,11 @@
           "locationName": "deviceSettingsSyncState",
           "documentation": "The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration."
         },
+        "DeviceUpdateStatus": {
+          "shape": "DeviceUpdateStatus",
+          "locationName": "deviceUpdateStatus",
+          "documentation": "The status of software on the input device."
+        },
         "HdDeviceSettings": {
           "shape": "InputDeviceHdSettings",
           "locationName": "hdDeviceSettings",
@@ -8083,9 +9014,22 @@
           "shape": "InputDeviceType",
           "locationName": "type",
           "documentation": "The type of the input device."
+        },
+        "UhdDeviceSettings": {
+          "shape": "InputDeviceUhdSettings",
+          "locationName": "uhdDeviceSettings",
+          "documentation": "Settings that describe an input device that is type UHD."
         }
       },
       "documentation": "Details of the input device."
+    },
+    "InputDeviceTransferType": {
+      "type": "string",
+      "documentation": "The type of device transfer. INCOMING for an input device that is being transferred to you, OUTGOING for an input device that you are transferring to another AWS account.",
+      "enum": [
+        "OUTGOING",
+        "INCOMING"
+      ]
     },
     "InputDeviceType": {
       "type": "string",
@@ -8093,6 +9037,52 @@
       "enum": [
         "HD"
       ]
+    },
+    "InputDeviceUhdSettings": {
+      "type": "structure",
+      "members": {
+        "ActiveInput": {
+          "shape": "InputDeviceActiveInput",
+          "locationName": "activeInput",
+          "documentation": "If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI)."
+        },
+        "ConfiguredInput": {
+          "shape": "InputDeviceConfiguredInput",
+          "locationName": "configuredInput",
+          "documentation": "The source at the input device that is currently active. You can specify this source."
+        },
+        "DeviceState": {
+          "shape": "InputDeviceState",
+          "locationName": "deviceState",
+          "documentation": "The state of the input device."
+        },
+        "Framerate": {
+          "shape": "__double",
+          "locationName": "framerate",
+          "documentation": "The frame rate of the video source."
+        },
+        "Height": {
+          "shape": "__integer",
+          "locationName": "height",
+          "documentation": "The height of the video source, in pixels."
+        },
+        "MaxBitrate": {
+          "shape": "__integer",
+          "locationName": "maxBitrate",
+          "documentation": "The current maximum bitrate for ingesting this source, in bits per second. You can specify this maximum."
+        },
+        "ScanType": {
+          "shape": "InputDeviceScanType",
+          "locationName": "scanType",
+          "documentation": "The scan type of the video source."
+        },
+        "Width": {
+          "shape": "__integer",
+          "locationName": "width",
+          "documentation": "The width of the video source, in pixels."
+        }
+      },
+      "documentation": "Settings that describe the active source from the input device, and the video characteristics of that source."
     },
     "InputFilter": {
       "type": "string",
@@ -8190,6 +9180,17 @@
         }
       },
       "documentation": "Input Loss Behavior"
+    },
+    "InputLossFailoverSettings": {
+      "type": "structure",
+      "members": {
+        "InputLossThresholdMsec": {
+          "shape": "__integerMin100",
+          "locationName": "inputLossThresholdMsec",
+          "documentation": "The amount of time (in milliseconds) that no input is detected. After that time, an input failover will occur."
+        }
+      },
+      "documentation": "MediaLive will perform a failover if content is not detected in this input for the specified period."
     },
     "InputLossImageType": {
       "type": "string",
@@ -8496,7 +9497,8 @@
         "URL_PULL",
         "MP4_FILE",
         "MEDIACONNECT",
-        "INPUT_DEVICE"
+        "INPUT_DEVICE",
+        "AWS_CDI"
       ],
       "documentation": "Placeholder documentation for InputType"
     },
@@ -8646,6 +9648,62 @@
         }
       },
       "documentation": "Placeholder documentation for ListChannelsResultModel"
+    },
+    "ListInputDeviceTransfersRequest": {
+      "type": "structure",
+      "members": {
+        "MaxResults": {
+          "shape": "MaxResults",
+          "location": "querystring",
+          "locationName": "maxResults"
+        },
+        "NextToken": {
+          "shape": "__string",
+          "location": "querystring",
+          "locationName": "nextToken"
+        },
+        "TransferType": {
+          "shape": "__string",
+          "location": "querystring",
+          "locationName": "transferType"
+        }
+      },
+      "required": [
+        "TransferType"
+      ],
+      "documentation": "Placeholder documentation for ListInputDeviceTransfersRequest"
+    },
+    "ListInputDeviceTransfersResponse": {
+      "type": "structure",
+      "members": {
+        "InputDeviceTransfers": {
+          "shape": "__listOfTransferringInputDeviceSummary",
+          "locationName": "inputDeviceTransfers",
+          "documentation": "The list of devices that you are transferring or are being transferred to you."
+        },
+        "NextToken": {
+          "shape": "__string",
+          "locationName": "nextToken",
+          "documentation": "A token to get additional list results."
+        }
+      },
+      "documentation": "Placeholder documentation for ListInputDeviceTransfersResponse"
+    },
+    "ListInputDeviceTransfersResultModel": {
+      "type": "structure",
+      "members": {
+        "InputDeviceTransfers": {
+          "shape": "__listOfTransferringInputDeviceSummary",
+          "locationName": "inputDeviceTransfers",
+          "documentation": "The list of devices that you are transferring or are being transferred to you."
+        },
+        "NextToken": {
+          "shape": "__string",
+          "locationName": "nextToken",
+          "documentation": "A token to get additional list results."
+        }
+      },
+      "documentation": "The list of input devices in the transferred state. The recipient hasn't yet accepted or rejected the transfer."
     },
     "ListInputDevicesRequest": {
       "type": "structure",
@@ -8913,7 +9971,7 @@
           "shape": "__string",
           "location": "querystring",
           "locationName": "codec",
-          "documentation": "Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'"
+          "documentation": "Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'"
         },
         "Duration": {
           "shape": "__string",
@@ -9015,7 +10073,7 @@
           "shape": "__string",
           "location": "querystring",
           "locationName": "codec",
-          "documentation": "Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'"
+          "documentation": "Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'"
         },
         "MaxResults": {
           "shape": "MaxResults",
@@ -9332,7 +10390,7 @@
         "BufferModel": {
           "shape": "M2tsBufferModel",
           "locationName": "bufferModel",
-          "documentation": "If set to multiplex, use multiplex buffer model for accurate interleaving.  Setting to bufferModel to none can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions."
+          "documentation": "Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet timing. Or set to NONE, which might result in lower latency but will result in more variability in output network packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or receiving devices."
         },
         "CcDescriptor": {
           "shape": "M2tsCcDescriptor",
@@ -9708,7 +10766,8 @@
     },
     "MediaPackageOutputSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Media Package Output Settings"
     },
     "Mp2CodingMode": {
@@ -9739,6 +10798,173 @@
         }
       },
       "documentation": "Mp2 Settings"
+    },
+    "Mpeg2AdaptiveQuantization": {
+      "type": "string",
+      "documentation": "Mpeg2 Adaptive Quantization",
+      "enum": [
+        "AUTO",
+        "HIGH",
+        "LOW",
+        "MEDIUM",
+        "OFF"
+      ]
+    },
+    "Mpeg2ColorMetadata": {
+      "type": "string",
+      "documentation": "Mpeg2 Color Metadata",
+      "enum": [
+        "IGNORE",
+        "INSERT"
+      ]
+    },
+    "Mpeg2ColorSpace": {
+      "type": "string",
+      "documentation": "Mpeg2 Color Space",
+      "enum": [
+        "AUTO",
+        "PASSTHROUGH"
+      ]
+    },
+    "Mpeg2DisplayRatio": {
+      "type": "string",
+      "documentation": "Mpeg2 Display Ratio",
+      "enum": [
+        "DISPLAYRATIO16X9",
+        "DISPLAYRATIO4X3"
+      ]
+    },
+    "Mpeg2FilterSettings": {
+      "type": "structure",
+      "members": {
+        "TemporalFilterSettings": {
+          "shape": "TemporalFilterSettings",
+          "locationName": "temporalFilterSettings"
+        }
+      },
+      "documentation": "Mpeg2 Filter Settings"
+    },
+    "Mpeg2GopSizeUnits": {
+      "type": "string",
+      "documentation": "Mpeg2 Gop Size Units",
+      "enum": [
+        "FRAMES",
+        "SECONDS"
+      ]
+    },
+    "Mpeg2ScanType": {
+      "type": "string",
+      "documentation": "Mpeg2 Scan Type",
+      "enum": [
+        "INTERLACED",
+        "PROGRESSIVE"
+      ]
+    },
+    "Mpeg2Settings": {
+      "type": "structure",
+      "members": {
+        "AdaptiveQuantization": {
+          "shape": "Mpeg2AdaptiveQuantization",
+          "locationName": "adaptiveQuantization",
+          "documentation": "Choose Off to disable adaptive quantization. Or choose another value to enable the quantizer and set its strength. The strengths are: Auto, Off, Low, Medium, High. When you enable this field, MediaLive allows intra-frame quantizers to vary, which might improve visual quality."
+        },
+        "AfdSignaling": {
+          "shape": "AfdSignaling",
+          "locationName": "afdSignaling",
+          "documentation": "Indicates the AFD values that MediaLive will write into the video encode. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose AUTO.\nAUTO: MediaLive will try to preserve the input AFD value (in cases where multiple AFD values are valid).\nFIXED: MediaLive will use the value you specify in fixedAFD."
+        },
+        "ColorMetadata": {
+          "shape": "Mpeg2ColorMetadata",
+          "locationName": "colorMetadata",
+          "documentation": "Specifies whether to include the color space metadata. The metadata describes the color space that applies to the video (the colorSpace field). We recommend that you insert the metadata."
+        },
+        "ColorSpace": {
+          "shape": "Mpeg2ColorSpace",
+          "locationName": "colorSpace",
+          "documentation": "Choose the type of color space conversion to apply to the output. For detailed information on setting up both the input and the output to obtain the desired color space in the output, see the section on \\\"MediaLive Features - Video - color space\\\" in the MediaLive User Guide.\nPASSTHROUGH: Keep the color space of the input content - do not convert it.\nAUTO:Convert all content that is SD to rec 601, and convert all content that is HD to rec 709."
+        },
+        "DisplayAspectRatio": {
+          "shape": "Mpeg2DisplayRatio",
+          "locationName": "displayAspectRatio",
+          "documentation": "Sets the pixel aspect ratio for the encode."
+        },
+        "FilterSettings": {
+          "shape": "Mpeg2FilterSettings",
+          "locationName": "filterSettings",
+          "documentation": "Optionally specify a noise reduction filter, which can improve quality of compressed content. If you do not choose a filter, no filter will be applied.\nTEMPORAL: This filter is useful for both source content that is noisy (when it has excessive digital artifacts) and source content that is clean.\nWhen the content is noisy, the filter cleans up the source content before the encoding phase, with these two effects: First, it improves the output video quality because the content has been cleaned up. Secondly, it decreases the bandwidth because MediaLive does not waste bits on encoding noise.\nWhen the content is reasonably clean, the filter tends to decrease the bitrate."
+        },
+        "FixedAfd": {
+          "shape": "FixedAfd",
+          "locationName": "fixedAfd",
+          "documentation": "Complete this field only when afdSignaling is set to FIXED. Enter the AFD value (4 bits) to write on all frames of the video encode."
+        },
+        "FramerateDenominator": {
+          "shape": "__integerMin1",
+          "locationName": "framerateDenominator",
+          "documentation": "description\": \"The framerate denominator. For example, 1001. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS."
+        },
+        "FramerateNumerator": {
+          "shape": "__integerMin1",
+          "locationName": "framerateNumerator",
+          "documentation": "The framerate numerator. For example, 24000. The framerate is the numerator divided by the denominator. For example, 24000 / 1001 = 23.976 FPS."
+        },
+        "GopClosedCadence": {
+          "shape": "__integerMin0",
+          "locationName": "gopClosedCadence",
+          "documentation": "MPEG2: default is open GOP."
+        },
+        "GopNumBFrames": {
+          "shape": "__integerMin0Max7",
+          "locationName": "gopNumBFrames",
+          "documentation": "Relates to the GOP structure. The number of B-frames between reference frames. If you do not know what a B-frame is, use the default."
+        },
+        "GopSize": {
+          "shape": "__double",
+          "locationName": "gopSize",
+          "documentation": "Relates to the GOP structure. The GOP size (keyframe interval) in the units specified in gopSizeUnits. If you do not know what GOP is, use the default.\nIf gopSizeUnits is frames, then the gopSize must be an integer and must be greater than or equal to 1.\nIf gopSizeUnits is seconds, the gopSize must be greater than 0, but does not need to be an integer."
+        },
+        "GopSizeUnits": {
+          "shape": "Mpeg2GopSizeUnits",
+          "locationName": "gopSizeUnits",
+          "documentation": "Relates to the GOP structure. Specifies whether the gopSize is specified in frames or seconds. If you do not plan to change the default gopSize, leave the default. If you specify SECONDS, MediaLive will internally convert the gop size to a frame count."
+        },
+        "ScanType": {
+          "shape": "Mpeg2ScanType",
+          "locationName": "scanType",
+          "documentation": "Set the scan type of the output to PROGRESSIVE or INTERLACED (top field first)."
+        },
+        "SubgopLength": {
+          "shape": "Mpeg2SubGopLength",
+          "locationName": "subgopLength",
+          "documentation": "Relates to the GOP structure. If you do not know what GOP is, use the default.\nFIXED: Set the number of B-frames in each sub-GOP to the value in gopNumBFrames.\nDYNAMIC: Let MediaLive optimize the number of B-frames in each sub-GOP, to improve visual quality."
+        },
+        "TimecodeInsertion": {
+          "shape": "Mpeg2TimecodeInsertionBehavior",
+          "locationName": "timecodeInsertion",
+          "documentation": "Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \\\"MediaLive Features - Timecode configuration\\\" in the MediaLive User Guide.\nDISABLED: do not include timecodes.\nGOP_TIMECODE: Include timecode metadata in the GOP header."
+        }
+      },
+      "documentation": "Mpeg2 Settings",
+      "required": [
+        "FramerateNumerator",
+        "FramerateDenominator"
+      ]
+    },
+    "Mpeg2SubGopLength": {
+      "type": "string",
+      "documentation": "Mpeg2 Sub Gop Length",
+      "enum": [
+        "DYNAMIC",
+        "FIXED"
+      ]
+    },
+    "Mpeg2TimecodeInsertionBehavior": {
+      "type": "string",
+      "documentation": "Mpeg2 Timecode Insertion Behavior",
+      "enum": [
+        "DISABLED",
+        "GOP_TIMECODE"
+      ]
     },
     "MsSmoothGroupSettings": {
       "type": "structure",
@@ -9942,7 +11168,8 @@
     },
     "MultiplexGroupSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Multiplex Group Settings"
     },
     "MultiplexMediaConnectOutputDestinationSettings": {
@@ -9998,6 +11225,11 @@
           "shape": "MultiplexProgramPacketIdentifiersMap",
           "locationName": "packetIdentifiersMap",
           "documentation": "The packet identifier map for this multiplex program."
+        },
+        "PipelineDetails": {
+          "shape": "__listOfMultiplexProgramPipelineDetail",
+          "locationName": "pipelineDetails",
+          "documentation": "Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time."
         },
         "ProgramName": {
           "shape": "__string",
@@ -10081,6 +11313,22 @@
       },
       "documentation": "Packet identifiers map for a given Multiplex program."
     },
+    "MultiplexProgramPipelineDetail": {
+      "type": "structure",
+      "members": {
+        "ActiveChannelPipeline": {
+          "shape": "__string",
+          "locationName": "activeChannelPipeline",
+          "documentation": "Identifies the channel pipeline that is currently active for the pipeline (identified by PipelineId) in the multiplex."
+        },
+        "PipelineId": {
+          "shape": "__string",
+          "locationName": "pipelineId",
+          "documentation": "Identifies a specific pipeline in the multiplex."
+        }
+      },
+      "documentation": "The current source for one of the pipelines in the multiplex."
+    },
     "MultiplexProgramServiceDescriptor": {
       "type": "structure",
       "members": {
@@ -10150,7 +11398,7 @@
       "type": "structure",
       "members": {
         "MaximumVideoBufferDelayMilliseconds": {
-          "shape": "__integerMin1000Max3000",
+          "shape": "__integerMin800Max3000",
           "locationName": "maximumVideoBufferDelayMilliseconds",
           "documentation": "Maximum video buffer delay in milliseconds."
         },
@@ -10214,6 +11462,11 @@
           "shape": "__integerMin100000Max100000000",
           "locationName": "minimumBitrate",
           "documentation": "Minimum statmux bitrate."
+        },
+        "Priority": {
+          "shape": "__integerMinNegative5Max5",
+          "locationName": "priority",
+          "documentation": "The purpose of the priority is to use a combination of the\\nmultiplex rate control algorithm and the QVBR capability of the\\nencoder to prioritize the video quality of some channels in a\\nmultiplex over others.  Channels that have a higher priority will\\nget higher video quality at the expense of the video quality of\\nother channels in the multiplex with lower priority."
         }
       },
       "documentation": "Statmux rate control settings"
@@ -10620,7 +11873,8 @@
     },
     "PassThroughSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Pass Through Settings"
     },
     "PauseStateScheduleActionSettings": {
@@ -10782,15 +12036,44 @@
       },
       "documentation": "PurchaseOffering response"
     },
+    "RawSettings": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Raw Settings"
+    },
     "Rec601Settings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Rec601 Settings"
     },
     "Rec709Settings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Rec709 Settings"
+    },
+    "RejectInputDeviceTransferRequest": {
+      "type": "structure",
+      "members": {
+        "InputDeviceId": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "inputDeviceId",
+          "documentation": "The unique ID of the input device to reject. For example, hd-123456789abcdef."
+        }
+      },
+      "required": [
+        "InputDeviceId"
+      ],
+      "documentation": "Placeholder documentation for RejectInputDeviceTransferRequest"
+    },
+    "RejectInputDeviceTransferResponse": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Placeholder documentation for RejectInputDeviceTransferResponse"
     },
     "RemixSettings": {
       "type": "structure",
@@ -10919,7 +12202,8 @@
         "MPEG2",
         "AVC",
         "HEVC",
-        "AUDIO"
+        "AUDIO",
+        "LINK"
       ]
     },
     "ReservationMaximumBitrate": {
@@ -11052,6 +12336,13 @@
       },
       "documentation": "Placeholder documentation for ResourceNotFound"
     },
+    "RtmpAdMarkers": {
+      "type": "string",
+      "documentation": "Rtmp Ad Markers",
+      "enum": [
+        "ON_CUE_POINT_SCTE35"
+      ]
+    },
     "RtmpCacheFullBehavior": {
       "type": "string",
       "documentation": "Rtmp Cache Full Behavior",
@@ -11071,12 +12362,18 @@
     },
     "RtmpCaptionInfoDestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Rtmp Caption Info Destination Settings"
     },
     "RtmpGroupSettings": {
       "type": "structure",
       "members": {
+        "AdMarkers": {
+          "shape": "__listOfRtmpAdMarkers",
+          "locationName": "adMarkers",
+          "documentation": "Choose the ad marker type for this output group. MediaLive will create a message based on the content of each SCTE-35 message, format it for that marker type, and insert it in the datastream."
+        },
         "AuthenticationScheme": {
           "shape": "AuthenticationScheme",
           "locationName": "authenticationScheme",
@@ -11252,7 +12549,8 @@
     },
     "ScheduleDeleteResultModel": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Result of a schedule deletion."
     },
     "ScheduleDescribeResultModel": {
@@ -11284,7 +12582,8 @@
     },
     "Scte20PlusEmbeddedDestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Scte20 Plus Embedded Destination Settings"
     },
     "Scte20SourceSettings": {
@@ -11305,7 +12604,8 @@
     },
     "Scte27DestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Scte27 Destination Settings"
     },
     "Scte27SourceSettings": {
@@ -11683,7 +12983,8 @@
     },
     "SmpteTtDestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Smpte Tt Destination Settings"
     },
     "StandardHlsSettings": {
@@ -11727,6 +13028,11 @@
           "locationName": "arn",
           "documentation": "The unique arn of the channel."
         },
+        "CdiInputSpecification": {
+          "shape": "CdiInputSpecification",
+          "locationName": "cdiInputSpecification",
+          "documentation": "Specification of CDI inputs for this channel"
+        },
         "ChannelClass": {
           "shape": "ChannelClass",
           "locationName": "channelClass",
@@ -11758,7 +13064,8 @@
         },
         "InputSpecification": {
           "shape": "InputSpecification",
-          "locationName": "inputSpecification"
+          "locationName": "inputSpecification",
+          "documentation": "Specification of network and file inputs for this channel"
         },
         "LogLevel": {
           "shape": "LogLevel",
@@ -11996,6 +13303,11 @@
           "locationName": "arn",
           "documentation": "The unique arn of the channel."
         },
+        "CdiInputSpecification": {
+          "shape": "CdiInputSpecification",
+          "locationName": "cdiInputSpecification",
+          "documentation": "Specification of CDI inputs for this channel"
+        },
         "ChannelClass": {
           "shape": "ChannelClass",
           "locationName": "channelClass",
@@ -12027,7 +13339,8 @@
         },
         "InputSpecification": {
           "shape": "InputSpecification",
-          "locationName": "inputSpecification"
+          "locationName": "inputSpecification",
+          "documentation": "Specification of network and file inputs for this channel"
         },
         "LogLevel": {
           "shape": "LogLevel",
@@ -12175,7 +13488,8 @@
     },
     "TeletextDestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Teletext Destination Settings"
     },
     "TeletextSourceSettings": {
@@ -12237,6 +13551,17 @@
         "STRENGTH_16"
       ]
     },
+    "ThumbnailData": {
+      "type": "structure",
+      "members": {
+        "Body": {
+          "shape": "__string",
+          "locationName": "body",
+          "documentation": "The binary data for the thumbnail that the Link device has most recently sent to MediaLive."
+        }
+      },
+      "documentation": "The binary data for the thumbnail that the Link device has most recently sent to MediaLive."
+    },
     "TimecodeConfig": {
       "type": "structure",
       "members": {
@@ -12278,6 +13603,79 @@
         "httpStatusCode": 429
       },
       "documentation": "Placeholder documentation for TooManyRequestsException"
+    },
+    "TransferInputDevice": {
+      "type": "structure",
+      "members": {
+        "TargetCustomerId": {
+          "shape": "__string",
+          "locationName": "targetCustomerId",
+          "documentation": "The AWS account ID (12 digits) for the recipient of the device transfer."
+        },
+        "TransferMessage": {
+          "shape": "__string",
+          "locationName": "transferMessage",
+          "documentation": "An optional message for the recipient. Maximum 280 characters."
+        }
+      },
+      "documentation": "The transfer details of the input device."
+    },
+    "TransferInputDeviceRequest": {
+      "type": "structure",
+      "members": {
+        "InputDeviceId": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "inputDeviceId",
+          "documentation": "The unique ID of this input device. For example, hd-123456789abcdef."
+        },
+        "TargetCustomerId": {
+          "shape": "__string",
+          "locationName": "targetCustomerId",
+          "documentation": "The AWS account ID (12 digits) for the recipient of the device transfer."
+        },
+        "TransferMessage": {
+          "shape": "__string",
+          "locationName": "transferMessage",
+          "documentation": "An optional message for the recipient. Maximum 280 characters."
+        }
+      },
+      "documentation": "A request to transfer an input device.",
+      "required": [
+        "InputDeviceId"
+      ]
+    },
+    "TransferInputDeviceResponse": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Placeholder documentation for TransferInputDeviceResponse"
+    },
+    "TransferringInputDeviceSummary": {
+      "type": "structure",
+      "members": {
+        "Id": {
+          "shape": "__string",
+          "locationName": "id",
+          "documentation": "The unique ID of the input device."
+        },
+        "Message": {
+          "shape": "__string",
+          "locationName": "message",
+          "documentation": "The optional message that the sender has attached to the transfer."
+        },
+        "TargetCustomerId": {
+          "shape": "__string",
+          "locationName": "targetCustomerId",
+          "documentation": "The AWS account ID for the recipient of the input device transfer."
+        },
+        "TransferType": {
+          "shape": "InputDeviceTransferType",
+          "locationName": "transferType",
+          "documentation": "The type (direction) of the input device transfer."
+        }
+      },
+      "documentation": "Details about the input device that is being transferred."
     },
     "TtmlDestinationSettings": {
       "type": "structure",
@@ -12390,6 +13788,11 @@
     "UpdateChannel": {
       "type": "structure",
       "members": {
+        "CdiInputSpecification": {
+          "shape": "CdiInputSpecification",
+          "locationName": "cdiInputSpecification",
+          "documentation": "Specification of CDI inputs for this channel"
+        },
         "Destinations": {
           "shape": "__listOfOutputDestination",
           "locationName": "destinations",
@@ -12407,7 +13810,7 @@
         "InputSpecification": {
           "shape": "InputSpecification",
           "locationName": "inputSpecification",
-          "documentation": "Specification of input for this channel (max. bitrate, resolution, codec, etc.)"
+          "documentation": "Specification of network and file inputs for this channel"
         },
         "LogLevel": {
           "shape": "LogLevel",
@@ -12485,6 +13888,11 @@
     "UpdateChannelRequest": {
       "type": "structure",
       "members": {
+        "CdiInputSpecification": {
+          "shape": "CdiInputSpecification",
+          "locationName": "cdiInputSpecification",
+          "documentation": "Specification of CDI inputs for this channel"
+        },
         "ChannelId": {
           "shape": "__string",
           "location": "uri",
@@ -12508,7 +13916,7 @@
         "InputSpecification": {
           "shape": "InputSpecification",
           "locationName": "inputSpecification",
-          "documentation": "Specification of input for this channel (max. bitrate, resolution, codec, etc.)"
+          "documentation": "Specification of network and file inputs for this channel"
         },
         "LogLevel": {
           "shape": "LogLevel",
@@ -12598,12 +14006,17 @@
         "HdDeviceSettings": {
           "shape": "InputDeviceConfigurableSettings",
           "locationName": "hdDeviceSettings",
-          "documentation": "The settings that you want to apply to the input device."
+          "documentation": "The settings that you want to apply to the HD input device."
         },
         "Name": {
           "shape": "__string",
           "locationName": "name",
           "documentation": "The name that you assigned to this input device (not the unique ID)."
+        },
+        "UhdDeviceSettings": {
+          "shape": "InputDeviceConfigurableSettings",
+          "locationName": "uhdDeviceSettings",
+          "documentation": "The settings that you want to apply to the UHD input device."
         }
       },
       "documentation": "Updates an input device."
@@ -12614,7 +14027,7 @@
         "HdDeviceSettings": {
           "shape": "InputDeviceConfigurableSettings",
           "locationName": "hdDeviceSettings",
-          "documentation": "The settings that you want to apply to the input device."
+          "documentation": "The settings that you want to apply to the HD input device."
         },
         "InputDeviceId": {
           "shape": "__string",
@@ -12626,6 +14039,11 @@
           "shape": "__string",
           "locationName": "name",
           "documentation": "The name that you assigned to this input device (not the unique ID)."
+        },
+        "UhdDeviceSettings": {
+          "shape": "InputDeviceConfigurableSettings",
+          "locationName": "uhdDeviceSettings",
+          "documentation": "The settings that you want to apply to the UHD input device."
         }
       },
       "documentation": "A request to update an input device.",
@@ -12650,6 +14068,11 @@
           "shape": "DeviceSettingsSyncState",
           "locationName": "deviceSettingsSyncState",
           "documentation": "The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration."
+        },
+        "DeviceUpdateStatus": {
+          "shape": "DeviceUpdateStatus",
+          "locationName": "deviceUpdateStatus",
+          "documentation": "The status of software on the input device."
         },
         "HdDeviceSettings": {
           "shape": "InputDeviceHdSettings",
@@ -12685,6 +14108,11 @@
           "shape": "InputDeviceType",
           "locationName": "type",
           "documentation": "The type of the input device."
+        },
+        "UhdDeviceSettings": {
+          "shape": "InputDeviceUhdSettings",
+          "locationName": "uhdDeviceSettings",
+          "documentation": "Settings that describe an input device that is type UHD."
         }
       },
       "documentation": "Placeholder documentation for UpdateInputDeviceResponse"
@@ -12994,6 +14422,22 @@
       },
       "documentation": "Placeholder documentation for ValidationError"
     },
+    "VideoBlackFailoverSettings": {
+      "type": "structure",
+      "members": {
+        "BlackDetectThreshold": {
+          "shape": "__doubleMin0Max1",
+          "locationName": "blackDetectThreshold",
+          "documentation": "A value used in calculating the threshold below which MediaLive considers a pixel to be 'black'. For the input to be considered black, every pixel in a frame must be below this threshold. The threshold is calculated as a percentage (expressed as a decimal) of white. Therefore .1 means 10% white (or 90% black). Note how the formula works for any color depth. For example, if you set this field to 0.1 in 10-bit color depth: (1023*0.1=102.3), which means a pixel value of 102 or less is 'black'. If you set this field to .1 in an 8-bit color depth: (255*0.1=25.5), which means a pixel value of 25 or less is 'black'. The range is 0.0 to 1.0, with any number of decimal places."
+        },
+        "VideoBlackThresholdMsec": {
+          "shape": "__integerMin1000",
+          "locationName": "videoBlackThresholdMsec",
+          "documentation": "The amount of time (in milliseconds) that the active input must be black before automatic input failover occurs."
+        }
+      },
+      "documentation": "Placeholder documentation for VideoBlackFailoverSettings"
+    },
     "VideoCodecSettings": {
       "type": "structure",
       "members": {
@@ -13008,6 +14452,10 @@
         "H265Settings": {
           "shape": "H265Settings",
           "locationName": "h265Settings"
+        },
+        "Mpeg2Settings": {
+          "shape": "Mpeg2Settings",
+          "locationName": "mpeg2Settings"
         }
       },
       "documentation": "Video Codec Settings"
@@ -13033,7 +14481,7 @@
         "RespondToAfd": {
           "shape": "VideoDescriptionRespondToAfd",
           "locationName": "respondToAfd",
-          "documentation": "Indicates how to respond to the AFD values in the input stream. RESPOND causes input video to be clipped, depending on the AFD value, input display aspect ratio, and output display aspect ratio, and (except for FRAME_CAPTURE codec) includes the values in the output. PASSTHROUGH (does not apply to FRAME_CAPTURE codec) ignores the AFD values and includes the values in the output, so input video is not clipped. NONE ignores the AFD values and does not include the values through to the output, so input video is not clipped."
+          "documentation": "Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH.\nRESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE.\nPASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output.\nNONE: MediaLive does not clip the input video and does not include the AFD values in the output"
         },
         "ScalingBehavior": {
           "shape": "VideoDescriptionScalingBehavior",
@@ -13147,29 +14595,42 @@
       },
       "documentation": "Video Selector Settings"
     },
+    "WavCodingMode": {
+      "type": "string",
+      "documentation": "Wav Coding Mode",
+      "enum": [
+        "CODING_MODE_1_0",
+        "CODING_MODE_2_0",
+        "CODING_MODE_4_0",
+        "CODING_MODE_8_0"
+      ]
+    },
+    "WavSettings": {
+      "type": "structure",
+      "members": {
+        "BitDepth": {
+          "shape": "__double",
+          "locationName": "bitDepth",
+          "documentation": "Bits per sample."
+        },
+        "CodingMode": {
+          "shape": "WavCodingMode",
+          "locationName": "codingMode",
+          "documentation": "The audio coding mode for the WAV audio. The mode determines the number of channels in the audio."
+        },
+        "SampleRate": {
+          "shape": "__double",
+          "locationName": "sampleRate",
+          "documentation": "Sample rate in Hz."
+        }
+      },
+      "documentation": "Wav Settings"
+    },
     "WebvttDestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Webvtt Destination Settings"
-    },
-    "AcceptHeader": {
-      "type": "string",
-      "enum": [
-        "image/jpeg"
-      ],
-      "documentation": "The HTTP Accept header. Indicates the requested type for the thumbnail."
-    },
-    "ContentType": {
-      "type": "string",
-      "enum": [
-        "image/jpeg"
-      ],
-      "documentation": "Specifies the media type of the thumbnail."
-    },
-    "InputDeviceThumbnail": {
-      "type": "blob",
-      "streaming": true,
-      "description": "The binary data for the thumbnail that the Link device has most recently sent to MediaLive."
     },
     "__boolean": {
       "type": "boolean",
@@ -13182,6 +14643,10 @@
     "__doubleMin0": {
       "type": "double",
       "documentation": "Placeholder documentation for __doubleMin0"
+    },
+    "__doubleMin0Max1": {
+      "type": "double",
+      "documentation": "Placeholder documentation for __doubleMin0Max1"
     },
     "__doubleMin1": {
       "type": "double",
@@ -13313,6 +14778,11 @@
       "min": 1,
       "documentation": "Placeholder documentation for __integerMin1"
     },
+    "__integerMin100": {
+      "type": "integer",
+      "min": 100,
+      "documentation": "Placeholder documentation for __integerMin100"
+    },
     "__integerMin1000": {
       "type": "integer",
       "min": 1000,
@@ -13341,12 +14811,6 @@
       "min": 100000,
       "max": 80000000,
       "documentation": "Placeholder documentation for __integerMin100000Max80000000"
-    },
-    "__integerMin1000Max3000": {
-      "type": "integer",
-      "min": 1000,
-      "max": 3000,
-      "documentation": "Placeholder documentation for __integerMin1000Max3000"
     },
     "__integerMin1000Max30000": {
       "type": "integer",
@@ -13454,6 +14918,12 @@
       "max": 20,
       "documentation": "Placeholder documentation for __integerMin4Max20"
     },
+    "__integerMin800Max3000": {
+      "type": "integer",
+      "min": 800,
+      "max": 3000,
+      "documentation": "Placeholder documentation for __integerMin800Max3000"
+    },
     "__integerMin96Max600": {
       "type": "integer",
       "min": 96,
@@ -13465,6 +14935,12 @@
       "min": -1000,
       "max": 1000,
       "documentation": "Placeholder documentation for __integerMinNegative1000Max1000"
+    },
+    "__integerMinNegative5Max5": {
+      "type": "integer",
+      "min": -5,
+      "max": 5,
+      "documentation": "Placeholder documentation for __integerMinNegative5Max5"
     },
     "__integerMinNegative60Max6": {
       "type": "integer",
@@ -13506,6 +14982,20 @@
       },
       "documentation": "Placeholder documentation for __listOfAudioTrack"
     },
+    "__listOfBatchFailedResultModel": {
+      "type": "list",
+      "member": {
+        "shape": "BatchFailedResultModel"
+      },
+      "documentation": "Placeholder documentation for __listOfBatchFailedResultModel"
+    },
+    "__listOfBatchSuccessfulResultModel": {
+      "type": "list",
+      "member": {
+        "shape": "BatchSuccessfulResultModel"
+      },
+      "documentation": "Placeholder documentation for __listOfBatchSuccessfulResultModel"
+    },
     "__listOfCaptionDescription": {
       "type": "list",
       "member": {
@@ -13540,6 +15030,13 @@
         "shape": "ChannelSummary"
       },
       "documentation": "Placeholder documentation for __listOfChannelSummary"
+    },
+    "__listOfFailoverCondition": {
+      "type": "list",
+      "member": {
+        "shape": "FailoverCondition"
+      },
+      "documentation": "Placeholder documentation for __listOfFailoverCondition"
     },
     "__listOfHlsAdMarkers": {
       "type": "list",
@@ -13667,6 +15164,13 @@
       },
       "documentation": "Placeholder documentation for __listOfMultiplexOutputDestination"
     },
+    "__listOfMultiplexProgramPipelineDetail": {
+      "type": "list",
+      "member": {
+        "shape": "MultiplexProgramPipelineDetail"
+      },
+      "documentation": "Placeholder documentation for __listOfMultiplexProgramPipelineDetail"
+    },
     "__listOfMultiplexProgramSummary": {
       "type": "list",
       "member": {
@@ -13737,6 +15241,13 @@
       },
       "documentation": "Placeholder documentation for __listOfReservation"
     },
+    "__listOfRtmpAdMarkers": {
+      "type": "list",
+      "member": {
+        "shape": "RtmpAdMarkers"
+      },
+      "documentation": "Placeholder documentation for __listOfRtmpAdMarkers"
+    },
     "__listOfScheduleAction": {
       "type": "list",
       "member": {
@@ -13750,6 +15261,13 @@
         "shape": "Scte35Descriptor"
       },
       "documentation": "Placeholder documentation for __listOfScte35Descriptor"
+    },
+    "__listOfTransferringInputDeviceSummary": {
+      "type": "list",
+      "member": {
+        "shape": "TransferringInputDeviceSummary"
+      },
+      "documentation": "Placeholder documentation for __listOfTransferringInputDeviceSummary"
     },
     "__listOfValidationError": {
       "type": "list",
@@ -13871,6 +15389,25 @@
       "type": "timestamp",
       "timestampFormat": "unixTimestamp",
       "documentation": "Placeholder documentation for __timestampUnix"
+    },
+    "InputDeviceThumbnail": {
+      "type": "blob",
+      "streaming": true,
+      "documentation": "The binary data for the thumbnail that the Link device has most recently sent to MediaLive."
+    },
+    "AcceptHeader": {
+      "type": "string",
+      "enum": [
+        "image/jpeg"
+      ],
+      "documentation": "The HTTP Accept header. Indicates the requested type fothe thumbnail."
+    },
+    "ContentType": {
+      "type": "string",
+      "enum": [
+        "image/jpeg"
+      ],
+      "documentation": "Specifies the media type of the thumbnail."
     },
     "__timestamp": {
       "type": "timestamp",

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -188,6 +188,78 @@ namespace Amazon.DirectoryService
         /// <returns>Returns a  AddIpRoutesResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddIpRoutes">REST API Reference for AddIpRoutes Operation</seealso>
         AddIpRoutesResponse EndAddIpRoutes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AddRegion
+
+
+        /// <summary>
+        /// Adds two domain controllers in the specified Region for the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddRegion service method.</param>
+        /// 
+        /// <returns>The response from the AddRegion service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// Client authentication is not available in this region at this time.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryAlreadyInRegionException">
+        /// The Region you specified is the same Region where the AWS Managed Microsoft AD directory
+        /// was created. Specify a different Region and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.RegionLimitExceededException">
+        /// You have reached the limit for maximum number of simultaneous Region replications
+        /// per directory.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddRegion">REST API Reference for AddRegion Operation</seealso>
+        AddRegionResponse AddRegion(AddRegionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddRegion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddRegion operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddRegion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddRegion">REST API Reference for AddRegion Operation</seealso>
+        IAsyncResult BeginAddRegion(AddRegionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddRegion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddRegion.</param>
+        /// 
+        /// <returns>Returns a  AddRegionResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddRegion">REST API Reference for AddRegion Operation</seealso>
+        AddRegionResponse EndAddRegion(IAsyncResult asyncResult);
 
         #endregion
         
@@ -428,8 +500,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Creates a computer account in the specified directory, and joins the computer to the
-        /// directory.
+        /// Creates an Active Directory computer object in the specified directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComputer service method.</param>
         /// 
@@ -1149,7 +1220,8 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Deletes from the system the certificate that was registered for a secured LDAP connection.
+        /// Deletes from the system the certificate that was registered for secure LDAP or client
+        /// certificate authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterCertificate service method.</param>
         /// 
@@ -1266,7 +1338,8 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Displays information about the certificate registered for a secured LDAP connection.
+        /// Displays information about the certificate registered for secure LDAP or client certificate
+        /// authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
         /// 
@@ -1675,6 +1748,67 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DescribeRegions
+
+
+        /// <summary>
+        /// Provides information about the Regions that are configured for multi-Region replication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRegions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRegions service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// Client authentication is not available in this region at this time.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
+        DescribeRegionsResponse DescribeRegions(DescribeRegionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeRegions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRegions operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRegions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
+        IAsyncResult BeginDescribeRegions(DescribeRegionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeRegions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRegions.</param>
+        /// 
+        /// <returns>Returns a  DescribeRegionsResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
+        DescribeRegionsResponse EndDescribeRegions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeSharedDirectories
 
 
@@ -1864,6 +1998,64 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  DisableClientAuthentication
+
+
+        /// <summary>
+        /// Disables alternative client authentication methods for the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableClientAuthentication service method.</param>
+        /// 
+        /// <returns>The response from the DisableClientAuthentication service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// Client authentication is not available in this region at this time.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidClientAuthStatusException">
+        /// Client authentication is already enabled.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication">REST API Reference for DisableClientAuthentication Operation</seealso>
+        DisableClientAuthenticationResponse DisableClientAuthentication(DisableClientAuthenticationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableClientAuthentication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableClientAuthentication operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableClientAuthentication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication">REST API Reference for DisableClientAuthentication Operation</seealso>
+        IAsyncResult BeginDisableClientAuthentication(DisableClientAuthenticationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableClientAuthentication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableClientAuthentication.</param>
+        /// 
+        /// <returns>Returns a  DisableClientAuthenticationResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication">REST API Reference for DisableClientAuthentication Operation</seealso>
+        DisableClientAuthenticationResponse EndDisableClientAuthentication(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisableLDAPS
 
 
@@ -2030,6 +2222,68 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  EnableClientAuthentication
+
+
+        /// <summary>
+        /// Enables alternative client authentication methods for the specified directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableClientAuthentication service method.</param>
+        /// 
+        /// <returns>The response from the EnableClientAuthentication service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// Client authentication is not available in this region at this time.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidClientAuthStatusException">
+        /// Client authentication is already enabled.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.NoAvailableCertificateException">
+        /// Client authentication setup could not be completed because at least one valid certificate
+        /// must be registered in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication">REST API Reference for EnableClientAuthentication Operation</seealso>
+        EnableClientAuthenticationResponse EnableClientAuthentication(EnableClientAuthenticationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableClientAuthentication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableClientAuthentication operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableClientAuthentication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication">REST API Reference for EnableClientAuthentication Operation</seealso>
+        IAsyncResult BeginEnableClientAuthentication(EnableClientAuthenticationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableClientAuthentication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableClientAuthentication.</param>
+        /// 
+        /// <returns>Returns a  EnableClientAuthenticationResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication">REST API Reference for EnableClientAuthentication Operation</seealso>
+        EnableClientAuthenticationResponse EndEnableClientAuthentication(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  EnableLDAPS
 
 
@@ -2055,8 +2309,8 @@ namespace Amazon.DirectoryService
         /// One or more parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.NoAvailableCertificateException">
-        /// The LDAP activities could not be performed because at least one valid certificate
-        /// must be registered with the system.
+        /// Client authentication setup could not be completed because at least one valid certificate
+        /// must be registered in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
         /// An exception has occurred in AWS Directory Service.
@@ -2327,8 +2581,8 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// For the specified directory, lists all the certificates registered for a secured LDAP
-        /// connection.
+        /// For the specified directory, lists all the certificates registered for a secure LDAP
+        /// or client certificate authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
         /// 
@@ -2600,7 +2854,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Registers a certificate for secured LDAP connection.
+        /// Registers a certificate for a secure LDAP or client certificate authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterCertificate service method.</param>
         /// 
@@ -2826,6 +3080,66 @@ namespace Amazon.DirectoryService
         /// <returns>Returns a  RemoveIpRoutesResult from DirectoryService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveIpRoutes">REST API Reference for RemoveIpRoutes Operation</seealso>
         RemoveIpRoutesResponse EndRemoveIpRoutes(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RemoveRegion
+
+
+        /// <summary>
+        /// Stops all replication and removes the domain controllers from the specified Region.
+        /// You cannot remove the primary Region with this operation. Instead, use the <code>DeleteDirectory</code>
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRegion service method.</param>
+        /// 
+        /// <returns>The response from the RemoveRegion service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
+        /// Client authentication is not available in this region at this time.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryDoesNotExistException">
+        /// The specified directory does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.UnsupportedOperationException">
+        /// The operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveRegion">REST API Reference for RemoveRegion Operation</seealso>
+        RemoveRegionResponse RemoveRegion(RemoveRegionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveRegion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRegion operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveRegion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveRegion">REST API Reference for RemoveRegion Operation</seealso>
+        IAsyncResult BeginRemoveRegion(RemoveRegionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveRegion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveRegion.</param>
+        /// 
+        /// <returns>Returns a  RemoveRegionResult from DirectoryService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveRegion">REST API Reference for RemoveRegion Operation</seealso>
+        RemoveRegionResponse EndRemoveRegion(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3061,7 +3375,7 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>The response from the ShareDirectory service method, as returned by DirectoryService.</returns>
         /// <exception cref="Amazon.DirectoryService.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action.
+        /// Client authentication is not available in this region at this time.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ClientException">
         /// A client exception has occurred.

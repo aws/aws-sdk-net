@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -104,6 +104,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FunctionName);
                 }
 
+                if(publicRequest.IsSetFunctionResponseTypes())
+                {
+                    context.Writer.WritePropertyName("FunctionResponseTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFunctionResponseTypesListValue in publicRequest.FunctionResponseTypes)
+                    {
+                            context.Writer.Write(publicRequestFunctionResponseTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMaximumBatchingWindowInSeconds())
                 {
                     context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
@@ -126,6 +137,28 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ParallelizationFactor");
                     context.Writer.Write(publicRequest.ParallelizationFactor);
+                }
+
+                if(publicRequest.IsSetSourceAccessConfigurations())
+                {
+                    context.Writer.WritePropertyName("SourceAccessConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSourceAccessConfigurationsListValue in publicRequest.SourceAccessConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SourceAccessConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSourceAccessConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetTumblingWindowInSeconds())
+                {
+                    context.Writer.WritePropertyName("TumblingWindowInSeconds");
+                    context.Writer.Write(publicRequest.TumblingWindowInSeconds);
                 }
 
         

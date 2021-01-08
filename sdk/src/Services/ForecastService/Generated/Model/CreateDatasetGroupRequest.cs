@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,8 +46,8 @@ namespace Amazon.ForecastService.Model
     ///  <note> 
     /// <para>
     /// The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you
-    /// can create use the dataset group to create a predictor. To get the status, use the
-    /// <a>DescribeDatasetGroup</a> operation.
+    /// can use the dataset group to create a predictor. To get the status, use the <a>DescribeDatasetGroup</a>
+    /// operation.
     /// </para>
     ///  </note>
     /// </summary>

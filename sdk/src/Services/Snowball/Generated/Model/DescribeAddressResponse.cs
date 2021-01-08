@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,8 +38,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Address. 
         /// <para>
-        /// The address that you want the Snowball or Snowballs associated with a specific job
-        /// to be shipped to.
+        /// The address that you want the Snow device(s) associated with a specific job to be
+        /// shipped to.
         /// </para>
         /// </summary>
         public Address Address

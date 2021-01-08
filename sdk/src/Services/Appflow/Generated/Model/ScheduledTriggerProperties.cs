@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -80,7 +80,8 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        ///  The scheduling expression that determines when and how often the rule runs. 
+        ///  The scheduling expression that determines the rate at which the schedule will run,
+        /// for example <code>rate(5minutes)</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

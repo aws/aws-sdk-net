@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ namespace Amazon.EKS.Model
     #endif
     public partial class InvalidRequestException : AmazonEKSException
     {
+        private string _addonName;
         private string _clusterName;
         private string _nodegroupName;
 
@@ -100,6 +101,7 @@ namespace Amazon.EKS.Model
         protected InvalidRequestException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.AddonName = (string)info.GetValue("AddonName", typeof(string));
             this.ClusterName = (string)info.GetValue("ClusterName", typeof(string));
             this.NodegroupName = (string)info.GetValue("NodegroupName", typeof(string));
         }
@@ -122,10 +124,26 @@ namespace Amazon.EKS.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("AddonName", this.AddonName);
             info.AddValue("ClusterName", this.ClusterName);
             info.AddValue("NodegroupName", this.NodegroupName);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property AddonName.
+        /// </summary>
+        public string AddonName
+        {
+            get { return this._addonName; }
+            set { this._addonName = value; }
+        }
+
+        // Check to see if AddonName property is set
+        internal bool IsSetAddonName()
+        {
+            return this._addonName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterName. 

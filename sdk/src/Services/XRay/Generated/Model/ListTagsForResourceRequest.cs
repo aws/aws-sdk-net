@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ namespace Amazon.XRay.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// 
+    /// Returns a list of tags that are applied to the specified AWS X-Ray group or sampling
+    /// rule.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonXRayRequest
     {
@@ -38,7 +39,12 @@ namespace Amazon.XRay.Model
         private string _resourceARN;
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A pagination token. If multiple pages of results are returned, use the <code>NextToken</code>
+        /// value returned with the current page of results as the value of this parameter to
+        /// get the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -53,7 +59,10 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceARN.
+        /// Gets and sets the property ResourceARN. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceARN

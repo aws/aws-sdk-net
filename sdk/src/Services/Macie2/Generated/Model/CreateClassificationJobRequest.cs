@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -102,7 +102,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property InitialRun. 
         /// <para>
-        /// Specifies whether to run the job immediately, after it's created.
+        /// Specifies whether to analyze all existing, eligible objects immediately after the
+        /// job is created.
         /// </para>
         /// </summary>
         public bool InitialRun
@@ -211,7 +212,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property ScheduleFrequency. 
         /// <para>
         /// The recurrence pattern for running the job. To run the job only once, don't specify
-        /// a value for this property and set the value of the jobType property to ONE_TIME.
+        /// a value for this property and set the value for the jobType property to ONE_TIME.
         /// </para>
         /// </summary>
         public JobScheduleFrequency ScheduleFrequency

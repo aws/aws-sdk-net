@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,6 +45,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FirehoseAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBatchMode())
+            {
+                context.Writer.WritePropertyName("batchMode");
+                context.Writer.Write(requestObject.BatchMode);
+            }
+
             if(requestObject.IsSetDeliveryStreamName())
             {
                 context.Writer.WritePropertyName("deliveryStreamName");

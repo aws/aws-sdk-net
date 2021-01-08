@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -99,6 +99,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                     response.FulfillmentActivity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inputContexts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<InputContext, InputContextUnmarshaller>(InputContextUnmarshaller.Instance);
+                    response.InputContexts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("kendraConfiguration", targetDepth))
                 {
                     var unmarshaller = KendraConfigurationUnmarshaller.Instance;
@@ -115,6 +121,12 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("outputContexts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<OutputContext, OutputContextUnmarshaller>(OutputContextUnmarshaller.Instance);
+                    response.OutputContexts = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("parentIntentSignature", targetDepth))

@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,6 +25,11 @@ namespace Amazon.Redshift.Model
     ///</summary>
     public interface IRedshiftPaginatorFactory
     {
+
+        /// <summary>
+        /// Paginator for DescribeClusterDbRevisions operation
+        ///</summary>
+        IDescribeClusterDbRevisionsPaginator DescribeClusterDbRevisions(DescribeClusterDbRevisionsRequest request);
 
         /// <summary>
         /// Paginator for DescribeClusterParameterGroups operation
@@ -55,6 +60,11 @@ namespace Amazon.Redshift.Model
         /// Paginator for DescribeClusterSubnetGroups operation
         ///</summary>
         IDescribeClusterSubnetGroupsPaginator DescribeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeClusterTracks operation
+        ///</summary>
+        IDescribeClusterTracksPaginator DescribeClusterTracks(DescribeClusterTracksRequest request);
 
         /// <summary>
         /// Paginator for DescribeClusterVersions operation
@@ -112,9 +122,34 @@ namespace Amazon.Redshift.Model
         IDescribeScheduledActionsPaginator DescribeScheduledActions(DescribeScheduledActionsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeSnapshotCopyGrants operation
+        ///</summary>
+        IDescribeSnapshotCopyGrantsPaginator DescribeSnapshotCopyGrants(DescribeSnapshotCopyGrantsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeSnapshotSchedules operation
+        ///</summary>
+        IDescribeSnapshotSchedulesPaginator DescribeSnapshotSchedules(DescribeSnapshotSchedulesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTableRestoreStatus operation
+        ///</summary>
+        IDescribeTableRestoreStatusPaginator DescribeTableRestoreStatus(DescribeTableRestoreStatusRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeTags operation
+        ///</summary>
+        IDescribeTagsPaginator DescribeTags(DescribeTagsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeUsageLimits operation
         ///</summary>
         IDescribeUsageLimitsPaginator DescribeUsageLimits(DescribeUsageLimitsRequest request);
+
+        /// <summary>
+        /// Paginator for GetReservedNodeExchangeOfferings operation
+        ///</summary>
+        IGetReservedNodeExchangeOfferingsPaginator GetReservedNodeExchangeOfferings(GetReservedNodeExchangeOfferingsRequest request);
     }
 }
 #endif

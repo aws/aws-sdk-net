@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,19 +32,12 @@ namespace Amazon.GlobalAccelerator.Model
     /// Container for the parameters to the CreateAccelerator operation.
     /// Create an accelerator. An accelerator includes one or more listeners that process
     /// inbound connections and direct traffic to one or more endpoint groups, each of which
-    /// includes endpoints, such as Network Load Balancers. To see an AWS CLI example of creating
-    /// an accelerator, scroll down to <b>Example</b>.
+    /// includes endpoints, such as Network Load Balancers. 
     /// 
-    ///  
-    /// <para>
-    /// If you bring your own IP address ranges to AWS Global Accelerator (BYOIP), you can
-    /// assign IP addresses from your own pool to your accelerator as the static IP address
-    /// entry points. Only one IP address from each of your IP address ranges can be used
-    /// for each accelerator.
-    /// </para>
     ///  <important> 
     /// <para>
-    /// You must specify the US West (Oregon) Region to create or update accelerators.
+    /// Global Accelerator is a global service that supports endpoints in multiple AWS Regions
+    /// but you must specify the US West (Oregon) Region to create or update accelerators.
     /// </para>
     ///  </important>
     /// </summary>
@@ -104,15 +97,21 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property IpAddresses. 
         /// <para>
-        /// Optionally, if you've added your own IP address pool to Global Accelerator, you can
-        /// choose IP addresses from your own pool to use for the accelerator's static IP addresses.
-        /// You can specify one or two addresses, separated by a comma. Do not include the /32
-        /// suffix.
+        /// Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP),
+        /// you can choose IP addresses from your own pool to use for the accelerator's static
+        /// IP addresses when you create an accelerator. You can specify one or two addresses,
+        /// separated by a comma. Do not include the /32 suffix.
         /// </para>
         ///  
         /// <para>
+        /// Only one IP address from each of your IP address ranges can be used for each accelerator.
         /// If you specify only one IP address from your IP address range, Global Accelerator
         /// assigns a second static IP address for the accelerator from the AWS IP address pool.
+        /// </para>
+        ///  
+        /// <para>
+        ///  Note that you can't update IP addresses for an existing accelerator. To change them,
+        /// you must create a new accelerator with the new addresses.
         /// </para>
         ///  
         /// <para>
@@ -136,7 +135,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The value for the address type must be IPv4. 
+        /// The value for the address type must be IPv4.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType

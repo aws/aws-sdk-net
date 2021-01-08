@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, provides additional mapping
-    /// information when JSON is the record format on the streaming source.
+    /// For a SQL-based Kinesis Data Analytics application, provides additional mapping information
+    /// when JSON is the record format on the streaming source.
     /// </summary>
     public partial class JSONMappingParameters
     {
@@ -42,7 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// The path to the top-level parent that contains the records.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=65535)]
         public string RecordRowPath
         {
             get { return this._recordRowPath; }

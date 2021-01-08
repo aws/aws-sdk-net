@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDatasetContent operation.
-    /// Retrieves the contents of a data set as pre-signed URIs.
+    /// Retrieves the contents of a data set as presigned URIs.
     /// </summary>
     public partial class GetDatasetContentRequest : AmazonIoTAnalyticsRequest
     {

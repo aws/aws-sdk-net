@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the DescribePortfolioShareStatus operation.
     /// Gets the status of the specified portfolio share operation. This API can only be called
-    /// by the master account in the organization or by a delegated admin.
+    /// by the management account in the organization or by a delegated admin.
     /// </summary>
     public partial class DescribePortfolioShareStatusRequest : AmazonServiceCatalogRequest
     {

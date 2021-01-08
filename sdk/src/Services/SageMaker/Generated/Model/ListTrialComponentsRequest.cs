@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -104,7 +104,7 @@ namespace Amazon.SageMaker.Model
         /// or <code>TrialName</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=82)]
+        [AWSProperty(Min=1, Max=120)]
         public string ExperimentName
         {
             get { return this._experimentName; }
@@ -221,7 +221,7 @@ namespace Amazon.SageMaker.Model
         /// <code>SourceArn</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=82)]
+        [AWSProperty(Min=1, Max=120)]
         public string TrialName
         {
             get { return this._trialName; }

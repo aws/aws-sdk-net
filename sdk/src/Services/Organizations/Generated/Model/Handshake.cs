@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Contains information that must be exchanged to securely establish a relationship between
-    /// two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a master
+    /// two accounts (an <i>originator</i> and a <i>recipient</i>). For example, when a management
     /// account (the originator) invites another account (the recipient) to join its organization,
     /// the two accounts exchange information as a series of handshake requests and responses.
     /// 
@@ -60,21 +60,22 @@ namespace Amazon.Organizations.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b>INVITE</b>: This type of handshake represents a request to join an organization.
-        /// It is always sent from the master account to only non-member accounts.
+        /// It is always sent from the management account to only non-member accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable
-        /// all features in an organization. It is always sent from the master account to only
-        /// <i>invited</i> member accounts. Created accounts do not receive this because those
-        /// accounts were created by the organization's master account and approval is inferred.
+        /// all features in an organization. It is always sent from the management account to
+        /// only <i>invited</i> member accounts. Created accounts do not receive this because
+        /// those accounts were created by the organization's management account and approval
+        /// is inferred.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations
         /// service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code>
-        /// invitation. It is sent only to the master account and signals the master that it can
-        /// finalize the process to enable all features.
+        /// invitation. It is sent only to the management account and signals the master that
+        /// it can finalize the process to enable all features.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -142,7 +143,7 @@ namespace Amazon.Organizations.Model
         ///  
         /// <para>
         /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-        /// requires "h-" followed by from 8 to 32 lower-case letters or digits.
+        /// requires "h-" followed by from 8 to 32 lowercase letters or digits.
         /// </para>
         /// </summary>
         [AWSProperty(Max=34)]

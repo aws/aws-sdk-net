@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property Provider. 
         /// <para>
         /// The App Mesh object that is acting as the provider for a virtual service. You can
-        /// specify         a single virtual node or virtual router.
+        /// specify a single virtual node or virtual router.
         /// </para>
         /// </summary>
         public VirtualServiceProvider Provider

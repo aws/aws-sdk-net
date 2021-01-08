@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// Configuration properties of a peer node.
+    /// Configuration properties of a node.
     /// </summary>
     public partial class Node
     {
@@ -41,6 +41,7 @@ namespace Amazon.ManagedBlockchain.Model
         private NodeLogPublishingConfiguration _logPublishingConfiguration;
         private string _memberId;
         private string _networkId;
+        private StateDBType _stateDB;
         private NodeStatus _status;
 
         /// <summary>
@@ -135,7 +136,11 @@ namespace Amazon.ManagedBlockchain.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogPublishingConfiguration.
+        /// Gets and sets the property LogPublishingConfiguration. 
+        /// <para>
+        /// Configuration properties for logging events associated with a peer node on a Hyperledger
+        /// Fabric network on Managed Blockchain.
+        /// </para>
         /// </summary>
         public NodeLogPublishingConfiguration LogPublishingConfiguration
         {
@@ -154,6 +159,10 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The unique identifier of the member to which the node belongs.
         /// </para>
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
         public string MemberId
@@ -171,7 +180,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property NetworkId. 
         /// <para>
-        /// The unique identifier of the network that the node is in.
+        /// The unique identifier of the network that the node is on.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -185,6 +194,28 @@ namespace Amazon.ManagedBlockchain.Model
         internal bool IsSetNetworkId()
         {
             return this._networkId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateDB. 
+        /// <para>
+        /// The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Applies only to Hyperledger Fabric.
+        /// </para>
+        /// </summary>
+        public StateDBType StateDB
+        {
+            get { return this._stateDB; }
+            set { this._stateDB = value; }
+        }
+
+        // Check to see if StateDB property is set
+        internal bool IsSetStateDB()
+        {
+            return this._stateDB != null;
         }
 
         /// <summary>

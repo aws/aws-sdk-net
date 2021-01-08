@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,8 +46,10 @@ namespace Amazon.CloudFront.Model
         private long? _maxTTL;
         private long? _minTTL;
         private string _originRequestPolicyId;
+        private string _realtimeLogConfigArn;
         private bool? _smoothStreaming;
         private string _targetOriginId;
+        private TrustedKeyGroups _trustedKeyGroups;
         private TrustedSigners _trustedSigners;
         private ViewerProtocolPolicy _viewerProtocolPolicy;
 
@@ -309,6 +311,26 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RealtimeLogConfigArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the real-time log configuration that is attached
+        /// to this cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+        /// logs</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string RealtimeLogConfigArn
+        {
+            get { return this._realtimeLogConfigArn; }
+            set { this._realtimeLogConfigArn = value; }
+        }
+
+        // Check to see if RealtimeLogConfigArn property is set
+        internal bool IsSetRealtimeLogConfigArn()
+        {
+            return this._realtimeLogConfigArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SmoothStreaming. 
         /// <para>
         /// Indicates whether you want to distribute media files in the Microsoft Smooth Streaming
@@ -351,35 +373,52 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrustedSigners. 
+        /// Gets and sets the property TrustedKeyGroups. 
         /// <para>
-        /// A complex type that specifies the AWS accounts, if any, that you want to allow to
-        /// create signed URLs for private content.
+        /// A list of key groups that CloudFront can use to validate signed URLs or signed cookies.
         /// </para>
         ///  
         /// <para>
-        /// If you want to require signed URLs in requests for objects in the target origin that
-        /// match the <code>PathPattern</code> for this cache behavior, specify <code>true</code>
-        /// for <code>Enabled</code>, and specify the applicable values for <code>Quantity</code>
-        /// and <code>Items</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
-        /// Private Content with Signed URLs and Signed Cookies</a> in the <i>Amazon CloudFront
-        /// Developer Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you don’t want to require signed URLs in requests for objects that match <code>PathPattern</code>,
-        /// specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>.
-        /// Omit <code>Items</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To add, change, or remove one or more trusted signers, change <code>Enabled</code>
-        /// to <code>true</code> (if it’s currently <code>false</code>), change <code>Quantity</code>
-        /// as applicable, and specify all of the trusted signers that you want to include in
-        /// the updated distribution.
+        /// When a cache behavior contains trusted key groups, CloudFront requires signed URLs
+        /// or signed cookies for all requests that match the cache behavior. The URLs or cookies
+        /// must be signed with a private key whose corresponding public key is in the key group.
+        /// The signed URL or cookie contains information about which public key CloudFront should
+        /// use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public TrustedKeyGroups TrustedKeyGroups
+        {
+            get { return this._trustedKeyGroups; }
+            set { this._trustedKeyGroups = value; }
+        }
+
+        // Check to see if TrustedKeyGroups property is set
+        internal bool IsSetTrustedKeyGroups()
+        {
+            return this._trustedKeyGroups != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrustedSigners. <important> 
+        /// <para>
+        /// We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// A list of AWS account IDs whose public keys CloudFront can use to validate signed
+        /// URLs or signed cookies.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a cache behavior contains trusted signers, CloudFront requires signed URLs or
+        /// signed cookies for all requests that match the cache behavior. The URLs or cookies
+        /// must be signed with the private key of a CloudFront key pair in a trusted signer’s
+        /// AWS account. The signed URL or cookie contains information about which public key
+        /// CloudFront should use to verify the signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// private content</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        /// </summary>
         public TrustedSigners TrustedSigners
         {
             get { return this._trustedSigners; }

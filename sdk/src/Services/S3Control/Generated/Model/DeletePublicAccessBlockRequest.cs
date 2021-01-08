@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,25 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePublicAccessBlock operation.
-    /// Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services
-    /// account.
+    /// Removes the <code>PublicAccessBlock</code> configuration for an AWS account. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
+    /// Using Amazon S3 block public access</a>.
+    /// 
+    ///  
+    /// <para>
+    /// Related actions include:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetPublicAccessBlock.html">GetPublicAccessBlock</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html">PutPublicAccessBlock</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeletePublicAccessBlockRequest : AmazonS3ControlRequest
     {
@@ -40,8 +57,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code>
-        /// configuration you want to remove.
+        /// The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration
+        /// you want to remove.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

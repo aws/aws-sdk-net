@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -75,7 +75,7 @@ namespace Amazon.Translate.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED_WITH_ERRORS</code> - The job was completed with errors. The errors
+        ///  <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors
         /// can be analyzed in the job's output.
         /// </para>
         ///  </li> <li> 

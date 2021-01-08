@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableOrganizationAdminAccount operation.
-    /// Enables an account as a delegated administrator of Amazon Macie for an AWS organization.
+    /// Designates an account as the delegated Amazon Macie administrator account for an AWS
+    /// organization.
     /// </summary>
     public partial class EnableOrganizationAdminAccountRequest : AmazonMacie2Request
     {
@@ -40,7 +41,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AdminAccountId. 
         /// <para>
-        /// The AWS account ID for the account.
+        /// The AWS account ID for the account to designate as the delegated Amazon Macie administrator
+        /// account for the organization.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

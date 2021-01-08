@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags (metadata) which you have assigned to the resource.
+        /// The tags (metadata) that you have assigned to the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -663,6 +663,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly DataSourceType MYSQL = new DataSourceType("MYSQL");
         /// <summary>
+        /// Constant ORACLE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType ORACLE = new DataSourceType("ORACLE");
+        /// <summary>
         /// Constant POSTGRESQL for DataSourceType
         /// </summary>
         public static readonly DataSourceType POSTGRESQL = new DataSourceType("POSTGRESQL");
@@ -702,6 +706,10 @@ namespace Amazon.QuickSight
         /// Constant TERADATA for DataSourceType
         /// </summary>
         public static readonly DataSourceType TERADATA = new DataSourceType("TERADATA");
+        /// <summary>
+        /// Constant TIMESTREAM for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType TIMESTREAM = new DataSourceType("TIMESTREAM");
         /// <summary>
         /// Constant TWITTER for DataSourceType
         /// </summary>
@@ -786,6 +794,60 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Edition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EmbeddingIdentityType.
+    /// </summary>
+    public class EmbeddingIdentityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANONYMOUS for EmbeddingIdentityType
+        /// </summary>
+        public static readonly EmbeddingIdentityType ANONYMOUS = new EmbeddingIdentityType("ANONYMOUS");
+        /// <summary>
+        /// Constant IAM for EmbeddingIdentityType
+        /// </summary>
+        public static readonly EmbeddingIdentityType IAM = new EmbeddingIdentityType("IAM");
+        /// <summary>
+        /// Constant QUICKSIGHT for EmbeddingIdentityType
+        /// </summary>
+        public static readonly EmbeddingIdentityType QUICKSIGHT = new EmbeddingIdentityType("QUICKSIGHT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EmbeddingIdentityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EmbeddingIdentityType FindValue(string value)
+        {
+            return FindValue<EmbeddingIdentityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EmbeddingIdentityType(string value)
         {
             return FindValue(value);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -91,6 +91,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetKubernetesNetworkConfig())
+                {
+                    context.Writer.WritePropertyName("kubernetesNetworkConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KubernetesNetworkConfigRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.KubernetesNetworkConfig, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetLogging())

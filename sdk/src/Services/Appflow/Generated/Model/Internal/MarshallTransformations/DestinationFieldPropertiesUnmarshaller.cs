@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -76,10 +76,22 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsNullable = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isUpdatable", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsUpdatable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("isUpsertable", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.IsUpsertable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("supportedWriteOperations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedWriteOperations = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

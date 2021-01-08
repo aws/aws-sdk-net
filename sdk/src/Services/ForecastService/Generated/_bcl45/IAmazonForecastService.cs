@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -194,8 +194,8 @@ namespace Amazon.ForecastService
         ///  <note> 
         /// <para>
         /// The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you
-        /// can create use the dataset group to create a predictor. To get the status, use the
-        /// <a>DescribeDatasetGroup</a> operation.
+        /// can use the dataset group to create a predictor. To get the status, use the <a>DescribeDatasetGroup</a>
+        /// operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -241,8 +241,8 @@ namespace Amazon.ForecastService
         ///  <note> 
         /// <para>
         /// The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you
-        /// can create use the dataset group to create a predictor. To get the status, use the
-        /// <a>DescribeDatasetGroup</a> operation.
+        /// can use the dataset group to create a predictor. To get the status, use the <a>DescribeDatasetGroup</a>
+        /// operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -660,27 +660,25 @@ namespace Amazon.ForecastService
         /// 
         ///  
         /// <para>
-        /// In the request, you provide a dataset group and either specify an algorithm or let
-        /// Amazon Forecast choose the algorithm for you using AutoML. If you specify an algorithm,
-        /// you also can override algorithm-specific hyperparameters.
+        /// In the request, provide a dataset group and either specify an algorithm or let Amazon
+        /// Forecast choose an algorithm for you using AutoML. If you specify an algorithm, you
+        /// also can override algorithm-specific hyperparameters.
         /// </para>
         ///  
         /// <para>
-        /// Amazon Forecast uses the chosen algorithm to train a model using the latest version
-        /// of the datasets in the specified dataset group. The result is called a predictor.
-        /// You then generate a forecast using the <a>CreateForecast</a> operation.
+        /// Amazon Forecast uses the algorithm to train a predictor using the latest version of
+        /// the datasets in the specified dataset group. You can then generate a forecast using
+        /// the <a>CreateForecast</a> operation.
         /// </para>
         ///  
         /// <para>
-        /// After training a model, the <code>CreatePredictor</code> operation also evaluates
-        /// it. To see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. Always
-        /// review the evaluation metrics before deciding to use the predictor to generate a forecast.
+        ///  To see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. 
         /// </para>
         ///  
         /// <para>
-        /// Optionally, you can specify a featurization configuration to fill and aggregate the
-        /// data fields in the <code>TARGET_TIME_SERIES</code> dataset to improve model training.
-        /// For more information, see <a>FeaturizationConfig</a>.
+        /// You can specify a featurization configuration to fill and aggregate the data fields
+        /// in the <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more
+        /// information, see <a>FeaturizationConfig</a>.
         /// </para>
         ///  
         /// <para>
@@ -691,14 +689,21 @@ namespace Amazon.ForecastService
         /// </para>
         ///  
         /// <para>
+        /// By default, predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and
+        /// 0.9 (P90) quantiles. You can choose custom forecast types to train and evaluate your
+        /// predictor by setting the <code>ForecastTypes</code>. 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>AutoML</b> 
         /// </para>
         ///  
         /// <para>
         /// If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes
         /// the <code>objective function</code>, set <code>PerformAutoML</code> to <code>true</code>.
-        /// The <code>objective function</code> is defined as the mean of the weighted p10, p50,
-        /// and p90 quantile losses. For more information, see <a>EvaluationResult</a>.
+        /// The <code>objective function</code> is defined as the mean of the weighted losses
+        /// over the forecast types. By default, these are the p10, p50, and p90 quantile losses.
+        /// For more information, see <a>EvaluationResult</a>.
         /// </para>
         ///  
         /// <para>
@@ -762,27 +767,25 @@ namespace Amazon.ForecastService
         /// 
         ///  
         /// <para>
-        /// In the request, you provide a dataset group and either specify an algorithm or let
-        /// Amazon Forecast choose the algorithm for you using AutoML. If you specify an algorithm,
-        /// you also can override algorithm-specific hyperparameters.
+        /// In the request, provide a dataset group and either specify an algorithm or let Amazon
+        /// Forecast choose an algorithm for you using AutoML. If you specify an algorithm, you
+        /// also can override algorithm-specific hyperparameters.
         /// </para>
         ///  
         /// <para>
-        /// Amazon Forecast uses the chosen algorithm to train a model using the latest version
-        /// of the datasets in the specified dataset group. The result is called a predictor.
-        /// You then generate a forecast using the <a>CreateForecast</a> operation.
+        /// Amazon Forecast uses the algorithm to train a predictor using the latest version of
+        /// the datasets in the specified dataset group. You can then generate a forecast using
+        /// the <a>CreateForecast</a> operation.
         /// </para>
         ///  
         /// <para>
-        /// After training a model, the <code>CreatePredictor</code> operation also evaluates
-        /// it. To see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. Always
-        /// review the evaluation metrics before deciding to use the predictor to generate a forecast.
+        ///  To see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation. 
         /// </para>
         ///  
         /// <para>
-        /// Optionally, you can specify a featurization configuration to fill and aggregate the
-        /// data fields in the <code>TARGET_TIME_SERIES</code> dataset to improve model training.
-        /// For more information, see <a>FeaturizationConfig</a>.
+        /// You can specify a featurization configuration to fill and aggregate the data fields
+        /// in the <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more
+        /// information, see <a>FeaturizationConfig</a>.
         /// </para>
         ///  
         /// <para>
@@ -793,14 +796,21 @@ namespace Amazon.ForecastService
         /// </para>
         ///  
         /// <para>
+        /// By default, predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and
+        /// 0.9 (P90) quantiles. You can choose custom forecast types to train and evaluate your
+        /// predictor by setting the <code>ForecastTypes</code>. 
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>AutoML</b> 
         /// </para>
         ///  
         /// <para>
         /// If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes
         /// the <code>objective function</code>, set <code>PerformAutoML</code> to <code>true</code>.
-        /// The <code>objective function</code> is defined as the mean of the weighted p10, p50,
-        /// and p90 quantile losses. For more information, see <a>EvaluationResult</a>.
+        /// The <code>objective function</code> is defined as the mean of the weighted losses
+        /// over the forecast types. By default, these are the p10, p50, and p90 quantile losses.
+        /// For more information, see <a>EvaluationResult</a>.
         /// </para>
         ///  
         /// <para>
@@ -859,6 +869,124 @@ namespace Amazon.ForecastService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictor">REST API Reference for CreatePredictor Operation</seealso>
         Task<CreatePredictorResponse> CreatePredictorAsync(CreatePredictorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreatePredictorBacktestExportJob
+
+
+        /// <summary>
+        /// Exports backtest forecasts and accuracy metrics generated by the <a>CreatePredictor</a>
+        /// operation. Two folders containing CSV files are exported to your specified S3 bucket.
+        /// 
+        ///  
+        /// <para>
+        ///  The export file names will match the following conventions:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&lt;ExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;.csv</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The &lt;ExportTimestamp&gt; component is in Java SimpleDate format (yyyy-MM-ddTHH-mm-ssZ).
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket
+        /// and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume
+        /// to access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>Status</code> of the export job must be <code>ACTIVE</code> before you can
+        /// access the export in your Amazon S3 bucket. To get the status, use the <a>DescribePredictorBacktestExportJob</a>
+        /// operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePredictorBacktestExportJob service method.</param>
+        /// 
+        /// <returns>The response from the CreatePredictorBacktestExportJob service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictorBacktestExportJob">REST API Reference for CreatePredictorBacktestExportJob Operation</seealso>
+        CreatePredictorBacktestExportJobResponse CreatePredictorBacktestExportJob(CreatePredictorBacktestExportJobRequest request);
+
+
+
+        /// <summary>
+        /// Exports backtest forecasts and accuracy metrics generated by the <a>CreatePredictor</a>
+        /// operation. Two folders containing CSV files are exported to your specified S3 bucket.
+        /// 
+        ///  
+        /// <para>
+        ///  The export file names will match the following conventions:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&lt;ExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;.csv</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The &lt;ExportTimestamp&gt; component is in Java SimpleDate format (yyyy-MM-ddTHH-mm-ssZ).
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket
+        /// and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume
+        /// to access the Amazon S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>Status</code> of the export job must be <code>ACTIVE</code> before you can
+        /// access the export in your Amazon S3 bucket. To get the status, use the <a>DescribePredictorBacktestExportJob</a>
+        /// operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePredictorBacktestExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePredictorBacktestExportJob service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.LimitExceededException">
+        /// The limit on the number of resources per account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceAlreadyExistsException">
+        /// There is already a resource with this name. Try again with a different name.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictorBacktestExportJob">REST API Reference for CreatePredictorBacktestExportJob Operation</seealso>
+        Task<CreatePredictorBacktestExportJobResponse> CreatePredictorBacktestExportJobAsync(CreatePredictorBacktestExportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1225,6 +1353,56 @@ namespace Amazon.ForecastService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeletePredictor">REST API Reference for DeletePredictor Operation</seealso>
         Task<DeletePredictorResponse> DeletePredictorAsync(DeletePredictorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeletePredictorBacktestExportJob
+
+
+        /// <summary>
+        /// Deletes a predictor backtest export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePredictorBacktestExportJob service method.</param>
+        /// 
+        /// <returns>The response from the DeletePredictorBacktestExportJob service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeletePredictorBacktestExportJob">REST API Reference for DeletePredictorBacktestExportJob Operation</seealso>
+        DeletePredictorBacktestExportJobResponse DeletePredictorBacktestExportJob(DeletePredictorBacktestExportJobRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a predictor backtest export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePredictorBacktestExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePredictorBacktestExportJob service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeletePredictorBacktestExportJob">REST API Reference for DeletePredictorBacktestExportJob Operation</seealso>
+        Task<DeletePredictorBacktestExportJobResponse> DeletePredictorBacktestExportJobAsync(DeletePredictorBacktestExportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1804,13 +1982,106 @@ namespace Amazon.ForecastService
 
         #endregion
         
+        #region  DescribePredictorBacktestExportJob
+
+
+        /// <summary>
+        /// Describes a predictor backtest export job created using the <a>CreatePredictorBacktestExportJob</a>
+        /// operation.
+        /// 
+        ///  
+        /// <para>
+        /// In addition to listing the properties provided by the user in the <code>CreatePredictorBacktestExportJob</code>
+        /// request, this operation lists the following properties:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CreationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastModificationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Status</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Message</code> (if an error occurred)
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePredictorBacktestExportJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribePredictorBacktestExportJob service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribePredictorBacktestExportJob">REST API Reference for DescribePredictorBacktestExportJob Operation</seealso>
+        DescribePredictorBacktestExportJobResponse DescribePredictorBacktestExportJob(DescribePredictorBacktestExportJobRequest request);
+
+
+
+        /// <summary>
+        /// Describes a predictor backtest export job created using the <a>CreatePredictorBacktestExportJob</a>
+        /// operation.
+        /// 
+        ///  
+        /// <para>
+        /// In addition to listing the properties provided by the user in the <code>CreatePredictorBacktestExportJob</code>
+        /// request, this operation lists the following properties:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CreationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastModificationTime</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Status</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Message</code> (if an error occurred)
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePredictorBacktestExportJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePredictorBacktestExportJob service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.ResourceNotFoundException">
+        /// We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try
+        /// again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribePredictorBacktestExportJob">REST API Reference for DescribePredictorBacktestExportJob Operation</seealso>
+        Task<DescribePredictorBacktestExportJobResponse> DescribePredictorBacktestExportJobAsync(DescribePredictorBacktestExportJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAccuracyMetrics
 
 
         /// <summary>
         /// Provides metrics on the accuracy of the models that were trained by the <a>CreatePredictor</a>
         /// operation. Use metrics to see how well the model performed and to decide whether to
-        /// use the predictor to generate a forecast. For more information, see <a>metrics</a>.
+        /// use the predictor to generate a forecast. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Predictor
+        /// Metrics</a>.
         /// 
         ///  
         /// <para>
@@ -1857,7 +2128,8 @@ namespace Amazon.ForecastService
         /// <summary>
         /// Provides metrics on the accuracy of the models that were trained by the <a>CreatePredictor</a>
         /// operation. Use metrics to see how well the model performed and to decide whether to
-        /// use the predictor to generate a forecast. For more information, see <a>metrics</a>.
+        /// use the predictor to generate a forecast. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Predictor
+        /// Metrics</a>.
         /// 
         ///  
         /// <para>
@@ -2131,6 +2403,64 @@ namespace Amazon.ForecastService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListForecasts">REST API Reference for ListForecasts Operation</seealso>
         Task<ListForecastsResponse> ListForecastsAsync(ListForecastsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListPredictorBacktestExportJobs
+
+
+        /// <summary>
+        /// Returns a list of predictor backtest export jobs created using the <a>CreatePredictorBacktestExportJob</a>
+        /// operation. This operation returns a summary for each backtest export job. You can
+        /// filter the list using an array of <a>Filter</a> objects.
+        /// 
+        ///  
+        /// <para>
+        /// To retrieve the complete set of properties for a particular backtest export job, use
+        /// the ARN with the <a>DescribePredictorBacktestExportJob</a> operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPredictorBacktestExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListPredictorBacktestExportJobs service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListPredictorBacktestExportJobs">REST API Reference for ListPredictorBacktestExportJobs Operation</seealso>
+        ListPredictorBacktestExportJobsResponse ListPredictorBacktestExportJobs(ListPredictorBacktestExportJobsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of predictor backtest export jobs created using the <a>CreatePredictorBacktestExportJob</a>
+        /// operation. This operation returns a summary for each backtest export job. You can
+        /// filter the list using an array of <a>Filter</a> objects.
+        /// 
+        ///  
+        /// <para>
+        /// To retrieve the complete set of properties for a particular backtest export job, use
+        /// the ARN with the <a>DescribePredictorBacktestExportJob</a> operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPredictorBacktestExportJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPredictorBacktestExportJobs service method, as returned by ForecastService.</returns>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidInputException">
+        /// We can't process the request because it includes an invalid value or a value that
+        /// exceeds the valid range.
+        /// </exception>
+        /// <exception cref="Amazon.ForecastService.Model.InvalidNextTokenException">
+        /// The token is not valid. Tokens expire after 24 hours.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListPredictorBacktestExportJobs">REST API Reference for ListPredictorBacktestExportJobs Operation</seealso>
+        Task<ListPredictorBacktestExportJobsResponse> ListPredictorBacktestExportJobsAsync(ListPredictorBacktestExportJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

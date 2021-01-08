@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -54,6 +54,7 @@ namespace Amazon.Translate.Model
         private InputDataConfig _inputDataConfig;
         private string _jobName;
         private OutputDataConfig _outputDataConfig;
+        private List<string> _parallelDataNames = new List<string>();
         private string _sourceLanguageCode;
         private List<string> _targetLanguageCodes = new List<string>();
         private List<string> _terminologyNames = new List<string>();
@@ -61,11 +62,8 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The client token of the EC2 instance calling the request. This token is auto-generated
-        /// when using the Amazon Translate SDK. Otherwise, use the <a href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-        /// EC2 operation to retreive an instance's client token. For more information, see <a
-        /// href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-        /// Tokens</a> in the EC2 User Guide.
+        /// A unique identifier for the request. This token is auto-generated when using the Amazon
+        /// Translate SDK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -157,6 +155,25 @@ namespace Amazon.Translate.Model
         internal bool IsSetOutputDataConfig()
         {
             return this._outputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParallelDataNames. 
+        /// <para>
+        /// The names of the parallel data resources to use in the batch translation job. For
+        /// a list of available parallel data resources, use the <a>ListParallelData</a> operation.
+        /// </para>
+        /// </summary>
+        public List<string> ParallelDataNames
+        {
+            get { return this._parallelDataNames; }
+            set { this._parallelDataNames = value; }
+        }
+
+        // Check to see if ParallelDataNames property is set
+        internal bool IsSetParallelDataNames()
+        {
+            return this._parallelDataNames != null && this._parallelDataNames.Count > 0; 
         }
 
         /// <summary>

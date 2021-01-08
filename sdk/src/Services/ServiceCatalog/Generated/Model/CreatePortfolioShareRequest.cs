@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the CreatePortfolioShare operation.
     /// Shares the specified portfolio with the specified account or organization node. Shares
-    /// to an organization node can only be created by the master account of an organization
+    /// to an organization node can only be created by the management account of an organization
     /// or by a delegated administrator. You can share portfolios to an organization, an organizational
     /// unit, or a specific account.
     /// 
@@ -47,8 +47,13 @@ namespace Amazon.ServiceCatalog.Model
     /// </para>
     ///  
     /// <para>
-    /// You can't share a shared resource. This includes portfolios that contain a shared
-    /// product.
+    /// You can't share a shared resource, including portfolios that contain a shared product.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the portfolio share with the specified account or organization node already exists,
+    /// this action will have no effect and will not return an error. To update an existing
+    /// share, you must use the <code> UpdatePortfolioShare</code> API instead.
     /// </para>
     /// </summary>
     public partial class CreatePortfolioShareRequest : AmazonServiceCatalogRequest
@@ -57,6 +62,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _accountId;
         private OrganizationNode _organizationNode;
         private string _portfolioId;
+        private bool? _shareTagOptions;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -112,9 +118,9 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property OrganizationNode. 
         /// <para>
         /// The organization node to whom you are going to share. If <code>OrganizationNode</code>
-        /// is passed in, <code>PortfolioShare</code> will be created for the node and its children
-        /// (when applies), and a <code>PortfolioShareToken</code> will be returned in the output
-        /// in order for the administrator to monitor the status of the <code>PortfolioShare</code>
+        /// is passed in, <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd
+        /// its children (when applies), and a <code>PortfolioShareToken</code> will be returned
+        /// in the output in order for the administrator to monitor the status of the <code>PortfolioShare</code>
         /// creation process.
         /// </para>
         /// </summary>
@@ -147,6 +153,25 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetPortfolioId()
         {
             return this._portfolioId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareTagOptions. 
+        /// <para>
+        /// Enables or disables <code>TagOptions </code> sharing when creating the portfolio share.
+        /// If this flag is not provided, TagOptions sharing is disabled.
+        /// </para>
+        /// </summary>
+        public bool ShareTagOptions
+        {
+            get { return this._shareTagOptions.GetValueOrDefault(); }
+            set { this._shareTagOptions = value; }
+        }
+
+        // Check to see if ShareTagOptions property is set
+        internal bool IsSetShareTagOptions()
+        {
+            return this._shareTagOptions.HasValue; 
         }
 
     }

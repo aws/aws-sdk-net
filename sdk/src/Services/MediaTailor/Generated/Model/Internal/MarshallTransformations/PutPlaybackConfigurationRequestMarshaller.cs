@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -123,6 +123,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
                     var marshaller = LivePreRollConfigurationMarshaller.Instance;
                     marshaller.Marshall(publicRequest.LivePreRollConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetManifestProcessingRules())
+                {
+                    context.Writer.WritePropertyName("ManifestProcessingRules");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ManifestProcessingRulesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ManifestProcessingRules, context);
 
                     context.Writer.WriteObjectEnd();
                 }

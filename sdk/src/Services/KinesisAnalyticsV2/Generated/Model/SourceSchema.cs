@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// For an SQL-based Amazon Kinesis Data Analytics application, describes the format of
-    /// the data in the streaming source, and how each data element maps to corresponding
-    /// columns created in the in-application stream.
+    /// For a SQL-based Kinesis Data Analytics application, describes the format of the data
+    /// in the streaming source, and how each data element maps to corresponding columns created
+    /// in the in-application stream.
     /// </summary>
     public partial class SourceSchema
     {
@@ -64,6 +64,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Specifies the encoding of the records in the streaming source. For example, UTF-8.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=5)]
         public string RecordEncoding
         {
             get { return this._recordEncoding; }

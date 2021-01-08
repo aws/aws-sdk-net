@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class DataSetSummary
     {
         private string _arn;
+        private bool? _columnLevelPermissionRulesApplied;
         private DateTime? _createdTime;
         private string _dataSetId;
         private DataSetImportMode _importMode;
@@ -57,6 +58,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ColumnLevelPermissionRulesApplied. 
+        /// <para>
+        /// A value that indicates if the dataset has column level permission configured.
+        /// </para>
+        /// </summary>
+        public bool ColumnLevelPermissionRulesApplied
+        {
+            get { return this._columnLevelPermissionRulesApplied.GetValueOrDefault(); }
+            set { this._columnLevelPermissionRulesApplied = value; }
+        }
+
+        // Check to see if ColumnLevelPermissionRulesApplied property is set
+        internal bool IsSetColumnLevelPermissionRulesApplied()
+        {
+            return this._columnLevelPermissionRulesApplied.HasValue; 
         }
 
         /// <summary>
@@ -98,7 +117,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ImportMode. 
         /// <para>
-        /// Indicates whether you want to import the data into SPICE.
+        /// A value that indicates whether you want to import the data into SPICE.
         /// </para>
         /// </summary>
         public DataSetImportMode ImportMode

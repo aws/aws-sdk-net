@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -67,6 +67,9 @@ namespace Amazon.Redshift
     /// the databases that make up your data warehouse. 
     /// </para>
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial interface IAmazonRedshift : IAmazonService, IDisposable
     {
 #if AWS_ASYNC_ENUMERABLES_API
@@ -918,6 +921,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.InvalidScheduleException">
         /// The schedule you submitted isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.ScheduleDefinitionTypeUnsupportedException">
         /// The definition you submitted is not supported.
         /// </exception>
@@ -959,6 +965,9 @@ namespace Amazon.Redshift
         /// </param>
         /// 
         /// <returns>The response from the CreateTags service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <code>available</code> state.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
         /// The tag is invalid.
         /// </exception>
@@ -3661,6 +3670,10 @@ namespace Amazon.Redshift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ra3.xlplus
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ra3.4xlarge
         /// </para>
         ///  </li> <li> 
@@ -3902,6 +3915,9 @@ namespace Amazon.Redshift
         /// <returns>The response from the ResumeCluster service method, as returned by Redshift.</returns>
         /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
         /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InsufficientClusterCapacityException">
+        /// The number of nodes specified exceeds the allotted capacity of the cluster.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
         /// The specified cluster is not in the <code>available</code> state.

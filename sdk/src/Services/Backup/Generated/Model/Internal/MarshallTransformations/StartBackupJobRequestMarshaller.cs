@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -66,6 +66,20 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBackupOptions())
+                {
+                    context.Writer.WritePropertyName("BackupOptions");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestBackupOptionsKvp in publicRequest.BackupOptions)
+                    {
+                        context.Writer.WritePropertyName(publicRequestBackupOptionsKvp.Key);
+                        var publicRequestBackupOptionsValue = publicRequestBackupOptionsKvp.Value;
+
+                            context.Writer.Write(publicRequestBackupOptionsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetBackupVaultName())
                 {
                     context.Writer.WritePropertyName("BackupVaultName");

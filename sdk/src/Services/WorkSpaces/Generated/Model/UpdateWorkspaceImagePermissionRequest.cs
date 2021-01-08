@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,11 +30,30 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateWorkspaceImagePermission operation.
-    /// Shares or unshares an image with one account by specifying whether that account has
-    /// permission to copy the image. If the copy image permission is granted, the image is
-    /// shared with that account. If the copy image permission is revoked, the image is unshared
-    /// with the account.
+    /// Shares or unshares an image with one account in the same AWS Region by specifying
+    /// whether that account has permission to copy the image. If the copy image permission
+    /// is granted, the image is shared with that account. If the copy image permission is
+    /// revoked, the image is unshared with the account.
     /// 
+    ///  
+    /// <para>
+    /// After an image has been shared, the recipient account can copy the image to other
+    /// AWS Regions as needed.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// In the China (Ningxia) Region, you can copy images only within the same Region.
+    /// </para>
+    ///  
+    /// <para>
+    /// In the AWS GovCloud (US-West) Region, to copy images to and from other AWS Regions,
+    /// contact AWS Support.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// For more information about sharing images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html">
+    /// Share or Unshare a Custom WorkSpaces Image</a>.
+    /// </para>
     ///  <note> <ul> <li> 
     /// <para>
     /// To delete an image that has been shared, you must unshare the image before you delete
@@ -98,6 +117,12 @@ namespace Amazon.WorkSpaces.Model
         /// <para>
         /// The identifier of the AWS account to share or unshare the image with.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Before sharing the image, confirm that you are sharing to the correct AWS account
+        /// ID.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SharedAccountId

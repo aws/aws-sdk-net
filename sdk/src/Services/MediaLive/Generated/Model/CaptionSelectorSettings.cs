@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,12 +33,28 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class CaptionSelectorSettings
     {
+        private AncillarySourceSettings _ancillarySourceSettings;
         private AribSourceSettings _aribSourceSettings;
         private DvbSubSourceSettings _dvbSubSourceSettings;
         private EmbeddedSourceSettings _embeddedSourceSettings;
         private Scte20SourceSettings _scte20SourceSettings;
         private Scte27SourceSettings _scte27SourceSettings;
         private TeletextSourceSettings _teletextSourceSettings;
+
+        /// <summary>
+        /// Gets and sets the property AncillarySourceSettings.
+        /// </summary>
+        public AncillarySourceSettings AncillarySourceSettings
+        {
+            get { return this._ancillarySourceSettings; }
+            set { this._ancillarySourceSettings = value; }
+        }
+
+        // Check to see if AncillarySourceSettings property is set
+        internal bool IsSetAncillarySourceSettings()
+        {
+            return this._ancillarySourceSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AribSourceSettings.

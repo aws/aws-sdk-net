@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -906,6 +906,10 @@ namespace Amazon.DataSync
         /// Constant ONEZONE_IA for S3StorageClass
         /// </summary>
         public static readonly S3StorageClass ONEZONE_IA = new S3StorageClass("ONEZONE_IA");
+        /// <summary>
+        /// Constant OUTPOSTS for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass OUTPOSTS = new S3StorageClass("OUTPOSTS");
         /// <summary>
         /// Constant STANDARD for S3StorageClass
         /// </summary>

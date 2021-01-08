@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,8 +30,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoadBalancer operation.
-    /// Deletes the specified Application Load Balancer or Network Load Balancer and its attached
-    /// listeners.
+    /// Deletes the specified Application Load Balancer, Network Load Balancer, or Gateway
+    /// Load Balancer. Deleting a load balancer also deletes its listeners.
     /// 
     ///  
     /// <para>

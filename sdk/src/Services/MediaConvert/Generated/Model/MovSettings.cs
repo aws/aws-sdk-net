@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -92,8 +92,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PaddingControl. If set to OMNEON, inserts Omneon-compatible
-        /// padding
+        /// Gets and sets the property PaddingControl. To make this output compatible with Omenon,
+        /// keep the default value, OMNEON. Unless you need Omneon compatibility, set this value
+        /// to NONE. When you keep the default value, OMNEON, MediaConvert increases the length
+        /// of the edit list atom. This might cause file rejections when a recipient of the output
+        /// file doesn't expct this extra padding.
         /// </summary>
         public MovPaddingControl PaddingControl
         {

@@ -1,6 +1,6 @@
 #if !NETSTANDARD13
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -53,6 +53,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListApprovedOrigins operation
+        ///</summary>
+        public IListApprovedOriginsPaginator ListApprovedOrigins(ListApprovedOriginsRequest request) 
+        {
+            return new ListApprovedOriginsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListContactFlows operation
         ///</summary>
         public IListContactFlowsPaginator ListContactFlows(ListContactFlowsRequest request) 
@@ -69,11 +77,67 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListInstanceAttributes operation
+        ///</summary>
+        public IListInstanceAttributesPaginator ListInstanceAttributes(ListInstanceAttributesRequest request) 
+        {
+            return new ListInstanceAttributesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListInstances operation
+        ///</summary>
+        public IListInstancesPaginator ListInstances(ListInstancesRequest request) 
+        {
+            return new ListInstancesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListInstanceStorageConfigs operation
+        ///</summary>
+        public IListInstanceStorageConfigsPaginator ListInstanceStorageConfigs(ListInstanceStorageConfigsRequest request) 
+        {
+            return new ListInstanceStorageConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListIntegrationAssociations operation
+        ///</summary>
+        public IListIntegrationAssociationsPaginator ListIntegrationAssociations(ListIntegrationAssociationsRequest request) 
+        {
+            return new ListIntegrationAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLambdaFunctions operation
+        ///</summary>
+        public IListLambdaFunctionsPaginator ListLambdaFunctions(ListLambdaFunctionsRequest request) 
+        {
+            return new ListLambdaFunctionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLexBots operation
+        ///</summary>
+        public IListLexBotsPaginator ListLexBots(ListLexBotsRequest request) 
+        {
+            return new ListLexBotsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPhoneNumbers operation
         ///</summary>
         public IListPhoneNumbersPaginator ListPhoneNumbers(ListPhoneNumbersRequest request) 
         {
             return new ListPhoneNumbersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPrompts operation
+        ///</summary>
+        public IListPromptsPaginator ListPrompts(ListPromptsRequest request) 
+        {
+            return new ListPromptsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -85,6 +149,22 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListQuickConnects operation
+        ///</summary>
+        public IListQuickConnectsPaginator ListQuickConnects(ListQuickConnectsRequest request) 
+        {
+            return new ListQuickConnectsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRoutingProfileQueues operation
+        ///</summary>
+        public IListRoutingProfileQueuesPaginator ListRoutingProfileQueues(ListRoutingProfileQueuesRequest request) 
+        {
+            return new ListRoutingProfileQueuesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRoutingProfiles operation
         ///</summary>
         public IListRoutingProfilesPaginator ListRoutingProfiles(ListRoutingProfilesRequest request) 
@@ -93,11 +173,27 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListSecurityKeys operation
+        ///</summary>
+        public IListSecurityKeysPaginator ListSecurityKeys(ListSecurityKeysRequest request) 
+        {
+            return new ListSecurityKeysPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSecurityProfiles operation
         ///</summary>
         public IListSecurityProfilesPaginator ListSecurityProfiles(ListSecurityProfilesRequest request) 
         {
             return new ListSecurityProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListUseCases operation
+        ///</summary>
+        public IListUseCasesPaginator ListUseCases(ListUseCasesRequest request) 
+        {
+            return new ListUseCasesPaginator(this.client, request);
         }
 
         /// <summary>

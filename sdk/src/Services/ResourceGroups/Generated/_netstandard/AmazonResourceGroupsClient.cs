@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ namespace Amazon.ResourceGroups
     /// match the resource types specified in a query, and share one or more tags or portions
     /// of tags. You can create a group of resources based on their roles in your cloud infrastructure,
     /// lifecycle stages, regions, application layers, or virtually any criteria. Resource
-    /// groups enable you to automate management tasks, such as those in AWS Systems Manager
+    /// Groups enable you to automate management tasks, such as those in AWS Systems Manager
     /// Automation documents, on tag-related resources in AWS Systems Manager. Groups of tagged
     /// resources also let you quickly view a custom console in AWS Systems Manager that shows
     /// AWS Config compliance and other monitoring data about member resources.
@@ -89,6 +89,9 @@ namespace Amazon.ResourceGroups
     /// </para>
     ///  </li> </ul>
     /// </summary>
+#if NETSTANDARD13
+    [Obsolete("Support for .NET Standard 1.3 is in maintenance mode and will only receive critical bug fixes and security patches. Visit https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/migration-from-net-standard-1-3.html for further details.")]
+#endif
     public partial class AmazonResourceGroupsClient : AmazonServiceClient, IAmazonResourceGroups
     {
         private static IServiceMetadata serviceMetadata = new AmazonResourceGroupsMetadata();
@@ -322,7 +325,25 @@ namespace Amazon.ResourceGroups
 
         /// <summary>
         /// Creates a resource group with the specified name and description. You can optionally
-        /// include a resource query, or a service configuration.
+        /// include a resource query, or a service configuration. For more information about constructing
+        /// a resource query, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+        /// a tag-based group in Resource Groups</a>. For more information about service configurations,
+        /// see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+        /// configurations for resource groups</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:CreateGroup</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
         /// <param name="cancellationToken">
@@ -373,6 +394,20 @@ namespace Amazon.ResourceGroups
         /// <summary>
         /// Deletes the specified resource group. Deleting a resource group does not delete any
         /// resources that are members of the group; it only deletes the group structure.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:DeleteGroup</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
         /// <param name="cancellationToken">
@@ -425,6 +460,20 @@ namespace Amazon.ResourceGroups
 
         /// <summary>
         /// Returns information about a specified resource group.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:GetGroup</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -476,14 +525,21 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Returns the service configuration associated with the specified resource group. AWS
-        /// Resource Groups supports configurations for the following resource group types:
+        /// Returns the service configuration associated with the specified resource group. For
+        /// details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
+        /// configurations for resource groups</a>.
         /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation
-        /// pools. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">Working
-        /// with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
+        ///  <code>resource-groups:GetGroupConfiguration</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -537,7 +593,23 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Retrieves the resource query associated with the specified resource group.
+        /// Retrieves the resource query associated with the specified resource group. For more
+        /// information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+        /// a tag-based group in Resource Groups</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:GetGroupQuery</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGroupQuery service method.</param>
         /// <param name="cancellationToken">
@@ -591,6 +663,20 @@ namespace Amazon.ResourceGroups
         /// <summary>
         /// Returns a list of tags that are associated with a resource group, specified by an
         /// ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:GetTags</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTags service method.</param>
         /// <param name="cancellationToken">
@@ -643,6 +729,20 @@ namespace Amazon.ResourceGroups
 
         /// <summary>
         /// Adds the specified resources to the specified group.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:GroupResources</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GroupResources service method.</param>
         /// <param name="cancellationToken">
@@ -695,6 +795,20 @@ namespace Amazon.ResourceGroups
 
         /// <summary>
         /// Returns a list of ARNs of the resources that are members of a specified resource group.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:ListGroupResources</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupResources service method.</param>
         /// <param name="cancellationToken">
@@ -751,6 +865,20 @@ namespace Amazon.ResourceGroups
 
         /// <summary>
         /// Returns a list of existing resource groups in your account.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:ListGroups</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
         /// <param name="cancellationToken">
@@ -785,6 +913,74 @@ namespace Amazon.ResourceGroups
 
         #endregion
         
+        #region  PutGroupConfiguration
+
+        internal virtual PutGroupConfigurationResponse PutGroupConfiguration(PutGroupConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutGroupConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutGroupConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutGroupConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Attaches a service configuration to the specified group. This occurs asynchronously,
+        /// and can take time to complete. You can use <a>GetGroupConfiguration</a> to check the
+        /// status of the update.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:PutGroupConfiguration</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutGroupConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutGroupConfiguration service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request includes one or more parameters that violate validation rules.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request. Check permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method that isn't allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.NotFoundException">
+        /// One or more of the specified resources don't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// You've exceeded throttling limits by making too many requests in a period of time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/PutGroupConfiguration">REST API Reference for PutGroupConfiguration Operation</seealso>
+        public virtual Task<PutGroupConfigurationResponse> PutGroupConfigurationAsync(PutGroupConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutGroupConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutGroupConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutGroupConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchResources
 
         internal virtual SearchResourcesResponse SearchResources(SearchResourcesRequest request)
@@ -799,8 +995,22 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Returns a list of AWS resource identifiers that matches tne specified query. The query
+        /// Returns a list of AWS resource identifiers that matches the specified query. The query
         /// uses the same format as a resource query in a CreateGroup or UpdateGroupQuery operation.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:SearchResources</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchResources service method.</param>
         /// <param name="cancellationToken">
@@ -862,7 +1072,19 @@ namespace Amazon.ResourceGroups
         /// information in tags. We use tags to provide you with billing and administration services.
         /// Tags are not intended to be used for private or sensitive data.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:Tag</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Tag service method.</param>
         /// <param name="cancellationToken">
@@ -915,6 +1137,20 @@ namespace Amazon.ResourceGroups
 
         /// <summary>
         /// Removes the specified resources from the specified group.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:UngroupResources</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UngroupResources service method.</param>
         /// <param name="cancellationToken">
@@ -967,6 +1203,20 @@ namespace Amazon.ResourceGroups
 
         /// <summary>
         /// Deletes tags from a specified resource group.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:Untag</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Untag service method.</param>
         /// <param name="cancellationToken">
@@ -1020,6 +1270,20 @@ namespace Amazon.ResourceGroups
         /// <summary>
         /// Updates the description for an existing group. You cannot update the name of a resource
         /// group.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:UpdateGroup</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
         /// <param name="cancellationToken">
@@ -1071,7 +1335,23 @@ namespace Amazon.ResourceGroups
 
 
         /// <summary>
-        /// Updates the resource query of a group.
+        /// Updates the resource query of a group. For more information about resource queries,
+        /// see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create
+        /// a tag-based group in Resource Groups</a>.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resource-groups:UpdateGroupQuery</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroupQuery service method.</param>
         /// <param name="cancellationToken">

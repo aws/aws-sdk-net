@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// The request was rejected because it attempted to create resources beyond the current
-    /// AWS account limits. The error code describes the limit exceeded.
+    /// AWS account or throttling limits. The error code describes the limit exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

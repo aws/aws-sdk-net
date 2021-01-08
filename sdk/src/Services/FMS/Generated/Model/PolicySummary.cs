@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -126,7 +126,7 @@ namespace Amazon.FMS.Model
         /// For a security group content audit policy, valid values are <code>AWS::EC2::SecurityGroup</code>,
         /// <code>AWS::EC2::NetworkInterface</code>, and <code>AWS::EC2::Instance</code>. For
         /// a security group usage audit policy, the value is <code>AWS::EC2::SecurityGroup</code>.
-        /// 
+        /// For an AWS Network Firewall policy, the value is <code>AWS::EC2::VPC</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

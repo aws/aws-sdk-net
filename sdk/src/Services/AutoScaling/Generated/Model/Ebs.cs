@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -91,7 +91,7 @@ namespace Amazon.AutoScaling.Model
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
         /// Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>
         /// and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
-        /// CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto Scaling
+        /// CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto Scaling
         /// User Guide</i>.
         /// </para>
         /// </summary>

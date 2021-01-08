@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,8 @@ namespace Amazon.SageMaker.Model
     public partial class MonitoringScheduleConfig
     {
         private MonitoringJobDefinition _monitoringJobDefinition;
+        private string _monitoringJobDefinitionName;
+        private MonitoringType _monitoringType;
         private ScheduleConfig _scheduleConfig;
 
         /// <summary>
@@ -42,7 +44,6 @@ namespace Amazon.SageMaker.Model
         /// Defines the monitoring job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public MonitoringJobDefinition MonitoringJobDefinition
         {
             get { return this._monitoringJobDefinition; }
@@ -53,6 +54,43 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMonitoringJobDefinition()
         {
             return this._monitoringJobDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringJobDefinitionName. 
+        /// <para>
+        /// The name of the monitoring job definition to schedule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=63)]
+        public string MonitoringJobDefinitionName
+        {
+            get { return this._monitoringJobDefinitionName; }
+            set { this._monitoringJobDefinitionName = value; }
+        }
+
+        // Check to see if MonitoringJobDefinitionName property is set
+        internal bool IsSetMonitoringJobDefinitionName()
+        {
+            return this._monitoringJobDefinitionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringType. 
+        /// <para>
+        /// The type of the monitoring job definition to schedule.
+        /// </para>
+        /// </summary>
+        public MonitoringType MonitoringType
+        {
+            get { return this._monitoringType; }
+            set { this._monitoringType = value; }
+        }
+
+        // Check to see if MonitoringType property is set
+        internal bool IsSetMonitoringType()
+        {
+            return this._monitoringType != null;
         }
 
         /// <summary>

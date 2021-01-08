@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,8 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// A custom key-value pair associated with a resource such as an account within your
-    /// organization.
+    /// A custom key-value pair associated with a resource within your organization.
+    /// 
+    ///  
+    /// <para>
+    /// You can attach tags to any of the following organization resources.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// AWS account
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Organizational unit (OU)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Organization root
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Policy
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Tag
     {

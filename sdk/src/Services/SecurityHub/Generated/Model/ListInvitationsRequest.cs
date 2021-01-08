@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,6 +31,12 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the ListInvitations operation.
     /// Lists all Security Hub membership invitations that were sent to the current AWS account.
+    /// 
+    ///  
+    /// <para>
+    /// This operation is only used by accounts that do not belong to an organization. Organization
+    /// accounts do not receive invitations.
+    /// </para>
     /// </summary>
     public partial class ListInvitationsRequest : AmazonSecurityHubRequest
     {
@@ -43,7 +49,7 @@ namespace Amazon.SecurityHub.Model
         /// The maximum number of items to return in the response. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=50)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -237,7 +237,7 @@ namespace Amazon.FSx.Model
         /// bucket.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=900)]
+        [AWSProperty(Min=3, Max=4357)]
         public string ExportPath
         {
             get { return this._exportPath; }
@@ -288,7 +288,7 @@ namespace Amazon.FSx.Model
         /// are loaded into the file system.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=900)]
+        [AWSProperty(Min=3, Max=4357)]
         public string ImportPath
         {
             get { return this._importPath; }

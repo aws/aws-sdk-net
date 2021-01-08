@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -64,7 +64,7 @@ namespace Amazon.SQS.Model
     /// <para>
     /// Cross-account permissions don't apply to this action. For more information, see <a
     /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-    /// Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue
+    /// cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue
     /// Service Developer Guide</i>.
     /// </para>
     ///  </note>

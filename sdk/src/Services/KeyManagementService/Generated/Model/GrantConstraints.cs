@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,7 +40,7 @@ namespace Amazon.KeyManagementService.Model
     /// an encryption context, that is, all cryptographic operations with a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric
     /// CMK</a>. Grant constraints are not applied to operations that do not support an encryption
     /// context, such as cryptographic operations with asymmetric CMKs and management operations,
-    /// such as <a>DescribeKey</a> or <a>ScheduleKeyDeletion</a>.
+    /// such as <a>DescribeKey</a> or <a>RetireGrant</a>.
     /// </para>
     ///  <important> 
     /// <para>

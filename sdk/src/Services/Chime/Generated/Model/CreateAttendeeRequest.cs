@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,8 +43,9 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ExternalUserId. 
         /// <para>
-        /// The Amazon Chime SDK external user ID. Links the attendee to an identity managed by
-        /// a builder application.
+        /// The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to
+        /// an identity managed by a builder application. If you create an attendee with the same
+        /// external user id, the service returns the existing record.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=64)]

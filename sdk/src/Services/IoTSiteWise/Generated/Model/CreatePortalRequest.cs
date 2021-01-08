@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,15 +30,13 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePortal operation.
-    /// Creates a portal, which can contain projects and dashboards. Before you can create
-    /// a portal, you must enable AWS Single Sign-On. AWS IoT SiteWise Monitor uses AWS SSO
-    /// to manage user permissions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
-    /// AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.
+    /// Creates a portal, which can contain projects and dashboards. AWS IoT SiteWise Monitor
+    /// uses AWS SSO or IAM to authenticate portal users and manage user permissions.
     /// 
     ///  <note> 
     /// <para>
-    /// Before you can sign in to a new portal, you must add at least one AWS SSO user or
-    /// group to that portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
+    /// Before you can sign in to a new portal, you must add at least one identity to that
+    /// portal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
     /// or removing portal administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
     /// </para>
     ///  </note>
@@ -46,6 +44,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class CreatePortalRequest : AmazonIoTSiteWiseRequest
     {
         private string _clientToken;
+        private AuthMode _portalAuthMode;
         private string _portalContactEmail;
         private string _portalDescription;
         private ImageFile _portalLogoImageFile;
@@ -71,6 +70,46 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PortalAuthMode. 
+        /// <para>
+        /// The service to use to authenticate users to the portal. Choose from the following
+        /// options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage
+        /// user permissions. Before you can create a portal that uses AWS SSO, you must enable
+        /// AWS SSO. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling
+        /// AWS SSO</a> in the <i>AWS IoT SiteWise User Guide</i>. This option is only available
+        /// in AWS Regions other than the China Regions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate
+        /// users and manage user permissions. This option is only available in the China Regions.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can't change this value after you create a portal.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>SSO</code> 
+        /// </para>
+        /// </summary>
+        public AuthMode PortalAuthMode
+        {
+            get { return this._portalAuthMode; }
+            set { this._portalAuthMode = value; }
+        }
+
+        // Check to see if PortalAuthMode property is set
+        internal bool IsSetPortalAuthMode()
+        {
+            return this._portalAuthMode != null;
         }
 
         /// <summary>

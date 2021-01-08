@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1883,6 +1883,78 @@ namespace Amazon.StorageGateway
         /// <returns>Returns a  DescribeBandwidthRateLimitResult from StorageGateway.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">REST API Reference for DescribeBandwidthRateLimit Operation</seealso>
         DescribeBandwidthRateLimitResponse EndDescribeBandwidthRateLimit(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeBandwidthRateLimitSchedule
+
+
+        /// <summary>
+        /// Returns information about the bandwidth rate limit schedule of a gateway. By default,
+        /// gateways do not have bandwidth rate limit schedules, which means no bandwidth rate
+        /// limiting is in effect. This operation is supported only in the volume and tape gateway
+        /// types. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns information about a gateway's bandwidth rate limit schedule.
+        /// A bandwidth rate limit schedule consists of one or more bandwidth rate limit intervals.
+        /// A bandwidth rate limit interval defines a period of time on one or more days of the
+        /// week, during which bandwidth rate limits are specified for uploading, downloading,
+        /// or both. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  A bandwidth rate limit interval consists of one or more days of the week, a start
+        /// hour and minute, an ending hour and minute, and bandwidth rate limits for uploading
+        /// and downloading 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If no bandwidth rate limit schedule intervals are set for the gateway, this operation
+        /// returns an empty response. To specify which gateway to describe, use the Amazon Resource
+        /// Name (ARN) of the gateway in your request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBandwidthRateLimitSchedule service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBandwidthRateLimitSchedule service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule">REST API Reference for DescribeBandwidthRateLimitSchedule Operation</seealso>
+        DescribeBandwidthRateLimitScheduleResponse DescribeBandwidthRateLimitSchedule(DescribeBandwidthRateLimitScheduleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBandwidthRateLimitSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBandwidthRateLimitSchedule operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBandwidthRateLimitSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule">REST API Reference for DescribeBandwidthRateLimitSchedule Operation</seealso>
+        IAsyncResult BeginDescribeBandwidthRateLimitSchedule(DescribeBandwidthRateLimitScheduleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBandwidthRateLimitSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBandwidthRateLimitSchedule.</param>
+        /// 
+        /// <returns>Returns a  DescribeBandwidthRateLimitScheduleResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule">REST API Reference for DescribeBandwidthRateLimitSchedule Operation</seealso>
+        DescribeBandwidthRateLimitScheduleResponse EndDescribeBandwidthRateLimitSchedule(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4339,6 +4411,57 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  UpdateBandwidthRateLimitSchedule
+
+
+        /// <summary>
+        /// Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways
+        /// do not have bandwidth rate limit schedules, which means no bandwidth rate limiting
+        /// is in effect. Use this to initiate or update a gateway's bandwidth rate limit schedule.
+        /// This operation is supported in the volume and tape gateway types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBandwidthRateLimitSchedule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBandwidthRateLimitSchedule service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule">REST API Reference for UpdateBandwidthRateLimitSchedule Operation</seealso>
+        UpdateBandwidthRateLimitScheduleResponse UpdateBandwidthRateLimitSchedule(UpdateBandwidthRateLimitScheduleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBandwidthRateLimitSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBandwidthRateLimitSchedule operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBandwidthRateLimitSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule">REST API Reference for UpdateBandwidthRateLimitSchedule Operation</seealso>
+        IAsyncResult BeginUpdateBandwidthRateLimitSchedule(UpdateBandwidthRateLimitScheduleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateBandwidthRateLimitSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBandwidthRateLimitSchedule.</param>
+        /// 
+        /// <returns>Returns a  UpdateBandwidthRateLimitScheduleResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule">REST API Reference for UpdateBandwidthRateLimitSchedule Operation</seealso>
+        UpdateBandwidthRateLimitScheduleResponse EndUpdateBandwidthRateLimitSchedule(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateChapCredentials
 
 
@@ -4583,7 +4706,7 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  </note> 
         /// <para>
-        /// Updates the following file share setting:
+        /// Updates the following file share settings:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4605,12 +4728,7 @@ namespace Amazon.StorageGateway
         /// <para>
         /// Write status of your file share
         /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// To leave a file share field unchanged, set the corresponding input field to null.
-        /// This operation is only supported in file gateways.
-        /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNFSFileShare service method.</param>
         /// 
@@ -4658,12 +4776,12 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Updates a Server Message Block (SMB) file share.
+        /// Updates a Server Message Block (SMB) file share. This operation is only supported
+        /// for file gateways.
         /// 
         ///  <note> 
         /// <para>
         /// To leave a file share field unchanged, set the corresponding input field to null.
-        /// This operation is only supported for file gateways.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -4719,6 +4837,54 @@ namespace Amazon.StorageGateway
         /// <returns>Returns a  UpdateSMBFileShareResult from StorageGateway.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare">REST API Reference for UpdateSMBFileShare Operation</seealso>
         UpdateSMBFileShareResponse EndUpdateSMBFileShare(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateSMBFileShareVisibility
+
+
+        /// <summary>
+        /// Controls whether the shares on a gateway are visible in a net view or browse list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBFileShareVisibility service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSMBFileShareVisibility service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility">REST API Reference for UpdateSMBFileShareVisibility Operation</seealso>
+        UpdateSMBFileShareVisibilityResponse UpdateSMBFileShareVisibility(UpdateSMBFileShareVisibilityRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSMBFileShareVisibility operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSMBFileShareVisibility operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSMBFileShareVisibility
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility">REST API Reference for UpdateSMBFileShareVisibility Operation</seealso>
+        IAsyncResult BeginUpdateSMBFileShareVisibility(UpdateSMBFileShareVisibilityRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSMBFileShareVisibility operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSMBFileShareVisibility.</param>
+        /// 
+        /// <returns>Returns a  UpdateSMBFileShareVisibilityResult from StorageGateway.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility">REST API Reference for UpdateSMBFileShareVisibility Operation</seealso>
+        UpdateSMBFileShareVisibilityResponse EndUpdateSMBFileShareVisibility(IAsyncResult asyncResult);
 
         #endregion
         

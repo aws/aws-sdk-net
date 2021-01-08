@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ namespace Amazon.MediaLive.Model
         private string _arn;
         private InputDeviceConnectionState _connectionState;
         private DeviceSettingsSyncState _deviceSettingsSyncState;
+        private DeviceUpdateStatus _deviceUpdateStatus;
         private InputDeviceHdSettings _hdDeviceSettings;
         private string _id;
         private string _macAddress;
@@ -43,6 +44,7 @@ namespace Amazon.MediaLive.Model
         private InputDeviceNetworkSettings _networkSettings;
         private string _serialNumber;
         private InputDeviceType _type;
+        private InputDeviceUhdSettings _uhdDeviceSettings;
 
         /// <summary>
         /// Gets and sets the property Arn. The unique ARN of the input device.
@@ -92,6 +94,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetDeviceSettingsSyncState()
         {
             return this._deviceSettingsSyncState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceUpdateStatus. The status of software on the input
+        /// device.
+        /// </summary>
+        public DeviceUpdateStatus DeviceUpdateStatus
+        {
+            get { return this._deviceUpdateStatus; }
+            set { this._deviceUpdateStatus = value; }
+        }
+
+        // Check to see if DeviceUpdateStatus property is set
+        internal bool IsSetDeviceUpdateStatus()
+        {
+            return this._deviceUpdateStatus != null;
         }
 
         /// <summary>
@@ -198,6 +216,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UhdDeviceSettings. Settings that describe an input device
+        /// that is type UHD.
+        /// </summary>
+        public InputDeviceUhdSettings UhdDeviceSettings
+        {
+            get { return this._uhdDeviceSettings; }
+            set { this._uhdDeviceSettings = value; }
+        }
+
+        // Check to see if UhdDeviceSettings property is set
+        internal bool IsSetUhdDeviceSettings()
+        {
+            return this._uhdDeviceSettings != null;
         }
 
     }

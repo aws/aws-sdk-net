@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,9 +59,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The descriptive message including the error the EMR service has identified as the
-        /// cause of step failure. This is text from an error log that describes the root cause
-        /// of the failure.
+        /// The descriptive message including the error the Amazon EMR service has identified
+        /// as the cause of step failure. This is text from an error log that describes the root
+        /// cause of the failure.
         /// </para>
         /// </summary>
         public string Message

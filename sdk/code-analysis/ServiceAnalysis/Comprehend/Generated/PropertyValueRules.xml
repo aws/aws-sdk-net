@@ -135,7 +135,19 @@
     <pattern>arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Comprehend.Model.DescribeEventsDetectionJobRequest.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Comprehend.Model.DescribeKeyPhrasesDetectionJobRequest.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.DescribePiiEntitiesDetectionJobRequest.JobId</property>
     <min>1</min>
     <max>32</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
@@ -167,6 +179,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.DetectKeyPhrasesRequest.Text</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.DetectPiiEntitiesRequest.Text</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -256,6 +272,19 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Comprehend.Model.ListEventsDetectionJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.ListEventsDetectionJobsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.ListEventsDetectionJobsResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Comprehend.Model.ListKeyPhrasesDetectionJobsRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>
@@ -266,6 +295,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.ListKeyPhrasesDetectionJobsResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.ListPiiEntitiesDetectionJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.ListPiiEntitiesDetectionJobsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.ListPiiEntitiesDetectionJobsResponse.NextToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -399,6 +441,30 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Comprehend.Model.StartEventsDetectionJobRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.StartEventsDetectionJobRequest.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.StartEventsDetectionJobRequest.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.StartEventsDetectionJobResponse.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Comprehend.Model.StartKeyPhrasesDetectionJobRequest.ClientRequestToken</property>
     <min>1</min>
     <max>64</max>
@@ -422,6 +488,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.StartKeyPhrasesDetectionJobResponse.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.StartPiiEntitiesDetectionJobRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.StartPiiEntitiesDetectionJobRequest.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.StartPiiEntitiesDetectionJobRequest.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.StartPiiEntitiesDetectionJobResponse.JobId</property>
     <min>1</min>
     <max>32</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
@@ -512,6 +602,18 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Comprehend.Model.StopEventsDetectionJobRequest.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.StopEventsDetectionJobResponse.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Comprehend.Model.StopKeyPhrasesDetectionJobRequest.JobId</property>
     <min>1</min>
     <max>32</max>
@@ -519,6 +621,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.StopKeyPhrasesDetectionJobResponse.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.StopPiiEntitiesDetectionJobRequest.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.StopPiiEntitiesDetectionJobResponse.JobId</property>
     <min>1</min>
     <max>32</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
@@ -563,6 +677,11 @@
     <property>Amazon.Comprehend.Model.UpdateEndpointRequest.EndpointArn</property>
     <max>256</max>
     <pattern>arn:aws(-[^:]+)?:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:(document-classifier-endpoint|entity-recognizer-endpoint)/[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.AugmentedManifestsListItem.S3Uri</property>
+    <max>1024</max>
+    <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.BatchItemError.ErrorCode</property>
@@ -773,7 +892,31 @@
   <property-value-rule>
     <property>Amazon.Comprehend.Model.EntityTypesListItem.Type</property>
     <max>64</max>
-    <pattern>[_A-Z0-9]+</pattern>
+    <pattern>^(?:(?!\\n+|\\t+|\\r+|[\r\t\n\s,]).)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.EventsDetectionJobFilter.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.EventsDetectionJobProperties.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.EventsDetectionJobProperties.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.EventsDetectionJobProperties.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.InputDataConfig.S3Uri</property>
@@ -820,6 +963,45 @@
     <property>Amazon.Comprehend.Model.OutputDataConfig.S3Uri</property>
     <max>1024</max>
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.PiiEntitiesDetectionJobFilter.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.PiiEntitiesDetectionJobProperties.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.PiiEntitiesDetectionJobProperties.JobId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.PiiEntitiesDetectionJobProperties.JobName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.PiiOutputDataConfig.KmsKeyId</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.PiiOutputDataConfig.S3Uri</property>
+    <max>1024</max>
+    <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.RedactionConfig.MaskCharacter</property>
+    <min>1</min>
+    <max>1</max>
+    <pattern>[!@#$%&amp;*]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.SentimentDetectionJobFilter.JobName</property>
