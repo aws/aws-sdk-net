@@ -43,9 +43,41 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class ModifyGlobalClusterRequest : AmazonRDSRequest
     {
+        private bool? _allowMajorVersionUpgrade;
         private bool? _deletionProtection;
+        private string _engineVersion;
         private string _globalClusterIdentifier;
         private string _newGlobalClusterIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property AllowMajorVersionUpgrade. 
+        /// <para>
+        /// A value that indicates whether major version upgrades are allowed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: You must allow major version upgrades when specifying a value for the
+        /// <code>EngineVersion</code> parameter that is a different major version than the DB
+        /// cluster's current version.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you upgrade the major version of a global database, the cluster and DB instance
+        /// parameter groups are set to the default parameter groups for the new version. Apply
+        /// any custom parameter groups after completing the upgrade.
+        /// </para>
+        /// </summary>
+        public bool AllowMajorVersionUpgrade
+        {
+            get { return this._allowMajorVersionUpgrade.GetValueOrDefault(); }
+            set { this._allowMajorVersionUpgrade = value; }
+        }
+
+        // Check to see if AllowMajorVersionUpgrade property is set
+        internal bool IsSetAllowMajorVersionUpgrade()
+        {
+            return this._allowMajorVersionUpgrade.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
@@ -64,6 +96,56 @@ namespace Amazon.RDS.Model
         internal bool IsSetDeletionProtection()
         {
             return this._deletionProtection.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The version number of the database engine to which you want to upgrade. Changing this
+        /// parameter results in an outage. The change is applied during the next maintenance
+        /// window unless <code>ApplyImmediately</code> is enabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible
+        /// Aurora), use the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine aurora --query '*[]|[?SupportsGlobalDatabases
+        /// == `true`].[EngineVersion]'</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL
+        /// 5.7-compatible Aurora), use the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases
+        /// == `true`].[EngineVersion]'</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list all of the available engine versions for <code>aurora-postgresql</code>, use
+        /// the following command:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases
+        /// == `true`].[EngineVersion]'</code> 
+        /// </para>
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
         }
 
         /// <summary>

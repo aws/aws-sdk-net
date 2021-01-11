@@ -143,7 +143,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        /// Indicates that minor version patches are applied automatically.
+        /// A value that indicates that minor version patches are applied automatically.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -966,8 +966,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PendingModifiedValues. 
         /// <para>
-        /// Specifies that changes to the DB instance are pending. This element is only included
-        /// when changes are pending. Specific changes are identified by subelements.
+        /// A value that specifies that changes to the DB instance are pending. This element is
+        /// only included when changes are pending. Specific changes are identified by subelements.
         /// </para>
         /// </summary>
         public PendingModifiedValues PendingModifiedValues

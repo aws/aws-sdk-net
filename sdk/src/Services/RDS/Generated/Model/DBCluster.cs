@@ -938,8 +938,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PendingModifiedValues. 
         /// <para>
-        /// Specifies that changes to the DB cluster are pending. This element is only included
-        /// when changes are pending. Specific changes are identified by subelements.
+        /// A value that specifies that changes to the DB cluster are pending. This element is
+        /// only included when changes are pending. Specific changes are identified by subelements.
         /// </para>
         /// </summary>
         public ClusterPendingModifiedValues PendingModifiedValues

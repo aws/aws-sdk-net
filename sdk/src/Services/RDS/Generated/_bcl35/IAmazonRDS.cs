@@ -6357,6 +6357,12 @@ namespace Amazon.RDS
         /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
         /// cluster.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
         /// The global cluster is in an invalid state and can't perform the requested operation.
         /// </exception>

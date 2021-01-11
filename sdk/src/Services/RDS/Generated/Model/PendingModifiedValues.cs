@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// This data type is used as a response element in the <code>ModifyDBInstance</code>
-    /// action and contains changes that will be applied during the next maintenance window.
+    /// operation and contains changes that will be applied during the next maintenance window.
     /// </summary>
     public partial class PendingModifiedValues
     {
@@ -263,7 +263,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// Indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
+        /// A value that indicates that the Single-AZ DB instance will change to a Multi-AZ deployment.
         /// </para>
         /// </summary>
         public bool MultiAZ

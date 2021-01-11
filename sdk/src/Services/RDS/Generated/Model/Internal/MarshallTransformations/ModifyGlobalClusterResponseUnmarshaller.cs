@@ -116,6 +116,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return GlobalClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterStateFault"))
+                {
+                    return InvalidDBClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBInstanceState"))
+                {
+                    return InvalidDBInstanceStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGlobalClusterStateFault"))
                 {
                     return InvalidGlobalClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

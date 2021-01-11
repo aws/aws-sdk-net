@@ -815,8 +815,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about valid engine versions, see <code>CreateDBInstance</code>, or
-        /// call <code>DescribeDBEngineVersions</code>.
+        /// If you specify only a major version, Amazon RDS will update the DB instance to the
+        /// default minor version if the current minor version is lower. For information about
+        /// valid engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -1131,9 +1132,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        ///  Indicates that the DB instance should be associated with the specified option group.
-        /// Changing this parameter doesn't result in an outage except in the following case and
-        /// the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
+        ///  A value that indicates the DB instance should be associated with the specified option
+        /// group. Changing this parameter doesn't result in an outage except in the following
+        /// case and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
         /// parameter is enabled for this request. If the parameter change results in an option
         /// group that enables OEM, this change can cause a brief (sub-second) period during which
         /// new connections are rejected but existing connections are not interrupted. 

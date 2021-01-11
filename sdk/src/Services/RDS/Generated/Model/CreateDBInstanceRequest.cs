@@ -864,7 +864,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>,
-        /// and <code>trace</code>. 
+        /// <code>trace</code>, and <code>oemagent</code>. 
         /// </para>
         ///  
         /// <para>
@@ -1129,8 +1129,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
-        /// PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> 
+        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
+        /// RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
+        /// 
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -1559,7 +1560,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        /// Indicates that the DB instance should be associated with the specified option group.
+        /// A value that indicates that the DB instance should be associated with the specified
+        /// option group.
         /// </para>
         ///  
         /// <para>

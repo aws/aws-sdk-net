@@ -58,9 +58,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAllowMajorVersionUpgrade())
+                {
+                    request.Parameters.Add("AllowMajorVersionUpgrade", StringUtils.FromBool(publicRequest.AllowMajorVersionUpgrade));
+                }
                 if(publicRequest.IsSetDeletionProtection())
                 {
                     request.Parameters.Add("DeletionProtection", StringUtils.FromBool(publicRequest.DeletionProtection));
+                }
+                if(publicRequest.IsSetEngineVersion())
+                {
+                    request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
                 if(publicRequest.IsSetGlobalClusterIdentifier())
                 {
