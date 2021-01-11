@@ -43,8 +43,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>GrantId</code> in a subsequent <a>RetireGrant</a> or <a>RevokeGrant</a>
-        /// operation.
+        /// You can use the <code>GrantId</code> in a <a>ListGrants</a>, <a>RetireGrant</a>, or
+        /// <a>RevokeGrant</a> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

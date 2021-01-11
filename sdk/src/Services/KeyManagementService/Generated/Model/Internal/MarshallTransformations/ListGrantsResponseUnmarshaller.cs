@@ -100,6 +100,10 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 {
                     return InvalidArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGrantIdException"))
+                {
+                    return InvalidGrantIdExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidMarkerException"))
                 {
                     return InvalidMarkerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

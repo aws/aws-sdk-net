@@ -68,6 +68,18 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetGranteePrincipal())
+                {
+                    context.Writer.WritePropertyName("GranteePrincipal");
+                    context.Writer.Write(publicRequest.GranteePrincipal);
+                }
+
+                if(publicRequest.IsSetGrantId())
+                {
+                    context.Writer.WritePropertyName("GrantId");
+                    context.Writer.Write(publicRequest.GrantId);
+                }
+
                 if(publicRequest.IsSetKeyId())
                 {
                     context.Writer.WritePropertyName("KeyId");

@@ -6065,8 +6065,13 @@ namespace Amazon.KeyManagementService
         #region  ListGrants
 
         /// <summary>
-        /// Gets a list of all grants for the specified customer master key (CMK).
+        /// Gets a list of all grants for the specified customer master key (CMK). 
         /// 
+        ///  
+        /// <para>
+        /// You must specify the CMK in all requests. You can filter the grant list by grant ID
+        /// or grantee principal.
+        /// </para>
         ///  <note> 
         /// <para>
         /// The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually
@@ -6116,6 +6121,9 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN, or an ARN in a key policy, is not
         /// valid.
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantIdException">
+        /// The request was rejected because the specified <code>GrantId</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
         /// The request was rejected because the marker that specifies where pagination should
