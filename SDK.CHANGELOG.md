@@ -1,3 +1,14 @@
+### 3.5.88.0 (2021-01-11 19:27 UTC)
+* KeyManagementService (3.5.2.0)
+	* Adds support for filtering grants by grant ID and grantee principal in ListGrants requests to AWS KMS.
+* RDS (3.5.10.0)
+	* This releases adds support for Major Version Upgrades on Aurora MySQL Global Clusters. Customers will be able to upgrade their whole Aurora MySQL Global Cluster to a new major engine version.
+* Core 3.5.1.59
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.87.0 (2021-01-07 19:16 UTC)
 * CodePipeline (3.5.2.0)
 	* Adding cancelled status and summary for executions aborted by pipeline updates.
