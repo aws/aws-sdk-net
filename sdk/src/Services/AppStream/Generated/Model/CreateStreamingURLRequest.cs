@@ -46,7 +46,9 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property ApplicationId. 
         /// <para>
         /// The name of the application to launch after the session starts. This is the name that
-        /// you specified as <b>Name</b> in the Image Assistant.
+        /// you specified as <b>Name</b> in the Image Assistant. If your fleet is enabled for
+        /// the <b>Desktop</b> stream view, you can also choose to launch directly to the operating
+        /// system desktop. To do so, specify <b>Desktop</b>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

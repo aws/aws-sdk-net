@@ -85,6 +85,14 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly Action CLIPBOARD_COPY_TO_LOCAL_DEVICE = new Action("CLIPBOARD_COPY_TO_LOCAL_DEVICE");
         /// <summary>
+        /// Constant DOMAIN_PASSWORD_SIGNIN for Action
+        /// </summary>
+        public static readonly Action DOMAIN_PASSWORD_SIGNIN = new Action("DOMAIN_PASSWORD_SIGNIN");
+        /// <summary>
+        /// Constant DOMAIN_SMART_CARD_SIGNIN for Action
+        /// </summary>
+        public static readonly Action DOMAIN_SMART_CARD_SIGNIN = new Action("DOMAIN_SMART_CARD_SIGNIN");
+        /// <summary>
         /// Constant FILE_DOWNLOAD for Action
         /// </summary>
         public static readonly Action FILE_DOWNLOAD = new Action("FILE_DOWNLOAD");
@@ -298,6 +306,14 @@ namespace Amazon.AppStream
         /// Constant DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED for FleetErrorCode
         /// </summary>
         public static readonly FleetErrorCode DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED = new FleetErrorCode("DOMAIN_JOIN_NERR_WORKSTATION_NOT_STARTED");
+        /// <summary>
+        /// Constant FLEET_INSTANCE_PROVISIONING_FAILURE for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode FLEET_INSTANCE_PROVISIONING_FAILURE = new FleetErrorCode("FLEET_INSTANCE_PROVISIONING_FAILURE");
+        /// <summary>
+        /// Constant FLEET_STOPPED for FleetErrorCode
+        /// </summary>
+        public static readonly FleetErrorCode FLEET_STOPPED = new FleetErrorCode("FLEET_STOPPED");
         /// <summary>
         /// Constant IAM_SERVICE_ROLE_IS_MISSING for FleetErrorCode
         /// </summary>
@@ -649,6 +665,10 @@ namespace Amazon.AppStream
         /// </summary>
         public static readonly ImageState COPYING = new ImageState("COPYING");
         /// <summary>
+        /// Constant CREATING for ImageState
+        /// </summary>
+        public static readonly ImageState CREATING = new ImageState("CREATING");
+        /// <summary>
         /// Constant DELETING for ImageState
         /// </summary>
         public static readonly ImageState DELETING = new ImageState("DELETING");
@@ -656,6 +676,10 @@ namespace Amazon.AppStream
         /// Constant FAILED for ImageState
         /// </summary>
         public static readonly ImageState FAILED = new ImageState("FAILED");
+        /// <summary>
+        /// Constant IMPORTING for ImageState
+        /// </summary>
+        public static readonly ImageState IMPORTING = new ImageState("IMPORTING");
         /// <summary>
         /// Constant PENDING for ImageState
         /// </summary>

@@ -333,6 +333,10 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// stream.standard.small
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// stream.standard.medium
         /// </para>
         ///  </li> <li> 
