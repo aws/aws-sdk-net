@@ -106,6 +106,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstancePort = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ipAddressType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("location", targetDepth))
                 {
                     var unmarshaller = ResourceLocationUnmarshaller.Instance;

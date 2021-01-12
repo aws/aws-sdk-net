@@ -82,6 +82,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.FromPort = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ipv6Cidrs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Ipv6Cidrs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("protocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

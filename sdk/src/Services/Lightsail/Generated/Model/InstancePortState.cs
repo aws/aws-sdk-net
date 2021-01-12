@@ -37,6 +37,7 @@ namespace Amazon.Lightsail.Model
         private List<string> _cidrListAliases = new List<string>();
         private List<string> _cidrs = new List<string>();
         private int? _fromPort;
+        private List<string> _ipv6Cidrs = new List<string>();
         private NetworkProtocol _protocol;
         private PortState _state;
         private int? _toPort;
@@ -68,10 +69,15 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Cidrs. 
         /// <para>
-        /// The IP address, or range of IP addresses in CIDR notation, that are allowed to connect
-        /// to an instance through the ports, and the protocol. Lightsail supports IPv4 addresses.
+        /// The IPv4 address, or range of IPv4 addresses (in CIDR notation) that are allowed to
+        /// connect to an instance through the ports, and the protocol.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to
+        /// connect to an instance.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
         /// Inter-Domain Routing</a> on <i>Wikipedia</i>.
@@ -104,10 +110,17 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ICMP - The ICMP type. For example, specify <code>8</code> as the <code>fromPort</code>
-        /// (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable
-        /// ICMP Ping. For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+        /// ICMP - The ICMP type for IPv4 addresses. For example, specify <code>8</code> as the
+        /// <code>fromPort</code> (ICMP type), and <code>-1</code> as the <code>toPort</code>
+        /// (ICMP code), to enable ICMP Ping. For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
         /// Messages</a> on <i>Wikipedia</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <code>128</code> as
+        /// the <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code>
+        /// (ICMPv6 code). For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+        /// Control Message Protocol for IPv6</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -122,6 +135,36 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetFromPort()
         {
             return this._fromPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Cidrs. 
+        /// <para>
+        /// The IPv6 address, or range of IPv6 addresses (in CIDR notation) that are allowed to
+        /// connect to an instance through the ports, and the protocol. Only devices with an IPv6
+        /// address can connect to an instance through IPv6; otherwise, IPv4 should be used.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect
+        /// to an instance.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information about CIDR block notation, see <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">Classless
+        /// Inter-Domain Routing</a> on <i>Wikipedia</i>.
+        /// </para>
+        /// </summary>
+        public List<string> Ipv6Cidrs
+        {
+            get { return this._ipv6Cidrs; }
+            set { this._ipv6Cidrs = value; }
+        }
+
+        // Check to see if Ipv6Cidrs property is set
+        internal bool IsSetIpv6Cidrs()
+        {
+            return this._ipv6Cidrs != null && this._ipv6Cidrs.Count > 0; 
         }
 
         /// <summary>
@@ -216,10 +259,17 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ICMP - The ICMP code. For example, specify <code>8</code> as the <code>fromPort</code>
-        /// (ICMP type), and <code>-1</code> as the <code>toPort</code> (ICMP code), to enable
-        /// ICMP Ping. For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+        /// ICMP - The ICMP code for IPv4 addresses. For example, specify <code>8</code> as the
+        /// <code>fromPort</code> (ICMP type), and <code>-1</code> as the <code>toPort</code>
+        /// (ICMP code), to enable ICMP Ping. For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
         /// Messages</a> on <i>Wikipedia</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <code>128</code> as
+        /// the <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code>
+        /// (ICMPv6 code). For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+        /// Control Message Protocol for IPv6</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

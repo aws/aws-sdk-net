@@ -90,20 +90,28 @@ namespace Amazon.Lightsail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance
-        /// blueprint.
+        /// blueprint. If this is specified, then IPv4 and IPv6 will be configured for the new
+        /// instance that is created in Amazon EC2.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail
-        /// instance.
+        /// instance. If this is specified, the new instance that is created in Amazon EC2 will
+        /// be configured to match the configuration of the source Lightsail instance. For example,
+        /// if the source instance is configured for dual-stack (IPv4 and IPv6), then IPv4 and
+        /// IPv6 will be configured for the new instance that is created in Amazon EC2. If the
+        /// source instance is configured for IPv4 only, then only IPv4 will be configured for
+        /// the new instance that is created in Amazon EC2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NONE</code> - Use the default Amazon EC2 security group.
+        ///  <code>NONE</code> - Use the default Amazon EC2 security group. If this is specified,
+        /// then only IPv4 will be configured for the new instance that is created in Amazon EC2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CLOSED</code> - All ports closed.
+        ///  <code>CLOSED</code> - All ports closed. If this is specified, then only IPv4 will
+        /// be configured for the new instance that is created in Amazon EC2.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

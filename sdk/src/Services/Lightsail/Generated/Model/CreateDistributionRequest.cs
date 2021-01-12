@@ -47,6 +47,7 @@ namespace Amazon.Lightsail.Model
         private CacheSettings _cacheBehaviorSettings;
         private CacheBehavior _defaultCacheBehavior;
         private string _distributionName;
+        private IpAddressType _ipAddressType;
         private InputOrigin _origin;
         private List<Tag> _tags = new List<Tag>();
 
@@ -151,6 +152,33 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetDistributionName()
         {
             return this._distributionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code>
+        /// for IPv4 and IPv6.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>dualstack</code>.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

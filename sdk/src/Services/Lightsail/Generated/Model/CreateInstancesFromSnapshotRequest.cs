@@ -48,6 +48,7 @@ namespace Amazon.Lightsail.Model
         private string _bundleId;
         private List<string> _instanceNames = new List<string>();
         private string _instanceSnapshotName;
+        private IpAddressType _ipAddressType;
         private string _keyPairName;
         private string _restoreDate;
         private string _sourceInstanceName;
@@ -181,6 +182,33 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetInstanceSnapshotName()
         {
             return this._instanceSnapshotName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code>
+        /// for IPv4 and IPv6.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>dualstack</code>.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

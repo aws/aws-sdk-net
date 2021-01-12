@@ -124,6 +124,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ipAddressType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("isEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

@@ -527,6 +527,10 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.SetIpAddressTypeRequest.ResourceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.StartInstanceRequest.InstanceName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
@@ -821,10 +825,6 @@
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Instance.BundleId</property>
     <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Lightsail.Model.Instance.Ipv6Address</property>
-    <pattern>([A-F0-9]{1,4}:){7}[A-F0-9]{1,4}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.Instance.Name</property>

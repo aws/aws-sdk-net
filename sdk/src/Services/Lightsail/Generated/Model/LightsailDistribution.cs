@@ -43,6 +43,7 @@ namespace Amazon.Lightsail.Model
         private DateTime? _createdAt;
         private CacheBehavior _defaultCacheBehavior;
         private string _domainName;
+        private IpAddressType _ipAddressType;
         private bool? _isEnabled;
         private ResourceLocation _location;
         private string _name;
@@ -237,6 +238,29 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type of the distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code>
+        /// for IPv4 and IPv6.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

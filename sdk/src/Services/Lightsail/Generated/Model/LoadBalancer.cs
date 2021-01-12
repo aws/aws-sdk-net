@@ -40,6 +40,7 @@ namespace Amazon.Lightsail.Model
         private string _healthCheckPath;
         private List<InstanceHealthSummary> _instanceHealthSummary = new List<InstanceHealthSummary>();
         private int? _instancePort;
+        private IpAddressType _ipAddressType;
         private ResourceLocation _location;
         private string _name;
         private LoadBalancerProtocol _protocol;
@@ -177,6 +178,29 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetInstancePort()
         {
             return this._instancePort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type of the load balancer.
+        /// </para>
+        ///  
+        /// <para>
+        /// The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code>
+        /// for IPv4 and IPv6.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

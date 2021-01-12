@@ -40,7 +40,8 @@ namespace Amazon.Lightsail.Model
         private string _bundleId;
         private DateTime? _createdAt;
         private InstanceHardware _hardware;
-        private string _ipv6Address;
+        private IpAddressType _ipAddressType;
+        private List<string> _ipv6Addresses = new List<string>();
         private bool? _isStaticIp;
         private ResourceLocation _location;
         private string _name;
@@ -182,21 +183,44 @@ namespace Amazon.Lightsail.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Ipv6Address. 
+        /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The IPv6 address of the instance.
+        /// The IP address type of the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code>
+        /// for IPv4 and IPv6.
         /// </para>
         /// </summary>
-        public string Ipv6Address
+        public IpAddressType IpAddressType
         {
-            get { return this._ipv6Address; }
-            set { this._ipv6Address = value; }
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
         }
 
-        // Check to see if Ipv6Address property is set
-        internal bool IsSetIpv6Address()
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
         {
-            return this._ipv6Address != null;
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Addresses. 
+        /// <para>
+        /// The IPv6 addresses of the instance.
+        /// </para>
+        /// </summary>
+        public List<string> Ipv6Addresses
+        {
+            get { return this._ipv6Addresses; }
+            set { this._ipv6Addresses = value; }
+        }
+
+        // Check to see if Ipv6Addresses property is set
+        internal bool IsSetIpv6Addresses()
+        {
+            return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
         }
 
         /// <summary>

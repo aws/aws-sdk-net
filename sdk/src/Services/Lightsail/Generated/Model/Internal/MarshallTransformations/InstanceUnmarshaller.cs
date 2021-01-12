@@ -106,10 +106,16 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.Hardware = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ipv6Address", targetDepth))
+                if (context.TestExpression("ipAddressType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Ipv6Address = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ipv6Addresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Ipv6Addresses = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("isStaticIp", targetDepth))

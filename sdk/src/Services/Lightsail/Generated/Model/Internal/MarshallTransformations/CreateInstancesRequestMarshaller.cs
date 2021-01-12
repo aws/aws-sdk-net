@@ -119,6 +119,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetIpAddressType())
+                {
+                    context.Writer.WritePropertyName("ipAddressType");
+                    context.Writer.Write(publicRequest.IpAddressType);
+                }
+
                 if(publicRequest.IsSetKeyPairName())
                 {
                     context.Writer.WritePropertyName("keyPairName");

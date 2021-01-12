@@ -118,6 +118,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DistributionName);
                 }
 
+                if(publicRequest.IsSetIpAddressType())
+                {
+                    context.Writer.WritePropertyName("ipAddressType");
+                    context.Writer.Write(publicRequest.IpAddressType);
+                }
+
                 if(publicRequest.IsSetOrigin())
                 {
                     context.Writer.WritePropertyName("origin");

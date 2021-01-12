@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateLoadBalancer Request Marshaller
+    /// SetIpAddressType Request Marshaller
     /// </summary>       
-    public class CreateLoadBalancerRequestMarshaller : IMarshaller<IRequest, CreateLoadBalancerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class SetIpAddressTypeRequestMarshaller : IMarshaller<IRequest, SetIpAddressTypeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateLoadBalancerRequest)input);
+            return this.Marshall((SetIpAddressTypeRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateLoadBalancerRequest publicRequest)
+        public IRequest Marshall(SetIpAddressTypeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Lightsail");
-            string target = "Lightsail_20161128.CreateLoadBalancer";
+            string target = "Lightsail_20161128.SetIpAddressType";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-11-28";            
@@ -68,67 +68,22 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCertificateAlternativeNames())
-                {
-                    context.Writer.WritePropertyName("certificateAlternativeNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestCertificateAlternativeNamesListValue in publicRequest.CertificateAlternativeNames)
-                    {
-                            context.Writer.Write(publicRequestCertificateAlternativeNamesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetCertificateDomainName())
-                {
-                    context.Writer.WritePropertyName("certificateDomainName");
-                    context.Writer.Write(publicRequest.CertificateDomainName);
-                }
-
-                if(publicRequest.IsSetCertificateName())
-                {
-                    context.Writer.WritePropertyName("certificateName");
-                    context.Writer.Write(publicRequest.CertificateName);
-                }
-
-                if(publicRequest.IsSetHealthCheckPath())
-                {
-                    context.Writer.WritePropertyName("healthCheckPath");
-                    context.Writer.Write(publicRequest.HealthCheckPath);
-                }
-
-                if(publicRequest.IsSetInstancePort())
-                {
-                    context.Writer.WritePropertyName("instancePort");
-                    context.Writer.Write(publicRequest.InstancePort);
-                }
-
                 if(publicRequest.IsSetIpAddressType())
                 {
                     context.Writer.WritePropertyName("ipAddressType");
                     context.Writer.Write(publicRequest.IpAddressType);
                 }
 
-                if(publicRequest.IsSetLoadBalancerName())
+                if(publicRequest.IsSetResourceName())
                 {
-                    context.Writer.WritePropertyName("loadBalancerName");
-                    context.Writer.Write(publicRequest.LoadBalancerName);
+                    context.Writer.WritePropertyName("resourceName");
+                    context.Writer.Write(publicRequest.ResourceName);
                 }
 
-                if(publicRequest.IsSetTags())
+                if(publicRequest.IsSetResourceType())
                 {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("resourceType");
+                    context.Writer.Write(publicRequest.ResourceType);
                 }
 
         
@@ -140,9 +95,9 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateLoadBalancerRequestMarshaller _instance = new CreateLoadBalancerRequestMarshaller();        
+        private static SetIpAddressTypeRequestMarshaller _instance = new SetIpAddressTypeRequestMarshaller();        
 
-        internal static CreateLoadBalancerRequestMarshaller GetInstance()
+        internal static SetIpAddressTypeRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -150,7 +105,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateLoadBalancerRequestMarshaller Instance
+        public static SetIpAddressTypeRequestMarshaller Instance
         {
             get
             {

@@ -73,6 +73,17 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FromPort);
             }
 
+            if(requestObject.IsSetIpv6Cidrs())
+            {
+                context.Writer.WritePropertyName("ipv6Cidrs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectIpv6CidrsListValue in requestObject.Ipv6Cidrs)
+                {
+                        context.Writer.Write(requestObjectIpv6CidrsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("protocol");
