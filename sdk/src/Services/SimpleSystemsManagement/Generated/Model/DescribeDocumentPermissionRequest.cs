@@ -36,8 +36,30 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeDocumentPermissionRequest : AmazonSimpleSystemsManagementRequest
     {
+        private int? _maxResults;
         private string _name;
+        private string _nextToken;
         private DocumentPermissionType _permissionType;
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of items to return for this call. The call also returns a token
+        /// that you can specify in a subsequent call to get the next set of results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -56,6 +78,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

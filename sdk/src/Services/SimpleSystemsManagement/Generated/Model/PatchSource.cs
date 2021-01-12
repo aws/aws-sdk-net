@@ -49,16 +49,22 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>cachedir=/var/cache/yum/$basesearch$releasever</code> 
+        ///  <code>name=MyCustomRepository</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>keepcache=0</code> 
+        ///  <code>baseurl=https://my-custom-repository</code> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>debuglevel=2</code> 
+        ///  <code>enabled=1</code> 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For information about other options available for your yum repository configuration,
+        /// see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
         public string Configuration

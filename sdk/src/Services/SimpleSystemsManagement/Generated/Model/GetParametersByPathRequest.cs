@@ -123,10 +123,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The hierarchy for the parameter. Hierarchies start with a forward slash (/) and end
-        /// with the parameter name. A parameter name hierarchy can have a maximum of 15 levels.
-        /// Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33</code>
-        /// 
+        /// The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy
+        /// is the parameter name except the last part of the parameter. For the API call to succeeed,
+        /// the last part of the parameter name cannot be in the path. A parameter name hierarchy
+        /// can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33
+        /// </code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
