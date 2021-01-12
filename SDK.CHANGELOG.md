@@ -1,3 +1,15 @@
+### 3.5.89.0 (2021-01-12 19:13 UTC)
+* AppStream (3.5.1.0)
+	* Adds support for the Smart Card Redirection feature
+* AuditManager (3.5.1.0)
+	* This release introduces tag support for assessment frameworks. You can now add, remove, and get tags from existing frameworks, and specify the tags to apply when creating a custom framework.
+* ElastiCache (3.5.1.36)
+	* Documentation updates for elasticache
+* Lightsail (3.5.2.0)
+	* This release adds IPv6 support for Amazon Lightsail instances, container services, CDN distributions, and load balancers.
+* SimpleSystemsManagement (3.5.9.0)
+	* AWS Systems Manager adds pagination support for DescribeDocumentPermission API
+
 ### 3.5.88.0 (2021-01-11 19:27 UTC)
 * KeyManagementService (3.5.2.0)
 	* Adds support for filtering grants by grant ID and grantee principal in ListGrants requests to AWS KMS.

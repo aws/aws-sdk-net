@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.88.0",
+    "ProductVersion" : "3.5.89.0",
     "CoreVersion"    : "3.5.1.59",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -168,7 +168,7 @@
             "InPreview"               : false
         },
         "ElastiCache"       : {
-            "Version" : "3.5.1.35",
+            "Version" : "3.5.1.36",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.59"
@@ -370,7 +370,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.5.8.4",
+            "Version" : "3.5.9.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.59"
@@ -618,7 +618,7 @@
             "InPreview"               : false
         },
         "Lightsail"                       : {
-            "Version" : "3.5.1.23",
+            "Version" : "3.5.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.59"
@@ -642,7 +642,7 @@
             "InPreview"               : false
         },
         "AppStream"                       : {
-            "Version" : "3.5.0.59",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.59"
@@ -1994,7 +1994,7 @@
             "InPreview"               : false
         },
         "AuditManager"                    : {
-            "Version" : "3.5.0.12",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.1.59"
