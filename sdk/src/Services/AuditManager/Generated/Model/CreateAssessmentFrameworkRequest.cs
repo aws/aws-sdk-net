@@ -38,6 +38,7 @@ namespace Amazon.AuditManager.Model
         private List<CreateAssessmentFrameworkControlSet> _controlSets = new List<CreateAssessmentFrameworkControlSet>();
         private string _description;
         private string _name;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ComplianceType. 
@@ -114,6 +115,25 @@ namespace Amazon.AuditManager.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  The tags associated with the framework. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

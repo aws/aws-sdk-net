@@ -820,6 +820,12 @@
     <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AuditManager.Model.AssessmentFrameworkMetadata.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:.*:auditmanager:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AuditManager.Model.AssessmentFrameworkMetadata.ComplianceType</property>
     <max>100</max>
     <pattern>^[\w\W\s\S]*$</pattern>

@@ -33,6 +33,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class AssessmentFrameworkMetadata
     {
+        private string _arn;
         private string _complianceType;
         private int? _controlsCount;
         private int? _controlSetsCount;
@@ -43,6 +44,25 @@ namespace Amazon.AuditManager.Model
         private string _logo;
         private string _name;
         private FrameworkType _type;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the framework. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ComplianceType. 

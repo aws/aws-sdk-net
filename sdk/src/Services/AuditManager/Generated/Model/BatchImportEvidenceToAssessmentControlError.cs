@@ -61,7 +61,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        ///  The error message returned by the <code>BatchImportEvidenceToAssessmentControlError</code>
+        ///  The error message returned by the <code>BatchImportEvidenceToAssessmentControl</code>
         /// API. 
         /// </para>
         /// </summary>
