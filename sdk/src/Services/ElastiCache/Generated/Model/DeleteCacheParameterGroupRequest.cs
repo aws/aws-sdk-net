@@ -31,7 +31,8 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Container for the parameters to the DeleteCacheParameterGroup operation.
     /// Deletes the specified cache parameter group. You cannot delete a cache parameter group
-    /// if it is associated with any cache clusters.
+    /// if it is associated with any cache clusters. You cannot delete the default cache parameter
+    /// groups in your account.
     /// </summary>
     public partial class DeleteCacheParameterGroupRequest : AmazonElastiCacheRequest
     {

@@ -45,7 +45,15 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Redis (cluster mode disabled) clusters
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// A cluster that is the last read replica of a replication group
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A cluster that is the primary node of a replication group
     /// </para>
     ///  </li> <li> 
     /// <para>

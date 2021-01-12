@@ -1498,7 +1498,15 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Redis (cluster mode disabled) clusters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// A cluster that is the last read replica of a replication group
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A cluster that is the primary node of a replication group
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1582,7 +1590,8 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Deletes the specified cache parameter group. You cannot delete a cache parameter group
-        /// if it is associated with any cache clusters.
+        /// if it is associated with any cache clusters. You cannot delete the default cache parameter
+        /// groups in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCacheParameterGroup service method.</param>
         /// <param name="cancellationToken">

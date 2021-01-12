@@ -297,6 +297,11 @@ namespace Amazon.ElastiCache.Model
         /// in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code>
         /// to true when you create a cluster. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
+        /// using redis version <code>3.2.6</code>, <code>4.x</code> or later.
+        /// </para>
         /// </summary>
         public bool TransitEncryptionEnabled
         {
