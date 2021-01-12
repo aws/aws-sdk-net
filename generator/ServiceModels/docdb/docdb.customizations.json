@@ -1,0 +1,12 @@
+{
+    "runtimePipelineOverride": {
+        "overrides": [
+            {
+                "operation": "addBefore",
+                "newType": "Amazon.DocDB.Internal.PreSignedUrlRequestHandler",
+                "targetType": "Amazon.Runtime.Internal.Marshaller",
+                "constructorInput": "this.Credentials"
+            }
+        ]
+    }  
+}
