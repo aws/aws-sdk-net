@@ -925,8 +925,7 @@ namespace Amazon.FraudDetector
         ///  
         /// <para>
         /// When you delete an entity type, Amazon Fraud Detector permanently deletes that entity
-        /// type from the evaluation history, and the data is no longer stored in Amazon Fraud
-        /// Detector.
+        /// type and the data is no longer stored in Amazon Fraud Detector.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEntityType service method.</param>
@@ -1018,8 +1017,8 @@ namespace Amazon.FraudDetector
         /// 
         ///  
         /// <para>
-        /// When you delete an event, Amazon Fraud Detector permanently deletes that event from
-        /// the evaluation history, and the event data is no longer stored in Amazon Fraud Detector.
+        /// When you delete an event, Amazon Fraud Detector permanently deletes that event and
+        /// the event data is no longer stored in Amazon Fraud Detector.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvent service method.</param>
@@ -1097,8 +1096,7 @@ namespace Amazon.FraudDetector
         ///  
         /// <para>
         /// When you delete an entity type, Amazon Fraud Detector permanently deletes that entity
-        /// type from the evaluation history, and the data is no longer stored in Amazon Fraud
-        /// Detector.
+        /// type and the data is no longer stored in Amazon Fraud Detector.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventType service method.</param>
@@ -1296,8 +1294,8 @@ namespace Amazon.FraudDetector
         /// </para>
         ///  
         /// <para>
-        /// When you delete a label, Amazon Fraud Detector permanently deletes that label from
-        /// the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        /// When you delete a label, Amazon Fraud Detector permanently deletes that label and
+        /// the data is no longer stored in Amazon Fraud Detector.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLabel service method.</param>
@@ -1389,8 +1387,8 @@ namespace Amazon.FraudDetector
         /// </para>
         ///  
         /// <para>
-        ///  When you delete a model, Amazon Fraud Detector permanently deletes that model from
-        /// the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        ///  When you delete a model, Amazon Fraud Detector permanently deletes that model and
+        /// the data is no longer stored in Amazon Fraud Detector.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteModel service method.</param>
@@ -1488,8 +1486,7 @@ namespace Amazon.FraudDetector
         ///  
         /// <para>
         ///  When you delete a model version, Amazon Fraud Detector permanently deletes that model
-        /// version from the evaluation history, and the data is no longer stored in Amazon Fraud
-        /// Detector.
+        /// version and the data is no longer stored in Amazon Fraud Detector.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteModelVersion service method.</param>
@@ -1586,7 +1583,7 @@ namespace Amazon.FraudDetector
         ///  
         /// <para>
         /// When you delete an outcome, Amazon Fraud Detector permanently deletes that outcome
-        /// from the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        /// and the data is no longer stored in Amazon Fraud Detector.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOutcome service method.</param>
@@ -1682,8 +1679,8 @@ namespace Amazon.FraudDetector
         /// 
         ///  
         /// <para>
-        /// When you delete a rule, Amazon Fraud Detector permanently deletes that rule from the
-        /// evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        /// When you delete a rule, Amazon Fraud Detector permanently deletes that rule and the
+        /// data is no longer stored in Amazon Fraud Detector.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRule service method.</param>
@@ -1788,7 +1785,7 @@ namespace Amazon.FraudDetector
         ///  
         /// <para>
         /// When you delete a variable, Amazon Fraud Detector permanently deletes that variable
-        /// from the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+        /// and the data is no longer stored in Amazon Fraud Detector.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVariable service method.</param>

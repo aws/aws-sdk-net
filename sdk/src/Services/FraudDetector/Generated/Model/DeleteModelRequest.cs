@@ -39,8 +39,8 @@ namespace Amazon.FraudDetector.Model
     /// </para>
     ///  
     /// <para>
-    ///  When you delete a model, Amazon Fraud Detector permanently deletes that model from
-    /// the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+    ///  When you delete a model, Amazon Fraud Detector permanently deletes that model and
+    /// the data is no longer stored in Amazon Fraud Detector.
     /// </para>
     /// </summary>
     public partial class DeleteModelRequest : AmazonFraudDetectorRequest

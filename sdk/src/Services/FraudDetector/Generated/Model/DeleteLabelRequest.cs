@@ -43,8 +43,8 @@ namespace Amazon.FraudDetector.Model
     /// </para>
     ///  
     /// <para>
-    /// When you delete a label, Amazon Fraud Detector permanently deletes that label from
-    /// the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+    /// When you delete a label, Amazon Fraud Detector permanently deletes that label and
+    /// the data is no longer stored in Amazon Fraud Detector.
     /// </para>
     /// </summary>
     public partial class DeleteLabelRequest : AmazonFraudDetectorRequest

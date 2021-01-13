@@ -39,7 +39,7 @@ namespace Amazon.FraudDetector.Model
     ///  
     /// <para>
     /// When you delete an outcome, Amazon Fraud Detector permanently deletes that outcome
-    /// from the evaluation history, and the data is no longer stored in Amazon Fraud Detector.
+    /// and the data is no longer stored in Amazon Fraud Detector.
     /// </para>
     /// </summary>
     public partial class DeleteOutcomeRequest : AmazonFraudDetectorRequest

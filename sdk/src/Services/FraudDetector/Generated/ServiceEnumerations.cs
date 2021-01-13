@@ -492,6 +492,10 @@ namespace Amazon.FraudDetector
         /// Constant INACTIVE for ModelVersionStatus
         /// </summary>
         public static readonly ModelVersionStatus INACTIVE = new ModelVersionStatus("INACTIVE");
+        /// <summary>
+        /// Constant TRAINING_CANCELLED for ModelVersionStatus
+        /// </summary>
+        public static readonly ModelVersionStatus TRAINING_CANCELLED = new ModelVersionStatus("TRAINING_CANCELLED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

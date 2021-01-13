@@ -39,8 +39,7 @@ namespace Amazon.FraudDetector.Model
     ///  
     /// <para>
     /// When you delete an entity type, Amazon Fraud Detector permanently deletes that entity
-    /// type from the evaluation history, and the data is no longer stored in Amazon Fraud
-    /// Detector.
+    /// type and the data is no longer stored in Amazon Fraud Detector.
     /// </para>
     /// </summary>
     public partial class DeleteEntityTypeRequest : AmazonFraudDetectorRequest
