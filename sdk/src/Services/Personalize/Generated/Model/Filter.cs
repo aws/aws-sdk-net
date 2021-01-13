@@ -121,17 +121,8 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property FilterExpression. 
         /// <para>
         /// Specifies the type of item interactions to filter out of recommendation results. The
-        /// filter expression must follow the following format:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Where "EVENT_TYPE" is the type of event to filter out. For more information, see <a
-        /// href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters
-        /// with Amazon Personalize</a>.
+        /// filter expression must follow specific format rules. For information about filter
+        /// expression structure and syntax, see <a>filter-expressions</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2500)]

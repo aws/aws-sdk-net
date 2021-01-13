@@ -51,7 +51,12 @@ namespace Amazon.Personalize.Model
     /// and Amazon Personalize will analyze your data and select the optimum USER_PERSONALIZATION
     /// recipe for you.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Amazon Personalize doesn't support configuring the <code>hpoObjective</code> for solution
+    /// hyperparameter optimization at this time.
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  <b>Status</b> 
     /// </para>
@@ -135,6 +140,11 @@ namespace Amazon.Personalize.Model
         /// When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
         /// this parameter specifies which event type (for example, 'click' or 'like') is used
         /// for training the model.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions
+        /// for training with equal weight regardless of type.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -247,6 +257,12 @@ namespace Amazon.Personalize.Model
         /// to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of
         /// the solution configuration.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this
+        /// time.
+        /// </para>
+        ///  </note>
         /// </summary>
         public SolutionConfig SolutionConfig
         {

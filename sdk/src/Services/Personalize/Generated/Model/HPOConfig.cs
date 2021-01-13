@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Personalize.Model
 {
     /// <summary>
-    /// Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe
-    /// feature. Do not use for Amazon Personalize native recipes.
+    /// Describes the properties for hyperparameter optimization (HPO).
     /// </summary>
     public partial class HPOConfig
     {
@@ -61,6 +60,12 @@ namespace Amazon.Personalize.Model
         /// <para>
         /// The metric to optimize during HPO.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this
+        /// time.
+        /// </para>
+        ///  </note>
         /// </summary>
         public HPOObjective HpoObjective
         {

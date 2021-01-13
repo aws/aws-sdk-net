@@ -121,11 +121,21 @@ namespace Amazon.Personalize
         /// call. Transactions per second (TPS) is the throughput and unit of billing for Amazon
         /// Personalize. The minimum provisioned TPS (<code>minProvisionedTPS</code>) specifies
         /// the baseline throughput provisioned by Amazon Personalize, and thus, the minimum billing
-        /// charge. If your TPS increases beyond <code>minProvisionedTPS</code>, Amazon Personalize
-        /// auto-scales the provisioned capacity up and down, but never below <code>minProvisionedTPS</code>,
-        /// to maintain a 70% utilization. There's a short time delay while the capacity is increased
-        /// that might cause loss of transactions. It's recommended to start with a low <code>minProvisionedTPS</code>,
-        /// track your usage using Amazon CloudWatch metrics, and then increase the <code>minProvisionedTPS</code>
+        /// charge. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If your TPS increases beyond <code>minProvisionedTPS</code>, Amazon Personalize auto-scales
+        /// the provisioned capacity up and down, but never below <code>minProvisionedTPS</code>.
+        /// There's a short time delay while the capacity is increased that might cause loss of
+        /// transactions.
+        /// </para>
+        ///  
+        /// <para>
+        /// The actual TPS used is calculated as the average requests/second within a 5-minute
+        /// window. You pay for maximum of either the minimum provisioned TPS or the actual TPS.
+        /// We recommend starting with a low <code>minProvisionedTPS</code>, track your usage
+        /// using Amazon CloudWatch metrics, and then increase the <code>minProvisionedTPS</code>
         /// as necessary.
         /// </para>
         ///  
@@ -211,11 +221,21 @@ namespace Amazon.Personalize
         /// call. Transactions per second (TPS) is the throughput and unit of billing for Amazon
         /// Personalize. The minimum provisioned TPS (<code>minProvisionedTPS</code>) specifies
         /// the baseline throughput provisioned by Amazon Personalize, and thus, the minimum billing
-        /// charge. If your TPS increases beyond <code>minProvisionedTPS</code>, Amazon Personalize
-        /// auto-scales the provisioned capacity up and down, but never below <code>minProvisionedTPS</code>,
-        /// to maintain a 70% utilization. There's a short time delay while the capacity is increased
-        /// that might cause loss of transactions. It's recommended to start with a low <code>minProvisionedTPS</code>,
-        /// track your usage using Amazon CloudWatch metrics, and then increase the <code>minProvisionedTPS</code>
+        /// charge. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If your TPS increases beyond <code>minProvisionedTPS</code>, Amazon Personalize auto-scales
+        /// the provisioned capacity up and down, but never below <code>minProvisionedTPS</code>.
+        /// There's a short time delay while the capacity is increased that might cause loss of
+        /// transactions.
+        /// </para>
+        ///  
+        /// <para>
+        /// The actual TPS used is calculated as the average requests/second within a 5-minute
+        /// window. You pay for maximum of either the minimum provisioned TPS or the actual TPS.
+        /// We recommend starting with a low <code>minProvisionedTPS</code>, track your usage
+        /// using Amazon CloudWatch metrics, and then increase the <code>minProvisionedTPS</code>
         /// as necessary.
         /// </para>
         ///  
@@ -677,7 +697,8 @@ namespace Amazon.Personalize
         /// 
         ///  <important> 
         /// <para>
-        /// The dataset import job replaces any previous data in the dataset.
+        /// The dataset import job replaces any existing data in the dataset that you imported
+        /// in bulk.
         /// </para>
         ///  </important> 
         /// <para>
@@ -747,7 +768,8 @@ namespace Amazon.Personalize
         /// 
         ///  <important> 
         /// <para>
-        /// The dataset import job replaces any previous data in the dataset.
+        /// The dataset import job replaces any existing data in the dataset that you imported
+        /// in bulk.
         /// </para>
         ///  </important> 
         /// <para>
@@ -815,17 +837,10 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Creates an event tracker that you use when sending event data to the specified dataset
+        /// Creates an event tracker that you use when adding event data to a specified dataset
         /// group using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a>
         /// API.
         /// 
-        ///  
-        /// <para>
-        /// When Amazon Personalize creates an event tracker, it also creates an <i>event-interactions</i>
-        /// dataset in the dataset group associated with the event tracker. The event-interactions
-        /// dataset stores the event data from the <code>PutEvents</code> call. The contents of
-        /// this dataset are not available to the user.
-        /// </para>
         ///  <note> 
         /// <para>
         /// Only one event tracker can be associated with a dataset group. You will get an error
@@ -834,8 +849,10 @@ namespace Amazon.Personalize
         /// </para>
         ///  </note> 
         /// <para>
-        /// When you send event data you include your tracking ID. The tracking ID identifies
-        /// the customer and authorizes the customer to send the data.
+        /// When you create an event tracker, the response includes a tracking ID, which you pass
+        /// as a parameter when you use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a>
+        /// operation. Amazon Personalize then appends the event data to the Interactions dataset
+        /// of the dataset group you specify in your event tracker. 
         /// </para>
         ///  
         /// <para>
@@ -897,17 +914,10 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Creates an event tracker that you use when sending event data to the specified dataset
+        /// Creates an event tracker that you use when adding event data to a specified dataset
         /// group using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a>
         /// API.
         /// 
-        ///  
-        /// <para>
-        /// When Amazon Personalize creates an event tracker, it also creates an <i>event-interactions</i>
-        /// dataset in the dataset group associated with the event tracker. The event-interactions
-        /// dataset stores the event data from the <code>PutEvents</code> call. The contents of
-        /// this dataset are not available to the user.
-        /// </para>
         ///  <note> 
         /// <para>
         /// Only one event tracker can be associated with a dataset group. You will get an error
@@ -916,8 +926,10 @@ namespace Amazon.Personalize
         /// </para>
         ///  </note> 
         /// <para>
-        /// When you send event data you include your tracking ID. The tracking ID identifies
-        /// the customer and authorizes the customer to send the data.
+        /// When you create an event tracker, the response includes a tracking ID, which you pass
+        /// as a parameter when you use the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a>
+        /// operation. Amazon Personalize then appends the event data to the Interactions dataset
+        /// of the dataset group you specify in your event tracker. 
         /// </para>
         ///  
         /// <para>
@@ -985,8 +997,7 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Creates a recommendation filter. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
-        /// Filters with Amazon Personalize</a>.
+        /// Creates a recommendation filter. For more information, see <a>filter</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFilter service method.</param>
         /// 
@@ -1009,8 +1020,7 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Creates a recommendation filter. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using
-        /// Filters with Amazon Personalize</a>.
+        /// Creates a recommendation filter. For more information, see <a>filter</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFilter service method.</param>
         /// <param name="cancellationToken">
@@ -1152,7 +1162,12 @@ namespace Amazon.Personalize
         /// and Amazon Personalize will analyze your data and select the optimum USER_PERSONALIZATION
         /// recipe for you.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Amazon Personalize doesn't support configuring the <code>hpoObjective</code> for solution
+        /// hyperparameter optimization at this time.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Status</b> 
         /// </para>
@@ -1246,7 +1261,12 @@ namespace Amazon.Personalize
         /// and Amazon Personalize will analyze your data and select the optimum USER_PERSONALIZATION
         /// recipe for you.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Amazon Personalize doesn't support configuring the <code>hpoObjective</code> for solution
+        /// hyperparameter optimization at this time.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Status</b> 
         /// </para>

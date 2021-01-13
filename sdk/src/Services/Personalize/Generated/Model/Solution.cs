@@ -107,6 +107,8 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property EventType. 
         /// <para>
         /// The event type (for example, 'click' or 'like') that is used for training the model.
+        /// If no <code>eventType</code> is provided, Amazon Personalize uses all interactions
+        /// for training with equal weight regardless of type.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

@@ -30,6 +30,13 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// The metric to optimize during hyperparameter optimization (HPO).
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this
+    /// time.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class HPOObjective
     {

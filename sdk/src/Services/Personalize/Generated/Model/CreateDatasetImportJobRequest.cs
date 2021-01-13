@@ -38,7 +38,8 @@ namespace Amazon.Personalize.Model
     /// 
     ///  <important> 
     /// <para>
-    /// The dataset import job replaces any previous data in the dataset.
+    /// The dataset import job replaces any existing data in the dataset that you imported
+    /// in bulk.
     /// </para>
     ///  </important> 
     /// <para>
