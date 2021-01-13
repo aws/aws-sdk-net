@@ -1,3 +1,9 @@
+### 3.5.90.0 (2021-01-13 19:16 UTC)
+* FraudDetector (3.5.3.0)
+	* Added support for cancelling a model version that is TRAINING_IN_PROGRESS.
+* Personalize (3.5.0.60)
+	* Miscellaneous updates and improvements to the documentation
+
 ### 3.5.89.0 (2021-01-12 19:13 UTC)
 * AppStream (3.5.1.0)
 	* Adds support for the Smart Card Redirection feature
