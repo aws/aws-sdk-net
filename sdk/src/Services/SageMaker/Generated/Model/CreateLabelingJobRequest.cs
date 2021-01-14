@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the CreateLabelingJob operation.
     /// Creates a job that uses workers to label the data objects in your input dataset. You
-    /// can use the labeled data to train machine learning models.
+    /// can use the labeled data to train machine learning models. 
     /// 
     ///  
     /// <para>
@@ -73,6 +73,18 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// The output can be used as the manifest file for another labeling job or as training
     /// data for your machine learning models.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use this operation to create a static labeling job or a streaming labeling
+    /// job. A static labeling job stops if all data objects in the input manifest file identified
+    /// in <code>ManifestS3Uri</code> have been labeled. A streaming labeling job runs perpetually
+    /// until it is manually stopped, or remains idle for 10 days. You can send new data objects
+    /// to an active (<code>InProgress</code>) streaming labeling job in real time. To learn
+    /// how to create a static labeling job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-create-labeling-job-api.html">Create
+    /// a Labeling Job (API) </a> in the Amazon SageMaker Developer Guide. To learn how to
+    /// create a streaming labeling job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-create-job.html">Create
+    /// a Streaming Labeling Job</a>.
     /// </para>
     /// </summary>
     public partial class CreateLabelingJobRequest : AmazonSageMakerRequest
@@ -154,11 +166,14 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LabelCategoryConfigS3Uri. 
         /// <para>
-        /// The S3 URI of the file that defines the categories used to label the data objects.
+        /// The S3 URI of the file, referred to as a <i>label category configuration file</i>,
+        /// that defines the categories used to label the data objects.
         /// </para>
         ///  
         /// <para>
-        /// For 3D point cloud task types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
+        /// For 3D point cloud and video frame task types, you can add label category attributes
+        /// and frame attributes to your label category configuration file. To learn how, see
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create
         /// a Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>. 
         /// </para>
         ///  
@@ -265,7 +280,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LabelingJobName. 
         /// <para>
         /// The name of the labeling job. This name is used to identify the job in a list of labeling
-        /// jobs.
+        /// jobs. Labeling job names must be unique within an AWS account and region. <code>LabelingJobName</code>
+        /// is not case sensitive. For example, Example-job and example-job are considered the
+        /// same labeling job name by Ground Truth.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

@@ -81,7 +81,7 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>RoleArn</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes
+    ///  <code>RoleArn</code> - The Amazon Resource Name (ARN) that Amazon SageMaker assumes
     /// to perform tasks on your behalf during model training. You must grant this role the
     /// necessary permissions so that Amazon SageMaker can successfully complete model training.
     /// 

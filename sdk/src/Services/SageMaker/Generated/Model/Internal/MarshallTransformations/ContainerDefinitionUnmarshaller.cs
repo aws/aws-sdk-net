@@ -106,6 +106,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelPackageName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MultiModelConfig", targetDepth))
+                {
+                    var unmarshaller = MultiModelConfigUnmarshaller.Instance;
+                    unmarshalledObject.MultiModelConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

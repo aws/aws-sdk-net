@@ -2119,7 +2119,7 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Creates a job that uses workers to label the data objects in your input dataset. You
-        /// can use the labeled data to train machine learning models.
+        /// can use the labeled data to train machine learning models. 
         /// 
         ///  
         /// <para>
@@ -2161,6 +2161,18 @@ namespace Amazon.SageMaker
         /// <para>
         /// The output can be used as the manifest file for another labeling job or as training
         /// data for your machine learning models.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this operation to create a static labeling job or a streaming labeling
+        /// job. A static labeling job stops if all data objects in the input manifest file identified
+        /// in <code>ManifestS3Uri</code> have been labeled. A streaming labeling job runs perpetually
+        /// until it is manually stopped, or remains idle for 10 days. You can send new data objects
+        /// to an active (<code>InProgress</code>) streaming labeling job in real time. To learn
+        /// how to create a static labeling job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-create-labeling-job-api.html">Create
+        /// a Labeling Job (API) </a> in the Amazon SageMaker Developer Guide. To learn how to
+        /// create a streaming labeling job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-create-job.html">Create
+        /// a Streaming Labeling Job</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLabelingJob service method.</param>
@@ -3297,7 +3309,7 @@ namespace Amazon.SageMaker
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RoleArn</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes
+        ///  <code>RoleArn</code> - The Amazon Resource Name (ARN) that Amazon SageMaker assumes
         /// to perform tasks on your behalf during model training. You must grant this role the
         /// necessary permissions so that Amazon SageMaker can successfully complete model training.
         /// 

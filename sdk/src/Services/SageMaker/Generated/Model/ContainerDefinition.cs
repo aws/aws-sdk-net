@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private ContainerMode _mode;
         private string _modelDataUrl;
         private string _modelPackageName;
+        private MultiModelConfig _multiModelConfig;
 
         /// <summary>
         /// Gets and sets the property ContainerHostname. 
@@ -218,6 +219,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelPackageName()
         {
             return this._modelPackageName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiModelConfig. 
+        /// <para>
+        /// Specifies additional configuration for multi-model endpoints.
+        /// </para>
+        /// </summary>
+        public MultiModelConfig MultiModelConfig
+        {
+            get { return this._multiModelConfig; }
+            set { this._multiModelConfig = value; }
+        }
+
+        // Check to see if MultiModelConfig property is set
+        internal bool IsSetMultiModelConfig()
+        {
+            return this._multiModelConfig != null;
         }
 
     }

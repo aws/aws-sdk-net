@@ -100,6 +100,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ModelPackageName);
             }
 
+            if(requestObject.IsSetMultiModelConfig())
+            {
+                context.Writer.WritePropertyName("MultiModelConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MultiModelConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.MultiModelConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

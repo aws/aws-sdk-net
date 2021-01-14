@@ -29,7 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A collection of settings.
+    /// A collection of settings that apply to users of Amazon SageMaker Studio. These settings
+    /// are specified when the <a>CreateUserProfile</a> API is called, and as <code>DefaultUserSettings</code>
+    /// when the <a>CreateDomain</a> API is called.
+    /// 
+    ///  
+    /// <para>
+    ///  <code>SecurityGroups</code> is aggregated when specified in both calls. For all other
+    /// settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code>
+    /// take precedence over those specified in <code>CreateDomain</code>.
+    /// </para>
     /// </summary>
     public partial class UserSettings
     {
@@ -110,6 +119,12 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set
         /// to <code>VpcOnly</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio.
+        /// Therefore, the number of security groups that you can specify is one less than the
+        /// maximum number shown.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]

@@ -982,62 +982,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
         /// 
         /// </para>
         ///  </li> </ul> 
