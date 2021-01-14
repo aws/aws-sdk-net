@@ -103,7 +103,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// The operation that the specified job is configured to run on each object listed in
+        /// The operation that the specified job is configured to run on every object listed in
         /// the manifest.
         /// </para>
         /// </summary>

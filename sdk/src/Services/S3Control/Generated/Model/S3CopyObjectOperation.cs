@@ -30,8 +30,8 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Contains the configuration parameters for a PUT Copy object operation. S3 Batch Operations
-    /// passes each value through to the underlying PUT Copy object API. For more information
-    /// about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT
+    /// passes every object to the underlying PUT Copy object API. For more information about
+    /// the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT
     /// Object - Copy</a>.
     /// </summary>
     public partial class S3CopyObjectOperation

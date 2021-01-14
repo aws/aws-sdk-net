@@ -54,8 +54,8 @@ namespace Amazon.S3Control.Model
     ///  <note> 
     /// <para>
     /// Within a bucket, if you add a tag that has the same key as an existing tag, the new
-    /// value overwrites the old value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using
-    /// Cost Allocation in Amazon S3 Bucket Tags</a>.
+    /// value overwrites the old value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">
+    /// Using Cost Allocation in Amazon S3 Bucket Tags</a>.
     /// </para>
     ///  </note> 
     /// <para>

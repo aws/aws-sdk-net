@@ -63,8 +63,8 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about object expiration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">
-    /// Elements to Describe Lifecycle Actions</a>.
+    /// For more information about object expiration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">Elements
+    /// to Describe Lifecycle Actions</a>.
     /// </para>
     ///  
     /// <para>

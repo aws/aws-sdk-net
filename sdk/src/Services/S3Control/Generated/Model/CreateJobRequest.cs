@@ -178,7 +178,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// The operation that you want this job to perform on each object listed in the manifest.
+        /// The operation that you want this job to perform on every object listed in the manifest.
         /// For more information about the available operations, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a>
         /// in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
@@ -238,7 +238,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role
-        /// that Batch Operations will use to run this job's operation on each object in the manifest.
+        /// that Batch Operations will use to run this job's operation on every object in the
+        /// manifest.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

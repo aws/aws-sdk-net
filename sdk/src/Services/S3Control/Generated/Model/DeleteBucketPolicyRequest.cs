@@ -61,7 +61,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// For more information about bucket policies, see <a href=" https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
+    /// For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
     /// Bucket Policies and User Policies</a>. 
     /// </para>
     ///  
