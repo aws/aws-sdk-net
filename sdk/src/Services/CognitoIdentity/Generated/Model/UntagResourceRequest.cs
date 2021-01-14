@@ -30,8 +30,8 @@ namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the specified tags from an Amazon Cognito identity pool. You can use this
-    /// action up to 5 times per second, per account
+    /// Removes the specified tags from the specified Amazon Cognito identity pool. You can
+    /// use this action up to 5 times per second, per account
     /// </summary>
     public partial class UntagResourceRequest : AmazonCognitoIdentityRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.
+        /// The Amazon Resource Name (ARN) of the identity pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

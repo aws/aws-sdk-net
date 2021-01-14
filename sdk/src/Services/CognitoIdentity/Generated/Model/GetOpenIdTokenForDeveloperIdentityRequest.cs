@@ -55,6 +55,7 @@ namespace Amazon.CognitoIdentity.Model
         private string _identityId;
         private string _identityPoolId;
         private Dictionary<string, string> _logins = new Dictionary<string, string>();
+        private Dictionary<string, string> _principalTags = new Dictionary<string, string>();
         private long? _tokenDuration;
 
         /// <summary>
@@ -119,6 +120,25 @@ namespace Amazon.CognitoIdentity.Model
         internal bool IsSetLogins()
         {
             return this._logins != null && this._logins.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrincipalTags. 
+        /// <para>
+        /// Use this operation to configure attribute mappings for custom providers. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public Dictionary<string, string> PrincipalTags
+        {
+            get { return this._principalTags; }
+            set { this._principalTags = value; }
+        }
+
+        // Check to see if PrincipalTags property is set
+        internal bool IsSetPrincipalTags()
+        {
+            return this._principalTags != null && this._principalTags.Count > 0; 
         }
 
         /// <summary>

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetOpenIdTokenForDeveloperIdentity Request Marshaller
+    /// SetPrincipalTagAttributeMap Request Marshaller
     /// </summary>       
-    public class GetOpenIdTokenForDeveloperIdentityRequestMarshaller : IMarshaller<IRequest, GetOpenIdTokenForDeveloperIdentityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class SetPrincipalTagAttributeMapRequestMarshaller : IMarshaller<IRequest, SetPrincipalTagAttributeMapRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetOpenIdTokenForDeveloperIdentityRequest)input);
+            return this.Marshall((SetPrincipalTagAttributeMapRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetOpenIdTokenForDeveloperIdentityRequest publicRequest)
+        public IRequest Marshall(SetPrincipalTagAttributeMapRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CognitoIdentity");
-            string target = "AWSCognitoIdentityService.GetOpenIdTokenForDeveloperIdentity";
+            string target = "AWSCognitoIdentityService.SetPrincipalTagAttributeMap";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-06-30";            
@@ -68,30 +68,16 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIdentityId())
-                {
-                    context.Writer.WritePropertyName("IdentityId");
-                    context.Writer.Write(publicRequest.IdentityId);
-                }
-
                 if(publicRequest.IsSetIdentityPoolId())
                 {
                     context.Writer.WritePropertyName("IdentityPoolId");
                     context.Writer.Write(publicRequest.IdentityPoolId);
                 }
 
-                if(publicRequest.IsSetLogins())
+                if(publicRequest.IsSetIdentityProviderName())
                 {
-                    context.Writer.WritePropertyName("Logins");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestLoginsKvp in publicRequest.Logins)
-                    {
-                        context.Writer.WritePropertyName(publicRequestLoginsKvp.Key);
-                        var publicRequestLoginsValue = publicRequestLoginsKvp.Value;
-
-                            context.Writer.Write(publicRequestLoginsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("IdentityProviderName");
+                    context.Writer.Write(publicRequest.IdentityProviderName);
                 }
 
                 if(publicRequest.IsSetPrincipalTags())
@@ -108,10 +94,10 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTokenDuration())
+                if(publicRequest.IsSetUseDefaults())
                 {
-                    context.Writer.WritePropertyName("TokenDuration");
-                    context.Writer.Write(publicRequest.TokenDuration);
+                    context.Writer.WritePropertyName("UseDefaults");
+                    context.Writer.Write(publicRequest.UseDefaults);
                 }
 
         
@@ -123,9 +109,9 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetOpenIdTokenForDeveloperIdentityRequestMarshaller _instance = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();        
+        private static SetPrincipalTagAttributeMapRequestMarshaller _instance = new SetPrincipalTagAttributeMapRequestMarshaller();        
 
-        internal static GetOpenIdTokenForDeveloperIdentityRequestMarshaller GetInstance()
+        internal static SetPrincipalTagAttributeMapRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +119,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetOpenIdTokenForDeveloperIdentityRequestMarshaller Instance
+        public static SetPrincipalTagAttributeMapRequestMarshaller Instance
         {
             get
             {

@@ -700,7 +700,7 @@ namespace Amazon.CognitoIdentity
         /// </para>
         /// </summary>
         /// <param name="identityId">A unique identifier in the format REGION:GUID.</param>
-        /// <param name="logins">A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier". Logins should not be specified when trying to get credentials for an unauthenticated identity. The Logins parameter is required when using identities associated with external identity providers such as FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</param>
+        /// <param name="logins">A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier". Logins should not be specified when trying to get credentials for an unauthenticated identity. The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</param>
         /// 
         /// <returns>The response from the GetCredentialsForIdentity service method, as returned by CognitoIdentity.</returns>
         /// <exception cref="Amazon.CognitoIdentity.Model.ExternalServiceException">
@@ -831,7 +831,7 @@ namespace Amazon.CognitoIdentity
         /// </para>
         /// </summary>
         /// <param name="identityId">A unique identifier in the format REGION:GUID.</param>
-        /// <param name="logins">A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier". Logins should not be specified when trying to get credentials for an unauthenticated identity. The Logins parameter is required when using identities associated with external identity providers such as FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</param>
+        /// <param name="logins">A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier". Logins should not be specified when trying to get credentials for an unauthenticated identity. The Logins parameter is required when using identities associated with external identity providers such as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1152,7 +1152,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// The OpenId token is valid for 10 minutes.
+        /// The OpenID token is valid for 10 minutes.
         /// </para>
         ///  
         /// <para>
@@ -1193,7 +1193,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// The OpenId token is valid for 10 minutes.
+        /// The OpenID token is valid for 10 minutes.
         /// </para>
         ///  
         /// <para>
@@ -1235,7 +1235,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// The OpenId token is valid for 10 minutes.
+        /// The OpenID token is valid for 10 minutes.
         /// </para>
         ///  
         /// <para>
@@ -1280,7 +1280,7 @@ namespace Amazon.CognitoIdentity
         /// 
         ///  
         /// <para>
-        /// The OpenId token is valid for 10 minutes.
+        /// The OpenID token is valid for 10 minutes.
         /// </para>
         ///  
         /// <para>
@@ -1424,6 +1424,66 @@ namespace Amazon.CognitoIdentity
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetOpenIdTokenForDeveloperIdentity">REST API Reference for GetOpenIdTokenForDeveloperIdentity Operation</seealso>
         Task<GetOpenIdTokenForDeveloperIdentityResponse> GetOpenIdTokenForDeveloperIdentityAsync(GetOpenIdTokenForDeveloperIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetPrincipalTagAttributeMap
+
+
+        /// <summary>
+        /// Use <code>GetPrincipalTagAttributeMap</code> to list all mappings between <code>PrincipalTags</code>
+        /// and user attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPrincipalTagAttributeMap service method.</param>
+        /// 
+        /// <returns>The response from the GetPrincipalTagAttributeMap service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetPrincipalTagAttributeMap">REST API Reference for GetPrincipalTagAttributeMap Operation</seealso>
+        GetPrincipalTagAttributeMapResponse GetPrincipalTagAttributeMap(GetPrincipalTagAttributeMapRequest request);
+
+
+
+        /// <summary>
+        /// Use <code>GetPrincipalTagAttributeMap</code> to list all mappings between <code>PrincipalTags</code>
+        /// and user attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPrincipalTagAttributeMap service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPrincipalTagAttributeMap service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetPrincipalTagAttributeMap">REST API Reference for GetPrincipalTagAttributeMap Operation</seealso>
+        Task<GetPrincipalTagAttributeMapResponse> GetPrincipalTagAttributeMapAsync(GetPrincipalTagAttributeMapRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2004,13 +2064,73 @@ namespace Amazon.CognitoIdentity
 
         #endregion
         
+        #region  SetPrincipalTagAttributeMap
+
+
+        /// <summary>
+        /// You can use this operation to use default (username and clientID) attribute or custom
+        /// attribute mappings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetPrincipalTagAttributeMap service method.</param>
+        /// 
+        /// <returns>The response from the SetPrincipalTagAttributeMap service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetPrincipalTagAttributeMap">REST API Reference for SetPrincipalTagAttributeMap Operation</seealso>
+        SetPrincipalTagAttributeMapResponse SetPrincipalTagAttributeMap(SetPrincipalTagAttributeMapRequest request);
+
+
+
+        /// <summary>
+        /// You can use this operation to use default (username and clientID) attribute or custom
+        /// attribute mappings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetPrincipalTagAttributeMap service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SetPrincipalTagAttributeMap service method, as returned by CognitoIdentity.</returns>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InternalErrorException">
+        /// Thrown when the service encounters an error during processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.InvalidParameterException">
+        /// Thrown for missing or bad input parameter(s).
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.NotAuthorizedException">
+        /// Thrown when a user is not authorized to access the requested resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.ResourceNotFoundException">
+        /// Thrown when the requested resource (for example, a dataset or record) does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentity.Model.TooManyRequestsException">
+        /// Thrown when a request is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetPrincipalTagAttributeMap">REST API Reference for SetPrincipalTagAttributeMap Operation</seealso>
+        Task<SetPrincipalTagAttributeMapResponse> SetPrincipalTagAttributeMapAsync(SetPrincipalTagAttributeMapRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  TagResource
 
 
         /// <summary>
-        /// Assigns a set of tags to an Amazon Cognito identity pool. A tag is a label that you
-        /// can use to categorize and manage identity pools in different ways, such as by purpose,
-        /// owner, environment, or other criteria.
+        /// Assigns a set of tags to the specified Amazon Cognito identity pool. A tag is a label
+        /// that you can use to categorize and manage identity pools in different ways, such as
+        /// by purpose, owner, environment, or other criteria.
         /// 
         ///  
         /// <para>
@@ -2057,9 +2177,9 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Assigns a set of tags to an Amazon Cognito identity pool. A tag is a label that you
-        /// can use to categorize and manage identity pools in different ways, such as by purpose,
-        /// owner, environment, or other criteria.
+        /// Assigns a set of tags to the specified Amazon Cognito identity pool. A tag is a label
+        /// that you can use to categorize and manage identity pools in different ways, such as
+        /// by purpose, owner, environment, or other criteria.
         /// 
         ///  
         /// <para>
@@ -2276,8 +2396,8 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Removes the specified tags from an Amazon Cognito identity pool. You can use this
-        /// action up to 5 times per second, per account
+        /// Removes the specified tags from the specified Amazon Cognito identity pool. You can
+        /// use this action up to 5 times per second, per account
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -2303,8 +2423,8 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Removes the specified tags from an Amazon Cognito identity pool. You can use this
-        /// action up to 5 times per second, per account
+        /// Removes the specified tags from the specified Amazon Cognito identity pool. You can
+        /// use this action up to 5 times per second, per account
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

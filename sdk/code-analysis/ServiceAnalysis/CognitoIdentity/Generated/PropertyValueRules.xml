@@ -155,6 +155,28 @@
     <pattern>[\w-]+:[0-9a-f-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.GetPrincipalTagAttributeMapRequest.IdentityPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>[\w-]+:[0-9a-f-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.GetPrincipalTagAttributeMapRequest.IdentityProviderName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.GetPrincipalTagAttributeMapResponse.IdentityPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>[\w-]+:[0-9a-f-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.GetPrincipalTagAttributeMapResponse.IdentityProviderName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.ListIdentitiesRequest.IdentityPoolId</property>
     <min>1</min>
     <max>55</max>
@@ -278,6 +300,28 @@
     <min>1</min>
     <max>55</max>
     <pattern>[\w-]+:[0-9a-f-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.SetPrincipalTagAttributeMapRequest.IdentityPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>[\w-]+:[0-9a-f-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.SetPrincipalTagAttributeMapRequest.IdentityProviderName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.SetPrincipalTagAttributeMapResponse.IdentityPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>[\w-]+:[0-9a-f-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.SetPrincipalTagAttributeMapResponse.IdentityProviderName</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.TagResourceRequest.ResourceArn</property>

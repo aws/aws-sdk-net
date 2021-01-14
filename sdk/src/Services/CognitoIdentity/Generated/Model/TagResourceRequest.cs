@@ -30,9 +30,9 @@ namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Assigns a set of tags to an Amazon Cognito identity pool. A tag is a label that you
-    /// can use to categorize and manage identity pools in different ways, such as by purpose,
-    /// owner, environment, or other criteria.
+    /// Assigns a set of tags to the specified Amazon Cognito identity pool. A tag is a label
+    /// that you can use to categorize and manage identity pools in different ways, such as
+    /// by purpose, owner, environment, or other criteria.
     /// 
     ///  
     /// <para>
@@ -63,7 +63,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the identity pool to assign the tags to.
+        /// The Amazon Resource Name (ARN) of the identity pool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
