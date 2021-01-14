@@ -175,6 +175,22 @@ namespace Amazon.Pinpoint
     {
 
         /// <summary>
+        /// Constant AFTER for AttributeType
+        /// </summary>
+        public static readonly AttributeType AFTER = new AttributeType("AFTER");
+        /// <summary>
+        /// Constant BEFORE for AttributeType
+        /// </summary>
+        public static readonly AttributeType BEFORE = new AttributeType("BEFORE");
+        /// <summary>
+        /// Constant BETWEEN for AttributeType
+        /// </summary>
+        public static readonly AttributeType BETWEEN = new AttributeType("BETWEEN");
+        /// <summary>
+        /// Constant CONTAINS for AttributeType
+        /// </summary>
+        public static readonly AttributeType CONTAINS = new AttributeType("CONTAINS");
+        /// <summary>
         /// Constant EXCLUSIVE for AttributeType
         /// </summary>
         public static readonly AttributeType EXCLUSIVE = new AttributeType("EXCLUSIVE");
@@ -182,6 +198,10 @@ namespace Amazon.Pinpoint
         /// Constant INCLUSIVE for AttributeType
         /// </summary>
         public static readonly AttributeType INCLUSIVE = new AttributeType("INCLUSIVE");
+        /// <summary>
+        /// Constant ON for AttributeType
+        /// </summary>
+        public static readonly AttributeType ON = new AttributeType("ON");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
