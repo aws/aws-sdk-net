@@ -1,3 +1,7 @@
+### 3.5.91.1 (2021-01-15 19:24 UTC)
+* SimpleNotificationService (3.5.1.31)
+	* Documentation updates for Amazon SNS.
+
 ### 3.5.91.0 (2021-01-14 19:13 UTC)
 * CognitoIdentity (3.5.2.0)
 	* Add Attributes For Access Control support for Amazon Cognito Identity Pools to facilitate access to AWS resources based on attributes from social and corporate identity providers
