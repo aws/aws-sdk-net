@@ -40,6 +40,12 @@ namespace Amazon.SimpleNotificationService.Model
     /// see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing
     /// to a mobile phone</a> in the <i>Amazon SNS Developer Guide</i>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// To use this operation, you must grant the Amazon SNS service principal (<code>sns.amazonaws.com</code>)
+    /// permission to perform the <code>s3:ListBucket</code> action. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SetSMSAttributesRequest : AmazonSimpleNotificationServiceRequest
     {

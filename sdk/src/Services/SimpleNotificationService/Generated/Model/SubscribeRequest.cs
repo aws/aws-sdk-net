@@ -61,8 +61,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// Instantiates SubscribeRequest with the parameterized properties
         /// </summary>
         /// <param name="topicArn">The ARN of the topic you want to subscribe to.</param>
-        /// <param name="protocol">The protocol you want to use. Supported protocols include: <ul> <li>  <code>http</code> – delivery of JSON-encoded message via HTTP POST </li> <li>  <code>https</code> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <code>email</code> – delivery of message via SMTP </li> <li>  <code>email-json</code> – delivery of JSON-encoded message via SMTP </li> <li>  <code>sms</code> – delivery of message via SMS </li> <li>  <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device. </li> <li>  <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function. </li> </ul></param>
-        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>  </li> <li> For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>  </li> <li> For the <code>email</code> protocol, the endpoint is an email address </li> <li> For the <code>email-json</code> protocol, the endpoint is an email address </li> <li> For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device </li> <li> For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue </li> <li> For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda function. </li> </ul></param>
+        /// <param name="protocol">The protocol that you want to use. Supported protocols include: <ul> <li>  <code>http</code> – delivery of JSON-encoded message via HTTP POST </li> <li>  <code>https</code> – delivery of JSON-encoded message via HTTPS POST </li> <li>  <code>email</code> – delivery of message via SMTP </li> <li>  <code>email-json</code> – delivery of JSON-encoded message via SMTP </li> <li>  <code>sms</code> – delivery of message via SMS </li> <li>  <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS queue </li> <li>  <code>application</code> – delivery of JSON-encoded message to an EndpointArn for a mobile app and device </li> <li>  <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function </li> <li>  <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream. </li> </ul></param>
+        /// <param name="endpoint">The endpoint that you want to receive notifications. Endpoints vary by protocol: <ul> <li> For the <code>http</code> protocol, the (public) endpoint is a URL beginning with <code>http://</code>. </li> <li> For the <code>https</code> protocol, the (public) endpoint is a URL beginning with <code>https://</code>. </li> <li> For the <code>email</code> protocol, the endpoint is an email address. </li> <li> For the <code>email-json</code> protocol, the endpoint is an email address. </li> <li> For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled device. </li> <li> For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue. </li> <li> For the <code>application</code> protocol, the endpoint is the EndpointArn of a mobile app and device. </li> <li> For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function. </li> <li> For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream. </li> </ul></param>
         public SubscribeRequest(string topicArn, string protocol, string endpoint)
         {
             _topicArn = topicArn;
@@ -104,6 +104,29 @@ namespace Amazon.SimpleNotificationService.Model
         /// (for example, when the service that powers the subscribed endpoint becomes unavailable)
         /// are held in the dead-letter queue for further analysis or reprocessing.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following attribute applies only to Amazon Kinesis Data Firehose delivery stream
+        /// subscriptions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Permission to write to the Kinesis Data Firehose delivery stream
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon SNS listed as a trusted entity
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery
+        /// stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-kinesis-subscriber.html">Fanout
+        /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -126,29 +149,29 @@ namespace Amazon.SimpleNotificationService.Model
         ///  <ul> <li> 
         /// <para>
         /// For the <code>http</code> protocol, the (public) endpoint is a URL beginning with
-        /// <code>http://</code> 
+        /// <code>http://</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For the <code>https</code> protocol, the (public) endpoint is a URL beginning with
-        /// <code>https://</code> 
+        /// <code>https://</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>email</code> protocol, the endpoint is an email address
+        /// For the <code>email</code> protocol, the endpoint is an email address.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>email-json</code> protocol, the endpoint is an email address
+        /// For the <code>email-json</code> protocol, the endpoint is an email address.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For the <code>sms</code> protocol, the endpoint is a phone number of an SMS-enabled
-        /// device
+        /// device.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue
+        /// For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -157,8 +180,12 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>lambda</code> protocol, the endpoint is the ARN of an Amazon Lambda
-        /// function.
+        /// For the <code>lambda</code> protocol, the endpoint is the ARN of an AWS Lambda function.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
+        /// Data Firehose delivery stream.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -177,7 +204,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol you want to use. Supported protocols include:
+        /// The protocol that you want to use. Supported protocols include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -206,11 +233,16 @@ namespace Amazon.SimpleNotificationService.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>application</code> – delivery of JSON-encoded message to an EndpointArn for
-        /// a mobile app and device.
+        /// a mobile app and device
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda function.
+        ///  <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda function
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data
+        /// Firehose delivery stream.
         /// </para>
         ///  </li> </ul>
         /// </summary>

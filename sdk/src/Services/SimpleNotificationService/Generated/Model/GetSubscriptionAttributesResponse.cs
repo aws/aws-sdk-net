@@ -93,6 +93,29 @@ namespace Amazon.SimpleNotificationService.Model
         /// <para>
         ///  <code>TopicArn</code> – The topic ARN that the subscription is associated with.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following attribute applies only to Amazon Kinesis Data Firehose delivery stream
+        /// subscriptions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Permission to write to the Kinesis Data Firehose delivery stream
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon SNS listed as a trusted entity
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery
+        /// stream subscriptions. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-kinesis-subscriber.html">Fanout
+        /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> Attributes
