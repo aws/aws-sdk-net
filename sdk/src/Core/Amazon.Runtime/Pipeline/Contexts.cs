@@ -51,6 +51,8 @@ namespace Amazon.Runtime
 
         bool CSMEnabled { get; }
         bool IsLastExceptionRetryable { get; set; }
+
+        Guid InvocationId { get; }
     }
 
     public interface IResponseContext
@@ -102,6 +104,7 @@ namespace Amazon.Runtime.Internal
             this.clientSigner = clientSigner;
             this.Metrics = new RequestMetrics();
             this.Metrics.IsEnabled = enableMetrics;
+            this.InvocationId = Guid.NewGuid();
         }
 
         public IRequest Request { get; set; }
@@ -163,6 +166,8 @@ namespace Amazon.Runtime.Internal
         /// was retryable or not.
         /// </summary>
         public bool IsLastExceptionRetryable { get; set; }
+
+        public Guid InvocationId { get; private set; }
     }
 
     public class AsyncRequestContext : RequestContext, IAsyncRequestContext

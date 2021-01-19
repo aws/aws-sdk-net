@@ -52,7 +52,9 @@ namespace Amazon.Runtime.Internal.Auth
 
         private static IEnumerable<string> _headersToIgnoreWhenSigning = new HashSet<string>(StringComparer.OrdinalIgnoreCase) {
             HeaderKeys.XAmznTraceIdHeader,
-            HeaderKeys.TransferEncodingHeader
+            HeaderKeys.TransferEncodingHeader,
+            HeaderKeys.AmzSdkInvocationId,
+            HeaderKeys.AmzSdkRequest
         };
 
         public AWS4Signer()
