@@ -30,6 +30,7 @@ namespace Amazon.Runtime
     internal class DefaultInstanceProfileAWSCredentials : AWSCredentials, IDisposable
     {
         private static object instanceLock = new object();
+        private ReaderWriterLockSlim credentialsLock = new ReaderWriterLockSlim(); // Lock to control getting credentials across multiple threads.
 
         private Timer credentialsRetrieverTimer;
         private ImmutableCredentials lastRetrievedCredentials;
@@ -38,8 +39,10 @@ namespace Amazon.Runtime
         private static readonly TimeSpan neverTimespan = TimeSpan.FromMilliseconds(-1);
         private static readonly TimeSpan refreshRate = TimeSpan.FromMinutes(2); // EC2 refreshes credentials 5 min before expiration
         private const string FailedToGetCredentialsMessage = "Failed to retrieve credentials from EC2 Instance Metadata Service.";
+        private static readonly TimeSpan credentialsLockTimeout = TimeSpan.FromMilliseconds(5000);
 
         private static DefaultInstanceProfileAWSCredentials _instance;
+
         public static DefaultInstanceProfileAWSCredentials Instance
         {
             get
@@ -53,7 +56,6 @@ namespace Amazon.Runtime
                         if (_instance == null)
                         {
                             _instance = new DefaultInstanceProfileAWSCredentials();
-
                         }
                     }
                 }
@@ -68,7 +70,7 @@ namespace Amazon.Runtime
             if (!EC2InstanceMetadata.IsIMDSEnabled) return;
 
             logger = Logger.GetLogger(typeof(DefaultInstanceProfileAWSCredentials));
-
+            
             credentialsRetrieverTimer = new Timer(RenewCredentials, null, TimeSpan.Zero, neverTimespan);
         }
 
@@ -79,14 +81,43 @@ namespace Amazon.Runtime
         public override ImmutableCredentials GetCredentials()
         {
             CheckIsIMDSEnabled();
+            ImmutableCredentials credentials = null;
 
-            var credentials = lastRetrievedCredentials?.Copy();
-
-            // If there's no credentials cached, hit IMDS directly.
-            if (credentials == null)
+            // Try to acquire read lock. The thread would be blocked if another thread has write lock.
+            if (credentialsLock.TryEnterReadLock(credentialsLockTimeout))
             {
-                credentials = FetchCredentials();
-                lastRetrievedCredentials = credentials;
+                try
+                {
+                    credentials = lastRetrievedCredentials?.Copy();
+
+                    if (credentials != null)
+                    {
+                        return credentials;
+                    }
+                }
+                finally
+                {
+                    credentialsLock.ExitReadLock();
+                }
+            }
+
+            // If there's no credentials cached, hit IMDS directly. Try to acquire write lock.
+            if (credentialsLock.TryEnterWriteLock(credentialsLockTimeout))
+            {
+                try
+                {
+                    // Check for last retrieved credentials again in case other thread might have already fetched it.
+                    credentials = lastRetrievedCredentials?.Copy();
+                    if (credentials == null)
+                    {
+                        credentials = FetchCredentials();
+                        lastRetrievedCredentials = credentials;
+                    }
+                }
+                finally
+                {
+                    credentialsLock.ExitWriteLock();
+                }
             }
 
             if (credentials == null)
@@ -97,7 +128,7 @@ namespace Amazon.Runtime
             return credentials;
         }
 
-#if AWS_ASYNC_API   
+#if AWS_ASYNC_API
         /// <summary>
         /// Returns a copy of the most recent instance profile credentials.
         /// </summary>
@@ -106,7 +137,7 @@ namespace Amazon.Runtime
             return Task.FromResult<ImmutableCredentials>(GetCredentials());
         }
 #endif
-        #endregion
+#endregion
 
         #region Private members
         private void RenewCredentials(object unused)
@@ -165,9 +196,9 @@ namespace Amazon.Runtime
             // keep this behavior consistent with GetObjectFromResponse case.
             if (!EC2InstanceMetadata.IsIMDSEnabled) throw new AmazonServiceException("Unable to retrieve credentials.");
         }
-        #endregion
+#endregion
 
-        #region IDisposable Support
+#region IDisposable Support
         private bool isDisposed = false;
 
         protected virtual void Dispose(bool disposing)
@@ -196,6 +227,6 @@ namespace Amazon.Runtime
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-        #endregion
+#endregion
     }
 }
