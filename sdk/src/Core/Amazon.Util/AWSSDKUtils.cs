@@ -577,6 +577,16 @@ namespace Amazon.Util
             return new DateTime(seconds * 10000000L + EPOCH_START.Ticks, DateTimeKind.Utc).ToLocalTime();
         }
 
+        /// <summary>
+        /// Utility method for converting Unix epoch milliseconds to DateTime structure.
+        /// </summary>
+        /// <param name="milliseconds">The number of milliseconds since January 1, 1970.</param>
+        /// <returns>Converted DateTime structure</returns>
+        public static DateTime ConvertFromUnixEpochMilliseconds(long milliseconds)
+        {
+            return new DateTime(milliseconds * 10000L + EPOCH_START.Ticks, DateTimeKind.Utc).ToLocalTime();
+        }
+
         public static int ConvertToUnixEpochSeconds(DateTime dateTime)
         {
             return Convert.ToInt32(GetTimeSpanInTicks(dateTime).TotalSeconds);

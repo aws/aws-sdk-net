@@ -48,6 +48,10 @@ namespace Amazon.Runtime.CredentialManagement
         private const string S3RegionalEndpointField = "s3_us_east_1_regional_endpoint";
         private const string RetryModeField = "retry_mode";
         private const string MaxAttemptsField = "max_attempts";
+        private const string SsoAccountId = "sso_account_id";
+        private const string SsoRegion = "sso_region";
+        private const string SsoRoleName = "sso_role_name";
+        private const string SsoStartUrl = "sso_start_url";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -60,7 +64,11 @@ namespace Amazon.Runtime.CredentialManagement
             S3UseArnRegionField,
             S3RegionalEndpointField,
             RetryModeField,
-            MaxAttemptsField
+            MaxAttemptsField,
+            SsoAccountId,
+            SsoRegion,
+            SsoRoleName,
+            SsoStartUrl,
         };
 
         /// <summary>
@@ -84,7 +92,10 @@ namespace Amazon.Runtime.CredentialManagement
                 CredentialProfileType.AssumeRoleCredentialSourceSessionName,
                 CredentialProfileType.AssumeRoleExternalSessionName,
                 CredentialProfileType.AssumeRoleExternalMFASessionName,
-                CredentialProfileType.AssumeRoleMFASessionName
+                CredentialProfileType.AssumeRoleMFASessionName,
+#if !BCL35 && !NETSTANDARD13
+                CredentialProfileType.SSO,
+#endif
             };
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
@@ -107,7 +118,13 @@ namespace Amazon.Runtime.CredentialManagement
                     { "UserIdentity", null },
 #endif
                     { "CredentialProcess" , "credential_process" },
-                    { "WebIdentityTokenFile", "web_identity_token_file" }
+                    { "WebIdentityTokenFile", "web_identity_token_file" },
+#if !BCL35 && !NETSTANDARD13
+                    { nameof(CredentialProfileOptions.SsoAccountId), SsoAccountId },
+                    { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
+                    { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },
+                    { nameof(CredentialProfileOptions.SsoStartUrl), SsoStartUrl },
+#endif
                 }
             );
 
@@ -410,7 +427,7 @@ namespace Amazon.Runtime.CredentialManagement
                         profile = null;
                         return false;
                     }
-#else 
+#else
                     if (!Enum.TryParse<StsRegionalEndpointsValue>(stsRegionalEndpointsString, true, out var stsRegionalEndpointsTemp))
                     {
                         _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string regional/legacy is expected.", stsRegionalEndpointsString, StsRegionalEndpointsField, profileName);
@@ -448,7 +465,7 @@ namespace Amazon.Runtime.CredentialManagement
                         profile = null;
                         return false;
                     }
-#else 
+#else
                     if (!Enum.TryParse<S3UsEast1RegionalEndpointValue>(s3RegionalEndpointString, true, out var s3RegionalEndpointTemp))
                     {
                         _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string regional/legacy is expected.", s3RegionalEndpointString, S3RegionalEndpointField, profileName);
@@ -473,7 +490,7 @@ namespace Amazon.Runtime.CredentialManagement
                         profile = null;
                         return false;
                     }
-#else 
+#else
                     if (!Enum.TryParse<RequestRetryMode>(retryModeString, true, out var retryModeTemp))
                     {
                         _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string legacy/standard/adaptive is expected.", retryModeString, RetryModeField, profileName);

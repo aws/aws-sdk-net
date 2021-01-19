@@ -34,7 +34,10 @@ namespace Amazon.Runtime.CredentialManagement
                 CredentialProfileType.SAMLRoleUserIdentity,
 #endif
                 CredentialProfileType.AssumeRoleExternalMFA,
-                CredentialProfileType.AssumeRoleMFA
+                CredentialProfileType.AssumeRoleMFA,
+#if !BCL35 && !NETSTANDARD13
+                CredentialProfileType.SSO,
+#endif
             };
 
         private const string RoleSessionNamePrefix = "aws-dotnet-sdk-session-";
@@ -153,6 +156,18 @@ namespace Amazon.Runtime.CredentialManagement
                             "Please use an assume role profile that doesn't require an MFA, or a different type of profile.", profileName);
                     throw new InvalidOperationException(mfaMessage);
                 }
+#if !BCL35 && !NETSTANDARD13
+                else if (profileType == CredentialProfileType.SSO)
+                {
+                    var ssoMessage = profileName == null
+                        ? $"The credential options represent {nameof(SSOAWSCredentials)}.  This is not allowed here.  " +
+                          "Please use a different type of credentials."
+                        : String.Format(CultureInfo.InvariantCulture,
+                            "The profile [{0}] is an SSO profile.  This type of profile is not allowed here.  " +
+                            "Please use a different type of profile.", profileName);
+                    throw new InvalidOperationException(ssoMessage);
+                }
+#endif
 #if !NETSTANDARD13
                 else if (profileType == CredentialProfileType.SAMLRoleUserIdentity)
                 {
@@ -252,6 +267,17 @@ namespace Amazon.Runtime.CredentialManagement
                     case CredentialProfileType.AssumeRoleWithWebIdentity:
                     case CredentialProfileType.AssumeRoleWithWebIdentitySessionName:
                         return new AssumeRoleWithWebIdentityCredentials(options.WebIdentityTokenFile, options.RoleArn, options.RoleSessionName);
+#if !BCL35 && !NETSTANDARD13
+                    case CredentialProfileType.SSO:
+                    {
+                        var ssoCredentialsOptions = new SSOAWSCredentialsOptions();
+                        return new SSOAWSCredentials(
+                            options.SsoAccountId, options.SsoRegion,
+                            options.SsoRoleName, options.SsoStartUrl,
+                            ssoCredentialsOptions
+                        );
+                    }
+#endif
 #if !NETSTANDARD13
                     case CredentialProfileType.SAMLRole:
                     case CredentialProfileType.SAMLRoleUserIdentity:

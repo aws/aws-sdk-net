@@ -66,6 +66,14 @@ namespace Amazon.Util
 
 
 
+            public byte[] ComputeSHA1Hash(byte[] data)
+            {
+                using (var sha1 = new SHA1Managed())
+                {
+                    return sha1.ComputeHash(data);
+                }
+            }
+
             public byte[] ComputeSHA256Hash(byte[] data)
             {
                 return SHA256HashAlgorithmInstance.ComputeHash(data);

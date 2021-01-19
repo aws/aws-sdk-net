@@ -219,5 +219,17 @@ namespace AWSSDK.UnitTests
                 Assert.IsInstanceOfType(e, typeof(ArgumentException));
             }
         }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        public void ConvertFromUnixEpochMilliseconds()
+        {
+            // Sample UTC value: 9/8/2020 18:48:34.970
+            var expectedDateTime = new DateTime(2020, 9, 8, 18, 48, 34, DateTimeKind.Utc).AddMilliseconds(970);
+            var dateTime = AWSSDKUtils.ConvertFromUnixEpochMilliseconds(1599590914970).ToUniversalTime();
+            
+            Assert.AreEqual(expectedDateTime, dateTime);
+        }
     }
 }

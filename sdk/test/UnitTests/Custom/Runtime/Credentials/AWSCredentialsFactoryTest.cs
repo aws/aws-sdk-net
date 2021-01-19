@@ -24,6 +24,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml.Serialization;
 
 namespace AWSSDK.UnitTests
 {
@@ -41,6 +42,9 @@ namespace AWSSDK.UnitTests
             "Please use an assume role profile that doesn't require an MFA, or a different type of profile.";
         private const string UserIdentityCallbackErrorFormat = "The profile [{0}] is a SAML role profile that specifies a user identity.  This type of profile is not allowed here.  " +
             "Please use a SAML role profile without an explicit user identity, or a different type of profile.";
+        private const string SsoErrorFormat =
+            "The profile [{0}] is an SSO profile.  This type of profile is not allowed here.  " +
+            "Please use a different type of profile.";
 
         private const string InvalidErrorAnonymous = "The credential options provided are not valid.  Please ensure the options contain a valid combination of properties.";
         private const string SourceErrorFormatAnonymous = "Error reading source profile [{0}] for the credential options provided.";
@@ -48,6 +52,10 @@ namespace AWSSDK.UnitTests
             "Please use credential options for AssumeRoleAWSCredentials that don't require an MFA, or a different type of credentials.";
         private const string UserIdentityCallbackErrorAnonymous = "The credential options represent FederatedAWSCredentials that specify a user identity.  This is not allowed here.  " +
             "Please use credential options for FederatedAWSCredentials without an explicit user identity, or a different type of credentials.";
+        private const string SsoErrorAnonymous =
+            "The credential options represent SSOAWSCredentials.  This is not allowed here.  " +
+            "Please use a different type of credentials.";
+
         private const string CredentialSourceErrorFormat = "Error reading credential source [{0}] for profile [{1}].";
         private const string InvalidCredentialSourceErrorFormat = "Credential source [{0}] is invalid.";
         private const string IMDSNotEnabledError = "Unable to retrieve credentials.";
@@ -131,6 +139,34 @@ namespace AWSSDK.UnitTests
                 UserIdentity = "user_identity"
             });
 
+#if !BCL35 && !NETSTANDARD13
+        private static readonly CredentialProfile SsoProfile =
+            new CredentialProfile("sso_profile", new CredentialProfileOptions
+            {
+                SsoAccountId = "account_id",
+                SsoRegion = "region",
+                SsoRoleName = "role_name",
+                SsoStartUrl = "start_url",
+            });
+
+        private static readonly CredentialProfile SsoProfileMissingFields =
+            new CredentialProfile("sso_profile_missing_fields", new CredentialProfileOptions
+            {
+                SsoStartUrl = "start_url",
+            });
+
+        private static readonly CredentialProfile SsoProfileMixedFields =
+            new CredentialProfile("sso_profile_mixed_fields", new CredentialProfileOptions
+            {
+                AccessKey = "aws_access_key_id",
+                SecretKey = "aws_secret_access_key",
+                SsoAccountId = "account_id",
+                SsoRegion = "region",
+                SsoRoleName = "role_name",
+                SsoStartUrl = "start_url",
+            });
+#endif
+
         private static readonly CredentialProfile AssumeRoleProfileSAMLRoleSource =
             new CredentialProfile("assume_role_profile_source_not_basic_or_session", new CredentialProfileOptions
             {
@@ -201,6 +237,11 @@ namespace AWSSDK.UnitTests
             ProfileStore.Profiles.Add(AssumeRoleChainedAssumeRoleSource.Name, AssumeRoleChainedAssumeRoleSource);
             ProfileStore.Profiles.Add(AssumeRoleLoopedAssumeRoleSource1.Name, AssumeRoleLoopedAssumeRoleSource1);
             ProfileStore.Profiles.Add(AssumeRoleLoopedAssumeRoleSource2.Name, AssumeRoleLoopedAssumeRoleSource2);
+#if !BCL35 && !NETSTANDARD13
+            ProfileStore.Profiles.Add(SsoProfile.Name, SsoProfile);
+            ProfileStore.Profiles.Add(SsoProfileMissingFields.Name, SsoProfileMissingFields);
+            ProfileStore.Profiles.Add(SsoProfileMixedFields.Name, SsoProfileMixedFields);
+#endif
         }
 
         private static readonly BasicAWSCredentials BasicCredentials =
@@ -236,6 +277,18 @@ namespace AWSSDK.UnitTests
 
         private static readonly AssumeRoleAWSCredentials AssumeRoleChainedAssumeRoleCredentials =
             new AssumeRoleAWSCredentials(AssumeRoleCredentialsBasicSource, "second_role_arn", "role_session_name");
+
+#if !BCL35 && !NETSTANDARD13
+        private static readonly SSOAWSCredentials SsoCredentials =
+            new SSOAWSCredentials(
+                SsoProfile.Options.SsoAccountId,
+                SsoProfile.Options.SsoRegion,
+                SsoProfile.Options.SsoRoleName,
+                SsoProfile.Options.SsoStartUrl,
+                new SSOAWSCredentialsOptions()
+                {
+                });
+#endif
 
         private static readonly SAMLEndpoint SomeSAMLEndpoint = new SAMLEndpoint("endpoint_name", new Uri("https://samlendpoint.com"));
 
@@ -422,6 +475,40 @@ namespace AWSSDK.UnitTests
             }, typeof(InvalidOperationException), string.Format(UserIdentityCallbackErrorFormat, SAMLRoleUserIdentityProfile.Name));
         }
 
+#if !BCL35 && !NETSTANDARD13
+        [TestMethod]
+        public void GetSsoCredentialsNoCallback()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                AWSCredentialsFactory.GetAWSCredentials(SsoProfile, ProfileStore, true);
+            }, typeof(InvalidOperationException), string.Format(SsoErrorFormat, SsoProfile.Name));
+        }
+
+        [TestMethod]
+        public void GetSsoCredentials()
+        {
+            AssertSSOCredentialsAreEqual(
+                SsoCredentials,
+                AWSCredentialsFactory.GetAWSCredentials(SsoProfile, ProfileStore));
+        }
+
+        [TestMethod]
+        public void GetSsoCredentialsWithMissingFields()
+        {
+            var credentials = AWSCredentialsFactory.GetAWSCredentials(SsoProfileMissingFields, ProfileStore);
+            Assert.IsInstanceOfType(credentials, typeof(SSOAWSCredentials));
+        }
+
+        [TestMethod]
+        public void GetSsoCredentialsWithMixedFields()
+        {
+            AssertSSOCredentialsAreEqual(
+                SsoCredentials,
+                AWSCredentialsFactory.GetAWSCredentials(SsoProfileMixedFields, ProfileStore));
+        }
+#endif
+
         [TestMethod]
         public void GetAssumeRoleProfileSourceWithLoop()
         {
@@ -568,6 +655,17 @@ namespace AWSSDK.UnitTests
             }, typeof(InvalidOperationException), UserIdentityCallbackErrorAnonymous);
         }
 
+#if !BCL35 && !NETSTANDARD13
+        [TestMethod]
+        public void GetSsoCredentialsNoCallbackAnonymous()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                AWSCredentialsFactory.GetAWSCredentials(SsoProfile.Options, ProfileStore, true);
+            }, typeof(InvalidOperationException), SsoErrorAnonymous);
+        }
+#endif
+
         [TestMethod]
         public void GetAssumeRoleCredentialSourceEnvironment()
         {
@@ -669,6 +767,24 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expected.Options.Policy, actual.Options.Policy);
             Assert.AreEqual(expected.Options.ProxySettings, actual.Options.ProxySettings);
         }
+
+#if !BCL35 && !NETSTANDARD13
+        private void AssertSSOCredentialsAreEqual(SSOAWSCredentials expected, AWSCredentials actualAWSCredentials)
+        {
+            var actual = actualAWSCredentials as SSOAWSCredentials;
+            Assert.IsNotNull(actual);
+
+            Assert.AreEqual(expected.AccountId, actual.AccountId);
+            Assert.AreEqual(expected.Region, actual.Region);
+            Assert.AreEqual(expected.RoleName, actual.RoleName);
+            Assert.AreEqual(expected.StartUrl, actual.StartUrl);
+            Assert.AreEqual(expected.PreemptExpiryTime, actual.PreemptExpiryTime);
+            
+            Assert.AreEqual(expected.Options.ClientName, actual.Options.ClientName);
+            Assert.AreEqual(expected.Options.SsoVerificationCallback, actual.Options.SsoVerificationCallback);
+            Assert.AreEqual(expected.Options.ProxySettings, actual.Options.ProxySettings);
+        }
+#endif
 
         private void AssertFederatedCredentialsAreEqual(FederatedAWSCredentials expected, AWSCredentials actualAWSCredentials)
         {

@@ -14,6 +14,14 @@ namespace Amazon.Runtime.Internal
         public const string S3_ASSEMBLY_NAME = "AWSSDK.S3";
         public const string S3_SERVICE_CLASS_NAME = "Amazon.S3.AmazonS3Client";
 
+        public const string SSO_ASSEMBLY_NAME = "AWSSDK.SSO";
+        public const string SSO_SERVICE_CLASS_NAME = "Amazon.SSO.AmazonSSOClient";
+        public const string SSO_SERVICE_CONFIG_NAME = "Amazon.SSO.AmazonSSOConfig";
+
+        public const string SSO_OIDC_ASSEMBLY_NAME = "AWSSDK.SSOOIDC";
+        public const string SSO_OIDC_SERVICE_CLASS_NAME = "Amazon.SSOOIDC.AmazonSSOOIDCClient";
+        public const string SSO_OIDC_SERVICE_CONFIG_NAME = "Amazon.SSOOIDC.AmazonSSOOIDCConfig";
+
         public const string STS_ASSEMBLY_NAME = "AWSSDK.SecurityToken";
         public const string STS_SERVICE_CLASS_NAME = "Amazon.SecurityToken.AmazonSecurityTokenServiceClient";
         public const string STS_SERVICE_CONFIG_NAME = "Amazon.SecurityToken.AmazonSecurityTokenServiceConfig";

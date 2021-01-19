@@ -32,6 +32,8 @@ namespace Amazon.Util
         string HMACSign(string data, string key, SigningAlgorithm algorithmName);
         string HMACSign(byte[] data, string key, SigningAlgorithm algorithmName);
 
+        byte[] ComputeSHA1Hash(byte[] data);
+
         byte[] ComputeSHA256Hash(byte[] data);
         byte[] ComputeSHA256Hash(Stream steam);
 
