@@ -277,6 +277,16 @@ namespace Amazon.Runtime
         /// </summary>
         bool FastFailRequests { get;  }
 
+
+        /// <summary>
+        /// When set to true, the service client will use the  x-amz-user-agent
+        /// header instead of the User-Agent header to report version and
+        /// environment information to the AWS service.
+        ///
+        /// Note: This is especially useful when using a platform like WebAssembly
+        /// which doesn't allow to specify the User-Agent header.
+        /// </summary>
+        bool UseAlternateUserAgentHeader { get; }
 #if BCL
         /// <summary>
         /// Gets the TCP keep-alive values to use for service requests. Enabling TCP keep-alive sends periodic TCP keep-alive probe packets, to prevent disconnection due to 

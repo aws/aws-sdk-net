@@ -33,7 +33,6 @@ namespace Amazon.Runtime.Internal
         public override bool HandleException(IExecutionContext executionContext, WebException exception)
         {
             var requestContext = executionContext.RequestContext;
-            var responseContext = executionContext.ResponseContext;
             var httpErrorResponse = exception.Response as HttpWebResponse;
 
 
@@ -47,5 +46,13 @@ namespace Amazon.Runtime.Internal
             }
             throw new AmazonServiceException(message, exception);
         }
+
+
+#if AWS_ASYNC_API
+        public override System.Threading.Tasks.Task<bool> HandleExceptionAsync(IExecutionContext executionContext, WebException exception)
+        {
+            return System.Threading.Tasks.Task.FromResult(this.HandleException(executionContext, exception));
+        }
+#endif
     }
 }

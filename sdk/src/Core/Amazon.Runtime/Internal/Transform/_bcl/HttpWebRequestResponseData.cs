@@ -158,8 +158,10 @@ namespace Amazon.Runtime.Internal.Transform
         }
 #if AWS_ASYNC_API 
         public System.Threading.Tasks.Task<Stream> OpenResponseAsync()
-        {            
-            throw new NotSupportedException();
+        {
+            // There is no GetResponseStreamAsync on HttpWebResponse so just
+            // reuse the sync version.
+            return System.Threading.Tasks.Task.FromResult(OpenResponse());
         }
 #endif
         public void Dispose()

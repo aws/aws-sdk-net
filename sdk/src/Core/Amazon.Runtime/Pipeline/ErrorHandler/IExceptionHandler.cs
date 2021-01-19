@@ -34,6 +34,21 @@ namespace Amazon.Runtime
         /// This method can also throw a new exception to replace the original exception.
         /// </returns>
         bool Handle(IExecutionContext executionContext, Exception exception);
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Handles an exception for the given execution context.
+        /// </summary>
+        /// <param name="executionContext">The execution context, it contains the
+        /// request and response context.</param>
+        /// <param name="exception">The exception to handle.</param>
+        /// <returns>
+        /// Returns a boolean value which indicates if the original exception
+        /// should be rethrown.
+        /// This method can also throw a new exception to replace the original exception.
+        /// </returns>
+        System.Threading.Tasks.Task<bool> HandleAsync(IExecutionContext executionContext, Exception exception);
+#endif
     }
 
     /// <summary>

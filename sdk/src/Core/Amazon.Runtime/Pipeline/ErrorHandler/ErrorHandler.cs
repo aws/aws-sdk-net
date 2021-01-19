@@ -101,7 +101,7 @@ namespace Amazon.Runtime.Internal
             catch (Exception exception)
             {
                 DisposeReponse(executionContext.ResponseContext);
-                bool rethrowOriginalException = ProcessException(executionContext, exception);
+                bool rethrowOriginalException = await ProcessExceptionAsync(executionContext, exception).ConfigureAwait(false);
                 if (rethrowOriginalException)
                 {
                     throw;
@@ -211,5 +211,48 @@ namespace Amazon.Runtime.Internal
             // No match found, rethrow the original exception.
             return true;
         }
+
+#if AWS_ASYNC_API
+        /// <summary>
+        /// Processes an exception by invoking a matching exception handler
+        /// for the given exception.
+        /// </summary>
+        /// <param name="executionContext">The execution context, it contains the
+        /// request and response context.</param>
+        /// <param name="exception">The exception to be processed.</param>
+        /// <returns>
+        /// This method returns a boolean value which indicates if the original exception
+        /// should be rethrown.
+        /// This method can also throw a new exception that may be thrown by exception
+        /// processing by a matching exception handler.
+        /// </returns>
+        private async System.Threading.Tasks.Task<bool> ProcessExceptionAsync(IExecutionContext executionContext, Exception exception)
+        {
+            // Log the exception
+            this.Logger.Error(exception, "An exception of type {0} was handled in ErrorHandler.", exception.GetType().Name);
+            executionContext.RequestContext.Metrics.AddProperty(Metric.Exception, exception);
+
+            // Find the matching handler which can process the exception
+            // Start by checking if there is a matching handler for the specific exception type,
+            // if not check for handlers for it's base type till we find a match.
+            var exceptionType = exception.GetType();
+            var exceptionTypeInfo = TypeFactory.GetTypeInfo(exception.GetType());
+            do
+            {
+                IExceptionHandler exceptionHandler = null;
+
+                if (this.ExceptionHandlers.TryGetValue(exceptionType, out exceptionHandler))
+                {
+                    return await exceptionHandler.HandleAsync(executionContext, exception).ConfigureAwait(false);
+                }
+                exceptionType = exceptionTypeInfo.BaseType;
+                exceptionTypeInfo = TypeFactory.GetTypeInfo(exceptionTypeInfo.BaseType);
+
+            } while (exceptionType != typeof(Exception));
+
+            // No match found, rethrow the original exception.
+            return true;
+        }
+#endif
     }
 }
