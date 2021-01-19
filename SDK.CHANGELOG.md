@@ -1,3 +1,16 @@
+### 3.5.92.0 (2021-01-19 19:13 UTC)
+* ACMPCA (3.5.2.0)
+	* ACM Private CA is launching additional certificate templates and API parameters. This allows customers to create custom certificates for their identity and secure communication use cases.
+* Chime (3.5.3.0)
+	* Add support for specifying ChimeBearer header as part of the request for Amazon Chime SDK messaging APIs. Documentation updates.
+* ECS (3.5.3.0)
+	* This release adds support to include task definition metadata information such as registeredAt, deregisteredAt, registeredBy as part of DescribeTaskDefinition API.
+* Core 3.5.1.60
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.91.1 (2021-01-15 19:24 UTC)
 * SimpleNotificationService (3.5.1.31)
 	* Documentation updates for Amazon SNS.
