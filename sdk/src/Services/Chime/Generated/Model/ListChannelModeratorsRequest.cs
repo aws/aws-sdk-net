@@ -31,10 +31,18 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the ListChannelModerators operation.
     /// Lists all the moderators for a channel.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// of the user that makes the API call as the value in the header.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListChannelModeratorsRequest : AmazonChimeRequest
     {
         private string _channelArn;
+        private string _chimeBearer;
         private int? _maxResults;
         private string _nextToken;
 
@@ -55,6 +63,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetChannelArn()
         {
             return this._channelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChimeBearer. 
+        /// <para>
+        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChimeBearer
+        {
+            get { return this._chimeBearer; }
+            set { this._chimeBearer = value; }
+        }
+
+        // Check to see if ChimeBearer property is set
+        internal bool IsSetChimeBearer()
+        {
+            return this._chimeBearer != null;
         }
 
         /// <summary>

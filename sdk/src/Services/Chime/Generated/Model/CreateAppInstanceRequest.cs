@@ -30,20 +30,21 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAppInstance operation.
-    /// Creates an Amazon Chime Messaging SDK <code>AppInstance</code> under an AWS Account.
-    /// Only Messaging SDK customers use this API. <code>CreateAppInstance</code> supports
-    /// <code>idempotency</code> behavior as described in the AWS API Standard.
+    /// Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account.
+    /// Only SDK messaging customers use this API. <code>CreateAppInstance</code> supports
+    /// idempotency behavior as described in the AWS API Standard.
     /// </summary>
     public partial class CreateAppInstanceRequest : AmazonChimeRequest
     {
         private string _clientRequestToken;
         private string _metadata;
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The <code>ClientRequestToken</code> of the app instance.
+        /// The <code>ClientRequestToken</code> of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=64)]
@@ -62,7 +63,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata of the app instance. Limited to a 1KB string in UTF-8.
+        /// The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -81,7 +82,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the app instance.
+        /// The name of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -95,6 +96,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags assigned to the <code>AppInstanceUser</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

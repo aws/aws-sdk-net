@@ -59,7 +59,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ChannelMessages. 
         /// <para>
-        /// The information about and content of each requested message.
+        /// The information about, and content of, each requested message.
         /// </para>
         /// </summary>
         public List<ChannelMessageSummary> ChannelMessages

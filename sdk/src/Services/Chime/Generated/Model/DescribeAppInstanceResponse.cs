@@ -38,7 +38,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstance. 
         /// <para>
-        /// The ARN, metadata, created and last-updated timestamps, and the name of the app instance.
+        /// The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>.
         /// All timestamps use epoch milliseconds.
         /// </para>
         /// </summary>

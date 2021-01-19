@@ -43,7 +43,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The phone number order creation timestamp, in ISO 8601 format.
+        /// The phone number order creation time stamp, in ISO 8601 format.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
@@ -134,7 +134,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property UpdatedTimestamp. 
         /// <para>
-        /// The updated phone number order timestamp, in ISO 8601 format.
+        /// The updated phone number order time stamp, in ISO 8601 format.
         /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp

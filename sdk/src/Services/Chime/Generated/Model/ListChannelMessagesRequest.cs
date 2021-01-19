@@ -31,7 +31,7 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the ListChannelMessages operation.
     /// List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>.
-    /// Sorted in descending order by default, based on the creation timestamp.
+    /// By default, sorted by creation timestamp in descending order .
     /// 
     ///  <note> 
     /// <para>
@@ -39,11 +39,17 @@ namespace Amazon.Chime.Model
     /// deleted. Deleted messages do not appear in the results. This action always returns
     /// the latest version of an edited message.
     /// </para>
+    ///  
+    /// <para>
+    /// Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// of the user that makes the API call as the value in the header.
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class ListChannelMessagesRequest : AmazonChimeRequest
     {
         private string _channelArn;
+        private string _chimeBearer;
         private int? _maxResults;
         private string _nextToken;
         private DateTime? _notAfter;
@@ -67,6 +73,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetChannelArn()
         {
             return this._channelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChimeBearer. 
+        /// <para>
+        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChimeBearer
+        {
+            get { return this._chimeBearer; }
+            set { this._chimeBearer = value; }
+        }
+
+        // Check to see if ChimeBearer property is set
+        internal bool IsSetChimeBearer()
+        {
+            return this._chimeBearer != null;
         }
 
         /// <summary>
@@ -128,7 +153,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property NotBefore. 
         /// <para>
-        /// The initial or starting time stamp for your requested messages. 
+        /// The initial or starting time stamp for your requested messages.
         /// </para>
         /// </summary>
         public DateTime NotBefore

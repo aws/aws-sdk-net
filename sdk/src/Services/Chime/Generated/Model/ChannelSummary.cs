@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The summary data for a channel.
+    /// Summary of the details of a <code>Channel</code>.
     /// </summary>
     public partial class ChannelSummary
     {
@@ -43,7 +43,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ChannelArn. 
         /// <para>
-        /// The ARN of the channel summary.
+        /// The ARN of the channel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -80,7 +80,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata of the channel summary.
+        /// The metadata of the channel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -99,7 +99,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// The summary mode of the channel.
+        /// The mode of the channel.
         /// </para>
         /// </summary>
         public ChannelMode Mode
@@ -117,7 +117,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The parameter of the action.
+        /// The name of the channel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -136,7 +136,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Privacy. 
         /// <para>
-        /// The privacy setting of the channel being summarized, <code>PUBLIC</code> or <code>HIDDEN</code>.
+        /// The privacy setting of the channel.
         /// </para>
         /// </summary>
         public ChannelPrivacy Privacy

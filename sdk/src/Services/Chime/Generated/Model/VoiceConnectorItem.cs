@@ -42,7 +42,7 @@ namespace Amazon.Chime.Model
         /// Gets and sets the property Priority. 
         /// <para>
         /// The priority associated with the Amazon Chime Voice Connector, with 1 being the highest
-        /// priority. Higher priority Amazon Chime Voice Connectors are attempted first. 
+        /// priority. Higher priority Amazon Chime Voice Connectors are attempted first.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=99)]

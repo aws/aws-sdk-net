@@ -39,7 +39,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceAdmin. 
         /// <para>
-        /// The name and ARN of the admin for the app instance.
+        /// The name and ARN of the admin for the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         public Identity AppInstanceAdmin
@@ -57,7 +57,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the of the admin for the app instance.
+        /// The ARN of the of the admin for the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]

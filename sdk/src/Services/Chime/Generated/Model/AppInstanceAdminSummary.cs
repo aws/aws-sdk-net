@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The identity and metadata of an administrator.
+    /// Summary of the details of an <code>AppInstanceAdmin</code>.
     /// </summary>
     public partial class AppInstanceAdminSummary
     {
@@ -38,7 +38,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Admin. 
         /// <para>
-        /// The name and metadata of the app instance administrator.
+        /// The details of the <code>AppInstanceAdmin</code>.
         /// </para>
         /// </summary>
         public Identity Admin

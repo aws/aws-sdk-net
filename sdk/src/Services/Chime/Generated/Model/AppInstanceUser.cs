@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The app instance user.
+    /// The details of an <code>AppInstanceUser</code>.
     /// </summary>
     public partial class AppInstanceUser
     {
@@ -42,7 +42,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the app instance user.
+        /// The ARN of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -61,7 +61,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The time at which the app instance user was created.
+        /// The time at which the <code>AppInstanceUser</code> was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
@@ -79,7 +79,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTimestamp. 
         /// <para>
-        /// The time at which the app instance user was last updated.
+        /// The time at which the <code>AppInstanceUser</code> was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTimestamp
@@ -97,7 +97,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata of the app instance user.
+        /// The metadata of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -116,7 +116,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the app instance user.
+        /// The name of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

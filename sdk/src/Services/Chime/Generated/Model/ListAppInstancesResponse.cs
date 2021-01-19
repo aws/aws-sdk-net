@@ -39,7 +39,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstances. 
         /// <para>
-        /// The information for each app instance.
+        /// The information for each <code>AppInstance</code>.
         /// </para>
         /// </summary>
         public List<AppInstanceSummary> AppInstances
@@ -57,7 +57,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token passed by previous API requests until the maximum number of app instances
+        /// The token passed by previous API requests until the maximum number of <code>AppInstance</code>s
         /// is reached.
         /// </para>
         /// </summary>

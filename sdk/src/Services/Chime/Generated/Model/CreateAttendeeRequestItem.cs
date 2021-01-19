@@ -41,13 +41,7 @@ namespace Amazon.Chime.Model
         /// Gets and sets the property ExternalUserId. 
         /// <para>
         /// The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to
-        /// an identity managed by a builder application. If you create an attendee with the same
-        /// external user id, the service returns the existing record.
-        /// </para>
-        ///  
-        /// <para>
-        /// The Amazon Chime SDK external user ID. Links the attendee to an identity managed by
-        /// a builder application.
+        /// an identity managed by a builder application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=64)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Promotes a user to the administrator role for the duration of an app instance.
+    /// The details of an <code>AppInstanceAdmin</code>.
     /// </summary>
     public partial class AppInstanceAdmin
     {
@@ -40,7 +40,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Admin. 
         /// <para>
-        /// The name and metadata of the app instance administrator.
+        /// The <code>AppInstanceAdmin</code> data.
         /// </para>
         /// </summary>
         public Identity Admin
@@ -58,7 +58,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the app instance administrator.
+        /// The ARN of the <code>AppInstance</code> for which the user is an administrator.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Creates a channel member.
+    /// The details of a channel member.
     /// </summary>
     public partial class ChannelMembership
     {
@@ -62,7 +62,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The time at which the channel membership was created. 
+        /// The time at which the channel membership was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
@@ -80,7 +80,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property InvitedBy. 
         /// <para>
-        /// The identifier of the member who invited another member. Taken from the message header.
+        /// The identifier of the member who invited another member.
         /// </para>
         /// </summary>
         public Identity InvitedBy

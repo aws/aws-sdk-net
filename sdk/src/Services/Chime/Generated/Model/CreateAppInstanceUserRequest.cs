@@ -40,11 +40,12 @@ namespace Amazon.Chime.Model
         private string _clientRequestToken;
         private string _metadata;
         private string _name;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the app instance request.
+        /// The ARN of the <code>AppInstance</code> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -63,7 +64,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserId. 
         /// <para>
-        /// The user ID of the app instance.
+        /// The user ID of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -82,7 +83,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The token assigned to the user requesting an app instance.
+        /// The token assigned to the user requesting an <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=64)]
@@ -134,6 +135,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags assigned to the <code>AppInstanceUser</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

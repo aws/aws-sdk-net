@@ -34,14 +34,20 @@ namespace Amazon.Chime.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code>
-    /// messages can contain 30 bytes of data and no metadata.
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// of the user that makes the API call as the value in the header.
+    /// </para>
+    ///  
+    /// <para>
+    /// Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata.
+    /// <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.
     /// </para>
     ///  </note>
     /// </summary>
     public partial class SendChannelMessageRequest : AmazonChimeRequest
     {
         private string _channelArn;
+        private string _chimeBearer;
         private string _clientRequestToken;
         private string _content;
         private string _metadata;
@@ -65,6 +71,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetChannelArn()
         {
             return this._channelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChimeBearer. 
+        /// <para>
+        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChimeBearer
+        {
+            get { return this._chimeBearer; }
+            set { this._chimeBearer = value; }
+        }
+
+        // Check to see if ChimeBearer property is set
+        internal bool IsSetChimeBearer()
+        {
+            return this._chimeBearer != null;
         }
 
         /// <summary>
@@ -92,7 +117,7 @@ namespace Amazon.Chime.Model
         /// The content of the message.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
+        [AWSProperty(Required=true, Min=1)]
         public string Content
         {
             get { return this._content; }
@@ -108,7 +133,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The optional metadata for each message. 
+        /// The optional metadata for each message.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

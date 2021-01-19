@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSipMediaApplication operation.
-    /// Updates the details for the specified SIP media application.
+    /// Updates the details of the specified SIP media application.
     /// </summary>
     public partial class UpdateSipMediaApplicationRequest : AmazonChimeRequest
     {

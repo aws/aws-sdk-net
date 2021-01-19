@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMessagingSessionEndpoint operation.
-    /// The endpoint for the messaging session.
+    /// The details of the endpoint for the messaging session.
     /// </summary>
     public partial class GetMessagingSessionEndpointRequest : AmazonChimeRequest
     {

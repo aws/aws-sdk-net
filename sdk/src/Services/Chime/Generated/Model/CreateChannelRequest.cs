@@ -36,10 +36,17 @@ namespace Amazon.Chime.Model
     /// <para>
     ///  <b>Restriction</b>: You can't change a channel's privacy.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// of the user that makes the API call as the value in the header.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateChannelRequest : AmazonChimeRequest
     {
         private string _appInstanceArn;
+        private string _chimeBearer;
         private string _clientRequestToken;
         private string _metadata;
         private ChannelMode _mode;
@@ -64,6 +71,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetAppInstanceArn()
         {
             return this._appInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChimeBearer. 
+        /// <para>
+        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChimeBearer
+        {
+            get { return this._chimeBearer; }
+            set { this._chimeBearer = value; }
+        }
+
+        // Check to see if ChimeBearer property is set
+        internal bool IsSetChimeBearer()
+        {
+            return this._chimeBearer != null;
         }
 
         /// <summary>
@@ -148,7 +174,7 @@ namespace Amazon.Chime.Model
         /// <para>
         /// The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
         /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-        /// by anyone in the app instance.
+        /// by anyone in the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         public ChannelPrivacy Privacy
@@ -164,7 +190,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags for the creation request.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public List<Tag> Tags

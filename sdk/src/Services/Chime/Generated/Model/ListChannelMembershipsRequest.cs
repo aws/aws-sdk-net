@@ -31,10 +31,18 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the ListChannelMemberships operation.
     /// Lists all channel memberships in a channel.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// of the user that makes the API call as the value in the header.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListChannelMembershipsRequest : AmazonChimeRequest
     {
         private string _channelArn;
+        private string _chimeBearer;
         private int? _maxResults;
         private string _nextToken;
         private ChannelMembershipType _type;
@@ -56,6 +64,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetChannelArn()
         {
             return this._channelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChimeBearer. 
+        /// <para>
+        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChimeBearer
+        {
+            get { return this._chimeBearer; }
+            set { this._chimeBearer = value; }
+        }
+
+        // Check to see if ChimeBearer property is set
+        internal bool IsSetChimeBearer()
+        {
+            return this._chimeBearer != null;
         }
 
         /// <summary>
@@ -81,7 +108,7 @@ namespace Amazon.Chime.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token passed by previous API calls until all requested channel memberships are
-        /// returned..
+        /// returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

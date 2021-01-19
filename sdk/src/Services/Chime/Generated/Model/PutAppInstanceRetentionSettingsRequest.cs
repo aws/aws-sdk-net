@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAppInstanceRetentionSettings operation.
-    /// Sets the amount of time in days that a given app instance retains data.
+    /// Sets the amount of time in days that a given <code>AppInstance</code> retains data.
     /// </summary>
     public partial class PutAppInstanceRetentionSettingsRequest : AmazonChimeRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the app instance.
+        /// The ARN of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

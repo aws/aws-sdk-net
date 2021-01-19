@@ -31,10 +31,18 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the GetChannelMessage operation.
     /// Gets the full details of a channel message.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// of the user that makes the API call as the value in the header.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetChannelMessageRequest : AmazonChimeRequest
     {
         private string _channelArn;
+        private string _chimeBearer;
         private string _messageId;
 
         /// <summary>
@@ -54,6 +62,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetChannelArn()
         {
             return this._channelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChimeBearer. 
+        /// <para>
+        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChimeBearer
+        {
+            get { return this._chimeBearer; }
+            set { this._chimeBearer = value; }
+        }
+
+        // Check to see if ChimeBearer property is set
+        internal bool IsSetChimeBearer()
+        {
+            return this._chimeBearer != null;
         }
 
         /// <summary>

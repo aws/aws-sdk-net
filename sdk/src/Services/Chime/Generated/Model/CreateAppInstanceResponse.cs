@@ -38,7 +38,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the app instance.
+        /// The Amazon Resource Number (ARN) of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]

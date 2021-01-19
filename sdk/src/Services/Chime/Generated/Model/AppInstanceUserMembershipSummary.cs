@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Lists the channels to which app instance users belong.
+    /// Summary of the membership details of an <code>AppInstanceUser</code>.
     /// </summary>
     public partial class AppInstanceUserMembershipSummary
     {
@@ -39,7 +39,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ReadMarkerTimestamp. 
         /// <para>
-        /// The time at which a summary was last read.
+        /// The time at which a message was last read.
         /// </para>
         /// </summary>
         public DateTime ReadMarkerTimestamp
@@ -57,7 +57,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of channel summary, 
+        /// The type of <code>ChannelMembership</code>.
         /// </para>
         /// </summary>
         public ChannelMembershipType Type

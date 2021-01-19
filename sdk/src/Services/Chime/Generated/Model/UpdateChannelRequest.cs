@@ -34,12 +34,19 @@ namespace Amazon.Chime.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Restriction</b>: You can't change a channel's privacy.
+    ///  <b>Restriction</b>: You can't change a channel's privacy. 
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// of the user that makes the API call as the value in the header.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateChannelRequest : AmazonChimeRequest
     {
         private string _channelArn;
+        private string _chimeBearer;
         private string _metadata;
         private ChannelMode _mode;
         private string _name;
@@ -64,9 +71,28 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChimeBearer. 
+        /// <para>
+        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChimeBearer
+        {
+            get { return this._chimeBearer; }
+            set { this._chimeBearer = value; }
+        }
+
+        // Check to see if ChimeBearer property is set
+        internal bool IsSetChimeBearer()
+        {
+            return this._chimeBearer != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata of the channel.
+        /// The metadata for the update request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

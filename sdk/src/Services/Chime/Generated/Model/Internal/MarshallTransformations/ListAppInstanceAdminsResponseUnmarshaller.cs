@@ -100,10 +100,6 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 {
                     return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceLimitExceededException"))
-                {
-                    return ResourceLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceFailureException"))
                 {
                     return ServiceFailureExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Endpoints to specify as part of a SIP media application.
+    /// The endpoint assigned to the SIP media application.
     /// </summary>
     public partial class SipMediaApplicationEndpoint
     {
@@ -38,8 +38,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property LambdaArn. 
         /// <para>
-        /// Valid Amazon Resource Name (ARN) of the Lambda function of the same AWS Region where
-        /// the SIP media application is created.
+        /// Valid Amazon Resource Name (ARN) of the Lambda function. The function must be created
+        /// in the same AWS Region as the SIP media application.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]

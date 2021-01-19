@@ -41,7 +41,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// AWS Region assigned to the SIP media application.
+        /// The AWS Region assigned to the SIP media application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,7 +83,7 @@ namespace Amazon.Chime.Model
         /// The SIP media application name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

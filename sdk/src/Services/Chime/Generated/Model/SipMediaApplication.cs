@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The SIP media application details, including name and endpoints. An AWS account can
-    /// have multiple SIP media applications.
+    /// The details of the SIP media application, including name and endpoints. An AWS account
+    /// can have multiple SIP media applications.
     /// </summary>
     public partial class SipMediaApplication
     {

@@ -78,6 +78,9 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 request.Parameters.Add("sort-order", StringUtils.FromString(publicRequest.SortOrder));
             request.ResourcePath = "/channels/{channelArn}/messages";
             request.MarshallerVersion = 2;
+        
+            if(publicRequest.IsSetChimeBearer())
+                request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;
             request.UseQueryString = true;
             
             request.HostPrefix = $"messaging-";

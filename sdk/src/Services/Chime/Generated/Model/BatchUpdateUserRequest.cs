@@ -30,9 +30,9 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchUpdateUser operation.
-    /// Updates user details within the <a>UpdateUserRequestItem</a> object for up to 20 users
-    /// for the specified Amazon Chime account. Currently, only <code>LicenseType</code> updates
-    /// are supported for this action.
+    /// Updates user details within the <a>UpdateUserRequestItem</a> object for up to 20
+    /// users for the specified Amazon Chime account. Currently, only <code>LicenseType</code>
+    /// updates are supported for this action.
     /// </summary>
     public partial class BatchUpdateUserRequest : AmazonChimeRequest
     {

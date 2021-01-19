@@ -36,10 +36,7 @@ namespace Amazon.Chime.Model
         private SipMediaApplicationLoggingConfiguration _sipMediaApplicationLoggingConfiguration;
 
         /// <summary>
-        /// Gets and sets the property SipMediaApplicationLoggingConfiguration. 
-        /// <para>
-        /// The actual logging configuration.
-        /// </para>
+        /// Gets and sets the property SipMediaApplicationLoggingConfiguration.
         /// </summary>
         public SipMediaApplicationLoggingConfiguration SipMediaApplicationLoggingConfiguration
         {

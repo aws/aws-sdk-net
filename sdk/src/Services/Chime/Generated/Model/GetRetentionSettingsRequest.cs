@@ -32,7 +32,7 @@ namespace Amazon.Chime.Model
     /// Container for the parameters to the GetRetentionSettings operation.
     /// Gets the retention settings for the specified Amazon Chime Enterprise account. For
     /// more information about retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
-    /// Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
+    /// Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
     /// </summary>
     public partial class GetRetentionSettingsRequest : AmazonChimeRequest
     {

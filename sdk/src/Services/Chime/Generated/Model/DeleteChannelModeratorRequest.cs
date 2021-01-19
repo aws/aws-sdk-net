@@ -31,11 +31,19 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the DeleteChannelModerator operation.
     /// Deletes a channel moderator.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// of the user that makes the API call as the value in the header.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteChannelModeratorRequest : AmazonChimeRequest
     {
         private string _channelArn;
         private string _channelModeratorArn;
+        private string _chimeBearer;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
@@ -73,6 +81,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetChannelModeratorArn()
         {
             return this._channelModeratorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChimeBearer. 
+        /// <para>
+        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChimeBearer
+        {
+            get { return this._chimeBearer; }
+            set { this._chimeBearer = value; }
+        }
+
+        // Check to see if ChimeBearer property is set
+        internal bool IsSetChimeBearer()
+        {
+            return this._chimeBearer != null;
         }
 
     }

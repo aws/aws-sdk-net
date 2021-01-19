@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The summary data for the channel ban.
+    /// Summary of the details of a <code>ChannelBan</code>.
     /// </summary>
     public partial class ChannelBanSummary
     {

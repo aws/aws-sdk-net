@@ -30,8 +30,8 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateVoiceConnectorGroup operation.
-    /// Updates details for the specified Amazon Chime Voice Connector group, such as the
-    /// name and Amazon Chime Voice Connector priority ranking.
+    /// Updates details of the specified Amazon Chime Voice Connector group, such as the name
+    /// and Amazon Chime Voice Connector priority ranking.
     /// </summary>
     public partial class UpdateVoiceConnectorGroupRequest : AmazonChimeRequest
     {
@@ -80,7 +80,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property VoiceConnectorItems. 
         /// <para>
-        /// The <code>VoiceConnectorItems</code> to associate with the group.
+        ///  The <code>VoiceConnectorItems</code> to associate with the group. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

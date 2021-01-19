@@ -45,7 +45,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The Amazon Chime Voice Connector group creation timestamp, in ISO 8601 format.
+        /// The Amazon Chime Voice Connector group creation time stamp, in ISO 8601 format.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
@@ -82,7 +82,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property UpdatedTimestamp. 
         /// <para>
-        /// The updated Amazon Chime Voice Connector group timestamp, in ISO 8601 format.
+        /// The updated Amazon Chime Voice Connector group time stamp, in ISO 8601 format.
         /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp

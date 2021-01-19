@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The endpoint of a meeting session.
+    /// The websocket endpoint used to connect to Amazon Chime SDK messaging.
     /// </summary>
     public partial class MessagingSessionEndpoint
     {
@@ -38,7 +38,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The URL of a meeting session endpoint.
+        /// The endpoint to which you establish a websocket connection.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

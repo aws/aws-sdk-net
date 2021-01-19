@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Returns the summary data for a moderated channel.
+    /// Summary of the details of a moderated channel.
     /// </summary>
     public partial class ChannelModeratedByAppInstanceUserSummary
     {

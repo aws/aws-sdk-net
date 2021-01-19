@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAppInstanceAdmins operation.
-    /// Returns a list of the administrators in the app instance.
+    /// Returns a list of the administrators in the <code>AppInstance</code>.
     /// </summary>
     public partial class ListAppInstanceAdminsRequest : AmazonChimeRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the app instance.
+        /// The ARN of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

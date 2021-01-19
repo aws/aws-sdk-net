@@ -30,8 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAppInstanceUser operation.
-    /// Updates the details for an <code>AppInstanceUser</code>. You can update names and
-    /// metadata.
+    /// Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.
     /// </summary>
     public partial class UpdateAppInstanceUserRequest : AmazonChimeRequest
     {
@@ -42,7 +41,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the app instance user.
+        /// The ARN of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -61,7 +60,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata of the app instance user.
+        /// The metadata of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -80,7 +79,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the app instance user.
+        /// The name of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

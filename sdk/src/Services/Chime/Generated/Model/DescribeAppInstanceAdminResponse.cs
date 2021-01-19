@@ -38,8 +38,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceAdmin. 
         /// <para>
-        /// The ARN and name of the app instance user, the ARN of the app instance, and the created
-        /// and last-updated timestamps. All timestamps use epoch milliseconds.
+        /// The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>,
+        /// and the created and last-updated timestamps. All timestamps use epoch milliseconds.
         /// </para>
         /// </summary>
         public AppInstanceAdmin AppInstanceAdmin

@@ -32,13 +32,13 @@ namespace Amazon.Chime.Model
     /// Container for the parameters to the CreateMeetingDialOut operation.
     /// Uses the join token and call metadata in a meeting request (From number, To number,
     /// and so forth) to initiate an outbound call to a public switched telephone network
-    /// (PSTN) and joins them into Chime meeting. Also ensures that the From number belongs
+    /// (PSTN) and join them into a Chime meeting. Also ensures that the From number belongs
     /// to the customer.
     /// 
     ///  
     /// <para>
     /// To play welcome audio or implement an interactive voice response (IVR), use the <code>CreateSipMediaApplicationCall</code>
-    /// API with the corresponding SIP media application ID.
+    /// action with the corresponding SIP media application ID.
     /// </para>
     /// </summary>
     public partial class CreateMeetingDialOutRequest : AmazonChimeRequest
@@ -70,8 +70,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property JoinToken. 
         /// <para>
-        /// Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.html">
-        /// CreateAttendee API</a> to get a join token. 
+        /// Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.htmlCreateAttendee">CreateAttendee</a>
+        /// action to get a join token.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=2048)]
@@ -91,18 +91,6 @@ namespace Amazon.Chime.Model
         /// Gets and sets the property MeetingId. 
         /// <para>
         /// The Amazon Chime SDK meeting ID.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: String
-        /// </para>
-        ///  
-        /// <para>
-        /// Pattern: [a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}
-        /// </para>
-        ///  
-        /// <para>
-        /// Required: No
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

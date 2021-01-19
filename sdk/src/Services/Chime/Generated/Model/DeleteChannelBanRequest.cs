@@ -31,16 +31,24 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the DeleteChannelBan operation.
     /// Removes a user from a channel's ban list.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// of the user that makes the API call as the value in the header.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteChannelBanRequest : AmazonChimeRequest
     {
         private string _channelArn;
+        private string _chimeBearer;
         private string _memberArn;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
         /// <para>
-        /// The ARN of the channel from which the app instance user was banned.
+        /// The ARN of the channel from which the <code>AppInstanceUser</code> was banned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -57,9 +65,28 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChimeBearer. 
+        /// <para>
+        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChimeBearer
+        {
+            get { return this._chimeBearer; }
+            set { this._chimeBearer = value; }
+        }
+
+        // Check to see if ChimeBearer property is set
+        internal bool IsSetChimeBearer()
+        {
+            return this._chimeBearer != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MemberArn. 
         /// <para>
-        /// The ARN of the app instance user that you want to reinstate.
+        /// The ARN of the <code>AppInstanceUser</code> that you want to reinstate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

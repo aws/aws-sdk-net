@@ -31,8 +31,7 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the DeleteAccount operation.
     /// Deletes the specified Amazon Chime account. You must suspend all users before deleting
-    /// a <code>Team</code> account. You can use the <a>BatchSuspendUser</a> action to do
-    /// so.
+    /// <code>Team</code> account. You can use the <a>BatchSuspendUser</a> action to dodo.
     /// 
     ///  
     /// <para>
@@ -43,13 +42,13 @@ namespace Amazon.Chime.Model
     ///  
     /// <para>
     /// Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To
-    /// restore a deleted account from your <code>Disabled</code> accounts list, you must
-    /// contact AWS Support.
+    /// restore deleted account from your <code>Disabled</code> accounts list, you must contact
+    /// AWS Support.
     /// </para>
     ///  
     /// <para>
-    /// After 90 days, deleted accounts are permanently removed from your <code>Disabled</code>
-    /// accounts list.
+    ///  After 90 days, deleted accounts are permanently removed from your <code>Disabled</code>
+    /// accounts list. 
     /// </para>
     /// </summary>
     public partial class DeleteAccountRequest : AmazonChimeRequest

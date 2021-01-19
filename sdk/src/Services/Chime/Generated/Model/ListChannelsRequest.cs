@@ -37,18 +37,25 @@ namespace Amazon.Chime.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account
+    ///  Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list
     /// the private channels in an account.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// of the user that makes the API call as the value in the header.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListChannelsRequest : AmazonChimeRequest
     {
         private string _appInstanceArn;
+        private string _chimeBearer;
         private int? _maxResults;
         private string _nextToken;
         private ChannelPrivacy _privacy;
@@ -56,7 +63,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the app instance.
+        /// The ARN of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -70,6 +77,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetAppInstanceArn()
         {
             return this._appInstanceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChimeBearer. 
+        /// <para>
+        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChimeBearer
+        {
+            get { return this._chimeBearer; }
+            set { this._chimeBearer = value; }
+        }
+
+        // Check to see if ChimeBearer property is set
+        internal bool IsSetChimeBearer()
+        {
+            return this._chimeBearer != null;
         }
 
         /// <summary>
@@ -113,9 +139,9 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Privacy. 
         /// <para>
-        /// The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code>
-        /// retrieves private channels. Only an app instance administrator can retrieve private
-        /// channels.
+        ///  The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code>
+        /// retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private
+        /// channels. 
         /// </para>
         /// </summary>
         public ChannelPrivacy Privacy

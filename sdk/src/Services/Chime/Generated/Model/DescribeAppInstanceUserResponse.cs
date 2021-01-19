@@ -38,7 +38,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUser. 
         /// <para>
-        /// The name of the app instance user.
+        /// The name of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
         public AppInstanceUser AppInstanceUser

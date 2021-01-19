@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// An instance of a Chime messaging application.
+    /// The details of an <code>AppInstance</code>, an instance of an Amazon Chime SDK messaging
+    /// application.
     /// </summary>
     public partial class AppInstance
     {
@@ -42,7 +43,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the messaging instance. 
+        /// The ARN of the messaging instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -61,7 +62,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The time at which an app instance was created. In epoch milliseconds.
+        /// The time at which an <code>AppInstance</code> was created. In epoch milliseconds.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
@@ -79,7 +80,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTimestamp. 
         /// <para>
-        /// The time an app instance was last updated. In epoch milliseconds.
+        /// The time an <code>AppInstance</code> was last updated. In epoch milliseconds.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTimestamp
@@ -97,7 +98,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata of an app instance.
+        /// The metadata of an <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -116,7 +117,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of an app instance.
+        /// The name of an <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

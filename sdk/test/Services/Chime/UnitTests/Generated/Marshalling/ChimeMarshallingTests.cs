@@ -10090,38 +10090,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
-        public void DeleteAppInstanceAdmin_ResourceLimitExceededExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteAppInstanceAdmin");
-
-            var request = InstantiateClassGenerator.Execute<DeleteAppInstanceAdminRequest>();
-            var marshaller = new DeleteAppInstanceAdminRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("DeleteAppInstanceAdmin", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceLimitExceededException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceLimitExceededException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteAppInstanceAdminResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("Chime")]
         public void DeleteAppInstanceAdmin_ServiceFailureExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteAppInstanceAdmin");
@@ -27419,38 +27387,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Chime")]
-        public void ListAppInstanceAdmins_ResourceLimitExceededExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("ListAppInstanceAdmins");
-
-            var request = InstantiateClassGenerator.Execute<ListAppInstanceAdminsRequest>();
-            var marshaller = new ListAppInstanceAdminsRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("ListAppInstanceAdmins", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceLimitExceededException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceLimitExceededException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = ListAppInstanceAdminsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("Chime")]
         public void ListAppInstanceAdmins_ServiceFailureExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("ListAppInstanceAdmins");
@@ -31132,6 +31068,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListPhoneNumbersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Chime")]
+        public void ListPhoneNumbers_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListPhoneNumbers");
+
+            var request = InstantiateClassGenerator.Execute<ListPhoneNumbersRequest>();
+            var marshaller = new ListPhoneNumbersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListPhoneNumbers", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
                 }
             };
 

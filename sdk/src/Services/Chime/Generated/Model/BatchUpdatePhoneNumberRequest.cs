@@ -31,8 +31,8 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the BatchUpdatePhoneNumber operation.
     /// Updates phone number product types or calling names. You can update one attribute
-    /// at a time for each <code>UpdatePhoneNumberRequestItem</code>. For example, you can
-    /// update either the product type or the calling name.
+    /// at a time for each <code>UpdatePhoneNumberRequestItem</code> . For example, you can
+    /// update either the product type or the calling name. 
     /// 
     ///  
     /// <para>

@@ -31,16 +31,24 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the DescribeChannelModeratedByAppInstanceUser operation.
     /// Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// of the user that makes the API call as the value in the header.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeChannelModeratedByAppInstanceUserRequest : AmazonChimeRequest
     {
         private string _appInstanceUserArn;
         private string _channelArn;
+        private string _chimeBearer;
 
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the app instance user in the moderated channel.
+        /// The ARN of the <code>AppInstanceUser</code> in the moderated channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -73,6 +81,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetChannelArn()
         {
             return this._channelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChimeBearer. 
+        /// <para>
+        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChimeBearer
+        {
+            get { return this._chimeBearer; }
+            set { this._chimeBearer = value; }
+        }
+
+        // Check to see if ChimeBearer property is set
+        internal bool IsSetChimeBearer()
+        {
+            return this._chimeBearer != null;
         }
 
     }

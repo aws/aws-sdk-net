@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// A summary of the messages in a channel.
+    /// Summary of the messages in a <code>Channel</code>.
     /// </summary>
     public partial class ChannelMessageSummary
     {
@@ -46,7 +46,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the message summary.
+        /// The content of the message.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4096)]
@@ -81,7 +81,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastEditedTimestamp.
+        /// Gets and sets the property LastEditedTimestamp. 
+        /// <para>
+        /// The time at which a message was last edited.
+        /// </para>
         /// </summary>
         public DateTime LastEditedTimestamp
         {
@@ -96,7 +99,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdatedTimestamp.
+        /// Gets and sets the property LastUpdatedTimestamp. 
+        /// <para>
+        /// The time at which a message was last updated.
+        /// </para>
         /// </summary>
         public DateTime LastUpdatedTimestamp
         {
@@ -113,7 +119,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The ID of the message summary.
+        /// The ID of the message.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -132,7 +138,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata of the message summary.
+        /// The metadata of the message.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -151,7 +157,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Redacted. 
         /// <para>
-        /// Redacts the content of a message summary.
+        /// Indicates whether a message was redacted.
         /// </para>
         /// </summary>
         public bool Redacted
@@ -169,7 +175,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Sender. 
         /// <para>
-        /// The sender of the message summary.
+        /// The message sender.
         /// </para>
         /// </summary>
         public Identity Sender
@@ -187,7 +193,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of message summary.
+        /// The type of message.
         /// </para>
         /// </summary>
         public ChannelMessageType Type

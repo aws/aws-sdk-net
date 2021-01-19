@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Returns the channel membership summary data for an app instance.
+    /// Summary of the channel membership details of an <code>AppInstanceUser</code>.
     /// </summary>
     public partial class ChannelMembershipForAppInstanceUserSummary
     {
@@ -39,7 +39,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserMembershipSummary. 
         /// <para>
-        /// Returns the channel membership data for an app instance.
+        /// Returns the channel membership data for an <code>AppInstance</code>.
         /// </para>
         /// </summary>
         public AppInstanceUserMembershipSummary AppInstanceUserMembershipSummary

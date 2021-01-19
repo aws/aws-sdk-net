@@ -38,7 +38,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property SipMediaApplication. 
         /// <para>
-        /// The Sip media application details.
+        /// The SIP media application details.
         /// </para>
         /// </summary>
         public SipMediaApplication SipMediaApplication

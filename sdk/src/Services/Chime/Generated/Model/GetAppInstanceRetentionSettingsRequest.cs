@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAppInstanceRetentionSettings operation.
-    /// Gets the retention settings for an app instance.
+    /// Gets the retention settings for an <code>AppInstance</code>.
     /// </summary>
     public partial class GetAppInstanceRetentionSettingsRequest : AmazonChimeRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the app instance.
+        /// The ARN of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

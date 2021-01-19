@@ -40,7 +40,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property SipMediaApplicationId. 
         /// <para>
-        /// The ID of the specified SIP media application
+        /// The SIP media application ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The summary data of a channel membership.
+    /// Summary of the details of a <code>ChannelMembership</code>.
     /// </summary>
     public partial class ChannelMembershipSummary
     {

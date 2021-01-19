@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Bans a user from a channel.
+    /// The details of a channel ban.
     /// </summary>
     public partial class ChannelBan
     {
@@ -60,7 +60,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The parameter of the action.
+        /// The <code>AppInstanceUser</code> who created the ban.
         /// </para>
         /// </summary>
         public Identity CreatedBy

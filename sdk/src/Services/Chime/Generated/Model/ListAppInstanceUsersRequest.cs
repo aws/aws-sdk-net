@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAppInstanceUsers operation.
-    /// List all <code>AppInstanceUsers</code> created under a single app instance.
+    /// List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>.
     /// </summary>
     public partial class ListAppInstanceUsersRequest : AmazonChimeRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the app instance.
+        /// The ARN of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

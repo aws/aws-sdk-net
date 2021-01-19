@@ -147,6 +147,12 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.CreateChannelRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.CreateChannelRequest.ClientRequestToken</property>
     <min>2</min>
     <max>64</max>
@@ -177,6 +183,12 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.CreateChannelBanRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.CreateChannelBanRequest.MemberArn</property>
     <min>5</min>
     <max>1600</max>
@@ -190,6 +202,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateChannelMembershipRequest.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateChannelMembershipRequest.ChimeBearer</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -214,6 +232,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateChannelModeratorRequest.ChannelModeratorArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.CreateChannelModeratorRequest.ChimeBearer</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -407,7 +431,19 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteChannelRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.DeleteChannelBanRequest.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteChannelBanRequest.ChimeBearer</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -425,6 +461,12 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteChannelMembershipRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.DeleteChannelMembershipRequest.MemberArn</property>
     <min>5</min>
     <max>1600</max>
@@ -432,6 +474,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.DeleteChannelMessageRequest.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteChannelMessageRequest.ChimeBearer</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -450,6 +498,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.DeleteChannelModeratorRequest.ChannelModeratorArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DeleteChannelModeratorRequest.ChimeBearer</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -571,7 +625,19 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.DescribeChannelRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.DescribeChannelBanRequest.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DescribeChannelBanRequest.ChimeBearer</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -584,6 +650,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.DescribeChannelMembershipRequest.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DescribeChannelMembershipRequest.ChimeBearer</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -607,6 +679,12 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.DescribeChannelMembershipForAppInstanceUserRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.DescribeChannelModeratedByAppInstanceUserRequest.AppInstanceUserArn</property>
     <min>5</min>
     <max>1600</max>
@@ -619,6 +697,12 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.DescribeChannelModeratedByAppInstanceUserRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.DescribeChannelModeratorRequest.ChannelArn</property>
     <min>5</min>
     <max>1600</max>
@@ -626,6 +710,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.DescribeChannelModeratorRequest.ChannelModeratorArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.DescribeChannelModeratorRequest.ChimeBearer</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -680,6 +770,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.GetChannelMessageRequest.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.GetChannelMessageRequest.ChimeBearer</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -919,6 +1015,12 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.ListChannelBansRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.ListChannelBansRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -943,6 +1045,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.ListChannelMembershipsRequest.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListChannelMembershipsRequest.ChimeBearer</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -977,6 +1085,12 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.ListChannelMembershipsForAppInstanceUserRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.ListChannelMembershipsForAppInstanceUserRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -995,6 +1109,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.ListChannelMessagesRequest.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListChannelMessagesRequest.ChimeBearer</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -1029,6 +1149,12 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.ListChannelModeratorsRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.ListChannelModeratorsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -1058,6 +1184,12 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.ListChannelsRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.ListChannelsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -1076,6 +1208,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.ListChannelsModeratedByAppInstanceUserRequest.AppInstanceUserArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.ListChannelsModeratedByAppInstanceUserRequest.ChimeBearer</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -1296,6 +1434,12 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.RedactChannelMessageRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.RedactChannelMessageRequest.MessageId</property>
     <min>1</min>
     <max>128</max>
@@ -1375,6 +1519,12 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.SendChannelMessageRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.SendChannelMessageRequest.ClientRequestToken</property>
     <min>2</min>
     <max>64</max>
@@ -1383,7 +1533,6 @@
   <property-value-rule>
     <property>Amazon.Chime.Model.SendChannelMessageRequest.Content</property>
     <min>1</min>
-    <max>4096</max>
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1515,6 +1664,12 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateChannelRequest.ChimeBearer</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.UpdateChannelRequest.Metadata</property>
     <min>0</min>
     <max>1024</max>
@@ -1534,6 +1689,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.UpdateChannelMessageRequest.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateChannelMessageRequest.ChimeBearer</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
@@ -1570,6 +1731,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.UpdateChannelReadMarkerRequest.ChannelArn</property>
+    <min>5</min>
+    <max>1600</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.UpdateChannelReadMarkerRequest.ChimeBearer</property>
     <min>5</min>
     <max>1600</max>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>

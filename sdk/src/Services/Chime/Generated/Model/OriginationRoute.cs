@@ -120,7 +120,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Weight. 
         /// <para>
-        /// The weight associated with the host. If hosts are equal in priority, calls are distributed
+        /// The weight associated with the host. If hosts are equal in priority, calls are redistributed
         /// among them based on their relative weight.
         /// </para>
         /// </summary>

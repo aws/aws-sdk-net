@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The streaming configuration of an app instance.
+    /// The details of the streaming configuration of an <code>AppInstance</code>.
     /// </summary>
     public partial class AppInstanceStreamingConfiguration
     {
@@ -39,7 +39,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceDataType. 
         /// <para>
-        /// The data type of the app instance.
+        /// The type of data to be streamed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

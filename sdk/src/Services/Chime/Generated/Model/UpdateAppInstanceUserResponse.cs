@@ -38,7 +38,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the app instance user.
+        /// The ARN of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]

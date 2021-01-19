@@ -30,10 +30,10 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and
-    /// <code>JoinToken</code>. The <code>JoinToken</code> allows a client to authenticate
+    /// <code>JoinToken</code> . The <code>JoinToken</code> allows a client to authenticate
     /// and join as the specified attendee. The <code>JoinToken</code> expires when the meeting
     /// ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to
-    /// join the meeting.
+    /// join the meeting. 
     /// 
     ///  
     /// <para>
@@ -70,8 +70,7 @@ namespace Amazon.Chime.Model
         /// Gets and sets the property ExternalUserId. 
         /// <para>
         /// The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to
-        /// an identity managed by a builder application. If you create an attendee with the same
-        /// external user id, the service returns the existing record.
+        /// an identity managed by a builder application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=64)]

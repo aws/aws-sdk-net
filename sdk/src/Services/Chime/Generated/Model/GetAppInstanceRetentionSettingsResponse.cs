@@ -39,7 +39,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceRetentionSettings. 
         /// <para>
-        /// The retention settings for the app instance.
+        /// The retention settings for the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         public AppInstanceRetentionSettings AppInstanceRetentionSettings

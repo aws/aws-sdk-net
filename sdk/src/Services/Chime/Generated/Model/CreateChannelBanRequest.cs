@@ -33,17 +33,24 @@ namespace Amazon.Chime.Model
     /// Permanently bans a member from a channel. Moderators can't add banned members to a
     /// channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then
     /// <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or
-    /// channels. 
+    /// channels.
     /// 
     ///  
     /// <para>
     /// If you ban a user who is already part of a channel, that user is automatically kicked
     /// from the channel.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// of the user that makes the API call as the value in the header.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateChannelBanRequest : AmazonChimeRequest
     {
         private string _channelArn;
+        private string _chimeBearer;
         private string _memberArn;
 
         /// <summary>
@@ -63,6 +70,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetChannelArn()
         {
             return this._channelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChimeBearer. 
+        /// <para>
+        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChimeBearer
+        {
+            get { return this._chimeBearer; }
+            set { this._chimeBearer = value; }
+        }
+
+        // Check to see if ChimeBearer property is set
+        internal bool IsSetChimeBearer()
+        {
+            return this._chimeBearer != null;
         }
 
         /// <summary>

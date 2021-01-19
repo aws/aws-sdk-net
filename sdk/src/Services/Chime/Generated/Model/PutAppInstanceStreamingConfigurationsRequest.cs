@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAppInstanceStreamingConfigurations operation.
-    /// The data streaming configurations of an app instance.
+    /// The data streaming configurations of an <code>AppInstance</code>.
     /// </summary>
     public partial class PutAppInstanceStreamingConfigurationsRequest : AmazonChimeRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the app instance.
+        /// The ARN of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -59,7 +59,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceStreamingConfigurations. 
         /// <para>
-        /// The streaming configurations set for an app instance.
+        /// The streaming configurations set for an <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2)]

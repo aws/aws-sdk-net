@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Creates a channel.
+    /// The details of a channel.
     /// </summary>
     public partial class Channel
     {
@@ -65,7 +65,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The administrator who created the channel.
+        /// The <code>AppInstanceUser</code> who created the channel.
         /// </para>
         /// </summary>
         public Identity CreatedBy
@@ -83,7 +83,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The time at which the administrator created the channel.
+        /// The time at which the <code>AppInstanceUser</code> created the channel.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
@@ -101,7 +101,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property LastMessageTimestamp. 
         /// <para>
-        /// The time at which a member sent the last message in a session.
+        /// The time at which a member sent the last message in the channel.
         /// </para>
         /// </summary>
         public DateTime LastMessageTimestamp
@@ -137,7 +137,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata of the channel.
+        /// The channel's metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -193,7 +193,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Privacy. 
         /// <para>
-        /// The channel's privacy setting, <code>PUBLIC</code> or <code>HIDDEN</code>.
+        /// The channel's privacy setting.
         /// </para>
         /// </summary>
         public ChannelPrivacy Privacy

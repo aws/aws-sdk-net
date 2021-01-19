@@ -72,6 +72,9 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 request.Parameters.Add("privacy", StringUtils.FromString(publicRequest.Privacy));
             request.ResourcePath = "/channels";
             request.MarshallerVersion = 2;
+        
+            if(publicRequest.IsSetChimeBearer())
+                request.Headers["x-amz-chime-bearer"] = publicRequest.ChimeBearer;
             request.UseQueryString = true;
             
             request.HostPrefix = $"messaging-";

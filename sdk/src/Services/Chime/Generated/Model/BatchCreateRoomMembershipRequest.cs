@@ -31,8 +31,8 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the BatchCreateRoomMembership operation.
     /// Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members
-    /// can be either users or bots. The member role designates whether the member is a chat
-    /// room administrator or a general chat room member.
+    /// can be users or bots. The member role designates whether the member is a chat room
+    /// administrator or a general chat room member.
     /// </summary>
     public partial class BatchCreateRoomMembershipRequest : AmazonChimeRequest
     {

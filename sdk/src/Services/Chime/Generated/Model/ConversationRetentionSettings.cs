@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The retention settings that determine how long to retain chat conversation messages
-    /// for an Amazon Chime Enterprise account.
+    /// The retention settings that determine how long to retain conversation messages for
+    /// an Amazon Chime Enterprise account.
     /// </summary>
     public partial class ConversationRetentionSettings
     {
@@ -39,7 +39,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property RetentionDays. 
         /// <para>
-        /// The number of days for which to retain chat conversation messages.
+        /// The number of days for which to retain conversation messages.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5475)]

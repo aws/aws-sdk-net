@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAppInstanceUser operation.
-    /// Returns the full details of an <code>AppInstanceUser</code>.
+    /// Returns the full details of an <code>AppInstanceUser</code> .
     /// </summary>
     public partial class DescribeAppInstanceUserRequest : AmazonChimeRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the app instance user.
+        /// The ARN of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

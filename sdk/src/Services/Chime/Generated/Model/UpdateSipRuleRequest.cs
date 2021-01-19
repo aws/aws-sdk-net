@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSipRule operation.
-    /// Updates the details for the specified SIP rule.
+    /// Updates the details of the specified SIP rule.
     /// </summary>
     public partial class UpdateSipRuleRequest : AmazonChimeRequest
     {

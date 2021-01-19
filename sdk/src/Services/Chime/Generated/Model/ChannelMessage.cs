@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Creates a message in a channel.
+    /// The details of a message in a channel.
     /// </summary>
     public partial class ChannelMessage
     {
@@ -176,7 +176,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Persistence.
+        /// Gets and sets the property Persistence. 
+        /// <para>
+        /// The persistence setting for a channel message.
+        /// </para>
         /// </summary>
         public ChannelMessagePersistenceType Persistence
         {
@@ -193,8 +196,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Redacted. 
         /// <para>
-        /// Hides the content of a message. The message still exists on the back end, but this
-        /// action only returns metadata.
+        /// Hides the content of a message.
         /// </para>
         /// </summary>
         public bool Redacted

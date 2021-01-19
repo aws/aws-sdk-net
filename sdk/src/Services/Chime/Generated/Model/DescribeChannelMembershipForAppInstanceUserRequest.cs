@@ -30,13 +30,20 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeChannelMembershipForAppInstanceUser operation.
-    /// Returns the details of a channel based on the membership of the <code>AppInstanceUser</code>
-    /// specified.
+    /// Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// of the user that makes the API call as the value in the header.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeChannelMembershipForAppInstanceUserRequest : AmazonChimeRequest
     {
         private string _appInstanceUserArn;
         private string _channelArn;
+        private string _chimeBearer;
 
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
@@ -74,6 +81,25 @@ namespace Amazon.Chime.Model
         internal bool IsSetChannelArn()
         {
             return this._channelArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChimeBearer. 
+        /// <para>
+        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChimeBearer
+        {
+            get { return this._chimeBearer; }
+            set { this._chimeBearer = value; }
+        }
+
+        // Check to see if ChimeBearer property is set
+        internal bool IsSetChimeBearer()
+        {
+            return this._chimeBearer != null;
         }
 
     }

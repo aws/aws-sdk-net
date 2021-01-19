@@ -30,8 +30,8 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVoiceConnector operation.
-    /// Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps,
-    /// name, outbound host, and encryption requirements.
+    /// Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps,name,
+    /// outbound host, and encryption requirements.
     /// </summary>
     public partial class GetVoiceConnectorRequest : AmazonChimeRequest
     {

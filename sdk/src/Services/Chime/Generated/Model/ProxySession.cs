@@ -68,7 +68,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The created timestamp, in ISO 8601 format.
+        /// The created time stamp, in ISO 8601 format.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
@@ -86,7 +86,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property EndedTimestamp. 
         /// <para>
-        /// The ended timestamp, in ISO 8601 format.
+        /// The ended time stamp, in ISO 8601 format.
         /// </para>
         /// </summary>
         public DateTime EndedTimestamp
@@ -253,7 +253,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property UpdatedTimestamp. 
         /// <para>
-        /// The updated timestamp, in ISO 8601 format.
+        /// The updated time stamp, in ISO 8601 format.
         /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp

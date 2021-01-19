@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The length of time in days to retain messages.
+    /// The details of the data-retention settings for an <code>AppInstance</code>.
     /// </summary>
     public partial class AppInstanceRetentionSettings
     {
@@ -38,7 +38,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ChannelRetentionSettings. 
         /// <para>
-        /// The length of time in days to retain a channel.
+        /// The length of time in days to retain the messages in a channel.
         /// </para>
         /// </summary>
         public ChannelRetentionSettings ChannelRetentionSettings

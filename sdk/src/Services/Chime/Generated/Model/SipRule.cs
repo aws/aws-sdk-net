@@ -46,7 +46,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The SIP rule created timestamp, in ISO 8601 format.
+        /// The time at which the SIP rule was created, in ISO 8601 format.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
@@ -64,8 +64,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Disabled. 
         /// <para>
-        /// Indicates if the SIP rule is enabled or disabled. You must disable a rule before you
-        /// can delete it.
+        /// Indicates whether the SIP rule is enabled or disabled. You must disable a rule before
+        /// you can delete it.
         /// </para>
         /// </summary>
         public bool Disabled
@@ -120,8 +120,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property TargetApplications. 
         /// <para>
-        /// List of SIP media applications with priority and AWS Region. You can only use one
-        /// SIP application per AWS Region and priority combination.
+        /// Target SIP media application and other details, such as priority and AWS Region, to
+        /// be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -140,7 +140,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property TriggerType. 
         /// <para>
-        /// The type of trigger whose value is assigned to the SIP rule in <code>TriggerValue</code>.
+        /// The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently
+        /// <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.
         /// </para>
         /// </summary>
         public SipRuleTriggerType TriggerType
@@ -180,7 +181,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property UpdatedTimestamp. 
         /// <para>
-        /// The SIP rule updated timestamp, in ISO 8601 format.
+        /// The time at which the SIP rule was last updated, in ISO 8601 format.
         /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp

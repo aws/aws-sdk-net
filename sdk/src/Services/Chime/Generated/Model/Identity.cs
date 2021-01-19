@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The ARN and name of a user.
+    /// The details of a user.
     /// </summary>
     public partial class Identity
     {

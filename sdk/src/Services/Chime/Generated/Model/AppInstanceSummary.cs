@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// The summary data for an app instance.
+    /// Summary of the data for an <code>AppInstance</code>.
     /// </summary>
     public partial class AppInstanceSummary
     {
@@ -40,7 +40,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The app instance ARN.
+        /// The <code>AppInstance</code> ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -59,7 +59,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata of the app instance summary.
+        /// The metadata of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -78,7 +78,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the app instance summary.
+        /// The name of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

@@ -58,7 +58,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The ID string assigned to each message. 
+        /// The ID string assigned to each message.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

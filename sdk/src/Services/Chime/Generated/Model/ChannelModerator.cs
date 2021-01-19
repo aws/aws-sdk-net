@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Creates a moderator on a channel.
+    /// The details of a channel moderator.
     /// </summary>
     public partial class ChannelModerator
     {
@@ -60,7 +60,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The member who created the moderator.
+        /// The <code>AppInstanceUser</code> who created the moderator.
         /// </para>
         /// </summary>
         public Identity CreatedBy

@@ -45,6 +45,7 @@ namespace Amazon.Chime.Model
         /// The phone number that a user calls from.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string FromPhoneNumber
         {
             get { return this._fromPhoneNumber; }
@@ -79,9 +80,10 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ToPhoneNumber. 
         /// <para>
-        /// The phone number that the user dials in order to connect to a meeting
+        /// The phone number that the user dials in order to connect to a meeting.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ToPhoneNumber
         {
             get { return this._toPhoneNumber; }

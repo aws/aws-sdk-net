@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Target SIP media application along with other details like priority and AWS Region
-    /// to be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.
+    /// Target SIP media application and other details, such as priority and AWS Region, to
+    /// be specified in the SIP rule. Only one SIP rule per AWS Region can be provided.
     /// </summary>
     public partial class SipRuleTargetApplication
     {
@@ -41,7 +41,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// AWS Region of target application.
+        /// The AWS Region of the target application.
         /// </para>
         /// </summary>
         public string AwsRegion

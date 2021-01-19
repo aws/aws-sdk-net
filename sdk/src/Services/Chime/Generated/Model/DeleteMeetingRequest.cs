@@ -31,9 +31,10 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the DeleteMeeting operation.
     /// Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees
-    /// are also deleted and clients can no longer join it. For more information about the
-    /// Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-    /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+    /// are also deleted, clients connected to the meeting are disconnected, and clients can
+    /// no longer join the meeting. For more information about the Amazon Chime SDK, see <a
+    /// href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon
+    /// Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
     /// </summary>
     public partial class DeleteMeetingRequest : AmazonChimeRequest
     {

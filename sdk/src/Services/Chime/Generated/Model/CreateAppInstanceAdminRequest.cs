@@ -35,7 +35,7 @@ namespace Amazon.Chime.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ChannelModerator</code> actions across all channels in the app instance.
+    ///  <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceAdminArn. 
         /// <para>
-        /// The ARN of the administrator of the current app instance.
+        /// The ARN of the administrator of the current <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -74,7 +74,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the app instance.
+        /// The ARN of the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

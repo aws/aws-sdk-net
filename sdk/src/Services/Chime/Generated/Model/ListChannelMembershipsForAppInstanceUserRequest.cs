@@ -32,18 +32,26 @@ namespace Amazon.Chime.Model
     /// Container for the parameters to the ListChannelMembershipsForAppInstanceUser operation.
     /// Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only
     /// an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their
-    /// own.
+    /// own. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// of the user that makes the API call as the value in the header.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListChannelMembershipsForAppInstanceUserRequest : AmazonChimeRequest
     {
         private string _appInstanceUserArn;
+        private string _chimeBearer;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the app instance users
+        /// The ARN of the <code>AppInstanceUser</code>s
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -60,9 +68,28 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChimeBearer. 
+        /// <para>
+        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1600)]
+        public string ChimeBearer
+        {
+            get { return this._chimeBearer; }
+            set { this._chimeBearer = value; }
+        }
+
+        // Check to see if ChimeBearer property is set
+        internal bool IsSetChimeBearer()
+        {
+            return this._chimeBearer != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of users that you want returned. 
+        /// The maximum number of users that you want returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

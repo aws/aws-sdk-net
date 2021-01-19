@@ -101,8 +101,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property TriggerType. 
         /// <para>
-        /// The type of trigger whose value is assigned to the SIP rule in <code>TriggerValue</code>.
-        /// Allowed trigger values are <code>RequestUriHostname</code> and <code>ToPhoneNumber</code>.
+        /// The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently
+        /// <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -121,16 +121,13 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property TriggerValue. 
         /// <para>
-        /// If <code>TriggerType</code> is <code>RequestUriHostname</code> then the value can
-        /// be the outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code>
-        /// is <code>ToPhoneNumber</code> then the value can be a customer-owned phone number
-        /// in E164 format. <code>SipRule</code> is triggered if the SIP application requests
-        /// a host name, or a If <code>TriggerType</code> is <code>RequestUriHostname</code>,
-        /// then the value can be the outbound hostname of an Amazon Chime Voice Connector. If
-        /// <code>TriggerType</code> is <code>ToPhoneNumber</code>, then the value can be a customer-owned
-        /// phone number in E164 format. <code>SipRule</code> is triggered if the SIP application
-        /// requests a host name, or a <code>ToPhoneNumber</code> value matches the incoming SIP
-        /// request.
+        /// If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the
+        /// outbound host name of an Amazon Chime Voice Connector. If <code>TriggerType</code>
+        /// is <code>ToPhoneNumber</code>, the value can be a customer-owned phone number in the
+        /// E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code>
+        /// is triggered if the request URI in an incoming SIP request matches the <code>RequestUriHostname</code>,
+        /// or if the <code>To</code> header in the incoming SIP request matches the <code>ToPhoneNumber</code>
+        /// value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
