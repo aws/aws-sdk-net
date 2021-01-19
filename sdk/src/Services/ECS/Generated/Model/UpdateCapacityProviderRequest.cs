@@ -40,7 +40,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupProvider. 
         /// <para>
-        /// The name of the capacity provider to update.
+        /// An object representing the parameters to update for the Auto Scaling group capacity
+        /// provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,8 +60,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// An object representing the parameters to update for the Auto Scaling group capacity
-        /// provider.
+        /// The name of the capacity provider to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

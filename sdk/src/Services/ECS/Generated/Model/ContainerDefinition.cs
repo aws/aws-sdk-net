@@ -453,10 +453,6 @@ namespace Amazon.ECS.Model
         /// variable names. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
         /// Environment Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
-        ///  
-        /// <para>
-        /// This field is not valid for containers in tasks using the Fargate launch type.
-        /// </para>
         /// </summary>
         public List<EnvironmentFile> EnvironmentFiles
         {

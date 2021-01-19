@@ -39,6 +39,7 @@ namespace Amazon.ECS.Model
         private List<string> _compatibilities = new List<string>();
         private List<ContainerDefinition> _containerDefinitions = new List<ContainerDefinition>();
         private string _cpu;
+        private DateTime? _deregisteredAt;
         private string _executionRoleArn;
         private string _family;
         private List<InferenceAccelerator> _inferenceAccelerators = new List<InferenceAccelerator>();
@@ -48,6 +49,8 @@ namespace Amazon.ECS.Model
         private PidMode _pidMode;
         private List<TaskDefinitionPlacementConstraint> _placementConstraints = new List<TaskDefinitionPlacementConstraint>();
         private ProxyConfiguration _proxyConfiguration;
+        private DateTime? _registeredAt;
+        private string _registeredBy;
         private List<Attribute> _requiresAttributes = new List<Attribute>();
         private List<string> _requiresCompatibilities = new List<string>();
         private int? _revision;
@@ -141,6 +144,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetCpu()
         {
             return this._cpu != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeregisteredAt. 
+        /// <para>
+        /// The Unix timestamp for when the task definition was deregistered.
+        /// </para>
+        /// </summary>
+        public DateTime DeregisteredAt
+        {
+            get { return this._deregisteredAt.GetValueOrDefault(); }
+            set { this._deregisteredAt = value; }
+        }
+
+        // Check to see if DeregisteredAt property is set
+        internal bool IsSetDeregisteredAt()
+        {
+            return this._deregisteredAt.HasValue; 
         }
 
         /// <summary>
@@ -477,6 +498,42 @@ namespace Amazon.ECS.Model
         internal bool IsSetProxyConfiguration()
         {
             return this._proxyConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegisteredAt. 
+        /// <para>
+        /// The Unix timestamp for when the task definition was registered.
+        /// </para>
+        /// </summary>
+        public DateTime RegisteredAt
+        {
+            get { return this._registeredAt.GetValueOrDefault(); }
+            set { this._registeredAt = value; }
+        }
+
+        // Check to see if RegisteredAt property is set
+        internal bool IsSetRegisteredAt()
+        {
+            return this._registeredAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegisteredBy. 
+        /// <para>
+        /// The principal that registered the task definition.
+        /// </para>
+        /// </summary>
+        public string RegisteredBy
+        {
+            get { return this._registeredBy; }
+            set { this._registeredBy = value; }
+        }
+
+        // Check to see if RegisteredBy property is set
+        internal bool IsSetRegisteredBy()
+        {
+            return this._registeredBy != null;
         }
 
         /// <summary>

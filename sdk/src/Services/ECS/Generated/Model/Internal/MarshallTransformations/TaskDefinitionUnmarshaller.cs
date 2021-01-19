@@ -82,6 +82,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Cpu = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deregisteredAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.DeregisteredAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("executionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -134,6 +140,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ProxyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ProxyConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("registeredAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RegisteredAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("registeredBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RegisteredBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("requiresAttributes", targetDepth))
