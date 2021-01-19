@@ -29,14 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// Contains information about the certificate subject. The certificate can be one issued
-    /// by your private certificate authority (CA) or it can be your private CA certificate.
-    /// The <b>Subject</b> field in the certificate identifies the entity that owns or controls
-    /// the public key in the certificate. The entity can be a user, computer, device, or
-    /// service. The <b>Subject</b> must contain an X.500 distinguished name (DN). A DN is
-    /// a sequence of relative distinguished names (RDNs). The RDNs are separated by commas
-    /// in the certificate. The DN must be unique for each entity, but your private CA can
-    /// issue more than one certificate with the same DN to the same entity.
+    /// Contains information about the certificate subject. The <code>Subject</code> field
+    /// in the certificate identifies the entity that owns or controls the public key in the
+    /// certificate. The entity can be a user, computer, device, or service. The <code>Subject
+    /// </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative
+    /// distinguished names (RDNs). The RDNs are separated by commas in the certificate.
     /// </summary>
     public partial class ASN1Subject
     {
@@ -161,7 +158,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property Initials. 
         /// <para>
         /// Concatenation that typically contains the first letter of the <b>GivenName</b>, the
-        /// first letter of the middle name if one exists, and the first letter of the <b>SurName</b>.
+        /// first letter of the middle name if one exists, and the first letter of the <b>Surname</b>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

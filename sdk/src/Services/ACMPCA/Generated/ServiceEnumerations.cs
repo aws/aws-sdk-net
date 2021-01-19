@@ -357,6 +357,84 @@ namespace Amazon.ACMPCA
 
 
     /// <summary>
+    /// Constants used for properties of type ExtendedKeyUsageType.
+    /// </summary>
+    public class ExtendedKeyUsageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CERTIFICATE_TRANSPARENCY for ExtendedKeyUsageType
+        /// </summary>
+        public static readonly ExtendedKeyUsageType CERTIFICATE_TRANSPARENCY = new ExtendedKeyUsageType("CERTIFICATE_TRANSPARENCY");
+        /// <summary>
+        /// Constant CLIENT_AUTH for ExtendedKeyUsageType
+        /// </summary>
+        public static readonly ExtendedKeyUsageType CLIENT_AUTH = new ExtendedKeyUsageType("CLIENT_AUTH");
+        /// <summary>
+        /// Constant CODE_SIGNING for ExtendedKeyUsageType
+        /// </summary>
+        public static readonly ExtendedKeyUsageType CODE_SIGNING = new ExtendedKeyUsageType("CODE_SIGNING");
+        /// <summary>
+        /// Constant DOCUMENT_SIGNING for ExtendedKeyUsageType
+        /// </summary>
+        public static readonly ExtendedKeyUsageType DOCUMENT_SIGNING = new ExtendedKeyUsageType("DOCUMENT_SIGNING");
+        /// <summary>
+        /// Constant EMAIL_PROTECTION for ExtendedKeyUsageType
+        /// </summary>
+        public static readonly ExtendedKeyUsageType EMAIL_PROTECTION = new ExtendedKeyUsageType("EMAIL_PROTECTION");
+        /// <summary>
+        /// Constant OCSP_SIGNING for ExtendedKeyUsageType
+        /// </summary>
+        public static readonly ExtendedKeyUsageType OCSP_SIGNING = new ExtendedKeyUsageType("OCSP_SIGNING");
+        /// <summary>
+        /// Constant SERVER_AUTH for ExtendedKeyUsageType
+        /// </summary>
+        public static readonly ExtendedKeyUsageType SERVER_AUTH = new ExtendedKeyUsageType("SERVER_AUTH");
+        /// <summary>
+        /// Constant SMART_CARD_LOGIN for ExtendedKeyUsageType
+        /// </summary>
+        public static readonly ExtendedKeyUsageType SMART_CARD_LOGIN = new ExtendedKeyUsageType("SMART_CARD_LOGIN");
+        /// <summary>
+        /// Constant TIME_STAMPING for ExtendedKeyUsageType
+        /// </summary>
+        public static readonly ExtendedKeyUsageType TIME_STAMPING = new ExtendedKeyUsageType("TIME_STAMPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExtendedKeyUsageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExtendedKeyUsageType FindValue(string value)
+        {
+            return FindValue<ExtendedKeyUsageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExtendedKeyUsageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FailureReason.
     /// </summary>
     public class FailureReason : ConstantClass
@@ -462,6 +540,52 @@ namespace Amazon.ACMPCA
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeyAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyQualifierId.
+    /// </summary>
+    public class PolicyQualifierId : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CPS for PolicyQualifierId
+        /// </summary>
+        public static readonly PolicyQualifierId CPS = new PolicyQualifierId("CPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyQualifierId(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyQualifierId FindValue(string value)
+        {
+            return FindValue<PolicyQualifierId>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyQualifierId(string value)
         {
             return FindValue(value);
         }

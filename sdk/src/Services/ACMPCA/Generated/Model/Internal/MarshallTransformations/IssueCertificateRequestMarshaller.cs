@@ -68,6 +68,17 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApiPassthrough())
+                {
+                    context.Writer.WritePropertyName("ApiPassthrough");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ApiPassthroughMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ApiPassthrough, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCertificateAuthorityArn())
                 {
                     context.Writer.WritePropertyName("CertificateAuthorityArn");
@@ -105,6 +116,17 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 
                     var marshaller = ValidityMarshaller.Instance;
                     marshaller.Marshall(publicRequest.Validity, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetValidityNotBefore())
+                {
+                    context.Writer.WritePropertyName("ValidityNotBefore");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ValidityMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ValidityNotBefore, context);
 
                     context.Writer.WriteObjectEnd();
                 }

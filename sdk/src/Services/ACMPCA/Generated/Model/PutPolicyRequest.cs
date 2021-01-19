@@ -81,7 +81,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The path and filename of a JSON-formatted IAM policy to attach to the specified private
+        /// The path and file name of a JSON-formatted IAM policy to attach to the specified private
         /// CA resource. If this policy does not contain all required statements or if it includes
         /// any statement that is not allowed, the <code>PutPolicy</code> action returns an <code>InvalidPolicyException</code>.
         /// For information about IAM policy and statement structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview

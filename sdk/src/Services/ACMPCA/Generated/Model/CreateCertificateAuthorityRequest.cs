@@ -105,11 +105,13 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
-        /// Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
-        /// For a given token, ACM Private CA creates exactly one CA. If you issue a subsequent
-        /// call using the same token, ACM Private CA returns the ARN of the existing CA and takes
-        /// no further action. If you change the idempotency token across multiple calls, ACM
-        /// Private CA creates a unique CA for each unique token.
+        /// Custom string that can be used to distinguish between calls to the <b>CreateCertificateAuthority</b>
+        /// action. Idempotency tokens for <b>CreateCertificateAuthority</b> time out after five
+        /// minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times with
+        /// the same idempotency token within five minutes, ACM Private CA recognizes that you
+        /// are requesting only certificate authority and will issue only one. If you change the
+        /// idempotency token for each call, PCA recognizes that you are requesting multiple certificate
+        /// authorities.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]

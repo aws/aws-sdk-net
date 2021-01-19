@@ -838,7 +838,7 @@ namespace Amazon.ACMPCA
         ///  </li> <li> 
         /// <para>
         ///  <code>FAILED</code> - Your private CA has failed. Your CA can fail because of problems
-        /// such a network outage or backend AWS failure or other errors. A failed CA can never
+        /// such a network outage or back-end AWS failure or other errors. A failed CA can never
         /// return to the pending state. You must create a new CA. 
         /// </para>
         ///  </li> <li> 
@@ -894,7 +894,7 @@ namespace Amazon.ACMPCA
         ///  </li> <li> 
         /// <para>
         ///  <code>FAILED</code> - Your private CA has failed. Your CA can fail because of problems
-        /// such a network outage or backend AWS failure or other errors. A failed CA can never
+        /// such a network outage or back-end AWS failure or other errors. A failed CA can never
         /// return to the pending state. You must create a new CA. 
         /// </para>
         ///  </li> <li> 
@@ -1314,7 +1314,7 @@ namespace Amazon.ACMPCA
         ///  <ol> <li> 
         /// <para>
         /// In ACM Private CA, call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
-        /// action to create the private CA that that you plan to back with the imported certificate.
+        /// action to create the private CA that you plan to back with the imported certificate.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1350,7 +1350,7 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following addtitional requirements apply when you import a CA certificate.
+        /// The following additional requirements apply when you import a CA certificate.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1516,7 +1516,7 @@ namespace Amazon.ACMPCA
         ///  <ol> <li> 
         /// <para>
         /// In ACM Private CA, call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
-        /// action to create the private CA that that you plan to back with the imported certificate.
+        /// action to create the private CA that you plan to back with the imported certificate.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1552,7 +1552,7 @@ namespace Amazon.ACMPCA
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following addtitional requirements apply when you import a CA certificate.
+        /// The following additional requirements apply when you import a CA certificate.
         /// </para>
         ///  <ul> <li> 
         /// <para>

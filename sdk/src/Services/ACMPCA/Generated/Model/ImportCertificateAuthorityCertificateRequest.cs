@@ -37,7 +37,7 @@ namespace Amazon.ACMPCA.Model
     ///  <ol> <li> 
     /// <para>
     /// In ACM Private CA, call the <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
-    /// action to create the private CA that that you plan to back with the imported certificate.
+    /// action to create the private CA that you plan to back with the imported certificate.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.ACMPCA.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The following addtitional requirements apply when you import a CA certificate.
+    /// The following additional requirements apply when you import a CA certificate.
     /// </para>
     ///  <ul> <li> 
     /// <para>
