@@ -32,7 +32,7 @@ namespace Amazon.CertificateManager
     public partial class AmazonCertificateManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.5.0.60");
+            InternalSDKUtils.BuildUserAgentString("3.5.0.61");
 
         private string _userAgent = UserAgentString;
 

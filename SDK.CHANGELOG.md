@@ -1,3 +1,8 @@
+### 3.5.93.0 (2021-01-20 00:24 UTC)
+* Core 3.5.2.0
+	* Added retry header support; Read error response async when the service operation is called async; Fixes an issue in DefaultInstanceProfileAWSCredentials class to avoid multiple GetCredentials() calls from hitting IMDS subsequently; AWS SSO based Credential Profiles are now handled by the SDK.
+	* All services packages updated to require new Core
+
 ### 3.5.92.0 (2021-01-19 19:13 UTC)
 * ACMPCA (3.5.2.0)
 	* ACM Private CA is launching additional certificate templates and API parameters. This allows customers to create custom certificates for their identity and secure communication use cases.
