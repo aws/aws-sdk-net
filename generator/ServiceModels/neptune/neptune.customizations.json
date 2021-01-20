@@ -32,5 +32,16 @@
                 "RestoreToTime"
             ]
         }
-    }
+    },
+    
+    "runtimePipelineOverride": {
+        "overrides": [
+            {
+                "operation": "addBefore",
+                "newType": "Amazon.Neptune.Internal.PreSignedUrlRequestHandler",
+                "targetType": "Amazon.Runtime.Internal.Marshaller",
+                "constructorInput": "this.Credentials"
+            }
+        ]
+    }  
 }
