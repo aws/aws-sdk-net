@@ -1,3 +1,11 @@
+### 3.5.94.0 (2021-01-21 21:05 UTC)
+* Kafka (3.5.7.0)
+	* Amazon MSK has added a new API that allows you to update all the brokers in the cluster to the specified type.
+* ResourceGroupsTaggingAPI (3.5.1.0)
+	* This release adds a new parameter ResourceARNList to Resource Groups Tagging api GetResources api to allow customers retrieve tag data for specific resources.
+* SecurityHub (3.5.4.0)
+	* This release of ASFF adds a new Action object and a new resource details object - AwsSsmPatchCompliance. It also adds several new attributes for the AwsEc2NetworkInterface resource type.
+
 ### 3.5.93.0 (2021-01-20 00:24 UTC)
 * Core 3.5.2.0
 	* Added retry header support; Read error response async when the service operation is called async; Fixes an issue in DefaultInstanceProfileAWSCredentials class to avoid multiple GetCredentials() calls from hitting IMDS subsequently; AWS SSO based Credential Profiles are now handled by the SDK.

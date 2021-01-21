@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.93.0",
+    "ProductVersion" : "3.5.94.0",
     "CoreVersion"    : "3.5.2.0",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -762,7 +762,7 @@
             "InPreview"               : false
         },
         "ResourceGroupsTaggingAPI"        : {
-            "Version" : "3.5.0.61",
+            "Version" : "3.5.1.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.2.0"
@@ -1306,7 +1306,7 @@
             "InPreview"               : false
         },
         "SecurityHub"                     : {
-            "Version" : "3.5.3.20",
+            "Version" : "3.5.4.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.2.0"
@@ -1330,7 +1330,7 @@
             "InPreview"               : false
         },
         "Kafka"                           : {
-            "Version" : "3.5.6.15",
+            "Version" : "3.5.7.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.2.0"
