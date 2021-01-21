@@ -39,12 +39,12 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// <para>
     /// To remove tags from a resource, you need the necessary permissions for the service
     /// that the resource belongs to as well as permissions for removing tags. For more information,
-    /// see <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this
-    /// list</a>.
+    /// see the documentation for the service whose resource you want to untag.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You can only tag resources that are located in the specified Region for the AWS account.
+    /// You can only tag resources that are located in the specified AWS Region for the calling
+    /// AWS account.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -56,8 +56,12 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property ResourceARNList. 
         /// <para>
-        /// A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. For
-        /// more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Specifies a list of ARNs of the resources that you want to remove tags from.
+        /// </para>
+        ///  
+        /// <para>
+        /// An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
+        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
@@ -77,7 +81,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// A list of the tag keys that you want to remove from the specified resources.
+        /// Specifies a list of tag keys that you want to remove from the specified resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

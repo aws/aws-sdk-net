@@ -39,9 +39,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property PaginationToken. 
         /// <para>
-        /// A string that indicates that the response contains more data than can be returned
-        /// in a single response. To receive additional data, specify this string for the <code>PaginationToken</code>
-        /// value in a subsequent request.
+        /// A string that indicates that there is more data available than this response contains.
+        /// To receive the next part of the response, specify this response value as the <code>PaginationToken</code>
+        /// value in the request for the next page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

@@ -34,25 +34,25 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Not all resources can have tags. For a list of services that support tagging, see
-    /// <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this
-    /// list</a>.
+    /// Not all resources can have tags. For a list of services with resources that support
+    /// tagging using this operation, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+    /// that support the Resource Groups Tagging API</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Each resource can have up to 50 tags. For other limits, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
+    /// Each resource can have up to 50 tags. For other limits, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
     /// Naming and Usage Conventions</a> in the <i>AWS General Reference.</i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You can only tag resources that are located in the specified Region for the AWS account.
+    /// You can only tag resources that are located in the specified AWS Region for the AWS
+    /// account.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// To add tags to a resource, you need the necessary permissions for the service that
     /// the resource belongs to as well as permissions for adding tags. For more information,
-    /// see <a href="http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html">this
-    /// list</a>.
+    /// see the documentation for each service.
     /// </para>
     ///  </li> </ul> <important> 
     /// <para>
@@ -70,8 +70,12 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property ResourceARNList. 
         /// <para>
-        /// A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. For
-        /// more information, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Specifies the list of ARNs of the resources that you want to apply tags to.
+        /// </para>
+        ///  
+        /// <para>
+        /// An ARN (Amazon Resource Name) uniquely identifies a resource. For more information,
+        /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
         /// </para>
         /// </summary>
@@ -91,8 +95,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags that you want to add to the specified resources. A tag consists of a key
-        /// and a value that you define.
+        /// Specifies a list of tags that you want to add to the specified resources. A tag consists
+        /// of a key and a value that you define.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

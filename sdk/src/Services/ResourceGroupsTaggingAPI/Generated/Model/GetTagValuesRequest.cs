@@ -30,7 +30,18 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTagValues operation.
-    /// Returns all tag values for the specified key in the specified Region for the AWS account.
+    /// Returns all tag values for the specified key that are used in the specified AWS Region
+    /// for the calling AWS account.
+    /// 
+    ///  
+    /// <para>
+    /// This operation supports pagination, where the response can be sent in multiple pages.
+    /// You should check the <code>PaginationToken</code> response parameter to determine
+    /// if there are additional results available to return. Repeat the query, passing the
+    /// <code>PaginationToken</code> response parameter value as an input to the next request
+    /// until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code>
+    /// indicates that there are no more results waiting to be returned.
+    /// </para>
     /// </summary>
     public partial class GetTagValuesRequest : AmazonResourceGroupsTaggingAPIRequest
     {
@@ -40,8 +51,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key for which you want to list all existing values in the specified Region for
-        /// the AWS account.
+        /// Specifies the tag key for which you want to list all existing values that are currently
+        /// used in the specified AWS Region for the calling AWS account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -60,9 +71,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property PaginationToken. 
         /// <para>
-        /// A string that indicates that additional data is available. Leave this value empty
-        /// for your initial request. If the response includes a <code>PaginationToken</code>,
-        /// use that string for this value to request an additional page of data.
+        /// Specifies a <code>PaginationToken</code> response value from a previous request to
+        /// indicate that you want the next page of results. Leave this parameter empty in your
+        /// initial request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

@@ -35,13 +35,22 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// 
     ///  
     /// <para>
-    /// For more information on tag policies, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
+    /// For more information on tag policies, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag
     /// Policies</a> in the <i>AWS Organizations User Guide.</i> 
     /// </para>
     ///  
     /// <para>
-    /// You can call this operation only from the organization's master account and from the
-    /// us-east-1 Region.
+    /// You can call this operation only from the organization's management account and from
+    /// the us-east-1 Region.
+    /// </para>
+    ///  
+    /// <para>
+    /// This operation supports pagination, where the response can be sent in multiple pages.
+    /// You should check the <code>PaginationToken</code> response parameter to determine
+    /// if there are additional results available to return. Repeat the query, passing the
+    /// <code>PaginationToken</code> response parameter value as an input to the next request
+    /// until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code>
+    /// indicates that there are no more results waiting to be returned.
     /// </para>
     /// </summary>
     public partial class GetComplianceSummaryRequest : AmazonResourceGroupsTaggingAPIRequest
@@ -57,8 +66,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property GroupBy. 
         /// <para>
-        /// A list of attributes to group the counts of noncompliant resources by. If supplied,
-        /// the counts are sorted by those attributes.
+        /// Specifies a list of attributes to group the counts of noncompliant resources by. If
+        /// supplied, the counts are sorted by those attributes.
         /// </para>
         /// </summary>
         public List<string> GroupBy
@@ -76,7 +85,10 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// A limit that restricts the number of results that are returned per page.
+        /// Specifies the maximum number of results to be returned in each page. A query can return
+        /// fewer than this maximum, even if there are more results still to return. You should
+        /// always check the <code>PaginationToken</code> response value to see if there are more
+        /// results. You can specify a minimum of 1 and a maximum value of 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -95,9 +107,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property PaginationToken. 
         /// <para>
-        /// A string that indicates that additional data is available. Leave this value empty
-        /// for your initial request. If the response includes a <code>PaginationToken</code>,
-        /// use that string for this value to request an additional page of data.
+        /// Specifies a <code>PaginationToken</code> response value from a previous request to
+        /// indicate that you want the next page of results. Leave this parameter empty in your
+        /// initial request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -116,8 +128,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property RegionFilters. 
         /// <para>
-        /// A list of Regions to limit the output by. If you use this parameter, the count of
-        /// returned noncompliant resources includes only resources in the specified Regions.
+        /// Specifies a list of AWS Regions to limit the output by. If you use this parameter,
+        /// the count of returned noncompliant resources includes only resources in the specified
+        /// Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -136,11 +149,11 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property ResourceTypeFilters. 
         /// <para>
-        /// The constraints on the resources that you want returned. The format of each resource
-        /// type is <code>service[:resourceType]</code>. For example, specifying a resource type
-        /// of <code>ec2</code> returns all Amazon EC2 resources (which includes EC2 instances).
-        /// Specifying a resource type of <code>ec2:instance</code> returns only EC2 instances.
-        /// 
+        /// Specifies that you want the response to include information for only resources of
+        /// the specified types. The format of each resource type is <code>service[:resourceType]</code>.
+        /// For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2
+        /// resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code>
+        /// returns only EC2 instances. 
         /// </para>
         ///  
         /// <para>
@@ -150,24 +163,24 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For a list of service name strings, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+        /// For a list of service name strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
         /// Service Namespaces</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For resource type strings, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
+        /// For resource type strings, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
         /// ARNs</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can specify multiple resource types by using an array. The array can include up
-        /// to 100 items. Note that the length constraint requirement applies to each resource
-        /// type filter. 
+        /// You can specify multiple resource types by using a comma separated array. The array
+        /// can include up to 100 items. Note that the length constraint requirement applies to
+        /// each resource type filter. 
         /// </para>
         /// </summary>
         public List<string> ResourceTypeFilters
@@ -185,9 +198,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property TagKeyFilters. 
         /// <para>
-        /// A list of tag keys to limit the output by. If you use this parameter, the count of
-        /// returned noncompliant resources includes only resources that have the specified tag
-        /// keys.
+        /// Specifies that you want the response to include information for only resources that
+        /// have tags with the specified tag keys. If you use this parameter, the count of returned
+        /// noncompliant resources includes only resources that have the specified tag keys.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -206,8 +219,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property TargetIdFilters. 
         /// <para>
-        /// The target identifiers (usually, specific account IDs) to limit the output by. If
-        /// you use this parameter, the count of returned noncompliant resources includes only
+        /// Specifies target identifiers (usually, specific account IDs) to limit the output by.
+        /// If you use this parameter, the count of returned noncompliant resources includes only
         /// resources with the specified target IDs.
         /// </para>
         /// </summary>

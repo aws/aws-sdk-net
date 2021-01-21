@@ -34,8 +34,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// 
     ///  
     /// <para>
-    /// You can call this operation only from the organization's master account and from the
-    /// us-east-1 Region.
+    /// You can call this operation only from the organization's management account and from
+    /// the us-east-1 Region.
     /// </para>
     /// </summary>
     public partial class DescribeReportCreationRequest : AmazonResourceGroupsTaggingAPIRequest

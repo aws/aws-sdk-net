@@ -30,7 +30,18 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTagKeys operation.
-    /// Returns all tag keys in the specified Region for the AWS account.
+    /// Returns all tag keys currently in use in the specified Region for the calling AWS
+    /// account.
+    /// 
+    ///  
+    /// <para>
+    /// This operation supports pagination, where the response can be sent in multiple pages.
+    /// You should check the <code>PaginationToken</code> response parameter to determine
+    /// if there are additional results available to return. Repeat the query, passing the
+    /// <code>PaginationToken</code> response parameter value as an input to the next request
+    /// until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code>
+    /// indicates that there are no more results waiting to be returned.
+    /// </para>
     /// </summary>
     public partial class GetTagKeysRequest : AmazonResourceGroupsTaggingAPIRequest
     {
@@ -39,9 +50,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property PaginationToken. 
         /// <para>
-        /// A string that indicates that additional data is available. Leave this value empty
-        /// for your initial request. If the response includes a <code>PaginationToken</code>,
-        /// use that string for this value to request an additional page of data.
+        /// Specifies a <code>PaginationToken</code> response value from a previous request to
+        /// indicate that you want the next page of results. Leave this parameter empty in your
+        /// initial request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
