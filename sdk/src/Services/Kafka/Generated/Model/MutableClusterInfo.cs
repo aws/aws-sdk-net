@@ -36,6 +36,7 @@ namespace Amazon.Kafka.Model
         private List<BrokerEBSVolumeInfo> _brokerEBSVolumeInfo = new List<BrokerEBSVolumeInfo>();
         private ConfigurationInfo _configurationInfo;
         private EnhancedMonitoring _enhancedMonitoring;
+        private string _instanceType;
         private string _kafkaVersion;
         private LoggingInfo _loggingInfo;
         private int? _numberOfBrokerNodes;
@@ -94,6 +95,25 @@ namespace Amazon.Kafka.Model
         internal bool IsSetEnhancedMonitoring()
         {
             return this._enhancedMonitoring != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType.             
+        /// <para>
+        /// Information about the Amazon MSK broker type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=32)]
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
         }
 
         /// <summary>

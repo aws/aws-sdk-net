@@ -65,4 +65,9 @@
     <min>1</min>
     <max>16384</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kafka.Model.MutableClusterInfo.InstanceType</property>
+    <min>5</min>
+    <max>32</max>
+  </property-value-rule>
 </property-value-rules>
