@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// 
+    /// Provides details about an Amazon RDS DB cluster snapshot.
     /// </summary>
     public partial class AwsRdsDbSnapshotDetails
     {
@@ -62,7 +62,10 @@ namespace Amazon.SecurityHub.Model
         private string _vpcId;
 
         /// <summary>
-        /// Gets and sets the property AllocatedStorage.
+        /// Gets and sets the property AllocatedStorage. 
+        /// <para>
+        /// The amount of storage (in gigabytes) to be initially allocated for the database instance.
+        /// </para>
         /// </summary>
         public int AllocatedStorage
         {
@@ -77,7 +80,11 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AvailabilityZone.
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// Specifies the name of the Availability Zone in which the DB instance was located at
+        /// the time of the DB snapshot.
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
@@ -92,7 +99,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DbInstanceIdentifier.
+        /// Gets and sets the property DbInstanceIdentifier. 
+        /// <para>
+        /// A name for the DB instance.
+        /// </para>
         /// </summary>
         public string DbInstanceIdentifier
         {
@@ -107,7 +117,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DbiResourceId.
+        /// Gets and sets the property DbiResourceId. 
+        /// <para>
+        /// The identifier for the source DB instance.
+        /// </para>
         /// </summary>
         public string DbiResourceId
         {
@@ -122,7 +135,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DbSnapshotIdentifier.
+        /// Gets and sets the property DbSnapshotIdentifier. 
+        /// <para>
+        /// The name or ARN of the DB snapshot that is used to restore the DB instance.
+        /// </para>
         /// </summary>
         public string DbSnapshotIdentifier
         {
@@ -137,7 +153,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Encrypted.
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Whether the DB snapshot is encrypted.
+        /// </para>
         /// </summary>
         public bool Encrypted
         {
@@ -152,7 +171,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Engine.
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The name of the database engine to use for this DB instance.
+        /// </para>
         /// </summary>
         public string Engine
         {
@@ -167,7 +189,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineVersion.
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The version of the database engine.
+        /// </para>
         /// </summary>
         public string EngineVersion
         {
@@ -182,7 +207,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IamDatabaseAuthenticationEnabled.
+        /// Gets and sets the property IamDatabaseAuthenticationEnabled. 
+        /// <para>
+        /// Whether mapping of IAM accounts to database accounts is enabled.
+        /// </para>
         /// </summary>
         public bool IamDatabaseAuthenticationEnabled
         {
@@ -197,7 +225,11 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceCreateTime.
+        /// Gets and sets the property InstanceCreateTime. 
+        /// <para>
+        /// Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from
+        /// which the snapshot was taken, was created.
+        /// </para>
         /// </summary>
         public string InstanceCreateTime
         {
@@ -212,7 +244,11 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Iops.
+        /// Gets and sets the property Iops. 
+        /// <para>
+        /// The provisioned IOPS (I/O operations per second) value of the DB instance at the time
+        /// of the snapshot.
+        /// </para>
         /// </summary>
         public int Iops
         {
@@ -227,7 +263,11 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KmsKeyId.
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier for the
+        /// encrypted DB snapshot.
+        /// </para>
         /// </summary>
         public string KmsKeyId
         {
@@ -242,7 +282,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LicenseModel.
+        /// Gets and sets the property LicenseModel. 
+        /// <para>
+        /// License model information for the restored DB instance.
+        /// </para>
         /// </summary>
         public string LicenseModel
         {
@@ -257,7 +300,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MasterUsername.
+        /// Gets and sets the property MasterUsername. 
+        /// <para>
+        /// The master user name for the DB snapshot.
+        /// </para>
         /// </summary>
         public string MasterUsername
         {
@@ -272,7 +318,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OptionGroupName.
+        /// Gets and sets the property OptionGroupName. 
+        /// <para>
+        /// The option group name for the DB snapshot.
+        /// </para>
         /// </summary>
         public string OptionGroupName
         {
@@ -287,7 +336,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PercentProgress.
+        /// Gets and sets the property PercentProgress. 
+        /// <para>
+        /// The percentage of the estimated data that has been transferred.
+        /// </para>
         /// </summary>
         public int PercentProgress
         {
@@ -302,7 +354,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Port.
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The port that the database engine was listening on at the time of the snapshot.
+        /// </para>
         /// </summary>
         public int Port
         {
@@ -317,7 +372,11 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProcessorFeatures.
+        /// Gets and sets the property ProcessorFeatures. 
+        /// <para>
+        /// The number of CPU cores and the number of threads per core for the DB instance class
+        /// of the DB instance.
+        /// </para>
         /// </summary>
         public List<AwsRdsDbProcessorFeature> ProcessorFeatures
         {
@@ -332,7 +391,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SnapshotCreateTime.
+        /// Gets and sets the property SnapshotCreateTime. 
+        /// <para>
+        /// When the snapshot was taken in Coordinated Universal Time (UTC).
+        /// </para>
         /// </summary>
         public string SnapshotCreateTime
         {
@@ -347,7 +409,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SnapshotType.
+        /// Gets and sets the property SnapshotType. 
+        /// <para>
+        /// The type of the DB snapshot.
+        /// </para>
         /// </summary>
         public string SnapshotType
         {
@@ -362,7 +427,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceDbSnapshotIdentifier.
+        /// Gets and sets the property SourceDbSnapshotIdentifier. 
+        /// <para>
+        /// The DB snapshot ARN that the DB snapshot was copied from.
+        /// </para>
         /// </summary>
         public string SourceDbSnapshotIdentifier
         {
@@ -377,7 +445,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceRegion.
+        /// Gets and sets the property SourceRegion. 
+        /// <para>
+        /// The AWS Region that the DB snapshot was created in or copied from.
+        /// </para>
         /// </summary>
         public string SourceRegion
         {
@@ -392,7 +463,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of this DB snapshot.
+        /// </para>
         /// </summary>
         public string Status
         {
@@ -407,7 +481,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StorageType.
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The storage type associated with the DB snapshot.
+        /// </para>
         /// </summary>
         public string StorageType
         {
@@ -422,7 +499,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TdeCredentialArn.
+        /// Gets and sets the property TdeCredentialArn. 
+        /// <para>
+        /// The ARN from the key store with which to associate the instance for TDE encryption.
+        /// </para>
         /// </summary>
         public string TdeCredentialArn
         {
@@ -437,7 +517,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timezone.
+        /// Gets and sets the property Timezone. 
+        /// <para>
+        /// The time zone of the DB snapshot.
+        /// </para>
         /// </summary>
         public string Timezone
         {
@@ -452,7 +535,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcId.
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The VPC ID associated with the DB snapshot.
+        /// </para>
         /// </summary>
         public string VpcId
         {

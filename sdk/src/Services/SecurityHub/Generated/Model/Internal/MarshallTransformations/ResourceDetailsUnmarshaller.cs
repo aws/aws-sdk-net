@@ -286,6 +286,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsSqsQueue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsSsmPatchCompliance", targetDepth))
+                {
+                    var unmarshaller = AwsSsmPatchComplianceDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsSsmPatchCompliance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsWafWebAcl", targetDepth))
                 {
                     var unmarshaller = AwsWafWebAclDetailsUnmarshaller.Instance;

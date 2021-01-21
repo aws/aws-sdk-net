@@ -149,7 +149,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Engine.
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The name of the database engine that you want to use for this DB instance.
+        /// </para>
         /// </summary>
         public string Engine
         {

@@ -45,6 +45,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsSecurityFinding requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAction())
+            {
+                context.Writer.WritePropertyName("Action");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Action, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsAccountId())
             {
                 context.Writer.WritePropertyName("AwsAccountId");

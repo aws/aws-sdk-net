@@ -452,6 +452,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAwsSsmPatchCompliance())
+            {
+                context.Writer.WritePropertyName("AwsSsmPatchCompliance");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsSsmPatchComplianceDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsSsmPatchCompliance, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsWafWebAcl())
             {
                 context.Writer.WritePropertyName("AwsWafWebAcl");

@@ -115,7 +115,11 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceRole.
+        /// Gets and sets the property ResourceRole. 
+        /// <para>
+        /// Identifies the role of the resource in the finding. A resource is either the actor
+        /// or target of the finding activity,
+        /// </para>
         /// </summary>
         public string ResourceRole
         {

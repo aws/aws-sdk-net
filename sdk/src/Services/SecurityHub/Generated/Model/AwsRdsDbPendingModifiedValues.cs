@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// 
+    /// Changes to a DB instance that are currently pending.
     /// </summary>
     public partial class AwsRdsDbPendingModifiedValues
     {
@@ -50,7 +50,10 @@ namespace Amazon.SecurityHub.Model
         private string _storageType;
 
         /// <summary>
-        /// Gets and sets the property AllocatedStorage.
+        /// Gets and sets the property AllocatedStorage. 
+        /// <para>
+        /// The new value of the allocated storage for the DB instance.
+        /// </para>
         /// </summary>
         public int AllocatedStorage
         {
@@ -65,7 +68,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BackupRetentionPeriod.
+        /// Gets and sets the property BackupRetentionPeriod. 
+        /// <para>
+        /// The new backup retention period for the DB instance.
+        /// </para>
         /// </summary>
         public int BackupRetentionPeriod
         {
@@ -80,7 +86,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CaCertificateIdentifier.
+        /// Gets and sets the property CaCertificateIdentifier. 
+        /// <para>
+        /// The new CA certificate identifier for the DB instance.
+        /// </para>
         /// </summary>
         public string CaCertificateIdentifier
         {
@@ -95,7 +104,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DbInstanceClass.
+        /// Gets and sets the property DbInstanceClass. 
+        /// <para>
+        /// The new DB instance class for the DB instance.
+        /// </para>
         /// </summary>
         public string DbInstanceClass
         {
@@ -110,7 +122,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DbInstanceIdentifier.
+        /// Gets and sets the property DbInstanceIdentifier. 
+        /// <para>
+        /// The new DB instance identifier for the DB instance.
+        /// </para>
         /// </summary>
         public string DbInstanceIdentifier
         {
@@ -125,7 +140,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DbSubnetGroupName.
+        /// Gets and sets the property DbSubnetGroupName. 
+        /// <para>
+        /// The name of the new subnet group for the DB instance.
+        /// </para>
         /// </summary>
         public string DbSubnetGroupName
         {
@@ -140,7 +158,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineVersion.
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The new engine version for the DB instance.
+        /// </para>
         /// </summary>
         public string EngineVersion
         {
@@ -155,7 +176,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Iops.
+        /// Gets and sets the property Iops. 
+        /// <para>
+        /// The new provisioned IOPS value for the DB instance.
+        /// </para>
         /// </summary>
         public int Iops
         {
@@ -170,7 +194,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LicenseModel.
+        /// Gets and sets the property LicenseModel. 
+        /// <para>
+        /// The new license model value for the DB instance.
+        /// </para>
         /// </summary>
         public string LicenseModel
         {
@@ -185,7 +212,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MasterUserPassword.
+        /// Gets and sets the property MasterUserPassword. 
+        /// <para>
+        /// The new master user password for the DB instance.
+        /// </para>
         /// </summary>
         public string MasterUserPassword
         {
@@ -200,7 +230,11 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MultiAZ.
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        /// Indicates that a single Availability Zone DB instance is changing to a multiple Availability
+        /// Zone deployment.
+        /// </para>
         /// </summary>
         public bool MultiAZ
         {
@@ -215,7 +249,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PendingCloudWatchLogsExports.
+        /// Gets and sets the property PendingCloudWatchLogsExports. 
+        /// <para>
+        /// A list of log types that are being enabled or disabled.
+        /// </para>
         /// </summary>
         public AwsRdsPendingCloudWatchLogsExports PendingCloudWatchLogsExports
         {
@@ -230,7 +267,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Port.
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The new port for the DB instance.
+        /// </para>
         /// </summary>
         public int Port
         {
@@ -245,7 +285,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProcessorFeatures.
+        /// Gets and sets the property ProcessorFeatures. 
+        /// <para>
+        /// Processor features that are being updated.
+        /// </para>
         /// </summary>
         public List<AwsRdsDbProcessorFeature> ProcessorFeatures
         {
@@ -260,7 +303,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StorageType.
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The new storage type for the DB instance.
+        /// </para>
         /// </summary>
         public string StorageType
         {

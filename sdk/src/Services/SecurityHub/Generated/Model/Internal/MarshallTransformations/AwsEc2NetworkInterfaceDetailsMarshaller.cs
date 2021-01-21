@@ -56,10 +56,54 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetIpV6Addresses())
+            {
+                context.Writer.WritePropertyName("IpV6Addresses");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectIpV6AddressesListValue in requestObject.IpV6Addresses)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsEc2NetworkInterfaceIpV6AddressDetailMarshaller.Instance;
+                    marshaller.Marshall(requestObjectIpV6AddressesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetNetworkInterfaceId())
             {
                 context.Writer.WritePropertyName("NetworkInterfaceId");
                 context.Writer.Write(requestObject.NetworkInterfaceId);
+            }
+
+            if(requestObject.IsSetPrivateIpAddresses())
+            {
+                context.Writer.WritePropertyName("PrivateIpAddresses");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPrivateIpAddressesListValue in requestObject.PrivateIpAddresses)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AwsEc2NetworkInterfacePrivateIpAddressDetailMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPrivateIpAddressesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetPublicDnsName())
+            {
+                context.Writer.WritePropertyName("PublicDnsName");
+                context.Writer.Write(requestObject.PublicDnsName);
+            }
+
+            if(requestObject.IsSetPublicIp())
+            {
+                context.Writer.WritePropertyName("PublicIp");
+                context.Writer.Write(requestObject.PublicIp);
             }
 
             if(requestObject.IsSetSecurityGroups())

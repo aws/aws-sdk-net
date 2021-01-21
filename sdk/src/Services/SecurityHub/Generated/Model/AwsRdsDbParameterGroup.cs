@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// 
+    /// Provides information about a parameter group for a DB instance.
     /// </summary>
     public partial class AwsRdsDbParameterGroup
     {
@@ -37,7 +37,10 @@ namespace Amazon.SecurityHub.Model
         private string _parameterApplyStatus;
 
         /// <summary>
-        /// Gets and sets the property DbParameterGroupName.
+        /// Gets and sets the property DbParameterGroupName. 
+        /// <para>
+        /// The name of the parameter group.
+        /// </para>
         /// </summary>
         public string DbParameterGroupName
         {
@@ -52,7 +55,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParameterApplyStatus.
+        /// Gets and sets the property ParameterApplyStatus. 
+        /// <para>
+        /// The status of parameter updates.
+        /// </para>
         /// </summary>
         public string ParameterApplyStatus
         {

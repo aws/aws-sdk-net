@@ -79,8 +79,34 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsStatus. 
         /// <para>
-        /// The status of the standards subscription.
+        /// The status of the standard subscription.
         /// </para>
+        ///  
+        /// <para>
+        /// The status values are as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PENDING</code> - Standard is in the process of being enabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>READY</code> - Standard is enabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INCOMPLETE</code> - Standard could not be enabled completely. Some controls
+        /// may not be available.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETING</code> - Standard is in the process of being disabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FAILED</code> - Standard could not be disabled.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public StandardsStatus StandardsStatus

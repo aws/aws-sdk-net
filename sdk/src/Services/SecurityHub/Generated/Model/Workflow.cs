@@ -44,7 +44,21 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  <code>NEW</code> - The initial state of a finding, before it is reviewed.
         /// </para>
+        ///  
+        /// <para>
+        /// Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code>
+        /// to <code>NEW</code> in the following cases:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+        /// </para>
         ///  </li> <li> 
+        /// <para>
+        ///  <code>ComplianceStatus</code> changes from <code>PASSED</code> to either <code>WARNING</code>,
+        /// <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <code>NOTIFIED</code> - Indicates that you notified the resource owner about the
         /// security issue. Used when the initial reviewer is not the resource owner, and needs

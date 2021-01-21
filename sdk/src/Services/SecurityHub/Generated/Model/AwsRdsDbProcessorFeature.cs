@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// 
+    /// A processor feature.
     /// </summary>
     public partial class AwsRdsDbProcessorFeature
     {
@@ -37,7 +37,10 @@ namespace Amazon.SecurityHub.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the processor feature.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -52,7 +55,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The value of the processor feature.
+        /// </para>
         /// </summary>
         public string Value
         {

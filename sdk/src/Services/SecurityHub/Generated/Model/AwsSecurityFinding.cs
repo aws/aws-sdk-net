@@ -43,6 +43,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsSecurityFinding
     {
+        private Action _action;
         private string _awsAccountId;
         private Compliance _compliance;
         private int? _confidence;
@@ -77,6 +78,24 @@ namespace Amazon.SecurityHub.Model
         private List<Vulnerability> _vulnerabilities = new List<Vulnerability>();
         private Workflow _workflow;
         private WorkflowState _workflowState;
+
+        /// <summary>
+        /// Gets and sets the property Action. 
+        /// <para>
+        /// Provides details about an action that was detected for the finding.
+        /// </para>
+        /// </summary>
+        public Action Action
+        {
+            get { return this._action; }
+            set { this._action = value; }
+        }
+
+        // Check to see if Action property is set
+        internal bool IsSetAction()
+        {
+            return this._action != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 

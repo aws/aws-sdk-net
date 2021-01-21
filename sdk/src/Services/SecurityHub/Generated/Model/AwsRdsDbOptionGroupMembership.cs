@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// 
+    /// An option group membership.
     /// </summary>
     public partial class AwsRdsDbOptionGroupMembership
     {
@@ -37,7 +37,10 @@ namespace Amazon.SecurityHub.Model
         private string _status;
 
         /// <summary>
-        /// Gets and sets the property OptionGroupName.
+        /// Gets and sets the property OptionGroupName. 
+        /// <para>
+        /// The name of the option group.
+        /// </para>
         /// </summary>
         public string OptionGroupName
         {
@@ -52,7 +55,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the option group membership.
+        /// </para>
         /// </summary>
         public string Status
         {

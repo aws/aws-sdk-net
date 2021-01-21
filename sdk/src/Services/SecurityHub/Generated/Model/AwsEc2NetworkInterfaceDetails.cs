@@ -34,7 +34,11 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsEc2NetworkInterfaceDetails
     {
         private AwsEc2NetworkInterfaceAttachment _attachment;
+        private List<AwsEc2NetworkInterfaceIpV6AddressDetail> _ipV6Addresses = new List<AwsEc2NetworkInterfaceIpV6AddressDetail>();
         private string _networkInterfaceId;
+        private List<AwsEc2NetworkInterfacePrivateIpAddressDetail> _privateIpAddresses = new List<AwsEc2NetworkInterfacePrivateIpAddressDetail>();
+        private string _publicDnsName;
+        private string _publicIp;
         private List<AwsEc2NetworkInterfaceSecurityGroup> _securityGroups = new List<AwsEc2NetworkInterfaceSecurityGroup>();
         private bool? _sourceDestCheck;
 
@@ -57,6 +61,24 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpV6Addresses. 
+        /// <para>
+        /// The IPv6 addresses associated with the network interface.
+        /// </para>
+        /// </summary>
+        public List<AwsEc2NetworkInterfaceIpV6AddressDetail> IpV6Addresses
+        {
+            get { return this._ipV6Addresses; }
+            set { this._ipV6Addresses = value; }
+        }
+
+        // Check to see if IpV6Addresses property is set
+        internal bool IsSetIpV6Addresses()
+        {
+            return this._ipV6Addresses != null && this._ipV6Addresses.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkInterfaceId. 
         /// <para>
         /// The ID of the network interface.
@@ -72,6 +94,60 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetNetworkInterfaceId()
         {
             return this._networkInterfaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateIpAddresses. 
+        /// <para>
+        /// The private IPv4 addresses associated with the network interface.
+        /// </para>
+        /// </summary>
+        public List<AwsEc2NetworkInterfacePrivateIpAddressDetail> PrivateIpAddresses
+        {
+            get { return this._privateIpAddresses; }
+            set { this._privateIpAddresses = value; }
+        }
+
+        // Check to see if PrivateIpAddresses property is set
+        internal bool IsSetPrivateIpAddresses()
+        {
+            return this._privateIpAddresses != null && this._privateIpAddresses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicDnsName. 
+        /// <para>
+        /// The public DNS name of the network interface.
+        /// </para>
+        /// </summary>
+        public string PublicDnsName
+        {
+            get { return this._publicDnsName; }
+            set { this._publicDnsName = value; }
+        }
+
+        // Check to see if PublicDnsName property is set
+        internal bool IsSetPublicDnsName()
+        {
+            return this._publicDnsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicIp. 
+        /// <para>
+        /// The address of the Elastic IP address bound to the network interface.
+        /// </para>
+        /// </summary>
+        public string PublicIp
+        {
+            get { return this._publicIp; }
+            set { this._publicIp = value; }
+        }
+
+        // Check to see if PublicIp property is set
+        internal bool IsSetPublicIp()
+        {
+            return this._publicIp != null;
         }
 
         /// <summary>

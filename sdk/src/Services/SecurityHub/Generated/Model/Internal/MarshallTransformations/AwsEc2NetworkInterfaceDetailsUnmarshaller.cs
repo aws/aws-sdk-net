@@ -70,10 +70,34 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attachment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IpV6Addresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsEc2NetworkInterfaceIpV6AddressDetail, AwsEc2NetworkInterfaceIpV6AddressDetailUnmarshaller>(AwsEc2NetworkInterfaceIpV6AddressDetailUnmarshaller.Instance);
+                    unmarshalledObject.IpV6Addresses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NetworkInterfaceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PrivateIpAddresses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AwsEc2NetworkInterfacePrivateIpAddressDetail, AwsEc2NetworkInterfacePrivateIpAddressDetailUnmarshaller>(AwsEc2NetworkInterfacePrivateIpAddressDetailUnmarshaller.Instance);
+                    unmarshalledObject.PrivateIpAddresses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PublicDnsName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PublicDnsName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PublicIp", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PublicIp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SecurityGroups", targetDepth))

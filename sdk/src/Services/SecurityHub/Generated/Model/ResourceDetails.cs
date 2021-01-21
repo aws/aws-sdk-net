@@ -87,12 +87,16 @@ namespace Amazon.SecurityHub.Model
         private AwsSecretsManagerSecretDetails _awsSecretsManagerSecret;
         private AwsSnsTopicDetails _awsSnsTopic;
         private AwsSqsQueueDetails _awsSqsQueue;
+        private AwsSsmPatchComplianceDetails _awsSsmPatchCompliance;
         private AwsWafWebAclDetails _awsWafWebAcl;
         private ContainerDetails _container;
         private Dictionary<string, string> _other = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property AwsApiGatewayRestApi.
+        /// Gets and sets the property AwsApiGatewayRestApi. 
+        /// <para>
+        /// Provides information about a REST API in version 1 of Amazon API Gateway.
+        /// </para>
         /// </summary>
         public AwsApiGatewayRestApiDetails AwsApiGatewayRestApi
         {
@@ -107,7 +111,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AwsApiGatewayStage.
+        /// Gets and sets the property AwsApiGatewayStage. 
+        /// <para>
+        /// Provides information about a version 1 Amazon API Gateway stage.
+        /// </para>
         /// </summary>
         public AwsApiGatewayStageDetails AwsApiGatewayStage
         {
@@ -122,7 +129,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AwsApiGatewayV2Api.
+        /// Gets and sets the property AwsApiGatewayV2Api. 
+        /// <para>
+        /// Provides information about a version 2 API in Amazon API Gateway.
+        /// </para>
         /// </summary>
         public AwsApiGatewayV2ApiDetails AwsApiGatewayV2Api
         {
@@ -137,7 +147,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AwsApiGatewayV2Stage.
+        /// Gets and sets the property AwsApiGatewayV2Stage. 
+        /// <para>
+        /// Provides information about a version 2 stage for Amazon API Gateway.
+        /// </para>
         /// </summary>
         public AwsApiGatewayV2StageDetails AwsApiGatewayV2Stage
         {
@@ -170,7 +183,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AwsCertificateManagerCertificate.
+        /// Gets and sets the property AwsCertificateManagerCertificate. 
+        /// <para>
+        /// Provides details about an AWS Certificate Manager (ACM) certificate.
+        /// </para>
         /// </summary>
         public AwsCertificateManagerCertificateDetails AwsCertificateManagerCertificate
         {
@@ -203,7 +219,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AwsCloudTrailTrail.
+        /// Gets and sets the property AwsCloudTrailTrail. 
+        /// <para>
+        /// Provides details about a CloudTrail trail.
+        /// </para>
         /// </summary>
         public AwsCloudTrailTrailDetails AwsCloudTrailTrail
         {
@@ -380,7 +399,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AwsElbLoadBalancer.
+        /// Gets and sets the property AwsElbLoadBalancer. 
+        /// <para>
+        /// contains details about a Classic Load Balancer.
+        /// </para>
         /// </summary>
         public AwsElbLoadBalancerDetails AwsElbLoadBalancer
         {
@@ -431,7 +453,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AwsIamGroup.
+        /// Gets and sets the property AwsIamGroup. 
+        /// <para>
+        /// Contains details about an IAM group.
+        /// </para>
         /// </summary>
         public AwsIamGroupDetails AwsIamGroup
         {
@@ -626,7 +651,10 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AwsRedshiftCluster.
+        /// Gets and sets the property AwsRedshiftCluster. 
+        /// <para>
+        /// Contains details about an Amazon Redshift cluster.
+        /// </para>
         /// </summary>
         public AwsRedshiftClusterDetails AwsRedshiftCluster
         {
@@ -728,6 +756,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsSqsQueue()
         {
             return this._awsSqsQueue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsSsmPatchCompliance. 
+        /// <para>
+        /// Provides information about the state of a patch on an instance based on the patch
+        /// baseline that was used to patch the instance.
+        /// </para>
+        /// </summary>
+        public AwsSsmPatchComplianceDetails AwsSsmPatchCompliance
+        {
+            get { return this._awsSsmPatchCompliance; }
+            set { this._awsSsmPatchCompliance = value; }
+        }
+
+        // Check to see if AwsSsmPatchCompliance property is set
+        internal bool IsSetAwsSsmPatchCompliance()
+        {
+            return this._awsSsmPatchCompliance != null;
         }
 
         /// <summary>
