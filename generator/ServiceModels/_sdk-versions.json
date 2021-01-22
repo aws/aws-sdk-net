@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.5.94.0",
+    "ProductVersion" : "3.5.95.0",
     "CoreVersion"    : "3.5.2.0",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
@@ -152,7 +152,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.5.28.8",
+            "Version" : "3.5.29.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.2.0"
@@ -282,7 +282,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.5.10.2",
+            "Version" : "3.5.10.3",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.2.0"
@@ -290,7 +290,7 @@
             "InPreview"               : false
         },
         "Redshift"             : {
-            "Version" : "3.5.2.13",
+            "Version" : "3.5.3.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.2.0"
@@ -370,7 +370,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.5.9.2",
+            "Version" : "3.5.9.3",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.2.0"
@@ -2010,7 +2010,7 @@
             "InPreview"               : false
         },
         "GreengrassV2"                    : {
-            "Version" : "3.5.0.12",
+            "Version" : "3.5.0.13",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.2.0"
@@ -2051,6 +2051,22 @@
         },
         "WellArchitected"                 : {
             "Version" : "3.5.0.11",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.2.0"
+            },
+            "InPreview"               : false
+        },
+        "LexRuntimeV2"                    : {
+            "Version" : "3.5.0.0",
+            "AssemblyVersionOverride" : "3.3",
+            "Dependencies"            : {
+                "Core" : "3.5.2.0"
+            },
+            "InPreview"               : false
+        },
+        "LexModelsV2"                     : {
+            "Version" : "3.5.0.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.2.0"

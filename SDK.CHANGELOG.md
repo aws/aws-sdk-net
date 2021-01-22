@@ -1,3 +1,19 @@
+### 3.5.95.0 (2021-01-22 19:23 UTC)
+* EC2 (3.5.29.0)
+	* Introducing startDate field for CapacityReservation object for the date and time which the reservation started and adding reserved parameter for ModifyCapacityReservation.
+* GreengrassV2 (3.5.0.13)
+	* Documentation updates that improve clarity and fix broken links.
+* LexModelsV2 (3.5.0.0)
+	* This release adds support for Amazon Lex V2 APIs for model building.
+* LexRuntimeV2 (3.5.0.0)
+	* This release adds support for Amazon Lex V2 APIs for runtime, including Streaming APIs for conversation management.
+* RDS (3.5.10.3)
+	* Documentation updates for Amazon RDS
+* Redshift (3.5.3.0)
+	* Update VPC endpoint field names.
+* SimpleSystemsManagement (3.5.9.3)
+	* Documentation updates for the ListDocumentFilters API action.
+
 ### 3.5.94.0 (2021-01-21 21:05 UTC)
 * Kafka (3.5.7.0)
 	* Amazon MSK has added a new API that allows you to update all the brokers in the cluster to the specified type.
