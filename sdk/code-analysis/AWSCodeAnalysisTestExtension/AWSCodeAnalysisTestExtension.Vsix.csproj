@@ -652,6 +652,10 @@
       <Project>{458AB256-523D-4652-AB26-7A0C80B8D6FC}</Project>
       <Name>AWSSDK.LexModelBuildingService.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/LexModelsV2/AWSSDK.LexModelsV2.CodeAnalysis.csproj">
+      <Project>{5C75ECBA-B923-480A-9C6B-1723119FE89A}</Project>
+      <Name>AWSSDK.LexModelsV2.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/LexRuntimeV2/AWSSDK.LexRuntimeV2.CodeAnalysis.csproj">
       <Project>{70CFCDC3-35CE-4297-95EC-33B8A94D21B2}</Project>
       <Name>AWSSDK.LexRuntimeV2.CodeAnalysis</Name>
