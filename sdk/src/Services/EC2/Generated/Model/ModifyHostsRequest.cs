@@ -93,7 +93,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether to enable or disable host recovery for the Dedicated Host. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-        /// Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Host recovery</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public HostRecovery HostRecovery

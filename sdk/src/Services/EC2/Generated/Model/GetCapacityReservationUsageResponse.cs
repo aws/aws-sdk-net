@@ -152,8 +152,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved
-        /// capacity is no longer available for your use.
+        ///  <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity
+        /// is no longer available for your use.
         /// </para>
         ///  </li> <li> 
         /// <para>

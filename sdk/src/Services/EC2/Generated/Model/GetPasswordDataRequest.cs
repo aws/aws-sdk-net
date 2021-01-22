@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     /// <code>EC2Launch</code> scripts (Windows Server 2016 and later). This usually only
     /// happens the first time an instance is launched. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
     /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a>
-    /// in the Amazon Elastic Compute Cloud User Guide.
+    /// in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  
     /// <para>

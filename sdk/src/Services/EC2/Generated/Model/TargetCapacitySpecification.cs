@@ -43,8 +43,7 @@ namespace Amazon.EC2.Model
     /// the maximum amount that you're willing to pay. When the maximum amount you're willing
     /// to pay is reached, the fleet stops launching instances even if it hasn’t met the target
     /// capacity. The <code>MaxTotalPrice</code> parameters are located in <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptions.html">OnDemandOptions</a>
-    /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptions">SpotOptions</a>
-    /// 
+    /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptions">SpotOptions</a>.
     /// </para>
     /// </summary>
     public partial class TargetCapacitySpecification

@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// One or more entries to add to the prefix list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
+        [AWSProperty(Min=0, Max=100)]
         public List<AddPrefixListEntry> AddEntries
         {
             get { return this._addEntries; }
@@ -131,7 +131,7 @@ namespace Amazon.EC2.Model
         /// One or more entries to remove from the prefix list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
+        [AWSProperty(Min=0, Max=100)]
         public List<RemovePrefixListEntry> RemoveEntries
         {
             get { return this._removeEntries; }

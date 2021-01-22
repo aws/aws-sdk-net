@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-    /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.
+    /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ModifyReservedInstancesRequest : AmazonEC2Request

@@ -101,13 +101,13 @@ namespace Amazon.EC2.Model
     /// Linux instances have access to the public key of the key pair at boot. You can use
     /// this key to provide secure access to the instance. Amazon EC2 public images use this
     /// feature to provide secure access without passwords. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-    /// pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// pairs</a>.
     /// </para>
     ///  
     /// <para>
     /// For troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
     /// to do if an instance immediately terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-    /// connecting to your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// connecting to your instance</a>.
     /// </para>
     /// </summary>
     public partial class RunInstancesRequest : AmazonEC2Request
@@ -257,7 +257,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CpuOptions. 
         /// <para>
         /// The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-        /// CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// CPU options</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public CpuOptionsRequest CpuOptions
@@ -279,7 +279,7 @@ namespace Amazon.EC2.Model
         /// are <code>standard</code> and <code>unlimited</code>. To change this attribute after
         /// launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
         /// ModifyInstanceCreditSpecification</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-        /// performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// performance instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -354,8 +354,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that
         /// you can attach to your Windows instance to accelerate the graphics performance of
-        /// your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">
-        /// Amazon EC2 Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your applications. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+        /// EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public List<ElasticGpuSpecification> ElasticGpuSpecification
@@ -423,7 +423,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether an instance is enabled for hibernation. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-        /// your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -529,7 +529,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -607,7 +607,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-        /// PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -858,7 +858,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-        /// PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </important>
         /// </summary>

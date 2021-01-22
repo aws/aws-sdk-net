@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// a state of “pending”. After the parameter modifications are successfully applied to
     /// the instance, the state of the modifications changes from “pending” to “applied” in
     /// subsequent describe-instances API calls. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-    /// metadata and user data</a>.
+    /// metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.
     /// </summary>
     public partial class ModifyInstanceMetadataOptionsRequest : AmazonEC2Request
     {

@@ -38,10 +38,29 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyCapacityReservationRequest : AmazonEC2Request
     {
+        private bool? _accept;
         private string _capacityReservationId;
         private DateTime? _endDate;
         private EndDateType _endDateType;
         private int? _instanceCount;
+
+        /// <summary>
+        /// Gets and sets the property Accept. 
+        /// <para>
+        /// Reserved. Capacity Reservations you have created are accepted by default.
+        /// </para>
+        /// </summary>
+        public bool Accept
+        {
+            get { return this._accept.GetValueOrDefault(); }
+            set { this._accept = value; }
+        }
+
+        // Check to see if Accept property is set
+        internal bool IsSetAccept()
+        {
+            return this._accept.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CapacityReservationId. 

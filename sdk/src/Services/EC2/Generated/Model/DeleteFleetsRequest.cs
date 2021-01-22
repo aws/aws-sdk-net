@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Deleting
-    /// an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeleteFleetsRequest : AmazonEC2Request

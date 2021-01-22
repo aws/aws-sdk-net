@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     /// You can use the Stop action to hibernate an instance if the instance is <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
     /// for hibernation</a> and it meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
     /// prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-    /// your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// your instance</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.EC2.Model
     /// You can't stop or hibernate instance store-backed instances. You can't use the Stop
     /// action to hibernate Spot Instances, but you can specify that Amazon EC2 should hibernate
     /// Spot Instances when they are interrupted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
-    /// interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// interrupted Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -73,14 +73,14 @@ namespace Amazon.EC2.Model
     /// device and any other devices attached during the instance launch are automatically
     /// deleted. For more information about the differences between rebooting, stopping, hibernating,
     /// and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-    /// lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// When you stop an instance, we attempt to shut it down forcibly after a short while.
     /// If your instance appears stuck in the stopping state after a period of time, there
     /// may be an issue with the underlying host computer. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
-    /// stopping your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// stopping your instance</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class StopInstancesRequest : AmazonEC2Request
@@ -133,7 +133,7 @@ namespace Amazon.EC2.Model
         /// Hibernates the instance if the instance was enabled for hibernation at launch. If
         /// the instance cannot hibernate successfully, a normal shutdown occurs. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-        /// your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>

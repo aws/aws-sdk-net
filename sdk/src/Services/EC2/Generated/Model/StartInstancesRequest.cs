@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
-    /// instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// instances</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class StartInstancesRequest : AmazonEC2Request

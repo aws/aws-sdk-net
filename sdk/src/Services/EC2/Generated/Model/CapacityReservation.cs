@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         private CapacityReservationInstancePlatform _instancePlatform;
         private string _instanceType;
         private string _ownerId;
+        private DateTime? _startDate;
         private CapacityReservationState _state;
         private List<Tag> _tags = new List<Tag>();
         private CapacityReservationTenancy _tenancy;
@@ -341,6 +342,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StartDate. 
+        /// <para>
+        /// The date and time at which the Capacity Reservation was started.
+        /// </para>
+        /// </summary>
+        public DateTime StartDate
+        {
+            get { return this._startDate.GetValueOrDefault(); }
+            set { this._startDate = value; }
+        }
+
+        // Check to see if StartDate property is set
+        internal bool IsSetStartDate()
+        {
+            return this._startDate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property State. 
         /// <para>
         /// The current state of the Capacity Reservation. A Capacity Reservation can be in one
@@ -359,8 +378,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved
-        /// capacity is no longer available for your use.
+        ///  <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity
+        /// is no longer available for your use.
         /// </para>
         ///  </li> <li> 
         /// <para>

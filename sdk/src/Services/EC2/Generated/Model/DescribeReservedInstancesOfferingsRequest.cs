@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-    /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeReservedInstancesOfferingsRequest : AmazonEC2Request
@@ -206,7 +206,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The instance type that the reservation will cover (for example, <code>m1.small</code>).
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public InstanceType InstanceType

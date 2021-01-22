@@ -795,7 +795,7 @@ namespace Amazon.EC2.Model
         /// means that checking is enabled, and <code>false</code> means that checking is disabled.
         /// The value must be <code>false</code> for the instance to perform NAT. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-        /// Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// instances</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         public bool SourceDestCheck

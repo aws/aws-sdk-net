@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information about Reserved Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
-    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeReservedInstancesRequest : AmazonEC2Request

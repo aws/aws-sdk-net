@@ -1961,7 +1961,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelReservedInstancesListing service method.</param>
@@ -2311,7 +2311,7 @@ namespace Amazon.EC2
         /// that usage. By creating Capacity Reservations, you ensure that you always have access
         /// to Amazon EC2 capacity when you need it, for as long as you need it. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
-        /// Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Reservations</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2328,7 +2328,7 @@ namespace Amazon.EC2
         /// limit for the selected instance type. If your request fails due to limit constraints,
         /// increase your On-Demand Instance limit for the required instance type and try again.
         /// For more information about increasing your instance limits, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-        /// EC2 Service Limits</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EC2 Service Quotas</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservation service method.</param>
@@ -2824,7 +2824,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
-        /// an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFleet service method.</param>
@@ -3732,7 +3732,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// groups</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlacementGroup service method.</param>
@@ -3803,7 +3803,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReservedInstancesListing service method.</param>
@@ -5811,7 +5811,7 @@ namespace Amazon.EC2
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#delete-fleet">Deleting
-        /// an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFleets service method.</param>
@@ -6505,7 +6505,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Deletes the specified placement group. You must terminate all instances in the placement
         /// group before you can delete the placement group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// groups</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlacementGroup service method.</param>
         /// 
@@ -9254,6 +9254,11 @@ namespace Amazon.EC2
         /// ensures that you can query by the last evaluated time and not miss a recorded event.
         /// EC2 Fleet events are available for 48 hours.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+        /// your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetHistory service method.</param>
         /// 
@@ -9294,6 +9299,12 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the running instances for the specified EC2 Fleet.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+        /// your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleetInstances service method.</param>
         /// 
@@ -9334,6 +9345,12 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified EC2 Fleets or all of your EC2 Fleets.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html#monitor-ec2-fleet">Monitoring
+        /// your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFleets service method.</param>
         /// 
@@ -9506,7 +9523,7 @@ namespace Amazon.EC2
         /// purchasing an offering, ensure that the instance family and Region of the offering
         /// matches that of the Dedicated Hosts with which it is to be associated. For more information
         /// about supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
-        /// Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+        /// Hosts</a> in the <i>Amazon EC2 User Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservationOfferings service method.</param>
@@ -10081,7 +10098,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-        /// performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// performance instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceCreditSpecifications service method.</param>
@@ -10278,21 +10295,20 @@ namespace Amazon.EC2
         ///  <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
         /// to identify hardware and software issues. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
         /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
-        /// instances with failed status checks</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.
+        /// instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
         /// maintenance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
-        /// events for your instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// events for your instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Instance state</b> - You can manage your instances from the moment you launch
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-        /// lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -10315,21 +10331,20 @@ namespace Amazon.EC2
         ///  <b>Status checks</b> - Amazon EC2 performs status checks on running EC2 instances
         /// to identify hardware and software issues. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
         /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
-        /// instances with failed status checks</a> in the <i>Amazon Elastic Compute Cloud User
-        /// Guide</i>.
+        /// instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
         /// maintenance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
-        /// events for your instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// events for your instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Instance state</b> - You can manage your instances from the moment you launch
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-        /// lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -11324,7 +11339,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes the specified placement groups or all of your placement groups. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// groups</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by EC2.</returns>
@@ -11334,7 +11349,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Describes the specified placement groups or all of your placement groups. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-        /// groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// groups</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlacementGroups service method.</param>
         /// 
@@ -11597,7 +11612,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about Reserved Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -11611,7 +11626,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about Reserved Instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstances service method.</param>
@@ -11678,7 +11693,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -11713,7 +11728,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesListings service method.</param>
@@ -11762,7 +11777,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-        /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -11779,7 +11794,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-        /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesModifications service method.</param>
@@ -11834,7 +11849,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// 
@@ -11857,7 +11872,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesOfferings service method.</param>
@@ -15889,7 +15904,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
-        /// Console Output</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// console output</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConsoleOutput service method.</param>
@@ -15981,7 +15996,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-        /// performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// performance instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDefaultCreditSpecification service method.</param>
@@ -16343,7 +16358,7 @@ namespace Amazon.EC2
         /// <code>EC2Launch</code> scripts (Windows Server 2016 and later). This usually only
         /// happens the first time an instance is launched. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
         /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a>
-        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -17070,7 +17085,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-        /// performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// performance instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDefaultCreditSpecification service method.</param>
@@ -17554,7 +17569,7 @@ namespace Amazon.EC2
         /// <para>
         /// To modify some attributes, the instance must be stopped. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
-        /// attributes of a stopped instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// attributes of a stopped instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceAttribute service method.</param>
@@ -17643,7 +17658,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-        /// performance instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// performance instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCreditSpecification service method.</param>
@@ -17730,7 +17745,7 @@ namespace Amazon.EC2
         /// a state of “pending”. After the parameter modifications are successfully applied to
         /// the instance, the state of the modifications changes from “pending” to “applied” in
         /// subsequent describe-instances API calls. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
-        /// metadata and user data</a>.
+        /// metadata and user data</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceMetadataOptions service method.</param>
         /// 
@@ -17986,7 +18001,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-        /// Reserved Instances</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReservedInstances service method.</param>
@@ -19183,7 +19198,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Enables detailed monitoring for a running instance. Otherwise, basic monitoring is
         /// enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-        /// your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your instances and volumes</a> in the <i>Amazon EC2 User Guide</i>.
         /// 
         ///  
         /// <para>
@@ -19394,7 +19409,7 @@ namespace Amazon.EC2
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
         /// Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-        /// Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedInstancesOffering service method.</param>
@@ -19502,8 +19517,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
-        /// console output and rebooting instances</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide</i>.
+        /// console output and rebooting instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebootInstances service method.</param>
@@ -20713,7 +20727,7 @@ namespace Amazon.EC2
         /// is enabled. The default value is <code>true</code>, which means checking is enabled.
         /// This value must be <code>false</code> for a NAT instance to perform NAT. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
-        /// Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// Instances</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetInstanceAttribute service method.</param>
@@ -21169,13 +21183,13 @@ namespace Amazon.EC2
         /// Linux instances have access to the public key of the key pair at boot. You can use
         /// this key to provide secure access to the instance. Amazon EC2 public images use this
         /// feature to provide secure access without passwords. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
-        /// pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// pairs</a>.
         /// </para>
         ///  
         /// <para>
         /// For troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
         /// to do if an instance immediately terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-        /// connecting to your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// connecting to your instance</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunInstances service method.</param>
@@ -21229,7 +21243,7 @@ namespace Amazon.EC2
         /// or reboot a Scheduled Instance, but you can terminate it as needed. If you terminate
         /// a Scheduled Instance before the current scheduled time period ends, you can launch
         /// it again after a few minutes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
-        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunScheduledInstances service method.</param>
@@ -21482,7 +21496,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
-        /// instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartInstances service method.</param>
@@ -21624,7 +21638,7 @@ namespace Amazon.EC2
         /// You can use the Stop action to hibernate an instance if the instance is <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
         /// for hibernation</a> and it meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
         /// prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-        /// your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -21642,7 +21656,7 @@ namespace Amazon.EC2
         /// You can't stop or hibernate instance store-backed instances. You can't use the Stop
         /// action to hibernate Spot Instances, but you can specify that Amazon EC2 should hibernate
         /// Spot Instances when they are interrupted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
-        /// interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// interrupted Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -21660,14 +21674,14 @@ namespace Amazon.EC2
         /// device and any other devices attached during the instance launch are automatically
         /// deleted. For more information about the differences between rebooting, stopping, hibernating,
         /// and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-        /// lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// When you stop an instance, we attempt to shut it down forcibly after a short while.
         /// If your instance appears stuck in the stopping state after a period of time, there
         /// may be an issue with the underlying host computer. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
-        /// stopping your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// stopping your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopInstances service method.</param>
@@ -21776,12 +21790,12 @@ namespace Amazon.EC2
         /// volumes with the <code>DeleteOnTermination</code> block device mapping parameter set
         /// to <code>true</code> are automatically deleted. For more information about the differences
         /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
-        /// lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For more information about troubleshooting, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
-        /// terminating your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// terminating your instance</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateInstances service method.</param>
@@ -21904,7 +21918,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Disables detailed monitoring for a running instance. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-        /// your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// your instances and volumes</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnmonitorInstances service method.</param>
         /// 

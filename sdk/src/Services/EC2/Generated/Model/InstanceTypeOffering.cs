@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public InstanceType InstanceType

@@ -47,8 +47,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether the EBS volume is deleted on instance termination. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination">Preserving
-        /// Amazon EBS volumes on instance termination</a> in the Amazon Elastic Compute Cloud
-        /// User Guide.
+        /// Amazon EBS volumes on instance termination</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public bool DeleteOnTermination
@@ -71,7 +70,7 @@ namespace Amazon.EC2.Model
         /// depends on the volume origin (new or from a snapshot), starting encryption state,
         /// ownership, and whether encryption by default is enabled. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
-        /// EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -242,11 +241,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>st1</code>: 500-16,384
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>sc1</code>: 500-16,384
+        ///  <code>st1</code> and <code>sc1</code>: 125-16,384
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -270,9 +265,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property VolumeType. 
         /// <para>
         /// The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-        /// EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. If the
-        /// volume type is <code>io1</code> or <code>io2</code>, you must specify the IOPS that
-        /// the volume supports.
+        /// EBS volume types</a> in the <i>Amazon EC2 User Guide</i>. If the volume type is <code>io1</code>
+        /// or <code>io2</code>, you must specify the IOPS that the volume supports.
         /// </para>
         /// </summary>
         public VolumeType VolumeType

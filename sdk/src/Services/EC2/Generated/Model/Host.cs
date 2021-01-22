@@ -73,9 +73,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property AllowsMultipleInstanceTypes. 
         /// <para>
         /// Indicates whether the Dedicated Host supports multiple instance types of the same
-        /// instance family, or a specific instance type only. <code>one</code> indicates that
-        /// the Dedicated Host supports multiple instance types in the instance family. <code>off</code>
-        /// indicates that the Dedicated Host supports a single instance type only.
+        /// instance family. If the value is <code>on</code>, the Dedicated Host supports multiple
+        /// instance types in the instance family. If the value is <code>off</code>, the Dedicated
+        /// Host supports a single instance type only.
         /// </para>
         /// </summary>
         public AllowsMultipleInstanceTypes AllowsMultipleInstanceTypes
@@ -166,8 +166,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a>.
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// Idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken

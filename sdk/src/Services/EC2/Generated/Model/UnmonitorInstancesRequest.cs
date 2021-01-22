@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the UnmonitorInstances operation.
     /// Disables detailed monitoring for a running instance. For more information, see <a
     /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
-    /// your instances and volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// your instances and volumes</a> in the <i>Amazon EC2 User Guide</i>.
     /// </summary>
     public partial class UnmonitorInstancesRequest : AmazonEC2Request
     {

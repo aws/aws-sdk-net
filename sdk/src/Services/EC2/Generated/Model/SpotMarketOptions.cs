@@ -115,8 +115,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SpotInstanceType. 
         /// <para>
         /// The Spot Instance request type. For <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
-        /// persistent Spot Instance requests are only supported when <b>InstanceInterruptionBehavior</b>
-        /// is set to either <code>hibernate</code> or <code>stop</code>.
+        /// persistent Spot Instance requests are only supported when the instance interruption
+        /// behavior is either <code>hibernate</code> or <code>stop</code>.
         /// </para>
         /// </summary>
         public SpotInstanceType SpotInstanceType

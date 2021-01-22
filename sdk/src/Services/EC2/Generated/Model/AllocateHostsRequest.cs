@@ -51,8 +51,7 @@ namespace Amazon.EC2.Model
         /// Indicates whether the host accepts any untargeted instance launches that match its
         /// instance type configuration, or if it only accepts Host tenancy instance launches
         /// that specify its unique host ID. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-understanding">
-        /// Understanding Instance Placement and Host Affinity</a> in the <i>Amazon EC2 User Guide
-        /// for Linux Instances</i>.
+        /// Understanding auto-placement and affinity</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -94,8 +93,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a>.
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// Idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -115,7 +114,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether to enable or disable host recovery for the Dedicated Host. Host
         /// recovery is disabled by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">
-        /// Host Recovery</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Host recovery</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>

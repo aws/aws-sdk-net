@@ -138,6 +138,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("startDate", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

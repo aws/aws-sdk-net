@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
-    /// an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// an EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateFleetRequest : AmazonEC2Request
@@ -236,7 +236,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>maintain</code> - The EC2 Fleet plaees an asynchronous request for your desired
+        ///  <code>maintain</code> - The EC2 Fleet places an asynchronous request for your desired
         /// capacity, and continues to maintain your desired Spot capacity by replenishing interrupted
         /// Spot Instances.
         /// </para>
@@ -255,7 +255,7 @@ namespace Amazon.EC2.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
-        /// Fleet request types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Fleet request types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public FleetType Type

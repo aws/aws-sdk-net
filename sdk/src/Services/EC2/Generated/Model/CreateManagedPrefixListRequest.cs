@@ -101,7 +101,7 @@ namespace Amazon.EC2.Model
         /// One or more entries for the prefix list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
+        [AWSProperty(Min=0, Max=100)]
         public List<AddPrefixListEntry> Entries
         {
             get { return this._entries; }

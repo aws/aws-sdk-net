@@ -58,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAccept())
+                {
+                    request.Parameters.Add("Accept", StringUtils.FromBool(publicRequest.Accept));
+                }
                 if(publicRequest.IsSetCapacityReservationId())
                 {
                     request.Parameters.Add("CapacityReservationId", StringUtils.FromString(publicRequest.CapacityReservationId));

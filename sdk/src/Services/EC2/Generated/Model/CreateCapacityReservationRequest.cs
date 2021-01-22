@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
     /// that usage. By creating Capacity Reservations, you ensure that you always have access
     /// to Amazon EC2 capacity when you need it, for as long as you need it. For more information,
     /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
-    /// Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Reservations</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
     /// limit for the selected instance type. If your request fails due to limit constraints,
     /// increase your On-Demand Instance limit for the required instance type and try again.
     /// For more information about increasing your instance limits, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-    /// EC2 Service Limits</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// EC2 Service Quotas</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateCapacityReservationRequest : AmazonEC2Request
@@ -116,8 +116,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
-        /// to Ensure Idempotency</a>.
+        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensure
+        /// Idempotency</a>.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -316,7 +316,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type for which to reserve capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// types</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
