@@ -120,7 +120,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TargetLocationMaxErrors. 
         /// <para>
         /// The maximum number of errors allowed before the system stops queueing additional Automation
-        /// executions for the currently running Automation. 
+        /// executions for the currently running Automation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
