@@ -371,7 +371,7 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
+        /// For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
         /// deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -421,7 +421,7 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  
         /// <para>
-        /// For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
+        /// For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
         /// deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -749,9 +749,8 @@ namespace Amazon.GreengrassV2
 
 
         /// <summary>
-        /// Gets the pre-signed URL to a component artifact in an S3 bucket. Core devices can
-        /// call this operation to identify the URL that they can use to download an artifact
-        /// to install.
+        /// Gets the pre-signed URL to download a public component artifact. Core devices call
+        /// this operation to identify the URL that they can use to download an artifact to install.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComponentVersionArtifact service method.</param>
         /// 
@@ -779,9 +778,8 @@ namespace Amazon.GreengrassV2
 
 
         /// <summary>
-        /// Gets the pre-signed URL to a component artifact in an S3 bucket. Core devices can
-        /// call this operation to identify the URL that they can use to download an artifact
-        /// to install.
+        /// Gets the pre-signed URL to download a public component artifact. Core devices call
+        /// this operation to identify the URL that they can use to download an artifact to install.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComponentVersionArtifact service method.</param>
         /// <param name="cancellationToken">
@@ -1371,7 +1369,7 @@ namespace Amazon.GreengrassV2
         ///  <important> 
         /// <para>
         /// To use this operation, you must use the data plane API endpoint and authenticate with
-        /// an AWS IoT device certificate. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS
+        /// an AWS IoT device certificate. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS
         /// IoT Greengrass endpoints and quotas</a>.
         /// </para>
         ///  </important>
@@ -1428,7 +1426,7 @@ namespace Amazon.GreengrassV2
         ///  <important> 
         /// <para>
         /// To use this operation, you must use the data plane API endpoint and authenticate with
-        /// an AWS IoT device certificate. For more information, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS
+        /// an AWS IoT device certificate. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS
         /// IoT Greengrass endpoints and quotas</a>.
         /// </para>
         ///  </important>

@@ -262,8 +262,8 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of key-value pairs that contain metadata for the resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-        /// resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+        /// your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

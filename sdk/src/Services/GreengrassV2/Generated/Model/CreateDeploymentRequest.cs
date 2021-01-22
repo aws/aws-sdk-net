@@ -50,7 +50,7 @@ namespace Amazon.GreengrassV2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
+    /// For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
     /// deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -150,8 +150,8 @@ namespace Amazon.GreengrassV2.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of key-value pairs that contain metadata for the resource. For more information,
-        /// see <a href="https://docs.aws.amazon.com/greengrass/v2/tag-resources.html">Tag your
-        /// resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+        /// your resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

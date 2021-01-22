@@ -58,7 +58,7 @@ namespace Amazon.GreengrassV2.Model
         /// stops and updates that component. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetocomponentupdates">SubscribeToComponentUpdates</a>
         /// IPC operation to receive these notifications. Then, components can respond with the
         /// <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a>
-        /// IPC operation. For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
+        /// IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
         /// deployments</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         ///  </li> <li> 

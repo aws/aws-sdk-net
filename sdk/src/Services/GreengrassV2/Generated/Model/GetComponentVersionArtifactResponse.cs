@@ -38,7 +38,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property PreSignedUrl. 
         /// <para>
-        /// The URL to the artifact.
+        /// The URL of the artifact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
