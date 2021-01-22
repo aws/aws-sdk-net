@@ -31,7 +31,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// The connection endpoint for connecting an Amazon Redshift cluster through the proxy.
     /// </summary>
-    public partial class SpartaProxyVpcEndpoint
+    public partial class VpcEndpoint
     {
         private string _vpcEndpointId;
 

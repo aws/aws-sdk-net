@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model
     {
         private string _address;
         private int? _port;
-        private List<SpartaProxyVpcEndpoint> _vpcEndpoints = new List<SpartaProxyVpcEndpoint>();
+        private List<VpcEndpoint> _vpcEndpoints = new List<VpcEndpoint>();
 
         /// <summary>
         /// Gets and sets the property Address. 
@@ -80,7 +80,7 @@ namespace Amazon.Redshift.Model
         /// Describes a connection endpoint.
         /// </para>
         /// </summary>
-        public List<SpartaProxyVpcEndpoint> VpcEndpoints
+        public List<VpcEndpoint> VpcEndpoints
         {
             get { return this._vpcEndpoints; }
             set { this._vpcEndpoints = value; }

@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SpartaProxyVpcEndpoint Object
+    /// Response Unmarshaller for VpcEndpoint Object
     /// </summary>  
-    public class SpartaProxyVpcEndpointUnmarshaller : IUnmarshaller<SpartaProxyVpcEndpoint, XmlUnmarshallerContext>, IUnmarshaller<SpartaProxyVpcEndpoint, JsonUnmarshallerContext>
+    public class VpcEndpointUnmarshaller : IUnmarshaller<VpcEndpoint, XmlUnmarshallerContext>, IUnmarshaller<VpcEndpoint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SpartaProxyVpcEndpoint Unmarshall(XmlUnmarshallerContext context)
+        public VpcEndpoint Unmarshall(XmlUnmarshallerContext context)
         {
-            SpartaProxyVpcEndpoint unmarshalledObject = new SpartaProxyVpcEndpoint();
+            VpcEndpoint unmarshalledObject = new VpcEndpoint();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -75,18 +75,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SpartaProxyVpcEndpoint Unmarshall(JsonUnmarshallerContext context)
+        public VpcEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static SpartaProxyVpcEndpointUnmarshaller _instance = new SpartaProxyVpcEndpointUnmarshaller();        
+        private static VpcEndpointUnmarshaller _instance = new VpcEndpointUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SpartaProxyVpcEndpointUnmarshaller Instance
+        public static VpcEndpointUnmarshaller Instance
         {
             get
             {

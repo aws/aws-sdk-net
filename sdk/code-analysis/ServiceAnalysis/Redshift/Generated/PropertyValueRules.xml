@@ -1761,10 +1761,6 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Redshift.Model.SpartaProxyVpcEndpoint.VpcEndpointId</property>
-    <max>2147483647</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Redshift.Model.Subnet.SubnetIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1842,6 +1838,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.UpdateTarget.MaintenanceTrackName</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.VpcEndpoint.VpcEndpointId</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
