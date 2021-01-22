@@ -54,11 +54,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Must specify a valid DB parameter group.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must specify a valid DB parameter group identifier, for example <code>my-db-param-group</code>,
-        /// or a valid ARN.
-        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]

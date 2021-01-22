@@ -574,7 +574,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// The name of the database to create when the DB instance is created. If this parameter
-        /// isn't specified, no database is created in the DB instance.
+        /// isn't specified, a database named <code>postgres</code> is created in the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -625,12 +625,13 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Amazon Aurora</b> 
+        ///  <b>Amazon Aurora MySQL</b> 
         /// </para>
         ///  
         /// <para>
-        /// The name of the database to create when the primary instance of the DB cluster is
-        /// created. If this parameter isn't specified, no database is created in the DB instance.
+        /// The name of the database to create when the primary DB instance of the Aurora MySQL
+        /// DB cluster is created. If this parameter isn't specified for an Aurora MySQL DB cluster,
+        /// no database is created in the DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -638,11 +639,38 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must contain 1 to 64 letters or numbers.
+        /// It must contain 1 to 64 alphanumeric characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be a word reserved by the specified database engine
+        /// It can't be a word reserved by the database engine.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Amazon Aurora PostgreSQL</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The name of the database to create when the primary DB instance of the Aurora PostgreSQL
+        /// DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL
+        /// DB cluster, a database named <code>postgres</code> is created in the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// It must contain 1 to 63 alphanumeric characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It must begin with a letter or an underscore. Subsequent characters can be letters,
+        /// underscores, or digits (0 to 9).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It can't be a word reserved by the database engine.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1451,6 +1479,13 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The upper limit to which Amazon RDS can automatically scale the storage of the DB
         /// instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about this setting, including limitations that apply to it, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+        /// Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon
+        /// RDS User Guide</i>.
         /// </para>
         /// </summary>
         public int MaxAllocatedStorage

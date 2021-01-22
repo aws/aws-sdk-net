@@ -45,6 +45,55 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specifies the name of the engine that this option group should be associated with.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>mariadb</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>mysql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-ee</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se2</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se1</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>oracle-se</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>postgres</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-ee</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-se</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-ex</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sqlserver-web</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string EngineName
