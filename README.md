@@ -385,6 +385,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Lex is a service for building conversational interactions into any application using voice or text.
 * [AWSSDK.LexModelBuildingService](https://www.nuget.org/packages/AWSSDK.LexModelBuildingService/)
 	* Amazon Lex is a service for building conversational interfaces into any application using voice and text.
+* [AWSSDK.LexRuntimeV2](https://www.nuget.org/packages/AWSSDK.LexRuntimeV2/)
+	* This release adds support for Amazon Lex V2 APIs for runtime, including Streaming APIs for conversation management.
 * [AWSSDK.LicenseManager](https://www.nuget.org/packages/AWSSDK.LicenseManager/)
 	* AWS License Manager makes it easier to manage licenses in AWS and on premises when customers run applications using existing licenses from a variety of software vendors including Microsoft, SAP, Oracle, and IBM. AWS License Manager automatically tracks and controls license usage once administrators have created and enforced rules that emulate the terms of their licensing agreements. The capabilities of AWS License Manager are available through SDK and Tools, besides the management console and CLI.
 * [AWSSDK.Lightsail](https://www.nuget.org/packages/AWSSDK.Lightsail/)

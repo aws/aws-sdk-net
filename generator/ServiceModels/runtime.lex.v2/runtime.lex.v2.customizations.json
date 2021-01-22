@@ -1,0 +1,11 @@
+{
+    "shapeModifiers": {
+        "*": {
+            "modify": [
+                {
+                    "sessionState": { "emitPropertyName": "SessionStateValue" }
+                }
+            ]
+        }
+    }
+}
