@@ -786,7 +786,8 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// The current feature settings for the AWS Account.
+        /// Describes the global settings of the AWS account, including whether it is opted in
+        /// to cross-account backup.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalSettings service method.</param>
         /// 
@@ -2651,7 +2652,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates the current global settings for the AWS Account. Use the <code>DescribeGlobalSettings</code>
+        /// Updates the current global settings for the AWS account. Use the <code>DescribeGlobalSettings</code>
         /// API to determine the current settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
@@ -2720,6 +2721,10 @@ namespace Amazon.Backup
         /// of 90 days. Therefore, the “expire after days” setting must be 90 days greater than
         /// the “transition to cold after days” setting. The “transition to cold after days” setting
         /// cannot be changed after a backup has been transitioned to cold. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Only Amazon EFS file system backups can be transitioned to cold storage.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecoveryPointLifecycle service method.</param>

@@ -57,7 +57,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property LastUpdateTime. 
         /// <para>
-        /// The date and time that the global settings was last updated. This update is in Unix
+        /// The date and time that the global settings were last updated. This update is in Unix
         /// format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code>
         /// is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
         /// January 26, 2018 12:11:30.087 AM.

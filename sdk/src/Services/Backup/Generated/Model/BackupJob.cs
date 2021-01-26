@@ -296,8 +296,10 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// Specifies the IAM role ARN used to create the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.
+        /// Specifies the IAM role ARN used to create the target recovery point. IAM roles other
+        /// than the default role must include either <code>AWSBackup</code> or <code>AwsBackup</code>
+        /// in the role name. For example, <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>.
+        /// Role names without those strings lack permissions to perform backup jobs.
         /// </para>
         /// </summary>
         public string IamRoleArn

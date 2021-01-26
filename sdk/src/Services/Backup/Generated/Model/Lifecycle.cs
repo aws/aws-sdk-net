@@ -40,6 +40,10 @@ namespace Amazon.Backup.Model
     /// cold after days” setting cannot be changed after a backup has been transitioned to
     /// cold.
     /// </para>
+    ///  
+    /// <para>
+    /// Only Amazon EFS file system backups can be transitioned to cold storage.
+    /// </para>
     /// </summary>
     public partial class Lifecycle
     {

@@ -62,6 +62,10 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>Aurora</code> for Amazon Aurora
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Storage Gateway</code> for AWS Storage Gateway
         /// </para>
         ///  </li> </ul>

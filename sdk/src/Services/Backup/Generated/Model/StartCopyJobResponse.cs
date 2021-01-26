@@ -57,7 +57,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date and time that a copy job is started, in Unix format and Coordinated Universal
+        /// The date and time that a copy job is created, in Unix format and Coordinated Universal
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.

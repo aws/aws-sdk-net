@@ -50,6 +50,11 @@ namespace Amazon.Backup.Model
         /// The account ID to list the jobs from. Returns only backup jobs associated with the
         /// specified account ID.
         /// </para>
+        ///  
+        /// <para>
+        /// If used from an AWS Organizations management account, passing <code>*</code> returns
+        /// all jobs across the organization.
+        /// </para>
         /// </summary>
         public string ByAccountId
         {
@@ -162,6 +167,10 @@ namespace Amazon.Backup.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>RDS</code> for Amazon Relational Database Service
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Aurora</code> for Amazon Aurora
         /// </para>
         ///  </li> <li> 
         /// <para>

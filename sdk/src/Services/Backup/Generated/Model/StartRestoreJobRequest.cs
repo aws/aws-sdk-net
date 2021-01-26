@@ -130,9 +130,9 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ItemsToRestore </code>: A serialized list of up to five strings where each
-        /// string is a file path. Use <code>ItemsToRestore</code> to restore specific files or
-        /// directories rather than the entire file system. This parameter is optional.
+        ///  <code>ItemsToRestore </code>: An array of one to five strings where each string is
+        /// a file path. Use <code>ItemsToRestore</code> to restore specific files or directories
+        /// rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -192,6 +192,10 @@ namespace Amazon.Backup.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>RDS</code> for Amazon Relational Database Service
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Aurora</code> for Amazon Aurora
         /// </para>
         ///  </li> <li> 
         /// <para>

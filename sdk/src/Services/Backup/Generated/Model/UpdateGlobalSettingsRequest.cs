@@ -30,7 +30,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGlobalSettings operation.
-    /// Updates the current global settings for the AWS Account. Use the <code>DescribeGlobalSettings</code>
+    /// Updates the current global settings for the AWS account. Use the <code>DescribeGlobalSettings</code>
     /// API to determine the current settings.
     /// </summary>
     public partial class UpdateGlobalSettingsRequest : AmazonBackupRequest

@@ -93,8 +93,10 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CompleteWindowMinutes. 
         /// <para>
-        /// A value in minutes after a backup job is successfully started before it must be completed
-        /// or it will be canceled by AWS Backup. This value is optional.
+        /// A value in minutes during which a successfully started backup must complete, or else
+        /// AWS Backup will cancel the job. This value is optional. This value begins counting
+        /// down from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>,
+        /// or if the backup started later than scheduled.
         /// </para>
         /// </summary>
         public long CompleteWindowMinutes
@@ -161,6 +163,10 @@ namespace Amazon.Backup.Model
         /// the “transition to cold after days” setting. The “transition to cold after days” setting
         /// cannot be changed after a backup has been transitioned to cold. 
         /// </para>
+        ///  
+        /// <para>
+        /// Only Amazon EFS file system backups can be transitioned to cold storage.
+        /// </para>
         /// </summary>
         public Lifecycle Lifecycle
         {
@@ -217,7 +223,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property StartWindowMinutes. 
         /// <para>
         /// A value in minutes after a backup is scheduled before a job will be canceled if it
-        /// doesn't start successfully. This value is optional.
+        /// doesn't start successfully. This value is optional, and the default is 8 hours.
         /// </para>
         /// </summary>
         public long StartWindowMinutes

@@ -30,7 +30,8 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGlobalSettings operation.
-    /// The current feature settings for the AWS Account.
+    /// Describes the global settings of the AWS account, including whether it is opted in
+    /// to cross-account backup.
     /// </summary>
     public partial class DescribeGlobalSettingsRequest : AmazonBackupRequest
     {
