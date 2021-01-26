@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
    <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
     <TargetFrameworks>netstandard1.3;netstandard2.0;netcoreapp3.1</TargetFrameworks>
@@ -20,9 +20,17 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
-    <NetStandardImplicitPackageVersion  Condition="'$(TargetFramework)' == 'netstandard1.3'">1.6.0</NetStandardImplicitPackageVersion>
+    <NetStandardImplicitPackageVersion Condition="'$(TargetFramework)' == 'netstandard1.3'">1.6.0</NetStandardImplicitPackageVersion>
+
+    <!-- Sourcelink -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
-  <!-- Async Enumerable Compatibility -->
+
+    <!-- Async Enumerable Compatibility -->
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
@@ -32,11 +40,7 @@
   <PropertyGroup Condition=" '$(RuleSetFileForBuild)' == 'true' ">
     <CodeAnalysisRuleSet>..\..\..\AWSDotNetSDKForBuild.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <LangVersion>8.0</LangVersion>
-  </PropertyGroup>
-
+  
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
@@ -51,20 +55,27 @@
   </Choose>
 
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
-    <Analyzer Include= "..\..\..\..\buildtools\CustomRoslynAnalyzers.dll" />
+    <Analyzer Include="..\..\..\..\buildtools\CustomRoslynAnalyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="**/_bcl35/**"/>
-    <Compile Remove="**/_bcl45/**"/>
-    <Compile Remove="**/_bcl/**"/>
-    <Compile Remove="**/obj/**"/>
+    <Compile Remove="**/_bcl35/**" />
+    <Compile Remove="**/_bcl45/**" />
+    <Compile Remove="**/_bcl/**" />
+    <Compile Remove="**/obj/**" />
     <None Remove="**/obj/**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\AWSSDK.Core.NetStandard.csproj"/>
+    <ProjectReference Include="..\..\Core\AWSSDK.Core.NetStandard.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+    
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
         <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.3">
             <PrivateAssets>all</PrivateAssets>
@@ -72,8 +83,6 @@
         <PackageReference Include="Microsoft.DotNet.Analyzers.Compatibility" Version="0.2.12-alpha">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
   </ItemGroup>
 
   <ItemGroup>
