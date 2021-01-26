@@ -1,3 +1,12 @@
+### 3.5.95.1 (2021-01-26 19:10 UTC)
+* Backup (3.5.2.24)
+	* Documentation updates for AWS Backup
+* Core 3.5.2.1
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.95.0 (2021-01-22 19:23 UTC)
 * EC2 (3.5.29.0)
 	* Introducing startDate field for CapacityReservation object for the date and time which the reservation started and adding reserved parameter for ModifyCapacityReservation.
