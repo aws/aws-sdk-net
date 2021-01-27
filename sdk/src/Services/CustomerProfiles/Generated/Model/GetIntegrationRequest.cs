@@ -62,7 +62,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The URI of the S3 bucket or any other type of data source.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Uri
         {
             get { return this._uri; }
