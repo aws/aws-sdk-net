@@ -1,3 +1,22 @@
+### 3.5.96.0 (2021-01-27 19:16 UTC)
+* AccessAnalyzer (3.5.2.0)
+	* This release adds Secrets Manager secrets as a supported resource in IAM Access Analyzer to help you identify secrets that can be accessed from outside your account or AWS organization.
+* CustomerProfiles (3.5.1.0)
+	* This release makes Uri a required parameter in GetIntegrationRequest and DeleteIntegrationRequest.
+* ElastiCache (3.5.2.0)
+	* Add support to pass ParameterGroup name as part updating Engine Version of Global Datastore.
+* Elasticsearch (3.5.5.0)
+	* Amazon Elasticsearch Service adds support for node-to-node encryption and encryption at rest for existing domains running Elasticsearch version 6.7 and above
+* Lightsail (3.5.2.4)
+	* Documentation updates for Lightsail
+* SimpleEmailV2 (3.5.2.0)
+	* This release includes the ability to assign a configuration set to an email identity (a domain or email address), which allows the settings from the configuration set to be applied to the identity.
+* Core 3.5.2.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.95.1 (2021-01-26 19:10 UTC)
 * Backup (3.5.2.24)
 	* Documentation updates for AWS Backup
