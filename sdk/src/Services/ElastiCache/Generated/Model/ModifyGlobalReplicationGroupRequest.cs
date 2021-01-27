@@ -37,6 +37,7 @@ namespace Amazon.ElastiCache.Model
         private bool? _applyImmediately;
         private bool? _automaticFailoverEnabled;
         private string _cacheNodeType;
+        private string _cacheParameterGroupName;
         private string _engineVersion;
         private string _globalReplicationGroupDescription;
         private string _globalReplicationGroupId;
@@ -97,6 +98,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetCacheNodeType()
         {
             return this._cacheNodeType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheParameterGroupName. 
+        /// <para>
+        /// The name of the cache parameter group to use with the Global datastore. It must be
+        /// compatible with the major engine version used by the Global datastore.
+        /// </para>
+        /// </summary>
+        public string CacheParameterGroupName
+        {
+            get { return this._cacheParameterGroupName; }
+            set { this._cacheParameterGroupName = value; }
+        }
+
+        // Check to see if CacheParameterGroupName property is set
+        internal bool IsSetCacheParameterGroupName()
+        {
+            return this._cacheParameterGroupName != null;
         }
 
         /// <summary>

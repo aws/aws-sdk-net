@@ -70,6 +70,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CacheNodeType", StringUtils.FromString(publicRequest.CacheNodeType));
                 }
+                if(publicRequest.IsSetCacheParameterGroupName())
+                {
+                    request.Parameters.Add("CacheParameterGroupName", StringUtils.FromString(publicRequest.CacheParameterGroupName));
+                }
                 if(publicRequest.IsSetEngineVersion())
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
