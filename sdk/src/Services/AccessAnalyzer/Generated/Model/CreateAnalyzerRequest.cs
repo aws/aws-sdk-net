@@ -117,8 +117,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create
-        /// only one analyzer per account per Region.
+        /// The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported.
+        /// You can create only one analyzer per account per Region. You can create up to 5 analyzers
+        /// per organization per Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
