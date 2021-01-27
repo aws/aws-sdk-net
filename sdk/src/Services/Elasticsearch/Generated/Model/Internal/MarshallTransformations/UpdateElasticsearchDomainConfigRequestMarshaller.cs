@@ -144,6 +144,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetEncryptionAtRestOptions())
+                {
+                    context.Writer.WritePropertyName("EncryptionAtRestOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EncryptionAtRestOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionAtRestOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLogPublishingOptions())
                 {
                     context.Writer.WritePropertyName("LogPublishingOptions");
@@ -160,6 +171,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
 
                         context.Writer.WriteObjectEnd();
                     }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetNodeToNodeEncryptionOptions())
+                {
+                    context.Writer.WritePropertyName("NodeToNodeEncryptionOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NodeToNodeEncryptionOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NodeToNodeEncryptionOptions, context);
+
                     context.Writer.WriteObjectEnd();
                 }
 
