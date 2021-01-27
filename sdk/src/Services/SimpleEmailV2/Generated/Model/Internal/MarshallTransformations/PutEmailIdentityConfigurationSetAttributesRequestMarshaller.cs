@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateEmailIdentity Request Marshaller
+    /// PutEmailIdentityConfigurationSetAttributes Request Marshaller
     /// </summary>       
-    public class CreateEmailIdentityRequestMarshaller : IMarshaller<IRequest, CreateEmailIdentityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutEmailIdentityConfigurationSetAttributesRequestMarshaller : IMarshaller<IRequest, PutEmailIdentityConfigurationSetAttributesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateEmailIdentityRequest)input);
+            return this.Marshall((PutEmailIdentityConfigurationSetAttributesRequest)input);
         }
 
         /// <summary>
@@ -52,14 +52,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateEmailIdentityRequest publicRequest)
+        public IRequest Marshall(PutEmailIdentityConfigurationSetAttributesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmailV2");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-27";            
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/v2/email/identities";
+            if (!publicRequest.IsSetEmailIdentity())
+                throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field EmailIdentity set");
+            request.AddPathResource("{EmailIdentity}", StringUtils.FromString(publicRequest.EmailIdentity));
+            request.ResourcePath = "/v2/email/identities/{EmailIdentity}/configuration-set";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -72,39 +75,6 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ConfigurationSetName);
                 }
 
-                if(publicRequest.IsSetDkimSigningAttributes())
-                {
-                    context.Writer.WritePropertyName("DkimSigningAttributes");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DkimSigningAttributesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DkimSigningAttributes, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEmailIdentity())
-                {
-                    context.Writer.WritePropertyName("EmailIdentity");
-                    context.Writer.Write(publicRequest.EmailIdentity);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
@@ -114,9 +84,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateEmailIdentityRequestMarshaller _instance = new CreateEmailIdentityRequestMarshaller();        
+        private static PutEmailIdentityConfigurationSetAttributesRequestMarshaller _instance = new PutEmailIdentityConfigurationSetAttributesRequestMarshaller();        
 
-        internal static CreateEmailIdentityRequestMarshaller GetInstance()
+        internal static PutEmailIdentityConfigurationSetAttributesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -124,7 +94,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateEmailIdentityRequestMarshaller Instance
+        public static PutEmailIdentityConfigurationSetAttributesRequestMarshaller Instance
         {
             get
             {

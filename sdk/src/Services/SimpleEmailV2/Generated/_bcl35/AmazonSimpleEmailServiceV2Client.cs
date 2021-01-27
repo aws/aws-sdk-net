@@ -831,6 +831,19 @@ namespace Amazon.SimpleEmailV2
         /// a selector (a component of the DNS record name that identifies the public key that
         /// you want to use for DKIM authentication) and a private key.
         /// </para>
+        ///  
+        /// <para>
+        /// When you verify a domain, this operation provides a set of DKIM tokens, which you
+        /// can convert into CNAME tokens. You add these CNAME tokens to the DNS configuration
+        /// for your domain. Your domain is verified when Amazon SES detects these records in
+        /// the DNS configuration for your domain. For some DNS providers, it can take 72 hours
+        /// or more to complete the domain verification process.
+        /// </para>
+        ///  
+        /// <para>
+        /// Additionally, you can associate an existing configuration set with the email identity
+        /// that you're verifying.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEmailIdentity service method.</param>
         /// 
@@ -846,6 +859,9 @@ namespace Amazon.SimpleEmailV2
         /// </exception>
         /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
         /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
         /// Too many requests have been made to the operation.
@@ -4565,6 +4581,69 @@ namespace Amazon.SimpleEmailV2
         public virtual PutDeliverabilityDashboardOptionResponse EndPutDeliverabilityDashboardOption(IAsyncResult asyncResult)
         {
             return EndInvoke<PutDeliverabilityDashboardOptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutEmailIdentityConfigurationSetAttributes
+
+        /// <summary>
+        /// Used to associate a configuration set with an email identity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEmailIdentityConfigurationSetAttributes service method.</param>
+        /// 
+        /// <returns>The response from the PutEmailIdentityConfigurationSetAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityConfigurationSetAttributes">REST API Reference for PutEmailIdentityConfigurationSetAttributes Operation</seealso>
+        public virtual PutEmailIdentityConfigurationSetAttributesResponse PutEmailIdentityConfigurationSetAttributes(PutEmailIdentityConfigurationSetAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityConfigurationSetAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityConfigurationSetAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<PutEmailIdentityConfigurationSetAttributesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEmailIdentityConfigurationSetAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEmailIdentityConfigurationSetAttributes operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEmailIdentityConfigurationSetAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityConfigurationSetAttributes">REST API Reference for PutEmailIdentityConfigurationSetAttributes Operation</seealso>
+        public virtual IAsyncResult BeginPutEmailIdentityConfigurationSetAttributes(PutEmailIdentityConfigurationSetAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutEmailIdentityConfigurationSetAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEmailIdentityConfigurationSetAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutEmailIdentityConfigurationSetAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEmailIdentityConfigurationSetAttributes.</param>
+        /// 
+        /// <returns>Returns a  PutEmailIdentityConfigurationSetAttributesResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityConfigurationSetAttributes">REST API Reference for PutEmailIdentityConfigurationSetAttributes Operation</seealso>
+        public virtual PutEmailIdentityConfigurationSetAttributesResponse EndPutEmailIdentityConfigurationSetAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutEmailIdentityConfigurationSetAttributesResponse>(asyncResult);
         }
 
         #endregion

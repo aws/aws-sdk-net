@@ -33,6 +33,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class GetEmailIdentityResponse : AmazonWebServiceResponse
     {
+        private string _configurationSetName;
         private DkimAttributes _dkimAttributes;
         private bool? _feedbackForwardingStatus;
         private IdentityType _identityType;
@@ -40,6 +41,24 @@ namespace Amazon.SimpleEmailV2.Model
         private Dictionary<string, string> _policies = new Dictionary<string, string>();
         private List<Tag> _tags = new List<Tag>();
         private bool? _verifiedForSendingStatus;
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationSetName. 
+        /// <para>
+        /// The configuration set used by default when sending from this identity.
+        /// </para>
+        /// </summary>
+        public string ConfigurationSetName
+        {
+            get { return this._configurationSetName; }
+            set { this._configurationSetName = value; }
+        }
+
+        // Check to see if ConfigurationSetName property is set
+        internal bool IsSetConfigurationSetName()
+        {
+            return this._configurationSetName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DkimAttributes. 

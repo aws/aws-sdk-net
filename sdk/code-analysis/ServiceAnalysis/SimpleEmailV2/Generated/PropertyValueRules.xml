@@ -98,6 +98,10 @@
     <pattern>^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.PutEmailIdentityConfigurationSetAttributesRequest.EmailIdentity</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.PutEmailIdentityDkimAttributesRequest.EmailIdentity</property>
     <min>1</min>
   </property-value-rule>
