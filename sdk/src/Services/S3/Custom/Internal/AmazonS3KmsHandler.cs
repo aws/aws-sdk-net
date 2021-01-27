@@ -82,7 +82,7 @@ namespace Amazon.S3.Internal
             // Skip this for S3-compatible storage provider endpoints
             if (request.OriginalRequest is S3.Model.GetObjectRequest && 
                 AmazonS3Uri.TryParseAmazonS3Uri(request.Endpoint, out var amazonS3Uri) && 
-                amazonS3Uri.Region != RegionEndpoint.USEast1)     
+                amazonS3Uri.Region?.SystemName != RegionEndpoint.USEast1.SystemName)     
             {
                 request.UseSigV4 = true;
             }

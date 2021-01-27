@@ -61,7 +61,7 @@ namespace Amazon.SecurityToken
         private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
         
 #if BCL35
-        private readonly HashSet<RegionEndpoint> legacyGlobalRegions = new HashSet<RegionEndpoint>
+        private static readonly HashSet<RegionEndpoint> legacyGlobalRegions = new HashSet<RegionEndpoint>
          {
              RegionEndpoint.USEast1,
              RegionEndpoint.USEast2,
@@ -79,8 +79,9 @@ namespace Amazon.SecurityToken
              RegionEndpoint.APSouth1,
              RegionEndpoint.APNortheast1
          };
+        private static readonly HashSet<string> legacyGlobalRegionSystemNames = new HashSet<string>();
 #else
-        private readonly ISet<RegionEndpoint> legacyGlobalRegions = new HashSet<RegionEndpoint>
+        private static readonly ISet<RegionEndpoint> legacyGlobalRegions = new HashSet<RegionEndpoint>
          {
              RegionEndpoint.USEast1,
              RegionEndpoint.USEast2,
@@ -98,7 +99,16 @@ namespace Amazon.SecurityToken
              RegionEndpoint.APSouth1,
              RegionEndpoint.APNortheast1
          };
+        private static readonly ISet<string> legacyGlobalRegionSystemNames = new HashSet<string>();
 #endif
+
+        static AmazonSecurityTokenServiceConfig()
+        {
+            foreach (var legacyGlobalRegion in legacyGlobalRegions)
+            {
+                legacyGlobalRegionSystemNames.Add(legacyGlobalRegion.SystemName);
+            }
+        }
 
         /// <summary>
         /// Override DetermineServiceURL to set the url to the 
@@ -113,7 +123,8 @@ namespace Amazon.SecurityToken
                 return this.ServiceURL;
             }
             // also check if the region is within the list of legacy global regions
-            else if (this.StsRegionalEndpoints == StsRegionalEndpointsValue.Legacy && legacyGlobalRegions.Contains(this.RegionEndpoint))
+            else if (this.StsRegionalEndpoints == StsRegionalEndpointsValue.Legacy &&
+                     (this.RegionEndpoint != null && legacyGlobalRegionSystemNames.Contains(this.RegionEndpoint?.SystemName)))
             {
                 this.AuthenticationRegion = "us-east-1";
                 return StsDefaultHostname;

@@ -23,6 +23,10 @@ using Amazon.Runtime.Internal.Auth;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using ThirdParty.Json.LitJson;
 
 namespace Amazon
 {
@@ -34,6 +38,7 @@ namespace Amazon
     {
         #region Statics
         private static Dictionary<string, RegionEndpoint> _hashBySystemName = new Dictionary<string, RegionEndpoint>(StringComparer.OrdinalIgnoreCase);
+        private static ReaderWriterLockSlim _regionEndpointOverrideLock = new ReaderWriterLockSlim(); // controls access to _hashRegionEndpointOverride
 
         /// <summary>
         /// The US East (Virginia) endpoint.
@@ -168,11 +173,14 @@ namespace Amazon
         /// <summary>
         /// Represents the endpoint overridding rules in the endpoints.json
         /// Is used to map private region (ie us-east-1-regional) to public regions (us-east-1)
-        /// For signing purposes.
+        /// For signing purposes. Map is keyed by region SystemName.
         /// </summary>
-        private static Dictionary<RegionEndpoint, RegionEndpoint> _hashRegionEndpointOverride  = new Dictionary<RegionEndpoint, RegionEndpoint>() {
-                { USEast1Regional, USEast1 }
-            };
+        private static Dictionary<string, RegionEndpoint> _hashRegionEndpointOverride = new Dictionary<string, RegionEndpoint>();
+
+        static RegionEndpoint()
+        {
+            ResetRegionEndpointOverride();
+        }
 
         /// <summary>
         /// Enumerate through all the regions.
@@ -207,7 +215,94 @@ namespace Amazon
         /// <returns></returns>
         public static RegionEndpoint GetRegionEndpointOverride(RegionEndpoint regionEndpoint)
         {
-            return _hashRegionEndpointOverride.ContainsKey(regionEndpoint) ? _hashRegionEndpointOverride[regionEndpoint] : null;
+            try
+            {
+                _regionEndpointOverrideLock.EnterReadLock();
+
+                if (!_hashRegionEndpointOverride.TryGetValue(regionEndpoint.SystemName,
+                    out var regionEndpointOverride))
+                {
+                    return null;
+                }
+
+                return regionEndpointOverride;
+            }
+            finally
+            {
+                _regionEndpointOverrideLock.ExitReadLock();
+            }
+        }
+
+        /// <summary>
+        /// Force the SDK to load and apply the given endpoints details
+        /// (eg: an updated endpoints.json file).
+        /// Service clients created after this call will be set up with
+        /// endpoints based on this information.
+        ///
+        /// This function should only be used at application startup, before
+        /// creating service clients.
+        ///
+        /// Known Caveats:
+        /// * static readonly fields (eg: <see cref="RegionEndpoint.USEast1"/>) are not updated.
+        ///   If you use this function, you should use <see cref="RegionEndpoint.GetEndpoint"/> with
+        ///   explicit region system names to ensure you work with RegionEndpoint objects containing
+        ///   the reloaded data. RegionEndpoint objects returned from GetEndpoint will generally 
+        ///   fail Equality comparisons against the static fields.
+        /// * Service clients created before calling Reload have no guarantee around
+        ///   which endpoint data will be used.
+        /// </summary>
+        /// <param name="stream">Stream containing an Endpoints manifest to reload in the SDK.
+        /// Pass null in to reset the SDK, so that it uses its built-in manifest instead.</param>
+        public static void Reload(Stream stream)
+        {
+            if (stream == null)
+            {
+                _regionEndpointProvider = null;
+            }
+            else
+            {
+                JsonData rootData = null;
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    rootData = JsonMapper.ToObject(reader);
+                }
+
+                var manifestVersion = rootData?["version"]?.ToString();
+                if (manifestVersion == "3")
+                {
+                    _regionEndpointProvider = new RegionEndpointProviderV3(rootData);
+                }
+                else
+                {
+                    throw new NotSupportedException("Endpoints data format is not supported by reload");
+                }
+            }
+
+            // Reset static lookup maps that may contain objects relating to old endpoint data
+            lock (_hashBySystemName)
+            {
+                _hashBySystemName.Clear();
+            }
+
+            ResetRegionEndpointOverride();
+        }
+
+        /// <summary>
+        /// Rebuilds the endpoint override map, referencing the SDK's current Region Endpoint data.
+        /// </summary>
+        private static void ResetRegionEndpointOverride()
+        {
+            try
+            {
+                _regionEndpointOverrideLock.EnterWriteLock();
+
+                _hashRegionEndpointOverride.Clear();
+                _hashRegionEndpointOverride.Add(USEast1Regional.SystemName, GetEndpoint(USEast1.SystemName, null));
+            }
+            finally
+            {
+                _regionEndpointOverrideLock.ExitWriteLock();
+            }
         }
 
         private static RegionEndpoint GetEndpoint(string systemName, string displayName)

@@ -360,7 +360,7 @@ namespace Amazon.S3.Util
         public static S3PostUploadResponse PostUpload(S3PostUploadRequest request)
         {
             string url;
-            string subdomain = request.Region.Equals(RegionEndpoint.USEast1) ? "s3" : "s3-" + request.Region.SystemName;
+            string subdomain = (request.Region.Equals(RegionEndpoint.USEast1) || request.Region?.SystemName == RegionEndpoint.USEast1.SystemName) ? "s3" : "s3-" + request.Region.SystemName;
 
             if (request.Bucket.IndexOf('.') > -1)
                 url = string.Format(CultureInfo.InvariantCulture, "https://{0}.amazonaws.com/{1}/", subdomain, request.Bucket);
