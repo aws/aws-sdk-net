@@ -36,6 +36,8 @@ namespace Amazon.RoboMaker.Model
         private string _application;
         private string _applicationVersion;
         private LaunchConfig _launchConfig;
+        private List<UploadConfiguration> _uploadConfigurations = new List<UploadConfiguration>();
+        private bool? _useDefaultUploadConfigurations;
 
         /// <summary>
         /// Gets and sets the property Application. 
@@ -92,6 +94,49 @@ namespace Amazon.RoboMaker.Model
         internal bool IsSetLaunchConfig()
         {
             return this._launchConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UploadConfigurations. 
+        /// <para>
+        /// The upload configurations for the robot application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<UploadConfiguration> UploadConfigurations
+        {
+            get { return this._uploadConfigurations; }
+            set { this._uploadConfigurations = value; }
+        }
+
+        // Check to see if UploadConfigurations property is set
+        internal bool IsSetUploadConfigurations()
+        {
+            return this._uploadConfigurations != null && this._uploadConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseDefaultUploadConfigurations. 
+        /// <para>
+        /// A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code>
+        /// and <code>.gazebo</code> files are uploaded when the application terminates and all
+        /// ROS topics will be recorded.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set this value, you must specify an <code>outputLocation</code>. 
+        /// </para>
+        /// </summary>
+        public bool UseDefaultUploadConfigurations
+        {
+            get { return this._useDefaultUploadConfigurations.GetValueOrDefault(); }
+            set { this._useDefaultUploadConfigurations = value; }
+        }
+
+        // Check to see if UseDefaultUploadConfigurations property is set
+        internal bool IsSetUseDefaultUploadConfigurations()
+        {
+            return this._useDefaultUploadConfigurations.HasValue; 
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SimulationApplicationConfig Object
+    /// Response Unmarshaller for UploadConfiguration Object
     /// </summary>  
-    public class SimulationApplicationConfigUnmarshaller : IUnmarshaller<SimulationApplicationConfig, XmlUnmarshallerContext>, IUnmarshaller<SimulationApplicationConfig, JsonUnmarshallerContext>
+    public class UploadConfigurationUnmarshaller : IUnmarshaller<UploadConfiguration, XmlUnmarshallerContext>, IUnmarshaller<UploadConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SimulationApplicationConfig IUnmarshaller<SimulationApplicationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        UploadConfiguration IUnmarshaller<UploadConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,33 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SimulationApplicationConfig Unmarshall(JsonUnmarshallerContext context)
+        public UploadConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SimulationApplicationConfig unmarshalledObject = new SimulationApplicationConfig();
+            UploadConfiguration unmarshalledObject = new UploadConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("application", targetDepth))
+                if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Application = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("applicationVersion", targetDepth))
+                if (context.TestExpression("path", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Path = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("launchConfig", targetDepth))
+                if (context.TestExpression("uploadBehavior", targetDepth))
                 {
-                    var unmarshaller = LaunchConfigUnmarshaller.Instance;
-                    unmarshalledObject.LaunchConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("uploadConfigurations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<UploadConfiguration, UploadConfigurationUnmarshaller>(UploadConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.UploadConfigurations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("useDefaultUploadConfigurations", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.UseDefaultUploadConfigurations = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("worldConfigs", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<WorldConfig, WorldConfigUnmarshaller>(WorldConfigUnmarshaller.Instance);
-                    unmarshalledObject.WorldConfigs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UploadBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +88,12 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static SimulationApplicationConfigUnmarshaller _instance = new SimulationApplicationConfigUnmarshaller();        
+        private static UploadConfigurationUnmarshaller _instance = new UploadConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SimulationApplicationConfigUnmarshaller Instance
+        public static UploadConfigurationUnmarshaller Instance
         {
             get
             {

@@ -82,6 +82,18 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.LaunchConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("uploadConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<UploadConfiguration, UploadConfigurationUnmarshaller>(UploadConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.UploadConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("useDefaultUploadConfigurations", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UseDefaultUploadConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

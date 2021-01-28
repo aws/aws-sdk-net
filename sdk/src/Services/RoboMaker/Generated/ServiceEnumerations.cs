@@ -829,6 +829,10 @@ namespace Amazon.RoboMaker
         /// </summary>
         public static readonly SimulationJobErrorCode SubnetIpLimitExceeded = new SimulationJobErrorCode("SubnetIpLimitExceeded");
         /// <summary>
+        /// Constant UploadContentMismatchError for SimulationJobErrorCode
+        /// </summary>
+        public static readonly SimulationJobErrorCode UploadContentMismatchError = new SimulationJobErrorCode("UploadContentMismatchError");
+        /// <summary>
         /// Constant WrongRegionRobotApplication for SimulationJobErrorCode
         /// </summary>
         public static readonly SimulationJobErrorCode WrongRegionRobotApplication = new SimulationJobErrorCode("WrongRegionRobotApplication");
@@ -1006,6 +1010,56 @@ namespace Amazon.RoboMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SimulationSoftwareSuiteType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UploadBehavior.
+    /// </summary>
+    public class UploadBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UPLOAD_ON_TERMINATE for UploadBehavior
+        /// </summary>
+        public static readonly UploadBehavior UPLOAD_ON_TERMINATE = new UploadBehavior("UPLOAD_ON_TERMINATE");
+        /// <summary>
+        /// Constant UPLOAD_ROLLING_AUTO_REMOVE for UploadBehavior
+        /// </summary>
+        public static readonly UploadBehavior UPLOAD_ROLLING_AUTO_REMOVE = new UploadBehavior("UPLOAD_ROLLING_AUTO_REMOVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UploadBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UploadBehavior FindValue(string value)
+        {
+            return FindValue<UploadBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UploadBehavior(string value)
         {
             return FindValue(value);
         }

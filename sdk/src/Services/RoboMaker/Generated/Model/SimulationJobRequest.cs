@@ -250,7 +250,8 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property UseDefaultApplications. 
         /// <para>
-        /// Boolean indicating whether to use default simulation tool applications.
+        /// A Boolean indicating whether to use default applications in the simulation job. Default
+        /// applications include Gazebo, rqt, rviz and terminal access. 
         /// </para>
         /// </summary>
         public bool UseDefaultApplications
