@@ -79,6 +79,20 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectTagsKvp in requestObject.Tags)
+                {
+                    context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
+                    var requestObjectTagsValue = requestObjectTagsKvp.Value;
+
+                        context.Writer.Write(requestObjectTagsValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

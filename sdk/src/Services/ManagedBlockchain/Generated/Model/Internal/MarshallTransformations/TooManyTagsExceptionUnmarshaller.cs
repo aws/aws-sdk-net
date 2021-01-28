@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceNotFoundException Object
+    /// Response Unmarshaller for TooManyTagsException Object
     /// </summary>  
-    public class ResourceNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ResourceNotFoundException, JsonUnmarshallerContext>
+    public class TooManyTagsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyTagsException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResourceNotFoundException Unmarshall(JsonUnmarshallerContext context)
+        public TooManyTagsException Unmarshall(JsonUnmarshallerContext context)
         {
             return this.Unmarshall(context, new ErrorResponse());
         }
@@ -54,11 +54,11 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ResourceNotFoundException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
+        public TooManyTagsException Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse)
         {
             context.Read();
 
-            ResourceNotFoundException unmarshalledObject = new ResourceNotFoundException(errorResponse.Message, errorResponse.InnerException,
+            TooManyTagsException unmarshalledObject = new TooManyTagsException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
@@ -75,12 +75,12 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ResourceNotFoundExceptionUnmarshaller _instance = new ResourceNotFoundExceptionUnmarshaller();        
+        private static TooManyTagsExceptionUnmarshaller _instance = new TooManyTagsExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceNotFoundExceptionUnmarshaller Instance
+        public static TooManyTagsExceptionUnmarshaller Instance
         {
             get
             {

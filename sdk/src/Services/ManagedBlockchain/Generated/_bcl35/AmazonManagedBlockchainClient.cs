@@ -43,10 +43,11 @@ namespace Amazon.ManagedBlockchain
     ///  
     /// <para>
     /// Managed Blockchain supports the Hyperledger Fabric and Ethereum open-source frameworks.
-    /// Because of fundamental differences between the frameworks, some API actions or data
-    /// types may only apply in the context of one framework and not the other. For example,
-    /// actions related to Hyperledger Fabric network members such as <code>CreateMember</code>
-    /// and <code>DeleteMember</code> do not apply to Ethereum.
+    /// Ethereum on Managed Blockchain is in preview release and is subject to change. Because
+    /// of fundamental differences between the frameworks, some API actions or data types
+    /// may only apply in the context of one framework and not the other. For example, actions
+    /// related to Hyperledger Fabric network members such as <code>CreateMember</code> and
+    /// <code>DeleteMember</code> do not apply to Ethereum.
     /// </para>
     ///  
     /// <para>
@@ -285,8 +286,7 @@ namespace Amazon.ManagedBlockchain
         /// are within the boundaries of the service edition and your account limits.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
         /// The requested resource exists but is not in a status that can complete the operation.
@@ -296,6 +296,9 @@ namespace Amazon.ManagedBlockchain
         /// The most common source of throttling errors is launching EC2 instances such that your
         /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
         /// resources if possible.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateMember">REST API Reference for CreateMember Operation</seealso>
         public virtual CreateMemberResponse CreateMember(CreateMemberRequest request)
@@ -378,6 +381,9 @@ namespace Amazon.ManagedBlockchain
         /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
         /// resources if possible.
         /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateNetwork">REST API Reference for CreateNetwork Operation</seealso>
         public virtual CreateNetworkResponse CreateNetwork(CreateNetworkRequest request)
         {
@@ -433,6 +439,10 @@ namespace Amazon.ManagedBlockchain
         /// <para>
         /// Applies to Hyperledger Fabric and Ethereum.
         /// </para>
+        ///  
+        /// <para>
+        /// Ethereum on Managed Blockchain is in preview release and is subject to change.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNode service method.</param>
         /// 
@@ -454,8 +464,7 @@ namespace Amazon.ManagedBlockchain
         /// are within the boundaries of the service edition and your account limits.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
         /// The requested resource exists but is not in a status that can complete the operation.
@@ -465,6 +474,9 @@ namespace Amazon.ManagedBlockchain
         /// The most common source of throttling errors is launching EC2 instances such that your
         /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
         /// resources if possible.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateNode">REST API Reference for CreateNode Operation</seealso>
         public virtual CreateNodeResponse CreateNode(CreateNodeRequest request)
@@ -537,8 +549,7 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
         /// The requested resource exists but is not in a status that can complete the operation.
@@ -548,6 +559,9 @@ namespace Amazon.ManagedBlockchain
         /// The most common source of throttling errors is launching EC2 instances such that your
         /// service limit for EC2 instances is exceeded. Request a limit increase or delete unused
         /// resources if possible.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateProposal">REST API Reference for CreateProposal Operation</seealso>
         public virtual CreateProposalResponse CreateProposal(CreateProposalRequest request)
@@ -624,8 +638,7 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
         /// The requested resource exists but is not in a status that can complete the operation.
@@ -706,8 +719,7 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
         /// The requested resource exists but is not in a status that can complete the operation.
@@ -787,8 +799,7 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
         /// The request or operation could not be performed because a service is throttling requests.
@@ -865,8 +876,7 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
         /// The request or operation could not be performed because a service is throttling requests.
@@ -943,8 +953,7 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
         /// The request or operation could not be performed because a service is throttling requests.
@@ -1021,8 +1030,7 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
         /// The request or operation could not be performed because a service is throttling requests.
@@ -1103,8 +1111,7 @@ namespace Amazon.ManagedBlockchain
         /// are within the boundaries of the service edition and your account limits.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
         /// The request or operation could not be performed because a service is throttling requests.
@@ -1403,8 +1410,7 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
         /// The request or operation could not be performed because a service is throttling requests.
@@ -1533,6 +1539,81 @@ namespace Amazon.ManagedBlockchain
 
         #endregion
         
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Returns a list of tags for the specified resource. Each tag consists of a key and
+        /// optional value.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+        /// Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or
+        /// <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+        /// Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
+        /// The requested resource exists but is not in a status that can complete the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonManagedBlockchainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from ManagedBlockchain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RejectInvitation
 
         /// <summary>
@@ -1560,8 +1641,7 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
         /// The request or operation could not be performed because a service is throttling requests.
@@ -1615,6 +1695,168 @@ namespace Amazon.ManagedBlockchain
 
         #endregion
         
+        #region  TagResource
+
+        /// <summary>
+        /// Adds or overwrites the specified tags for the specified Amazon Managed Blockchain
+        /// resource. Each tag consists of a key and optional value.
+        /// 
+        ///  
+        /// <para>
+        /// When you specify a tag key that already exists, the tag value is overwritten with
+        /// the new value. Use <code>UntagResource</code> to remove tag keys.
+        /// </para>
+        ///  
+        /// <para>
+        /// A resource can have up to 50 tags. If you try to create more than 50 tags for a resource,
+        /// your request fails and returns an error.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+        /// Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or
+        /// <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+        /// Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
+        /// The requested resource exists but is not in a status that can complete the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonManagedBlockchainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from ManagedBlockchain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes the specified tags from the Amazon Managed Blockchain resource.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+        /// Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or
+        /// <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+        /// Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ManagedBlockchain.</returns>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InternalServiceErrorException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.InvalidRequestException">
+        /// The action or operation requested is invalid. Verify that the action is typed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotReadyException">
+        /// The requested resource exists but is not in a status that can complete the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonManagedBlockchainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from ManagedBlockchain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateMember
 
         /// <summary>
@@ -1638,8 +1880,7 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
         /// The request or operation could not be performed because a service is throttling requests.
@@ -1716,8 +1957,7 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
         /// The request or operation could not be performed because a service is throttling requests.
@@ -1799,8 +2039,7 @@ namespace Amazon.ManagedBlockchain
         /// The action or operation requested is invalid. Verify that the action is typed correctly.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ResourceNotFoundException">
-        /// A requested resource does not exist on the network. It may have been deleted or referenced
-        /// inaccurately.
+        /// A requested resource does not exist. It may have been deleted or referenced inaccurately.
         /// </exception>
         /// <exception cref="Amazon.ManagedBlockchain.Model.ThrottlingException">
         /// The request or operation could not be performed because a service is throttling requests.

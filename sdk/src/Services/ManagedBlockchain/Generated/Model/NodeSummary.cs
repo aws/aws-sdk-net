@@ -33,11 +33,33 @@ namespace Amazon.ManagedBlockchain.Model
     /// </summary>
     public partial class NodeSummary
     {
+        private string _arn;
         private string _availabilityZone;
         private DateTime? _creationDate;
         private string _id;
         private string _instanceType;
         private NodeStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the node. For more information about ARNs and their
+        /// format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1011)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 

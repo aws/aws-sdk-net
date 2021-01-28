@@ -33,6 +33,7 @@ namespace Amazon.ManagedBlockchain.Model
     /// </summary>
     public partial class Network
     {
+        private string _arn;
         private DateTime? _creationDate;
         private string _description;
         private Framework _framework;
@@ -41,8 +42,30 @@ namespace Amazon.ManagedBlockchain.Model
         private string _id;
         private string _name;
         private NetworkStatus _status;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private VotingPolicy _votingPolicy;
         private string _vpcEndpointServiceName;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the network. For more information about ARNs and
+        /// their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1011)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreationDate. 
@@ -190,6 +213,32 @@ namespace Amazon.ManagedBlockchain.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags assigned to the network. Each tag consists of a key and optional value.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+        /// Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or
+        /// <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+        /// Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

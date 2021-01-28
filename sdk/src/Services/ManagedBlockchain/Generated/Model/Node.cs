@@ -33,6 +33,7 @@ namespace Amazon.ManagedBlockchain.Model
     /// </summary>
     public partial class Node
     {
+        private string _arn;
         private string _availabilityZone;
         private DateTime? _creationDate;
         private NodeFrameworkAttributes _frameworkAttributes;
@@ -43,11 +44,34 @@ namespace Amazon.ManagedBlockchain.Model
         private string _networkId;
         private StateDBType _stateDB;
         private NodeStatus _status;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the node. For more information about ARNs and their
+        /// format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1011)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone in which the node exists.
+        /// The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum
+        /// on Managed Blockchain is in preview release and is subject to change.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -234,6 +258,32 @@ namespace Amazon.ManagedBlockchain.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags assigned to the node. Each tag consists of a key and optional value.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+        /// Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or
+        /// <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+        /// Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

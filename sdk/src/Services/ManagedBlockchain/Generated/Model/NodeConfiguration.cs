@@ -41,7 +41,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone in which the node exists.
+        /// The Availability Zone in which the node exists. Required for Ethereum nodes. Ethereum
+        /// on Managed Blockchain is in preview release and is subject to change.
         /// </para>
         /// </summary>
         public string AvailabilityZone

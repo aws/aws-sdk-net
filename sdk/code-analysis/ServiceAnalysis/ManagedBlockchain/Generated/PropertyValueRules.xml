@@ -268,9 +268,27 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.RejectInvitationRequest.InvitationId</property>
     <min>1</min>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.UpdateMemberRequest.MemberId</property>
@@ -323,9 +341,21 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.Invitation.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.Invitation.InvitationId</property>
     <min>1</min>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.Member.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.Member.Description</property>
@@ -376,6 +406,12 @@
     <pattern>^[a-zA-Z][a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.MemberSummary.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.MemberSummary.Description</property>
     <max>128</max>
   </property-value-rule>
@@ -389,6 +425,12 @@
     <min>1</min>
     <max>64</max>
     <pattern>^(?!-|[0-9])(?!.*-$)(?!.*?--)[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.Network.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.Network.Description</property>
@@ -411,6 +453,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.NetworkSummary.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.NetworkSummary.Description</property>
     <max>128</max>
   </property-value-rule>
@@ -431,6 +479,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.Node.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.Node.Id</property>
     <min>1</min>
     <max>32</max>
@@ -446,9 +500,21 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.NodeSummary.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.NodeSummary.Id</property>
     <min>1</min>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.Proposal.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.Proposal.Description</property>
@@ -476,6 +542,12 @@
     <pattern>^(?!-|[0-9])(?!.*-$)(?!.*?--)[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.ProposalSummary.Arn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.ProposalSummary.Description</property>
     <max>128</max>
   </property-value-rule>
@@ -499,6 +571,18 @@
     <property>Amazon.ManagedBlockchain.Model.RemoveAction.MemberId</property>
     <min>1</min>
     <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.ResourceNotFoundException.ResourceName</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ManagedBlockchain.Model.TooManyTagsException.ResourceName</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:.+:.+:.+:.+:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ManagedBlockchain.Model.VoteSummary.MemberId</property>

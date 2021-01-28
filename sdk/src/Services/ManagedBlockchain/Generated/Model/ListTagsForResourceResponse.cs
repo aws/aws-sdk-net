@@ -29,43 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// Attributes of Ethereum for a network. Ethereum on Managed Blockchain is in preview
-    /// release and is subject to change.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class NetworkEthereumAttributes
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _chainId;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property ChainId. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs
-        /// are as follows:
+        /// The tags assigned to the resource.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// mainnet = <code>1</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// rinkeby = <code>4</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// ropsten = <code>3</code> 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
-        public string ChainId
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._chainId; }
-            set { this._chainId = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if ChainId property is set
-        internal bool IsSetChainId()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._chainId != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

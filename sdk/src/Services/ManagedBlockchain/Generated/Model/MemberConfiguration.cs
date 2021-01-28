@@ -42,6 +42,7 @@ namespace Amazon.ManagedBlockchain.Model
         private MemberFrameworkConfiguration _frameworkConfiguration;
         private MemberLogPublishingConfiguration _logPublishingConfiguration;
         private string _name;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -117,6 +118,32 @@ namespace Amazon.ManagedBlockchain.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Tags assigned to the member. Tags consist of a key and optional value. For more information
+        /// about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+        /// Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When specifying tags during creation, you can specify multiple key-value pairs in
+        /// a single request, with an overall maximum of 50 added to each resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

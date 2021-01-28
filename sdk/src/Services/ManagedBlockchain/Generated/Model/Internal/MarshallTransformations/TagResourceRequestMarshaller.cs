@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateProposal Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateProposalRequestMarshaller : IMarshaller<IRequest, CreateProposalRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateProposalRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,57 +52,23 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateProposalRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ManagedBlockchain");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-24";            
             request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetNetworkId())
-                throw new AmazonManagedBlockchainException("Request object does not have required field NetworkId set");
-            request.AddPathResource("{networkId}", StringUtils.FromString(publicRequest.NetworkId));
-            request.ResourcePath = "/networks/{networkId}/proposals";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonManagedBlockchainException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tags/{resourceArn}";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetActions())
-                {
-                    context.Writer.WritePropertyName("Actions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ProposalActionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Actions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetMemberId())
-                {
-                    context.Writer.WritePropertyName("MemberId");
-                    context.Writer.Write(publicRequest.MemberId);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
@@ -126,9 +92,9 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateProposalRequestMarshaller _instance = new CreateProposalRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateProposalRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -136,7 +102,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateProposalRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {
