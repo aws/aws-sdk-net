@@ -55,7 +55,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateBotAliasRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LexModelsV2");
-            request.Headers["Content-Type"] = "application/json";
+            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-07";            
             request.HttpMethod = "PUT";
 

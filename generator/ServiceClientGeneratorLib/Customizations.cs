@@ -424,6 +424,8 @@ namespace ServiceClientGenerator
         public const string GenerateUnmarshallerKey = "generateUnmarshaller";
         public const string SkipUriPropertyValidationKey = "skipUriPropertyValidation";
         public const string OperationArnFieldKey = "operationArnField";
+        public const string OverrideContentTypeKey = "overrideContentType";
+
         JsonData _documentRoot;
 
         SimpleMethodFormsModel _simpleMethodsModel;
@@ -651,6 +653,23 @@ namespace ServiceClientGenerator
                     arnFields.Add(kvp.Key, new ArnFieldProperties(bool.Parse(kvp.Value["containsArnField"].ToString()), kvp.Value["field"]?.ToString()));
                 }
                 return arnFields;
+            }
+        }
+
+        /// <summary>
+        /// Override for the Content-Type header
+        /// </summary>
+        public string OverrideContentType
+        {
+            get
+            {
+                var data = _documentRoot[OverrideContentTypeKey];
+                if (data == null)
+                {
+                    return null;
+                }
+              
+                return (string)data;
             }
         }
 
