@@ -32,7 +32,7 @@ namespace Amazon.KinesisAnalyticsV2
     public partial class AmazonKinesisAnalyticsV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.5.3.24");
+            InternalSDKUtils.BuildUserAgentString("3.5.3.25");
 
         private string _userAgent = UserAgentString;
 
