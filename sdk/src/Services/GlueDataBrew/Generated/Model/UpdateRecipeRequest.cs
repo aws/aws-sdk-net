@@ -30,8 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRecipe operation.
-    /// Modifies the definition of the latest working version of an AWS Glue DataBrew recipe
-    /// in the current AWS account.
+    /// Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe.
     /// </summary>
     public partial class UpdateRecipeRequest : AmazonGlueDataBrewRequest
     {

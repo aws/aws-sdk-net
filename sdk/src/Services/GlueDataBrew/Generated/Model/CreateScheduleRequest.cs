@@ -30,8 +30,8 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSchedule operation.
-    /// Creates a new schedule for one or more AWS Glue DataBrew jobs. Jobs can be run at
-    /// a specific date and time, or at regular intervals.
+    /// Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific
+    /// date and time, or at regular intervals.
     /// </summary>
     public partial class CreateScheduleRequest : AmazonGlueDataBrewRequest
     {
@@ -43,8 +43,9 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property CronExpression. 
         /// <para>
-        /// The date or dates and time or times, in <code>cron</code> format, when the jobs are
-        /// to be run.
+        /// The date or dates and time or times when the jobs are to be run. For more information,
+        /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a>
+        /// in the <i>AWS Glue DataBrew Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -82,7 +83,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A unique name for the schedule.
+        /// A unique name for the schedule. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+        /// hyphen (-), period (.), and space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

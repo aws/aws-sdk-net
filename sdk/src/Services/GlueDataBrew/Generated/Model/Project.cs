@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents all of the attributes of an AWS Glue DataBrew project.
+    /// Represents all of the attributes of a DataBrew project.
     /// </summary>
     public partial class Project
     {
@@ -88,7 +88,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The identifier (the user name) of the user who crated the project.
+        /// The Amazon Resource Name (ARN) of the user who crated the project.
         /// </para>
         /// </summary>
         public string CreatedBy
@@ -125,7 +125,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property LastModifiedBy. 
         /// <para>
-        /// The identifier (user name) of the user who last modified the project.
+        /// The Amazon Resource Name (ARN) of the user who last modified the project.
         /// </para>
         /// </summary>
         public string LastModifiedBy
@@ -198,7 +198,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property OpenedBy. 
         /// <para>
-        /// The identifier (the user name) of the user that opened the project for use.
+        /// The Amazon Resource Name (ARN) of the user that opened the project for use.
         /// </para>
         /// </summary>
         public string OpenedBy

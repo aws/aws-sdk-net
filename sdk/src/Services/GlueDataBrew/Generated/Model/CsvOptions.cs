@@ -29,30 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDataset operation.
-    /// Deletes a dataset from DataBrew.
+    /// Options that define how DataBrew will read a Csv file when creating a dataset from
+    /// that file.
     /// </summary>
-    public partial class DeleteDatasetRequest : AmazonGlueDataBrewRequest
+    public partial class CsvOptions
     {
-        private string _name;
+        private string _delimiter;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Delimiter. 
         /// <para>
-        /// The name of the dataset to be deleted.
+        /// A single character that specifies the delimiter being used in the Csv file.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Name
+        [AWSProperty(Min=1, Max=1)]
+        public string Delimiter
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._delimiter; }
+            set { this._delimiter = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Delimiter property is set
+        internal bool IsSetDelimiter()
         {
-            return this._name != null;
+            return this._delimiter != null;
         }
 
     }

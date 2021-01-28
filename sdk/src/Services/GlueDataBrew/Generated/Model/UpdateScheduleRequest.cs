@@ -30,8 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSchedule operation.
-    /// Modifies the definition of an existing AWS Glue DataBrew schedule in the current AWS
-    /// account.
+    /// Modifies the definition of an existing DataBrew schedule.
     /// </summary>
     public partial class UpdateScheduleRequest : AmazonGlueDataBrewRequest
     {
@@ -42,8 +41,9 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property CronExpression. 
         /// <para>
-        /// The date or dates and time or times, in <code>cron</code> format, when the jobs are
-        /// to be run.
+        /// The date or dates and time or times when the jobs are to be run. For more information,
+        /// see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a>
+        /// in the <i>AWS Glue DataBrew Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

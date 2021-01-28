@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents one run of an AWS Glue DataBrew job.
+    /// Represents one run of a DataBrew job.
     /// </summary>
     public partial class JobRun
     {
@@ -255,7 +255,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property StartedBy. 
         /// <para>
-        /// The identifier (the user name) of the user who initiated the job run. 
+        /// The Amazon Resource Name (ARN) of the user who initiated the job run. 
         /// </para>
         /// </summary>
         public string StartedBy

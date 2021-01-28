@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents all of the attributes of an AWS Glue DataBrew recipe.
+    /// Represents the name and version of a DataBrew recipe.
     /// </summary>
     public partial class RecipeReference
     {

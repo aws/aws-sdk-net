@@ -52,7 +52,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
-        /// A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html">Recipe
+        /// A specific condition to apply to a recipe action. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe
         /// structure</a> in the <i>AWS Glue DataBrew Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property TargetColumn. 
         /// <para>
-        /// A column to apply this condition to, within an AWS Glue DataBrew dataset.
+        /// A column to apply this condition to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

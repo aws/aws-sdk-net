@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateProject operation.
-    /// Creates a new AWS Glue DataBrew project in the current AWS account.
+    /// Creates a new DataBrew project.
     /// </summary>
     public partial class CreateProjectRequest : AmazonGlueDataBrewRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// The name of the dataset to associate this project with.
+        /// The name of an existing dataset to associate this project with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -63,7 +63,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A unique name for the new project.
+        /// A unique name for the new project. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+        /// hyphen (-), period (.), and space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

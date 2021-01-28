@@ -39,7 +39,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// Errors, if any, that were encountered when deleting the recipe versions.
+        /// Errors, if any, that occurred while attempting to delete the recipe versions.
         /// </para>
         /// </summary>
         public List<RecipeVersionErrorDetail> Errors

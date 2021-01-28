@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents how metadata stored in the AWS Glue Data Catalog is defined in an AWS Glue
-    /// DataBrew dataset.
+    /// Represents how metadata stored in the AWS Glue Data Catalog is defined in a DataBrew
+    /// dataset.
     /// </summary>
     public partial class DataCatalogInputDefinition
     {

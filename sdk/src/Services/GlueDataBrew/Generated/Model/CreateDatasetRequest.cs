@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataset operation.
-    /// Creates a new AWS Glue DataBrew dataset for this AWS account.
+    /// Creates a new DataBrew dataset.
     /// </summary>
     public partial class CreateDatasetRequest : AmazonGlueDataBrewRequest
     {
@@ -73,7 +73,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the dataset to be created.
+        /// The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z,
+        /// 0-9), hyphen (-), period (.), and space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

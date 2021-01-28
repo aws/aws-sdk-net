@@ -30,8 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the SendProjectSessionAction operation.
-    /// Performs a recipe step within an interactive AWS Glue DataBrew session that's currently
-    /// open.
+    /// Performs a recipe step within an interactive DataBrew session that's currently open.
     /// </summary>
     public partial class SendProjectSessionActionRequest : AmazonGlueDataBrewRequest
     {
@@ -84,8 +83,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Preview. 
         /// <para>
-        /// Returns the result of the recipe step, without applying it. The result isn't added
-        /// to the view frame stack.
+        /// If true, the result of the recipe step will be returned, but not applied.
         /// </para>
         /// </summary>
         public bool Preview

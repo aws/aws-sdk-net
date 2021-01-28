@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProjects operation.
-    /// Lists all of the DataBrew projects in the current AWS account.
+    /// Lists all of the DataBrew projects that are defined.
     /// </summary>
     public partial class ListProjectsRequest : AmazonGlueDataBrewRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token that can be used in a subsequent request.
+        /// The token returned by a previous call to retrieve the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

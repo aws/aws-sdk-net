@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
-    /// Lists the AWS Glue DataBrew jobs in the current AWS account.
+    /// Lists all of the DataBrew jobs that are defined.
     /// </summary>
     public partial class ListJobsRequest : AmazonGlueDataBrewRequest
     {

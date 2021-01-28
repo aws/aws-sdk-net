@@ -30,9 +30,9 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Represents a transformation and associated parameters that are used to apply a change
-    /// to an AWS Glue DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html">Recipe
-    /// structure</a> and <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">ecipe
-    /// actions reference</a> .
+    /// to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html">Recipe
+    /// structure</a> and <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe
+    /// actions reference</a>.
     /// </summary>
     public partial class RecipeAction
     {

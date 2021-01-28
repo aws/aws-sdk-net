@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Information on how AWS Glue DataBrew can find data, in either the AWS Glue Data Catalog
-    /// or Amazon S3.
+    /// Information on how DataBrew can find data, in either the AWS Glue Data Catalog or
+    /// Amazon S3.
     /// </summary>
     public partial class Input
     {

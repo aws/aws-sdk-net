@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the StartJobRun operation.
-    /// Runs an AWS Glue DataBrew job that exists in the current AWS account.
+    /// Runs a DataBrew job.
     /// </summary>
     public partial class StartJobRunRequest : AmazonGlueDataBrewRequest
     {

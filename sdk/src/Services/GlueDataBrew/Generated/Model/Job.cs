@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents all of the attributes of an AWS Glue DataBrew job.
+    /// Represents all of the attributes of a DataBrew job.
     /// </summary>
     public partial class Job
     {
@@ -94,7 +94,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The identifier (the user name) of the user who created the job.
+        /// The Amazon Resource Name (ARN) of the user who created the job.
         /// </para>
         /// </summary>
         public string CreatedBy
@@ -131,7 +131,9 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property EncryptionKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an encryption key that is used to protect a job.
+        /// The Amazon Resource Name (ARN) of an encryption key that is used to protect the job
+        /// output. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/encryption-security-configuration.html">Encrypting
+        /// data written by DataBrew jobs</a> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -177,7 +179,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property LastModifiedBy. 
         /// <para>
-        /// The identifier (the user name) of the user who last modified the job.
+        /// The Amazon Resource Name (ARN) of the user who last modified the job.
         /// </para>
         /// </summary>
         public string LastModifiedBy

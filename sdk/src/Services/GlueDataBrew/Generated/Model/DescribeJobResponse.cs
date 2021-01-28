@@ -193,7 +193,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property LogSubscription. 
         /// <para>
-        /// A value that indicates whether Amazon CloudWatch logging is enabled for this job.
+        /// Indicates whether Amazon CloudWatch logging is enabled for this job.
         /// </para>
         /// </summary>
         public LogSubscription LogSubscription
@@ -211,7 +211,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The maximum number of nodes that AWS Glue DataBrew can consume when the job processes
+        /// The maximum number of compute nodes that DataBrew can consume when the job processes
         /// data.
         /// </para>
         /// </summary>
@@ -340,8 +340,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the AWS Identity and Access Management (IAM) role that was assumed for
-        /// this request.
+        /// The ARN of the AWS Identity and Access Management (IAM) role to be assumed when DataBrew
+        /// runs the job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

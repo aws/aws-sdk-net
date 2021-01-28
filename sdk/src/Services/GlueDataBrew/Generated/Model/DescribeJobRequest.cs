@@ -30,8 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeJob operation.
-    /// Returns the definition of a specific AWS Glue DataBrew job that is in the current
-    /// AWS account.
+    /// Returns the definition of a specific DataBrew job.
     /// </summary>
     public partial class DescribeJobRequest : AmazonGlueDataBrewRequest
     {

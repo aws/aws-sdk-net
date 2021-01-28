@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FormatOptions Object
+    /// Response Unmarshaller for OutputFormatOptions Object
     /// </summary>  
-    public class FormatOptionsUnmarshaller : IUnmarshaller<FormatOptions, XmlUnmarshallerContext>, IUnmarshaller<FormatOptions, JsonUnmarshallerContext>
+    public class OutputFormatOptionsUnmarshaller : IUnmarshaller<OutputFormatOptions, XmlUnmarshallerContext>, IUnmarshaller<OutputFormatOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FormatOptions IUnmarshaller<FormatOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OutputFormatOptions IUnmarshaller<OutputFormatOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FormatOptions Unmarshall(JsonUnmarshallerContext context)
+        public OutputFormatOptions Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FormatOptions unmarshalledObject = new FormatOptions();
+            OutputFormatOptions unmarshalledObject = new OutputFormatOptions();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
                 if (context.TestExpression("Csv", targetDepth))
                 {
-                    var unmarshaller = CsvOptionsUnmarshaller.Instance;
+                    var unmarshaller = CsvOutputOptionsUnmarshaller.Instance;
                     unmarshalledObject.Csv = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Excel", targetDepth))
-                {
-                    var unmarshaller = ExcelOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Excel = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Json", targetDepth))
-                {
-                    var unmarshaller = JsonOptionsUnmarshaller.Instance;
-                    unmarshalledObject.Json = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         }
 
 
-        private static FormatOptionsUnmarshaller _instance = new FormatOptionsUnmarshaller();        
+        private static OutputFormatOptionsUnmarshaller _instance = new OutputFormatOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FormatOptionsUnmarshaller Instance
+        public static OutputFormatOptionsUnmarshaller Instance
         {
             get
             {

@@ -30,8 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSchedule operation.
-    /// Returns the definition of a specific AWS Glue DataBrew schedule that is in the current
-    /// AWS account.
+    /// Returns the definition of a specific DataBrew schedule.
     /// </summary>
     public partial class DescribeScheduleRequest : AmazonGlueDataBrewRequest
     {

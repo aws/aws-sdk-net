@@ -76,6 +76,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     unmarshalledObject.Format = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FormatOptions", targetDepth))
+                {
+                    var unmarshaller = OutputFormatOptionsUnmarshaller.Instance;
+                    unmarshalledObject.FormatOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Location", targetDepth))
                 {
                     var unmarshaller = S3LocationUnmarshaller.Instance;

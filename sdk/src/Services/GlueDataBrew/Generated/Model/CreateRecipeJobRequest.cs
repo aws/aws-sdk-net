@@ -30,9 +30,8 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRecipeJob operation.
-    /// Creates a new job for an existing AWS Glue DataBrew recipe in the current AWS account.
-    /// You can create a standalone job using either a project, or a combination of a recipe
-    /// and a dataset.
+    /// Creates a new job to transform input data, using steps defined in an existing AWS
+    /// Glue DataBrew recipe
     /// </summary>
     public partial class CreateRecipeJobRequest : AmazonGlueDataBrewRequest
     {
@@ -118,8 +117,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property LogSubscription. 
         /// <para>
-        /// A value that enables or disables Amazon CloudWatch logging for the current AWS account.
-        /// If logging is enabled, CloudWatch writes one log stream for each job run.
+        /// Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
+        /// CloudWatch writes one log stream for each job run.
         /// </para>
         /// </summary>
         public LogSubscription LogSubscription
@@ -174,7 +173,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A unique name for the job.
+        /// A unique name for the job. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen
+        /// (-), period (.), and space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=240)]
@@ -248,7 +248,7 @@ namespace Amazon.GlueDataBrew.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// to be assumed for this request.
+        /// to be assumed when DataBrew runs the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -267,7 +267,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Metadata tags to apply to this job dataset.
+        /// Metadata tags to apply to this job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

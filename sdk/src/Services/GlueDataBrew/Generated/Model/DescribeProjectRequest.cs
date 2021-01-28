@@ -30,8 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProject operation.
-    /// Returns the definition of a specific AWS Glue DataBrew project that is in the current
-    /// AWS account.
+    /// Returns the definition of a specific DataBrew project.
     /// </summary>
     public partial class DescribeProjectRequest : AmazonGlueDataBrewRequest
     {

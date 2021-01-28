@@ -30,8 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateProfileJob operation.
-    /// Creates a new job to profile an AWS Glue DataBrew dataset that exists in the current
-    /// AWS account.
+    /// Creates a new job to analyze a dataset and create its data profile.
     /// </summary>
     public partial class CreateProfileJobRequest : AmazonGlueDataBrewRequest
     {
@@ -116,8 +115,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property LogSubscription. 
         /// <para>
-        /// A value that enables or disables Amazon CloudWatch logging for the current AWS account.
-        /// If logging is enabled, CloudWatch writes one log stream for each job run.
+        /// Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
+        /// CloudWatch writes one log stream for each job run.
         /// </para>
         /// </summary>
         public LogSubscription LogSubscription
@@ -172,7 +171,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the job to be created.
+        /// The name of the job to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9),
+        /// hyphen (-), period (.), and space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=240)]
@@ -208,7 +208,7 @@ namespace Amazon.GlueDataBrew.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// to be assumed for this request.
+        /// to be assumed when DataBrew runs the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

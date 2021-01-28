@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSchedule operation.
-    /// Deletes the specified AWS Glue DataBrew schedule from the current AWS account.
+    /// Deletes the specified DataBrew schedule.
     /// </summary>
     public partial class DeleteScheduleRequest : AmazonGlueDataBrewRequest
     {

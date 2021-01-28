@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the StartProjectSession operation.
-    /// Creates an interactive session, enabling you to manipulate an AWS Glue DataBrew project.
+    /// Creates an interactive session, enabling you to manipulate data in a DataBrew project.
     /// </summary>
     public partial class StartProjectSessionRequest : AmazonGlueDataBrewRequest
     {

@@ -30,8 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteJob operation.
-    /// Deletes the specified AWS Glue DataBrew job from the current AWS account. The job
-    /// can be for a recipe or for a profile.
+    /// Deletes the specified DataBrew job.
     /// </summary>
     public partial class DeleteJobRequest : AmazonGlueDataBrewRequest
     {

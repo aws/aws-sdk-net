@@ -29,12 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Options that define how Microsoft Excel input is to be interpreted by DataBrew.
+    /// Options that define the structure of either Csv, Excel, or JSON input.
     /// </summary>
     public partial class FormatOptions
     {
+        private CsvOptions _csv;
         private ExcelOptions _excel;
         private JsonOptions _json;
+
+        /// <summary>
+        /// Gets and sets the property Csv. 
+        /// <para>
+        /// Options that define how Csv input is to be interpreted by DataBrew.
+        /// </para>
+        /// </summary>
+        public CsvOptions Csv
+        {
+            get { return this._csv; }
+            set { this._csv = value; }
+        }
+
+        // Check to see if Csv property is set
+        internal bool IsSetCsv()
+        {
+            return this._csv != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Excel. 

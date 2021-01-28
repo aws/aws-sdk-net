@@ -30,8 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the PublishRecipe operation.
-    /// Publishes a new major version of an AWS Glue DataBrew recipe that exists in the current
-    /// AWS account.
+    /// Publishes a new version of a DataBrew recipe.
     /// </summary>
     public partial class PublishRecipeRequest : AmazonGlueDataBrewRequest
     {

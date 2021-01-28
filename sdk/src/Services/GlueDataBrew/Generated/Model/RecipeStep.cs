@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents a single step to be performed in an AWS Glue DataBrew recipe.
+    /// Represents a single step from a DataBrew recipe to be performed.
     /// </summary>
     public partial class RecipeStep
     {

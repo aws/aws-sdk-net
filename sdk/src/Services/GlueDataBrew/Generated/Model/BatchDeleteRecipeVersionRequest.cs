@@ -31,6 +31,58 @@ namespace Amazon.GlueDataBrew.Model
     /// <summary>
     /// Container for the parameters to the BatchDeleteRecipeVersion operation.
     /// Deletes one or more versions of a recipe at a time.
+    /// 
+    ///  
+    /// <para>
+    /// The entire request will be rejected if:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The recipe does not exist.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// There is an invalid version identifier in the list of versions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The verision list is empty.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The version list size exceeds 50.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The verison list contains duplicate entries.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The request will complete successfully, but with partial failures, if:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// A version does not exist.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A version is being used by a job.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You specify <code>LATEST_WORKING</code>, but it's being used by a project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The version fails to be deleted.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no
+    /// other versions. If you try to delete <code>LATEST_WORKING</code> while other versions
+    /// exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed
+    /// as partial failure in the response.
+    /// </para>
     /// </summary>
     public partial class BatchDeleteRecipeVersionRequest : AmazonGlueDataBrewRequest
     {
@@ -40,7 +92,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the recipe to be modified.
+        /// The name of the recipe whose versions are to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -59,7 +111,9 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property RecipeVersions. 
         /// <para>
-        /// An array of version identifiers to be deleted.
+        /// An array of version identifiers, for the recipe versions to be deleted. You can specify
+        /// numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code>
+        /// is not supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

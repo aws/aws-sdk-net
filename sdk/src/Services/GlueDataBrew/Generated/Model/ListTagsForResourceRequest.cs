@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists all the tags for an AWS Glue DataBrew resource.
+    /// Lists all the tags for a DataBrew resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonGlueDataBrewRequest
     {

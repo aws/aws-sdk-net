@@ -30,8 +30,8 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeRecipe operation.
-    /// Returns the definition of a specific AWS Glue DataBrew recipe that is in the current
-    /// AWS account.
+    /// Returns the definition of a specific DataBrew recipe corresponding to a particular
+    /// version.
     /// </summary>
     public partial class DescribeRecipeRequest : AmazonGlueDataBrewRequest
     {

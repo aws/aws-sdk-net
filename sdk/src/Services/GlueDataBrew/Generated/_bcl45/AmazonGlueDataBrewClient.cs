@@ -262,6 +262,58 @@ namespace Amazon.GlueDataBrew
 
         /// <summary>
         /// Deletes one or more versions of a recipe at a time.
+        /// 
+        ///  
+        /// <para>
+        /// The entire request will be rejected if:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The recipe does not exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is an invalid version identifier in the list of versions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The verision list is empty.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version list size exceeds 50.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The verison list contains duplicate entries.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The request will complete successfully, but with partial failures, if:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A version does not exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A version is being used by a job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specify <code>LATEST_WORKING</code>, but it's being used by a project.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version fails to be deleted.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no
+        /// other versions. If you try to delete <code>LATEST_WORKING</code> while other versions
+        /// exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed
+        /// as partial failure in the response.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteRecipeVersion service method.</param>
         /// 
@@ -288,6 +340,58 @@ namespace Amazon.GlueDataBrew
 
         /// <summary>
         /// Deletes one or more versions of a recipe at a time.
+        /// 
+        ///  
+        /// <para>
+        /// The entire request will be rejected if:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The recipe does not exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// There is an invalid version identifier in the list of versions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The verision list is empty.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version list size exceeds 50.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The verison list contains duplicate entries.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The request will complete successfully, but with partial failures, if:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A version does not exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A version is being used by a job.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You specify <code>LATEST_WORKING</code>, but it's being used by a project.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version fails to be deleted.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no
+        /// other versions. If you try to delete <code>LATEST_WORKING</code> while other versions
+        /// exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed
+        /// as partial failure in the response.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteRecipeVersion service method.</param>
         /// <param name="cancellationToken">
@@ -320,7 +424,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates a new AWS Glue DataBrew dataset for this AWS account.
+        /// Creates a new DataBrew dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
         /// 
@@ -349,7 +453,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates a new AWS Glue DataBrew dataset for this AWS account.
+        /// Creates a new DataBrew dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
         /// <param name="cancellationToken">
@@ -385,12 +489,23 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates a new job to profile an AWS Glue DataBrew dataset that exists in the current
-        /// AWS account.
+        /// Creates a new job to analyze a dataset and create its data profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProfileJob service method.</param>
         /// 
         /// <returns>The response from the CreateProfileJob service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.AccessDeniedException">
+        /// Access to the specified resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
         /// </exception>
@@ -406,8 +521,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates a new job to profile an AWS Glue DataBrew dataset that exists in the current
-        /// AWS account.
+        /// Creates a new job to analyze a dataset and create its data profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProfileJob service method.</param>
         /// <param name="cancellationToken">
@@ -415,6 +529,18 @@ namespace Amazon.GlueDataBrew
         /// </param>
         /// 
         /// <returns>The response from the CreateProfileJob service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.AccessDeniedException">
+        /// Access to the specified resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
         /// </exception>
@@ -434,7 +560,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates a new AWS Glue DataBrew project in the current AWS account.
+        /// Creates a new DataBrew project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
         /// 
@@ -463,7 +589,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates a new AWS Glue DataBrew project in the current AWS account.
+        /// Creates a new DataBrew project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
         /// <param name="cancellationToken">
@@ -499,7 +625,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates a new AWS Glue DataBrew recipe for the current AWS account.
+        /// Creates a new DataBrew recipe.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRecipe service method.</param>
         /// 
@@ -525,7 +651,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates a new AWS Glue DataBrew recipe for the current AWS account.
+        /// Creates a new DataBrew recipe.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRecipe service method.</param>
         /// <param name="cancellationToken">
@@ -558,13 +684,24 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates a new job for an existing AWS Glue DataBrew recipe in the current AWS account.
-        /// You can create a standalone job using either a project, or a combination of a recipe
-        /// and a dataset.
+        /// Creates a new job to transform input data, using steps defined in an existing AWS
+        /// Glue DataBrew recipe
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRecipeJob service method.</param>
         /// 
         /// <returns>The response from the CreateRecipeJob service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.AccessDeniedException">
+        /// Access to the specified resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
         /// </exception>
@@ -580,9 +717,8 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates a new job for an existing AWS Glue DataBrew recipe in the current AWS account.
-        /// You can create a standalone job using either a project, or a combination of a recipe
-        /// and a dataset.
+        /// Creates a new job to transform input data, using steps defined in an existing AWS
+        /// Glue DataBrew recipe
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRecipeJob service method.</param>
         /// <param name="cancellationToken">
@@ -590,6 +726,18 @@ namespace Amazon.GlueDataBrew
         /// </param>
         /// 
         /// <returns>The response from the CreateRecipeJob service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.AccessDeniedException">
+        /// Access to the specified resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
         /// </exception>
@@ -609,12 +757,18 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates a new schedule for one or more AWS Glue DataBrew jobs. Jobs can be run at
-        /// a specific date and time, or at regular intervals.
+        /// Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific
+        /// date and time, or at regular intervals.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSchedule service method.</param>
         /// 
         /// <returns>The response from the CreateSchedule service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
         /// </exception>
@@ -630,8 +784,8 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates a new schedule for one or more AWS Glue DataBrew jobs. Jobs can be run at
-        /// a specific date and time, or at regular intervals.
+        /// Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific
+        /// date and time, or at regular intervals.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSchedule service method.</param>
         /// <param name="cancellationToken">
@@ -639,6 +793,12 @@ namespace Amazon.GlueDataBrew
         /// </param>
         /// 
         /// <returns>The response from the CreateSchedule service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
         /// </exception>
@@ -658,11 +818,14 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Deletes a dataset from AWS Glue DataBrew.
+        /// Deletes a dataset from DataBrew.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// 
         /// <returns>The response from the DeleteDataset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -681,7 +844,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Deletes a dataset from AWS Glue DataBrew.
+        /// Deletes a dataset from DataBrew.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// <param name="cancellationToken">
@@ -689,6 +852,9 @@ namespace Amazon.GlueDataBrew
         /// </param>
         /// 
         /// <returns>The response from the DeleteDataset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -711,12 +877,14 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Deletes the specified AWS Glue DataBrew job from the current AWS account. The job
-        /// can be for a recipe or for a profile.
+        /// Deletes the specified DataBrew job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJob service method.</param>
         /// 
         /// <returns>The response from the DeleteJob service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -735,8 +903,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Deletes the specified AWS Glue DataBrew job from the current AWS account. The job
-        /// can be for a recipe or for a profile.
+        /// Deletes the specified DataBrew job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJob service method.</param>
         /// <param name="cancellationToken">
@@ -744,6 +911,9 @@ namespace Amazon.GlueDataBrew
         /// </param>
         /// 
         /// <returns>The response from the DeleteJob service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -766,11 +936,14 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Deletes an existing AWS Glue DataBrew project from the current AWS account.
+        /// Deletes an existing DataBrew project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
         /// 
         /// <returns>The response from the DeleteProject service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -789,7 +962,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Deletes an existing AWS Glue DataBrew project from the current AWS account.
+        /// Deletes an existing DataBrew project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
         /// <param name="cancellationToken">
@@ -797,6 +970,9 @@ namespace Amazon.GlueDataBrew
         /// </param>
         /// 
         /// <returns>The response from the DeleteProject service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -819,11 +995,14 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Deletes a single version of an AWS Glue DataBrew recipe.
+        /// Deletes a single version of a DataBrew recipe.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRecipeVersion service method.</param>
         /// 
         /// <returns>The response from the DeleteRecipeVersion service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -842,7 +1021,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Deletes a single version of an AWS Glue DataBrew recipe.
+        /// Deletes a single version of a DataBrew recipe.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRecipeVersion service method.</param>
         /// <param name="cancellationToken">
@@ -850,6 +1029,9 @@ namespace Amazon.GlueDataBrew
         /// </param>
         /// 
         /// <returns>The response from the DeleteRecipeVersion service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -872,7 +1054,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Deletes the specified AWS Glue DataBrew schedule from the current AWS account.
+        /// Deletes the specified DataBrew schedule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSchedule service method.</param>
         /// 
@@ -895,7 +1077,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Deletes the specified AWS Glue DataBrew schedule from the current AWS account.
+        /// Deletes the specified DataBrew schedule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSchedule service method.</param>
         /// <param name="cancellationToken">
@@ -925,8 +1107,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Returns the definition of a specific AWS Glue DataBrew dataset that is in the current
-        /// AWS account.
+        /// Returns the definition of a specific DataBrew dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// 
@@ -949,8 +1130,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Returns the definition of a specific AWS Glue DataBrew dataset that is in the current
-        /// AWS account.
+        /// Returns the definition of a specific DataBrew dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// <param name="cancellationToken">
@@ -980,8 +1160,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Returns the definition of a specific AWS Glue DataBrew job that is in the current
-        /// AWS account.
+        /// Returns the definition of a specific DataBrew job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
         /// 
@@ -1004,8 +1183,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Returns the definition of a specific AWS Glue DataBrew job that is in the current
-        /// AWS account.
+        /// Returns the definition of a specific DataBrew job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
         /// <param name="cancellationToken">
@@ -1035,8 +1213,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Returns the definition of a specific AWS Glue DataBrew project that is in the current
-        /// AWS account.
+        /// Returns the definition of a specific DataBrew project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProject service method.</param>
         /// 
@@ -1059,8 +1236,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Returns the definition of a specific AWS Glue DataBrew project that is in the current
-        /// AWS account.
+        /// Returns the definition of a specific DataBrew project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProject service method.</param>
         /// <param name="cancellationToken">
@@ -1090,8 +1266,8 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Returns the definition of a specific AWS Glue DataBrew recipe that is in the current
-        /// AWS account.
+        /// Returns the definition of a specific DataBrew recipe corresponding to a particular
+        /// version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRecipe service method.</param>
         /// 
@@ -1114,8 +1290,8 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Returns the definition of a specific AWS Glue DataBrew recipe that is in the current
-        /// AWS account.
+        /// Returns the definition of a specific DataBrew recipe corresponding to a particular
+        /// version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRecipe service method.</param>
         /// <param name="cancellationToken">
@@ -1145,8 +1321,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Returns the definition of a specific AWS Glue DataBrew schedule that is in the current
-        /// AWS account.
+        /// Returns the definition of a specific DataBrew schedule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSchedule service method.</param>
         /// 
@@ -1169,8 +1344,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Returns the definition of a specific AWS Glue DataBrew schedule that is in the current
-        /// AWS account.
+        /// Returns the definition of a specific DataBrew schedule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSchedule service method.</param>
         /// <param name="cancellationToken">
@@ -1200,7 +1374,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists all of the AWS Glue DataBrew datasets for the current AWS account.
+        /// Lists all of the DataBrew datasets.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
         /// 
@@ -1220,7 +1394,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists all of the AWS Glue DataBrew datasets for the current AWS account.
+        /// Lists all of the DataBrew datasets.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
         /// <param name="cancellationToken">
@@ -1247,8 +1421,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists all of the previous runs of a particular AWS Glue DataBrew job in the current
-        /// AWS account.
+        /// Lists all of the previous runs of a particular DataBrew job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobRuns service method.</param>
         /// 
@@ -1271,8 +1444,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists all of the previous runs of a particular AWS Glue DataBrew job in the current
-        /// AWS account.
+        /// Lists all of the previous runs of a particular DataBrew job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobRuns service method.</param>
         /// <param name="cancellationToken">
@@ -1302,7 +1474,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists the AWS Glue DataBrew jobs in the current AWS account.
+        /// Lists all of the DataBrew jobs that are defined.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 
@@ -1322,7 +1494,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists the AWS Glue DataBrew jobs in the current AWS account.
+        /// Lists all of the DataBrew jobs that are defined.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// <param name="cancellationToken">
@@ -1349,7 +1521,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists all of the DataBrew projects in the current AWS account.
+        /// Lists all of the DataBrew projects that are defined.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProjects service method.</param>
         /// 
@@ -1369,7 +1541,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists all of the DataBrew projects in the current AWS account.
+        /// Lists all of the DataBrew projects that are defined.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProjects service method.</param>
         /// <param name="cancellationToken">
@@ -1396,7 +1568,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists all of the AWS Glue DataBrew recipes in the current AWS account.
+        /// Lists all of the DataBrew recipes that are defined.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecipes service method.</param>
         /// 
@@ -1416,7 +1588,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists all of the AWS Glue DataBrew recipes in the current AWS account.
+        /// Lists all of the DataBrew recipes that are defined.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecipes service method.</param>
         /// <param name="cancellationToken">
@@ -1443,8 +1615,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists all of the versions of a particular AWS Glue DataBrew recipe in the current
-        /// AWS account.
+        /// Lists the versions of a particular DataBrew recipe, except for <code>LATEST_WORKING</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecipeVersions service method.</param>
         /// 
@@ -1464,8 +1635,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists all of the versions of a particular AWS Glue DataBrew recipe in the current
-        /// AWS account.
+        /// Lists the versions of a particular DataBrew recipe, except for <code>LATEST_WORKING</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecipeVersions service method.</param>
         /// <param name="cancellationToken">
@@ -1492,7 +1662,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists the AWS Glue DataBrew schedules in the current AWS account.
+        /// Lists the DataBrew schedules that are defined.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSchedules service method.</param>
         /// 
@@ -1512,7 +1682,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists the AWS Glue DataBrew schedules in the current AWS account.
+        /// Lists the DataBrew schedules that are defined.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSchedules service method.</param>
         /// <param name="cancellationToken">
@@ -1539,7 +1709,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists all the tags for an AWS Glue DataBrew resource.
+        /// Lists all the tags for a DataBrew resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1565,7 +1735,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists all the tags for an AWS Glue DataBrew resource.
+        /// Lists all the tags for a DataBrew resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1598,14 +1768,16 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Publishes a new major version of an AWS Glue DataBrew recipe that exists in the current
-        /// AWS account.
+        /// Publishes a new version of a DataBrew recipe.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PublishRecipe service method.</param>
         /// 
         /// <returns>The response from the PublishRecipe service method, as returned by GlueDataBrew.</returns>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
         /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
@@ -1622,8 +1794,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Publishes a new major version of an AWS Glue DataBrew recipe that exists in the current
-        /// AWS account.
+        /// Publishes a new version of a DataBrew recipe.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PublishRecipe service method.</param>
         /// <param name="cancellationToken">
@@ -1633,6 +1804,9 @@ namespace Amazon.GlueDataBrew
         /// <returns>The response from the PublishRecipe service method, as returned by GlueDataBrew.</returns>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
         /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
@@ -1653,8 +1827,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Performs a recipe step within an interactive AWS Glue DataBrew session that's currently
-        /// open.
+        /// Performs a recipe step within an interactive DataBrew session that's currently open.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendProjectSessionAction service method.</param>
         /// 
@@ -1680,8 +1853,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Performs a recipe step within an interactive AWS Glue DataBrew session that's currently
-        /// open.
+        /// Performs a recipe step within an interactive DataBrew session that's currently open.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendProjectSessionAction service method.</param>
         /// <param name="cancellationToken">
@@ -1714,13 +1886,19 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Runs an AWS Glue DataBrew job that exists in the current AWS account.
+        /// Runs a DataBrew job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartJobRun service method.</param>
         /// 
         /// <returns>The response from the StartJobRun service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
         /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
@@ -1737,7 +1915,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Runs an AWS Glue DataBrew job that exists in the current AWS account.
+        /// Runs a DataBrew job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartJobRun service method.</param>
         /// <param name="cancellationToken">
@@ -1745,8 +1923,14 @@ namespace Amazon.GlueDataBrew
         /// </param>
         /// 
         /// <returns>The response from the StartJobRun service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
         /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
@@ -1767,13 +1951,19 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates an interactive session, enabling you to manipulate an AWS Glue DataBrew project.
+        /// Creates an interactive session, enabling you to manipulate data in a DataBrew project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartProjectSession service method.</param>
         /// 
         /// <returns>The response from the StartProjectSession service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
         /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
@@ -1790,7 +1980,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Creates an interactive session, enabling you to manipulate an AWS Glue DataBrew project.
+        /// Creates an interactive session, enabling you to manipulate data in a DataBrew project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartProjectSession service method.</param>
         /// <param name="cancellationToken">
@@ -1798,8 +1988,14 @@ namespace Amazon.GlueDataBrew
         /// </param>
         /// 
         /// <returns>The response from the StartProjectSession service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
         /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
@@ -1820,7 +2016,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Stops the specified job from running in the current AWS account.
+        /// Stops a particular run of a job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopJobRun service method.</param>
         /// 
@@ -1843,7 +2039,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Stops the specified job from running in the current AWS account.
+        /// Stops a particular run of a job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopJobRun service method.</param>
         /// <param name="cancellationToken">
@@ -1873,8 +2069,8 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Adds metadata tags to an AWS Glue DataBrew resource, such as a dataset, job, project,
-        /// or recipe.
+        /// Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe, job,
+        /// or schedule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1900,8 +2096,8 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Adds metadata tags to an AWS Glue DataBrew resource, such as a dataset, job, project,
-        /// or recipe.
+        /// Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe, job,
+        /// or schedule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1934,7 +2130,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Removes metadata tags from an AWS Glue DataBrew resource.
+        /// Removes metadata tags from a DataBrew resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1960,7 +2156,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Removes metadata tags from an AWS Glue DataBrew resource.
+        /// Removes metadata tags from a DataBrew resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1993,12 +2189,14 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Modifies the definition of an existing AWS Glue DataBrew dataset in the current AWS
-        /// account.
+        /// Modifies the definition of an existing DataBrew dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataset service method.</param>
         /// 
         /// <returns>The response from the UpdateDataset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.AccessDeniedException">
+        /// Access to the specified resource was denied.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -2017,8 +2215,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Modifies the definition of an existing AWS Glue DataBrew dataset in the current AWS
-        /// account.
+        /// Modifies the definition of an existing DataBrew dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataset service method.</param>
         /// <param name="cancellationToken">
@@ -2026,6 +2223,9 @@ namespace Amazon.GlueDataBrew
         /// </param>
         /// 
         /// <returns>The response from the UpdateDataset service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.AccessDeniedException">
+        /// Access to the specified resource was denied.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
         /// </exception>
@@ -2048,11 +2248,17 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Modifies the definition of an existing AWS Glue DataBrew job in the current AWS account.
+        /// Modifies the definition of an existing profile job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProfileJob service method.</param>
         /// 
         /// <returns>The response from the UpdateProfileJob service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.AccessDeniedException">
+        /// Access to the specified resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
         /// </exception>
@@ -2068,7 +2274,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Modifies the definition of an existing AWS Glue DataBrew job in the current AWS account.
+        /// Modifies the definition of an existing profile job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProfileJob service method.</param>
         /// <param name="cancellationToken">
@@ -2076,6 +2282,12 @@ namespace Amazon.GlueDataBrew
         /// </param>
         /// 
         /// <returns>The response from the UpdateProfileJob service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.AccessDeniedException">
+        /// Access to the specified resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
         /// </exception>
@@ -2095,8 +2307,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Modifies the definition of an existing AWS Glue DataBrew project in the current AWS
-        /// account.
+        /// Modifies the definition of an existing DataBrew project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
         /// 
@@ -2119,8 +2330,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Modifies the definition of an existing AWS Glue DataBrew project in the current AWS
-        /// account.
+        /// Modifies the definition of an existing DataBrew project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
         /// <param name="cancellationToken">
@@ -2150,8 +2360,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Modifies the definition of the latest working version of an AWS Glue DataBrew recipe
-        /// in the current AWS account.
+        /// Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecipe service method.</param>
         /// 
@@ -2174,8 +2383,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Modifies the definition of the latest working version of an AWS Glue DataBrew recipe
-        /// in the current AWS account.
+        /// Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecipe service method.</param>
         /// <param name="cancellationToken">
@@ -2205,12 +2413,17 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Modifies the definition of an existing AWS Glue DataBrew recipe job in the current
-        /// AWS account.
+        /// Modifies the definition of an existing DataBrew recipe job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecipeJob service method.</param>
         /// 
         /// <returns>The response from the UpdateRecipeJob service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.AccessDeniedException">
+        /// Access to the specified resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
         /// </exception>
@@ -2226,8 +2439,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Modifies the definition of an existing AWS Glue DataBrew recipe job in the current
-        /// AWS account.
+        /// Modifies the definition of an existing DataBrew recipe job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecipeJob service method.</param>
         /// <param name="cancellationToken">
@@ -2235,6 +2447,12 @@ namespace Amazon.GlueDataBrew
         /// </param>
         /// 
         /// <returns>The response from the UpdateRecipeJob service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.AccessDeniedException">
+        /// Access to the specified resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
         /// </exception>
@@ -2254,12 +2472,17 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Modifies the definition of an existing AWS Glue DataBrew schedule in the current AWS
-        /// account.
+        /// Modifies the definition of an existing DataBrew schedule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSchedule service method.</param>
         /// 
         /// <returns>The response from the UpdateSchedule service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
         /// </exception>
@@ -2275,8 +2498,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Modifies the definition of an existing AWS Glue DataBrew schedule in the current AWS
-        /// account.
+        /// Modifies the definition of an existing DataBrew schedule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSchedule service method.</param>
         /// <param name="cancellationToken">
@@ -2284,6 +2506,12 @@ namespace Amazon.GlueDataBrew
         /// </param>
         /// 
         /// <returns>The response from the UpdateSchedule service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ServiceQuotaExceededException">
+        /// A service quota is exceeded.
+        /// </exception>
         /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
         /// The input parameters for this request failed validation.
         /// </exception>

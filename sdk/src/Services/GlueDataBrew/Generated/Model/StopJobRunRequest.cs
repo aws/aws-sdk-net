@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the StopJobRun operation.
-    /// Stops the specified job from running in the current AWS account.
+    /// Stops a particular run of a job.
     /// </summary>
     public partial class StopJobRunRequest : AmazonGlueDataBrewRequest
     {

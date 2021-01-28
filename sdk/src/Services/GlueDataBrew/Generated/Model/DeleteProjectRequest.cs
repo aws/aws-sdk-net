@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProject operation.
-    /// Deletes an existing AWS Glue DataBrew project from the current AWS account.
+    /// Deletes an existing DataBrew project.
     /// </summary>
     public partial class DeleteProjectRequest : AmazonGlueDataBrewRequest
     {

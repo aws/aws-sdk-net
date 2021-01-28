@@ -30,8 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDataset operation.
-    /// Modifies the definition of an existing AWS Glue DataBrew dataset in the current AWS
-    /// account.
+    /// Modifies the definition of an existing DataBrew dataset.
     /// </summary>
     public partial class UpdateDatasetRequest : AmazonGlueDataBrewRequest
     {

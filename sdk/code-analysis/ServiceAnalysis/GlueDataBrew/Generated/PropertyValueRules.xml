@@ -697,6 +697,16 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.CsvOptions.Delimiter</property>
+    <min>1</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.CsvOutputOptions.Delimiter</property>
+    <min>1</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.DataCatalogInputDefinition.CatalogId</property>
     <min>1</min>
     <max>255</max>

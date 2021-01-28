@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents the sample size and sampling type for AWS Glue DataBrew to use for interactive
-    /// data analysis.
+    /// Represents the sample size and sampling type for DataBrew to use for interactive data
+    /// analysis.
     /// </summary>
     public partial class Sample
     {

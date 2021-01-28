@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRecipeVersion operation.
-    /// Deletes a single version of an AWS Glue DataBrew recipe.
+    /// Deletes a single version of a DataBrew recipe.
     /// </summary>
     public partial class DeleteRecipeVersionRequest : AmazonGlueDataBrewRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the recipe to be deleted.
+        /// The name of the recipe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -59,7 +59,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property RecipeVersion. 
         /// <para>
-        /// The version of the recipe to be deleted.
+        /// The version of the recipe to be deleted. You can specify a numeric versions (<code>X.Y</code>)
+        /// or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code> is not supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=16)]

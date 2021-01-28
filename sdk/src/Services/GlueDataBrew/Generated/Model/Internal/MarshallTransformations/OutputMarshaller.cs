@@ -57,6 +57,17 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Format);
             }
 
+            if(requestObject.IsSetFormatOptions())
+            {
+                context.Writer.WritePropertyName("FormatOptions");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OutputFormatOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FormatOptions, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("Location");

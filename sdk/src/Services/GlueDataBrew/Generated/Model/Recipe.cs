@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents one or more actions to be performed on an AWS Glue DataBrew dataset.
+    /// Represents one or more actions to be performed on a DataBrew dataset.
     /// </summary>
     public partial class Recipe
     {
@@ -68,7 +68,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The identifier (the user name) of the user who created the recipe.
+        /// The Amazon Resource Name (ARN) of the user who created the recipe.
         /// </para>
         /// </summary>
         public string CreatedBy
@@ -105,7 +105,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property LastModifiedBy. 
         /// <para>
-        /// The identifier (user name) of the user who last modified the recipe.
+        /// The Amazon Resource Name (ARN) of the user who last modified the recipe.
         /// </para>
         /// </summary>
         public string LastModifiedBy
@@ -179,7 +179,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property PublishedBy. 
         /// <para>
-        /// The identifier (the user name) of the user who published the recipe.
+        /// The Amazon Resource Name (ARN) of the user who published the recipe.
         /// </para>
         /// </summary>
         public string PublishedBy
@@ -215,8 +215,25 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property RecipeVersion. 
         /// <para>
-        /// The identifier for the version for the recipe. 
+        /// The identifier for the version for the recipe. Must be one of the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major
+        /// and minor version numbers. The maximum length of each is 6 digits, and neither can
+        /// be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0"
+        /// is not a valid version.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LATEST_WORKING</code> - the most recent valid version being developed in a
+        /// DataBrew project.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LATEST_PUBLISHED</code> - the most recent published version.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=16)]
         public string RecipeVersion

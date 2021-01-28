@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRecipe operation.
-    /// Creates a new AWS Glue DataBrew recipe for the current AWS account.
+    /// Creates a new DataBrew recipe.
     /// </summary>
     public partial class CreateRecipeRequest : AmazonGlueDataBrewRequest
     {
@@ -61,7 +61,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A unique name for the recipe.
+        /// A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen
+        /// (-), period (.), and space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

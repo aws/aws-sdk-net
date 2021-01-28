@@ -84,7 +84,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The identifier (the user name) of the user who created the schedule.
+        /// The Amazon Resource Name (ARN) of the user who created the schedule.
         /// </para>
         /// </summary>
         public string CreatedBy
@@ -102,7 +102,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property CronExpression. 
         /// <para>
-        /// The date(s) and time(s), in <code>cron</code> format, when the job will run.
+        /// The date(s) and time(s) when the job will run. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
+        /// expressions</a> in the <i>AWS Glue DataBrew Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -140,7 +141,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property LastModifiedBy. 
         /// <para>
-        /// The identifier (the user name) of the user who last modified the schedule.
+        /// The Amazon Resource Name (ARN) of the user who last modified the schedule.
         /// </para>
         /// </summary>
         public string LastModifiedBy

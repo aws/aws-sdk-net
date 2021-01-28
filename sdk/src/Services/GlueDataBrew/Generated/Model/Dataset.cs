@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Represents a dataset that can be processed by AWS Glue DataBrew.
+    /// Represents a dataset that can be processed by DataBrew.
     /// </summary>
     public partial class Dataset
     {
@@ -85,7 +85,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The identifier (the user name) of the user who created the dataset.
+        /// The Amazon Resource Name (ARN) of the user who created the dataset.
         /// </para>
         /// </summary>
         public string CreatedBy
@@ -141,7 +141,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property LastModifiedBy. 
         /// <para>
-        /// The identifier (the user name) of the user who last modified the dataset.
+        /// The Amazon Resource Name (ARN) of the user who last modified the dataset.
         /// </para>
         /// </summary>
         public string LastModifiedBy

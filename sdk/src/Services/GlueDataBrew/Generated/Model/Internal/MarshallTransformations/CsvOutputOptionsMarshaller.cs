@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FormatOptions Marshaller
+    /// CsvOutputOptions Marshaller
     /// </summary>       
-    public class FormatOptionsMarshaller : IRequestMarshaller<FormatOptions, JsonMarshallerContext> 
+    public class CsvOutputOptionsMarshaller : IRequestMarshaller<CsvOutputOptions, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,39 +43,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FormatOptions requestObject, JsonMarshallerContext context)
+        public void Marshall(CsvOutputOptions requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCsv())
+            if(requestObject.IsSetDelimiter())
             {
-                context.Writer.WritePropertyName("Csv");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CsvOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Csv, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetExcel())
-            {
-                context.Writer.WritePropertyName("Excel");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ExcelOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Excel, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetJson())
-            {
-                context.Writer.WritePropertyName("Json");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = JsonOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.Json, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Delimiter");
+                context.Writer.Write(requestObject.Delimiter);
             }
 
         }
@@ -83,7 +56,7 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static FormatOptionsMarshaller Instance = new FormatOptionsMarshaller();
+        public readonly static CsvOutputOptionsMarshaller Instance = new CsvOutputOptionsMarshaller();
 
     }
 }

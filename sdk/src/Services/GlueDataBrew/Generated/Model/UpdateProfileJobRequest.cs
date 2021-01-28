@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProfileJob operation.
-    /// Modifies the definition of an existing AWS Glue DataBrew job in the current AWS account.
+    /// Modifies the definition of an existing profile job.
     /// </summary>
     public partial class UpdateProfileJobRequest : AmazonGlueDataBrewRequest
     {
@@ -93,8 +93,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property LogSubscription. 
         /// <para>
-        /// A value that enables or disables Amazon CloudWatch logging for the current AWS account.
-        /// If logging is enabled, CloudWatch writes one log stream for each job run.
+        /// Enables or disables Amazon CloudWatch logging for the job. If logging is enabled,
+        /// CloudWatch writes one log stream for each job run.
         /// </para>
         /// </summary>
         public LogSubscription LogSubscription
@@ -112,7 +112,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The maximum number of nodes that DataBrew can use when the job processes data.
+        /// The maximum number of compute nodes that DataBrew can use when the job processes data.
         /// </para>
         /// </summary>
         public int MaxCapacity
@@ -185,7 +185,7 @@ namespace Amazon.GlueDataBrew.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// to be assumed for this request.
+        /// to be assumed when DataBrew runs the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

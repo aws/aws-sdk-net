@@ -30,8 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDataset operation.
-    /// Returns the definition of a specific AWS Glue DataBrew dataset that is in the current
-    /// AWS account.
+    /// Returns the definition of a specific DataBrew dataset.
     /// </summary>
     public partial class DescribeDatasetRequest : AmazonGlueDataBrewRequest
     {

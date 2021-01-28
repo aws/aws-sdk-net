@@ -30,8 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRecipeVersions operation.
-    /// Lists all of the versions of a particular AWS Glue DataBrew recipe in the current
-    /// AWS account.
+    /// Lists the versions of a particular DataBrew recipe, except for <code>LATEST_WORKING</code>.
     /// </summary>
     public partial class ListRecipeVersionsRequest : AmazonGlueDataBrewRequest
     {
@@ -80,7 +79,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token that can be used in a subsequent request.
+        /// The token returned by a previous call to retrieve the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

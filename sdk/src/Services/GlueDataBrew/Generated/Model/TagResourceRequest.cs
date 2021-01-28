@@ -30,8 +30,8 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds metadata tags to an AWS Glue DataBrew resource, such as a dataset, job, project,
-    /// or recipe.
+    /// Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe, job,
+    /// or schedule.
     /// </summary>
     public partial class TagResourceRequest : AmazonGlueDataBrewRequest
     {

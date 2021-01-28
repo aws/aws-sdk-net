@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes metadata tags from an AWS Glue DataBrew resource.
+    /// Removes metadata tags from a DataBrew resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonGlueDataBrewRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// An DataBrew resource from which you want to remove a tag or tags. The value for this
+        /// A DataBrew resource from which you want to remove a tag or tags. The value for this
         /// parameter is an Amazon Resource Name (ARN). 
         /// </para>
         /// </summary>

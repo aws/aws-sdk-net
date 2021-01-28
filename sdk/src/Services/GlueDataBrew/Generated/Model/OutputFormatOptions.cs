@@ -29,30 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDataset operation.
-    /// Deletes a dataset from DataBrew.
+    /// Options that define the structure of Csv job output.
     /// </summary>
-    public partial class DeleteDatasetRequest : AmazonGlueDataBrewRequest
+    public partial class OutputFormatOptions
     {
-        private string _name;
+        private CsvOutputOptions _csv;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Csv. 
         /// <para>
-        /// The name of the dataset to be deleted.
+        /// Options that define how DataBrew writes Csv output.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Name
+        public CsvOutputOptions Csv
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._csv; }
+            set { this._csv = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Csv property is set
+        internal bool IsSetCsv()
         {
-            return this._name != null;
+            return this._csv != null;
         }
 
     }
