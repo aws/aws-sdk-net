@@ -134,6 +134,12 @@ namespace Amazon.CloudWatch.Model
         /// expression is shown in a CloudWatch dashboard widget, the label is shown. If Label
         /// is omitted, CloudWatch generates a default.
         /// </para>
+        ///  
+        /// <para>
+        /// You can put dynamic expressions into a label, so that it is more descriptive. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using
+        /// Dynamic Labels</a>.
+        /// </para>
         /// </summary>
         public string Label
         {

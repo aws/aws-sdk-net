@@ -90,6 +90,7 @@ namespace Amazon.CloudWatch.Model
     public partial class GetMetricDataRequest : AmazonCloudWatchRequest
     {
         private DateTime? _endTimeUtc;
+        private LabelOptions _labelOptions;
         private int? _maxDatapoints;
         private List<MetricDataQuery> _metricDataQueries = new List<MetricDataQuery>();
         private string _nextToken;
@@ -126,6 +127,26 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetEndTimeUtc()
         {
             return this._endTimeUtc.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LabelOptions. 
+        /// <para>
+        /// This structure includes the <code>Timezone</code> parameter, which you can use to
+        /// specify your time zone so that the labels of returned data display the correct time
+        /// for your time zone. 
+        /// </para>
+        /// </summary>
+        public LabelOptions LabelOptions
+        {
+            get { return this._labelOptions; }
+            set { this._labelOptions = value; }
+        }
+
+        // Check to see if LabelOptions property is set
+        internal bool IsSetLabelOptions()
+        {
+            return this._labelOptions != null;
         }
 
         /// <summary>

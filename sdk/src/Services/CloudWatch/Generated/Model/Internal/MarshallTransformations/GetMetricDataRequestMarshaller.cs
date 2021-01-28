@@ -62,6 +62,13 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
                 }
+                if(publicRequest.IsSetLabelOptions())
+                {
+                    if(publicRequest.LabelOptions.IsSetTimezone())
+                    {
+                        request.Parameters.Add("LabelOptions" + "." + "Timezone", StringUtils.FromString(publicRequest.LabelOptions.Timezone));
+                    }
+                }
                 if(publicRequest.IsSetMaxDatapoints())
                 {
                     request.Parameters.Add("MaxDatapoints", StringUtils.FromInt(publicRequest.MaxDatapoints));
