@@ -1,3 +1,7 @@
+### 3.5.97.1 (2021-01-29 00:47 UTC)
+* LexModelsV2 (3.5.0.4)
+	* Fixed incorrect Content-Type header being sent to the service
+
 ### 3.5.97.0 (2021-01-28 19:16 UTC)
 * CloudWatch (3.5.1.0)
 	* Update to SDK to support label time zones in CloudWatch GetMetricData
