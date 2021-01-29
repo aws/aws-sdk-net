@@ -40,12 +40,10 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The unique identifier for the AWS account that owns the buckets. If you specify this
-        /// value and don't specify a value for the buckets array, the job analyzes objects in
-        /// all the buckets that are owned by the account and meet other conditions specified
-        /// for the job.
+        /// The unique identifier for the AWS account that owns the buckets.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -64,6 +62,7 @@ namespace Amazon.Macie2.Model
         /// An array that lists the names of the buckets.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public List<string> Buckets
         {
             get { return this._buckets; }

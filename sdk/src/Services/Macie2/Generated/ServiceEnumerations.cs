@@ -884,6 +884,10 @@ namespace Amazon.Macie2
         /// Constant NE for JobComparator
         /// </summary>
         public static readonly JobComparator NE = new JobComparator("NE");
+        /// <summary>
+        /// Constant STARTS_WITH for JobComparator
+        /// </summary>
+        public static readonly JobComparator STARTS_WITH = new JobComparator("STARTS_WITH");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1398,6 +1402,10 @@ namespace Amazon.Macie2
         /// Constant OBJECT_EXTENSION for ScopeFilterKey
         /// </summary>
         public static readonly ScopeFilterKey OBJECT_EXTENSION = new ScopeFilterKey("OBJECT_EXTENSION");
+        /// <summary>
+        /// Constant OBJECT_KEY for ScopeFilterKey
+        /// </summary>
+        public static readonly ScopeFilterKey OBJECT_KEY = new ScopeFilterKey("OBJECT_KEY");
         /// <summary>
         /// Constant OBJECT_LAST_MODIFIED_DATE for ScopeFilterKey
         /// </summary>

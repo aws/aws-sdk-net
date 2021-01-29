@@ -50,6 +50,10 @@ namespace Amazon.Macie2.Model
         /// </para>
         /// </li> <li>
         /// <para>
+        /// OBJECT_KEY - STARTS_WITH
+        /// </para>
+        /// </li> <li>
+        /// <para>
         /// OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
         /// </para>
         /// </li> <li>
@@ -96,14 +100,24 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Values. 
         /// <para>
         /// An array that lists the values to use in the condition. If the value for the key property
-        /// is OBJECT_EXTENSION, this array can specify multiple values and Amazon Macie uses
-        /// an OR operator to join the values. Otherwise, this array can specify only one value.
+        /// is OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon
+        /// Macie uses an OR operator to join the values. Otherwise, this array can specify only
+        /// one value.
+        /// </para>
+        ///  
+        /// <para>
         /// Valid values for each supported property (key) are:
         /// </para>
         ///  <ul><li>
         /// <para>
         /// OBJECT_EXTENSION - A string that represents the file name extension of an object.
-        /// For example: doc, docx, pdf
+        /// For example: docx or pdf
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object.
+        /// For example: logs or awslogs/eventlogs. This value applies a condition to objects
+        /// whose keys (names) begin with the specified value.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -120,7 +134,11 @@ namespace Amazon.Macie2.Model
         /// a TagScopeTerm object, instead of a SimpleScopeTerm object, to define a tag-based
         /// condition for the job.
         /// </para>
-        /// </li></ul>
+        /// </li></ul> 
+        /// <para>
+        /// Macie doesn't support use of wildcard characters in values. Also, string values are
+        /// case sensitive.
+        /// </para>
         /// </summary>
         public List<string> Values
         {
