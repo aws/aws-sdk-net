@@ -186,6 +186,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetVpc())
+                {
+                    context.Writer.WritePropertyName("vpc");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcOutputSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Vpc, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

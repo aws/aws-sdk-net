@@ -160,6 +160,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vpc", targetDepth))
+                {
+                    var unmarshaller = VpcOutputSettingsUnmarshaller.Instance;
+                    unmarshalledObject.Vpc = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

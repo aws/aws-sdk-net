@@ -46,6 +46,7 @@ namespace Amazon.MediaLive.Model
         private string _reserved;
         private string _roleArn;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private VpcOutputSettings _vpc;
 
         /// <summary>
         /// Gets and sets the property CdiInputSpecification. Specification of CDI inputs for
@@ -232,6 +233,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Vpc. Settings for VPC output
+        /// </summary>
+        public VpcOutputSettings Vpc
+        {
+            get { return this._vpc; }
+            set { this._vpc = value; }
+        }
+
+        // Check to see if Vpc property is set
+        internal bool IsSetVpc()
+        {
+            return this._vpc != null;
         }
 
     }
