@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Request processing failed due to an error or failure with the service.
+    /// Request processing failed because of an error or failure with the service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -123,7 +123,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property QueueId. 
         /// <para>
-        /// The identifier of the queue.
+        /// The identifier for the queue.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

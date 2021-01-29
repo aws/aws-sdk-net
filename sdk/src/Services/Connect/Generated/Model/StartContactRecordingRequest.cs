@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the StartContactRecording operation.
-    /// This API starts recording the contact when the agent joins the call. StartContactRecording
+    /// Starts recording the contact when the agent joins the call. StartContactRecording
     /// is a one-time action. For example, if you use StopContactRecording to stop recording
     /// an ongoing call, you can't use StartContactRecording to restart it. For scenarios
     /// where the recording has started and you want to suspend and resume it, such as when
@@ -115,7 +115,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property VoiceRecordingConfiguration. 
         /// <para>
-        /// Who is being recorded.
+        /// The person being recorded.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

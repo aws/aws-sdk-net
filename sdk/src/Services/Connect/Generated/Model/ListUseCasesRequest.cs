@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// List the use cases. 
+    /// Lists the use cases. 
     /// </para>
     /// </summary>
     public partial class ListUseCasesRequest : AmazonConnectRequest
@@ -85,7 +85,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximimum number of results to return per page.
+        /// The maximum number of results to return per page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

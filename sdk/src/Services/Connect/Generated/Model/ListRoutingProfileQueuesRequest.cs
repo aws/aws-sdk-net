@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRoutingProfileQueues operation.
-    /// List the queues associated with a routing profile.
+    /// Lists the queues associated with a routing profile.
     /// </summary>
     public partial class ListRoutingProfileQueuesRequest : AmazonConnectRequest
     {
@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximimum number of results to return per page.
+        /// The maximum number of results to return per page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

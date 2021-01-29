@@ -59,7 +59,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A formatted URL that will be shown to an agent in the Contact Control Panel (CCP)
+        /// A formatted URL that displays to an agent in the Contact Control Panel (CCP)
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4096)]

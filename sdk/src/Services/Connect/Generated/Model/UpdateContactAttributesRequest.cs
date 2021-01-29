@@ -35,12 +35,12 @@ namespace Amazon.Connect.Model
     ///  
     /// <para>
     /// You can add or update attributes for both ongoing and completed contacts. For example,
-    /// you can update the customer's name or the reason the customer called while the call
-    /// is active, or add notes about steps that the agent took during the call that are displayed
+    /// while the call is active, you can update the customer's name or the reason the customer
+    /// called. You can add notes about steps that the agent took during the call that display
     /// to the next agent that takes the call. You can also update attributes for a contact
     /// using data from your CRM application and save the data with the contact in Amazon
     /// Connect. You could also flag calls for additional analysis, such as legal review or
-    /// identifying abusive callers.
+    /// to identify abusive callers.
     /// </para>
     ///  
     /// <para>
@@ -49,11 +49,11 @@ namespace Amazon.Connect.Model
     ///  
     /// <para>
     ///  <b>Important:</b> You cannot use the operation to update attributes for contacts
-    /// that occurred prior to the release of the API, September 12, 2018. You can update
-    /// attributes only for contacts that started after the release of the API. If you attempt
-    /// to update attributes for a contact that occurred prior to the release of the API,
-    /// a 400 error is returned. This applies also to queued callbacks that were initiated
-    /// prior to the release of the API but are still active in your instance.
+    /// that occurred prior to the release of the API, which was September 12, 2018. You can
+    /// update attributes only for contacts that started after the release of the API. If
+    /// you attempt to update attributes for a contact that occurred prior to the release
+    /// of the API, a 400 error is returned. This applies also to queued callbacks that were
+    /// initiated prior to the release of the API but are still active in your instance.
     /// </para>
     /// </summary>
     public partial class UpdateContactAttributesRequest : AmazonConnectRequest

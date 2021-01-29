@@ -36,9 +36,9 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// When a new chat contact is successfully created, clients need to subscribe to the
-    /// participant’s connection for the created chat within 5 minutes. This is achieved by
-    /// invoking <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+    /// When a new chat contact is successfully created, clients must subscribe to the participant’s
+    /// connection for the created chat within 5 minutes. This is achieved by invoking <a
+    /// href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
     /// with WEBSOCKET and CONNECTION_CREDENTIALS. 
     /// </para>
     ///  
@@ -57,7 +57,7 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information about how chat works, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
+    /// For more information about chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
     /// in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
     /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Attributes. 
         /// <para>
         /// A custom key-value pair using an attribute map. The attributes are standard Amazon
-        /// Connect attributes, and can be accessed in contact flows just like any other contact
+        /// Connect attributes. They can be accessed in contact flows just like any other contact
         /// attributes. 
         /// </para>
         ///  

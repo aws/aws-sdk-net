@@ -41,7 +41,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN).
+        /// The Amazon Resource Name (ARN) of the quick connect.
         /// </para>
         /// </summary>
         public string Arn
@@ -77,7 +77,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name.
+        /// The name of the quick connect.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]

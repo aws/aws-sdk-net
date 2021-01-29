@@ -29,27 +29,26 @@ namespace Amazon.Connect
     /// <summary>
     /// Interface for accessing Connect
     ///
-    /// Amazon Connect is a cloud-based contact center solution that makes it easy to set
-    /// up and manage a customer contact center and provide reliable customer engagement at
-    /// any scale.
+    /// Amazon Connect is a cloud-based contact center solution that you use to set up and
+    /// manage a customer contact center and provide reliable customer engagement at any scale.
     /// 
     ///  
     /// <para>
-    /// Amazon Connect provides rich metrics and real-time reporting that allow you to optimize
-    /// contact routing. You can also resolve customer issues more efficiently by putting
-    /// customers in touch with the right agents.
+    /// Amazon Connect provides metrics and real-time reporting that enable you to optimize
+    /// contact routing. You can also resolve customer issues more efficiently by getting
+    /// customers in touch with the appropriate agents.
     /// </para>
     ///  
     /// <para>
-    /// There are limits to the number of Amazon Connect resources that you can create and
-    /// limits to the number of requests that you can make per second. For more information,
+    /// There are limits to the number of Amazon Connect resources that you can create. There
+    /// are also limits to the number of requests that you can make per second. For more information,
     /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
     /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// To connect programmatically to an AWS service, you use an endpoint. For a list of
-    /// Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+    /// You can connect programmatically to an AWS service by using an endpoint. For a list
+    /// of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
     /// Connect Endpoints</a>.
     /// </para>
     ///  <note> 
@@ -87,7 +86,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the AssociateApprovedOrigin service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -154,14 +153,14 @@ namespace Amazon.Connect
         /// <para>
         /// This API does not create a resource that doesn't exist. It only associates it to the
         /// instance. Ensure that the resource being specified in the storage configuration, like
-        /// an Amazon S3 bucket, exists when being used for association.
+        /// an S3 bucket, exists when being used for association.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateInstanceStorageConfig service method.</param>
         /// 
         /// <returns>The response from the AssociateInstanceStorageConfig service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -224,7 +223,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the AssociateLambdaFunction service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -290,7 +289,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the AssociateLexBot service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -341,6 +340,69 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateQueueQuickConnects
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Associates a set of quick connects with a queue.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateQueueQuickConnects service method.</param>
+        /// 
+        /// <returns>The response from the AssociateQueueQuickConnects service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueQuickConnects">REST API Reference for AssociateQueueQuickConnects Operation</seealso>
+        AssociateQueueQuickConnectsResponse AssociateQueueQuickConnects(AssociateQueueQuickConnectsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateQueueQuickConnects operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateQueueQuickConnects operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateQueueQuickConnects
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueQuickConnects">REST API Reference for AssociateQueueQuickConnects Operation</seealso>
+        IAsyncResult BeginAssociateQueueQuickConnects(AssociateQueueQuickConnectsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateQueueQuickConnects operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateQueueQuickConnects.</param>
+        /// 
+        /// <returns>Returns a  AssociateQueueQuickConnectsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueQuickConnects">REST API Reference for AssociateQueueQuickConnects Operation</seealso>
+        AssociateQueueQuickConnectsResponse EndAssociateQueueQuickConnects(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateRoutingProfileQueues
 
 
@@ -351,7 +413,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the AssociateRoutingProfileQueues service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -411,7 +473,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the AssociateSecurityKey service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -481,7 +543,7 @@ namespace Amazon.Connect
         /// A resource with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidContactFlowException">
         /// The contact flow is not valid.
@@ -541,15 +603,16 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Initiates an Amazon Connect instance with all the supported channels enabled. It does
-        /// not attach any storage (such as Amazon S3, or Kinesis) or allow for any configurations
-        /// on features such as Contact Lens for Amazon Connect. 
+        /// not attach any storage, such as Amazon Simple Storage Service (Amazon S3) or Amazon
+        /// Kinesis. It also does not allow for any configurations on features, such as Contact
+        /// Lens for Amazon Connect. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstance service method.</param>
         /// 
         /// <returns>The response from the CreateInstance service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -612,7 +675,7 @@ namespace Amazon.Connect
         /// A resource with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -654,6 +717,72 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateQueue
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Creates a new queue for the specified Amazon Connect instance.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQueue service method.</param>
+        /// 
+        /// <returns>The response from the CreateQueue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
+        CreateQueueResponse CreateQueue(CreateQueueRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateQueue operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateQueue operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateQueue
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
+        IAsyncResult BeginCreateQueue(CreateQueueRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateQueue operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateQueue.</param>
+        /// 
+        /// <returns>Returns a  CreateQueueResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
+        CreateQueueResponse EndCreateQueue(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateQuickConnect
 
 
@@ -672,7 +801,7 @@ namespace Amazon.Connect
         /// A resource with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -733,7 +862,7 @@ namespace Amazon.Connect
         /// A resource with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -799,7 +928,7 @@ namespace Amazon.Connect
         /// A resource with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -861,7 +990,7 @@ namespace Amazon.Connect
         /// A resource with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -922,7 +1051,7 @@ namespace Amazon.Connect
         /// A resource with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -985,7 +1114,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DeleteInstance service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -1040,7 +1169,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DeleteIntegrationAssociation service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -1097,7 +1226,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DeleteQuickConnect service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -1157,7 +1286,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DeleteUseCase service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -1217,7 +1346,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -1273,7 +1402,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DeleteUserHierarchyGroup service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -1340,7 +1469,7 @@ namespace Amazon.Connect
         /// The contact flow has not been published.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -1385,6 +1514,66 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DescribeHoursOfOperation
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Describes the hours of operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHoursOfOperation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHoursOfOperation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation">REST API Reference for DescribeHoursOfOperation Operation</seealso>
+        DescribeHoursOfOperationResponse DescribeHoursOfOperation(DescribeHoursOfOperationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHoursOfOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHoursOfOperation operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHoursOfOperation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation">REST API Reference for DescribeHoursOfOperation Operation</seealso>
+        IAsyncResult BeginDescribeHoursOfOperation(DescribeHoursOfOperationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeHoursOfOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHoursOfOperation.</param>
+        /// 
+        /// <returns>Returns a  DescribeHoursOfOperationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperation">REST API Reference for DescribeHoursOfOperation Operation</seealso>
+        DescribeHoursOfOperationResponse EndDescribeHoursOfOperation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeInstance
 
 
@@ -1394,7 +1583,7 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Returns the current state of the specified instance identifier. It tracks the instance
-        /// while it is being created and returns an error status if applicable. 
+        /// while it is being created and returns an error status, if applicable. 
         /// </para>
         ///  
         /// <para>
@@ -1407,7 +1596,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DescribeInstance service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -1461,7 +1650,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DescribeInstanceAttribute service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -1522,7 +1711,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DescribeInstanceStorageConfig service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -1567,6 +1756,66 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DescribeQueue
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Describes the specified queue.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQueue service method.</param>
+        /// 
+        /// <returns>The response from the DescribeQueue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQueue">REST API Reference for DescribeQueue Operation</seealso>
+        DescribeQueueResponse DescribeQueue(DescribeQueueRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeQueue operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQueue operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeQueue
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQueue">REST API Reference for DescribeQueue Operation</seealso>
+        IAsyncResult BeginDescribeQueue(DescribeQueueRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeQueue operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeQueue.</param>
+        /// 
+        /// <returns>Returns a  DescribeQueueResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQueue">REST API Reference for DescribeQueue Operation</seealso>
+        DescribeQueueResponse EndDescribeQueue(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeQuickConnect
 
 
@@ -1582,7 +1831,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DescribeQuickConnect service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -1637,7 +1886,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DescribeRoutingProfile service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -1694,7 +1943,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DescribeUser service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -1749,7 +1998,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DescribeUserHierarchyGroup service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -1804,7 +2053,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DescribeUserHierarchyStructure service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -1864,7 +2113,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DisassociateApprovedOrigin service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -1925,7 +2174,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DisassociateInstanceStorageConfig service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -1978,7 +2227,7 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// Remove the Lambda function from the drop-down options available in the relevant contact
+        /// Remove the Lambda function from the dropdown options available in the relevant contact
         /// flow blocks.
         /// </para>
         /// </summary>
@@ -1986,7 +2235,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DisassociateLambdaFunction service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -2047,7 +2296,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DisassociateLexBot service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -2092,6 +2341,66 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateQueueQuickConnects
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Disassociates a set of quick connects from a queue.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateQueueQuickConnects service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateQueueQuickConnects service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueQuickConnects">REST API Reference for DisassociateQueueQuickConnects Operation</seealso>
+        DisassociateQueueQuickConnectsResponse DisassociateQueueQuickConnects(DisassociateQueueQuickConnectsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateQueueQuickConnects operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateQueueQuickConnects operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateQueueQuickConnects
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueQuickConnects">REST API Reference for DisassociateQueueQuickConnects Operation</seealso>
+        IAsyncResult BeginDisassociateQueueQuickConnects(DisassociateQueueQuickConnectsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateQueueQuickConnects operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateQueueQuickConnects.</param>
+        /// 
+        /// <returns>Returns a  DisassociateQueueQuickConnectsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueQuickConnects">REST API Reference for DisassociateQueueQuickConnects Operation</seealso>
+        DisassociateQueueQuickConnectsResponse EndDisassociateQueueQuickConnects(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateRoutingProfileQueues
 
 
@@ -2102,7 +2411,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DisassociateRoutingProfileQueues service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -2162,7 +2471,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DisassociateSecurityKey service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -2217,7 +2526,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the GetContactAttributes service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -2272,7 +2581,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the GetCurrentMetricData service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -2330,7 +2639,7 @@ namespace Amazon.Connect
         /// A resource with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -2391,7 +2700,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the GetMetricData service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -2451,7 +2760,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListApprovedOrigins service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -2517,7 +2826,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListContactFlows service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -2579,7 +2888,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListHoursOfOperations service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -2639,7 +2948,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListInstanceAttributes service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -2701,7 +3010,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListInstances service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -2753,7 +3062,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListInstanceStorageConfigs service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -2814,7 +3123,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListIntegrationAssociations service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -2864,15 +3173,15 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// Returns a paginated list of all the Lambda functions that show up in the drop-down
-        /// options in the relevant contact flow blocks.
+        /// Returns a paginated list of all Lambda functions that display in the dropdown options
+        /// in the relevant contact flow blocks.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLambdaFunctions service method.</param>
         /// 
         /// <returns>The response from the ListLambdaFunctions service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -2933,7 +3242,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListLexBots service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -2996,7 +3305,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListPhoneNumbers service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -3051,7 +3360,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListPrompts service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -3096,6 +3405,66 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListQueueQuickConnects
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Lists the quick connects associated with a queue.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQueueQuickConnects service method.</param>
+        /// 
+        /// <returns>The response from the ListQueueQuickConnects service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueQuickConnects">REST API Reference for ListQueueQuickConnects Operation</seealso>
+        ListQueueQuickConnectsResponse ListQueueQuickConnects(ListQueueQuickConnectsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListQueueQuickConnects operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListQueueQuickConnects operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListQueueQuickConnects
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueQuickConnects">REST API Reference for ListQueueQuickConnects Operation</seealso>
+        IAsyncResult BeginListQueueQuickConnects(ListQueueQuickConnectsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListQueueQuickConnects operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListQueueQuickConnects.</param>
+        /// 
+        /// <returns>Returns a  ListQueueQuickConnectsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueQuickConnects">REST API Reference for ListQueueQuickConnects Operation</seealso>
+        ListQueueQuickConnectsResponse EndListQueueQuickConnects(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListQueues
 
 
@@ -3112,7 +3481,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListQueues service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -3173,7 +3542,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListQuickConnects service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -3222,13 +3591,13 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// List the queues associated with a routing profile.
+        /// Lists the queues associated with a routing profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRoutingProfileQueues service method.</param>
         /// 
         /// <returns>The response from the ListRoutingProfileQueues service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -3291,7 +3660,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListRoutingProfiles service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -3351,7 +3720,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListSecurityKeys service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -3413,7 +3782,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListSecurityProfiles service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -3475,7 +3844,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -3528,14 +3897,14 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// List the use cases. 
+        /// Lists the use cases. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUseCases service method.</param>
         /// 
         /// <returns>The response from the ListUseCases service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -3594,7 +3963,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListUserHierarchyGroups service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -3649,7 +4018,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ListUsers service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -3710,7 +4079,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the ResumeContactRecording service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -3759,9 +4128,9 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// When a new chat contact is successfully created, clients need to subscribe to the
-        /// participant’s connection for the created chat within 5 minutes. This is achieved by
-        /// invoking <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+        /// When a new chat contact is successfully created, clients must subscribe to the participant’s
+        /// connection for the created chat within 5 minutes. This is achieved by invoking <a
+        /// href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
         /// with WEBSOCKET and CONNECTION_CREDENTIALS. 
         /// </para>
         ///  
@@ -3780,7 +4149,7 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about how chat works, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
+        /// For more information about chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a>
         /// in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
@@ -3788,7 +4157,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the StartChatContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -3837,7 +4206,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API starts recording the contact when the agent joins the call. StartContactRecording
+        /// Starts recording the contact when the agent joins the call. StartContactRecording
         /// is a one-time action. For example, if you use StopContactRecording to stop recording
         /// an ongoing call, you can't use StartContactRecording to restart it. For scenarios
         /// where the recording has started and you want to suspend and resume it, such as when
@@ -3858,7 +4227,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the StartContactRecording service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -3904,18 +4273,18 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API places an outbound call to a contact, and then initiates the contact flow.
-        /// It performs the actions in the contact flow that's specified (in <code>ContactFlowId</code>).
+        /// Places an outbound call to a contact, and then initiates the contact flow. It performs
+        /// the actions in the contact flow that's specified (in <code>ContactFlowId</code>).
         /// 
         ///  
         /// <para>
-        /// Agents are not involved in initiating the outbound API (that is, dialing the contact).
+        /// Agents do not initiate the outbound API, which means that they do not dial the contact.
         /// If the contact flow places an outbound call to a contact, and then puts the contact
-        /// in queue, that's when the call is routed to the agent, like any other inbound case.
+        /// in queue, the call is then routed to the agent, like any other inbound case.
         /// </para>
         ///  
         /// <para>
-        /// There is a 60 second dialing timeout for this operation. If the call is not connected
+        /// There is a 60-second dialing timeout for this operation. If the call is not connected
         /// after 60 seconds, it fails.
         /// </para>
         ///  <note> 
@@ -3934,7 +4303,7 @@ namespace Amazon.Connect
         /// Outbound calls to the destination number are not allowed.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -3992,7 +4361,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the StartTaskContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -4053,7 +4422,7 @@ namespace Amazon.Connect
         /// The contact with the specified ID is not active or does not exist.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -4099,9 +4468,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// When a contact is being recorded, this API stops recording the call. StopContactRecording
-        /// is a one-time action. If you use StopContactRecording to stop recording an ongoing
-        /// call, you can't use StartContactRecording to restart it. For scenarios where the recording
+        /// Stops recording a call when a contact is being recorded. StopContactRecording is a
+        /// one-time action. If you use StopContactRecording to stop recording an ongoing call,
+        /// you can't use StartContactRecording to restart it. For scenarios where the recording
         /// has started and you want to suspend it for sensitive information (for example, to
         /// collect a credit card number), and then restart it, use SuspendContactRecording and
         /// ResumeContactRecording.
@@ -4115,7 +4484,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the StopContactRecording service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -4176,7 +4545,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the SuspendContactRecording service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -4223,8 +4592,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// The supported resource types are users, routing profiles, quick connects, and contact
-        /// flows.
+        /// The supported resource types are users, routing profiles, queues, quick connects,
+        /// and contact flows.
         /// </para>
         ///  
         /// <para>
@@ -4237,7 +4606,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the TagResource service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -4292,7 +4661,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -4346,12 +4715,12 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// You can add or update attributes for both ongoing and completed contacts. For example,
-        /// you can update the customer's name or the reason the customer called while the call
-        /// is active, or add notes about steps that the agent took during the call that are displayed
+        /// while the call is active, you can update the customer's name or the reason the customer
+        /// called. You can add notes about steps that the agent took during the call that display
         /// to the next agent that takes the call. You can also update attributes for a contact
         /// using data from your CRM application and save the data with the contact in Amazon
         /// Connect. You could also flag calls for additional analysis, such as legal review or
-        /// identifying abusive callers.
+        /// to identify abusive callers.
         /// </para>
         ///  
         /// <para>
@@ -4360,18 +4729,18 @@ namespace Amazon.Connect
         ///  
         /// <para>
         ///  <b>Important:</b> You cannot use the operation to update attributes for contacts
-        /// that occurred prior to the release of the API, September 12, 2018. You can update
-        /// attributes only for contacts that started after the release of the API. If you attempt
-        /// to update attributes for a contact that occurred prior to the release of the API,
-        /// a 400 error is returned. This applies also to queued callbacks that were initiated
-        /// prior to the release of the API but are still active in your instance.
+        /// that occurred prior to the release of the API, which was September 12, 2018. You can
+        /// update attributes only for contacts that started after the release of the API. If
+        /// you attempt to update attributes for a contact that occurred prior to the release
+        /// of the API, a 400 error is returned. This applies also to queued callbacks that were
+        /// initiated prior to the release of the API but are still active in your instance.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactAttributes service method.</param>
         /// 
         /// <returns>The response from the UpdateContactAttributes service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -4429,7 +4798,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the UpdateContactFlowContent service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidContactFlowException">
         /// The contact flow is not valid.
@@ -4496,7 +4865,7 @@ namespace Amazon.Connect
         /// A resource with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -4556,7 +4925,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the UpdateInstanceAttribute service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -4616,7 +4985,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the UpdateInstanceStorageConfig service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -4661,6 +5030,312 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateQueueHoursOfOperation
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Updates the hours of operation for the specified queue.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueHoursOfOperation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQueueHoursOfOperation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueHoursOfOperation">REST API Reference for UpdateQueueHoursOfOperation Operation</seealso>
+        UpdateQueueHoursOfOperationResponse UpdateQueueHoursOfOperation(UpdateQueueHoursOfOperationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateQueueHoursOfOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueHoursOfOperation operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateQueueHoursOfOperation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueHoursOfOperation">REST API Reference for UpdateQueueHoursOfOperation Operation</seealso>
+        IAsyncResult BeginUpdateQueueHoursOfOperation(UpdateQueueHoursOfOperationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateQueueHoursOfOperation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateQueueHoursOfOperation.</param>
+        /// 
+        /// <returns>Returns a  UpdateQueueHoursOfOperationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueHoursOfOperation">REST API Reference for UpdateQueueHoursOfOperation Operation</seealso>
+        UpdateQueueHoursOfOperationResponse EndUpdateQueueHoursOfOperation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateQueueMaxContacts
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Updates the maximum number of contacts allowed in a queue before it is considered
+        /// full.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueMaxContacts service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQueueMaxContacts service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueMaxContacts">REST API Reference for UpdateQueueMaxContacts Operation</seealso>
+        UpdateQueueMaxContactsResponse UpdateQueueMaxContacts(UpdateQueueMaxContactsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateQueueMaxContacts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueMaxContacts operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateQueueMaxContacts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueMaxContacts">REST API Reference for UpdateQueueMaxContacts Operation</seealso>
+        IAsyncResult BeginUpdateQueueMaxContacts(UpdateQueueMaxContactsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateQueueMaxContacts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateQueueMaxContacts.</param>
+        /// 
+        /// <returns>Returns a  UpdateQueueMaxContactsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueMaxContacts">REST API Reference for UpdateQueueMaxContacts Operation</seealso>
+        UpdateQueueMaxContactsResponse EndUpdateQueueMaxContacts(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateQueueName
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Updates the name and description of a queue. At least <code>Name</code> or <code>Description</code>
+        /// must be provided.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueName service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQueueName service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueName">REST API Reference for UpdateQueueName Operation</seealso>
+        UpdateQueueNameResponse UpdateQueueName(UpdateQueueNameRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateQueueName operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueName operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateQueueName
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueName">REST API Reference for UpdateQueueName Operation</seealso>
+        IAsyncResult BeginUpdateQueueName(UpdateQueueNameRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateQueueName operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateQueueName.</param>
+        /// 
+        /// <returns>Returns a  UpdateQueueNameResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueName">REST API Reference for UpdateQueueName Operation</seealso>
+        UpdateQueueNameResponse EndUpdateQueueName(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateQueueOutboundCallerConfig
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Updates the outbound caller ID name, number, and outbound whisper flow for a specified
+        /// queue.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueOutboundCallerConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQueueOutboundCallerConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig">REST API Reference for UpdateQueueOutboundCallerConfig Operation</seealso>
+        UpdateQueueOutboundCallerConfigResponse UpdateQueueOutboundCallerConfig(UpdateQueueOutboundCallerConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateQueueOutboundCallerConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueOutboundCallerConfig operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateQueueOutboundCallerConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig">REST API Reference for UpdateQueueOutboundCallerConfig Operation</seealso>
+        IAsyncResult BeginUpdateQueueOutboundCallerConfig(UpdateQueueOutboundCallerConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateQueueOutboundCallerConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateQueueOutboundCallerConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateQueueOutboundCallerConfigResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig">REST API Reference for UpdateQueueOutboundCallerConfig Operation</seealso>
+        UpdateQueueOutboundCallerConfigResponse EndUpdateQueueOutboundCallerConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateQueueStatus
+
+
+        /// <summary>
+        /// This API is in preview release for Amazon Connect and is subject to change.
+        /// 
+        ///  
+        /// <para>
+        /// Updates the status of the queue.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQueueStatus service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueStatus">REST API Reference for UpdateQueueStatus Operation</seealso>
+        UpdateQueueStatusResponse UpdateQueueStatus(UpdateQueueStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateQueueStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQueueStatus operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateQueueStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueStatus">REST API Reference for UpdateQueueStatus Operation</seealso>
+        IAsyncResult BeginUpdateQueueStatus(UpdateQueueStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateQueueStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateQueueStatus.</param>
+        /// 
+        /// <returns>Returns a  UpdateQueueStatusResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueStatus">REST API Reference for UpdateQueueStatus Operation</seealso>
+        UpdateQueueStatusResponse EndUpdateQueueStatus(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateQuickConnectConfig
 
 
@@ -4676,7 +5351,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the UpdateQuickConnectConfig service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -4730,14 +5405,15 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Updates the name and description of a quick connect. The request accepts the following
-        /// data in JSON format. At least Name or Description must be provided.
+        /// data in JSON format. At least <code>Name</code> or <code>Description</code> must be
+        /// provided.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQuickConnectName service method.</param>
         /// 
         /// <returns>The response from the UpdateQuickConnectName service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -4793,7 +5469,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the UpdateRoutingProfileConcurrency service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -4848,7 +5524,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the UpdateRoutingProfileDefaultOutboundQueue service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -4908,7 +5584,7 @@ namespace Amazon.Connect
         /// A resource with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -4963,7 +5639,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the UpdateRoutingProfileQueues service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -5018,7 +5694,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the UpdateUserHierarchy service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -5076,7 +5752,7 @@ namespace Amazon.Connect
         /// A resource with the specified name already exists.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -5131,7 +5807,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the UpdateUserHierarchyStructure service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -5187,12 +5863,11 @@ namespace Amazon.Connect
         /// 
         ///  <important> 
         /// <para>
-        /// Someone with the ability to invoke <code>UpdateUserIndentityInfo</code> can change
-        /// the login credentials of other users by changing their email address. This poses a
-        /// security risk to your organization. They can change the email address of a user to
-        /// the attacker's email address, and then reset the password through email. We strongly
-        /// recommend limiting who has the ability to invoke <code>UpdateUserIndentityInfo</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
+        /// We strongly recommend limiting who has the ability to invoke <code>UpdateUserIdentityInfo</code>.
+        /// Someone with that ability can change the login credentials of other users by changing
+        /// their email address. This poses a security risk to your organization. They can change
+        /// the email address of a user to the attacker's email address, and then reset the password
+        /// through email. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
         /// Practices for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         ///  </important>
@@ -5201,7 +5876,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the UpdateUserIdentityInfo service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -5256,7 +5931,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the UpdateUserPhoneConfig service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -5311,7 +5986,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the UpdateUserRoutingProfile service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.
@@ -5366,7 +6041,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the UpdateUserSecurityProfiles service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
-        /// Request processing failed due to an error or failure with the service.
+        /// Request processing failed because of an error or failure with the service.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
         /// One or more of the specified parameters are not valid.

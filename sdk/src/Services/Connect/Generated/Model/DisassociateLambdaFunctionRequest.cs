@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// Remove the Lambda function from the drop-down options available in the relevant contact
+    /// Remove the Lambda function from the dropdown options available in the relevant contact
     /// flow blocks.
     /// </para>
     /// </summary>

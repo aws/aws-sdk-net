@@ -35,7 +35,7 @@ namespace Amazon.Connect.Model
     ///  
     /// <para>
     /// Returns the current state of the specified instance identifier. It tracks the instance
-    /// while it is being created and returns an error status if applicable. 
+    /// while it is being created and returns an error status, if applicable. 
     /// </para>
     ///  
     /// <para>

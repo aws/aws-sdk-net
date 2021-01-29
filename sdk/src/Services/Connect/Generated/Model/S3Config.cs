@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about the S3 storage type.
+    /// Information about the Amazon Simple Storage Service (Amazon S3) storage type.
     /// </summary>
     public partial class S3Config
     {
@@ -78,7 +78,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfig. 
         /// <para>
-        /// The S3 encryption configuration.
+        /// The Amazon S3 encryption configuration.
         /// </para>
         /// </summary>
         public EncryptionConfig EncryptionConfig

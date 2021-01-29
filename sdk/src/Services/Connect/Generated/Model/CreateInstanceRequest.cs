@@ -35,8 +35,9 @@ namespace Amazon.Connect.Model
     ///  
     /// <para>
     /// Initiates an Amazon Connect instance with all the supported channels enabled. It does
-    /// not attach any storage (such as Amazon S3, or Kinesis) or allow for any configurations
-    /// on features such as Contact Lens for Amazon Connect. 
+    /// not attach any storage, such as Amazon Simple Storage Service (Amazon S3) or Amazon
+    /// Kinesis. It also does not allow for any configurations on features, such as Contact
+    /// Lens for Amazon Connect. 
     /// </para>
     /// </summary>
     public partial class CreateInstanceRequest : AmazonConnectRequest
@@ -108,7 +109,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InboundCallsEnabled. 
         /// <para>
-        /// Whether your contact center handles incoming contacts.
+        /// Your contact center handles incoming contacts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -146,7 +147,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property OutboundCallsEnabled. 
         /// <para>
-        /// Whether your contact center allows outbound calls.
+        /// Your contact center allows outbound calls.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

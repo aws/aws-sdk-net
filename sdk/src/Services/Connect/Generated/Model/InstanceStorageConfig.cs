@@ -117,7 +117,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property S3Config. 
         /// <para>
-        /// The S3 configuration.
+        /// The S3 bucket configuration.
         /// </para>
         /// </summary>
         public S3Config S3Config

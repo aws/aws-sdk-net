@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MediaConcurrencies. 
         /// <para>
-        /// The channels agents can handle in the Contact Control Panel (CCP).
+        /// The channels that agents can handle in the Contact Control Panel (CCP).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

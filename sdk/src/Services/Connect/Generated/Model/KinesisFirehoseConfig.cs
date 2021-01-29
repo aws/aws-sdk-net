@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Configuration information of a Kinesis Firehose delivery stream.
+    /// Configuration information of a Kinesis Data Firehose delivery stream.
     /// </summary>
     public partial class KinesisFirehoseConfig
     {

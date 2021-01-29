@@ -102,7 +102,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MediaConcurrencies. 
         /// <para>
-        /// The channels agents can handle in the Contact Control Panel (CCP) for this routing
+        /// The channels that agents can handle in the Contact Control Panel (CCP) for this routing
         /// profile.
         /// </para>
         /// </summary>
@@ -142,7 +142,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property QueueConfigs. 
         /// <para>
         /// The inbound queues associated with the routing profile. If no queue is added, the
-        /// agent can only make outbound calls.
+        /// agent can make only outbound calls.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
