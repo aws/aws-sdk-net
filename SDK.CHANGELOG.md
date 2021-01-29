@@ -1,3 +1,16 @@
+### 3.5.98.0 (2021-01-29 19:16 UTC)
+* Connect (3.5.6.0)
+	* Added API to manage queues or get hours of operation for a queue programmatically, which can be used to create new/update queues, or take actions when skills are outside of their hours of operation.
+* Macie2 (3.5.7.0)
+	* This release of the Amazon Macie API adds support for using object prefixes to refine the scope of a classification job.
+* MediaLive (3.5.9.0)
+	* "AWS Elemental MediaLive now supports output to a private VPC. When this property is specified, the output will egress from a user specified VPC."
+* Core 3.5.2.4
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.97.1 (2021-01-29 00:47 UTC)
 * LexModelsV2 (3.5.0.4)
 	* Fixed incorrect Content-Type header being sent to the service
