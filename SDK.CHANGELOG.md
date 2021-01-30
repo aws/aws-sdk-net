@@ -1,3 +1,11 @@
+### 3.5.99.0 (2021-01-30 00:51 UTC)
+* DocDB (3.5.2.0)
+	* Support for presignedURL for DocDB
+* Neptune (3.5.2.0)
+	* Support for presignedURL for Neptune
+* Core 3.5.2.5
+	* Removed the Obsolete attribute from ActionIdentifier.cs
+
 ### 3.5.98.0 (2021-01-29 19:16 UTC)
 * Connect (3.5.6.0)
 	* Added API to manage queues or get hours of operation for a queue programmatically, which can be used to create new/update queues, or take actions when skills are outside of their hours of operation.

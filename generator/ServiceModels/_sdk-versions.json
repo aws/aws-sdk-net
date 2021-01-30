@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.5.98.0",
-    "CoreVersion"    : "3.5.2.4",
+    "ProductVersion" : "3.5.99.0",
+    "CoreVersion"    : "3.5.2.5",
     "OverrideCoreVersion" : "3.3",
     "DefaultToPreview"    : false,
     "ServiceVersions"     : {
@@ -1122,7 +1122,7 @@
             "InPreview"               : false
         },
         "Neptune"                         : {
-            "Version" : "3.5.1.33",
+            "Version" : "3.5.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.2.4"
@@ -1354,7 +1354,7 @@
             "InPreview"               : false
         },
         "DocDB"                           : {
-            "Version" : "3.5.1.53",
+            "Version" : "3.5.2.0",
             "AssemblyVersionOverride" : "3.3",
             "Dependencies"            : {
                 "Core" : "3.5.2.4"
