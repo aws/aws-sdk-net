@@ -32,7 +32,7 @@ namespace Amazon.ApplicationAutoScaling
     public partial class AmazonApplicationAutoScalingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.5.2.44");
+            InternalSDKUtils.BuildUserAgentString("3.5.3.0");
 
         private string _userAgent = UserAgentString;
 

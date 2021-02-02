@@ -1,3 +1,25 @@
+### 3.5.100.0 (2021-02-02 19:21 UTC)
+* ApplicationAutoScaling (3.5.3.0)
+	* With this release, scheduled actions of Application Auto Scaling can be created in the local time zone and automatically adjusted according to daylight saving changes.
+* AppMesh (3.5.3.0)
+	* App Mesh now supports mutual TLS with two-way peer authentication. You can specify client certificates, server-side TLS validation, and matching of Subject Alternative Names.
+* IoTWireless (3.5.2.0)
+	* Add enum value MqttTopic for Destination ExpressionType, add LoRaWANNetworkServerCertificateId for GetWirelessGatewayCertificate API
+* LocationService (3.5.0.16)
+	* Doc only update for Amazon Location Maps that fixes a customer related issue regarding MapConfiguration
+* LookoutforVision (3.5.1.0)
+	* This release includes the General Availability (GA) SDK for Amazon Lookout for Vision. New for GA is tagging support for Amazon Lookout for Vision models.
+* MediaLive (3.5.10.0)
+	* AWS Elemental MediaLive now supports Image Media Playlists on HLS outputs, version 0.4 (trick-mode).
+* Organizations (3.5.1.53)
+	* Documentation updates for AWS Organizations.
+* RDSDataService (3.5.1.0)
+	* With the Data API, you can now use UUID and JSON data types as input to your database. Also with the Data API, you can now have a LONG type value returned from your database as a STRING value.
+* Route53 (3.5.1.15)
+	* Documentation updates for Route 53
+* S3Control (3.5.4.0)
+	* Amazon S3 Batch Operations now supports Delete Object Tagging
+
 ### 3.5.99.0 (2021-01-30 00:51 UTC)
 * DocDB (3.5.2.0)
 	* Support for presignedURL for DocDB
