@@ -31,6 +31,12 @@ namespace Amazon.LookoutforVision.Model
     /// <summary>
     /// Container for the parameters to the ListModels operation.
     /// Lists the versions of a model in an Amazon Lookout for Vision project.
+    /// 
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>lookoutvision:ListModels</code>
+    /// operation.
+    /// </para>
     /// </summary>
     public partial class ListModelsRequest : AmazonLookoutforVisionRequest
     {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateModel Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateModelRequestMarshaller : IMarshaller<IRequest, CreateModelRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateModelRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,46 +52,23 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateModelRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.LookoutforVision");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-20";            
             request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetProjectName())
-                throw new AmazonLookoutforVisionException("Request object does not have required field ProjectName set");
-            request.AddPathResource("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
-            request.ResourcePath = "/2020-11-20/projects/{projectName}/models";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonLookoutforVisionException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/2020-11-20/tags/{resourceArn}";
             request.MarshallerVersion = 2;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetKmsKeyId())
-                {
-                    context.Writer.WritePropertyName("KmsKeyId");
-                    context.Writer.Write(publicRequest.KmsKeyId);
-                }
-
-                if(publicRequest.IsSetOutputConfig())
-                {
-                    context.Writer.WritePropertyName("OutputConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OutputConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
@@ -114,15 +91,12 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
-        
-            if(publicRequest.IsSetClientToken())
-                request.Headers["X-Amzn-Client-Token"] = publicRequest.ClientToken;
 
             return request;
         }
-        private static CreateModelRequestMarshaller _instance = new CreateModelRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateModelRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -130,7 +104,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateModelRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

@@ -298,7 +298,12 @@ namespace Amazon.LookoutforVision
         /// To have a project with separate training and test datasets, call <code>CreateDataset</code>
         /// twice. On the first call, specify <code>train</code> for the value of <code>DatasetType</code>.
         /// On the second call, specify <code>test</code> for the value of <code>DatasetType</code>.
-        /// of dataset with 
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:CreateDataset</code>
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
@@ -378,6 +383,12 @@ namespace Amazon.LookoutforVision
         /// After training completes, the evaluation metrics are stored at the location specified
         /// in <code>OutputConfig</code>. 
         /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:CreateModel</code>
+        /// operation. If you want to tag your model, you also require permission to the <code>lookoutvision:TagResource</code>
+        /// operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateModel service method.</param>
         /// <param name="cancellationToken">
@@ -437,6 +448,12 @@ namespace Amazon.LookoutforVision
         /// <summary>
         /// Creates an empty Amazon Lookout for Vision project. After you create the project,
         /// add a dataset by calling <a>CreateDataset</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:CreateProject</code>
+        /// operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProject service method.</param>
         /// <param name="cancellationToken">
@@ -521,6 +538,11 @@ namespace Amazon.LookoutforVision
         /// It might take a while to delete the dataset. To check the current status, check the
         /// <code>Status</code> field in the response from a call to <a>DescribeDataset</a>. 
         /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:DeleteDataset</code>
+        /// operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// <param name="cancellationToken">
@@ -576,6 +598,12 @@ namespace Amazon.LookoutforVision
         /// <summary>
         /// Deletes an Amazon Lookout for Vision model. You can't delete a running model. To stop
         /// a running model, use the <a>StopModel</a> operation.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code>
+        /// operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteModel service method.</param>
         /// <param name="cancellationToken">
@@ -638,8 +666,14 @@ namespace Amazon.LookoutforVision
         /// </para>
         ///  
         /// <para>
-        /// The training and test datasets are deleted automatically for you. The images referenced
-        /// by the training and test datasets aren't deleted. 
+        /// You also have to delete the dataset(s) associated with the model. For more information,
+        /// see <a>DeleteDataset</a>. The images referenced by the training and test datasets
+        /// aren't deleted. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:DeleteProject</code>
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
@@ -695,6 +729,12 @@ namespace Amazon.LookoutforVision
 
         /// <summary>
         /// Describe an Amazon Lookout for Vision dataset.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:DescribeDataset</code>
+        /// operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataset service method.</param>
         /// <param name="cancellationToken">
@@ -749,6 +789,12 @@ namespace Amazon.LookoutforVision
 
         /// <summary>
         /// Describes a version of an Amazon Lookout for Vision model.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:DescribeModel</code>
+        /// operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeModel service method.</param>
         /// <param name="cancellationToken">
@@ -803,6 +849,12 @@ namespace Amazon.LookoutforVision
 
         /// <summary>
         /// Describes an Amazon Lookout for Vision project.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:DescribeProject</code>
+        /// operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProject service method.</param>
         /// <param name="cancellationToken">
@@ -871,7 +923,11 @@ namespace Amazon.LookoutforVision
         /// If you are not using a model, use the <a>StopModel</a> operation to stop your model.
         /// 
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code>
+        /// operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectAnomalies service method.</param>
         /// <param name="cancellationToken">
@@ -928,6 +984,12 @@ namespace Amazon.LookoutforVision
         /// Lists the JSON Lines within a dataset. An Amazon Lookout for Vision JSON Line contains
         /// the anomaly information for a single image, including the image location and the assigned
         /// label.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:ListDatasetEntries</code>
+        /// operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDatasetEntries service method.</param>
         /// <param name="cancellationToken">
@@ -982,6 +1044,12 @@ namespace Amazon.LookoutforVision
 
         /// <summary>
         /// Lists the versions of a model in an Amazon Lookout for Vision project.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:ListModels</code>
+        /// operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListModels service method.</param>
         /// <param name="cancellationToken">
@@ -1036,6 +1104,12 @@ namespace Amazon.LookoutforVision
 
         /// <summary>
         /// Lists the Amazon Lookout for Vision projects in your AWS account.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:ListProjects</code>
+        /// operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProjects service method.</param>
         /// <param name="cancellationToken">
@@ -1075,6 +1149,66 @@ namespace Amazon.LookoutforVision
 
         #endregion
         
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of tags attached to the specified Amazon Lookout for Vision model.
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:ListTagsForResource</code>
+        /// operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by LookoutforVision.</returns>
+        /// <exception cref="Amazon.LookoutforVision.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ConflictException">
+        /// The update or deletion of a resource caused an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.InternalServerException">
+        /// Amazon Lookout for Vision experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ThrottlingException">
+        /// Amazon Lookout for Vision is temporarily unable to process the request. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ValidationException">
+        /// An input validation error occured. For example, invalid characters in a project name,
+        /// or if a pagination token is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartModel
 
         internal virtual StartModelResponse StartModel(StartModelRequest request)
@@ -1101,7 +1235,11 @@ namespace Amazon.LookoutforVision
         /// You are charged for the amount of time that the model is running. To stop a running
         /// model, call <a>StopModel</a>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:StartModel</code>
+        /// operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartModel service method.</param>
         /// <param name="cancellationToken">
@@ -1160,7 +1298,13 @@ namespace Amazon.LookoutforVision
 
         /// <summary>
         /// Stops a running model. The operation might take a while to complete. To check the
-        /// current status, call <a>DescribeModel</a>.
+        /// current status, call <a>DescribeModel</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:StopModel</code>
+        /// operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopModel service method.</param>
         /// <param name="cancellationToken">
@@ -1200,6 +1344,134 @@ namespace Amazon.LookoutforVision
 
         #endregion
         
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds one or more key-value tags to an Amazon Lookout for Vision model. For more information,
+        /// see <i>Tagging a model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:TagResource</code>
+        /// operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by LookoutforVision.</returns>
+        /// <exception cref="Amazon.LookoutforVision.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ConflictException">
+        /// The update or deletion of a resource caused an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.InternalServerException">
+        /// Amazon Lookout for Vision experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ServiceQuotaExceededException">
+        /// A service quota was exceeded the allowed limit. For more information, see Limits in
+        /// Amazon Lookout for Vision in the Amazon Lookout for Vision Developer Guide.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ThrottlingException">
+        /// Amazon Lookout for Vision is temporarily unable to process the request. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ValidationException">
+        /// An input validation error occured. For example, invalid characters in a project name,
+        /// or if a pagination token is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes one or more tags from an Amazon Lookout for Vision model. For more information,
+        /// see <i>Tagging a model</i> in the <i>Amazon Lookout for Vision Developer Guide</i>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:UntagResource</code>
+        /// operation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by LookoutforVision.</returns>
+        /// <exception cref="Amazon.LookoutforVision.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ConflictException">
+        /// The update or deletion of a resource caused an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.InternalServerException">
+        /// Amazon Lookout for Vision experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ThrottlingException">
+        /// Amazon Lookout for Vision is temporarily unable to process the request. Try your call
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.LookoutforVision.Model.ValidationException">
+        /// An input validation error occured. For example, invalid characters in a project name,
+        /// or if a pagination token is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateDatasetEntries
 
         internal virtual UpdateDatasetEntriesResponse UpdateDatasetEntries(UpdateDatasetEntriesRequest request)
@@ -1222,6 +1494,11 @@ namespace Amazon.LookoutforVision
         /// <para>
         /// Updating a dataset might take a while to complete. To check the current status, call
         /// <a>DescribeDataset</a> and check the <code>Status</code> field in the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>lookoutvision:UpdateDatasetEntries</code>
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDatasetEntries service method.</param>

@@ -45,7 +45,11 @@ namespace Amazon.LookoutforVision.Model
     /// If you are not using a model, use the <a>StopModel</a> operation to stop your model.
     /// 
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code>
+    /// operation.
+    /// </para>
     /// </summary>
     public partial class DetectAnomaliesRequest : AmazonLookoutforVisionRequest
     {

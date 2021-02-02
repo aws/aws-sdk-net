@@ -42,7 +42,11 @@ namespace Amazon.LookoutforVision.Model
     /// You are charged for the amount of time that the model is running. To stop a running
     /// model, call <a>StopModel</a>.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// This operation requires permissions to perform the <code>lookoutvision:StartModel</code>
+    /// operation.
+    /// </para>
     /// </summary>
     public partial class StartModelRequest : AmazonLookoutforVisionRequest
     {

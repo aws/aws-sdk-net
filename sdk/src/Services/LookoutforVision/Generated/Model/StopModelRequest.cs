@@ -31,7 +31,13 @@ namespace Amazon.LookoutforVision.Model
     /// <summary>
     /// Container for the parameters to the StopModel operation.
     /// Stops a running model. The operation might take a while to complete. To check the
-    /// current status, call <a>DescribeModel</a>.
+    /// current status, call <a>DescribeModel</a>. 
+    /// 
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>lookoutvision:StopModel</code>
+    /// operation.
+    /// </para>
     /// </summary>
     public partial class StopModelRequest : AmazonLookoutforVisionRequest
     {

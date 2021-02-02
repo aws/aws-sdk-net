@@ -29,36 +29,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeProject operation.
-    /// Describes an Amazon Lookout for Vision project.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// Returns a list of tags attached to the specified Amazon Lookout for Vision model.
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>lookoutvision:DescribeProject</code>
+    /// This operation requires permissions to perform the <code>lookoutvision:ListTagsForResource</code>
     /// operation.
     /// </para>
     /// </summary>
-    public partial class DescribeProjectRequest : AmazonLookoutforVisionRequest
+    public partial class ListTagsForResourceRequest : AmazonLookoutforVisionRequest
     {
-        private string _projectName;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ProjectName. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The name of the project that you want to describe.
+        /// The Amazon Resource Name (ARN) of the model for which you want to list tags. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string ProjectName
+        [AWSProperty(Required=true, Min=1, Max=1011)]
+        public string ResourceArn
         {
-            get { return this._projectName; }
-            set { this._projectName = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if ProjectName property is set
-        internal bool IsSetProjectName()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._projectName != null;
+            return this._resourceArn != null;
         }
 
     }

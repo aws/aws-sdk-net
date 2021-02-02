@@ -33,6 +33,12 @@ namespace Amazon.LookoutforVision.Model
     /// Lists the JSON Lines within a dataset. An Amazon Lookout for Vision JSON Line contains
     /// the anomaly information for a single image, including the image location and the assigned
     /// label.
+    /// 
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>lookoutvision:ListDatasetEntries</code>
+    /// operation.
+    /// </para>
     /// </summary>
     public partial class ListDatasetEntriesRequest : AmazonLookoutforVisionRequest
     {

@@ -31,6 +31,12 @@ namespace Amazon.LookoutforVision.Model
     /// <summary>
     /// Container for the parameters to the ListProjects operation.
     /// Lists the Amazon Lookout for Vision projects in your AWS account.
+    /// 
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>lookoutvision:ListProjects</code>
+    /// operation.
+    /// </para>
     /// </summary>
     public partial class ListProjectsRequest : AmazonLookoutforVisionRequest
     {

@@ -51,14 +51,21 @@ namespace Amazon.LookoutforVision.Model
     /// After training completes, the evaluation metrics are stored at the location specified
     /// in <code>OutputConfig</code>. 
     /// </para>
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>lookoutvision:CreateModel</code>
+    /// operation. If you want to tag your model, you also require permission to the <code>lookoutvision:TagResource</code>
+    /// operation.
+    /// </para>
     /// </summary>
     public partial class CreateModelRequest : AmazonLookoutforVisionRequest
     {
         private string _clientToken;
-        private ModelDescription _description;
+        private string _description;
         private string _kmsKeyId;
         private OutputConfig _outputConfig;
         private string _projectName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -92,7 +99,8 @@ namespace Amazon.LookoutforVision.Model
         /// A description for the version of the model.
         /// </para>
         /// </summary>
-        public ModelDescription Description
+        [AWSProperty(Min=1, Max=500)]
+        public string Description
         {
             get { return this._description; }
             set { this._description = value; }
@@ -161,6 +169,25 @@ namespace Amazon.LookoutforVision.Model
         internal bool IsSetProjectName()
         {
             return this._projectName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A set of tags (key-value pairs) that you want to attach to the model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

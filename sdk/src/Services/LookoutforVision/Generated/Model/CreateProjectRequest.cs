@@ -32,6 +32,12 @@ namespace Amazon.LookoutforVision.Model
     /// Container for the parameters to the CreateProject operation.
     /// Creates an empty Amazon Lookout for Vision project. After you create the project,
     /// add a dataset by calling <a>CreateDataset</a>.
+    /// 
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>lookoutvision:CreateProject</code>
+    /// operation.
+    /// </para>
     /// </summary>
     public partial class CreateProjectRequest : AmazonLookoutforVisionRequest
     {
@@ -67,7 +73,7 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property ProjectName. 
         /// <para>
-        /// S nsme for the project.
+        /// The name for the project.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

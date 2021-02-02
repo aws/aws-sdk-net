@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OutputS3Object Marshaller
+    /// Tag Marshaller
     /// </summary>       
-    public class OutputS3ObjectMarshaller : IRequestMarshaller<OutputS3Object, JsonMarshallerContext> 
+    public class TagMarshaller : IRequestMarshaller<Tag, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,18 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OutputS3Object requestObject, JsonMarshallerContext context)
+        public void Marshall(Tag requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetBucket())
-            {
-                context.Writer.WritePropertyName("Bucket");
-                context.Writer.Write(requestObject.Bucket);
-            }
-
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");
                 context.Writer.Write(requestObject.Key);
+            }
+
+            if(requestObject.IsSetValue())
+            {
+                context.Writer.WritePropertyName("Value");
+                context.Writer.Write(requestObject.Value);
             }
 
         }
@@ -62,7 +62,7 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static OutputS3ObjectMarshaller Instance = new OutputS3ObjectMarshaller();
+        public readonly static TagMarshaller Instance = new TagMarshaller();
 
     }
 }

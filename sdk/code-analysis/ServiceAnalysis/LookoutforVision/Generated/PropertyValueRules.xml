@@ -25,6 +25,12 @@
     <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.CreateModelRequest.Description</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>[0-9A-Za-z\.\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutforVision.Model.CreateModelRequest.KmsKeyId</property>
     <min>1</min>
     <max>2048</max>
@@ -220,6 +226,11 @@
     <pattern>^[a-zA-Z0-9\/\+\=]{0,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LookoutforVision.Model.StartModelRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -258,6 +269,16 @@
     <min>1</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.UntagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LookoutforVision.Model.UpdateDatasetEntriesRequest.Changes</property>
@@ -386,5 +407,17 @@
     <property>Amazon.LookoutforVision.Model.S3Location.Prefix</property>
     <max>1024</max>
     <pattern>^([a-zA-Z0-9!_.*'()-][/a-zA-Z0-9!_.*'()-]*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LookoutforVision.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
 </property-value-rules>

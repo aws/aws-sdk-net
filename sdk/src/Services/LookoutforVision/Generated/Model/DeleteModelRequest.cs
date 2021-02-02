@@ -32,6 +32,12 @@ namespace Amazon.LookoutforVision.Model
     /// Container for the parameters to the DeleteModel operation.
     /// Deletes an Amazon Lookout for Vision model. You can't delete a running model. To stop
     /// a running model, use the <a>StopModel</a> operation.
+    /// 
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code>
+    /// operation.
+    /// </para>
     /// </summary>
     public partial class DeleteModelRequest : AmazonLookoutforVisionRequest
     {

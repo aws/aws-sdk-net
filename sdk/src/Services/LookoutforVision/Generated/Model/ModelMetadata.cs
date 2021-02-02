@@ -118,7 +118,7 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property Performance. 
         /// <para>
-        /// Performance metrics for the model. Created during training.
+        /// Performance metrics for the model. Not available until training has successfully completed.
         /// </para>
         /// </summary>
         public ModelPerformance Performance

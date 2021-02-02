@@ -31,6 +31,12 @@ namespace Amazon.LookoutforVision.Model
     /// <summary>
     /// Container for the parameters to the DescribeDataset operation.
     /// Describe an Amazon Lookout for Vision dataset.
+    /// 
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>lookoutvision:DescribeDataset</code>
+    /// operation.
+    /// </para>
     /// </summary>
     public partial class DescribeDatasetRequest : AmazonLookoutforVisionRequest
     {

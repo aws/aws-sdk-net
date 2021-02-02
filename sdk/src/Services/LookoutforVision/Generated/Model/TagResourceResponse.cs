@@ -29,37 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeProject operation.
-    /// Describes an Amazon Lookout for Vision project.
-    /// 
-    ///  
-    /// <para>
-    /// This operation requires permissions to perform the <code>lookoutvision:DescribeProject</code>
-    /// operation.
-    /// </para>
+    /// This is the response object from the TagResource operation.
     /// </summary>
-    public partial class DescribeProjectRequest : AmazonLookoutforVisionRequest
+    public partial class TagResourceResponse : AmazonWebServiceResponse
     {
-        private string _projectName;
-
-        /// <summary>
-        /// Gets and sets the property ProjectName. 
-        /// <para>
-        /// The name of the project that you want to describe.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string ProjectName
-        {
-            get { return this._projectName; }
-            set { this._projectName = value; }
-        }
-
-        // Check to see if ProjectName property is set
-        internal bool IsSetProjectName()
-        {
-            return this._projectName != null;
-        }
 
     }
 }
