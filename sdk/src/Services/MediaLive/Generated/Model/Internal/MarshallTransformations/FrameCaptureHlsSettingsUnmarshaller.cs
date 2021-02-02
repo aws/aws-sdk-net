@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HlsSettings Object
+    /// Response Unmarshaller for FrameCaptureHlsSettings Object
     /// </summary>  
-    public class HlsSettingsUnmarshaller : IUnmarshaller<HlsSettings, XmlUnmarshallerContext>, IUnmarshaller<HlsSettings, JsonUnmarshallerContext>
+    public class FrameCaptureHlsSettingsUnmarshaller : IUnmarshaller<FrameCaptureHlsSettings, XmlUnmarshallerContext>, IUnmarshaller<FrameCaptureHlsSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        HlsSettings IUnmarshaller<HlsSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FrameCaptureHlsSettings IUnmarshaller<FrameCaptureHlsSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,53 +53,29 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HlsSettings Unmarshall(JsonUnmarshallerContext context)
+        public FrameCaptureHlsSettings Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            HlsSettings unmarshalledObject = new HlsSettings();
+            FrameCaptureHlsSettings unmarshalledObject = new FrameCaptureHlsSettings();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("audioOnlyHlsSettings", targetDepth))
-                {
-                    var unmarshaller = AudioOnlyHlsSettingsUnmarshaller.Instance;
-                    unmarshalledObject.AudioOnlyHlsSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("fmp4HlsSettings", targetDepth))
-                {
-                    var unmarshaller = Fmp4HlsSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Fmp4HlsSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("frameCaptureHlsSettings", targetDepth))
-                {
-                    var unmarshaller = FrameCaptureHlsSettingsUnmarshaller.Instance;
-                    unmarshalledObject.FrameCaptureHlsSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("standardHlsSettings", targetDepth))
-                {
-                    var unmarshaller = StandardHlsSettingsUnmarshaller.Instance;
-                    unmarshalledObject.StandardHlsSettings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static HlsSettingsUnmarshaller _instance = new HlsSettingsUnmarshaller();        
+        private static FrameCaptureHlsSettingsUnmarshaller _instance = new FrameCaptureHlsSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HlsSettingsUnmarshaller Instance
+        public static FrameCaptureHlsSettingsUnmarshaller Instance
         {
             get
             {

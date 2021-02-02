@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     {
         private AudioOnlyHlsSettings _audioOnlyHlsSettings;
         private Fmp4HlsSettings _fmp4HlsSettings;
+        private FrameCaptureHlsSettings _frameCaptureHlsSettings;
         private StandardHlsSettings _standardHlsSettings;
 
         /// <summary>
@@ -65,6 +66,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetFmp4HlsSettings()
         {
             return this._fmp4HlsSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FrameCaptureHlsSettings.
+        /// </summary>
+        public FrameCaptureHlsSettings FrameCaptureHlsSettings
+        {
+            get { return this._frameCaptureHlsSettings; }
+            set { this._frameCaptureHlsSettings = value; }
+        }
+
+        // Check to see if FrameCaptureHlsSettings property is set
+        internal bool IsSetFrameCaptureHlsSettings()
+        {
+            return this._frameCaptureHlsSettings != null;
         }
 
         /// <summary>

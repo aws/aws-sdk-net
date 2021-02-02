@@ -67,6 +67,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFrameCaptureHlsSettings())
+            {
+                context.Writer.WritePropertyName("frameCaptureHlsSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FrameCaptureHlsSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FrameCaptureHlsSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStandardHlsSettings())
             {
                 context.Writer.WritePropertyName("standardHlsSettings");
