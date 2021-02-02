@@ -34,6 +34,7 @@ namespace Amazon.IoTWireless.Model
     public partial class GetWirelessGatewayCertificateResponse : AmazonWebServiceResponse
     {
         private string _iotCertificateId;
+        private string _loRaWANNetworkServerCertificateId;
 
         /// <summary>
         /// Gets and sets the property IotCertificateId. 
@@ -52,6 +53,26 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetIotCertificateId()
         {
             return this._iotCertificateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoRaWANNetworkServerCertificateId. 
+        /// <para>
+        /// The ID of the certificate associated with the wireless gateway and used for LoRaWANNetworkServer
+        /// endpoint.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
+        public string LoRaWANNetworkServerCertificateId
+        {
+            get { return this._loRaWANNetworkServerCertificateId; }
+            set { this._loRaWANNetworkServerCertificateId = value; }
+        }
+
+        // Check to see if LoRaWANNetworkServerCertificateId property is set
+        internal bool IsSetLoRaWANNetworkServerCertificateId()
+        {
+            return this._loRaWANNetworkServerCertificateId != null;
         }
 
     }

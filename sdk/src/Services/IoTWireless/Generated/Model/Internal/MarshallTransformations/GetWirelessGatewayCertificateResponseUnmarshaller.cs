@@ -57,6 +57,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     response.IotCertificateId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LoRaWANNetworkServerCertificateId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LoRaWANNetworkServerCertificateId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

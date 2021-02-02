@@ -31,6 +31,10 @@ namespace Amazon.IoTWireless
     {
 
         /// <summary>
+        /// Constant MqttTopic for ExpressionType
+        /// </summary>
+        public static readonly ExpressionType MqttTopic = new ExpressionType("MqttTopic");
+        /// <summary>
         /// Constant RuleName for ExpressionType
         /// </summary>
         public static readonly ExpressionType RuleName = new ExpressionType("RuleName");

@@ -58,7 +58,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Fingerprint. 
         /// <para>
-        /// Fingerprint for Sidewalk application server private key.
+        /// The fingerprint of the Sidewalk application server private key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=64, Max=64)]
