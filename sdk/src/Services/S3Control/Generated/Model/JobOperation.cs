@@ -36,6 +36,7 @@ namespace Amazon.S3Control.Model
     public partial class JobOperation
     {
         private LambdaInvokeOperation _lambdaInvoke;
+        private S3DeleteObjectTaggingOperation _s3DeleteObjectTagging;
         private S3InitiateRestoreObjectOperation _s3InitiateRestoreObject;
         private S3SetObjectAclOperation _s3PutObjectAcl;
         private S3CopyObjectOperation _s3PutObjectCopy;
@@ -60,6 +61,25 @@ namespace Amazon.S3Control.Model
         internal bool IsSetLambdaInvoke()
         {
             return this._lambdaInvoke != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3DeleteObjectTagging. 
+        /// <para>
+        /// Directs the specified job to execute a DELETE Object tagging call on every object
+        /// in the manifest.
+        /// </para>
+        /// </summary>
+        public S3DeleteObjectTaggingOperation S3DeleteObjectTagging
+        {
+            get { return this._s3DeleteObjectTagging; }
+            set { this._s3DeleteObjectTagging = value; }
+        }
+
+        // Check to see if S3DeleteObjectTagging property is set
+        internal bool IsSetS3DeleteObjectTagging()
+        {
+            return this._s3DeleteObjectTagging != null;
         }
 
         /// <summary>

@@ -61,6 +61,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.LambdaInvoke = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("S3DeleteObjectTagging", targetDepth))
+                    {
+                        var unmarshaller = S3DeleteObjectTaggingOperationUnmarshaller.Instance;
+                        unmarshalledObject.S3DeleteObjectTagging = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("S3InitiateRestoreObject", targetDepth))
                     {
                         var unmarshaller = S3InitiateRestoreObjectOperationUnmarshaller.Instance;

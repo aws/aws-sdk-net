@@ -31,9 +31,9 @@ namespace Amazon.S3Control.Model
     /// <summary>
     /// Container for the parameters to the GetStorageLensConfigurationTagging operation.
     /// Gets the tags of Amazon S3 Storage Lens configuration. For more information about
-    /// S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working
-    /// with Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service Developer
-    /// Guide</i>.
+    /// S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing
+    /// your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon
+    /// Simple Storage Service Developer Guide</i>.
     /// 
     ///  <note> 
     /// <para>

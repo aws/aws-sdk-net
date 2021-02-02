@@ -133,6 +133,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteEndElement();
                     }
                     
+                    if (publicRequest.Operation.S3DeleteObjectTagging != null) 
+                    {
+                        xmlWriter.WriteStartElement("S3DeleteObjectTagging", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                        xmlWriter.WriteEndElement();
+                    }
+                    
                     if (publicRequest.Operation.S3InitiateRestoreObject != null) 
                     {
                         xmlWriter.WriteStartElement("S3InitiateRestoreObject", "http://awss3control.amazonaws.com/doc/2018-08-20/");            

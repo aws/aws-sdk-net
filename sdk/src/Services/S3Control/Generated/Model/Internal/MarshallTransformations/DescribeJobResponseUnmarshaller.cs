@@ -45,6 +45,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             DescribeJobResponse response = new DescribeJobResponse();
+            context.AllowEmptyElementLookup.Add("S3DeleteObjectTagging");
             UnmarshallResult(context,response);
             
             return response;

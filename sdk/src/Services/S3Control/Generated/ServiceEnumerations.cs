@@ -627,6 +627,10 @@ namespace Amazon.S3Control
         /// </summary>
         public static readonly OperationName LambdaInvoke = new OperationName("LambdaInvoke");
         /// <summary>
+        /// Constant S3DeleteObjectTagging for OperationName
+        /// </summary>
+        public static readonly OperationName S3DeleteObjectTagging = new OperationName("S3DeleteObjectTagging");
+        /// <summary>
         /// Constant S3InitiateRestoreObject for OperationName
         /// </summary>
         public static readonly OperationName S3InitiateRestoreObject = new OperationName("S3InitiateRestoreObject");

@@ -61,6 +61,13 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// The Amazon Resource Name (ARN) for a manifest object.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Replacement must be made for object keys containing special characters (such as carriage
+        /// returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
+        /// XML related object key constraints</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2000)]
         public string ObjectArn

@@ -41,6 +41,12 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// A container for the bucket where the S3 Storage Lens metrics export will be located.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This bucket must be located in the same Region as the storage lens configuration.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public S3BucketDestination S3BucketDestination
