@@ -172,7 +172,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon MSK cluster storage
+        /// Amazon MSK broker storage
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -263,7 +263,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon MSK cluster storage
+        /// Amazon MSK broker storage
         /// </para>
         ///  </li> </ul>
         /// </summary>

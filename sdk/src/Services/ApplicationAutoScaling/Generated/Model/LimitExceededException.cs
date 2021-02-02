@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// A per-account resource limit is exceeded. For more information, see <a href="https://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html">Application
-    /// Auto Scaling Limits</a>.
+    /// A per-account resource limit is exceeded. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-limits.html">Application
+    /// Auto Scaling service quotas</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

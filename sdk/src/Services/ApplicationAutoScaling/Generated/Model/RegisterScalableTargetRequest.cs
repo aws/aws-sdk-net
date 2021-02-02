@@ -235,7 +235,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         /// If the service supports service-linked roles, Application Auto Scaling uses a service-linked
         /// role, which it creates if it does not yet exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application
-        /// Auto Scaling IAM Roles</a>.
+        /// Auto Scaling IAM roles</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -407,7 +407,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
-        /// and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// and resuming scaling</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public SuspendedState SuspendedState

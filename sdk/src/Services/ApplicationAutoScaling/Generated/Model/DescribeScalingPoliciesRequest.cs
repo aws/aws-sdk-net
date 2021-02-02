@@ -41,8 +41,8 @@ namespace Amazon.ApplicationAutoScaling.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-    /// Tracking Scaling Policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-    /// Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+    /// tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+    /// scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeScalingPoliciesRequest : AmazonApplicationAutoScalingRequest
@@ -105,6 +105,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The names of the scaling policies to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<string> PolicyNames
         {
             get { return this._policyNames; }
@@ -121,8 +122,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// The identifier of the resource associated with the scaling policy. This string consists
-        /// of the resource type and unique identifier. If you specify a scalable dimension, you
-        /// must also specify a resource ID.
+        /// of the resource type and unique identifier.
         /// </para>
         ///  <ul> <li> 
         /// <para>

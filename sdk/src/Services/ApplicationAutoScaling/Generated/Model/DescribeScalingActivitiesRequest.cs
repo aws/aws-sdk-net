@@ -95,8 +95,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// The identifier of the resource associated with the scaling activity. This string consists
-        /// of the resource type and unique identifier. If you specify a scalable dimension, you
-        /// must also specify a resource ID.
+        /// of the resource type and unique identifier.
         /// </para>
         ///  <ul> <li> 
         /// <para>

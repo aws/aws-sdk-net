@@ -41,7 +41,8 @@ namespace Amazon.ApplicationAutoScaling.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-    /// Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+    /// scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-additional-cli-commands.html">Managing
+    /// scheduled scaling</a> in the <i>Application Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeScheduledActionsRequest : AmazonApplicationAutoScalingRequest
@@ -102,8 +103,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// The identifier of the resource associated with the scheduled action. This string consists
-        /// of the resource type and unique identifier. If you specify a scalable dimension, you
-        /// must also specify a resource ID.
+        /// of the resource type and unique identifier.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -307,6 +307,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The names of the scheduled actions to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=50)]
         public List<string> ScheduledActionNames
         {
             get { return this._scheduledActionNames; }

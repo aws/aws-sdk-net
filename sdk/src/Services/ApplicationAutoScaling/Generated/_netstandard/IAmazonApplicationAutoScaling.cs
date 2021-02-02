@@ -80,7 +80,7 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon Managed Streaming for Apache Kafka cluster storage
+    /// Amazon Managed Streaming for Apache Kafka broker storage
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -146,8 +146,8 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#delete-step-scaling-policy">Delete
-        /// a Step Scaling Policy</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy">Delete
-        /// a Target Tracking Scaling Policy</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// a step scaling policy</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy">Delete
+        /// a target tracking scaling policy</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteScalingPolicy service method.</param>
@@ -188,8 +188,8 @@ namespace Amazon.ApplicationAutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html#delete-scheduled-action">Delete
-        /// a Scheduled Action</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-additional-cli-commands.html#delete-scheduled-action">Delete
+        /// a scheduled action</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteScheduledAction service method.</param>
@@ -357,8 +357,8 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-        /// Tracking Scaling Policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-        /// Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+        /// scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingPolicies service method.</param>
@@ -409,7 +409,8 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-        /// Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// scaling</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-additional-cli-commands.html">Managing
+        /// scheduled scaling</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledActions service method.</param>
@@ -475,8 +476,8 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-        /// Tracking Scaling Policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-        /// Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+        /// scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -507,8 +508,8 @@ namespace Amazon.ApplicationAutoScaling
         /// The service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.LimitExceededException">
-        /// A per-account resource limit is exceeded. For more information, see <a href="https://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html">Application
-        /// Auto Scaling Limits</a>.
+        /// A per-account resource limit is exceeded. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-limits.html">Application
+        /// Auto Scaling service quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ObjectNotFoundException">
         /// The specified object could not be found. For any operation that depends on the existence
@@ -533,6 +534,7 @@ namespace Amazon.ApplicationAutoScaling
         /// <summary>
         /// Creates or updates a scheduled action for an Application Auto Scaling scalable target.
         /// 
+        /// 
         ///  
         /// <para>
         /// Each scalable target is identified by a service namespace, resource ID, and scalable
@@ -543,7 +545,7 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// When start and end times are specified with a recurring schedule using a cron expression
-        /// or rates, they form the boundaries of when the recurring action starts and stops.
+        /// or rates, they form the boundaries for when the recurring action starts and stops.
         /// </para>
         ///  
         /// <para>
@@ -553,7 +555,7 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-        /// Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// scaling</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -577,8 +579,8 @@ namespace Amazon.ApplicationAutoScaling
         /// The service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.LimitExceededException">
-        /// A per-account resource limit is exceeded. For more information, see <a href="https://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html">Application
-        /// Auto Scaling Limits</a>.
+        /// A per-account resource limit is exceeded. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-limits.html">Application
+        /// Auto Scaling service quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ObjectNotFoundException">
         /// The specified object could not be found. For any operation that depends on the existence
@@ -646,8 +648,8 @@ namespace Amazon.ApplicationAutoScaling
         /// The service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.LimitExceededException">
-        /// A per-account resource limit is exceeded. For more information, see <a href="https://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html">Application
-        /// Auto Scaling Limits</a>.
+        /// A per-account resource limit is exceeded. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-limits.html">Application
+        /// Auto Scaling service quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
         /// An exception was thrown for a validation issue. Review the available parameters for

@@ -41,8 +41,8 @@ namespace Amazon.ApplicationAutoScaling.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#delete-step-scaling-policy">Delete
-    /// a Step Scaling Policy</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy">Delete
-    /// a Target Tracking Scaling Policy</a> in the <i>Application Auto Scaling User Guide</i>.
+    /// a step scaling policy</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy">Delete
+    /// a target tracking scaling policy</a> in the <i>Application Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeleteScalingPolicyRequest : AmazonApplicationAutoScalingRequest

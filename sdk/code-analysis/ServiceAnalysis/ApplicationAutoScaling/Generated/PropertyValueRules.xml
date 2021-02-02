@@ -96,6 +96,11 @@
     <pattern>(?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.PutScheduledActionRequest.Timezone</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationAutoScaling.Model.RegisterScalableTargetRequest.ResourceId</property>
     <min>1</min>
     <max>1600</max>
@@ -181,5 +186,10 @@
     <min>1</min>
     <max>256</max>
     <pattern>(?!((^[ ]+.*)|(.*([\u0000-\u001f]|[\u007f-\u009f]|[:/|])+.*)|(.*[ ]+$))).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationAutoScaling.Model.ScheduledAction.Timezone</property>
+    <min>1</min>
+    <max>1600</max>
   </property-value-rule>
 </property-value-rules>

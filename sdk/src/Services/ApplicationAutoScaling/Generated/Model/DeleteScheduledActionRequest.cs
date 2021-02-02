@@ -34,8 +34,8 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html#delete-scheduled-action">Delete
-    /// a Scheduled Action</a> in the <i>Application Auto Scaling User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-additional-cli-commands.html#delete-scheduled-action">Delete
+    /// a scheduled action</a> in the <i>Application Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeleteScheduledActionRequest : AmazonApplicationAutoScalingRequest

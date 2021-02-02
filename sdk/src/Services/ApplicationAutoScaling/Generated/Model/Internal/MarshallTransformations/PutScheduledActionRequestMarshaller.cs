@@ -121,6 +121,12 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StartTime);
                 }
 
+                if(publicRequest.IsSetTimezone())
+                {
+                    context.Writer.WritePropertyName("Timezone");
+                    context.Writer.Write(publicRequest.Timezone);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

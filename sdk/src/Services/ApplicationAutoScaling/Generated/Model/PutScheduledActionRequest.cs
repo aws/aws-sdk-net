@@ -32,6 +32,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// Container for the parameters to the PutScheduledAction operation.
     /// Creates or updates a scheduled action for an Application Auto Scaling scalable target.
     /// 
+    /// 
     ///  
     /// <para>
     /// Each scalable target is identified by a service namespace, resource ID, and scalable
@@ -42,7 +43,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     ///  
     /// <para>
     /// When start and end times are specified with a recurring schedule using a cron expression
-    /// or rates, they form the boundaries of when the recurring action starts and stops.
+    /// or rates, they form the boundaries for when the recurring action starts and stops.
     /// </para>
     ///  
     /// <para>
@@ -52,7 +53,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-    /// Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+    /// scaling</a> in the <i>Application Auto Scaling User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -72,11 +73,12 @@ namespace Amazon.ApplicationAutoScaling.Model
         private string _scheduledActionName;
         private ServiceNamespace _serviceNamespace;
         private DateTime? _startTime;
+        private string _timezone;
 
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The date and time for the recurring schedule to end.
+        /// The date and time for the recurring schedule to end, in UTC.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -333,7 +335,18 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// At expressions are useful for one-time schedules. Specify the time in UTC.
+        /// At expressions are useful for one-time schedules. Cron expressions are useful for
+        /// scheduled actions that run periodically at a specified date and time, and rate expressions
+        /// are useful for scheduled actions that run at a regular interval.
+        /// </para>
+        ///  
+        /// <para>
+        /// At and cron expressions use Universal Coordinated Time (UTC) by default.
+        /// </para>
+        ///  
+        /// <para>
+        /// The cron format consists of six fields separated by white spaces: [Minutes] [Hours]
+        /// [Day_of_Month] [Month] [Day_of_Week] [Year].
         /// </para>
         ///  
         /// <para>
@@ -343,14 +356,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For cron expressions, <i>fields</i> is a cron expression. The supported cron format
-        /// consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month]
-        /// [Month] [Day_of_Week] [Year].
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-        /// Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+        /// scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling
+        /// User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -409,7 +417,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The date and time for this scheduled action to start.
+        /// The date and time for this scheduled action to start, in UTC.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -422,6 +430,32 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timezone. 
+        /// <para>
+        /// Specifies the time zone used when setting a scheduled action by using an at or cron
+        /// expression. If a time zone is not provided, UTC is used by default.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are the canonical names of the IANA time zones supported by Joda-Time
+        /// (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+        /// see <a href="https://www.joda.org/joda-time/timezones.html">https://www.joda.org/joda-time/timezones.html</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1600)]
+        public string Timezone
+        {
+            get { return this._timezone; }
+            set { this._timezone = value; }
+        }
+
+        // Check to see if Timezone property is set
+        internal bool IsSetTimezone()
+        {
+            return this._timezone != null;
         }
 
     }

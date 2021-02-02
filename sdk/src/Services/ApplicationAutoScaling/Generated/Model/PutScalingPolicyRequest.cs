@@ -63,8 +63,8 @@ namespace Amazon.ApplicationAutoScaling.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-    /// Tracking Scaling Policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-    /// Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+    /// tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+    /// scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -124,8 +124,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-        /// Tracking Scaling Policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-        /// Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
+        /// scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
         public PolicyType PolicyType
