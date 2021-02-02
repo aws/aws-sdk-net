@@ -61,6 +61,13 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// The account that you want to leave must not be a delegated administrator account for
+    /// any AWS service enabled for your organization. If the account is a delegated administrator,
+    /// you must first change the delegated administrator account to another account that
+    /// is remaining in the organization.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// After the account leaves the organization, all tags that were attached to the account
     /// object in the organization are deleted. AWS accounts outside of an organization do
     /// not support tags.

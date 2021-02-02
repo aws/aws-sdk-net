@@ -48,8 +48,8 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-        /// Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+        /// For more information about ARNs in Organizations, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies">ARN
+        /// Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
         /// </para>
         /// </summary>
         public string Arn
