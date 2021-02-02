@@ -226,7 +226,7 @@ namespace Amazon.S3.Util
             if (uri == null)
                 throw new ArgumentNullException("uri");
 
-            if (uri.Host.EndsWith("amazonaws.com", StringComparison.OrdinalIgnoreCase) || uri.Host.EndsWith("amazonaws.com.cn", StringComparison.OrdinalIgnoreCase))
+            if (uri.IsAbsoluteUri && (uri.Host.EndsWith("amazonaws.com", StringComparison.OrdinalIgnoreCase) || uri.Host.EndsWith("amazonaws.com.cn", StringComparison.OrdinalIgnoreCase)))
             {
                 return EndpointRegexMatch.Match(uri.Host).Success;
             }
