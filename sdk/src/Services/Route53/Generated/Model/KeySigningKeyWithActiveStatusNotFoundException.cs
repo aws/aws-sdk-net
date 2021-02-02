@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A key signing key (KSK) with <code>ACTIVE</code> status wasn't found.
+    /// A key-signing key (KSK) with <code>ACTIVE</code> status wasn't found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

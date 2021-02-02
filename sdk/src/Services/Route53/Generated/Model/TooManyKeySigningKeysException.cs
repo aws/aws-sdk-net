@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// You've reached the limit for the number of key signing keys (KSKs). Remove at least
+    /// You've reached the limit for the number of key-signing keys (KSKs). Remove at least
     /// one KSK, and then try again.
     /// </summary>
     #if !NETSTANDARD

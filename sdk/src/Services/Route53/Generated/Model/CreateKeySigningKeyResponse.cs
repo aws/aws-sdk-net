@@ -56,7 +56,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property KeySigningKey. 
         /// <para>
-        /// The key signing key (KSK) that the request creates.
+        /// The key-signing key (KSK) that the request creates.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -75,7 +75,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The unique URL representing the new key signing key (KSK).
+        /// The unique URL representing the new key-signing key (KSK).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

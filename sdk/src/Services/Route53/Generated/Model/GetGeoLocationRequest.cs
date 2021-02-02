@@ -35,6 +35,11 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
+    /// Route 53 does not perform authorization for this API because it retrieves information
+    /// that is already available to the public.
+    /// </para>
+    ///  
+    /// <para>
     /// Use the following syntax to determine whether a continent is supported for geolocation:
     /// </para>
     ///  
@@ -140,15 +145,11 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property SubdivisionCode. 
         /// <para>
-        /// For <code>SubdivisionCode</code>, Amazon Route 53 supports only states of the United
-        /// States. For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix
+        /// The code for the subdivision, such as a particular state within the United States.
+        /// For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix
         /// B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service
-        /// website. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If you specify <code>subdivisioncode</code>, you must also specify <code>US</code>
-        /// for <code>CountryCode</code>. 
+        /// website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a>
+        /// API.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]

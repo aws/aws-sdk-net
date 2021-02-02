@@ -31,7 +31,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the DisableHostedZoneDNSSEC operation.
     /// Disables DNSSEC signing in a specific hosted zone. This action does not deactivate
-    /// any key signing keys (KSKs) that are active in the hosted zone.
+    /// any key-signing keys (KSKs) that are active in the hosted zone.
     /// </summary>
     public partial class DisableHostedZoneDNSSECRequest : AmazonRoute53Request
     {

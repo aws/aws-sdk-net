@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// The key signing key (KSK) that you specified can't be deactivated because it's the
+    /// The key-signing key (KSK) that you specified can't be deactivated because it's the
     /// only KSK for a currently-enabled DNSSEC. Disable DNSSEC signing, or add or enable
     /// another KSK.
     /// </summary>

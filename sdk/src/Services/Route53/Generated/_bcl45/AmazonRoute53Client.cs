@@ -267,7 +267,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Activates a key signing key (KSK) so that it can be used for signing by DNSSEC. This
+        /// Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC. This
         /// operation changes the KSK status to <code>ACTIVE</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ActivateKeySigningKey service method.</param>
@@ -278,7 +278,7 @@ namespace Amazon.Route53
         /// time that you did. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
@@ -288,7 +288,7 @@ namespace Amazon.Route53
         /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchKeySigningKeyException">
-        /// The specified key signing key (KSK) doesn't exist.
+        /// The specified key-signing key (KSK) doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">REST API Reference for ActivateKeySigningKey Operation</seealso>
         public virtual ActivateKeySigningKeyResponse ActivateKeySigningKey(ActivateKeySigningKeyRequest request)
@@ -302,7 +302,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Activates a key signing key (KSK) so that it can be used for signing by DNSSEC. This
+        /// Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC. This
         /// operation changes the KSK status to <code>ACTIVE</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ActivateKeySigningKey service method.</param>
@@ -316,7 +316,7 @@ namespace Amazon.Route53
         /// time that you did. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
@@ -326,7 +326,7 @@ namespace Amazon.Route53
         /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchKeySigningKeyException">
-        /// The specified key signing key (KSK) doesn't exist.
+        /// The specified key-signing key (KSK) doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey">REST API Reference for ActivateKeySigningKey Operation</seealso>
         public virtual Task<ActivateKeySigningKeyResponse> ActivateKeySigningKeyAsync(ActivateKeySigningKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1465,7 +1465,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Creates a new key signing key (KSK) associated with a hosted zone. You can only have
+        /// Creates a new key-signing key (KSK) associated with a hosted zone. You can only have
         /// two KSKs per hosted zone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKeySigningKey service method.</param>
@@ -1482,10 +1482,10 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyNameException">
-        /// The key signing key (KSK) name that you specified isn't a valid name.
+        /// The key-signing key (KSK) name that you specified isn't a valid name.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
@@ -1495,14 +1495,14 @@ namespace Amazon.Route53
         /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyAlreadyExistsException">
-        /// You've already created a key signing key (KSK) with this name or with the same customer
-        /// managed key (CMK) ARN.
+        /// You've already created a key-signing key (KSK) with this name or with the same customer
+        /// managed customer master key (CMK) ARN.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TooManyKeySigningKeysException">
-        /// You've reached the limit for the number of key signing keys (KSKs). Remove at least
+        /// You've reached the limit for the number of key-signing keys (KSKs). Remove at least
         /// one KSK, and then try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">REST API Reference for CreateKeySigningKey Operation</seealso>
@@ -1517,7 +1517,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Creates a new key signing key (KSK) associated with a hosted zone. You can only have
+        /// Creates a new key-signing key (KSK) associated with a hosted zone. You can only have
         /// two KSKs per hosted zone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKeySigningKey service method.</param>
@@ -1537,10 +1537,10 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyNameException">
-        /// The key signing key (KSK) name that you specified isn't a valid name.
+        /// The key-signing key (KSK) name that you specified isn't a valid name.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
@@ -1550,14 +1550,14 @@ namespace Amazon.Route53
         /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyAlreadyExistsException">
-        /// You've already created a key signing key (KSK) with this name or with the same customer
-        /// managed key (CMK) ARN.
+        /// You've already created a key-signing key (KSK) with this name or with the same customer
+        /// managed customer master key (CMK) ARN.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TooManyKeySigningKeysException">
-        /// You've reached the limit for the number of key signing keys (KSKs). Remove at least
+        /// You've reached the limit for the number of key-signing keys (KSKs). Remove at least
         /// one KSK, and then try again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey">REST API Reference for CreateKeySigningKey Operation</seealso>
@@ -2654,7 +2654,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Deactivates a key signing key (KSK) so that it will not be used for signing by DNSSEC.
+        /// Deactivates a key-signing key (KSK) so that it will not be used for signing by DNSSEC.
         /// This operation changes the KSK status to <code>INACTIVE</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeactivateKeySigningKey service method.</param>
@@ -2665,22 +2665,22 @@ namespace Amazon.Route53
         /// time that you did. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidSigningStatusException">
         /// Your hosted zone status isn't valid for this operation. In the hosted zone, change
         /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyInParentDSRecordException">
-        /// The key signing key (KSK) is specified in a parent DS record.
+        /// The key-signing key (KSK) is specified in a parent DS record.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyInUseException">
-        /// The key signing key (KSK) that you specified can't be deactivated because it's the
+        /// The key-signing key (KSK) that you specified can't be deactivated because it's the
         /// only KSK for a currently-enabled DNSSEC. Disable DNSSEC signing, or add or enable
         /// another KSK.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchKeySigningKeyException">
-        /// The specified key signing key (KSK) doesn't exist.
+        /// The specified key-signing key (KSK) doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">REST API Reference for DeactivateKeySigningKey Operation</seealso>
         public virtual DeactivateKeySigningKeyResponse DeactivateKeySigningKey(DeactivateKeySigningKeyRequest request)
@@ -2694,7 +2694,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Deactivates a key signing key (KSK) so that it will not be used for signing by DNSSEC.
+        /// Deactivates a key-signing key (KSK) so that it will not be used for signing by DNSSEC.
         /// This operation changes the KSK status to <code>INACTIVE</code>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeactivateKeySigningKey service method.</param>
@@ -2708,22 +2708,22 @@ namespace Amazon.Route53
         /// time that you did. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidSigningStatusException">
         /// Your hosted zone status isn't valid for this operation. In the hosted zone, change
         /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyInParentDSRecordException">
-        /// The key signing key (KSK) is specified in a parent DS record.
+        /// The key-signing key (KSK) is specified in a parent DS record.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyInUseException">
-        /// The key signing key (KSK) that you specified can't be deactivated because it's the
+        /// The key-signing key (KSK) that you specified can't be deactivated because it's the
         /// only KSK for a currently-enabled DNSSEC. Disable DNSSEC signing, or add or enable
         /// another KSK.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchKeySigningKeyException">
-        /// The specified key signing key (KSK) doesn't exist.
+        /// The specified key-signing key (KSK) doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey">REST API Reference for DeactivateKeySigningKey Operation</seealso>
         public virtual Task<DeactivateKeySigningKeyResponse> DeactivateKeySigningKeyAsync(DeactivateKeySigningKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3031,7 +3031,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Deletes a key signing key (KSK). Before you can delete a KSK, you must deactivate
+        /// Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate
         /// it. The KSK must be deactived before you can delete it regardless of whether the hosted
         /// zone is enabled for DNSSEC signing.
         /// </summary>
@@ -3043,7 +3043,7 @@ namespace Amazon.Route53
         /// time that you did. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
@@ -3053,7 +3053,7 @@ namespace Amazon.Route53
         /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchKeySigningKeyException">
-        /// The specified key signing key (KSK) doesn't exist.
+        /// The specified key-signing key (KSK) doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">REST API Reference for DeleteKeySigningKey Operation</seealso>
         public virtual DeleteKeySigningKeyResponse DeleteKeySigningKey(DeleteKeySigningKeyRequest request)
@@ -3067,7 +3067,7 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Deletes a key signing key (KSK). Before you can delete a KSK, you must deactivate
+        /// Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate
         /// it. The KSK must be deactived before you can delete it regardless of whether the hosted
         /// zone is enabled for DNSSEC signing.
         /// </summary>
@@ -3082,7 +3082,7 @@ namespace Amazon.Route53
         /// time that you did. Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
@@ -3092,7 +3092,7 @@ namespace Amazon.Route53
         /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchKeySigningKeyException">
-        /// The specified key signing key (KSK) doesn't exist.
+        /// The specified key-signing key (KSK) doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey">REST API Reference for DeleteKeySigningKey Operation</seealso>
         public virtual Task<DeleteKeySigningKeyResponse> DeleteKeySigningKeyAsync(DeleteKeySigningKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3568,7 +3568,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Disables DNSSEC signing in a specific hosted zone. This action does not deactivate
-        /// any key signing keys (KSKs) that are active in the hosted zone.
+        /// any key-signing keys (KSKs) that are active in the hosted zone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableHostedZoneDNSSEC service method.</param>
         /// 
@@ -3584,13 +3584,13 @@ namespace Amazon.Route53
         /// Parameter name is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyInParentDSRecordException">
-        /// The key signing key (KSK) is specified in a parent DS record.
+        /// The key-signing key (KSK) is specified in a parent DS record.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -3608,7 +3608,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Disables DNSSEC signing in a specific hosted zone. This action does not deactivate
-        /// any key signing keys (KSKs) that are active in the hosted zone.
+        /// any key-signing keys (KSKs) that are active in the hosted zone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableHostedZoneDNSSEC service method.</param>
         /// <param name="cancellationToken">
@@ -3627,13 +3627,13 @@ namespace Amazon.Route53
         /// Parameter name is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyInParentDSRecordException">
-        /// The key signing key (KSK) is specified in a parent DS record.
+        /// The key-signing key (KSK) is specified in a parent DS record.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -3809,13 +3809,13 @@ namespace Amazon.Route53
         /// Parameter name is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyWithActiveStatusNotFoundException">
-        /// A key signing key (KSK) with <code>ACTIVE</code> status wasn't found.
+        /// A key-signing key (KSK) with <code>ACTIVE</code> status wasn't found.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -3855,13 +3855,13 @@ namespace Amazon.Route53
         /// Parameter name is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyWithActiveStatusNotFoundException">
-        /// A key signing key (KSK) with <code>ACTIVE</code> status wasn't found.
+        /// A key-signing key (KSK) with <code>ACTIVE</code> status wasn't found.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -4040,7 +4040,10 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// <important> 
+        /// Route 53 does not perform authorization for this API because it retrieves information
+        /// that is already available to the public.
+        /// 
+        ///  <important> 
         /// <para>
         ///  <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json,
         /// which includes IP address ranges for all AWS services. For more information, see <a
@@ -4065,7 +4068,10 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// <important> 
+        /// Route 53 does not perform authorization for this API because it retrieves information
+        /// that is already available to the public.
+        /// 
+        ///  <important> 
         /// <para>
         ///  <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json,
         /// which includes IP address ranges for all AWS services. For more information, see <a
@@ -4097,8 +4103,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Returns information about DNSSEC for a specific hosted zone, including the key signing
-        /// keys (KSKs) and zone signing keys (ZSKs) in the hosted zone.
+        /// Returns information about DNSSEC for a specific hosted zone, including the key-signing
+        /// keys (KSKs) in the hosted zone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDNSSEC service method.</param>
         /// 
@@ -4121,8 +4127,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Returns information about DNSSEC for a specific hosted zone, including the key signing
-        /// keys (KSKs) and zone signing keys (ZSKs) in the hosted zone.
+        /// Returns information about DNSSEC for a specific hosted zone, including the key-signing
+        /// keys (KSKs) in the hosted zone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDNSSEC service method.</param>
         /// <param name="cancellationToken">
@@ -4155,6 +4161,11 @@ namespace Amazon.Route53
         /// Gets information about whether a specified geographic location is supported for Amazon
         /// Route 53 geolocation resource record sets.
         /// 
+        ///  
+        /// <para>
+        /// Route 53 does not perform authorization for this API because it retrieves information
+        /// that is already available to the public.
+        /// </para>
         ///  
         /// <para>
         /// Use the following syntax to determine whether a continent is supported for geolocation:
@@ -4210,6 +4221,11 @@ namespace Amazon.Route53
         /// Gets information about whether a specified geographic location is supported for Amazon
         /// Route 53 geolocation resource record sets.
         /// 
+        ///  
+        /// <para>
+        /// Route 53 does not perform authorization for this API because it retrieves information
+        /// that is already available to the public.
+        /// </para>
         ///  
         /// <para>
         /// Use the following syntax to determine whether a continent is supported for geolocation:
@@ -5081,6 +5097,11 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
+        /// Route 53 does not perform authorization for this API because it retrieves information
+        /// that is already available to the public.
+        /// </para>
+        ///  
+        /// <para>
         /// For a list of supported geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a>
         /// data type.
         /// </para>
@@ -5106,6 +5127,11 @@ namespace Amazon.Route53
         /// subdivisions for a country (for example, states or provinces), the subdivisions for
         /// that country are listed in alphabetical order immediately after the corresponding
         /// country.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route 53 does not perform authorization for this API because it retrieves information
+        /// that is already available to the public.
         /// </para>
         ///  
         /// <para>
@@ -5142,6 +5168,11 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
+        /// Route 53 does not perform authorization for this API because it retrieves information
+        /// that is already available to the public.
+        /// </para>
+        ///  
+        /// <para>
         /// For a list of supported geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a>
         /// data type.
         /// </para>
@@ -5169,6 +5200,11 @@ namespace Amazon.Route53
         /// subdivisions for a country (for example, states or provinces), the subdivisions for
         /// that country are listed in alphabetical order immediately after the corresponding
         /// country.
+        /// </para>
+        ///  
+        /// <para>
+        /// Route 53 does not perform authorization for this API because it retrieves information
+        /// that is already available to the public.
         /// </para>
         ///  
         /// <para>

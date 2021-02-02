@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A key signing key (KSK) is a complex type that represents a public/private key pair.
+    /// A key-signing key (KSK) is a complex type that represents a public/private key pair.
     /// The private key is used to generate a digital signature for the zone signing key (ZSK).
     /// The public key is stored in the DNS and is used to authenticate the ZSK. A KSK is
     /// always associated with a hosted zone; it cannot exist by itself.
@@ -56,8 +56,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// An alphanumeric string used to identify a key signing key (KSK). <code>Name</code>
-        /// must be unique for each key signing key in the same hosted zone.
+        /// A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers,
+        /// letters, and underscores (_). <code>Name</code> must be unique for each key-signing
+        /// key in the same hosted zone.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
@@ -76,9 +77,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property KmsArn. 
         /// <para>
-        /// The Amazon resource name (ARN) used to identify the customer managed key (CMK) in
-        /// AWS Key Management Service (KMS). The <code>KmsArn</code> must be unique for each
-        /// key signing key (KSK) in a single hosted zone.
+        /// The Amazon resource name (ARN) used to identify the customer managed customer master
+        /// key (CMK) in AWS Key Management Service (AWS KMS). The <code>KmsArn</code> must be
+        /// unique for each key-signing key (KSK) in a single hosted zone.
         /// </para>
         ///  
         /// <para>
@@ -123,9 +124,9 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
-        /// For more information about working with the customer managed key (CMK) in KMS, see
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
-        /// Key Management Service concepts</a>.
+        /// For more information about working with the customer managed CMK in AWS KMS, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key
+        /// Management Service concepts</a>.
         /// </para>
         /// </summary>
         public string KmsArn
@@ -143,7 +144,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Flag. 
         /// <para>
-        /// An integer that specifies how the key is used. For key signing key (KSK), this value
+        /// An integer that specifies how the key is used. For key-signing key (KSK), this value
         /// is always 257.
         /// </para>
         /// </summary>
@@ -338,7 +339,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// A string that represents the current key signing key (KSK) status.
+        /// A string that represents the current key-signing key (KSK) status.
         /// </para>
         ///  
         /// <para>
@@ -352,9 +353,15 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The KSK is not being used for signing.
         /// </para>
+        ///  </dd> <dt>DELETING</dt> <dd> 
+        /// <para>
+        /// The KSK is in the process of being deleted.
+        /// </para>
         ///  </dd> <dt>ACTION_NEEDED</dt> <dd> 
         /// <para>
-        /// There is an error in the KSK that requires you to take action to resolve.
+        /// There is a problem with the KSK that requires you to take action to resolve. For example,
+        /// the customer managed customer master key (CMK) might have been deleted, or the permissions
+        /// for the customer managed CMK might have been changed.
         /// </para>
         ///  </dd> <dt>INTERNAL_FAILURE</dt> <dd> 
         /// <para>
@@ -380,7 +387,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// The status message provided for the following key signing key (KSK) statuses: <code>ACTION_NEEDED</code>
+        /// The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code>
         /// or <code>INTERNAL_FAILURE</code>. The status message includes information about what
         /// the problem might be and steps that you can take to correct the issue.
         /// </para>
@@ -401,7 +408,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        /// The date when the key signing key (KSK) was created.
+        /// The date when the key-signing key (KSK) was created.
         /// </para>
         /// </summary>
         public DateTime CreatedDate
@@ -419,7 +426,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        /// The last time that the key signing key (KSK) was changed.
+        /// The last time that the key-signing key (KSK) was changed.
         /// </para>
         /// </summary>
         public DateTime LastModifiedDate

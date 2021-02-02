@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// The key signing key (KSK) name that you specified isn't a valid name.
+    /// The key-signing key (KSK) name that you specified isn't a valid name.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

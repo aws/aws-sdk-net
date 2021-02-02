@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// The specified key signing key (KSK) doesn't exist.
+    /// The specified key-signing key (KSK) doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

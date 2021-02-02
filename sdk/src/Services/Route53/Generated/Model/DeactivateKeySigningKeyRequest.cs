@@ -30,7 +30,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the DeactivateKeySigningKey operation.
-    /// Deactivates a key signing key (KSK) so that it will not be used for signing by DNSSEC.
+    /// Deactivates a key-signing key (KSK) so that it will not be used for signing by DNSSEC.
     /// This operation changes the KSK status to <code>INACTIVE</code>.
     /// </summary>
     public partial class DeactivateKeySigningKeyRequest : AmazonRoute53Request
@@ -60,7 +60,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// An alphanumeric string used to identify a key signing key (KSK).
+        /// A string used to identify a key-signing key (KSK).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=128)]

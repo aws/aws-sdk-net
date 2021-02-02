@@ -45,9 +45,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// For the current list of CloudWatch regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon
-        /// CloudWatch</a> in the <i>AWS Service Endpoints</i> chapter of the <i>Amazon Web Services
-        /// General Reference</i>.
+        /// For the current list of CloudWatch regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/cw_region.html">Amazon
+        /// CloudWatch endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

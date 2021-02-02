@@ -30,7 +30,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateKeySigningKey operation.
-    /// Creates a new key signing key (KSK) associated with a hosted zone. You can only have
+    /// Creates a new key-signing key (KSK) associated with a hosted zone. You can only have
     /// two KSKs per hosted zone.
     /// </summary>
     public partial class CreateKeySigningKeyRequest : AmazonRoute53Request
@@ -82,14 +82,15 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property KeyManagementServiceArn. 
         /// <para>
-        /// The Amazon resource name (ARN) for a customer managed key (CMK) in AWS Key Management
-        /// Service (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key
-        /// signing key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code>
-        /// that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>. 
+        /// The Amazon resource name (ARN) for a customer managed customer master key (CMK) in
+        /// AWS Key Management Service (AWS KMS). The <code>KeyManagementServiceArn</code> must
+        /// be unique for each key-signing key (KSK) in a single hosted zone. To see an example
+        /// of <code>KeyManagementServiceArn</code> that grants the correct permissions for DNSSEC,
+        /// scroll down to <b>Example</b>. 
         /// </para>
         ///  
         /// <para>
-        /// You must configure the CMK as follows:
+        /// You must configure the customer managed CMK as follows:
         /// </para>
         ///  <dl> <dt>Status</dt> <dd> 
         /// <para>
@@ -130,8 +131,9 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
-        /// For more information about working with CMK in KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS
-        /// Key Management Service concepts</a>.
+        /// For more information about working with a customer managed CMK in AWS KMS, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key
+        /// Management Service concepts</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -150,8 +152,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// An alphanumeric string used to identify a key signing key (KSK). <code>Name</code>
-        /// must be unique for each key signing key in the same hosted zone.
+        /// A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers,
+        /// letters, and underscores (_). <code>Name</code> must be unique for each key-signing
+        /// key in the same hosted zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=128)]
@@ -170,7 +173,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// A string specifying the initial status of the key signing key (KSK). You can set the
+        /// A string specifying the initial status of the key-signing key (KSK). You can set the
         /// value to <code>ACTIVE</code> or <code>INACTIVE</code>.
         /// </para>
         /// </summary>

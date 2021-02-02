@@ -44,8 +44,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier that Amazon Route 53assigned to the health check when you created it.
-        /// When you add or update a resource record set, you use this value to specify which
+        /// The identifier that Amazon Route 53 assigned to the health check when you created
+        /// it. When you add or update a resource record set, you use this value to specify which
         /// health check to use. The value can be up to 64 characters long. 
         /// </para>
         /// </summary>

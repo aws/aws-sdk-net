@@ -30,7 +30,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the ActivateKeySigningKey operation.
-    /// Activates a key signing key (KSK) so that it can be used for signing by DNSSEC. This
+    /// Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC. This
     /// operation changes the KSK status to <code>ACTIVE</code>.
     /// </summary>
     public partial class ActivateKeySigningKeyRequest : AmazonRoute53Request
@@ -60,7 +60,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// An alphanumeric string used to identify a key signing key (KSK).
+        /// A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers,
+        /// letters, and underscores (_). <code>Name</code> must be unique for each key-signing
+        /// key in the same hosted zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=128)]

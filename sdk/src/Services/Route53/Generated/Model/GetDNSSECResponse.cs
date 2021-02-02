@@ -58,7 +58,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property KeySigningKeys. 
         /// <para>
-        /// The key signing keys (KSKs) in your account.
+        /// The key-signing keys (KSKs) in your account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

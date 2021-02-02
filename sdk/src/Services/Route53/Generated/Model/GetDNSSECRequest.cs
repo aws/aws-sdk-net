@@ -30,8 +30,8 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDNSSEC operation.
-    /// Returns information about DNSSEC for a specific hosted zone, including the key signing
-    /// keys (KSKs) and zone signing keys (ZSKs) in the hosted zone.
+    /// Returns information about DNSSEC for a specific hosted zone, including the key-signing
+    /// keys (KSKs) in the hosted zone.
     /// </summary>
     public partial class GetDNSSECRequest : AmazonRoute53Request
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// The key signing key (KSK) is specified in a parent DS record.
+    /// The key-signing key (KSK) is specified in a parent DS record.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
