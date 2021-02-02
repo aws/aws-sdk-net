@@ -1,3 +1,9 @@
+### 3.5.101.0 (2021-02-02 21:41 UTC)
+* S3 (3.5.8.0)
+	* Amazon S3 now supports AWS PrivateLink, providing direct access to S3 via a private endpoint within your virtual private network.
+* S3Control (3.5.5.0)
+	* Amazon S3 now supports AWS PrivateLink, providing direct access to S3 via a private endpoint within your virtual private network.
+
 ### 3.5.100.0 (2021-02-02 19:21 UTC)
 * ApplicationAutoScaling (3.5.3.0)
 	* With this release, scheduled actions of Application Auto Scaling can be created in the local time zone and automatically adjusted according to daylight saving changes.
