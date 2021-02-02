@@ -42,9 +42,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid styles: <code>VectorEsriLightGrayCanvas</code>, <code>VectorEsriLight</code>,
-        /// <code>VectorEsriStreets</code>, <code>VectorEsriNavigation</code>, <code>VectorEsriDarkGrayCanvas</code>,
-        /// <code>VectorEsriLightGrayCanvas</code>, <code>VectorHereBerlin</code> 
+        /// Valid styles: <code>VectorEsriStreets</code>, <code>VectorEsriTopographic</code>,
+        /// <code>VectorEsriNavigation</code>, <code>VectorEsriDarkGrayCanvas</code>, <code>VectorEsriLightGrayCanvas</code>,
+        /// <code>VectorHereBerlin</code>.
         /// </para>
         ///  <note> 
         /// <para>
