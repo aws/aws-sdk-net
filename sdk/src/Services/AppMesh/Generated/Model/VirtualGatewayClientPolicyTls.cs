@@ -33,9 +33,29 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class VirtualGatewayClientPolicyTls
     {
+        private VirtualGatewayClientTlsCertificate _certificate;
         private bool? _enforce;
         private List<int> _ports = new List<int>();
         private VirtualGatewayTlsValidationContext _validation;
+
+        /// <summary>
+        /// Gets and sets the property Certificate. 
+        /// <para>
+        /// A reference to an object that represents a virtual gateway's client's Transport Layer
+        /// Security (TLS) certificate.
+        /// </para>
+        /// </summary>
+        public VirtualGatewayClientTlsCertificate Certificate
+        {
+            get { return this._certificate; }
+            set { this._certificate = value; }
+        }
+
+        // Check to see if Certificate property is set
+        internal bool IsSetCertificate()
+        {
+            return this._certificate != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Enforce. 
@@ -77,7 +97,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Validation. 
         /// <para>
-        /// A reference to an object that represents a TLS validation context.
+        /// A reference to an object that represents a Transport Layer Security (TLS) validation
+        /// context.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

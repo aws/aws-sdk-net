@@ -45,6 +45,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ClientPolicyTls requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCertificate())
+            {
+                context.Writer.WritePropertyName("certificate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ClientTlsCertificateMarshaller.Instance;
+                marshaller.Marshall(requestObject.Certificate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEnforce())
             {
                 context.Writer.WritePropertyName("enforce");

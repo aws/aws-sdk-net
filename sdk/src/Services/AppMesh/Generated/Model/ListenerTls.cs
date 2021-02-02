@@ -35,11 +35,13 @@ namespace Amazon.AppMesh.Model
     {
         private ListenerTlsCertificate _certificate;
         private ListenerTlsMode _mode;
+        private ListenerTlsValidationContext _validation;
 
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// A reference to an object that represents a listener's TLS certificate.
+        /// A reference to an object that represents a listener's Transport Layer Security (TLS)
+        /// certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,6 +87,25 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetMode()
         {
             return this._mode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Validation. 
+        /// <para>
+        /// A reference to an object that represents a listener's Transport Layer Security (TLS)
+        /// validation context.
+        /// </para>
+        /// </summary>
+        public ListenerTlsValidationContext Validation
+        {
+            get { return this._validation; }
+            set { this._validation = value; }
+        }
+
+        // Check to see if Validation property is set
+        internal bool IsSetValidation()
+        {
+            return this._validation != null;
         }
 
     }

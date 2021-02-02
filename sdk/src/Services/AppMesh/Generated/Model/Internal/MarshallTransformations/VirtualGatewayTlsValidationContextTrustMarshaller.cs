@@ -67,6 +67,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSds())
+            {
+                context.Writer.WritePropertyName("sds");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VirtualGatewayTlsValidationContextSdsTrustMarshaller.Instance;
+                marshaller.Marshall(requestObject.Sds, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

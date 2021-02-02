@@ -35,12 +35,13 @@ namespace Amazon.AppMesh.Model
     {
         private VirtualGatewayTlsValidationContextAcmTrust _acm;
         private VirtualGatewayTlsValidationContextFileTrust _file;
+        private VirtualGatewayTlsValidationContextSdsTrust _sds;
 
         /// <summary>
         /// Gets and sets the property Acm. 
         /// <para>
-        /// A reference to an object that represents a TLS validation context trust for an AWS
-        /// Certicate Manager (ACM) certificate.
+        /// A reference to an object that represents a Transport Layer Security (TLS) validation
+        /// context trust for an AWS Certicate Manager (ACM) certificate.
         /// </para>
         /// </summary>
         public VirtualGatewayTlsValidationContextAcmTrust Acm
@@ -58,7 +59,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property File. 
         /// <para>
-        /// An object that represents a TLS validation context trust for a local file.
+        /// An object that represents a Transport Layer Security (TLS) validation context trust
+        /// for a local file.
         /// </para>
         /// </summary>
         public VirtualGatewayTlsValidationContextFileTrust File
@@ -71,6 +73,25 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetFile()
         {
             return this._file != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sds. 
+        /// <para>
+        /// A reference to an object that represents a virtual gateway's Transport Layer Security
+        /// (TLS) Secret Discovery Service validation context trust.
+        /// </para>
+        /// </summary>
+        public VirtualGatewayTlsValidationContextSdsTrust Sds
+        {
+            get { return this._sds; }
+            set { this._sds = value; }
+        }
+
+        // Check to see if Sds property is set
+        internal bool IsSetSds()
+        {
+            return this._sds != null;
         }
 
     }

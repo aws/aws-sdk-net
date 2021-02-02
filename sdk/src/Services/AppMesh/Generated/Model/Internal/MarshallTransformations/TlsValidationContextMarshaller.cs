@@ -45,6 +45,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TlsValidationContext requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetSubjectAlternativeNames())
+            {
+                context.Writer.WritePropertyName("subjectAlternativeNames");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SubjectAlternativeNamesMarshaller.Instance;
+                marshaller.Marshall(requestObject.SubjectAlternativeNames, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTrust())
             {
                 context.Writer.WritePropertyName("trust");

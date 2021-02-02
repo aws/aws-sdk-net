@@ -35,6 +35,7 @@ namespace Amazon.AppMesh.Model
     {
         private VirtualGatewayListenerTlsCertificate _certificate;
         private VirtualGatewayListenerTlsMode _mode;
+        private VirtualGatewayListenerTlsValidationContext _validation;
 
         /// <summary>
         /// Gets and sets the property Certificate. 
@@ -85,6 +86,25 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetMode()
         {
             return this._mode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Validation. 
+        /// <para>
+        /// A reference to an object that represents a virtual gateway's listener's Transport
+        /// Layer Security (TLS) validation context.
+        /// </para>
+        /// </summary>
+        public VirtualGatewayListenerTlsValidationContext Validation
+        {
+            get { return this._validation; }
+            set { this._validation = value; }
+        }
+
+        // Check to see if Validation property is set
+        internal bool IsSetValidation()
+        {
+            return this._validation != null;
         }
 
     }

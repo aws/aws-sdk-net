@@ -35,6 +35,7 @@ namespace Amazon.AppMesh.Model
     {
         private ListenerTlsAcmCertificate _acm;
         private ListenerTlsFileCertificate _file;
+        private ListenerTlsSdsCertificate _sds;
 
         /// <summary>
         /// Gets and sets the property Acm. 
@@ -70,6 +71,24 @@ namespace Amazon.AppMesh.Model
         internal bool IsSetFile()
         {
             return this._file != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sds. 
+        /// <para>
+        /// A reference to an object that represents a listener's Secret Discovery Service certificate.
+        /// </para>
+        /// </summary>
+        public ListenerTlsSdsCertificate Sds
+        {
+            get { return this._sds; }
+            set { this._sds = value; }
+        }
+
+        // Check to see if Sds property is set
+        internal bool IsSetSds()
+        {
+            return this._sds != null;
         }
 
     }

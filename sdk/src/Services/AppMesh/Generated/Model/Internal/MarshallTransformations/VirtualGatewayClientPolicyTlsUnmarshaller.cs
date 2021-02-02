@@ -64,6 +64,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("certificate", targetDepth))
+                {
+                    var unmarshaller = VirtualGatewayClientTlsCertificateUnmarshaller.Instance;
+                    unmarshalledObject.Certificate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("enforce", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

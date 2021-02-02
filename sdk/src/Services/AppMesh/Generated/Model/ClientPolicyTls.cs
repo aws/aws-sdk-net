@@ -33,9 +33,28 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class ClientPolicyTls
     {
+        private ClientTlsCertificate _certificate;
         private bool? _enforce;
         private List<int> _ports = new List<int>();
         private TlsValidationContext _validation;
+
+        /// <summary>
+        /// Gets and sets the property Certificate. 
+        /// <para>
+        /// A reference to an object that represents a client's TLS certificate.
+        /// </para>
+        /// </summary>
+        public ClientTlsCertificate Certificate
+        {
+            get { return this._certificate; }
+            set { this._certificate = value; }
+        }
+
+        // Check to see if Certificate property is set
+        internal bool IsSetCertificate()
+        {
+            return this._certificate != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Enforce. 

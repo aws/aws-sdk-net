@@ -33,12 +33,33 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class VirtualGatewayTlsValidationContext
     {
+        private SubjectAlternativeNames _subjectAlternativeNames;
         private VirtualGatewayTlsValidationContextTrust _trust;
+
+        /// <summary>
+        /// Gets and sets the property SubjectAlternativeNames. 
+        /// <para>
+        /// A reference to an object that represents the SANs for a virtual gateway's listener's
+        /// Transport Layer Security (TLS) validation context.
+        /// </para>
+        /// </summary>
+        public SubjectAlternativeNames SubjectAlternativeNames
+        {
+            get { return this._subjectAlternativeNames; }
+            set { this._subjectAlternativeNames = value; }
+        }
+
+        // Check to see if SubjectAlternativeNames property is set
+        internal bool IsSetSubjectAlternativeNames()
+        {
+            return this._subjectAlternativeNames != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Trust. 
         /// <para>
-        /// A reference to an object that represents a TLS validation context trust.
+        /// A reference to where to retrieve the trust chain when validating a peer’s Transport
+        /// Layer Security (TLS) certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

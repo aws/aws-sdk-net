@@ -76,6 +76,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("validation", targetDepth))
+                {
+                    var unmarshaller = VirtualGatewayListenerTlsValidationContextUnmarshaller.Instance;
+                    unmarshalledObject.Validation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

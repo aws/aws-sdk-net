@@ -76,6 +76,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                     unmarshalledObject.File = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sds", targetDepth))
+                {
+                    var unmarshaller = VirtualGatewayListenerTlsSdsCertificateUnmarshaller.Instance;
+                    unmarshalledObject.Sds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -64,6 +64,12 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("subjectAlternativeNames", targetDepth))
+                {
+                    var unmarshaller = SubjectAlternativeNamesUnmarshaller.Instance;
+                    unmarshalledObject.SubjectAlternativeNames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("trust", targetDepth))
                 {
                     var unmarshaller = VirtualGatewayTlsValidationContextTrustUnmarshaller.Instance;

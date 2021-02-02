@@ -62,6 +62,17 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Mode);
             }
 
+            if(requestObject.IsSetValidation())
+            {
+                context.Writer.WritePropertyName("validation");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ListenerTlsValidationContextMarshaller.Instance;
+                marshaller.Marshall(requestObject.Validation, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
