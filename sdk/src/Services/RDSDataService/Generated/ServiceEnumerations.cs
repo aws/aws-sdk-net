@@ -89,6 +89,10 @@ namespace Amazon.RDSDataService
         /// </summary>
         public static readonly TypeHint DECIMAL = new TypeHint("DECIMAL");
         /// <summary>
+        /// Constant JSON for TypeHint
+        /// </summary>
+        public static readonly TypeHint JSON = new TypeHint("JSON");
+        /// <summary>
         /// Constant TIME for TypeHint
         /// </summary>
         public static readonly TypeHint TIME = new TypeHint("TIME");
@@ -96,6 +100,10 @@ namespace Amazon.RDSDataService
         /// Constant TIMESTAMP for TypeHint
         /// </summary>
         public static readonly TypeHint TIMESTAMP = new TypeHint("TIMESTAMP");
+        /// <summary>
+        /// Constant UUID for TypeHint
+        /// </summary>
+        public static readonly TypeHint UUID = new TypeHint("UUID");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

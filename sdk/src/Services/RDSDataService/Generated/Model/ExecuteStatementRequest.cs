@@ -184,6 +184,11 @@ namespace Amazon.RDSDataService.Model
         /// <para>
         /// The name of the database schema.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, the <code>schema</code> parameter isn't supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
         public string Schema

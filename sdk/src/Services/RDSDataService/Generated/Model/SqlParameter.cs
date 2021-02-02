@@ -58,16 +58,28 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property TypeHint. 
         /// <para>
-        /// A hint that specifies the correct object type for data type mapping.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Values:</b> 
+        /// A hint that specifies the correct object type for data type mapping. Possible values
+        /// are as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>DATE</code> - The corresponding <code>String</code> parameter value is sent
+        /// as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent
         /// as an object of <code>DECIMAL</code> type to the database.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>JSON</code> - The corresponding <code>String</code> parameter value is sent
+        /// as an object of <code>JSON</code> type to the database.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TIME</code> - The corresponding <code>String</code> parameter value is sent
+        /// as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -77,13 +89,8 @@ namespace Amazon.RDSDataService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TIME</code> - The corresponding <code>String</code> parameter value is sent
-        /// as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DATE</code> - The corresponding <code>String</code> parameter value is sent
-        /// as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.
+        ///  <code>UUID</code> - The corresponding <code>String</code> parameter value is sent
+        /// as an object of <code>UUID</code> type to the database. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

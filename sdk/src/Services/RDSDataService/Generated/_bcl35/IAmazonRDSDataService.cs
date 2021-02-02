@@ -39,11 +39,7 @@ namespace Amazon.RDSDataService
     /// For more information about the Data Service API, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
     /// the Data API for Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// If you have questions or comments related to the Data API, send email to <a href="mailto:Rds-data-api-feedback@amazon.com">Rds-data-api-feedback@amazon.com</a>.
-    /// </para>
-    ///  </note>
+    /// 
     /// </para>
     /// </summary>
     public partial interface IAmazonRDSDataService : IAmazonService, IDisposable
