@@ -61,7 +61,7 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// If your account is the management account of an organization, use this parameter to
-        /// specify the member accounts for which you want to export recommendations.
+        /// specify the member account for which you want to export recommendations.
         /// </para>
         ///  
         /// <para>

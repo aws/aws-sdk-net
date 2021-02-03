@@ -172,9 +172,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation,
-        /// or there was an internal error. This finding reason code is part of the <code>Unavailable</code>
-        /// finding classification.
+        ///  <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation
+        /// because Compute Optimizer cannot generate a recommendation with a high degree of confidence.
+        /// This finding reason code is part of the <code>Unavailable</code> finding classification.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -51,12 +51,12 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The IDs of the AWS accounts for which to return instance recommendations.
+        /// The ID of the AWS account for which to return instance recommendations.
         /// </para>
         ///  
         /// <para>
         /// If your account is the management account of an organization, use this parameter to
-        /// specify the member accounts for which you want to return instance recommendations.
+        /// specify the member account for which you want to return instance recommendations.
         /// </para>
         ///  
         /// <para>
