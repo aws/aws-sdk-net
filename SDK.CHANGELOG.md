@@ -1,3 +1,25 @@
+### 3.5.102.0 (2021-02-03 19:18 UTC)
+* AuditManager (3.5.2.0)
+	* This release adds AccessDeniedException to GetServicesInScope API.
+* CodeBuild (3.5.3.24)
+	* Documentation updates for codebuild
+* ComputeOptimizer (3.5.3.10)
+	* Documentation updates for Compute Optimizer
+* CostExplorer (3.5.8.9)
+	* Clarify valid values for the filter parameter for certain APIs.
+* EC2 (3.5.30.0)
+	* EC2 Public IP now supports API for setting PTR records on Elastic IP address.
+* GlueDataBrew (3.5.2.0)
+	* This release adds the DescribeJobRun API to allow customers retrieve details of a given job run
+* IoTSiteWise (3.5.7.0)
+	* Update AccessPolicy API input to support IAM role for IAM mode. Iam role is added as part of accessPolicyIdentity.
+* Lambda (3.5.7.0)
+	* Support for creating Lambda Functions using 'nodejs14.x'
+* SecurityHub (3.5.5.0)
+	* Added a ProductArn parameter to DescribeProducts. ProductArn is used to identify the integration to return details for.
+* WorkMail (3.5.3.0)
+	* Increased maximum length of ipRanges values for Access Control Rules from 10 to 1024.
+
 ### 3.5.101.0 (2021-02-02 21:41 UTC)
 * S3 (3.5.8.0)
 	* Amazon S3 now supports AWS PrivateLink, providing direct access to S3 via a private endpoint within your virtual private network.
