@@ -436,7 +436,7 @@ namespace Amazon.Lambda.Model
         /// source.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=22)]
+        [AWSProperty(Min=0, Max=22)]
         public List<SourceAccessConfiguration> SourceAccessConfigurations
         {
             get { return this._sourceAccessConfigurations; }
@@ -510,8 +510,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TumblingWindowInSeconds. 
         /// <para>
-        /// (Streams) The duration of a processing window in seconds. The range is between 1 second
-        /// up to 15 minutes.
+        /// (Streams) The duration in seconds of a processing window. The range is between 1 second
+        /// up to 900 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=900)]

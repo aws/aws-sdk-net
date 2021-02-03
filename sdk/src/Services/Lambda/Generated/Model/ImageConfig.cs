@@ -30,7 +30,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Configuration values that override the container image Dockerfile settings. See <a
-    /// href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container settings</a>.
+    /// href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container
+    /// settings</a>.
     /// </summary>
     public partial class ImageConfig
     {

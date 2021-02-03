@@ -51,22 +51,22 @@ namespace Amazon.Lambda.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>VPC_SUBNET</code> - The subnets associated with your VPC. Lambda connects to
-        /// these subnets to fetch data from your Kafka cluster.
+        /// these subnets to fetch data from your Self-Managed Apache Kafka cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access to
-        /// your Kafka brokers.
+        /// your Self-Managed Apache Kafka brokers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL SCRAM-256
-        /// authentication of your Kafka brokers.
+        ///  <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key used
+        /// for SASL SCRAM-256 authentication of your Self-Managed Apache Kafka brokers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL SCRAM-512
-        /// authentication of your Kafka brokers.
+        ///  <code>SASL_SCRAM_512_AUTH</code> - The Secrets Manager ARN of your secret key used
+        /// for SASL SCRAM-512 authentication of your Self-Managed Apache Kafka brokers.
         /// </para>
         ///  </li> </ul>
         /// </summary>
