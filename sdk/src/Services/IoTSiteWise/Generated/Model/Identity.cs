@@ -42,6 +42,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class Identity
     {
         private GroupIdentity _group;
+        private IAMRoleIdentity _iamRole;
         private IAMUserIdentity _iamUser;
         private UserIdentity _user;
 
@@ -61,6 +62,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetGroup()
         {
             return this._group != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamRole. 
+        /// <para>
+        /// An IAM role identity.
+        /// </para>
+        /// </summary>
+        public IAMRoleIdentity IamRole
+        {
+            get { return this._iamRole; }
+            set { this._iamRole = value; }
+        }
+
+        // Check to see if IamRole property is set
+        internal bool IsSetIamRole()
+        {
+            return this._iamRole != null;
         }
 
         /// <summary>

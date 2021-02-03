@@ -29,11 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains an asset measurement property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements">Measurements</a>
-    /// in the <i>AWS IoT SiteWise User Guide</i>.
+    /// This is the response object from the CreatePresignedPortalUrl operation.
     /// </summary>
-    public partial class Measurement
+    public partial class CreatePresignedPortalUrlResponse : AmazonWebServiceResponse
     {
+        private string _presignedPortalUrl;
+
+        /// <summary>
+        /// Gets and sets the property PresignedPortalUrl.
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string PresignedPortalUrl
+        {
+            get { return this._presignedPortalUrl; }
+            set { this._presignedPortalUrl = value; }
+        }
+
+        // Check to see if PresignedPortalUrl property is set
+        internal bool IsSetPresignedPortalUrl()
+        {
+            return this._presignedPortalUrl != null;
+        }
 
     }
 }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Identity Object
+    /// Response Unmarshaller for IAMRoleIdentity Object
     /// </summary>  
-    public class IdentityUnmarshaller : IUnmarshaller<Identity, XmlUnmarshallerContext>, IUnmarshaller<Identity, JsonUnmarshallerContext>
+    public class IAMRoleIdentityUnmarshaller : IUnmarshaller<IAMRoleIdentity, XmlUnmarshallerContext>, IUnmarshaller<IAMRoleIdentity, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Identity IUnmarshaller<Identity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IAMRoleIdentity IUnmarshaller<IAMRoleIdentity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Identity Unmarshall(JsonUnmarshallerContext context)
+        public IAMRoleIdentity Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Identity unmarshalledObject = new Identity();
+            IAMRoleIdentity unmarshalledObject = new IAMRoleIdentity();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("group", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
-                    var unmarshaller = GroupIdentityUnmarshaller.Instance;
-                    unmarshalledObject.Group = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("iamRole", targetDepth))
-                {
-                    var unmarshaller = IAMRoleIdentityUnmarshaller.Instance;
-                    unmarshalledObject.IamRole = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("iamUser", targetDepth))
-                {
-                    var unmarshaller = IAMUserIdentityUnmarshaller.Instance;
-                    unmarshalledObject.IamUser = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("user", targetDepth))
-                {
-                    var unmarshaller = UserIdentityUnmarshaller.Instance;
-                    unmarshalledObject.User = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         }
 
 
-        private static IdentityUnmarshaller _instance = new IdentityUnmarshaller();        
+        private static IAMRoleIdentityUnmarshaller _instance = new IAMRoleIdentityUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IdentityUnmarshaller Instance
+        public static IAMRoleIdentityUnmarshaller Instance
         {
             get
             {
