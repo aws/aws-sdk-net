@@ -145,7 +145,7 @@ namespace Amazon.WorkMail.Model
         /// IPv4 CIDR ranges to include in the rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
+        [AWSProperty(Min=0, Max=1024)]
         public List<string> IpRanges
         {
             get { return this._ipRanges; }
@@ -204,7 +204,7 @@ namespace Amazon.WorkMail.Model
         /// IPv4 CIDR ranges to exclude from the rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
+        [AWSProperty(Min=0, Max=1024)]
         public List<string> NotIpRanges
         {
             get { return this._notIpRanges; }
