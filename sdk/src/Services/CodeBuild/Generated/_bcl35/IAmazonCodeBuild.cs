@@ -41,176 +41,6 @@ namespace Amazon.CodeBuild
     /// For more information about AWS CodeBuild, see the <i> <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">AWS
     /// CodeBuild User Guide</a>.</i> 
     /// </para>
-    ///  
-    /// <para>
-    /// AWS CodeBuild supports these operations:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <code>BatchDeleteBuilds</code>: Deletes one or more builds.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>BatchGetBuilds</code>: Gets information about one or more builds.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>BatchGetProjects</code>: Gets information about one or more build projects.
-    /// A <i>build project</i> defines how AWS CodeBuild runs a build. This includes information
-    /// such as where to get the source code to build, the build environment to use, the build
-    /// commands to run, and where to store the build output. A <i>build environment</i> is
-    /// a representation of operating system, programming language runtime, and tools that
-    /// AWS CodeBuild uses to run a build. You can add tags to build projects to help manage
-    /// your resources and costs.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>BatchGetReportGroups</code>: Returns an array of report groups. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>BatchGetReports</code>: Returns an array of reports. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>CreateProject</code>: Creates a build project.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>CreateReportGroup</code>: Creates a report group. A report group contains a
-    /// collection of reports. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has
-    /// its source code stored in a GitHub or Bitbucket repository, enables AWS CodeBuild
-    /// to start rebuilding the source code every time a code change is pushed to the repository.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>DeleteProject</code>: Deletes a build project.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>DeleteReport</code>: Deletes a report. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>DeleteReportGroup</code>: Deletes a report group. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>DeleteResourcePolicy</code>: Deletes a resource policy that is identified by
-    /// its resource ARN. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise,
-    /// or Bitbucket source credentials.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has
-    /// its source code stored in a GitHub or Bitbucket repository, stops AWS CodeBuild from
-    /// rebuilding the source code every time a code change is pushed to the repository.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>DescribeTestCases</code>: Returns a list of details about test cases for a
-    /// report. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>GetResourcePolicy</code>: Gets a resource policy that is identified by its
-    /// resource ARN. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ImportSourceCredentials</code>: Imports the source repository credentials for
-    /// an AWS CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise,
-    /// or Bitbucket repository.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>InvalidateProjectCache</code>: Resets the cache for a project.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ListBuilds</code>: Gets a list of build IDs, with each build ID representing
-    /// a single build.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ListBuildsForProject</code>: Gets a list of build IDs for the specified build
-    /// project, with each build ID representing a single build.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images that
-    /// are managed by AWS CodeBuild.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ListProjects</code>: Gets a list of build project names, with each build project
-    /// name representing a single build project.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ListReportGroups</code>: Gets a list ARNs for the report groups in the current
-    /// AWS account. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ListReports</code>: Gets a list ARNs for the reports in the current AWS account.
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ListReportsForReportGroup</code>: Returns a list of ARNs for the reports that
-    /// belong to a <code>ReportGroup</code>. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ListSharedProjects</code>: Gets a list of ARNs associated with projects shared
-    /// with the current AWS account or user.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ListSharedReportGroups</code>: Gets a list of ARNs associated with report groups
-    /// shared with the current AWS account or user
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code>
-    /// objects. Each <code>SourceCredentialsInfo</code> object includes the authentication
-    /// type, token ARN, and type of source provider for one set of credentials.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>PutResourcePolicy</code>: Stores a resource policy for the ARN of a <code>Project</code>
-    /// or <code>ReportGroup</code> object. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>StartBuild</code>: Starts running a build.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>StopBuild</code>: Attempts to stop running a build.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>UpdateProject</code>: Changes the settings of an existing build project.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>UpdateReportGroup</code>: Changes a report group.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonCodeBuild : IAmazonService, IDisposable
     {
@@ -1056,7 +886,7 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// 
+        /// Analyzes and accumulates test report values for the specified test reports.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReportGroupTrend service method.</param>
         /// 
@@ -1377,8 +1207,8 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Gets a list of build IDs for the specified build project, with each build ID representing
-        /// a single build.
+        /// Gets a list of build identifiers for the specified build project, with each build
+        /// identifier representing a single build.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBuildsForProject service method.</param>
         /// 

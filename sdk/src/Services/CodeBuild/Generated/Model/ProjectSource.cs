@@ -248,8 +248,16 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  Set to true to report the status of a build's start and finish to your source provider.
         /// This option is valid only when your source provider is GitHub, GitHub Enterprise,
-        /// or Bitbucket. If this is set and you use a different source provider, an invalidInputException
+        /// or Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code>
         /// is thrown. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To be able to report the build status to the source provider, the user associated
+        /// with the source provider must have write access to the repo. If the user does not
+        /// have write access, the build status cannot be updated. For more information, see <a
+        /// href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+        /// provider access</a> in the <i>AWS CodeBuild User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>

@@ -47,7 +47,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The ARN of a <code>ReportGroup</code>. 
+        /// The ARN of the <code>ReportGroup</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -66,7 +66,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Created. 
         /// <para>
-        ///  The date and time this <code>ReportGroup</code> was created. 
+        /// The date and time this <code>ReportGroup</code> was created. 
         /// </para>
         /// </summary>
         public DateTime Created
@@ -84,7 +84,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ExportConfig. 
         /// <para>
-        ///  Information about the destination where the raw data of this <code>ReportGroup</code>
+        /// Information about the destination where the raw data of this <code>ReportGroup</code>
         /// is exported. 
         /// </para>
         /// </summary>
@@ -103,7 +103,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
-        ///  The date and time this <code>ReportGroup</code> was last modified. 
+        /// The date and time this <code>ReportGroup</code> was last modified. 
         /// </para>
         /// </summary>
         public DateTime LastModified
@@ -121,7 +121,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of a <code>ReportGroup</code>. 
+        /// The name of the <code>ReportGroup</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=128)]
@@ -138,7 +138,23 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the report group. This property is read-only.
+        /// </para>
+        ///  
+        /// <para>
+        /// This can be one of the following values:
+        /// </para>
+        ///  <dl> <dt>ACTIVE</dt> <dd> 
+        /// <para>
+        /// The report group is active.
+        /// </para>
+        ///  </dd> <dt>DELETING</dt> <dd> 
+        /// <para>
+        /// The report group is in the process of being deleted.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public ReportGroupStatusType Status
         {
@@ -155,7 +171,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  A list of tag key and value pairs associated with this report group. 
+        /// A list of tag key and value pairs associated with this report group. 
         /// </para>
         ///  
         /// <para>
@@ -179,9 +195,17 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of the <code>ReportGroup</code>. The one valid value is <code>TEST</code>.
-        /// 
+        /// The type of the <code>ReportGroup</code>. This can be one of the following values:
         /// </para>
+        ///  <dl> <dt>CODE_COVERAGE</dt> <dd> 
+        /// <para>
+        /// The report group contains code coverage reports.
+        /// </para>
+        ///  </dd> <dt>TEST</dt> <dd> 
+        /// <para>
+        /// The report group contains test reports.
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         public ReportType Type
         {

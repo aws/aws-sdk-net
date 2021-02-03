@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// 
+    /// Contains the unmodified data for the report. For more information, see .
     /// </summary>
     public partial class ReportWithRawData
     {
@@ -37,7 +37,10 @@ namespace Amazon.CodeBuild.Model
         private string _reportArn;
 
         /// <summary>
-        /// Gets and sets the property Data.
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// The value of the requested data field from the report.
+        /// </para>
         /// </summary>
         public string Data
         {
@@ -52,7 +55,10 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReportArn.
+        /// Gets and sets the property ReportArn. 
+        /// <para>
+        /// The ARN of the report.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public string ReportArn

@@ -30,8 +30,8 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBuildsForProject operation.
-    /// Gets a list of build IDs for the specified build project, with each build ID representing
-    /// a single build.
+    /// Gets a list of build identifiers for the specified build project, with each build
+    /// identifier representing a single build.
     /// </summary>
     public partial class ListBuildsForProjectRequest : AmazonCodeBuildRequest
     {
@@ -83,7 +83,12 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The order to list build IDs. Valid values include:
+        /// The order to list results in. The results are sorted by build number, not the build
+        /// identifier.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -93,7 +98,11 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  <code>DESCENDING</code>: List the build IDs in descending order by build ID.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the project has more than 100 builds, setting the sort order will result in an
+        /// error. 
+        /// </para>
         /// </summary>
         public SortOrderType SortOrder
         {

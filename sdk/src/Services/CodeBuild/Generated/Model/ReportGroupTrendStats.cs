@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// 
+    /// Contains trend statistics for a set of reports. The actual values depend on the type
+    /// of trend being collected. For more information, see .
     /// </summary>
     public partial class ReportGroupTrendStats
     {
@@ -38,7 +39,10 @@ namespace Amazon.CodeBuild.Model
         private string _min;
 
         /// <summary>
-        /// Gets and sets the property Average.
+        /// Gets and sets the property Average. 
+        /// <para>
+        /// Contains the average of all values analyzed.
+        /// </para>
         /// </summary>
         public string Average
         {
@@ -53,7 +57,10 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Max.
+        /// Gets and sets the property Max. 
+        /// <para>
+        /// Contains the maximum value analyzed.
+        /// </para>
         /// </summary>
         public string Max
         {
@@ -68,7 +75,10 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Min.
+        /// Gets and sets the property Min. 
+        /// <para>
+        /// Contains the minimum value analyzed.
+        /// </para>
         /// </summary>
         public string Min
         {

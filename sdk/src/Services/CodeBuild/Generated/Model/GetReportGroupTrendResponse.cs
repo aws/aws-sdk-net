@@ -37,7 +37,10 @@ namespace Amazon.CodeBuild.Model
         private ReportGroupTrendStats _stats;
 
         /// <summary>
-        /// Gets and sets the property RawData.
+        /// Gets and sets the property RawData. 
+        /// <para>
+        /// An array that contains the raw data for each report.
+        /// </para>
         /// </summary>
         public List<ReportWithRawData> RawData
         {
@@ -52,7 +55,10 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Stats.
+        /// Gets and sets the property Stats. 
+        /// <para>
+        /// Contains the accumulated trend data.
+        /// </para>
         /// </summary>
         public ReportGroupTrendStats Stats
         {
