@@ -7287,11 +7287,45 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also deletes
-        /// the endpoint routes in the route tables that were associated with the endpoint. Deleting
-        /// an interface endpoint or a Gateway Load Balancer endpoint deletes the endpoint network
-        /// interfaces. Gateway Load Balancer endpoints can only be deleted if the routes that
-        /// are associated with the endpoint are deleted.
+        /// Deletes one or more specified VPC endpoints. You can delete any of the following types
+        /// of VPC endpoints. 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Gateway endpoint,
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Gateway Load Balancer endpoint,
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Interface endpoint
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following rules apply when you delete a VPC endpoint:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When you delete a gateway endpoint, we delete the endpoint routes in the route tables
+        /// that are associated with the endpoint.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you delete a Gateway Load Balancer endpoint, we delete the endpoint network interfaces.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only delete Gateway Load Balancer endpoints when the routes that are associated
+        /// with the endpoint are deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you delete an interface endpoint, we delete the endpoint network interfaces.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints service method.</param>
         /// 
@@ -7302,11 +7336,45 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also deletes
-        /// the endpoint routes in the route tables that were associated with the endpoint. Deleting
-        /// an interface endpoint or a Gateway Load Balancer endpoint deletes the endpoint network
-        /// interfaces. Gateway Load Balancer endpoints can only be deleted if the routes that
-        /// are associated with the endpoint are deleted.
+        /// Deletes one or more specified VPC endpoints. You can delete any of the following types
+        /// of VPC endpoints. 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Gateway endpoint,
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Gateway Load Balancer endpoint,
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Interface endpoint
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following rules apply when you delete a VPC endpoint:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When you delete a gateway endpoint, we delete the endpoint routes in the route tables
+        /// that are associated with the endpoint.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you delete a Gateway Load Balancer endpoint, we delete the endpoint network interfaces.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only delete Gateway Load Balancer endpoints when the routes that are associated
+        /// with the endpoint are deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you delete an interface endpoint, we delete the endpoint network interfaces.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints service method.</param>
         /// <param name="cancellationToken">
@@ -7958,6 +8026,38 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeAddresses service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         Task<DescribeAddressesResponse> DescribeAddressesAsync(DescribeAddressesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAddressesAttribute
+
+
+        /// <summary>
+        /// Describes the attributes of the specified Elastic IP addresses. For requirements,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+        /// reverse DNS for email applications</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddressesAttribute service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAddressesAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">REST API Reference for DescribeAddressesAttribute Operation</seealso>
+        DescribeAddressesAttributeResponse DescribeAddressesAttribute(DescribeAddressesAttributeRequest request);
+
+
+
+        /// <summary>
+        /// Describes the attributes of the specified Elastic IP addresses. For requirements,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+        /// reverse DNS for email applications</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddressesAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAddressesAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">REST API Reference for DescribeAddressesAttribute Operation</seealso>
+        Task<DescribeAddressesAttributeResponse> DescribeAddressesAttributeAsync(DescribeAddressesAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -13834,12 +13934,12 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When the service provider and the consumer have different accounts multiple Availability
+        /// When the service provider and the consumer have different accounts in multiple Availability
         /// Zones, and the consumer views the VPC endpoint service information, the response only
         /// includes the common Availability Zones. For example, when the service provider account
         /// uses <code>us-east-1a</code> and <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code>
-        /// and us-east-1a and us-east-1b, the response includes the VPC endpoint services in
-        /// the common Availability Zone, <code>us-east-1a</code>.
+        /// and <code>us-east-1b</code>, the response includes the VPC endpoint services in the
+        /// common Availability Zone, <code>us-east-1a</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServices service method.</param>
@@ -13855,12 +13955,12 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When the service provider and the consumer have different accounts multiple Availability
+        /// When the service provider and the consumer have different accounts in multiple Availability
         /// Zones, and the consumer views the VPC endpoint service information, the response only
         /// includes the common Availability Zones. For example, when the service provider account
         /// uses <code>us-east-1a</code> and <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code>
-        /// and us-east-1a and us-east-1b, the response includes the VPC endpoint services in
-        /// the common Availability Zone, <code>us-east-1a</code>.
+        /// and <code>us-east-1b</code>, the response includes the VPC endpoint services in the
+        /// common Availability Zone, <code>us-east-1a</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServices service method.</param>
@@ -16401,6 +16501,38 @@ namespace Amazon.EC2
         /// <returns>The response from the ImportVolume service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">REST API Reference for ImportVolume Operation</seealso>
         Task<ImportVolumeResponse> ImportVolumeAsync(ImportVolumeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyAddressAttribute
+
+
+        /// <summary>
+        /// Modifies an attribute of the specified Elastic IP address. For requirements, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+        /// reverse DNS for email applications</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAddressAttribute service method.</param>
+        /// 
+        /// <returns>The response from the ModifyAddressAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">REST API Reference for ModifyAddressAttribute Operation</seealso>
+        ModifyAddressAttributeResponse ModifyAddressAttribute(ModifyAddressAttributeRequest request);
+
+
+
+        /// <summary>
+        /// Modifies an attribute of the specified Elastic IP address. For requirements, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+        /// reverse DNS for email applications</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAddressAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyAddressAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">REST API Reference for ModifyAddressAttribute Operation</seealso>
+        Task<ModifyAddressAttributeResponse> ModifyAddressAttributeAsync(ModifyAddressAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -20049,6 +20181,36 @@ namespace Amazon.EC2
         /// <returns>The response from the RequestSpotInstances service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">REST API Reference for RequestSpotInstances Operation</seealso>
         Task<RequestSpotInstancesResponse> RequestSpotInstancesAsync(RequestSpotInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ResetAddressAttribute
+
+
+        /// <summary>
+        /// Resets the attribute of the specified IP address. For requirements, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+        /// reverse DNS for email applications</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetAddressAttribute service method.</param>
+        /// 
+        /// <returns>The response from the ResetAddressAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">REST API Reference for ResetAddressAttribute Operation</seealso>
+        ResetAddressAttributeResponse ResetAddressAttribute(ResetAddressAttributeRequest request);
+
+
+
+        /// <summary>
+        /// Resets the attribute of the specified IP address. For requirements, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+        /// reverse DNS for email applications</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetAddressAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResetAddressAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">REST API Reference for ResetAddressAttribute Operation</seealso>
+        Task<ResetAddressAttributeResponse> ResetAddressAttributeAsync(ResetAddressAttributeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

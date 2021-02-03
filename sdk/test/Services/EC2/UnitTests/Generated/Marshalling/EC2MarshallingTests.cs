@@ -3807,6 +3807,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeAddressesAttributeMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAddressesAttribute");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAddressesAttributeRequest>();
+            var marshaller = new DescribeAddressesAttributeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeAddressesAttributeResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeAddressesAttributeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeAggregateIdFormatMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeAggregateIdFormat");
@@ -7967,6 +7991,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void ModifyAddressAttributeMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyAddressAttribute");
+
+            var request = InstantiateClassGenerator.Execute<ModifyAddressAttributeRequest>();
+            var marshaller = new ModifyAddressAttributeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyAddressAttributeResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyAddressAttributeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void ModifyAvailabilityZoneGroupMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyAvailabilityZoneGroup");
@@ -9568,6 +9616,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = RequestSpotInstancesResponseUnmarshaller.Instance.Unmarshall(context)
                 as RequestSpotInstancesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ResetAddressAttributeMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResetAddressAttribute");
+
+            var request = InstantiateClassGenerator.Execute<ResetAddressAttributeRequest>();
+            var marshaller = new ResetAddressAttributeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ResetAddressAttributeResponseUnmarshaller.Instance.Unmarshall(context)
+                as ResetAddressAttributeResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

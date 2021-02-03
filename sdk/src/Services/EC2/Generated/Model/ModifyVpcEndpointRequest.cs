@@ -130,6 +130,11 @@ namespace Amazon.EC2.Model
         /// (Interface endpoint) Indicates whether a private hosted zone is associated with the
         /// VPC.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Private DNS is not supported for Amazon S3 interface endpoints.
+        /// </para>
+        ///  </important>
         /// </summary>
         public bool PrivateDnsEnabled
         {

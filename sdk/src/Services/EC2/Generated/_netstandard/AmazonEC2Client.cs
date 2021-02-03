@@ -6958,11 +6958,45 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also deletes
-        /// the endpoint routes in the route tables that were associated with the endpoint. Deleting
-        /// an interface endpoint or a Gateway Load Balancer endpoint deletes the endpoint network
-        /// interfaces. Gateway Load Balancer endpoints can only be deleted if the routes that
-        /// are associated with the endpoint are deleted.
+        /// Deletes one or more specified VPC endpoints. You can delete any of the following types
+        /// of VPC endpoints. 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Gateway endpoint,
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Gateway Load Balancer endpoint,
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Interface endpoint
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following rules apply when you delete a VPC endpoint:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When you delete a gateway endpoint, we delete the endpoint routes in the route tables
+        /// that are associated with the endpoint.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you delete a Gateway Load Balancer endpoint, we delete the endpoint network interfaces.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only delete Gateway Load Balancer endpoints when the routes that are associated
+        /// with the endpoint are deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you delete an interface endpoint, we delete the endpoint network interfaces.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints service method.</param>
         /// <param name="cancellationToken">
@@ -7556,6 +7590,42 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeAddressesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAddressesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAddressesAttribute
+
+        internal virtual DescribeAddressesAttributeResponse DescribeAddressesAttribute(DescribeAddressesAttributeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAddressesAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAddressesAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAddressesAttributeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the attributes of the specified Elastic IP addresses. For requirements,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+        /// reverse DNS for email applications</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddressesAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAddressesAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">REST API Reference for DescribeAddressesAttribute Operation</seealso>
+        public virtual Task<DescribeAddressesAttributeResponse> DescribeAddressesAttributeAsync(DescribeAddressesAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAddressesAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAddressesAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAddressesAttributeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -12997,12 +13067,12 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When the service provider and the consumer have different accounts multiple Availability
+        /// When the service provider and the consumer have different accounts in multiple Availability
         /// Zones, and the consumer views the VPC endpoint service information, the response only
         /// includes the common Availability Zones. For example, when the service provider account
         /// uses <code>us-east-1a</code> and <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code>
-        /// and us-east-1a and us-east-1b, the response includes the VPC endpoint services in
-        /// the common Availability Zone, <code>us-east-1a</code>.
+        /// and <code>us-east-1b</code>, the response includes the VPC endpoint services in the
+        /// common Availability Zone, <code>us-east-1a</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServices service method.</param>
@@ -15558,6 +15628,42 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ImportVolumeResponseUnmarshaller.Instance;
 
             return InvokeAsync<ImportVolumeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyAddressAttribute
+
+        internal virtual ModifyAddressAttributeResponse ModifyAddressAttribute(ModifyAddressAttributeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyAddressAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyAddressAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyAddressAttributeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies an attribute of the specified Elastic IP address. For requirements, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+        /// reverse DNS for email applications</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAddressAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyAddressAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">REST API Reference for ModifyAddressAttribute Operation</seealso>
+        public virtual Task<ModifyAddressAttributeResponse> ModifyAddressAttributeAsync(ModifyAddressAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyAddressAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyAddressAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyAddressAttributeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -18782,6 +18888,41 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = RequestSpotInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<RequestSpotInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ResetAddressAttribute
+
+        internal virtual ResetAddressAttributeResponse ResetAddressAttribute(ResetAddressAttributeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetAddressAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetAddressAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<ResetAddressAttributeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Resets the attribute of the specified IP address. For requirements, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+        /// reverse DNS for email applications</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetAddressAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ResetAddressAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">REST API Reference for ResetAddressAttribute Operation</seealso>
+        public virtual Task<ResetAddressAttributeResponse> ResetAddressAttributeAsync(ResetAddressAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ResetAddressAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ResetAddressAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResetAddressAttributeResponse>(request, options, cancellationToken);
         }
 
         #endregion

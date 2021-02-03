@@ -7576,11 +7576,45 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes one or more specified VPC endpoints. Deleting a gateway endpoint also deletes
-        /// the endpoint routes in the route tables that were associated with the endpoint. Deleting
-        /// an interface endpoint or a Gateway Load Balancer endpoint deletes the endpoint network
-        /// interfaces. Gateway Load Balancer endpoints can only be deleted if the routes that
-        /// are associated with the endpoint are deleted.
+        /// Deletes one or more specified VPC endpoints. You can delete any of the following types
+        /// of VPC endpoints. 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Gateway endpoint,
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Gateway Load Balancer endpoint,
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Interface endpoint
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following rules apply when you delete a VPC endpoint:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When you delete a gateway endpoint, we delete the endpoint routes in the route tables
+        /// that are associated with the endpoint.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you delete a Gateway Load Balancer endpoint, we delete the endpoint network interfaces.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only delete Gateway Load Balancer endpoints when the routes that are associated
+        /// with the endpoint are deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you delete an interface endpoint, we delete the endpoint network interfaces.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints service method.</param>
         /// 
@@ -8241,6 +8275,48 @@ namespace Amazon.EC2
         /// <returns>Returns a  DescribeAddressesResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         DescribeAddressesResponse EndDescribeAddresses(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeAddressesAttribute
+
+
+        /// <summary>
+        /// Describes the attributes of the specified Elastic IP addresses. For requirements,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+        /// reverse DNS for email applications</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddressesAttribute service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAddressesAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">REST API Reference for DescribeAddressesAttribute Operation</seealso>
+        DescribeAddressesAttributeResponse DescribeAddressesAttribute(DescribeAddressesAttributeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAddressesAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAddressesAttribute operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAddressesAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">REST API Reference for DescribeAddressesAttribute Operation</seealso>
+        IAsyncResult BeginDescribeAddressesAttribute(DescribeAddressesAttributeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAddressesAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAddressesAttribute.</param>
+        /// 
+        /// <returns>Returns a  DescribeAddressesAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressesAttribute">REST API Reference for DescribeAddressesAttribute Operation</seealso>
+        DescribeAddressesAttributeResponse EndDescribeAddressesAttribute(IAsyncResult asyncResult);
 
         #endregion
         
@@ -14024,12 +14100,12 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// When the service provider and the consumer have different accounts multiple Availability
+        /// When the service provider and the consumer have different accounts in multiple Availability
         /// Zones, and the consumer views the VPC endpoint service information, the response only
         /// includes the common Availability Zones. For example, when the service provider account
         /// uses <code>us-east-1a</code> and <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code>
-        /// and us-east-1a and us-east-1b, the response includes the VPC endpoint services in
-        /// the common Availability Zone, <code>us-east-1a</code>.
+        /// and <code>us-east-1b</code>, the response includes the VPC endpoint services in the
+        /// common Availability Zone, <code>us-east-1a</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServices service method.</param>
@@ -16930,6 +17006,48 @@ namespace Amazon.EC2
         /// <returns>Returns a  ImportVolumeResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">REST API Reference for ImportVolume Operation</seealso>
         ImportVolumeResponse EndImportVolume(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyAddressAttribute
+
+
+        /// <summary>
+        /// Modifies an attribute of the specified Elastic IP address. For requirements, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+        /// reverse DNS for email applications</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAddressAttribute service method.</param>
+        /// 
+        /// <returns>The response from the ModifyAddressAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">REST API Reference for ModifyAddressAttribute Operation</seealso>
+        ModifyAddressAttributeResponse ModifyAddressAttribute(ModifyAddressAttributeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyAddressAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAddressAttribute operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyAddressAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">REST API Reference for ModifyAddressAttribute Operation</seealso>
+        IAsyncResult BeginModifyAddressAttribute(ModifyAddressAttributeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyAddressAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyAddressAttribute.</param>
+        /// 
+        /// <returns>Returns a  ModifyAddressAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAddressAttribute">REST API Reference for ModifyAddressAttribute Operation</seealso>
+        ModifyAddressAttributeResponse EndModifyAddressAttribute(IAsyncResult asyncResult);
 
         #endregion
         
@@ -20574,6 +20692,47 @@ namespace Amazon.EC2
         /// <returns>Returns a  RequestSpotInstancesResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">REST API Reference for RequestSpotInstances Operation</seealso>
         RequestSpotInstancesResponse EndRequestSpotInstances(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ResetAddressAttribute
+
+
+        /// <summary>
+        /// Resets the attribute of the specified IP address. For requirements, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using
+        /// reverse DNS for email applications</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetAddressAttribute service method.</param>
+        /// 
+        /// <returns>The response from the ResetAddressAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">REST API Reference for ResetAddressAttribute Operation</seealso>
+        ResetAddressAttributeResponse ResetAddressAttribute(ResetAddressAttributeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetAddressAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetAddressAttribute operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetAddressAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">REST API Reference for ResetAddressAttribute Operation</seealso>
+        IAsyncResult BeginResetAddressAttribute(ResetAddressAttributeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetAddressAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetAddressAttribute.</param>
+        /// 
+        /// <returns>Returns a  ResetAddressAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetAddressAttribute">REST API Reference for ResetAddressAttribute Operation</seealso>
+        ResetAddressAttributeResponse EndResetAddressAttribute(IAsyncResult asyncResult);
 
         #endregion
         

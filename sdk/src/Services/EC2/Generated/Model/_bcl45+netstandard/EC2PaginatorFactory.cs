@@ -37,6 +37,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeAddressesAttribute operation
+        ///</summary>
+        public IDescribeAddressesAttributePaginator DescribeAddressesAttribute(DescribeAddressesAttributeRequest request) 
+        {
+            return new DescribeAddressesAttributePaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeByoipCidrs operation
         ///</summary>
         public IDescribeByoipCidrsPaginator DescribeByoipCidrs(DescribeByoipCidrsRequest request) 
