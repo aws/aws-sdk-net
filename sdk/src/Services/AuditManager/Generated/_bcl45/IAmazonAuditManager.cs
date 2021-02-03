@@ -1701,6 +1701,9 @@ namespace Amazon.AuditManager
         /// <param name="request">Container for the necessary parameters to execute the GetServicesInScope service method.</param>
         /// 
         /// <returns>The response from the GetServicesInScope service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
         /// later.
@@ -1722,6 +1725,9 @@ namespace Amazon.AuditManager
         /// </param>
         /// 
         /// <returns>The response from the GetServicesInScope service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
         /// An internal service error occurred during the processing of your request. Try again
         /// later.
