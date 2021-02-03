@@ -82,7 +82,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// Provides details about an action that was detected for the finding.
+        /// Provides details about an action that affects or that was taken on a resource.
         /// </para>
         /// </summary>
         public Action Action

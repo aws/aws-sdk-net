@@ -1661,8 +1661,18 @@ namespace Amazon.SecurityHub
         #region  DescribeProducts
 
         /// <summary>
-        /// Returns information about the available products that you can subscribe to and integrate
-        /// with Security Hub in order to consolidate findings.
+        /// Returns information about product integrations in Security Hub.
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally provide an integration ARN. If you provide an integration ARN,
+        /// then the results only include that integration.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not provide an integration ARN, then the results include all of the available
+        /// product integrations. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProducts service method.</param>
         /// 

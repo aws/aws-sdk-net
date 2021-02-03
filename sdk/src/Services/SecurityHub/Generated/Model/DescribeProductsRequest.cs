@@ -30,13 +30,24 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProducts operation.
-    /// Returns information about the available products that you can subscribe to and integrate
-    /// with Security Hub in order to consolidate findings.
+    /// Returns information about product integrations in Security Hub.
+    /// 
+    ///  
+    /// <para>
+    /// You can optionally provide an integration ARN. If you provide an integration ARN,
+    /// then the results only include that integration.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you do not provide an integration ARN, then the results include all of the available
+    /// product integrations. 
+    /// </para>
     /// </summary>
     public partial class DescribeProductsRequest : AmazonSecurityHubRequest
     {
         private int? _maxResults;
         private string _nextToken;
+        private string _productArn;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -79,6 +90,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductArn. 
+        /// <para>
+        /// The ARN of the integration to return.
+        /// </para>
+        /// </summary>
+        public string ProductArn
+        {
+            get { return this._productArn; }
+            set { this._productArn = value; }
+        }
+
+        // Check to see if ProductArn property is set
+        internal bool IsSetProductArn()
+        {
+            return this._productArn != null;
         }
 
     }
