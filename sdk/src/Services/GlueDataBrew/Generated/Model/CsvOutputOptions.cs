@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
-    /// Options that define how DataBrew will write a Csv file a.
+    /// Options that define how DataBrew will write a Csv file.
     /// </summary>
     public partial class CsvOutputOptions
     {

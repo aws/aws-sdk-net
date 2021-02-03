@@ -929,6 +929,46 @@ namespace Amazon.GlueDataBrew
 
         #endregion
         
+        #region  DescribeJobRun
+
+        internal virtual DescribeJobRunResponse DescribeJobRun(DescribeJobRunRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobRunResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJobRunResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Represents one run of a DataBrew job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeJobRun service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJobRun">REST API Reference for DescribeJobRun Operation</seealso>
+        public virtual Task<DescribeJobRunResponse> DescribeJobRunAsync(DescribeJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeJobRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobRunResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeJobRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeProject
 
         internal virtual DescribeProjectResponse DescribeProject(DescribeProjectRequest request)

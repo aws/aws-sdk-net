@@ -815,6 +815,46 @@ namespace Amazon.GlueDataBrew
 
         #endregion
         
+        #region  DescribeJobRun
+
+
+        /// <summary>
+        /// Represents one run of a DataBrew job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobRun service method.</param>
+        /// 
+        /// <returns>The response from the DescribeJobRun service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJobRun">REST API Reference for DescribeJobRun Operation</seealso>
+        DescribeJobRunResponse DescribeJobRun(DescribeJobRunRequest request);
+
+
+
+        /// <summary>
+        /// Represents one run of a DataBrew job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeJobRun service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJobRun">REST API Reference for DescribeJobRun Operation</seealso>
+        Task<DescribeJobRunResponse> DescribeJobRunAsync(DescribeJobRunRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeProject
 
 

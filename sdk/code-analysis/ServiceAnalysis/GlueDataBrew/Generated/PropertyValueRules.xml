@@ -264,6 +264,36 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DescribeJobRunRequest.Name</property>
+    <min>1</min>
+    <max>240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DescribeJobRunRequest.RunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DescribeJobRunResponse.DatasetName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DescribeJobRunResponse.JobName</property>
+    <min>1</min>
+    <max>240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DescribeJobRunResponse.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DescribeJobRunResponse.RunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.DescribeProjectRequest.Name</property>
     <min>1</min>
     <max>255</max>

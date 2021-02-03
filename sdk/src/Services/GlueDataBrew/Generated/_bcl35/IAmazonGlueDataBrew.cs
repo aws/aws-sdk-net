@@ -796,6 +796,52 @@ namespace Amazon.GlueDataBrew
 
         #endregion
         
+        #region  DescribeJobRun
+
+
+        /// <summary>
+        /// Represents one run of a DataBrew job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobRun service method.</param>
+        /// 
+        /// <returns>The response from the DescribeJobRun service method, as returned by GlueDataBrew.</returns>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.GlueDataBrew.Model.ValidationException">
+        /// The input parameters for this request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJobRun">REST API Reference for DescribeJobRun Operation</seealso>
+        DescribeJobRunResponse DescribeJobRun(DescribeJobRunRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeJobRun operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobRun operation on AmazonGlueDataBrewClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJobRun
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJobRun">REST API Reference for DescribeJobRun Operation</seealso>
+        IAsyncResult BeginDescribeJobRun(DescribeJobRunRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeJobRun operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJobRun.</param>
+        /// 
+        /// <returns>Returns a  DescribeJobRunResult from GlueDataBrew.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJobRun">REST API Reference for DescribeJobRun Operation</seealso>
+        DescribeJobRunResponse EndDescribeJobRun(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeProject
 
 
