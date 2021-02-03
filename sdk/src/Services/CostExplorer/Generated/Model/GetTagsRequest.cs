@@ -65,6 +65,10 @@ namespace Amazon.CostExplorer.Model
         /// of objects that to be returned for this request. If MaxResults is not specified with
         /// SortBy, the request will return 1000 results as the default value for this parameter.
         /// </para>
+        ///  
+        /// <para>
+        /// For <code>GetTags</code>, MaxResults has an upper limit of 1000.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public int MaxResults

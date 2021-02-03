@@ -91,6 +91,10 @@ namespace Amazon.CostExplorer.Model
         /// is not specified with <code>SortBy</code>, the request will return 1000 results as
         /// the default value for this parameter.
         /// </para>
+        ///  
+        /// <para>
+        /// For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public int MaxResults
