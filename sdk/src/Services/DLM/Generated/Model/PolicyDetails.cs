@@ -37,6 +37,7 @@ namespace Amazon.DLM.Model
         private EventSource _eventSource;
         private Parameters _parameters;
         private PolicyTypeValues _policyType;
+        private List<string> _resourceLocations = new List<string>();
         private List<string> _resourceTypes = new List<string>();
         private List<Schedule> _schedules = new List<Schedule>();
         private List<Tag> _targetTags = new List<Tag>();
@@ -136,6 +137,33 @@ namespace Amazon.DLM.Model
         internal bool IsSetPolicyType()
         {
             return this._policyType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceLocations. 
+        /// <para>
+        /// The location of the resources to backup. If the source resources are located in an
+        /// AWS Region, specify <code>CLOUD</code>. If the source resources are located on an
+        /// AWS Outpost in your account, specify <code>OUTPOST</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up all resources
+        /// of the specified type with matching target tags across all of the Outposts in your
+        /// account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> ResourceLocations
+        {
+            get { return this._resourceLocations; }
+            set { this._resourceLocations = value; }
+        }
+
+        // Check to see if ResourceLocations property is set
+        internal bool IsSetResourceLocations()
+        {
+            return this._resourceLocations != null && this._resourceLocations.Count > 0; 
         }
 
         /// <summary>

@@ -85,8 +85,8 @@
   <property-value-rule>
     <property>Amazon.DLM.Model.CrossRegionCopyAction.Target</property>
     <min>0</min>
-    <max>16</max>
-    <pattern>^[\\w:\\-\\/\\*]+$</pattern>
+    <max>2048</max>
+    <pattern>^[\w:\-\/\*]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.CrossRegionCopyRetainRule.Interval</property>
@@ -97,6 +97,12 @@
     <min>0</min>
     <max>2048</max>
     <pattern>arn:aws(-[a-z]{1,3}){0,2}:kms:([a-z]+-){2,3}\d:\d+:key/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DLM.Model.CrossRegionCopyRule.Target</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^[\w:\-\/\*]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DLM.Model.CrossRegionCopyRule.TargetRegion</property>

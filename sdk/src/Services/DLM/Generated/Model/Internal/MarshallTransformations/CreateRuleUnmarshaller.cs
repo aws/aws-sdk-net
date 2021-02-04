@@ -82,6 +82,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                     unmarshalledObject.IntervalUnit = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Location", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Times", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

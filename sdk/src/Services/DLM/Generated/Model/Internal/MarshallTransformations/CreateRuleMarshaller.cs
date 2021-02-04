@@ -63,6 +63,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IntervalUnit);
             }
 
+            if(requestObject.IsSetLocation())
+            {
+                context.Writer.WritePropertyName("Location");
+                context.Writer.Write(requestObject.Location);
+            }
+
             if(requestObject.IsSetTimes())
             {
                 context.Writer.WritePropertyName("Times");

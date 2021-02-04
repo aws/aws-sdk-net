@@ -85,6 +85,13 @@ namespace Amazon.DLM.Model
         /// <para>
         /// The rule for cross-Region snapshot copies.
         /// </para>
+        ///  
+        /// <para>
+        /// You can only specify cross-Region copy rules for policies that create snapshots in
+        /// a Region. If the policy creates snapshots on an Outpost, then you cannot copy the
+        /// snapshots to a Region or to an Outpost. If the policy creates snapshots in a Region,
+        /// then snapshots can be copied to up to three Regions or Outposts.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
         public List<CrossRegionCopyRule> CrossRegionCopyRules

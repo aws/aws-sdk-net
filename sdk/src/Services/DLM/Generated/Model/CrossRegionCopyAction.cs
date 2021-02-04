@@ -77,7 +77,7 @@ namespace Amazon.DLM.Model
         /// The target Region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=16)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string Target
         {
             get { return this._target; }

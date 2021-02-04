@@ -37,6 +37,7 @@ namespace Amazon.DLM.Model
         private bool? _copyTags;
         private bool? _encrypted;
         private CrossRegionCopyRetainRule _retainRule;
+        private string _target;
         private string _targetRegion;
 
         /// <summary>
@@ -118,12 +119,41 @@ namespace Amazon.DLM.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetRegion. 
+        /// Gets and sets the property Target. 
         /// <para>
-        /// The target Region.
+        /// The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot copies.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an ARN, you must omit <b>TargetRegion</b>. You cannot specify a target
+        /// Region and a target Outpost in the same rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=16)]
+        [AWSProperty(Min=0, Max=2048)]
+        public string Target
+        {
+            get { return this._target; }
+            set { this._target = value; }
+        }
+
+        // Check to see if Target property is set
+        internal bool IsSetTarget()
+        {
+            return this._target != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetRegion. 
+        /// <para>
+        /// The target Region for the snapshot copies.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a target Region, you must omit <b>Target</b>. You cannot specify a
+        /// target Region and a target Outpost in the same rule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=16)]
         public string TargetRegion
         {
             get { return this._targetRegion; }

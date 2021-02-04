@@ -88,6 +88,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                     unmarshalledObject.RetainRule = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Target", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Target = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TargetRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

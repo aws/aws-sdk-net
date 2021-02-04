@@ -217,6 +217,56 @@ namespace Amazon.DLM
 
 
     /// <summary>
+    /// Constants used for properties of type LocationValues.
+    /// </summary>
+    public class LocationValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUD for LocationValues
+        /// </summary>
+        public static readonly LocationValues CLOUD = new LocationValues("CLOUD");
+        /// <summary>
+        /// Constant OUTPOST_LOCAL for LocationValues
+        /// </summary>
+        public static readonly LocationValues OUTPOST_LOCAL = new LocationValues("OUTPOST_LOCAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LocationValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LocationValues FindValue(string value)
+        {
+            return FindValue<LocationValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LocationValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PolicyTypeValues.
     /// </summary>
     public class PolicyTypeValues : ConstantClass
@@ -264,6 +314,56 @@ namespace Amazon.DLM
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PolicyTypeValues(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceLocationValues.
+    /// </summary>
+    public class ResourceLocationValues : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUD for ResourceLocationValues
+        /// </summary>
+        public static readonly ResourceLocationValues CLOUD = new ResourceLocationValues("CLOUD");
+        /// <summary>
+        /// Constant OUTPOST for ResourceLocationValues
+        /// </summary>
+        public static readonly ResourceLocationValues OUTPOST = new ResourceLocationValues("OUTPOST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceLocationValues(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceLocationValues FindValue(string value)
+        {
+            return FindValue<ResourceLocationValues>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceLocationValues(string value)
         {
             return FindValue(value);
         }

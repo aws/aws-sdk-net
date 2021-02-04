@@ -42,6 +42,7 @@ namespace Amazon.DLM.Model
         private string _cronExpression;
         private int? _interval;
         private IntervalUnitValues _intervalUnit;
+        private LocationValues _location;
         private List<string> _times = new List<string>();
 
         /// <summary>
@@ -101,6 +102,37 @@ namespace Amazon.DLM.Model
         internal bool IsSetIntervalUnit()
         {
             return this._intervalUnit != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// Specifies the destination for snapshots created by the policy. To create snapshots
+        /// in the same Region as the source resource, specify <code>CLOUD</code>. To create snapshots
+        /// on the same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If
+        /// you omit this parameter, <code>CLOUD</code> is used by default.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the policy targets resources in an AWS Region, then you must create snapshots in
+        /// the same Region as the source resource. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the policy targets resources on an Outpost, then you can create snapshots on the
+        /// same Outpost as the source resource, or in the Region of that Outpost.
+        /// </para>
+        /// </summary>
+        public LocationValues Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
         }
 
         /// <summary>

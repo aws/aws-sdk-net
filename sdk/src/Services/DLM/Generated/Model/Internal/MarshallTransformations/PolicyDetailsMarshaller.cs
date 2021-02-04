@@ -89,6 +89,17 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PolicyType);
             }
 
+            if(requestObject.IsSetResourceLocations())
+            {
+                context.Writer.WritePropertyName("ResourceLocations");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectResourceLocationsListValue in requestObject.ResourceLocations)
+                {
+                        context.Writer.Write(requestObjectResourceLocationsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetResourceTypes())
             {
                 context.Writer.WritePropertyName("ResourceTypes");

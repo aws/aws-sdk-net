@@ -74,6 +74,12 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTarget())
+            {
+                context.Writer.WritePropertyName("Target");
+                context.Writer.Write(requestObject.Target);
+            }
+
             if(requestObject.IsSetTargetRegion())
             {
                 context.Writer.WritePropertyName("TargetRegion");
