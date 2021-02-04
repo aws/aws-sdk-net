@@ -1,3 +1,22 @@
+### 3.5.103.0 (2021-02-04 21:14 UTC)
+* Appflow (3.5.3.0)
+	* Adding schedule offset as an input for scheduled flows in CreateFlow API. Also, adding data pull start time and data pull end time for DescribeFlowExecutionRecords API response.
+* Athena (3.5.1.0)
+	* Adds the Athena ListEngineVersions action and the EngineVersion data type. ListEngineVersions returns the available Athena engine versions, including Auto, as a list of EngineVersion objects.
+* DLM (3.5.4.0)
+	* Provide support for EBS Local Snapshots on AWS Outpost in Data Lifecycle Manager (DLM).
+* EC2 (3.5.31.0)
+	* AWS Outposts now supports EBS local snapshots on Outposts that allows customers to store snapshots of EBS volumes and AMIs locally on S3 on Outposts.
+* EMRContainers (3.5.1.0)
+	* This release is to correct the timestamp format to ISO8601 for the date parameters in the describe and list API response objects of Job Run and Virtual Clusters.
+* QuickSight (3.5.10.0)
+	* API release for field folders feature.
+* Core 3.5.2.6
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.102.0 (2021-02-03 19:18 UTC)
 * AuditManager (3.5.2.0)
 	* This release adds AccessDeniedException to GetServicesInScope API.
