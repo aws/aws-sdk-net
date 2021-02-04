@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private List<ColumnGroup> _columnGroups = new List<ColumnGroup>();
         private List<ColumnLevelPermissionRule> _columnLevelPermissionRules = new List<ColumnLevelPermissionRule>();
         private string _dataSetId;
+        private Dictionary<string, FieldFolder> _fieldFolders = new Dictionary<string, FieldFolder>();
         private DataSetImportMode _importMode;
         private Dictionary<string, LogicalTable> _logicalTableMap = new Dictionary<string, LogicalTable>();
         private string _name;
@@ -122,6 +123,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDataSetId()
         {
             return this._dataSetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FieldFolders. 
+        /// <para>
+        /// The folder that contains fields and nested subfolders for your dataset.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, FieldFolder> FieldFolders
+        {
+            get { return this._fieldFolders; }
+            set { this._fieldFolders = value; }
+        }
+
+        // Check to see if FieldFolders property is set
+        internal bool IsSetFieldFolders()
+        {
+            return this._fieldFolders != null && this._fieldFolders.Count > 0; 
         }
 
         /// <summary>

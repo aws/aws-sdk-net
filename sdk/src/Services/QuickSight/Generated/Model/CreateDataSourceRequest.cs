@@ -202,9 +202,13 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of the data source. Currently, the supported types for this operation are:
-        /// <code>ATHENA, AURORA, AURORA_POSTGRESQL, MARIADB, MYSQL, POSTGRESQL, PRESTO, REDSHIFT,
-        /// S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>. Use <code>ListDataSources</code>
+        /// <code>ATHENA, AURORA, AURORA_POSTGRESQL, AMAZON_ELASTICSEARCH, MARIADB, MYSQL, POSTGRESQL,
+        /// PRESTO, REDSHIFT, S3, SNOWFLAKE, SPARK, SQLSERVER, TERADATA</code>. Use <code>ListDataSources</code>
         /// to return a list of all data sources.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>AMAZON_ELASTICSEARCH</code> is for Amazon managed Elasticsearch Service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

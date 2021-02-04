@@ -100,6 +100,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FieldFolders", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, FieldFolder, StringUnmarshaller, FieldFolderUnmarshaller>(StringUnmarshaller.Instance, FieldFolderUnmarshaller.Instance);
+                    unmarshalledObject.FieldFolders = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ImportMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

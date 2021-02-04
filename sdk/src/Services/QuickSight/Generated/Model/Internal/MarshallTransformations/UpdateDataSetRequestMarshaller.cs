@@ -104,6 +104,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetFieldFolders())
+                {
+                    context.Writer.WritePropertyName("FieldFolders");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestFieldFoldersKvp in publicRequest.FieldFolders)
+                    {
+                        context.Writer.WritePropertyName(publicRequestFieldFoldersKvp.Key);
+                        var publicRequestFieldFoldersValue = publicRequestFieldFoldersKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FieldFolderMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFieldFoldersValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetImportMode())
                 {
                     context.Writer.WritePropertyName("ImportMode");

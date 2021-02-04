@@ -39,6 +39,7 @@ namespace Amazon.QuickSight.Model
         private long? _consumedSpiceCapacityInBytes;
         private DateTime? _createdTime;
         private string _dataSetId;
+        private Dictionary<string, FieldFolder> _fieldFolders = new Dictionary<string, FieldFolder>();
         private DataSetImportMode _importMode;
         private DateTime? _lastUpdatedTime;
         private Dictionary<string, LogicalTable> _logicalTableMap = new Dictionary<string, LogicalTable>();
@@ -157,6 +158,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDataSetId()
         {
             return this._dataSetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FieldFolders. 
+        /// <para>
+        /// The folder that contains fields and nested subfolders for your dataset.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, FieldFolder> FieldFolders
+        {
+            get { return this._fieldFolders; }
+            set { this._fieldFolders = value; }
+        }
+
+        // Check to see if FieldFolders property is set
+        internal bool IsSetFieldFolders()
+        {
+            return this._fieldFolders != null && this._fieldFolders.Count > 0; 
         }
 
         /// <summary>

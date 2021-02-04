@@ -1889,6 +1889,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.FieldFolder.Description</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.FilterOperation.ConditionExpression</property>
     <min>1</min>
     <max>4096</max>
