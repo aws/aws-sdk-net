@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for WorkGroupSummary Object
+    /// Response Unmarshaller for EngineVersion Object
     /// </summary>  
-    public class WorkGroupSummaryUnmarshaller : IUnmarshaller<WorkGroupSummary, XmlUnmarshallerContext>, IUnmarshaller<WorkGroupSummary, JsonUnmarshallerContext>
+    public class EngineVersionUnmarshaller : IUnmarshaller<EngineVersion, XmlUnmarshallerContext>, IUnmarshaller<EngineVersion, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        WorkGroupSummary IUnmarshaller<WorkGroupSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EngineVersion IUnmarshaller<EngineVersion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public WorkGroupSummary Unmarshall(JsonUnmarshallerContext context)
+        public EngineVersion Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            WorkGroupSummary unmarshalledObject = new WorkGroupSummary();
+            EngineVersion unmarshalledObject = new EngineVersion();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("EffectiveEngineVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EffectiveEngineVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EngineVersion", targetDepth))
-                {
-                    var unmarshaller = EngineVersionUnmarshaller.Instance;
-                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("SelectedEngineVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SelectedEngineVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         }
 
 
-        private static WorkGroupSummaryUnmarshaller _instance = new WorkGroupSummaryUnmarshaller();        
+        private static EngineVersionUnmarshaller _instance = new EngineVersionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static WorkGroupSummaryUnmarshaller Instance
+        public static EngineVersionUnmarshaller Instance
         {
             get
             {

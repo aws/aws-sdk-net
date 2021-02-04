@@ -39,6 +39,7 @@ namespace Amazon.Athena.Model
     {
         private long? _bytesScannedCutoffPerQuery;
         private bool? _enforceWorkGroupConfiguration;
+        private EngineVersion _engineVersion;
         private bool? _publishCloudWatchMetricsEnabled;
         private bool? _removeBytesScannedCutoffPerQuery;
         private bool? _requesterPaysEnabled;
@@ -82,6 +83,27 @@ namespace Amazon.Athena.Model
         internal bool IsSetEnforceWorkGroupConfiguration()
         {
             return this._enforceWorkGroupConfiguration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The engine version requested when a workgroup is updated. After the update, all queries
+        /// on the workgroup run on the requested engine version. If no value was previously set,
+        /// the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code>
+        /// workgroup run on the preview engine regardless of this setting.
+        /// </para>
+        /// </summary>
+        public EngineVersion EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
         }
 
         /// <summary>

@@ -29,12 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// This is the response object from the ListWorkGroups operation.
+    /// This is the response object from the ListEngineVersions operation.
     /// </summary>
-    public partial class ListWorkGroupsResponse : AmazonWebServiceResponse
+    public partial class ListEngineVersionsResponse : AmazonWebServiceResponse
     {
+        private List<EngineVersion> _engineVersions = new List<EngineVersion>();
         private string _nextToken;
-        private List<WorkGroupSummary> _workGroups = new List<WorkGroupSummary>();
+
+        /// <summary>
+        /// Gets and sets the property EngineVersions. 
+        /// <para>
+        /// A list of engine versions that are available to choose from.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<EngineVersion> EngineVersions
+        {
+            get { return this._engineVersions; }
+            set { this._engineVersions = value; }
+        }
+
+        // Check to see if EngineVersions property is set
+        internal bool IsSetEngineVersions()
+        {
+            return this._engineVersions != null && this._engineVersions.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -55,26 +74,6 @@ namespace Amazon.Athena.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property WorkGroups. 
-        /// <para>
-        /// A list of <a>WorkGroupSummary</a> objects that include the names, descriptions, creation
-        /// times, and states for each workgroup.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=50)]
-        public List<WorkGroupSummary> WorkGroups
-        {
-            get { return this._workGroups; }
-            set { this._workGroups = value; }
-        }
-
-        // Check to see if WorkGroups property is set
-        internal bool IsSetWorkGroups()
-        {
-            return this._workGroups != null && this._workGroups.Count > 0; 
         }
 
     }

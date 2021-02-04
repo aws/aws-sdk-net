@@ -33,6 +33,7 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class QueryExecution
     {
+        private EngineVersion _engineVersion;
         private string _query;
         private QueryExecutionContext _queryExecutionContext;
         private string _queryExecutionId;
@@ -41,6 +42,24 @@ namespace Amazon.Athena.Model
         private QueryExecutionStatistics _statistics;
         private QueryExecutionStatus _status;
         private string _workGroup;
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The engine version that executed the query.
+        /// </para>
+        /// </summary>
+        public EngineVersion EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Query. 

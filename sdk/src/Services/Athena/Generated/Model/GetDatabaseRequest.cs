@@ -30,7 +30,7 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDatabase operation.
-    /// Returns a database object for the specfied database and data catalog.
+    /// Returns a database object for the specified database and data catalog.
     /// </summary>
     public partial class GetDatabaseRequest : AmazonAthenaRequest
     {

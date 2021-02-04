@@ -76,6 +76,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnforceWorkGroupConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EngineVersion", targetDepth))
+                {
+                    var unmarshaller = EngineVersionUnmarshaller.Instance;
+                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PublishCloudWatchMetricsEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

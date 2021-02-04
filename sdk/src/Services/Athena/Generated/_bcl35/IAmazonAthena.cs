@@ -469,7 +469,7 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Returns a database object for the specfied database and data catalog.
+        /// Returns a database object for the specified database and data catalog.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDatabase service method.</param>
         /// 
@@ -929,6 +929,54 @@ namespace Amazon.Athena
         /// <returns>Returns a  ListDataCatalogsResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDataCatalogs">REST API Reference for ListDataCatalogs Operation</seealso>
         ListDataCatalogsResponse EndListDataCatalogs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListEngineVersions
+
+
+        /// <summary>
+        /// Returns a list of engine versions that are available to choose from, including the
+        /// Auto option.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEngineVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListEngineVersions service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListEngineVersions">REST API Reference for ListEngineVersions Operation</seealso>
+        ListEngineVersionsResponse ListEngineVersions(ListEngineVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEngineVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEngineVersions operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEngineVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListEngineVersions">REST API Reference for ListEngineVersions Operation</seealso>
+        IAsyncResult BeginListEngineVersions(ListEngineVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEngineVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEngineVersions.</param>
+        /// 
+        /// <returns>Returns a  ListEngineVersionsResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListEngineVersions">REST API Reference for ListEngineVersions Operation</seealso>
+        ListEngineVersionsResponse EndListEngineVersions(IAsyncResult asyncResult);
 
         #endregion
         

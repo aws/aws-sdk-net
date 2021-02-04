@@ -36,6 +36,7 @@ namespace Amazon.Athena.Model
     {
         private DateTime? _creationTime;
         private string _description;
+        private EngineVersion _engineVersion;
         private string _name;
         private WorkGroupState _state;
 
@@ -74,6 +75,25 @@ namespace Amazon.Athena.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code>
+        /// workgroup run on the preview engine regardless of this setting.
+        /// </para>
+        /// </summary>
+        public EngineVersion EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
         }
 
         /// <summary>

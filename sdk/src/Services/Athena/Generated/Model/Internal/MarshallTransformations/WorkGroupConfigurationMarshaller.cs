@@ -57,6 +57,17 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EnforceWorkGroupConfiguration);
             }
 
+            if(requestObject.IsSetEngineVersion())
+            {
+                context.Writer.WritePropertyName("EngineVersion");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EngineVersionMarshaller.Instance;
+                marshaller.Marshall(requestObject.EngineVersion, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPublishCloudWatchMetricsEnabled())
             {
                 context.Writer.WritePropertyName("PublishCloudWatchMetricsEnabled");

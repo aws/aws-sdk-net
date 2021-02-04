@@ -64,6 +64,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EngineVersion", targetDepth))
+                {
+                    var unmarshaller = EngineVersionUnmarshaller.Instance;
+                    unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Query", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

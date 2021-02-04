@@ -122,11 +122,7 @@ namespace Amazon.Athena.Model
         /// <para>
         ///  <code>function=<i>lambda_arn</i> </code> 
         /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// The <code>GLUE</code> type has no parameters.
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         public Dictionary<string, string> Parameters
         {
@@ -161,9 +157,16 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code>
-        /// for AWS Glue Catalog, or <code>HIVE</code> for an external hive metastore.
+        /// The type of data catalog to create: <code>LAMBDA</code> for a federated catalog or
+        /// <code>HIVE</code> for an external hive metastore.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code>
+        /// that already exists in your account, of which you can have only one. Specifying the
+        /// <code>GLUE</code> type will result in an <code>INVALID_INPUT</code> error.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public DataCatalogType Type
