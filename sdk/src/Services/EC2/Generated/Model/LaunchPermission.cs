@@ -59,6 +59,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The AWS account ID.
         /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Up to 10 000 account IDs can be specified in a single request.
+        /// </para>
         /// </summary>
         public string UserId
         {

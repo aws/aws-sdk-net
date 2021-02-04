@@ -85,6 +85,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "KmsKeyId", StringUtils.FromString(publicRequestlistValue.Ebs.KmsKeyId));
                             }
+                            if(publicRequestlistValue.Ebs.IsSetOutpostArn())
+                            {
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "OutpostArn", StringUtils.FromString(publicRequestlistValue.Ebs.OutpostArn));
+                            }
                             if(publicRequestlistValue.Ebs.IsSetSnapshotId())
                             {
                                 request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestlistValue.Ebs.SnapshotId));

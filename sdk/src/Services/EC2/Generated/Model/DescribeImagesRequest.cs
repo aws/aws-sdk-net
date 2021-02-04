@@ -153,15 +153,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-alias</code> - The owner alias, from an Amazon-maintained list (<code>amazon</code>
-        /// | <code>aws-marketplace</code>). This is not the user-configured AWS account alias
-        /// set using the IAM console. We recommend that you use the related parameter instead
-        /// of this filter.
+        ///  <code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).
+        /// The valid aliases are defined in an Amazon-maintained list. This is not the AWS account
+        /// alias that can be set using the IAM console. We recommend that you use the <b>Owner</b>
+        /// request parameter instead of this filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use
-        /// the related parameter instead of this filter.
+        /// the <b>Owner</b> request parameter instead of this filter.
         /// </para>
         ///  </li> <li> 
         /// <para>

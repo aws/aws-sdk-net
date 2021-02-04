@@ -287,7 +287,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReplaceUnhealthyInstances. 
         /// <para>
-        /// Indicates whether EC2 Fleet should replace unhealthy instances.
+        /// Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only
+        /// for fleets of type <code>maintain</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+        /// Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public bool ReplaceUnhealthyInstances

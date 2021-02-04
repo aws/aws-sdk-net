@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetDestinationOutpostArn())
+                {
+                    request.Parameters.Add("DestinationOutpostArn", StringUtils.FromString(publicRequest.DestinationOutpostArn));
+                }
                 if(publicRequest.IsSetDestinationRegion())
                 {
                     request.Parameters.Add("DestinationRegion", StringUtils.FromString(publicRequest.DestinationRegion));

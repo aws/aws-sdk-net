@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private bool? _encrypted;
         private int? _iops;
         private string _kmsKeyId;
+        private string _outpostArn;
         private string _snapshotId;
         private int? _throughput;
         private int? _volumeSize;
@@ -174,6 +175,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The ARN of the Outpost on which the snapshot is stored.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>

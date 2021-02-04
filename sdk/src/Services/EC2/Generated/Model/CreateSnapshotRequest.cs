@@ -36,6 +36,13 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
+    /// You can create snapshots of volumes in a Region and volumes on an Outpost. If you
+    /// create a snapshot of a volume in a Region, the snapshot must be stored in the same
+    /// Region as the volume. If you create a snapshot of a volume on an Outpost, the snapshot
+    /// can be stored on the same Outpost as the volume, or in the Region for that Outpost.
+    /// </para>
+    ///  
+    /// <para>
     /// When a snapshot is created, any AWS Marketplace product codes that are associated
     /// with the source volume are propagated to the snapshot.
     /// </para>
@@ -77,6 +84,7 @@ namespace Amazon.EC2.Model
     public partial class CreateSnapshotRequest : AmazonEC2Request
     {
         private string _description;
+        private string _outpostArn;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
         private string _volumeId;
 
@@ -112,6 +120,46 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local snapshot.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To create a snapshot of a volume in a Region, omit this parameter. The snapshot is
+        /// created in the same Region as the volume.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a snapshot of a volume on an Outpost and store the snapshot in the Region,
+        /// omit this parameter. The snapshot is created in the Region for the Outpost.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost,
+        /// specify the ARN of the destination Outpost. The snapshot must be created on the same
+        /// Outpost as the volume.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">
+        /// Creating local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>

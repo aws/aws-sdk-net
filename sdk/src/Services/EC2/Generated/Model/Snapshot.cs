@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private string _description;
         private bool? _encrypted;
         private string _kmsKeyId;
+        private string _outpostArn;
         private string _ownerAlias;
         private string _ownerId;
         private string _progress;
@@ -125,6 +126,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The ARN of the AWS Outpost on which the snapshot is stored. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS
+        /// Local Snapshot on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>

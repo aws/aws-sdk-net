@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("outpostArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ownerId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

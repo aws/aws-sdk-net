@@ -78,6 +78,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("outpostArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("snapshotId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -33,13 +33,23 @@ namespace Amazon.EC2.Model
     /// Creates crash-consistent snapshots of multiple EBS volumes and stores the data in
     /// S3. Volumes are chosen by specifying an instance. Any attached volumes will produce
     /// one snapshot each that is crash-consistent across the instance. Boot volumes can be
-    /// excluded by changing the parameters.
+    /// excluded by changing the parameters. 
+    /// 
+    ///  
+    /// <para>
+    /// You can create multi-volume snapshots of instances in a Region and instances on an
+    /// Outpost. If you create snapshots from an instance in a Region, the snapshots must
+    /// be stored in the same Region as the instance. If you create snapshots from an instance
+    /// on an Outpost, the snapshots can be stored on the same Outpost as the instance, or
+    /// in the Region for that Outpost.
+    /// </para>
     /// </summary>
     public partial class CreateSnapshotsRequest : AmazonEC2Request
     {
         private CopyTagsFromSource _copyTagsFromSource;
         private string _description;
         private InstanceSpecification _instanceSpecification;
+        private string _outpostArn;
         private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
 
         /// <summary>
@@ -95,6 +105,46 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceSpecification()
         {
             return this._instanceSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutpostArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the AWS Outpost on which to create the local snapshots.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To create snapshots from an instance in a Region, omit this parameter. The snapshots
+        /// are created in the same Region as the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create snapshots from an instance on an Outpost and store the snapshots in the
+        /// Region, omit this parameter. The snapshots are created in the Region for the Outpost.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To create snapshots from an instance on an Outpost and store the snapshots on an Outpost,
+        /// specify the ARN of the destination Outpost. The snapshots must be created on the same
+        /// Outpost as the instance.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+        /// Creating multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon
+        /// Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string OutpostArn
+        {
+            get { return this._outpostArn; }
+            set { this._outpostArn = value; }
+        }
+
+        // Check to see if OutpostArn property is set
+        internal bool IsSetOutpostArn()
+        {
+            return this._outpostArn != null;
         }
 
         /// <summary>
