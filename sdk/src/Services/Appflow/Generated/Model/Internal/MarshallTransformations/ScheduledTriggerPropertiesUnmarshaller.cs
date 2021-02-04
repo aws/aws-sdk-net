@@ -82,6 +82,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScheduleExpression = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("scheduleOffset", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ScheduleOffset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scheduleStartTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -33,11 +33,51 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class ExecutionRecord
     {
+        private DateTime? _dataPullEndTime;
+        private DateTime? _dataPullStartTime;
         private string _executionId;
         private ExecutionResult _executionResult;
         private ExecutionStatus _executionStatus;
         private DateTime? _lastUpdatedAt;
         private DateTime? _startedAt;
+
+        /// <summary>
+        /// Gets and sets the property DataPullEndTime. 
+        /// <para>
+        ///  The timestamp that indicates the last new or updated record to be transferred in
+        /// the flow run. 
+        /// </para>
+        /// </summary>
+        public DateTime DataPullEndTime
+        {
+            get { return this._dataPullEndTime.GetValueOrDefault(); }
+            set { this._dataPullEndTime = value; }
+        }
+
+        // Check to see if DataPullEndTime property is set
+        internal bool IsSetDataPullEndTime()
+        {
+            return this._dataPullEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataPullStartTime. 
+        /// <para>
+        ///  The timestamp that determines the first new or updated record to be transferred in
+        /// the flow run. 
+        /// </para>
+        /// </summary>
+        public DateTime DataPullStartTime
+        {
+            get { return this._dataPullStartTime.GetValueOrDefault(); }
+            set { this._dataPullStartTime = value; }
+        }
+
+        // Check to see if DataPullStartTime property is set
+        internal bool IsSetDataPullStartTime()
+        {
+            return this._dataPullStartTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ExecutionId. 

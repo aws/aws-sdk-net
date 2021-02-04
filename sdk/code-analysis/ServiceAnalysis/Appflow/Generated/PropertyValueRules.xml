@@ -580,6 +580,11 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.ScheduledTriggerProperties.ScheduleOffset</property>
+    <min>0</min>
+    <max>36000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.ScheduledTriggerProperties.Timezone</property>
     <max>256</max>
     <pattern>.*</pattern>

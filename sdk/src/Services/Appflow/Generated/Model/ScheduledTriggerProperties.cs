@@ -37,6 +37,7 @@ namespace Amazon.Appflow.Model
         private DataPullMode _dataPullMode;
         private DateTime? _scheduleEndTime;
         private string _scheduleExpression;
+        private long? _scheduleOffset;
         private DateTime? _scheduleStartTime;
         private string _timezone;
 
@@ -98,6 +99,26 @@ namespace Amazon.Appflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ScheduleOffset. 
+        /// <para>
+        ///  Specifies the optional offset that is added to the time interval for a schedule-triggered
+        /// flow. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=36000)]
+        public long ScheduleOffset
+        {
+            get { return this._scheduleOffset.GetValueOrDefault(); }
+            set { this._scheduleOffset = value; }
+        }
+
+        // Check to see if ScheduleOffset property is set
+        internal bool IsSetScheduleOffset()
+        {
+            return this._scheduleOffset.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ScheduleStartTime. 
         /// <para>
         ///  Specifies the scheduled start time for a schedule-triggered flow. 
@@ -119,7 +140,7 @@ namespace Amazon.Appflow.Model
         /// Gets and sets the property Timezone. 
         /// <para>
         ///  Specifies the time zone used when referring to the date and time of a scheduled-triggered
-        /// flow. 
+        /// flow, such as <code>America/New_York</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

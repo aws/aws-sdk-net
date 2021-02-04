@@ -63,6 +63,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ScheduleExpression);
             }
 
+            if(requestObject.IsSetScheduleOffset())
+            {
+                context.Writer.WritePropertyName("scheduleOffset");
+                context.Writer.Write(requestObject.ScheduleOffset);
+            }
+
             if(requestObject.IsSetScheduleStartTime())
             {
                 context.Writer.WritePropertyName("scheduleStartTime");
