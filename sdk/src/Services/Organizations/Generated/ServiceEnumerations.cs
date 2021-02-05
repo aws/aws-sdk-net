@@ -451,6 +451,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly CreateAccountFailureReason EMAIL_ALREADY_EXISTS = new CreateAccountFailureReason("EMAIL_ALREADY_EXISTS");
         /// <summary>
+        /// Constant FAILED_BUSINESS_VALIDATION for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason FAILED_BUSINESS_VALIDATION = new CreateAccountFailureReason("FAILED_BUSINESS_VALIDATION");
+        /// <summary>
         /// Constant GOVCLOUD_ACCOUNT_ALREADY_EXISTS for CreateAccountFailureReason
         /// </summary>
         public static readonly CreateAccountFailureReason GOVCLOUD_ACCOUNT_ALREADY_EXISTS = new CreateAccountFailureReason("GOVCLOUD_ACCOUNT_ALREADY_EXISTS");
@@ -467,6 +471,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly CreateAccountFailureReason INVALID_EMAIL = new CreateAccountFailureReason("INVALID_EMAIL");
         /// <summary>
+        /// Constant INVALID_IDENTITY_FOR_BUSINESS_VALIDATION for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason INVALID_IDENTITY_FOR_BUSINESS_VALIDATION = new CreateAccountFailureReason("INVALID_IDENTITY_FOR_BUSINESS_VALIDATION");
+        /// <summary>
         /// Constant MISSING_BUSINESS_VALIDATION for CreateAccountFailureReason
         /// </summary>
         public static readonly CreateAccountFailureReason MISSING_BUSINESS_VALIDATION = new CreateAccountFailureReason("MISSING_BUSINESS_VALIDATION");
@@ -474,6 +482,14 @@ namespace Amazon.Organizations
         /// Constant MISSING_PAYMENT_INSTRUMENT for CreateAccountFailureReason
         /// </summary>
         public static readonly CreateAccountFailureReason MISSING_PAYMENT_INSTRUMENT = new CreateAccountFailureReason("MISSING_PAYMENT_INSTRUMENT");
+        /// <summary>
+        /// Constant PENDING_BUSINESS_VALIDATION for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason PENDING_BUSINESS_VALIDATION = new CreateAccountFailureReason("PENDING_BUSINESS_VALIDATION");
+        /// <summary>
+        /// Constant UNKNOWN_BUSINESS_VALIDATION for CreateAccountFailureReason
+        /// </summary>
+        public static readonly CreateAccountFailureReason UNKNOWN_BUSINESS_VALIDATION = new CreateAccountFailureReason("UNKNOWN_BUSINESS_VALIDATION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -648,6 +664,10 @@ namespace Amazon.Organizations
         /// Constant ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD for HandshakeConstraintViolationExceptionReason
         /// </summary>
         public static readonly HandshakeConstraintViolationExceptionReason ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD = new HandshakeConstraintViolationExceptionReason("ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD");
+        /// <summary>
+        /// Constant ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION = new HandshakeConstraintViolationExceptionReason("ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION");
         /// <summary>
         /// Constant ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED for HandshakeConstraintViolationExceptionReason
         /// </summary>
@@ -954,6 +974,10 @@ namespace Amazon.Organizations
         /// Constant INPUT_REQUIRED for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason INPUT_REQUIRED = new InvalidInputExceptionReason("INPUT_REQUIRED");
+        /// <summary>
+        /// Constant INVALID_EMAIL_ADDRESS_TARGET for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason INVALID_EMAIL_ADDRESS_TARGET = new InvalidInputExceptionReason("INVALID_EMAIL_ADDRESS_TARGET");
         /// <summary>
         /// Constant INVALID_ENUM for InvalidInputExceptionReason
         /// </summary>

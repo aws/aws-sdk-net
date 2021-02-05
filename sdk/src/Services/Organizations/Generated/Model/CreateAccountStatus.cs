@@ -125,8 +125,19 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// FAILED_BUSINESS_VALIDATION: The AWS account that owns your organization failed to
+        /// receive business license validation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// GOVCLOUD_ACCOUNT_ALREADY_EXISTS: The account in the AWS GovCloud (US) Region could
         /// not be created because this Region already includes an account with that email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IDENTITY_INVALID_BUSINESS_VALIDATION: The AWS account that owns your organization
+        /// can't complete business license validation because it doesn't have valid identity
+        /// data.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -152,6 +163,16 @@ namespace Amazon.Organizations.Model
         /// <para>
         ///  MISSING_PAYMENT_INSTRUMENT: You must configure the management account with a valid
         /// payment method, such as a credit card.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PENDING_BUSINESS_VALIDATION: The AWS account that owns your organization is still
+        /// in the process of completing business license validation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNKNOWN_BUSINESS_VALIDATION: The AWS account that owns your organization has an unknown
+        /// issue with business license validation.
         /// </para>
         ///  </li> </ul>
         /// </summary>

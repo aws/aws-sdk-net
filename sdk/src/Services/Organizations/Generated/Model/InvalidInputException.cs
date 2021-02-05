@@ -52,6 +52,11 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited
+    /// account owner.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// INVALID_ENUM: You specified an invalid value.
     /// </para>
     ///  </li> <li> 
