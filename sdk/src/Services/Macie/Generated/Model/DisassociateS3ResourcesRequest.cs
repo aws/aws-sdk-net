@@ -32,8 +32,9 @@ namespace Amazon.Macie.Model
     /// Container for the parameters to the DisassociateS3Resources operation.
     /// Removes specified S3 resources from being monitored by Amazon Macie Classic. If memberAccountId
     /// isn't specified, the action removes specified S3 resources from Macie Classic for
-    /// the current master account. If memberAccountId is specified, the action removes specified
-    /// S3 resources from Macie Classic for the specified member account.
+    /// the current Macie Classic administrator account. If memberAccountId is specified,
+    /// the action removes specified S3 resources from Macie Classic for the specified member
+    /// account.
     /// </summary>
     public partial class DisassociateS3ResourcesRequest : AmazonMacieRequest
     {
@@ -64,7 +65,7 @@ namespace Amazon.Macie.Model
         /// Gets and sets the property MemberAccountId. 
         /// <para>
         /// The ID of the Amazon Macie Classic member account whose resources you want to remove
-        /// from being monitored by Amazon Macie Classic. 
+        /// from being monitored by Macie Classic. 
         /// </para>
         /// </summary>
         public string MemberAccountId

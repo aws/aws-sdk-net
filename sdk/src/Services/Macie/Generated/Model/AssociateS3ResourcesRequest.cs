@@ -32,9 +32,9 @@ namespace Amazon.Macie.Model
     /// Container for the parameters to the AssociateS3Resources operation.
     /// Associates specified S3 resources with Amazon Macie Classic for monitoring and data
     /// classification. If memberAccountId isn't specified, the action associates specified
-    /// S3 resources with Macie Classic for the current master account. If memberAccountId
-    /// is specified, the action associates specified S3 resources with Macie Classic for
-    /// the specified member account.
+    /// S3 resources with Macie Classic for the current Macie Classic administrator account.
+    /// If memberAccountId is specified, the action associates specified S3 resources with
+    /// Macie Classic for the specified member account.
     /// </summary>
     public partial class AssociateS3ResourcesRequest : AmazonMacieRequest
     {

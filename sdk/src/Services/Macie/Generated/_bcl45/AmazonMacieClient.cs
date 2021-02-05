@@ -47,14 +47,6 @@ namespace Amazon.Macie
     /// being accessed or moved. For more information, see the <a href="https://docs.aws.amazon.com/macie/latest/userguide/what-is-macie.html">Amazon
     /// Macie Classic User Guide</a>. 
     /// </para>
-    ///  
-    /// <para>
-    /// A new Amazon Macie is now available with significant design improvements and additional
-    /// features, at a lower price and in most AWS Regions. We encourage you to explore and
-    /// use the new and improved features, and benefit from the reduced cost. To learn about
-    /// features and pricing for the new Amazon Macie, see <a href="https://aws.amazon.com/macie/">Amazon
-    /// Macie</a>.
-    /// </para>
     /// </summary>
     public partial class AmazonMacieClient : AmazonServiceClient, IAmazonMacie
     {
@@ -339,9 +331,9 @@ namespace Amazon.Macie
         /// <summary>
         /// Associates specified S3 resources with Amazon Macie Classic for monitoring and data
         /// classification. If memberAccountId isn't specified, the action associates specified
-        /// S3 resources with Macie Classic for the current master account. If memberAccountId
-        /// is specified, the action associates specified S3 resources with Macie Classic for
-        /// the specified member account.
+        /// S3 resources with Macie Classic for the current Macie Classic administrator account.
+        /// If memberAccountId is specified, the action associates specified S3 resources with
+        /// Macie Classic for the specified member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateS3Resources service method.</param>
         /// 
@@ -374,9 +366,9 @@ namespace Amazon.Macie
         /// <summary>
         /// Associates specified S3 resources with Amazon Macie Classic for monitoring and data
         /// classification. If memberAccountId isn't specified, the action associates specified
-        /// S3 resources with Macie Classic for the current master account. If memberAccountId
-        /// is specified, the action associates specified S3 resources with Macie Classic for
-        /// the specified member account.
+        /// S3 resources with Macie Classic for the current Macie Classic administrator account.
+        /// If memberAccountId is specified, the action associates specified S3 resources with
+        /// Macie Classic for the specified member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateS3Resources service method.</param>
         /// <param name="cancellationToken">
@@ -471,8 +463,9 @@ namespace Amazon.Macie
         /// <summary>
         /// Removes specified S3 resources from being monitored by Amazon Macie Classic. If memberAccountId
         /// isn't specified, the action removes specified S3 resources from Macie Classic for
-        /// the current master account. If memberAccountId is specified, the action removes specified
-        /// S3 resources from Macie Classic for the specified member account.
+        /// the current Macie Classic administrator account. If memberAccountId is specified,
+        /// the action removes specified S3 resources from Macie Classic for the specified member
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateS3Resources service method.</param>
         /// 
@@ -501,8 +494,9 @@ namespace Amazon.Macie
         /// <summary>
         /// Removes specified S3 resources from being monitored by Amazon Macie Classic. If memberAccountId
         /// isn't specified, the action removes specified S3 resources from Macie Classic for
-        /// the current master account. If memberAccountId is specified, the action removes specified
-        /// S3 resources from Macie Classic for the specified member account.
+        /// the current Macie Classic administrator account. If memberAccountId is specified,
+        /// the action removes specified S3 resources from Macie Classic for the specified member
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateS3Resources service method.</param>
         /// <param name="cancellationToken">
@@ -536,8 +530,8 @@ namespace Amazon.Macie
 
 
         /// <summary>
-        /// Lists all Amazon Macie Classic member accounts for the current Amazon Macie Classic
-        /// master account.
+        /// Lists all Amazon Macie Classic member accounts for the current Macie Classic administrator
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMemberAccounts service method.</param>
         /// 
@@ -561,8 +555,8 @@ namespace Amazon.Macie
 
 
         /// <summary>
-        /// Lists all Amazon Macie Classic member accounts for the current Amazon Macie Classic
-        /// master account.
+        /// Lists all Amazon Macie Classic member accounts for the current Macie Classic administrator
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMemberAccounts service method.</param>
         /// <param name="cancellationToken">
@@ -594,9 +588,10 @@ namespace Amazon.Macie
 
         /// <summary>
         /// Lists all the S3 resources associated with Amazon Macie Classic. If memberAccountId
-        /// isn't specified, the action lists the S3 resources associated with Amazon Macie Classic
-        /// for the current master account. If memberAccountId is specified, the action lists
-        /// the S3 resources associated with Amazon Macie Classic for the specified member account.
+        /// isn't specified, the action lists the S3 resources associated with Macie Classic for
+        /// the current Macie Classic administrator account. If memberAccountId is specified,
+        /// the action lists the S3 resources associated with Macie Classic for the specified
+        /// member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListS3Resources service method.</param>
         /// 
@@ -624,9 +619,10 @@ namespace Amazon.Macie
 
         /// <summary>
         /// Lists all the S3 resources associated with Amazon Macie Classic. If memberAccountId
-        /// isn't specified, the action lists the S3 resources associated with Amazon Macie Classic
-        /// for the current master account. If memberAccountId is specified, the action lists
-        /// the S3 resources associated with Amazon Macie Classic for the specified member account.
+        /// isn't specified, the action lists the S3 resources associated with Macie Classic for
+        /// the current Macie Classic administrator account. If memberAccountId is specified,
+        /// the action lists the S3 resources associated with Macie Classic for the specified
+        /// member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListS3Resources service method.</param>
         /// <param name="cancellationToken">
@@ -662,9 +658,9 @@ namespace Amazon.Macie
         /// <summary>
         /// Updates the classification types for the specified S3 resources. If memberAccountId
         /// isn't specified, the action updates the classification types of the S3 resources associated
-        /// with Amazon Macie Classic for the current master account. If memberAccountId is specified,
-        /// the action updates the classification types of the S3 resources associated with Amazon
-        /// Macie Classic for the specified member account.
+        /// with Amazon Macie Classic for the current Macie Classic administrator account. If
+        /// memberAccountId is specified, the action updates the classification types of the S3
+        /// resources associated with Macie Classic for the specified member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateS3Resources service method.</param>
         /// 
@@ -693,9 +689,9 @@ namespace Amazon.Macie
         /// <summary>
         /// Updates the classification types for the specified S3 resources. If memberAccountId
         /// isn't specified, the action updates the classification types of the S3 resources associated
-        /// with Amazon Macie Classic for the current master account. If memberAccountId is specified,
-        /// the action updates the classification types of the S3 resources associated with Amazon
-        /// Macie Classic for the specified member account.
+        /// with Amazon Macie Classic for the current Macie Classic administrator account. If
+        /// memberAccountId is specified, the action updates the classification types of the S3
+        /// resources associated with Macie Classic for the specified member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateS3Resources service method.</param>
         /// <param name="cancellationToken">

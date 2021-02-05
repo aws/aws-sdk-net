@@ -31,9 +31,10 @@ namespace Amazon.Macie.Model
     /// <summary>
     /// Container for the parameters to the ListS3Resources operation.
     /// Lists all the S3 resources associated with Amazon Macie Classic. If memberAccountId
-    /// isn't specified, the action lists the S3 resources associated with Amazon Macie Classic
-    /// for the current master account. If memberAccountId is specified, the action lists
-    /// the S3 resources associated with Amazon Macie Classic for the specified member account.
+    /// isn't specified, the action lists the S3 resources associated with Macie Classic for
+    /// the current Macie Classic administrator account. If memberAccountId is specified,
+    /// the action lists the S3 resources associated with Macie Classic for the specified
+    /// member account.
     /// </summary>
     public partial class ListS3ResourcesRequest : AmazonMacieRequest
     {

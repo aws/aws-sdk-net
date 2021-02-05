@@ -30,8 +30,8 @@ namespace Amazon.Macie.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMemberAccounts operation.
-    /// Lists all Amazon Macie Classic member accounts for the current Amazon Macie Classic
-    /// master account.
+    /// Lists all Amazon Macie Classic member accounts for the current Macie Classic administrator
+    /// account.
     /// </summary>
     public partial class ListMemberAccountsRequest : AmazonMacieRequest
     {
