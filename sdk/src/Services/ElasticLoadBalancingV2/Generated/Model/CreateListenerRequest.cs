@@ -30,7 +30,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateListener operation.
-    /// Creates a listener for the specified Application Load Balancer, Network Load Balancer.
+    /// Creates a listener for the specified Application Load Balancer, Network Load Balancer,
     /// or Gateway Load Balancer.
     /// 
     ///  

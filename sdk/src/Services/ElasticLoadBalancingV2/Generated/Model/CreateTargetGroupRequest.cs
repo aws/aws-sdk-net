@@ -100,10 +100,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property HealthCheckIntervalSeconds. 
         /// <para>
         /// The approximate amount of time, in seconds, between health checks of an individual
-        /// target. For TCP health checks, the supported values are 10 and 30 seconds. If the
-        /// target type is <code>instance</code> or <code>ip</code>, the default is 30 seconds.
-        /// If the target group protocol is GENEVE, the default is 10 seconds. If the target type
-        /// is <code>lambda</code>, the default is 35 seconds.
+        /// target. If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values
+        /// are 10 and 30 seconds. If the target group protocol is HTTP or HTTPS, the default
+        /// is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds.
+        /// If the target type is <code>lambda</code>, the default is 35 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=300)]

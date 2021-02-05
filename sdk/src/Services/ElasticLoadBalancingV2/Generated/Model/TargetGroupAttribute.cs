@@ -120,6 +120,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation
+        /// is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled
+        /// if the target group type is IP address and the target group protocol is TCP or TLS.
+        /// Otherwise, the default is enabled. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version
         /// 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is
         /// <code>false</code>.

@@ -226,7 +226,7 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Creates a listener for the specified Application Load Balancer, Network Load Balancer.
+        /// Creates a listener for the specified Application Load Balancer, Network Load Balancer,
         /// or Gateway Load Balancer.
         /// 
         ///  
@@ -320,7 +320,7 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Creates a listener for the specified Application Load Balancer, Network Load Balancer.
+        /// Creates a listener for the specified Application Load Balancer, Network Load Balancer,
         /// or Gateway Load Balancer.
         /// 
         ///  
