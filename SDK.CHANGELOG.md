@@ -1,3 +1,16 @@
+### 3.5.104.0 (2021-02-05 19:19 UTC)
+* ElasticLoadBalancingV2 (3.5.5.30)
+	* Adds a target group attribute for client IP preservation for Network Load Balancers.
+* Macie (3.5.0.67)
+	* Documentation updates for Amazon Macie Classic. We replaced the term "master account" with the term "administrator account." An administrator account is used to centrally manage multiple accounts.
+* Organizations (3.5.2.0)
+	* Added support for a few additional exception codes for some AWS Organizations APIs.
+* Core 3.5.2.7
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.103.0 (2021-02-04 21:14 UTC)
 * Appflow (3.5.3.0)
 	* Adding schedule offset as an input for scheduled flows in CreateFlow API. Also, adding data pull start time and data pull end time for DescribeFlowExecutionRecords API response.
