@@ -7425,6 +7425,18 @@
           },
           "isRegionalized": true
         },
+        "guardduty": {
+          "defaults": {
+            "protocols": [
+              "https"
+            ]
+          },
+          "endpoints": {
+            "cn-north-1": {},
+            "cn-northwest-1": {}
+          },
+          "isRegionalized": true
+        },
         "health": {
           "endpoints": {
             "cn-north-1": {},
