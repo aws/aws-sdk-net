@@ -41,11 +41,18 @@ namespace Amazon.GlobalAccelerator.Model
     /// individual port mappings that can receive traffic, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html">
     /// AllowCustomRoutingTraffic</a> operation.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// Global Accelerator is a global service that supports endpoints in multiple AWS Regions
+    /// but you must specify the US West (Oregon) Region to create or update accelerators.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateCustomRoutingAcceleratorRequest : AmazonGlobalAcceleratorRequest
     {
         private bool? _enabled;
         private string _idempotencyToken;
+        private List<string> _ipAddresses = new List<string>();
         private IpAddressType _ipAddressType;
         private string _name;
         private List<Tag> _tags = new List<Tag>();
@@ -92,6 +99,44 @@ namespace Amazon.GlobalAccelerator.Model
         internal bool IsSetIdempotencyToken()
         {
             return this._idempotencyToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddresses. 
+        /// <para>
+        /// Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP),
+        /// you can choose IP addresses from your own pool to use for the accelerator's static
+        /// IP addresses when you create an accelerator. You can specify one or two addresses,
+        /// separated by a space. Do not include the /32 suffix.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only one IP address from each of your IP address ranges can be used for each accelerator.
+        /// If you specify only one IP address from your IP address range, Global Accelerator
+        /// assigns a second static IP address for the accelerator from the AWS IP address pool.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that you can't update IP addresses for an existing accelerator. To change them,
+        /// you must create a new accelerator with the new addresses.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+        /// your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2)]
+        public List<string> IpAddresses
+        {
+            get { return this._ipAddresses; }
+            set { this._ipAddresses = value; }
+        }
+
+        // Check to see if IpAddresses property is set
+        internal bool IsSetIpAddresses()
+        {
+            return this._ipAddresses != null && this._ipAddresses.Count > 0; 
         }
 
         /// <summary>

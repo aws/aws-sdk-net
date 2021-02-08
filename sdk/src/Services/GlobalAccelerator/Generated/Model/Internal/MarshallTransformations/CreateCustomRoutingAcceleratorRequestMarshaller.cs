@@ -85,6 +85,17 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("IdempotencyToken");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetIpAddresses())
+                {
+                    context.Writer.WritePropertyName("IpAddresses");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestIpAddressesListValue in publicRequest.IpAddresses)
+                    {
+                            context.Writer.Write(publicRequestIpAddressesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetIpAddressType())
                 {
                     context.Writer.WritePropertyName("IpAddressType");

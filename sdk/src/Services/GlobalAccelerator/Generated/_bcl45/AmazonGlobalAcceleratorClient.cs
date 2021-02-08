@@ -830,6 +830,12 @@ namespace Amazon.GlobalAccelerator
         /// individual port mappings that can receive traffic, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html">
         /// AllowCustomRoutingTraffic</a> operation.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Global Accelerator is a global service that supports endpoints in multiple AWS Regions
+        /// but you must specify the US West (Oregon) Region to create or update accelerators.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomRoutingAccelerator service method.</param>
         /// 
@@ -869,6 +875,12 @@ namespace Amazon.GlobalAccelerator
         /// individual port mappings that can receive traffic, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html">
         /// AllowCustomRoutingTraffic</a> operation.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Global Accelerator is a global service that supports endpoints in multiple AWS Regions
+        /// but you must specify the US West (Oregon) Region to create or update accelerators.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomRoutingAccelerator service method.</param>
         /// <param name="cancellationToken">
