@@ -46,6 +46,7 @@ namespace Amazon.Macie2.Model
         private BucketPublicAccess _publicAccess;
         private string _region;
         private ReplicationDetails _replicationDetails;
+        private BucketServerSideEncryption _serverSideEncryption;
         private SharedAccess _sharedAccess;
         private long? _sizeInBytes;
         private long? _sizeInBytesCompressed;
@@ -245,9 +246,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property PublicAccess. 
         /// <para>
-        /// Specifies whether the bucket is publicly accessible. If this value is true, an access
-        /// control list (ACL), bucket policy, or block public access settings allow the bucket
-        /// to be accessed by the general public.
+        /// Specifies whether the bucket is publicly accessible due to the combination of permissions
+        /// settings that apply to the bucket, and provides information about those settings.
         /// </para>
         /// </summary>
         public BucketPublicAccess PublicAccess
@@ -297,6 +297,25 @@ namespace Amazon.Macie2.Model
         internal bool IsSetReplicationDetails()
         {
             return this._replicationDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerSideEncryption. 
+        /// <para>
+        /// Specifies whether the bucket encrypts new objects by default and, if so, the type
+        /// of server-side encryption that's used.
+        /// </para>
+        /// </summary>
+        public BucketServerSideEncryption ServerSideEncryption
+        {
+            get { return this._serverSideEncryption; }
+            set { this._serverSideEncryption = value; }
+        }
+
+        // Check to see if ServerSideEncryption property is set
+        internal bool IsSetServerSideEncryption()
+        {
+            return this._serverSideEncryption != null;
         }
 
         /// <summary>

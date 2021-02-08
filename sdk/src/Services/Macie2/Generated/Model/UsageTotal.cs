@@ -29,8 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides aggregated data for a usage metric. The value for the metric reports usage
-    /// data for an account during the past 30 days.
+    /// Provides aggregated data for an Amazon Macie usage metric. The value for the metric
+    /// reports estimated usage data for an account for the preceding 30 days or the current
+    /// calendar month to date, depending on the time period (timeRange) specified in the
+    /// request.
     /// </summary>
     public partial class UsageTotal
     {
@@ -78,7 +80,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring
-        /// S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+        /// S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive
+        /// data.
         /// </para>
         /// </summary>
         public UsageType Type

@@ -86,8 +86,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketCountByEncryptionType. 
         /// <para>
-        /// The total number of buckets, grouped by server-side encryption type. This object also
-        /// reports the total number of buckets that don't encrypt objects by default.
+        /// The total number of buckets, grouped by default server-side encryption type. This
+        /// object also reports the total number of buckets that don't encrypt new objects by
+        /// default.
         /// </para>
         /// </summary>
         public BucketCountByEncryptionType BucketCountByEncryptionType

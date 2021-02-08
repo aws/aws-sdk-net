@@ -33,7 +33,27 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class GetUsageTotalsResponse : AmazonWebServiceResponse
     {
+        private TimeRange _timeRange;
         private List<UsageTotal> _usageTotals = new List<UsageTotal>();
+
+        /// <summary>
+        /// Gets and sets the property TimeRange. 
+        /// <para>
+        /// The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE,
+        /// for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+        /// </para>
+        /// </summary>
+        public TimeRange TimeRange
+        {
+            get { return this._timeRange; }
+            set { this._timeRange = value; }
+        }
+
+        // Check to see if TimeRange property is set
+        internal bool IsSetTimeRange()
+        {
+            return this._timeRange != null;
+        }
 
         /// <summary>
         /// Gets and sets the property UsageTotals. 

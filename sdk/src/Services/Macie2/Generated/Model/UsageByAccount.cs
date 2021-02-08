@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides data for a specific usage metric and the corresponding quota for an account.
-    /// The value for the metric is an aggregated value that reports usage during the past
-    /// 30 days.
+    /// Provides data for a specific usage metric and the corresponding quota for an Amazon
+    /// Macie account.
     /// </summary>
     public partial class UsageByAccount
     {
@@ -99,7 +98,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring
-        /// S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+        /// S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive
+        /// data.
         /// </para>
         /// </summary>
         public UsageType Type

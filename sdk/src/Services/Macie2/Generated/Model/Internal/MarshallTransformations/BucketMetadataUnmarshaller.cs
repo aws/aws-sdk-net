@@ -142,6 +142,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReplicationDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("serverSideEncryption", targetDepth))
+                {
+                    var unmarshaller = BucketServerSideEncryptionUnmarshaller.Instance;
+                    unmarshalledObject.ServerSideEncryption = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sharedAccess", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

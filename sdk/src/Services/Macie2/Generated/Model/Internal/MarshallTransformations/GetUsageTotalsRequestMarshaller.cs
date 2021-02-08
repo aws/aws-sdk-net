@@ -58,8 +58,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-01-01";            
             request.HttpMethod = "GET";
 
+            
+            if (publicRequest.IsSetTimeRange())
+                request.Parameters.Add("timeRange", StringUtils.FromString(publicRequest.TimeRange));
             request.ResourcePath = "/usage";
             request.MarshallerVersion = 2;
+            request.UseQueryString = true;
 
             return request;
         }

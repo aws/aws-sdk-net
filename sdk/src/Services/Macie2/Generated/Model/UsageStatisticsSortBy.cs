@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies criteria for sorting the results of a query for account quotas and usage
-    /// data.
+    /// Specifies criteria for sorting the results of a query for Amazon Macie account quotas
+    /// and usage data.
     /// </summary>
     public partial class UsageStatisticsSortBy
     {

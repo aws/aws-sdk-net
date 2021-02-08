@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies a current quota for an account.
+    /// Specifies a current quota for an Amazon Macie account.
     /// </summary>
     public partial class ServiceLimit
     {

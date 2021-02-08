@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Provides information about the number of S3 buckets that use certain types of server-side
-    /// encryption or don't encrypt objects by default.
+    /// encryption by default or don't encrypt new objects by default.
     /// </summary>
     public partial class BucketCountByEncryptionType
     {
@@ -42,8 +42,8 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property KmsManaged.  
         /// <para>
         /// The total number of buckets that use an AWS Key Management Service (AWS KMS) customer
-        /// master key (CMK) by default to encrypt objects. These buckets use AWS managed AWS
-        /// KMS (AWS-KMS) encryption or customer managed AWS KMS (SSE-KMS) encryption.
+        /// master key (CMK) to encrypt new objects by default. These buckets use AWS managed
+        /// AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).
         /// </para>
         /// </summary>
         public long KmsManaged
@@ -61,8 +61,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property S3Managed. 
         /// <para>
-        /// The total number of buckets that use an Amazon S3 managed key by default to encrypt
-        /// objects. These buckets use Amazon S3 managed (SSE-S3) encryption.
+        /// The total number of buckets that use an Amazon S3 managed key to encrypt new objects
+        /// by default. These buckets use Amazon S3 managed encryption (SSE-S3).
         /// </para>
         /// </summary>
         public long S3Managed
@@ -80,7 +80,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Unencrypted. 
         /// <para>
-        /// The total number of buckets that don't encrypt objects by default. Default encryption
+        /// The total number of buckets that don't encrypt new objects by default. Default encryption
         /// is disabled for these buckets.
         /// </para>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides quota and aggregated usage data for an account.
+    /// Provides quota and aggregated usage data for an Amazon Macie account.
     /// </summary>
     public partial class UsageRecord
     {

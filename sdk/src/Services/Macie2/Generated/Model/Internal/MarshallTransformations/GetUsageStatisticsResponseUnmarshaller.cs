@@ -63,6 +63,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     response.Records = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("timeRange", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TimeRange = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

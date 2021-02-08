@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about account-level permissions settings that apply to an S3
-    /// bucket.
+    /// Provides information about the account-level permissions settings that apply to an
+    /// S3 bucket.
     /// </summary>
     public partial class AccountLevelPermissions
     {
@@ -39,7 +39,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BlockPublicAccess. 
         /// <para>
-        /// The block public access settings for the bucket.
+        /// The block public access settings for the AWS account that owns the bucket.
         /// </para>
         /// </summary>
         public BlockPublicAccess BlockPublicAccess

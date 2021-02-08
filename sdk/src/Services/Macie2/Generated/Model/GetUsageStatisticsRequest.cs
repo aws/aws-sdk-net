@@ -38,13 +38,14 @@ namespace Amazon.Macie2.Model
         private int? _maxResults;
         private string _nextToken;
         private UsageStatisticsSortBy _sortBy;
+        private TimeRange _timeRange;
 
         /// <summary>
         /// Gets and sets the property FilterBy. 
         /// <para>
         /// An array of objects, one for each condition to use to filter the query results. If
-        /// the array contains more than one object, Amazon Macie uses an AND operator to join
-        /// the conditions specified by the objects.
+        /// you specify more than one condition, Amazon Macie uses an AND operator to join the
+        /// conditions.
         /// </para>
         /// </summary>
         public List<UsageStatisticsFilter> FilterBy
@@ -112,6 +113,27 @@ namespace Amazon.Macie2.Model
         internal bool IsSetSortBy()
         {
             return this._sortBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeRange. 
+        /// <para>
+        /// The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE,
+        /// for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+        /// If you don't specify a value, Amazon Macie provides usage data for the preceding 30
+        /// days.
+        /// </para>
+        /// </summary>
+        public TimeRange TimeRange
+        {
+            get { return this._timeRange; }
+            set { this._timeRange = value; }
+        }
+
+        // Check to see if TimeRange property is set
+        internal bool IsSetTimeRange()
+        {
+            return this._timeRange != null;
         }
 
     }

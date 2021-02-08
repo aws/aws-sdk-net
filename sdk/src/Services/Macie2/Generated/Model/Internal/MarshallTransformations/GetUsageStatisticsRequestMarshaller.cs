@@ -105,6 +105,12 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTimeRange())
+                {
+                    context.Writer.WritePropertyName("timeRange");
+                    context.Writer.Write(publicRequest.TimeRange);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
