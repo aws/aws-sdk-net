@@ -503,6 +503,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Engine. 
         /// <para>
         /// The name of the cache engine to be used for the clusters in this replication group.
+        /// Must be Redis.
         /// </para>
         /// </summary>
         public string Engine

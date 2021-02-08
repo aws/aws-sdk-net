@@ -2571,7 +2571,8 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// You cannot delete a cache subnet group if it is associated with any clusters.
+        /// You cannot delete a default cache subnet group or one that is associated with any
+        /// clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2600,7 +2601,8 @@ namespace Amazon.ElastiCache
         /// 
         ///  <note> 
         /// <para>
-        /// You cannot delete a cache subnet group if it is associated with any clusters.
+        /// You cannot delete a default cache subnet group or one that is associated with any
+        /// clusters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5716,7 +5718,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Modifies a replication group's shards (node groups) by allowing you to add shards,
-        /// remove shards, or rebalance the keyspaces among exisiting shards.
+        /// remove shards, or rebalance the keyspaces among existing shards.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationGroupShardConfiguration service method.</param>
         /// 
@@ -5768,7 +5770,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Modifies a replication group's shards (node groups) by allowing you to add shards,
-        /// remove shards, or rebalance the keyspaces among exisiting shards.
+        /// remove shards, or rebalance the keyspaces among existing shards.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationGroupShardConfiguration service method.</param>
         /// <param name="cancellationToken">

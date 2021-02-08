@@ -31,7 +31,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Container for the parameters to the ModifyReplicationGroupShardConfiguration operation.
     /// Modifies a replication group's shards (node groups) by allowing you to add shards,
-    /// remove shards, or rebalance the keyspaces among exisiting shards.
+    /// remove shards, or rebalance the keyspaces among existing shards.
     /// </summary>
     public partial class ModifyReplicationGroupShardConfigurationRequest : AmazonElastiCacheRequest
     {
