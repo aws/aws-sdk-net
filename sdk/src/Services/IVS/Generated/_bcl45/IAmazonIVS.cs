@@ -925,6 +925,9 @@ namespace Amazon.IVS
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
         /// 
         /// </exception>
@@ -944,6 +947,9 @@ namespace Amazon.IVS
         /// 
         /// <returns>The response from the ListChannels service method, as returned by IVS.</returns>
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">

@@ -937,6 +937,9 @@ namespace Amazon.IVS
         /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.IVS.Model.ValidationException">
         /// 
         /// </exception>
