@@ -66,8 +66,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>stickiness.type</code> - The type of sticky sessions. The possible values are
-        /// <code>lb_cookie</code> for Application Load Balancers or <code>source_ip</code> for
-        /// Network Load Balancers.
+        /// <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers
+        /// or <code>source_ip</code> for Network Load Balancers.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -86,6 +86,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// a newly registered target receives an increasing share of the traffic to the target
         /// group. After this time period ends, the target receives its full share of traffic.
         /// The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds,
+        /// during which requests from a client should be routed to the same target. After this
+        /// time period expires, the application-based cookie is considered stale. The range is
+        /// 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
         /// </para>
         ///  </li> <li> 
         /// <para>
