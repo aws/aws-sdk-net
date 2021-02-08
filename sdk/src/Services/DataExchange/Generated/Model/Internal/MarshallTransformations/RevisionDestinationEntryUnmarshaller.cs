@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResponseDetails Object
+    /// Response Unmarshaller for RevisionDestinationEntry Object
     /// </summary>  
-    public class ResponseDetailsUnmarshaller : IUnmarshaller<ResponseDetails, XmlUnmarshallerContext>, IUnmarshaller<ResponseDetails, JsonUnmarshallerContext>
+    public class RevisionDestinationEntryUnmarshaller : IUnmarshaller<RevisionDestinationEntry, XmlUnmarshallerContext>, IUnmarshaller<RevisionDestinationEntry, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ResponseDetails IUnmarshaller<ResponseDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RevisionDestinationEntry IUnmarshaller<RevisionDestinationEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,33 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResponseDetails Unmarshall(JsonUnmarshallerContext context)
+        public RevisionDestinationEntry Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ResponseDetails unmarshalledObject = new ResponseDetails();
+            RevisionDestinationEntry unmarshalledObject = new RevisionDestinationEntry();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ExportAssetsToS3", targetDepth))
+                if (context.TestExpression("Bucket", targetDepth))
                 {
-                    var unmarshaller = ExportAssetsToS3ResponseDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ExportAssetsToS3 = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ExportAssetToSignedUrl", targetDepth))
+                if (context.TestExpression("KeyPattern", targetDepth))
                 {
-                    var unmarshaller = ExportAssetToSignedUrlResponseDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ExportAssetToSignedUrl = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KeyPattern = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ExportRevisionsToS3", targetDepth))
+                if (context.TestExpression("RevisionId", targetDepth))
                 {
-                    var unmarshaller = ExportRevisionsToS3ResponseDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ExportRevisionsToS3 = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ImportAssetFromSignedUrl", targetDepth))
-                {
-                    var unmarshaller = ImportAssetFromSignedUrlResponseDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ImportAssetFromSignedUrl = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ImportAssetsFromS3", targetDepth))
-                {
-                    var unmarshaller = ImportAssetsFromS3ResponseDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ImportAssetsFromS3 = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RevisionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +88,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
         }
 
 
-        private static ResponseDetailsUnmarshaller _instance = new ResponseDetailsUnmarshaller();        
+        private static RevisionDestinationEntryUnmarshaller _instance = new RevisionDestinationEntryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResponseDetailsUnmarshaller Instance
+        public static RevisionDestinationEntryUnmarshaller Instance
         {
             get
             {

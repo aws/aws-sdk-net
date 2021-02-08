@@ -35,6 +35,7 @@ namespace Amazon.DataExchange.Model
     {
         private ExportAssetsToS3ResponseDetails _exportAssetsToS3;
         private ExportAssetToSignedUrlResponseDetails _exportAssetToSignedUrl;
+        private ExportRevisionsToS3ResponseDetails _exportRevisionsToS3;
         private ImportAssetFromSignedUrlResponseDetails _importAssetFromSignedUrl;
         private ImportAssetsFromS3ResponseDetails _importAssetsFromS3;
 
@@ -72,6 +73,24 @@ namespace Amazon.DataExchange.Model
         internal bool IsSetExportAssetToSignedUrl()
         {
             return this._exportAssetToSignedUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExportRevisionsToS3. 
+        /// <para>
+        /// Details for the export revisions to Amazon S3 response.
+        /// </para>
+        /// </summary>
+        public ExportRevisionsToS3ResponseDetails ExportRevisionsToS3
+        {
+            get { return this._exportRevisionsToS3; }
+            set { this._exportRevisionsToS3 = value; }
+        }
+
+        // Check to see if ExportRevisionsToS3 property is set
+        internal bool IsSetExportRevisionsToS3()
+        {
+            return this._exportRevisionsToS3 != null;
         }
 
         /// <summary>

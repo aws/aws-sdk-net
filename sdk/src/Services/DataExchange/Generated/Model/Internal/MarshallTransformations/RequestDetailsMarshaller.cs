@@ -67,6 +67,17 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetExportRevisionsToS3())
+            {
+                context.Writer.WritePropertyName("ExportRevisionsToS3");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExportRevisionsToS3RequestDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExportRevisionsToS3, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetImportAssetFromSignedUrl())
             {
                 context.Writer.WritePropertyName("ImportAssetFromSignedUrl");

@@ -569,6 +569,10 @@ namespace Amazon.DataExchange
         /// </summary>
         public static readonly Type EXPORT_ASSETS_TO_S3 = new Type("EXPORT_ASSETS_TO_S3");
         /// <summary>
+        /// Constant EXPORT_REVISIONS_TO_S3 for Type
+        /// </summary>
+        public static readonly Type EXPORT_REVISIONS_TO_S3 = new Type("EXPORT_REVISIONS_TO_S3");
+        /// <summary>
         /// Constant IMPORT_ASSET_FROM_SIGNED_URL for Type
         /// </summary>
         public static readonly Type IMPORT_ASSET_FROM_SIGNED_URL = new Type("IMPORT_ASSET_FROM_SIGNED_URL");
