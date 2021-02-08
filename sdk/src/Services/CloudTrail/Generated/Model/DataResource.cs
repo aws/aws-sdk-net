@@ -109,6 +109,11 @@ namespace Amazon.CloudTrail.Model
         /// The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code>
         /// or <code>AWS::Lambda::Function</code> resources.
         /// </para>
+        ///  
+        /// <para>
+        /// The <code>AWS::S3Outposts::Object</code> resource type is not valid in basic event
+        /// selectors. To log data events on this resource type, use advanced event selectors.
+        /// </para>
         /// </summary>
         public string Type
         {

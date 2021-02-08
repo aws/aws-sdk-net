@@ -117,9 +117,9 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         ///  <b> <code>resources.type</code> </b> - This ﬁeld is required. <code>resources.type</code>
         /// can only use the <code>Equals</code> operator, and the value can be one of the following:
-        /// <code>AWS::S3::Object</code> or <code>AWS::Lambda::Function</code>. You can have only
-        /// one <code>resources.type</code> ﬁeld per selector. To log data events on more than
-        /// one resource type, add another selector.
+        /// <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or <code>AWS::S3Outposts::Object</code>.
+        /// You can have only one <code>resources.type</code> ﬁeld per selector. To log data events
+        /// on more than one resource type, add another selector.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -147,6 +147,16 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>arn:partition:lambda:region:account_ID:function:function_name</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and
+        /// the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
+        /// be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
