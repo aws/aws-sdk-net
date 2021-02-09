@@ -2863,6 +2863,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly CaptionSourceType SMI = new CaptionSourceType("SMI");
         /// <summary>
+        /// Constant SMPTE_TT for CaptionSourceType
+        /// </summary>
+        public static readonly CaptionSourceType SMPTE_TT = new CaptionSourceType("SMPTE_TT");
+        /// <summary>
         /// Constant SRT for CaptionSourceType
         /// </summary>
         public static readonly CaptionSourceType SRT = new CaptionSourceType("SRT");

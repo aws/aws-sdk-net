@@ -54,7 +54,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property InputChannelsFineTune. Use this setting to specify your
-        /// remix values when they have a decimal component, such as  -10.312, 0.08, or 4.9. MediaConvert
+        /// remix values when they have a decimal component, such as -10.312, 0.08, or 4.9. MediaConvert
         /// rounds your remixing values to the nearest thousandth.
         /// </summary>
         public List<double> InputChannelsFineTune
