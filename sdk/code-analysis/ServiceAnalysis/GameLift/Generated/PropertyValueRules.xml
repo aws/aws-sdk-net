@@ -188,7 +188,7 @@
     <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.NotificationTarget</property>
     <min>0</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9:_/-]*</pattern>
+    <pattern>[a-zA-Z0-9:_/-]*(.fifo)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateMatchmakingConfigurationRequest.RequestTimeoutSeconds</property>
@@ -1143,7 +1143,7 @@
     <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.NotificationTarget</property>
     <min>0</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9:_/-]*</pattern>
+    <pattern>[a-zA-Z0-9:_/-]*(.fifo)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateMatchmakingConfigurationRequest.RequestTimeoutSeconds</property>
@@ -1692,7 +1692,7 @@
     <property>Amazon.GameLift.Model.MatchmakingConfiguration.NotificationTarget</property>
     <min>0</min>
     <max>300</max>
-    <pattern>[a-zA-Z0-9:_/-]*</pattern>
+    <pattern>[a-zA-Z0-9:_/-]*(.fifo)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.MatchmakingConfiguration.RequestTimeoutSeconds</property>
