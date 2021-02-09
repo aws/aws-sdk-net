@@ -56,7 +56,6 @@
     <property>Amazon.QuickSight.Model.CreateAnalysisRequest.Name</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.CreateAnalysisResponse.AnalysisId</property>
@@ -80,7 +79,6 @@
     <property>Amazon.QuickSight.Model.CreateDashboardRequest.Name</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.CreateDashboardRequest.VersionDescription</property>
@@ -223,7 +221,6 @@
     <property>Amazon.QuickSight.Model.CreateTemplateRequest.Name</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.CreateTemplateRequest.TemplateId</property>
@@ -1335,7 +1332,6 @@
     <property>Amazon.QuickSight.Model.UpdateAnalysisRequest.Name</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateAnalysisResponse.AnalysisId</property>
@@ -1377,7 +1373,6 @@
     <property>Amazon.QuickSight.Model.UpdateDashboardRequest.Name</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateDashboardRequest.VersionDescription</property>
@@ -1516,7 +1511,6 @@
     <property>Amazon.QuickSight.Model.UpdateTemplateRequest.Name</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateTemplateRequest.TemplateId</property>
@@ -1696,7 +1690,6 @@
     <property>Amazon.QuickSight.Model.Analysis.Name</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.AnalysisError.Message</property>
@@ -1712,7 +1705,6 @@
     <property>Amazon.QuickSight.Model.AnalysisSummary.Name</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.AthenaParameters.WorkGroup</property>
@@ -1813,7 +1805,6 @@
     <property>Amazon.QuickSight.Model.Dashboard.Name</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DashboardError.Message</property>
@@ -1829,7 +1820,6 @@
     <property>Amazon.QuickSight.Model.DashboardSummary.Name</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DashboardSummary.PublishedVersionNumber</property>
@@ -2221,7 +2211,6 @@
     <property>Amazon.QuickSight.Model.Template.Name</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.Template.TemplateId</property>
@@ -2251,7 +2240,6 @@
     <property>Amazon.QuickSight.Model.TemplateSummary.Name</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.TemplateSummary.TemplateId</property>

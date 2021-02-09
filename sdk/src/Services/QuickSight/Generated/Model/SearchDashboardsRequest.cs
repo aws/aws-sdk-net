@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model
         /// "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1" } ]</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1)]
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<DashboardSearchFilter> Filters
         {
             get { return this._filters; }

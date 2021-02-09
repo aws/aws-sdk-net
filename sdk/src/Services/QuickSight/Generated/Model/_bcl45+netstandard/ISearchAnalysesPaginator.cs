@@ -30,6 +30,11 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<SearchAnalysesResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the AnalysisSummaryList
+        /// </summary>
+        IPaginatedEnumerable<AnalysisSummary> AnalysisSummaryList { get; }
     }
 }
 #endif

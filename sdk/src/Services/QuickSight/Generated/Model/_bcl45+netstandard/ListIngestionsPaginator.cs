@@ -42,6 +42,12 @@ namespace Amazon.QuickSight.Model
         /// </summary>
         public IPaginatedEnumerable<ListIngestionsResponse> Responses => new PaginatedResponse<ListIngestionsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Ingestions
+        /// </summary>
+        public IPaginatedEnumerable<Ingestion> Ingestions => 
+            new PaginatedResultKeyResponse<ListIngestionsResponse, Ingestion>(this, (i) => i.Ingestions);
+
         internal ListIngestionsPaginator(IAmazonQuickSight client, ListIngestionsRequest request)
         {
             this._client = client;

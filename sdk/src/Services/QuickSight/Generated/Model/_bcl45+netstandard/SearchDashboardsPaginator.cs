@@ -42,6 +42,12 @@ namespace Amazon.QuickSight.Model
         /// </summary>
         public IPaginatedEnumerable<SearchDashboardsResponse> Responses => new PaginatedResponse<SearchDashboardsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the DashboardSummaryList
+        /// </summary>
+        public IPaginatedEnumerable<DashboardSummary> DashboardSummaryList => 
+            new PaginatedResultKeyResponse<SearchDashboardsResponse, DashboardSummary>(this, (i) => i.DashboardSummaryList);
+
         internal SearchDashboardsPaginator(IAmazonQuickSight client, SearchDashboardsRequest request)
         {
             this._client = client;

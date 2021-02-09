@@ -64,7 +64,7 @@ namespace Amazon.QuickSight.Model
         /// The structure for the search filters that you want to apply to your search. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=1)]
+        [AWSProperty(Required=true, Min=1, Max=1)]
         public List<AnalysisSearchFilter> Filters
         {
             get { return this._filters; }

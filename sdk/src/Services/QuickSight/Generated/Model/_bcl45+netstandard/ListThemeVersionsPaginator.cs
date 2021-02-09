@@ -29,32 +29,32 @@ using Amazon.Runtime;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Base class for ListDashboardVersions paginators.
+    /// Base class for ListThemeVersions paginators.
     /// </summary>
-    internal sealed partial class ListDashboardVersionsPaginator : IPaginator<ListDashboardVersionsResponse>, IListDashboardVersionsPaginator
+    internal sealed partial class ListThemeVersionsPaginator : IPaginator<ListThemeVersionsResponse>, IListThemeVersionsPaginator
     {
         private readonly IAmazonQuickSight _client;
-        private readonly ListDashboardVersionsRequest _request;
+        private readonly ListThemeVersionsRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<ListDashboardVersionsResponse> Responses => new PaginatedResponse<ListDashboardVersionsResponse>(this);
+        public IPaginatedEnumerable<ListThemeVersionsResponse> Responses => new PaginatedResponse<ListThemeVersionsResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the DashboardVersionSummaryList
+        /// Enumerable containing all of the ThemeVersionSummaryList
         /// </summary>
-        public IPaginatedEnumerable<DashboardVersionSummary> DashboardVersionSummaryList => 
-            new PaginatedResultKeyResponse<ListDashboardVersionsResponse, DashboardVersionSummary>(this, (i) => i.DashboardVersionSummaryList);
+        public IPaginatedEnumerable<ThemeVersionSummary> ThemeVersionSummaryList => 
+            new PaginatedResultKeyResponse<ListThemeVersionsResponse, ThemeVersionSummary>(this, (i) => i.ThemeVersionSummaryList);
 
-        internal ListDashboardVersionsPaginator(IAmazonQuickSight client, ListDashboardVersionsRequest request)
+        internal ListThemeVersionsPaginator(IAmazonQuickSight client, ListThemeVersionsRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<ListDashboardVersionsResponse> IPaginator<ListDashboardVersionsResponse>.Paginate()
+        IEnumerable<ListThemeVersionsResponse> IPaginator<ListThemeVersionsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -62,11 +62,11 @@ namespace Amazon.QuickSight.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            ListDashboardVersionsResponse response;
+            ListThemeVersionsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = _client.ListDashboardVersions(_request);
+                response = _client.ListThemeVersions(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -74,7 +74,7 @@ namespace Amazon.QuickSight.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDashboardVersionsResponse> IPaginator<ListDashboardVersionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListThemeVersionsResponse> IPaginator<ListThemeVersionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -82,11 +82,11 @@ namespace Amazon.QuickSight.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            ListDashboardVersionsResponse response;
+            ListThemeVersionsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = await _client.ListDashboardVersionsAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.ListThemeVersionsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;

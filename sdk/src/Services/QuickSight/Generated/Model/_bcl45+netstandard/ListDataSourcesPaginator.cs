@@ -42,6 +42,12 @@ namespace Amazon.QuickSight.Model
         /// </summary>
         public IPaginatedEnumerable<ListDataSourcesResponse> Responses => new PaginatedResponse<ListDataSourcesResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the DataSources
+        /// </summary>
+        public IPaginatedEnumerable<DataSource> DataSources => 
+            new PaginatedResultKeyResponse<ListDataSourcesResponse, DataSource>(this, (i) => i.DataSources);
+
         internal ListDataSourcesPaginator(IAmazonQuickSight client, ListDataSourcesRequest request)
         {
             this._client = client;

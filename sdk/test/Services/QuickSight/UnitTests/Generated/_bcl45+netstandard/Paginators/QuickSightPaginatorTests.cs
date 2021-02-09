@@ -433,6 +433,84 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("QuickSight")]
+        public void ListThemesTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListThemesRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListThemesResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListThemesResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListThemes(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListThemes(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("QuickSight")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListThemesTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListThemesRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListThemesResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListThemes(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListThemes(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("QuickSight")]
+        public void ListThemeVersionsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListThemeVersionsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListThemeVersionsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListThemeVersionsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListThemeVersions(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListThemeVersions(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("QuickSight")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListThemeVersionsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListThemeVersionsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListThemeVersionsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListThemeVersions(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListThemeVersions(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("QuickSight")]
         public void SearchAnalysesTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<SearchAnalysesRequest>();

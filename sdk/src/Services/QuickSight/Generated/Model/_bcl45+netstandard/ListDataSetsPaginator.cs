@@ -42,6 +42,12 @@ namespace Amazon.QuickSight.Model
         /// </summary>
         public IPaginatedEnumerable<ListDataSetsResponse> Responses => new PaginatedResponse<ListDataSetsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the DataSetSummaries
+        /// </summary>
+        public IPaginatedEnumerable<DataSetSummary> DataSetSummaries => 
+            new PaginatedResultKeyResponse<ListDataSetsResponse, DataSetSummary>(this, (i) => i.DataSetSummaries);
+
         internal ListDataSetsPaginator(IAmazonQuickSight client, ListDataSetsRequest request)
         {
             this._client = client;

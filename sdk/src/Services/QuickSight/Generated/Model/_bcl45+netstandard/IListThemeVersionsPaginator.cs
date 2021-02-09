@@ -22,19 +22,19 @@ using Amazon.Runtime;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Paginator for the ListAnalyses operation
+    /// Paginator for the ListThemeVersions operation
     ///</summary>
-    public interface IListAnalysesPaginator
+    public interface IListThemeVersionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<ListAnalysesResponse> Responses { get; }
+        IPaginatedEnumerable<ListThemeVersionsResponse> Responses { get; }
 
         /// <summary>
-        /// Enumerable containing all of the AnalysisSummaryList
+        /// Enumerable containing all of the ThemeVersionSummaryList
         /// </summary>
-        IPaginatedEnumerable<AnalysisSummary> AnalysisSummaryList { get; }
+        IPaginatedEnumerable<ThemeVersionSummary> ThemeVersionSummaryList { get; }
     }
 }
 #endif

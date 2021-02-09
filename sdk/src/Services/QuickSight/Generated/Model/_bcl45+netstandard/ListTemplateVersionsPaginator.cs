@@ -42,6 +42,12 @@ namespace Amazon.QuickSight.Model
         /// </summary>
         public IPaginatedEnumerable<ListTemplateVersionsResponse> Responses => new PaginatedResponse<ListTemplateVersionsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the TemplateVersionSummaryList
+        /// </summary>
+        public IPaginatedEnumerable<TemplateVersionSummary> TemplateVersionSummaryList => 
+            new PaginatedResultKeyResponse<ListTemplateVersionsResponse, TemplateVersionSummary>(this, (i) => i.TemplateVersionSummaryList);
+
         internal ListTemplateVersionsPaginator(IAmazonQuickSight client, ListTemplateVersionsRequest request)
         {
             this._client = client;

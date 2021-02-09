@@ -30,6 +30,11 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListTemplateAliasesResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the TemplateAliasList
+        /// </summary>
+        IPaginatedEnumerable<TemplateAlias> TemplateAliasList { get; }
     }
 }
 #endif

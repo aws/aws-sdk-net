@@ -30,6 +30,11 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListDashboardVersionsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the DashboardVersionSummaryList
+        /// </summary>
+        IPaginatedEnumerable<DashboardVersionSummary> DashboardVersionSummaryList { get; }
     }
 }
 #endif
