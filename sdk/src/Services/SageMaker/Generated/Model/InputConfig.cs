@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _dataInputConfig;
         private Framework _framework;
+        private string _frameworkVersion;
         private string _s3Uri;
 
         /// <summary>
@@ -312,6 +313,32 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFramework()
         {
             return this._framework != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FrameworkVersion. 
+        /// <para>
+        /// Specifies the framework version to use.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API field is only supported for PyTorch framework versions <code>1.4</code>,
+        /// <code>1.5</code>, and <code>1.6</code> for cloud instance target devices: <code>ml_c4</code>,
+        /// <code>ml_c5</code>, <code>ml_m4</code>, <code>ml_m5</code>, <code>ml_p2</code>, <code>ml_p3</code>,
+        /// and <code>ml_g4dn</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=10)]
+        public string FrameworkVersion
+        {
+            get { return this._frameworkVersion; }
+            set { this._frameworkVersion = value; }
+        }
+
+        // Check to see if FrameworkVersion property is set
+        internal bool IsSetFrameworkVersion()
+        {
+            return this._frameworkVersion != null;
         }
 
         /// <summary>

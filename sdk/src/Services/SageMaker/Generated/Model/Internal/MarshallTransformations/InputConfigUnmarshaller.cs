@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Framework = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FrameworkVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FrameworkVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
