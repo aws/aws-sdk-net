@@ -120,6 +120,10 @@ namespace Amazon.QLDBSession.Model.Internal.MarshallTransformations
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("CapacityExceededException"))
+                {
+                    return CapacityExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSessionException"))
                 {
                     return InvalidSessionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

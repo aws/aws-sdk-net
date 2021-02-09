@@ -39,7 +39,7 @@ namespace Amazon.QLDBSession.Model
         /// <summary>
         /// Gets and sets the property ReadIOs. 
         /// <para>
-        /// The number of read I/O requests that the command performed.
+        /// The number of read I/O requests that the command made.
         /// </para>
         /// </summary>
         public long ReadIOs
@@ -57,7 +57,7 @@ namespace Amazon.QLDBSession.Model
         /// <summary>
         /// Gets and sets the property WriteIOs. 
         /// <para>
-        /// The number of write I/O requests that the command performed.
+        /// The number of write I/O requests that the command made.
         /// </para>
         /// </summary>
         public long WriteIOs

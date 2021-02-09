@@ -293,6 +293,9 @@ namespace Amazon.QLDBSession
         /// Returned if the request is malformed or contains an error such as an invalid parameter
         /// value or a missing required parameter.
         /// </exception>
+        /// <exception cref="Amazon.QLDBSession.Model.CapacityExceededException">
+        /// Returned when the request exceeds the processing capacity of the ledger.
+        /// </exception>
         /// <exception cref="Amazon.QLDBSession.Model.InvalidSessionException">
         /// Returned if the session doesn't exist anymore because it timed out or expired.
         /// </exception>

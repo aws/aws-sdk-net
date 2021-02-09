@@ -40,8 +40,7 @@ namespace Amazon.QLDBSession.Model
         /// <summary>
         /// Gets and sets the property ProcessingTimeMilliseconds. 
         /// <para>
-        /// The amount of time that was taken for the command to finish processing, measured in
-        /// milliseconds.
+        /// The amount of time that QLDB spent on processing the command, measured in milliseconds.
         /// </para>
         /// </summary>
         public long ProcessingTimeMilliseconds
