@@ -24,7 +24,8 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
         public string Execute()
         {
             var content = new StringWriter();
-            using (var writer = XmlTextWriter.Create(content))
+            var settings = new XmlWriterSettings() { ConformanceLevel = ConformanceLevel.Auto };
+            using (var writer = XmlTextWriter.Create(content, settings))
             {
                 if (_model.Type == ServiceType.Rest_Xml &&
                     _operation.ResponseStructure.PayloadMemberName == null)
@@ -104,6 +105,13 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
         private void WriteStructure(XmlWriter writer, Shape structure)
         {
+            // Handle cases where a payload is not a structure, rather something like a blob
+            if (structure.PayloadMemberName != null && !structure.PayloadMember.Shape.IsStructure)
+            {
+                this.Write(writer, structure.PayloadMember, structure.PayloadMember.Shape);
+                return;
+            }
+
             foreach (var member in structure.Members)
             {
                 if (member.IsInHeader)

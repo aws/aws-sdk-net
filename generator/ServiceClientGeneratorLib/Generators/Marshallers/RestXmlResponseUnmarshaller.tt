@@ -27,6 +27,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
     var payload= this.Operation.ResponsePayloadMember;
     var shouldMarshallPayload = (payload != null && payload.IsStructure);
+    var payloadIsStream = (payload != null && !shouldMarshallPayload);
     if( this.Operation.ResponseHasBodyMembers || shouldMarshallPayload)
     {
         if(this.Operation.AllowEmptyResult){
@@ -46,6 +47,26 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             UnmarshallResult(context,response);
 <#    
 	}
+    else if (payloadIsStream)
+    {
+        if (payload.IsStreaming)
+        {
+#>
+            response.<#=payload.PropertyName#> = context.Stream;
+<#        
+        }
+        else
+        {
+#>
+
+            var ms = new MemoryStream();
+            Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
+            ms.Seek(0, SeekOrigin.Begin);
+            response.<#=payload.PropertyName#> = ms;
+
+<#
+        }
+    }
 	UnmarshallHeaders();
 	ProcessStatusCode();
 #>            
