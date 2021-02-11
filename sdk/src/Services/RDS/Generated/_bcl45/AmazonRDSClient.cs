@@ -7289,6 +7289,119 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  FailoverGlobalCluster
+
+
+        /// <summary>
+        /// Initiates the failover process for an Aurora global database (<a>GlobalCluster</a>).
+        /// 
+        ///  
+        /// <para>
+        /// A failover for an Aurora global database promotes one of secondary read-only DB clusters
+        /// to be the primary DB cluster and demotes the primary DB cluster to being a secondary
+        /// (read-only) DB cluster. In other words, the role of the current primary DB cluster
+        /// and the selected (target) DB cluster are switched. The selected secondary DB cluster
+        /// assumes full read/write capabilities for the Aurora global database.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about failing over an Amazon Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.managed-failover">Managed
+        /// planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User
+        /// Guide.</i> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this
+        /// action only on healthy Aurora global databases with running Aurora DB clusters and
+        /// no Region-wide outages, to test disaster recovery scenarios or to reconfigure your
+        /// Aurora global database topology. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalCluster service method.</param>
+        /// 
+        /// <returns>The response from the FailoverGlobalCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster">REST API Reference for FailoverGlobalCluster Operation</seealso>
+        public virtual FailoverGlobalClusterResponse FailoverGlobalCluster(FailoverGlobalClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = FailoverGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = FailoverGlobalClusterResponseUnmarshaller.Instance;
+
+            return Invoke<FailoverGlobalClusterResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates the failover process for an Aurora global database (<a>GlobalCluster</a>).
+        /// 
+        ///  
+        /// <para>
+        /// A failover for an Aurora global database promotes one of secondary read-only DB clusters
+        /// to be the primary DB cluster and demotes the primary DB cluster to being a secondary
+        /// (read-only) DB cluster. In other words, the role of the current primary DB cluster
+        /// and the selected (target) DB cluster are switched. The selected secondary DB cluster
+        /// assumes full read/write capabilities for the Aurora global database.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about failing over an Amazon Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.managed-failover">Managed
+        /// planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User
+        /// Guide.</i> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this
+        /// action only on healthy Aurora global databases with running Aurora DB clusters and
+        /// no Region-wide outages, to test disaster recovery scenarios or to reconfigure your
+        /// Aurora global database topology. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the FailoverGlobalCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster">REST API Reference for FailoverGlobalCluster Operation</seealso>
+        public virtual Task<FailoverGlobalClusterResponse> FailoverGlobalClusterAsync(FailoverGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = FailoverGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = FailoverGlobalClusterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<FailoverGlobalClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ImportInstallationMedia
 
 

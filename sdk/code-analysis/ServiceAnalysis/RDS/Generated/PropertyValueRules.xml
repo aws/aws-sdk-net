@@ -20,4 +20,16 @@
     <min>20</min>
     <max>100</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.FailoverGlobalClusterRequest.GlobalClusterIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RDS.Model.FailoverGlobalClusterRequest.TargetDbClusterIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
 </property-value-rules>

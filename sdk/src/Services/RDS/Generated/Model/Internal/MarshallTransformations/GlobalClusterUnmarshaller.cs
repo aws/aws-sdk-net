@@ -78,6 +78,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("FailoverState", targetDepth))
+                    {
+                        var unmarshaller = FailoverStateUnmarshaller.Instance;
+                        unmarshalledObject.FailoverState = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("GlobalClusterArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

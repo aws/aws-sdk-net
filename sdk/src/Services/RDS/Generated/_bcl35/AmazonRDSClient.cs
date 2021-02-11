@@ -6649,6 +6649,96 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  FailoverGlobalCluster
+
+        /// <summary>
+        /// Initiates the failover process for an Aurora global database (<a>GlobalCluster</a>).
+        /// 
+        ///  
+        /// <para>
+        /// A failover for an Aurora global database promotes one of secondary read-only DB clusters
+        /// to be the primary DB cluster and demotes the primary DB cluster to being a secondary
+        /// (read-only) DB cluster. In other words, the role of the current primary DB cluster
+        /// and the selected (target) DB cluster are switched. The selected secondary DB cluster
+        /// assumes full read/write capabilities for the Aurora global database.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about failing over an Amazon Aurora global database, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.managed-failover">Managed
+        /// planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User
+        /// Guide.</i> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this
+        /// action only on healthy Aurora global databases with running Aurora DB clusters and
+        /// no Region-wide outages, to test disaster recovery scenarios or to reconfigure your
+        /// Aurora global database topology. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalCluster service method.</param>
+        /// 
+        /// <returns>The response from the FailoverGlobalCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
+        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
+        /// cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster">REST API Reference for FailoverGlobalCluster Operation</seealso>
+        public virtual FailoverGlobalClusterResponse FailoverGlobalCluster(FailoverGlobalClusterRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = FailoverGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = FailoverGlobalClusterResponseUnmarshaller.Instance;
+
+            return Invoke<FailoverGlobalClusterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the FailoverGlobalCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the FailoverGlobalCluster operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndFailoverGlobalCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster">REST API Reference for FailoverGlobalCluster Operation</seealso>
+        public virtual IAsyncResult BeginFailoverGlobalCluster(FailoverGlobalClusterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = FailoverGlobalClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = FailoverGlobalClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  FailoverGlobalCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginFailoverGlobalCluster.</param>
+        /// 
+        /// <returns>Returns a  FailoverGlobalClusterResult from RDS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster">REST API Reference for FailoverGlobalCluster Operation</seealso>
+        public virtual FailoverGlobalClusterResponse EndFailoverGlobalCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<FailoverGlobalClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ImportInstallationMedia
 
         /// <summary>

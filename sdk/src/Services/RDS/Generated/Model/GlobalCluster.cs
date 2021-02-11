@@ -37,6 +37,7 @@ namespace Amazon.RDS.Model
         private bool? _deletionProtection;
         private string _engine;
         private string _engineVersion;
+        private FailoverState _failoverState;
         private string _globalClusterArn;
         private string _globalClusterIdentifier;
         private List<GlobalClusterMember> _globalClusterMembers = new List<GlobalClusterMember>();
@@ -114,6 +115,27 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailoverState. 
+        /// <para>
+        /// A data object containing all properties for the current state of an in-process or
+        /// pending failover process for this Aurora global database. This object is empty unless
+        /// the <a>FailoverGlobalCluster</a> API operation has been called on this Aurora global
+        /// database (<a>GlobalCluster</a>). 
+        /// </para>
+        /// </summary>
+        public FailoverState FailoverState
+        {
+            get { return this._failoverState; }
+            set { this._failoverState = value; }
+        }
+
+        // Check to see if FailoverState property is set
+        internal bool IsSetFailoverState()
+        {
+            return this._failoverState != null;
         }
 
         /// <summary>
