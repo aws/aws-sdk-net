@@ -37,6 +37,7 @@ namespace Amazon.GlueDataBrew.Model
         private string _datasetName;
         private string _encryptionKeyArn;
         private EncryptionMode _encryptionMode;
+        private JobSample _jobSample;
         private LogSubscription _logSubscription;
         private int? _maxCapacity;
         private int? _maxRetries;
@@ -91,8 +92,8 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SSE-KMS</code> - para&gt;<code>SSE-KMS</code> - server-side encryption with
-        /// AWS KMS-managed keys.
+        ///  <code>SSE-KMS</code> - <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed
+        /// keys.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -110,6 +111,27 @@ namespace Amazon.GlueDataBrew.Model
         internal bool IsSetEncryptionMode()
         {
             return this._encryptionMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobSample. 
+        /// <para>
+        /// Sample configuration for profile jobs only. Determines the number of rows on which
+        /// the profile job will be executed. If a JobSample value is not provided, the default
+        /// value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000
+        /// for the size parameter.
+        /// </para>
+        /// </summary>
+        public JobSample JobSample
+        {
+            get { return this._jobSample; }
+            set { this._jobSample = value; }
+        }
+
+        // Check to see if JobSample property is set
+        internal bool IsSetJobSample()
+        {
+            return this._jobSample != null;
         }
 
         /// <summary>

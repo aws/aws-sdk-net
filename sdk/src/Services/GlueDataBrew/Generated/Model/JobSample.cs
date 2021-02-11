@@ -1,0 +1,95 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the databrew-2017-07-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.GlueDataBrew.Model
+{
+    /// <summary>
+    /// Sample configuration for Profile Jobs only. Determines the number of rows on which
+    /// the Profile job will be executed. If a JobSample value is not provided for profile
+    /// jobs, the default value will be used. The default value is CUSTOM_ROWS for the mode
+    /// parameter and 20000 for the size parameter.
+    /// </summary>
+    public partial class JobSample
+    {
+        private SampleMode _mode;
+        private long? _size;
+
+        /// <summary>
+        /// Gets and sets the property Mode. 
+        /// <para>
+        /// Determines whether the profile job will be executed on the entire dataset or on a
+        /// specified number of rows. Must be one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// FULL_DATASET: Profile job will be executed on the entire dataset.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CUSTOM_ROWS: Profile job will be executed on the number of rows specified in the Size
+        /// parameter.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SampleMode Mode
+        {
+            get { return this._mode; }
+            set { this._mode = value; }
+        }
+
+        // Check to see if Mode property is set
+        internal bool IsSetMode()
+        {
+            return this._mode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Size. 
+        /// <para>
+        /// Size parameter is only required when the mode is CUSTOM_ROWS. Profile job will be
+        /// executed on the the specified number of rows. The maximum value for size is Long.MAX_VALUE.
+        /// </para>
+        ///  
+        /// <para>
+        /// Long.MAX_VALUE = 9223372036854775807
+        /// </para>
+        /// </summary>
+        public long Size
+        {
+            get { return this._size.GetValueOrDefault(); }
+            set { this._size = value; }
+        }
+
+        // Check to see if Size property is set
+        internal bool IsSetSize()
+        {
+            return this._size.HasValue; 
+        }
+
+    }
+}

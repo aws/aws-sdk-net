@@ -87,6 +87,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     response.JobName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JobSample", targetDepth))
+                {
+                    var unmarshaller = JobSampleUnmarshaller.Instance;
+                    response.JobSample = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LogGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

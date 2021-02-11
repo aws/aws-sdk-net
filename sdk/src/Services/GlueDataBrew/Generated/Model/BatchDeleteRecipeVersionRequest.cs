@@ -46,7 +46,7 @@ namespace Amazon.GlueDataBrew.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The verision list is empty.
+    /// The version list is empty.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.GlueDataBrew.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The verison list contains duplicate entries.
+    /// The version list contains duplicate entries.
     /// </para>
     ///  </li> </ul> 
     /// <para>

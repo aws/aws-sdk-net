@@ -84,6 +84,17 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EncryptionMode);
                 }
 
+                if(publicRequest.IsSetJobSample())
+                {
+                    context.Writer.WritePropertyName("JobSample");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = JobSampleMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.JobSample, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLogSubscription())
                 {
                     context.Writer.WritePropertyName("LogSubscription");

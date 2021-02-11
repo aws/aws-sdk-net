@@ -100,6 +100,12 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                     unmarshalledObject.EncryptionMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JobSample", targetDepth))
+                {
+                    var unmarshaller = JobSampleUnmarshaller.Instance;
+                    unmarshalledObject.JobSample = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

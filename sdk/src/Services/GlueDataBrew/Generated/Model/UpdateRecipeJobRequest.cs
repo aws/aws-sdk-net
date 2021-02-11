@@ -70,7 +70,7 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+        ///  <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
         /// </para>
         ///  </li> <li> 
         /// <para>

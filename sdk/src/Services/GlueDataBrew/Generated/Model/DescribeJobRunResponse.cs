@@ -39,6 +39,7 @@ namespace Amazon.GlueDataBrew.Model
         private string _errorMessage;
         private int? _executionTime;
         private string _jobName;
+        private JobSample _jobSample;
         private string _logGroupName;
         private LogSubscription _logSubscription;
         private List<Output> _outputs = new List<Output>();
@@ -124,7 +125,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property ExecutionTime. 
         /// <para>
-        /// The amount of time, in seconds, during which a job run consumed resources.
+        /// The amount of time, in seconds, during which the job run consumed resources.
         /// </para>
         /// </summary>
         public int ExecutionTime
@@ -156,6 +157,27 @@ namespace Amazon.GlueDataBrew.Model
         internal bool IsSetJobName()
         {
             return this._jobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobSample. 
+        /// <para>
+        /// Sample configuration for profile jobs only. Determines the number of rows on which
+        /// the profile job will be executed. If a JobSample value is not provided, the default
+        /// value will be used. The default value is CUSTOM_ROWS for the mode parameter and 20000
+        /// for the size parameter.
+        /// </para>
+        /// </summary>
+        public JobSample JobSample
+        {
+            get { return this._jobSample; }
+            set { this._jobSample = value; }
+        }
+
+        // Check to see if JobSample property is set
+        internal bool IsSetJobSample()
+        {
+            return this._jobSample != null;
         }
 
         /// <summary>
@@ -252,7 +274,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property StartedBy. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the user who initiated the job run.
+        /// The Amazon Resource Name (ARN) of the user who started the job run.
         /// </para>
         /// </summary>
         public string StartedBy
