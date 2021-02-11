@@ -1,3 +1,9 @@
+### 3.5.107.0 (2021-02-11 19:12 UTC)
+* GlueDataBrew (3.5.3.0)
+	* This release adds support for profile job sampling, which determines the number of rows on which the profile job will be executed.
+* RDS (3.5.11.0)
+	* Adding support for RDS Aurora Global Database Failover
+
 ### 3.5.106.0 (2021-02-09 19:13 UTC)
 * GameLift (3.5.3.0)
 	* GameLift FleetIQ users can now use AMD instance families in supported Regions. In addition, FlexMatch matchmaking notification now supports SNS FIFO topics.
