@@ -30,7 +30,8 @@ namespace Amazon.PersonalizeEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the PutItems operation.
-    /// Adds one or more items to an Items dataset. For more information see <a>importing-items</a>.
+    /// Adds one or more items to an Items dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
+    /// Items Incrementally</a>.
     /// </summary>
     public partial class PutItemsRequest : AmazonPersonalizeEventsRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property DatasetArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the Items dataset you are adding the item or items
+        /// The Amazon Resource Name (ARN) of the Items dataset you are adding the item or items
         /// to.
         /// </para>
         /// </summary>

@@ -30,7 +30,8 @@ namespace Amazon.PersonalizeEvents.Model
 {
     /// <summary>
     /// Container for the parameters to the PutUsers operation.
-    /// Adds one or more users to a Users dataset. For more information see <a>importing-users</a>.
+    /// Adds one or more users to a Users dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing
+    /// Users Incrementally</a>.
     /// </summary>
     public partial class PutUsersRequest : AmazonPersonalizeEventsRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property DatasetArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the Users dataset you are adding the user or users
+        /// The Amazon Resource Name (ARN) of the Users dataset you are adding the user or users
         /// to.
         /// </para>
         /// </summary>

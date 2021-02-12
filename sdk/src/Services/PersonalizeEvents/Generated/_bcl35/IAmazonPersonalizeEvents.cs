@@ -31,7 +31,8 @@ namespace Amazon.PersonalizeEvents
     ///
     /// Amazon Personalize can consume real-time user event data, such as <i>stream</i> or
     /// <i>click</i> data, and use it for model training either alone or combined with historical
-    /// data. For more information see <a>recording-events</a>.
+    /// data. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
+    /// Events</a>.
     /// </summary>
     public partial interface IAmazonPersonalizeEvents : IAmazonService, IDisposable
     {
@@ -44,7 +45,8 @@ namespace Amazon.PersonalizeEvents
 
 
         /// <summary>
-        /// Records user interaction event data. For more information see <a>event-record-api</a>.
+        /// Records user interaction event data. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording
+        /// Events</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEvents service method.</param>
         /// 
@@ -87,13 +89,17 @@ namespace Amazon.PersonalizeEvents
 
 
         /// <summary>
-        /// Adds one or more items to an Items dataset. For more information see <a>importing-items</a>.
+        /// Adds one or more items to an Items dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
+        /// Items Incrementally</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutItems service method.</param>
         /// 
         /// <returns>The response from the PutItems service method, as returned by PersonalizeEvents.</returns>
         /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
         /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceInUseException">
+        /// The specified resource is in use.
         /// </exception>
         /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
         /// Could not find the specified resource.
@@ -133,13 +139,17 @@ namespace Amazon.PersonalizeEvents
 
 
         /// <summary>
-        /// Adds one or more users to a Users dataset. For more information see <a>importing-users</a>.
+        /// Adds one or more users to a Users dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing
+        /// Users Incrementally</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutUsers service method.</param>
         /// 
         /// <returns>The response from the PutUsers service method, as returned by PersonalizeEvents.</returns>
         /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
         /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceInUseException">
+        /// The specified resource is in use.
         /// </exception>
         /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
         /// Could not find the specified resource.

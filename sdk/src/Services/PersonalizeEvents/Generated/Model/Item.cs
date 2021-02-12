@@ -30,7 +30,8 @@ namespace Amazon.PersonalizeEvents.Model
 {
     /// <summary>
     /// Represents item metadata added to an Items dataset using the <code>PutItems</code>
-    /// API.
+    /// API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
+    /// Items Incrementally</a>.
     /// </summary>
     public partial class Item
     {
@@ -60,20 +61,18 @@ namespace Amazon.PersonalizeEvents.Model
         /// Gets and sets the property Properties. 
         /// <para>
         /// A string map of item-specific metadata. Each element in the map consists of a key-value
-        /// pair. For example, 
+        /// pair. For example, <code>{"numberOfRatings": "12"}</code>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"numberOfRatings": "12"}</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The keys use camel case names that match the fields in the Items schema. In the above
-        /// example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field
-        /// defined in the Items schema.
+        /// The keys use camel case names that match the fields in the schema for the Items dataset.
+        /// In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS'
+        /// field defined in the Items schema. For categorical string data, to include multiple
+        /// categories for a single item, separate each category with a pipe separator (<code>|</code>).
+        /// For example, <code>\"Horror|Action\"</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=4096)]
         public string Properties
         {
             get { return this._properties; }
