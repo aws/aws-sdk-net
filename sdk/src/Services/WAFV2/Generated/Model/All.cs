@@ -29,31 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetWebACLForResource operation.
-    /// Retrieves the <a>WebACL</a> for the specified resource.
+    /// Inspect all of the elements that AWS WAF has parsed and extracted from the web request
+    /// JSON body that are within the <a>JsonBody</a> <code>MatchScope</code>. This is used
+    /// with the <a>FieldToMatch</a> option <code>JsonBody</code>. 
+    /// 
+    ///  
+    /// <para>
+    /// This is used only to indicate the web request component for AWS WAF to inspect, in
+    /// the <a>FieldToMatch</a> specification. 
+    /// </para>
     /// </summary>
-    public partial class GetWebACLForResourceRequest : AmazonWAFV2Request
+    public partial class All
     {
-        private string _resourceArn;
-
-        /// <summary>
-        /// Gets and sets the property ResourceArn. 
-        /// <para>
-        /// The ARN (Amazon Resource Name) of the resource.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
-        public string ResourceArn
-        {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
-        }
-
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
-        {
-            return this._resourceArn != null;
-        }
 
     }
 }

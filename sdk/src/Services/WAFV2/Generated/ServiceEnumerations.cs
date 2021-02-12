@@ -25,6 +25,60 @@ namespace Amazon.WAFV2
 {
 
     /// <summary>
+    /// Constants used for properties of type BodyParsingFallbackBehavior.
+    /// </summary>
+    public class BodyParsingFallbackBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EVALUATE_AS_STRING for BodyParsingFallbackBehavior
+        /// </summary>
+        public static readonly BodyParsingFallbackBehavior EVALUATE_AS_STRING = new BodyParsingFallbackBehavior("EVALUATE_AS_STRING");
+        /// <summary>
+        /// Constant MATCH for BodyParsingFallbackBehavior
+        /// </summary>
+        public static readonly BodyParsingFallbackBehavior MATCH = new BodyParsingFallbackBehavior("MATCH");
+        /// <summary>
+        /// Constant NO_MATCH for BodyParsingFallbackBehavior
+        /// </summary>
+        public static readonly BodyParsingFallbackBehavior NO_MATCH = new BodyParsingFallbackBehavior("NO_MATCH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BodyParsingFallbackBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BodyParsingFallbackBehavior FindValue(string value)
+        {
+            return FindValue<BodyParsingFallbackBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BodyParsingFallbackBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComparisonOperator.
     /// </summary>
     public class ComparisonOperator : ConstantClass
@@ -1283,6 +1337,60 @@ namespace Amazon.WAFV2
 
 
     /// <summary>
+    /// Constants used for properties of type JsonMatchScope.
+    /// </summary>
+    public class JsonMatchScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for JsonMatchScope
+        /// </summary>
+        public static readonly JsonMatchScope ALL = new JsonMatchScope("ALL");
+        /// <summary>
+        /// Constant KEY for JsonMatchScope
+        /// </summary>
+        public static readonly JsonMatchScope KEY = new JsonMatchScope("KEY");
+        /// <summary>
+        /// Constant VALUE for JsonMatchScope
+        /// </summary>
+        public static readonly JsonMatchScope VALUE = new JsonMatchScope("VALUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JsonMatchScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JsonMatchScope FindValue(string value)
+        {
+            return FindValue<JsonMatchScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JsonMatchScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ParameterExceptionField.
     /// </summary>
     public class ParameterExceptionField : ConstantClass
@@ -1292,6 +1400,10 @@ namespace Amazon.WAFV2
         /// Constant AND_STATEMENT for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField AND_STATEMENT = new ParameterExceptionField("AND_STATEMENT");
+        /// <summary>
+        /// Constant BODY_PARSING_FALLBACK_BEHAVIOR for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField BODY_PARSING_FALLBACK_BEHAVIOR = new ParameterExceptionField("BODY_PARSING_FALLBACK_BEHAVIOR");
         /// <summary>
         /// Constant BYTE_MATCH_STATEMENT for ParameterExceptionField
         /// </summary>
@@ -1352,6 +1464,14 @@ namespace Amazon.WAFV2
         /// Constant IP_SET_REFERENCE_STATEMENT for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField IP_SET_REFERENCE_STATEMENT = new ParameterExceptionField("IP_SET_REFERENCE_STATEMENT");
+        /// <summary>
+        /// Constant JSON_MATCH_PATTERN for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField JSON_MATCH_PATTERN = new ParameterExceptionField("JSON_MATCH_PATTERN");
+        /// <summary>
+        /// Constant JSON_MATCH_SCOPE for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField JSON_MATCH_SCOPE = new ParameterExceptionField("JSON_MATCH_SCOPE");
         /// <summary>
         /// Constant MANAGED_RULE_SET for ParameterExceptionField
         /// </summary>

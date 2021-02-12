@@ -30,17 +30,7 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIPSets operation.
-    /// <note> 
-    /// <para>
-    /// This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November,
-    /// 2019. For information, including how to migrate your AWS WAF resources from the prior
-    /// release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF Developer Guide</a>. 
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Retrieves an array of <a>IPSetSummary</a> objects for the IP sets that you manage.
-    /// </para>
     /// </summary>
     public partial class ListIPSetsRequest : AmazonWAFV2Request
     {

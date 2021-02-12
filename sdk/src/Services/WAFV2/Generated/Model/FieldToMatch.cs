@@ -29,26 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November,
-    /// 2019. For information, including how to migrate your AWS WAF resources from the prior
-    /// release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF Developer Guide</a>. 
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// The part of a web request that you want AWS WAF to inspect. Include the single <code>FieldToMatch</code>
     /// type that you want to inspect, with additional specifications as needed, according
     /// to the type. You specify a single request component in <code>FieldToMatch</code> for
     /// each rule statement that requires it. To inspect more than one component of a web
     /// request, create a separate rule statement for each component.
-    /// </para>
     /// </summary>
     public partial class FieldToMatch
     {
         private AllQueryArguments _allQueryArguments;
         private Body _body;
+        private JsonBody _jsonBody;
         private Method _method;
         private QueryString _queryString;
         private SingleHeader _singleHeader;
@@ -76,9 +67,10 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// Inspect the request body, which immediately follows the request headers. This is the
-        /// part of a request that contains any additional data that you want to send to your
-        /// web server as the HTTP request body, such as data from a form. 
+        /// Inspect the request body as plain text. The request body immediately follows the request
+        /// headers. This is the part of a request that contains any additional data that you
+        /// want to send to your web server as the HTTP request body, such as data from a form.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -101,6 +93,37 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetBody()
         {
             return this._body != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JsonBody. 
+        /// <para>
+        /// Inspect the request body as JSON. The request body immediately follows the request
+        /// headers. This is the part of a request that contains any additional data that you
+        /// want to send to your web server as the HTTP request body, such as data from a form.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that only the first 8 KB (8192 bytes) of the request body are forwarded to AWS
+        /// WAF for inspection by the underlying host service. If you don't need to inspect more
+        /// than 8 KB, you can guarantee that you don't allow additional bytes in by combining
+        /// a statement that inspects the body of the web request, such as <a>ByteMatchStatement</a>
+        /// or <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
+        /// that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't support
+        /// inspecting the entire contents of web requests whose bodies exceed the 8 KB limit.
+        /// </para>
+        /// </summary>
+        public JsonBody JsonBody
+        {
+            get { return this._jsonBody; }
+            set { this._jsonBody = value; }
+        }
+
+        // Check to see if JsonBody property is set
+        internal bool IsSetJsonBody()
+        {
+            return this._jsonBody != null;
         }
 
         /// <summary>

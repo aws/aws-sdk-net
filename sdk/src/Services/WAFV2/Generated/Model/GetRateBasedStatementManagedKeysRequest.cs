@@ -30,19 +30,9 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRateBasedStatementManagedKeys operation.
-    /// <note> 
-    /// <para>
-    /// This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November,
-    /// 2019. For information, including how to migrate your AWS WAF resources from the prior
-    /// release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF Developer Guide</a>. 
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Retrieves the keys that are currently blocked by a rate-based rule. The maximum number
     /// of managed keys that can be blocked for a single rate-based rule is 10,000. If more
     /// than 10,000 addresses exceed the rate limit, those with the highest rates are blocked.
-    /// </para>
     /// </summary>
     public partial class GetRateBasedStatementManagedKeysRequest : AmazonWAFV2Request
     {

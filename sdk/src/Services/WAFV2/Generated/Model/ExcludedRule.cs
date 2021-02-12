@@ -29,19 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November,
-    /// 2019. For information, including how to migrate your AWS WAF resources from the prior
-    /// release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF Developer Guide</a>. 
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Specifies a single rule to exclude from the rule group. Excluding a rule overrides
     /// its action setting for the rule group in the web ACL, setting it to <code>COUNT</code>.
-    /// This effectively excludes the rule from acting on web requests. 
-    /// </para>
+    /// This effectively excludes the rule from acting on web requests.
     /// </summary>
     public partial class ExcludedRule
     {

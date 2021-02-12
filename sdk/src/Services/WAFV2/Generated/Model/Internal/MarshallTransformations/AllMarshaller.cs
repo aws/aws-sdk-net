@@ -18,42 +18,39 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
+using System.Globalization;
 using System.IO;
-using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
+using Amazon.WAFV2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
 
-namespace Amazon.WAFV2.Model
+namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// A logical rule statement used to negate the results of another rule statement. You
-    /// provide one <a>Statement</a> within the <code>NotStatement</code>.
-    /// </summary>
-    public partial class NotStatement
+    /// All Marshaller
+    /// </summary>       
+    public class AllMarshaller : IRequestMarshaller<All, JsonMarshallerContext> 
     {
-        private Statement _statement;
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public void Marshall(All requestObject, JsonMarshallerContext context)
+        {
+        }
 
         /// <summary>
-        /// Gets and sets the property Statement. 
-        /// <para>
-        /// The statement to negate. You can use any statement that can be nested.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public Statement Statement
-        {
-            get { return this._statement; }
-            set { this._statement = value; }
-        }
-
-        // Check to see if Statement property is set
-        internal bool IsSetStatement()
-        {
-            return this._statement != null;
-        }
+        /// Singleton Marshaller.
+        /// </summary>  
+        public readonly static AllMarshaller Instance = new AllMarshaller();
 
     }
 }

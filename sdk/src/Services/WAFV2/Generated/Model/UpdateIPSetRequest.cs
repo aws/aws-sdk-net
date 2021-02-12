@@ -30,17 +30,7 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateIPSet operation.
-    /// <note> 
-    /// <para>
-    /// This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November,
-    /// 2019. For information, including how to migrate your AWS WAF resources from the prior
-    /// release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF Developer Guide</a>. 
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Updates the specified <a>IPSet</a>.
-    /// </para>
     /// </summary>
     public partial class UpdateIPSetRequest : AmazonWAFV2Request
     {
@@ -105,8 +95,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the IP set that helps with identification. You cannot change the
-        /// description of an IP set after you create it.
+        /// A description of the IP set that helps with identification. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

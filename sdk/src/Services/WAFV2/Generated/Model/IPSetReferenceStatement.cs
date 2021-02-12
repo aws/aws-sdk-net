@@ -29,20 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November,
-    /// 2019. For information, including how to migrate your AWS WAF resources from the prior
-    /// release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF Developer Guide</a>. 
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// A rule statement used to detect web requests coming from particular IP addresses or
     /// address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you
     /// want to detect, then use the ARN of that set in this statement. To create an IP set,
     /// see <a>CreateIPSet</a>.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Each IP set rule statement references an IP set. You create and maintain the set independent

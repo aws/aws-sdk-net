@@ -67,6 +67,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetJsonBody())
+            {
+                context.Writer.WritePropertyName("JsonBody");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = JsonBodyMarshaller.Instance;
+                marshaller.Marshall(requestObject.JsonBody, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMethod())
             {
                 context.Writer.WritePropertyName("Method");

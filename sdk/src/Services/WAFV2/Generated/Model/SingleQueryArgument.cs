@@ -29,19 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November,
-    /// 2019. For information, including how to migrate your AWS WAF resources from the prior
-    /// release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF Developer Guide</a>. 
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// One query argument in a web request, identified by name, for example <i>UserName</i>
     /// or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.
-    /// 
-    /// </para>
     /// </summary>
     public partial class SingleQueryArgument
     {

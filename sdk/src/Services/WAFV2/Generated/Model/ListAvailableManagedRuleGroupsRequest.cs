@@ -30,19 +30,9 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAvailableManagedRuleGroups operation.
-    /// <note> 
-    /// <para>
-    /// This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November,
-    /// 2019. For information, including how to migrate your AWS WAF resources from the prior
-    /// release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF Developer Guide</a>. 
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Retrieves an array of managed rule groups that are available for you to use. This
     /// list includes all AWS Managed Rules rule groups and the AWS Marketplace managed rule
     /// groups that you're subscribed to.
-    /// </para>
     /// </summary>
     public partial class ListAvailableManagedRuleGroupsRequest : AmazonWAFV2Request
     {

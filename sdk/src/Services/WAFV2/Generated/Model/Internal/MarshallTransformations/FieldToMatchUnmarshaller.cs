@@ -76,6 +76,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Body = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JsonBody", targetDepth))
+                {
+                    var unmarshaller = JsonBodyUnmarshaller.Instance;
+                    unmarshalledObject.JsonBody = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Method", targetDepth))
                 {
                     var unmarshaller = MethodUnmarshaller.Instance;

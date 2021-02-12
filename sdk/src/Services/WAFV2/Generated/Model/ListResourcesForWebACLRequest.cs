@@ -30,19 +30,9 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResourcesForWebACL operation.
-    /// <note> 
-    /// <para>
-    /// This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November,
-    /// 2019. For information, including how to migrate your AWS WAF resources from the prior
-    /// release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF Developer Guide</a>. 
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources
     /// that are associated with the specified web ACL. If you want the list of AWS CloudFront
-    /// resources, use the AWS CloudFront call <code>ListDistributionsByWebACLId</code>. 
-    /// </para>
+    /// resources, use the AWS CloudFront call <code>ListDistributionsByWebACLId</code>.
     /// </summary>
     public partial class ListResourcesForWebACLRequest : AmazonWAFV2Request
     {

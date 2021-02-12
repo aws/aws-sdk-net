@@ -30,21 +30,12 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// <note> 
-    /// <para>
-    /// This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November,
-    /// 2019. For information, including how to migrate your AWS WAF resources from the prior
-    /// release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF Developer Guide</a>. 
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Associates tags with the specified AWS resource. Tags are key:value pairs that you
     /// can use to categorize and manage your resources, for purposes like billing. For example,
     /// you might set the tag key to "customer" and the value to the customer name or ID.
     /// You can specify one or more tags to add to each AWS resource, up to 50 tags for a
     /// resource.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups,

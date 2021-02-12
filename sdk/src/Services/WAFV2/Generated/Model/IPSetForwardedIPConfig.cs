@@ -67,12 +67,12 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// MATCH - Treat the web request as matching the rule statement. AWS WAF applies the
-        /// rule action to the request.
+        ///  <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF
+        /// applies the rule action to the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// NO_MATCH - Treat the web request as not matching the rule statement.
+        ///  <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
         /// </para>
         ///  </li> </ul>
         /// </summary>

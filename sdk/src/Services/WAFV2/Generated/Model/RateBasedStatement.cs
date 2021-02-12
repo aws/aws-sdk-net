@@ -29,20 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November,
-    /// 2019. For information, including how to migrate your AWS WAF resources from the prior
-    /// release, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-    /// WAF Developer Guide</a>. 
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// A rate-based rule tracks the rate of requests for each originating IP address, and
     /// triggers the rule action when the rate exceeds a limit that you specify on the number
     /// of requests in any 5-minute time span. You can use this to put a temporary block on
     /// requests from an IP address that is sending excessive requests.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// When the rule action triggers, AWS WAF blocks additional requests from the IP address
