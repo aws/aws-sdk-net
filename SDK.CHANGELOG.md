@@ -1,3 +1,30 @@
+### 3.5.108.0 (2021-02-12 19:18 UTC)
+* AppSync (3.5.2.0)
+	* Approve release for appsync local on pipeline resolver
+* CodePipeline (3.5.3.0)
+	* The release provides new GetActionType and UpdateActionType APIs for viewing and editing action types in CodePipeline.
+* Detective (3.5.1.0)
+	* The API definition now indicates that the format for timestamps is an ISO 8601 date-time string
+* EKS (3.5.4.0)
+	* Amazon EKS now supports OpenId Connect (OIDC) compatible identity providers as a user authentication option
+* ElasticLoadBalancingV2 (3.5.5.33)
+	* Adds a target group attribute for application-based stickiness for Application Load Balancers and an update to the client IP preservation attribute for Network Load Balancers.
+* IdentityManagement (3.5.1.0)
+	* AWS Identity and Access Management now supports tagging for the following resources: customer managed policies, identity providers, instance profiles, server certificates, and virtual MFA devices.
+* Macie2 (3.5.9.0)
+	* This release of the Amazon Macie API replaces the term master account with the term administrator account, including deprecating APIs that use the previous term and adding APIs that use the new term.
+* PersonalizeEvents (3.5.2.0)
+	* Increased maximum char size of PutUsers and PutItems properties.
+* RDS (3.5.12.0)
+	* EngineMode in the response of DescribeDBClusterSnapshots. SupportedEngineModes, SupportsParallelQuery and SupportsGlobalDatabases in ValidUpgradeTarget of DBEngineVersions in DescribeDBEngineVersions.
+* WAFV2 (3.5.2.0)
+	* Added the option to inspect the web request body as parsed and filtered JSON (new FieldToMatch type JsonBody), in addition to the existing option to inspect the web request body as plain text.
+* Core 3.5.2.10
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.5.107.0 (2021-02-11 19:12 UTC)
 * GlueDataBrew (3.5.3.0)
 	* This release adds support for profile job sampling, which determines the number of rows on which the profile job will be executed.
