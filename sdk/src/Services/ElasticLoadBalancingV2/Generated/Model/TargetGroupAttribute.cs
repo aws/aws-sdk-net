@@ -89,6 +89,13 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based
+        /// cookie. Names that start with the following names are not allowed: <code>AWSALB</code>,
+        /// <code>AWSALBAPP</code>, and <code>AWSALBTG</code>. They're reserved for use by the
+        /// load balancer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds,
         /// during which requests from a client should be routed to the same target. After this
         /// time period expires, the application-based cookie is considered stale. The range is
@@ -130,7 +137,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation
         /// is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled
         /// if the target group type is IP address and the target group protocol is TCP or TLS.
-        /// Otherwise, the default is enabled. 
+        /// Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP
+        /// and TCP_UDP target groups.
         /// </para>
         ///  </li> <li> 
         /// <para>
