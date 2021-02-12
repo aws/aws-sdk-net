@@ -199,6 +199,45 @@ namespace AWSSDK_DotNet35.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("EKS")]
+        public void ListIdentityProviderConfigsTest_TwoPages()
+        {
+            var request = InstantiateClassGenerator.Execute<ListIdentityProviderConfigsRequest>();
+
+            var firstResponse = InstantiateClassGenerator.Execute<ListIdentityProviderConfigsResponse>();
+            var secondResponse = InstantiateClassGenerator.Execute<ListIdentityProviderConfigsResponse>();
+            secondResponse.NextToken = null;
+
+            _mockClient.SetupSequence(x => x.ListIdentityProviderConfigs(request)).Returns(firstResponse).Returns(secondResponse);
+            var paginator = _mockClient.Object.Paginators.ListIdentityProviderConfigs(request);
+            
+            Assert.AreEqual(2, paginator.Responses.ToList().Count);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EKS")]
+        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
+        public void ListIdentityProviderConfigsTest__OnlyUsedOnce()
+        {
+            var request = InstantiateClassGenerator.Execute<ListIdentityProviderConfigsRequest>();
+
+            var response = InstantiateClassGenerator.Execute<ListIdentityProviderConfigsResponse>();
+            response.NextToken = null;
+
+            _mockClient.Setup(x => x.ListIdentityProviderConfigs(request)).Returns(response);
+            var paginator = _mockClient.Object.Paginators.ListIdentityProviderConfigs(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            paginator.Responses.ToList();
+        }
+
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("EKS")]
         public void ListNodegroupsTest_TwoPages()
         {
             var request = InstantiateClassGenerator.Execute<ListNodegroupsRequest>();

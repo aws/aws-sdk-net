@@ -125,8 +125,8 @@ namespace Amazon.EKS.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>NodeCreationFailure</b>: Your launched instances are unable to register with your
-        /// Amazon EKS cluster. Common causes of this failure are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
-        /// node IAM role</a> permissions or lack of outbound internet access for the nodes. 
+        /// Amazon EKS cluster. Common causes of this failure are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node
+        /// IAM role</a> permissions or lack of outbound internet access for the nodes. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

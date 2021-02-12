@@ -29,29 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An object representing the <a href="https://openid.net/connect/">OpenID Connect</a>
-    /// (OIDC) identity provider information for the cluster.
+    /// An object representing an identity provider configuration.
     /// </summary>
-    public partial class OIDC
+    public partial class IdentityProviderConfig
     {
-        private string _issuer;
+        private string _name;
+        private string _type;
 
         /// <summary>
-        /// Gets and sets the property Issuer. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The issuer URL for the OIDC identity provider.
+        /// The name of the identity provider configuration.
         /// </para>
         /// </summary>
-        public string Issuer
+        [AWSProperty(Required=true)]
+        public string Name
         {
-            get { return this._issuer; }
-            set { this._issuer = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Issuer property is set
-        internal bool IsSetIssuer()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._issuer != null;
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the identity provider configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

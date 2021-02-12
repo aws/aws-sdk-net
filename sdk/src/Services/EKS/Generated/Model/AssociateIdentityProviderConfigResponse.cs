@@ -29,29 +29,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An object representing the <a href="https://openid.net/connect/">OpenID Connect</a>
-    /// (OIDC) identity provider information for the cluster.
+    /// This is the response object from the AssociateIdentityProviderConfig operation.
     /// </summary>
-    public partial class OIDC
+    public partial class AssociateIdentityProviderConfigResponse : AmazonWebServiceResponse
     {
-        private string _issuer;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Update _update;
 
         /// <summary>
-        /// Gets and sets the property Issuer. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The issuer URL for the OIDC identity provider.
+        /// The tags for the resource.
         /// </para>
         /// </summary>
-        public string Issuer
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._issuer; }
-            set { this._issuer = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Issuer property is set
-        internal bool IsSetIssuer()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._issuer != null;
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Update.
+        /// </summary>
+        public Update Update
+        {
+            get { return this._update; }
+            set { this._update = value; }
+        }
+
+        // Check to see if Update property is set
+        internal bool IsSetUpdate()
+        {
+            return this._update != null;
         }
 
     }

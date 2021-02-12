@@ -39,8 +39,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Ec2SshKey. 
         /// <para>
-        /// The Amazon EC2 SSH key that provides access for SSH communication with the worker
-        /// nodes in the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+        /// The Amazon EC2 SSH key that provides access for SSH communication with the nodes in
+        /// the managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
         /// EC2 Key Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
@@ -59,10 +59,10 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property SourceSecurityGroups. 
         /// <para>
-        /// The security groups that are allowed SSH access (port 22) to the worker nodes. If
-        /// you specify an Amazon EC2 SSH key but do not specify a source security group when
-        /// you create a managed node group, then port 22 on the worker nodes is opened to the
-        /// internet (0.0.0.0/0). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
+        /// The security groups that are allowed SSH access (port 22) to the nodes. If you specify
+        /// an Amazon EC2 SSH key but do not specify a source security group when you create a
+        /// managed node group, then port 22 on the nodes is opened to the internet (0.0.0.0/0).
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
         /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>

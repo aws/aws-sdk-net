@@ -29,29 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An object representing the <a href="https://openid.net/connect/">OpenID Connect</a>
-    /// (OIDC) identity provider information for the cluster.
+    /// This is the response object from the DescribeIdentityProviderConfig operation.
     /// </summary>
-    public partial class OIDC
+    public partial class DescribeIdentityProviderConfigResponse : AmazonWebServiceResponse
     {
-        private string _issuer;
+        private IdentityProviderConfigResponse _identityProviderConfig;
 
         /// <summary>
-        /// Gets and sets the property Issuer. 
+        /// Gets and sets the property IdentityProviderConfig. 
         /// <para>
-        /// The issuer URL for the OIDC identity provider.
+        /// The object that represents an OpenID Connect (OIDC) identity provider configuration.
         /// </para>
         /// </summary>
-        public string Issuer
+        public IdentityProviderConfigResponse IdentityProviderConfig
         {
-            get { return this._issuer; }
-            set { this._issuer = value; }
+            get { return this._identityProviderConfig; }
+            set { this._identityProviderConfig = value; }
         }
 
-        // Check to see if Issuer property is set
-        internal bool IsSetIssuer()
+        // Check to see if IdentityProviderConfig property is set
+        internal bool IsSetIdentityProviderConfig()
         {
-            return this._issuer != null;
+            return this._identityProviderConfig != null;
         }
 
     }

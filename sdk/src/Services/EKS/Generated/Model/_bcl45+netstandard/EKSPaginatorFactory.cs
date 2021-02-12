@@ -69,6 +69,14 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Paginator for ListIdentityProviderConfigs operation
+        ///</summary>
+        public IListIdentityProviderConfigsPaginator ListIdentityProviderConfigs(ListIdentityProviderConfigsRequest request) 
+        {
+            return new ListIdentityProviderConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNodegroups operation
         ///</summary>
         public IListNodegroupsPaginator ListNodegroups(ListNodegroupsRequest request) 

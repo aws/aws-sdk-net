@@ -58,6 +58,58 @@ namespace Amazon.EKS
         IEKSPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  AssociateIdentityProviderConfig
+
+
+
+        /// <summary>
+        /// Associate an identity provider configuration to a cluster.
+        /// 
+        ///  
+        /// <para>
+        /// If you want to authenticate identities using an identity provider, you can create
+        /// an identity provider configuration and associate it to your cluster. After configuring
+        /// authentication to your cluster you can create Kubernetes <code>roles</code> and <code>clusterroles</code>
+        /// to assign permissions to the roles, and then bind the roles to the identities using
+        /// Kubernetes <code>rolebindings</code> and <code>clusterrolebindings</code>. For more
+        /// information see <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using
+        /// RBAC Authorization</a> in the Kubernetes documentation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIdentityProviderConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateIdentityProviderConfig service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateIdentityProviderConfig">REST API Reference for AssociateIdentityProviderConfig Operation</seealso>
+        Task<AssociateIdentityProviderConfigResponse> AssociateIdentityProviderConfigAsync(AssociateIdentityProviderConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateAddon
 
 
@@ -128,14 +180,14 @@ namespace Amazon.EKS
         /// The cluster control plane is provisioned across multiple Availability Zones and fronted
         /// by an Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions elastic
         /// network interfaces in your VPC subnets to provide connectivity from the control plane
-        /// instances to the worker nodes (for example, to support <code>kubectl exec</code>,
-        /// <code>logs</code>, and <code>proxy</code> data flows).
+        /// instances to the nodes (for example, to support <code>kubectl exec</code>, <code>logs</code>,
+        /// and <code>proxy</code> data flows).
         /// </para>
         ///  
         /// <para>
-        /// Amazon EKS worker nodes run in your AWS account and connect to your cluster's control
-        /// plane via the Kubernetes API server endpoint and a certificate file that is created
-        /// for your cluster.
+        /// Amazon EKS nodes run in your AWS account and connect to your cluster's control plane
+        /// via the Kubernetes API server endpoint and a certificate file that is created for
+        /// your cluster.
         /// </para>
         ///  
         /// <para>
@@ -164,9 +216,9 @@ namespace Amazon.EKS
         /// <para>
         /// Cluster creation typically takes between 10 and 15 minutes. After you create an Amazon
         /// EKS cluster, you must configure your Kubernetes tooling to communicate with the API
-        /// server and launch worker nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
+        /// server and launch nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
         /// Cluster Authentication</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
-        /// Amazon EKS Worker Nodes</a> in the <i>Amazon EKS User Guide</i>.
+        /// Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
@@ -292,12 +344,11 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Creates a managed worker node group for an Amazon EKS cluster. You can only create
-        /// a node group for your cluster that is equal to the current Kubernetes version for
-        /// the cluster. All node groups are created with the latest AMI release version for the
-        /// respective minor Kubernetes version of the cluster, unless you deploy a custom AMI
-        /// using a launch template. For more information about using launch templates, see <a
-        /// href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+        /// Creates a managed node group for an Amazon EKS cluster. You can only create a node
+        /// group for your cluster that is equal to the current Kubernetes version for the cluster.
+        /// All node groups are created with the latest AMI release version for the respective
+        /// minor Kubernetes version of the cluster, unless you deploy a custom AMI using a launch
+        /// template. For more information about using launch templates, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
         /// template support</a>.
         /// 
         ///  
@@ -676,6 +727,43 @@ namespace Amazon.EKS
 
         #endregion
                 
+        #region  DescribeIdentityProviderConfig
+
+
+
+        /// <summary>
+        /// Returns descriptive information about an identity provider configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityProviderConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIdentityProviderConfig service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeIdentityProviderConfig">REST API Reference for DescribeIdentityProviderConfig Operation</seealso>
+        Task<DescribeIdentityProviderConfigResponse> DescribeIdentityProviderConfigAsync(DescribeIdentityProviderConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeNodegroup
 
 
@@ -752,6 +840,49 @@ namespace Amazon.EKS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate">REST API Reference for DescribeUpdate Operation</seealso>
         Task<DescribeUpdateResponse> DescribeUpdateAsync(DescribeUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisassociateIdentityProviderConfig
+
+
+
+        /// <summary>
+        /// Disassociates an identity provider configuration from a cluster. If you disassociate
+        /// an identity provider from your cluster, users included in the provider can no longer
+        /// access the cluster. However, you can still access the cluster with AWS IAM users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIdentityProviderConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateIdentityProviderConfig service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateIdentityProviderConfig">REST API Reference for DisassociateIdentityProviderConfig Operation</seealso>
+        Task<DisassociateIdentityProviderConfigResponse> DisassociateIdentityProviderConfigAsync(DisassociateIdentityProviderConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -857,6 +988,43 @@ namespace Amazon.EKS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles">REST API Reference for ListFargateProfiles Operation</seealso>
         Task<ListFargateProfilesResponse> ListFargateProfilesAsync(ListFargateProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListIdentityProviderConfigs
+
+
+
+        /// <summary>
+        /// A list of identity provider configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityProviderConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIdentityProviderConfigs service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. You can view your available managed node groups with <a>ListNodegroups</a>.
+        /// Amazon EKS clusters and node groups are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListIdentityProviderConfigs">REST API Reference for ListIdentityProviderConfigs Operation</seealso>
+        Task<ListIdentityProviderConfigsResponse> ListIdentityProviderConfigsAsync(ListIdentityProviderConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -970,7 +1138,7 @@ namespace Amazon.EKS
         /// deleted as well. Tags that you create for Amazon EKS resources do not propagate to
         /// any other resources associated with the cluster. For example, if you tag a cluster
         /// with this operation, that tag does not automatically propagate to the subnets and
-        /// worker nodes associated with the cluster.
+        /// nodes associated with the cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">

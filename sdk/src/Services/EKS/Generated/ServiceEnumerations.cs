@@ -323,6 +323,60 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type ConfigStatus.
+    /// </summary>
+    public class ConfigStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ConfigStatus
+        /// </summary>
+        public static readonly ConfigStatus ACTIVE = new ConfigStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ConfigStatus
+        /// </summary>
+        public static readonly ConfigStatus CREATING = new ConfigStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ConfigStatus
+        /// </summary>
+        public static readonly ConfigStatus DELETING = new ConfigStatus("DELETING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigStatus FindValue(string value)
+        {
+            return FindValue<ConfigStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ErrorCode.
     /// </summary>
     public class ErrorCode : ConstantClass
@@ -805,6 +859,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType EndpointPublicAccess = new UpdateParamType("EndpointPublicAccess");
         /// <summary>
+        /// Constant IdentityProviderConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType IdentityProviderConfig = new UpdateParamType("IdentityProviderConfig");
+        /// <summary>
         /// Constant LabelsToAdd for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType LabelsToAdd = new UpdateParamType("LabelsToAdd");
@@ -949,9 +1007,17 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateType AddonUpdate = new UpdateType("AddonUpdate");
         /// <summary>
+        /// Constant AssociateIdentityProviderConfig for UpdateType
+        /// </summary>
+        public static readonly UpdateType AssociateIdentityProviderConfig = new UpdateType("AssociateIdentityProviderConfig");
+        /// <summary>
         /// Constant ConfigUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType ConfigUpdate = new UpdateType("ConfigUpdate");
+        /// <summary>
+        /// Constant DisassociateIdentityProviderConfig for UpdateType
+        /// </summary>
+        public static readonly UpdateType DisassociateIdentityProviderConfig = new UpdateType("DisassociateIdentityProviderConfig");
         /// <summary>
         /// Constant EndpointAccessUpdate for UpdateType
         /// </summary>

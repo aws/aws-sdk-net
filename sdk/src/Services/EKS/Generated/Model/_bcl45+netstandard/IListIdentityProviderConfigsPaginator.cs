@@ -1,3 +1,4 @@
+#if !NETSTANDARD13
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
@@ -16,43 +17,24 @@
 /*
  * Do not modify this file. This file is generated from the eks-2017-11-01.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An object representing an identity provider.
-    /// </summary>
-    public partial class Identity
+    /// Paginator for the ListIdentityProviderConfigs operation
+    ///</summary>
+    public interface IListIdentityProviderConfigsPaginator
     {
-        private OIDC _oidc;
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListIdentityProviderConfigsResponse> Responses { get; }
 
         /// <summary>
-        /// Gets and sets the property Oidc. 
-        /// <para>
-        /// An object representing the <a href="https://openid.net/connect/">OpenID Connect</a>
-        /// identity provider information.
-        /// </para>
+        /// Enumerable containing all of the IdentityProviderConfigs
         /// </summary>
-        public OIDC Oidc
-        {
-            get { return this._oidc; }
-            set { this._oidc = value; }
-        }
-
-        // Check to see if Oidc property is set
-        internal bool IsSetOidc()
-        {
-            return this._oidc != null;
-        }
-
+        IPaginatedEnumerable<IdentityProviderConfig> IdentityProviderConfigs { get; }
     }
 }
+#endif

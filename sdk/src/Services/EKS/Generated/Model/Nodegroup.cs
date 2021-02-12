@@ -288,9 +288,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property NodeRole. 
         /// <para>
-        /// The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code>
-        /// daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions for
-        /// these API calls through an IAM instance profile and associated policies.
+        /// The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code>
+        /// daemon makes calls to AWS APIs on your behalf. Nodes receive permissions for these
+        /// API calls through an IAM instance profile and associated policies.
         /// </para>
         /// </summary>
         public string NodeRole

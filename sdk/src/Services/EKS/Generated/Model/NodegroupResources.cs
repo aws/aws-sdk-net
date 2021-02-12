@@ -59,7 +59,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property RemoteAccessSecurityGroup. 
         /// <para>
         /// The remote access security group associated with the node group. This security group
-        /// controls SSH access to the worker nodes.
+        /// controls SSH access to the nodes.
         /// </para>
         /// </summary>
         public string RemoteAccessSecurityGroup
