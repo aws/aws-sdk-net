@@ -58,7 +58,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the account as a delegated administrator of Amazon Macie for
+        /// The current status of the account as the delegated administrator of Amazon Macie for
         /// the organization.
         /// </para>
         /// </summary>

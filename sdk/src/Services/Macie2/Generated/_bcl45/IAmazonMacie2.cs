@@ -544,7 +544,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Associates an account with an Amazon Macie master account.
+        /// Associates an account with an Amazon Macie administrator account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMember service method.</param>
         /// 
@@ -582,7 +582,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Associates an account with an Amazon Macie master account.
+        /// Associates an account with an Amazon Macie administrator account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMember service method.</param>
         /// <param name="cancellationToken">
@@ -1036,7 +1036,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Deletes the association between an Amazon Macie master account and an account.
+        /// Deletes the association between an Amazon Macie administrator account and an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMember service method.</param>
         /// 
@@ -1074,7 +1074,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Deletes the association between an Amazon Macie master account and an account.
+        /// Deletes the association between an Amazon Macie administrator account and an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMember service method.</param>
         /// <param name="cancellationToken">
@@ -1528,11 +1528,93 @@ namespace Amazon.Macie2
 
         #endregion
         
+        #region  DisassociateFromAdministratorAccount
+
+
+        /// <summary>
+        /// Disassociates a member account from its Amazon Macie administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFromAdministratorAccount service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateFromAdministratorAccount service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ConflictException">
+        /// Provides information about an error that occurred due to a versioning conflict for
+        /// a specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromAdministratorAccount">REST API Reference for DisassociateFromAdministratorAccount Operation</seealso>
+        DisassociateFromAdministratorAccountResponse DisassociateFromAdministratorAccount(DisassociateFromAdministratorAccountRequest request);
+
+
+
+        /// <summary>
+        /// Disassociates a member account from its Amazon Macie administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFromAdministratorAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateFromAdministratorAccount service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ConflictException">
+        /// Provides information about an error that occurred due to a versioning conflict for
+        /// a specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromAdministratorAccount">REST API Reference for DisassociateFromAdministratorAccount Operation</seealso>
+        Task<DisassociateFromAdministratorAccountResponse> DisassociateFromAdministratorAccountAsync(DisassociateFromAdministratorAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisassociateFromMasterAccount
 
 
         /// <summary>
-        /// Disassociates a member account from its Amazon Macie master account.
+        /// (Deprecated) Disassociates a member account from its Amazon Macie administrator account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFromMasterAccount service method.</param>
         /// 
@@ -1570,7 +1652,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Disassociates a member account from its Amazon Macie master account.
+        /// (Deprecated) Disassociates a member account from its Amazon Macie administrator account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFromMasterAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1614,7 +1696,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Disassociates an Amazon Macie master account from a member account.
+        /// Disassociates an Amazon Macie administrator account from a member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMember service method.</param>
         /// 
@@ -1652,7 +1734,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Disassociates an Amazon Macie master account from a member account.
+        /// Disassociates an Amazon Macie administrator account from a member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMember service method.</param>
         /// <param name="cancellationToken">
@@ -1855,6 +1937,88 @@ namespace Amazon.Macie2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount">REST API Reference for EnableOrganizationAdminAccount Operation</seealso>
         Task<EnableOrganizationAdminAccountResponse> EnableOrganizationAdminAccountAsync(EnableOrganizationAdminAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAdministratorAccount
+
+
+        /// <summary>
+        /// Retrieves information about the Amazon Macie administrator account for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdministratorAccount service method.</param>
+        /// 
+        /// <returns>The response from the GetAdministratorAccount service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ConflictException">
+        /// Provides information about an error that occurred due to a versioning conflict for
+        /// a specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAdministratorAccount">REST API Reference for GetAdministratorAccount Operation</seealso>
+        GetAdministratorAccountResponse GetAdministratorAccount(GetAdministratorAccountRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about the Amazon Macie administrator account for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdministratorAccount service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAdministratorAccount service method, as returned by Macie2.</returns>
+        /// <exception cref="Amazon.Macie2.Model.AccessDeniedException">
+        /// Provides information about an error that occurred due to insufficient access to a
+        /// specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ConflictException">
+        /// Provides information about an error that occurred due to a versioning conflict for
+        /// a specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.InternalServerException">
+        /// Provides information about an error that occurred due to an unknown internal server
+        /// error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ResourceNotFoundException">
+        /// Provides information about an error that occurred because a specified resource wasn't
+        /// found.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ServiceQuotaExceededException">
+        /// Provides information about an error that occurred due to one or more service quotas
+        /// for an account.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ThrottlingException">
+        /// Provides information about an error that occurred because too many requests were sent
+        /// during a certain amount of time.
+        /// </exception>
+        /// <exception cref="Amazon.Macie2.Model.ValidationException">
+        /// Provides information about an error that occurred due to a syntax error in a request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAdministratorAccount">REST API Reference for GetAdministratorAccount Operation</seealso>
+        Task<GetAdministratorAccountResponse> GetAdministratorAccountAsync(GetAdministratorAccountRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2522,7 +2686,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves information about the Amazon Macie master account for an account.
+        /// (Deprecated) Retrieves information about the Amazon Macie administrator account for
+        /// an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMasterAccount service method.</param>
         /// 
@@ -2560,7 +2725,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves information about the Amazon Macie master account for an account.
+        /// (Deprecated) Retrieves information about the Amazon Macie administrator account for
+        /// an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMasterAccount service method.</param>
         /// <param name="cancellationToken">
@@ -2604,8 +2770,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves information about a member account that's associated with an Amazon Macie
-        /// master account.
+        /// Retrieves information about an account that's associated with an Amazon Macie administrator
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMember service method.</param>
         /// 
@@ -2643,8 +2809,8 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Retrieves information about a member account that's associated with an Amazon Macie
-        /// master account.
+        /// Retrieves information about an account that's associated with an Amazon Macie administrator
+        /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMember service method.</param>
         /// <param name="cancellationToken">
@@ -3265,7 +3431,7 @@ namespace Amazon.Macie2
 
         /// <summary>
         /// Retrieves information about the accounts that are associated with an Amazon Macie
-        /// master account.
+        /// administrator account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// 
@@ -3304,7 +3470,7 @@ namespace Amazon.Macie2
 
         /// <summary>
         /// Retrieves information about the accounts that are associated with an Amazon Macie
-        /// master account.
+        /// administrator account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMembers service method.</param>
         /// <param name="cancellationToken">
@@ -3934,7 +4100,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Enables an Amazon Macie master account to suspend or re-enable a member account.
+        /// Enables an Amazon Macie administrator to suspend or re-enable a member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMemberSession service method.</param>
         /// 
@@ -3972,7 +4138,7 @@ namespace Amazon.Macie2
 
 
         /// <summary>
-        /// Enables an Amazon Macie master account to suspend or re-enable a member account.
+        /// Enables an Amazon Macie administrator to suspend or re-enable a member account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMemberSession service method.</param>
         /// <param name="cancellationToken">

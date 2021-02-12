@@ -30,7 +30,8 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMasterAccount operation.
-    /// Retrieves information about the Amazon Macie master account for an account.
+    /// (Deprecated) Retrieves information about the Amazon Macie administrator account for
+    /// an account.
     /// </summary>
     public partial class GetMasterAccountRequest : AmazonMacie2Request
     {

@@ -34,8 +34,27 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class AcceptInvitationRequest : AmazonMacie2Request
     {
+        private string _administratorAccountId;
         private string _invitationId;
         private string _masterAccount;
+
+        /// <summary>
+        /// Gets and sets the property AdministratorAccountId. 
+        /// <para>
+        /// The AWS account ID for the account that sent the invitation.
+        /// </para>
+        /// </summary>
+        public string AdministratorAccountId
+        {
+            get { return this._administratorAccountId; }
+            set { this._administratorAccountId = value; }
+        }
+
+        // Check to see if AdministratorAccountId property is set
+        internal bool IsSetAdministratorAccountId()
+        {
+            return this._administratorAccountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InvitationId. 
@@ -59,10 +78,11 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property MasterAccount. 
         /// <para>
-        /// The AWS account ID for the account that sent the invitation.
+        /// (Deprecated) The AWS account ID for the account that sent the invitation. This property
+        /// has been replaced by the administratorAccountId property and is retained only for
+        /// backward compatibility.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string MasterAccount
         {
             get { return this._masterAccount; }

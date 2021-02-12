@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMember operation.
-    /// Deletes the association between an Amazon Macie master account and an account.
+    /// Deletes the association between an Amazon Macie administrator account and an account.
     /// </summary>
     public partial class DeleteMemberRequest : AmazonMacie2Request
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Specifies details for an account to associate with an Amazon Macie master account.
+    /// Specifies details for an account to associate with an Amazon Macie administrator account.
     /// </summary>
     public partial class AccountDetail
     {

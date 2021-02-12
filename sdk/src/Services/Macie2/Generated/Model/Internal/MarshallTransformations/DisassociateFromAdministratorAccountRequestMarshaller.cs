@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AcceptInvitation Request Marshaller
+    /// DisassociateFromAdministratorAccount Request Marshaller
     /// </summary>       
-    public class AcceptInvitationRequestMarshaller : IMarshaller<IRequest, AcceptInvitationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DisassociateFromAdministratorAccountRequestMarshaller : IMarshaller<IRequest, DisassociateFromAdministratorAccountRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((AcceptInvitationRequest)input);
+            return this.Marshall((DisassociateFromAdministratorAccountRequest)input);
         }
 
         /// <summary>
@@ -52,50 +52,21 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(AcceptInvitationRequest publicRequest)
+        public IRequest Marshall(DisassociateFromAdministratorAccountRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Macie2");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-01-01";            
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/invitations/accept";
+            request.ResourcePath = "/administrator/disassociate";
             request.MarshallerVersion = 2;
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdministratorAccountId())
-                {
-                    context.Writer.WritePropertyName("administratorAccountId");
-                    context.Writer.Write(publicRequest.AdministratorAccountId);
-                }
-
-                if(publicRequest.IsSetInvitationId())
-                {
-                    context.Writer.WritePropertyName("invitationId");
-                    context.Writer.Write(publicRequest.InvitationId);
-                }
-
-                if(publicRequest.IsSetMasterAccount())
-                {
-                    context.Writer.WritePropertyName("masterAccount");
-                    context.Writer.Write(publicRequest.MasterAccount);
-                }
-
-        
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
 
             return request;
         }
-        private static AcceptInvitationRequestMarshaller _instance = new AcceptInvitationRequestMarshaller();        
+        private static DisassociateFromAdministratorAccountRequestMarshaller _instance = new DisassociateFromAdministratorAccountRequestMarshaller();        
 
-        internal static AcceptInvitationRequestMarshaller GetInstance()
+        internal static DisassociateFromAdministratorAccountRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +74,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AcceptInvitationRequestMarshaller Instance
+        public static DisassociateFromAdministratorAccountRequestMarshaller Instance
         {
             get
             {

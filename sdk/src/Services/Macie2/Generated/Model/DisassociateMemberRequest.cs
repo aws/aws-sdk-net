@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateMember operation.
-    /// Disassociates an Amazon Macie master account from a member account.
+    /// Disassociates an Amazon Macie administrator account from a member account.
     /// </summary>
     public partial class DisassociateMemberRequest : AmazonMacie2Request
     {

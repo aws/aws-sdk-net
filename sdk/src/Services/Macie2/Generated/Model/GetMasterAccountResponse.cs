@@ -38,9 +38,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Master. 
         /// <para>
-        /// The AWS account ID for the master account. If the accounts are associated by a Macie
-        /// membership invitation, this object also provides details about the invitation that
-        /// was sent and accepted to establish the relationship between the accounts.
+        /// (Deprecated) The AWS account ID for the administrator account. If the accounts are
+        /// associated by a Macie membership invitation, this object also provides details about
+        /// the invitation that was sent to establish the relationship between the accounts.
         /// </para>
         /// </summary>
         public Invitation Master

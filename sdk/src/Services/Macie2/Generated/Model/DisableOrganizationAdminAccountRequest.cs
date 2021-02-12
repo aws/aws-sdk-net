@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property AdminAccountId. 
         /// <para>
-        /// The AWS account ID of the delegated administrator account.
+        /// The AWS account ID of the delegated Amazon Macie administrator account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

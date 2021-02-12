@@ -29,12 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Provides information about an account that's associated with an Amazon Macie master
+    /// Provides information about an account that's associated with an Amazon Macie administrator
     /// account.
     /// </summary>
     public partial class Member
     {
         private string _accountId;
+        private string _administratorAccountId;
         private string _arn;
         private string _email;
         private DateTime? _invitedAt;
@@ -59,6 +60,24 @@ namespace Amazon.Macie2.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdministratorAccountId. 
+        /// <para>
+        /// The AWS account ID for the administrator account.
+        /// </para>
+        /// </summary>
+        public string AdministratorAccountId
+        {
+            get { return this._administratorAccountId; }
+            set { this._administratorAccountId = value; }
+        }
+
+        // Check to see if AdministratorAccountId property is set
+        internal bool IsSetAdministratorAccountId()
+        {
+            return this._administratorAccountId != null;
         }
 
         /// <summary>
@@ -120,7 +139,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property MasterAccountId. 
         /// <para>
-        /// The AWS account ID for the master account.
+        /// (Deprecated) The AWS account ID for the administrator account. This property has been
+        /// replaced by the administratorAccountId property and is retained only for backward
+        /// compatibility.
         /// </para>
         /// </summary>
         public string MasterAccountId
@@ -138,7 +159,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property RelationshipStatus. 
         /// <para>
-        /// The current status of the relationship between the account and the master account.
+        /// The current status of the relationship between the account and the administrator account.
         /// </para>
         /// </summary>
         public RelationshipStatus RelationshipStatus
@@ -176,7 +197,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property UpdatedAt. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, of the most recent change
-        /// to the status of the relationship between the account and the master account.
+        /// to the status of the relationship between the account and the administrator account.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

@@ -29,33 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Macie2.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetMember operation.
-    /// Retrieves information about an account that's associated with an Amazon Macie administrator
-    /// account.
+    /// Container for the parameters to the GetAdministratorAccount operation.
+    /// Retrieves information about the Amazon Macie administrator account for an account.
     /// </summary>
-    public partial class GetMemberRequest : AmazonMacie2Request
+    public partial class GetAdministratorAccountRequest : AmazonMacie2Request
     {
-        private string _id;
-
-        /// <summary>
-        /// Gets and sets the property Id. 
-        /// <para>
-        /// The unique identifier for the Amazon Macie resource or account that the request applies
-        /// to.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
 
     }
 }

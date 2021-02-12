@@ -30,7 +30,7 @@ namespace Amazon.Macie2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMember operation.
-    /// Associates an account with an Amazon Macie master account.
+    /// Associates an account with an Amazon Macie administrator account.
     /// </summary>
     public partial class CreateMemberRequest : AmazonMacie2Request
     {
@@ -40,7 +40,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// The details for the account to associate with the master account.
+        /// The details for the account to associate with the administrator account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

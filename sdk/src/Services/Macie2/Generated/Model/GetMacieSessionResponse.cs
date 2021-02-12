@@ -61,9 +61,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property FindingPublishingFrequency. 
         /// <para>
-        /// The frequency with which Amazon Macie publishes updates to policy findings for the
-        /// account. This includes publishing updates to AWS Security Hub and Amazon EventBridge
-        /// (formerly called Amazon CloudWatch Events).
+        /// The frequency with which Macie publishes updates to policy findings for the account.
+        /// This includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly
+        /// called Amazon CloudWatch Events).
         /// </para>
         /// </summary>
         public FindingPublishingFrequency FindingPublishingFrequency
@@ -81,8 +81,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the service-linked role that allows Amazon Macie
-        /// to monitor and analyze data in AWS resources for the account.
+        /// The Amazon Resource Name (ARN) of the service-linked role that allows Macie to monitor
+        /// and analyze data in AWS resources for the account.
         /// </para>
         /// </summary>
         public string ServiceRole
@@ -100,10 +100,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the Amazon Macie account. Possible values are: PAUSED, the account
-        /// is enabled but all Amazon Macie activities are suspended (paused) for the account;
-        /// and, ENABLED, the account is enabled and all Amazon Macie activities are enabled for
-        /// the account.
+        /// The current status of the Macie account. Possible values are: PAUSED, the account
+        /// is enabled but all Macie activities are suspended (paused) for the account; and, ENABLED,
+        /// the account is enabled and all Macie activities are enabled for the account.
         /// </para>
         /// </summary>
         public MacieStatus Status
@@ -122,7 +121,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property UpdatedAt. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, of the most recent change
-        /// to the status of the Amazon Macie account.
+        /// to the status of the Macie account.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

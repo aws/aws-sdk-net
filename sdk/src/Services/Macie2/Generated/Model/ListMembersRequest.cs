@@ -31,7 +31,7 @@ namespace Amazon.Macie2.Model
     /// <summary>
     /// Container for the parameters to the ListMembers operation.
     /// Retrieves information about the accounts that are associated with an Amazon Macie
-    /// master account.
+    /// administrator account.
     /// </summary>
     public partial class ListMembersRequest : AmazonMacie2Request
     {
@@ -81,8 +81,9 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property OnlyAssociated. 
         /// <para>
         /// Specifies which accounts to include in the response, based on the status of an account's
-        /// relationship with the master account. By default, the response includes only current
-        /// member accounts. To include all accounts, set the value for this parameter to false.
+        /// relationship with the administrator account. By default, the response includes only
+        /// current member accounts. To include all accounts, set the value for this parameter
+        /// to false.
         /// </para>
         /// </summary>
         public string OnlyAssociated

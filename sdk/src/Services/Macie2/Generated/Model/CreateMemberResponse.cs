@@ -38,7 +38,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the account that was associated with the master
+        /// The Amazon Resource Name (ARN) of the account that was associated with the administrator
         /// account.
         /// </para>
         /// </summary>

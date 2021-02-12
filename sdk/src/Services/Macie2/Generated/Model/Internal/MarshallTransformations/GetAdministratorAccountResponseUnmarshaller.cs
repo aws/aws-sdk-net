@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetMember operation
+    /// Response Unmarshaller for GetAdministratorAccount operation
     /// </summary>  
-    public class GetMemberResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetAdministratorAccountResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,64 +45,16 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetMemberResponse response = new GetMemberResponse();
+            GetAdministratorAccountResponse response = new GetAdministratorAccountResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("administrator", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AccountId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("administratorAccountId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AdministratorAccountId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("email", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Email = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("invitedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.InvitedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("masterAccountId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.MasterAccountId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("relationshipStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RelationshipStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("updatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.UpdatedAt = unmarshaller.Unmarshall(context);
+                    var unmarshaller = InvitationUnmarshaller.Instance;
+                    response.Administrator = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -160,9 +112,9 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             return new AmazonMacie2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetMemberResponseUnmarshaller _instance = new GetMemberResponseUnmarshaller();        
+        private static GetAdministratorAccountResponseUnmarshaller _instance = new GetAdministratorAccountResponseUnmarshaller();        
 
-        internal static GetMemberResponseUnmarshaller GetInstance()
+        internal static GetAdministratorAccountResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -170,7 +122,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetMemberResponseUnmarshaller Instance
+        public static GetAdministratorAccountResponseUnmarshaller Instance
         {
             get
             {
