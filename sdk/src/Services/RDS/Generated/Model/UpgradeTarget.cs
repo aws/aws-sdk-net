@@ -38,6 +38,9 @@ namespace Amazon.RDS.Model
         private string _engine;
         private string _engineVersion;
         private bool? _isMajorVersionUpgrade;
+        private List<string> _supportedEngineModes = new List<string>();
+        private bool? _supportsGlobalDatabases;
+        private bool? _supportsParallelQuery;
 
         /// <summary>
         /// Gets and sets the property AutoUpgrade. 
@@ -115,7 +118,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsMajorVersionUpgrade. 
         /// <para>
-        /// A value that indicates whether a database engine is upgraded to a major version.
+        /// A value that indicates whether upgrading to the target version requires upgrading
+        /// the major version of the database engine.
         /// </para>
         /// </summary>
         public bool IsMajorVersionUpgrade
@@ -128,6 +132,62 @@ namespace Amazon.RDS.Model
         internal bool IsSetIsMajorVersionUpgrade()
         {
             return this._isMajorVersionUpgrade.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedEngineModes. 
+        /// <para>
+        /// A list of the supported DB engine modes for the target engine version.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedEngineModes
+        {
+            get { return this._supportedEngineModes; }
+            set { this._supportedEngineModes = value; }
+        }
+
+        // Check to see if SupportedEngineModes property is set
+        internal bool IsSetSupportedEngineModes()
+        {
+            return this._supportedEngineModes != null && this._supportedEngineModes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsGlobalDatabases. 
+        /// <para>
+        /// A value that indicates whether you can use Aurora global databases with the target
+        /// engine version.
+        /// </para>
+        /// </summary>
+        public bool SupportsGlobalDatabases
+        {
+            get { return this._supportsGlobalDatabases.GetValueOrDefault(); }
+            set { this._supportsGlobalDatabases = value; }
+        }
+
+        // Check to see if SupportsGlobalDatabases property is set
+        internal bool IsSetSupportsGlobalDatabases()
+        {
+            return this._supportsGlobalDatabases.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsParallelQuery. 
+        /// <para>
+        /// A value that indicates whether you can use Aurora parallel query with the target engine
+        /// version.
+        /// </para>
+        /// </summary>
+        public bool SupportsParallelQuery
+        {
+            get { return this._supportsParallelQuery.GetValueOrDefault(); }
+            set { this._supportsParallelQuery = value; }
+        }
+
+        // Check to see if SupportsParallelQuery property is set
+        internal bool IsSetSupportsParallelQuery()
+        {
+            return this._supportsParallelQuery.HasValue; 
         }
 
     }

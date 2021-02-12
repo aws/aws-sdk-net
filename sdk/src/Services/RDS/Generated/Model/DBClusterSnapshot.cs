@@ -46,6 +46,7 @@ namespace Amazon.RDS.Model
         private string _dbClusterSnapshotArn;
         private string _dbClusterSnapshotIdentifier;
         private string _engine;
+        private string _engineMode;
         private string _engineVersion;
         private bool? _iamDatabaseAuthenticationEnabled;
         private string _kmsKeyId;
@@ -175,7 +176,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Specifies the name of the database engine.
+        /// Specifies the name of the database engine for this DB cluster snapshot.
         /// </para>
         /// </summary>
         public string Engine
@@ -188,6 +189,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngine()
         {
             return this._engine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineMode. 
+        /// <para>
+        /// Provides the engine mode of the database engine for this DB cluster snapshot.
+        /// </para>
+        /// </summary>
+        public string EngineMode
+        {
+            get { return this._engineMode; }
+            set { this._engineMode = value; }
+        }
+
+        // Check to see if EngineMode property is set
+        internal bool IsSetEngineMode()
+        {
+            return this._engineMode != null;
         }
 
         /// <summary>
@@ -272,7 +291,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// Provides the master username for the DB cluster snapshot.
+        /// Provides the master username for this DB cluster snapshot.
         /// </para>
         /// </summary>
         public string MasterUsername
