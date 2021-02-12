@@ -112,15 +112,15 @@
         />  
     </Target>
 
-    <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;copy-service-models;keyscan;consolidate-docartifacts;save-build"/>
+    <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;copy-dependencies;copy-service-models;keyscan;consolidate-docartifacts;save-build"/>
 
     <Target Name="full-build-service" DependsOnTargets="test-sdk-service"/>
 
     <Target Name="full-build-nodocs" DependsOnTargets="full-build-nodocs-all;full-build-nodocs-service"/>
 
-    <Target Name="full-build-nodocs-all" DependsOnTargets="test-sdk;package-extensions;keyscan;copy-assemblies;copy-service-models;save-build" Condition="'$(ServiceList)'==''"/>
+    <Target Name="full-build-nodocs-all" DependsOnTargets="test-sdk;package-extensions;keyscan;copy-assemblies;copy-dependencies;copy-service-models;save-build" Condition="'$(ServiceList)'==''"/>
 
-    <Target Name="full-build-nodocs-service" DependsOnTargets="test-sdk-service;package-extensions;keyscan;copy-assemblies;copy-service-models;save-build" Condition="'$(ServiceList)'!=''"/>
+    <Target Name="full-build-nodocs-service" DependsOnTargets="test-sdk-service;package-extensions;keyscan;copy-assemblies;copy-dependencies;copy-service-models;save-build" Condition="'$(ServiceList)'!=''"/>
 
     <Target Name="restore-nuget">
         <Message Text="Restore nuget packages"/>
@@ -153,13 +153,13 @@
       RepoPath = "$(MSBuildProjectDirectory)\.."/>  
    </Target>  
 
-    <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-netstandard;copy-assemblies">
+    <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-netstandard;copy-assemblies;copy-dependencies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
     </Target>
 
-    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;copy-assemblies">
+    <Target Name="build-sdk-service" DependsOnTargets="populate-deployment;build-sdk-desktop-service;build-code-analysis;copy-assemblies;copy-dependencies">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
@@ -436,7 +436,37 @@
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File copy-sdkassemblies.ps1 -PublicKeyTokenToCheck $(CustomSnkPublicKeyToken) -BuildType $(Configuration) -ServiceList &quot;$(ServiceList)&quot;"/>
     </Target>
 
-    <Target Name="copy-service-models" DependsOnTargets="copy-assemblies">
+    <Target Name="copy-dependencies" DependsOnTargets="copy-assemblies">
+        <Message Text="Copying dependency dlls" />
+        <Exec LogStandardErrorAsError="true" Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File copy-dependencies.ps1"/>
+    </Target>
+
+    <Target Name="copy-license-and-notice" DependsOnTargets="copy-dependencies">
+        <Message Text="Copying License.txt and Notice.txt to the assembly zips" />
+        <Copy
+            SourceFiles="..\Notice.txt;..\License.txt"
+            DestinationFiles="..\Deployment\assemblies\net35\Notice.txt;..\Deployment\assemblies\net35\License.txt"
+        />
+        <Copy
+            SourceFiles="..\Notice.txt;..\License.txt"
+            DestinationFiles="..\Deployment\assemblies\net45\Notice.txt;..\Deployment\assemblies\net45\License.txt"
+        />
+        <Copy
+            SourceFiles="..\Notice.txt;..\License.txt"
+            DestinationFiles="..\Deployment\assemblies\netstandard1.3\Notice.txt;..\Deployment\assemblies\netstandard1.3\License.txt"
+        />
+        <!-- netstandard2.0 needs modified Notice with additional 3rd party dependencies -->
+        <Copy
+            SourceFiles=".\NoticeForZips.txt;..\License.txt"
+            DestinationFiles="..\Deployment\assemblies\netstandard2.0\Notice.txt;..\Deployment\assemblies\netstandard2.0\License.txt"
+        />
+        <Copy
+            SourceFiles="..\Notice.txt;..\License.txt"
+            DestinationFiles="..\Deployment\assemblies\netcoreapp3.1\Notice.txt;..\Deployment\assemblies\netcoreapp3.1\License.txt"
+        />
+    </Target>
+
+    <Target Name="copy-service-models" DependsOnTargets="copy-license-and-notice">
         <Message Text="Collating service models for downstream tooling" />
 
     <ItemGroup>
